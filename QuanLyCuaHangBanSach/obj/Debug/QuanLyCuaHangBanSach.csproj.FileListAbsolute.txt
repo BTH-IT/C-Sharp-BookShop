@@ -1,0 +1,9 @@
+C:\Users\Hung\source\repos\QuanLyCuaHangBanSach\QuanLyCuaHangBanSach\bin\Debug\QuanLyCuaHangBanSach.exe.config
+C:\Users\Hung\source\repos\QuanLyCuaHangBanSach\QuanLyCuaHangBanSach\bin\Debug\QuanLyCuaHangBanSach.exe
+C:\Users\Hung\source\repos\QuanLyCuaHangBanSach\QuanLyCuaHangBanSach\bin\Debug\QuanLyCuaHangBanSach.pdb
+C:\Users\Hung\source\repos\QuanLyCuaHangBanSach\QuanLyCuaHangBanSach\obj\Debug\QuanLyCuaHangBanSach.csproj.AssemblyReference.cache
+C:\Users\Hung\source\repos\QuanLyCuaHangBanSach\QuanLyCuaHangBanSach\obj\Debug\QuanLyCuaHangBanSach.Properties.Resources.resources
+C:\Users\Hung\source\repos\QuanLyCuaHangBanSach\QuanLyCuaHangBanSach\obj\Debug\QuanLyCuaHangBanSach.csproj.GenerateResource.cache
+C:\Users\Hung\source\repos\QuanLyCuaHangBanSach\QuanLyCuaHangBanSach\obj\Debug\QuanLyCuaHangBanSach.csproj.CoreCompileInputs.cache
+C:\Users\Hung\source\repos\QuanLyCuaHangBanSach\QuanLyCuaHangBanSach\obj\Debug\QuanLyCuaHangBanSach.exe
+C:\Users\Hung\source\repos\QuanLyCuaHangBanSach\QuanLyCuaHangBanSach\obj\Debug\QuanLyCuaHangBanSach.pdb
