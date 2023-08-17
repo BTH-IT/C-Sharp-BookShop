@@ -17,8 +17,6 @@ namespace QuanLyCuaHangBanSach.DAO
         private MySqlConnection connect = null;
         private static DataProvider instance;
 
-
-
         public static DataProvider Instance {
             get {
                 if (instance == null)
@@ -32,16 +30,9 @@ namespace QuanLyCuaHangBanSach.DAO
         }
 
         public DataProvider() {
-            connect = new MySqlConnection("SERVER=" + this.serverName + ";" +
+            this.connect = new MySqlConnection("SERVER=" + this.serverName + ";" +
                     "DATABASE=" + this.databaseName + ";" + "UID=" + this.username + ";" +
                     "PASSWORD=" + this.password + ";");
-        }
-
-        public DataProvider(string serverName, string databaseName, string username, string password)
-        {
-            connect = new MySqlConnection("SERVER=" + serverName + ";" +
-                "DATABASE=" + databaseName + ";" + "UID=" + username + ";" +
-                "PASSWORD=" + password + ";");
         }
     }
 }
