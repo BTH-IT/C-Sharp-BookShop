@@ -12,9 +12,36 @@ namespace QuanLyCuaHangBanSach.BUS
 {
     public class AccountBUS : IBUS<AccountDTO>
     {
+        private static AccountBUS instance;
+
+        public static AccountBUS Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    instance = new AccountBUS();
+                }
+
+                return AccountBUS.instance;
+            }
+            private set { AccountBUS.instance = value; }
+        }
+
         public DataTable getAll()
         {
             return AccountDAO.Instance.getAll();
+        }
+
+        public AccountDTO login(string email, string pwd)
+        {
+            AccountDTO account = this.getById(email);
+
+            if (account == null) return null;
+
+            if (!account.MatKhau.Equals(pwd)) return null;
+
+            return account;
         }
 
         public List<AccountDTO> getAllData()

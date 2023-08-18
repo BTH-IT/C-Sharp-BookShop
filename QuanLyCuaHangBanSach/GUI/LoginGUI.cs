@@ -3,14 +3,18 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.IO;
 using System.Reflection;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using QuanLyCuaHangBanSach.BUS;
+using QuanLyCuaHangBanSach.DTO;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace QuanLyCuaHangBanSach.GUI
 {
-    public partial class DangNhapGUI : Form
+    public partial class LoginGUI : Form
     {
         private bool isHiddenPwd = true;
-        public DangNhapGUI()
+        public LoginGUI()
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
@@ -137,6 +141,90 @@ namespace QuanLyCuaHangBanSach.GUI
             }
             textBox2.UseSystemPasswordChar = this.isHiddenPwd;
             this.pictureBox5.Refresh();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private bool validateForm()
+        {
+            if (this.textBox1.Text.Equals("") || this.textBox1.Text.Equals("Enter your email"))
+            {
+                this.textBox1.Focus();
+                this.errorMsg1.Text = "This field is a required field";
+                this.line1.BackColor = Color.FromArgb(239, 68, 68);
+                return false;
+            } else
+            {
+                this.errorMsg1.Text = "";
+                this.line1.BackColor = Color.FromArgb(45, 212, 191);
+            }
+
+            if (!Regex.Match(textBox1.Text, @"^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$").Success)
+            {
+                this.textBox1.Focus();
+                this.errorMsg1.Text = "This field is an email field";
+                this.line1.BackColor = Color.FromArgb(239, 68, 68);
+                return false;
+            } else
+            {
+                this.errorMsg1.Text = "";
+                this.line1.BackColor = Color.FromArgb(45, 212, 191);
+            }
+
+            if (this.textBox2.Text.Equals("") || this.textBox2.Text.Equals("Enter your password"))
+            {
+                this.textBox2.Focus();
+                this.errorMsg2.Text = "This field is a required field";
+                this.line2.BackColor = Color.FromArgb(239, 68, 68);
+                return false;
+            } else
+            {
+                this.errorMsg2.Text = "";
+                this.line2.BackColor = Color.FromArgb(45, 212, 191);
+            }
+
+            
+            return true;
+        }
+
+        private void handleLogin()
+        {
+            bool isValid = this.validateForm();
+
+            if (!isValid) return;
+
+            AccountDTO account = AccountBUS.Instance.login(this.textBox1.Text, this.textBox2.Text);
+
+            if (account == null)
+            {
+                MessageBox.Show("Email or password is invalid, please try again!!");
+                return;
+            }
+
+        }
+
+        private void customButton1_Click(object sender, EventArgs e)
+        {
+            this.handleLogin();
+        }
+
+        private void textBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                this.handleLogin();
+            }
+        }
+
+        private void textBox2_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                this.handleLogin();
+            }
         }
     }
 }

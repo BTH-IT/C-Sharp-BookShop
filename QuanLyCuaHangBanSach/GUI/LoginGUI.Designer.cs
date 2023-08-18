@@ -1,6 +1,6 @@
 ﻿namespace QuanLyCuaHangBanSach.GUI
 {
-    partial class DangNhapGUI
+    partial class LoginGUI
     {
         /// <summary>
         /// Required designer variable.
@@ -28,32 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DangNhapGUI));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginGUI));
+            QuanLyCuaHangBanSach.CustomButton customButton1;
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblLogin = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.errorMsg1 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.line1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.errorMsg2 = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.panel4 = new System.Windows.Forms.Panel();
+            this.line2 = new System.Windows.Forms.Panel();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.gradientPanel2 = new QuanLyCuaHangBanSach.GradientPanel();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.customButton1 = new QuanLyCuaHangBanSach.CustomButton();
-            this.label9 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            customButton1 = new QuanLyCuaHangBanSach.CustomButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -76,9 +77,11 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // lblLogin
             // 
+            this.lblLogin.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.lblLogin.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed SemiB", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblLogin.Location = new System.Drawing.Point(525, 28);
             this.lblLogin.Name = "lblLogin";
@@ -91,9 +94,9 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.errorMsg1);
             this.panel1.Controls.Add(this.pictureBox3);
-            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.line1);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Location = new System.Drawing.Point(434, 110);
             this.panel1.Name = "panel1";
@@ -114,17 +117,18 @@
             this.textBox1.Text = "Enter your email";
             this.textBox1.Click += new System.EventHandler(this.textBox1_Click);
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
             this.textBox1.Leave += new System.EventHandler(this.textBox1_Leave);
             // 
-            // label4
+            // errorMsg1
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed SemiB", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label4.ForeColor = System.Drawing.Color.Red;
-            this.label4.Location = new System.Drawing.Point(165, 54);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(0, 30);
-            this.label4.TabIndex = 2;
+            this.errorMsg1.AutoSize = true;
+            this.errorMsg1.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed SemiB", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.errorMsg1.ForeColor = System.Drawing.Color.Red;
+            this.errorMsg1.Location = new System.Drawing.Point(165, 54);
+            this.errorMsg1.Name = "errorMsg1";
+            this.errorMsg1.Size = new System.Drawing.Size(0, 30);
+            this.errorMsg1.TabIndex = 2;
             // 
             // pictureBox3
             // 
@@ -136,14 +140,14 @@
             this.pictureBox3.TabIndex = 5;
             this.pictureBox3.TabStop = false;
             // 
-            // panel2
+            // line1
             // 
-            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(212)))), ((int)(((byte)(191)))));
-            this.panel2.Location = new System.Drawing.Point(170, 52);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(253, 1);
-            this.panel2.TabIndex = 4;
+            this.line1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.line1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(212)))), ((int)(((byte)(191)))));
+            this.line1.Location = new System.Drawing.Point(170, 52);
+            this.line1.Name = "line1";
+            this.line1.Size = new System.Drawing.Size(253, 1);
+            this.line1.TabIndex = 4;
             // 
             // label3
             // 
@@ -159,9 +163,9 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.Transparent;
             this.panel3.Controls.Add(this.pictureBox5);
-            this.panel3.Controls.Add(this.label5);
+            this.panel3.Controls.Add(this.errorMsg2);
             this.panel3.Controls.Add(this.pictureBox4);
-            this.panel3.Controls.Add(this.panel4);
+            this.panel3.Controls.Add(this.line2);
             this.panel3.Controls.Add(this.textBox2);
             this.panel3.Controls.Add(this.label6);
             this.panel3.Location = new System.Drawing.Point(434, 214);
@@ -180,15 +184,15 @@
             this.pictureBox5.TabStop = false;
             this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
             // 
-            // label5
+            // errorMsg2
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed SemiB", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label5.ForeColor = System.Drawing.Color.Red;
-            this.label5.Location = new System.Drawing.Point(165, 61);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(0, 30);
-            this.label5.TabIndex = 2;
+            this.errorMsg2.AutoSize = true;
+            this.errorMsg2.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed SemiB", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.errorMsg2.ForeColor = System.Drawing.Color.Red;
+            this.errorMsg2.Location = new System.Drawing.Point(165, 61);
+            this.errorMsg2.Name = "errorMsg2";
+            this.errorMsg2.Size = new System.Drawing.Size(0, 30);
+            this.errorMsg2.TabIndex = 2;
             // 
             // pictureBox4
             // 
@@ -200,14 +204,14 @@
             this.pictureBox4.TabIndex = 5;
             this.pictureBox4.TabStop = false;
             // 
-            // panel4
+            // line2
             // 
-            this.panel4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(212)))), ((int)(((byte)(191)))));
-            this.panel4.Location = new System.Drawing.Point(170, 56);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(253, 1);
-            this.panel4.TabIndex = 4;
+            this.line2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.line2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(212)))), ((int)(((byte)(191)))));
+            this.line2.Location = new System.Drawing.Point(170, 56);
+            this.line2.Name = "line2";
+            this.line2.Size = new System.Drawing.Size(253, 1);
+            this.line2.TabIndex = 4;
             // 
             // textBox2
             // 
@@ -223,6 +227,7 @@
             this.textBox2.Text = "Enter your password";
             this.textBox2.Click += new System.EventHandler(this.textBox2_Click);
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.textBox2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox2_KeyDown);
             this.textBox2.Leave += new System.EventHandler(this.textBox2_Leave);
             // 
             // label6
@@ -264,6 +269,48 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("#9Slide03 Cabin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.label9.Location = new System.Drawing.Point(743, 310);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(136, 26);
+            this.label9.TabIndex = 5;
+            this.label9.Text = "Forgot password?";
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Font = new System.Drawing.Font("#9Slide03 Cabin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.checkBox1.Location = new System.Drawing.Point(437, 310);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(143, 30);
+            this.checkBox1.TabIndex = 6;
+            this.checkBox1.Text = "Remember me";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // customButton1
+            // 
+            customButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            customButton1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            customButton1.BorderColor = System.Drawing.Color.Transparent;
+            customButton1.BorderRadius = 30;
+            customButton1.BorderSize = 0;
+            customButton1.FlatAppearance.BorderSize = 0;
+            customButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            customButton1.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            customButton1.ForeColor = System.Drawing.Color.White;
+            customButton1.Location = new System.Drawing.Point(525, 355);
+            customButton1.Name = "customButton1";
+            customButton1.Size = new System.Drawing.Size(248, 64);
+            customButton1.TabIndex = 4;
+            customButton1.Text = "Đăng nhập";
+            customButton1.TextColor = System.Drawing.Color.White;
+            customButton1.UseVisualStyleBackColor = false;
+            customButton1.Click += new System.EventHandler(this.customButton1_Click);
             // 
             // gradientPanel2
             // 
@@ -310,48 +357,7 @@
             this.pictureBox6.TabIndex = 0;
             this.pictureBox6.TabStop = false;
             // 
-            // customButton1
-            // 
-            this.customButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.customButton1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.customButton1.BorderColor = System.Drawing.Color.Transparent;
-            this.customButton1.BorderRadius = 30;
-            this.customButton1.BorderSize = 0;
-            this.customButton1.FlatAppearance.BorderSize = 0;
-            this.customButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton1.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.customButton1.ForeColor = System.Drawing.Color.White;
-            this.customButton1.Location = new System.Drawing.Point(525, 355);
-            this.customButton1.Name = "customButton1";
-            this.customButton1.Size = new System.Drawing.Size(248, 64);
-            this.customButton1.TabIndex = 4;
-            this.customButton1.Text = "Đăng nhập";
-            this.customButton1.TextColor = System.Drawing.Color.White;
-            this.customButton1.UseVisualStyleBackColor = false;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("#9Slide03 Cabin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.label9.Location = new System.Drawing.Point(743, 310);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(136, 26);
-            this.label9.TabIndex = 5;
-            this.label9.Text = "Forgot password?";
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("#9Slide03 Cabin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.checkBox1.Location = new System.Drawing.Point(437, 310);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(143, 30);
-            this.checkBox1.TabIndex = 6;
-            this.checkBox1.Text = "Remember me";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // DangNhapGUI
+            // LoginGUI
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
@@ -359,7 +365,7 @@
             this.ClientSize = new System.Drawing.Size(900, 450);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.customButton1);
+            this.Controls.Add(customButton1);
             this.Controls.Add(this.gradientPanel2);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
@@ -369,7 +375,7 @@
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed SemiB", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "DangNhapGUI";
+            this.Name = "LoginGUI";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "1";
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.DangNhapGUI_Paint);
@@ -399,13 +405,13 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel line1;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label errorMsg1;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label errorMsg2;
         private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel line2;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBox1;
@@ -414,7 +420,6 @@
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private CustomButton customButton1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.CheckBox checkBox1;
     }

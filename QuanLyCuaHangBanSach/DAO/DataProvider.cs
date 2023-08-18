@@ -36,7 +36,7 @@ namespace QuanLyCuaHangBanSach.DAO
                     "PASSWORD=" + this.password + ";");
         }
 
-        public DataTable ExecuteQuery(string query)
+        public DataTable ExecuteQuery(string query, MySqlParameter[] parameters = null)
         {
             DataTable data = new DataTable();
 
@@ -46,6 +46,15 @@ namespace QuanLyCuaHangBanSach.DAO
                 try
                 {
                     MySqlCommand cmd = new MySqlCommand(query, connect);
+
+                    if (parameters != null)
+                    {
+                        foreach (MySqlParameter param in parameters)
+                        {
+                            cmd.Parameters.Add(param);
+                        }
+                    }
+
                     MySqlDataAdapter dataAdapter = new MySqlDataAdapter(cmd);
                     dataAdapter.Fill(data);
                 }
@@ -61,7 +70,7 @@ namespace QuanLyCuaHangBanSach.DAO
             return data;
         }
 
-        public int ExecuteNonQuery(string query, SqlParameter[] parameters = null)
+        public int ExecuteNonQuery(string query, MySqlParameter[] parameters = null)
         {
             int data = 0;
 
@@ -74,7 +83,7 @@ namespace QuanLyCuaHangBanSach.DAO
 
                     if (parameters != null)
                     {
-                        foreach (SqlParameter param in parameters)
+                        foreach (MySqlParameter param in parameters)
                         {
                             cmd.Parameters.Add(param);
                         }

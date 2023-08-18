@@ -75,7 +75,6 @@ D:\C#\C-Sharp-BookShop\QuanLyCuaHangBanSach\bin\Debug\System.Numerics.Vectors.xm
 D:\C#\C-Sharp-BookShop\QuanLyCuaHangBanSach\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 D:\C#\C-Sharp-BookShop\QuanLyCuaHangBanSach\bin\Debug\System.Threading.Tasks.Extensions.xml
 D:\C#\C-Sharp-BookShop\QuanLyCuaHangBanSach\obj\Debug\QuanLyCuaHangBanSach.csproj.AssemblyReference.cache
-D:\C#\C-Sharp-BookShop\QuanLyCuaHangBanSach\obj\Debug\QuanLyCuaHangBanSach.GUI.DangNhapGUI.resources
 D:\C#\C-Sharp-BookShop\QuanLyCuaHangBanSach\obj\Debug\QuanLyCuaHangBanSach.Properties.Resources.resources
 D:\C#\C-Sharp-BookShop\QuanLyCuaHangBanSach\obj\Debug\QuanLyCuaHangBanSach.csproj.GenerateResource.cache
 D:\C#\C-Sharp-BookShop\QuanLyCuaHangBanSach\obj\Debug\QuanLyCuaHangBanSach.csproj.CoreCompileInputs.cache
@@ -83,3 +82,4 @@ D:\C#\C-Sharp-BookShop\QuanLyCuaHangBanSach\obj\Debug\QuanLyCuaHangBanSach.cspro
 D:\C#\C-Sharp-BookShop\QuanLyCuaHangBanSach\obj\Debug\QuanLyCuaHangBanSach.exe
 D:\C#\C-Sharp-BookShop\QuanLyCuaHangBanSach\obj\Debug\QuanLyCuaHangBanSach.pdb
 D:\C#\C-Sharp-BookShop\QuanLyCuaHangBanSach\obj\Debug\QuanLyCuaHangBanSach.GUI.test.resources
+D:\C#\C-Sharp-BookShop\QuanLyCuaHangBanSach\obj\Debug\QuanLyCuaHangBanSach.GUI.LoginGUI.resources

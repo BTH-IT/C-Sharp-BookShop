@@ -102,20 +102,22 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BUS\AccountBUS.cs" />
+    <Compile Include="BUS\IBUS.cs" />
     <Compile Include="CustomButton.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="DAO\AccountDAO.cs" />
+    <Compile Include="DAO\IDAO.cs" />
     <Compile Include="DTO\AccountDTO.cs" />
     <Compile Include="GradientPanel.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="DAO\DataProvider.cs" />
-    <Compile Include="GUI\DangNhapGUI.cs">
+    <Compile Include="GUI\LoginGUI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\DangNhapGUI.Designer.cs">
-      <DependentUpon>DangNhapGUI.cs</DependentUpon>
+    <Compile Include="GUI\LoginGUI.Designer.cs">
+      <DependentUpon>LoginGUI.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\test.cs">
       <SubType>Form</SubType>
@@ -125,8 +127,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="GUI\DangNhapGUI.resx">
-      <DependentUpon>DangNhapGUI.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\LoginGUI.resx">
+      <DependentUpon>LoginGUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\test.resx">
       <DependentUpon>test.cs</DependentUpon>
