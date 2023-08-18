@@ -101,9 +101,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BUS\AccountBUS.cs" />
     <Compile Include="CustomButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="DAO\AccountDAO.cs" />
+    <Compile Include="DTO\AccountDTO.cs" />
     <Compile Include="GradientPanel.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -114,10 +117,19 @@
     <Compile Include="GUI\DangNhapGUI.Designer.cs">
       <DependentUpon>DangNhapGUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\test.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\test.Designer.cs">
+      <DependentUpon>test.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="GUI\DangNhapGUI.resx">
       <DependentUpon>DangNhapGUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\test.resx">
+      <DependentUpon>test.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -143,10 +155,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="BUS\" />
-    <Folder Include="DTO\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="assets\hidden-eye-icon-new.png" />
   </ItemGroup>

@@ -1,0 +1,26 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using QuanLyCuaHangBanSach.BUS;
+
+namespace QuanLyCuaHangBanSach.GUI
+{
+    public partial class test : Form
+    {
+        public test()
+        {
+            InitializeComponent();
+
+            AccountBUS bus = new AccountBUS();
+
+
+            this.dataGridView1.DataSource = bus.getAll();
+        }
+    }
+}
