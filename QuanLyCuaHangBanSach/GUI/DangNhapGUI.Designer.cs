@@ -52,6 +52,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.customButton1 = new QuanLyCuaHangBanSach.CustomButton();
+            this.label9 = new System.Windows.Forms.Label();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -78,7 +80,7 @@
             // lblLogin
             // 
             this.lblLogin.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed SemiB", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lblLogin.Location = new System.Drawing.Point(515, 28);
+            this.lblLogin.Location = new System.Drawing.Point(525, 28);
             this.lblLogin.Name = "lblLogin";
             this.lblLogin.Size = new System.Drawing.Size(248, 68);
             this.lblLogin.TabIndex = 0;
@@ -319,7 +321,7 @@
             this.customButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.customButton1.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.customButton1.ForeColor = System.Drawing.Color.White;
-            this.customButton1.Location = new System.Drawing.Point(515, 374);
+            this.customButton1.Location = new System.Drawing.Point(525, 355);
             this.customButton1.Name = "customButton1";
             this.customButton1.Size = new System.Drawing.Size(248, 64);
             this.customButton1.TabIndex = 4;
@@ -327,12 +329,36 @@
             this.customButton1.TextColor = System.Drawing.Color.White;
             this.customButton1.UseVisualStyleBackColor = false;
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("#9Slide03 Cabin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.label9.Location = new System.Drawing.Point(743, 310);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(136, 26);
+            this.label9.TabIndex = 5;
+            this.label9.Text = "Forgot password?";
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Font = new System.Drawing.Font("#9Slide03 Cabin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.checkBox1.Location = new System.Drawing.Point(437, 310);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(143, 30);
+            this.checkBox1.TabIndex = 6;
+            this.checkBox1.Text = "Remember me";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
             // DangNhapGUI
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(900, 450);
+            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.customButton1);
             this.Controls.Add(this.gradientPanel2);
             this.Controls.Add(this.panel3);
@@ -360,6 +386,7 @@
             this.gradientPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -388,5 +415,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private CustomButton customButton1;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }
