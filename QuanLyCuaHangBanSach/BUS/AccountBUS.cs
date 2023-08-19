@@ -44,6 +44,17 @@ namespace QuanLyCuaHangBanSach.BUS
             return account;
         }
 
+        public bool resetPassword(string email, string pwd)
+        {
+            AccountDTO account = this.getById(email);
+
+            if (account == null) return false;
+
+            account.MatKhau = pwd;
+
+            return this.update(account);
+        }
+
         public List<AccountDTO> getAllData()
         {
             List<AccountDTO> accountList = new List<AccountDTO>();

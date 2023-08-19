@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginGUI));
             QuanLyCuaHangBanSach.CustomButton customButton1;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginGUI));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblLogin = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -65,6 +65,27 @@
             this.gradientPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.SuspendLayout();
+            // 
+            // customButton1
+            // 
+            customButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            customButton1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            customButton1.BorderColor = System.Drawing.Color.Transparent;
+            customButton1.BorderRadius = 30;
+            customButton1.BorderSize = 0;
+            customButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            customButton1.FlatAppearance.BorderSize = 0;
+            customButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            customButton1.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            customButton1.ForeColor = System.Drawing.Color.White;
+            customButton1.Location = new System.Drawing.Point(535, 360);
+            customButton1.Name = "customButton1";
+            customButton1.Size = new System.Drawing.Size(238, 64);
+            customButton1.TabIndex = 4;
+            customButton1.Text = "Đăng nhập";
+            customButton1.TextColor = System.Drawing.Color.White;
+            customButton1.UseVisualStyleBackColor = false;
+            customButton1.Click += new System.EventHandler(this.customButton1_Click);
             // 
             // pictureBox1
             // 
@@ -175,6 +196,7 @@
             // 
             // pictureBox5
             // 
+            this.pictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox5.Image = global::QuanLyCuaHangBanSach.Properties.Resources.hidden_eye_icon_new;
             this.pictureBox5.Location = new System.Drawing.Point(382, 22);
             this.pictureBox5.Name = "pictureBox5";
@@ -272,45 +294,30 @@
             // 
             // label9
             // 
-            this.label9.AutoSize = true;
+            this.label9.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label9.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label9.Font = new System.Drawing.Font("#9Slide03 Cabin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.label9.Location = new System.Drawing.Point(743, 310);
+            this.label9.Location = new System.Drawing.Point(740, 309);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(136, 26);
+            this.label9.Size = new System.Drawing.Size(139, 30);
             this.label9.TabIndex = 5;
             this.label9.Text = "Forgot password?";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
+            this.checkBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.checkBox1.Font = new System.Drawing.Font("#9Slide03 Cabin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.checkBox1.Location = new System.Drawing.Point(437, 310);
+            this.checkBox1.Location = new System.Drawing.Point(455, 309);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(143, 30);
             this.checkBox1.TabIndex = 6;
             this.checkBox1.Text = "Remember me";
+            this.checkBox1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // customButton1
-            // 
-            customButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            customButton1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            customButton1.BorderColor = System.Drawing.Color.Transparent;
-            customButton1.BorderRadius = 30;
-            customButton1.BorderSize = 0;
-            customButton1.FlatAppearance.BorderSize = 0;
-            customButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            customButton1.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            customButton1.ForeColor = System.Drawing.Color.White;
-            customButton1.Location = new System.Drawing.Point(525, 355);
-            customButton1.Name = "customButton1";
-            customButton1.Size = new System.Drawing.Size(248, 64);
-            customButton1.TabIndex = 4;
-            customButton1.Text = "Đăng nhập";
-            customButton1.TextColor = System.Drawing.Color.White;
-            customButton1.UseVisualStyleBackColor = false;
-            customButton1.Click += new System.EventHandler(this.customButton1_Click);
             // 
             // gradientPanel2
             // 
@@ -371,7 +378,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblLogin);
             this.Controls.Add(this.pictureBox1);
-            this.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed SemiB", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -416,11 +423,11 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.PictureBox pictureBox5;
-        private GradientPanel gradientPanel2;
-        private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.CheckBox checkBox1;
+        private GradientPanel gradientPanel2;
+        private System.Windows.Forms.PictureBox pictureBox6;
     }
 }

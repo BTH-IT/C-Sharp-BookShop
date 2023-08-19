@@ -19,6 +19,15 @@ namespace QuanLyCuaHangBanSach.GUI
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
             this.Padding = new Padding(2);
+            
+            if (Properties.Settings.Default.Email != string.Empty) {
+                this.textBox1.Text = Properties.Settings.Default.Email;
+                this.textBox2.Text = Properties.Settings.Default.Password;
+                checkBox1.Checked = true;
+            } else
+            {
+                checkBox1.Checked = false;
+            }
         }
 
         #region xử lý border form
@@ -139,7 +148,11 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.pictureBox5.Image = QuanLyCuaHangBanSach.Properties.Resources.hidden_eye_icon_new;
                 this.isHiddenPwd = true;
             }
-            textBox2.UseSystemPasswordChar = this.isHiddenPwd;
+
+            if (!this.textBox2.Text.Equals("Enter your password"))
+            {
+                textBox2.UseSystemPasswordChar = this.isHiddenPwd;
+            }
             this.pictureBox5.Refresh();
         }
 
@@ -201,9 +214,22 @@ namespace QuanLyCuaHangBanSach.GUI
             if (account == null)
             {
                 MessageBox.Show("Email or password is invalid, please try again!!");
+                checkBox1.Checked = false;
                 return;
             }
 
+            if (checkBox1.Checked == true)
+            {
+                Properties.Settings.Default.Email = this.textBox1.Text;
+                Properties.Settings.Default.Password = this.textBox2.Text;
+                Properties.Settings.Default.Save();
+            }
+            else
+            {
+                Properties.Settings.Default.Email = "";
+                Properties.Settings.Default.Password = "";
+                Properties.Settings.Default.Save();
+            }
         }
 
         private void customButton1_Click(object sender, EventArgs e)
@@ -225,6 +251,13 @@ namespace QuanLyCuaHangBanSach.GUI
             {
                 this.handleLogin();
             }
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            SendCodeGUI sendCode = new SendCodeGUI();
+            sendCode.Show();
         }
     }
 }

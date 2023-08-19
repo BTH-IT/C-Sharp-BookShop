@@ -119,6 +119,18 @@
     <Compile Include="GUI\LoginGUI.Designer.cs">
       <DependentUpon>LoginGUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\ResetPasswordGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ResetPasswordGUI.Designer.cs">
+      <DependentUpon>ResetPasswordGUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\SendCodeGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\SendCodeGUI.Designer.cs">
+      <DependentUpon>SendCodeGUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\test.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,8 +139,16 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Settings.cs" />
+    <Compile Include="CustomTimer.cs" />
     <EmbeddedResource Include="GUI\LoginGUI.resx">
       <DependentUpon>LoginGUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ResetPasswordGUI.resx">
+      <DependentUpon>ResetPasswordGUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\SendCodeGUI.resx">
+      <DependentUpon>SendCodeGUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\test.resx">
       <DependentUpon>test.cs</DependentUpon>

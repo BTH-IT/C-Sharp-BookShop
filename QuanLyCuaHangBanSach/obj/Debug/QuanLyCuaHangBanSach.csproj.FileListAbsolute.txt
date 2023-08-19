@@ -83,3 +83,5 @@ D:\C#\C-Sharp-BookShop\QuanLyCuaHangBanSach\obj\Debug\QuanLyCuaHangBanSach.exe
 D:\C#\C-Sharp-BookShop\QuanLyCuaHangBanSach\obj\Debug\QuanLyCuaHangBanSach.pdb
 D:\C#\C-Sharp-BookShop\QuanLyCuaHangBanSach\obj\Debug\QuanLyCuaHangBanSach.GUI.test.resources
 D:\C#\C-Sharp-BookShop\QuanLyCuaHangBanSach\obj\Debug\QuanLyCuaHangBanSach.GUI.LoginGUI.resources
+D:\C#\C-Sharp-BookShop\QuanLyCuaHangBanSach\obj\Debug\QuanLyCuaHangBanSach.GUI.SendCodeGUI.resources
+D:\C#\C-Sharp-BookShop\QuanLyCuaHangBanSach\obj\Debug\QuanLyCuaHangBanSach.GUI.ResetPasswordGUI.resources
