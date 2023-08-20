@@ -283,28 +283,28 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="DAO\DataProvider.cs" />
-    <Compile Include="GUI\LoginGUI.cs">
+    <Compile Include="GUI\Auth\LoginGUI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\LoginGUI.Designer.cs">
+    <Compile Include="GUI\Auth\LoginGUI.Designer.cs">
       <DependentUpon>LoginGUI.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\ManagerGUI.cs">
+    <Compile Include="GUI\Manager\ManagerGUI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\ManagerGUI.Designer.cs">
+    <Compile Include="GUI\Manager\ManagerGUI.Designer.cs">
       <DependentUpon>ManagerGUI.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\ResetPasswordGUI.cs">
+    <Compile Include="GUI\Auth\ResetPasswordGUI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\ResetPasswordGUI.Designer.cs">
+    <Compile Include="GUI\Auth\ResetPasswordGUI.Designer.cs">
       <DependentUpon>ResetPasswordGUI.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\SendCodeGUI.cs">
+    <Compile Include="GUI\Auth\SendCodeGUI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\SendCodeGUI.Designer.cs">
+    <Compile Include="GUI\Auth\SendCodeGUI.Designer.cs">
       <DependentUpon>SendCodeGUI.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\test.cs">
@@ -317,16 +317,16 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="CustomTimer.cs" />
-    <EmbeddedResource Include="GUI\LoginGUI.resx">
+    <EmbeddedResource Include="GUI\Auth\LoginGUI.resx">
       <DependentUpon>LoginGUI.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\ManagerGUI.resx">
+    <EmbeddedResource Include="GUI\Manager\ManagerGUI.resx">
       <DependentUpon>ManagerGUI.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\ResetPasswordGUI.resx">
+    <EmbeddedResource Include="GUI\Auth\ResetPasswordGUI.resx">
       <DependentUpon>ResetPasswordGUI.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\SendCodeGUI.resx">
+    <EmbeddedResource Include="GUI\Auth\SendCodeGUI.resx">
       <DependentUpon>SendCodeGUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\test.resx">
@@ -357,7 +357,10 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="GUI\Importer\" />
+    <Folder Include="GUI\Vendor\" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="assets\hidden-eye-icon-new.png" />
   </ItemGroup>
