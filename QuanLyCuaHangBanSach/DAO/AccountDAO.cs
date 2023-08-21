@@ -71,13 +71,13 @@ namespace QuanLyCuaHangBanSach.DAO
             return rowChanged > 0;
         }
 
-        public bool delete(AccountDTO data)
+        public bool delete(string id)
         {
             string sql = $@"UPDATE taikhoan SET hienThi = 0 WHERE email=@Email;";
 
             int rowChanged = DataProvider.Instance.ExecuteNonQuery(sql,
                 new MySqlParameter[] {
-                    new MySqlParameter("@Email", data.Email),
+                    new MySqlParameter("@Email", id),
                 });
 
             return rowChanged > 0;

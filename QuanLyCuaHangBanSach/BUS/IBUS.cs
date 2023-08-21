@@ -10,6 +10,6 @@ namespace QuanLyCuaHangBanSach.BUS
         T getById(string id);
         bool insert(T data);
         bool update(T data);
-        bool delete(T data);
+        bool delete(string id);
     }
 }

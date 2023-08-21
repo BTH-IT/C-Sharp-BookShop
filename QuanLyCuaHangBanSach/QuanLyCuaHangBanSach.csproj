@@ -42,9 +42,6 @@
     <Reference Include="BouncyCastle.Crypto, Version=1.9.0.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
       <HintPath>..\packages\Portable.BouncyCastle.1.9.0\lib\net40\BouncyCastle.Crypto.dll</HintPath>
     </Reference>
-    <Reference Include="Bunifu.Charts.WinForms">
-      <HintPath>C:\Users\Hung\Downloads\Bunifu Charts WinForms 1.0.1\charts.winforms.1.0.1\Bunifu.Charts.WinForms.dll</HintPath>
-    </Reference>
     <Reference Include="Bunifu_UI_v1.52">
       <HintPath>C:\Users\Hung\Downloads\Bunifu_UI_v1.52.dll</HintPath>
     </Reference>
@@ -271,13 +268,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BUS\BookBUS.cs" />
     <Compile Include="BUS\AccountBUS.cs" />
     <Compile Include="BUS\IBUS.cs" />
     <Compile Include="CustomButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="DAO\BookDAO.cs" />
     <Compile Include="DAO\AccountDAO.cs" />
     <Compile Include="DAO\IDAO.cs" />
+    <Compile Include="DTO\BookDTO.cs" />
     <Compile Include="DTO\AccountDTO.cs" />
     <Compile Include="GradientPanel.cs">
       <SubType>Component</SubType>
@@ -288,6 +288,18 @@
     </Compile>
     <Compile Include="GUI\Auth\LoginGUI.Designer.cs">
       <DependentUpon>LoginGUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Manager\BookManageGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Manager\BookManageGUI.Designer.cs">
+      <DependentUpon>BookManageGUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Manager\HomeManageGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Manager\HomeManageGUI.Designer.cs">
+      <DependentUpon>HomeManageGUI.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Manager\ManagerGUI.cs">
       <SubType>Form</SubType>
@@ -320,6 +332,12 @@
     <EmbeddedResource Include="GUI\Auth\LoginGUI.resx">
       <DependentUpon>LoginGUI.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Manager\BookManageGUI.resx">
+      <DependentUpon>BookManageGUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Manager\HomeManageGUI.resx">
+      <DependentUpon>HomeManageGUI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Manager\ManagerGUI.resx">
       <DependentUpon>ManagerGUI.cs</DependentUpon>
     </EmbeddedResource>
@@ -332,7 +350,6 @@
     <EmbeddedResource Include="GUI\test.resx">
       <DependentUpon>test.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>

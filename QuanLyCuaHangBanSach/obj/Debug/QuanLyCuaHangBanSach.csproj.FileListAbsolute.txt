@@ -97,8 +97,8 @@ D:\C#\C-Sharp-BookShop\QuanLyCuaHangBanSach\obj\Debug\QuanLyCuaHangBanSach.cspro
 D:\C#\C-Sharp-BookShop\QuanLyCuaHangBanSach\obj\Debug\QuanLyCuaHangBanSach.csproj.CopyComplete
 D:\C#\C-Sharp-BookShop\QuanLyCuaHangBanSach\obj\Debug\QuanLyCuaHangBanSach.exe
 D:\C#\C-Sharp-BookShop\QuanLyCuaHangBanSach\obj\Debug\QuanLyCuaHangBanSach.pdb
-D:\C#\C-Sharp-BookShop\QuanLyCuaHangBanSach\bin\Debug\Bunifu.Charts.WinForms.xml
-D:\C#\C-Sharp-BookShop\QuanLyCuaHangBanSach\obj\Debug\QuanLyCuaHangBanSach.exe.licenses
 D:\C#\C-Sharp-BookShop\QuanLyCuaHangBanSach\bin\Debug\LiveCharts.xml
 D:\C#\C-Sharp-BookShop\QuanLyCuaHangBanSach\bin\Debug\LiveCharts.WinForms.xml
 D:\C#\C-Sharp-BookShop\QuanLyCuaHangBanSach\bin\Debug\LiveCharts.Wpf.xml
+D:\C#\C-Sharp-BookShop\QuanLyCuaHangBanSach\obj\Debug\QuanLyCuaHangBanSach.GUI.Manager.HomeManageGUI.resources
+D:\C#\C-Sharp-BookShop\QuanLyCuaHangBanSach\obj\Debug\QuanLyCuaHangBanSach.GUI.Manager.BookManageGUI.resources
