@@ -637,6 +637,7 @@
             this.Name = "ManagerGUI";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ManagerGUI";
+            this.Load += new System.EventHandler(this.ManagerGUI_Load);
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();

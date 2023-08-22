@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO.Ports;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using QuanLyCuaHangBanSach.GUI.Manager;
+using QuanLyCuaHangBanSach.GUI.Modal;
 
 namespace QuanLyCuaHangBanSach.GUI
 {
@@ -478,6 +481,10 @@ namespace QuanLyCuaHangBanSach.GUI
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void ManagerGUI_Load(object sender, EventArgs e)
+        {
         }
     }
 }

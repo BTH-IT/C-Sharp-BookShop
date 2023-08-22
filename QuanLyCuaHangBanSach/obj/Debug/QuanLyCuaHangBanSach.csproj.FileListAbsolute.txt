@@ -102,3 +102,4 @@ D:\C#\C-Sharp-BookShop\QuanLyCuaHangBanSach\bin\Debug\LiveCharts.WinForms.xml
 D:\C#\C-Sharp-BookShop\QuanLyCuaHangBanSach\bin\Debug\LiveCharts.Wpf.xml
 D:\C#\C-Sharp-BookShop\QuanLyCuaHangBanSach\obj\Debug\QuanLyCuaHangBanSach.GUI.Manager.HomeManageGUI.resources
 D:\C#\C-Sharp-BookShop\QuanLyCuaHangBanSach\obj\Debug\QuanLyCuaHangBanSach.GUI.Manager.BookManageGUI.resources
+D:\C#\C-Sharp-BookShop\QuanLyCuaHangBanSach\obj\Debug\QuanLyCuaHangBanSach.GUI.Modal.AddBookModal.resources

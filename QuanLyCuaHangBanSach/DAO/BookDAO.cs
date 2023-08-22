@@ -1,4 +1,5 @@
-﻿using System.Data;
+﻿using System;
+using System.Data;
 using System.Windows.Documents;
 using MySql.Data.MySqlClient;
 using QuanLyCuaHangBanSach.DTO;
@@ -46,11 +47,12 @@ namespace QuanLyCuaHangBanSach.DAO
         
         public DataTable searchData(string value)
         {
-            return DataProvider.Instance.ExecuteQuery(
-                "SELECT * FROM sach WHERE maSach LIKE '%@maSach%' or tenSach LIKE '%@tenSach%';",
+            string sql = $@"SELECT * FROM sach WHERE maSach LIKE @maSach OR tenSach LIKE @tenSach;";
+
+            return DataProvider.Instance.ExecuteQuery(sql,
                 new MySqlParameter[] {
-                    new MySqlParameter("@maSach", value),
-                    new MySqlParameter("@tenSach", value)
+                    new MySqlParameter("@maSach", "%" + value + "%"),
+                    new MySqlParameter("@tenSach", "%" + value + "%")
                 }
             );
         }

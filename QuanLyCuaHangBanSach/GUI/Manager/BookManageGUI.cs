@@ -11,6 +11,7 @@ using System.Windows.Documents;
 using System.Windows.Forms;
 using QuanLyCuaHangBanSach.BUS;
 using QuanLyCuaHangBanSach.DTO;
+using QuanLyCuaHangBanSach.GUI.Modal;
 
 namespace QuanLyCuaHangBanSach.GUI.Manager
 {
@@ -21,14 +22,12 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             InitializeComponent();
         }
 
-        private void loadBookListToDataView()
+        private void loadBookListToDataView(List<BookDTO> bookList)
         {
             this.dgvBook.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(45, 210, 192);
             this.dgvBook.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
 
             this.dgvBook.Rows.Clear();
-
-            List<BookDTO> bookList = BookBUS.Instance.getAllData();
 
             foreach (BookDTO book in bookList)
             {
@@ -48,7 +47,44 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
         private void BookManageGUI_Load(object sender, EventArgs e)
         {
-            this.loadBookListToDataView();
+            List<BookDTO> bookList = BookBUS.Instance.getAllData();
+            this.loadBookListToDataView(bookList);
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            this.searchInput.ForeColor = Color.Black;
+
+            List<BookDTO> bookList = BookBUS.Instance.search(this.searchInput.Text.ToString());
+            this.loadBookListToDataView(bookList);
+        }
+
+        private void searchInput_Click(object sender, EventArgs e)
+        {
+            if (this.searchInput.Text.Equals("Enter your search..."))
+            {
+                this.searchInput.Text = "";
+
+            }
+        }
+
+        private void searchInput_Leave(object sender, EventArgs e)
+        {
+            if (this.searchInput.Text.Length <= 0)
+            {
+                this.searchInput.Text = "Enter your search...";
+                this.searchInput.ForeColor = Color.LightGray;
+                List<BookDTO> bookList = BookBUS.Instance.getAllData();
+                this.loadBookListToDataView(bookList);
+            }
+        }
+
+        private void gunaAdvenceButton1_Click(object sender, EventArgs e)
+        {
+            using (AddBookModal addBookModal = new AddBookModal())
+            {
+                addBookModal.ShowDialog();
+            }
         }
     }
 }

@@ -21,19 +21,19 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         {
             InitializeComponent();
 
-            cartesianChart2.AxisX.Add(new LiveCharts.Wpf.Axis
+            cartesianChart1.AxisX.Add(new LiveCharts.Wpf.Axis
             {
                 Title = "Tháng",
                 Labels = new string[] {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"}
             });
 
-            cartesianChart2.AxisY.Add(new LiveCharts.Wpf.Axis
+            cartesianChart1.AxisY.Add(new LiveCharts.Wpf.Axis
             {
                 Title = "Doanh thu",
                 Labels = new string[] { "0", "1", "2", "3", "4", "5", "6" }
             });
-            cartesianChart2.Series.Clear();
-            cartesianChart2.LegendLocation = LiveCharts.LegendLocation.Right;
+            cartesianChart1.Series.Clear();
+            cartesianChart1.LegendLocation = LiveCharts.LegendLocation.Right;
 
             var gradientBrush = new LinearGradientBrush
             {
@@ -43,7 +43,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             gradientBrush.GradientStops.Add(new GradientStop(System.Windows.Media.Color.FromRgb(153, 246, 228), 0));
             gradientBrush.GradientStops.Add(new GradientStop(Colors.Transparent, 1));
 
-            cartesianChart2.Series.Add(new LineSeries
+            cartesianChart1.Series.Add(new LineSeries
             {
                 Values = new ChartValues<int> { 3, 4, 6, 3, 2, 6 },
                 Stroke = new SolidColorBrush(System.Windows.Media.Color.FromRgb(45, 210, 192)),
@@ -54,10 +54,8 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
             foreach (AccountDTO account in list)
             {
-
                 this.gunaDataGridView1.Rows.Add(new object[]{ account.MaNhanVien, account.Email, account.MatKhau});
             }
-
         }
     }
 }

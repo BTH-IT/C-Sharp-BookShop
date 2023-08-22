@@ -41,7 +41,6 @@ namespace QuanLyCuaHangBanSach.DTO
 
         public BookDTO(DataRow row)
         {
-            Console.WriteLine(row["giaBan"]);
             this.MaSach = (int) row["maSach"];
             this.TenSach = row["tenSach"].ToString();
             this.MaTheLoai = (int)row["maTheLoai"];

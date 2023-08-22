@@ -36,7 +36,7 @@ namespace QuanLyCuaHangBanSach.BUS
         public List<BookDTO> search(string value)
         {
             List<BookDTO> bookList = new List<BookDTO>();
-            DataTable dt = BookDAO.Instance.getAll();
+            DataTable dt = BookDAO.Instance.searchData(value);
 
             foreach (DataRow row in dt.Rows)
             {
