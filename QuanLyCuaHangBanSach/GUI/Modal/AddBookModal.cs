@@ -12,7 +12,6 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 {
     public partial class AddBookModal : Form
     {
-        int tmp;
         public AddBookModal()
         {
             InitializeComponent();
