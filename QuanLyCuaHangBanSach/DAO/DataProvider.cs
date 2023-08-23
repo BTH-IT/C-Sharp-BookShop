@@ -42,6 +42,7 @@ namespace QuanLyCuaHangBanSach.DAO
                 {
                     MySqlCommand cmd = new MySqlCommand(query, connect);
 
+
                     if (parameters != null)
                     {
                         foreach (MySqlParameter param in parameters)

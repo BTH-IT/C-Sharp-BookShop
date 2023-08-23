@@ -84,9 +84,9 @@ namespace QuanLyCuaHangBanSach.BUS
             return AccountDAO.Instance.update(account);
         }
 
-        public bool delete(AccountDTO account)
+        public bool delete(string id)
         {
-            return AccountDAO.Instance.delete(account);
+            return AccountDAO.Instance.delete(id);
         }
     }
 }

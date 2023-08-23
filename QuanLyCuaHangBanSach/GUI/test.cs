@@ -16,11 +16,6 @@ namespace QuanLyCuaHangBanSach.GUI
         public test()
         {
             InitializeComponent();
-
-            AccountBUS bus = new AccountBUS();
-
-
-            this.dataGridView1.DataSource = bus.getAll();
         }
     }
 }
