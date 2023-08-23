@@ -101,14 +101,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BUS\CustomerBUS.cs" />
     <Compile Include="BUS\AccountBUS.cs" />
     <Compile Include="BUS\IBUS.cs" />
     <Compile Include="CustomButton.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="DAO\AccountDAO.cs" />
+    <Compile Include="DAO\CustomerDAO.cs" />
     <Compile Include="DAO\IDAO.cs" />
     <Compile Include="DTO\AccountDTO.cs" />
+    <Compile Include="DTO\CustomerDTO.cs" />
     <Compile Include="GradientPanel.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -118,6 +121,12 @@
     </Compile>
     <Compile Include="GUI\LoginGUI.Designer.cs">
       <DependentUpon>LoginGUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\MainPageGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\MainPageGUI.Designer.cs">
+      <DependentUpon>MainPageGUI.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\ResetPasswordGUI.cs">
       <SubType>Form</SubType>
@@ -143,6 +152,9 @@
     <Compile Include="CustomTimer.cs" />
     <EmbeddedResource Include="GUI\LoginGUI.resx">
       <DependentUpon>LoginGUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\MainPageGUI.resx">
+      <DependentUpon>MainPageGUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\ResetPasswordGUI.resx">
       <DependentUpon>ResetPasswordGUI.cs</DependentUpon>
