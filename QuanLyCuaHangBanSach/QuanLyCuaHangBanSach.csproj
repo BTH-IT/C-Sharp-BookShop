@@ -43,7 +43,7 @@
       <HintPath>..\packages\Portable.BouncyCastle.1.9.0\lib\net40\BouncyCastle.Crypto.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu_UI_v1.52">
-      <HintPath>C:\Users\Hung\Downloads\Bunifu_UI_v1.52.dll</HintPath>
+      <HintPath>..\..\..\..\..\Downloads\Bunifu_UI_v1.52.dll</HintPath>
     </Reference>
     <Reference Include="Costura, Version=3.3.3.0, Culture=neutral, PublicKeyToken=9919ef960d84173d, processorArchitecture=MSIL">
       <HintPath>..\packages\Costura.Fody.3.3.3\lib\net40\Costura.dll</HintPath>
@@ -52,7 +52,10 @@
       <HintPath>..\packages\Google.Protobuf.3.21.9\lib\net45\Google.Protobuf.dll</HintPath>
     </Reference>
     <Reference Include="Guna.UI">
-      <HintPath>C:\Users\Hung\Downloads\Guna.UI-Framework-Lib-master\Guna.UI WinForms\.net 4.0\Guna.UI.dll</HintPath>
+      <HintPath>..\..\..\..\..\Downloads\Guna.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.UI2">
+      <HintPath>..\..\..\..\..\Downloads\Guna.UI2.dll</HintPath>
     </Reference>
     <Reference Include="K4os.Compression.LZ4, Version=1.3.5.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
       <HintPath>..\packages\K4os.Compression.LZ4.1.3.5\lib\net462\K4os.Compression.LZ4.dll</HintPath>
@@ -246,6 +249,7 @@
       <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Web.Services.Description, Version=4.9.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Web.Services.Description.4.9.0\lib\net461\System.Web.Services.Description.dll</HintPath>
@@ -267,10 +271,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BUS\BookBUS.cs" />
     <Compile Include="BUS\CustomerBUS.cs" />
-	<Compile Include="BUS\BookBUS.cs" /> 
     <Compile Include="BUS\AccountBUS.cs" />
     <Compile Include="BUS\IBUS.cs" />
+    <Compile Include="CustomButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="CustomButton.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -291,24 +301,6 @@
     <Compile Include="GUI\Auth\LoginGUI.Designer.cs">
       <DependentUpon>LoginGUI.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\MainPageGUI.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\MainPageGUI.Designer.cs">
-      <DependentUpon>MainPageGUI.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\ResetPasswordGUI.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\Manager\HomeManageGUI.Designer.cs">
-      <DependentUpon>HomeManageGUI.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Manager\ManagerGUI.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\Manager\ManagerGUI.Designer.cs">
-      <DependentUpon>ManagerGUI.cs</DependentUpon>
-    </Compile>
     <Compile Include="GUI\Auth\ResetPasswordGUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -320,6 +312,31 @@
     </Compile>
     <Compile Include="GUI\Auth\SendCodeGUI.Designer.cs">
       <DependentUpon>SendCodeGUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Manager\BookManageGUI.cs" />
+    <Compile Include="GUI\Manager\BookManageGUI.Designer.cs">
+      <DependentUpon>BookManageGUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Manager\HomeManageGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Manager\HomeManageGUI.Designer.cs">
+      <DependentUpon>HomeManageGUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Vendor\MainPageGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Vendor\MainPageGUI.Designer.cs">
+      <DependentUpon>MainPageGUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Manager\BookManageGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Manager\ManagerGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Manager\ManagerGUI.Designer.cs">
+      <DependentUpon>ManagerGUI.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modal\AddBookModal.cs">
       <SubType>Form</SubType>
@@ -333,6 +350,8 @@
     <Compile Include="GUI\test.Designer.cs">
       <DependentUpon>test.cs</DependentUpon>
     </Compile>
+    <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
+    <Compile Include="obj\Release\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Settings.cs" />
@@ -340,14 +359,20 @@
     <EmbeddedResource Include="GUI\Auth\LoginGUI.resx">
       <DependentUpon>LoginGUI.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\MainPageGUI.resx">
-      <DependentUpon>MainPageGUI.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\ResetPasswordGUI.resx">
-      <DependentUpon>ResetPasswordGUI.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Auth\SendCodeGUI.resx">
       <DependentUpon>SendCodeGUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Manager\BookManageGUI.resx">
+      <DependentUpon>BookManageGUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Manager\HomeManageGUI.resx">
+      <DependentUpon>HomeManageGUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Vendor\MainPageGUI.resx">
+      <DependentUpon>MainPageGUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Manager\ManagerGUI.resx">
+      <DependentUpon>ManagerGUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Modal\AddBookModal.resx">
       <DependentUpon>AddBookModal.cs</DependentUpon>
@@ -355,11 +380,138 @@
     <EmbeddedResource Include="GUI\test.resx">
       <DependentUpon>test.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="obj\Debug\QuanLyCuaHangBanSach.GUI.LoginGUI.resources" />
+    <EmbeddedResource Include="obj\Debug\QuanLyCuaHangBanSach.GUI.MainPageGUI.resources" />
+    <EmbeddedResource Include="obj\Debug\QuanLyCuaHangBanSach.GUI.Manager.BookManageGUI.resources" />
+    <EmbeddedResource Include="obj\Debug\QuanLyCuaHangBanSach.GUI.ManagerGUI.resources" />
+    <EmbeddedResource Include="obj\Debug\QuanLyCuaHangBanSach.GUI.Modal.AddBookModal.resources" />
+    <EmbeddedResource Include="obj\Debug\QuanLyCuaHangBanSach.GUI.ResetPasswordGUI.resources" />
+    <EmbeddedResource Include="obj\Debug\QuanLyCuaHangBanSach.GUI.SendCodeGUI.resources" />
+    <EmbeddedResource Include="obj\Debug\QuanLyCuaHangBanSach.GUI.test.resources" />
+    <EmbeddedResource Include="obj\Debug\QuanLyCuaHangBanSach.Properties.Resources.resources" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="bin\Debug\QuanLyCuaHangBanSach.exe.config" />
+    <None Include="FodyWeavers.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="obj\Debug\Costura\030BBD6D404138A5DE6AD850269985372C89D9EB.costura.system.diagnostics.diagnosticsource.dll.compressed" />
+    <None Include="obj\Debug\Costura\038539203A1EAB74E1AFC9097A6F49D74DEAAECD.costura.system.servicemodel.duplex.dll.compressed" />
+    <None Include="obj\Debug\Costura\0A2A93D4ECBF4BBEC2FAF110066C6B4472B0DBF5.costura.bunifu.ui.winforms.1.5.3.dll.compressed" />
+    <None Include="obj\Debug\Costura\0A3022798B8006C5D51CBC7C8CFB4528A2D75C3B.costura.bunifu.ui.winforms.bunifurating.dll.compressed" />
+    <None Include="obj\Debug\Costura\0D9D2AA3F21D19708F3DDC59A47853DCF521B616.costura.mysql.data.dll.compressed" />
+    <None Include="obj\Debug\Costura\0EA487E0F4A0FA9F7721D25A320E0ED014D86919.costura.system.io.pipes.accesscontrol.dll.compressed" />
+    <None Include="obj\Debug\Costura\0F423916B55E2693771B6388310AD41509F97D44.costura.bunifu.licensing.pdb.compressed" />
+    <None Include="obj\Debug\Costura\13C03454586F5ED2AD3340185A5276102967CA1C.costura.system.data.oledb.dll.compressed" />
+    <None Include="obj\Debug\Costura\15B7B81172EF13E72E6B55D93F512D3C660F8238.costura.bunifu.ui.winforms.bunifupanel.dll.compressed" />
+    <None Include="obj\Debug\Costura\16E8D2004D2C3A71A8DCB6983B72537079CCFD3B.costura.bunifu.ui.winforms.bunifuimagebutton.dll.compressed" />
+    <None Include="obj\Debug\Costura\180A7BAAFBC820A838BBACA434032D9D33CCEEBE.costura.system.runtime.compilerservices.unsafe.dll.compressed" />
+    <None Include="obj\Debug\Costura\18EA7BD41D31247148ABF184527C9368A26F39E7.costura.system.io.filesystem.accesscontrol.dll.compressed" />
+    <None Include="obj\Debug\Costura\18F65508762D2492F41B22E4E6E5AD19A2226BAA.costura.bunifu.licensing.dll.compressed" />
+    <None Include="obj\Debug\Costura\191D79AD78FB961CE162AD342299EDDACACD94CF.costura.microsoft.win32.registry.accesscontrol.dll.compressed" />
+    <None Include="obj\Debug\Costura\196A77D254DBC489AFB69323E9445B2276E8A0BA.costura.google.protobuf.pdb.compressed" />
+    <None Include="obj\Debug\Costura\1BB14967938D99E768AF208FB54668109E81ABBB.costura.costura.dll.compressed" />
+    <None Include="obj\Debug\Costura\1CEA8CB48D0E33C010BCE20244520B79491F6E6C.costura.bunifu.ui.winforms.bunifushapes.dll.compressed" />
+    <None Include="obj\Debug\Costura\201772BF796B16C1A83A5DD15CF2BF42562A05E2.costura.bunifu.charts.winforms.dll.compressed" />
+    <None Include="obj\Debug\Costura\2242627282F9E07E37B274EA36FAC2D3CD9C9110.costura.system.threading.tasks.extensions.dll.compressed" />
+    <None Include="obj\Debug\Costura\242324F1112E6387CDA41686291B6E9A415EEB8C.costura.bunifu.licensing.dll.compressed" />
+    <None Include="obj\Debug\Costura\254CE04897946348E25C45D9E22638BF64FEC6CE.costura.bunifu.ui.winforms.bunifuprogressbar.dll.compressed" />
+    <None Include="obj\Debug\Costura\2C82EE0278886B217E7DD92EA3351ACED72893C8.costura.livecharts.pdb.compressed" />
+    <None Include="obj\Debug\Costura\2F2C9D016FFC2BD7078104234E27AB2B010BD765.costura.system.drawing.common.dll.compressed" />
+    <None Include="obj\Debug\Costura\2F410A0396BC148ED533AD49B6415FB58DD4D641.costura.system.buffers.dll.compressed" />
+    <None Include="obj\Debug\Costura\2FA3DDE71CD17BC2A9FBE8DC05F5E50C94F6CB16.costura.bunifu.ui.winforms.bunifupages.dll.compressed" />
+    <None Include="obj\Debug\Costura\316A26CBC90735A276BC914BC492DD0DA2CB7CAD.costura.bunifu.ui.winforms.bunifuradiobutton.dll.compressed" />
+    <None Include="obj\Debug\Costura\31ACE4B26D8A069C84AAD6001E06C2A5483806F3.costura.microsoft.win32.registry.dll.compressed" />
+    <None Include="obj\Debug\Costura\31BC60903D60CDEC565C6CFF6A8FF4B1EB609D7D.costura.k4os.hash.xxhash.dll.compressed" />
+    <None Include="obj\Debug\Costura\325E7F541F0D2AF9DEF583590A0C1F135206841B.costura.bunifu.ui.winforms.bunifutooltip.dll.compressed" />
+    <None Include="obj\Debug\Costura\3AAC13F00F8A7F55CC06C1F0FB7691B03537B55B.costura.system.servicemodel.nettcp.dll.compressed" />
+    <None Include="obj\Debug\Costura\3C5C5DF5F8F8DB3F0A35C5ED8D357313A54E3CDE.costura.system.memory.dll.compressed" />
+    <None Include="obj\Debug\Costura\3C867A7A5274F0CE9285C2C357A6602B7F360A17.costura.google.protobuf.dll.compressed" />
+    <None Include="obj\Debug\Costura\3CD7CED8805ED67536E6B7DB5144DB20B822CC38.costura.system.servicemodel.http.pdb.compressed" />
+    <None Include="obj\Debug\Costura\3D216458740AD5CB05BC5F7C3491CDE44A1E5DF0.costura.system.numerics.vectors.dll.compressed" />
+    <None Include="obj\Debug\Costura\3FE2C79512A0D1153FB07F6640B27106C90D333E.costura.livecharts.winforms.dll.compressed" />
+    <None Include="obj\Debug\Costura\445EBB73A64BF910BEA401192784446D298BF106.costura.bunifu.ui.winforms.bunifutransition.dll.compressed" />
+    <None Include="obj\Debug\Costura\479A0254D1C9E5565C7D861BB77F54B7EAE50C96.costura.livecharts.dll.compressed" />
+    <None Include="obj\Debug\Costura\493A5A01DABF629192FE90F15194587E5814DBA2.costura.bunifu.ui.winforms.bunifuslider.dll.compressed" />
+    <None Include="obj\Debug\Costura\4CCDB0E13C24FB71F502D50E34F00C39BCACF307.costura.bunifu.ui.winforms.bunifutextbox.dll.compressed" />
+    <None Include="obj\Debug\Costura\4D131D1AF5DE8A09FC857772D5791E18939E7CAD.costura.system.servicemodel.http.dll.compressed" />
+    <None Include="obj\Debug\Costura\4F8E79CDA2C407C7DD0421554BBE24D6A180DAE9.costura.bunifu.ui.winforms.bunifupicturebox.dll.compressed" />
+    <None Include="obj\Debug\Costura\54EC870FFB8CE10B3C8B05BBC7FB7EA45142A430.costura.restsharp.dll.compressed" />
+    <None Include="obj\Debug\Costura\58EB81643B8B1218ACDBEF4F8F1BA7E1FA5DF666.costura.livecharts.wpf.pdb.compressed" />
+    <None Include="obj\Debug\Costura\597B3C61424BFC46BA16F6BDA01B8BAE844A39F7.costura.k4os.compression.lz4.streams.dll.compressed" />
+    <None Include="obj\Debug\Costura\5B37A6004FB20C9D485E9664A4797AF63E9DDF70.costura.zstdsharp.dll.compressed" />
+    <None Include="obj\Debug\Costura\5B721C140591E0ADC68963C49A0EE72B0C27EFEF.costura.system.threading.accesscontrol.dll.compressed" />
+    <None Include="obj\Debug\Costura\5DBF1534FFBFF016CC45559EB5EFF3DC4252A522.costura.microsoft.bcl.asyncinterfaces.dll.compressed" />
+    <None Include="obj\Debug\Costura\64F71E20E1953B13C771D8A8E63549AD6D64216E.costura.livecharts.wpf.dll.compressed" />
+    <None Include="obj\Debug\Costura\68AE50EC9E5E6D50EF06593E2B70CCCFCAFB2017.costura.system.security.cryptography.pkcs.dll.compressed" />
+    <None Include="obj\Debug\Costura\6A511A5688B188C4D1615CEDE33B1E5278376001.costura.system.configuration.configurationmanager.dll.compressed" />
+    <None Include="obj\Debug\Costura\73D1557D00F91CC239F13B27EB385D314CA40511.costura.system.io.ports.dll.compressed" />
+    <None Include="obj\Debug\Costura\7490C66757ACE1971272087DD6737A7D272A06BA.costura.system.servicemodel.syndication.dll.compressed" />
+    <None Include="obj\Debug\Costura\75C7EC63458C79DED533D1D4175DE4117036ADAE.costura.bunifu.ui.winforms.bunifudatagridview.dll.compressed" />
+    <None Include="obj\Debug\Costura\7645E52D1AEAC19169C8CD1B411200EE808295B8.costura.bunifu.ui.winforms.bunifugauge.dll.compressed" />
+    <None Include="obj\Debug\Costura\7889B3830E815C1EC2CA9B3BC40FBE115B6B9CFE.costura.system.web.services.description.dll.compressed" />
+    <None Include="obj\Debug\Costura\79D26EE6E1BF0BEB2EE0593562592DE8FF01935B.costura.bunifu.ui.winforms.bunifulabel.dll.compressed" />
+    <None Include="obj\Debug\Costura\7ADB84B667BBC630CD077280BD9D5C03E04C856C.costura.system.servicemodel.nettcp.pdb.compressed" />
+    <None Include="obj\Debug\Costura\83014E2A98F7597B9A26E424A0759E5A3D2ECFF1.costura.system.security.accesscontrol.dll.compressed" />
+    <None Include="obj\Debug\Costura\86312CBA2EB3495CC6BEC66D54D4AB88596275D8.costura.bunifu.ui.winforms.1.5.3.dll.compressed" />
+    <None Include="obj\Debug\Costura\88C8065034EE0E4B9F6A3935FD32E541EFF39EBC.costura.system.codedom.dll.compressed" />
+    <None Include="obj\Debug\Costura\8CD06D3EC991AE3D5C0D935EA03FD7C06D504D53.costura.bunifu.ui.winforms.bunifudropdown.dll.compressed" />
+    <None Include="obj\Debug\Costura\8E83C5A162EEC525281C870B3D7FC2F197A70FAF.costura.system.servicemodel.primitives.pdb.compressed" />
+    <None Include="obj\Debug\Costura\8F4F33D477CA7D3CEA872BC4EBFDAAE401C3B6FD.costura.bunifu.ui.winforms.bunifuscrollbar.dll.compressed" />
+    <None Include="obj\Debug\Costura\94A5848F149A8B4FD8BBF401D43BCDAAE1765829.costura.bunifu.ui.winforms.bunifuseparator.dll.compressed" />
+    <None Include="obj\Debug\Costura\9611AA929D35CBD86B87E40B628F60D5177D2411.costura.bouncycastle.crypto.dll.compressed" />
+    <None Include="obj\Debug\Costura\97E4DD5546B524B92BD92285AC5A841E45890791.costura.bunifu.ui.winforms.bunifuusercontrol.dll.compressed" />
+    <None Include="obj\Debug\Costura\9A5BE1FCF410FE5934D720329D36A2377E83747E.costura.system.security.principal.windows.dll.compressed" />
+    <None Include="obj\Debug\Costura\9A725973AA498472C253382FF8D766A5D3A41697.costura.bunifu.ui.winforms.bunifudatepicker.dll.compressed" />
+    <None Include="obj\Debug\Costura\9BDDAAB55A1FF8564DD64FC32A746CA6AD234450.costura.system.servicemodel.security.dll.compressed" />
+    <None Include="obj\Debug\Costura\A027BE116049B789BF6451C03FA6A53B7C8C3BAD.costura.system.serviceprocess.servicecontroller.dll.compressed" />
+    <None Include="obj\Debug\Costura\ABFF11BF4D29E9EA1D3D575DCE6908A44A89B3ED.costura.bunifu.ui.winforms.dll.compressed" />
+    <None Include="obj\Debug\Costura\AD3E1CE93782537FFD3CD9E0BB9D30AE22D40DDB.costura.guna.ui.dll.compressed" />
+    <None Include="obj\Debug\Costura\AE8936A05D58236B3B538712505A353C080D894B.costura.bunifu.ui.winforms.bunifusnackbar.dll.compressed" />
+    <None Include="obj\Debug\Costura\B0CE15E0F096D027B1D1482AFA9D93BAFD160F7A.costura.bunifu.ui.winforms.bunifucolortransition.dll.compressed" />
+    <None Include="obj\Debug\Costura\B382B80CA629393DA72379C2EC0149E7639D498D.costura.system.security.permissions.dll.compressed" />
+    <None Include="obj\Debug\Costura\B5F3B8153DEB32F540C785C030F190DAF7C0F3F3.costura.system.diagnostics.eventlog.dll.compressed" />
+    <None Include="obj\Debug\Costura\B6A5EBF42211FDABCF377EC2018B6B9A14A99761.costura.system.text.encoding.codepages.dll.compressed" />
+    <None Include="obj\Debug\Costura\C57659CDC8B66AF4B6D3B7F0E44028F265207FD2.costura.system.data.odbc.dll.compressed" />
+    <None Include="obj\Debug\Costura\C5E978EB89E9646423C3B2A1D7D2651CDBEE90F0.costura.bunifu.ui.winforms.bunifuformdock.dll.compressed" />
+    <None Include="obj\Debug\Costura\C96D0313C788BD447C3EC1145A49E5BEAE200E33.costura.system.security.cryptography.xml.dll.compressed" />
+    <None Include="obj\Debug\Costura\C9AB7D835B24B294309ABED83EFFF4CDF102906B.costura.bunifu.ui.winforms.bunifugroupbox.dll.compressed" />
+    <None Include="obj\Debug\Costura\CBC510520FCD85DBC1C82B02E82040702ACA9B79.costura.newtonsoft.json.dll.compressed" />
+    <None Include="obj\Debug\Costura\CC9FA50E441BFABA51462D872F530E2C01AF0DDF.costura.k4os.compression.lz4.dll.compressed" />
+    <None Include="obj\Debug\Costura\CE08C80E52B6CF3F62BA82408D8F32AE6BCEF0D8.costura.bunifu.ui.winforms.bunifushadowpanel.dll.compressed" />
+    <None Include="obj\Debug\Costura\D00C8BE9945B6FBD22929DD0E666799CF0670673.costura.system.data.sqlclient.dll.compressed" />
+    <None Include="obj\Debug\Costura\D363FBC7BA468F03681B7AF3296B498521050E31.costura.bunifu.ui.winforms.bunifutoggleswitch.dll.compressed" />
+    <None Include="obj\Debug\Costura\D8BB1A8A291F73CDF2B5658B2B65736C87DB19DD.costura.bunifu.ui.winforms.bunifubutton.dll.compressed" />
+    <None Include="obj\Debug\Costura\D8E4FA365F129E5EB07BA46167AF44640E35BB14.costura.livecharts.winforms.pdb.compressed" />
+    <None Include="obj\Debug\Costura\DB3618ED05B40478E26949650E4439616A8C5161.costura.system.web.services.description.pdb.compressed" />
+    <None Include="obj\Debug\Costura\DC97569E1CE6E799307290C1A70061CB1AA3BBDD.costura.microsoft.win32.systemevents.dll.compressed" />
+    <None Include="obj\Debug\Costura\E47E323D44743A5104620A9E0B0264693A64ED92.costura.system.security.cryptography.cng.dll.compressed" />
+    <None Include="obj\Debug\Costura\E6878D381AC1C37C331FD01A25B2EC508E1C1A21.costura.bunifu.ui.winforms.bunifucircleprogress.dll.compressed" />
+    <None Include="obj\Debug\Costura\E6C8AE06810C6DA0CAA1F6D4853BDE1AD91ED49D.costura.bunifu.charts.winforms.dll.compressed" />
+    <None Include="obj\Debug\Costura\E8D2771A4891AD7B751C4AC153F599D7D58EBD31.costura.bunifu_ui_v1.52.dll.compressed" />
+    <None Include="obj\Debug\Costura\EC11E46A636FE3927FD5FA7C30BE65B958853EF0.costura.bunifu.ui.winforms.bunifucheckbox.dll.compressed" />
+    <None Include="obj\Debug\Costura\ECFE9CA1AD79826D2272A531CB185D980ED0E700.costura.system.diagnostics.performancecounter.dll.compressed" />
+    <None Include="obj\Debug\Costura\ED2E870002AB8F0D5189D9C40239261B82DBCA58.costura.bunifu.licensing.dll.compressed" />
+    <None Include="obj\Debug\Costura\EDD5AB7D84363B985CABD9E6354EBB336BCFAD34.costura.bunifu.ui.winforms.deprecated.dll.compressed" />
+    <None Include="obj\Debug\Costura\EF600AC2BC485766D0577FEEF1A3AB281A0E5E74.costura.system.servicemodel.primitives.dll.compressed" />
+    <None Include="obj\Debug\Costura\EF795925B5FF7A408FDA1913F9B4D0B065DA9291.costura.system.servicemodel.duplex.pdb.compressed" />
+    <None Include="obj\Debug\Costura\F788F0B87276B5EF87721813990E905E3344A8B1.costura.system.io.packaging.dll.compressed" />
+    <None Include="obj\Debug\Costura\F958C517D41679230D2F3193F11E86423E68C847.costura.system.io.pipelines.dll.compressed" />
+    <None Include="obj\Debug\Costura\FBDCE08394B1D11A961C0684D5C0013507DFF9E5.costura.bunifu.ui.winforms.bunifugradientpanel.dll.compressed" />
+    <None Include="obj\Debug\Costura\FE75C14F17C7B308D6AE149CA2AA602204AA1726.costura.system.servicemodel.security.pdb.compressed" />
+    <None Include="obj\Debug\Costura\FF6F8C28A314B0E878DC3EA10A605A1B06562FC7.costura.system.security.cryptography.protecteddata.dll.compressed" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="obj\Debug\QuanLyCuaHangBanSach.csproj.AssemblyReference.cache" />
+    <None Include="obj\Debug\QuanLyCuaHangBanSach.csproj.CopyComplete" />
+    <None Include="obj\Debug\QuanLyCuaHangBanSach.csproj.CoreCompileInputs.cache" />
+    <None Include="obj\Debug\QuanLyCuaHangBanSach.csproj.Fody.CopyLocal.cache" />
+    <None Include="obj\Debug\QuanLyCuaHangBanSach.csproj.GenerateResource.cache" />
+    <None Include="obj\Release\QuanLyCuaHangBanSach.csproj.AssemblyReference.cache" />
+    <None Include="packages.config" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -380,8 +532,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="bin\Release\" />
     <Folder Include="GUI\Importer\" />
-    <Folder Include="GUI\Vendor\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="assets\hidden-eye-icon-new.png" />
@@ -390,6 +542,56 @@
     <Content Include="assets\email-icom.jpg" />
     <Content Include="assets\eye-icon.png" />
     <Content Include="assets\password.png" />
+    <Content Include="bin\Debug\BouncyCastle.Crypto.xml" />
+    <Content Include="bin\Debug\Google.Protobuf.xml" />
+    <Content Include="bin\Debug\K4os.Compression.LZ4.Streams.xml" />
+    <Content Include="bin\Debug\K4os.Compression.LZ4.xml" />
+    <Content Include="bin\Debug\K4os.Hash.xxHash.xml" />
+    <Content Include="bin\Debug\LiveCharts.WinForms.xml" />
+    <Content Include="bin\Debug\LiveCharts.Wpf.xml" />
+    <Content Include="bin\Debug\LiveCharts.xml" />
+    <Content Include="bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml" />
+    <Content Include="bin\Debug\Microsoft.Win32.Registry.AccessControl.xml" />
+    <Content Include="bin\Debug\Microsoft.Win32.Registry.xml" />
+    <Content Include="bin\Debug\Microsoft.Win32.SystemEvents.xml" />
+    <Content Include="bin\Debug\MySql.Data.xml" />
+    <Content Include="bin\Debug\Newtonsoft.Json.xml" />
+    <Content Include="bin\Debug\QuanLyCuaHangBanSach.exe" />
+    <Content Include="bin\Debug\QuanLyCuaHangBanSach.pdb" />
+    <Content Include="bin\Debug\RestSharp.xml" />
+    <Content Include="bin\Debug\System.Buffers.xml" />
+    <Content Include="bin\Debug\System.CodeDom.xml" />
+    <Content Include="bin\Debug\System.Configuration.ConfigurationManager.xml" />
+    <Content Include="bin\Debug\System.Data.Odbc.xml" />
+    <Content Include="bin\Debug\System.Data.OleDb.xml" />
+    <Content Include="bin\Debug\System.Data.SqlClient.xml" />
+    <Content Include="bin\Debug\System.Diagnostics.DiagnosticSource.xml" />
+    <Content Include="bin\Debug\System.Diagnostics.EventLog.xml" />
+    <Content Include="bin\Debug\System.Diagnostics.PerformanceCounter.xml" />
+    <Content Include="bin\Debug\System.Drawing.Common.xml" />
+    <Content Include="bin\Debug\System.IO.FileSystem.AccessControl.xml" />
+    <Content Include="bin\Debug\System.IO.Packaging.xml" />
+    <Content Include="bin\Debug\System.IO.Pipelines.xml" />
+    <Content Include="bin\Debug\System.IO.Ports.xml" />
+    <Content Include="bin\Debug\System.Memory.xml" />
+    <Content Include="bin\Debug\System.Numerics.Vectors.xml" />
+    <Content Include="bin\Debug\System.Runtime.CompilerServices.Unsafe.xml" />
+    <Content Include="bin\Debug\System.Security.AccessControl.xml" />
+    <Content Include="bin\Debug\System.Security.Cryptography.Cng.xml" />
+    <Content Include="bin\Debug\System.Security.Cryptography.Pkcs.xml" />
+    <Content Include="bin\Debug\System.Security.Cryptography.ProtectedData.xml" />
+    <Content Include="bin\Debug\System.Security.Cryptography.Xml.xml" />
+    <Content Include="bin\Debug\System.Security.Permissions.xml" />
+    <Content Include="bin\Debug\System.Security.Principal.Windows.xml" />
+    <Content Include="bin\Debug\System.ServiceModel.Syndication.xml" />
+    <Content Include="bin\Debug\System.ServiceProcess.ServiceController.xml" />
+    <Content Include="bin\Debug\System.Text.Encoding.CodePages.xml" />
+    <Content Include="bin\Debug\System.Threading.AccessControl.xml" />
+    <Content Include="bin\Debug\System.Threading.Tasks.Extensions.xml" />
+    <Content Include="FodyWeavers.xml" />
+    <Content Include="obj\Debug\QuanLyCuaHangBanSach.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\TempPE\Properties.Resources.Designer.cs.dll" />
+    <Content Include="qlchs.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Fody.4.0.2\build\Fody.targets" Condition="Exists('..\packages\Fody.4.0.2\build\Fody.targets')" />

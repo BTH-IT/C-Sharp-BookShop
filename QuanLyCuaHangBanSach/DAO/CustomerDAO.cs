@@ -99,13 +99,13 @@ namespace QuanLyCuaHangBanSach.DAO
             return rowChanged > 0;
         }
 
-        public bool delete(CustomerDTO data)
+        public bool delete(string id)
         {
             string sql = $@"UPDATE khachhang SET hienThi = 0 WHERE soDienThoai=@SoDienThoai;";
 
             int rowChanged = DataProvider.Instance.ExecuteNonQuery(sql,
                 new MySqlParameter[] {
-                    new MySqlParameter("@SoDienThoai", data.SoDienThoai),
+                    new MySqlParameter("@SoDienThoai", id),
                 });
 
             return rowChanged > 0;

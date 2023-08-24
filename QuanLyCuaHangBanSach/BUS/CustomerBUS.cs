@@ -66,9 +66,9 @@ namespace QuanLyCuaHangBanSach.BUS
             return CustomerDAO.Instance.update(customer);
         }
 
-        public bool delete(CustomerDTO customer)
+        public bool delete(string id)
         {
-            return CustomerDAO.Instance.delete(customer);
+            return CustomerDAO.Instance.delete(id);
         }
     }
 }
