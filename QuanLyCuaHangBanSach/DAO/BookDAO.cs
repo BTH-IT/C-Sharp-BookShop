@@ -60,12 +60,13 @@ namespace QuanLyCuaHangBanSach.DAO
         public bool insert(BookDTO data)
         {
 
-            string sql = $@"INSERT INTO sach (tenSach, maTheLoai, maTacGia, maNhaXuatBan, soLuongConLai, giaBan, giaNhap, namXuatBan)
-                            VALUES (@tenSach, @maTheLoai, @maTacGia, @maNhaXuatBan, @soLuongConLai, @giaBan, @giaNhap, @namXuatBan);";
+            string sql = $@"INSERT INTO sach (tenSach, hinhAnh, maTheLoai, maTacGia, maNhaXuatBan, soLuongConLai, giaBan, giaNhap, namXuatBan)
+                            VALUES (@tenSach, @hinhAnh, @maTheLoai, @maTacGia, @maNhaXuatBan, @soLuongConLai, @giaBan, @giaNhap, @namXuatBan);";
 
             int rowChanged = DataProvider.Instance.ExecuteNonQuery(sql,
                 new MySqlParameter[] {
                     new MySqlParameter("@tenSach", data.TenSach),
+                    new MySqlParameter("@hinhAnh", data.HinhAnh),
                     new MySqlParameter("@maTheLoai", data.MaTheLoai),
                     new MySqlParameter("@maTacGia", data.MaTacGia),
                     new MySqlParameter("@maNhaXuatBan", data.MaNhaXuatBan),
@@ -80,14 +81,15 @@ namespace QuanLyCuaHangBanSach.DAO
 
         public bool update(BookDTO data)
         {
-            string sql = $@"UPDATE taikhoan
-                            SET tenSach=@tenSach, maTheLoai=@maTheLoai, maTacGia=@maTacGia, maNhaXuatBan=@maNhaXuatBan, soLuongConLai=@soLuongConLai, giaBan=@giaBan, giaNhap=@giaNhap, namXuatBan=@namXuatBan
+            string sql = $@"UPDATE sach
+                            SET tenSach=@tenSach, hinhAnh=@hinhAnh, maTheLoai=@maTheLoai, maTacGia=@maTacGia, maNhaXuatBan=@maNhaXuatBan, soLuongConLai=@soLuongConLai, giaBan=@giaBan, giaNhap=@giaNhap, namXuatBan=@namXuatBan
                             WHERE maSach=@maSach;";
 
             int rowChanged = DataProvider.Instance.ExecuteNonQuery(sql,
                 new MySqlParameter[] {
                     new MySqlParameter("@maSach", data.MaSach),
                     new MySqlParameter("@tenSach", data.TenSach),
+                    new MySqlParameter("@hinhAnh", data.HinhAnh),
                     new MySqlParameter("@maTheLoai", data.MaTheLoai),
                     new MySqlParameter("@maTacGia", data.MaTacGia),
                     new MySqlParameter("@maNhaXuatBan", data.MaNhaXuatBan),

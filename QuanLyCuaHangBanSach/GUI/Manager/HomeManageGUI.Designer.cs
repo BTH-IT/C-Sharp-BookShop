@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomeManageGUI));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -52,7 +53,9 @@
             this.column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cartesianChart1 = new LiveCharts.WinForms.CartesianChart();
+            this.elementHost1 = new System.Windows.Forms.Integration.ElementHost();
+            this.cartesianChart1 = new LiveCharts.Wpf.CartesianChart();
+            this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
             this.gunaGradient2Panel1.SuspendLayout();
             this.gunaGradient2Panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -339,14 +342,14 @@
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
             // 
-            // cartesianChart1
+            // elementHost1
             // 
-            this.cartesianChart1.Location = new System.Drawing.Point(14, 240);
-            this.cartesianChart1.Name = "cartesianChart1";
-            this.cartesianChart1.Size = new System.Drawing.Size(997, 412);
-            this.cartesianChart1.TabIndex = 16;
-            this.cartesianChart1.TabStop = false;
-            this.cartesianChart1.Text = "cartesianChart2";
+            this.elementHost1.Location = new System.Drawing.Point(12, 240);
+            this.elementHost1.Name = "elementHost1";
+            this.elementHost1.Size = new System.Drawing.Size(999, 412);
+            this.elementHost1.TabIndex = 16;
+            this.elementHost1.Text = "elementHost1";
+            this.elementHost1.Child = this.cartesianChart1;
             // 
             // HomeManageGUI
             // 
@@ -356,7 +359,7 @@
             this.AutoScrollMargin = new System.Drawing.Size(0, 30);
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
             this.ClientSize = new System.Drawing.Size(1044, 764);
-            this.Controls.Add(this.cartesianChart1);
+            this.Controls.Add(this.elementHost1);
             this.Controls.Add(this.gunaDataGridView1);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.gunaGradient2Panel3);
@@ -392,7 +395,6 @@
         private Guna.UI.WinForms.GunaGradient2Panel gunaGradient2Panel2;
         private Guna.UI.WinForms.GunaGradient2Panel gunaGradient2Panel3;
         private System.Windows.Forms.Label label1;
-        private LiveCharts.WinForms.CartesianChart cartesianChart2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
@@ -409,6 +411,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private LiveCharts.WinForms.CartesianChart cartesianChart1;
+        private System.Windows.Forms.Integration.ElementHost elementHost1;
+        private LiveCharts.Wpf.CartesianChart cartesianChart1;
+        private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow1;
     }
 }

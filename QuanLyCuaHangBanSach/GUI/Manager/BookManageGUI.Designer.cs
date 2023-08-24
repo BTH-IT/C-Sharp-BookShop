@@ -32,12 +32,14 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BookManageGUI));
             this.searchInput = new System.Windows.Forms.TextBox();
             this.line1 = new System.Windows.Forms.Panel();
             this.dgvBook = new Guna.UI.WinForms.GunaDataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewImageColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,10 +48,14 @@
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.gunaComboBox1 = new Guna.UI.WinForms.GunaComboBox();
-            this.gunaComboBox2 = new Guna.UI.WinForms.GunaComboBox();
-            this.gunaComboBox3 = new Guna.UI.WinForms.GunaComboBox();
+            this.gunaAdvenceButton4 = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.gunaAdvenceButton3 = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.gunaAdvenceButton2 = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.gunaAdvenceButton1 = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.authorCbx = new Guna.UI.WinForms.GunaComboBox();
+            this.bookTypeCbx = new Guna.UI.WinForms.GunaComboBox();
+            this.publisherCbx = new Guna.UI.WinForms.GunaComboBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.gradientPanel1 = new QuanLyCuaHangBanSach.GradientPanel();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -57,19 +63,10 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.gunaAdvenceButton4 = new Guna.UI.WinForms.GunaAdvenceButton();
-            this.gunaAdvenceButton3 = new Guna.UI.WinForms.GunaAdvenceButton();
-            this.gunaAdvenceButton2 = new Guna.UI.WinForms.GunaAdvenceButton();
-            this.gunaAdvenceButton1 = new Guna.UI.WinForms.GunaAdvenceButton();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBook)).BeginInit();
             this.panel1.SuspendLayout();
-            this.gradientPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.gradientPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // searchInput
@@ -83,6 +80,7 @@
             this.searchInput.Name = "searchInput";
             this.searchInput.Size = new System.Drawing.Size(237, 30);
             this.searchInput.TabIndex = 20;
+            this.searchInput.TabStop = false;
             this.searchInput.Text = "Enter your search...";
             this.searchInput.Click += new System.EventHandler(this.searchInput_Click);
             this.searchInput.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
@@ -99,6 +97,9 @@
             // 
             // dgvBook
             // 
+            this.dgvBook.AllowUserToAddRows = false;
+            this.dgvBook.AllowUserToDeleteRows = false;
+            this.dgvBook.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.dgvBook.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvBook.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -119,6 +120,7 @@
             this.dgvBook.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
+            this.Column10,
             this.Column3,
             this.Column4,
             this.Column5,
@@ -136,7 +138,7 @@
             this.dgvBook.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvBook.EnableHeadersVisualStyles = false;
             this.dgvBook.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvBook.Location = new System.Drawing.Point(12, 65);
+            this.dgvBook.Location = new System.Drawing.Point(12, 66);
             this.dgvBook.Name = "dgvBook";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
@@ -144,16 +146,24 @@
             dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvBook.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvBook.RowHeadersVisible = false;
             this.dgvBook.RowHeadersWidth = 51;
             this.dgvBook.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dgvBook.RowTemplate.Height = 24;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvBook.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvBook.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvBook.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvBook.RowTemplate.Height = 75;
+            this.dgvBook.RowTemplate.ReadOnly = true;
+            this.dgvBook.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvBook.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvBook.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvBook.Size = new System.Drawing.Size(1020, 637);
+            this.dgvBook.Size = new System.Drawing.Size(1020, 636);
             this.dgvBook.TabIndex = 23;
+            this.dgvBook.TabStop = false;
             this.dgvBook.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna;
             this.dgvBook.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvBook.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -173,7 +183,7 @@
             this.dgvBook.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvBook.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("#9Slide03 Cabin", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvBook.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.dgvBook.ThemeStyle.RowsStyle.Height = 24;
+            this.dgvBook.ThemeStyle.RowsStyle.Height = 75;
             this.dgvBook.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvBook.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
@@ -194,6 +204,14 @@
             this.Column2.ReadOnly = true;
             this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Column2.ToolTipText = "Tên Sách";
+            // 
+            // Column10
+            // 
+            this.Column10.HeaderText = "Hình Ảnh";
+            this.Column10.Image = ((System.Drawing.Image)(resources.GetObject("Column10.Image")));
+            this.Column10.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.Column10.MinimumWidth = 100;
+            this.Column10.Name = "Column10";
             // 
             // Column3
             // 
@@ -267,163 +285,10 @@
             this.panel1.Controls.Add(this.gunaAdvenceButton3);
             this.panel1.Controls.Add(this.gunaAdvenceButton2);
             this.panel1.Controls.Add(this.gunaAdvenceButton1);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Controls.Add(this.pictureBox3);
             this.panel1.Location = new System.Drawing.Point(12, 705);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1020, 54);
             this.panel1.TabIndex = 24;
-            // 
-            // label2
-            // 
-            this.label2.Font = new System.Drawing.Font("#9Slide03 Cabin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(47, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(92, 55);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "1 / 100";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // gunaComboBox1
-            // 
-            this.gunaComboBox1.BackColor = System.Drawing.Color.Transparent;
-            this.gunaComboBox1.BaseColor = System.Drawing.Color.White;
-            this.gunaComboBox1.BorderColor = System.Drawing.Color.Silver;
-            this.gunaComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.gunaComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.gunaComboBox1.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaComboBox1.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.gunaComboBox1.ForeColor = System.Drawing.Color.Black;
-            this.gunaComboBox1.FormattingEnabled = true;
-            this.gunaComboBox1.ItemHeight = 30;
-            this.gunaComboBox1.Location = new System.Drawing.Point(297, 10);
-            this.gunaComboBox1.Name = "gunaComboBox1";
-            this.gunaComboBox1.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.gunaComboBox1.OnHoverItemForeColor = System.Drawing.Color.White;
-            this.gunaComboBox1.Radius = 4;
-            this.gunaComboBox1.Size = new System.Drawing.Size(142, 36);
-            this.gunaComboBox1.TabIndex = 25;
-            // 
-            // gunaComboBox2
-            // 
-            this.gunaComboBox2.BackColor = System.Drawing.Color.Transparent;
-            this.gunaComboBox2.BaseColor = System.Drawing.Color.White;
-            this.gunaComboBox2.BorderColor = System.Drawing.Color.Silver;
-            this.gunaComboBox2.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.gunaComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.gunaComboBox2.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaComboBox2.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.gunaComboBox2.ForeColor = System.Drawing.Color.Black;
-            this.gunaComboBox2.FormattingEnabled = true;
-            this.gunaComboBox2.ItemHeight = 30;
-            this.gunaComboBox2.Location = new System.Drawing.Point(445, 10);
-            this.gunaComboBox2.Name = "gunaComboBox2";
-            this.gunaComboBox2.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.gunaComboBox2.OnHoverItemForeColor = System.Drawing.Color.White;
-            this.gunaComboBox2.Radius = 4;
-            this.gunaComboBox2.Size = new System.Drawing.Size(142, 36);
-            this.gunaComboBox2.TabIndex = 26;
-            // 
-            // gunaComboBox3
-            // 
-            this.gunaComboBox3.BackColor = System.Drawing.Color.Transparent;
-            this.gunaComboBox3.BaseColor = System.Drawing.Color.White;
-            this.gunaComboBox3.BorderColor = System.Drawing.Color.Silver;
-            this.gunaComboBox3.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.gunaComboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.gunaComboBox3.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaComboBox3.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.gunaComboBox3.ForeColor = System.Drawing.Color.Black;
-            this.gunaComboBox3.FormattingEnabled = true;
-            this.gunaComboBox3.ItemHeight = 30;
-            this.gunaComboBox3.Location = new System.Drawing.Point(593, 10);
-            this.gunaComboBox3.Name = "gunaComboBox3";
-            this.gunaComboBox3.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.gunaComboBox3.OnHoverItemForeColor = System.Drawing.Color.White;
-            this.gunaComboBox3.Radius = 4;
-            this.gunaComboBox3.Size = new System.Drawing.Size(142, 36);
-            this.gunaComboBox3.TabIndex = 27;
-            // 
-            // gradientPanel1
-            // 
-            this.gradientPanel1.ColorLeft = System.Drawing.Color.Empty;
-            this.gradientPanel1.ColorRight = System.Drawing.Color.Empty;
-            this.gradientPanel1.Controls.Add(this.textBox2);
-            this.gradientPanel1.Controls.Add(this.panel3);
-            this.gradientPanel1.Controls.Add(this.textBox3);
-            this.gradientPanel1.Controls.Add(this.panel4);
-            this.gradientPanel1.Controls.Add(this.panel2);
-            this.gradientPanel1.Controls.Add(this.label1);
-            this.gradientPanel1.Location = new System.Drawing.Point(741, 12);
-            this.gradientPanel1.Name = "gradientPanel1";
-            this.gradientPanel1.Size = new System.Drawing.Size(291, 34);
-            this.gradientPanel1.TabIndex = 29;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Font = new System.Drawing.Font("#9Slide03 Cabin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.textBox2.ForeColor = System.Drawing.Color.LightGray;
-            this.textBox2.Location = new System.Drawing.Point(31, 3);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 25);
-            this.textBox2.TabIndex = 30;
-            this.textBox2.Text = "Enter your search...";
-            // 
-            // panel3
-            // 
-            this.panel3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(212)))), ((int)(((byte)(191)))));
-            this.panel3.Location = new System.Drawing.Point(31, 30);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(100, 1);
-            this.panel3.TabIndex = 31;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox3.Font = new System.Drawing.Font("#9Slide03 Cabin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.textBox3.ForeColor = System.Drawing.Color.LightGray;
-            this.textBox3.Location = new System.Drawing.Point(188, 3);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 25);
-            this.textBox3.TabIndex = 32;
-            this.textBox3.Text = "Enter your search...";
-            // 
-            // panel4
-            // 
-            this.panel4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(212)))), ((int)(((byte)(191)))));
-            this.panel4.Location = new System.Drawing.Point(188, 30);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(100, 1);
-            this.panel4.TabIndex = 33;
-            // 
-            // panel2
-            // 
-            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(212)))), ((int)(((byte)(191)))));
-            this.panel2.Location = new System.Drawing.Point(147, 17);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(28, 1);
-            this.panel2.TabIndex = 22;
-            // 
-            // label1
-            // 
-            this.label1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label1.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(212)))), ((int)(((byte)(191)))));
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(25, 34);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "$";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // gunaAdvenceButton4
             // 
@@ -456,6 +321,7 @@
             this.gunaAdvenceButton4.Size = new System.Drawing.Size(107, 42);
             this.gunaAdvenceButton4.TabIndex = 7;
             this.gunaAdvenceButton4.Text = "Làm mới";
+            this.gunaAdvenceButton4.Click += new System.EventHandler(this.gunaAdvenceButton4_Click);
             // 
             // gunaAdvenceButton3
             // 
@@ -554,25 +420,79 @@
             this.gunaAdvenceButton1.Text = "Thêm mới";
             this.gunaAdvenceButton1.Click += new System.EventHandler(this.gunaAdvenceButton1_Click);
             // 
-            // pictureBox2
+            // authorCbx
             // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(48, 55);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 2;
-            this.pictureBox2.TabStop = false;
+            this.authorCbx.BackColor = System.Drawing.Color.Transparent;
+            this.authorCbx.BaseColor = System.Drawing.Color.White;
+            this.authorCbx.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.authorCbx.BorderSize = 1;
+            this.authorCbx.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.authorCbx.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.authorCbx.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.authorCbx.FocusedColor = System.Drawing.Color.Empty;
+            this.authorCbx.Font = new System.Drawing.Font("#9Slide03 Cabin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.authorCbx.ForeColor = System.Drawing.Color.Black;
+            this.authorCbx.FormattingEnabled = true;
+            this.authorCbx.ItemHeight = 30;
+            this.authorCbx.Location = new System.Drawing.Point(297, 10);
+            this.authorCbx.Name = "authorCbx";
+            this.authorCbx.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.authorCbx.OnHoverItemForeColor = System.Drawing.Color.White;
+            this.authorCbx.Radius = 6;
+            this.authorCbx.Size = new System.Drawing.Size(142, 36);
+            this.authorCbx.TabIndex = 25;
+            this.authorCbx.TabStop = false;
+            this.authorCbx.SelectedIndexChanged += new System.EventHandler(this.authorCbx_SelectedIndexChanged);
             // 
-            // pictureBox3
+            // bookTypeCbx
             // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(135, 0);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(48, 55);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 1;
-            this.pictureBox3.TabStop = false;
+            this.bookTypeCbx.BackColor = System.Drawing.Color.Transparent;
+            this.bookTypeCbx.BaseColor = System.Drawing.Color.White;
+            this.bookTypeCbx.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.bookTypeCbx.BorderSize = 1;
+            this.bookTypeCbx.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bookTypeCbx.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.bookTypeCbx.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.bookTypeCbx.FocusedColor = System.Drawing.Color.Empty;
+            this.bookTypeCbx.Font = new System.Drawing.Font("#9Slide03 Cabin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bookTypeCbx.ForeColor = System.Drawing.Color.Black;
+            this.bookTypeCbx.FormattingEnabled = true;
+            this.bookTypeCbx.ItemHeight = 30;
+            this.bookTypeCbx.Location = new System.Drawing.Point(445, 10);
+            this.bookTypeCbx.Name = "bookTypeCbx";
+            this.bookTypeCbx.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.bookTypeCbx.OnHoverItemForeColor = System.Drawing.Color.White;
+            this.bookTypeCbx.Radius = 6;
+            this.bookTypeCbx.Size = new System.Drawing.Size(142, 36);
+            this.bookTypeCbx.TabIndex = 26;
+            this.bookTypeCbx.TabStop = false;
+            this.bookTypeCbx.SelectedIndexChanged += new System.EventHandler(this.bookTypeCbx_SelectedIndexChanged);
+            // 
+            // publisherCbx
+            // 
+            this.publisherCbx.BackColor = System.Drawing.Color.Transparent;
+            this.publisherCbx.BaseColor = System.Drawing.Color.White;
+            this.publisherCbx.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.publisherCbx.BorderSize = 1;
+            this.publisherCbx.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.publisherCbx.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.publisherCbx.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.publisherCbx.FocusedColor = System.Drawing.Color.Empty;
+            this.publisherCbx.Font = new System.Drawing.Font("#9Slide03 Cabin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.publisherCbx.ForeColor = System.Drawing.Color.Black;
+            this.publisherCbx.FormattingEnabled = true;
+            this.publisherCbx.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.publisherCbx.ItemHeight = 30;
+            this.publisherCbx.Location = new System.Drawing.Point(593, 10);
+            this.publisherCbx.Margin = new System.Windows.Forms.Padding(3, 3, 100, 3);
+            this.publisherCbx.Name = "publisherCbx";
+            this.publisherCbx.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.publisherCbx.OnHoverItemForeColor = System.Drawing.Color.White;
+            this.publisherCbx.Radius = 6;
+            this.publisherCbx.Size = new System.Drawing.Size(142, 36);
+            this.publisherCbx.TabIndex = 27;
+            this.publisherCbx.TabStop = false;
+            this.publisherCbx.SelectedIndexChanged += new System.EventHandler(this.publisherCbx_SelectedIndexChanged);
             // 
             // pictureBox1
             // 
@@ -584,6 +504,94 @@
             this.pictureBox1.TabIndex = 22;
             this.pictureBox1.TabStop = false;
             // 
+            // gradientPanel1
+            // 
+            this.gradientPanel1.ColorLeft = System.Drawing.Color.Empty;
+            this.gradientPanel1.ColorRight = System.Drawing.Color.Empty;
+            this.gradientPanel1.Controls.Add(this.textBox2);
+            this.gradientPanel1.Controls.Add(this.panel3);
+            this.gradientPanel1.Controls.Add(this.textBox3);
+            this.gradientPanel1.Controls.Add(this.panel4);
+            this.gradientPanel1.Controls.Add(this.panel2);
+            this.gradientPanel1.Controls.Add(this.label1);
+            this.gradientPanel1.Location = new System.Drawing.Point(741, 10);
+            this.gradientPanel1.Name = "gradientPanel1";
+            this.gradientPanel1.Size = new System.Drawing.Size(291, 36);
+            this.gradientPanel1.TabIndex = 30;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
+            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox2.Font = new System.Drawing.Font("#9Slide03 Cabin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.textBox2.ForeColor = System.Drawing.Color.LightGray;
+            this.textBox2.Location = new System.Drawing.Point(31, 4);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(100, 25);
+            this.textBox2.TabIndex = 30;
+            this.textBox2.TabStop = false;
+            this.textBox2.Text = "Enter price from";
+            this.textBox2.Click += new System.EventHandler(this.textBox2_Click);
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.textBox2.Leave += new System.EventHandler(this.textBox2_Leave);
+            // 
+            // panel3
+            // 
+            this.panel3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(212)))), ((int)(((byte)(191)))));
+            this.panel3.Location = new System.Drawing.Point(31, 31);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(100, 1);
+            this.panel3.TabIndex = 31;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
+            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox3.Font = new System.Drawing.Font("#9Slide03 Cabin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.textBox3.ForeColor = System.Drawing.Color.LightGray;
+            this.textBox3.Location = new System.Drawing.Point(188, 4);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(100, 25);
+            this.textBox3.TabIndex = 32;
+            this.textBox3.TabStop = false;
+            this.textBox3.Text = "Enter price to";
+            this.textBox3.Click += new System.EventHandler(this.textBox3_Click);
+            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            this.textBox3.Leave += new System.EventHandler(this.textBox3_Leave);
+            // 
+            // panel4
+            // 
+            this.panel4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(212)))), ((int)(((byte)(191)))));
+            this.panel4.Location = new System.Drawing.Point(188, 31);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(100, 1);
+            this.panel4.TabIndex = 33;
+            // 
+            // panel2
+            // 
+            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(212)))), ((int)(((byte)(191)))));
+            this.panel2.Location = new System.Drawing.Point(147, 18);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(28, 1);
+            this.panel2.TabIndex = 22;
+            // 
+            // label1
+            // 
+            this.label1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label1.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(212)))), ((int)(((byte)(191)))));
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(25, 36);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "$";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // BookManageGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 23F);
@@ -591,9 +599,9 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
             this.ClientSize = new System.Drawing.Size(1044, 764);
             this.Controls.Add(this.gradientPanel1);
-            this.Controls.Add(this.gunaComboBox3);
-            this.Controls.Add(this.gunaComboBox2);
-            this.Controls.Add(this.gunaComboBox1);
+            this.Controls.Add(this.publisherCbx);
+            this.Controls.Add(this.bookTypeCbx);
+            this.Controls.Add(this.authorCbx);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dgvBook);
             this.Controls.Add(this.pictureBox1);
@@ -608,11 +616,9 @@
             this.Load += new System.EventHandler(this.BookManageGUI_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvBook)).EndInit();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.gradientPanel1.ResumeLayout(false);
             this.gradientPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -625,8 +631,23 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private Guna.UI.WinForms.GunaDataGridView dgvBook;
         private System.Windows.Forms.Panel panel1;
+        private Guna.UI.WinForms.GunaComboBox authorCbx;
+        private Guna.UI.WinForms.GunaComboBox bookTypeCbx;
+        private Guna.UI.WinForms.GunaComboBox publisherCbx;
+        private Guna.UI.WinForms.GunaAdvenceButton gunaAdvenceButton1;
+        private Guna.UI.WinForms.GunaAdvenceButton gunaAdvenceButton2;
+        private Guna.UI.WinForms.GunaAdvenceButton gunaAdvenceButton3;
+        private Guna.UI.WinForms.GunaAdvenceButton gunaAdvenceButton4;
+        private GradientPanel gradientPanel1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewImageColumn Column10;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
@@ -634,22 +655,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private Guna.UI.WinForms.GunaComboBox gunaComboBox1;
-        private Guna.UI.WinForms.GunaComboBox gunaComboBox2;
-        private Guna.UI.WinForms.GunaComboBox gunaComboBox3;
-        private GradientPanel gradientPanel1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private Guna.UI.WinForms.GunaAdvenceButton gunaAdvenceButton1;
-        private Guna.UI.WinForms.GunaAdvenceButton gunaAdvenceButton2;
-        private Guna.UI.WinForms.GunaAdvenceButton gunaAdvenceButton3;
-        private Guna.UI.WinForms.GunaAdvenceButton gunaAdvenceButton4;
     }
 }

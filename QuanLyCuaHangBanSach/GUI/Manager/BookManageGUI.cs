@@ -12,11 +12,13 @@ using System.Windows.Forms;
 using QuanLyCuaHangBanSach.BUS;
 using QuanLyCuaHangBanSach.DTO;
 using QuanLyCuaHangBanSach.GUI.Modal;
+using static Guna.UI2.Native.WinApi;
 
 namespace QuanLyCuaHangBanSach.GUI.Manager
 {
     public partial class BookManageGUI : Form
     {
+
         public BookManageGUI()
         {
             InitializeComponent();
@@ -34,9 +36,10 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                 this.dgvBook.Rows.Add(new object[] {
                     book.MaSach,
                     book.TenSach,
-                    book.MaTacGia,
-                    book.MaTheLoai,
-                    book.MaNhaXuatBan,
+                    book.HinhAnh,
+                    AuthorBUS.Instance.getById(book.MaTacGia.ToString()).TenTacGia,
+                    BookTypeBUS.Instance.getById(book.MaTheLoai.ToString()).TenTheLoai,
+                    PublisherBUS.Instance.getById(book.MaNhaXuatBan.ToString()).TenNhaXuatBan,
                     book.GiaBan,
                     book.GiaNhap,
                     book.NamXuatBan,
@@ -45,17 +48,136 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             }
         }
 
+        private void loadAuthorCbx()
+        {
+            List<AuthorDTO> authorList = AuthorBUS.Instance.getAllData();
+
+            authorList.Insert(0, new AuthorDTO(0, "Tất cả tác giả", "", 0));
+
+            this.authorCbx.ValueMember = "MaTacGia";
+            this.authorCbx.DisplayMember = "TenTacGia";
+            this.authorCbx.DataSource = authorList;
+
+            this.authorCbx.SelectedIndex = 0;
+        }
+
+        private void loadBookTypeCbx()
+        {
+            List<BookTypeDTO> bookTypeList = BookTypeBUS.Instance.getAllData();
+
+            bookTypeList.Insert(0, new BookTypeDTO(0, "Tất cả thể loại"));
+
+            this.bookTypeCbx.ValueMember = "MaTheLoai";
+            this.bookTypeCbx.DisplayMember = "TenTheLoai";
+            this.bookTypeCbx.DataSource = bookTypeList;
+        }
+
+        private void loadPublisherCbx()
+        {
+            List<PublisherDTO> publisherList = PublisherBUS.Instance.getAllData();
+
+            publisherList.Insert(0, new PublisherDTO(0, "Tất cả nhà xuất bản", "", ""));
+
+            this.publisherCbx.ValueMember = "MaNhaXuatBan";
+            this.publisherCbx.DisplayMember = "TenNhaXuatBan";
+            this.publisherCbx.DataSource = publisherList;
+        }
+
         private void BookManageGUI_Load(object sender, EventArgs e)
         {
             List<BookDTO> bookList = BookBUS.Instance.getAllData();
             this.loadBookListToDataView(bookList);
+
+            this.loadAuthorCbx();
+            this.loadBookTypeCbx();
+            this.loadPublisherCbx();
+        }
+
+        private List<BookDTO> handleFilter(string searchText)
+        {
+            if (searchText == "Enter your search...")
+            {
+                searchText = "";
+            }
+
+            List<BookDTO> bookList = BookBUS.Instance.search(searchText);
+
+            if (this.textBox2.Text.ToString() != "Enter price from"
+                && this.textBox3.Text.ToString() != "Enter price to"
+                && this.textBox2.Text.ToString() != string.Empty
+                && this.textBox3.Text.ToString() != string.Empty)
+            {
+                try
+                {
+                    bookList = bookList.FindAll(
+                        item => item.GiaBan >= Convert.ToDouble(this.textBox2.Text.ToString())
+                                && item.GiaBan <= Convert.ToDouble(this.textBox3.Text.ToString()
+                    ));
+                } catch
+                {
+                    MessageBox.Show("Giá phải là số");
+                }
+            }
+
+            int authorId = Convert.ToInt32(this.authorCbx.SelectedValue);
+            int bookTypeId = Convert.ToInt32(this.bookTypeCbx.SelectedValue);
+            int publisherId = Convert.ToInt32(this.publisherCbx.SelectedValue);
+
+            List<BookDTO> newBookList = bookList.FindAll(book =>
+            {
+                if (authorId != 0 && bookTypeId != 0 && publisherId != 0)
+                {
+                    return book.MaTacGia == authorId &&
+                           book.MaTheLoai == bookTypeId &&
+                           book.MaNhaXuatBan == publisherId;
+                }
+
+                if (authorId == 0 && bookTypeId != 0 && publisherId != 0)
+                {
+                    return book.MaTheLoai == bookTypeId &&
+                           book.MaNhaXuatBan == publisherId;
+                }
+
+                if (authorId == 0 && bookTypeId == 0 && publisherId != 0)
+                {
+                    return book.MaNhaXuatBan == publisherId;
+                }
+
+                if (authorId == 0 && bookTypeId != 0 && publisherId == 0)
+                {
+                    return book.MaTheLoai == bookTypeId;
+                }
+
+                if (authorId != 0 && bookTypeId == 0 && publisherId == 0)
+                {
+                    return book.MaTacGia == authorId;
+                }
+
+                if (authorId != 0 && bookTypeId != 0 && publisherId == 0)
+                {
+                    return book.MaTacGia == authorId &&
+                           book.MaTheLoai == bookTypeId;
+                }
+
+                if (authorId != 0 && bookTypeId == 0 && publisherId != 0)
+                {
+                    return book.MaTacGia == authorId &&
+                           book.MaNhaXuatBan == publisherId;
+                }
+
+                return true;
+            });
+
+
+            return newBookList;
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             this.searchInput.ForeColor = Color.Black;
 
-            List<BookDTO> bookList = BookBUS.Instance.search(this.searchInput.Text.ToString());
+            List<BookDTO> bookList = handleFilter(this.searchInput.Text.ToString());
+
             this.loadBookListToDataView(bookList);
         }
 
@@ -74,7 +196,9 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             {
                 this.searchInput.Text = "Enter your search...";
                 this.searchInput.ForeColor = Color.LightGray;
-                List<BookDTO> bookList = BookBUS.Instance.getAllData();
+
+                List<BookDTO> bookList = handleFilter(this.searchInput.Text.ToString());
+
                 this.loadBookListToDataView(bookList);
             }
         }
@@ -84,6 +208,108 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             using (AddBookModal addBookModal = new AddBookModal())
             {
                 addBookModal.ShowDialog();
+            }
+        }
+
+        private void gunaAdvenceButton4_Click(object sender, EventArgs e)
+        {
+            this.searchInput.Text = "Enter your search...";
+            this.searchInput.ForeColor = Color.LightGray;
+
+            this.textBox2.Text = "Enter price from";
+            this.textBox2.ForeColor = Color.LightGray;
+
+            this.textBox3.Text = "Enter price to";
+            this.textBox3.ForeColor = Color.LightGray;
+
+            this.authorCbx.SelectedIndex = 0;
+            this.bookTypeCbx.SelectedIndex = 0;
+            this.publisherCbx.SelectedIndex = 0;
+
+            List<BookDTO> bookList = BookBUS.Instance.search("");
+            this.loadBookListToDataView(bookList);
+        }
+
+        private void authorCbx_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            List<BookDTO> bookList = handleFilter(this.searchInput.Text.ToString());
+
+            this.loadBookListToDataView(bookList);
+        }
+
+        private void bookTypeCbx_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            List<BookDTO> bookList = handleFilter(this.searchInput.Text.ToString());
+
+            this.loadBookListToDataView(bookList);
+        }
+
+        private void publisherCbx_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            List<BookDTO> bookList = handleFilter(this.searchInput.Text.ToString());
+
+            this.loadBookListToDataView(bookList);
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            this.textBox2.ForeColor = Color.Black;
+
+            List<BookDTO> bookList = handleFilter(this.searchInput.Text.ToString());
+
+            this.loadBookListToDataView(bookList);
+        }
+
+        private void textBox2_Leave(object sender, EventArgs e)
+        {
+            if (this.textBox2.Text.Length <= 0)
+            {
+                this.textBox2.Text = "Enter price from";
+                this.textBox2.ForeColor = Color.LightGray;
+
+                List<BookDTO> bookList = handleFilter(this.searchInput.Text.ToString());
+
+                this.loadBookListToDataView(bookList);
+            }
+        }
+
+        private void textBox2_Click(object sender, EventArgs e)
+        {
+            if (this.textBox2.Text.Equals("Enter price from"))
+            {
+                this.textBox2.Text = "";
+
+            }
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+            this.textBox3.ForeColor = Color.Black;
+
+            List<BookDTO> bookList = handleFilter(this.searchInput.Text.ToString());
+
+            this.loadBookListToDataView(bookList);
+        }
+
+        private void textBox3_Leave(object sender, EventArgs e)
+        {
+            if (this.textBox3.Text.Length <= 0)
+            {
+                this.textBox3.Text = "Enter price to";
+                this.textBox3.ForeColor = Color.LightGray;
+
+                List<BookDTO> bookList = handleFilter(this.searchInput.Text.ToString());
+
+                this.loadBookListToDataView(bookList);
+            }
+        }
+
+        private void textBox3_Click(object sender, EventArgs e)
+        {
+            if (this.textBox3.Text.Equals("Enter price to"))
+            {
+                this.textBox3.Text = "";
+
             }
         }
     }

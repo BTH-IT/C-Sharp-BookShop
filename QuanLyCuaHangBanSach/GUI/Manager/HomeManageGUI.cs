@@ -24,7 +24,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             cartesianChart1.AxisX.Add(new LiveCharts.Wpf.Axis
             {
                 Title = "Tháng",
-                Labels = new string[] {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"}
+                Labels = new string[] { "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" }
             });
 
             cartesianChart1.AxisY.Add(new LiveCharts.Wpf.Axis
@@ -54,7 +54,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
             foreach (AccountDTO account in list)
             {
-                this.gunaDataGridView1.Rows.Add(new object[]{ account.MaNhanVien, account.Email, account.MatKhau});
+                this.gunaDataGridView1.Rows.Add(new object[] { account.MaNhanVien, account.Email, account.MatKhau });
             }
         }
     }
