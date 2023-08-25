@@ -312,5 +312,16 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
             }
         }
+
+        private void exportBtn_Click(object sender, EventArgs e)
+        {
+            List<BookDTO> bookList = handleFilter(this.searchInput.Text.ToString());
+
+            DataTable dataTable = CustomExcel.Instance.ConvertListToDataTable(bookList);
+
+            string[] headerList = new string[] { "Mã sách", "Tên sách", "Tác giả", "Thể loại", "Nhà xuất bản", "Giá bán", "Giá nhập", "Năm xuất bản", "Còn lại" };
+            
+            CustomExcel.Instance.ExportFile(dataTable, "Book Manage", "Cửa hàng bán sách", headerList, 2);
+        }
     }
 }

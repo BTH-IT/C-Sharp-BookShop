@@ -103,3 +103,8 @@ D:\C#\C-Sharp-BookShop\QuanLyCuaHangBanSach\bin\Debug\LiveCharts.Wpf.xml
 D:\C#\C-Sharp-BookShop\QuanLyCuaHangBanSach\obj\Debug\QuanLyCuaHangBanSach.GUI.Manager.HomeManageGUI.resources
 D:\C#\C-Sharp-BookShop\QuanLyCuaHangBanSach\obj\Debug\QuanLyCuaHangBanSach.GUI.Manager.BookManageGUI.resources
 D:\C#\C-Sharp-BookShop\QuanLyCuaHangBanSach\obj\Debug\QuanLyCuaHangBanSach.GUI.Modal.AddBookModal.resources
+D:\C#\C-Sharp-BookShop\QuanLyCuaHangBanSach\obj\Debug\QuanLyCuaHangBanSach.csproj.ResolveComReference.cache
+D:\C#\C-Sharp-BookShop\QuanLyCuaHangBanSach\bin\Debug\EPPlus.xml
+D:\C#\C-Sharp-BookShop\QuanLyCuaHangBanSach\bin\Debug\ExcelDataReader.xml
+D:\C#\C-Sharp-BookShop\QuanLyCuaHangBanSach\bin\Debug\ExcelDataReader.DataSet.xml
+D:\C#\C-Sharp-BookShop\QuanLyCuaHangBanSach\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
