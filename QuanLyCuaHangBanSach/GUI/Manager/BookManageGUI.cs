@@ -3,16 +3,11 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Security.Principal;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Documents;
+using System.Reflection;
 using System.Windows.Forms;
 using QuanLyCuaHangBanSach.BUS;
 using QuanLyCuaHangBanSach.DTO;
 using QuanLyCuaHangBanSach.GUI.Modal;
-using static Guna.UI2.Native.WinApi;
 
 namespace QuanLyCuaHangBanSach.GUI.Manager
 {
@@ -205,9 +200,17 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
         private void gunaAdvenceButton1_Click(object sender, EventArgs e)
         {
-            using (AddBookModal addBookModal = new AddBookModal())
+            using (BookModal bookModal = new BookModal())
             {
-                addBookModal.ShowDialog();
+                bookModal.ShowDialog();
+
+
+                if (bookModal.isSubmitSuccess)
+                {
+                    List<BookDTO> bookList = handleFilter(this.searchInput.Text.ToString());
+
+                    this.loadBookListToDataView(bookList);
+                }
             }
         }
 
@@ -322,6 +325,67 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             string[] headerList = new string[] { "Mã sách", "Tên sách", "Tác giả", "Thể loại", "Nhà xuất bản", "Giá bán", "Giá nhập", "Năm xuất bản", "Còn lại" };
             
             CustomExcel.Instance.ExportFile(dataTable, "Book Manage", "Cửa hàng bán sách", headerList, 2);
+        }
+
+        private void editBtn_Click(object sender, EventArgs e)
+        {
+            using (BookModal bookModal = new BookModal("Sửa sách"))
+            {
+                if (this.dgvBook.CurrentCell.RowIndex < 0)
+                {
+                    MessageBox.Show("Hãy chọn dòng dữ liệu muốn thao tác");
+                    return;
+                }
+
+                DataGridViewRow row = this.dgvBook.Rows[this.dgvBook.CurrentCell.RowIndex];
+
+                BookDTO book = BookBUS.Instance.getById(row.Cells[0].Value.ToString());
+
+                bookModal.updateBook = book;
+
+                if (bookModal.updateBook == null)
+                {
+                    MessageBox.Show("Đã xảy ra lỗi vui lòng thử lại sau!!");
+                    return;
+                }
+
+                bookModal.ShowDialog();
+
+                if (bookModal.isSubmitSuccess)
+                {
+                    List<BookDTO> bookList = handleFilter(this.searchInput.Text.ToString());
+
+                    this.loadBookListToDataView(bookList);
+                }
+            }
+        }
+
+        private void deleteBtn_Click(object sender, EventArgs e)
+        {
+            if (this.dgvBook.CurrentCell.RowIndex < 0)
+            {
+                MessageBox.Show("Hãy chọn dòng dữ liệu muốn thao tác");
+                return;
+            }
+
+            DataGridViewRow row = this.dgvBook.Rows[this.dgvBook.CurrentCell.RowIndex];
+
+            DialogResult dlgResult = MessageBox.Show("Bạn chắc chắn muốn xóa chứ?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+
+            if (dlgResult == DialogResult.Yes) {
+                
+                if (BookBUS.Instance.delete(row.Cells[0].Value.ToString()))
+                {
+                    MessageBox.Show("Delete successful");
+
+                    List<BookDTO> bookList = handleFilter(this.searchInput.Text.ToString());
+
+                    this.loadBookListToDataView(bookList);
+                } else
+                {
+                    MessageBox.Show("Delete failure");
+                }
+            }
         }
     }
 }

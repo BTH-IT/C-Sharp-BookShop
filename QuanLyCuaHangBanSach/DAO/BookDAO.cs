@@ -26,13 +26,13 @@ namespace QuanLyCuaHangBanSach.DAO
 
         
         public DataTable getAll() {
-            return DataProvider.Instance.ExecuteQuery("select * from sach");
+            return DataProvider.Instance.ExecuteQuery("select * from sach WHERE hienThi = 1;");
         }
 
         public BookDTO getById(string id)
         {
             DataTable dataTable = DataProvider.Instance.ExecuteQuery(
-                "SELECT * FROM sach WHERE maSach=@MaSach;",
+                "SELECT * FROM sach WHERE maSach=@MaSach AND hienThi = 1;",
                 new MySqlParameter[] {
                     new MySqlParameter("@MaSach", id)
                 }
@@ -47,7 +47,7 @@ namespace QuanLyCuaHangBanSach.DAO
         
         public DataTable searchData(string value)
         {
-            string sql = $@"SELECT * FROM sach WHERE maSach LIKE @maSach OR tenSach LIKE @tenSach;";
+            string sql = $@"SELECT * FROM sach WHERE (maSach LIKE @maSach OR tenSach LIKE @tenSach) AND hienThi = 1;";
 
             return DataProvider.Instance.ExecuteQuery(sql,
                 new MySqlParameter[] {
