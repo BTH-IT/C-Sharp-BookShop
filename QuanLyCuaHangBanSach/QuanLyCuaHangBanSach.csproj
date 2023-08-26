@@ -290,6 +290,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BUS\CustomerBUS.cs" />
     <Compile Include="BUS\PublisherBUS.cs" />
     <Compile Include="BUS\BookTypeBUS.cs" />
     <Compile Include="BUS\AuthorBUS.cs" />
@@ -300,6 +301,8 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="CustomValidation.cs" />
+    <Compile Include="DAO\CustomerDAO.cs" />
+    <Compile Include="DTO\CustomerDTO.cs" />
     <Compile Include="DAO\PublisherDAO.cs" />
     <Compile Include="DAO\BookTypeDAO.cs" />
     <Compile Include="DAO\AuthorDAO.cs" />
@@ -364,6 +367,12 @@
     <Compile Include="GUI\test.Designer.cs">
       <DependentUpon>test.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Vendor\VendorGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Vendor\VendorGUI.Designer.cs">
+      <DependentUpon>VendorGUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Settings.cs" />
@@ -392,6 +401,9 @@
     <EmbeddedResource Include="GUI\test.resx">
       <DependentUpon>test.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Vendor\VendorGUI.resx">
+      <DependentUpon>VendorGUI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
@@ -418,7 +430,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="GUI\Importer\" />
-    <Folder Include="GUI\Vendor\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="assets\hidden-eye-icon-new.png" />

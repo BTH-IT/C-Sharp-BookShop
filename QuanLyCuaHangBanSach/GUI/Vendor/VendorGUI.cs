@@ -7,9 +7,9 @@ using QuanLyCuaHangBanSach.DTO;
 
 namespace QuanLyCuaHangBanSach.GUI
 {
-    public partial class MainPageGUI : Form
+    public partial class VendorGUI : Form
     {
-        public MainPageGUI()
+        public VendorGUI()
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;

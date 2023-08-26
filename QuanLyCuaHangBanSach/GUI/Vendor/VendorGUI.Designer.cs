@@ -1,6 +1,6 @@
 ﻿namespace QuanLyCuaHangBanSach.GUI
 {
-    partial class MainPageGUI
+    partial class VendorGUI
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainPageGUI));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VendorGUI));
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.LogoImg = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
