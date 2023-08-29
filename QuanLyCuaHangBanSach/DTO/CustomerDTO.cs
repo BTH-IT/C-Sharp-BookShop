@@ -2,28 +2,26 @@
 
 namespace QuanLyCuaHangBanSach.DTO
 {
-    public class CustomerDTO
+    public class CustomerDTO : HumanDTO
     {
-        public int MaKhachHang { get; private set; }
-        public string TenKhachHang { get; set; }
         public string SoDienThoai { get; private set; }
-        public string GioiTinh { get; set; }
-        public string NamSinh { get; set; }
 
         public CustomerDTO() { }
-        public CustomerDTO(int maKhachHang, string tenKhachHang, string soDienThoai, string gioiTinh, string namSinh)
+        public CustomerDTO(
+            int maKhachHang,
+            string tenKhachHang,
+            string soDienThoai,
+            string gioiTinh,
+            string namSinh)
+        :base(maKhachHang, tenKhachHang, gioiTinh, namSinh)
         {
-            this.MaKhachHang = maKhachHang;
-            this.TenKhachHang = tenKhachHang;
             this.SoDienThoai = soDienThoai;
-            this.GioiTinh = gioiTinh;
-            this.NamSinh = namSinh;
         }
 
         public CustomerDTO(DataRow row)
         {
-            this.TenKhachHang = row["tenKhachHang"].ToString();
-            this.MaKhachHang = (int)row["maKhachHang"];
+            this.Ma = (int)row["maKhachHang"];
+            this.Ten = row["tenKhachHang"].ToString();
             this.SoDienThoai = row["soDienThoai"].ToString();
             this.GioiTinh = row["gioiTinh"].ToString();
             this.NamSinh = row["namSinh"].ToString();
@@ -31,7 +29,7 @@ namespace QuanLyCuaHangBanSach.DTO
 
         public override string ToString()
         {
-            return this.MaKhachHang + " " + this.TenKhachHang + " " + this.SoDienThoai + " " + this.GioiTinh + " " + this.NamSinh;
+            return this.Ma + " " + this.Ten + " " + this.SoDienThoai + " " + this.GioiTinh + " " + this.NamSinh;
         }
     }
 }
