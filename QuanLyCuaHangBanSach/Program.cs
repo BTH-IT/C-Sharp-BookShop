@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using QuanLyCuaHangBanSach.GUI;
+using QuanLyCuaHangBanSach.GUI.Manager;
 using QuanLyCuaHangBanSach.GUI.Modal;
 
 namespace QuanLyCuaHangBanSach
