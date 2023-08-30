@@ -290,6 +290,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BUS\SaleBUS.cs" />
+    <Compile Include="BUS\StaffBUS.cs" />
+    <Compile Include="BUS\SupplierBUS.cs" />
+    <Compile Include="BUS\ImportBillBUS.cs" />
+    <Compile Include="BUS\CustomerBillBUS.cs" />
     <Compile Include="BUS\CustomerBUS.cs" />
     <Compile Include="BUS\PublisherBUS.cs" />
     <Compile Include="BUS\BookTypeBUS.cs" />
@@ -301,10 +306,18 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="CustomValidation.cs" />
+    <Compile Include="DAO\SaleDAO.cs" />
+    <Compile Include="DAO\StaffDAO.cs" />
+    <Compile Include="DAO\ImportBillDAO.cs" />
+    <Compile Include="DAO\CustomerBillDAO.cs" />
     <Compile Include="DAO\CustomerDAO.cs" />
+    <Compile Include="DAO\SupplierDAO.cs" />
+    <Compile Include="DTO\SupplierDTO.cs" />
+    <Compile Include="DTO\SaleDTO.cs" />
     <Compile Include="DTO\BillDetailDTO .cs" />
     <Compile Include="DTO\BillDTO.cs" />
     <Compile Include="DTO\CustomerBillDetailDTO.cs" />
+    <Compile Include="DTO\StaffDTO.cs" />
     <Compile Include="DTO\HumanDTO.cs" />
     <Compile Include="DTO\ImportBillDetailDTO.cs" />
     <Compile Include="DTO\ImportBillDTO.cs" />
@@ -337,6 +350,12 @@
     </Compile>
     <Compile Include="GUI\Manager\BookManageGUI.Designer.cs">
       <DependentUpon>BookManageGUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Manager\CustomerBillGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Manager\CustomerBillGUI.Designer.cs">
+      <DependentUpon>CustomerBillGUI.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Manager\HomeManageGUI.cs">
       <SubType>Form</SubType>
@@ -389,6 +408,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Manager\BookManageGUI.resx">
       <DependentUpon>BookManageGUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Manager\CustomerBillGUI.resx">
+      <DependentUpon>CustomerBillGUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Manager\HomeManageGUI.resx">
       <DependentUpon>HomeManageGUI.cs</DependentUpon>

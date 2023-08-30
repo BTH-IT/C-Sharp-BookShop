@@ -25,7 +25,7 @@ namespace QuanLyCuaHangBanSach.DTO
         {
             this.MaKhuyenMai = (int)row["maKhuyenMai"];
             this.TenKhuyenMai = row["tenKhuyenMai"].ToString();
-            this.PhanTram = (byte)row["phanTram"];
+            this.PhanTram = Convert.ToByte(row["phanTram"]);
             this.NgayBatDau = (DateTime) row["ngayBatDau"];
             this.NgayKetThuc = (DateTime)row["ngayKetThuc"];
         }

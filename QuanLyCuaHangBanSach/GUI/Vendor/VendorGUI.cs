@@ -57,7 +57,7 @@ namespace QuanLyCuaHangBanSach.GUI
                     {
                         foreach (var customer in customers)
                         {
-                            PhoneResultData.Rows.Add(customer.SoDienThoai, customer.TenKhachHang);
+                            PhoneResultData.Rows.Add(customer.SoDienThoai, customer.Ten);
                         }
                     }
                 }

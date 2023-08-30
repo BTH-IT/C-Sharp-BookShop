@@ -24,16 +24,7 @@ namespace QuanLyCuaHangBanSach.DTO
             double donGia
         )
         {
-            this.MaSach = maSach;
-            this.SoLuong = soLuong;
-            this.DonGia = donGia;
-            this.ThanhTien = soLuong * donGia;
-        }
-
-        protected BillDetailDTO(
-            DataRow row
-        )
-        {
+            this.MaDon = maDon;
             this.MaSach = maSach;
             this.SoLuong = soLuong;
             this.DonGia = donGia;

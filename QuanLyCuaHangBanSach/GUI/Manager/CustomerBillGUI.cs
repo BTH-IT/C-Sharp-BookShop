@@ -10,7 +10,6 @@ using System.Windows.Forms;
 using QuanLyCuaHangBanSach.BUS;
 using QuanLyCuaHangBanSach.DTO;
 using QuanLyCuaHangBanSach.GUI.Modal;
-using static Guna.UI2.Native.WinApi;
 
 namespace QuanLyCuaHangBanSach.GUI.Manager
 {
@@ -26,15 +25,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         private void renderCheckBoxDgv()
         {
             int size = 25;
-            DataGridViewCheckBoxColumn cbxColumn = new DataGridViewCheckBoxColumn();
-            cbxColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            cbxColumn.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            cbxColumn.MinimumWidth = 50;
-            cbxColumn.ReadOnly = false;
-            this.dgvCustomerBill.Columns.Insert(0, cbxColumn);
-
             Rectangle rect = this.dgvCustomerBill.GetCellDisplayRectangle(0, -1, false);
-
 
             headerCheckbox = new CheckBox();
 
@@ -46,7 +37,6 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             rect.Y = (rect.Height / 2) - (size / 2);
 
             headerCheckbox.Location = rect.Location;
-
 
             this.dgvCustomerBill.Controls.Add(headerCheckbox);
         }
@@ -64,18 +54,36 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             foreach (CustomerBillDTO customerBill in customerBillList)
             {
                 customer = CustomerBUS.Instance.getById(customerBill.MaKhachHang.ToString());
+
                 sale = SaleBUS.Instance.getById(customerBill.MaKhuyenMai.ToString());
 
-                this.dgvCustomerBill.Rows.Add(new object[] {
-                    customerBill.MaDonKhachHang,
-                    customer.Ten,
-                    customer.SoDienThoai,
-                    StaffBUS.Instance.getById(customerBill.MaNhanVien.ToString()).Ten,
-                    sale.TenKhuyenMai,
-                    sale.PhanTram + "%",
-                    customerBill.NgayLap.ToString(),
-                    customerBill.TongTien,
-                });
+                if (sale == null)
+                {
+                    this.dgvCustomerBill.Rows.Add(new object[] {
+                        false,
+                        customerBill.MaDonKhachHang,
+                        customer.Ten,
+                        customer.SoDienThoai,
+                        StaffBUS.Instance.getById(customerBill.MaNhanVien.ToString()).Ten,
+                        "Không có",
+                        "0",
+                        customerBill.NgayLap.GetDateTimeFormats()[0],
+                        customerBill.TongTien,
+                    });
+                } else
+                {
+                    this.dgvCustomerBill.Rows.Add(new object[] {
+                        false,
+                        customerBill.MaDonKhachHang,
+                        customer.Ten,
+                        customer.SoDienThoai,
+                        StaffBUS.Instance.getById(customerBill.MaNhanVien.ToString()).Ten,
+                        sale.TenKhuyenMai,
+                        sale.PhanTram + "%",
+                        customerBill.NgayLap.GetDateTimeFormats()[0],
+                        customerBill.TongTien,
+                    });
+                }
             }
 
         }
@@ -84,47 +92,53 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         {
             List<CustomerDTO> customerList = CustomerBUS.Instance.getAllData();
 
-            customerList.Insert(0, new CustomerDTO(0, "Tất cả khách hàng", "", "", 0));
+            customerList.Insert(0, new CustomerDTO(0, "", "Tất cả khách hàng", "", 0));
 
-            this.customerCbx.ValueMember = "MaTacGia";
-            this.customerCbx.DisplayMember = "TenTacGia";
+            this.customerCbx.ValueMember = "Ma";
+            this.customerCbx.DisplayMember = "SoDienThoai";
             this.customerCbx.DataSource = customerList;
 
             this.customerCbx.SelectedIndex = 0;
         }
 
-        private void loadBookTypeCbx()
+        private void loadStaffCbx()
         {
-            List<BookTypeDTO> bookTypeList = BookTypeBUS.Instance.getAllData();
+            List<StaffDTO> staffList = StaffBUS.Instance.getAllData();
 
-            bookTypeList.Insert(0, new BookTypeDTO(0, "Tất cả thể loại"));
+            staffList.Insert(0, new StaffDTO(0, "Tất cả nhân viên", "", "", 0, 0, ""));
 
-            this.staffCbx.ValueMember = "MaTheLoai";
-            this.staffCbx.DisplayMember = "TenTheLoai";
-            this.staffCbx.DataSource = bookTypeList;
+            this.staffCbx.ValueMember = "Ma";
+            this.staffCbx.DisplayMember = "Ten";
+            this.staffCbx.DataSource = staffList;
+
+            this.staffCbx.SelectedIndex = 0;
         }
 
-        private void loadPublisherCbx()
+        private void loadSaleCbx()
         {
-            List<PublisherDTO> publisherList = PublisherBUS.Instance.getAllData();
+            List<SaleDTO> saleList = SaleBUS.Instance.getAllData();
 
-            publisherList.Insert(0, new PublisherDTO(0, "Tất cả nhà xuất bản", "", ""));
+            saleList.Insert(0, new SaleDTO(0, "Tất cả khuyến mãi", 0, new DateTime(), new DateTime()));
+            saleList.Insert(1, new SaleDTO(-1, "Không có khuyến mãi", 0, new DateTime(), new DateTime()));
 
-            this.saleCbx.ValueMember = "MaNhaXuatBan";
-            this.saleCbx.DisplayMember = "TenNhaXuatBan";
-            this.saleCbx.DataSource = publisherList;
+            this.saleCbx.ValueMember = "MaKhuyenMai";
+            this.saleCbx.DisplayMember = "TenKhuyenMai";
+            this.saleCbx.DataSource = saleList;
+
+            this.saleCbx.SelectedIndex = 0;
         }
 
-        private void BookManageGUI_Load(object sender, EventArgs e)
+        private void CustomerBillGUI_Load(object sender, EventArgs e)
         {
 
-            List<BookDTO> bookList = BookBUS.Instance.getAllData();
-            this.loadBookListToDataView(bookList);
+            List<CustomerBillDTO> customerBillList = CustomerBillBUS.Instance.getAllData();
+            this.loadCustomerBillListToDataView(customerBillList);
 
             this.loadCustomerCbx();
-            this.loadBookTypeCbx();
-            this.loadPublisherCbx();
+            this.loadStaffCbx();
+            this.loadSaleCbx();
             this.renderCheckBoxDgv();
+
             headerCheckbox.MouseClick += new MouseEventHandler(headerCheckbox_Clicked);
         }
 
@@ -138,14 +152,14 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             this.dgvCustomerBill.RefreshEdit();
         }
 
-        private List<BookDTO> handleFilter(string searchText)
+        private List<CustomerBillDTO> handleFilter(string searchText)
         {
             if (searchText == "Enter your search...")
             {
                 searchText = "";
             }
 
-            List<BookDTO> bookList = BookBUS.Instance.search(searchText);
+            List<CustomerBillDTO> customerBillList = CustomerBillBUS.Instance.search(searchText);
 
             if (this.fromPriceTxt.Text.ToString() != "Enter price from"
                 && this.toPriceTxt.Text.ToString() != "Enter price to"
@@ -154,77 +168,77 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             {
                 try
                 {
-                    bookList = bookList.FindAll(
-                        item => item.GiaBan >= Convert.ToDouble(this.fromPriceTxt.Text.ToString())
-                                && item.GiaBan <= Convert.ToDouble(this.toPriceTxt.Text.ToString()
+                    customerBillList = customerBillList.FindAll(
+                        item => item.TongTien >= Convert.ToDouble(this.fromPriceTxt.Text.ToString())
+                                && item.TongTien <= Convert.ToDouble(this.toPriceTxt.Text.ToString()
                     ));
                 }
                 catch
                 {
-                    MessageBox.Show("Giá phải là số");
+                    MessageBox.Show("Tổng tiền phải là số");
                 }
             }
 
-            int authorId = Convert.ToInt32(this.customerCbx.SelectedValue);
-            int bookTypeId = Convert.ToInt32(this.staffCbx.SelectedValue);
-            int publisherId = Convert.ToInt32(this.saleCbx.SelectedValue);
+            int customerId = Convert.ToInt32(this.customerCbx.SelectedValue);
+            int staffId = Convert.ToInt32(this.staffCbx.SelectedValue);
+            int saleId = Convert.ToInt32(this.saleCbx.SelectedValue);
 
-            List<BookDTO> newBookList = bookList.FindAll(book =>
+            List<CustomerBillDTO> newCustomerBillList = customerBillList.FindAll(customerBill =>
             {
-                if (authorId != 0 && bookTypeId != 0 && publisherId != 0)
+                if (customerId != 0 && staffId != 0 && saleId != 0)
                 {
-                    return book.MaTacGia == authorId &&
-                           book.MaTheLoai == bookTypeId &&
-                           book.MaNhaXuatBan == publisherId;
+                    return customerBill.MaKhachHang == customerId &&
+                           customerBill.MaNhanVien == staffId &&
+                           customerBill.MaKhuyenMai == saleId;
                 }
 
-                if (authorId == 0 && bookTypeId != 0 && publisherId != 0)
+                if (customerId == 0 && staffId != 0 && saleId != 0)
                 {
-                    return book.MaTheLoai == bookTypeId &&
-                           book.MaNhaXuatBan == publisherId;
+                    return customerBill.MaNhanVien == staffId &&
+                           customerBill.MaKhuyenMai == saleId;
                 }
 
-                if (authorId == 0 && bookTypeId == 0 && publisherId != 0)
+                if (customerId == 0 && staffId == 0 && saleId != 0)
                 {
-                    return book.MaNhaXuatBan == publisherId;
+                    return customerBill.MaKhuyenMai == saleId;
                 }
 
-                if (authorId == 0 && bookTypeId != 0 && publisherId == 0)
+                if (customerId == 0 && staffId != 0 && saleId == 0)
                 {
-                    return book.MaTheLoai == bookTypeId;
+                    return customerBill.MaNhanVien == staffId;
                 }
 
-                if (authorId != 0 && bookTypeId == 0 && publisherId == 0)
+                if (customerId != 0 && staffId == 0 && saleId == 0)
                 {
-                    return book.MaTacGia == authorId;
+                    return customerBill.MaKhachHang == customerId;
                 }
 
-                if (authorId != 0 && bookTypeId != 0 && publisherId == 0)
+                if (customerId != 0 && staffId != 0 && saleId == 0)
                 {
-                    return book.MaTacGia == authorId &&
-                           book.MaTheLoai == bookTypeId;
+                    return customerBill.MaKhachHang == customerId &&
+                           customerBill.MaNhanVien == staffId;
                 }
 
-                if (authorId != 0 && bookTypeId == 0 && publisherId != 0)
+                if (customerId != 0 && staffId == 0 && saleId != 0)
                 {
-                    return book.MaTacGia == authorId &&
-                           book.MaNhaXuatBan == publisherId;
+                    return customerBill.MaKhachHang == customerId &&
+                           customerBill.MaKhuyenMai == saleId;
                 }
 
                 return true;
             });
 
 
-            return newBookList;
+            return newCustomerBillList;
         }
 
         private void searchInput_TextChanged(object sender, EventArgs e)
         {
             this.searchInput.ForeColor = Color.Black;
 
-            List<BookDTO> bookList = handleFilter(this.searchInput.Text.ToString());
+            List<CustomerBillDTO> customerBillList = handleFilter(this.searchInput.Text.ToString());
 
-            this.loadBookListToDataView(bookList);
+            this.loadCustomerBillListToDataView(customerBillList);
         }
 
         private void searchInput_Click(object sender, EventArgs e)
@@ -243,29 +257,29 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                 this.searchInput.Text = "Enter your search...";
                 this.searchInput.ForeColor = Color.LightGray;
 
-                List<BookDTO> bookList = handleFilter(this.searchInput.Text.ToString());
+                List<CustomerBillDTO> customerBillList = handleFilter(this.searchInput.Text.ToString());
 
-                this.loadBookListToDataView(bookList);
+                this.loadCustomerBillListToDataView(customerBillList);
             }
         }
 
-        private void gunaAdvenceButton1_Click(object sender, EventArgs e)
+        private void addBtn_Click(object sender, EventArgs e)
         {
-            using (BookModal bookModal = new BookModal())
+            using (BookModal customerBillModal = new BookModal())
             {
-                bookModal.ShowDialog();
+                customerBillModal.ShowDialog();
 
 
-                if (bookModal.isSubmitSuccess)
+                if (customerBillModal.isSubmitSuccess)
                 {
-                    List<BookDTO> bookList = handleFilter(this.searchInput.Text.ToString());
+                    List<CustomerBillDTO> customerBillList = handleFilter(this.searchInput.Text.ToString());
 
-                    this.loadBookListToDataView(bookList);
+                    this.loadCustomerBillListToDataView(customerBillList);
                 }
             }
         }
 
-        private void gunaAdvenceButton4_Click(object sender, EventArgs e)
+        private void refreshBtn_Click(object sender, EventArgs e)
         {
             this.searchInput.Text = "Enter your search...";
             this.searchInput.ForeColor = Color.LightGray;
@@ -280,85 +294,85 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             this.staffCbx.SelectedIndex = 0;
             this.saleCbx.SelectedIndex = 0;
 
-            List<BookDTO> bookList = BookBUS.Instance.search("");
-            this.loadBookListToDataView(bookList);
+            List<CustomerBillDTO> customerBillList = handleFilter("");
+
+            this.loadCustomerBillListToDataView(customerBillList);
         }
 
-        private void authorCbx_SelectedIndexChanged(object sender, EventArgs e)
+        private void customerCbx_SelectedIndexChanged(object sender, EventArgs e)
         {
-            List<BookDTO> bookList = handleFilter(this.searchInput.Text.ToString());
+            List<CustomerBillDTO> customerBillList = handleFilter(this.searchInput.Text.ToString());
 
-            this.loadBookListToDataView(bookList);
+            this.loadCustomerBillListToDataView(customerBillList);
         }
 
-        private void bookTypeCbx_SelectedIndexChanged(object sender, EventArgs e)
+        private void staffCbx_SelectedIndexChanged(object sender, EventArgs e)
         {
-            List<BookDTO> bookList = handleFilter(this.searchInput.Text.ToString());
+            List<CustomerBillDTO> customerBillList = handleFilter(this.searchInput.Text.ToString());
 
-            this.loadBookListToDataView(bookList);
+            this.loadCustomerBillListToDataView(customerBillList);
         }
 
-        private void publisherCbx_SelectedIndexChanged(object sender, EventArgs e)
+        private void saleCbx_SelectedIndexChanged(object sender, EventArgs e)
         {
-            List<BookDTO> bookList = handleFilter(this.searchInput.Text.ToString());
+            List<CustomerBillDTO> customerBillList = handleFilter(this.searchInput.Text.ToString());
 
-            this.loadBookListToDataView(bookList);
+            this.loadCustomerBillListToDataView(customerBillList);
         }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
+        private void fromPriceTxt_TextChanged(object sender, EventArgs e)
         {
             this.fromPriceTxt.ForeColor = Color.Black;
 
-            List<BookDTO> bookList = handleFilter(this.searchInput.Text.ToString());
+            List<CustomerBillDTO> customerBillList = handleFilter(this.searchInput.Text.ToString());
 
-            this.loadBookListToDataView(bookList);
+            this.loadCustomerBillListToDataView(customerBillList);
         }
 
-        private void textBox2_Leave(object sender, EventArgs e)
+        private void fromPriceTxt_Leave(object sender, EventArgs e)
         {
             if (this.fromPriceTxt.Text.Length <= 0)
             {
                 this.fromPriceTxt.Text = "Enter price from";
                 this.fromPriceTxt.ForeColor = Color.LightGray;
 
-                List<BookDTO> bookList = handleFilter(this.searchInput.Text.ToString());
+                List<CustomerBillDTO> customerBillList = handleFilter(this.searchInput.Text.ToString());
 
-                this.loadBookListToDataView(bookList);
+                this.loadCustomerBillListToDataView(customerBillList);
             }
         }
 
-        private void textBox2_Click(object sender, EventArgs e)
+        private void fromPriceTxt_Click(object sender, EventArgs e)
         {
             if (this.fromPriceTxt.Text.Equals("Enter price from"))
             {
                 this.fromPriceTxt.Text = "";
-
             }
         }
 
-        private void textBox3_TextChanged(object sender, EventArgs e)
+        private void toPriceTxt_TextChanged(object sender, EventArgs e)
         {
             this.toPriceTxt.ForeColor = Color.Black;
 
-            List<BookDTO> bookList = handleFilter(this.searchInput.Text.ToString());
+            List<CustomerBillDTO> customerBillList = handleFilter(this.searchInput.Text.ToString());
 
-            this.loadBookListToDataView(bookList);
+            this.loadCustomerBillListToDataView(customerBillList);
         }
 
-        private void textBox3_Leave(object sender, EventArgs e)
+        private void toPriceTxt_Leave(object sender, EventArgs e)
         {
             if (this.toPriceTxt.Text.Length <= 0)
             {
                 this.toPriceTxt.Text = "Enter price to";
                 this.toPriceTxt.ForeColor = Color.LightGray;
 
-                List<BookDTO> bookList = handleFilter(this.searchInput.Text.ToString());
+                List<CustomerBillDTO> customerBillList = handleFilter(this.searchInput.Text.ToString());
 
-                this.loadBookListToDataView(bookList);
+                this.loadCustomerBillListToDataView(customerBillList);
             }
         }
 
-        private void textBox3_Click(object sender, EventArgs e)
+        private void toPriceTxt_Click(object sender, EventArgs e)
         {
             if (this.toPriceTxt.Text.Equals("Enter price to"))
             {
@@ -369,13 +383,13 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
         private void exportBtn_Click(object sender, EventArgs e)
         {
-            List<BookDTO> bookList = handleFilter(this.searchInput.Text.ToString());
+            List<CustomerBillDTO> customerBillList = handleFilter(this.searchInput.Text.ToString());
 
-            DataTable dataTable = CustomExcel.Instance.ConvertListToDataTable(bookList);
+            DataTable dataTable = CustomExcel.Instance.ConvertListToDataTable(customerBillList);
 
             string[] headerList = new string[] { "Mã sách", "Tên sách", "Tác giả", "Thể loại", "Nhà xuất bản", "Giá bán", "Giá nhập", "Năm xuất bản", "Còn lại" };
 
-            CustomExcel.Instance.ExportFile(dataTable, "Book Manage", "Cửa hàng bán sách", headerList, 2);
+            CustomExcel.Instance.ExportFile(dataTable, "Customer Bill Manage", "Cửa hàng bán sách", headerList, 2);
         }
 
         private void editBtn_Click(object sender, EventArgs e)
@@ -386,27 +400,27 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                 return;
             }
 
-            using (BookModal bookModal = new BookModal("Sửa sách"))
+            using (BookModal customerBillModal = new BookModal("Sửa đơn khách hàng"))
             {
                 DataGridViewRow row = this.dgvCustomerBill.Rows[this.dgvCustomerBill.CurrentCell.RowIndex];
 
-                BookDTO book = BookBUS.Instance.getById(row.Cells[1].Value.ToString());
+                BookDTO customerBill = BookBUS.Instance.getById(row.Cells[1].Value.ToString());
 
-                bookModal.updateBook = book;
+                customerBillModal.updateBook = customerBill;
 
-                if (bookModal.updateBook == null)
+                if (customerBillModal.updateBook == null)
                 {
                     MessageBox.Show("Đã xảy ra lỗi vui lòng thử lại sau!!");
                     return;
                 }
 
-                bookModal.ShowDialog();
+                customerBillModal.ShowDialog();
 
-                if (bookModal.isSubmitSuccess)
+                if (customerBillModal.isSubmitSuccess)
                 {
-                    List<BookDTO> bookList = handleFilter(this.searchInput.Text.ToString());
+                    List<CustomerBillDTO> customerBillList = handleFilter(this.searchInput.Text.ToString());
 
-                    this.loadBookListToDataView(bookList);
+                    this.loadCustomerBillListToDataView(customerBillList);
                 }
             }
         }
@@ -425,12 +439,12 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
             if (!isHaveSelect)
             {
-                MessageBox.Show("Bạn chưa chọn những sách cần xóa");
+                MessageBox.Show("Bạn chưa chọn những đơn hàng cần xóa");
                 return;
             }
 
             DialogResult dlgResult = MessageBox.Show(
-                "Bạn chắc chắn muốn xóa các sách đã chọn chứ chứ?",
+                "Bạn chắc chắn muốn xóa các đơn hàng đã chọn chứ chứ?",
                 "Xác nhận",
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question,
@@ -445,10 +459,9 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                     {
                         if (BookBUS.Instance.delete(row.Cells[1].Value.ToString()))
                         {
+                            List<CustomerBillDTO> customerBillList = handleFilter(this.searchInput.Text.ToString());
 
-                            List<BookDTO> bookList = handleFilter(this.searchInput.Text.ToString());
-
-                            this.loadBookListToDataView(bookList);
+                            this.loadCustomerBillListToDataView(customerBillList);
 
                             row.Cells[0].Value = false;
                         }
@@ -466,30 +479,6 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             if (e.RowIndex < 0 || e.ColumnIndex <= 0)
             {
                 return;
-            }
-
-            using (BookModal bookModal = new BookModal("Sửa sách"))
-            {
-                DataGridViewRow row = this.dgvCustomerBill.Rows[e.RowIndex];
-
-                BookDTO book = BookBUS.Instance.getById(row.Cells[1].Value.ToString());
-
-                bookModal.updateBook = book;
-
-                if (bookModal.updateBook == null)
-                {
-                    MessageBox.Show("Đã xảy ra lỗi vui lòng thử lại sau!!");
-                    return;
-                }
-
-                bookModal.ShowDialog();
-
-                if (bookModal.isSubmitSuccess)
-                {
-                    List<BookDTO> bookList = handleFilter(this.searchInput.Text.ToString());
-
-                    this.loadBookListToDataView(bookList);
-                }
             }
         }
     }

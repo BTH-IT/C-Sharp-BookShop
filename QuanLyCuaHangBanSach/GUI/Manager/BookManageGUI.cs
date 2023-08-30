@@ -22,15 +22,8 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         private void renderCheckBoxDgv()
         {
             int size = 25;
-            DataGridViewCheckBoxColumn cbxColumn = new DataGridViewCheckBoxColumn();
-            cbxColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            cbxColumn.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            cbxColumn.MinimumWidth = 50;
-            cbxColumn.ReadOnly = false;
-            this.dgvBook.Columns.Insert(0, cbxColumn);
 
             Rectangle rect = this.dgvBook.GetCellDisplayRectangle(0, -1, false);
-
 
             headerCheckbox = new CheckBox();
             
@@ -56,7 +49,9 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
             foreach (BookDTO book in bookList)
             {
+                Console.WriteLine(book.MaSach);
                 this.dgvBook.Rows.Add(new object[] {
+                    false,
                     book.MaSach,
                     book.TenSach,
                     book.HinhAnh,
