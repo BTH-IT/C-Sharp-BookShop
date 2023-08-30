@@ -9,15 +9,15 @@ namespace QuanLyCuaHangBanSach.DTO
 {
     public class BillDetailDTO
     {
-        protected int MaDon { get; set; }
-        protected int MaSach { get; set; }
-        protected int SoLuong { get; set; }
-        protected double DonGia { get; set; }
-        protected double ThanhTien { get; }
+        public int MaDon { get; protected set; }
+        public int MaSach { get; set; }
+        public int SoLuong { get; set; }
+        public double DonGia { get; set; }
+        public double ThanhTien { get; }
 
-        protected BillDetailDTO() { }
+        public BillDetailDTO() { }
 
-        protected BillDetailDTO(
+        public BillDetailDTO(
             int maDon,
             int maSach,
             int soLuong,

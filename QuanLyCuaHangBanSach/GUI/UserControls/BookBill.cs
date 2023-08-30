@@ -1,0 +1,38 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using QuanLyCuaHangBanSach.BUS;
+using QuanLyCuaHangBanSach.DTO;
+
+namespace QuanLyCuaHangBanSach.GUI.UserControls
+{
+    public partial class BookBill : UserControl
+    {
+        public BookBill()
+        {
+            InitializeComponent();
+        }
+
+        public void addData(int maSach, int soLuong, double donGia)
+        {
+            BookDTO book = BookBUS.Instance.getById(maSach.ToString());
+
+            MemoryStream ms = new MemoryStream(book.HinhAnh);
+            Image img = Image.FromStream(ms);
+
+            this.name.Text = book.TenSach;
+            this.amountInput.Text = soLuong.ToString();
+            this.price.Text = donGia.ToString();
+            this.pictureBook.Image = img;
+
+            this.pictureBook.SizeMode = PictureBoxSizeMode.StretchImage;
+        }
+    }
+}

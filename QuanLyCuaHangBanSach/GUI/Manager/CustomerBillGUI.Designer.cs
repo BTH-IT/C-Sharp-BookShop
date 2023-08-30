@@ -44,17 +44,6 @@
             this.editBtn = new Guna.UI.WinForms.GunaAdvenceButton();
             this.addBtn = new Guna.UI.WinForms.GunaAdvenceButton();
             this.dgvCustomerBill = new Guna.UI.WinForms.GunaDataGridView();
-            this.searchInput = new System.Windows.Forms.TextBox();
-            this.line1 = new System.Windows.Forms.Panel();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.gradientPanel1 = new QuanLyCuaHangBanSach.GradientPanel();
-            this.fromPriceTxt = new System.Windows.Forms.TextBox();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.toPriceTxt = new System.Windows.Forms.TextBox();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.Column9 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -64,9 +53,27 @@
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.searchInput = new System.Windows.Forms.TextBox();
+            this.line1 = new System.Windows.Forms.Panel();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.dateTimeFrom = new Guna.UI.WinForms.GunaDateTimePicker();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.dateTimeTo = new Guna.UI.WinForms.GunaDateTimePicker();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.filterCkx = new Guna.UI.WinForms.GunaMediumCheckBox();
+            this.gradientPanel1 = new QuanLyCuaHangBanSach.GradientPanel();
+            this.fromPriceTxt = new System.Windows.Forms.TextBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.toPriceTxt = new System.Windows.Forms.TextBox();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomerBill)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel5.SuspendLayout();
             this.gradientPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -85,13 +92,13 @@
             this.saleCbx.FormattingEnabled = true;
             this.saleCbx.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.saleCbx.ItemHeight = 30;
-            this.saleCbx.Location = new System.Drawing.Point(593, 8);
+            this.saleCbx.Location = new System.Drawing.Point(520, 10);
             this.saleCbx.Margin = new System.Windows.Forms.Padding(3, 3, 100, 3);
             this.saleCbx.Name = "saleCbx";
             this.saleCbx.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.saleCbx.OnHoverItemForeColor = System.Drawing.Color.White;
             this.saleCbx.Radius = 6;
-            this.saleCbx.Size = new System.Drawing.Size(142, 36);
+            this.saleCbx.Size = new System.Drawing.Size(159, 36);
             this.saleCbx.TabIndex = 38;
             this.saleCbx.TabStop = false;
             this.saleCbx.SelectedIndexChanged += new System.EventHandler(this.saleCbx_SelectedIndexChanged);
@@ -110,12 +117,12 @@
             this.staffCbx.ForeColor = System.Drawing.Color.Black;
             this.staffCbx.FormattingEnabled = true;
             this.staffCbx.ItemHeight = 30;
-            this.staffCbx.Location = new System.Drawing.Point(445, 8);
+            this.staffCbx.Location = new System.Drawing.Point(361, 10);
             this.staffCbx.Name = "staffCbx";
             this.staffCbx.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.staffCbx.OnHoverItemForeColor = System.Drawing.Color.White;
             this.staffCbx.Radius = 6;
-            this.staffCbx.Size = new System.Drawing.Size(142, 36);
+            this.staffCbx.Size = new System.Drawing.Size(153, 36);
             this.staffCbx.TabIndex = 37;
             this.staffCbx.TabStop = false;
             this.staffCbx.SelectedIndexChanged += new System.EventHandler(this.staffCbx_SelectedIndexChanged);
@@ -134,12 +141,12 @@
             this.customerCbx.ForeColor = System.Drawing.Color.Black;
             this.customerCbx.FormattingEnabled = true;
             this.customerCbx.ItemHeight = 30;
-            this.customerCbx.Location = new System.Drawing.Point(297, 8);
+            this.customerCbx.Location = new System.Drawing.Point(192, 10);
             this.customerCbx.Name = "customerCbx";
             this.customerCbx.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.customerCbx.OnHoverItemForeColor = System.Drawing.Color.White;
             this.customerCbx.Radius = 6;
-            this.customerCbx.Size = new System.Drawing.Size(142, 36);
+            this.customerCbx.Size = new System.Drawing.Size(163, 36);
             this.customerCbx.TabIndex = 36;
             this.customerCbx.TabStop = false;
             this.customerCbx.SelectedIndexChanged += new System.EventHandler(this.customerCbx_SelectedIndexChanged);
@@ -154,7 +161,7 @@
             this.panel1.Controls.Add(this.addBtn);
             this.panel1.Location = new System.Drawing.Point(12, 703);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1020, 54);
+            this.panel1.Size = new System.Drawing.Size(1371, 54);
             this.panel1.TabIndex = 35;
             // 
             // exportBtn
@@ -242,7 +249,7 @@
             this.deleteBtn.Image = ((System.Drawing.Image)(resources.GetObject("deleteBtn.Image")));
             this.deleteBtn.ImageSize = new System.Drawing.Size(20, 20);
             this.deleteBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.deleteBtn.Location = new System.Drawing.Point(936, 6);
+            this.deleteBtn.Location = new System.Drawing.Point(1286, 6);
             this.deleteBtn.Name = "deleteBtn";
             this.deleteBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.deleteBtn.OnHoverBorderColor = System.Drawing.Color.Transparent;
@@ -275,7 +282,7 @@
             this.editBtn.Image = ((System.Drawing.Image)(resources.GetObject("editBtn.Image")));
             this.editBtn.ImageSize = new System.Drawing.Size(20, 20);
             this.editBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.editBtn.Location = new System.Drawing.Point(817, 6);
+            this.editBtn.Location = new System.Drawing.Point(1167, 6);
             this.editBtn.Name = "editBtn";
             this.editBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.editBtn.OnHoverBorderColor = System.Drawing.Color.Transparent;
@@ -308,7 +315,7 @@
             this.addBtn.Image = ((System.Drawing.Image)(resources.GetObject("addBtn.Image")));
             this.addBtn.ImageSize = new System.Drawing.Size(20, 20);
             this.addBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.addBtn.Location = new System.Drawing.Point(694, 6);
+            this.addBtn.Location = new System.Drawing.Point(1044, 6);
             this.addBtn.Name = "addBtn";
             this.addBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.addBtn.OnHoverBorderColor = System.Drawing.Color.Transparent;
@@ -364,7 +371,7 @@
             this.dgvCustomerBill.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvCustomerBill.EnableHeadersVisualStyles = false;
             this.dgvCustomerBill.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvCustomerBill.Location = new System.Drawing.Point(12, 64);
+            this.dgvCustomerBill.Location = new System.Drawing.Point(12, 68);
             this.dgvCustomerBill.Name = "dgvCustomerBill";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
@@ -386,7 +393,7 @@
             this.dgvCustomerBill.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvCustomerBill.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvCustomerBill.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCustomerBill.Size = new System.Drawing.Size(1020, 636);
+            this.dgvCustomerBill.Size = new System.Drawing.Size(1371, 632);
             this.dgvCustomerBill.TabIndex = 34;
             this.dgvCustomerBill.TabStop = false;
             this.dgvCustomerBill.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna;
@@ -412,6 +419,92 @@
             this.dgvCustomerBill.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvCustomerBill.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
+            // Column9
+            // 
+            this.Column9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Column9.FillWeight = 50F;
+            this.Column9.Frozen = true;
+            this.Column9.HeaderText = "";
+            this.Column9.MinimumWidth = 50;
+            this.Column9.Name = "Column9";
+            this.Column9.Width = 50;
+            // 
+            // Column1
+            // 
+            this.Column1.FillWeight = 61.60671F;
+            this.Column1.HeaderText = "Mã Đơn";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column1.ToolTipText = "Mã Đơn";
+            // 
+            // Column6
+            // 
+            this.Column6.FillWeight = 61.60671F;
+            this.Column6.HeaderText = "Tên Khách Hàng";
+            this.Column6.MinimumWidth = 6;
+            this.Column6.Name = "Column6";
+            this.Column6.ToolTipText = "Tên Khách Hàng";
+            // 
+            // Column2
+            // 
+            this.Column2.FillWeight = 61.60671F;
+            this.Column2.HeaderText = "Số Điện Thoại Khách Hàng";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column2.ToolTipText = "Số Điện Thoại Khách Hàng";
+            // 
+            // Column3
+            // 
+            this.Column3.FillWeight = 61.60671F;
+            this.Column3.HeaderText = "Nhân Viên";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column3.ToolTipText = "Nhân Viên";
+            // 
+            // Column5
+            // 
+            this.Column5.FillWeight = 61.60671F;
+            this.Column5.HeaderText = "Khuyến Mãi";
+            this.Column5.MinimumWidth = 6;
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            this.Column5.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column5.ToolTipText = "Khuyến Mãi";
+            // 
+            // Column8
+            // 
+            this.Column8.FillWeight = 61.60671F;
+            this.Column8.HeaderText = "Phần Trăm";
+            this.Column8.MinimumWidth = 6;
+            this.Column8.Name = "Column8";
+            this.Column8.ToolTipText = "Phần Trăm";
+            // 
+            // Column4
+            // 
+            this.Column4.FillWeight = 61.60671F;
+            this.Column4.HeaderText = "Ngày Lập";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column4.ToolTipText = "Ngày Lập";
+            // 
+            // Column7
+            // 
+            this.Column7.FillWeight = 61.60671F;
+            this.Column7.HeaderText = "Tổng tiền";
+            this.Column7.MinimumWidth = 6;
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            this.Column7.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column7.ToolTipText = "Tổng tiền";
+            // 
             // searchInput
             // 
             this.searchInput.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -419,9 +512,9 @@
             this.searchInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.searchInput.Font = new System.Drawing.Font("#9Slide03 Cabin", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.searchInput.ForeColor = System.Drawing.Color.LightGray;
-            this.searchInput.Location = new System.Drawing.Point(12, 10);
+            this.searchInput.Location = new System.Drawing.Point(18, 12);
             this.searchInput.Name = "searchInput";
-            this.searchInput.Size = new System.Drawing.Size(237, 30);
+            this.searchInput.Size = new System.Drawing.Size(126, 30);
             this.searchInput.TabIndex = 31;
             this.searchInput.TabStop = false;
             this.searchInput.Text = "Enter your search...";
@@ -433,9 +526,9 @@
             // 
             this.line1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.line1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(212)))), ((int)(((byte)(191)))));
-            this.line1.Location = new System.Drawing.Point(12, 43);
+            this.line1.Location = new System.Drawing.Point(18, 45);
             this.line1.Name = "line1";
-            this.line1.Size = new System.Drawing.Size(279, 1);
+            this.line1.Size = new System.Drawing.Size(168, 1);
             this.line1.TabIndex = 32;
             // 
             // dataGridViewImageColumn1
@@ -450,12 +543,110 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(255, 10);
+            this.pictureBox1.Location = new System.Drawing.Point(150, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(36, 30);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 33;
             this.pictureBox1.TabStop = false;
+            // 
+            // dateTimeFrom
+            // 
+            this.dateTimeFrom.BackColor = System.Drawing.Color.Transparent;
+            this.dateTimeFrom.BaseColor = System.Drawing.Color.White;
+            this.dateTimeFrom.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.dateTimeFrom.BorderSize = 1;
+            this.dateTimeFrom.CustomFormat = null;
+            this.dateTimeFrom.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
+            this.dateTimeFrom.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.dateTimeFrom.Font = new System.Drawing.Font("#9Slide03 Cabin", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimeFrom.ForeColor = System.Drawing.Color.Black;
+            this.dateTimeFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimeFrom.Location = new System.Drawing.Point(81, 0);
+            this.dateTimeFrom.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dateTimeFrom.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dateTimeFrom.Name = "dateTimeFrom";
+            this.dateTimeFrom.OnHoverBaseColor = System.Drawing.Color.White;
+            this.dateTimeFrom.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.dateTimeFrom.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.dateTimeFrom.OnPressedColor = System.Drawing.Color.Black;
+            this.dateTimeFrom.Radius = 6;
+            this.dateTimeFrom.Size = new System.Drawing.Size(130, 36);
+            this.dateTimeFrom.TabIndex = 40;
+            this.dateTimeFrom.Text = "8/30/2023";
+            this.dateTimeFrom.Value = new System.DateTime(2023, 8, 30, 19, 55, 8, 854);
+            this.dateTimeFrom.ValueChanged += new System.EventHandler(this.dateTimeFrom_ValueChanged);
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.filterCkx);
+            this.panel5.Controls.Add(this.dateTimeTo);
+            this.panel5.Controls.Add(this.label3);
+            this.panel5.Controls.Add(this.label2);
+            this.panel5.Controls.Add(this.dateTimeFrom);
+            this.panel5.Location = new System.Drawing.Point(985, 10);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(400, 36);
+            this.panel5.TabIndex = 41;
+            // 
+            // dateTimeTo
+            // 
+            this.dateTimeTo.BackColor = System.Drawing.Color.Transparent;
+            this.dateTimeTo.BaseColor = System.Drawing.Color.White;
+            this.dateTimeTo.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.dateTimeTo.BorderSize = 1;
+            this.dateTimeTo.CustomFormat = null;
+            this.dateTimeTo.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
+            this.dateTimeTo.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.dateTimeTo.Font = new System.Drawing.Font("#9Slide03 Cabin", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimeTo.ForeColor = System.Drawing.Color.Black;
+            this.dateTimeTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimeTo.Location = new System.Drawing.Point(270, 0);
+            this.dateTimeTo.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dateTimeTo.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dateTimeTo.Name = "dateTimeTo";
+            this.dateTimeTo.OnHoverBaseColor = System.Drawing.Color.White;
+            this.dateTimeTo.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.dateTimeTo.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.dateTimeTo.OnPressedColor = System.Drawing.Color.Black;
+            this.dateTimeTo.Radius = 6;
+            this.dateTimeTo.Size = new System.Drawing.Size(130, 36);
+            this.dateTimeTo.TabIndex = 42;
+            this.dateTimeTo.Text = "8/30/2023";
+            this.dateTimeTo.Value = new System.DateTime(2023, 8, 30, 19, 55, 8, 854);
+            this.dateTimeTo.ValueChanged += new System.EventHandler(this.dateTimeTo_ValueChanged);
+            // 
+            // label3
+            // 
+            this.label3.Font = new System.Drawing.Font("#9Slide03 Cabin", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(217, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(52, 36);
+            this.label3.TabIndex = 41;
+            this.label3.Text = "- Đến :";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("#9Slide03 Cabin", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(43, -1);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(32, 37);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Từ :";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // filterCkx
+            // 
+            this.filterCkx.BaseColor = System.Drawing.Color.White;
+            this.filterCkx.CheckedOffColor = System.Drawing.Color.LightGray;
+            this.filterCkx.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.filterCkx.FillColor = System.Drawing.Color.White;
+            this.filterCkx.Location = new System.Drawing.Point(17, 9);
+            this.filterCkx.Name = "filterCkx";
+            this.filterCkx.Size = new System.Drawing.Size(20, 20);
+            this.filterCkx.TabIndex = 42;
+            this.filterCkx.CheckedChanged += new System.EventHandler(this.filterCkx_CheckedChanged);
             // 
             // gradientPanel1
             // 
@@ -467,7 +658,7 @@
             this.gradientPanel1.Controls.Add(this.panel4);
             this.gradientPanel1.Controls.Add(this.panel2);
             this.gradientPanel1.Controls.Add(this.label1);
-            this.gradientPanel1.Location = new System.Drawing.Point(741, 8);
+            this.gradientPanel1.Location = new System.Drawing.Point(688, 10);
             this.gradientPanel1.Name = "gradientPanel1";
             this.gradientPanel1.Size = new System.Drawing.Size(291, 36);
             this.gradientPanel1.TabIndex = 39;
@@ -545,95 +736,13 @@
             this.label1.Text = "$";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // Column9
-            // 
-            this.Column9.FillWeight = 50F;
-            this.Column9.HeaderText = "";
-            this.Column9.MinimumWidth = 50;
-            this.Column9.Name = "Column9";
-            // 
-            // Column1
-            // 
-            this.Column1.FillWeight = 77.84091F;
-            this.Column1.HeaderText = "Mã Đơn";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column1.ToolTipText = "Mã Đơn";
-            // 
-            // Column6
-            // 
-            this.Column6.FillWeight = 77.84091F;
-            this.Column6.HeaderText = "Tên Khách Hàng";
-            this.Column6.MinimumWidth = 6;
-            this.Column6.Name = "Column6";
-            this.Column6.ToolTipText = "Tên Khách Hàng";
-            // 
-            // Column2
-            // 
-            this.Column2.FillWeight = 77.84091F;
-            this.Column2.HeaderText = "Số Điện Thoại Khách Hàng";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column2.ToolTipText = "Số Điện Thoại Khách Hàng";
-            // 
-            // Column3
-            // 
-            this.Column3.FillWeight = 77.84091F;
-            this.Column3.HeaderText = "Nhân Viên";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column3.ToolTipText = "Nhân Viên";
-            // 
-            // Column5
-            // 
-            this.Column5.FillWeight = 77.84091F;
-            this.Column5.HeaderText = "Khuyến Mãi";
-            this.Column5.MinimumWidth = 6;
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            this.Column5.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column5.ToolTipText = "Khuyến Mãi";
-            // 
-            // Column8
-            // 
-            this.Column8.FillWeight = 77.84091F;
-            this.Column8.HeaderText = "Phần Trăm";
-            this.Column8.MinimumWidth = 6;
-            this.Column8.Name = "Column8";
-            this.Column8.ToolTipText = "Phần Trăm";
-            // 
-            // Column4
-            // 
-            this.Column4.FillWeight = 77.84091F;
-            this.Column4.HeaderText = "Ngày Lập";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            this.Column4.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column4.ToolTipText = "Ngày Lập";
-            // 
-            // Column7
-            // 
-            this.Column7.FillWeight = 77.84091F;
-            this.Column7.HeaderText = "Tổng tiền";
-            this.Column7.MinimumWidth = 6;
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
-            this.Column7.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column7.ToolTipText = "Tổng tiền";
-            // 
             // CustomerBillGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
-            this.ClientSize = new System.Drawing.Size(1044, 764);
+            this.ClientSize = new System.Drawing.Size(1400, 764);
+            this.Controls.Add(this.panel5);
             this.Controls.Add(this.gradientPanel1);
             this.Controls.Add(this.saleCbx);
             this.Controls.Add(this.staffCbx);
@@ -654,6 +763,7 @@
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomerBill)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel5.ResumeLayout(false);
             this.gradientPanel1.ResumeLayout(false);
             this.gradientPanel1.PerformLayout();
             this.ResumeLayout(false);
@@ -684,6 +794,7 @@
         private System.Windows.Forms.TextBox searchInput;
         private System.Windows.Forms.Panel line1;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
+        private Guna.UI.WinForms.GunaDateTimePicker dateTimeFrom;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Column9;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
@@ -693,5 +804,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.Panel panel5;
+        private Guna.UI.WinForms.GunaDateTimePicker dateTimeTo;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private Guna.UI.WinForms.GunaMediumCheckBox filterCkx;
     }
 }

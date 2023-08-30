@@ -130,6 +130,8 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
         private void CustomerBillGUI_Load(object sender, EventArgs e)
         {
+            this.dateTimeFrom.Enabled = this.filterCkx.Checked;
+            this.dateTimeTo.Enabled = this.filterCkx.Checked;
 
             List<CustomerBillDTO> customerBillList = CustomerBillBUS.Instance.getAllData();
             this.loadCustomerBillListToDataView(customerBillList);
@@ -170,12 +172,27 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                 {
                     customerBillList = customerBillList.FindAll(
                         item => item.TongTien >= Convert.ToDouble(this.fromPriceTxt.Text.ToString())
-                                && item.TongTien <= Convert.ToDouble(this.toPriceTxt.Text.ToString()
-                    ));
+                                && item.TongTien <= Convert.ToDouble(this.toPriceTxt.Text.ToString())
+                    );
                 }
                 catch
                 {
                     MessageBox.Show("Tổng tiền phải là số");
+                }
+            }
+
+            if (DateTime.Compare(this.dateTimeFrom.Value, this.dateTimeTo.Value) <= 0 && this.filterCkx.Checked)
+            {
+                try
+                {
+                    customerBillList = customerBillList.FindAll(
+                        item => (DateTime.Compare(item.NgayLap, this.dateTimeFrom.Value) >= 0)
+                                && (DateTime.Compare(item.NgayLap, this.dateTimeTo.Value) <= 0)
+                    );
+                }
+                catch
+                {
+                    MessageBox.Show("Lọc theo khoảng ngày không hợp lệ");
                 }
             }
 
@@ -294,6 +311,10 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             this.staffCbx.SelectedIndex = 0;
             this.saleCbx.SelectedIndex = 0;
 
+            this.filterCkx.Checked = false;
+            this.dateTimeFrom.Enabled = false;
+            this.dateTimeTo.Enabled = false;
+
             List<CustomerBillDTO> customerBillList = handleFilter("");
 
             this.loadCustomerBillListToDataView(customerBillList);
@@ -400,28 +421,20 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                 return;
             }
 
-            using (BookModal customerBillModal = new BookModal("Sửa đơn khách hàng"))
+            DataGridViewRow row = this.dgvCustomerBill.Rows[this.dgvCustomerBill.CurrentCell.RowIndex];
+            
+            using (CustomerBillModal customerBillModal = new CustomerBillModal(Convert.ToInt32(row.Cells[1].Value)))
             {
-                DataGridViewRow row = this.dgvCustomerBill.Rows[this.dgvCustomerBill.CurrentCell.RowIndex];
-
                 BookDTO customerBill = BookBUS.Instance.getById(row.Cells[1].Value.ToString());
-
-                customerBillModal.updateBook = customerBill;
-
-                if (customerBillModal.updateBook == null)
-                {
-                    MessageBox.Show("Đã xảy ra lỗi vui lòng thử lại sau!!");
-                    return;
-                }
 
                 customerBillModal.ShowDialog();
 
-                if (customerBillModal.isSubmitSuccess)
+                /*if (customerBillModal.isSubmitSuccess)
                 {
                     List<CustomerBillDTO> customerBillList = handleFilter(this.searchInput.Text.ToString());
 
                     this.loadCustomerBillListToDataView(customerBillList);
-                }
+                }*/
             }
         }
 
@@ -480,6 +493,44 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             {
                 return;
             }
+        }
+
+        private void dateTimeFrom_ValueChanged(object sender, EventArgs e)
+        {
+            bool isValid = DateTime.Compare(dateTimeFrom.Value, dateTimeTo.Value) > 0;
+
+            if (isValid)
+            {
+                dateTimeFrom.Value = dateTimeTo.Value;
+                MessageBox.Show("Bạn không thể chọn ngày lớn hơn ngày " + dateTimeTo.Value.GetDateTimeFormats()[0]);
+                return;
+            }
+
+            List<CustomerBillDTO> customerBillList = handleFilter(this.searchInput.Text.ToString());
+
+            this.loadCustomerBillListToDataView(customerBillList);
+        }
+
+        private void dateTimeTo_ValueChanged(object sender, EventArgs e)
+        {
+            bool isValid = DateTime.Compare(dateTimeTo.Value, dateTimeFrom.Value) < 0;
+
+            if (isValid)
+            {
+                dateTimeTo.Value = dateTimeFrom.Value;
+                MessageBox.Show("Bạn không thể chọn ngày nhỏ hơn ngày " + dateTimeFrom.Value.GetDateTimeFormats()[0]);
+                return;
+            }
+
+            List<CustomerBillDTO> customerBillList = handleFilter(this.searchInput.Text.ToString());
+
+            this.loadCustomerBillListToDataView(customerBillList);
+        }
+
+        private void filterCkx_CheckedChanged(object sender, EventArgs e)
+        {
+            this.dateTimeFrom.Enabled = this.filterCkx.Checked;
+            this.dateTimeTo.Enabled = this.filterCkx.Checked;
         }
     }
 }

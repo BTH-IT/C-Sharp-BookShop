@@ -387,11 +387,23 @@
     <Compile Include="GUI\Modal\BookModal.Designer.cs">
       <DependentUpon>BookModal.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Modal\CustomerBillModal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Modal\CustomerBillModal.Designer.cs">
+      <DependentUpon>CustomerBillModal.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\test.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\test.Designer.cs">
       <DependentUpon>test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UserControls\BookBill.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UserControls\BookBill.Designer.cs">
+      <DependentUpon>BookBill.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Vendor\VendorGUI.cs">
       <SubType>Form</SubType>
@@ -427,8 +439,14 @@
     <EmbeddedResource Include="GUI\Modal\BookModal.resx">
       <DependentUpon>BookModal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Modal\CustomerBillModal.resx">
+      <DependentUpon>CustomerBillModal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\test.resx">
       <DependentUpon>test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UserControls\BookBill.resx">
+      <DependentUpon>BookBill.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Vendor\VendorGUI.resx">
       <DependentUpon>VendorGUI.cs</DependentUpon>

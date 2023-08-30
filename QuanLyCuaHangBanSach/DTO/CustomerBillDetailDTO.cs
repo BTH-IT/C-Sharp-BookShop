@@ -14,7 +14,7 @@ namespace QuanLyCuaHangBanSach.DTO
         }
 
         public CustomerBillDetailDTO(
-            int maDonHang, int maSach, int soLuong, long donGia
+            int maDonHang, int maSach, int soLuong, double donGia
         ) : base(maDonHang, maSach, soLuong, donGia)
         {
         }
@@ -24,7 +24,7 @@ namespace QuanLyCuaHangBanSach.DTO
             this.MaDon = (int)row["maDonKhachHang"];
             this.MaSach = (int)row["maSach"];
             this.SoLuong = (int)row["soLuong"];
-            this.DonGia = (double)row["donGia"];
+            this.DonGia = Convert.ToDouble(row["donGia"]);
         }
     }
 }

@@ -51,7 +51,11 @@ namespace QuanLyCuaHangBanSach.BUS
         {
             return CustomerBillDAO.Instance.getById(id);
         }
-
+        public List<CustomerBillDetailDTO> getCustomerBillDetail(string id)
+        {
+            return CustomerBillDAO.Instance.getCustomerBillDetail(id);
+        }
+        
         public List<CustomerBillDTO> search(string id)
         {
             DataTable dataTable = CustomerBillDAO.Instance.searchData(id);

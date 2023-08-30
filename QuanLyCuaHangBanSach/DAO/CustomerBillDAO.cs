@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Windows.Documents;
 using MySql.Data.MySqlClient;
@@ -44,7 +45,31 @@ namespace QuanLyCuaHangBanSach.DAO
 
             return account;
         }
-        
+
+        public List<CustomerBillDetailDTO> getCustomerBillDetail(string id)
+        {
+            DataTable dataTable = DataProvider.Instance.ExecuteQuery(
+                "SELECT * FROM chitietphieuban WHERE maDonKhachHang=@maDonKhachHang;",
+                new MySqlParameter[] {
+                    new MySqlParameter("@maDonKhachHang", id)
+                }
+            );
+
+            if (dataTable.Rows.Count <= 0) return null;
+
+            List<CustomerBillDetailDTO> customerBillDetailList = new List<CustomerBillDetailDTO>();
+
+            foreach (DataRow row in dataTable.Rows)
+            {
+                Console.WriteLine(row["donGia"]);
+                CustomerBillDetailDTO customerBillDetail = new CustomerBillDetailDTO(row);
+                customerBillDetailList.Add(customerBillDetail);
+            }
+
+            return customerBillDetailList;
+        }
+
+
         public DataTable searchData(string value)
         {
             string sql = $@"SELECT * FROM phieuban WHERE maDonKhachHang LIKE @maDonKhachHang AND hienThi = 1;";

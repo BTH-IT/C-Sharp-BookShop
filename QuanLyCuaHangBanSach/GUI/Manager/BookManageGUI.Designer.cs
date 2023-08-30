@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BookManageGUI));
             this.searchInput = new System.Windows.Forms.TextBox();
             this.line1 = new System.Windows.Forms.Panel();
@@ -78,7 +78,7 @@
             this.searchInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.searchInput.Font = new System.Drawing.Font("#9Slide03 Cabin", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.searchInput.ForeColor = System.Drawing.Color.LightGray;
-            this.searchInput.Location = new System.Drawing.Point(12, 12);
+            this.searchInput.Location = new System.Drawing.Point(15, 12);
             this.searchInput.Name = "searchInput";
             this.searchInput.Size = new System.Drawing.Size(237, 30);
             this.searchInput.TabIndex = 20;
@@ -92,7 +92,7 @@
             // 
             this.line1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.line1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(212)))), ((int)(((byte)(191)))));
-            this.line1.Location = new System.Drawing.Point(12, 45);
+            this.line1.Location = new System.Drawing.Point(15, 45);
             this.line1.Name = "line1";
             this.line1.Size = new System.Drawing.Size(279, 1);
             this.line1.TabIndex = 21;
@@ -102,21 +102,21 @@
             this.dgvBook.AllowUserToAddRows = false;
             this.dgvBook.AllowUserToDeleteRows = false;
             this.dgvBook.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dgvBook.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            this.dgvBook.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvBook.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvBook.BackgroundColor = System.Drawing.Color.White;
             this.dgvBook.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvBook.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvBook.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("#9Slide03 Cabin", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvBook.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("#9Slide03 Cabin", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvBook.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvBook.ColumnHeadersHeight = 50;
             this.dgvBook.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvBook.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -131,39 +131,39 @@
             this.Column8,
             this.Column9,
             this.Column6});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("#9Slide03 Cabin", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvBook.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("#9Slide03 Cabin", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvBook.DefaultCellStyle = dataGridViewCellStyle8;
             this.dgvBook.EnableHeadersVisualStyles = false;
             this.dgvBook.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvBook.Location = new System.Drawing.Point(12, 66);
             this.dgvBook.Name = "dgvBook";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("#9Slide03 Cabin", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvBook.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("#9Slide03 Cabin", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvBook.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvBook.RowHeadersVisible = false;
             this.dgvBook.RowHeadersWidth = 51;
             this.dgvBook.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvBook.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvBook.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvBook.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dgvBook.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvBook.RowTemplate.Height = 75;
             this.dgvBook.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvBook.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvBook.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvBook.Size = new System.Drawing.Size(1020, 636);
+            this.dgvBook.Size = new System.Drawing.Size(1376, 636);
             this.dgvBook.TabIndex = 23;
             this.dgvBook.TabStop = false;
             this.dgvBook.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna;
@@ -200,7 +200,7 @@
             this.panel1.Controls.Add(this.addBtn);
             this.panel1.Location = new System.Drawing.Point(12, 705);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1020, 54);
+            this.panel1.Size = new System.Drawing.Size(1376, 54);
             this.panel1.TabIndex = 24;
             // 
             // exportBtn
@@ -288,7 +288,7 @@
             this.deleteBtn.Image = ((System.Drawing.Image)(resources.GetObject("deleteBtn.Image")));
             this.deleteBtn.ImageSize = new System.Drawing.Size(20, 20);
             this.deleteBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.deleteBtn.Location = new System.Drawing.Point(936, 6);
+            this.deleteBtn.Location = new System.Drawing.Point(1288, 6);
             this.deleteBtn.Name = "deleteBtn";
             this.deleteBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.deleteBtn.OnHoverBorderColor = System.Drawing.Color.Transparent;
@@ -321,7 +321,7 @@
             this.editBtn.Image = ((System.Drawing.Image)(resources.GetObject("editBtn.Image")));
             this.editBtn.ImageSize = new System.Drawing.Size(20, 20);
             this.editBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.editBtn.Location = new System.Drawing.Point(817, 6);
+            this.editBtn.Location = new System.Drawing.Point(1169, 6);
             this.editBtn.Name = "editBtn";
             this.editBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.editBtn.OnHoverBorderColor = System.Drawing.Color.Transparent;
@@ -354,7 +354,7 @@
             this.addBtn.Image = ((System.Drawing.Image)(resources.GetObject("addBtn.Image")));
             this.addBtn.ImageSize = new System.Drawing.Size(20, 20);
             this.addBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.addBtn.Location = new System.Drawing.Point(694, 6);
+            this.addBtn.Location = new System.Drawing.Point(1046, 6);
             this.addBtn.Name = "addBtn";
             this.addBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.addBtn.OnHoverBorderColor = System.Drawing.Color.Transparent;
@@ -382,12 +382,12 @@
             this.authorCbx.ForeColor = System.Drawing.Color.Black;
             this.authorCbx.FormattingEnabled = true;
             this.authorCbx.ItemHeight = 30;
-            this.authorCbx.Location = new System.Drawing.Point(297, 10);
+            this.authorCbx.Location = new System.Drawing.Point(525, 10);
             this.authorCbx.Name = "authorCbx";
             this.authorCbx.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.authorCbx.OnHoverItemForeColor = System.Drawing.Color.White;
             this.authorCbx.Radius = 6;
-            this.authorCbx.Size = new System.Drawing.Size(142, 36);
+            this.authorCbx.Size = new System.Drawing.Size(175, 36);
             this.authorCbx.TabIndex = 25;
             this.authorCbx.TabStop = false;
             this.authorCbx.SelectedIndexChanged += new System.EventHandler(this.authorCbx_SelectedIndexChanged);
@@ -406,12 +406,12 @@
             this.bookTypeCbx.ForeColor = System.Drawing.Color.Black;
             this.bookTypeCbx.FormattingEnabled = true;
             this.bookTypeCbx.ItemHeight = 30;
-            this.bookTypeCbx.Location = new System.Drawing.Point(445, 10);
+            this.bookTypeCbx.Location = new System.Drawing.Point(706, 10);
             this.bookTypeCbx.Name = "bookTypeCbx";
             this.bookTypeCbx.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.bookTypeCbx.OnHoverItemForeColor = System.Drawing.Color.White;
             this.bookTypeCbx.Radius = 6;
-            this.bookTypeCbx.Size = new System.Drawing.Size(142, 36);
+            this.bookTypeCbx.Size = new System.Drawing.Size(166, 36);
             this.bookTypeCbx.TabIndex = 26;
             this.bookTypeCbx.TabStop = false;
             this.bookTypeCbx.SelectedIndexChanged += new System.EventHandler(this.bookTypeCbx_SelectedIndexChanged);
@@ -431,13 +431,13 @@
             this.publisherCbx.FormattingEnabled = true;
             this.publisherCbx.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.publisherCbx.ItemHeight = 30;
-            this.publisherCbx.Location = new System.Drawing.Point(593, 10);
+            this.publisherCbx.Location = new System.Drawing.Point(878, 10);
             this.publisherCbx.Margin = new System.Windows.Forms.Padding(3, 3, 100, 3);
             this.publisherCbx.Name = "publisherCbx";
             this.publisherCbx.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.publisherCbx.OnHoverItemForeColor = System.Drawing.Color.White;
             this.publisherCbx.Radius = 6;
-            this.publisherCbx.Size = new System.Drawing.Size(142, 36);
+            this.publisherCbx.Size = new System.Drawing.Size(200, 36);
             this.publisherCbx.TabIndex = 27;
             this.publisherCbx.TabStop = false;
             this.publisherCbx.SelectedIndexChanged += new System.EventHandler(this.publisherCbx_SelectedIndexChanged);
@@ -445,7 +445,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(255, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(258, 11);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(36, 30);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -462,7 +462,7 @@
             this.gradientPanel1.Controls.Add(this.panel4);
             this.gradientPanel1.Controls.Add(this.panel2);
             this.gradientPanel1.Controls.Add(this.label1);
-            this.gradientPanel1.Location = new System.Drawing.Point(741, 10);
+            this.gradientPanel1.Location = new System.Drawing.Point(1097, 11);
             this.gradientPanel1.Name = "gradientPanel1";
             this.gradientPanel1.Size = new System.Drawing.Size(291, 36);
             this.gradientPanel1.TabIndex = 30;
@@ -542,10 +542,13 @@
             // 
             // Column11
             // 
+            this.Column11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.Column11.FillWeight = 50F;
+            this.Column11.Frozen = true;
             this.Column11.HeaderText = "";
             this.Column11.MinimumWidth = 50;
             this.Column11.Name = "Column11";
+            this.Column11.Width = 50;
             // 
             // Column1
             // 
@@ -643,7 +646,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
-            this.ClientSize = new System.Drawing.Size(1044, 764);
+            this.ClientSize = new System.Drawing.Size(1400, 764);
             this.Controls.Add(this.gradientPanel1);
             this.Controls.Add(this.publisherCbx);
             this.Controls.Add(this.bookTypeCbx);
