@@ -12,7 +12,7 @@ namespace QuanLyCuaHangBanSach.DTO
             string tenKhachHang,
             string soDienThoai,
             string gioiTinh,
-            string namSinh)
+            int namSinh)
         :base(maKhachHang, tenKhachHang, gioiTinh, namSinh)
         {
             this.SoDienThoai = soDienThoai;
@@ -24,7 +24,7 @@ namespace QuanLyCuaHangBanSach.DTO
             this.Ten = row["tenKhachHang"].ToString();
             this.SoDienThoai = row["soDienThoai"].ToString();
             this.GioiTinh = row["gioiTinh"].ToString();
-            this.NamSinh = row["namSinh"].ToString();
+            this.NamSinh = (int)row["namSinh"];
         }
 
         public override string ToString()

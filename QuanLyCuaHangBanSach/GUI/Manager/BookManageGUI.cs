@@ -60,7 +60,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                     book.MaSach,
                     book.TenSach,
                     book.HinhAnh,
-                    AuthorBUS.Instance.getById(book.MaTacGia.ToString()).TenTacGia,
+                    AuthorBUS.Instance.getById(book.MaTacGia.ToString()).Ten,
                     BookTypeBUS.Instance.getById(book.MaTheLoai.ToString()).TenTheLoai,
                     PublisherBUS.Instance.getById(book.MaNhaXuatBan.ToString()).TenNhaXuatBan,
                     book.GiaBan,
@@ -78,8 +78,8 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
             authorList.Insert(0, new AuthorDTO(0, "Tất cả tác giả", "", 0));
 
-            this.authorCbx.ValueMember = "MaTacGia";
-            this.authorCbx.DisplayMember = "TenTacGia";
+            this.authorCbx.ValueMember = "Ma";
+            this.authorCbx.DisplayMember = "Ten";
             this.authorCbx.DataSource = authorList;
 
             this.authorCbx.SelectedIndex = 0;
@@ -434,20 +434,13 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                 {
                     if ((bool)row.Cells[0].Value == true)
                     {
-                        if (BookBUS.Instance.delete(row.Cells[1].Value.ToString()))
-                        {
-                            
-                            List<BookDTO> bookList = handleFilter(this.searchInput.Text.ToString());
-
-                            this.loadBookListToDataView(bookList);
-
-                            row.Cells[0].Value = false;
-                        }
+                        BookBUS.Instance.delete(row.Cells[1].Value.ToString());
                     }
                     
                 }
+                List<BookDTO> bookList = handleFilter(this.searchInput.Text.ToString());
+                this.loadBookListToDataView(bookList);
 
-                this.dgvBook.RefreshEdit();
                 MessageBox.Show("Delete successful");
             }
         }

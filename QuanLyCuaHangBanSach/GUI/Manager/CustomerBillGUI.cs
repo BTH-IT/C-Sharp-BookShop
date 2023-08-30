@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using QuanLyCuaHangBanSach.BUS;
 using QuanLyCuaHangBanSach.DTO;
 using QuanLyCuaHangBanSach.GUI.Modal;
+using static Guna.UI2.Native.WinApi;
 
 namespace QuanLyCuaHangBanSach.GUI.Manager
 {
@@ -50,40 +51,44 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             this.dgvCustomerBill.Controls.Add(headerCheckbox);
         }
 
-        private void loadBookListToDataView(List<BookDTO> bookList)
+        private void loadCustomerBillListToDataView(List<CustomerBillDTO> customerBillList)
         {
             this.dgvCustomerBill.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(45, 210, 192);
             this.dgvCustomerBill.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
 
             this.dgvCustomerBill.Rows.Clear();
 
-            foreach (BookDTO book in bookList)
+            CustomerDTO customer;
+            SaleDTO sale;
+
+            foreach (CustomerBillDTO customerBill in customerBillList)
             {
+                customer = CustomerBUS.Instance.getById(customerBill.MaKhachHang.ToString());
+                sale = SaleBUS.Instance.getById(customerBill.MaKhuyenMai.ToString());
+
                 this.dgvCustomerBill.Rows.Add(new object[] {
-                    book.MaSach,
-                    book.TenSach,
-                    book.HinhAnh,
-                    AuthorBUS.Instance.getById(book.MaTacGia.ToString()).TenTacGia,
-                    BookTypeBUS.Instance.getById(book.MaTheLoai.ToString()).TenTheLoai,
-                    PublisherBUS.Instance.getById(book.MaNhaXuatBan.ToString()).TenNhaXuatBan,
-                    book.GiaBan,
-                    book.GiaNhap,
-                    book.NamXuatBan,
-                    book.SoLuongConLai,
+                    customerBill.MaDonKhachHang,
+                    customer.Ten,
+                    customer.SoDienThoai,
+                    StaffBUS.Instance.getById(customerBill.MaNhanVien.ToString()).Ten,
+                    sale.TenKhuyenMai,
+                    sale.PhanTram + "%",
+                    customerBill.NgayLap.ToString(),
+                    customerBill.TongTien,
                 });
             }
 
         }
 
-        private void loadAuthorCbx()
+        private void loadCustomerCbx()
         {
-            List<AuthorDTO> authorList = AuthorBUS.Instance.getAllData();
+            List<CustomerDTO> customerList = CustomerBUS.Instance.getAllData();
 
-            authorList.Insert(0, new AuthorDTO(0, "Tất cả tác giả", "", 0));
+            customerList.Insert(0, new CustomerDTO(0, "Tất cả khách hàng", "", "", 0));
 
             this.customerCbx.ValueMember = "MaTacGia";
             this.customerCbx.DisplayMember = "TenTacGia";
-            this.customerCbx.DataSource = authorList;
+            this.customerCbx.DataSource = customerList;
 
             this.customerCbx.SelectedIndex = 0;
         }
@@ -116,7 +121,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             List<BookDTO> bookList = BookBUS.Instance.getAllData();
             this.loadBookListToDataView(bookList);
 
-            this.loadAuthorCbx();
+            this.loadCustomerCbx();
             this.loadBookTypeCbx();
             this.loadPublisherCbx();
             this.renderCheckBoxDgv();

@@ -8,11 +8,11 @@ namespace QuanLyCuaHangBanSach.DTO
         public string Ten { get; set; }
 
         public string GioiTinh { get; set; }
-        public string NamSinh { get; set; }
+        public int NamSinh { get; set; }
 
         public HumanDTO() { }
 
-        public HumanDTO(int ma, string ten, string gioiTinh, string namSinh)
+        public HumanDTO(int ma, string ten, string gioiTinh, int namSinh)
         {
             this.Ma = ma;
             this.Ten = ten;

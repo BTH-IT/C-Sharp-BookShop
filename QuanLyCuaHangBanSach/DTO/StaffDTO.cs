@@ -15,7 +15,7 @@ namespace QuanLyCuaHangBanSach.DTO
             string tenNhanVien,
             string soDienThoai,
             string gioiTinh,
-            string namSinh,
+            int namSinh,
             int soNgayNghi,
             string vaiTro)
         : base(maNhanVien, tenNhanVien, gioiTinh, namSinh)
@@ -33,7 +33,7 @@ namespace QuanLyCuaHangBanSach.DTO
             this.Ten = row["tenNhanVien"].ToString();
             this.SoDienThoai = row["soDienThoai"].ToString();
             this.GioiTinh = row["gioiTinh"].ToString();
-            this.NamSinh = row["namSinh"].ToString();
+            this.NamSinh = (int)row["namSinh"];
         }
     }
 }
