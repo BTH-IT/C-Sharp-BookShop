@@ -302,6 +302,13 @@
     </Compile>
     <Compile Include="CustomValidation.cs" />
     <Compile Include="DAO\CustomerDAO.cs" />
+    <Compile Include="DTO\BillDetailDTO .cs" />
+    <Compile Include="DTO\BillDTO.cs" />
+    <Compile Include="DTO\CustomerBillDetailDTO.cs" />
+    <Compile Include="DTO\HumanDTO.cs" />
+    <Compile Include="DTO\ImportBillDetailDTO.cs" />
+    <Compile Include="DTO\ImportBillDTO.cs" />
+    <Compile Include="DTO\CustomerBillDTO.cs" />
     <Compile Include="DTO\CustomerDTO.cs" />
     <Compile Include="DAO\PublisherDAO.cs" />
     <Compile Include="DAO\BookTypeDAO.cs" />

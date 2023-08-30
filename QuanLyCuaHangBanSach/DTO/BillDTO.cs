@@ -9,13 +9,13 @@ namespace QuanLyCuaHangBanSach.DTO
 {
     public class BillDTO
     {
-        protected DateTime NgayLap { get; set; }
-        protected int MaNhanVien { get; set; }
-        protected double TongTien { get; set; }
+        public DateTime NgayLap { get; set; }
+        public int MaNhanVien { get; set; }
+        public double TongTien { get; set; }
 
-        protected BillDTO() { }
+        public BillDTO() { }
 
-        protected BillDTO(
+        public BillDTO(
             DateTime ngayLap,
             int maNhanVien,
             double tongTien

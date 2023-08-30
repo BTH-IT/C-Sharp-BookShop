@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,9 +18,20 @@ namespace QuanLyCuaHangBanSach.DTO
         protected BillDetailDTO() { }
 
         protected BillDetailDTO(
+            int maDon,
             int maSach,
             int soLuong,
             double donGia
+        )
+        {
+            this.MaSach = maSach;
+            this.SoLuong = soLuong;
+            this.DonGia = donGia;
+            this.ThanhTien = soLuong * donGia;
+        }
+
+        protected BillDetailDTO(
+            DataRow row
         )
         {
             this.MaSach = maSach;
