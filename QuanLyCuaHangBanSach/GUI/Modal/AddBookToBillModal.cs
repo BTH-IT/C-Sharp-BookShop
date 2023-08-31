@@ -3,21 +3,23 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Reflection;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using QuanLyCuaHangBanSach.BUS;
 using QuanLyCuaHangBanSach.DTO;
-using QuanLyCuaHangBanSach.GUI.Modal;
 
-namespace QuanLyCuaHangBanSach.GUI.Manager
+namespace QuanLyCuaHangBanSach.GUI.Modal
 {
-    public partial class BookManageGUI : Form
+    public partial class AddBookToBillModal : Form
     {
-        private CheckBox headerCheckbox;
-        public BookManageGUI()
+        public AddBookToBillModal()
         {
             InitializeComponent();
         }
+
+        private CheckBox headerCheckbox;
 
         private void renderCheckBoxDgv()
         {
@@ -26,7 +28,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             Rectangle rect = this.dgvBook.GetCellDisplayRectangle(0, -1, false);
 
             headerCheckbox = new CheckBox();
-            
+
             headerCheckbox.BackColor = Color.FromArgb(45, 210, 192);
             headerCheckbox.Name = "chkHeader";
             headerCheckbox.Size = new Size(size, size);
@@ -101,19 +103,6 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             this.publisherCbx.DataSource = publisherList;
         }
 
-        private void BookManageGUI_Load(object sender, EventArgs e)
-        {
-
-            List<BookDTO> bookList = BookBUS.Instance.getAllData();
-            this.loadBookListToDataView(bookList);
-
-            this.loadAuthorCbx();
-            this.loadBookTypeCbx();
-            this.loadPublisherCbx();
-            this.renderCheckBoxDgv();
-            headerCheckbox.MouseClick += new MouseEventHandler(headerCheckbox_Clicked);
-        }
-
         private void headerCheckbox_Clicked(object sender, EventArgs e)
         {
             foreach (DataGridViewRow row in this.dgvBook.Rows)
@@ -142,7 +131,8 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                         item => item.GiaBan >= Convert.ToDouble(this.priceFrom.Text.ToString())
                                 && item.GiaBan <= Convert.ToDouble(this.priceTo.Text.ToString()
                     ));
-                } catch
+                }
+                catch
                 {
                     MessageBox.Show("Giá phải là số");
                 }
@@ -210,37 +200,6 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             this.loadBookListToDataView(bookList);
         }
 
-        private void gunaAdvenceButton1_Click(object sender, EventArgs e)
-        {
-            using (BookModal bookModal = new BookModal())
-            {
-                bookModal.ShowDialog();
-
-
-                if (bookModal.isSubmitSuccess)
-                {
-                    List<BookDTO> bookList = handleFilter(this.searchInput.Text.ToString());
-
-                    this.loadBookListToDataView(bookList);
-                }
-            }
-        }
-
-        private void gunaAdvenceButton4_Click(object sender, EventArgs e)
-        {
-            this.searchInput.Refresh();
-
-            this.priceFrom.Refresh();
-            this.priceTo.Refresh();
-
-            this.authorCbx.SelectedIndex = 0;
-            this.bookTypeCbx.SelectedIndex = 0;
-            this.publisherCbx.SelectedIndex = 0;
-
-            List<BookDTO> bookList = BookBUS.Instance.search("");
-            this.loadBookListToDataView(bookList);
-        }
-
         private void authorCbx_SelectedIndexChanged(object sender, EventArgs e)
         {
             List<BookDTO> bookList = handleFilter(this.searchInput.Text.ToString());
@@ -276,51 +235,39 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             this.loadBookListToDataView(bookList);
         }
 
-        private void exportBtn_Click(object sender, EventArgs e)
+        private void AddBookToBillModal_Load(object sender, EventArgs e)
         {
-            List<BookDTO> bookList = handleFilter(this.searchInput.Text.ToString());
+            List<BookDTO> bookList = BookBUS.Instance.getAllData();
+            this.loadBookListToDataView(bookList);
 
-            DataTable dataTable = CustomExcel.Instance.ConvertListToDataTable(bookList);
-
-            string[] headerList = new string[] { "Mã sách", "Tên sách", "Tác giả", "Thể loại", "Nhà xuất bản", "Giá bán", "Giá nhập", "Năm xuất bản", "Còn lại" };
-            
-            CustomExcel.Instance.ExportFile(dataTable, "Book Manage", "Cửa hàng bán sách", headerList, 2);
+            this.loadAuthorCbx();
+            this.loadBookTypeCbx();
+            this.loadPublisherCbx();
+            this.renderCheckBoxDgv();
+            headerCheckbox.MouseClick += new MouseEventHandler(headerCheckbox_Clicked);
         }
 
-        private void editBtn_Click(object sender, EventArgs e)
+        private void refreshBtn_Click(object sender, EventArgs e)
         {
-            if (this.dgvBook.CurrentCell.RowIndex < 0)
-            {
-                MessageBox.Show("Hãy chọn dòng dữ liệu muốn thao tác");
-                return;
-            }
+            this.searchInput.Refresh();
 
-            using (BookModal bookModal = new BookModal("Sửa sách"))
-            {
-                DataGridViewRow row = this.dgvBook.Rows[this.dgvBook.CurrentCell.RowIndex];
+            this.priceFrom.Refresh();
+            this.priceTo.Refresh();
 
-                BookDTO book = BookBUS.Instance.getById(row.Cells[1].Value.ToString());
+            this.authorCbx.SelectedIndex = 0;
+            this.bookTypeCbx.SelectedIndex = 0;
+            this.publisherCbx.SelectedIndex = 0;
 
-                bookModal.updateBook = book;
-
-                if (bookModal.updateBook == null)
-                {
-                    MessageBox.Show("Đã xảy ra lỗi vui lòng thử lại sau!!");
-                    return;
-                }
-
-                bookModal.ShowDialog();
-
-                if (bookModal.isSubmitSuccess)
-                {
-                    List<BookDTO> bookList = handleFilter(this.searchInput.Text.ToString());
-
-                    this.loadBookListToDataView(bookList);
-                }
-            }
+            List<BookDTO> bookList = BookBUS.Instance.search("");
+            this.loadBookListToDataView(bookList);
         }
 
-        private void deleteBtn_Click(object sender, EventArgs e)
+        private void barcodeBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void addToProductList_Click(object sender, EventArgs e)
         {
             bool isHaveSelect = false;
 
@@ -334,15 +281,15 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
             if (!isHaveSelect)
             {
-                MessageBox.Show("Bạn chưa chọn những sách cần xóa");
+                MessageBox.Show("Bạn chưa chọn những sách cần thêm vào danh sách sản phẩm cả");
                 return;
             }
 
             DialogResult dlgResult = MessageBox.Show(
-                "Bạn chắc chắn muốn xóa các sách đã chọn chứ chứ?", 
-                "Xác nhận", 
+                "Bạn chắc chắn muốn thêm các sách đã chọn vào danh sách sản phẩm chứ?",
+                "Xác nhận",
                 MessageBoxButtons.YesNo,
-                MessageBoxIcon.Question, 
+                MessageBoxIcon.Question,
                 MessageBoxDefaultButton.Button1
             );
 
@@ -352,46 +299,14 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                 {
                     if ((bool)row.Cells[0].Value == true)
                     {
-                        BookBUS.Instance.delete(row.Cells[1].Value.ToString());
+                        // do something
                     }
-                    
+
                 }
                 List<BookDTO> bookList = handleFilter(this.searchInput.Text.ToString());
                 this.loadBookListToDataView(bookList);
 
-                MessageBox.Show("Delete successful");
-            }
-        }
-
-        private void dgvBook_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex < 0 || e.ColumnIndex <= 0)
-            {
-                return;
-            }
-
-            using (BookModal bookModal = new BookModal("Sửa sách"))
-            {
-                DataGridViewRow row = this.dgvBook.Rows[e.RowIndex];
-
-                BookDTO book = BookBUS.Instance.getById(row.Cells[1].Value.ToString());
-
-                bookModal.updateBook = book;
-
-                if (bookModal.updateBook == null)
-                {
-                    MessageBox.Show("Đã xảy ra lỗi vui lòng thử lại sau!!");
-                    return;
-                }
-
-                bookModal.ShowDialog();
-
-                if (bookModal.isSubmitSuccess)
-                {
-                    List<BookDTO> bookList = handleFilter(this.searchInput.Text.ToString());
-
-                    this.loadBookListToDataView(bookList);
-                }
+                MessageBox.Show("Add to list is success");
             }
         }
     }
