@@ -71,7 +71,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1636, 800);
+            this.panel1.Size = new System.Drawing.Size(1636, 900);
             this.panel1.TabIndex = 0;
             // 
             // manageContent
@@ -79,7 +79,7 @@
             this.manageContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.manageContent.Location = new System.Drawing.Point(236, 36);
             this.manageContent.Name = "manageContent";
-            this.manageContent.Size = new System.Drawing.Size(1400, 764);
+            this.manageContent.Size = new System.Drawing.Size(1400, 864);
             this.manageContent.TabIndex = 3;
             // 
             // panel3
@@ -93,7 +93,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel3.Location = new System.Drawing.Point(0, 36);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(236, 764);
+            this.panel3.Size = new System.Drawing.Size(236, 864);
             this.panel3.TabIndex = 2;
             // 
             // panel5
@@ -115,7 +115,7 @@
             this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel5.Location = new System.Drawing.Point(0, 85);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(236, 679);
+            this.panel5.Size = new System.Drawing.Size(236, 779);
             this.panel5.TabIndex = 6;
             // 
             // accountBtn
@@ -630,7 +630,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1636, 800);
+            this.ClientSize = new System.Drawing.Size(1636, 900);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("#9Slide03 Cabin", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

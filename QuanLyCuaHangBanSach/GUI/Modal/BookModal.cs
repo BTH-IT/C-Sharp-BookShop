@@ -99,7 +99,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             this.Close();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void bookNameTxt_TextChanged(object sender, EventArgs e)
         {
             this.bookNameTxt.ForeColor = Color.Black;
 
@@ -115,32 +115,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             }
         }
 
-        private void textBox1_Leave(object sender, EventArgs e)
-        {
-            if (this.bookNameTxt.Text.Length <= 0)
-            {
-                this.bookNameTxt.Text = "Nhập tên sách";
-                this.bookNameTxt.ForeColor = Color.LightGray;
-
-                CustomValidation.Instance.checkTextbox(
-                    this.bookNameTxt,
-                    this.errorBookNameMsg,
-                    this.nameLine,
-                    "Nhập tên sách",
-                    new string[] { "required" }
-                );
-            }
-        }
-
-        private void textBox1_Click(object sender, EventArgs e)
-        {
-            if (this.bookNameTxt.Text.Equals("Nhập tên sách"))
-            {
-                this.bookNameTxt.Text = "";
-            }
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
+        private void remainTxt_TextChanged(object sender, EventArgs e)
         {
             this.remainTxt.ForeColor = Color.Black;
 
@@ -156,32 +131,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             }
         }
 
-        private void textBox2_Leave(object sender, EventArgs e)
-        {
-            if (this.remainTxt.Text.Length <= 0)
-            {
-                this.remainTxt.Text = "Nhập số lượng còn lại";
-                this.remainTxt.ForeColor = Color.LightGray;
-
-                CustomValidation.Instance.checkTextbox(
-                    this.remainTxt,
-                    this.errorRemainMsg,
-                    this.remainLine,
-                    "Nhập số lượng còn lại",
-                    new string[] { "required", "positive-number" }
-                );
-            }
-        }
-
-        private void textBox2_Click(object sender, EventArgs e)
-        {
-            if (this.remainTxt.Text.Equals("Nhập số lượng còn lại"))
-            {
-                this.remainTxt.Text = "";
-            }
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
+        private void sellPriceTxt_TextChanged(object sender, EventArgs e)
         {
             this.sellPriceTxt.ForeColor = Color.Black;
 
@@ -197,32 +147,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             }
         }
 
-        private void textBox3_Leave(object sender, EventArgs e)
-        {
-            if (this.sellPriceTxt.Text.Length <= 0)
-            {
-                this.sellPriceTxt.Text = "Nhập giá bán";
-                this.sellPriceTxt.ForeColor = Color.LightGray;
-
-                CustomValidation.Instance.checkTextbox(
-                    this.sellPriceTxt,
-                    this.errorSellPriceMsg,
-                    this.sellPriceLine,
-                    "Nhập giá bán",
-                    new string[] { "required", "positive-number" }
-                );
-            }
-        }
-
-        private void textBox3_Click(object sender, EventArgs e)
-        {
-            if (this.sellPriceTxt.Text.Equals("Nhập giá bán"))
-            {
-                this.sellPriceTxt.Text = "";
-            }
-        }
-
-        private void textBox4_TextChanged(object sender, EventArgs e)
+        private void importPriceTxt_TextChanged(object sender, EventArgs e)
         {
             this.importPriceTxt.ForeColor = Color.Black;
 
@@ -238,32 +163,8 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             }
         }
 
-        private void textBox4_Leave(object sender, EventArgs e)
-        {
-            if (this.importPriceTxt.Text.Length <= 0)
-            {
-                this.importPriceTxt.Text = "Nhập giá nhập";
-                this.importPriceTxt.ForeColor = Color.LightGray;
-
-                CustomValidation.Instance.checkTextbox(
-                    this.importPriceTxt,
-                    this.errorImportPriceMsg,
-                    this.importPriceLine,
-                    "Nhập giá nhập",
-                    new string[] { "required", "positive-number" }
-                );
-            }
-        }
-
-        private void textBox4_Click(object sender, EventArgs e)
-        {
-            if (this.importPriceTxt.Text.Equals("Nhập giá nhập"))
-            {
-                this.importPriceTxt.Text = "";
-            }
-        }
-
-        private void textBox5_TextChanged(object sender, EventArgs e)
+        
+        private void publishYearTxt_TextChanged(object sender, EventArgs e)
         {
             this.publishYearTxt.ForeColor = Color.Black;
 
@@ -276,31 +177,6 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                     "Nhập năm xuất bản",
                     new string[] { "required", "positive-number" }
                 );
-            }
-        }
-
-        private void textBox5_Leave(object sender, EventArgs e)
-        {
-            if (this.publishYearTxt.Text.Length <= 0)
-            {
-                this.publishYearTxt.Text = "Nhập năm xuất bản";
-                this.publishYearTxt.ForeColor = Color.LightGray;
-
-                CustomValidation.Instance.checkTextbox(
-                    this.publishYearTxt,
-                    this.errorPublishYearMsg,
-                    this.publishYearLine,
-                    "Nhập năm xuất bản",
-                    new string[] { "required", "positive-number" }
-                );
-            }
-        }
-
-        private void textBox5_Click(object sender, EventArgs e)
-        {
-            if (this.publishYearTxt.Text.Equals("Nhập năm xuất bản"))
-            {
-                this.publishYearTxt.Text = "";
             }
         }
 

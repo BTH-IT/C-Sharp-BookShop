@@ -34,9 +34,7 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.line2 = new System.Windows.Forms.Panel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.errorMsg1 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.line1 = new System.Windows.Forms.Panel();
@@ -45,6 +43,8 @@
             this.customButton2 = new QuanLyCuaHangBanSach.CustomButton();
             this.lblLogin = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.emailTxt = new Guna.UI2.WinForms.Guna2TextBox();
+            this.codeTxt = new Guna.UI2.WinForms.Guna2TextBox();
             customButton1 = new QuanLyCuaHangBanSach.CustomButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -112,22 +112,6 @@
             this.line2.Size = new System.Drawing.Size(279, 1);
             this.line2.TabIndex = 4;
             // 
-            // textBox2
-            // 
-            this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox2.BackColor = System.Drawing.SystemColors.Window;
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Font = new System.Drawing.Font("#9Slide03 Cabin", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.textBox2.ForeColor = System.Drawing.Color.LightGray;
-            this.textBox2.Location = new System.Drawing.Point(144, 22);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(279, 30);
-            this.textBox2.TabIndex = 1;
-            this.textBox2.Text = "Enter your code";
-            this.textBox2.Click += new System.EventHandler(this.textBox2_Click);
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
-            this.textBox2.Leave += new System.EventHandler(this.textBox2_Leave);
-            // 
             // label6
             // 
             this.label6.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
@@ -137,22 +121,6 @@
             this.label6.TabIndex = 0;
             this.label6.Text = "Code";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox1.BackColor = System.Drawing.SystemColors.Window;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("#9Slide03 Cabin", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.textBox1.ForeColor = System.Drawing.Color.LightGray;
-            this.textBox1.Location = new System.Drawing.Point(144, 19);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(200, 30);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.Text = "Enter your email";
-            this.textBox1.Click += new System.EventHandler(this.textBox1_Click);
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            this.textBox1.Leave += new System.EventHandler(this.textBox1_Leave);
             // 
             // errorMsg1
             // 
@@ -186,10 +154,10 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Transparent;
+            this.panel3.Controls.Add(this.codeTxt);
             this.panel3.Controls.Add(this.errorMsg2);
             this.panel3.Controls.Add(this.pictureBox4);
             this.panel3.Controls.Add(this.line2);
-            this.panel3.Controls.Add(this.textBox2);
             this.panel3.Controls.Add(this.label6);
             this.panel3.Location = new System.Drawing.Point(28, 246);
             this.panel3.Name = "panel3";
@@ -199,8 +167,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.emailTxt);
             this.panel1.Controls.Add(this.customButton2);
-            this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.errorMsg1);
             this.panel1.Controls.Add(this.pictureBox3);
             this.panel1.Controls.Add(this.line1);
@@ -255,6 +223,63 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // emailTxt
+            // 
+            this.emailTxt.BackColor = System.Drawing.Color.Transparent;
+            this.emailTxt.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
+            this.emailTxt.BorderThickness = 0;
+            this.emailTxt.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.emailTxt.DefaultText = "";
+            this.emailTxt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.emailTxt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.emailTxt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.emailTxt.DisabledState.Parent = this.emailTxt;
+            this.emailTxt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.emailTxt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.emailTxt.FocusedState.Parent = this.emailTxt;
+            this.emailTxt.Font = new System.Drawing.Font("#9Slide03 Cabin", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.emailTxt.ForeColor = System.Drawing.Color.Black;
+            this.emailTxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.emailTxt.HoverState.Parent = this.emailTxt;
+            this.emailTxt.Location = new System.Drawing.Point(135, 19);
+            this.emailTxt.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
+            this.emailTxt.Name = "emailTxt";
+            this.emailTxt.PasswordChar = '\0';
+            this.emailTxt.PlaceholderText = "Nhập email";
+            this.emailTxt.SelectedText = "";
+            this.emailTxt.ShadowDecoration.Parent = this.emailTxt;
+            this.emailTxt.Size = new System.Drawing.Size(207, 30);
+            this.emailTxt.TabIndex = 35;
+            this.emailTxt.TextChanged += new System.EventHandler(this.emailTxt_TextChanged);
+            // 
+            // codeTxt
+            // 
+            this.codeTxt.BackColor = System.Drawing.Color.Transparent;
+            this.codeTxt.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
+            this.codeTxt.BorderThickness = 0;
+            this.codeTxt.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.codeTxt.DefaultText = "";
+            this.codeTxt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.codeTxt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.codeTxt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.codeTxt.DisabledState.Parent = this.codeTxt;
+            this.codeTxt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.codeTxt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.codeTxt.FocusedState.Parent = this.codeTxt;
+            this.codeTxt.Font = new System.Drawing.Font("#9Slide03 Cabin", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.codeTxt.ForeColor = System.Drawing.Color.Black;
+            this.codeTxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.codeTxt.HoverState.Parent = this.codeTxt;
+            this.codeTxt.Location = new System.Drawing.Point(135, 23);
+            this.codeTxt.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
+            this.codeTxt.Name = "codeTxt";
+            this.codeTxt.PasswordChar = '\0';
+            this.codeTxt.PlaceholderText = "Nhập code";
+            this.codeTxt.SelectedText = "";
+            this.codeTxt.ShadowDecoration.Parent = this.codeTxt;
+            this.codeTxt.Size = new System.Drawing.Size(288, 30);
+            this.codeTxt.TabIndex = 36;
+            // 
             // SendCodeGUI
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -286,9 +311,7 @@
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel line2;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label errorMsg1;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Panel line1;
@@ -297,5 +320,7 @@
         private System.Windows.Forms.Label lblLogin;
         private System.Windows.Forms.PictureBox pictureBox1;
         private CustomButton customButton2;
+        private Guna.UI2.WinForms.Guna2TextBox codeTxt;
+        private Guna.UI2.WinForms.Guna2TextBox emailTxt;
     }
 }

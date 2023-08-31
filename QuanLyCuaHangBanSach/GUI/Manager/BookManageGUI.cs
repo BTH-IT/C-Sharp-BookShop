@@ -204,35 +204,13 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             return newBookList;
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void searchInput_TextChanged(object sender, EventArgs e)
         {
             this.searchInput.ForeColor = Color.Black;
 
             List<BookDTO> bookList = handleFilter(this.searchInput.Text.ToString());
 
             this.loadBookListToDataView(bookList);
-        }
-
-        private void searchInput_Click(object sender, EventArgs e)
-        {
-            if (this.searchInput.Text.Equals("Enter your search..."))
-            {
-                this.searchInput.Text = "";
-
-            }
-        }
-
-        private void searchInput_Leave(object sender, EventArgs e)
-        {
-            if (this.searchInput.Text.Length <= 0)
-            {
-                this.searchInput.Text = "Enter your search...";
-                this.searchInput.ForeColor = Color.LightGray;
-
-                List<BookDTO> bookList = handleFilter(this.searchInput.Text.ToString());
-
-                this.loadBookListToDataView(bookList);
-            }
         }
 
         private void gunaAdvenceButton1_Click(object sender, EventArgs e)
@@ -291,66 +269,18 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             this.loadBookListToDataView(bookList);
         }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
+        private void priceTo_TextChanged(object sender, EventArgs e)
         {
-            this.textBox2.ForeColor = Color.Black;
-
             List<BookDTO> bookList = handleFilter(this.searchInput.Text.ToString());
 
             this.loadBookListToDataView(bookList);
         }
 
-        private void textBox2_Leave(object sender, EventArgs e)
+        private void priceFrom_TextChanged(object sender, EventArgs e)
         {
-            if (this.textBox2.Text.Length <= 0)
-            {
-                this.textBox2.Text = "Enter price from";
-                this.textBox2.ForeColor = Color.LightGray;
-
-                List<BookDTO> bookList = handleFilter(this.searchInput.Text.ToString());
-
-                this.loadBookListToDataView(bookList);
-            }
-        }
-
-        private void textBox2_Click(object sender, EventArgs e)
-        {
-            if (this.textBox2.Text.Equals("Enter price from"))
-            {
-                this.textBox2.Text = "";
-
-            }
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-            this.textBox3.ForeColor = Color.Black;
-
             List<BookDTO> bookList = handleFilter(this.searchInput.Text.ToString());
 
             this.loadBookListToDataView(bookList);
-        }
-
-        private void textBox3_Leave(object sender, EventArgs e)
-        {
-            if (this.textBox3.Text.Length <= 0)
-            {
-                this.textBox3.Text = "Enter price to";
-                this.textBox3.ForeColor = Color.LightGray;
-
-                List<BookDTO> bookList = handleFilter(this.searchInput.Text.ToString());
-
-                this.loadBookListToDataView(bookList);
-            }
-        }
-
-        private void textBox3_Click(object sender, EventArgs e)
-        {
-            if (this.textBox3.Text.Equals("Enter price to"))
-            {
-                this.textBox3.Text = "";
-
-            }
         }
 
         private void exportBtn_Click(object sender, EventArgs e)

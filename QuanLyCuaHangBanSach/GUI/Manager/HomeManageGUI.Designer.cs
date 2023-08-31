@@ -358,7 +358,7 @@
             this.AutoScroll = true;
             this.AutoScrollMargin = new System.Drawing.Size(0, 30);
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
-            this.ClientSize = new System.Drawing.Size(1400, 764);
+            this.ClientSize = new System.Drawing.Size(1400, 864);
             this.Controls.Add(this.elementHost1);
             this.Controls.Add(this.gunaDataGridView1);
             this.Controls.Add(this.label7);

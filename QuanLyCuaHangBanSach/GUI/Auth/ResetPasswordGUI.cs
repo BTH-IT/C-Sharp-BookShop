@@ -10,72 +10,10 @@ namespace QuanLyCuaHangBanSach.GUI
         private string email = SendCodeGUI.to;
         private bool isHiddenNewPwd = true;
         private bool isHiddenConfirmPwd = true;
+
         public ResetPasswordGUI()
         {
             InitializeComponent();
-        }
-
-        private void textBox1_TextChanged(object sender, System.EventArgs e)
-        {
-            try
-            {
-                textBox1.ForeColor = Color.Black;
-                textBox1.UseSystemPasswordChar = isHiddenNewPwd;
-
-            }
-            catch
-            {
-
-            }
-        }
-
-        private void textBox2_TextChanged(object sender, System.EventArgs e)
-        {
-            try
-            {
-                textBox2.ForeColor = Color.Black;
-                textBox2.UseSystemPasswordChar = isHiddenConfirmPwd;
-            }
-            catch
-            {
-
-            }
-        }
-
-        private void textBox1_Leave(object sender, System.EventArgs e)
-        {
-            if (textBox1.Text.Length <= 0)
-            {
-                textBox1.Text = "Enter your password";
-                textBox1.ForeColor = Color.LightGray;
-                textBox1.UseSystemPasswordChar = false;
-            }
-        }
-
-        private void textBox1_Click(object sender, System.EventArgs e)
-        {
-            if (textBox1.Text.Equals("Enter your password"))
-            {
-                textBox1.Text = "";
-            }
-        }
-
-        private void textBox2_Leave(object sender, System.EventArgs e)
-        {
-            if (textBox2.Text.Length <= 0)
-            {
-                textBox2.Text = "Enter your password";
-                textBox2.ForeColor = Color.LightGray;
-                textBox2.UseSystemPasswordChar = false;
-            }
-        }
-
-        private void textBox2_Click(object sender, System.EventArgs e)
-        {
-            if (textBox2.Text == "Enter your password")
-            {
-                textBox2.Text = "";
-            }
         }
 
         private void pictureBox5_Click(object sender, EventArgs e)
@@ -91,11 +29,7 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.isHiddenNewPwd = true;
             }
             
-            if (!this.textBox1.Text.Equals("Enter your password"))
-            {
-                textBox1.UseSystemPasswordChar = this.isHiddenNewPwd;
-            }
-
+            this.newPwdTxt.UseSystemPasswordChar = this.isHiddenNewPwd;
             this.pictureBox5.Refresh();
         }
 
@@ -112,10 +46,7 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.isHiddenConfirmPwd = true;
             }
 
-            if (!this.textBox2.Text.Equals("Enter your password"))
-            {
-                textBox2.UseSystemPasswordChar = this.isHiddenNewPwd;
-            }
+            this.confirmPwdTxt.UseSystemPasswordChar = this.isHiddenNewPwd;
             this.pictureBox6.Refresh();
         }
 
@@ -129,61 +60,48 @@ namespace QuanLyCuaHangBanSach.GUI
 
         private bool validateForm()
         {
-            if (this.textBox1.Text.Equals("") || this.textBox1.Text.Equals("Enter your password"))
-            {
-                this.textBox1.Focus();
-                this.errorMsg1.Text = "This field is a required field";
-                this.line1.BackColor = Color.FromArgb(239, 68, 68);
-                return false;
-            }
-            else
-            {
-                this.errorMsg1.Text = "";
-                this.line1.BackColor = Color.FromArgb(45, 212, 191);
-            }
+            bool isCheck1 = CustomValidation.Instance.checkTextbox(
+                this.newPwdTxt,
+                this.errorMsg1,
+                this.line1,
+                new string[] { "required" }
+            );
 
-            if (this.textBox2.Text.Equals("") || this.textBox2.Text.Equals("Enter your password"))
-            {
-                this.textBox2.Focus();
-                this.errorMsg2.Text = "This field is a required field";
-                this.line2.BackColor = Color.FromArgb(239, 68, 68);
-                return false;
-            }
-            else
-            {
-                this.errorMsg2.Text = "";
-                this.line2.BackColor = Color.FromArgb(45, 212, 191);
-            }
+            bool isCheck2 = CustomValidation.Instance.checkTextbox(
+                this.newPwdTxt,
+                this.errorMsg2,
+                this.line2,
+                new string[] { "required" }
+            );
 
-            if (!this.textBox2.Text.Equals(this.textBox1.Text) && !this.textBox2.Text.Equals("Enter your password"))
+            if (isCheck2)
             {
-                this.textBox2.Focus();
-                this.errorMsg2.Text = "This field must match the new password field";
-                this.line2.BackColor = Color.FromArgb(239, 68, 68);
-                return false;
-            }
-            else
-            {
-                this.errorMsg2.Text = "";
-                this.line2.BackColor = Color.FromArgb(45, 212, 191);
+                isCheck2 = CustomValidation.Instance.checkTextboxMatchWithOtherTextBox(
+                    this.confirmPwdTxt,
+                    this.newPwdTxt,
+                    "Trường này phải khớp với trường 'mật khẩu mới'",
+                    this.errorMsg2,
+                    this.line2
+                );
             }
 
 
-            return true;
+            return isCheck2 && isCheck1;
         }
 
-        private void customButton1_Click(object sender, EventArgs e)
+        private void handleSubmit()
         {
             bool isValid = this.validateForm();
 
             if (!isValid) return;
 
-            bool isSuccess = AccountBUS.Instance.resetPassword(this.email, this.textBox1.Text);
+            bool isSuccess = AccountBUS.Instance.resetPassword(this.email, this.newPwdTxt.Text);
 
             if (isSuccess)
             {
                 MessageBox.Show("Reset password successfully");
-            } else
+            }
+            else
             {
                 MessageBox.Show("Reset password failure");
             }
@@ -194,12 +112,63 @@ namespace QuanLyCuaHangBanSach.GUI
             login.Show();
         }
 
+        private void customButton1_Click(object sender, EventArgs e)
+        {
+            this.handleSubmit();
+        }
+
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             this.email = "";
             this.Hide();
             SendCodeGUI sendCode = new SendCodeGUI();
             sendCode.Show();
+        }
+
+        private void newPwdTxt_TextChanged(object sender, EventArgs e)
+        {
+            CustomValidation.Instance.checkTextbox(
+                this.newPwdTxt,
+                this.errorMsg1,
+                this.line1,
+                new string[] { "required" }
+            );
+        }
+
+        private void comfirmPwdTxt_TextChanged(object sender, EventArgs e)
+        {
+            bool isCheck = CustomValidation.Instance.checkTextbox(
+                this.confirmPwdTxt,
+                this.errorMsg2,
+                this.line2,
+                new string[] { "required" }
+            );
+
+            if (isCheck)
+            {
+                CustomValidation.Instance.checkTextboxMatchWithOtherTextBox(
+                    this.confirmPwdTxt,
+                    this.newPwdTxt,
+                    "Trường này phải khớp với trường 'mật khẩu mới'",
+                    this.errorMsg2,
+                    this.line2
+                );
+            }
+        }
+
+        private void newPwdTxt_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter) {
+                this.handleSubmit();
+            }
+        }
+
+        private void confirmPwdTxt_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                this.handleSubmit();
+            }
         }
     }
 }

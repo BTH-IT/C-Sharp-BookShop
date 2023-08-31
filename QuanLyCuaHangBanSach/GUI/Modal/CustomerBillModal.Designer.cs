@@ -42,7 +42,6 @@
             this.label18 = new System.Windows.Forms.Label();
             this.saleCbx = new Guna.UI.WinForms.GunaComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.bookNameTxt = new System.Windows.Forms.TextBox();
             this.errorBookNameMsg = new System.Windows.Forms.Label();
             this.nameLine = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
@@ -52,6 +51,7 @@
             this.submitBtn = new Guna.UI.WinForms.GunaButton();
             this.cancelBtn = new Guna.UI.WinForms.GunaButton();
             this.label1 = new System.Windows.Forms.Label();
+            this.totalPriceTxt = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel2.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -235,7 +235,7 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.bookNameTxt);
+            this.panel1.Controls.Add(this.totalPriceTxt);
             this.panel1.Controls.Add(this.errorBookNameMsg);
             this.panel1.Controls.Add(this.nameLine);
             this.panel1.Controls.Add(this.label3);
@@ -243,18 +243,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(594, 88);
             this.panel1.TabIndex = 3;
-            // 
-            // bookNameTxt
-            // 
-            this.bookNameTxt.BackColor = System.Drawing.SystemColors.Window;
-            this.bookNameTxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.bookNameTxt.Font = new System.Drawing.Font("#9Slide03 Cabin", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.bookNameTxt.ForeColor = System.Drawing.Color.LightGray;
-            this.bookNameTxt.Location = new System.Drawing.Point(160, 12);
-            this.bookNameTxt.Name = "bookNameTxt";
-            this.bookNameTxt.Size = new System.Drawing.Size(414, 30);
-            this.bookNameTxt.TabIndex = 6;
-            this.bookNameTxt.Text = "Nhập tổng tiền";
             // 
             // errorBookNameMsg
             // 
@@ -382,6 +370,35 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "Sửa Đơn Khách Hàng";
             // 
+            // totalPriceTxt
+            // 
+            this.totalPriceTxt.BackColor = System.Drawing.Color.Transparent;
+            this.totalPriceTxt.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
+            this.totalPriceTxt.BorderThickness = 0;
+            this.totalPriceTxt.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.totalPriceTxt.DefaultText = "";
+            this.totalPriceTxt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.totalPriceTxt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.totalPriceTxt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.totalPriceTxt.DisabledState.Parent = this.totalPriceTxt;
+            this.totalPriceTxt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.totalPriceTxt.Enabled = false;
+            this.totalPriceTxt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.totalPriceTxt.FocusedState.Parent = this.totalPriceTxt;
+            this.totalPriceTxt.Font = new System.Drawing.Font("#9Slide03 Cabin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalPriceTxt.ForeColor = System.Drawing.Color.Black;
+            this.totalPriceTxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.totalPriceTxt.HoverState.Parent = this.totalPriceTxt;
+            this.totalPriceTxt.Location = new System.Drawing.Point(151, 8);
+            this.totalPriceTxt.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.totalPriceTxt.Name = "totalPriceTxt";
+            this.totalPriceTxt.PasswordChar = '\0';
+            this.totalPriceTxt.PlaceholderText = "Tổng tiền";
+            this.totalPriceTxt.SelectedText = "";
+            this.totalPriceTxt.ShadowDecoration.Parent = this.totalPriceTxt;
+            this.totalPriceTxt.Size = new System.Drawing.Size(423, 36);
+            this.totalPriceTxt.TabIndex = 34;
+            // 
             // CustomerBillModal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 23F);
@@ -432,12 +449,12 @@
         private Guna.UI.WinForms.GunaButton cancelBtn;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox bookNameTxt;
         private System.Windows.Forms.Label errorBookNameMsg;
         private System.Windows.Forms.Panel nameLine;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.FlowLayoutPanel bookList;
+        private Guna.UI2.WinForms.Guna2TextBox totalPriceTxt;
     }
 }

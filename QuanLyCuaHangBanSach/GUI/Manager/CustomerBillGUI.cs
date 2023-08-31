@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using QuanLyCuaHangBanSach.BUS;
 using QuanLyCuaHangBanSach.DTO;
@@ -258,28 +254,6 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             this.loadCustomerBillListToDataView(customerBillList);
         }
 
-        private void searchInput_Click(object sender, EventArgs e)
-        {
-            if (this.searchInput.Text.Equals("Enter your search..."))
-            {
-                this.searchInput.Text = "";
-
-            }
-        }
-
-        private void searchInput_Leave(object sender, EventArgs e)
-        {
-            if (this.searchInput.Text.Length <= 0)
-            {
-                this.searchInput.Text = "Enter your search...";
-                this.searchInput.ForeColor = Color.LightGray;
-
-                List<CustomerBillDTO> customerBillList = handleFilter(this.searchInput.Text.ToString());
-
-                this.loadCustomerBillListToDataView(customerBillList);
-            }
-        }
-
         private void addBtn_Click(object sender, EventArgs e)
         {
             using (BookModal customerBillModal = new BookModal())
@@ -350,27 +324,6 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             this.loadCustomerBillListToDataView(customerBillList);
         }
 
-        private void fromPriceTxt_Leave(object sender, EventArgs e)
-        {
-            if (this.fromPriceTxt.Text.Length <= 0)
-            {
-                this.fromPriceTxt.Text = "Enter price from";
-                this.fromPriceTxt.ForeColor = Color.LightGray;
-
-                List<CustomerBillDTO> customerBillList = handleFilter(this.searchInput.Text.ToString());
-
-                this.loadCustomerBillListToDataView(customerBillList);
-            }
-        }
-
-        private void fromPriceTxt_Click(object sender, EventArgs e)
-        {
-            if (this.fromPriceTxt.Text.Equals("Enter price from"))
-            {
-                this.fromPriceTxt.Text = "";
-            }
-        }
-
         private void toPriceTxt_TextChanged(object sender, EventArgs e)
         {
             this.toPriceTxt.ForeColor = Color.Black;
@@ -378,28 +331,6 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             List<CustomerBillDTO> customerBillList = handleFilter(this.searchInput.Text.ToString());
 
             this.loadCustomerBillListToDataView(customerBillList);
-        }
-
-        private void toPriceTxt_Leave(object sender, EventArgs e)
-        {
-            if (this.toPriceTxt.Text.Length <= 0)
-            {
-                this.toPriceTxt.Text = "Enter price to";
-                this.toPriceTxt.ForeColor = Color.LightGray;
-
-                List<CustomerBillDTO> customerBillList = handleFilter(this.searchInput.Text.ToString());
-
-                this.loadCustomerBillListToDataView(customerBillList);
-            }
-        }
-
-        private void toPriceTxt_Click(object sender, EventArgs e)
-        {
-            if (this.toPriceTxt.Text.Equals("Enter price to"))
-            {
-                this.toPriceTxt.Text = "";
-
-            }
         }
 
         private void exportBtn_Click(object sender, EventArgs e)

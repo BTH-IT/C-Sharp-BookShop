@@ -53,7 +53,6 @@
             this.panel7.Controls.Add(this.price);
             this.panel7.Controls.Add(this.pictureBook);
             this.panel7.Controls.Add(this.name);
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel7.Location = new System.Drawing.Point(0, 0);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(575, 200);
