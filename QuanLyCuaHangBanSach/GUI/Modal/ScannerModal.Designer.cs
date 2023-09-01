@@ -108,6 +108,7 @@
             this.Font = new System.Drawing.Font("#9Slide03 Cabin", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "ScannerModal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ScannerModal";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ScannerModal_FormClosing);
             this.Load += new System.EventHandler(this.ScannerModal_Load);

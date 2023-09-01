@@ -31,19 +31,18 @@
             this.label16 = new System.Windows.Forms.Label();
             this.staffCbx = new Guna.UI.WinForms.GunaComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.errorAuthorMsg = new System.Windows.Forms.Label();
+            this.errorCustomerMsg = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.customerCbx = new Guna.UI.WinForms.GunaComboBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.errorBookTypeMsg = new System.Windows.Forms.Label();
+            this.errorStaffMsg = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.errorPublisherMsg = new System.Windows.Forms.Label();
+            this.errorSaleMsg = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.saleCbx = new Guna.UI.WinForms.GunaComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.totalPriceTxt = new Guna.UI2.WinForms.Guna2TextBox();
-            this.errorBookNameMsg = new System.Windows.Forms.Label();
             this.nameLine = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -96,7 +95,7 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.errorAuthorMsg);
+            this.panel2.Controls.Add(this.errorCustomerMsg);
             this.panel2.Controls.Add(this.label13);
             this.panel2.Controls.Add(this.customerCbx);
             this.panel2.Location = new System.Drawing.Point(3, 3);
@@ -104,15 +103,15 @@
             this.panel2.Size = new System.Drawing.Size(594, 88);
             this.panel2.TabIndex = 1;
             // 
-            // errorAuthorMsg
+            // errorCustomerMsg
             // 
-            this.errorAuthorMsg.AutoSize = true;
-            this.errorAuthorMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed SemiB", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.errorAuthorMsg.ForeColor = System.Drawing.Color.Red;
-            this.errorAuthorMsg.Location = new System.Drawing.Point(163, 52);
-            this.errorAuthorMsg.Name = "errorAuthorMsg";
-            this.errorAuthorMsg.Size = new System.Drawing.Size(0, 30);
-            this.errorAuthorMsg.TabIndex = 27;
+            this.errorCustomerMsg.AutoSize = true;
+            this.errorCustomerMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed SemiB", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.errorCustomerMsg.ForeColor = System.Drawing.Color.Red;
+            this.errorCustomerMsg.Location = new System.Drawing.Point(163, 52);
+            this.errorCustomerMsg.Name = "errorCustomerMsg";
+            this.errorCustomerMsg.Size = new System.Drawing.Size(0, 30);
+            this.errorCustomerMsg.TabIndex = 27;
             // 
             // label13
             // 
@@ -163,7 +162,7 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.errorBookTypeMsg);
+            this.panel3.Controls.Add(this.errorStaffMsg);
             this.panel3.Controls.Add(this.label16);
             this.panel3.Controls.Add(this.staffCbx);
             this.panel3.Location = new System.Drawing.Point(603, 3);
@@ -171,19 +170,19 @@
             this.panel3.Size = new System.Drawing.Size(594, 88);
             this.panel3.TabIndex = 1;
             // 
-            // errorBookTypeMsg
+            // errorStaffMsg
             // 
-            this.errorBookTypeMsg.AutoSize = true;
-            this.errorBookTypeMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed SemiB", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.errorBookTypeMsg.ForeColor = System.Drawing.Color.Red;
-            this.errorBookTypeMsg.Location = new System.Drawing.Point(163, 52);
-            this.errorBookTypeMsg.Name = "errorBookTypeMsg";
-            this.errorBookTypeMsg.Size = new System.Drawing.Size(0, 30);
-            this.errorBookTypeMsg.TabIndex = 30;
+            this.errorStaffMsg.AutoSize = true;
+            this.errorStaffMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed SemiB", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.errorStaffMsg.ForeColor = System.Drawing.Color.Red;
+            this.errorStaffMsg.Location = new System.Drawing.Point(163, 52);
+            this.errorStaffMsg.Name = "errorStaffMsg";
+            this.errorStaffMsg.Size = new System.Drawing.Size(0, 30);
+            this.errorStaffMsg.TabIndex = 30;
             // 
             // panel6
             // 
-            this.panel6.Controls.Add(this.errorPublisherMsg);
+            this.panel6.Controls.Add(this.errorSaleMsg);
             this.panel6.Controls.Add(this.label18);
             this.panel6.Controls.Add(this.saleCbx);
             this.panel6.Location = new System.Drawing.Point(3, 97);
@@ -191,15 +190,15 @@
             this.panel6.Size = new System.Drawing.Size(594, 88);
             this.panel6.TabIndex = 2;
             // 
-            // errorPublisherMsg
+            // errorSaleMsg
             // 
-            this.errorPublisherMsg.AutoSize = true;
-            this.errorPublisherMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed SemiB", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.errorPublisherMsg.ForeColor = System.Drawing.Color.Red;
-            this.errorPublisherMsg.Location = new System.Drawing.Point(163, 52);
-            this.errorPublisherMsg.Name = "errorPublisherMsg";
-            this.errorPublisherMsg.Size = new System.Drawing.Size(0, 30);
-            this.errorPublisherMsg.TabIndex = 33;
+            this.errorSaleMsg.AutoSize = true;
+            this.errorSaleMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed SemiB", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.errorSaleMsg.ForeColor = System.Drawing.Color.Red;
+            this.errorSaleMsg.Location = new System.Drawing.Point(163, 52);
+            this.errorSaleMsg.Name = "errorSaleMsg";
+            this.errorSaleMsg.Size = new System.Drawing.Size(0, 30);
+            this.errorSaleMsg.TabIndex = 33;
             // 
             // label18
             // 
@@ -237,7 +236,6 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.totalPriceTxt);
-            this.panel1.Controls.Add(this.errorBookNameMsg);
             this.panel1.Controls.Add(this.nameLine);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Location = new System.Drawing.Point(603, 97);
@@ -273,16 +271,6 @@
             this.totalPriceTxt.ShadowDecoration.Parent = this.totalPriceTxt;
             this.totalPriceTxt.Size = new System.Drawing.Size(423, 36);
             this.totalPriceTxt.TabIndex = 34;
-            // 
-            // errorBookNameMsg
-            // 
-            this.errorBookNameMsg.AutoSize = true;
-            this.errorBookNameMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed SemiB", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.errorBookNameMsg.ForeColor = System.Drawing.Color.Red;
-            this.errorBookNameMsg.Location = new System.Drawing.Point(163, 50);
-            this.errorBookNameMsg.Name = "errorBookNameMsg";
-            this.errorBookNameMsg.Size = new System.Drawing.Size(0, 30);
-            this.errorBookNameMsg.TabIndex = 7;
             // 
             // nameLine
             // 
@@ -357,7 +345,7 @@
             this.label2.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label2.Location = new System.Drawing.Point(3, 15);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(223, 49);
+            this.label2.Size = new System.Drawing.Size(389, 49);
             this.label2.TabIndex = 28;
             this.label2.Text = "Danh sách các sản phẩm";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -391,6 +379,7 @@
             this.submitBtn.TabStop = false;
             this.submitBtn.Text = "Lưu";
             this.submitBtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.submitBtn.Click += new System.EventHandler(this.submitBtn_Click);
             // 
             // cancelBtn
             // 
@@ -421,6 +410,7 @@
             this.cancelBtn.TabStop = false;
             this.cancelBtn.Text = "Hủy";
             this.cancelBtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
             // 
             // label1
             // 
@@ -459,7 +449,6 @@
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -470,21 +459,20 @@
         private System.Windows.Forms.Label label16;
         private Guna.UI.WinForms.GunaComboBox staffCbx;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label errorAuthorMsg;
+        private System.Windows.Forms.Label errorCustomerMsg;
         private System.Windows.Forms.Label label13;
         private Guna.UI.WinForms.GunaComboBox customerCbx;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label errorBookTypeMsg;
+        private System.Windows.Forms.Label errorStaffMsg;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Label errorPublisherMsg;
+        private System.Windows.Forms.Label errorSaleMsg;
         private System.Windows.Forms.Label label18;
         private Guna.UI.WinForms.GunaComboBox saleCbx;
         private Guna.UI.WinForms.GunaButton submitBtn;
         private Guna.UI.WinForms.GunaButton cancelBtn;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label errorBookNameMsg;
         private System.Windows.Forms.Panel nameLine;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel4;

@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data;
-using System.Windows.Documents;
 using MySql.Data.MySqlClient;
 using QuanLyCuaHangBanSach.DTO;
 
@@ -46,12 +44,29 @@ namespace QuanLyCuaHangBanSach.DAO
             return account;
         }
 
-        public List<CustomerBillDetailDTO> getCustomerBillDetail(string id)
+        public CustomerBillDetailDTO getCustomerBillDetail(string billId, string bookId)
+        {
+            DataTable dataTable = DataProvider.Instance.ExecuteQuery(
+                "SELECT * FROM chitietphieuban WHERE maDonKhachHang=@maDonKhachHang AND maSach=@maSach;",
+                new MySqlParameter[] {
+                    new MySqlParameter("@maDonKhachHang", billId),
+                    new MySqlParameter("@maSach", bookId)
+                }
+            );
+
+            if (dataTable.Rows.Count <= 0) return null;
+
+            CustomerBillDetailDTO customerBillDetail = new CustomerBillDetailDTO(dataTable.Rows[0]);
+
+            return customerBillDetail;
+        }
+
+        public List<CustomerBillDetailDTO> getCustomerBillDetailList(string billId)
         {
             DataTable dataTable = DataProvider.Instance.ExecuteQuery(
                 "SELECT * FROM chitietphieuban WHERE maDonKhachHang=@maDonKhachHang;",
                 new MySqlParameter[] {
-                    new MySqlParameter("@maDonKhachHang", id)
+                    new MySqlParameter("@maDonKhachHang", billId),
                 }
             );
 
@@ -67,7 +82,6 @@ namespace QuanLyCuaHangBanSach.DAO
 
             return customerBillDetailList;
         }
-
 
         public DataTable searchData(string value)
         {
@@ -98,6 +112,51 @@ namespace QuanLyCuaHangBanSach.DAO
             return rowChanged > 0;
         }
 
+        public bool createCustomerBillDetail(CustomerBillDetailDTO data)
+        {
+            string sql = $@"INSERT INTO chitietphieuban (maDonKhachHang, maSach, soLuong, donGia) 
+                            VALUES (@maDonKhachHang, @maSach, @soLuong, @donGia);";
+
+            int rowChanged = DataProvider.Instance.ExecuteNonQuery(sql,
+                new MySqlParameter[] {
+                    new MySqlParameter("@maDonKhachHang", data.MaDon),
+                    new MySqlParameter("@maSach", data.MaSach),
+                    new MySqlParameter("@soLuong", data.SoLuong),
+                    new MySqlParameter("@donGia", data.DonGia),
+                });
+
+            return rowChanged > 0;
+        }
+
+        public bool updateCustomerBillDetail(CustomerBillDetailDTO data)
+        {
+            string sql = $@"UPDATE chitietphieuban SET soLuong=@soLuong, donGia=@donGia  
+                            WHERE maDonKhachHang=@maDonKhachHang AND maSach=@maSach;";
+
+            int rowChanged = DataProvider.Instance.ExecuteNonQuery(sql,
+                new MySqlParameter[] {
+                    new MySqlParameter("@maDonKhachHang", data.MaDon),
+                    new MySqlParameter("@maSach", data.MaSach),
+                    new MySqlParameter("@soLuong", data.SoLuong),
+                    new MySqlParameter("@donGia", data.DonGia),
+                });
+
+            return rowChanged > 0;
+        }
+
+        public bool deleteCustomerBillDetail(string billId, string bookId)
+        {
+            string sql = $@"DELETE FROM chitietphieuban WHERE maDonKhachHang=@maDonKhachHang AND maSach=@maSach;";
+
+            int rowChanged = DataProvider.Instance.ExecuteNonQuery(sql,
+                new MySqlParameter[] {
+                    new MySqlParameter("@maDonKhachHang", billId),
+                    new MySqlParameter("@maSach", bookId),
+                });
+
+            return rowChanged > 0;
+        }
+
         public bool update(CustomerBillDTO data)
         {
             string sql = $@"UPDATE phieuban SET 
@@ -110,7 +169,7 @@ namespace QuanLyCuaHangBanSach.DAO
                     new MySqlParameter("@maNhanVien", data.MaNhanVien),
                     new MySqlParameter("@ngayLap", data.NgayLap),
                     new MySqlParameter("@tongTien", data.TongTien),
-                    new MySqlParameter("@maKhuyenMai", data.MaKhuyenMai),
+                    new MySqlParameter("@maKhuyenMai", data.MaKhuyenMai == -1 ? null : data.MaKhuyenMai.ToString()),
                     new MySqlParameter("@maDonKhachHang", data.MaDonKhachHang),
                 });
 

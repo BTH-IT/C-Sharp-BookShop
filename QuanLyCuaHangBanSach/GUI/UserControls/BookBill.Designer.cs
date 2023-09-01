@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BookBill));
             this.panel7 = new System.Windows.Forms.Panel();
+            this.id = new System.Windows.Forms.Label();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.amountInput = new Guna.UI2.WinForms.Guna2TextBox();
             this.minus = new Guna.UI.WinForms.GunaAdvenceButton();
@@ -48,6 +49,7 @@
             // 
             this.panel7.AutoSize = true;
             this.panel7.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel7.Controls.Add(this.id);
             this.panel7.Controls.Add(this.guna2Panel2);
             this.panel7.Controls.Add(this.close);
             this.panel7.Controls.Add(this.price);
@@ -58,16 +60,27 @@
             this.panel7.Size = new System.Drawing.Size(575, 200);
             this.panel7.TabIndex = 8;
             // 
+            // id
+            // 
+            this.id.Font = new System.Drawing.Font("#9Slide03 Cabin", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.id.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.id.Location = new System.Drawing.Point(269, 13);
+            this.id.Name = "id";
+            this.id.Size = new System.Drawing.Size(156, 29);
+            this.id.TabIndex = 7;
+            this.id.Text = "Mã: 1";
+            this.id.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // guna2Panel2
             // 
             this.guna2Panel2.BorderRadius = 100;
             this.guna2Panel2.Controls.Add(this.amountInput);
             this.guna2Panel2.Controls.Add(this.minus);
             this.guna2Panel2.Controls.Add(this.plus);
-            this.guna2Panel2.Location = new System.Drawing.Point(269, 91);
+            this.guna2Panel2.Location = new System.Drawing.Point(273, 91);
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.ShadowDecoration.Parent = this.guna2Panel2;
-            this.guna2Panel2.Size = new System.Drawing.Size(191, 35);
+            this.guna2Panel2.Size = new System.Drawing.Size(241, 42);
             this.guna2Panel2.TabIndex = 6;
             // 
             // amountInput
@@ -86,14 +99,14 @@
             this.amountInput.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.amountInput.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.amountInput.HoverState.Parent = this.amountInput;
-            this.amountInput.Location = new System.Drawing.Point(35, 0);
+            this.amountInput.Location = new System.Drawing.Point(46, 0);
             this.amountInput.Margin = new System.Windows.Forms.Padding(4, 9, 4, 9);
             this.amountInput.Name = "amountInput";
             this.amountInput.PasswordChar = '\0';
             this.amountInput.PlaceholderText = "";
             this.amountInput.SelectedText = "";
             this.amountInput.ShadowDecoration.Parent = this.amountInput;
-            this.amountInput.Size = new System.Drawing.Size(121, 35);
+            this.amountInput.Size = new System.Drawing.Size(145, 42);
             this.amountInput.TabIndex = 4;
             this.amountInput.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -120,13 +133,13 @@
             this.minus.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.minus.Location = new System.Drawing.Point(0, 0);
             this.minus.Name = "minus";
-            this.minus.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.minus.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(225)))));
             this.minus.OnHoverBorderColor = System.Drawing.Color.Black;
             this.minus.OnHoverForeColor = System.Drawing.Color.White;
             this.minus.OnHoverImage = null;
             this.minus.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.minus.OnPressedColor = System.Drawing.Color.Black;
-            this.minus.Size = new System.Drawing.Size(35, 35);
+            this.minus.Size = new System.Drawing.Size(46, 42);
             this.minus.TabIndex = 3;
             this.minus.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -151,15 +164,15 @@
             this.plus.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.plus.ImageSize = new System.Drawing.Size(20, 20);
             this.plus.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.plus.Location = new System.Drawing.Point(156, 0);
+            this.plus.Location = new System.Drawing.Point(191, 0);
             this.plus.Name = "plus";
-            this.plus.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.plus.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(225)))));
             this.plus.OnHoverBorderColor = System.Drawing.Color.Black;
             this.plus.OnHoverForeColor = System.Drawing.Color.White;
             this.plus.OnHoverImage = null;
             this.plus.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.plus.OnPressedColor = System.Drawing.Color.Black;
-            this.plus.Size = new System.Drawing.Size(35, 35);
+            this.plus.Size = new System.Drawing.Size(50, 42);
             this.plus.TabIndex = 2;
             this.plus.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -177,7 +190,7 @@
             // 
             this.price.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.price.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.price.Location = new System.Drawing.Point(264, 146);
+            this.price.Location = new System.Drawing.Point(266, 146);
             this.price.Name = "price";
             this.price.Size = new System.Drawing.Size(252, 40);
             this.price.TabIndex = 3;
@@ -198,13 +211,12 @@
             // 
             // name
             // 
-            this.name.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.name.Location = new System.Drawing.Point(264, 13);
+            this.name.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.name.Location = new System.Drawing.Point(267, 42);
             this.name.Name = "name";
-            this.name.Size = new System.Drawing.Size(252, 43);
+            this.name.Size = new System.Drawing.Size(247, 38);
             this.name.TabIndex = 1;
             this.name.Text = "Conan";
-            this.name.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // BookBill
             // 
@@ -226,12 +238,13 @@
 
         private System.Windows.Forms.Panel panel7;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
-        private Guna.UI2.WinForms.Guna2TextBox amountInput;
-        private Guna.UI.WinForms.GunaAdvenceButton minus;
-        private Guna.UI.WinForms.GunaAdvenceButton plus;
-        private System.Windows.Forms.PictureBox close;
         private System.Windows.Forms.Label price;
         private Guna.UI2.WinForms.Guna2PictureBox pictureBook;
         private System.Windows.Forms.Label name;
+        private System.Windows.Forms.Label id;
+        public Guna.UI2.WinForms.Guna2TextBox amountInput;
+        public Guna.UI.WinForms.GunaAdvenceButton minus;
+        public Guna.UI.WinForms.GunaAdvenceButton plus;
+        public System.Windows.Forms.PictureBox close;
     }
 }

@@ -31,29 +31,25 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddBookToBillModal));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             this.publisherCbx = new Guna.UI.WinForms.GunaComboBox();
             this.bookTypeCbx = new Guna.UI.WinForms.GunaComboBox();
             this.authorCbx = new Guna.UI.WinForms.GunaComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.cancelBtn = new Guna.UI.WinForms.GunaButton();
+            this.saveBtn = new Guna.UI.WinForms.GunaButton();
             this.addToProductList = new Guna.UI.WinForms.GunaAdvenceButton();
             this.refreshBtn = new Guna.UI.WinForms.GunaAdvenceButton();
             this.barcodeBtn = new Guna.UI.WinForms.GunaAdvenceButton();
             this.searchInput = new Guna.UI2.WinForms.Guna2TextBox();
             this.dgvBook = new Guna.UI.WinForms.GunaDataGridView();
-            this.line1 = new System.Windows.Forms.Panel();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.gradientPanel1 = new QuanLyCuaHangBanSach.GradientPanel();
-            this.priceTo = new Guna.UI2.WinForms.Guna2TextBox();
-            this.priceFrom = new Guna.UI2.WinForms.Guna2TextBox();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.Column11 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.maSach = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tenSach = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,12 +58,28 @@
             this.maTheLoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.maNhaXuatBan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.giaBan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.giaNhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.namXuatBan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.soLuongConLai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.line1 = new System.Windows.Forms.Panel();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.dgvAddBookToBillList = new Guna.UI.WinForms.GunaDataGridView();
+            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.soLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gunaAdvenceButton1 = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.gradientPanel1 = new QuanLyCuaHangBanSach.GradientPanel();
+            this.priceTo = new Guna.UI2.WinForms.Guna2TextBox();
+            this.priceFrom = new Guna.UI2.WinForms.Guna2TextBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBook)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAddBookToBillList)).BeginInit();
             this.gradientPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -86,7 +98,7 @@
             this.publisherCbx.FormattingEnabled = true;
             this.publisherCbx.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.publisherCbx.ItemHeight = 30;
-            this.publisherCbx.Location = new System.Drawing.Point(869, 9);
+            this.publisherCbx.Location = new System.Drawing.Point(650, 9);
             this.publisherCbx.Margin = new System.Windows.Forms.Padding(3, 3, 100, 3);
             this.publisherCbx.Name = "publisherCbx";
             this.publisherCbx.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
@@ -111,7 +123,7 @@
             this.bookTypeCbx.ForeColor = System.Drawing.Color.Black;
             this.bookTypeCbx.FormattingEnabled = true;
             this.bookTypeCbx.ItemHeight = 30;
-            this.bookTypeCbx.Location = new System.Drawing.Point(697, 9);
+            this.bookTypeCbx.Location = new System.Drawing.Point(478, 9);
             this.bookTypeCbx.Name = "bookTypeCbx";
             this.bookTypeCbx.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.bookTypeCbx.OnHoverItemForeColor = System.Drawing.Color.White;
@@ -135,7 +147,7 @@
             this.authorCbx.ForeColor = System.Drawing.Color.Black;
             this.authorCbx.FormattingEnabled = true;
             this.authorCbx.ItemHeight = 30;
-            this.authorCbx.Location = new System.Drawing.Point(516, 9);
+            this.authorCbx.Location = new System.Drawing.Point(297, 9);
             this.authorCbx.Name = "authorCbx";
             this.authorCbx.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.authorCbx.OnHoverItemForeColor = System.Drawing.Color.White;
@@ -148,45 +160,45 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
-            this.panel1.Controls.Add(this.cancelBtn);
+            this.panel1.Controls.Add(this.saveBtn);
             this.panel1.Controls.Add(this.addToProductList);
             this.panel1.Controls.Add(this.refreshBtn);
             this.panel1.Controls.Add(this.barcodeBtn);
             this.panel1.Location = new System.Drawing.Point(3, 756);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1376, 62);
+            this.panel1.Size = new System.Drawing.Size(1577, 62);
             this.panel1.TabIndex = 35;
             // 
-            // cancelBtn
+            // saveBtn
             // 
-            this.cancelBtn.Animated = true;
-            this.cancelBtn.AnimationHoverSpeed = 0.05F;
-            this.cancelBtn.AnimationSpeed = 0.05F;
-            this.cancelBtn.BackColor = System.Drawing.Color.Transparent;
-            this.cancelBtn.BaseColor = System.Drawing.Color.White;
-            this.cancelBtn.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.cancelBtn.BorderSize = 2;
-            this.cancelBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cancelBtn.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.cancelBtn.FocusedColor = System.Drawing.Color.Empty;
-            this.cancelBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cancelBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.cancelBtn.Image = null;
-            this.cancelBtn.ImageSize = new System.Drawing.Size(20, 20);
-            this.cancelBtn.Location = new System.Drawing.Point(1211, 7);
-            this.cancelBtn.Name = "cancelBtn";
-            this.cancelBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.cancelBtn.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.cancelBtn.OnHoverForeColor = System.Drawing.Color.White;
-            this.cancelBtn.OnHoverImage = null;
-            this.cancelBtn.OnPressedColor = System.Drawing.Color.White;
-            this.cancelBtn.Radius = 16;
-            this.cancelBtn.Size = new System.Drawing.Size(156, 49);
-            this.cancelBtn.TabIndex = 41;
-            this.cancelBtn.TabStop = false;
-            this.cancelBtn.Text = "Trở về";
-            this.cancelBtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
+            this.saveBtn.Animated = true;
+            this.saveBtn.AnimationHoverSpeed = 0.05F;
+            this.saveBtn.AnimationSpeed = 0.05F;
+            this.saveBtn.BackColor = System.Drawing.Color.Transparent;
+            this.saveBtn.BaseColor = System.Drawing.Color.White;
+            this.saveBtn.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.saveBtn.BorderSize = 2;
+            this.saveBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.saveBtn.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.saveBtn.FocusedColor = System.Drawing.Color.Empty;
+            this.saveBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.saveBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.saveBtn.Image = null;
+            this.saveBtn.ImageSize = new System.Drawing.Size(20, 20);
+            this.saveBtn.Location = new System.Drawing.Point(1411, 7);
+            this.saveBtn.Name = "saveBtn";
+            this.saveBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.saveBtn.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.saveBtn.OnHoverForeColor = System.Drawing.Color.White;
+            this.saveBtn.OnHoverImage = null;
+            this.saveBtn.OnPressedColor = System.Drawing.Color.White;
+            this.saveBtn.Radius = 16;
+            this.saveBtn.Size = new System.Drawing.Size(156, 49);
+            this.saveBtn.TabIndex = 41;
+            this.saveBtn.TabStop = false;
+            this.saveBtn.Text = "Lưu";
+            this.saveBtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.saveBtn.Click += new System.EventHandler(this.cancelBtn_Click);
             // 
             // addToProductList
             // 
@@ -348,42 +360,40 @@
             this.maTheLoai,
             this.maNhaXuatBan,
             this.giaBan,
-            this.giaNhap,
-            this.namXuatBan,
             this.soLuongConLai});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("#9Slide03 Cabin", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvBook.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("#9Slide03 Cabin", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvBook.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvBook.EnableHeadersVisualStyles = false;
             this.dgvBook.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvBook.Location = new System.Drawing.Point(3, 62);
             this.dgvBook.Name = "dgvBook";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("#9Slide03 Cabin", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvBook.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("#9Slide03 Cabin", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvBook.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvBook.RowHeadersVisible = false;
             this.dgvBook.RowHeadersWidth = 51;
             this.dgvBook.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvBook.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvBook.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvBook.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dgvBook.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvBook.RowTemplate.Height = 75;
             this.dgvBook.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvBook.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvBook.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvBook.Size = new System.Drawing.Size(1376, 688);
+            this.dgvBook.Size = new System.Drawing.Size(1154, 688);
             this.dgvBook.TabIndex = 34;
             this.dgvBook.TabStop = false;
             this.dgvBook.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna;
@@ -408,6 +418,91 @@
             this.dgvBook.ThemeStyle.RowsStyle.Height = 75;
             this.dgvBook.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvBook.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            // 
+            // Column11
+            // 
+            this.Column11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Column11.FillWeight = 50F;
+            this.Column11.Frozen = true;
+            this.Column11.HeaderText = "";
+            this.Column11.MinimumWidth = 50;
+            this.Column11.Name = "Column11";
+            this.Column11.Width = 50;
+            // 
+            // maSach
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.maSach.DefaultCellStyle = dataGridViewCellStyle3;
+            this.maSach.HeaderText = "Mã Sách";
+            this.maSach.MinimumWidth = 6;
+            this.maSach.Name = "maSach";
+            this.maSach.ReadOnly = true;
+            this.maSach.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.maSach.ToolTipText = "Mã Sách";
+            // 
+            // tenSach
+            // 
+            this.tenSach.HeaderText = "Tên Sách";
+            this.tenSach.MinimumWidth = 6;
+            this.tenSach.Name = "tenSach";
+            this.tenSach.ReadOnly = true;
+            this.tenSach.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.tenSach.ToolTipText = "Tên Sách";
+            // 
+            // hinhAnh
+            // 
+            this.hinhAnh.HeaderText = "Hình Ảnh";
+            this.hinhAnh.Image = ((System.Drawing.Image)(resources.GetObject("hinhAnh.Image")));
+            this.hinhAnh.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.hinhAnh.MinimumWidth = 100;
+            this.hinhAnh.Name = "hinhAnh";
+            // 
+            // maTacGia
+            // 
+            this.maTacGia.HeaderText = "Tác Giả";
+            this.maTacGia.MinimumWidth = 6;
+            this.maTacGia.Name = "maTacGia";
+            this.maTacGia.ReadOnly = true;
+            this.maTacGia.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.maTacGia.ToolTipText = "Tác Giả";
+            // 
+            // maTheLoai
+            // 
+            this.maTheLoai.HeaderText = "Thể Loại";
+            this.maTheLoai.MinimumWidth = 6;
+            this.maTheLoai.Name = "maTheLoai";
+            this.maTheLoai.ReadOnly = true;
+            this.maTheLoai.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.maTheLoai.ToolTipText = "Thể Loại";
+            // 
+            // maNhaXuatBan
+            // 
+            this.maNhaXuatBan.HeaderText = "Nhà Xuất Bản";
+            this.maNhaXuatBan.MinimumWidth = 6;
+            this.maNhaXuatBan.Name = "maNhaXuatBan";
+            this.maNhaXuatBan.ReadOnly = true;
+            this.maNhaXuatBan.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.maNhaXuatBan.ToolTipText = "Nhà Xuất Bản";
+            // 
+            // giaBan
+            // 
+            this.giaBan.HeaderText = "Giá Bán";
+            this.giaBan.MinimumWidth = 6;
+            this.giaBan.Name = "giaBan";
+            this.giaBan.ReadOnly = true;
+            this.giaBan.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.giaBan.ToolTipText = "Giá Bán";
+            // 
+            // soLuongConLai
+            // 
+            this.soLuongConLai.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.soLuongConLai.HeaderText = "Còn Lại";
+            this.soLuongConLai.MinimumWidth = 6;
+            this.soLuongConLai.Name = "soLuongConLai";
+            this.soLuongConLai.ReadOnly = true;
+            this.soLuongConLai.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.soLuongConLai.ToolTipText = "Còn Lại";
+            this.soLuongConLai.Width = 125;
             // 
             // line1
             // 
@@ -436,6 +531,168 @@
             this.pictureBox1.TabIndex = 33;
             this.pictureBox1.TabStop = false;
             // 
+            // dgvAddBookToBillList
+            // 
+            this.dgvAddBookToBillList.AllowUserToAddRows = false;
+            this.dgvAddBookToBillList.AllowUserToDeleteRows = false;
+            this.dgvAddBookToBillList.AllowUserToResizeRows = false;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            this.dgvAddBookToBillList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            this.dgvAddBookToBillList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvAddBookToBillList.BackgroundColor = System.Drawing.Color.White;
+            this.dgvAddBookToBillList.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvAddBookToBillList.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvAddBookToBillList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("#9Slide03 Cabin", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvAddBookToBillList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            this.dgvAddBookToBillList.ColumnHeadersHeight = 50;
+            this.dgvAddBookToBillList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvAddBookToBillList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewCheckBoxColumn1,
+            this.dataGridViewTextBoxColumn1,
+            this.soLuong,
+            this.dataGridViewTextBoxColumn6,
+            this.Column1});
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("#9Slide03 Cabin", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvAddBookToBillList.DefaultCellStyle = dataGridViewCellStyle9;
+            this.dgvAddBookToBillList.EnableHeadersVisualStyles = false;
+            this.dgvAddBookToBillList.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvAddBookToBillList.Location = new System.Drawing.Point(1166, 62);
+            this.dgvAddBookToBillList.Name = "dgvAddBookToBillList";
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("#9Slide03 Cabin", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvAddBookToBillList.RowHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            this.dgvAddBookToBillList.RowHeadersVisible = false;
+            this.dgvAddBookToBillList.RowHeadersWidth = 51;
+            this.dgvAddBookToBillList.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvAddBookToBillList.RowsDefaultCellStyle = dataGridViewCellStyle11;
+            this.dgvAddBookToBillList.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvAddBookToBillList.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvAddBookToBillList.RowTemplate.Height = 75;
+            this.dgvAddBookToBillList.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvAddBookToBillList.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dgvAddBookToBillList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvAddBookToBillList.Size = new System.Drawing.Size(414, 688);
+            this.dgvAddBookToBillList.TabIndex = 41;
+            this.dgvAddBookToBillList.TabStop = false;
+            this.dgvAddBookToBillList.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna;
+            this.dgvAddBookToBillList.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.dgvAddBookToBillList.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.dgvAddBookToBillList.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.dgvAddBookToBillList.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.dgvAddBookToBillList.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.dgvAddBookToBillList.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.dgvAddBookToBillList.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvAddBookToBillList.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.dgvAddBookToBillList.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dgvAddBookToBillList.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("#9Slide03 Cabin", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvAddBookToBillList.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.dgvAddBookToBillList.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvAddBookToBillList.ThemeStyle.HeaderStyle.Height = 50;
+            this.dgvAddBookToBillList.ThemeStyle.ReadOnly = false;
+            this.dgvAddBookToBillList.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.dgvAddBookToBillList.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvAddBookToBillList.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("#9Slide03 Cabin", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvAddBookToBillList.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgvAddBookToBillList.ThemeStyle.RowsStyle.Height = 75;
+            this.dgvAddBookToBillList.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvAddBookToBillList.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgvAddBookToBillList.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAddBookToBillList_CellEndEdit);
+            // 
+            // dataGridViewCheckBoxColumn1
+            // 
+            this.dataGridViewCheckBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dataGridViewCheckBoxColumn1.FillWeight = 50F;
+            this.dataGridViewCheckBoxColumn1.Frozen = true;
+            this.dataGridViewCheckBoxColumn1.HeaderText = "";
+            this.dataGridViewCheckBoxColumn1.MinimumWidth = 50;
+            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
+            this.dataGridViewCheckBoxColumn1.Width = 50;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "Mã Sách";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewTextBoxColumn1.ToolTipText = "Mã Sách";
+            // 
+            // soLuong
+            // 
+            this.soLuong.HeaderText = "Số lượng";
+            this.soLuong.MinimumWidth = 6;
+            this.soLuong.Name = "soLuong";
+            this.soLuong.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.soLuong.ToolTipText = "Số lượng";
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.HeaderText = "Đơn giá";
+            this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            this.dataGridViewTextBoxColumn6.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewTextBoxColumn6.ToolTipText = "Đơn giá";
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Thành tiền";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            // 
+            // gunaAdvenceButton1
+            // 
+            this.gunaAdvenceButton1.AnimationHoverSpeed = 0.07F;
+            this.gunaAdvenceButton1.AnimationSpeed = 0.03F;
+            this.gunaAdvenceButton1.BackColor = System.Drawing.Color.Transparent;
+            this.gunaAdvenceButton1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.gunaAdvenceButton1.BorderColor = System.Drawing.Color.Black;
+            this.gunaAdvenceButton1.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.gunaAdvenceButton1.CheckedBorderColor = System.Drawing.Color.Black;
+            this.gunaAdvenceButton1.CheckedForeColor = System.Drawing.Color.White;
+            this.gunaAdvenceButton1.CheckedImage = ((System.Drawing.Image)(resources.GetObject("gunaAdvenceButton1.CheckedImage")));
+            this.gunaAdvenceButton1.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.gunaAdvenceButton1.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.gunaAdvenceButton1.FocusedColor = System.Drawing.Color.Empty;
+            this.gunaAdvenceButton1.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaAdvenceButton1.ForeColor = System.Drawing.Color.White;
+            this.gunaAdvenceButton1.Image = ((System.Drawing.Image)(resources.GetObject("gunaAdvenceButton1.Image")));
+            this.gunaAdvenceButton1.ImageSize = new System.Drawing.Size(30, 30);
+            this.gunaAdvenceButton1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.gunaAdvenceButton1.Location = new System.Drawing.Point(1327, 9);
+            this.gunaAdvenceButton1.Name = "gunaAdvenceButton1";
+            this.gunaAdvenceButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.gunaAdvenceButton1.OnHoverBorderColor = System.Drawing.Color.Transparent;
+            this.gunaAdvenceButton1.OnHoverForeColor = System.Drawing.Color.White;
+            this.gunaAdvenceButton1.OnHoverImage = null;
+            this.gunaAdvenceButton1.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.gunaAdvenceButton1.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaAdvenceButton1.Radius = 6;
+            this.gunaAdvenceButton1.Size = new System.Drawing.Size(253, 37);
+            this.gunaAdvenceButton1.TabIndex = 42;
+            this.gunaAdvenceButton1.Text = "Xóa sách khỏi danh sách thêm";
+            this.gunaAdvenceButton1.Click += new System.EventHandler(this.gunaAdvenceButton1_Click);
+            // 
             // gradientPanel1
             // 
             this.gradientPanel1.ColorLeft = System.Drawing.Color.Empty;
@@ -446,7 +703,7 @@
             this.gradientPanel1.Controls.Add(this.panel4);
             this.gradientPanel1.Controls.Add(this.panel2);
             this.gradientPanel1.Controls.Add(this.label1);
-            this.gradientPanel1.Location = new System.Drawing.Point(1088, 10);
+            this.gradientPanel1.Location = new System.Drawing.Point(869, 10);
             this.gradientPanel1.Name = "gradientPanel1";
             this.gradientPanel1.Size = new System.Drawing.Size(291, 36);
             this.gradientPanel1.TabIndex = 39;
@@ -550,113 +807,14 @@
             this.label1.Text = "$";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // Column11
-            // 
-            this.Column11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Column11.FillWeight = 50F;
-            this.Column11.Frozen = true;
-            this.Column11.HeaderText = "";
-            this.Column11.MinimumWidth = 50;
-            this.Column11.Name = "Column11";
-            this.Column11.Width = 50;
-            // 
-            // maSach
-            // 
-            this.maSach.HeaderText = "Mã Sách";
-            this.maSach.MinimumWidth = 6;
-            this.maSach.Name = "maSach";
-            this.maSach.ReadOnly = true;
-            this.maSach.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.maSach.ToolTipText = "Mã Sách";
-            // 
-            // tenSach
-            // 
-            this.tenSach.HeaderText = "Tên Sách";
-            this.tenSach.MinimumWidth = 6;
-            this.tenSach.Name = "tenSach";
-            this.tenSach.ReadOnly = true;
-            this.tenSach.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.tenSach.ToolTipText = "Tên Sách";
-            // 
-            // hinhAnh
-            // 
-            this.hinhAnh.HeaderText = "Hình Ảnh";
-            this.hinhAnh.Image = ((System.Drawing.Image)(resources.GetObject("hinhAnh.Image")));
-            this.hinhAnh.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
-            this.hinhAnh.MinimumWidth = 100;
-            this.hinhAnh.Name = "hinhAnh";
-            // 
-            // maTacGia
-            // 
-            this.maTacGia.HeaderText = "Tác Giả";
-            this.maTacGia.MinimumWidth = 6;
-            this.maTacGia.Name = "maTacGia";
-            this.maTacGia.ReadOnly = true;
-            this.maTacGia.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.maTacGia.ToolTipText = "Tác Giả";
-            // 
-            // maTheLoai
-            // 
-            this.maTheLoai.HeaderText = "Thể Loại";
-            this.maTheLoai.MinimumWidth = 6;
-            this.maTheLoai.Name = "maTheLoai";
-            this.maTheLoai.ReadOnly = true;
-            this.maTheLoai.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.maTheLoai.ToolTipText = "Thể Loại";
-            // 
-            // maNhaXuatBan
-            // 
-            this.maNhaXuatBan.HeaderText = "Nhà Xuất Bản";
-            this.maNhaXuatBan.MinimumWidth = 6;
-            this.maNhaXuatBan.Name = "maNhaXuatBan";
-            this.maNhaXuatBan.ReadOnly = true;
-            this.maNhaXuatBan.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.maNhaXuatBan.ToolTipText = "Nhà Xuất Bản";
-            // 
-            // giaBan
-            // 
-            this.giaBan.HeaderText = "Giá Bán";
-            this.giaBan.MinimumWidth = 6;
-            this.giaBan.Name = "giaBan";
-            this.giaBan.ReadOnly = true;
-            this.giaBan.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.giaBan.ToolTipText = "Giá Bán";
-            // 
-            // giaNhap
-            // 
-            this.giaNhap.HeaderText = "Giá Nhập";
-            this.giaNhap.MinimumWidth = 6;
-            this.giaNhap.Name = "giaNhap";
-            this.giaNhap.ReadOnly = true;
-            this.giaNhap.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.giaNhap.ToolTipText = "Giá Nhập";
-            // 
-            // namXuatBan
-            // 
-            this.namXuatBan.HeaderText = "Năm Xuất Bản";
-            this.namXuatBan.MinimumWidth = 6;
-            this.namXuatBan.Name = "namXuatBan";
-            this.namXuatBan.ReadOnly = true;
-            this.namXuatBan.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.namXuatBan.ToolTipText = "Năm Xuất Bản";
-            // 
-            // soLuongConLai
-            // 
-            this.soLuongConLai.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.soLuongConLai.HeaderText = "Còn Lại";
-            this.soLuongConLai.MinimumWidth = 6;
-            this.soLuongConLai.Name = "soLuongConLai";
-            this.soLuongConLai.ReadOnly = true;
-            this.soLuongConLai.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.soLuongConLai.ToolTipText = "Còn Lại";
-            this.soLuongConLai.Width = 125;
-            // 
             // AddBookToBillModal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
-            this.ClientSize = new System.Drawing.Size(1382, 817);
+            this.ClientSize = new System.Drawing.Size(1582, 817);
+            this.Controls.Add(this.gunaAdvenceButton1);
+            this.Controls.Add(this.dgvAddBookToBillList);
             this.Controls.Add(this.gradientPanel1);
             this.Controls.Add(this.publisherCbx);
             this.Controls.Add(this.bookTypeCbx);
@@ -673,10 +831,12 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thêm sách vào danh sách sản phẩm của đơn khách hàng";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AddBookToBillModal_FormClosing);
             this.Load += new System.EventHandler(this.AddBookToBillModal_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvBook)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAddBookToBillList)).EndInit();
             this.gradientPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -703,7 +863,14 @@
         private System.Windows.Forms.Panel line1;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private Guna.UI.WinForms.GunaAdvenceButton addToProductList;
-        private Guna.UI.WinForms.GunaButton cancelBtn;
+        private Guna.UI.WinForms.GunaButton saveBtn;
+        private Guna.UI.WinForms.GunaDataGridView dgvAddBookToBillList;
+        private Guna.UI.WinForms.GunaAdvenceButton gunaAdvenceButton1;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn soLuong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Column11;
         private System.Windows.Forms.DataGridViewTextBoxColumn maSach;
         private System.Windows.Forms.DataGridViewTextBoxColumn tenSach;
@@ -712,8 +879,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn maTheLoai;
         private System.Windows.Forms.DataGridViewTextBoxColumn maNhaXuatBan;
         private System.Windows.Forms.DataGridViewTextBoxColumn giaBan;
-        private System.Windows.Forms.DataGridViewTextBoxColumn giaNhap;
-        private System.Windows.Forms.DataGridViewTextBoxColumn namXuatBan;
         private System.Windows.Forms.DataGridViewTextBoxColumn soLuongConLai;
     }
 }

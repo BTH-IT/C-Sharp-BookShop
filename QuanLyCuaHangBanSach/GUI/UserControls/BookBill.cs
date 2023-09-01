@@ -27,12 +27,16 @@ namespace QuanLyCuaHangBanSach.GUI.UserControls
             MemoryStream ms = new MemoryStream(book.HinhAnh);
             Image img = Image.FromStream(ms);
 
+            this.id.Text = "Mã : " + maSach;
             this.name.Text = book.TenSach;
             this.amountInput.Text = soLuong.ToString();
             this.price.Text = donGia.ToString();
             this.pictureBook.Image = img;
 
-            this.pictureBook.SizeMode = PictureBoxSizeMode.StretchImage;
+            if (soLuong == 1)
+            {
+                this.minus.Enabled = false;
+            }
         }
     }
 }
