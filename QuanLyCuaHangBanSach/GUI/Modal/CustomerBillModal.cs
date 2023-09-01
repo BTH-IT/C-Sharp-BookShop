@@ -39,5 +39,18 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             }
             
         }
+
+        private void gunaButton1_Click(object sender, EventArgs e)
+        {
+            using (AddBookToBillModal addBookToBillModal = new AddBookToBillModal(customerBill))
+            {
+                addBookToBillModal.ShowDialog();
+
+                foreach (CustomerBillDetailDTO customerBillDetail in addBookToBillModal.selectedCustomerBillDetailList)
+                {
+                    Console.WriteLine(customerBillDetail.ToString());
+                }
+            }
+        }
     }
 }

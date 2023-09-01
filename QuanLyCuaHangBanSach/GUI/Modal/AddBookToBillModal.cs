@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Reflection;
 using System.Windows.Forms;
+using Guna.UI.WinForms;
 using QuanLyCuaHangBanSach.BUS;
 using QuanLyCuaHangBanSach.DTO;
 
@@ -14,9 +13,13 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 {
     public partial class AddBookToBillModal : Form
     {
-        public AddBookToBillModal()
+        private CustomerBillDTO customerBill;
+        public List<CustomerBillDetailDTO> selectedCustomerBillDetailList = new List<CustomerBillDetailDTO>();
+        public AddBookToBillModal(CustomerBillDTO customerBill)
         {
             InitializeComponent();
+
+            this.customerBill = customerBill;
         }
 
         private CheckBox headerCheckbox;
@@ -264,11 +267,41 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
         private void barcodeBtn_Click(object sender, EventArgs e)
         {
+            using(ScannerModal scannerModal = new ScannerModal())
+            {
+                scannerModal.ShowDialog();
 
+                if (scannerModal.scannedBook != null)
+                {
+                    int idx = this.selectedCustomerBillDetailList.FindIndex(
+                        book => book.MaSach == scannerModal.scannedBook.MaSach
+                    );
+
+                    if (idx == -1)
+                    {
+                        CustomerBillDetailDTO customerBillDetail = new CustomerBillDetailDTO(
+                            customerBill.MaDonKhachHang,
+                            scannerModal.scannedBook.MaSach,
+                            1,
+                            scannerModal.scannedBook.GiaBan
+                        );
+
+                        this.selectedCustomerBillDetailList.Add(customerBillDetail);
+                    } else
+                    {
+
+                        this.selectedCustomerBillDetailList[idx].SoLuong += 1;
+                    }
+
+                    MessageBox.Show("Đã thêm sách có mã " + scannerModal.scannedBook.MaSach + " vào danh sách thêm");
+                }
+            }
         }
 
         private void addToProductList_Click(object sender, EventArgs e)
         {
+            this.selectedCustomerBillDetailList.Clear();
+
             bool isHaveSelect = false;
 
             foreach (DataGridViewRow row in this.dgvBook.Rows)
@@ -276,6 +309,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 if ((bool)row.Cells[0].Value)
                 {
                     isHaveSelect = true;
+                    break;
                 }
             }
 
@@ -299,15 +333,40 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 {
                     if ((bool)row.Cells[0].Value == true)
                     {
-                        // do something
-                    }
+                        int maSach = Convert.ToInt32(row.Cells[1].Value.ToString());
+                        double giaBan = Convert.ToDouble(row.Cells[7].Value.ToString());
 
+                        int idx = this.selectedCustomerBillDetailList.FindIndex(
+                            book => book.MaSach == maSach
+                        );
+
+                        if (idx == -1)
+                        {
+                            CustomerBillDetailDTO customerBillDetail = new CustomerBillDetailDTO(
+                                this.customerBill.MaDonKhachHang,
+                                maSach,
+                                1,
+                                giaBan
+                            );
+
+                            this.selectedCustomerBillDetailList.Add(customerBillDetail);
+                            continue;
+                        }
+                        this.selectedCustomerBillDetailList[idx].SoLuong += 1;
+                    }
                 }
+
                 List<BookDTO> bookList = handleFilter(this.searchInput.Text.ToString());
+
                 this.loadBookListToDataView(bookList);
 
-                MessageBox.Show("Add to list is success");
+                MessageBox.Show("Thêm các sách đã chọn vào danh sách thành công");
             }
+        }
+
+        private void cancelBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

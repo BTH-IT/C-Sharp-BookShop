@@ -61,7 +61,6 @@ namespace QuanLyCuaHangBanSach.DAO
 
             foreach (DataRow row in dataTable.Rows)
             {
-                Console.WriteLine(row["donGia"]);
                 CustomerBillDetailDTO customerBillDetail = new CustomerBillDetailDTO(row);
                 customerBillDetailList.Add(customerBillDetail);
             }

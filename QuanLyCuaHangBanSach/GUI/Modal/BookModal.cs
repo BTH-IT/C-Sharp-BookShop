@@ -109,7 +109,6 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                     this.bookNameTxt,
                     this.errorBookNameMsg,
                     this.nameLine,
-                    "Nhập tên sách",
                     new string[] { "required" }
                 );
             }
@@ -125,7 +124,6 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                     this.remainTxt,
                     this.errorRemainMsg,
                     this.remainLine,
-                    "Nhập số lượng còn lại",
                     new string[] { "required", "positive-number" }
                 );
             }
@@ -141,7 +139,6 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                     this.sellPriceTxt,
                     this.errorSellPriceMsg,
                     this.sellPriceLine,
-                    "Nhập giá bán",
                     new string[] { "required", "positive-number" }
                 );
             }
@@ -157,7 +154,6 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                     this.importPriceTxt,
                     this.errorImportPriceMsg,
                     this.importPriceLine,
-                    "Nhập giá nhập",
                     new string[] { "required", "positive-number" }
                 );
             }
@@ -174,7 +170,6 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                     this.publishYearTxt,
                     this.errorPublishYearMsg,
                     this.publishYearLine,
-                    "Nhập năm xuất bản",
                     new string[] { "required", "positive-number" }
                 );
             }
@@ -186,7 +181,6 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 this.bookNameTxt,
                 this.errorBookNameMsg,
                 this.nameLine,
-                "Nhập tên sách",
                 new string[] {"required"}
             );
 
@@ -194,7 +188,6 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 this.remainTxt,
                 this.errorRemainMsg,
                 this.remainLine,
-                "Nhập số lượng còn lại",
                 new string[] { "required", "positive-number" }
             );
 
@@ -202,7 +195,6 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 this.sellPriceTxt,
                 this.errorSellPriceMsg,
                 this.sellPriceLine,
-                "Nhập giá bán",
                 new string[] { "required", "positive-number" }
             );
 
@@ -210,7 +202,6 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 this.importPriceTxt,
                 this.errorImportPriceMsg,
                 this.importPriceLine,
-                "Nhập giá nhập",
                 new string[] { "required", "positive-number" }
             );
 
@@ -218,7 +209,6 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 this.publishYearTxt,
                 this.errorPublishYearMsg,
                 this.publishYearLine,
-                "Nhập năm xuất bản",
                 new string[] { "required", "positive-number" }
             );
 

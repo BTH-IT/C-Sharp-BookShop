@@ -42,17 +42,17 @@
             this.label18 = new System.Windows.Forms.Label();
             this.saleCbx = new Guna.UI.WinForms.GunaComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.totalPriceTxt = new Guna.UI2.WinForms.Guna2TextBox();
             this.errorBookNameMsg = new System.Windows.Forms.Label();
             this.nameLine = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.gunaButton1 = new Guna.UI.WinForms.GunaButton();
             this.bookList = new System.Windows.Forms.FlowLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
             this.submitBtn = new Guna.UI.WinForms.GunaButton();
             this.cancelBtn = new Guna.UI.WinForms.GunaButton();
             this.label1 = new System.Windows.Forms.Label();
-            this.totalPriceTxt = new Guna.UI2.WinForms.Guna2TextBox();
-            this.gunaButton1 = new Guna.UI.WinForms.GunaButton();
             this.panel2.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -245,6 +245,35 @@
             this.panel1.Size = new System.Drawing.Size(594, 88);
             this.panel1.TabIndex = 3;
             // 
+            // totalPriceTxt
+            // 
+            this.totalPriceTxt.BackColor = System.Drawing.Color.Transparent;
+            this.totalPriceTxt.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
+            this.totalPriceTxt.BorderThickness = 0;
+            this.totalPriceTxt.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.totalPriceTxt.DefaultText = "";
+            this.totalPriceTxt.DisabledState.BorderColor = System.Drawing.Color.Transparent;
+            this.totalPriceTxt.DisabledState.FillColor = System.Drawing.Color.White;
+            this.totalPriceTxt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.totalPriceTxt.DisabledState.Parent = this.totalPriceTxt;
+            this.totalPriceTxt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.totalPriceTxt.Enabled = false;
+            this.totalPriceTxt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.totalPriceTxt.FocusedState.Parent = this.totalPriceTxt;
+            this.totalPriceTxt.Font = new System.Drawing.Font("#9Slide03 Cabin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalPriceTxt.ForeColor = System.Drawing.Color.Black;
+            this.totalPriceTxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.totalPriceTxt.HoverState.Parent = this.totalPriceTxt;
+            this.totalPriceTxt.Location = new System.Drawing.Point(151, 8);
+            this.totalPriceTxt.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.totalPriceTxt.Name = "totalPriceTxt";
+            this.totalPriceTxt.PasswordChar = '\0';
+            this.totalPriceTxt.PlaceholderText = "Tổng tiền";
+            this.totalPriceTxt.SelectedText = "";
+            this.totalPriceTxt.ShadowDecoration.Parent = this.totalPriceTxt;
+            this.totalPriceTxt.Size = new System.Drawing.Size(423, 36);
+            this.totalPriceTxt.TabIndex = 34;
+            // 
             // errorBookNameMsg
             // 
             this.errorBookNameMsg.AutoSize = true;
@@ -282,6 +311,38 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1194, 422);
             this.panel4.TabIndex = 9;
+            // 
+            // gunaButton1
+            // 
+            this.gunaButton1.Animated = true;
+            this.gunaButton1.AnimationHoverSpeed = 0.05F;
+            this.gunaButton1.AnimationSpeed = 0.05F;
+            this.gunaButton1.BackColor = System.Drawing.Color.Transparent;
+            this.gunaButton1.BaseColor = System.Drawing.Color.White;
+            this.gunaButton1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.gunaButton1.BorderSize = 1;
+            this.gunaButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.gunaButton1.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.gunaButton1.FocusedColor = System.Drawing.Color.Empty;
+            this.gunaButton1.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.gunaButton1.Image = null;
+            this.gunaButton1.ImageSize = new System.Drawing.Size(20, 20);
+            this.gunaButton1.Location = new System.Drawing.Point(960, 15);
+            this.gunaButton1.Name = "gunaButton1";
+            this.gunaButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.gunaButton1.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.gunaButton1.OnHoverForeColor = System.Drawing.Color.White;
+            this.gunaButton1.OnHoverImage = null;
+            this.gunaButton1.OnPressedColor = System.Drawing.Color.White;
+            this.gunaButton1.OnPressedDepth = 0;
+            this.gunaButton1.Radius = 12;
+            this.gunaButton1.Size = new System.Drawing.Size(214, 50);
+            this.gunaButton1.TabIndex = 9;
+            this.gunaButton1.TabStop = false;
+            this.gunaButton1.Text = "Thêm sách vào danh sách";
+            this.gunaButton1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.gunaButton1.Click += new System.EventHandler(this.gunaButton1_Click);
             // 
             // bookList
             // 
@@ -372,65 +433,6 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "Sửa Đơn Khách Hàng";
             // 
-            // totalPriceTxt
-            // 
-            this.totalPriceTxt.BackColor = System.Drawing.Color.Transparent;
-            this.totalPriceTxt.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
-            this.totalPriceTxt.BorderThickness = 0;
-            this.totalPriceTxt.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.totalPriceTxt.DefaultText = "";
-            this.totalPriceTxt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.totalPriceTxt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.totalPriceTxt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.totalPriceTxt.DisabledState.Parent = this.totalPriceTxt;
-            this.totalPriceTxt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.totalPriceTxt.Enabled = false;
-            this.totalPriceTxt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.totalPriceTxt.FocusedState.Parent = this.totalPriceTxt;
-            this.totalPriceTxt.Font = new System.Drawing.Font("#9Slide03 Cabin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalPriceTxt.ForeColor = System.Drawing.Color.Black;
-            this.totalPriceTxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.totalPriceTxt.HoverState.Parent = this.totalPriceTxt;
-            this.totalPriceTxt.Location = new System.Drawing.Point(151, 8);
-            this.totalPriceTxt.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.totalPriceTxt.Name = "totalPriceTxt";
-            this.totalPriceTxt.PasswordChar = '\0';
-            this.totalPriceTxt.PlaceholderText = "Tổng tiền";
-            this.totalPriceTxt.SelectedText = "";
-            this.totalPriceTxt.ShadowDecoration.Parent = this.totalPriceTxt;
-            this.totalPriceTxt.Size = new System.Drawing.Size(423, 36);
-            this.totalPriceTxt.TabIndex = 34;
-            // 
-            // gunaButton1
-            // 
-            this.gunaButton1.Animated = true;
-            this.gunaButton1.AnimationHoverSpeed = 0.05F;
-            this.gunaButton1.AnimationSpeed = 0.05F;
-            this.gunaButton1.BackColor = System.Drawing.Color.Transparent;
-            this.gunaButton1.BaseColor = System.Drawing.Color.White;
-            this.gunaButton1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.gunaButton1.BorderSize = 2;
-            this.gunaButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.gunaButton1.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaButton1.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaButton1.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.gunaButton1.Image = null;
-            this.gunaButton1.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaButton1.Location = new System.Drawing.Point(960, 15);
-            this.gunaButton1.Name = "gunaButton1";
-            this.gunaButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.gunaButton1.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.gunaButton1.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaButton1.OnHoverImage = null;
-            this.gunaButton1.OnPressedColor = System.Drawing.Color.White;
-            this.gunaButton1.Radius = 12;
-            this.gunaButton1.Size = new System.Drawing.Size(214, 50);
-            this.gunaButton1.TabIndex = 9;
-            this.gunaButton1.TabStop = false;
-            this.gunaButton1.Text = "Thêm sách vào danh sách";
-            this.gunaButton1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // CustomerBillModal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 23F);
@@ -446,7 +448,8 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "CustomerBillModal";
             this.ShowInTaskbar = false;
-            this.Text = "Customer Bill Modal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Sửa đơn khách hàng";
             this.Load += new System.EventHandler(this.CustomerBillModal_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
