@@ -10,6 +10,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 {
     public partial class CustomerBillModal : Form
     {
+        public bool isSubmitSuccess = false;
         private CustomerBillDTO customerBill;
         private List<CustomerBillDetailDTO> customerBillDetailList;
 
@@ -270,9 +271,14 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             )
             {
                 MessageBox.Show("Success");
-            } else
+
+                this.isSubmitSuccess = true;
+                this.Close();
+            }
+            else
             {
                 MessageBox.Show("Failure");
+                this.isSubmitSuccess = false;
             }
             
         }

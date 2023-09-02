@@ -11,6 +11,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 {
     public partial class CustomerBillGUI : Form
     {
+
         private CheckBox headerCheckbox;
 
         public CustomerBillGUI()
@@ -152,16 +153,9 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
         private List<CustomerBillDTO> handleFilter(string searchText)
         {
-            if (searchText == "Enter your search...")
-            {
-                searchText = "";
-            }
-
             List<CustomerBillDTO> customerBillList = CustomerBillBUS.Instance.search(searchText);
 
-            if (this.fromPriceTxt.Text.ToString() != "Enter price from"
-                && this.toPriceTxt.Text.ToString() != "Enter price to"
-                && this.fromPriceTxt.Text.ToString() != string.Empty
+            if (this.fromPriceTxt.Text.ToString() != string.Empty
                 && this.toPriceTxt.Text.ToString() != string.Empty)
             {
                 try
@@ -247,8 +241,6 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
         private void searchInput_TextChanged(object sender, EventArgs e)
         {
-            this.searchInput.ForeColor = Color.Black;
-
             List<CustomerBillDTO> customerBillList = handleFilter(this.searchInput.Text.ToString());
 
             this.loadCustomerBillListToDataView(customerBillList);
@@ -272,14 +264,9 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
         private void refreshBtn_Click(object sender, EventArgs e)
         {
-            this.searchInput.Text = "Enter your search...";
-            this.searchInput.ForeColor = Color.LightGray;
-
-            this.fromPriceTxt.Text = "Enter price from";
-            this.fromPriceTxt.ForeColor = Color.LightGray;
-
-            this.toPriceTxt.Text = "Enter price to";
-            this.toPriceTxt.ForeColor = Color.LightGray;
+            this.searchInput.Clear();
+            this.fromPriceTxt.Clear();
+            this.toPriceTxt.Clear();
 
             this.customerCbx.SelectedIndex = 0;
             this.staffCbx.SelectedIndex = 0;
@@ -288,6 +275,9 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             this.filterCkx.Checked = false;
             this.dateTimeFrom.Enabled = false;
             this.dateTimeTo.Enabled = false;
+
+            this.dateTimeFrom.Refresh();
+            this.dateTimeTo.Refresh();
 
             List<CustomerBillDTO> customerBillList = handleFilter("");
 
@@ -317,8 +307,6 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
         private void fromPriceTxt_TextChanged(object sender, EventArgs e)
         {
-            this.fromPriceTxt.ForeColor = Color.Black;
-
             List<CustomerBillDTO> customerBillList = handleFilter(this.searchInput.Text.ToString());
 
             this.loadCustomerBillListToDataView(customerBillList);
@@ -326,8 +314,6 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
         private void toPriceTxt_TextChanged(object sender, EventArgs e)
         {
-            this.toPriceTxt.ForeColor = Color.Black;
-
             List<CustomerBillDTO> customerBillList = handleFilter(this.searchInput.Text.ToString());
 
             this.loadCustomerBillListToDataView(customerBillList);
@@ -339,9 +325,9 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
             DataTable dataTable = CustomExcel.Instance.ConvertListToDataTable(customerBillList);
 
-            string[] headerList = new string[] { "Mã sách", "Tên sách", "Tác giả", "Thể loại", "Nhà xuất bản", "Giá bán", "Giá nhập", "Năm xuất bản", "Còn lại" };
+            string[] headerList = new string[] { "Mã đơn", "Tên khách hàng", "Số điện thoại khách hàng", "Nhân Viên", "Khuyến mãi", "Giá bán", "Phần trăm", "Ngày lập", "Tổng tiền" };
 
-            CustomExcel.Instance.ExportFile(dataTable, "Customer Bill Manage", "Cửa hàng bán sách", headerList, 2);
+            CustomExcel.Instance.ExportFile(dataTable, "Customer Bill Manage", "Cửa hàng bán sách", headerList);
         }
 
         private void editBtn_Click(object sender, EventArgs e)
@@ -360,12 +346,12 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
                 customerBillModal.ShowDialog();
 
-                /*if (customerBillModal.isSubmitSuccess)
+                if (customerBillModal.isSubmitSuccess)
                 {
                     List<CustomerBillDTO> customerBillList = handleFilter(this.searchInput.Text.ToString());
 
                     this.loadCustomerBillListToDataView(customerBillList);
-                }*/
+                }
             }
         }
 

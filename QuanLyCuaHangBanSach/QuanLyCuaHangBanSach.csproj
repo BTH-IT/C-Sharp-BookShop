@@ -378,6 +378,12 @@
     <Compile Include="GUI\Manager\HomeManageGUI.Designer.cs">
       <DependentUpon>HomeManageGUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Manager\ImportBillGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Manager\ImportBillGUI.Designer.cs">
+      <DependentUpon>ImportBillGUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Manager\ManagerGUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -453,6 +459,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Manager\HomeManageGUI.resx">
       <DependentUpon>HomeManageGUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Manager\ImportBillGUI.resx">
+      <DependentUpon>ImportBillGUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Manager\ManagerGUI.resx">
       <DependentUpon>ManagerGUI.cs</DependentUpon>

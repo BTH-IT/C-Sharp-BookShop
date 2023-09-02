@@ -228,10 +228,10 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
         private void gunaAdvenceButton4_Click(object sender, EventArgs e)
         {
-            this.searchInput.Refresh();
+            this.searchInput.Clear();
 
-            this.priceFrom.Refresh();
-            this.priceTo.Refresh();
+            this.priceFrom.Clear();
+            this.priceTo.Clear();
 
             this.authorCbx.SelectedIndex = 0;
             this.bookTypeCbx.SelectedIndex = 0;

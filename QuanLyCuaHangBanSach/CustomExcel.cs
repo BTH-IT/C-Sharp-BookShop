@@ -124,7 +124,7 @@ namespace QuanLyCuaHangBanSach
                     {
                         DataRow dataRow = dataTable.Rows[row];
                         colIndex = 0;
-                        for (int col = 0; col < dataTable.Columns.Count; col++)
+                        for (int col = 1; col < dataTable.Columns.Count; col++)
                         {
                             if (col == imgCol) continue;
 

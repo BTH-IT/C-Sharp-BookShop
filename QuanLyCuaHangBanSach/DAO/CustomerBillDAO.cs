@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Data;
 using MySql.Data.MySqlClient;
+using QuanLyCuaHangBanSach.BUS;
 using QuanLyCuaHangBanSach.DTO;
 
 namespace QuanLyCuaHangBanSach.DAO
@@ -22,8 +23,6 @@ namespace QuanLyCuaHangBanSach.DAO
             }
             private set { CustomerBillDAO.instance = value; }
         }
-
-        
         public DataTable getAll() {
             return DataProvider.Instance.ExecuteQuery("select * from phieuban WHERE hienThi = 1;");
         }
@@ -125,11 +124,30 @@ namespace QuanLyCuaHangBanSach.DAO
                     new MySqlParameter("@donGia", data.DonGia),
                 });
 
+            // xóa số lượng còn lại của sách
+            if (rowChanged > 0)
+            {
+                BookDTO book = BookBUS.Instance.getById(data.MaSach.ToString());
+
+                book.SoLuongConLai -= data.SoLuong;
+
+                return BookBUS.Instance.update(book);
+            }
+
             return rowChanged > 0;
         }
 
         public bool updateCustomerBillDetail(CustomerBillDetailDTO data)
         {
+            BookDTO book = BookBUS.Instance.getById(data.MaSach.ToString());
+
+            CustomerBillDetailDTO customerBillDetail = this.getCustomerBillDetail(
+                data.MaDon.ToString(), 
+                data.MaSach.ToString()
+            );
+
+            book.SoLuongConLai += customerBillDetail.SoLuong;
+
             string sql = $@"UPDATE chitietphieuban SET soLuong=@soLuong, donGia=@donGia  
                             WHERE maDonKhachHang=@maDonKhachHang AND maSach=@maSach;";
 
@@ -141,11 +159,24 @@ namespace QuanLyCuaHangBanSach.DAO
                     new MySqlParameter("@donGia", data.DonGia),
                 });
 
+            // cập nhật số lượng còn lại của sách
+            if (rowChanged > 0)
+            {
+                book.SoLuongConLai -= data.SoLuong;
+
+                return BookBUS.Instance.update(book);
+            }
+
             return rowChanged > 0;
         }
 
         public bool deleteCustomerBillDetail(string billId, string bookId)
         {
+            CustomerBillDetailDTO customerBillDetail = this.getCustomerBillDetail(
+                billId,
+                bookId
+            );
+
             string sql = $@"DELETE FROM chitietphieuban WHERE maDonKhachHang=@maDonKhachHang AND maSach=@maSach;";
 
             int rowChanged = DataProvider.Instance.ExecuteNonQuery(sql,
@@ -153,6 +184,16 @@ namespace QuanLyCuaHangBanSach.DAO
                     new MySqlParameter("@maDonKhachHang", billId),
                     new MySqlParameter("@maSach", bookId),
                 });
+
+            // thêm lại số lượng còn lại của sách
+            if (rowChanged > 0)
+            {
+                BookDTO book = BookBUS.Instance.getById(bookId);
+
+                book.SoLuongConLai += customerBillDetail.SoLuong;
+
+                return BookBUS.Instance.update(book);
+            }
 
             return rowChanged > 0;
         }

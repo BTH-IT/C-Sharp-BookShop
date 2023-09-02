@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using QuanLyCuaHangBanSach.GUI;
 using QuanLyCuaHangBanSach.GUI.Manager;
@@ -19,7 +16,7 @@ namespace QuanLyCuaHangBanSach
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new CustomerBillGUI());
+            Application.Run(new ManagerGUI());
         }
     }
 }
