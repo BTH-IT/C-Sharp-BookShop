@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using QuanLyCuaHangBanSach.BUS;
 using QuanLyCuaHangBanSach.DTO;
@@ -101,16 +102,20 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             if (this.fromPriceTxt.Text.ToString() != string.Empty
                 && this.toPriceTxt.Text.ToString() != string.Empty)
             {
-                try
+                Regex isNum = new Regex(@"^\d+$");
+
+                if (!isNum.IsMatch(this.fromPriceTxt.Text.ToString()) || !isNum.IsMatch(this.toPriceTxt.Text.ToString()))
+                {
+                    this.fromPriceTxt.Clear();
+                    this.toPriceTxt.Clear();
+                    MessageBox.Show("Tổng tiền là một số dương");
+                }
+                else
                 {
                     importBillList = importBillList.FindAll(
                         item => item.TongTien >= Convert.ToDouble(this.fromPriceTxt.Text.ToString())
-                                && item.TongTien <= Convert.ToDouble(this.toPriceTxt.Text.ToString())
-                    );
-                }
-                catch
-                {
-                    MessageBox.Show("Tổng tiền phải là số");
+                                && item.TongTien <= Convert.ToDouble(this.toPriceTxt.Text.ToString()
+                    ));
                 }
             }
 
@@ -125,7 +130,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                 }
                 catch
                 {
-                    MessageBox.Show("Lọc theo khoảng ngày không hợp lệ");
+                    MessageBox.Show("Lọc theo khoảng thời gian không hợp lệ");
                 }
             }
 
@@ -249,7 +254,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
             DataGridViewRow row = this.dgvImportBill.Rows[this.dgvImportBill.CurrentCell.RowIndex];
 
-            /*using (ImportBillModal importBillModal = new ImportBillModal(Convert.ToInt32(row.Cells[1].Value)))
+            using (ImportBillModal importBillModal = new ImportBillModal(Convert.ToInt32(row.Cells[1].Value)))
             {
                 BookDTO importBill = BookBUS.Instance.getById(row.Cells[1].Value.ToString());
 
@@ -261,7 +266,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
                     this.loadImportBillListToDataView(importBillList);
                 }
-            }*/
+            }
         }
 
         private void deleteBtn_Click(object sender, EventArgs e)
@@ -351,11 +356,6 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             this.dateTimeTo.Enabled = this.filterCkx.Checked;
         }
 
-        private void importExcelBtn_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void dgvImportBill_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0 || e.ColumnIndex <= 0)
@@ -377,6 +377,23 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             this.renderCheckBoxDgv();
 
             headerCheckbox.MouseClick += new MouseEventHandler(headerCheckbox_Clicked);
+        }
+
+        private void importExcelBtn_Click(object sender, EventArgs e)
+        {
+            DataTable dt = CustomExcel.Instance.ImportFile();
+
+            foreach (DataRow row in dt.Rows)
+            {
+                BookDTO book = BookBUS.Instance.getById(row[0].ToString());
+
+                if (book == null) continue;
+
+                book.SoLuongConLai += Convert.ToInt32(row[2].ToString());
+                book.GiaNhap = Convert.ToDouble(row[3].ToString());
+
+                BookBUS.Instance.update(book);
+            }
         }
     }
 }

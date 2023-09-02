@@ -7,6 +7,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Windows;
+using ExcelDataReader;
 using Microsoft.Win32;
 using OfficeOpenXml;
 using OfficeOpenXml.Drawing;
@@ -167,6 +168,26 @@ namespace QuanLyCuaHangBanSach
             }
             //put a breakpoint here and check datatable
             return dataTable;
+        }
+
+        public DataTable ImportFile()
+        {
+            OpenFileDialog fil = new OpenFileDialog();
+            fil.ShowDialog();
+
+            string path = fil.FileName.ToString();
+
+            if (path == string.Empty) return null;
+
+            var stream = File.Open(path, FileMode.Open, FileAccess.Read);
+
+            var reader = ExcelReaderFactory.CreateReader(stream);
+
+            var result = reader.AsDataSet();
+
+            var tables = result.Tables.Cast<DataTable>();
+
+            return tables.ElementAt(0);
         }
     }
 }

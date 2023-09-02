@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ImportBillGUI));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.exportBtn = new Guna.UI.WinForms.GunaAdvenceButton();
             this.refreshBtn = new Guna.UI.WinForms.GunaAdvenceButton();
@@ -58,7 +58,6 @@
             this.staffCbx = new Guna.UI.WinForms.GunaComboBox();
             this.supplierCbx = new Guna.UI.WinForms.GunaComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.importExcelBtn = new Guna.UI.WinForms.GunaAdvenceButton();
             this.dgvImportBill = new Guna.UI.WinForms.GunaDataGridView();
             this.Column9 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,6 +66,7 @@
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.line1 = new System.Windows.Forms.Panel();
+            this.importExcelBtn = new Guna.UI.WinForms.GunaAdvenceButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gradientPanel1.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -562,59 +562,26 @@
             this.panel1.Size = new System.Drawing.Size(1378, 54);
             this.panel1.TabIndex = 46;
             // 
-            // importExcelBtn
-            // 
-            this.importExcelBtn.AnimationHoverSpeed = 0.07F;
-            this.importExcelBtn.AnimationSpeed = 0.03F;
-            this.importExcelBtn.BackColor = System.Drawing.Color.Transparent;
-            this.importExcelBtn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.importExcelBtn.BorderColor = System.Drawing.Color.Black;
-            this.importExcelBtn.CheckedBaseColor = System.Drawing.Color.Gray;
-            this.importExcelBtn.CheckedBorderColor = System.Drawing.Color.Black;
-            this.importExcelBtn.CheckedForeColor = System.Drawing.Color.White;
-            this.importExcelBtn.CheckedImage = ((System.Drawing.Image)(resources.GetObject("importExcelBtn.CheckedImage")));
-            this.importExcelBtn.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.importExcelBtn.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.importExcelBtn.FocusedColor = System.Drawing.Color.Empty;
-            this.importExcelBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.importExcelBtn.ForeColor = System.Drawing.Color.White;
-            this.importExcelBtn.Image = ((System.Drawing.Image)(resources.GetObject("importExcelBtn.Image")));
-            this.importExcelBtn.ImageSize = new System.Drawing.Size(20, 20);
-            this.importExcelBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.importExcelBtn.Location = new System.Drawing.Point(243, 6);
-            this.importExcelBtn.Name = "importExcelBtn";
-            this.importExcelBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.importExcelBtn.OnHoverBorderColor = System.Drawing.Color.Transparent;
-            this.importExcelBtn.OnHoverForeColor = System.Drawing.Color.White;
-            this.importExcelBtn.OnHoverImage = null;
-            this.importExcelBtn.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.importExcelBtn.OnPressedColor = System.Drawing.Color.Black;
-            this.importExcelBtn.Radius = 6;
-            this.importExcelBtn.Size = new System.Drawing.Size(136, 42);
-            this.importExcelBtn.TabIndex = 9;
-            this.importExcelBtn.Text = "Nhập từ excel";
-            this.importExcelBtn.Click += new System.EventHandler(this.importExcelBtn_Click);
-            // 
             // dgvImportBill
             // 
             this.dgvImportBill.AllowUserToAddRows = false;
             this.dgvImportBill.AllowUserToDeleteRows = false;
             this.dgvImportBill.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dgvImportBill.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            this.dgvImportBill.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvImportBill.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvImportBill.BackgroundColor = System.Drawing.Color.White;
             this.dgvImportBill.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvImportBill.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvImportBill.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("#9Slide03 Cabin", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvImportBill.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("#9Slide03 Cabin", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvImportBill.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvImportBill.ColumnHeadersHeight = 50;
             this.dgvImportBill.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvImportBill.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -624,32 +591,32 @@
             this.Column3,
             this.Column4,
             this.Column7});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("#9Slide03 Cabin", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvImportBill.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("#9Slide03 Cabin", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvImportBill.DefaultCellStyle = dataGridViewCellStyle8;
             this.dgvImportBill.EnableHeadersVisualStyles = false;
             this.dgvImportBill.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvImportBill.Location = new System.Drawing.Point(11, 72);
             this.dgvImportBill.Name = "dgvImportBill";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("#9Slide03 Cabin", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvImportBill.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("#9Slide03 Cabin", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvImportBill.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvImportBill.RowHeadersVisible = false;
             this.dgvImportBill.RowHeadersWidth = 51;
             this.dgvImportBill.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvImportBill.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvImportBill.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvImportBill.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dgvImportBill.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvImportBill.RowTemplate.Height = 75;
@@ -750,6 +717,39 @@
             this.line1.Size = new System.Drawing.Size(234, 1);
             this.line1.TabIndex = 43;
             // 
+            // importExcelBtn
+            // 
+            this.importExcelBtn.AnimationHoverSpeed = 0.07F;
+            this.importExcelBtn.AnimationSpeed = 0.03F;
+            this.importExcelBtn.BackColor = System.Drawing.Color.Transparent;
+            this.importExcelBtn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.importExcelBtn.BorderColor = System.Drawing.Color.Black;
+            this.importExcelBtn.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.importExcelBtn.CheckedBorderColor = System.Drawing.Color.Black;
+            this.importExcelBtn.CheckedForeColor = System.Drawing.Color.White;
+            this.importExcelBtn.CheckedImage = ((System.Drawing.Image)(resources.GetObject("importExcelBtn.CheckedImage")));
+            this.importExcelBtn.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.importExcelBtn.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.importExcelBtn.FocusedColor = System.Drawing.Color.Empty;
+            this.importExcelBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.importExcelBtn.ForeColor = System.Drawing.Color.White;
+            this.importExcelBtn.Image = ((System.Drawing.Image)(resources.GetObject("importExcelBtn.Image")));
+            this.importExcelBtn.ImageSize = new System.Drawing.Size(20, 20);
+            this.importExcelBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.importExcelBtn.Location = new System.Drawing.Point(243, 6);
+            this.importExcelBtn.Name = "importExcelBtn";
+            this.importExcelBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.importExcelBtn.OnHoverBorderColor = System.Drawing.Color.Transparent;
+            this.importExcelBtn.OnHoverForeColor = System.Drawing.Color.White;
+            this.importExcelBtn.OnHoverImage = null;
+            this.importExcelBtn.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.importExcelBtn.OnPressedColor = System.Drawing.Color.Black;
+            this.importExcelBtn.Radius = 6;
+            this.importExcelBtn.Size = new System.Drawing.Size(167, 42);
+            this.importExcelBtn.TabIndex = 9;
+            this.importExcelBtn.Text = "Nhập hàng từ excel";
+            this.importExcelBtn.Click += new System.EventHandler(this.importExcelBtn_Click);
+            // 
             // ImportBillGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 23F);
@@ -807,7 +807,6 @@
         private Guna.UI.WinForms.GunaComboBox staffCbx;
         private Guna.UI.WinForms.GunaComboBox supplierCbx;
         private System.Windows.Forms.Panel panel1;
-        private Guna.UI.WinForms.GunaAdvenceButton importExcelBtn;
         private Guna.UI.WinForms.GunaDataGridView dgvImportBill;
         private System.Windows.Forms.Panel line1;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Column9;
@@ -816,5 +815,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private Guna.UI.WinForms.GunaAdvenceButton importExcelBtn;
     }
 }

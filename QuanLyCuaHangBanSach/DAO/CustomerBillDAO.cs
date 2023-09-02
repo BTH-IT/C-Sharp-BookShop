@@ -27,22 +27,6 @@ namespace QuanLyCuaHangBanSach.DAO
             return DataProvider.Instance.ExecuteQuery("select * from phieuban WHERE hienThi = 1;");
         }
 
-        public CustomerBillDTO getById(string id)
-        {
-            DataTable dataTable = DataProvider.Instance.ExecuteQuery(
-                "SELECT * FROM phieuban WHERE maDonKhachHang=@maDonKhachHang AND hienThi = 1;",
-                new MySqlParameter[] {
-                    new MySqlParameter("@maDonKhachHang", id)
-                }
-            );
-
-            if (dataTable.Rows.Count <= 0) return null;
-
-            CustomerBillDTO account = new CustomerBillDTO(dataTable.Rows[0]);
-
-            return account;
-        }
-
         public CustomerBillDetailDTO getCustomerBillDetail(string billId, string bookId)
         {
             DataTable dataTable = DataProvider.Instance.ExecuteQuery(
@@ -227,6 +211,22 @@ namespace QuanLyCuaHangBanSach.DAO
                 });
 
             return rowChanged > 0;
+        }
+
+        public CustomerBillDTO getById(string id)
+        {
+            DataTable dataTable = DataProvider.Instance.ExecuteQuery(
+                "SELECT * FROM phieuban WHERE maDonKhachHang=@maDonKhachHang;",
+                new MySqlParameter[] {
+                    new MySqlParameter("@maDonKhachHang", id),
+                }
+            );
+
+            if (dataTable.Rows.Count <= 0) return null;
+
+            CustomerBillDTO customerBill = new CustomerBillDTO(dataTable.Rows[0]);
+
+            return customerBill;
         }
     }
 }

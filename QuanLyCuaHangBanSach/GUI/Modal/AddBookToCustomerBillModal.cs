@@ -8,7 +8,7 @@ using QuanLyCuaHangBanSach.DTO;
 
 namespace QuanLyCuaHangBanSach.GUI.Modal
 {
-    public partial class AddBookToBillModal : Form
+    public partial class AddBookToCustomerBillModal : Form
     {
         private bool isSaved = false;
         private CustomerBillDTO customerBill;
@@ -18,7 +18,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
         public List<CustomerBillDetailDTO> selectedCustomerBillDetailList = new List<CustomerBillDetailDTO>();
 
-        public AddBookToBillModal(CustomerBillDTO customerBill)
+        public AddBookToCustomerBillModal(CustomerBillDTO customerBill)
         {
             InitializeComponent();
 
@@ -168,11 +168,6 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
         private List<BookDTO> handleFilter(string searchText)
         {
-            if (searchText == "Enter your search...")
-            {
-                searchText = "";
-            }
-
             List<BookDTO> newBookList = this.bookList.FindAll(
                 (book) => book.TenSach.Contains(searchText) || book.MaSach.ToString().Contains(searchText)
             );
@@ -180,16 +175,20 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             if (this.priceFrom.Text.ToString() != string.Empty
                 && this.priceTo.Text.ToString() != string.Empty)
             {
-                try
+                Regex isNum = new Regex(@"^\d+$");
+
+                if (!isNum.IsMatch(this.priceFrom.Text.ToString()) || !isNum.IsMatch(this.priceFrom.Text.ToString()))
+                {
+                    this.priceFrom.Clear();
+                    this.priceTo.Clear();
+                    MessageBox.Show("Giá là một số");
+                }
+                else
                 {
                     newBookList = newBookList.FindAll(
                         item => item.GiaBan >= Convert.ToDouble(this.priceFrom.Text.ToString())
                                 && item.GiaBan <= Convert.ToDouble(this.priceTo.Text.ToString()
                     ));
-                }
-                catch
-                {
-                    MessageBox.Show("Giá phải là số");
                 }
             }
 
@@ -295,10 +294,10 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
         private void refreshBtn_Click(object sender, EventArgs e)
         {
-            this.searchInput.Refresh();
+            this.searchInput.Clear();
 
-            this.priceFrom.Refresh();
-            this.priceTo.Refresh();
+            this.priceFrom.Clear();
+            this.priceTo.Clear();
 
             this.authorCbx.SelectedIndex = 0;
             this.bookTypeCbx.SelectedIndex = 0;

@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Org.BouncyCastle.Utilities;
 using QuanLyCuaHangBanSach.DAO;
 using QuanLyCuaHangBanSach.DTO;
 
@@ -47,11 +42,6 @@ namespace QuanLyCuaHangBanSach.BUS
             return importBillList;
         }
 
-        public ImportBillDTO getById(string id)
-        {
-            return ImportBillDAO.Instance.getById(id);
-        }
-
         public List<ImportBillDTO> search(string id)
         {
             DataTable dataTable = ImportBillDAO.Instance.searchData(id);
@@ -67,6 +57,65 @@ namespace QuanLyCuaHangBanSach.BUS
             return importBillList;
         }
 
+        public List<ImportBillDetailDTO> getImportBillDetailList(string id)
+        {
+            return ImportBillDAO.Instance.getImportBillDetailList(id);
+        }
+
+        public bool updateBillAndBillDetail(ImportBillDTO importBill, List<ImportBillDetailDTO> importBillDetailList)
+        {
+            try
+            {
+                if (ImportBillDAO.Instance.update(importBill))
+                {
+                    List<ImportBillDetailDTO> oldImportBillDetailList = ImportBillDAO.Instance.getImportBillDetailList(importBill.MaDonNhapHang.ToString());
+
+                    oldImportBillDetailList = oldImportBillDetailList.FindAll(
+                        (oldImportBillDetail) =>
+                        {
+                            foreach (ImportBillDetailDTO importBillDetail in importBillDetailList)
+                            {
+                                if (importBillDetail.MaDon == oldImportBillDetail.MaDon
+                                    && importBillDetail.MaSach == oldImportBillDetail.MaSach
+                                )
+                                {
+                                    return false;
+                                }
+                            }
+
+                            return true;
+                        }
+                    );
+
+                    foreach (ImportBillDetailDTO importBillDetail in importBillDetailList)
+                    {
+                        if (ImportBillDAO.Instance.getImportBillDetail(
+                            importBillDetail.MaDon.ToString(),
+                            importBillDetail.MaSach.ToString()
+                         ) == null)
+                        {
+                            ImportBillDAO.Instance.createImportBillDetail(importBillDetail);
+                            continue;
+                        }
+
+                        ImportBillDAO.Instance.updateImportBillDetail(importBillDetail);
+                    }
+
+                    foreach (ImportBillDetailDTO importBillDetail in oldImportBillDetailList)
+                    {
+                        ImportBillDAO.Instance.deleteImportBillDetail(importBillDetail.MaDon.ToString(), importBillDetail.MaSach.ToString());
+                    }
+                }
+
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+
         public bool insert(ImportBillDTO importBill)
         {
             return ImportBillDAO.Instance.insert(importBill);
@@ -80,6 +129,11 @@ namespace QuanLyCuaHangBanSach.BUS
         public bool delete(string id)
         {
             return ImportBillDAO.Instance.delete(id);
+        }
+
+        public ImportBillDTO getById(string id)
+        {
+            return ImportBillDAO.Instance.getById(id);
         }
     }
 }

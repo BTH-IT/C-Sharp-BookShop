@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using QuanLyCuaHangBanSach.BUS;
 using QuanLyCuaHangBanSach.DTO;
@@ -158,16 +159,20 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             if (this.fromPriceTxt.Text.ToString() != string.Empty
                 && this.toPriceTxt.Text.ToString() != string.Empty)
             {
-                try
+                Regex isNum = new Regex(@"^\d+$");
+
+                if (!isNum.IsMatch(this.fromPriceTxt.Text.ToString()) || !isNum.IsMatch(this.toPriceTxt.Text.ToString()))
+                {
+                    this.fromPriceTxt.Clear();
+                    this.toPriceTxt.Clear();
+                    MessageBox.Show("Tổng tiền là một số dương");
+                }
+                else
                 {
                     customerBillList = customerBillList.FindAll(
                         item => item.TongTien >= Convert.ToDouble(this.fromPriceTxt.Text.ToString())
-                                && item.TongTien <= Convert.ToDouble(this.toPriceTxt.Text.ToString())
-                    );
-                }
-                catch
-                {
-                    MessageBox.Show("Tổng tiền phải là số");
+                                && item.TongTien <= Convert.ToDouble(this.toPriceTxt.Text.ToString()
+                    ));
                 }
             }
 
@@ -182,7 +187,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                 }
                 catch
                 {
-                    MessageBox.Show("Lọc theo khoảng ngày không hợp lệ");
+                    MessageBox.Show("Lọc theo khoảng thời gian không hợp lệ");
                 }
             }
 

@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Reflection;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using QuanLyCuaHangBanSach.BUS;
 using QuanLyCuaHangBanSach.DTO;
@@ -126,25 +127,25 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
         private List<BookDTO> handleFilter(string searchText)
         {
-            if (searchText == "Enter your search...")
-            {
-                searchText = "";
-            }
-
             List<BookDTO> bookList = BookBUS.Instance.search(searchText);
 
             if (this.priceFrom.Text.ToString() != string.Empty
                 && this.priceTo.Text.ToString() != string.Empty)
             {
-                try
+                Regex isNum = new Regex(@"^\d+$");
+
+                if (!isNum.IsMatch(this.priceFrom.Text.ToString()) || !isNum.IsMatch(this.priceFrom.Text.ToString()))
+                {
+                    this.priceFrom.Clear();
+                    this.priceTo.Clear();
+                    MessageBox.Show("Tổng tiền là một số");
+                }
+                else
                 {
                     bookList = bookList.FindAll(
                         item => item.GiaBan >= Convert.ToDouble(this.priceFrom.Text.ToString())
                                 && item.GiaBan <= Convert.ToDouble(this.priceTo.Text.ToString()
                     ));
-                } catch
-                {
-                    MessageBox.Show("Giá phải là số");
                 }
             }
 

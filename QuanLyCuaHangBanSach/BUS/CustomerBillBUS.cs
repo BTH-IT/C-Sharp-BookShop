@@ -42,11 +42,7 @@ namespace QuanLyCuaHangBanSach.BUS
             return customerBillList;
         }
 
-        public CustomerBillDTO getById(string id)
-        {
-            return CustomerBillDAO.Instance.getById(id);
-        }
-        public List<CustomerBillDetailDTO> getCustomerBillDetail(string id)
+        public List<CustomerBillDetailDTO> getCustomerBillDetailList(string id)
         {
             return CustomerBillDAO.Instance.getCustomerBillDetailList(id);
         }
@@ -131,6 +127,11 @@ namespace QuanLyCuaHangBanSach.BUS
         public bool update(CustomerBillDTO customerBill)
         {
             return CustomerBillDAO.Instance.update(customerBill);
+        }
+
+        public CustomerBillDTO getById(string id)
+        {
+            return CustomerBillDAO.Instance.getById(id);
         }
     }
 }

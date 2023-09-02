@@ -19,7 +19,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             InitializeComponent();
 
             this.customerBill = CustomerBillBUS.Instance.getById(customerBillId.ToString());
-            this.customerBillDetailList = CustomerBillBUS.Instance.getCustomerBillDetail(customerBillId.ToString());
+            this.customerBillDetailList = CustomerBillBUS.Instance.getCustomerBillDetailList(customerBillId.ToString());
         }
 
         private void loadCustomerCbx()
@@ -208,7 +208,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
         private void gunaButton1_Click(object sender, EventArgs e)
         {
-            using (AddBookToBillModal addBookToBillModal = new AddBookToBillModal(customerBill))
+            using (AddBookToCustomerBillModal addBookToBillModal = new AddBookToCustomerBillModal(customerBill))
             {
                 addBookToBillModal.ShowDialog();
 
@@ -240,13 +240,13 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             );
 
             bool isCheckCbx2 = CustomValidation.Instance.checkCombobox(
-                this.saleCbx,
+                this.staffCbx,
                 this.errorStaffMsg,
                 new string[] { "required" }
             );
 
             bool isCheckCbx3 = CustomValidation.Instance.checkCombobox(
-                this.staffCbx,
+                this.saleCbx,
                 this.errorSaleMsg,
                 new string[] { "required" }
             );
