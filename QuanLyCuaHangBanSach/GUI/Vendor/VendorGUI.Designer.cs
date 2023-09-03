@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VendorGUI));
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.LogoImg = new System.Windows.Forms.PictureBox();
@@ -43,10 +42,12 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.ProductSearchInp = new System.Windows.Forms.TextBox();
             this.FilterBtn = new System.Windows.Forms.Button();
+            this.ProductTable = new System.Windows.Forms.TableLayoutPanel();
+            this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.vScrollBar2 = new System.Windows.Forms.VScrollBar();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.PhoneResultContainer = new System.Windows.Forms.FlowLayoutPanel();
-            this.CartContainer = new System.Windows.Forms.FlowLayoutPanel();
+            this.PhoneResultData = new System.Windows.Forms.DataGridView();
             this.RecipientLb = new System.Windows.Forms.Label();
             this.PrintBtn = new System.Windows.Forms.Button();
             this.TotalLb = new System.Windows.Forms.Label();
@@ -54,9 +55,9 @@
             this.AddCustomerBtn = new System.Windows.Forms.Button();
             this.PhoneInp = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.checkUser = new System.Windows.Forms.Timer(this.components);
-            this.BookContainer = new System.Windows.Forms.FlowLayoutPanel();
-            this.TotalMoneylb = new System.Windows.Forms.Label();
+            this.OrderTable = new System.Windows.Forms.TableLayoutPanel();
+            this.phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LogoImg)).BeginInit();
             this.flowLayoutPanel2.SuspendLayout();
@@ -65,6 +66,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PhoneResultData)).BeginInit();
             this.SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -138,9 +140,9 @@
             this.flowLayoutPanel2.Controls.Add(this.label1);
             this.flowLayoutPanel2.Controls.Add(this.label2);
             this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(103, -8);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(81, -8);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(786, 84);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(805, 84);
             this.flowLayoutPanel2.TabIndex = 1;
             // 
             // label1
@@ -170,9 +172,9 @@
             // flowLayoutPanel4
             // 
             this.flowLayoutPanel4.Controls.Add(this.flowLayoutPanel5);
-            this.flowLayoutPanel4.Location = new System.Drawing.Point(103, 82);
+            this.flowLayoutPanel4.Location = new System.Drawing.Point(81, 82);
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
-            this.flowLayoutPanel4.Size = new System.Drawing.Size(786, 48);
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(805, 48);
             this.flowLayoutPanel4.TabIndex = 3;
             // 
             // flowLayoutPanel5
@@ -181,10 +183,10 @@
             this.flowLayoutPanel5.Controls.Add(this.pictureBox2);
             this.flowLayoutPanel5.Controls.Add(this.ProductSearchInp);
             this.flowLayoutPanel5.Controls.Add(this.FilterBtn);
-            this.flowLayoutPanel5.Location = new System.Drawing.Point(0, 3);
-            this.flowLayoutPanel5.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
+            this.flowLayoutPanel5.Location = new System.Drawing.Point(20, 3);
+            this.flowLayoutPanel5.Margin = new System.Windows.Forms.Padding(20, 3, 3, 3);
             this.flowLayoutPanel5.Name = "flowLayoutPanel5";
-            this.flowLayoutPanel5.Size = new System.Drawing.Size(291, 40);
+            this.flowLayoutPanel5.Size = new System.Drawing.Size(234, 40);
             this.flowLayoutPanel5.TabIndex = 0;
             // 
             // pictureBox2
@@ -206,7 +208,7 @@
             this.ProductSearchInp.Location = new System.Drawing.Point(35, 12);
             this.ProductSearchInp.Margin = new System.Windows.Forms.Padding(3, 12, 3, 10);
             this.ProductSearchInp.Name = "ProductSearchInp";
-            this.ProductSearchInp.Size = new System.Drawing.Size(212, 18);
+            this.ProductSearchInp.Size = new System.Drawing.Size(152, 18);
             this.ProductSearchInp.TabIndex = 1;
             this.ProductSearchInp.Text = "Search ...";
             this.ProductSearchInp.Click += new System.EventHandler(this.ProductSearchInp_Click);
@@ -217,7 +219,7 @@
             // 
             this.FilterBtn.BackColor = System.Drawing.Color.White;
             this.FilterBtn.Image = ((System.Drawing.Image)(resources.GetObject("FilterBtn.Image")));
-            this.FilterBtn.Location = new System.Drawing.Point(256, 5);
+            this.FilterBtn.Location = new System.Drawing.Point(196, 5);
             this.FilterBtn.Margin = new System.Windows.Forms.Padding(6, 5, 0, 0);
             this.FilterBtn.Name = "FilterBtn";
             this.FilterBtn.Size = new System.Drawing.Size(30, 30);
@@ -225,20 +227,50 @@
             this.FilterBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.FilterBtn.UseVisualStyleBackColor = false;
             // 
+            // ProductTable
+            // 
+            this.ProductTable.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ProductTable.ColumnCount = 3;
+            this.ProductTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.ProductTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.ProductTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.ProductTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.ProductTable.Location = new System.Drawing.Point(81, 131);
+            this.ProductTable.Name = "ProductTable";
+            this.ProductTable.RowCount = 3;
+            this.ProductTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.ProductTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.ProductTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.ProductTable.Size = new System.Drawing.Size(805, 538);
+            this.ProductTable.TabIndex = 4;
+            // 
+            // vScrollBar1
+            // 
+            this.vScrollBar1.Location = new System.Drawing.Point(866, 133);
+            this.vScrollBar1.Name = "vScrollBar1";
+            this.vScrollBar1.Size = new System.Drawing.Size(20, 536);
+            this.vScrollBar1.TabIndex = 0;
+            // 
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.vScrollBar2);
             this.panel3.Controls.Add(this.panel4);
-            this.panel3.Location = new System.Drawing.Point(913, -8);
+            this.panel3.Location = new System.Drawing.Point(907, -8);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(359, 702);
+            this.panel3.Size = new System.Drawing.Size(368, 702);
             this.panel3.TabIndex = 5;
+            // 
+            // vScrollBar2
+            // 
+            this.vScrollBar2.Location = new System.Drawing.Point(329, 171);
+            this.vScrollBar2.Name = "vScrollBar2";
+            this.vScrollBar2.Size = new System.Drawing.Size(14, 401);
+            this.vScrollBar2.TabIndex = 0;
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.TotalMoneylb);
-            this.panel4.Controls.Add(this.PhoneResultContainer);
-            this.panel4.Controls.Add(this.CartContainer);
+            this.panel4.Controls.Add(this.PhoneResultData);
             this.panel4.Controls.Add(this.RecipientLb);
             this.panel4.Controls.Add(this.PrintBtn);
             this.panel4.Controls.Add(this.TotalLb);
@@ -246,29 +278,40 @@
             this.panel4.Controls.Add(this.AddCustomerBtn);
             this.panel4.Controls.Add(this.PhoneInp);
             this.panel4.Controls.Add(this.label3);
+            this.panel4.Controls.Add(this.OrderTable);
             this.panel4.Location = new System.Drawing.Point(24, 8);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(300, 668);
+            this.panel4.Size = new System.Drawing.Size(319, 668);
             this.panel4.TabIndex = 3;
             // 
-            // PhoneResultContainer
+            // PhoneResultData
             // 
-            this.PhoneResultContainer.AutoScroll = true;
-            this.PhoneResultContainer.AutoScrollMinSize = new System.Drawing.Size(1, 1);
-            this.PhoneResultContainer.Location = new System.Drawing.Point(0, 95);
-            this.PhoneResultContainer.Margin = new System.Windows.Forms.Padding(0);
-            this.PhoneResultContainer.MaximumSize = new System.Drawing.Size(262, 180);
-            this.PhoneResultContainer.Name = "PhoneResultContainer";
-            this.PhoneResultContainer.Size = new System.Drawing.Size(244, 0);
-            this.PhoneResultContainer.TabIndex = 19;
-            // 
-            // CartContainer
-            // 
-            this.CartContainer.AutoScroll = true;
-            this.CartContainer.Location = new System.Drawing.Point(0, 143);
-            this.CartContainer.Name = "CartContainer";
-            this.CartContainer.Size = new System.Drawing.Size(300, 411);
-            this.CartContainer.TabIndex = 20;
+            this.PhoneResultData.AllowUserToAddRows = false;
+            this.PhoneResultData.AllowUserToDeleteRows = false;
+            this.PhoneResultData.AllowUserToOrderColumns = true;
+            this.PhoneResultData.AllowUserToResizeColumns = false;
+            this.PhoneResultData.AllowUserToResizeRows = false;
+            this.PhoneResultData.BackgroundColor = System.Drawing.Color.White;
+            this.PhoneResultData.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.PhoneResultData.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.PhoneResultData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.PhoneResultData.ColumnHeadersVisible = false;
+            this.PhoneResultData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.phone,
+            this.name});
+            this.PhoneResultData.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PhoneResultData.GridColor = System.Drawing.Color.DarkGray;
+            this.PhoneResultData.Location = new System.Drawing.Point(0, 96);
+            this.PhoneResultData.Name = "PhoneResultData";
+            this.PhoneResultData.RowHeadersVisible = false;
+            this.PhoneResultData.RowTemplate.Height = 25;
+            this.PhoneResultData.RowTemplate.ReadOnly = true;
+            this.PhoneResultData.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.PhoneResultData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.PhoneResultData.Size = new System.Drawing.Size(244, 100);
+            this.PhoneResultData.TabIndex = 10;
+            this.PhoneResultData.Visible = false;
+            this.PhoneResultData.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.PhoneResultData_CellDoubleClick);
             // 
             // RecipientLb
             // 
@@ -285,12 +328,11 @@
             // PrintBtn
             // 
             this.PrintBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.PrintBtn.Cursor = System.Windows.Forms.Cursors.No;
             this.PrintBtn.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.PrintBtn.ForeColor = System.Drawing.Color.White;
             this.PrintBtn.Location = new System.Drawing.Point(4, 623);
             this.PrintBtn.Name = "PrintBtn";
-            this.PrintBtn.Size = new System.Drawing.Size(293, 42);
+            this.PrintBtn.Size = new System.Drawing.Size(313, 42);
             this.PrintBtn.TabIndex = 17;
             this.PrintBtn.Text = "Print Receipt";
             this.PrintBtn.UseVisualStyleBackColor = false;
@@ -299,12 +341,12 @@
             // 
             this.TotalLb.AutoSize = true;
             this.TotalLb.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.TotalLb.Location = new System.Drawing.Point(-1, 575);
+            this.TotalLb.Location = new System.Drawing.Point(-1, 585);
             this.TotalLb.Margin = new System.Windows.Forms.Padding(20, 30, 3, 5);
             this.TotalLb.Name = "TotalLb";
-            this.TotalLb.Size = new System.Drawing.Size(70, 30);
+            this.TotalLb.Size = new System.Drawing.Size(103, 30);
             this.TotalLb.TabIndex = 16;
-            this.TotalLb.Text = "Total:";
+            this.TotalLb.Text = "Total: 0đ";
             this.TotalLb.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // CustomerInfoLb
@@ -353,47 +395,51 @@
             this.label3.Text = "Book orders";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // checkUser
+            // OrderTable
             // 
-            this.checkUser.Enabled = true;
-            this.checkUser.Interval = 1;
-            this.checkUser.Tick += new System.EventHandler(this.checkUser_Tick);
+            this.OrderTable.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.OrderTable.ColumnCount = 1;
+            this.OrderTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.OrderTable.Location = new System.Drawing.Point(0, 163);
+            this.OrderTable.Name = "OrderTable";
+            this.OrderTable.RowCount = 3;
+            this.OrderTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.OrderTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.OrderTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.OrderTable.Size = new System.Drawing.Size(319, 401);
+            this.OrderTable.TabIndex = 14;
             // 
-            // BookContainer
+            // phone
             // 
-            this.BookContainer.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.BookContainer.AutoScroll = true;
-            this.BookContainer.Location = new System.Drawing.Point(102, 146);
-            this.BookContainer.Name = "BookContainer";
-            this.BookContainer.Size = new System.Drawing.Size(787, 520);
-            this.BookContainer.TabIndex = 6;
+            this.phone.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.phone.HeaderText = "Phone Number";
+            this.phone.Name = "phone";
+            this.phone.ReadOnly = true;
+            this.phone.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
-            // TotalMoneylb
+            // name
             // 
-            this.TotalMoneylb.AutoSize = true;
-            this.TotalMoneylb.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.TotalMoneylb.Location = new System.Drawing.Point(63, 575);
-            this.TotalMoneylb.Margin = new System.Windows.Forms.Padding(20, 30, 3, 5);
-            this.TotalMoneylb.Name = "TotalMoneylb";
-            this.TotalMoneylb.Size = new System.Drawing.Size(0, 30);
-            this.TotalMoneylb.TabIndex = 21;
-            this.TotalMoneylb.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.name.FillWeight = 16F;
+            this.name.HeaderText = "Name";
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
             // 
-            // VendorGUI
+            // MainPageGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1264, 681);
-            this.Controls.Add(this.BookContainer);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.flowLayoutPanel4);
             this.Controls.Add(this.flowLayoutPanel2);
             this.Controls.Add(this.flowLayoutPanel1);
-            this.Name = "VendorGUI";
+            this.Controls.Add(this.vScrollBar1);
+            this.Controls.Add(this.ProductTable);
+            this.Name = "MainPageGUI";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainPage";
-            this.Load += new System.EventHandler(this.Vendor_Load);
             this.flowLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.LogoImg)).EndInit();
             this.flowLayoutPanel2.ResumeLayout(false);
@@ -405,6 +451,7 @@
             this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PhoneResultData)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -414,6 +461,8 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel4;
+        private System.Windows.Forms.TableLayoutPanel ProductTable;
+        private System.Windows.Forms.VScrollBar vScrollBar1;
         private System.Windows.Forms.PictureBox LogoImg;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel5;
         private System.Windows.Forms.PictureBox pictureBox2;
@@ -425,18 +474,18 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.VScrollBar vScrollBar2;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button AddCustomerBtn;
+        private System.Windows.Forms.DataGridView PhoneResultData;
         private System.Windows.Forms.TextBox PhoneInp;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label CustomerInfoLb;
         private System.Windows.Forms.Label TotalLb;
+        private System.Windows.Forms.TableLayoutPanel OrderTable;
         private System.Windows.Forms.Button PrintBtn;
         private System.Windows.Forms.Label RecipientLb;
-        private System.Windows.Forms.FlowLayoutPanel PhoneResultContainer;
-        private System.Windows.Forms.Timer checkUser;
-        private System.Windows.Forms.FlowLayoutPanel BookContainer;
-        private System.Windows.Forms.FlowLayoutPanel CartContainer;
-        private System.Windows.Forms.Label TotalMoneylb;
+        private System.Windows.Forms.DataGridViewTextBoxColumn phone;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name;
     }
 }
