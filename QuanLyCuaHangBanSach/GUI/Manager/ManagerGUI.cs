@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Windows.Forms;
+using QuanLyCuaHangBanSach.BUS;
+using QuanLyCuaHangBanSach.DTO;
 using QuanLyCuaHangBanSach.GUI.Manager;
 
 namespace QuanLyCuaHangBanSach.GUI
 {
     public partial class ManagerGUI : Form
     {
+        public static StaffDTO currentStaff;
         private string contentActive = "homeBtn";
         private HomeManageGUI homeFrm = new HomeManageGUI() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle=FormBorderStyle.None, };
         private BookManageGUI bookFrm = new BookManageGUI() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle=FormBorderStyle.None, };
@@ -20,7 +23,7 @@ namespace QuanLyCuaHangBanSach.GUI
         private test publisherFrm = new test() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle=FormBorderStyle.None, };
         private test accountFrm = new test() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle=FormBorderStyle.None, };
         
-        public ManagerGUI()
+        public ManagerGUI(int staffId)
         {
             InitializeComponent();
             this.manageContent.Controls.Add(this.homeFrm);
@@ -35,7 +38,8 @@ namespace QuanLyCuaHangBanSach.GUI
             this.manageContent.Controls.Add(this.seoFrm);
             this.manageContent.Controls.Add(this.publisherFrm);
             this.manageContent.Controls.Add(this.accountFrm);
-            this.homeFrm.Show();                                
+            this.homeFrm.Show();
+            currentStaff = StaffBUS.Instance.getById(staffId.ToString());
         }
 
         private void homeBtn_Click(object sender, EventArgs e)

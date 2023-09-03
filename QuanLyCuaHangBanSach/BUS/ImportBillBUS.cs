@@ -62,6 +62,22 @@ namespace QuanLyCuaHangBanSach.BUS
             return ImportBillDAO.Instance.getImportBillDetailList(id);
         }
 
+        public bool createImportBillDetail(ImportBillDetailDTO importBillDetail)
+        {
+            return ImportBillDAO.Instance.createImportBillDetail(importBillDetail);
+        }
+
+        public bool updateImportBillDetail(ImportBillDetailDTO importBillDetail)
+        {
+            return ImportBillDAO.Instance.updateImportBillDetail(importBillDetail);
+
+        }
+
+        public bool deleteImportBillDetail(string billId, string bookId)
+        {
+            return ImportBillDAO.Instance.deleteImportBillDetail(billId, bookId);
+        }
+
         public bool updateBillAndBillDetail(ImportBillDTO importBill, List<ImportBillDetailDTO> importBillDetailList)
         {
             try
@@ -119,6 +135,11 @@ namespace QuanLyCuaHangBanSach.BUS
         public bool insert(ImportBillDTO importBill)
         {
             return ImportBillDAO.Instance.insert(importBill);
+        }
+
+        public ImportBillDTO insertReturnBill(ImportBillDTO importBill)
+        {
+            return ImportBillDAO.Instance.insertReturnBill(importBill);
         }
 
         public bool update(ImportBillDTO importBill)
