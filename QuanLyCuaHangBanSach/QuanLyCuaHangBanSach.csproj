@@ -39,11 +39,20 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AForge, Version=2.2.5.0, Culture=neutral, PublicKeyToken=c1db6ff4eaa06aeb, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.2.2.5\lib\AForge.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video, Version=2.2.5.0, Culture=neutral, PublicKeyToken=cbfb6e07d173c401, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.Video.2.2.5\lib\AForge.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video.DirectShow, Version=2.2.5.0, Culture=neutral, PublicKeyToken=61ea4348d43881b7, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.Video.DirectShow.2.2.5\lib\AForge.Video.DirectShow.dll</HintPath>
+    </Reference>
     <Reference Include="BouncyCastle.Crypto, Version=1.9.0.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
       <HintPath>..\packages\Portable.BouncyCastle.1.9.0\lib\net40\BouncyCastle.Crypto.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu_UI_v1.52">
-      <HintPath>D:\Downloads\Bunifu_UI_v1.52.dll</HintPath>
+      <HintPath>..\Bunifu_UI_v1.52.dll</HintPath>
     </Reference>
     <Reference Include="Costura, Version=3.3.3.0, Culture=neutral, PublicKeyToken=9919ef960d84173d, processorArchitecture=MSIL">
       <HintPath>..\packages\Costura.Fody.3.3.3\lib\net40\Costura.dll</HintPath>
@@ -67,10 +76,10 @@
       <HintPath>..\packages\Google.Protobuf.3.21.9\lib\net45\Google.Protobuf.dll</HintPath>
     </Reference>
     <Reference Include="Guna.UI">
-      <HintPath>D:\Downloads\Guna.UI.dll</HintPath>
+      <HintPath>..\Guna.UI.dll</HintPath>
     </Reference>
     <Reference Include="Guna.UI2">
-      <HintPath>D:\Downloads\Guna.UI2.dll</HintPath>
+      <HintPath>..\Guna.UI2.dll</HintPath>
     </Reference>
     <Reference Include="K4os.Compression.LZ4, Version=1.3.5.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
       <HintPath>..\packages\K4os.Compression.LZ4.1.3.5\lib\net462\K4os.Compression.LZ4.dll</HintPath>
@@ -288,9 +297,19 @@
     <Reference Include="ZstdSharp, Version=0.7.1.0, Culture=neutral, PublicKeyToken=8d151af33a4ad5cf, processorArchitecture=MSIL">
       <HintPath>..\packages\ZstdSharp.Port.0.7.1\lib\net461\ZstdSharp.dll</HintPath>
     </Reference>
+    <Reference Include="zxing, Version=0.16.9.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZXing.Net.0.16.9\lib\net47\zxing.dll</HintPath>
+    </Reference>
+    <Reference Include="zxing.presentation, Version=0.16.9.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZXing.Net.0.16.9\lib\net47\zxing.presentation.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BUS\BookBUS.cs" />
+    <Compile Include="BUS\SaleBUS.cs" />
+    <Compile Include="BUS\StaffBUS.cs" />
+    <Compile Include="BUS\SupplierBUS.cs" />
+    <Compile Include="BUS\ImportBillBUS.cs" />
+    <Compile Include="BUS\CustomerBillBUS.cs" />
     <Compile Include="BUS\CustomerBUS.cs" />
     <Compile Include="BUS\PublisherBUS.cs" />
     <Compile Include="BUS\BookTypeBUS.cs" />
@@ -302,7 +321,22 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="CustomValidation.cs" />
+    <Compile Include="DAO\SaleDAO.cs" />
+    <Compile Include="DAO\StaffDAO.cs" />
+    <Compile Include="DAO\ImportBillDAO.cs" />
+    <Compile Include="DAO\CustomerBillDAO.cs" />
     <Compile Include="DAO\CustomerDAO.cs" />
+    <Compile Include="DAO\SupplierDAO.cs" />
+    <Compile Include="DTO\SupplierDTO.cs" />
+    <Compile Include="DTO\SaleDTO.cs" />
+    <Compile Include="DTO\BillDetailDTO .cs" />
+    <Compile Include="DTO\BillDTO.cs" />
+    <Compile Include="DTO\CustomerBillDetailDTO.cs" />
+    <Compile Include="DTO\StaffDTO.cs" />
+    <Compile Include="DTO\HumanDTO.cs" />
+    <Compile Include="DTO\ImportBillDetailDTO.cs" />
+    <Compile Include="DTO\ImportBillDTO.cs" />
+    <Compile Include="DTO\CustomerBillDTO.cs" />
     <Compile Include="DTO\CustomerDTO.cs" />
     <Compile Include="DAO\PublisherDAO.cs" />
     <Compile Include="DAO\BookTypeDAO.cs" />
@@ -332,11 +366,23 @@
     <Compile Include="GUI\Manager\BookManageGUI.Designer.cs">
       <DependentUpon>BookManageGUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Manager\CustomerBillGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Manager\CustomerBillGUI.Designer.cs">
+      <DependentUpon>CustomerBillGUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Manager\HomeManageGUI.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\Manager\HomeManageGUI.Designer.cs">
       <DependentUpon>HomeManageGUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Manager\ImportBillGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Manager\ImportBillGUI.Designer.cs">
+      <DependentUpon>ImportBillGUI.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Manager\ManagerGUI.cs">
       <SubType>Form</SubType>
@@ -356,11 +402,41 @@
     <Compile Include="GUI\Auth\SendCodeGUI.Designer.cs">
       <DependentUpon>SendCodeGUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Modal\AddBookToCustomerBillModal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Modal\AddBookToCustomerBillModal.Designer.cs">
+      <DependentUpon>AddBookToCustomerBillModal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modal\AddBookToImportBillModal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Modal\AddBookToImportBillModal.Designer.cs">
+      <DependentUpon>AddBookToImportBillModal.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Modal\BookModal.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\Modal\BookModal.Designer.cs">
       <DependentUpon>BookModal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modal\CustomerBillModal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Modal\CustomerBillModal.Designer.cs">
+      <DependentUpon>CustomerBillModal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modal\ImportBillModal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Modal\ImportBillModal.Designer.cs">
+      <DependentUpon>ImportBillModal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modal\ScannerModal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Modal\ScannerModal.Designer.cs">
+      <DependentUpon>ScannerModal.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\test.cs">
       <SubType>Form</SubType>
@@ -368,26 +444,11 @@
     <Compile Include="GUI\test.Designer.cs">
       <DependentUpon>test.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Vendor\BookUserControl.cs">
+    <Compile Include="GUI\UserControls\BookBill.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\Vendor\BookUserControl.Designer.cs">
-      <DependentUpon>BookUserControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Vendor\CartProductUserControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="GUI\Vendor\CartProductUserControl.Designer.cs">
-      <DependentUpon>CartProductUserControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Vendor\PhoneSearchResultControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="GUI\Vendor\PhoneSearchResultControl.Designer.cs">
-      <DependentUpon>PhoneSearchResultControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Vendor\PhoneSearchResultControl.Designer.cs">
-      <DependentUpon>PhoneSearchResultControl.cs</DependentUpon>
+    <Compile Include="GUI\UserControls\BookBill.Designer.cs">
+      <DependentUpon>BookBill.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Vendor\VendorGUI.cs">
       <SubType>Form</SubType>
@@ -405,8 +466,14 @@
     <EmbeddedResource Include="GUI\Manager\BookManageGUI.resx">
       <DependentUpon>BookManageGUI.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Manager\CustomerBillGUI.resx">
+      <DependentUpon>CustomerBillGUI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Manager\HomeManageGUI.resx">
       <DependentUpon>HomeManageGUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Manager\ImportBillGUI.resx">
+      <DependentUpon>ImportBillGUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Manager\ManagerGUI.resx">
       <DependentUpon>ManagerGUI.cs</DependentUpon>
@@ -417,20 +484,29 @@
     <EmbeddedResource Include="GUI\Auth\SendCodeGUI.resx">
       <DependentUpon>SendCodeGUI.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Modal\AddBookToCustomerBillModal.resx">
+      <DependentUpon>AddBookToCustomerBillModal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Modal\AddBookToImportBillModal.resx">
+      <DependentUpon>AddBookToImportBillModal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Modal\BookModal.resx">
       <DependentUpon>BookModal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Modal\CustomerBillModal.resx">
+      <DependentUpon>CustomerBillModal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Modal\ImportBillModal.resx">
+      <DependentUpon>ImportBillModal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Modal\ScannerModal.resx">
+      <DependentUpon>ScannerModal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\test.resx">
       <DependentUpon>test.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Vendor\BookUserControl.resx">
-      <DependentUpon>BookUserControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Vendor\CartProductUserControl.resx">
-      <DependentUpon>CartProductUserControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Vendor\PhoneSearchResultControl.resx">
-      <DependentUpon>PhoneSearchResultControl.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\UserControls\BookBill.resx">
+      <DependentUpon>BookBill.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Vendor\VendorGUI.resx">
       <DependentUpon>VendorGUI.cs</DependentUpon>

@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Data;
 using System.IO;
+using System.Text;
 using System.Text.RegularExpressions;
+using System.Windows.Markup;
 
 namespace QuanLyCuaHangBanSach.DTO
 {
@@ -45,16 +47,16 @@ namespace QuanLyCuaHangBanSach.DTO
 
         public BookDTO(DataRow row)
         {
-            this.MaSach = (int) row["maSach"];
+            this.MaSach = Convert.ToInt32(row["maSach"]);
             this.TenSach = row["tenSach"].ToString();
             this.HinhAnh = (byte[])row["hinhAnh"];
-            this.MaTheLoai = (int)row["maTheLoai"];
-            this.MaTacGia = (int)row["maTacGia"];
-            this.MaNhaXuatBan = (int)row["maNhaXuatBan"];
-            this.SoLuongConLai = (int)row["soLuongConLai"];
+            this.MaTheLoai = Convert.ToInt32(row["maTheLoai"]);
+            this.MaTacGia = Convert.ToInt32(row["maTacGia"]);
+            this.MaNhaXuatBan = Convert.ToInt32(row["maNhaXuatBan"]);
+            this.SoLuongConLai = Convert.ToInt32(row["soLuongConLai"]);
             this.GiaBan = Convert.ToDouble(row["giaBan"]);
             this.GiaNhap = Convert.ToDouble(row["giaNhap"]);
-            this.NamXuatBan = (int)row["namXuatBan"];
+            this.NamXuatBan = Convert.ToInt32(row["namXuatBan"]);
         }
 
         public override string ToString()

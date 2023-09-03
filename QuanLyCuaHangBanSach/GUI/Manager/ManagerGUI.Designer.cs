@@ -71,7 +71,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1280, 800);
+            this.panel1.Size = new System.Drawing.Size(1636, 900);
             this.panel1.TabIndex = 0;
             // 
             // manageContent
@@ -79,7 +79,7 @@
             this.manageContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.manageContent.Location = new System.Drawing.Point(236, 36);
             this.manageContent.Name = "manageContent";
-            this.manageContent.Size = new System.Drawing.Size(1044, 764);
+            this.manageContent.Size = new System.Drawing.Size(1400, 864);
             this.manageContent.TabIndex = 3;
             // 
             // panel3
@@ -93,7 +93,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel3.Location = new System.Drawing.Point(0, 36);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(236, 764);
+            this.panel3.Size = new System.Drawing.Size(236, 864);
             this.panel3.TabIndex = 2;
             // 
             // panel5
@@ -115,7 +115,7 @@
             this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel5.Location = new System.Drawing.Point(0, 85);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(236, 679);
+            this.panel5.Size = new System.Drawing.Size(236, 779);
             this.panel5.TabIndex = 6;
             // 
             // accountBtn
@@ -588,7 +588,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1280, 36);
+            this.panel2.Size = new System.Drawing.Size(1636, 36);
             this.panel2.TabIndex = 0;
             // 
             // label1
@@ -616,8 +616,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Right;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(1223, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(1579, 0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(57, 36);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -629,7 +630,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1280, 800);
+            this.ClientSize = new System.Drawing.Size(1636, 900);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("#9Slide03 Cabin", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

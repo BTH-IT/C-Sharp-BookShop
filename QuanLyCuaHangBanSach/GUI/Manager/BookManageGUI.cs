@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Reflection;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using QuanLyCuaHangBanSach.BUS;
 using QuanLyCuaHangBanSach.DTO;
@@ -13,10 +14,31 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 {
     public partial class BookManageGUI : Form
     {
-
+        private CheckBox headerCheckbox;
         public BookManageGUI()
         {
             InitializeComponent();
+        }
+
+        private void renderCheckBoxDgv()
+        {
+            int size = 25;
+
+            Rectangle rect = this.dgvBook.GetCellDisplayRectangle(0, -1, false);
+
+            headerCheckbox = new CheckBox();
+            
+            headerCheckbox.BackColor = Color.FromArgb(45, 210, 192);
+            headerCheckbox.Name = "chkHeader";
+            headerCheckbox.Size = new Size(size, size);
+
+            rect.X = (rect.Width / 2) - (size / 4);
+            rect.Y = (rect.Height / 2) - (size / 2);
+
+            headerCheckbox.Location = rect.Location;
+
+
+            this.dgvBook.Controls.Add(headerCheckbox);
         }
 
         private void loadBookListToDataView(List<BookDTO> bookList)
@@ -29,10 +51,11 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             foreach (BookDTO book in bookList)
             {
                 this.dgvBook.Rows.Add(new object[] {
+                    false,
                     book.MaSach,
                     book.TenSach,
                     book.HinhAnh,
-                    AuthorBUS.Instance.getById(book.MaTacGia.ToString()).TenTacGia,
+                    AuthorBUS.Instance.getById(book.MaTacGia.ToString()).Ten,
                     BookTypeBUS.Instance.getById(book.MaTheLoai.ToString()).TenTheLoai,
                     PublisherBUS.Instance.getById(book.MaNhaXuatBan.ToString()).TenNhaXuatBan,
                     book.GiaBan,
@@ -41,6 +64,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                     book.SoLuongConLai,
                 });
             }
+
         }
 
         private void loadAuthorCbx()
@@ -49,8 +73,8 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
             authorList.Insert(0, new AuthorDTO(0, "Tất cả tác giả", "", 0));
 
-            this.authorCbx.ValueMember = "MaTacGia";
-            this.authorCbx.DisplayMember = "TenTacGia";
+            this.authorCbx.ValueMember = "Ma";
+            this.authorCbx.DisplayMember = "Ten";
             this.authorCbx.DataSource = authorList;
 
             this.authorCbx.SelectedIndex = 0;
@@ -80,37 +104,48 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
         private void BookManageGUI_Load(object sender, EventArgs e)
         {
+
             List<BookDTO> bookList = BookBUS.Instance.getAllData();
             this.loadBookListToDataView(bookList);
 
             this.loadAuthorCbx();
             this.loadBookTypeCbx();
             this.loadPublisherCbx();
+            this.renderCheckBoxDgv();
+            headerCheckbox.MouseClick += new MouseEventHandler(headerCheckbox_Clicked);
+        }
+
+        private void headerCheckbox_Clicked(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in this.dgvBook.Rows)
+            {
+                row.Cells[0].Value = headerCheckbox.Checked;
+            }
+
+            this.dgvBook.RefreshEdit();
         }
 
         private List<BookDTO> handleFilter(string searchText)
         {
-            if (searchText == "Enter your search...")
-            {
-                searchText = "";
-            }
-
             List<BookDTO> bookList = BookBUS.Instance.search(searchText);
 
-            if (this.textBox2.Text.ToString() != "Enter price from"
-                && this.textBox3.Text.ToString() != "Enter price to"
-                && this.textBox2.Text.ToString() != string.Empty
-                && this.textBox3.Text.ToString() != string.Empty)
+            if (this.priceFrom.Text.ToString() != string.Empty
+                && this.priceTo.Text.ToString() != string.Empty)
             {
-                try
+                Regex isNum = new Regex(@"^\d+$");
+
+                if (!isNum.IsMatch(this.priceFrom.Text.ToString()) || !isNum.IsMatch(this.priceFrom.Text.ToString()))
+                {
+                    this.priceFrom.Clear();
+                    this.priceTo.Clear();
+                    MessageBox.Show("Tổng tiền là một số");
+                }
+                else
                 {
                     bookList = bookList.FindAll(
-                        item => item.GiaBan >= Convert.ToDouble(this.textBox2.Text.ToString())
-                                && item.GiaBan <= Convert.ToDouble(this.textBox3.Text.ToString()
+                        item => item.GiaBan >= Convert.ToDouble(this.priceFrom.Text.ToString())
+                                && item.GiaBan <= Convert.ToDouble(this.priceTo.Text.ToString()
                     ));
-                } catch
-                {
-                    MessageBox.Show("Giá phải là số");
                 }
             }
 
@@ -167,35 +202,13 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             return newBookList;
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void searchInput_TextChanged(object sender, EventArgs e)
         {
             this.searchInput.ForeColor = Color.Black;
 
             List<BookDTO> bookList = handleFilter(this.searchInput.Text.ToString());
 
             this.loadBookListToDataView(bookList);
-        }
-
-        private void searchInput_Click(object sender, EventArgs e)
-        {
-            if (this.searchInput.Text.Equals("Enter your search..."))
-            {
-                this.searchInput.Text = "";
-
-            }
-        }
-
-        private void searchInput_Leave(object sender, EventArgs e)
-        {
-            if (this.searchInput.Text.Length <= 0)
-            {
-                this.searchInput.Text = "Enter your search...";
-                this.searchInput.ForeColor = Color.LightGray;
-
-                List<BookDTO> bookList = handleFilter(this.searchInput.Text.ToString());
-
-                this.loadBookListToDataView(bookList);
-            }
         }
 
         private void gunaAdvenceButton1_Click(object sender, EventArgs e)
@@ -216,14 +229,10 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
         private void gunaAdvenceButton4_Click(object sender, EventArgs e)
         {
-            this.searchInput.Text = "Enter your search...";
-            this.searchInput.ForeColor = Color.LightGray;
+            this.searchInput.Clear();
 
-            this.textBox2.Text = "Enter price from";
-            this.textBox2.ForeColor = Color.LightGray;
-
-            this.textBox3.Text = "Enter price to";
-            this.textBox3.ForeColor = Color.LightGray;
+            this.priceFrom.Clear();
+            this.priceTo.Clear();
 
             this.authorCbx.SelectedIndex = 0;
             this.bookTypeCbx.SelectedIndex = 0;
@@ -254,66 +263,18 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             this.loadBookListToDataView(bookList);
         }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
+        private void priceTo_TextChanged(object sender, EventArgs e)
         {
-            this.textBox2.ForeColor = Color.Black;
-
             List<BookDTO> bookList = handleFilter(this.searchInput.Text.ToString());
 
             this.loadBookListToDataView(bookList);
         }
 
-        private void textBox2_Leave(object sender, EventArgs e)
+        private void priceFrom_TextChanged(object sender, EventArgs e)
         {
-            if (this.textBox2.Text.Length <= 0)
-            {
-                this.textBox2.Text = "Enter price from";
-                this.textBox2.ForeColor = Color.LightGray;
-
-                List<BookDTO> bookList = handleFilter(this.searchInput.Text.ToString());
-
-                this.loadBookListToDataView(bookList);
-            }
-        }
-
-        private void textBox2_Click(object sender, EventArgs e)
-        {
-            if (this.textBox2.Text.Equals("Enter price from"))
-            {
-                this.textBox2.Text = "";
-
-            }
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-            this.textBox3.ForeColor = Color.Black;
-
             List<BookDTO> bookList = handleFilter(this.searchInput.Text.ToString());
 
             this.loadBookListToDataView(bookList);
-        }
-
-        private void textBox3_Leave(object sender, EventArgs e)
-        {
-            if (this.textBox3.Text.Length <= 0)
-            {
-                this.textBox3.Text = "Enter price to";
-                this.textBox3.ForeColor = Color.LightGray;
-
-                List<BookDTO> bookList = handleFilter(this.searchInput.Text.ToString());
-
-                this.loadBookListToDataView(bookList);
-            }
-        }
-
-        private void textBox3_Click(object sender, EventArgs e)
-        {
-            if (this.textBox3.Text.Equals("Enter price to"))
-            {
-                this.textBox3.Text = "";
-
-            }
         }
 
         private void exportBtn_Click(object sender, EventArgs e)
@@ -329,17 +290,17 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
         private void editBtn_Click(object sender, EventArgs e)
         {
+            if (this.dgvBook.CurrentCell.RowIndex < 0)
+            {
+                MessageBox.Show("Hãy chọn dòng dữ liệu muốn thao tác");
+                return;
+            }
+
             using (BookModal bookModal = new BookModal("Sửa sách"))
             {
-                if (this.dgvBook.CurrentCell.RowIndex < 0)
-                {
-                    MessageBox.Show("Hãy chọn dòng dữ liệu muốn thao tác");
-                    return;
-                }
-
                 DataGridViewRow row = this.dgvBook.Rows[this.dgvBook.CurrentCell.RowIndex];
 
-                BookDTO book = BookBUS.Instance.getById(row.Cells[0].Value.ToString());
+                BookDTO book = BookBUS.Instance.getById(row.Cells[1].Value.ToString());
 
                 bookModal.updateBook = book;
 
@@ -362,28 +323,75 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
         private void deleteBtn_Click(object sender, EventArgs e)
         {
-            if (this.dgvBook.CurrentCell.RowIndex < 0)
+            bool isHaveSelect = false;
+
+            foreach (DataGridViewRow row in this.dgvBook.Rows)
             {
-                MessageBox.Show("Hãy chọn dòng dữ liệu muốn thao tác");
+                if ((bool)row.Cells[0].Value)
+                {
+                    isHaveSelect = true;
+                }
+            }
+
+            if (!isHaveSelect)
+            {
+                MessageBox.Show("Bạn chưa chọn những sách cần xóa");
                 return;
             }
 
-            DataGridViewRow row = this.dgvBook.Rows[this.dgvBook.CurrentCell.RowIndex];
+            DialogResult dlgResult = MessageBox.Show(
+                "Bạn chắc chắn muốn xóa các sách đã chọn chứ chứ?", 
+                "Xác nhận", 
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question, 
+                MessageBoxDefaultButton.Button1
+            );
 
-            DialogResult dlgResult = MessageBox.Show("Bạn chắc chắn muốn xóa chứ?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
-
-            if (dlgResult == DialogResult.Yes) {
-                
-                if (BookBUS.Instance.delete(row.Cells[0].Value.ToString()))
+            if (dlgResult == DialogResult.Yes)
+            {
+                foreach (DataGridViewRow row in this.dgvBook.Rows)
                 {
-                    MessageBox.Show("Delete successful");
+                    if ((bool)row.Cells[0].Value == true)
+                    {
+                        BookBUS.Instance.delete(row.Cells[1].Value.ToString());
+                    }
+                    
+                }
+                List<BookDTO> bookList = handleFilter(this.searchInput.Text.ToString());
+                this.loadBookListToDataView(bookList);
 
+                MessageBox.Show("Delete successful");
+            }
+        }
+
+        private void dgvBook_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0 || e.ColumnIndex <= 0)
+            {
+                return;
+            }
+
+            using (BookModal bookModal = new BookModal("Sửa sách"))
+            {
+                DataGridViewRow row = this.dgvBook.Rows[e.RowIndex];
+
+                BookDTO book = BookBUS.Instance.getById(row.Cells[1].Value.ToString());
+
+                bookModal.updateBook = book;
+
+                if (bookModal.updateBook == null)
+                {
+                    MessageBox.Show("Đã xảy ra lỗi vui lòng thử lại sau!!");
+                    return;
+                }
+
+                bookModal.ShowDialog();
+
+                if (bookModal.isSubmitSuccess)
+                {
                     List<BookDTO> bookList = handleFilter(this.searchInput.Text.ToString());
 
                     this.loadBookListToDataView(bookList);
-                } else
-                {
-                    MessageBox.Show("Delete failure");
                 }
             }
         }

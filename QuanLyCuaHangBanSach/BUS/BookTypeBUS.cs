@@ -30,30 +30,30 @@ namespace QuanLyCuaHangBanSach.BUS
 
         public List<BookTypeDTO> search(string value)
         {
-            List<BookTypeDTO> bookList = new List<BookTypeDTO>();
+            List<BookTypeDTO> bookTypeList = new List<BookTypeDTO>();
             DataTable dt = BookTypeDAO.Instance.searchData(value);
 
             foreach (DataRow row in dt.Rows)
             {
-                BookTypeDTO book = new BookTypeDTO(row);
-                bookList.Add(book);
+                BookTypeDTO bookType = new BookTypeDTO(row);
+                bookTypeList.Add(bookType);
             }
 
-            return bookList;
+            return bookTypeList;
         }
 
         public List<BookTypeDTO> getAllData()
         {
-            List<BookTypeDTO> bookList = new List<BookTypeDTO>();
+            List<BookTypeDTO> bookTypeList = new List<BookTypeDTO>();
             DataTable dt = BookTypeDAO.Instance.getAll();
 
             foreach (DataRow row in dt.Rows)
             {
-                BookTypeDTO book = new BookTypeDTO(row);
-                bookList.Add(book);
+                BookTypeDTO bookType = new BookTypeDTO(row);
+                bookTypeList.Add(bookType);
             }
 
-            return bookList;
+            return bookTypeList;
         }
 
         public BookTypeDTO getById(string id)
@@ -61,14 +61,14 @@ namespace QuanLyCuaHangBanSach.BUS
             return BookTypeDAO.Instance.getById(id);
         }
 
-        public bool insert(BookTypeDTO book)
+        public bool insert(BookTypeDTO bookType)
         {
-            return BookTypeDAO.Instance.insert(book);
+            return BookTypeDAO.Instance.insert(bookType);
         }
 
-        public bool update(BookTypeDTO book)
+        public bool update(BookTypeDTO bookType)
         {
-            return BookTypeDAO.Instance.update(book);
+            return BookTypeDAO.Instance.update(bookType);
         }
 
         public bool delete(string id)

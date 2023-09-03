@@ -30,30 +30,30 @@ namespace QuanLyCuaHangBanSach.BUS
 
         public List<AuthorDTO> search(string value)
         {
-            List<AuthorDTO> bookList = new List<AuthorDTO>();
+            List<AuthorDTO> authorList = new List<AuthorDTO>();
             DataTable dt = AuthorDAO.Instance.searchData(value);
 
             foreach (DataRow row in dt.Rows)
             {
-                AuthorDTO book = new AuthorDTO(row);
-                bookList.Add(book);
+                AuthorDTO author = new AuthorDTO(row);
+                authorList.Add(author);
             }
 
-            return bookList;
+            return authorList;
         }
 
         public List<AuthorDTO> getAllData()
         {
-            List<AuthorDTO> bookList = new List<AuthorDTO>();
+            List<AuthorDTO> authorList = new List<AuthorDTO>();
             DataTable dt = AuthorDAO.Instance.getAll();
 
             foreach (DataRow row in dt.Rows)
             {
-                AuthorDTO book = new AuthorDTO(row);
-                bookList.Add(book);
+                AuthorDTO author = new AuthorDTO(row);
+                authorList.Add(author);
             }
 
-            return bookList;
+            return authorList;
         }
 
         public AuthorDTO getById(string id)
@@ -61,14 +61,14 @@ namespace QuanLyCuaHangBanSach.BUS
             return AuthorDAO.Instance.getById(id);
         }
 
-        public bool insert(AuthorDTO book)
+        public bool insert(AuthorDTO author)
         {
-            return AuthorDAO.Instance.insert(book);
+            return AuthorDAO.Instance.insert(author);
         }
 
-        public bool update(AuthorDTO book)
+        public bool update(AuthorDTO author)
         {
-            return AuthorDAO.Instance.update(book);
+            return AuthorDAO.Instance.update(author);
         }
 
         public bool delete(string id)
