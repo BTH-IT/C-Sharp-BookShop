@@ -305,7 +305,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BUS\ImportBillBUS.cs" />
     <Compile Include="BUS\SaleBUS.cs" />
+    <Compile Include="BUS\SaleBUS.cs" />
+    <Compile Include="BUS\StaffBUS.cs" />
     <Compile Include="BUS\StaffBUS.cs" />
     <Compile Include="BUS\SupplierBUS.cs" />
     <Compile Include="BUS\ImportBillBUS.cs" />
@@ -321,12 +324,17 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="CustomValidation.cs" />
+    <Compile Include="DAO\CustomerBillDAO.cs" />
+    <Compile Include="DAO\ImportBillDAO.cs" />
+    <Compile Include="DAO\SaleDAO.cs" />
     <Compile Include="DAO\SaleDAO.cs" />
     <Compile Include="DAO\StaffDAO.cs" />
     <Compile Include="DAO\ImportBillDAO.cs" />
     <Compile Include="DAO\CustomerBillDAO.cs" />
     <Compile Include="DAO\CustomerDAO.cs" />
+    <Compile Include="DAO\StaffDAO.cs" />
     <Compile Include="DAO\SupplierDAO.cs" />
+    <Compile Include="DTO\BookDTO.cs" />
     <Compile Include="DTO\SupplierDTO.cs" />
     <Compile Include="DTO\SaleDTO.cs" />
     <Compile Include="DTO\BillDetailDTO .cs" />
@@ -450,6 +458,27 @@
     <Compile Include="GUI\UserControls\BookBill.Designer.cs">
       <DependentUpon>BookBill.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\UserControls\BookUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UserControls\BookUserControl.Designer.cs">
+      <DependentUpon>BookUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UserControls\CartProductUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UserControls\CartProductUserControl.Designer.cs">
+      <DependentUpon>CartProductUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UserControls\PhoneSearchResultControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UserControls\PhoneSearchResultControl.Designer.cs">
+      <DependentUpon>PhoneSearchResultControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Vendor\VendorGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="GUI\Vendor\VendorGUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -507,6 +536,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\UserControls\BookBill.resx">
       <DependentUpon>BookBill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UserControls\BookUserControl.resx">
+      <DependentUpon>BookUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UserControls\CartProductUserControl.resx">
+      <DependentUpon>CartProductUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UserControls\PhoneSearchResultControl.resx">
+      <DependentUpon>PhoneSearchResultControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Vendor\VendorGUI.resx">
       <DependentUpon>VendorGUI.cs</DependentUpon>
