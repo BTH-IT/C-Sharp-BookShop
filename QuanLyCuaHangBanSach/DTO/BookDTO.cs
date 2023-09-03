@@ -47,7 +47,7 @@ namespace QuanLyCuaHangBanSach.DTO
         {
             this.MaSach = (int) row["maSach"];
             this.TenSach = row["tenSach"].ToString();
-            this.HinhAnh = (byte[]) row["hinhAnh"];
+            this.HinhAnh = (byte[])row["hinhAnh"];
             this.MaTheLoai = (int)row["maTheLoai"];
             this.MaTacGia = (int)row["maTacGia"];
             this.MaNhaXuatBan = (int)row["maNhaXuatBan"];

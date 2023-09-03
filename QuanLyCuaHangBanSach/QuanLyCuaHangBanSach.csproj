@@ -43,7 +43,7 @@
       <HintPath>..\packages\Portable.BouncyCastle.1.9.0\lib\net40\BouncyCastle.Crypto.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu_UI_v1.52">
-      <HintPath>C:\Users\Hung\Downloads\Bunifu_UI_v1.52.dll</HintPath>
+      <HintPath>D:\Downloads\Bunifu_UI_v1.52.dll</HintPath>
     </Reference>
     <Reference Include="Costura, Version=3.3.3.0, Culture=neutral, PublicKeyToken=9919ef960d84173d, processorArchitecture=MSIL">
       <HintPath>..\packages\Costura.Fody.3.3.3\lib\net40\Costura.dll</HintPath>
@@ -67,10 +67,10 @@
       <HintPath>..\packages\Google.Protobuf.3.21.9\lib\net45\Google.Protobuf.dll</HintPath>
     </Reference>
     <Reference Include="Guna.UI">
-      <HintPath>C:\Users\Hung\Downloads\Guna.UI-Framework-Lib-master\Guna.UI WinForms\.net 4.0\Guna.UI.dll</HintPath>
+      <HintPath>D:\Downloads\Guna.UI.dll</HintPath>
     </Reference>
     <Reference Include="Guna.UI2">
-      <HintPath>C:\Users\Hung\Downloads\Guna_UI_Framework_Ultimate_v2.0.0.1\Guna_UI_Framework_Ultimate_v2.0.0.1\Guna.UI-Framework-Lib-master\Guna.UI2 WinForms\.net 4.0\Guna.UI2.dll</HintPath>
+      <HintPath>D:\Downloads\Guna.UI2.dll</HintPath>
     </Reference>
     <Reference Include="K4os.Compression.LZ4, Version=1.3.5.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
       <HintPath>..\packages\K4os.Compression.LZ4.1.3.5\lib\net462\K4os.Compression.LZ4.dll</HintPath>
@@ -290,6 +290,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BUS\BookBUS.cs" />
     <Compile Include="BUS\CustomerBUS.cs" />
     <Compile Include="BUS\PublisherBUS.cs" />
     <Compile Include="BUS\BookTypeBUS.cs" />
@@ -367,6 +368,27 @@
     <Compile Include="GUI\test.Designer.cs">
       <DependentUpon>test.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Vendor\BookUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Vendor\BookUserControl.Designer.cs">
+      <DependentUpon>BookUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Vendor\CartProductUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Vendor\CartProductUserControl.Designer.cs">
+      <DependentUpon>CartProductUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Vendor\PhoneSearchResultControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Vendor\PhoneSearchResultControl.Designer.cs">
+      <DependentUpon>PhoneSearchResultControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Vendor\PhoneSearchResultControl.Designer.cs">
+      <DependentUpon>PhoneSearchResultControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Vendor\VendorGUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -400,6 +422,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\test.resx">
       <DependentUpon>test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Vendor\BookUserControl.resx">
+      <DependentUpon>BookUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Vendor\CartProductUserControl.resx">
+      <DependentUpon>CartProductUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Vendor\PhoneSearchResultControl.resx">
+      <DependentUpon>PhoneSearchResultControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Vendor\VendorGUI.resx">
       <DependentUpon>VendorGUI.cs</DependentUpon>
