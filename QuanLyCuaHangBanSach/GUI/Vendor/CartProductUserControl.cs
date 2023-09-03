@@ -41,6 +41,7 @@ namespace QuanLyCuaHangBanSach.GUI.Vendor
         private void PlusBtn_Click(object sender, EventArgs e)
         {
             AmountTxt.Text = (int.Parse(AmountTxt.Text) + 1).ToString();
+            ChangeAmount();
         }
 
         private void MinusBtn_Click(object sender, EventArgs e)
@@ -48,6 +49,7 @@ namespace QuanLyCuaHangBanSach.GUI.Vendor
             if (!AmountTxt.Text.Equals("1"))
             {
                 AmountTxt.Text = (int.Parse(AmountTxt.Text) - 1).ToString();
+                ChangeAmount();
             }
         }
 
@@ -65,6 +67,12 @@ namespace QuanLyCuaHangBanSach.GUI.Vendor
 
         private void AmountTxt_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if (e.KeyChar == '\r')
+            {
+                NameLb.Focus();
+                return;
+            }
+
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true; // Cancel the key press event
@@ -74,11 +82,17 @@ namespace QuanLyCuaHangBanSach.GUI.Vendor
         private void AmountTxt_Leave(object sender, EventArgs e)
         {
             AmountTxt_Validation();
+            ChangeAmount();
+        }
+
+        public static bool AmountChanged = false;
+        private void ChangeAmount()
+        {
+            AmountChanged = true;
         }
 
         public static bool deletePress = false;
         public static string deleteId = "";
-
         private void DeleteBtn_Click(object sender, EventArgs e)
         {
             deletePress = true;

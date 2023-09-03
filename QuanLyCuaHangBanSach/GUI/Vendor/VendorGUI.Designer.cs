@@ -45,6 +45,7 @@
             this.FilterBtn = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.TotalMoneyLb = new System.Windows.Forms.Label();
             this.PhoneResultContainer = new System.Windows.Forms.FlowLayoutPanel();
             this.CartContainer = new System.Windows.Forms.FlowLayoutPanel();
             this.RecipientLb = new System.Windows.Forms.Label();
@@ -235,6 +236,7 @@
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.TotalMoneyLb);
             this.panel4.Controls.Add(this.PhoneResultContainer);
             this.panel4.Controls.Add(this.CartContainer);
             this.panel4.Controls.Add(this.RecipientLb);
@@ -248,6 +250,19 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(300, 668);
             this.panel4.TabIndex = 3;
+            this.panel4.Click += new System.EventHandler(this.panel4_Click);
+            // 
+            // TotalMoneyLb
+            // 
+            this.TotalMoneyLb.AutoSize = true;
+            this.TotalMoneyLb.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.TotalMoneyLb.Location = new System.Drawing.Point(62, 575);
+            this.TotalMoneyLb.Margin = new System.Windows.Forms.Padding(20, 30, 3, 5);
+            this.TotalMoneyLb.Name = "TotalMoneyLb";
+            this.TotalMoneyLb.Size = new System.Drawing.Size(46, 30);
+            this.TotalMoneyLb.TabIndex = 21;
+            this.TotalMoneyLb.Text = "0 đ";
+            this.TotalMoneyLb.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // PhoneResultContainer
             // 
@@ -300,9 +315,9 @@
             this.TotalLb.Location = new System.Drawing.Point(-1, 575);
             this.TotalLb.Margin = new System.Windows.Forms.Padding(20, 30, 3, 5);
             this.TotalLb.Name = "TotalLb";
-            this.TotalLb.Size = new System.Drawing.Size(103, 30);
+            this.TotalLb.Size = new System.Drawing.Size(70, 30);
             this.TotalLb.TabIndex = 16;
-            this.TotalLb.Text = "Total: 0đ";
+            this.TotalLb.Text = "Total:";
             this.TotalLb.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // CustomerInfoLb
@@ -424,5 +439,6 @@
         private System.Windows.Forms.Timer checkUser;
         private System.Windows.Forms.FlowLayoutPanel BookContainer;
         private System.Windows.Forms.FlowLayoutPanel CartContainer;
+        private System.Windows.Forms.Label TotalMoneyLb;
     }
 }

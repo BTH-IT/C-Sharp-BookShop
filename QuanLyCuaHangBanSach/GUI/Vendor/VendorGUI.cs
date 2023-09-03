@@ -17,6 +17,11 @@ namespace QuanLyCuaHangBanSach.GUI
             this.FormBorderStyle = FormBorderStyle.None;
         }
 
+        private void panel4_Click(object sender, EventArgs e)
+        {
+            this.ActiveControl = null;
+        }
+
         private void Vendor_Load(object sender, EventArgs e)
         {
             List<BookDTO> books = BookBUS.Instance.getAllData();
@@ -145,6 +150,7 @@ namespace QuanLyCuaHangBanSach.GUI
                     }
                 }
 
+                CalculateTotal();
                 BookUserControl.ChoseId = "";
                 BookUserControl.clicked = false;
             }
@@ -164,6 +170,7 @@ namespace QuanLyCuaHangBanSach.GUI
                         }
                     }
                 }
+                CalculateTotal();
                 CartProductUserControl.deleteId = "";
                 CartProductUserControl.deletePress = false;
             }
@@ -176,6 +183,36 @@ namespace QuanLyCuaHangBanSach.GUI
                 PhoneInp.Text = "Phone Number ...";
                 PhoneInp.ForeColor = Color.DarkGray;
                 PhoneSearchResultControl.clicked = false;
+            }
+
+            if (CartProductUserControl.AmountChanged)
+            {
+                CalculateTotal();
+                CartProductUserControl.AmountChanged = false;
+            }
+        }
+
+        private void CalculateTotal()
+        {
+            double total = 0;
+            for (int i = 0; i < CartContainer.Controls.Count; i++)
+            {
+                System.Windows.Forms.Control ctrl = CartContainer.Controls[i];
+                if (ctrl is CartProductUserControl cartProduct)
+                {
+                    BookDTO book = BookBUS.Instance.getById(cartProduct.IdLb.Text);
+                    double price = book.GiaBan * int.Parse(cartProduct.AmountTxt.Text);
+                    total += price;
+                }
+            }
+            TotalMoneyLb.Text = string.Format("{0:N0} đ", total);
+            if (total > 0)
+            {
+                PrintBtn.Cursor = Cursors.Hand;
+            }
+            else
+            {
+                PrintBtn.Cursor = Cursors.No;
             }
         }
 
