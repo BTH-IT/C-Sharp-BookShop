@@ -95,6 +95,24 @@ namespace QuanLyCuaHangBanSach.DAO
             return rowChanged > 0;
         }
 
+        public CustomerBillDTO insertReturnBill(CustomerBillDTO data)
+        {
+            string sql = "SELECT * FROM phieuban ORDER BY maDonKhachHang DESC LIMIT 1;";
+            if (this.insert(data))
+            {
+
+                DataTable dataTable = DataProvider.Instance.ExecuteQuery(sql);
+
+                if (dataTable.Rows.Count <= 0) return null;
+
+                CustomerBillDTO customerBill = new CustomerBillDTO(dataTable.Rows[0]);
+
+                return customerBill;
+            };
+
+            return null;
+        }
+
         public bool createCustomerBillDetail(CustomerBillDetailDTO data)
         {
             string sql = $@"INSERT INTO chitietphieuban (maDonKhachHang, maSach, soLuong, donGia) 

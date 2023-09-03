@@ -383,16 +383,28 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         {
             DataTable dt = CustomExcel.Instance.ImportFile();
 
-            foreach (DataRow row in dt.Rows)
+            ImportBillDTO newImportBill = new ImportBillDTO(0, 1, ManagerGUI.currentStaff.Ma, new DateTime(), 0);
+
+            ImportBillDTO importBill = ImportBillBUS.Instance.insertReturnBill(newImportBill);
+
+            if (importBill != null)
             {
-                BookDTO book = BookBUS.Instance.getById(row[0].ToString());
+                foreach (DataRow row in dt.Rows)
+                {
+                    BookDTO book = BookBUS.Instance.getById(row[0].ToString());
 
-                if (book == null) continue;
+                    if (book == null) continue;
 
-                book.SoLuongConLai += Convert.ToInt32(row[2].ToString());
-                book.GiaNhap = Convert.ToDouble(row[3].ToString());
+                    ImportBillDetailDTO importBillDetail = new ImportBillDetailDTO(importBill.MaDonNhapHang, book.MaSach, Convert.ToInt32(row[2].ToString()), Convert.ToDouble(row[3].ToString()));
 
-                BookBUS.Instance.update(book);
+                    if (ImportBillBUS.Instance.createImportBillDetail(importBillDetail))
+                    {
+                        book.SoLuongConLai += Convert.ToInt32(row[2].ToString());
+                        book.GiaNhap = Convert.ToDouble(row[3].ToString());
+
+                        BookBUS.Instance.update(book);
+                    };
+                }
             }
         }
     }

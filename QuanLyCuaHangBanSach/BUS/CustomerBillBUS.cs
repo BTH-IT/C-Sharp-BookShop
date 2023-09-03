@@ -46,7 +46,23 @@ namespace QuanLyCuaHangBanSach.BUS
         {
             return CustomerBillDAO.Instance.getCustomerBillDetailList(id);
         }
-        
+
+        public bool createCustomerBillDetail(CustomerBillDetailDTO customerBillDetail)
+        {
+            return CustomerBillDAO.Instance.createCustomerBillDetail(customerBillDetail);
+        }
+
+        public bool updateCustomerBillDetail(CustomerBillDetailDTO customerBillDetail)
+        {
+            return CustomerBillDAO.Instance.updateCustomerBillDetail(customerBillDetail);
+
+        }
+
+        public bool deleteCustomerBillDetail(string billId, string bookId)
+        {
+            return CustomerBillDAO.Instance.deleteCustomerBillDetail(billId, bookId);
+        }
+
         public List<CustomerBillDTO> search(string id)
         {
             DataTable dataTable = CustomerBillDAO.Instance.searchData(id);
@@ -117,6 +133,11 @@ namespace QuanLyCuaHangBanSach.BUS
             {
                 return false;
             }
+        }
+
+        public CustomerBillDTO insertReturnBill(CustomerBillDTO customerBill)
+        {
+            return CustomerBillDAO.Instance.insertReturnBill(customerBill);
         }
 
         public bool delete(string id)

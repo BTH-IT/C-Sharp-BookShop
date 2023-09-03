@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Net;
 using MySql.Data.MySqlClient;
 using QuanLyCuaHangBanSach.BUS;
 using QuanLyCuaHangBanSach.DTO;
@@ -182,6 +183,23 @@ namespace QuanLyCuaHangBanSach.DAO
                 });
 
             return rowChanged > 0;
+        }
+
+        public ImportBillDTO insertReturnBill(ImportBillDTO data)
+        {
+            string sql = "SELECT * FROM phieunhap ORDER BY maDonNhapHang DESC LIMIT 1;";
+            if (this.insert(data)) {
+
+                DataTable dataTable = DataProvider.Instance.ExecuteQuery(sql);
+
+                if (dataTable.Rows.Count <= 0) return null;
+
+                ImportBillDTO importBill = new ImportBillDTO(dataTable.Rows[0]);
+
+                return importBill;
+            };
+
+            return null;
         }
 
         public bool update(ImportBillDTO data)
