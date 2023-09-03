@@ -112,7 +112,6 @@ namespace QuanLyCuaHangBanSach.GUI
                 else
                 {
                     PhoneResultContainer.Height = 0;
-                    checkUser.Enabled = false;
                 }
             }
             catch
@@ -172,7 +171,7 @@ namespace QuanLyCuaHangBanSach.GUI
             if (PhoneSearchResultControl.clicked)
             {
                 CustomerDTO customer = CustomerBUS.Instance.getById(PhoneSearchResultControl.id.ToString());
-                RecipientLb.Text = "Recipient: " + customer.TenKhachHang;
+                RecipientLb.Text = "Recipient: " + customer.Ten;
                 PhoneResultContainer.Height = 0;
                 PhoneInp.Text = "Phone Number ...";
                 PhoneInp.ForeColor = Color.DarkGray;

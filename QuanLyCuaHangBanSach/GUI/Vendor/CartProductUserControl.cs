@@ -51,9 +51,9 @@ namespace QuanLyCuaHangBanSach.GUI.Vendor
             }
         }
 
-        private void AmountTxt_Validation(object sender, EventArgs e)
+        private void AmountTxt_Validation()
         {
-            if (int.Parse(AmountTxt.Text) < 1)
+            if (String.IsNullOrEmpty(AmountTxt.Text))
             {
                 AmountTxt.Text = "1";
             }
@@ -62,6 +62,7 @@ namespace QuanLyCuaHangBanSach.GUI.Vendor
                 AmountTxt.Text = stock.ToString();
             }
         }
+
         private void AmountTxt_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
@@ -72,7 +73,7 @@ namespace QuanLyCuaHangBanSach.GUI.Vendor
 
         private void AmountTxt_Leave(object sender, EventArgs e)
         {
-            AmountTxt_Validation(sender, e);
+            AmountTxt_Validation();
         }
 
         public static bool deletePress = false;

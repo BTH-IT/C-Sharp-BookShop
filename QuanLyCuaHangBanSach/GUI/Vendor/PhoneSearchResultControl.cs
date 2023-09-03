@@ -23,9 +23,9 @@ namespace QuanLyCuaHangBanSach.GUI.Vendor
 
         public void details(CustomerDTO customer)
         {
-            NameLb.Text = customer.TenKhachHang;
+            NameLb.Text = customer.Ten;
             PhoneLb.Text = customer.SoDienThoai;
-            temp_id = customer.MaKhachHang;
+            temp_id = customer.Ma;
         }
 
         private void PhoneSearchResultControl_MouseHover(object sender, EventArgs e)

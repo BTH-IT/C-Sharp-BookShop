@@ -72,8 +72,8 @@ namespace QuanLyCuaHangBanSach.DAO
 
             int rowChanged = DataProvider.Instance.ExecuteNonQuery(sql,
                 new MySqlParameter[] {
-                    new MySqlParameter("@MaKhachHang", data.MaKhachHang),
-                    new MySqlParameter("@TenKhachHang", data.TenKhachHang),
+                    new MySqlParameter("@MaKhachHang", data.Ma),
+                    new MySqlParameter("@TenKhachHang", data.Ten),
                     new MySqlParameter("@SoDienThoai", data.SoDienThoai),
                     new MySqlParameter("@GioiTinh", data.GioiTinh),
                     new MySqlParameter("@NamSinh", data.NamSinh),
@@ -89,8 +89,8 @@ namespace QuanLyCuaHangBanSach.DAO
 
             int rowChanged = DataProvider.Instance.ExecuteNonQuery(sql,
                 new MySqlParameter[] {
-                    new MySqlParameter("@MaKhachHang", data.MaKhachHang),
-                    new MySqlParameter("@TenKhachHang", data.TenKhachHang),
+                    new MySqlParameter("@MaKhachHang", data.Ma),
+                    new MySqlParameter("@TenKhachHang", data.Ten),
                     new MySqlParameter("@SoDienThoai", data.SoDienThoai),
                     new MySqlParameter("@GioiTinh", data.GioiTinh),
                     new MySqlParameter("@NamSinh", data.NamSinh),
