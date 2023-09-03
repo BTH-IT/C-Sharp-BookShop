@@ -479,6 +479,9 @@
     <Compile Include="GUI\Vendor\VendorGUI.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="GUI\Vendor\VendorGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="GUI\Vendor\VendorGUI.Designer.cs">
       <DependentUpon>VendorGUI.cs</DependentUpon>
     </Compile>
