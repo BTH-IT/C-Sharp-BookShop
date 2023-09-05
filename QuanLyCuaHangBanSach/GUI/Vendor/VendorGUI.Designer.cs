@@ -48,12 +48,12 @@
             this.TotalMoneyLb = new System.Windows.Forms.Label();
             this.PhoneResultContainer = new System.Windows.Forms.FlowLayoutPanel();
             this.CartContainer = new System.Windows.Forms.FlowLayoutPanel();
+            this.PhoneInp = new Guna.UI.WinForms.GunaLineTextBox();
             this.RecipientLb = new System.Windows.Forms.Label();
             this.PrintBtn = new System.Windows.Forms.Button();
             this.TotalLb = new System.Windows.Forms.Label();
             this.CustomerInfoLb = new System.Windows.Forms.Label();
             this.AddCustomerBtn = new System.Windows.Forms.Button();
-            this.PhoneInp = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.checkUser = new System.Windows.Forms.Timer(this.components);
             this.BookContainer = new System.Windows.Forms.FlowLayoutPanel();
@@ -236,6 +236,7 @@
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.PhoneInp);
             this.panel4.Controls.Add(this.TotalMoneyLb);
             this.panel4.Controls.Add(this.PhoneResultContainer);
             this.panel4.Controls.Add(this.CartContainer);
@@ -244,7 +245,6 @@
             this.panel4.Controls.Add(this.TotalLb);
             this.panel4.Controls.Add(this.CustomerInfoLb);
             this.panel4.Controls.Add(this.AddCustomerBtn);
-            this.panel4.Controls.Add(this.PhoneInp);
             this.panel4.Controls.Add(this.label3);
             this.panel4.Location = new System.Drawing.Point(24, 8);
             this.panel4.Name = "panel4";
@@ -282,6 +282,27 @@
             this.CartContainer.Name = "CartContainer";
             this.CartContainer.Size = new System.Drawing.Size(300, 411);
             this.CartContainer.TabIndex = 20;
+            // 
+            // PhoneInp
+            // 
+            this.PhoneInp.BackColor = System.Drawing.SystemColors.Window;
+            this.PhoneInp.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.PhoneInp.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.PhoneInp.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.PhoneInp.ForeColor = System.Drawing.Color.DarkGray;
+            this.PhoneInp.LineColor = System.Drawing.Color.Black;
+            this.PhoneInp.LineSize = 1;
+            this.PhoneInp.Location = new System.Drawing.Point(0, 65);
+            this.PhoneInp.Name = "PhoneInp";
+            this.PhoneInp.PasswordChar = '\0';
+            this.PhoneInp.SelectedText = "";
+            this.PhoneInp.Size = new System.Drawing.Size(244, 32);
+            this.PhoneInp.TabIndex = 1;
+            this.PhoneInp.Text = "Phone Number ...";
+            this.PhoneInp.TextChanged += new System.EventHandler(this.PhoneInp_TextChanged);
+            this.PhoneInp.Enter += new System.EventHandler(this.PhoneInp_Click);
+            this.PhoneInp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PhoneInp_KeyPress);
+            this.PhoneInp.Leave += new System.EventHandler(this.PhoneInp_Leave);
             // 
             // RecipientLb
             // 
@@ -340,19 +361,6 @@
             this.AddCustomerBtn.Size = new System.Drawing.Size(30, 30);
             this.AddCustomerBtn.TabIndex = 12;
             this.AddCustomerBtn.UseVisualStyleBackColor = true;
-            // 
-            // PhoneInp
-            // 
-            this.PhoneInp.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.PhoneInp.ForeColor = System.Drawing.Color.DarkGray;
-            this.PhoneInp.Location = new System.Drawing.Point(0, 65);
-            this.PhoneInp.Name = "PhoneInp";
-            this.PhoneInp.Size = new System.Drawing.Size(244, 29);
-            this.PhoneInp.TabIndex = 9;
-            this.PhoneInp.Text = "Phone Number ...";
-            this.PhoneInp.Click += new System.EventHandler(this.PhoneInp_Click);
-            this.PhoneInp.TextChanged += new System.EventHandler(this.PhoneInp_TextChanged);
-            this.PhoneInp.Leave += new System.EventHandler(this.PhoneInp_Leave);
             // 
             // label3
             // 
@@ -429,7 +437,6 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button AddCustomerBtn;
-        private System.Windows.Forms.TextBox PhoneInp;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label CustomerInfoLb;
         private System.Windows.Forms.Label TotalLb;
@@ -440,5 +447,6 @@
         private System.Windows.Forms.FlowLayoutPanel BookContainer;
         private System.Windows.Forms.FlowLayoutPanel CartContainer;
         private System.Windows.Forms.Label TotalMoneyLb;
+        private Guna.UI.WinForms.GunaLineTextBox PhoneInp;
     }
 }

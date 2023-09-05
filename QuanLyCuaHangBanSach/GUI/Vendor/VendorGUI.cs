@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using QuanLyCuaHangBanSach.BUS;
 using QuanLyCuaHangBanSach.DTO;
 using QuanLyCuaHangBanSach.GUI.Vendor;
+using static ZXing.QrCode.Internal.Mode;
 
 namespace QuanLyCuaHangBanSach.GUI
 {
@@ -83,6 +84,32 @@ namespace QuanLyCuaHangBanSach.GUI
             {
                 ProductSearchInp.Text = "Search ...";
                 ProductSearchInp.ForeColor = Color.DarkGray;
+            }
+        }
+
+        private void PhoneInp_Click(object sender, EventArgs e)
+        {
+            Console.WriteLine("v");
+            if (PhoneInp.Text.Equals("Phone Number ..."))
+            {
+                PhoneInp.Text = "";
+            }
+        }
+
+        private void PhoneInp_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // Cancel the key press event
+            }
+        }
+
+        private void PhoneInp_Leave(object sender, EventArgs e)
+        {
+            if (PhoneInp.Text.Length <= 0)
+            {
+                PhoneInp.Text = "Phone Number ...";
+                PhoneInp.ForeColor = Color.DarkGray;
             }
         }
 
@@ -213,23 +240,6 @@ namespace QuanLyCuaHangBanSach.GUI
             else
             {
                 PrintBtn.Cursor = Cursors.No;
-            }
-        }
-
-        private void PhoneInp_Click(object sender, EventArgs e)
-        {
-            if (PhoneInp.Text.Equals("Phone Number ..."))
-            {
-                PhoneInp.Text = "";
-            }
-        }
-
-        private void PhoneInp_Leave(object sender, EventArgs e)
-        {
-            if (PhoneInp.Text.Length <= 0)
-            {
-                PhoneInp.Text = "Phone Number ...";
-                PhoneInp.ForeColor = Color.DarkGray;
             }
         }
     }
