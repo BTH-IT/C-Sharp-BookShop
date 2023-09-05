@@ -188,6 +188,13 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                     }
                 };
 
+                bookBill.amountInput.KeyPress += (object sender, KeyPressEventArgs e) =>
+                {
+                    if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar)) {
+                        e.Handled = true;
+                    }
+                };
+
                 this.bookList.Controls.Add(bookBill);
             }
 

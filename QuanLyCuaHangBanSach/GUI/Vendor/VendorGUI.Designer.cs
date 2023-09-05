@@ -45,6 +45,7 @@
             this.FilterBtn = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.TotalMoneylb = new System.Windows.Forms.Label();
             this.PhoneResultContainer = new System.Windows.Forms.FlowLayoutPanel();
             this.CartContainer = new System.Windows.Forms.FlowLayoutPanel();
             this.RecipientLb = new System.Windows.Forms.Label();
@@ -56,7 +57,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.checkUser = new System.Windows.Forms.Timer(this.components);
             this.BookContainer = new System.Windows.Forms.FlowLayoutPanel();
-            this.TotalMoneylb = new System.Windows.Forms.Label();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LogoImg)).BeginInit();
             this.flowLayoutPanel2.SuspendLayout();
@@ -76,28 +76,30 @@
             this.flowLayoutPanel1.Controls.Add(this.LogOutBtn);
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel1.ForeColor = System.Drawing.Color.White;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(-5, -8);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(-7, -10);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(80, 694);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(107, 854);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // LogoImg
             // 
             this.LogoImg.Image = ((System.Drawing.Image)(resources.GetObject("LogoImg.Image")));
             this.LogoImg.InitialImage = null;
-            this.LogoImg.Location = new System.Drawing.Point(3, 25);
-            this.LogoImg.Margin = new System.Windows.Forms.Padding(3, 25, 3, 3);
+            this.LogoImg.Location = new System.Drawing.Point(4, 31);
+            this.LogoImg.Margin = new System.Windows.Forms.Padding(4, 31, 4, 4);
             this.LogoImg.Name = "LogoImg";
-            this.LogoImg.Padding = new System.Windows.Forms.Padding(18, 5, 10, 10);
-            this.LogoImg.Size = new System.Drawing.Size(77, 54);
+            this.LogoImg.Padding = new System.Windows.Forms.Padding(24, 6, 13, 12);
+            this.LogoImg.Size = new System.Drawing.Size(103, 66);
             this.LogoImg.TabIndex = 0;
             this.LogoImg.TabStop = false;
             // 
             // panel2
             // 
-            this.panel2.Location = new System.Drawing.Point(3, 85);
+            this.panel2.Location = new System.Drawing.Point(4, 105);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(77, 488);
+            this.panel2.Size = new System.Drawing.Size(103, 601);
             this.panel2.TabIndex = 1;
             // 
             // SettingBtn
@@ -110,10 +112,10 @@
             this.SettingBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.SettingBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SettingBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.SettingBtn.Location = new System.Drawing.Point(26, 579);
-            this.SettingBtn.Margin = new System.Windows.Forms.Padding(26, 3, 3, 20);
+            this.SettingBtn.Location = new System.Drawing.Point(35, 714);
+            this.SettingBtn.Margin = new System.Windows.Forms.Padding(35, 4, 4, 25);
             this.SettingBtn.Name = "SettingBtn";
-            this.SettingBtn.Size = new System.Drawing.Size(30, 30);
+            this.SettingBtn.Size = new System.Drawing.Size(40, 37);
             this.SettingBtn.TabIndex = 2;
             this.SettingBtn.UseVisualStyleBackColor = false;
             // 
@@ -126,10 +128,10 @@
             this.LogOutBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.LogOutBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.LogOutBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.LogOutBtn.Location = new System.Drawing.Point(25, 632);
-            this.LogOutBtn.Margin = new System.Windows.Forms.Padding(25, 3, 3, 3);
+            this.LogOutBtn.Location = new System.Drawing.Point(33, 780);
+            this.LogOutBtn.Margin = new System.Windows.Forms.Padding(33, 4, 4, 4);
             this.LogOutBtn.Name = "LogOutBtn";
-            this.LogOutBtn.Size = new System.Drawing.Size(30, 30);
+            this.LogOutBtn.Size = new System.Drawing.Size(40, 37);
             this.LogOutBtn.TabIndex = 3;
             this.LogOutBtn.UseVisualStyleBackColor = false;
             // 
@@ -138,19 +140,20 @@
             this.flowLayoutPanel2.Controls.Add(this.label1);
             this.flowLayoutPanel2.Controls.Add(this.label2);
             this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(103, -8);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(137, -10);
+            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(786, 84);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(1048, 103);
             this.flowLayoutPanel2.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.Location = new System.Drawing.Point(20, 30);
-            this.label1.Margin = new System.Windows.Forms.Padding(20, 30, 3, 5);
+            this.label1.Location = new System.Drawing.Point(27, 37);
+            this.label1.Margin = new System.Windows.Forms.Padding(27, 37, 4, 6);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(162, 30);
+            this.label1.Size = new System.Drawing.Size(202, 37);
             this.label1.TabIndex = 2;
             this.label1.Text = "Welcome, Huy";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -160,19 +163,20 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label2.ForeColor = System.Drawing.Color.Gray;
-            this.label2.Location = new System.Drawing.Point(20, 65);
-            this.label2.Margin = new System.Windows.Forms.Padding(20, 0, 3, 0);
+            this.label2.Location = new System.Drawing.Point(27, 80);
+            this.label2.Margin = new System.Windows.Forms.Padding(27, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(428, 15);
+            this.label2.Size = new System.Drawing.Size(544, 20);
             this.label2.TabIndex = 3;
             this.label2.Text = "Easily find whatever you need then you and manage book stock in your shop";
             // 
             // flowLayoutPanel4
             // 
             this.flowLayoutPanel4.Controls.Add(this.flowLayoutPanel5);
-            this.flowLayoutPanel4.Location = new System.Drawing.Point(103, 82);
+            this.flowLayoutPanel4.Location = new System.Drawing.Point(137, 101);
+            this.flowLayoutPanel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
-            this.flowLayoutPanel4.Size = new System.Drawing.Size(786, 48);
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(1048, 59);
             this.flowLayoutPanel4.TabIndex = 3;
             // 
             // flowLayoutPanel5
@@ -181,19 +185,20 @@
             this.flowLayoutPanel5.Controls.Add(this.pictureBox2);
             this.flowLayoutPanel5.Controls.Add(this.ProductSearchInp);
             this.flowLayoutPanel5.Controls.Add(this.FilterBtn);
-            this.flowLayoutPanel5.Location = new System.Drawing.Point(0, 3);
-            this.flowLayoutPanel5.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
+            this.flowLayoutPanel5.Location = new System.Drawing.Point(0, 4);
+            this.flowLayoutPanel5.Margin = new System.Windows.Forms.Padding(0, 4, 4, 4);
             this.flowLayoutPanel5.Name = "flowLayoutPanel5";
-            this.flowLayoutPanel5.Size = new System.Drawing.Size(291, 40);
+            this.flowLayoutPanel5.Size = new System.Drawing.Size(388, 49);
             this.flowLayoutPanel5.TabIndex = 0;
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox2.Location = new System.Drawing.Point(4, 4);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Padding = new System.Windows.Forms.Padding(0, 7, 0, 0);
-            this.pictureBox2.Size = new System.Drawing.Size(26, 32);
+            this.pictureBox2.Padding = new System.Windows.Forms.Padding(0, 9, 0, 0);
+            this.pictureBox2.Size = new System.Drawing.Size(35, 39);
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             // 
@@ -203,10 +208,10 @@
             this.ProductSearchInp.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ProductSearchInp.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.ProductSearchInp.ForeColor = System.Drawing.Color.DarkGray;
-            this.ProductSearchInp.Location = new System.Drawing.Point(35, 12);
-            this.ProductSearchInp.Margin = new System.Windows.Forms.Padding(3, 12, 3, 10);
+            this.ProductSearchInp.Location = new System.Drawing.Point(47, 15);
+            this.ProductSearchInp.Margin = new System.Windows.Forms.Padding(4, 15, 4, 12);
             this.ProductSearchInp.Name = "ProductSearchInp";
-            this.ProductSearchInp.Size = new System.Drawing.Size(212, 18);
+            this.ProductSearchInp.Size = new System.Drawing.Size(283, 23);
             this.ProductSearchInp.TabIndex = 1;
             this.ProductSearchInp.Text = "Search ...";
             this.ProductSearchInp.Click += new System.EventHandler(this.ProductSearchInp_Click);
@@ -217,10 +222,10 @@
             // 
             this.FilterBtn.BackColor = System.Drawing.Color.White;
             this.FilterBtn.Image = ((System.Drawing.Image)(resources.GetObject("FilterBtn.Image")));
-            this.FilterBtn.Location = new System.Drawing.Point(256, 5);
-            this.FilterBtn.Margin = new System.Windows.Forms.Padding(6, 5, 0, 0);
+            this.FilterBtn.Location = new System.Drawing.Point(342, 6);
+            this.FilterBtn.Margin = new System.Windows.Forms.Padding(8, 6, 0, 0);
             this.FilterBtn.Name = "FilterBtn";
-            this.FilterBtn.Size = new System.Drawing.Size(30, 30);
+            this.FilterBtn.Size = new System.Drawing.Size(40, 37);
             this.FilterBtn.TabIndex = 2;
             this.FilterBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.FilterBtn.UseVisualStyleBackColor = false;
@@ -229,9 +234,10 @@
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.panel4);
-            this.panel3.Location = new System.Drawing.Point(913, -8);
+            this.panel3.Location = new System.Drawing.Point(1217, -10);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(359, 702);
+            this.panel3.Size = new System.Drawing.Size(478, 864);
             this.panel3.TabIndex = 5;
             // 
             // panel4
@@ -246,38 +252,51 @@
             this.panel4.Controls.Add(this.AddCustomerBtn);
             this.panel4.Controls.Add(this.PhoneInp);
             this.panel4.Controls.Add(this.label3);
-            this.panel4.Location = new System.Drawing.Point(24, 8);
+            this.panel4.Location = new System.Drawing.Point(32, 10);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(300, 668);
+            this.panel4.Size = new System.Drawing.Size(400, 822);
             this.panel4.TabIndex = 3;
+            // 
+            // TotalMoneylb
+            // 
+            this.TotalMoneylb.AutoSize = true;
+            this.TotalMoneylb.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.TotalMoneylb.Location = new System.Drawing.Point(84, 708);
+            this.TotalMoneylb.Margin = new System.Windows.Forms.Padding(27, 37, 4, 6);
+            this.TotalMoneylb.Name = "TotalMoneylb";
+            this.TotalMoneylb.Size = new System.Drawing.Size(0, 37);
+            this.TotalMoneylb.TabIndex = 21;
+            this.TotalMoneylb.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // PhoneResultContainer
             // 
             this.PhoneResultContainer.AutoScroll = true;
             this.PhoneResultContainer.AutoScrollMinSize = new System.Drawing.Size(1, 1);
-            this.PhoneResultContainer.Location = new System.Drawing.Point(0, 95);
+            this.PhoneResultContainer.Location = new System.Drawing.Point(0, 117);
             this.PhoneResultContainer.Margin = new System.Windows.Forms.Padding(0);
-            this.PhoneResultContainer.MaximumSize = new System.Drawing.Size(262, 180);
+            this.PhoneResultContainer.MaximumSize = new System.Drawing.Size(349, 222);
             this.PhoneResultContainer.Name = "PhoneResultContainer";
-            this.PhoneResultContainer.Size = new System.Drawing.Size(244, 0);
+            this.PhoneResultContainer.Size = new System.Drawing.Size(325, 0);
             this.PhoneResultContainer.TabIndex = 19;
             // 
             // CartContainer
             // 
             this.CartContainer.AutoScroll = true;
-            this.CartContainer.Location = new System.Drawing.Point(0, 143);
+            this.CartContainer.Location = new System.Drawing.Point(0, 176);
+            this.CartContainer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CartContainer.Name = "CartContainer";
-            this.CartContainer.Size = new System.Drawing.Size(300, 411);
+            this.CartContainer.Size = new System.Drawing.Size(400, 506);
             this.CartContainer.TabIndex = 20;
             // 
             // RecipientLb
             // 
             this.RecipientLb.AutoSize = true;
             this.RecipientLb.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.RecipientLb.Location = new System.Drawing.Point(-1, 108);
-            this.RecipientLb.Margin = new System.Windows.Forms.Padding(20, 30, 3, 5);
+            this.RecipientLb.Location = new System.Drawing.Point(-1, 133);
+            this.RecipientLb.Margin = new System.Windows.Forms.Padding(27, 37, 4, 6);
             this.RecipientLb.Name = "RecipientLb";
-            this.RecipientLb.Size = new System.Drawing.Size(86, 21);
+            this.RecipientLb.Size = new System.Drawing.Size(106, 28);
             this.RecipientLb.TabIndex = 18;
             this.RecipientLb.Text = "Recipient:";
             this.RecipientLb.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -288,9 +307,10 @@
             this.PrintBtn.Cursor = System.Windows.Forms.Cursors.No;
             this.PrintBtn.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.PrintBtn.ForeColor = System.Drawing.Color.White;
-            this.PrintBtn.Location = new System.Drawing.Point(4, 623);
+            this.PrintBtn.Location = new System.Drawing.Point(5, 767);
+            this.PrintBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.PrintBtn.Name = "PrintBtn";
-            this.PrintBtn.Size = new System.Drawing.Size(293, 42);
+            this.PrintBtn.Size = new System.Drawing.Size(391, 52);
             this.PrintBtn.TabIndex = 17;
             this.PrintBtn.Text = "Print Receipt";
             this.PrintBtn.UseVisualStyleBackColor = false;
@@ -299,10 +319,10 @@
             // 
             this.TotalLb.AutoSize = true;
             this.TotalLb.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.TotalLb.Location = new System.Drawing.Point(-1, 575);
-            this.TotalLb.Margin = new System.Windows.Forms.Padding(20, 30, 3, 5);
+            this.TotalLb.Location = new System.Drawing.Point(-1, 708);
+            this.TotalLb.Margin = new System.Windows.Forms.Padding(27, 37, 4, 6);
             this.TotalLb.Name = "TotalLb";
-            this.TotalLb.Size = new System.Drawing.Size(70, 30);
+            this.TotalLb.Size = new System.Drawing.Size(89, 37);
             this.TotalLb.TabIndex = 16;
             this.TotalLb.Text = "Total:";
             this.TotalLb.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -311,10 +331,10 @@
             // 
             this.CustomerInfoLb.AutoSize = true;
             this.CustomerInfoLb.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.CustomerInfoLb.Location = new System.Drawing.Point(-2, 104);
-            this.CustomerInfoLb.Margin = new System.Windows.Forms.Padding(20, 30, 3, 5);
+            this.CustomerInfoLb.Location = new System.Drawing.Point(-3, 128);
+            this.CustomerInfoLb.Margin = new System.Windows.Forms.Padding(27, 37, 4, 6);
             this.CustomerInfoLb.Name = "CustomerInfoLb";
-            this.CustomerInfoLb.Size = new System.Drawing.Size(0, 25);
+            this.CustomerInfoLb.Size = new System.Drawing.Size(0, 32);
             this.CustomerInfoLb.TabIndex = 13;
             this.CustomerInfoLb.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.CustomerInfoLb.Visible = false;
@@ -322,9 +342,10 @@
             // AddCustomerBtn
             // 
             this.AddCustomerBtn.Image = ((System.Drawing.Image)(resources.GetObject("AddCustomerBtn.Image")));
-            this.AddCustomerBtn.Location = new System.Drawing.Point(250, 65);
+            this.AddCustomerBtn.Location = new System.Drawing.Point(333, 80);
+            this.AddCustomerBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.AddCustomerBtn.Name = "AddCustomerBtn";
-            this.AddCustomerBtn.Size = new System.Drawing.Size(30, 30);
+            this.AddCustomerBtn.Size = new System.Drawing.Size(40, 37);
             this.AddCustomerBtn.TabIndex = 12;
             this.AddCustomerBtn.UseVisualStyleBackColor = true;
             // 
@@ -332,9 +353,10 @@
             // 
             this.PhoneInp.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.PhoneInp.ForeColor = System.Drawing.Color.DarkGray;
-            this.PhoneInp.Location = new System.Drawing.Point(0, 65);
+            this.PhoneInp.Location = new System.Drawing.Point(0, 80);
+            this.PhoneInp.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.PhoneInp.Name = "PhoneInp";
-            this.PhoneInp.Size = new System.Drawing.Size(244, 29);
+            this.PhoneInp.Size = new System.Drawing.Size(324, 34);
             this.PhoneInp.TabIndex = 9;
             this.PhoneInp.Text = "Phone Number ...";
             this.PhoneInp.Click += new System.EventHandler(this.PhoneInp_Click);
@@ -345,10 +367,10 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label3.Location = new System.Drawing.Point(-5, 26);
-            this.label3.Margin = new System.Windows.Forms.Padding(20, 30, 3, 5);
+            this.label3.Location = new System.Drawing.Point(-7, 32);
+            this.label3.Margin = new System.Windows.Forms.Padding(27, 37, 4, 6);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(138, 30);
+            this.label3.Size = new System.Drawing.Size(173, 37);
             this.label3.TabIndex = 8;
             this.label3.Text = "Book orders";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -363,33 +385,24 @@
             // 
             this.BookContainer.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.BookContainer.AutoScroll = true;
-            this.BookContainer.Location = new System.Drawing.Point(102, 146);
+            this.BookContainer.Location = new System.Drawing.Point(136, 180);
+            this.BookContainer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BookContainer.Name = "BookContainer";
-            this.BookContainer.Size = new System.Drawing.Size(787, 520);
+            this.BookContainer.Size = new System.Drawing.Size(1049, 640);
             this.BookContainer.TabIndex = 6;
-            // 
-            // TotalMoneylb
-            // 
-            this.TotalMoneylb.AutoSize = true;
-            this.TotalMoneylb.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.TotalMoneylb.Location = new System.Drawing.Point(63, 575);
-            this.TotalMoneylb.Margin = new System.Windows.Forms.Padding(20, 30, 3, 5);
-            this.TotalMoneylb.Name = "TotalMoneylb";
-            this.TotalMoneylb.Size = new System.Drawing.Size(0, 30);
-            this.TotalMoneylb.TabIndex = 21;
-            this.TotalMoneylb.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // VendorGUI
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.ClientSize = new System.Drawing.Size(1685, 838);
             this.Controls.Add(this.BookContainer);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.flowLayoutPanel4);
             this.Controls.Add(this.flowLayoutPanel2);
             this.Controls.Add(this.flowLayoutPanel1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "VendorGUI";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainPage";
