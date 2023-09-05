@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
 using QuanLyCuaHangBanSach.GUI;
-using QuanLyCuaHangBanSach.GUI.Manager;
-using QuanLyCuaHangBanSach.GUI.Modal;
 
 namespace QuanLyCuaHangBanSach
 {
