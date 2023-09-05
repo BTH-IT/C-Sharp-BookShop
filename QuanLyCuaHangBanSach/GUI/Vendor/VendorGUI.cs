@@ -34,7 +34,19 @@ namespace QuanLyCuaHangBanSach.GUI
             }
         }
 
-        public bool search = false;
+        private void RenderBookContainer()
+        {
+            BookContainer.Controls.Clear();
+            List<BookDTO> books = BookBUS.Instance.getAllData();
+            foreach (var book in books)
+            {
+                BookUserControl product = new BookUserControl();
+                product.details(book);
+                BookContainer.Controls.Add(product);
+            }
+        }
+
+        private bool search = false;
         private void ProductSearchInp_TextChanged(object sender, EventArgs e)
         {
             try
@@ -42,8 +54,8 @@ namespace QuanLyCuaHangBanSach.GUI
                 ProductSearchInp.ForeColor = Color.Black;
                 if (ProductSearchInp.Focused && !string.IsNullOrEmpty(ProductSearchInp.Text))
                 {
-                    BookContainer.Controls.Clear();
                     search = true;
+                    BookContainer.Controls.Clear();
                     List <BookDTO> books = BookBUS.Instance.search(ProductSearchInp.Text);
                     foreach (var book in books)
                     {
@@ -54,15 +66,8 @@ namespace QuanLyCuaHangBanSach.GUI
                 }
                 else if (search)
                 {
-                    BookContainer.Controls.Clear();
-                    List<BookDTO> books = BookBUS.Instance.getAllData();
-                    foreach (var book in books)
-                    {
-                        BookUserControl product = new BookUserControl();
-                        product.details(book);
-                        BookContainer.Controls.Add(product);
-                        search = false;
-                    }
+                    RenderBookContainer();
+                    search = false;
                 }
             }
             catch
@@ -152,7 +157,6 @@ namespace QuanLyCuaHangBanSach.GUI
         }
 
         private List<int> cart = new List<int>();
-
         private void checkUser_Tick(object sender, EventArgs e)
         {
             if (BookUserControl.clicked)
@@ -177,7 +181,7 @@ namespace QuanLyCuaHangBanSach.GUI
                     }
                 }
 
-                CalculateTotal();
+                CartHandler();
                 BookUserControl.ChoseId = "";
                 BookUserControl.clicked = false;
             }
@@ -197,7 +201,7 @@ namespace QuanLyCuaHangBanSach.GUI
                         }
                     }
                 }
-                CalculateTotal();
+                CartHandler();
                 CartProductUserControl.deleteId = "";
                 CartProductUserControl.deletePress = false;
             }
@@ -205,21 +209,23 @@ namespace QuanLyCuaHangBanSach.GUI
             if (PhoneSearchResultControl.clicked)
             {
                 CustomerDTO customer = CustomerBUS.Instance.getById(PhoneSearchResultControl.id.ToString());
-                RecipientLb.Text = "Recipient: " + customer.Ten;
+                RecipientNameLb.Text = customer.Ten;
                 PhoneResultContainer.Height = 0;
                 PhoneInp.Text = "Phone Number ...";
                 PhoneInp.ForeColor = Color.DarkGray;
+                CartHandler();
                 PhoneSearchResultControl.clicked = false;
             }
 
             if (CartProductUserControl.AmountChanged)
             {
-                CalculateTotal();
+                CartHandler();
                 CartProductUserControl.AmountChanged = false;
             }
         }
 
-        private void CalculateTotal()
+        private bool PrintBtnAllowed;
+        private void CartHandler()
         {
             double total = 0;
             for (int i = 0; i < CartContainer.Controls.Count; i++)
@@ -233,13 +239,37 @@ namespace QuanLyCuaHangBanSach.GUI
                 }
             }
             TotalMoneyLb.Text = string.Format("{0:N0} đ", total);
-            if (total > 0)
+
+            if (CartContainer.Controls.Count > 0 && !String.IsNullOrEmpty(RecipientNameLb.Text))
             {
                 PrintBtn.Cursor = Cursors.Hand;
+                PrintBtnAllowed = true;
             }
             else
             {
                 PrintBtn.Cursor = Cursors.No;
+                PrintBtnAllowed = false;
+            }
+        }
+
+        private void PrintBtn_Click(object sender, EventArgs e)
+        {
+            if (PrintBtnAllowed)
+            {
+                foreach (System.Windows.Forms.Control ctrl in CartContainer.Controls)
+                {
+                    if (ctrl is CartProductUserControl cartProduct)
+                    {
+                        BookDTO book = BookBUS.Instance.getById(cartProduct.IdLb.Text);
+                        book.SoLuongConLai -= int.Parse(cartProduct.AmountTxt.Text);
+                        BookBUS.Instance.update(book);
+                    }
+                }
+
+                CartContainer.Controls.Clear();
+                CartHandler();
+                RecipientNameLb.Text = string.Empty;
+                RenderBookContainer();
             }
         }
     }
