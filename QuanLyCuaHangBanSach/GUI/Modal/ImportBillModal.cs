@@ -79,31 +79,19 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
                     int amount = Convert.ToInt32(bookBill.amountInput.Text.ToString());
 
-                    if (amount < remain)
-                    {
-                        bookBill.plus.Enabled = true;
-                        bookBill.amountInput.Text = (amount + 1).ToString();
+                    bookBill.amountInput.Text = (amount + 1).ToString();
 
-                        int idx = this.importBillDetailList.FindIndex(
-                            book => book.MaSach == importBillDetail.MaSach
-                        );
+                    int idx = this.importBillDetailList.FindIndex(
+                        book => book.MaSach == importBillDetail.MaSach
+                    );
 
-                        this.importBillDetailList[idx].SoLuong = amount + 1;
+                    this.importBillDetailList[idx].SoLuong = amount + 1;
 
-                        total += importBillDetail.DonGia;
-
-                        this.totalPriceTxt.Text = total.ToString();
-                    }
-                    else
-                    {
-                        bookBill.plus.Enabled = false;
-                    }
+                    total += importBillDetail.DonGia;
                 };
 
                 bookBill.minus.MouseClick += (object sender, MouseEventArgs e) =>
                 {
-                    bookBill.plus.Enabled = true;
-
                     int amount = Convert.ToInt32(bookBill.amountInput.Text.ToString());
 
                     int idx = this.importBillDetailList.FindIndex(
