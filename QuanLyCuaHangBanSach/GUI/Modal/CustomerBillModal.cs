@@ -13,6 +13,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
         public bool isSubmitSuccess = false;
         private CustomerBillDTO customerBill;
         private List<CustomerBillDetailDTO> customerBillDetailList;
+        private List<CustomerBillDetailDTO> customerBillDetailListTemp = new List<CustomerBillDetailDTO>();
 
         public CustomerBillModal(int customerBillId)
         {
@@ -72,11 +73,11 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             {
                 BookBill bookBill = new BookBill();
                 
-                int remain = BookBUS.Instance.getById(customerBillDetail.MaSach.ToString()).SoLuongConLai;
-
                 total += customerBillDetail.SoLuong * customerBillDetail.DonGia;
 
                 bookBill.addData(customerBillDetail.MaSach, customerBillDetail.SoLuong, customerBillDetail.DonGia);
+
+                int remain = BookBUS.Instance.getById(customerBillDetail.MaSach.ToString()).SoLuongConLai + customerBillDetail.SoLuong;
 
                 bookBill.close.MouseClick += (object sender, MouseEventArgs e) =>
                 {
@@ -107,6 +108,8 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                         total += customerBillDetail.DonGia;
 
                         this.totalPriceTxt.Text = total.ToString();
+
+                        if (amount == remain) bookBill.plus.Enabled = false;
                     }
                     else
                     {
@@ -181,7 +184,6 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                         total += this.customerBillDetailList[idx].SoLuong * customerBillDetail.DonGia;
 
                         this.totalPriceTxt.Text = total.ToString();
-
                     } catch
                     {
                         MessageBox.Show("Số lượng là một số");
@@ -219,8 +221,17 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             {
                 addBookToBillModal.ShowDialog();
 
+
                 foreach (CustomerBillDetailDTO customerBillDetail in addBookToBillModal.selectedCustomerBillDetailList)
                 {
+                    this.customerBillDetailListTemp.Add(
+                        new CustomerBillDetailDTO(
+                            customerBillDetail.MaDon, 
+                            customerBillDetail.MaSach, 
+                            customerBillDetail.SoLuong, 
+                            customerBillDetail.DonGia)
+                    );
+
                     int idx = this.customerBillDetailList.FindIndex(
                         book => book.MaSach == customerBillDetail.MaSach
                     );
@@ -293,6 +304,18 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
         private void cancelBtn_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void CustomerBillModal_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (!this.isSubmitSuccess) {
+                foreach (CustomerBillDetailDTO customerBillDetail in this.customerBillDetailListTemp)
+                {
+                    BookDTO book = BookBUS.Instance.getById(customerBillDetail.MaSach.ToString());
+                    book.SoLuongConLai += customerBillDetail.SoLuong;
+                    BookBUS.Instance.update(book);
+                }
+            }
         }
     }
 }
