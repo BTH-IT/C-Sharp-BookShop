@@ -137,16 +137,13 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
                         int amount = Convert.ToInt32(bookBill.amountInput.Text.ToString());
 
-                        if (amount < 1 || amount > remain || this.importBillDetailList[idx].SoLuong == amount)
+                        if (amount < 1 || this.importBillDetailList[idx].SoLuong == amount)
                         {
                             bookBill.amountInput.Text = this.importBillDetailList[idx].SoLuong.ToString();
                             return;
                         }
 
                         if (amount == 1) bookBill.minus.Enabled = false;
-                        else bookBill.minus.Enabled = true;
-
-                        if (amount == remain) bookBill.plus.Enabled = false;
                         else bookBill.minus.Enabled = true;
 
                         total -= this.importBillDetailList[idx].SoLuong * importBillDetail.DonGia;
