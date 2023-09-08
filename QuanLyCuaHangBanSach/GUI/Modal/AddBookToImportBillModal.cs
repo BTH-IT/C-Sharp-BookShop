@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Drawing;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
@@ -455,7 +454,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
                 int soLuong = Convert.ToInt32(this.dgvAddBookToBillList[e.ColumnIndex, e.RowIndex].Value);
 
-                if (soLuong <= 0 || book.SoLuongConLai < soLuong)
+                if (soLuong <= 0)
                 {
                     this.dgvAddBookToBillList[e.ColumnIndex, e.RowIndex].Value = this.selectedImportBillDetailList[e.RowIndex].SoLuong;
                     this.dgvAddBookToBillList.RefreshEdit();
@@ -553,6 +552,12 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
             this.renderCheckBoxDgvBookBillList();
             headerCheckboxBillList.MouseClick += new MouseEventHandler(headerCheckboxBillList_Clicked);
+        }
+
+        private void saveBtn_Click(object sender, EventArgs e)
+        {
+            this.isSaved = true;
+            this.Close();
         }
     }
 }

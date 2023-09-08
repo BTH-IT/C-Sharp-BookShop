@@ -148,7 +148,7 @@ namespace QuanLyCuaHangBanSach.DAO
                 data.MaSach.ToString()
             );
 
-            book.SoLuongConLai += customerBillDetail.SoLuong;
+            book.SoLuongConLai = book.SoLuongConLai + customerBillDetail.SoLuong - data.SoLuong;
 
             string sql = $@"UPDATE chitietphieuban SET soLuong=@soLuong, donGia=@donGia  
                             WHERE maDonKhachHang=@maDonKhachHang AND maSach=@maSach;";
@@ -164,8 +164,6 @@ namespace QuanLyCuaHangBanSach.DAO
             // cập nhật số lượng còn lại của sách
             if (rowChanged > 0)
             {
-                book.SoLuongConLai -= data.SoLuong;
-
                 return BookBUS.Instance.update(book);
             }
 

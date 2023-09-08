@@ -497,6 +497,14 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             if (!this.isSaved)
             {
                 this.selectedCustomerBillDetailList.Clear();
+            } else
+            {
+                foreach (CustomerBillDetailDTO customerBillDetail in this.selectedCustomerBillDetailList)
+                {
+                    BookDTO book = BookBUS.Instance.getById(customerBillDetail.MaSach.ToString());
+                    book.SoLuongConLai -= customerBillDetail.SoLuong;
+                    BookBUS.Instance.update(book);
+                }
             }
         }
 
