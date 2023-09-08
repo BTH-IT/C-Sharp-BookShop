@@ -58,6 +58,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.checkUser = new System.Windows.Forms.Timer(this.components);
             this.BookContainer = new System.Windows.Forms.FlowLayoutPanel();
+            this.FilterContainer = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LogoImg)).BeginInit();
             this.flowLayoutPanel2.SuspendLayout();
@@ -217,6 +218,7 @@
             // FilterBtn
             // 
             this.FilterBtn.BackColor = System.Drawing.Color.White;
+            this.FilterBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.FilterBtn.Image = ((System.Drawing.Image)(resources.GetObject("FilterBtn.Image")));
             this.FilterBtn.Location = new System.Drawing.Point(256, 5);
             this.FilterBtn.Margin = new System.Windows.Forms.Padding(6, 5, 0, 0);
@@ -225,6 +227,7 @@
             this.FilterBtn.TabIndex = 2;
             this.FilterBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.FilterBtn.UseVisualStyleBackColor = false;
+            this.FilterBtn.Click += new System.EventHandler(this.FilterBtn_Click);
             // 
             // panel3
             // 
@@ -403,12 +406,22 @@
             this.BookContainer.Size = new System.Drawing.Size(787, 520);
             this.BookContainer.TabIndex = 6;
             // 
+            // FilterContainer
+            // 
+            this.FilterContainer.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.FilterContainer.Location = new System.Drawing.Point(206, 124);
+            this.FilterContainer.Name = "FilterContainer";
+            this.FilterContainer.Size = new System.Drawing.Size(334, 204);
+            this.FilterContainer.TabIndex = 7;
+            this.FilterContainer.Visible = false;
+            // 
             // VendorGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.FilterContainer);
             this.Controls.Add(this.BookContainer);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.flowLayoutPanel4);
@@ -463,5 +476,6 @@
         private System.Windows.Forms.Label TotalMoneyLb;
         private Guna.UI.WinForms.GunaLineTextBox PhoneInp;
         private System.Windows.Forms.Label RecipientNameLb;
+        private System.Windows.Forms.Panel FilterContainer;
     }
 }

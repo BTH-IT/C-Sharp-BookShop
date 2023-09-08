@@ -5,6 +5,7 @@ using System.Windows.Controls;
 using System.Windows.Forms;
 using QuanLyCuaHangBanSach.BUS;
 using QuanLyCuaHangBanSach.DTO;
+using QuanLyCuaHangBanSach.GUI.UserControls;
 using QuanLyCuaHangBanSach.GUI.Vendor;
 using static ZXing.QrCode.Internal.Mode;
 
@@ -31,6 +32,9 @@ namespace QuanLyCuaHangBanSach.GUI
                 BookUserControl product = new BookUserControl();
                 product.details(book);
                 BookContainer.Controls.Add(product);
+
+                FilterUserControl filter = new FilterUserControl();
+                FilterContainer.Controls.Add(filter);
             }
         }
 
@@ -89,6 +93,18 @@ namespace QuanLyCuaHangBanSach.GUI
             {
                 ProductSearchInp.Text = "Search ...";
                 ProductSearchInp.ForeColor = Color.DarkGray;
+            }
+        }
+
+        private void FilterBtn_Click(object sender, EventArgs e)
+        {
+            if (!FilterContainer.Visible)
+            {
+                FilterContainer.Visible = true;
+            }
+            else
+            {
+                FilterContainer.Visible = false;
             }
         }
 
