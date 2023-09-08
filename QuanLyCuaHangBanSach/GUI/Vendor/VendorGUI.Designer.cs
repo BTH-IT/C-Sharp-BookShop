@@ -134,6 +134,7 @@
             this.LogOutBtn.Size = new System.Drawing.Size(30, 30);
             this.LogOutBtn.TabIndex = 3;
             this.LogOutBtn.UseVisualStyleBackColor = false;
+            this.LogOutBtn.Click += new System.EventHandler(this.LogOutBtn_Click);
             // 
             // flowLayoutPanel2
             // 
@@ -411,7 +412,7 @@
             this.FilterContainer.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.FilterContainer.Location = new System.Drawing.Point(206, 124);
             this.FilterContainer.Name = "FilterContainer";
-            this.FilterContainer.Size = new System.Drawing.Size(334, 204);
+            this.FilterContainer.Size = new System.Drawing.Size(334, 221);
             this.FilterContainer.TabIndex = 7;
             this.FilterContainer.Visible = false;
             // 

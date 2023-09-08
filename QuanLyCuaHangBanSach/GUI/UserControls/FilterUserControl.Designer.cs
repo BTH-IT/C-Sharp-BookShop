@@ -60,16 +60,18 @@
             this.PriceUpCkb.UncheckedState.BorderThickness = 0;
             this.PriceUpCkb.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.PriceUpCkb.UseVisualStyleBackColor = true;
+            this.PriceUpCkb.CheckedChanged += new System.EventHandler(this.PriceUpCkb_CheckedChanged);
             // 
             // PriceDownCkb
             // 
+            this.PriceDownCkb.Animated = true;
             this.PriceDownCkb.AutoSize = true;
             this.PriceDownCkb.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.PriceDownCkb.CheckedState.BorderRadius = 2;
             this.PriceDownCkb.CheckedState.BorderThickness = 0;
             this.PriceDownCkb.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.PriceDownCkb.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.PriceDownCkb.Location = new System.Drawing.Point(20, 54);
+            this.PriceDownCkb.Location = new System.Drawing.Point(20, 60);
             this.PriceDownCkb.Name = "PriceDownCkb";
             this.PriceDownCkb.Size = new System.Drawing.Size(111, 23);
             this.PriceDownCkb.TabIndex = 1;
@@ -79,16 +81,18 @@
             this.PriceDownCkb.UncheckedState.BorderThickness = 0;
             this.PriceDownCkb.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.PriceDownCkb.UseVisualStyleBackColor = true;
+            this.PriceDownCkb.CheckedChanged += new System.EventHandler(this.PriceDownCkb_CheckedChanged);
             // 
             // NameAZCkb
             // 
+            this.NameAZCkb.Animated = true;
             this.NameAZCkb.AutoSize = true;
             this.NameAZCkb.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.NameAZCkb.CheckedState.BorderRadius = 2;
             this.NameAZCkb.CheckedState.BorderThickness = 0;
             this.NameAZCkb.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.NameAZCkb.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.NameAZCkb.Location = new System.Drawing.Point(21, 103);
+            this.NameAZCkb.Location = new System.Drawing.Point(20, 100);
             this.NameAZCkb.Name = "NameAZCkb";
             this.NameAZCkb.Size = new System.Drawing.Size(95, 23);
             this.NameAZCkb.TabIndex = 2;
@@ -98,16 +102,18 @@
             this.NameAZCkb.UncheckedState.BorderThickness = 0;
             this.NameAZCkb.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.NameAZCkb.UseVisualStyleBackColor = true;
+            this.NameAZCkb.CheckedChanged += new System.EventHandler(this.NameAZCkb_CheckedChanged);
             // 
             // NameZACkb
             // 
+            this.NameZACkb.Animated = true;
             this.NameZACkb.AutoSize = true;
             this.NameZACkb.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.NameZACkb.CheckedState.BorderRadius = 2;
             this.NameZACkb.CheckedState.BorderThickness = 0;
             this.NameZACkb.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.NameZACkb.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.NameZACkb.Location = new System.Drawing.Point(21, 139);
+            this.NameZACkb.Location = new System.Drawing.Point(20, 139);
             this.NameZACkb.Name = "NameZACkb";
             this.NameZACkb.Size = new System.Drawing.Size(95, 23);
             this.NameZACkb.TabIndex = 3;
@@ -117,12 +123,14 @@
             this.NameZACkb.UncheckedState.BorderThickness = 0;
             this.NameZACkb.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.NameZACkb.UseVisualStyleBackColor = true;
+            this.NameZACkb.CheckedChanged += new System.EventHandler(this.NameZACkb_CheckedChanged);
             // 
             // ApplyBtn
             // 
             this.ApplyBtn.BorderColor = System.Drawing.Color.Transparent;
             this.ApplyBtn.BorderRadius = 15;
             this.ApplyBtn.CheckedState.Parent = this.ApplyBtn;
+            this.ApplyBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ApplyBtn.CustomImages.Parent = this.ApplyBtn;
             this.ApplyBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.ApplyBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
@@ -134,12 +142,13 @@
             this.ApplyBtn.Size = new System.Drawing.Size(293, 31);
             this.ApplyBtn.TabIndex = 4;
             this.ApplyBtn.Text = "Áp dụng";
+            this.ApplyBtn.Click += new System.EventHandler(this.ApplyBtn_Click);
             // 
             // TypeCb
             // 
             this.TypeCb.BackColor = System.Drawing.Color.Transparent;
             this.TypeCb.BaseColor = System.Drawing.Color.White;
-            this.TypeCb.BorderColor = System.Drawing.Color.LightGray;
+            this.TypeCb.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.TypeCb.BorderSize = 1;
             this.TypeCb.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.TypeCb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -153,7 +162,7 @@
             this.TypeCb.Name = "TypeCb";
             this.TypeCb.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.TypeCb.OnHoverItemForeColor = System.Drawing.Color.White;
-            this.TypeCb.Radius = 12;
+            this.TypeCb.Radius = 4;
             this.TypeCb.Size = new System.Drawing.Size(154, 26);
             this.TypeCb.TabIndex = 6;
             this.TypeCb.Tag = "";
@@ -163,7 +172,7 @@
             // 
             this.AuthorCb.BackColor = System.Drawing.Color.Transparent;
             this.AuthorCb.BaseColor = System.Drawing.Color.White;
-            this.AuthorCb.BorderColor = System.Drawing.Color.LightGray;
+            this.AuthorCb.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.AuthorCb.BorderSize = 1;
             this.AuthorCb.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.AuthorCb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -177,7 +186,7 @@
             this.AuthorCb.Name = "AuthorCb";
             this.AuthorCb.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.AuthorCb.OnHoverItemForeColor = System.Drawing.Color.White;
-            this.AuthorCb.Radius = 12;
+            this.AuthorCb.Radius = 4;
             this.AuthorCb.Size = new System.Drawing.Size(154, 26);
             this.AuthorCb.TabIndex = 7;
             this.AuthorCb.Tag = "";
@@ -187,7 +196,7 @@
             // 
             this.PublisherCb.BackColor = System.Drawing.Color.Transparent;
             this.PublisherCb.BaseColor = System.Drawing.Color.White;
-            this.PublisherCb.BorderColor = System.Drawing.Color.LightGray;
+            this.PublisherCb.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.PublisherCb.BorderSize = 1;
             this.PublisherCb.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.PublisherCb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -201,7 +210,7 @@
             this.PublisherCb.Name = "PublisherCb";
             this.PublisherCb.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.PublisherCb.OnHoverItemForeColor = System.Drawing.Color.White;
-            this.PublisherCb.Radius = 12;
+            this.PublisherCb.Radius = 4;
             this.PublisherCb.Size = new System.Drawing.Size(154, 26);
             this.PublisherCb.TabIndex = 8;
             this.PublisherCb.Tag = "";
@@ -241,6 +250,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(245)))));
             this.Controls.Add(this.PublisherLb);
             this.Controls.Add(this.AuthorLb);
             this.Controls.Add(this.Typelb);
@@ -252,6 +262,7 @@
             this.Controls.Add(this.NameAZCkb);
             this.Controls.Add(this.PriceDownCkb);
             this.Controls.Add(this.PriceUpCkb);
+            this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "FilterUserControl";
             this.Size = new System.Drawing.Size(334, 221);
             this.Load += new System.EventHandler(this.FilterUserControl_Load);

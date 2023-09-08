@@ -238,6 +238,16 @@ namespace QuanLyCuaHangBanSach.GUI
                 CartHandler();
                 CartProductUserControl.AmountChanged = false;
             }
+
+            if (FilterUserControl.ApplyClicked)
+            {
+                FilterContainer.Visible = false;
+                Console.WriteLine(FilterUserControl.Sort);
+                Console.WriteLine(FilterUserControl.TypeID);
+                Console.WriteLine(FilterUserControl.AuthorID);
+                Console.WriteLine(FilterUserControl.PublisherID);
+                FilterUserControl.ApplyClicked = false;
+            }
         }
 
         private bool PrintBtnAllowed;
@@ -287,6 +297,11 @@ namespace QuanLyCuaHangBanSach.GUI
                 RecipientNameLb.Text = string.Empty;
                 RenderBookContainer();
             }
+        }
+
+        private void LogOutBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
