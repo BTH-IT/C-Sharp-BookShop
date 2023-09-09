@@ -242,10 +242,14 @@ namespace QuanLyCuaHangBanSach.GUI
             if (FilterUserControl.ApplyClicked)
             {
                 FilterContainer.Visible = false;
-                Console.WriteLine(FilterUserControl.Sort);
-                Console.WriteLine(FilterUserControl.TypeID);
-                Console.WriteLine(FilterUserControl.AuthorID);
-                Console.WriteLine(FilterUserControl.PublisherID);
+                List<BookDTO> books = BookBUS.Instance.getAllDataFiltered(FilterUserControl.Sort, FilterUserControl.TypeID, FilterUserControl.AuthorID, FilterUserControl.PublisherID);
+                BookContainer.Controls.Clear();
+                foreach (var book in books)
+                {
+                    BookUserControl product = new BookUserControl();
+                    product.details(book);
+                    BookContainer.Controls.Add(product);
+                }
                 FilterUserControl.ApplyClicked = false;
             }
         }
@@ -301,7 +305,7 @@ namespace QuanLyCuaHangBanSach.GUI
 
         private void LogOutBtn_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
     }
 }

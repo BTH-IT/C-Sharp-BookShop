@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Data;
 using System.Windows.Documents;
+using Google.Protobuf.WellKnownTypes;
 using MySql.Data.MySqlClient;
 using QuanLyCuaHangBanSach.DTO;
+using QuanLyCuaHangBanSach.GUI.UserControls;
 
 namespace QuanLyCuaHangBanSach.DAO
 {
@@ -44,7 +46,53 @@ namespace QuanLyCuaHangBanSach.DAO
 
             return account;
         }
-        
+
+        public DataTable getAllDataFiltered(int SortMode, int Type, int Author, int Publisher)
+        {
+            string sql = $@"SELECT * FROM sach WHERE hienThi = 1";
+            if (Type != -1)
+            {
+                sql += " AND maTheLoai=@maTheLoai";
+            }
+            if (Author != -1)
+            {
+                sql += " AND maTacGia=@maTacGia";
+            }
+            if (Publisher != -1)
+            {
+                sql += " AND maNhaXuatBan=@maNhaXuatBan";
+            }
+            switch (SortMode)
+            {
+                case -1:
+                    sql += ";";
+                    break;
+                case 0:
+                    sql += " ORDER BY giaBan ASC;";
+                    break;
+                case 1:
+                    sql += " ORDER BY giaBan DESC;";
+                    break;
+                case 2:
+                    sql += " ORDER BY tenSach DESC;";
+                    break;
+                case 3:
+                    sql += " ORDER BY tenSach DESC;";
+                    break;
+                default:
+                    sql += ";";
+                    break;
+            }
+
+            return DataProvider.Instance.ExecuteQuery(sql,
+                new MySqlParameter[] {
+                    new MySqlParameter("@maTheLoai", Type.ToString()),
+                    new MySqlParameter("@maTacGia", Author.ToString()),
+                    new MySqlParameter("@maNhaXuatBan", Publisher.ToString())
+                }
+            );
+        }
+
         public DataTable searchData(string value)
         {
             string sql = $@"SELECT * FROM sach WHERE (maSach LIKE @maSach OR tenSach LIKE @tenSach) AND hienThi = 1;";
