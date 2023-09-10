@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using QuanLyCuaHangBanSach.GUI;
+using QuanLyCuaHangBanSach.GUI.Report;
 
 namespace QuanLyCuaHangBanSach
 {
@@ -14,7 +15,7 @@ namespace QuanLyCuaHangBanSach
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ManagerGUI(1));
+            Application.Run(new CustomerBillPrintForm(1));
         }
     }
 }

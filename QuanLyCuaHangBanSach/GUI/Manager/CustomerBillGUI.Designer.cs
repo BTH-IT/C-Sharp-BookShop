@@ -38,6 +38,7 @@
             this.staffCbx = new Guna.UI.WinForms.GunaComboBox();
             this.customerCbx = new Guna.UI.WinForms.GunaComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.printPdfBtn = new Guna.UI.WinForms.GunaAdvenceButton();
             this.exportBtn = new Guna.UI.WinForms.GunaAdvenceButton();
             this.refreshBtn = new Guna.UI.WinForms.GunaAdvenceButton();
             this.deleteBtn = new Guna.UI.WinForms.GunaAdvenceButton();
@@ -154,6 +155,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
+            this.panel1.Controls.Add(this.printPdfBtn);
             this.panel1.Controls.Add(this.exportBtn);
             this.panel1.Controls.Add(this.refreshBtn);
             this.panel1.Controls.Add(this.deleteBtn);
@@ -163,6 +165,39 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1371, 54);
             this.panel1.TabIndex = 35;
+            // 
+            // printPdfBtn
+            // 
+            this.printPdfBtn.AnimationHoverSpeed = 0.07F;
+            this.printPdfBtn.AnimationSpeed = 0.03F;
+            this.printPdfBtn.BackColor = System.Drawing.Color.Transparent;
+            this.printPdfBtn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.printPdfBtn.BorderColor = System.Drawing.Color.Black;
+            this.printPdfBtn.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.printPdfBtn.CheckedBorderColor = System.Drawing.Color.Black;
+            this.printPdfBtn.CheckedForeColor = System.Drawing.Color.White;
+            this.printPdfBtn.CheckedImage = ((System.Drawing.Image)(resources.GetObject("printPdfBtn.CheckedImage")));
+            this.printPdfBtn.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.printPdfBtn.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.printPdfBtn.FocusedColor = System.Drawing.Color.Empty;
+            this.printPdfBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.printPdfBtn.ForeColor = System.Drawing.Color.White;
+            this.printPdfBtn.Image = ((System.Drawing.Image)(resources.GetObject("printPdfBtn.Image")));
+            this.printPdfBtn.ImageSize = new System.Drawing.Size(20, 20);
+            this.printPdfBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.printPdfBtn.Location = new System.Drawing.Point(243, 6);
+            this.printPdfBtn.Name = "printPdfBtn";
+            this.printPdfBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.printPdfBtn.OnHoverBorderColor = System.Drawing.Color.Transparent;
+            this.printPdfBtn.OnHoverForeColor = System.Drawing.Color.White;
+            this.printPdfBtn.OnHoverImage = null;
+            this.printPdfBtn.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.printPdfBtn.OnPressedColor = System.Drawing.Color.Black;
+            this.printPdfBtn.Radius = 6;
+            this.printPdfBtn.Size = new System.Drawing.Size(92, 42);
+            this.printPdfBtn.TabIndex = 9;
+            this.printPdfBtn.Text = "In PDF";
+            this.printPdfBtn.Click += new System.EventHandler(this.printPdfBtn_Click);
             // 
             // exportBtn
             // 
@@ -845,5 +880,6 @@
         private Guna.UI2.WinForms.Guna2TextBox toPriceTxt;
         private Guna.UI2.WinForms.Guna2TextBox fromPriceTxt;
         private Guna.UI2.WinForms.Guna2TextBox searchInput;
+        private Guna.UI.WinForms.GunaAdvenceButton printPdfBtn;
     }
 }

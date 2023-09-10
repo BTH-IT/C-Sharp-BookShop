@@ -33,10 +33,12 @@
             this.cancelBtn = new Guna.UI.WinForms.GunaButton();
             this.submitBtn = new Guna.UI.WinForms.GunaButton();
             this.panel12 = new System.Windows.Forms.Panel();
+            this.publishYearTxt = new Guna.UI2.WinForms.Guna2TextBox();
             this.errorPublishYearMsg = new System.Windows.Forms.Label();
             this.publishYearLine = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.importPriceTxt = new Guna.UI2.WinForms.Guna2TextBox();
             this.errorImportPriceMsg = new System.Windows.Forms.Label();
             this.importPriceLine = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
@@ -45,6 +47,7 @@
             this.label18 = new System.Windows.Forms.Label();
             this.publisherCbx = new Guna.UI.WinForms.GunaComboBox();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.sellPriceTxt = new Guna.UI2.WinForms.Guna2TextBox();
             this.errorSellPriceMsg = new System.Windows.Forms.Label();
             this.sellPriceLine = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
@@ -53,6 +56,7 @@
             this.label16 = new System.Windows.Forms.Label();
             this.bookTypeCbx = new Guna.UI.WinForms.GunaComboBox();
             this.panel10 = new System.Windows.Forms.Panel();
+            this.remainTxt = new Guna.UI2.WinForms.Guna2TextBox();
             this.errorRemainMsg = new System.Windows.Forms.Label();
             this.remainLine = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
@@ -61,6 +65,7 @@
             this.label13 = new System.Windows.Forms.Label();
             this.authorCbx = new Guna.UI.WinForms.GunaComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.bookNameTxt = new Guna.UI2.WinForms.Guna2TextBox();
             this.errorBookNameMsg = new System.Windows.Forms.Label();
             this.nameLine = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
@@ -70,11 +75,6 @@
             this.errorImageMsg = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.bookNameTxt = new Guna.UI2.WinForms.Guna2TextBox();
-            this.remainTxt = new Guna.UI2.WinForms.Guna2TextBox();
-            this.sellPriceTxt = new Guna.UI2.WinForms.Guna2TextBox();
-            this.importPriceTxt = new Guna.UI2.WinForms.Guna2TextBox();
-            this.publishYearTxt = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel12.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -173,6 +173,35 @@
             this.panel12.Size = new System.Drawing.Size(594, 88);
             this.panel12.TabIndex = 11;
             // 
+            // publishYearTxt
+            // 
+            this.publishYearTxt.BackColor = System.Drawing.Color.Transparent;
+            this.publishYearTxt.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
+            this.publishYearTxt.BorderThickness = 0;
+            this.publishYearTxt.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.publishYearTxt.DefaultText = "";
+            this.publishYearTxt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.publishYearTxt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.publishYearTxt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.publishYearTxt.DisabledState.Parent = this.publishYearTxt;
+            this.publishYearTxt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.publishYearTxt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.publishYearTxt.FocusedState.Parent = this.publishYearTxt;
+            this.publishYearTxt.Font = new System.Drawing.Font("#9Slide03 Cabin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.publishYearTxt.ForeColor = System.Drawing.Color.Black;
+            this.publishYearTxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.publishYearTxt.HoverState.Parent = this.publishYearTxt;
+            this.publishYearTxt.Location = new System.Drawing.Point(149, 7);
+            this.publishYearTxt.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.publishYearTxt.Name = "publishYearTxt";
+            this.publishYearTxt.PasswordChar = '\0';
+            this.publishYearTxt.PlaceholderText = "Nhập năm xuất bản";
+            this.publishYearTxt.SelectedText = "";
+            this.publishYearTxt.ShadowDecoration.Parent = this.publishYearTxt;
+            this.publishYearTxt.Size = new System.Drawing.Size(419, 36);
+            this.publishYearTxt.TabIndex = 33;
+            this.publishYearTxt.TextChanged += new System.EventHandler(this.publishYearTxt_TextChanged);
+            // 
             // errorPublishYearMsg
             // 
             this.errorPublishYearMsg.AutoSize = true;
@@ -211,6 +240,35 @@
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(594, 88);
             this.panel7.TabIndex = 10;
+            // 
+            // importPriceTxt
+            // 
+            this.importPriceTxt.BackColor = System.Drawing.Color.Transparent;
+            this.importPriceTxt.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
+            this.importPriceTxt.BorderThickness = 0;
+            this.importPriceTxt.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.importPriceTxt.DefaultText = "";
+            this.importPriceTxt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.importPriceTxt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.importPriceTxt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.importPriceTxt.DisabledState.Parent = this.importPriceTxt;
+            this.importPriceTxt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.importPriceTxt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.importPriceTxt.FocusedState.Parent = this.importPriceTxt;
+            this.importPriceTxt.Font = new System.Drawing.Font("#9Slide03 Cabin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.importPriceTxt.ForeColor = System.Drawing.Color.Black;
+            this.importPriceTxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.importPriceTxt.HoverState.Parent = this.importPriceTxt;
+            this.importPriceTxt.Location = new System.Drawing.Point(149, 7);
+            this.importPriceTxt.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.importPriceTxt.Name = "importPriceTxt";
+            this.importPriceTxt.PasswordChar = '\0';
+            this.importPriceTxt.PlaceholderText = "Nhập giá nhập";
+            this.importPriceTxt.SelectedText = "";
+            this.importPriceTxt.ShadowDecoration.Parent = this.importPriceTxt;
+            this.importPriceTxt.Size = new System.Drawing.Size(425, 36);
+            this.importPriceTxt.TabIndex = 33;
+            this.importPriceTxt.TextChanged += new System.EventHandler(this.importPriceTxt_TextChanged);
             // 
             // errorImportPriceMsg
             // 
@@ -306,6 +364,35 @@
             this.panel4.Size = new System.Drawing.Size(594, 88);
             this.panel4.TabIndex = 9;
             // 
+            // sellPriceTxt
+            // 
+            this.sellPriceTxt.BackColor = System.Drawing.Color.Transparent;
+            this.sellPriceTxt.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
+            this.sellPriceTxt.BorderThickness = 0;
+            this.sellPriceTxt.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.sellPriceTxt.DefaultText = "";
+            this.sellPriceTxt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.sellPriceTxt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.sellPriceTxt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.sellPriceTxt.DisabledState.Parent = this.sellPriceTxt;
+            this.sellPriceTxt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.sellPriceTxt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.sellPriceTxt.FocusedState.Parent = this.sellPriceTxt;
+            this.sellPriceTxt.Font = new System.Drawing.Font("#9Slide03 Cabin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sellPriceTxt.ForeColor = System.Drawing.Color.Black;
+            this.sellPriceTxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.sellPriceTxt.HoverState.Parent = this.sellPriceTxt;
+            this.sellPriceTxt.Location = new System.Drawing.Point(149, 7);
+            this.sellPriceTxt.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.sellPriceTxt.Name = "sellPriceTxt";
+            this.sellPriceTxt.PasswordChar = '\0';
+            this.sellPriceTxt.PlaceholderText = "Nhập giá bán";
+            this.sellPriceTxt.SelectedText = "";
+            this.sellPriceTxt.ShadowDecoration.Parent = this.sellPriceTxt;
+            this.sellPriceTxt.Size = new System.Drawing.Size(425, 36);
+            this.sellPriceTxt.TabIndex = 33;
+            this.sellPriceTxt.TextChanged += new System.EventHandler(this.sellPriceTxt_TextChanged);
+            // 
             // errorSellPriceMsg
             // 
             this.errorSellPriceMsg.AutoSize = true;
@@ -400,6 +487,35 @@
             this.panel10.Size = new System.Drawing.Size(594, 88);
             this.panel10.TabIndex = 1;
             // 
+            // remainTxt
+            // 
+            this.remainTxt.BackColor = System.Drawing.Color.Transparent;
+            this.remainTxt.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
+            this.remainTxt.BorderThickness = 0;
+            this.remainTxt.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.remainTxt.DefaultText = "";
+            this.remainTxt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.remainTxt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.remainTxt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.remainTxt.DisabledState.Parent = this.remainTxt;
+            this.remainTxt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.remainTxt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.remainTxt.FocusedState.Parent = this.remainTxt;
+            this.remainTxt.Font = new System.Drawing.Font("#9Slide03 Cabin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.remainTxt.ForeColor = System.Drawing.Color.Black;
+            this.remainTxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.remainTxt.HoverState.Parent = this.remainTxt;
+            this.remainTxt.Location = new System.Drawing.Point(149, 7);
+            this.remainTxt.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.remainTxt.Name = "remainTxt";
+            this.remainTxt.PasswordChar = '\0';
+            this.remainTxt.PlaceholderText = "Nhập số lượng còn lại";
+            this.remainTxt.SelectedText = "";
+            this.remainTxt.ShadowDecoration.Parent = this.remainTxt;
+            this.remainTxt.Size = new System.Drawing.Size(425, 36);
+            this.remainTxt.TabIndex = 33;
+            this.remainTxt.TextChanged += new System.EventHandler(this.remainTxt_TextChanged);
+            // 
             // errorRemainMsg
             // 
             this.errorRemainMsg.AutoSize = true;
@@ -493,6 +609,35 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(594, 88);
             this.panel1.TabIndex = 0;
+            // 
+            // bookNameTxt
+            // 
+            this.bookNameTxt.BackColor = System.Drawing.Color.Transparent;
+            this.bookNameTxt.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
+            this.bookNameTxt.BorderThickness = 0;
+            this.bookNameTxt.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.bookNameTxt.DefaultText = "";
+            this.bookNameTxt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.bookNameTxt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.bookNameTxt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.bookNameTxt.DisabledState.Parent = this.bookNameTxt;
+            this.bookNameTxt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.bookNameTxt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.bookNameTxt.FocusedState.Parent = this.bookNameTxt;
+            this.bookNameTxt.Font = new System.Drawing.Font("#9Slide03 Cabin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bookNameTxt.ForeColor = System.Drawing.Color.Black;
+            this.bookNameTxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.bookNameTxt.HoverState.Parent = this.bookNameTxt;
+            this.bookNameTxt.Location = new System.Drawing.Point(149, 8);
+            this.bookNameTxt.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.bookNameTxt.Name = "bookNameTxt";
+            this.bookNameTxt.PasswordChar = '\0';
+            this.bookNameTxt.PlaceholderText = "Nhập tên sách";
+            this.bookNameTxt.SelectedText = "";
+            this.bookNameTxt.ShadowDecoration.Parent = this.bookNameTxt;
+            this.bookNameTxt.Size = new System.Drawing.Size(425, 36);
+            this.bookNameTxt.TabIndex = 32;
+            this.bookNameTxt.TextChanged += new System.EventHandler(this.bookNameTxt_TextChanged);
             // 
             // errorBookNameMsg
             // 
@@ -601,151 +746,6 @@
             this.guna2PictureBox2.TabIndex = 14;
             this.guna2PictureBox2.TabStop = false;
             this.guna2PictureBox2.Visible = false;
-            // 
-            // bookNameTxt
-            // 
-            this.bookNameTxt.BackColor = System.Drawing.Color.Transparent;
-            this.bookNameTxt.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
-            this.bookNameTxt.BorderThickness = 0;
-            this.bookNameTxt.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bookNameTxt.DefaultText = "";
-            this.bookNameTxt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.bookNameTxt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.bookNameTxt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.bookNameTxt.DisabledState.Parent = this.bookNameTxt;
-            this.bookNameTxt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.bookNameTxt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.bookNameTxt.FocusedState.Parent = this.bookNameTxt;
-            this.bookNameTxt.Font = new System.Drawing.Font("#9Slide03 Cabin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bookNameTxt.ForeColor = System.Drawing.Color.Black;
-            this.bookNameTxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.bookNameTxt.HoverState.Parent = this.bookNameTxt;
-            this.bookNameTxt.Location = new System.Drawing.Point(149, 8);
-            this.bookNameTxt.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.bookNameTxt.Name = "bookNameTxt";
-            this.bookNameTxt.PasswordChar = '\0';
-            this.bookNameTxt.PlaceholderText = "Nhập tên sách";
-            this.bookNameTxt.SelectedText = "";
-            this.bookNameTxt.ShadowDecoration.Parent = this.bookNameTxt;
-            this.bookNameTxt.Size = new System.Drawing.Size(425, 36);
-            this.bookNameTxt.TabIndex = 32;
-            this.bookNameTxt.TextChanged += new System.EventHandler(this.bookNameTxt_TextChanged);
-            // 
-            // remainTxt
-            // 
-            this.remainTxt.BackColor = System.Drawing.Color.Transparent;
-            this.remainTxt.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
-            this.remainTxt.BorderThickness = 0;
-            this.remainTxt.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.remainTxt.DefaultText = "";
-            this.remainTxt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.remainTxt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.remainTxt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.remainTxt.DisabledState.Parent = this.remainTxt;
-            this.remainTxt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.remainTxt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.remainTxt.FocusedState.Parent = this.remainTxt;
-            this.remainTxt.Font = new System.Drawing.Font("#9Slide03 Cabin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.remainTxt.ForeColor = System.Drawing.Color.Black;
-            this.remainTxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.remainTxt.HoverState.Parent = this.remainTxt;
-            this.remainTxt.Location = new System.Drawing.Point(149, 7);
-            this.remainTxt.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.remainTxt.Name = "remainTxt";
-            this.remainTxt.PasswordChar = '\0';
-            this.remainTxt.PlaceholderText = "Nhập số lượng còn lại";
-            this.remainTxt.SelectedText = "";
-            this.remainTxt.ShadowDecoration.Parent = this.remainTxt;
-            this.remainTxt.Size = new System.Drawing.Size(425, 36);
-            this.remainTxt.TabIndex = 33;
-            this.remainTxt.TextChanged += new System.EventHandler(this.remainTxt_TextChanged);
-            // 
-            // sellPriceTxt
-            // 
-            this.sellPriceTxt.BackColor = System.Drawing.Color.Transparent;
-            this.sellPriceTxt.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
-            this.sellPriceTxt.BorderThickness = 0;
-            this.sellPriceTxt.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.sellPriceTxt.DefaultText = "";
-            this.sellPriceTxt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.sellPriceTxt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.sellPriceTxt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.sellPriceTxt.DisabledState.Parent = this.sellPriceTxt;
-            this.sellPriceTxt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.sellPriceTxt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.sellPriceTxt.FocusedState.Parent = this.sellPriceTxt;
-            this.sellPriceTxt.Font = new System.Drawing.Font("#9Slide03 Cabin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sellPriceTxt.ForeColor = System.Drawing.Color.Black;
-            this.sellPriceTxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.sellPriceTxt.HoverState.Parent = this.sellPriceTxt;
-            this.sellPriceTxt.Location = new System.Drawing.Point(149, 7);
-            this.sellPriceTxt.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.sellPriceTxt.Name = "sellPriceTxt";
-            this.sellPriceTxt.PasswordChar = '\0';
-            this.sellPriceTxt.PlaceholderText = "Nhập giá bán";
-            this.sellPriceTxt.SelectedText = "";
-            this.sellPriceTxt.ShadowDecoration.Parent = this.sellPriceTxt;
-            this.sellPriceTxt.Size = new System.Drawing.Size(425, 36);
-            this.sellPriceTxt.TabIndex = 33;
-            this.sellPriceTxt.TextChanged += new System.EventHandler(this.sellPriceTxt_TextChanged);
-            // 
-            // importPriceTxt
-            // 
-            this.importPriceTxt.BackColor = System.Drawing.Color.Transparent;
-            this.importPriceTxt.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
-            this.importPriceTxt.BorderThickness = 0;
-            this.importPriceTxt.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.importPriceTxt.DefaultText = "";
-            this.importPriceTxt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.importPriceTxt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.importPriceTxt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.importPriceTxt.DisabledState.Parent = this.importPriceTxt;
-            this.importPriceTxt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.importPriceTxt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.importPriceTxt.FocusedState.Parent = this.importPriceTxt;
-            this.importPriceTxt.Font = new System.Drawing.Font("#9Slide03 Cabin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.importPriceTxt.ForeColor = System.Drawing.Color.Black;
-            this.importPriceTxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.importPriceTxt.HoverState.Parent = this.importPriceTxt;
-            this.importPriceTxt.Location = new System.Drawing.Point(149, 7);
-            this.importPriceTxt.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.importPriceTxt.Name = "importPriceTxt";
-            this.importPriceTxt.PasswordChar = '\0';
-            this.importPriceTxt.PlaceholderText = "Nhập giá nhập";
-            this.importPriceTxt.SelectedText = "";
-            this.importPriceTxt.ShadowDecoration.Parent = this.importPriceTxt;
-            this.importPriceTxt.Size = new System.Drawing.Size(425, 36);
-            this.importPriceTxt.TabIndex = 33;
-            this.importPriceTxt.TextChanged += new System.EventHandler(this.importPriceTxt_TextChanged);
-            // 
-            // publishYearTxt
-            // 
-            this.publishYearTxt.BackColor = System.Drawing.Color.Transparent;
-            this.publishYearTxt.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
-            this.publishYearTxt.BorderThickness = 0;
-            this.publishYearTxt.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.publishYearTxt.DefaultText = "";
-            this.publishYearTxt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.publishYearTxt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.publishYearTxt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.publishYearTxt.DisabledState.Parent = this.publishYearTxt;
-            this.publishYearTxt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.publishYearTxt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.publishYearTxt.FocusedState.Parent = this.publishYearTxt;
-            this.publishYearTxt.Font = new System.Drawing.Font("#9Slide03 Cabin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.publishYearTxt.ForeColor = System.Drawing.Color.Black;
-            this.publishYearTxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.publishYearTxt.HoverState.Parent = this.publishYearTxt;
-            this.publishYearTxt.Location = new System.Drawing.Point(149, 7);
-            this.publishYearTxt.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.publishYearTxt.Name = "publishYearTxt";
-            this.publishYearTxt.PasswordChar = '\0';
-            this.publishYearTxt.PlaceholderText = "Nhập năm xuất bản";
-            this.publishYearTxt.SelectedText = "";
-            this.publishYearTxt.ShadowDecoration.Parent = this.publishYearTxt;
-            this.publishYearTxt.Size = new System.Drawing.Size(419, 36);
-            this.publishYearTxt.TabIndex = 33;
-            this.publishYearTxt.TextChanged += new System.EventHandler(this.publishYearTxt_TextChanged);
             // 
             // BookModal
             // 

@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.SqlServer.Types.160.1000.6\build\net462\Microsoft.SqlServer.Types.props" Condition="Exists('..\packages\Microsoft.SqlServer.Types.160.1000.6\build\net462\Microsoft.SqlServer.Types.props')" />
   <Import Project="..\packages\Costura.Fody.5.7.0\build\Costura.Fody.props" Condition="Exists('..\packages\Costura.Fody.5.7.0\build\Costura.Fody.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -104,6 +105,15 @@
     </Reference>
     <Reference Include="Microsoft.IO.RecyclableMemoryStream, Version=1.4.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.IO.RecyclableMemoryStream.1.4.1\lib\net46\Microsoft.IO.RecyclableMemoryStream.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1586.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1586.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.160.1000.6\lib\net462\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Microsoft.Win32.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
@@ -545,6 +555,26 @@
     <Compile Include="GUI\Modal\ScannerModal.Designer.cs">
       <DependentUpon>ScannerModal.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Report\bookDataSet.cs">
+      <DependentUpon>bookDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Report\bookDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>bookDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Report\CustomerBillPrintForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Report\CustomerBillPrintForm.Designer.cs">
+      <DependentUpon>CustomerBillPrintForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Report\ImportBillPrintForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Report\ImportBillPrintForm.Designer.cs">
+      <DependentUpon>ImportBillPrintForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\test.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -630,6 +660,14 @@
     <EmbeddedResource Include="GUI\Modal\ScannerModal.resx">
       <DependentUpon>ScannerModal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Report\CustomerBillPrintForm.resx">
+      <DependentUpon>CustomerBillPrintForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Report\ImportBillPrintForm.resx">
+      <DependentUpon>ImportBillPrintForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Report\ImportBillReport.rdlc" />
+    <EmbeddedResource Include="GUI\Report\CustomerBillReport.rdlc" />
     <EmbeddedResource Include="GUI\test.resx">
       <DependentUpon>test.cs</DependentUpon>
     </EmbeddedResource>
@@ -653,7 +691,19 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="GUI\Report\bookDataSet.xsc">
+      <DependentUpon>bookDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="GUI\Report\bookDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>bookDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="GUI\Report\bookDataSet.xss">
+      <DependentUpon>bookDataSet.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\QuanLyCuaHangBanSach.DTO.CustomerBillDetailDTO.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -705,6 +755,7 @@
     <Error Condition="!Exists('..\packages\Fody.6.8.0\build\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Fody.6.8.0\build\Fody.targets'))" />
     <Error Condition="!Exists('..\packages\Costura.Fody.5.7.0\build\Costura.Fody.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Costura.Fody.5.7.0\build\Costura.Fody.props'))" />
     <Error Condition="!Exists('..\packages\Costura.Fody.5.7.0\build\Costura.Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Costura.Fody.5.7.0\build\Costura.Fody.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.SqlServer.Types.160.1000.6\build\net462\Microsoft.SqlServer.Types.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.SqlServer.Types.160.1000.6\build\net462\Microsoft.SqlServer.Types.props'))" />
   </Target>
   <Import Project="..\packages\Fody.6.8.0\build\Fody.targets" Condition="Exists('..\packages\Fody.6.8.0\build\Fody.targets')" />
   <Import Project="..\packages\Costura.Fody.5.7.0\build\Costura.Fody.targets" Condition="Exists('..\packages\Costura.Fody.5.7.0\build\Costura.Fody.targets')" />

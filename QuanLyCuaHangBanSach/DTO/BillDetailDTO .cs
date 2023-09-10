@@ -13,7 +13,7 @@ namespace QuanLyCuaHangBanSach.DTO
         public int MaSach { get; set; }
         public int SoLuong { get; set; }
         public double DonGia { get; set; }
-        public double ThanhTien { get; }
+        public double ThanhTien { get; protected set; }
 
         public BillDetailDTO() { }
 

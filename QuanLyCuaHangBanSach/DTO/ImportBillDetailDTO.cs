@@ -25,6 +25,7 @@ namespace QuanLyCuaHangBanSach.DTO
             this.MaSach = Convert.ToInt32(row["maSach"].ToString());
             this.SoLuong = Convert.ToInt32(row["soLuong"].ToString());
             this.DonGia = Convert.ToDouble(row["donGia"].ToString());
+            this.ThanhTien = this.SoLuong * this.DonGia;
         }
     }
 }
