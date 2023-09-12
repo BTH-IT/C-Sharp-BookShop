@@ -47,18 +47,18 @@ namespace QuanLyCuaHangBanSach.DAO
             return account;
         }
 
-        public DataTable getAllDataFiltered(int SortMode, int Type, int Author, int Publisher)
+        public DataTable getAllDataFiltered(int SortMode, string Type, string Author, string Publisher)
         {
             string sql = $@"SELECT * FROM sach WHERE hienThi = 1";
-            if (Type != -1)
+            if (!Type.Equals("0"))
             {
                 sql += " AND maTheLoai=@maTheLoai";
             }
-            if (Author != -1)
+            if (!Author.Equals("0"))
             {
                 sql += " AND maTacGia=@maTacGia";
             }
-            if (Publisher != -1)
+            if (!Publisher.Equals("0"))
             {
                 sql += " AND maNhaXuatBan=@maNhaXuatBan";
             }
@@ -86,9 +86,9 @@ namespace QuanLyCuaHangBanSach.DAO
 
             return DataProvider.Instance.ExecuteQuery(sql,
                 new MySqlParameter[] {
-                    new MySqlParameter("@maTheLoai", Type.ToString()),
-                    new MySqlParameter("@maTacGia", Author.ToString()),
-                    new MySqlParameter("@maNhaXuatBan", Publisher.ToString())
+                    new MySqlParameter("@maTheLoai", Type),
+                    new MySqlParameter("@maTacGia", Author),
+                    new MySqlParameter("@maNhaXuatBan", Publisher)
                 }
             );
         }

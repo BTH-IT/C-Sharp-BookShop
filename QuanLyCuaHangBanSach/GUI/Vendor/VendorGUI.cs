@@ -26,28 +26,43 @@ namespace QuanLyCuaHangBanSach.GUI
 
         private void Vendor_Load(object sender, EventArgs e)
         {
-            List<BookDTO> books = BookBUS.Instance.getAllData();
-            foreach (var book in books)
+            try
             {
-                BookUserControl product = new BookUserControl();
-                product.details(book);
-                BookContainer.Controls.Add(product);
+                List<BookDTO> books = BookBUS.Instance.getAllData();
+                foreach (var book in books)
+                {
+                    BookUserControl product = new BookUserControl();
+                    product.details(book);
+                    BookContainer.Controls.Add(product);
 
-                FilterUserControl filter = new FilterUserControl();
-                FilterContainer.Controls.Add(filter);
+                    FilterUserControl filter = new FilterUserControl();
+                    FilterContainer.Controls.Add(filter);
+                }
+
+                List<SaleDTO> discounts = SaleBUS.Instance.getAllNotExpired();
+                discounts.Insert(0, new SaleDTO(0, "Không có khuyến mãi", 0, new DateTime(), new DateTime()));
+                DiscountCb.DataSource = discounts;
+                DiscountCb.DisplayMember = "tenKhuyenMai";
+                DiscountCb.ValueMember = "phanTram";
+                DiscountCb.SelectedIndex = 0;
             }
+            catch (Exception ex) { Console.WriteLine(ex); }
         }
 
         private void RenderBookContainer()
         {
-            BookContainer.Controls.Clear();
-            List<BookDTO> books = BookBUS.Instance.getAllData();
-            foreach (var book in books)
+            try
             {
-                BookUserControl product = new BookUserControl();
-                product.details(book);
-                BookContainer.Controls.Add(product);
+                BookContainer.Controls.Clear();
+                List<BookDTO> books = BookBUS.Instance.getAllData();
+                foreach (var book in books)
+                {
+                    BookUserControl product = new BookUserControl();
+                    product.details(book);
+                    BookContainer.Controls.Add(product);
+                }
             }
+            catch (Exception ex) { Console.WriteLine(ex); }
         }
 
         private bool search = false;
@@ -74,38 +89,49 @@ namespace QuanLyCuaHangBanSach.GUI
                     search = false;
                 }
             }
-            catch
-            {
-            }
+            catch (Exception ex) { Console.WriteLine(ex); }
         }
 
         private void ProductSearchInp_Click(object sender, System.EventArgs e)
         {
-            if (ProductSearchInp.Text.Equals("Search ..."))
+            try
             {
-                ProductSearchInp.Text = "";
+                if (ProductSearchInp.Text.Equals("Search ..."))
+                {
+                    ProductSearchInp.Text = "";
+                }
             }
+            catch (Exception ex) { Console.WriteLine(ex); }
         }
 
         private void ProductSearchInp_Leave(object sender, System.EventArgs e)
         {
-            if (ProductSearchInp.Text.Length <= 0)
+            try
             {
-                ProductSearchInp.Text = "Search ...";
-                ProductSearchInp.ForeColor = Color.DarkGray;
+                if (ProductSearchInp.Text.Length <= 0)
+                {
+                    ProductSearchInp.Text = "Search ...";
+                    ProductSearchInp.ForeColor = Color.DarkGray;
+                }
             }
+            catch (Exception ex) { Console.WriteLine(ex); }
         }
 
         private void FilterBtn_Click(object sender, EventArgs e)
         {
-            if (!FilterContainer.Visible)
+            try
             {
-                FilterContainer.Visible = true;
+                if (!FilterContainer.Visible)
+                {
+                    FilterContainer.Visible = true;
+                }
+                else
+                {
+                    FilterContainer.Visible = false;
+                }
             }
-            else
-            {
-                FilterContainer.Visible = false;
-            }
+            catch (Exception ex) { Console.WriteLine(ex); }
+
         }
 
         private void PhoneInp_Click(object sender, EventArgs e)
@@ -118,19 +144,27 @@ namespace QuanLyCuaHangBanSach.GUI
 
         private void PhoneInp_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            try
             {
-                e.Handled = true; // Cancel the key press event
+                if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+                {
+                    e.Handled = true; // Cancel the key press event
+                }
             }
+            catch (Exception ex) { Console.WriteLine(ex); }
         }
 
         private void PhoneInp_Leave(object sender, EventArgs e)
         {
-            if (PhoneInp.Text.Length <= 0)
+            try
             {
-                PhoneInp.Text = "Phone Number ...";
-                PhoneInp.ForeColor = Color.DarkGray;
+                if (PhoneInp.Text.Length <= 0)
+                {
+                    PhoneInp.Text = "Phone Number ...";
+                    PhoneInp.ForeColor = Color.DarkGray;
+                }
             }
+            catch (Exception ex) { Console.WriteLine(ex); }
         }
 
         private void PhoneInp_TextChanged(object sender, EventArgs e)
@@ -166,195 +200,247 @@ namespace QuanLyCuaHangBanSach.GUI
                     PhoneResultContainer.Height = 0;
                 }
             }
-            catch
-            {
-            }
+            catch (Exception ex) { Console.WriteLine(ex); }
         }
 
         private List<int> cart = new List<int>();
         private void checkUser_Tick(object sender, EventArgs e)
         {
-            if (BookUserControl.clicked)
+            try
             {
-                int ChoseId_int = int.Parse(BookUserControl.ChoseId);
-                if (cart.Count == 0 || !cart.Contains(ChoseId_int))
+                if (BookUserControl.clicked)
                 {
-                    cart.Add(ChoseId_int);
-                    BookDTO book = BookBUS.Instance.getById(BookUserControl.ChoseId);
-                    CartProductUserControl product = new CartProductUserControl();
-                    product.details(book);
-                    CartContainer.Controls.Add(product);         
-                }
-                else
-                {
-                    foreach (System.Windows.Forms.Control ctrl in CartContainer.Controls)
+                    int ChoseId_int = int.Parse(BookUserControl.ChoseId);
+                    if (cart.Count == 0 || !cart.Contains(ChoseId_int))
                     {
-                        if (ctrl is CartProductUserControl cartProduct && cartProduct.IdLb.Text.Equals(BookUserControl.ChoseId))
+                        cart.Add(ChoseId_int);
+                        BookDTO book = BookBUS.Instance.getById(BookUserControl.ChoseId);
+                        CartProductUserControl product = new CartProductUserControl();
+                        product.details(book);
+                        CartContainer.Controls.Add(product);
+                    }
+                    else
+                    {
+                        foreach (System.Windows.Forms.Control ctrl in CartContainer.Controls)
                         {
-                            cartProduct.AmountTxt.Text = (int.Parse(cartProduct.AmountTxt.Text) + 1).ToString();
+                            if (ctrl is CartProductUserControl cartProduct && cartProduct.IdLb.Text.Equals(BookUserControl.ChoseId))
+                            {
+                                cartProduct.AmountTxt.Text = (int.Parse(cartProduct.AmountTxt.Text) + 1).ToString();
+                            }
                         }
                     }
+
+                    CartHandler();
+                    BookUserControl.ChoseId = "";
+                    BookUserControl.clicked = false;
                 }
 
-                CartHandler();
-                BookUserControl.ChoseId = "";
-                BookUserControl.clicked = false;
-            }
-
-            if (CartProductUserControl.deletePress)
-            {
-                for (int i = 0; i < CartContainer.Controls.Count; i++)
+                if (CartProductUserControl.deletePress)
                 {
-                    System.Windows.Forms.Control ctrl = CartContainer.Controls[i];
-                    if (ctrl is CartProductUserControl cartProduct)
+                    for (int i = 0; i < CartContainer.Controls.Count; i++)
                     {
-                        if (cartProduct.IdLb.Text.Equals(CartProductUserControl.deleteId))
+                        System.Windows.Forms.Control ctrl = CartContainer.Controls[i];
+                        if (ctrl is CartProductUserControl cartProduct)
                         {
-                            cart.RemoveAt(i);
-                            CartContainer.Controls.RemoveAt(i);
-                            cartProduct.Dispose();
+                            if (cartProduct.IdLb.Text.Equals(CartProductUserControl.deleteId))
+                            {
+                                cart.RemoveAt(i);
+                                CartContainer.Controls.RemoveAt(i);
+                                cartProduct.Dispose();
+                            }
                         }
                     }
+                    CartHandler();
+                    CartProductUserControl.deleteId = "";
+                    CartProductUserControl.deletePress = false;
                 }
-                CartHandler();
-                CartProductUserControl.deleteId = "";
-                CartProductUserControl.deletePress = false;
-            }
 
-            if (PhoneSearchResultControl.clicked)
-            {
-                CustomerDTO customer = CustomerBUS.Instance.getById(PhoneSearchResultControl.id.ToString());
-                RecipientNameLb.Text = customer.Ten;
-                PhoneResultContainer.Height = 0;
-                PhoneInp.Text = "Phone Number ...";
-                PhoneInp.ForeColor = Color.DarkGray;
-                CartHandler();
-                PhoneSearchResultControl.clicked = false;
-            }
-
-            if (CartProductUserControl.AmountChanged)
-            {
-                CartHandler();
-                CartProductUserControl.AmountChanged = false;
-            }
-
-            if (FilterUserControl.ApplyClicked)
-            {
-                FilterContainer.Visible = false;
-                List<BookDTO> books = BookBUS.Instance.getAllDataFiltered(FilterUserControl.Sort, FilterUserControl.TypeID, FilterUserControl.AuthorID, FilterUserControl.PublisherID);
-                BookContainer.Controls.Clear();
-                foreach (var book in books)
+                if (PhoneSearchResultControl.clicked)
                 {
-                    BookUserControl product = new BookUserControl();
-                    product.details(book);
-                    BookContainer.Controls.Add(product);
+                    CustomerDTO customer = CustomerBUS.Instance.getById(PhoneSearchResultControl.id.ToString());
+                    RecipientNameLb.Text = customer.Ten;
+                    PhoneResultContainer.Height = 0;
+                    PhoneInp.Text = "Phone Number ...";
+                    PhoneInp.ForeColor = Color.DarkGray;
+                    CartHandler();
+                    PhoneSearchResultControl.clicked = false;
                 }
-                FilterUserControl.ApplyClicked = false;
+
+                if (CartProductUserControl.AmountChanged)
+                {
+                    CartHandler();
+                    CartProductUserControl.AmountChanged = false;
+                }
+
+                if (FilterUserControl.ApplyClicked)
+                {
+                    FilterContainer.Visible = false;
+                    List<BookDTO> books = BookBUS.Instance.getAllDataFiltered(FilterUserControl.Sort, FilterUserControl.TypeID, FilterUserControl.AuthorID, FilterUserControl.PublisherID);
+                    BookContainer.Controls.Clear();
+                    foreach (var book in books)
+                    {
+                        BookUserControl product = new BookUserControl();
+                        product.details(book);
+                        BookContainer.Controls.Add(product);
+                    }
+                    FilterUserControl.ApplyClicked = false;
+                }
             }
+            catch (Exception ex) { Console.WriteLine(ex); }
         }
 
         private bool PrintBtnAllowed;
         private void CartHandler()
         {
-            double total = 0;
-            for (int i = 0; i < CartContainer.Controls.Count; i++)
+            try
             {
-                System.Windows.Forms.Control ctrl = CartContainer.Controls[i];
-                if (ctrl is CartProductUserControl cartProduct)
+                double total = 0;
+                for (int i = 0; i < CartContainer.Controls.Count; i++)
                 {
-                    BookDTO book = BookBUS.Instance.getById(cartProduct.IdLb.Text);
-                    double price = book.GiaBan * int.Parse(cartProduct.AmountTxt.Text);
-                    total += price;
+                    System.Windows.Forms.Control ctrl = CartContainer.Controls[i];
+                    if (ctrl is CartProductUserControl cartProduct)
+                    {
+                        BookDTO book = BookBUS.Instance.getById(cartProduct.IdLb.Text);
+                        double price = book.GiaBan * int.Parse(cartProduct.AmountTxt.Text);
+                        total += price;
+                    }
+                }
+                TotalMoneyLb.Text = string.Format("{0:N0} VND", total);
+                double finalTotalMoney = total - discount;
+                DiscountMoneyLb.Text = string.Format("{0:N0} VND", discount);
+                FinalTotalMoneyLb.Text = string.Format("{0:N0} VND", finalTotalMoney);
+
+                double CustommerCash = 0;
+                double Change = 0;
+                if (CustomerCashTxb.Text.Length > 0 && !CustomerCashTxb.Text.Equals("Khách đưa ...") && total > 0)
+                {
+                    CustommerCash = double.Parse(CustomerCashTxb.Text);
+                    Change = CustommerCash - finalTotalMoney;
+                }
+                ChangeMoneyLb.Text = string.Format("{0:N0} VND", Change);
+
+                if (Change < 0)
+                {
+                    ChangeMoneyLb.ForeColor = Color.Red;
+                }
+                else
+                {
+                    ChangeMoneyLb.ForeColor = Color.Black;
+                }
+
+                if (CartContainer.Controls.Count > 0 && !String.IsNullOrEmpty(RecipientNameLb.Text) && CustomerCashTxb.Text.Length > 0 && Change >= 0)
+                {
+                    PrintBtn.Cursor = Cursors.Hand;
+                    PrintBtnAllowed = true;
+                }
+                else
+                {
+                    PrintBtn.Cursor = Cursors.No;
+                    PrintBtnAllowed = false;
                 }
             }
-            TotalMoneyLb.Text = string.Format("{0:N0} đ", total);
+            catch (Exception ex) { Console.WriteLine(ex); }
+        }
 
-            double CustommerCash = 0;
-            double Change = 0;
-            if (CustomerCashTxb.Text.Length > 0 && !CustomerCashTxb.Text.Equals("Tiền khách đưa ...") && total > 0)
+        private double discount = 0;
+        private void DiscountCb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
             {
-                CustommerCash = double.Parse(CustomerCashTxb.Text);
-                Change = CustommerCash - total;
-                ChangeMoneyLb.Text = string.Format("{0:N0} đ", Change);
+                if (DiscountCb.SelectedIndex != 0)
+                {
+                    double percent = double.Parse(DiscountCb.SelectedValue.ToString()) / 100;
+                    double total = double.Parse(TotalMoneyLb.Text.Replace(".", "").Replace(" VND", ""));
+                    discount = total * percent;
+                    CartHandler();
+                }
+                else
+                {
+                    discount = 0;
+                    CartHandler();
+                }
             }
-
-            if (Change < 0)
-            {
-                ChangeMoneyLb.ForeColor = Color.Red;
-            }
-            else
-            {
-                ChangeMoneyLb.ForeColor = Color.Black;
-            }
-
-            if (CartContainer.Controls.Count > 0 && !String.IsNullOrEmpty(RecipientNameLb.Text) && CustomerCashTxb.Text.Length > 0 && Change >= 0)
-            {
-                PrintBtn.Cursor = Cursors.Hand;
-                PrintBtnAllowed = true;
-            }
-            else
-            {
-                PrintBtn.Cursor = Cursors.No;
-                PrintBtnAllowed = false;
-            }
+            catch (Exception ex) { Console.WriteLine(ex); }
         }
 
         private void CustomerCashTxb_Click(object sender, System.EventArgs e)
         {
-            if (CustomerCashTxb.Text.Equals("Tiền khách đưa ..."))
+            try
             {
-                CustomerCashTxb.Text = "";
+                if (CustomerCashTxb.Text.Equals("Khách đưa ..."))
+                {
+                    CustomerCashTxb.Text = "";
+                }
             }
+            catch (Exception ex) { Console.WriteLine(ex); }
         }
 
         private void CustomerCashTxb_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == '\r')
+            try
             {
-                TotalLb.Focus();
-                return;
-            }
+                if (e.KeyChar == '\r')
+                {
+                    TotalLb.Focus();
+                    return;
+                }
 
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true; // Cancel the key press event
+                if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+                {
+                    e.Handled = true; // Cancel the key press event
+                }
             }
+            catch (Exception ex) { Console.WriteLine(ex); }
         }
 
         private void CustomerCashTxb_Leave(object sender, System.EventArgs e)
         {
-            if (CustomerCashTxb.Text.Length <= 0)
+            try
             {
-                CustomerCashTxb.Text = "Tiền khách đưa ...";
-                CustomerCashTxb.ForeColor = Color.DarkGray;
+                if (CustomerCashTxb.Text.Length <= 0)
+                {
+                    CustomerCashTxb.Text = "Khách đưa ...";
+                    CustomerCashTxb.ForeColor = Color.DarkGray;
+                }
+                else
+                {
+                    CustomerCashTxb.ForeColor = Color.Black;
+                    CartHandler();
+                }
             }
-            else
-            {
-                CustomerCashTxb.ForeColor = Color.Black;
-                CartHandler();
-            }
+            catch (Exception ex) { Console.WriteLine(ex); }
         }
 
         private void PrintBtn_Click(object sender, EventArgs e)
         {
-            if (PrintBtnAllowed)
+            try
             {
-                foreach (System.Windows.Forms.Control ctrl in CartContainer.Controls)
+                if (PrintBtnAllowed)
                 {
-                    if (ctrl is CartProductUserControl cartProduct)
+                    foreach (System.Windows.Forms.Control ctrl in CartContainer.Controls)
                     {
-                        BookDTO book = BookBUS.Instance.getById(cartProduct.IdLb.Text);
-                        book.SoLuongConLai -= int.Parse(cartProduct.AmountTxt.Text);
-                        BookBUS.Instance.update(book);
+                        if (ctrl is CartProductUserControl cartProduct)
+                        {
+                            BookDTO book = BookBUS.Instance.getById(cartProduct.IdLb.Text);
+                            book.SoLuongConLai -= int.Parse(cartProduct.AmountTxt.Text);
+                            BookBUS.Instance.update(book);
+                        }
                     }
-                }
 
-                CartContainer.Controls.Clear();
-                CustomerCashTxb.Text = "";
-                CartHandler();
-                RecipientNameLb.Text = string.Empty;
-                RenderBookContainer();
+                    CartContainer.Controls.Clear();
+                    cart.Clear();
+                    CustomerCashTxb.Text = "";
+                    CustomerCashTxb.Text = "Khách đưa ...";
+                    CustomerCashTxb.ForeColor = Color.DarkGray;
+                    discount = 0;
+                    DiscountMoneyLb.Text = "0 VND";
+                    DiscountCb.SelectedIndex = 0;
+                    RecipientNameLb.Text = string.Empty;
+                    CartHandler();
+                    RenderBookContainer();
+                }
             }
+            catch (Exception ex) { Console.WriteLine(ex); }
         }
 
         private void LogOutBtn_Click(object sender, EventArgs e)

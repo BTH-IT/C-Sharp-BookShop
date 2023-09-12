@@ -43,6 +43,29 @@ namespace QuanLyCuaHangBanSach.DAO
             return customer;
         }
 
+        public List<SaleDTO> getAllNotExpired()
+        {
+            DateTime currentDate = DateTime.Now;
+            string sqlFormattedDate = currentDate.ToString("yyyy-MM-dd");
+
+            DataTable dataTable = DataProvider.Instance.ExecuteQuery(
+                "SELECT * FROM khuyenmai WHERE hienThi = 1 AND ngayBatDau<=@currentDate AND ngayKetThuc>=@currentDate;",
+                new MySqlParameter[] { new MySqlParameter("@currentDate", sqlFormattedDate) }
+            );
+
+            if (dataTable.Rows.Count <= 0) return null;
+
+            List<SaleDTO> customers = new List<SaleDTO>();
+
+            foreach (DataRow row in dataTable.Rows)
+            {
+                SaleDTO customer = new SaleDTO(row);
+                customers.Add(customer);
+            }
+
+            return customers;
+        }
+
         public List<SaleDTO> searchData(string value)
         {
             DataTable dataTable = DataProvider.Instance.ExecuteQuery(

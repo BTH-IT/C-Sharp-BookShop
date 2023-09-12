@@ -60,7 +60,7 @@ namespace QuanLyCuaHangBanSach.BUS
         {
             return BookDAO.Instance.getById(id);
         }
-        public List<BookDTO> getAllDataFiltered(int SortMode, int Type, int Author, int Publisher)
+        public List<BookDTO> getAllDataFiltered(int SortMode, string Type, string Author, string Publisher)
         {
             List<BookDTO> bookList = new List<BookDTO>();
             DataTable dt = BookDAO.Instance.getAllDataFiltered(SortMode, Type, Author, Publisher);

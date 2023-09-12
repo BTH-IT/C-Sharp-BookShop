@@ -30,7 +30,7 @@ namespace QuanLyCuaHangBanSach.GUI.Vendor
             IdLb.Text = book.MaSach.ToString();
             NameLb.Text = book.TenSach;
             StockLb.Text = "ST: " + book.SoLuongConLai;
-            PriceLb.Text = string.Format("{0:N0} đ", book.GiaBan);
+            PriceLb.Text = string.Format("{0:N0} VND", book.GiaBan);
             toolTip1.SetToolTip(NameLb, NameLb.Text);
         }
 

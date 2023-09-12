@@ -26,18 +26,20 @@ namespace QuanLyCuaHangBanSach.GUI.UserControls
 
         private void FilterUserControl_Load(object sender, EventArgs e)
         {
-            foreach (var type in types)
-            {
-                TypeCb.Items.Add(type.TenTheLoai);    
-            }
-            foreach (var author in authors)
-            {
-                AuthorCb.Items.Add(author.Ten);
-            }
-            foreach (var publisher in publishers)
-            {
-                PublisherCb.Items.Add(publisher.TenNhaXuatBan);
-            }
+            types.Insert(0, new BookTypeDTO(0, "Tất cả"));
+            TypeCb.DataSource = types;
+            TypeCb.DisplayMember = "tenTheLoai";
+            TypeCb.ValueMember = "maTheLoai";
+
+            authors.Insert(0, new AuthorDTO(0, "Tất cả", "", 0));
+            AuthorCb.DataSource = authors;
+            AuthorCb.DisplayMember = "Ten";
+            AuthorCb.ValueMember = "Ma";
+
+            publishers.Insert(0, new PublisherDTO(0, "Tất cả", "", ""));
+            PublisherCb.DataSource = publishers;
+            PublisherCb.DisplayMember = "tenNhaXuatBan";
+            PublisherCb.ValueMember = "maNhaXuatBan";
 
             TypeCb.SelectedIndex = 0;
             AuthorCb.SelectedIndex = 0;
@@ -46,10 +48,6 @@ namespace QuanLyCuaHangBanSach.GUI.UserControls
 
         private void TypeCb_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (TypeCb.SelectedIndex > 0)
-            {
-                /*Console.WriteLine(types[TypeCb.SelectedIndex - 1].MaTheLoai);*/
-            }
         }
 
         private void AuthorCb_SelectedIndexChanged(object sender, EventArgs e)
@@ -101,17 +99,17 @@ namespace QuanLyCuaHangBanSach.GUI.UserControls
         }
 
         public static int Sort;
-        public static int TypeID;
-        public static int AuthorID;
-        public static int PublisherID;
+        public static string TypeID;
+        public static string AuthorID;
+        public static string PublisherID;
         public static bool ApplyClicked = false;
 
         private void ApplyBtn_Click(object sender, EventArgs e)
         {
             Sort = PriceUpCkb.Checked ? 0 : (PriceDownCkb.Checked ? 1 : (NameAZCkb.Checked ? 2 : (NameZACkb.Checked ? 3 : -1)));
-            TypeID = TypeCb.SelectedIndex > 0 ? types[TypeCb.SelectedIndex - 1].MaTheLoai : -1;
-            AuthorID = AuthorCb.SelectedIndex > 0 ? authors[AuthorCb.SelectedIndex - 1].Ma : -1;
-            PublisherID = PublisherCb.SelectedIndex > 0 ? publishers[PublisherCb.SelectedIndex - 1].MaNhaXuatBan : -1;
+            TypeID = TypeCb.SelectedValue.ToString();
+            AuthorID = AuthorCb.SelectedValue.ToString();
+            PublisherID = PublisherCb.SelectedValue.ToString();
             ApplyClicked = true;
         }
     }

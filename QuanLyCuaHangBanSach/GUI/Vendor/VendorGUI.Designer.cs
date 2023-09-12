@@ -42,8 +42,15 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.ProductSearchInp = new System.Windows.Forms.TextBox();
             this.FilterBtn = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.DiscountCb = new Guna.UI.WinForms.GunaComboBox();
+            this.RefundBtn = new Guna.UI2.WinForms.Guna2Button();
+            this.FinalTotalMoneyLb = new System.Windows.Forms.Label();
+            this.FinalTotalLb = new System.Windows.Forms.Label();
+            this.DiscountMoneyLb = new System.Windows.Forms.Label();
+            this.DiscountLb = new System.Windows.Forms.Label();
             this.VndLb = new System.Windows.Forms.Label();
             this.CustomerCashTxb = new Guna.UI.WinForms.GunaTextBox();
             this.ChangeMoneyLb = new System.Windows.Forms.Label();
@@ -158,6 +165,7 @@
             // flowLayoutPanel4
             // 
             this.flowLayoutPanel4.Controls.Add(this.flowLayoutPanel5);
+            this.flowLayoutPanel4.Controls.Add(this.panel1);
             this.flowLayoutPanel4.Location = new System.Drawing.Point(103, 82);
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
             this.flowLayoutPanel4.Size = new System.Drawing.Size(786, 48);
@@ -215,6 +223,14 @@
             this.FilterBtn.UseVisualStyleBackColor = false;
             this.FilterBtn.Click += new System.EventHandler(this.FilterBtn_Click);
             // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(294, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(492, 48);
+            this.panel1.TabIndex = 1;
+            // 
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -226,6 +242,12 @@
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.DiscountCb);
+            this.panel4.Controls.Add(this.RefundBtn);
+            this.panel4.Controls.Add(this.FinalTotalMoneyLb);
+            this.panel4.Controls.Add(this.FinalTotalLb);
+            this.panel4.Controls.Add(this.DiscountMoneyLb);
+            this.panel4.Controls.Add(this.DiscountLb);
             this.panel4.Controls.Add(this.VndLb);
             this.panel4.Controls.Add(this.CustomerCashTxb);
             this.panel4.Controls.Add(this.ChangeMoneyLb);
@@ -247,11 +269,100 @@
             this.panel4.TabIndex = 3;
             this.panel4.Click += new System.EventHandler(this.panel4_Click);
             // 
+            // DiscountCb
+            // 
+            this.DiscountCb.BackColor = System.Drawing.Color.Transparent;
+            this.DiscountCb.BaseColor = System.Drawing.Color.White;
+            this.DiscountCb.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.DiscountCb.BorderSize = 1;
+            this.DiscountCb.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.DiscountCb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.DiscountCb.FocusedColor = System.Drawing.Color.Empty;
+            this.DiscountCb.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.DiscountCb.ForeColor = System.Drawing.Color.Black;
+            this.DiscountCb.FormattingEnabled = true;
+            this.DiscountCb.Location = new System.Drawing.Point(14, 447);
+            this.DiscountCb.Name = "DiscountCb";
+            this.DiscountCb.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.DiscountCb.OnHoverItemForeColor = System.Drawing.Color.White;
+            this.DiscountCb.Radius = 5;
+            this.DiscountCb.Size = new System.Drawing.Size(162, 26);
+            this.DiscountCb.TabIndex = 34;
+            this.DiscountCb.SelectedIndexChanged += new System.EventHandler(this.DiscountCb_SelectedIndexChanged);
+            // 
+            // RefundBtn
+            // 
+            this.RefundBtn.Animated = true;
+            this.RefundBtn.AutoRoundedCorners = true;
+            this.RefundBtn.BorderRadius = 17;
+            this.RefundBtn.CheckedState.Parent = this.RefundBtn;
+            this.RefundBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.RefundBtn.CustomImages.Parent = this.RefundBtn;
+            this.RefundBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.RefundBtn.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.RefundBtn.ForeColor = System.Drawing.Color.White;
+            this.RefundBtn.HoverState.Parent = this.RefundBtn;
+            this.RefundBtn.Location = new System.Drawing.Point(201, 6);
+            this.RefundBtn.Name = "RefundBtn";
+            this.RefundBtn.ShadowDecoration.Parent = this.RefundBtn;
+            this.RefundBtn.Size = new System.Drawing.Size(96, 37);
+            this.RefundBtn.TabIndex = 0;
+            this.RefundBtn.Text = "Trả hàng";
+            // 
+            // FinalTotalMoneyLb
+            // 
+            this.FinalTotalMoneyLb.AutoSize = true;
+            this.FinalTotalMoneyLb.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.FinalTotalMoneyLb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.FinalTotalMoneyLb.Location = new System.Drawing.Point(131, 515);
+            this.FinalTotalMoneyLb.Margin = new System.Windows.Forms.Padding(20, 30, 3, 5);
+            this.FinalTotalMoneyLb.Name = "FinalTotalMoneyLb";
+            this.FinalTotalMoneyLb.Size = new System.Drawing.Size(59, 21);
+            this.FinalTotalMoneyLb.TabIndex = 31;
+            this.FinalTotalMoneyLb.Text = "0 VND";
+            this.FinalTotalMoneyLb.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // FinalTotalLb
+            // 
+            this.FinalTotalLb.AutoSize = true;
+            this.FinalTotalLb.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.FinalTotalLb.Location = new System.Drawing.Point(11, 515);
+            this.FinalTotalLb.Margin = new System.Windows.Forms.Padding(20, 30, 3, 5);
+            this.FinalTotalLb.Name = "FinalTotalLb";
+            this.FinalTotalLb.Size = new System.Drawing.Size(124, 21);
+            this.FinalTotalLb.TabIndex = 30;
+            this.FinalTotalLb.Text = "Khách phải trả:";
+            this.FinalTotalLb.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // DiscountMoneyLb
+            // 
+            this.DiscountMoneyLb.AutoSize = true;
+            this.DiscountMoneyLb.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.DiscountMoneyLb.Location = new System.Drawing.Point(88, 485);
+            this.DiscountMoneyLb.Margin = new System.Windows.Forms.Padding(20, 30, 3, 5);
+            this.DiscountMoneyLb.Name = "DiscountMoneyLb";
+            this.DiscountMoneyLb.Size = new System.Drawing.Size(59, 21);
+            this.DiscountMoneyLb.TabIndex = 29;
+            this.DiscountMoneyLb.Text = "0 VND";
+            this.DiscountMoneyLb.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // DiscountLb
+            // 
+            this.DiscountLb.AutoSize = true;
+            this.DiscountLb.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.DiscountLb.Location = new System.Drawing.Point(10, 485);
+            this.DiscountLb.Margin = new System.Windows.Forms.Padding(20, 30, 3, 5);
+            this.DiscountLb.Name = "DiscountLb";
+            this.DiscountLb.Size = new System.Drawing.Size(86, 21);
+            this.DiscountLb.TabIndex = 28;
+            this.DiscountLb.Text = "Giảm giá: ";
+            this.DiscountLb.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // VndLb
             // 
             this.VndLb.AutoSize = true;
             this.VndLb.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.VndLb.Location = new System.Drawing.Point(251, 545);
+            this.VndLb.Location = new System.Drawing.Point(251, 551);
             this.VndLb.Margin = new System.Windows.Forms.Padding(20, 30, 3, 5);
             this.VndLb.Name = "VndLb";
             this.VndLb.Size = new System.Drawing.Size(46, 21);
@@ -269,13 +380,13 @@
             this.CustomerCashTxb.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.CustomerCashTxb.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.CustomerCashTxb.ForeColor = System.Drawing.Color.DarkGray;
-            this.CustomerCashTxb.Location = new System.Drawing.Point(9, 541);
+            this.CustomerCashTxb.Location = new System.Drawing.Point(9, 548);
             this.CustomerCashTxb.Name = "CustomerCashTxb";
             this.CustomerCashTxb.PasswordChar = '\0';
             this.CustomerCashTxb.SelectedText = "";
             this.CustomerCashTxb.Size = new System.Drawing.Size(238, 30);
             this.CustomerCashTxb.TabIndex = 25;
-            this.CustomerCashTxb.Text = "Tiền khách đưa ...";
+            this.CustomerCashTxb.Text = "Khách đưa ...";
             this.CustomerCashTxb.Enter += new System.EventHandler(this.CustomerCashTxb_Click);
             this.CustomerCashTxb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CustomerCashTxb_KeyPress);
             this.CustomerCashTxb.Leave += new System.EventHandler(this.CustomerCashTxb_Leave);
@@ -284,7 +395,7 @@
             // 
             this.ChangeMoneyLb.AutoSize = true;
             this.ChangeMoneyLb.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.ChangeMoneyLb.Location = new System.Drawing.Point(92, 599);
+            this.ChangeMoneyLb.Location = new System.Drawing.Point(94, 586);
             this.ChangeMoneyLb.Margin = new System.Windows.Forms.Padding(20, 30, 3, 5);
             this.ChangeMoneyLb.Name = "ChangeMoneyLb";
             this.ChangeMoneyLb.Size = new System.Drawing.Size(33, 21);
@@ -296,7 +407,7 @@
             // 
             this.ChangeLb.AutoSize = true;
             this.ChangeLb.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.ChangeLb.Location = new System.Drawing.Point(11, 599);
+            this.ChangeLb.Location = new System.Drawing.Point(11, 585);
             this.ChangeLb.Margin = new System.Windows.Forms.Padding(20, 30, 3, 5);
             this.ChangeLb.Name = "ChangeLb";
             this.ChangeLb.Size = new System.Drawing.Size(87, 21);
@@ -340,12 +451,12 @@
             // 
             this.TotalMoneyLb.AutoSize = true;
             this.TotalMoneyLb.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.TotalMoneyLb.Location = new System.Drawing.Point(100, 573);
+            this.TotalMoneyLb.Location = new System.Drawing.Point(136, 412);
             this.TotalMoneyLb.Margin = new System.Windows.Forms.Padding(20, 30, 3, 5);
             this.TotalMoneyLb.Name = "TotalMoneyLb";
-            this.TotalMoneyLb.Size = new System.Drawing.Size(33, 21);
+            this.TotalMoneyLb.Size = new System.Drawing.Size(59, 21);
             this.TotalMoneyLb.TabIndex = 21;
-            this.TotalMoneyLb.Text = "0 đ";
+            this.TotalMoneyLb.Text = "0 VND";
             this.TotalMoneyLb.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // PhoneResultContainer
@@ -364,7 +475,7 @@
             this.CartContainer.AutoScroll = true;
             this.CartContainer.Location = new System.Drawing.Point(0, 122);
             this.CartContainer.Name = "CartContainer";
-            this.CartContainer.Size = new System.Drawing.Size(300, 411);
+            this.CartContainer.Size = new System.Drawing.Size(300, 274);
             this.CartContainer.TabIndex = 20;
             // 
             // RecipientLb
@@ -397,12 +508,12 @@
             // 
             this.TotalLb.AutoSize = true;
             this.TotalLb.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.TotalLb.Location = new System.Drawing.Point(11, 573);
+            this.TotalLb.Location = new System.Drawing.Point(10, 412);
             this.TotalLb.Margin = new System.Windows.Forms.Padding(20, 30, 3, 5);
             this.TotalLb.Name = "TotalLb";
-            this.TotalLb.Size = new System.Drawing.Size(95, 21);
+            this.TotalLb.Size = new System.Drawing.Size(130, 21);
             this.TotalLb.TabIndex = 16;
-            this.TotalLb.Text = "Tổng cộng:";
+            this.TotalLb.Text = "Tổng tiền hàng:";
             this.TotalLb.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // CustomerInfoLb
@@ -527,5 +638,12 @@
         private System.Windows.Forms.Label ChangeLb;
         private Guna.UI.WinForms.GunaTextBox CustomerCashTxb;
         private System.Windows.Forms.Label VndLb;
+        private System.Windows.Forms.Label DiscountMoneyLb;
+        private System.Windows.Forms.Label DiscountLb;
+        private System.Windows.Forms.Label FinalTotalMoneyLb;
+        private System.Windows.Forms.Label FinalTotalLb;
+        private System.Windows.Forms.Panel panel1;
+        private Guna.UI2.WinForms.Guna2Button RefundBtn;
+        private Guna.UI.WinForms.GunaComboBox DiscountCb;
     }
 }
