@@ -110,7 +110,6 @@ namespace QuanLyCuaHangBanSach.GUI
 
         private void PhoneInp_Click(object sender, EventArgs e)
         {
-            Console.WriteLine("v");
             if (PhoneInp.Text.Equals("Phone Number ..."))
             {
                 PhoneInp.Text = "";
@@ -270,7 +269,25 @@ namespace QuanLyCuaHangBanSach.GUI
             }
             TotalMoneyLb.Text = string.Format("{0:N0} đ", total);
 
-            if (CartContainer.Controls.Count > 0 && !String.IsNullOrEmpty(RecipientNameLb.Text))
+            double CustommerCash = 0;
+            double Change = 0;
+            if (CustomerCashTxb.Text.Length > 0 && !CustomerCashTxb.Text.Equals("Tiền khách đưa ...") && total > 0)
+            {
+                CustommerCash = double.Parse(CustomerCashTxb.Text);
+                Change = CustommerCash - total;
+                ChangeMoneyLb.Text = string.Format("{0:N0} đ", Change);
+            }
+
+            if (Change < 0)
+            {
+                ChangeMoneyLb.ForeColor = Color.Red;
+            }
+            else
+            {
+                ChangeMoneyLb.ForeColor = Color.Black;
+            }
+
+            if (CartContainer.Controls.Count > 0 && !String.IsNullOrEmpty(RecipientNameLb.Text) && CustomerCashTxb.Text.Length > 0 && Change >= 0)
             {
                 PrintBtn.Cursor = Cursors.Hand;
                 PrintBtnAllowed = true;
@@ -279,6 +296,42 @@ namespace QuanLyCuaHangBanSach.GUI
             {
                 PrintBtn.Cursor = Cursors.No;
                 PrintBtnAllowed = false;
+            }
+        }
+
+        private void CustomerCashTxb_Click(object sender, System.EventArgs e)
+        {
+            if (CustomerCashTxb.Text.Equals("Tiền khách đưa ..."))
+            {
+                CustomerCashTxb.Text = "";
+            }
+        }
+
+        private void CustomerCashTxb_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == '\r')
+            {
+                TotalLb.Focus();
+                return;
+            }
+
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // Cancel the key press event
+            }
+        }
+
+        private void CustomerCashTxb_Leave(object sender, System.EventArgs e)
+        {
+            if (CustomerCashTxb.Text.Length <= 0)
+            {
+                CustomerCashTxb.Text = "Tiền khách đưa ...";
+                CustomerCashTxb.ForeColor = Color.DarkGray;
+            }
+            else
+            {
+                CustomerCashTxb.ForeColor = Color.Black;
+                CartHandler();
             }
         }
 
@@ -297,6 +350,7 @@ namespace QuanLyCuaHangBanSach.GUI
                 }
 
                 CartContainer.Controls.Clear();
+                CustomerCashTxb.Text = "";
                 CartHandler();
                 RecipientNameLb.Text = string.Empty;
                 RenderBookContainer();
