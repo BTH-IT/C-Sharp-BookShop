@@ -33,6 +33,14 @@
             this.manageContent = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.line1 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.gunaAdvenceButton4 = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.gunaAdvenceButton3 = new Guna.UI.WinForms.GunaAdvenceButton();
             this.gunaAdvenceButton1 = new Guna.UI.WinForms.GunaAdvenceButton();
             this.gunaAdvenceButton2 = new Guna.UI.WinForms.GunaAdvenceButton();
             this.accountBtn = new Guna.UI.WinForms.GunaAdvenceButton();
@@ -47,20 +55,16 @@
             this.authorBtn = new Guna.UI.WinForms.GunaAdvenceButton();
             this.bookBtn = new Guna.UI.WinForms.GunaAdvenceButton();
             this.homeBtn = new Guna.UI.WinForms.GunaAdvenceButton();
-            this.line1 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.gunaCirclePictureBox1 = new Guna.UI.WinForms.GunaCirclePictureBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.printDialog1 = new System.Windows.Forms.PrintDialog();
+            this.gunaAdvenceButton5 = new Guna.UI.WinForms.GunaAdvenceButton();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -103,7 +107,10 @@
             // 
             this.panel5.AccessibleRole = System.Windows.Forms.AccessibleRole.ScrollBar;
             this.panel5.AutoScrollMargin = new System.Drawing.Size(0, 10);
-            this.panel5.Controls.Add(this.gunaAdvenceButton1);
+            this.panel5.Controls.Add(this.gunaAdvenceButton5);
+            this.panel5.Controls.Add(this.gunaAdvenceButton4);
+            this.panel5.Controls.Add(this.gunaAdvenceButton3);
+            this.panel5.Controls.Add(this.panel4);
             this.panel5.Controls.Add(this.gunaAdvenceButton2);
             this.panel5.Controls.Add(this.accountBtn);
             this.panel5.Controls.Add(this.publisherBtn);
@@ -122,6 +129,134 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(236, 805);
             this.panel5.TabIndex = 6;
+            // 
+            // line1
+            // 
+            this.line1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(212)))), ((int)(((byte)(212)))));
+            this.line1.Location = new System.Drawing.Point(0, 78);
+            this.line1.Name = "line1";
+            this.line1.Size = new System.Drawing.Size(236, 1);
+            this.line1.TabIndex = 5;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(115)))), ((int)(((byte)(115)))));
+            this.label3.Location = new System.Drawing.Point(74, 42);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(122, 23);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Nhân viên quản lý";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("#9Slide03 Cabin Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(73, 15);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(149, 26);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Biện Thành Hưng";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.pictureBox2);
+            this.panel2.Controls.Add(this.pictureBox1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1636, 36);
+            this.panel2.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label1.Font = new System.Drawing.Font("#9Slide03 Cabin", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(38, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(86, 36);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Manager";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.gunaAdvenceButton1);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel4.Location = new System.Drawing.Point(0, 753);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(236, 52);
+            this.panel4.TabIndex = 32;
+            // 
+            // gunaAdvenceButton4
+            // 
+            this.gunaAdvenceButton4.Animated = true;
+            this.gunaAdvenceButton4.AnimationHoverSpeed = 0.3F;
+            this.gunaAdvenceButton4.AnimationSpeed = 0.5F;
+            this.gunaAdvenceButton4.BackColor = System.Drawing.Color.Transparent;
+            this.gunaAdvenceButton4.BaseColor = System.Drawing.Color.White;
+            this.gunaAdvenceButton4.BorderColor = System.Drawing.Color.Black;
+            this.gunaAdvenceButton4.CheckedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.gunaAdvenceButton4.CheckedBorderColor = System.Drawing.Color.Transparent;
+            this.gunaAdvenceButton4.CheckedForeColor = System.Drawing.Color.White;
+            this.gunaAdvenceButton4.CheckedImage = ((System.Drawing.Image)(resources.GetObject("gunaAdvenceButton4.CheckedImage")));
+            this.gunaAdvenceButton4.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.gunaAdvenceButton4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.gunaAdvenceButton4.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.gunaAdvenceButton4.FocusedColor = System.Drawing.Color.Empty;
+            this.gunaAdvenceButton4.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaAdvenceButton4.ForeColor = System.Drawing.Color.Black;
+            this.gunaAdvenceButton4.Image = ((System.Drawing.Image)(resources.GetObject("gunaAdvenceButton4.Image")));
+            this.gunaAdvenceButton4.ImageSize = new System.Drawing.Size(20, 20);
+            this.gunaAdvenceButton4.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.gunaAdvenceButton4.Location = new System.Drawing.Point(17, 695);
+            this.gunaAdvenceButton4.Name = "gunaAdvenceButton4";
+            this.gunaAdvenceButton4.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.gunaAdvenceButton4.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.gunaAdvenceButton4.OnHoverForeColor = System.Drawing.Color.White;
+            this.gunaAdvenceButton4.OnHoverImage = ((System.Drawing.Image)(resources.GetObject("gunaAdvenceButton4.OnHoverImage")));
+            this.gunaAdvenceButton4.OnHoverLineColor = System.Drawing.Color.Transparent;
+            this.gunaAdvenceButton4.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaAdvenceButton4.Radius = 8;
+            this.gunaAdvenceButton4.Size = new System.Drawing.Size(205, 40);
+            this.gunaAdvenceButton4.TabIndex = 34;
+            this.gunaAdvenceButton4.Text = "Phiếu chi";
+            // 
+            // gunaAdvenceButton3
+            // 
+            this.gunaAdvenceButton3.Animated = true;
+            this.gunaAdvenceButton3.AnimationHoverSpeed = 0.3F;
+            this.gunaAdvenceButton3.AnimationSpeed = 0.5F;
+            this.gunaAdvenceButton3.BackColor = System.Drawing.Color.Transparent;
+            this.gunaAdvenceButton3.BaseColor = System.Drawing.Color.White;
+            this.gunaAdvenceButton3.BorderColor = System.Drawing.Color.Black;
+            this.gunaAdvenceButton3.CheckedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.gunaAdvenceButton3.CheckedBorderColor = System.Drawing.Color.Transparent;
+            this.gunaAdvenceButton3.CheckedForeColor = System.Drawing.Color.White;
+            this.gunaAdvenceButton3.CheckedImage = ((System.Drawing.Image)(resources.GetObject("gunaAdvenceButton3.CheckedImage")));
+            this.gunaAdvenceButton3.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.gunaAdvenceButton3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.gunaAdvenceButton3.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.gunaAdvenceButton3.FocusedColor = System.Drawing.Color.Empty;
+            this.gunaAdvenceButton3.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaAdvenceButton3.ForeColor = System.Drawing.Color.Black;
+            this.gunaAdvenceButton3.Image = ((System.Drawing.Image)(resources.GetObject("gunaAdvenceButton3.Image")));
+            this.gunaAdvenceButton3.ImageSize = new System.Drawing.Size(20, 20);
+            this.gunaAdvenceButton3.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.gunaAdvenceButton3.Location = new System.Drawing.Point(17, 649);
+            this.gunaAdvenceButton3.Name = "gunaAdvenceButton3";
+            this.gunaAdvenceButton3.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.gunaAdvenceButton3.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.gunaAdvenceButton3.OnHoverForeColor = System.Drawing.Color.White;
+            this.gunaAdvenceButton3.OnHoverImage = ((System.Drawing.Image)(resources.GetObject("gunaAdvenceButton3.OnHoverImage")));
+            this.gunaAdvenceButton3.OnHoverLineColor = System.Drawing.Color.Transparent;
+            this.gunaAdvenceButton3.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaAdvenceButton3.Radius = 8;
+            this.gunaAdvenceButton3.Size = new System.Drawing.Size(205, 40);
+            this.gunaAdvenceButton3.TabIndex = 33;
+            this.gunaAdvenceButton3.Text = "Quản lý trả hàng";
             // 
             // gunaAdvenceButton1
             // 
@@ -144,7 +279,7 @@
             this.gunaAdvenceButton1.Image = ((System.Drawing.Image)(resources.GetObject("gunaAdvenceButton1.Image")));
             this.gunaAdvenceButton1.ImageSize = new System.Drawing.Size(20, 20);
             this.gunaAdvenceButton1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.gunaAdvenceButton1.Location = new System.Drawing.Point(17, 733);
+            this.gunaAdvenceButton1.Location = new System.Drawing.Point(17, 6);
             this.gunaAdvenceButton1.Name = "gunaAdvenceButton1";
             this.gunaAdvenceButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.gunaAdvenceButton1.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -153,7 +288,7 @@
             this.gunaAdvenceButton1.OnHoverLineColor = System.Drawing.Color.Transparent;
             this.gunaAdvenceButton1.OnPressedColor = System.Drawing.Color.Black;
             this.gunaAdvenceButton1.Radius = 8;
-            this.gunaAdvenceButton1.Size = new System.Drawing.Size(205, 50);
+            this.gunaAdvenceButton1.Size = new System.Drawing.Size(205, 40);
             this.gunaAdvenceButton1.TabIndex = 31;
             this.gunaAdvenceButton1.Text = "Đăng xuất";
             // 
@@ -178,7 +313,7 @@
             this.gunaAdvenceButton2.Image = ((System.Drawing.Image)(resources.GetObject("gunaAdvenceButton2.Image")));
             this.gunaAdvenceButton2.ImageSize = new System.Drawing.Size(20, 20);
             this.gunaAdvenceButton2.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.gunaAdvenceButton2.Location = new System.Drawing.Point(17, 677);
+            this.gunaAdvenceButton2.Location = new System.Drawing.Point(17, 557);
             this.gunaAdvenceButton2.Name = "gunaAdvenceButton2";
             this.gunaAdvenceButton2.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.gunaAdvenceButton2.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -187,9 +322,9 @@
             this.gunaAdvenceButton2.OnHoverLineColor = System.Drawing.Color.Transparent;
             this.gunaAdvenceButton2.OnPressedColor = System.Drawing.Color.Black;
             this.gunaAdvenceButton2.Radius = 8;
-            this.gunaAdvenceButton2.Size = new System.Drawing.Size(205, 50);
+            this.gunaAdvenceButton2.Size = new System.Drawing.Size(205, 40);
             this.gunaAdvenceButton2.TabIndex = 30;
-            this.gunaAdvenceButton2.Text = "Quyền";
+            this.gunaAdvenceButton2.Text = "Chức vụ";
             // 
             // accountBtn
             // 
@@ -212,7 +347,7 @@
             this.accountBtn.Image = ((System.Drawing.Image)(resources.GetObject("accountBtn.Image")));
             this.accountBtn.ImageSize = new System.Drawing.Size(20, 20);
             this.accountBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.accountBtn.Location = new System.Drawing.Point(17, 621);
+            this.accountBtn.Location = new System.Drawing.Point(17, 511);
             this.accountBtn.Name = "accountBtn";
             this.accountBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.accountBtn.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -221,7 +356,7 @@
             this.accountBtn.OnHoverLineColor = System.Drawing.Color.Transparent;
             this.accountBtn.OnPressedColor = System.Drawing.Color.Black;
             this.accountBtn.Radius = 8;
-            this.accountBtn.Size = new System.Drawing.Size(205, 50);
+            this.accountBtn.Size = new System.Drawing.Size(205, 40);
             this.accountBtn.TabIndex = 28;
             this.accountBtn.Text = "Tài khoản";
             this.accountBtn.Click += new System.EventHandler(this.accountBtn_Click);
@@ -247,7 +382,7 @@
             this.publisherBtn.Image = ((System.Drawing.Image)(resources.GetObject("publisherBtn.Image")));
             this.publisherBtn.ImageSize = new System.Drawing.Size(20, 20);
             this.publisherBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.publisherBtn.Location = new System.Drawing.Point(17, 565);
+            this.publisherBtn.Location = new System.Drawing.Point(17, 465);
             this.publisherBtn.Name = "publisherBtn";
             this.publisherBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.publisherBtn.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -256,7 +391,7 @@
             this.publisherBtn.OnHoverLineColor = System.Drawing.Color.Transparent;
             this.publisherBtn.OnPressedColor = System.Drawing.Color.Black;
             this.publisherBtn.Radius = 8;
-            this.publisherBtn.Size = new System.Drawing.Size(205, 50);
+            this.publisherBtn.Size = new System.Drawing.Size(205, 40);
             this.publisherBtn.TabIndex = 27;
             this.publisherBtn.Text = "Nhà xuất bản";
             this.publisherBtn.Click += new System.EventHandler(this.publisherBtn_Click);
@@ -282,7 +417,7 @@
             this.seoBtn.Image = ((System.Drawing.Image)(resources.GetObject("seoBtn.Image")));
             this.seoBtn.ImageSize = new System.Drawing.Size(20, 20);
             this.seoBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.seoBtn.Location = new System.Drawing.Point(17, 509);
+            this.seoBtn.Location = new System.Drawing.Point(17, 419);
             this.seoBtn.Name = "seoBtn";
             this.seoBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.seoBtn.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -291,7 +426,7 @@
             this.seoBtn.OnHoverLineColor = System.Drawing.Color.Transparent;
             this.seoBtn.OnPressedColor = System.Drawing.Color.Black;
             this.seoBtn.Radius = 8;
-            this.seoBtn.Size = new System.Drawing.Size(205, 50);
+            this.seoBtn.Size = new System.Drawing.Size(205, 40);
             this.seoBtn.TabIndex = 26;
             this.seoBtn.Text = "Khuyến mãi";
             this.seoBtn.Click += new System.EventHandler(this.seoBtn_Click);
@@ -317,7 +452,7 @@
             this.billBtn.Image = ((System.Drawing.Image)(resources.GetObject("billBtn.Image")));
             this.billBtn.ImageSize = new System.Drawing.Size(20, 20);
             this.billBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.billBtn.Location = new System.Drawing.Point(17, 453);
+            this.billBtn.Location = new System.Drawing.Point(17, 373);
             this.billBtn.Name = "billBtn";
             this.billBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.billBtn.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -326,7 +461,7 @@
             this.billBtn.OnHoverLineColor = System.Drawing.Color.Transparent;
             this.billBtn.OnPressedColor = System.Drawing.Color.Black;
             this.billBtn.Radius = 8;
-            this.billBtn.Size = new System.Drawing.Size(205, 50);
+            this.billBtn.Size = new System.Drawing.Size(205, 40);
             this.billBtn.TabIndex = 25;
             this.billBtn.Text = "Hóa đơn";
             this.billBtn.Click += new System.EventHandler(this.billBtn_Click);
@@ -352,7 +487,7 @@
             this.importBilBtn.Image = ((System.Drawing.Image)(resources.GetObject("importBilBtn.Image")));
             this.importBilBtn.ImageSize = new System.Drawing.Size(20, 20);
             this.importBilBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.importBilBtn.Location = new System.Drawing.Point(17, 397);
+            this.importBilBtn.Location = new System.Drawing.Point(17, 327);
             this.importBilBtn.Name = "importBilBtn";
             this.importBilBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.importBilBtn.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -361,7 +496,7 @@
             this.importBilBtn.OnHoverLineColor = System.Drawing.Color.Transparent;
             this.importBilBtn.OnPressedColor = System.Drawing.Color.Black;
             this.importBilBtn.Radius = 8;
-            this.importBilBtn.Size = new System.Drawing.Size(205, 50);
+            this.importBilBtn.Size = new System.Drawing.Size(205, 40);
             this.importBilBtn.TabIndex = 24;
             this.importBilBtn.Text = "Phiếu nhập";
             this.importBilBtn.Click += new System.EventHandler(this.importBilBtn_Click);
@@ -387,7 +522,7 @@
             this.supplierBtn.Image = ((System.Drawing.Image)(resources.GetObject("supplierBtn.Image")));
             this.supplierBtn.ImageSize = new System.Drawing.Size(20, 20);
             this.supplierBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.supplierBtn.Location = new System.Drawing.Point(17, 341);
+            this.supplierBtn.Location = new System.Drawing.Point(17, 281);
             this.supplierBtn.Name = "supplierBtn";
             this.supplierBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.supplierBtn.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -396,7 +531,7 @@
             this.supplierBtn.OnHoverLineColor = System.Drawing.Color.Transparent;
             this.supplierBtn.OnPressedColor = System.Drawing.Color.Black;
             this.supplierBtn.Radius = 8;
-            this.supplierBtn.Size = new System.Drawing.Size(205, 50);
+            this.supplierBtn.Size = new System.Drawing.Size(205, 40);
             this.supplierBtn.TabIndex = 23;
             this.supplierBtn.Text = "Nhà cung cấp";
             this.supplierBtn.Click += new System.EventHandler(this.supplierBtn_Click);
@@ -422,7 +557,7 @@
             this.staffBtn.Image = ((System.Drawing.Image)(resources.GetObject("staffBtn.Image")));
             this.staffBtn.ImageSize = new System.Drawing.Size(20, 20);
             this.staffBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.staffBtn.Location = new System.Drawing.Point(17, 285);
+            this.staffBtn.Location = new System.Drawing.Point(17, 235);
             this.staffBtn.Name = "staffBtn";
             this.staffBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.staffBtn.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -431,7 +566,7 @@
             this.staffBtn.OnHoverLineColor = System.Drawing.Color.Transparent;
             this.staffBtn.OnPressedColor = System.Drawing.Color.Black;
             this.staffBtn.Radius = 8;
-            this.staffBtn.Size = new System.Drawing.Size(205, 50);
+            this.staffBtn.Size = new System.Drawing.Size(205, 40);
             this.staffBtn.TabIndex = 22;
             this.staffBtn.Text = "Nhân viên";
             this.staffBtn.Click += new System.EventHandler(this.staffBtn_Click);
@@ -457,7 +592,7 @@
             this.customerBtn.Image = ((System.Drawing.Image)(resources.GetObject("customerBtn.Image")));
             this.customerBtn.ImageSize = new System.Drawing.Size(20, 20);
             this.customerBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.customerBtn.Location = new System.Drawing.Point(17, 229);
+            this.customerBtn.Location = new System.Drawing.Point(17, 189);
             this.customerBtn.Name = "customerBtn";
             this.customerBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.customerBtn.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -466,7 +601,7 @@
             this.customerBtn.OnHoverLineColor = System.Drawing.Color.Transparent;
             this.customerBtn.OnPressedColor = System.Drawing.Color.Black;
             this.customerBtn.Radius = 8;
-            this.customerBtn.Size = new System.Drawing.Size(205, 50);
+            this.customerBtn.Size = new System.Drawing.Size(205, 40);
             this.customerBtn.TabIndex = 21;
             this.customerBtn.Text = "Khách hàng";
             this.customerBtn.Click += new System.EventHandler(this.customerBtn_Click);
@@ -492,7 +627,7 @@
             this.bookTypeBtn.Image = ((System.Drawing.Image)(resources.GetObject("bookTypeBtn.Image")));
             this.bookTypeBtn.ImageSize = new System.Drawing.Size(20, 20);
             this.bookTypeBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.bookTypeBtn.Location = new System.Drawing.Point(17, 173);
+            this.bookTypeBtn.Location = new System.Drawing.Point(17, 143);
             this.bookTypeBtn.Name = "bookTypeBtn";
             this.bookTypeBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.bookTypeBtn.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -501,7 +636,7 @@
             this.bookTypeBtn.OnHoverLineColor = System.Drawing.Color.Transparent;
             this.bookTypeBtn.OnPressedColor = System.Drawing.Color.Black;
             this.bookTypeBtn.Radius = 8;
-            this.bookTypeBtn.Size = new System.Drawing.Size(205, 50);
+            this.bookTypeBtn.Size = new System.Drawing.Size(205, 40);
             this.bookTypeBtn.TabIndex = 20;
             this.bookTypeBtn.Text = "Thể loại";
             this.bookTypeBtn.Click += new System.EventHandler(this.bookTypeBtn_Click);
@@ -527,7 +662,7 @@
             this.authorBtn.Image = ((System.Drawing.Image)(resources.GetObject("authorBtn.Image")));
             this.authorBtn.ImageSize = new System.Drawing.Size(20, 20);
             this.authorBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.authorBtn.Location = new System.Drawing.Point(17, 117);
+            this.authorBtn.Location = new System.Drawing.Point(17, 97);
             this.authorBtn.Name = "authorBtn";
             this.authorBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.authorBtn.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -536,7 +671,7 @@
             this.authorBtn.OnHoverLineColor = System.Drawing.Color.Transparent;
             this.authorBtn.OnPressedColor = System.Drawing.Color.Black;
             this.authorBtn.Radius = 8;
-            this.authorBtn.Size = new System.Drawing.Size(205, 50);
+            this.authorBtn.Size = new System.Drawing.Size(205, 40);
             this.authorBtn.TabIndex = 19;
             this.authorBtn.Text = "Tác giả";
             this.authorBtn.Click += new System.EventHandler(this.authorBtn_Click);
@@ -562,7 +697,7 @@
             this.bookBtn.Image = ((System.Drawing.Image)(resources.GetObject("bookBtn.Image")));
             this.bookBtn.ImageSize = new System.Drawing.Size(20, 20);
             this.bookBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.bookBtn.Location = new System.Drawing.Point(17, 61);
+            this.bookBtn.Location = new System.Drawing.Point(17, 51);
             this.bookBtn.Name = "bookBtn";
             this.bookBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.bookBtn.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -571,7 +706,7 @@
             this.bookBtn.OnHoverLineColor = System.Drawing.Color.Transparent;
             this.bookBtn.OnPressedColor = System.Drawing.Color.Black;
             this.bookBtn.Radius = 8;
-            this.bookBtn.Size = new System.Drawing.Size(205, 50);
+            this.bookBtn.Size = new System.Drawing.Size(205, 40);
             this.bookBtn.TabIndex = 18;
             this.bookBtn.Text = "Sách";
             this.bookBtn.Click += new System.EventHandler(this.bookBtn_Click);
@@ -607,38 +742,10 @@
             this.homeBtn.OnHoverLineColor = System.Drawing.Color.Transparent;
             this.homeBtn.OnPressedColor = System.Drawing.Color.Black;
             this.homeBtn.Radius = 8;
-            this.homeBtn.Size = new System.Drawing.Size(205, 50);
+            this.homeBtn.Size = new System.Drawing.Size(205, 40);
             this.homeBtn.TabIndex = 17;
             this.homeBtn.Text = "Trang chủ";
             this.homeBtn.Click += new System.EventHandler(this.homeBtn_Click);
-            // 
-            // line1
-            // 
-            this.line1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(212)))), ((int)(((byte)(212)))));
-            this.line1.Location = new System.Drawing.Point(0, 78);
-            this.line1.Name = "line1";
-            this.line1.Size = new System.Drawing.Size(236, 1);
-            this.line1.TabIndex = 5;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(115)))), ((int)(((byte)(115)))));
-            this.label3.Location = new System.Drawing.Point(74, 42);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(122, 23);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Nhân viên quản lý";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("#9Slide03 Cabin Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(73, 15);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(149, 26);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Biện Thành Hưng";
             // 
             // gunaCirclePictureBox1
             // 
@@ -651,29 +758,6 @@
             this.gunaCirclePictureBox1.TabIndex = 0;
             this.gunaCirclePictureBox1.TabStop = false;
             this.gunaCirclePictureBox1.UseTransfarantBackground = false;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.pictureBox2);
-            this.panel2.Controls.Add(this.pictureBox1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1636, 36);
-            this.panel2.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label1.Font = new System.Drawing.Font("#9Slide03 Cabin", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(38, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(86, 36);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Manager";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pictureBox2
             // 
@@ -699,9 +783,39 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // printDialog1
+            // gunaAdvenceButton5
             // 
-            this.printDialog1.UseEXDialog = true;
+            this.gunaAdvenceButton5.Animated = true;
+            this.gunaAdvenceButton5.AnimationHoverSpeed = 0.3F;
+            this.gunaAdvenceButton5.AnimationSpeed = 0.5F;
+            this.gunaAdvenceButton5.BackColor = System.Drawing.Color.Transparent;
+            this.gunaAdvenceButton5.BaseColor = System.Drawing.Color.White;
+            this.gunaAdvenceButton5.BorderColor = System.Drawing.Color.Black;
+            this.gunaAdvenceButton5.CheckedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.gunaAdvenceButton5.CheckedBorderColor = System.Drawing.Color.Transparent;
+            this.gunaAdvenceButton5.CheckedForeColor = System.Drawing.Color.White;
+            this.gunaAdvenceButton5.CheckedImage = ((System.Drawing.Image)(resources.GetObject("gunaAdvenceButton5.CheckedImage")));
+            this.gunaAdvenceButton5.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.gunaAdvenceButton5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.gunaAdvenceButton5.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.gunaAdvenceButton5.FocusedColor = System.Drawing.Color.Empty;
+            this.gunaAdvenceButton5.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaAdvenceButton5.ForeColor = System.Drawing.Color.Black;
+            this.gunaAdvenceButton5.Image = ((System.Drawing.Image)(resources.GetObject("gunaAdvenceButton5.Image")));
+            this.gunaAdvenceButton5.ImageSize = new System.Drawing.Size(20, 20);
+            this.gunaAdvenceButton5.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.gunaAdvenceButton5.Location = new System.Drawing.Point(17, 603);
+            this.gunaAdvenceButton5.Name = "gunaAdvenceButton5";
+            this.gunaAdvenceButton5.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.gunaAdvenceButton5.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.gunaAdvenceButton5.OnHoverForeColor = System.Drawing.Color.White;
+            this.gunaAdvenceButton5.OnHoverImage = ((System.Drawing.Image)(resources.GetObject("gunaAdvenceButton5.OnHoverImage")));
+            this.gunaAdvenceButton5.OnHoverLineColor = System.Drawing.Color.Transparent;
+            this.gunaAdvenceButton5.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaAdvenceButton5.Radius = 8;
+            this.gunaAdvenceButton5.Size = new System.Drawing.Size(205, 40);
+            this.gunaAdvenceButton5.TabIndex = 35;
+            this.gunaAdvenceButton5.Text = "Quyền";
             // 
             // ManagerGUI
             // 
@@ -720,8 +834,9 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -756,6 +871,9 @@
         private Guna.UI.WinForms.GunaAdvenceButton homeBtn;
         private Guna.UI.WinForms.GunaAdvenceButton gunaAdvenceButton2;
         private Guna.UI.WinForms.GunaAdvenceButton gunaAdvenceButton1;
-        private System.Windows.Forms.PrintDialog printDialog1;
+        private Guna.UI.WinForms.GunaAdvenceButton gunaAdvenceButton4;
+        private Guna.UI.WinForms.GunaAdvenceButton gunaAdvenceButton3;
+        private System.Windows.Forms.Panel panel4;
+        private Guna.UI.WinForms.GunaAdvenceButton gunaAdvenceButton5;
     }
 }

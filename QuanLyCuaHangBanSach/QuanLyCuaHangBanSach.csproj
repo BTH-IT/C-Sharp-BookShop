@@ -414,13 +414,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BUS\AuthDetailBUS.cs" />
+    <Compile Include="BUS\CustomerRefundBillBUS.cs" />
+    <Compile Include="BUS\PaymentBillBUS.cs" />
+    <Compile Include="BUS\ImportRefundBillBUS.cs" />
     <Compile Include="BUS\ImportBillBUS.cs" />
+    <Compile Include="BUS\PerrmissionBUS.cs" />
+    <Compile Include="BUS\PositionBUS.cs" />
     <Compile Include="BUS\SaleBUS.cs" />
-    <Compile Include="BUS\SaleBUS.cs" />
-    <Compile Include="BUS\StaffBUS.cs" />
     <Compile Include="BUS\StaffBUS.cs" />
     <Compile Include="BUS\SupplierBUS.cs" />
-    <Compile Include="BUS\ImportBillBUS.cs" />
     <Compile Include="BUS\CustomerBillBUS.cs" />
     <Compile Include="BUS\CustomerBUS.cs" />
     <Compile Include="BUS\PublisherBUS.cs" />

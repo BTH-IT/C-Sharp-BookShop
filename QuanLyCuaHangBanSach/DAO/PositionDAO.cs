@@ -75,7 +75,7 @@ namespace QuanLyCuaHangBanSach.DAO
         public bool update(PositionDTO data)
         {
             string sql = $@"UPDATE chucvu
-                            SET tenChucVu=@tenChucVu, moTa=@moTa, trangThai=@trangThai, macDinh=@macDinh
+                            SET tenChucVu=@tenChucVu, moTa=@moTa, trangThai=@trangThai
                             WHERE maChucVu=@maChucVu;";
 
             int rowChanged = DataProvider.Instance.ExecuteNonQuery(sql,
@@ -84,7 +84,6 @@ namespace QuanLyCuaHangBanSach.DAO
                     new MySqlParameter("@tenChucVu", data.TenChucVu),
                     new MySqlParameter("@moTa", data.MoTa),
                     new MySqlParameter("@trangThai", data.TrangThai),
-                    new MySqlParameter("@macDinh", data.MacDinh)
                 });
 
             return rowChanged > 0;
