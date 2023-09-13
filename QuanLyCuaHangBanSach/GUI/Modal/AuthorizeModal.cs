@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace QuanLyCuaHangBanSach.GUI.Modal
 {
-    public partial class AuthorizeGUI : Form
+    public partial class AuthorizeModal : Form
     {
-        public AuthorizeGUI()
+        public AuthorizeModal()
         {
             InitializeComponent();
         }
