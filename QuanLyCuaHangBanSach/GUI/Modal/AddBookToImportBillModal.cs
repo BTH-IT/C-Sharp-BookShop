@@ -11,20 +11,19 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
     public partial class AddBookToImportBillModal : Form
     {
         private bool isSaved = false;
-        private ImportBillDTO importBill;
         private CheckBox headerCheckbox;
         private CheckBox headerCheckboxBillList;
         private List<BookDTO> bookList = BookBUS.Instance.getAllData();
 
         public List<ImportBillDetailDTO> selectedImportBillDetailList = new List<ImportBillDetailDTO>();
 
-        public AddBookToImportBillModal(ImportBillDTO importBill)
+        public AddBookToImportBillModal(List<ImportBillDetailDTO> importBillDetailList)
         {
             InitializeComponent();
 
-            this.importBill = importBill;
-
             this.selectedImportBillDetailList.Clear();
+
+            this.selectedImportBillDetailList = importBillDetailList;
         }
 
         private void renderCheckBoxDgvBook()
@@ -303,7 +302,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                     if (idx == -1)
                     {
                         ImportBillDetailDTO importBillDetail = new ImportBillDetailDTO(
-                            importBill.MaDonNhapHang,
+                            0,
                             scannerModal.scannedBook.MaSach,
                             1,
                             scannerModal.scannedBook.GiaNhap
@@ -403,7 +402,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                         if (idx == -1)
                         {
                             ImportBillDetailDTO importBillDetail = new ImportBillDetailDTO(
-                                this.importBill.MaDonNhapHang,
+                                0,
                                 maSach,
                                 1,
                                 giaBan

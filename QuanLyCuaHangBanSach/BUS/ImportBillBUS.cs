@@ -42,9 +42,9 @@ namespace QuanLyCuaHangBanSach.BUS
             return importBillList;
         }
 
-        public List<ImportBillDTO> search(string id)
+        public List<ImportBillDTO> search(string value)
         {
-            DataTable dataTable = ImportBillDAO.Instance.searchData(id);
+            DataTable dataTable = ImportBillDAO.Instance.searchData(value);
 
             List<ImportBillDTO> importBillList = new List<ImportBillDTO>();
 
@@ -66,71 +66,6 @@ namespace QuanLyCuaHangBanSach.BUS
         {
             return ImportBillDAO.Instance.createImportBillDetail(importBillDetail);
         }
-
-        public bool updateImportBillDetail(ImportBillDetailDTO importBillDetail)
-        {
-            return ImportBillDAO.Instance.updateImportBillDetail(importBillDetail);
-
-        }
-
-        public bool deleteImportBillDetail(string billId, string bookId)
-        {
-            return ImportBillDAO.Instance.deleteImportBillDetail(billId, bookId);
-        }
-
-        public bool updateBillAndBillDetail(ImportBillDTO importBill, List<ImportBillDetailDTO> importBillDetailList)
-        {
-            try
-            {
-                if (ImportBillDAO.Instance.update(importBill))
-                {
-                    List<ImportBillDetailDTO> oldImportBillDetailList = ImportBillDAO.Instance.getImportBillDetailList(importBill.MaDonNhapHang.ToString());
-
-                    oldImportBillDetailList = oldImportBillDetailList.FindAll(
-                        (oldImportBillDetail) =>
-                        {
-                            foreach (ImportBillDetailDTO importBillDetail in importBillDetailList)
-                            {
-                                if (importBillDetail.MaDon == oldImportBillDetail.MaDon
-                                    && importBillDetail.MaSach == oldImportBillDetail.MaSach
-                                )
-                                {
-                                    return false;
-                                }
-                            }
-
-                            return true;
-                        }
-                    );
-
-                    foreach (ImportBillDetailDTO importBillDetail in importBillDetailList)
-                    {
-                        if (ImportBillDAO.Instance.getImportBillDetail(
-                            importBillDetail.MaDon.ToString(),
-                            importBillDetail.MaSach.ToString()
-                         ) == null)
-                        {
-                            ImportBillDAO.Instance.createImportBillDetail(importBillDetail);
-                            continue;
-                        }
-
-                        ImportBillDAO.Instance.updateImportBillDetail(importBillDetail);
-                    }
-
-                    foreach (ImportBillDetailDTO importBillDetail in oldImportBillDetailList)
-                    {
-                        ImportBillDAO.Instance.deleteImportBillDetail(importBillDetail.MaDon.ToString(), importBillDetail.MaSach.ToString());
-                    }
-                }
-
-                return true;
-            }
-            catch
-            {
-                return false;
-            }
-        }
-
 
         public bool insert(ImportBillDTO importBill)
         {

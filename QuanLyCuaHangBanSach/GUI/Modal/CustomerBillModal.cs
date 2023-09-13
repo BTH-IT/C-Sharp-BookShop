@@ -11,23 +11,22 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
     public partial class CustomerBillModal : Form
     {
         public bool isSubmitSuccess = false;
-        private CustomerBillDTO customerBill;
         private List<CustomerBillDetailDTO> customerBillDetailList;
-        private List<CustomerBillDetailDTO> customerBillDetailListTemp = new List<CustomerBillDetailDTO>();
+        private int staffId;
 
-        public CustomerBillModal(int customerBillId)
+        public CustomerBillModal(int staffId)
         {
             InitializeComponent();
 
-            this.customerBill = CustomerBillBUS.Instance.getById(customerBillId.ToString());
-            this.customerBillDetailList = CustomerBillBUS.Instance.getCustomerBillDetailList(customerBillId.ToString());
+
+            this.staffId = staffId;
         }
 
         private void loadCustomerCbx()
         {
             List<CustomerDTO> customerList = CustomerBUS.Instance.getAllData();
 
-            customerList.Insert(0, new CustomerDTO(0, "", "Chọn khách hàng", "", 0));
+            customerList.Insert(0, new CustomerDTO(0, "", "Chọn khách hàng", "", 0, 0));
 
             this.customerCbx.ValueMember = "Ma";
             this.customerCbx.DisplayMember = "SoDienThoai";
@@ -36,25 +35,12 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             this.customerCbx.SelectedIndex = 0;
         }
 
-        private void loadStaffCbx()
-        {
-            List<StaffDTO> staffList = StaffBUS.Instance.getAllData();
-
-            staffList.Insert(0, new StaffDTO(0, "Chọn nhân viên", "", "", 0, 0, ""));
-
-            this.staffCbx.ValueMember = "Ma";
-            this.staffCbx.DisplayMember = "Ten";
-            this.staffCbx.DataSource = staffList;
-
-            this.staffCbx.SelectedIndex = 0;
-        }
-
         private void loadSaleCbx()
         {
             List<SaleDTO> saleList = SaleBUS.Instance.getAllData();
 
-            saleList.Insert(0, new SaleDTO(0, "Chọn khuyến mãi", 0, new DateTime(), new DateTime()));
-            saleList.Insert(1, new SaleDTO(-1, "Không có khuyến mãi", 0, new DateTime(), new DateTime()));
+            saleList.Insert(0, new SaleDTO(-1, "Chọn khuyến mãi", 0, new DateTime(), new DateTime(), 0));
+            saleList.Insert(1, new SaleDTO(0, "Không có khuyến mãi", 0, new DateTime(), new DateTime(), 0));
 
             this.saleCbx.ValueMember = "MaKhuyenMai";
             this.saleCbx.DisplayMember = "TenKhuyenMai";
@@ -207,31 +193,21 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
         {
             this.loadCustomerBillDetailList();
             this.loadCustomerCbx();
-            this.loadStaffCbx();
             this.loadSaleCbx();
 
-            this.customerCbx.SelectedValue = customerBill.MaKhachHang;
-            this.staffCbx.SelectedValue = customerBill.MaNhanVien;
-            this.saleCbx.SelectedValue = customerBill.MaKhuyenMai;
+            this.customerCbx.SelectedValue = 0;
+            this.saleCbx.SelectedValue = 0;
         }
 
         private void gunaButton1_Click(object sender, EventArgs e)
         {
-            using (AddBookToCustomerBillModal addBookToBillModal = new AddBookToCustomerBillModal(customerBill))
+            using (AddBookToCustomerBillModal addBookToBillModal = new AddBookToCustomerBillModal(customerBillDetailList))
             {
                 addBookToBillModal.ShowDialog();
 
 
                 foreach (CustomerBillDetailDTO customerBillDetail in addBookToBillModal.selectedCustomerBillDetailList)
                 {
-                    this.customerBillDetailListTemp.Add(
-                        new CustomerBillDetailDTO(
-                            customerBillDetail.MaDon, 
-                            customerBillDetail.MaSach, 
-                            customerBillDetail.SoLuong, 
-                            customerBillDetail.DonGia)
-                    );
-
                     int idx = this.customerBillDetailList.FindIndex(
                         book => book.MaSach == customerBillDetail.MaSach
                     );
@@ -258,45 +234,54 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             );
 
             bool isCheckCbx2 = CustomValidation.Instance.checkCombobox(
-                this.staffCbx,
-                this.errorStaffMsg,
-                new string[] { "required" }
-            );
-
-            bool isCheckCbx3 = CustomValidation.Instance.checkCombobox(
                 this.saleCbx,
                 this.errorSaleMsg,
                 new string[] { "required" }
             );
 
-            return isCheckCbx1 && isCheckCbx2 && isCheckCbx3;
+            return isCheckCbx1 && isCheckCbx2;
         }
 
         private void submitBtn_Click(object sender, EventArgs e)
         {
             bool isValid = this.validate();
 
-            if (this.customerBill == null || !isValid) return;
+            if (!isValid) return;
 
-            this.customerBill.TongTien = Convert.ToDouble(this.totalPriceTxt.Text);
-            this.customerBill.MaNhanVien = Convert.ToInt32(this.staffCbx.SelectedValue);
-            this.customerBill.MaKhachHang = Convert.ToInt32(this.customerCbx.SelectedValue);
-            this.customerBill.MaKhuyenMai = Convert.ToInt32(this.saleCbx.SelectedValue);
+            CustomerBillDTO customerBill = new CustomerBillDTO();
 
-            if (CustomerBillBUS.Instance.updateBillAndBillDetail(
-                this.customerBill, 
-                this.customerBillDetailList)
-            )
+            customerBill.TongTien = Convert.ToDouble(this.totalPriceTxt.Text);
+            customerBill.MaNhanVien = this.staffId;
+            customerBill.MaKhachHang = Convert.ToInt32(this.customerCbx.SelectedValue);
+            customerBill.MaKhuyenMai = Convert.ToInt32(this.saleCbx.SelectedValue);
+            customerBill.NgayLap = new DateTime();
+
+            CustomerBillDTO newCustomerBill = CustomerBillBUS.Instance.insertReturnBill(customerBill);
+
+            if (newCustomerBill == null)
             {
+                
+                MessageBox.Show("Failure");
+                this.isSubmitSuccess = false;
+            }
+            else
+            {
+                foreach (CustomerBillDetailDTO customerBillDetail in this.customerBillDetailList)
+                {
+                    CustomerBillDetailDTO newCustomerBillDetail = new CustomerBillDetailDTO(
+                        newCustomerBill.MaDonKhachHang,
+                        customerBillDetail.MaSach,
+                        customerBillDetail.SoLuong,
+                        customerBillDetail.DonGia
+                    );
+
+                    CustomerBillBUS.Instance.createCustomerBillDetail(newCustomerBillDetail);
+                }
+
                 MessageBox.Show("Success");
 
                 this.isSubmitSuccess = true;
                 this.Close();
-            }
-            else
-            {
-                MessageBox.Show("Failure");
-                this.isSubmitSuccess = false;
             }
             
         }
@@ -308,14 +293,6 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
         private void CustomerBillModal_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (!this.isSubmitSuccess) {
-                foreach (CustomerBillDetailDTO customerBillDetail in this.customerBillDetailListTemp)
-                {
-                    BookDTO book = BookBUS.Instance.getById(customerBillDetail.MaSach.ToString());
-                    book.SoLuongConLai += customerBillDetail.SoLuong;
-                    BookBUS.Instance.update(book);
-                }
-            }
         }
     }
 }

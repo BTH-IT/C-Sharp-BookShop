@@ -42,7 +42,6 @@
             this.exportBtn = new Guna.UI.WinForms.GunaAdvenceButton();
             this.refreshBtn = new Guna.UI.WinForms.GunaAdvenceButton();
             this.deleteBtn = new Guna.UI.WinForms.GunaAdvenceButton();
-            this.editBtn = new Guna.UI.WinForms.GunaAdvenceButton();
             this.addBtn = new Guna.UI.WinForms.GunaAdvenceButton();
             this.dgvCustomerBill = new Guna.UI.WinForms.GunaDataGridView();
             this.Column9 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
@@ -159,7 +158,6 @@
             this.panel1.Controls.Add(this.exportBtn);
             this.panel1.Controls.Add(this.refreshBtn);
             this.panel1.Controls.Add(this.deleteBtn);
-            this.panel1.Controls.Add(this.editBtn);
             this.panel1.Controls.Add(this.addBtn);
             this.panel1.Location = new System.Drawing.Point(12, 836);
             this.panel1.Name = "panel1";
@@ -298,39 +296,6 @@
             this.deleteBtn.Text = "Xóa";
             this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
             // 
-            // editBtn
-            // 
-            this.editBtn.AnimationHoverSpeed = 0.07F;
-            this.editBtn.AnimationSpeed = 0.03F;
-            this.editBtn.BackColor = System.Drawing.Color.Transparent;
-            this.editBtn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.editBtn.BorderColor = System.Drawing.Color.Black;
-            this.editBtn.CheckedBaseColor = System.Drawing.Color.Gray;
-            this.editBtn.CheckedBorderColor = System.Drawing.Color.Black;
-            this.editBtn.CheckedForeColor = System.Drawing.Color.White;
-            this.editBtn.CheckedImage = ((System.Drawing.Image)(resources.GetObject("editBtn.CheckedImage")));
-            this.editBtn.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.editBtn.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.editBtn.FocusedColor = System.Drawing.Color.Empty;
-            this.editBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.editBtn.ForeColor = System.Drawing.Color.White;
-            this.editBtn.Image = ((System.Drawing.Image)(resources.GetObject("editBtn.Image")));
-            this.editBtn.ImageSize = new System.Drawing.Size(20, 20);
-            this.editBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.editBtn.Location = new System.Drawing.Point(1167, 6);
-            this.editBtn.Name = "editBtn";
-            this.editBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.editBtn.OnHoverBorderColor = System.Drawing.Color.Transparent;
-            this.editBtn.OnHoverForeColor = System.Drawing.Color.White;
-            this.editBtn.OnHoverImage = null;
-            this.editBtn.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.editBtn.OnPressedColor = System.Drawing.Color.Black;
-            this.editBtn.Radius = 6;
-            this.editBtn.Size = new System.Drawing.Size(113, 42);
-            this.editBtn.TabIndex = 5;
-            this.editBtn.Text = "Chỉnh sửa";
-            this.editBtn.Click += new System.EventHandler(this.editBtn_Click);
-            // 
             // addBtn
             // 
             this.addBtn.AnimationHoverSpeed = 0.07F;
@@ -350,7 +315,7 @@
             this.addBtn.Image = ((System.Drawing.Image)(resources.GetObject("addBtn.Image")));
             this.addBtn.ImageSize = new System.Drawing.Size(20, 20);
             this.addBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.addBtn.Location = new System.Drawing.Point(1044, 6);
+            this.addBtn.Location = new System.Drawing.Point(1163, 6);
             this.addBtn.Name = "addBtn";
             this.addBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.addBtn.OnHoverBorderColor = System.Drawing.Color.Transparent;
@@ -857,7 +822,6 @@
         private Guna.UI.WinForms.GunaAdvenceButton exportBtn;
         private Guna.UI.WinForms.GunaAdvenceButton refreshBtn;
         private Guna.UI.WinForms.GunaAdvenceButton deleteBtn;
-        private Guna.UI.WinForms.GunaAdvenceButton editBtn;
         private Guna.UI.WinForms.GunaAdvenceButton addBtn;
         private Guna.UI.WinForms.GunaDataGridView dgvCustomerBill;
         private System.Windows.Forms.Panel line1;
