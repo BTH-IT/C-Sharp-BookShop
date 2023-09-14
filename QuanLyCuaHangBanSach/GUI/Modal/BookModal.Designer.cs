@@ -55,11 +55,6 @@
             this.errorBookTypeMsg = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.bookTypeCbx = new Guna.UI.WinForms.GunaComboBox();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.remainTxt = new Guna.UI2.WinForms.Guna2TextBox();
-            this.errorRemainMsg = new System.Windows.Forms.Label();
-            this.remainLine = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.errorAuthorMsg = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -70,23 +65,22 @@
             this.nameLine = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.gradientPanel1 = new QuanLyCuaHangBanSach.GradientPanel();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.errorImageMsg = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel12.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.panel10.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
-            this.gradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -116,7 +110,7 @@
             this.cancelBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.cancelBtn.Image = null;
             this.cancelBtn.ImageSize = new System.Drawing.Size(20, 20);
-            this.cancelBtn.Location = new System.Drawing.Point(388, 691);
+            this.cancelBtn.Location = new System.Drawing.Point(388, 565);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.cancelBtn.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
@@ -147,7 +141,7 @@
             this.submitBtn.ForeColor = System.Drawing.Color.White;
             this.submitBtn.Image = null;
             this.submitBtn.ImageSize = new System.Drawing.Size(20, 20);
-            this.submitBtn.Location = new System.Drawing.Point(634, 691);
+            this.submitBtn.Location = new System.Drawing.Point(634, 565);
             this.submitBtn.Name = "submitBtn";
             this.submitBtn.OnHoverBaseColor = System.Drawing.Color.White;
             this.submitBtn.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
@@ -168,9 +162,9 @@
             this.panel12.Controls.Add(this.errorPublishYearMsg);
             this.panel12.Controls.Add(this.publishYearLine);
             this.panel12.Controls.Add(this.label10);
-            this.panel12.Location = new System.Drawing.Point(603, 285);
+            this.panel12.Location = new System.Drawing.Point(3, 285);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(594, 88);
+            this.panel12.Size = new System.Drawing.Size(594, 193);
             this.panel12.TabIndex = 11;
             // 
             // publishYearTxt
@@ -236,7 +230,7 @@
             this.panel7.Controls.Add(this.errorImportPriceMsg);
             this.panel7.Controls.Add(this.importPriceLine);
             this.panel7.Controls.Add(this.label8);
-            this.panel7.Location = new System.Drawing.Point(3, 285);
+            this.panel7.Location = new System.Drawing.Point(603, 191);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(594, 88);
             this.panel7.TabIndex = 10;
@@ -303,7 +297,7 @@
             this.panel6.Controls.Add(this.errorPublisherMsg);
             this.panel6.Controls.Add(this.label18);
             this.panel6.Controls.Add(this.publisherCbx);
-            this.panel6.Location = new System.Drawing.Point(603, 191);
+            this.panel6.Location = new System.Drawing.Point(3, 191);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(594, 88);
             this.panel6.TabIndex = 2;
@@ -347,7 +341,7 @@
             this.publisherCbx.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.publisherCbx.OnHoverItemForeColor = System.Drawing.Color.White;
             this.publisherCbx.Radius = 6;
-            this.publisherCbx.Size = new System.Drawing.Size(408, 36);
+            this.publisherCbx.Size = new System.Drawing.Size(414, 36);
             this.publisherCbx.TabIndex = 32;
             this.publisherCbx.TabStop = false;
             this.publisherCbx.SelectedIndexChanged += new System.EventHandler(this.publisherCbx_SelectedIndexChanged);
@@ -359,7 +353,7 @@
             this.panel4.Controls.Add(this.errorSellPriceMsg);
             this.panel4.Controls.Add(this.sellPriceLine);
             this.panel4.Controls.Add(this.label6);
-            this.panel4.Location = new System.Drawing.Point(3, 191);
+            this.panel4.Location = new System.Drawing.Point(603, 97);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(594, 88);
             this.panel4.TabIndex = 9;
@@ -426,7 +420,7 @@
             this.panel3.Controls.Add(this.errorBookTypeMsg);
             this.panel3.Controls.Add(this.label16);
             this.panel3.Controls.Add(this.bookTypeCbx);
-            this.panel3.Location = new System.Drawing.Point(603, 97);
+            this.panel3.Location = new System.Drawing.Point(3, 97);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(594, 88);
             this.panel3.TabIndex = 1;
@@ -470,79 +464,11 @@
             this.bookTypeCbx.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.bookTypeCbx.OnHoverItemForeColor = System.Drawing.Color.White;
             this.bookTypeCbx.Radius = 6;
-            this.bookTypeCbx.Size = new System.Drawing.Size(408, 36);
+            this.bookTypeCbx.Size = new System.Drawing.Size(414, 36);
             this.bookTypeCbx.TabIndex = 29;
             this.bookTypeCbx.TabStop = false;
             this.bookTypeCbx.SelectedIndexChanged += new System.EventHandler(this.bookTypeCbx_SelectedIndexChanged);
             this.bookTypeCbx.Click += new System.EventHandler(this.bookTypeCbx_Click);
-            // 
-            // panel10
-            // 
-            this.panel10.Controls.Add(this.remainTxt);
-            this.panel10.Controls.Add(this.errorRemainMsg);
-            this.panel10.Controls.Add(this.remainLine);
-            this.panel10.Controls.Add(this.label4);
-            this.panel10.Location = new System.Drawing.Point(3, 97);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(594, 88);
-            this.panel10.TabIndex = 1;
-            // 
-            // remainTxt
-            // 
-            this.remainTxt.BackColor = System.Drawing.Color.Transparent;
-            this.remainTxt.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
-            this.remainTxt.BorderThickness = 0;
-            this.remainTxt.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.remainTxt.DefaultText = "";
-            this.remainTxt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.remainTxt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.remainTxt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.remainTxt.DisabledState.Parent = this.remainTxt;
-            this.remainTxt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.remainTxt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.remainTxt.FocusedState.Parent = this.remainTxt;
-            this.remainTxt.Font = new System.Drawing.Font("#9Slide03 Cabin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.remainTxt.ForeColor = System.Drawing.Color.Black;
-            this.remainTxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.remainTxt.HoverState.Parent = this.remainTxt;
-            this.remainTxt.Location = new System.Drawing.Point(149, 7);
-            this.remainTxt.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.remainTxt.Name = "remainTxt";
-            this.remainTxt.PasswordChar = '\0';
-            this.remainTxt.PlaceholderText = "Nhập số lượng còn lại";
-            this.remainTxt.SelectedText = "";
-            this.remainTxt.ShadowDecoration.Parent = this.remainTxt;
-            this.remainTxt.Size = new System.Drawing.Size(425, 36);
-            this.remainTxt.TabIndex = 33;
-            this.remainTxt.TextChanged += new System.EventHandler(this.remainTxt_TextChanged);
-            // 
-            // errorRemainMsg
-            // 
-            this.errorRemainMsg.AutoSize = true;
-            this.errorRemainMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed SemiB", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.errorRemainMsg.ForeColor = System.Drawing.Color.Red;
-            this.errorRemainMsg.Location = new System.Drawing.Point(163, 49);
-            this.errorRemainMsg.Name = "errorRemainMsg";
-            this.errorRemainMsg.Size = new System.Drawing.Size(0, 30);
-            this.errorRemainMsg.TabIndex = 7;
-            // 
-            // remainLine
-            // 
-            this.remainLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(212)))), ((int)(((byte)(191)))));
-            this.remainLine.Location = new System.Drawing.Point(160, 45);
-            this.remainLine.Name = "remainLine";
-            this.remainLine.Size = new System.Drawing.Size(414, 1);
-            this.remainLine.TabIndex = 8;
-            // 
-            // label4
-            // 
-            this.label4.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label4.Location = new System.Drawing.Point(3, 3);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(151, 49);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Số lượng còn lại:";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panel2
             // 
@@ -593,7 +519,7 @@
             this.authorCbx.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.authorCbx.OnHoverItemForeColor = System.Drawing.Color.White;
             this.authorCbx.Radius = 6;
-            this.authorCbx.Size = new System.Drawing.Size(408, 36);
+            this.authorCbx.Size = new System.Drawing.Size(414, 36);
             this.authorCbx.TabIndex = 26;
             this.authorCbx.TabStop = false;
             this.authorCbx.SelectedIndexChanged += new System.EventHandler(this.authorCbx_SelectedIndexChanged);
@@ -673,40 +599,26 @@
             this.flowLayoutPanel1.AutoScrollMargin = new System.Drawing.Size(10, 10);
             this.flowLayoutPanel1.Controls.Add(this.panel1);
             this.flowLayoutPanel1.Controls.Add(this.panel2);
-            this.flowLayoutPanel1.Controls.Add(this.panel10);
             this.flowLayoutPanel1.Controls.Add(this.panel3);
             this.flowLayoutPanel1.Controls.Add(this.panel4);
             this.flowLayoutPanel1.Controls.Add(this.panel6);
             this.flowLayoutPanel1.Controls.Add(this.panel7);
             this.flowLayoutPanel1.Controls.Add(this.panel12);
-            this.flowLayoutPanel1.Controls.Add(this.gradientPanel1);
+            this.flowLayoutPanel1.Controls.Add(this.panel5);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(11, 47);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1200, 638);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1200, 485);
             this.flowLayoutPanel1.TabIndex = 4;
-            // 
-            // gradientPanel1
-            // 
-            this.gradientPanel1.ColorLeft = System.Drawing.Color.Empty;
-            this.gradientPanel1.ColorRight = System.Drawing.Color.Empty;
-            this.gradientPanel1.Controls.Add(this.guna2PictureBox1);
-            this.gradientPanel1.Controls.Add(this.errorImageMsg);
-            this.gradientPanel1.Controls.Add(this.label12);
-            this.gradientPanel1.Controls.Add(this.guna2PictureBox2);
-            this.gradientPanel1.Location = new System.Drawing.Point(3, 379);
-            this.gradientPanel1.Name = "gradientPanel1";
-            this.gradientPanel1.Size = new System.Drawing.Size(1194, 249);
-            this.gradientPanel1.TabIndex = 0;
             // 
             // guna2PictureBox1
             // 
             this.guna2PictureBox1.BorderRadius = 16;
             this.guna2PictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
-            this.guna2PictureBox1.Location = new System.Drawing.Point(489, 48);
+            this.guna2PictureBox1.Location = new System.Drawing.Point(289, 4);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
             this.guna2PictureBox1.ShadowDecoration.Parent = this.guna2PictureBox1;
-            this.guna2PictureBox1.Size = new System.Drawing.Size(217, 163);
+            this.guna2PictureBox1.Size = new System.Drawing.Size(145, 145);
             this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2PictureBox1.TabIndex = 13;
             this.guna2PictureBox1.TabStop = false;
@@ -717,42 +629,53 @@
             this.errorImageMsg.AutoSize = true;
             this.errorImageMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed SemiB", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.errorImageMsg.ForeColor = System.Drawing.Color.Red;
-            this.errorImageMsg.Location = new System.Drawing.Point(494, 213);
+            this.errorImageMsg.Location = new System.Drawing.Point(165, 157);
             this.errorImageMsg.Name = "errorImageMsg";
             this.errorImageMsg.Size = new System.Drawing.Size(0, 30);
             this.errorImageMsg.TabIndex = 11;
             this.errorImageMsg.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label12
-            // 
-            this.label12.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label12.Location = new System.Drawing.Point(484, 11);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(222, 32);
-            this.label12.TabIndex = 9;
-            this.label12.Text = "Hình ảnh";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // guna2PictureBox2
             // 
             this.guna2PictureBox2.BorderRadius = 16;
             this.guna2PictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.guna2PictureBox2.InitialImage = null;
-            this.guna2PictureBox2.Location = new System.Drawing.Point(489, 47);
+            this.guna2PictureBox2.Location = new System.Drawing.Point(289, 3);
             this.guna2PictureBox2.Name = "guna2PictureBox2";
             this.guna2PictureBox2.ShadowDecoration.Parent = this.guna2PictureBox2;
-            this.guna2PictureBox2.Size = new System.Drawing.Size(217, 163);
+            this.guna2PictureBox2.Size = new System.Drawing.Size(145, 145);
             this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2PictureBox2.TabIndex = 14;
             this.guna2PictureBox2.TabStop = false;
             this.guna2PictureBox2.Visible = false;
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.errorImageMsg);
+            this.panel5.Controls.Add(this.label2);
+            this.panel5.Controls.Add(this.guna2PictureBox1);
+            this.panel5.Controls.Add(this.guna2PictureBox2);
+            this.panel5.Location = new System.Drawing.Point(603, 285);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(594, 193);
+            this.panel5.TabIndex = 34;
+            // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label2.Location = new System.Drawing.Point(3, 7);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(151, 49);
+            this.label2.TabIndex = 34;
+            this.label2.Text = "Hình ảnh:";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // BookModal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1222, 753);
+            this.ClientSize = new System.Drawing.Size(1222, 637);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.submitBtn);
             this.Controls.Add(this.cancelBtn);
@@ -774,17 +697,15 @@
             this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            this.panel10.ResumeLayout(false);
-            this.panel10.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
-            this.gradientPanel1.ResumeLayout(false);
-            this.gradientPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -809,18 +730,12 @@
         private System.Windows.Forms.Panel sellPriceLine;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.Label errorRemainMsg;
-        private System.Windows.Forms.Panel remainLine;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label errorBookNameMsg;
         private System.Windows.Forms.Panel nameLine;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private GradientPanel gradientPanel1;
-        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label errorImageMsg;
         private Guna.UI.WinForms.GunaComboBox authorCbx;
         private System.Windows.Forms.Label errorAuthorMsg;
@@ -835,8 +750,9 @@
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
         private Guna.UI2.WinForms.Guna2TextBox importPriceTxt;
         private Guna.UI2.WinForms.Guna2TextBox sellPriceTxt;
-        private Guna.UI2.WinForms.Guna2TextBox remainTxt;
         private Guna.UI2.WinForms.Guna2TextBox bookNameTxt;
         private Guna.UI2.WinForms.Guna2TextBox publishYearTxt;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Label label2;
     }
 }

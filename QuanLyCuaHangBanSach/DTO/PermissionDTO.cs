@@ -22,7 +22,7 @@ namespace QuanLyCuaHangBanSach.DTO
         {
             this.MaQuyenHang = (int)row["maQuyenHang"];
             this.TenQuyenHang = row["tenQuyenHang"].ToString();
-            this.TrangThai = Convert.ToBoolean(row["trangThai"].ToString());
+            this.TrangThai = Convert.ToBoolean(row["trangThai"]);
         }
     }
 }

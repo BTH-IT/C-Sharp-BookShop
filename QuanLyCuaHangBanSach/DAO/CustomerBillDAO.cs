@@ -129,11 +129,7 @@ namespace QuanLyCuaHangBanSach.DAO
             // xóa số lượng còn lại của sách
             if (rowChanged > 0)
             {
-                BookDTO book = BookBUS.Instance.getById(data.MaSach.ToString());
-
-                book.SoLuongConLai -= data.SoLuong;
-
-                return BookBUS.Instance.update(book);
+                return BookBUS.Instance.deleteBookAmount(data.MaSach.ToString(), data.SoLuong);
             }
 
             return rowChanged > 0;

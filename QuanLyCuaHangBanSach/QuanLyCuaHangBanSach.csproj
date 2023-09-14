@@ -415,6 +415,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BUS\AuthDetailBUS.cs" />
+    <Compile Include="BUS\CustomerTypeBUS.cs" />
     <Compile Include="BUS\CustomerRefundBillBUS.cs" />
     <Compile Include="BUS\PaymentBillBUS.cs" />
     <Compile Include="BUS\ImportRefundBillBUS.cs" />
@@ -437,6 +438,7 @@
     </Compile>
     <Compile Include="CustomValidation.cs" />
     <Compile Include="DAO\AuthDetailDAO.cs" />
+    <Compile Include="DAO\CustomerTypeDAO.cs" />
     <Compile Include="DAO\PaymentBillDAO.cs" />
     <Compile Include="DAO\ImportRefundBillDAO.cs" />
     <Compile Include="DAO\CustomerRefundBillDAO.cs" />
@@ -463,7 +465,7 @@
     <Compile Include="DTO\RefundBillDTO.cs" />
     <Compile Include="DTO\SupplierDTO.cs" />
     <Compile Include="DTO\SaleDTO.cs" />
-    <Compile Include="DTO\BillDetailDTO .cs" />
+    <Compile Include="DTO\BillDetailDTO.cs" />
     <Compile Include="DTO\BillDTO.cs" />
     <Compile Include="DTO\CustomerBillDetailDTO.cs" />
     <Compile Include="DTO\StaffDTO.cs" />
@@ -536,6 +538,24 @@
     <Compile Include="GUI\Auth\SendCodeGUI.Designer.cs">
       <DependentUpon>SendCodeGUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Manager\PaymentBillManageGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Manager\PaymentBillManageGUI.Designer.cs">
+      <DependentUpon>PaymentBillManageGUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Manager\PermissionManageGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Manager\PermissionManageGUI.Designer.cs">
+      <DependentUpon>PermissionManageGUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Manager\PositionManageGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Manager\PositionManageGUI.Designer.cs">
+      <DependentUpon>PositionManageGUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Modal\AddBookToCustomerBillModal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -547,6 +567,12 @@
     </Compile>
     <Compile Include="GUI\Modal\AddBookToImportBillModal.Designer.cs">
       <DependentUpon>AddBookToImportBillModal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modal\AuthorizeModal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Modal\AuthorizeModal.Designer.cs">
+      <DependentUpon>AuthorizeModal.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modal\BookModal.cs">
       <SubType>Form</SubType>
@@ -565,6 +591,18 @@
     </Compile>
     <Compile Include="GUI\Modal\ImportBillModal.Designer.cs">
       <DependentUpon>ImportBillModal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modal\PermissionModal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Modal\PermissionModal.Designer.cs">
+      <DependentUpon>PermissionModal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modal\PositionModal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Modal\PositionModal.Designer.cs">
+      <DependentUpon>PositionModal.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modal\ScannerModal.cs">
       <SubType>Form</SubType>
@@ -597,6 +635,12 @@
     </Compile>
     <Compile Include="GUI\test.Designer.cs">
       <DependentUpon>test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UserControls\AuthorizeCkb.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UserControls\AuthorizeCkb.Designer.cs">
+      <DependentUpon>AuthorizeCkb.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\UserControls\BookBill.cs">
       <SubType>UserControl</SubType>
@@ -656,11 +700,23 @@
     <EmbeddedResource Include="GUI\Auth\SendCodeGUI.resx">
       <DependentUpon>SendCodeGUI.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Manager\PaymentBillManageGUI.resx">
+      <DependentUpon>PaymentBillManageGUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Manager\PermissionManageGUI.resx">
+      <DependentUpon>PermissionManageGUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Manager\PositionManageGUI.resx">
+      <DependentUpon>PositionManageGUI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Modal\AddBookToCustomerBillModal.resx">
       <DependentUpon>AddBookToCustomerBillModal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Modal\AddBookToImportBillModal.resx">
       <DependentUpon>AddBookToImportBillModal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Modal\AuthorizeModal.resx">
+      <DependentUpon>AuthorizeModal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Modal\BookModal.resx">
       <DependentUpon>BookModal.cs</DependentUpon>
@@ -670,6 +726,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Modal\ImportBillModal.resx">
       <DependentUpon>ImportBillModal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Modal\PermissionModal.resx">
+      <DependentUpon>PermissionModal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Modal\PositionModal.resx">
+      <DependentUpon>PositionModal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Modal\ScannerModal.resx">
       <DependentUpon>ScannerModal.cs</DependentUpon>
@@ -685,6 +747,9 @@
     <EmbeddedResource Include="GUI\test.resx">
       <DependentUpon>test.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UserControls\AuthorizeCkb.resx">
+      <DependentUpon>AuthorizeCkb.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\UserControls\BookBill.resx">
       <DependentUpon>BookBill.cs</DependentUpon>
     </EmbeddedResource>
@@ -696,9 +761,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\UserControls\PhoneSearchResultControl.resx">
       <DependentUpon>PhoneSearchResultControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Vendor\VendorGUI.resx">
-      <DependentUpon>VendorGUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

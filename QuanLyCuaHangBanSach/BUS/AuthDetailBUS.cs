@@ -47,6 +47,11 @@ namespace QuanLyCuaHangBanSach.BUS
             return AuthDetailDAO.Instance.getById(positionId, permissionId);
         }
 
+        public List<AuthDetailDTO> getByPositionId(string positionId)
+        {
+            return AuthDetailDAO.Instance.getByPositionId(positionId);
+        }
+
         public bool insert(AuthDetailDTO authDetail)
         {
             return AuthDetailDAO.Instance.insert(authDetail);

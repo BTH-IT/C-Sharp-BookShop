@@ -116,8 +116,8 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         {
             List<SaleDTO> saleList = SaleBUS.Instance.getAllData();
 
-            saleList.Insert(0, new SaleDTO(0, "Tất cả khuyến mãi", 0, new DateTime(), new DateTime()));
-            saleList.Insert(1, new SaleDTO(-1, "Không có khuyến mãi", 0, new DateTime(), new DateTime()));
+            saleList.Insert(0, new SaleDTO(0, "Tất cả khuyến mãi", 0, new DateTime(), new DateTime(), 0));
+            saleList.Insert(1, new SaleDTO(-1, "Không có khuyến mãi", 0, new DateTime(), new DateTime(), 0));
 
             this.saleCbx.ValueMember = "MaKhuyenMai";
             this.saleCbx.DisplayMember = "TenKhuyenMai";

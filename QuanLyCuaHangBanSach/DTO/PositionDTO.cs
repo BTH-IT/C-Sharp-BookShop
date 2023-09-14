@@ -25,8 +25,7 @@ namespace QuanLyCuaHangBanSach.DTO
             this.MaChucVu = (int)row["maChucVu"];
             this.TenChucVu = row["tenChucVu"].ToString();
             this.MoTa = row["moTa"].ToString();
-            this.TrangThai = Convert.ToBoolean(row["trangThai"].ToString());
+            this.TrangThai = Convert.ToBoolean(row["trangThai"]);
         }
     }
-}
 }

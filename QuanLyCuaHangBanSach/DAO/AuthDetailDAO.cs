@@ -1,4 +1,6 @@
-﻿using System.Data;
+﻿using System.Collections.Generic;
+using System.Data;
+using System.Windows.Documents;
 using MySql.Data.MySqlClient;
 using QuanLyCuaHangBanSach.DTO;
 
@@ -43,6 +45,28 @@ namespace QuanLyCuaHangBanSach.DAO
             AuthDetailDTO authDetail = new AuthDetailDTO(dataTable.Rows[0]);
 
             return authDetail;
+        }
+
+        public List<AuthDetailDTO> getByPositionId(string positionId)
+        {
+            DataTable dataTable = DataProvider.Instance.ExecuteQuery(
+                "SELECT * FROM chitietphanquyen WHERE maChucVu=@maChucVu",
+                new MySqlParameter[] {
+                    new MySqlParameter("@maChucVu", positionId),
+                }
+            );
+
+            if (dataTable.Rows.Count <= 0) return null;
+
+            List<AuthDetailDTO> authDetailDTOs = new List<AuthDetailDTO>();
+
+            foreach (DataRow row in dataTable.Rows)
+            {
+                AuthDetailDTO authDetail = new AuthDetailDTO(row);
+                authDetailDTOs.Add(authDetail);
+            }
+
+            return authDetailDTOs;
         }
 
         public bool insert(AuthDetailDTO data)
