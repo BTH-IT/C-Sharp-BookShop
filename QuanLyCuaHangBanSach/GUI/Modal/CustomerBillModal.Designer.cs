@@ -382,7 +382,6 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tạo đơn khách hàng";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CustomerBillModal_FormClosing);
             this.Load += new System.EventHandler(this.CustomerBillModal_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

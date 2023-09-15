@@ -18,7 +18,6 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
         {
             InitializeComponent();
 
-
             this.staffId = staffId;
         }
 
@@ -254,7 +253,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             customerBill.MaNhanVien = this.staffId;
             customerBill.MaKhachHang = Convert.ToInt32(this.customerCbx.SelectedValue);
             customerBill.MaKhuyenMai = Convert.ToInt32(this.saleCbx.SelectedValue);
-            customerBill.NgayLap = new DateTime();
+            customerBill.NgayLap = DateTime.Now;
 
             CustomerBillDTO newCustomerBill = CustomerBillBUS.Instance.insertReturnBill(customerBill);
 
@@ -289,10 +288,6 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
         private void cancelBtn_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void CustomerBillModal_FormClosing(object sender, FormClosingEventArgs e)
-        {
         }
     }
 }

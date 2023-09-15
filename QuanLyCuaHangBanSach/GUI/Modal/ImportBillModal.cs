@@ -214,7 +214,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             importBill.TongTien = Convert.ToDouble(this.totalPriceTxt.Text);
             importBill.MaNhanVien = this.staffId;
             importBill.MaNhaCungCap = Convert.ToInt32(this.supplierCbx.SelectedValue);
-            importBill.NgayLap = new DateTime();
+            importBill.NgayLap = DateTime.Now;
 
             ImportBillDTO newImportBill = ImportBillBUS.Instance.insertReturnBill(importBill);
 
