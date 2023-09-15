@@ -584,6 +584,7 @@
             // 
             // BookContainer
             // 
+            this.BookContainer.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.BookContainer.AutoScroll = true;
             this.BookContainer.Location = new System.Drawing.Point(102, 146);
             this.BookContainer.Name = "BookContainer";
@@ -604,7 +605,6 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1264, 681);
             this.Controls.Add(this.FilterContainer);
@@ -657,6 +657,7 @@
         private System.Windows.Forms.Label RecipientLb;
         private System.Windows.Forms.FlowLayoutPanel PhoneResultContainer;
         private System.Windows.Forms.Timer checkUser;
+        private System.Windows.Forms.FlowLayoutPanel BookContainer;
         private System.Windows.Forms.FlowLayoutPanel CartContainer;
         private System.Windows.Forms.Label TotalMoneyLb;
         private Guna.UI.WinForms.GunaLineTextBox PhoneInp;

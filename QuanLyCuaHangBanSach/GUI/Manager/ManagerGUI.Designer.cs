@@ -33,14 +33,10 @@
             this.manageContent = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.line1 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
+            this.gunaAdvenceButton5 = new Guna.UI.WinForms.GunaAdvenceButton();
             this.gunaAdvenceButton4 = new Guna.UI.WinForms.GunaAdvenceButton();
             this.gunaAdvenceButton3 = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.gunaAdvenceButton1 = new Guna.UI.WinForms.GunaAdvenceButton();
             this.gunaAdvenceButton2 = new Guna.UI.WinForms.GunaAdvenceButton();
             this.accountBtn = new Guna.UI.WinForms.GunaAdvenceButton();
@@ -55,16 +51,20 @@
             this.authorBtn = new Guna.UI.WinForms.GunaAdvenceButton();
             this.bookBtn = new Guna.UI.WinForms.GunaAdvenceButton();
             this.homeBtn = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.line1 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.gunaCirclePictureBox1 = new Guna.UI.WinForms.GunaCirclePictureBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.gunaAdvenceButton5 = new Guna.UI.WinForms.GunaAdvenceButton();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).BeginInit();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -130,65 +130,39 @@
             this.panel5.Size = new System.Drawing.Size(236, 805);
             this.panel5.TabIndex = 6;
             // 
-            // line1
+            // gunaAdvenceButton5
             // 
-            this.line1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(212)))), ((int)(((byte)(212)))));
-            this.line1.Location = new System.Drawing.Point(0, 78);
-            this.line1.Name = "line1";
-            this.line1.Size = new System.Drawing.Size(236, 1);
-            this.line1.TabIndex = 5;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(115)))), ((int)(((byte)(115)))));
-            this.label3.Location = new System.Drawing.Point(74, 42);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(122, 23);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Nhân viên quản lý";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("#9Slide03 Cabin Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(73, 15);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(149, 26);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Biện Thành Hưng";
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.pictureBox2);
-            this.panel2.Controls.Add(this.pictureBox1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1636, 36);
-            this.panel2.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label1.Font = new System.Drawing.Font("#9Slide03 Cabin", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(38, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(86, 36);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Manager";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.gunaAdvenceButton1);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(0, 753);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(236, 52);
-            this.panel4.TabIndex = 32;
+            this.gunaAdvenceButton5.Animated = true;
+            this.gunaAdvenceButton5.AnimationHoverSpeed = 0.3F;
+            this.gunaAdvenceButton5.AnimationSpeed = 0.5F;
+            this.gunaAdvenceButton5.BackColor = System.Drawing.Color.Transparent;
+            this.gunaAdvenceButton5.BaseColor = System.Drawing.Color.White;
+            this.gunaAdvenceButton5.BorderColor = System.Drawing.Color.Black;
+            this.gunaAdvenceButton5.CheckedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.gunaAdvenceButton5.CheckedBorderColor = System.Drawing.Color.Transparent;
+            this.gunaAdvenceButton5.CheckedForeColor = System.Drawing.Color.White;
+            this.gunaAdvenceButton5.CheckedImage = ((System.Drawing.Image)(resources.GetObject("gunaAdvenceButton5.CheckedImage")));
+            this.gunaAdvenceButton5.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.gunaAdvenceButton5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.gunaAdvenceButton5.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.gunaAdvenceButton5.FocusedColor = System.Drawing.Color.Empty;
+            this.gunaAdvenceButton5.Font = new System.Drawing.Font("#9Slide03 Cabin", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaAdvenceButton5.ForeColor = System.Drawing.Color.Black;
+            this.gunaAdvenceButton5.Image = ((System.Drawing.Image)(resources.GetObject("gunaAdvenceButton5.Image")));
+            this.gunaAdvenceButton5.ImageSize = new System.Drawing.Size(20, 20);
+            this.gunaAdvenceButton5.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.gunaAdvenceButton5.Location = new System.Drawing.Point(17, 603);
+            this.gunaAdvenceButton5.Name = "gunaAdvenceButton5";
+            this.gunaAdvenceButton5.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.gunaAdvenceButton5.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.gunaAdvenceButton5.OnHoverForeColor = System.Drawing.Color.White;
+            this.gunaAdvenceButton5.OnHoverImage = ((System.Drawing.Image)(resources.GetObject("gunaAdvenceButton5.OnHoverImage")));
+            this.gunaAdvenceButton5.OnHoverLineColor = System.Drawing.Color.Transparent;
+            this.gunaAdvenceButton5.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaAdvenceButton5.Radius = 8;
+            this.gunaAdvenceButton5.Size = new System.Drawing.Size(205, 40);
+            this.gunaAdvenceButton5.TabIndex = 35;
+            this.gunaAdvenceButton5.Text = "Quyền";
             // 
             // gunaAdvenceButton4
             // 
@@ -206,7 +180,7 @@
             this.gunaAdvenceButton4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.gunaAdvenceButton4.DialogResult = System.Windows.Forms.DialogResult.None;
             this.gunaAdvenceButton4.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaAdvenceButton4.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaAdvenceButton4.Font = new System.Drawing.Font("#9Slide03 Cabin", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaAdvenceButton4.ForeColor = System.Drawing.Color.Black;
             this.gunaAdvenceButton4.Image = ((System.Drawing.Image)(resources.GetObject("gunaAdvenceButton4.Image")));
             this.gunaAdvenceButton4.ImageSize = new System.Drawing.Size(20, 20);
@@ -240,7 +214,7 @@
             this.gunaAdvenceButton3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.gunaAdvenceButton3.DialogResult = System.Windows.Forms.DialogResult.None;
             this.gunaAdvenceButton3.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaAdvenceButton3.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaAdvenceButton3.Font = new System.Drawing.Font("#9Slide03 Cabin", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaAdvenceButton3.ForeColor = System.Drawing.Color.Black;
             this.gunaAdvenceButton3.Image = ((System.Drawing.Image)(resources.GetObject("gunaAdvenceButton3.Image")));
             this.gunaAdvenceButton3.ImageSize = new System.Drawing.Size(20, 20);
@@ -258,6 +232,15 @@
             this.gunaAdvenceButton3.TabIndex = 33;
             this.gunaAdvenceButton3.Text = "Quản lý trả hàng";
             // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.gunaAdvenceButton1);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel4.Location = new System.Drawing.Point(0, 753);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(236, 52);
+            this.panel4.TabIndex = 32;
+            // 
             // gunaAdvenceButton1
             // 
             this.gunaAdvenceButton1.Animated = true;
@@ -274,7 +257,7 @@
             this.gunaAdvenceButton1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.gunaAdvenceButton1.DialogResult = System.Windows.Forms.DialogResult.None;
             this.gunaAdvenceButton1.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaAdvenceButton1.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaAdvenceButton1.Font = new System.Drawing.Font("#9Slide03 Cabin", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaAdvenceButton1.ForeColor = System.Drawing.Color.Black;
             this.gunaAdvenceButton1.Image = ((System.Drawing.Image)(resources.GetObject("gunaAdvenceButton1.Image")));
             this.gunaAdvenceButton1.ImageSize = new System.Drawing.Size(20, 20);
@@ -308,7 +291,7 @@
             this.gunaAdvenceButton2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.gunaAdvenceButton2.DialogResult = System.Windows.Forms.DialogResult.None;
             this.gunaAdvenceButton2.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaAdvenceButton2.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaAdvenceButton2.Font = new System.Drawing.Font("#9Slide03 Cabin", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaAdvenceButton2.ForeColor = System.Drawing.Color.Black;
             this.gunaAdvenceButton2.Image = ((System.Drawing.Image)(resources.GetObject("gunaAdvenceButton2.Image")));
             this.gunaAdvenceButton2.ImageSize = new System.Drawing.Size(20, 20);
@@ -342,7 +325,7 @@
             this.accountBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.accountBtn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.accountBtn.FocusedColor = System.Drawing.Color.Empty;
-            this.accountBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.accountBtn.Font = new System.Drawing.Font("#9Slide03 Cabin", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.accountBtn.ForeColor = System.Drawing.Color.Black;
             this.accountBtn.Image = ((System.Drawing.Image)(resources.GetObject("accountBtn.Image")));
             this.accountBtn.ImageSize = new System.Drawing.Size(20, 20);
@@ -377,7 +360,7 @@
             this.publisherBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.publisherBtn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.publisherBtn.FocusedColor = System.Drawing.Color.Empty;
-            this.publisherBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.publisherBtn.Font = new System.Drawing.Font("#9Slide03 Cabin", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.publisherBtn.ForeColor = System.Drawing.Color.Black;
             this.publisherBtn.Image = ((System.Drawing.Image)(resources.GetObject("publisherBtn.Image")));
             this.publisherBtn.ImageSize = new System.Drawing.Size(20, 20);
@@ -412,7 +395,7 @@
             this.seoBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.seoBtn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.seoBtn.FocusedColor = System.Drawing.Color.Empty;
-            this.seoBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.seoBtn.Font = new System.Drawing.Font("#9Slide03 Cabin", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.seoBtn.ForeColor = System.Drawing.Color.Black;
             this.seoBtn.Image = ((System.Drawing.Image)(resources.GetObject("seoBtn.Image")));
             this.seoBtn.ImageSize = new System.Drawing.Size(20, 20);
@@ -447,7 +430,7 @@
             this.billBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.billBtn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.billBtn.FocusedColor = System.Drawing.Color.Empty;
-            this.billBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.billBtn.Font = new System.Drawing.Font("#9Slide03 Cabin", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.billBtn.ForeColor = System.Drawing.Color.Black;
             this.billBtn.Image = ((System.Drawing.Image)(resources.GetObject("billBtn.Image")));
             this.billBtn.ImageSize = new System.Drawing.Size(20, 20);
@@ -482,7 +465,7 @@
             this.importBilBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.importBilBtn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.importBilBtn.FocusedColor = System.Drawing.Color.Empty;
-            this.importBilBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.importBilBtn.Font = new System.Drawing.Font("#9Slide03 Cabin", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.importBilBtn.ForeColor = System.Drawing.Color.Black;
             this.importBilBtn.Image = ((System.Drawing.Image)(resources.GetObject("importBilBtn.Image")));
             this.importBilBtn.ImageSize = new System.Drawing.Size(20, 20);
@@ -517,7 +500,7 @@
             this.supplierBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.supplierBtn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.supplierBtn.FocusedColor = System.Drawing.Color.Empty;
-            this.supplierBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.supplierBtn.Font = new System.Drawing.Font("#9Slide03 Cabin", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.supplierBtn.ForeColor = System.Drawing.Color.Black;
             this.supplierBtn.Image = ((System.Drawing.Image)(resources.GetObject("supplierBtn.Image")));
             this.supplierBtn.ImageSize = new System.Drawing.Size(20, 20);
@@ -552,7 +535,7 @@
             this.staffBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.staffBtn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.staffBtn.FocusedColor = System.Drawing.Color.Empty;
-            this.staffBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.staffBtn.Font = new System.Drawing.Font("#9Slide03 Cabin", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.staffBtn.ForeColor = System.Drawing.Color.Black;
             this.staffBtn.Image = ((System.Drawing.Image)(resources.GetObject("staffBtn.Image")));
             this.staffBtn.ImageSize = new System.Drawing.Size(20, 20);
@@ -587,7 +570,7 @@
             this.customerBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.customerBtn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.customerBtn.FocusedColor = System.Drawing.Color.Empty;
-            this.customerBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customerBtn.Font = new System.Drawing.Font("#9Slide03 Cabin", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.customerBtn.ForeColor = System.Drawing.Color.Black;
             this.customerBtn.Image = ((System.Drawing.Image)(resources.GetObject("customerBtn.Image")));
             this.customerBtn.ImageSize = new System.Drawing.Size(20, 20);
@@ -622,7 +605,7 @@
             this.bookTypeBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bookTypeBtn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.bookTypeBtn.FocusedColor = System.Drawing.Color.Empty;
-            this.bookTypeBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bookTypeBtn.Font = new System.Drawing.Font("#9Slide03 Cabin", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bookTypeBtn.ForeColor = System.Drawing.Color.Black;
             this.bookTypeBtn.Image = ((System.Drawing.Image)(resources.GetObject("bookTypeBtn.Image")));
             this.bookTypeBtn.ImageSize = new System.Drawing.Size(20, 20);
@@ -657,7 +640,7 @@
             this.authorBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.authorBtn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.authorBtn.FocusedColor = System.Drawing.Color.Empty;
-            this.authorBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.authorBtn.Font = new System.Drawing.Font("#9Slide03 Cabin", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.authorBtn.ForeColor = System.Drawing.Color.Black;
             this.authorBtn.Image = ((System.Drawing.Image)(resources.GetObject("authorBtn.Image")));
             this.authorBtn.ImageSize = new System.Drawing.Size(20, 20);
@@ -692,7 +675,7 @@
             this.bookBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bookBtn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.bookBtn.FocusedColor = System.Drawing.Color.Empty;
-            this.bookBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bookBtn.Font = new System.Drawing.Font("#9Slide03 Cabin", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bookBtn.ForeColor = System.Drawing.Color.Black;
             this.bookBtn.Image = ((System.Drawing.Image)(resources.GetObject("bookBtn.Image")));
             this.bookBtn.ImageSize = new System.Drawing.Size(20, 20);
@@ -728,7 +711,7 @@
             this.homeBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.homeBtn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.homeBtn.FocusedColor = System.Drawing.Color.Empty;
-            this.homeBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.homeBtn.Font = new System.Drawing.Font("#9Slide03 Cabin", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.homeBtn.ForeColor = System.Drawing.Color.Black;
             this.homeBtn.Image = ((System.Drawing.Image)(resources.GetObject("homeBtn.Image")));
             this.homeBtn.ImageSize = new System.Drawing.Size(20, 20);
@@ -747,6 +730,34 @@
             this.homeBtn.Text = "Trang chủ";
             this.homeBtn.Click += new System.EventHandler(this.homeBtn_Click);
             // 
+            // line1
+            // 
+            this.line1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(212)))), ((int)(((byte)(212)))));
+            this.line1.Location = new System.Drawing.Point(0, 78);
+            this.line1.Name = "line1";
+            this.line1.Size = new System.Drawing.Size(236, 1);
+            this.line1.TabIndex = 5;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(115)))), ((int)(((byte)(115)))));
+            this.label3.Location = new System.Drawing.Point(74, 42);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(123, 18);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Nhân viên quản lý";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("#9Slide03 Cabin Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(73, 15);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(149, 26);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Biện Thành Hưng";
+            // 
             // gunaCirclePictureBox1
             // 
             this.gunaCirclePictureBox1.BaseColor = System.Drawing.Color.White;
@@ -758,6 +769,29 @@
             this.gunaCirclePictureBox1.TabIndex = 0;
             this.gunaCirclePictureBox1.TabStop = false;
             this.gunaCirclePictureBox1.UseTransfarantBackground = false;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.pictureBox2);
+            this.panel2.Controls.Add(this.pictureBox1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1636, 36);
+            this.panel2.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label1.Font = new System.Drawing.Font("#9Slide03 Cabin", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(38, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(86, 36);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Manager";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pictureBox2
             // 
@@ -783,40 +817,6 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // gunaAdvenceButton5
-            // 
-            this.gunaAdvenceButton5.Animated = true;
-            this.gunaAdvenceButton5.AnimationHoverSpeed = 0.3F;
-            this.gunaAdvenceButton5.AnimationSpeed = 0.5F;
-            this.gunaAdvenceButton5.BackColor = System.Drawing.Color.Transparent;
-            this.gunaAdvenceButton5.BaseColor = System.Drawing.Color.White;
-            this.gunaAdvenceButton5.BorderColor = System.Drawing.Color.Black;
-            this.gunaAdvenceButton5.CheckedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.gunaAdvenceButton5.CheckedBorderColor = System.Drawing.Color.Transparent;
-            this.gunaAdvenceButton5.CheckedForeColor = System.Drawing.Color.White;
-            this.gunaAdvenceButton5.CheckedImage = ((System.Drawing.Image)(resources.GetObject("gunaAdvenceButton5.CheckedImage")));
-            this.gunaAdvenceButton5.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.gunaAdvenceButton5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.gunaAdvenceButton5.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaAdvenceButton5.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaAdvenceButton5.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaAdvenceButton5.ForeColor = System.Drawing.Color.Black;
-            this.gunaAdvenceButton5.Image = ((System.Drawing.Image)(resources.GetObject("gunaAdvenceButton5.Image")));
-            this.gunaAdvenceButton5.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaAdvenceButton5.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.gunaAdvenceButton5.Location = new System.Drawing.Point(17, 603);
-            this.gunaAdvenceButton5.Name = "gunaAdvenceButton5";
-            this.gunaAdvenceButton5.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.gunaAdvenceButton5.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaAdvenceButton5.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaAdvenceButton5.OnHoverImage = ((System.Drawing.Image)(resources.GetObject("gunaAdvenceButton5.OnHoverImage")));
-            this.gunaAdvenceButton5.OnHoverLineColor = System.Drawing.Color.Transparent;
-            this.gunaAdvenceButton5.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaAdvenceButton5.Radius = 8;
-            this.gunaAdvenceButton5.Size = new System.Drawing.Size(205, 40);
-            this.gunaAdvenceButton5.TabIndex = 35;
-            this.gunaAdvenceButton5.Text = "Quyền";
-            // 
             // ManagerGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
@@ -834,9 +834,9 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel5.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).EndInit();
+            this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
