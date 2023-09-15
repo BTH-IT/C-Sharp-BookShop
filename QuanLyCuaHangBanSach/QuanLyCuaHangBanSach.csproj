@@ -505,9 +505,13 @@
     <Compile Include="GUI\Importer\ImportGUI.Designer.cs">
       <DependentUpon>ImportGUI.cs</DependentUpon>
     </Compile>
+<<<<<<< Updated upstream
     <Compile Include="GUI\Manager\AccountManageGUI.cs">
       <SubType>Form</SubType>
     </Compile>
+=======
+    <Compile Include="GUI\Manager\AccountManageGUI.cs" />
+>>>>>>> Stashed changes
     <Compile Include="GUI\Manager\AccountManageGUI.Designer.cs">
       <DependentUpon>AccountManageGUI.cs</DependentUpon>
     </Compile>
@@ -535,6 +539,7 @@
     <Compile Include="GUI\Manager\CustomerManagerGUI.Designer.cs">
       <DependentUpon>CustomerManagerGUI.cs</DependentUpon>
     </Compile>
+<<<<<<< Updated upstream
     <Compile Include="GUI\Manager\SeoManageGUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -544,6 +549,13 @@
     <Compile Include="GUI\Manager\StaffManageGUI.cs">
       <SubType>Form</SubType>
     </Compile>
+=======
+    <Compile Include="GUI\Manager\SeoManageGUI.cs" />
+    <Compile Include="GUI\Manager\SeoManageGUI.designer.cs">
+      <DependentUpon>SeoManageGUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Manager\StaffManageGUI.cs" />
+>>>>>>> Stashed changes
     <Compile Include="GUI\Manager\StaffManageGUI.designer.cs">
       <DependentUpon>StaffManageGUI.cs</DependentUpon>
     </Compile>
@@ -655,9 +667,13 @@
     <Compile Include="GUI\Modal\SaleModal.designer.cs">
       <DependentUpon>SaleModal.cs</DependentUpon>
     </Compile>
+<<<<<<< Updated upstream
     <Compile Include="GUI\Modal\StaffModal.cs">
       <SubType>Form</SubType>
     </Compile>
+=======
+    <Compile Include="GUI\Modal\StaffModal.cs" />
+>>>>>>> Stashed changes
     <Compile Include="GUI\Modal\StaffModal.designer.cs">
       <DependentUpon>StaffModal.cs</DependentUpon>
     </Compile>
@@ -759,7 +775,7 @@
     <Compile Include="GUI\Vendor\VendorGUI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Vendor\VendorGUI.Designer.cs">
+    <Compile Include="GUI\Vendor\VendorGUI.designer.cs">
       <DependentUpon>VendorGUI.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -890,6 +906,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\UserControls\PhoneSearchResultControl.resx">
       <DependentUpon>PhoneSearchResultControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Vendor\VendorGUI.resx">
+      <DependentUpon>VendorGUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
