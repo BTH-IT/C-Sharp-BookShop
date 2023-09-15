@@ -499,6 +499,12 @@
     <Compile Include="GUI\Auth\LoginGUI.Designer.cs">
       <DependentUpon>LoginGUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Importer\ImportGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Importer\ImportGUI.Designer.cs">
+      <DependentUpon>ImportGUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Manager\BookManageGUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -687,6 +693,15 @@
     <Compile Include="GUI\UserControls\CartProductUserControl.Designer.cs">
       <DependentUpon>CartProductUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\UserControls\FilterUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UserControls\FilterUserControl.Designer.cs">
+      <DependentUpon>FilterUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UserControls\FilterUserControl.Designer.cs">
+      <DependentUpon>FilterUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\UserControls\PhoneSearchResultControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -794,6 +809,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\UserControls\CartProductUserControl.resx">
       <DependentUpon>CartProductUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UserControls\FilterUserControl.resx">
+      <DependentUpon>FilterUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\UserControls\PhoneSearchResultControl.resx">
       <DependentUpon>PhoneSearchResultControl.cs</DependentUpon>
