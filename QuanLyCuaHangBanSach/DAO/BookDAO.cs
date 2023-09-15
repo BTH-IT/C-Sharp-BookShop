@@ -1,7 +1,4 @@
-﻿using System;
 using System.Data;
-using System.Windows.Documents;
-using Google.Protobuf.WellKnownTypes;
 using MySql.Data.MySqlClient;
 using QuanLyCuaHangBanSach.DTO;
 using QuanLyCuaHangBanSach.GUI.UserControls;
@@ -26,9 +23,32 @@ namespace QuanLyCuaHangBanSach.DAO
             private set { BookDAO.instance = value; }
         }
 
+        private DataTable getBookRemain(DataTable dataTable)
+        {
+            dataTable.Columns.Add("soLuongConLai");
+
+            foreach (DataRow row in dataTable.Rows)
+            {
+                DataTable dataTable1 = DataProvider.Instance.ExecuteQuery(
+                    "SELECT COUNT(*) as soLuongConLai FROM chitietsach WHERE maSach=@MaSach;",
+                    new MySqlParameter[] {
+                        new MySqlParameter("@MaSach", row["maSach"])
+                    }
+                );
+
+                row["soLuongConLai"] = dataTable1.Rows[0]["soLuongConLai"];
+            }
+
+            return dataTable;
+        }
+
         
         public DataTable getAll() {
-            return DataProvider.Instance.ExecuteQuery("select * from sach WHERE hienThi = 1;");
+            DataTable dataTable = DataProvider.Instance.ExecuteQuery(
+                "SELECT * FROM sach WHERE hienThi = 1;"
+            );
+
+            return getBookRemain(dataTable);
         }
 
         public BookDTO getById(string id)
@@ -42,74 +62,40 @@ namespace QuanLyCuaHangBanSach.DAO
 
             if (dataTable.Rows.Count <= 0) return null;
 
-            BookDTO account = new BookDTO(dataTable.Rows[0]);
-
-            return account;
-        }
-
-        public DataTable getAllDataFiltered(int SortMode, string Type, string Author, string Publisher)
-        {
-            string sql = $@"SELECT * FROM sach WHERE hienThi = 1";
-            if (!Type.Equals("0"))
-            {
-                sql += " AND maTheLoai=@maTheLoai";
-            }
-            if (!Author.Equals("0"))
-            {
-                sql += " AND maTacGia=@maTacGia";
-            }
-            if (!Publisher.Equals("0"))
-            {
-                sql += " AND maNhaXuatBan=@maNhaXuatBan";
-            }
-            switch (SortMode)
-            {
-                case -1:
-                    sql += ";";
-                    break;
-                case 0:
-                    sql += " ORDER BY giaBan ASC;";
-                    break;
-                case 1:
-                    sql += " ORDER BY giaBan DESC;";
-                    break;
-                case 2:
-                    sql += " ORDER BY tenSach DESC;";
-                    break;
-                case 3:
-                    sql += " ORDER BY tenSach DESC;";
-                    break;
-                default:
-                    sql += ";";
-                    break;
-            }
-
-            return DataProvider.Instance.ExecuteQuery(sql,
+            DataTable dataTable1 = DataProvider.Instance.ExecuteQuery(
+                "SELECT COUNT(*) as soLuongConLai FROM chitietsach WHERE maSach=@MaSach;",
                 new MySqlParameter[] {
-                    new MySqlParameter("@maTheLoai", Type),
-                    new MySqlParameter("@maTacGia", Author),
-                    new MySqlParameter("@maNhaXuatBan", Publisher)
+                    new MySqlParameter("@MaSach", id)
                 }
             );
+
+            dataTable.Columns.Add("soLuongConLai");
+            dataTable.Rows[0]["soLuongConLai"] = dataTable1.Rows[0]["soLuongConLai"];
+
+            BookDTO book = new BookDTO(dataTable.Rows[0]);
+
+            return book;
         }
 
         public DataTable searchData(string value)
         {
             string sql = $@"SELECT * FROM sach WHERE (maSach LIKE @maSach OR tenSach LIKE @tenSach) AND hienThi = 1;";
 
-            return DataProvider.Instance.ExecuteQuery(sql,
+            DataTable dataTable = DataProvider.Instance.ExecuteQuery(sql,
                 new MySqlParameter[] {
                     new MySqlParameter("@maSach", "%" + value + "%"),
                     new MySqlParameter("@tenSach", "%" + value + "%")
                 }
             );
+            
+            return getBookRemain(dataTable);
         }
 
         public bool insert(BookDTO data)
         {
 
-            string sql = $@"INSERT INTO sach (tenSach, hinhAnh, maTheLoai, maTacGia, maNhaXuatBan, soLuongConLai, giaBan, giaNhap, namXuatBan)
-                            VALUES (@tenSach, @hinhAnh, @maTheLoai, @maTacGia, @maNhaXuatBan, @soLuongConLai, @giaBan, @giaNhap, @namXuatBan);";
+            string sql = $@"INSERT INTO sach (tenSach, hinhAnh, maTheLoai, maTacGia, maNhaXuatBan, giaBan, giaNhap, namXuatBan)
+                            VALUES (@tenSach, @hinhAnh, @maTheLoai, @maTacGia, @maNhaXuatBan, @giaBan, @giaNhap, @namXuatBan);";
 
             int rowChanged = DataProvider.Instance.ExecuteNonQuery(sql,
                 new MySqlParameter[] {
@@ -118,7 +104,6 @@ namespace QuanLyCuaHangBanSach.DAO
                     new MySqlParameter("@maTheLoai", data.MaTheLoai),
                     new MySqlParameter("@maTacGia", data.MaTacGia),
                     new MySqlParameter("@maNhaXuatBan", data.MaNhaXuatBan),
-                    new MySqlParameter("@soLuongConLai", data.SoLuongConLai),
                     new MySqlParameter("@giaBan", data.GiaBan),
                     new MySqlParameter("@giaNhap", data.GiaNhap),
                     new MySqlParameter("@namXuatBan", data.NamXuatBan),
@@ -130,7 +115,7 @@ namespace QuanLyCuaHangBanSach.DAO
         public bool update(BookDTO data)
         {
             string sql = $@"UPDATE sach
-                            SET tenSach=@tenSach, hinhAnh=@hinhAnh, maTheLoai=@maTheLoai, maTacGia=@maTacGia, maNhaXuatBan=@maNhaXuatBan, soLuongConLai=@soLuongConLai, giaBan=@giaBan, giaNhap=@giaNhap, namXuatBan=@namXuatBan
+                            SET tenSach=@tenSach, hinhAnh=@hinhAnh, maTheLoai=@maTheLoai, maTacGia=@maTacGia, maNhaXuatBan=@maNhaXuatBan, giaBan=@giaBan, giaNhap=@giaNhap, namXuatBan=@namXuatBan
                             WHERE maSach=@maSach;";
 
             int rowChanged = DataProvider.Instance.ExecuteNonQuery(sql,
@@ -158,6 +143,64 @@ namespace QuanLyCuaHangBanSach.DAO
                 new MySqlParameter[] {
                     new MySqlParameter("@maSach", id),
                 });
+
+            if (rowChanged > 0)
+            {
+                sql = $@"DELETE FROM chitietsach WHERE maSach=@maSach;";
+
+                rowChanged = DataProvider.Instance.ExecuteNonQuery(sql,
+                    new MySqlParameter[] {
+                        new MySqlParameter("@maSach", id),
+                });
+
+                return rowChanged > 0;
+            }
+
+            return false;
+        }
+
+        public bool deleteBookAmount(string id, int amount)
+        {
+            string sql;
+            DataTable dataTable;
+            int rowChanged = 0;
+
+            for (int i = 1; i <= amount; i++)
+            {
+                sql = $@"SELECT * FROM chitietsach WHERE maSach=@maSach LIMIT 1;";
+
+                dataTable = DataProvider.Instance.ExecuteQuery(sql,
+                    new MySqlParameter[] {
+                    new MySqlParameter("@maSach", id),
+                });
+
+                if (dataTable.Rows.Count <= 0) return false;
+
+                DataRow row = dataTable.Rows[0];
+
+                sql = $@"DELETE FROM chitietsach WHERE maChiTietSach=@maChiTietSach;";
+
+                rowChanged = DataProvider.Instance.ExecuteNonQuery(sql,
+                    new MySqlParameter[] {
+                    new MySqlParameter("@maChiTietSach", row["maChiTietSach"]),
+                });
+            }
+
+            return rowChanged > 0;
+        }
+
+        public bool createBookAmount(string id, int amount)
+        {
+            string sql = $@"INSERT INTO chitietsach(maSach) VALUES (@maSach);";
+            int rowChanged = 0;
+
+            for (int i = 1; i <= amount; i++)
+            {
+                rowChanged = DataProvider.Instance.ExecuteNonQuery(sql,
+                    new MySqlParameter[] {
+                    new MySqlParameter("@maSach", id),
+                });
+            }
 
             return rowChanged > 0;
         }

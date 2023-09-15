@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Reflection;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using QuanLyCuaHangBanSach.BUS;
@@ -330,6 +328,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                 if ((bool)row.Cells[0].Value)
                 {
                     isHaveSelect = true;
+                    break;
                 }
             }
 

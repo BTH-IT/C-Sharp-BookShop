@@ -3,11 +3,8 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
-using System.Windows.Markup;
-using Guna.UI2.WinForms.Suite;
 using QuanLyCuaHangBanSach.BUS;
 using QuanLyCuaHangBanSach.DTO;
-using static Guna.UI2.Native.WinApi;
 
 namespace QuanLyCuaHangBanSach.GUI.Modal
 {
@@ -79,7 +76,6 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 Image img = Image.FromStream(ms);
 
                 this.bookNameTxt.Text = updateBook.TenSach;
-                this.remainTxt.Text = updateBook.SoLuongConLai.ToString();
                 this.sellPriceTxt.Text = updateBook.GiaBan.ToString();
                 this.importPriceTxt.Text = updateBook.GiaNhap.ToString();
                 this.publishYearTxt.Text = updateBook.NamXuatBan.ToString();
@@ -110,21 +106,6 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                     this.errorBookNameMsg,
                     this.nameLine,
                     new string[] { "required" }
-                );
-            }
-        }
-
-        private void remainTxt_TextChanged(object sender, EventArgs e)
-        {
-            this.remainTxt.ForeColor = Color.Black;
-
-            if (this.remainTxt.Text.Length > 0)
-            {
-                CustomValidation.Instance.checkTextbox(
-                    this.remainTxt,
-                    this.errorRemainMsg,
-                    this.remainLine,
-                    new string[] { "required", "positive-number" }
                 );
             }
         }
@@ -185,27 +166,20 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             );
 
             bool isCheckTxt2 = CustomValidation.Instance.checkTextbox(
-                this.remainTxt,
-                this.errorRemainMsg,
-                this.remainLine,
-                new string[] { "required", "positive-number" }
-            );
-
-            bool isCheckTxt3 = CustomValidation.Instance.checkTextbox(
                 this.sellPriceTxt,
                 this.errorSellPriceMsg,
                 this.sellPriceLine,
                 new string[] { "required", "positive-number" }
             );
 
-            bool isCheckTxt4 = CustomValidation.Instance.checkTextbox(
+            bool isCheckTxt3 = CustomValidation.Instance.checkTextbox(
                 this.importPriceTxt,
                 this.errorImportPriceMsg,
                 this.importPriceLine,
                 new string[] { "required", "positive-number" }
             );
 
-            bool isCheckTxt5 = CustomValidation.Instance.checkTextbox(
+            bool isCheckTxt4 = CustomValidation.Instance.checkTextbox(
                 this.publishYearTxt,
                 this.errorPublishYearMsg,
                 this.publishYearLine,
@@ -237,7 +211,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             );
 
             return isCheckTxt1 && isCheckTxt2 && isCheckTxt3 && isCheckTxt4
-                && isCheckTxt5 && isCheckCbx1 && isCheckCbx2 && isCheckCbx3 && isCheckPictureBox;
+                && isCheckCbx1 && isCheckCbx2 && isCheckCbx3 && isCheckPictureBox;
         }
 
         private void gunaButton1_Click(object sender, EventArgs e)
@@ -253,7 +227,6 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             byte[] img = ms.ToArray();
 
             string bookName = this.bookNameTxt.Text;
-            int remain = Convert.ToInt32(this.remainTxt.Text);
             double sellPrice = Convert.ToInt32(this.sellPriceTxt.Text);
             double importPrice = Convert.ToInt32(this.importPriceTxt.Text);
             int publishYear = Convert.ToInt32(this.publishYearTxt.Text);
@@ -263,8 +236,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
             int id = updateBook != null ? updateBook.MaSach : 0;
 
-            BookDTO book = new BookDTO(id, bookName, img, bookTypeId, authorId, publisherId,
-                remain, sellPrice, importPrice, publishYear);
+            BookDTO book = new BookDTO(id, bookName, img, bookTypeId, authorId, publisherId, sellPrice, importPrice, publishYear);
 
             bool isSuccess = updateBook != null ? BookBUS.Instance.update(book) : BookBUS.Instance.insert(book);
 

@@ -76,7 +76,7 @@
             customButton1.Cursor = System.Windows.Forms.Cursors.Hand;
             customButton1.FlatAppearance.BorderSize = 0;
             customButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            customButton1.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            customButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             customButton1.ForeColor = System.Drawing.Color.White;
             customButton1.Location = new System.Drawing.Point(535, 360);
             customButton1.Name = "customButton1";
@@ -103,7 +103,7 @@
             // lblLogin
             // 
             this.lblLogin.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.lblLogin.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed SemiB", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lblLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblLogin.Location = new System.Drawing.Point(525, 28);
             this.lblLogin.Name = "lblLogin";
             this.lblLogin.Size = new System.Drawing.Size(248, 68);
@@ -127,11 +127,11 @@
             // errorMsg1
             // 
             this.errorMsg1.AutoSize = true;
-            this.errorMsg1.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed SemiB", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.errorMsg1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.errorMsg1.ForeColor = System.Drawing.Color.Red;
             this.errorMsg1.Location = new System.Drawing.Point(173, 57);
             this.errorMsg1.Name = "errorMsg1";
-            this.errorMsg1.Size = new System.Drawing.Size(0, 30);
+            this.errorMsg1.Size = new System.Drawing.Size(0, 20);
             this.errorMsg1.TabIndex = 2;
             // 
             // pictureBox3
@@ -192,11 +192,11 @@
             // errorMsg2
             // 
             this.errorMsg2.AutoSize = true;
-            this.errorMsg2.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed SemiB", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.errorMsg2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.errorMsg2.ForeColor = System.Drawing.Color.Red;
             this.errorMsg2.Location = new System.Drawing.Point(171, 61);
             this.errorMsg2.Name = "errorMsg2";
-            this.errorMsg2.Size = new System.Drawing.Size(0, 30);
+            this.errorMsg2.Size = new System.Drawing.Size(0, 20);
             this.errorMsg2.TabIndex = 2;
             // 
             // pictureBox4
@@ -231,7 +231,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label2.Location = new System.Drawing.Point(12, 228);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(356, 35);
@@ -241,7 +241,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label1.Location = new System.Drawing.Point(68, 158);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(251, 49);
@@ -262,7 +262,7 @@
             // 
             this.label9.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label9.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label9.Font = new System.Drawing.Font("#9Slide03 Cabin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.label9.Location = new System.Drawing.Point(740, 309);
             this.label9.Name = "label9";
@@ -276,7 +276,7 @@
             // 
             this.checkBox1.AutoSize = true;
             this.checkBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.checkBox1.Font = new System.Drawing.Font("#9Slide03 Cabin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.checkBox1.Location = new System.Drawing.Point(455, 309);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(134, 30);
@@ -300,10 +300,10 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("#9Slide03 Cabin", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label8.Location = new System.Drawing.Point(56, 204);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(315, 120);
+            this.label8.Size = new System.Drawing.Size(255, 80);
             this.label8.TabIndex = 2;
             this.label8.Text = " Sống như đọc một cuốn sách\r\nCần phải biết...\r\nlật sang một trang mới khi cần thi" +
     "ết\r\n\r\n";
@@ -312,10 +312,10 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed SemiB", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label7.Location = new System.Drawing.Point(67, 141);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(295, 63);
+            this.label7.Size = new System.Drawing.Size(293, 39);
             this.label7.TabIndex = 1;
             this.label7.Text = "Wellcome Back!!";
             // 
@@ -406,7 +406,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.DoubleBuffered = true;
-            this.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed SemiB", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "LoginGUI";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
