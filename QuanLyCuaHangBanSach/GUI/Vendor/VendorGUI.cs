@@ -19,6 +19,7 @@ namespace QuanLyCuaHangBanSach.GUI
 
         private void Vendor_Load(object sender, EventArgs e)
         {
+            
             List<BookDTO> books = BookBUS.Instance.getAllData();
             foreach (var book in books)
             {
@@ -26,6 +27,7 @@ namespace QuanLyCuaHangBanSach.GUI
                 product.details(book);
                 BookContainer.Controls.Add(product);
             }
+            
         }
 
         public bool search = false;

@@ -77,7 +77,7 @@
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel1.ForeColor = System.Drawing.Color.White;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(-7, -10);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(107, 854);
             this.flowLayoutPanel1.TabIndex = 0;
@@ -97,7 +97,7 @@
             // panel2
             // 
             this.panel2.Location = new System.Drawing.Point(4, 105);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(103, 601);
             this.panel2.TabIndex = 1;
@@ -141,7 +141,7 @@
             this.flowLayoutPanel2.Controls.Add(this.label2);
             this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel2.Location = new System.Drawing.Point(137, -10);
-            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(4);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(1048, 103);
             this.flowLayoutPanel2.TabIndex = 1;
@@ -174,7 +174,7 @@
             // 
             this.flowLayoutPanel4.Controls.Add(this.flowLayoutPanel5);
             this.flowLayoutPanel4.Location = new System.Drawing.Point(137, 101);
-            this.flowLayoutPanel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.flowLayoutPanel4.Margin = new System.Windows.Forms.Padding(4);
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
             this.flowLayoutPanel4.Size = new System.Drawing.Size(1048, 59);
             this.flowLayoutPanel4.TabIndex = 3;
@@ -195,7 +195,7 @@
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(4, 4);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Padding = new System.Windows.Forms.Padding(0, 9, 0, 0);
             this.pictureBox2.Size = new System.Drawing.Size(35, 39);
@@ -235,7 +235,7 @@
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.panel4);
             this.panel3.Location = new System.Drawing.Point(1217, -10);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(478, 864);
             this.panel3.TabIndex = 5;
@@ -252,8 +252,8 @@
             this.panel4.Controls.Add(this.AddCustomerBtn);
             this.panel4.Controls.Add(this.PhoneInp);
             this.panel4.Controls.Add(this.label3);
-            this.panel4.Location = new System.Drawing.Point(32, 10);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel4.Location = new System.Drawing.Point(32, 12);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(400, 822);
             this.panel4.TabIndex = 3;
@@ -284,7 +284,7 @@
             // 
             this.CartContainer.AutoScroll = true;
             this.CartContainer.Location = new System.Drawing.Point(0, 176);
-            this.CartContainer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CartContainer.Margin = new System.Windows.Forms.Padding(4);
             this.CartContainer.Name = "CartContainer";
             this.CartContainer.Size = new System.Drawing.Size(400, 506);
             this.CartContainer.TabIndex = 20;
@@ -308,7 +308,7 @@
             this.PrintBtn.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.PrintBtn.ForeColor = System.Drawing.Color.White;
             this.PrintBtn.Location = new System.Drawing.Point(5, 767);
-            this.PrintBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.PrintBtn.Margin = new System.Windows.Forms.Padding(4);
             this.PrintBtn.Name = "PrintBtn";
             this.PrintBtn.Size = new System.Drawing.Size(391, 52);
             this.PrintBtn.TabIndex = 17;
@@ -343,7 +343,7 @@
             // 
             this.AddCustomerBtn.Image = ((System.Drawing.Image)(resources.GetObject("AddCustomerBtn.Image")));
             this.AddCustomerBtn.Location = new System.Drawing.Point(333, 80);
-            this.AddCustomerBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AddCustomerBtn.Margin = new System.Windows.Forms.Padding(4);
             this.AddCustomerBtn.Name = "AddCustomerBtn";
             this.AddCustomerBtn.Size = new System.Drawing.Size(40, 37);
             this.AddCustomerBtn.TabIndex = 12;
@@ -354,7 +354,7 @@
             this.PhoneInp.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.PhoneInp.ForeColor = System.Drawing.Color.DarkGray;
             this.PhoneInp.Location = new System.Drawing.Point(0, 80);
-            this.PhoneInp.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.PhoneInp.Margin = new System.Windows.Forms.Padding(4);
             this.PhoneInp.Name = "PhoneInp";
             this.PhoneInp.Size = new System.Drawing.Size(324, 34);
             this.PhoneInp.TabIndex = 9;
@@ -383,10 +383,11 @@
             // 
             // BookContainer
             // 
-            this.BookContainer.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.BookContainer.AutoScroll = true;
             this.BookContainer.Location = new System.Drawing.Point(136, 180);
-            this.BookContainer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BookContainer.Margin = new System.Windows.Forms.Padding(4);
+            this.BookContainer.MaximumSize = new System.Drawing.Size(1049, 640);
+            this.BookContainer.MinimumSize = new System.Drawing.Size(1049, 640);
             this.BookContainer.Name = "BookContainer";
             this.BookContainer.Size = new System.Drawing.Size(1049, 640);
             this.BookContainer.TabIndex = 6;
@@ -395,6 +396,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1685, 838);
             this.Controls.Add(this.BookContainer);
@@ -402,7 +404,7 @@
             this.Controls.Add(this.flowLayoutPanel4);
             this.Controls.Add(this.flowLayoutPanel2);
             this.Controls.Add(this.flowLayoutPanel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "VendorGUI";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainPage";
@@ -448,8 +450,8 @@
         private System.Windows.Forms.Label RecipientLb;
         private System.Windows.Forms.FlowLayoutPanel PhoneResultContainer;
         private System.Windows.Forms.Timer checkUser;
-        private System.Windows.Forms.FlowLayoutPanel BookContainer;
         private System.Windows.Forms.FlowLayoutPanel CartContainer;
         private System.Windows.Forms.Label TotalMoneylb;
+        private System.Windows.Forms.FlowLayoutPanel BookContainer;
     }
 }

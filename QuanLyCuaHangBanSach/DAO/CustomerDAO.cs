@@ -64,6 +64,26 @@ namespace QuanLyCuaHangBanSach.DAO
             return customers;
         }
 
+        public List<CustomerDTO> Search(string searchInput)
+        {
+            DataTable dataTable = DataProvider.Instance.ExecuteQuery(
+                    "SELECT * FROM khachhang WHERE (hienthi = 1 ) AND (soDienThoai = @SoDienThoai OR maKhachHang = @MaKhachHang OR tenKhachHang LIKE @TenKhachHang) ",
+                    new MySqlParameter[] {
+                            new MySqlParameter("@SoDienThoai" ,$"{searchInput}"),
+                            new MySqlParameter("@MaKhachHang" ,$"{searchInput}"),
+                            new MySqlParameter("@TenKhachHang" ,$"%{searchInput}%"),
+                    }
+                );
+            if (dataTable.Rows.Count <= 0) return null;
+            List<CustomerDTO> customers = new List<CustomerDTO>();
+            
+            foreach(DataRow row in dataTable.Rows)
+            {
+                CustomerDTO customer = new CustomerDTO(row);
+                customers.Add(customer);
+            }
+            return customers;
+        }
         public bool insert(CustomerDTO data)
         {
 

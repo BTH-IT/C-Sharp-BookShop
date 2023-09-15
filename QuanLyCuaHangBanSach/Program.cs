@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using QuanLyCuaHangBanSach.GUI;
-
+using QuanLyCuaHangBanSach.GUI.Vendor;
 namespace QuanLyCuaHangBanSach
 {
     internal static class Program

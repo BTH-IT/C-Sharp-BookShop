@@ -66,8 +66,8 @@ namespace QuanLyCuaHangBanSach.DAO
         public bool insert(StaffDTO data)
         {
 
-            string sql = $@"INSERT INTO nhanvien (tenNhanVien, namSinh, gioiTinh, soDienThoai, luong, soNgayNghi, vaiTro, hienThi)
-                            VALUES (@tenNhanVien, @namSinh, @gioiTinh, @soDienThoai, @luong, @soNgayNghi, @vaiTro, 1);";
+            string sql = $@"INSERT INTO nhanvien (tenNhanVien, namSinh, gioiTinh, soDienThoai, luong, soNgayNghi, maChucVu, hienThi)
+                            VALUES (@tenNhanVien, @namSinh, @gioiTinh, @soDienThoai, @luong, @soNgayNghi, @maChucVu, 1);";
 
             int rowChanged = DataProvider.Instance.ExecuteNonQuery(sql,
                 new MySqlParameter[] {
@@ -77,7 +77,7 @@ namespace QuanLyCuaHangBanSach.DAO
                     new MySqlParameter("@soDienThoai", data.SoDienThoai),
                     new MySqlParameter("@luong", data.Luong),
                     new MySqlParameter("@soNgayNghi", data.SoNgayNghi),
-                    new MySqlParameter("@vaiTro", data.VaiTro),
+                    new MySqlParameter("@maChucVu", data.MaChucVu),
                 });
 
             return rowChanged > 0;
@@ -87,7 +87,7 @@ namespace QuanLyCuaHangBanSach.DAO
         {
             string sql = $@"UPDATE nhanvien SET 
                             tenNhanVien=@tenNhanVien, namSinh=@namSinh, gioiTinh=@gioiTinh, soDienThoai=@soDienThoai, 
-                            luong=@luong, soNgayNghi=@soNgayNghi, vaiTro=@vaiTro
+                            luong=@luong, soNgayNghi=@soNgayNghi, maChucVu=@maChucVu
                             WHERE maNhanVien=@maNhanVien;";
 
             int rowChanged = DataProvider.Instance.ExecuteNonQuery(sql,
@@ -99,7 +99,7 @@ namespace QuanLyCuaHangBanSach.DAO
                     new MySqlParameter("@soDienThoai", data.SoDienThoai),
                     new MySqlParameter("@luong", data.Luong),
                     new MySqlParameter("@soNgayNghi", data.SoNgayNghi),
-                    new MySqlParameter("@vaiTro", data.VaiTro),
+                    new MySqlParameter("@maChucVu", data.MaChucVu),
                 });
 
             return rowChanged > 0;
