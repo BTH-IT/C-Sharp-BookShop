@@ -129,70 +129,7 @@ namespace QuanLyCuaHangBanSach.DAO
             // xóa số lượng còn lại của sách
             if (rowChanged > 0)
             {
-                BookDTO book = BookBUS.Instance.getById(data.MaSach.ToString());
-
-                book.SoLuongConLai -= data.SoLuong;
-
-                return BookBUS.Instance.update(book);
-            }
-
-            return rowChanged > 0;
-        }
-
-        public bool updateCustomerBillDetail(CustomerBillDetailDTO data)
-        {
-            BookDTO book = BookBUS.Instance.getById(data.MaSach.ToString());
-
-            CustomerBillDetailDTO customerBillDetail = this.getCustomerBillDetail(
-                data.MaDon.ToString(), 
-                data.MaSach.ToString()
-            );
-
-            book.SoLuongConLai = book.SoLuongConLai + customerBillDetail.SoLuong - data.SoLuong;
-
-            string sql = $@"UPDATE chitietphieuban SET soLuong=@soLuong, donGia=@donGia  
-                            WHERE maDonKhachHang=@maDonKhachHang AND maSach=@maSach;";
-
-            int rowChanged = DataProvider.Instance.ExecuteNonQuery(sql,
-                new MySqlParameter[] {
-                    new MySqlParameter("@maDonKhachHang", data.MaDon),
-                    new MySqlParameter("@maSach", data.MaSach),
-                    new MySqlParameter("@soLuong", data.SoLuong),
-                    new MySqlParameter("@donGia", data.DonGia),
-                });
-
-            // cập nhật số lượng còn lại của sách
-            if (rowChanged > 0)
-            {
-                return BookBUS.Instance.update(book);
-            }
-
-            return rowChanged > 0;
-        }
-
-        public bool deleteCustomerBillDetail(string billId, string bookId)
-        {
-            CustomerBillDetailDTO customerBillDetail = this.getCustomerBillDetail(
-                billId,
-                bookId
-            );
-
-            string sql = $@"DELETE FROM chitietphieuban WHERE maDonKhachHang=@maDonKhachHang AND maSach=@maSach;";
-
-            int rowChanged = DataProvider.Instance.ExecuteNonQuery(sql,
-                new MySqlParameter[] {
-                    new MySqlParameter("@maDonKhachHang", billId),
-                    new MySqlParameter("@maSach", bookId),
-                });
-
-            // thêm lại số lượng còn lại của sách
-            if (rowChanged > 0)
-            {
-                BookDTO book = BookBUS.Instance.getById(bookId);
-
-                book.SoLuongConLai += customerBillDetail.SoLuong;
-
-                return BookBUS.Instance.update(book);
+                return BookBUS.Instance.deleteBookAmount(data.MaSach.ToString(), data.SoLuong);
             }
 
             return rowChanged > 0;

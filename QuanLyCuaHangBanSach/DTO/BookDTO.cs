@@ -1,9 +1,5 @@
 ﻿using System;
 using System.Data;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Windows.Markup;
 
 namespace QuanLyCuaHangBanSach.DTO
 {
@@ -28,7 +24,6 @@ namespace QuanLyCuaHangBanSach.DTO
             int maTheLoai,
             int maTacGia,
             int maNhaXuatBan,
-            int soLuongConLai,
             double giaBan,
             double giaNhap,
             int namXuatBan
@@ -39,7 +34,6 @@ namespace QuanLyCuaHangBanSach.DTO
             this.MaTheLoai = maTheLoai;
             this.MaTacGia = maTacGia;
             this.MaNhaXuatBan = maNhaXuatBan;
-            this.SoLuongConLai = soLuongConLai;
             this.GiaBan = giaBan;
             this.GiaNhap = giaNhap;
             this.NamXuatBan = namXuatBan;
@@ -53,9 +47,9 @@ namespace QuanLyCuaHangBanSach.DTO
             this.MaTheLoai = Convert.ToInt32(row["maTheLoai"]);
             this.MaTacGia = Convert.ToInt32(row["maTacGia"]);
             this.MaNhaXuatBan = Convert.ToInt32(row["maNhaXuatBan"]);
-            this.SoLuongConLai = Convert.ToInt32(row["soLuongConLai"]);
             this.GiaBan = Convert.ToDouble(row["giaBan"]);
             this.GiaNhap = Convert.ToDouble(row["giaNhap"]);
+            this.SoLuongConLai = Convert.ToInt32(row["soLuongConLai"]);
             this.NamXuatBan = Convert.ToInt32(row["namXuatBan"]);
         }
 
