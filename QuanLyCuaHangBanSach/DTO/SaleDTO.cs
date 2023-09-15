@@ -10,18 +10,16 @@ namespace QuanLyCuaHangBanSach.DTO
         public byte PhanTram { get; set; }
         public DateTime NgayBatDau { get; set; }
         public DateTime NgayKetThuc { get; set; }
-        public int MaNhomKhachHang{ get; set; }
 
         public SaleDTO() { }
 
-        public SaleDTO(int maKhuyenMai, string tenKhuyenMai, byte phanTram, DateTime ngayBatDau, DateTime ngayKetThuc, int maNhomKhachHang)
+        public SaleDTO(int maKhuyenMai, string tenKhuyenMai, byte phanTram, DateTime ngayBatDau, DateTime ngayKetThuc)
         {
             this.MaKhuyenMai = maKhuyenMai;
             this.TenKhuyenMai = tenKhuyenMai;
             this.PhanTram = phanTram;
             this.NgayBatDau = ngayBatDau;
             this.NgayKetThuc = ngayKetThuc;
-            this.MaNhomKhachHang = maNhomKhachHang;
         }
 
         public SaleDTO(DataRow row)
@@ -31,7 +29,6 @@ namespace QuanLyCuaHangBanSach.DTO
             this.PhanTram = Convert.ToByte(row["phanTram"]);
             this.NgayBatDau = (DateTime) row["ngayBatDau"];
             this.NgayKetThuc = (DateTime)row["ngayKetThuc"];
-            this.MaNhomKhachHang = (int)row["maNhomKhachHang"];
         }
     }
 }
