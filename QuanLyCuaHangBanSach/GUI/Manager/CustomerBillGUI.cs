@@ -103,7 +103,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         {
             List<StaffDTO> staffList = StaffBUS.Instance.getAllData();
 
-            staffList.Insert(0, new StaffDTO(0, "Tất cả nhân viên", "", "", 0, 0, 0));
+            staffList.Insert(0, new StaffDTO(0, "Tất cả nhân viên", "", "", 0, 0, 0,0));
 
             this.staffCbx.ValueMember = "Ma";
             this.staffCbx.DisplayMember = "Ten";

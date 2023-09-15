@@ -1,4 +1,5 @@
-﻿using System.Data;
+﻿using System;
+using System.Data;
 
 namespace QuanLyCuaHangBanSach.DTO
 {
@@ -8,7 +9,6 @@ namespace QuanLyCuaHangBanSach.DTO
         public double Luong { get; set; }
         public int SoNgayNghi { get; set; }
         public int MaChucVu { get; set; }
-
         public StaffDTO() { }
         public StaffDTO(
             int maNhanVien,
@@ -17,12 +17,15 @@ namespace QuanLyCuaHangBanSach.DTO
             string gioiTinh,
             int namSinh,
             int soNgayNghi,
-            int maChucVu)
+            int maChucVu,
+            double luong
+            )
         : base(maNhanVien, tenNhanVien, gioiTinh, namSinh)
         {
             this.SoDienThoai = soDienThoai;
             this.SoNgayNghi = soNgayNghi;
             this.MaChucVu = maChucVu;
+            this.Luong = luong;
         }
 
         public StaffDTO(DataRow row)
@@ -34,6 +37,7 @@ namespace QuanLyCuaHangBanSach.DTO
             this.SoDienThoai = row["soDienThoai"].ToString();
             this.GioiTinh = row["gioiTinh"].ToString();
             this.NamSinh = (int)row["namSinh"];
+            this.Luong = Convert.ToDouble(row["Luong"]);
         }
     }
 }

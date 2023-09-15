@@ -83,7 +83,6 @@ namespace QuanLyCuaHangBanSach
 
                     // lấy ra số lượng cột cần dùng dựa vào số lượng header
                     var countColHeader = headerList.Count();
-
                     // merge các column lại từ column 1 đến số column header
                     // gán giá trị cho cell vừa merge là Thống kê thông tni User Kteam
                     ws.Cells[1, 1].Value = title;
@@ -125,12 +124,13 @@ namespace QuanLyCuaHangBanSach
                     {
                         DataRow dataRow = dataTable.Rows[row];
                         colIndex = 0;
-                        for (int col = 1; col < dataTable.Columns.Count; col++)
+                        for (int col = 0; col < dataTable.Columns.Count; col++)
                         {
+
                             if (col == imgCol) continue;
 
-                            ws.Cells[rowIndex, ++colIndex].Value = dataRow[col];
-                        }
+                            ws.Cells[rowIndex, ++colIndex].Value = dataRow[col]; 
+                       }
                         rowIndex++;
                     }
 
@@ -164,6 +164,7 @@ namespace QuanLyCuaHangBanSach
                     //inserting property values to datatable rows
                     values[i] = Props[i].GetValue(item, null);
                 }
+        
                 dataTable.Rows.Add(values);
             }
             //put a breakpoint here and check datatable

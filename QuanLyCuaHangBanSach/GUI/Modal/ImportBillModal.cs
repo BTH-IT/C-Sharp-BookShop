@@ -34,6 +34,19 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             this.supplierCbx.SelectedIndex = 0;
         }
 
+        private void loadStaffCbx()
+        {
+            List<StaffDTO> staffList = StaffBUS.Instance.getAllData();
+
+            staffList.Insert(0, new StaffDTO(0, "Chọn nhân viên", "", "", 0, 0, 0,0));
+
+            this.staffCbx.ValueMember = "Ma";
+            this.staffCbx.DisplayMember = "Ten";
+            this.staffCbx.DataSource = staffList;
+
+            this.staffCbx.SelectedIndex = 0;
+        }
+
         private void loadImportBillDetailList()
         {
             this.bookList.Controls.Clear();
