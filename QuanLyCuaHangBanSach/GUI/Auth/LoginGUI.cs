@@ -1,13 +1,9 @@
 ﻿using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
-using System.IO;
-using System.Reflection;
-using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using QuanLyCuaHangBanSach.BUS;
 using QuanLyCuaHangBanSach.DTO;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace QuanLyCuaHangBanSach.GUI
 {
@@ -21,8 +17,8 @@ namespace QuanLyCuaHangBanSach.GUI
             this.Padding = new Padding(2);
             
             if (Properties.Settings.Default.Email != string.Empty) {
-                this.textBox1.Text = Properties.Settings.Default.Email;
-                this.textBox2.Text = Properties.Settings.Default.Password;
+                this.emailTxt.Text = Properties.Settings.Default.Email;
+                this.pwdTxt.Text = Properties.Settings.Default.Password;
                 checkBox1.Checked = true;
             } else
             {
@@ -78,65 +74,6 @@ namespace QuanLyCuaHangBanSach.GUI
         }
         #endregion
 
-        private void textBox1_TextChanged(object sender, System.EventArgs e)
-        {
-            try
-            {
-                textBox1.ForeColor = Color.Black;
-            } catch
-            {
-
-            }
-        }
-
-        private void textBox2_TextChanged(object sender, System.EventArgs e)
-        {
-            try
-            {
-                textBox2.ForeColor = Color.Black;
-                textBox2.UseSystemPasswordChar = this.isHiddenPwd;
-            }
-            catch
-            {
-
-            }
-        }
-
-        private void textBox1_Leave(object sender, System.EventArgs e)
-        {
-            if (textBox1.Text.Length <= 0)
-            {
-                textBox1.Text = "Enter your email";
-                textBox1.ForeColor = Color.LightGray;
-            }
-        }
-
-        private void textBox1_Click(object sender, System.EventArgs e)
-        {
-            if (textBox1.Text.Equals("Enter your email"))
-            {
-                textBox1.Text = "";
-            }
-        }
-
-        private void textBox2_Leave(object sender, System.EventArgs e)
-        {
-            if (textBox2.Text.Length <= 0)
-            {
-                textBox2.Text = "Enter your password";
-                textBox2.ForeColor = Color.LightGray;
-                textBox2.UseSystemPasswordChar = false;
-            }
-        }
-
-        private void textBox2_Click(object sender, System.EventArgs e)
-        {
-            if (textBox2.Text == "Enter your password")
-            {
-                textBox2.Text = "";
-            }
-        }
-
         private void pictureBox5_Click(object sender, EventArgs e)
         {
             if (this.isHiddenPwd)
@@ -149,10 +86,7 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.isHiddenPwd = true;
             }
 
-            if (!this.textBox2.Text.Equals("Enter your password"))
-            {
-                textBox2.UseSystemPasswordChar = this.isHiddenPwd;
-            }
+            pwdTxt.UseSystemPasswordChar = this.isHiddenPwd;
             this.pictureBox5.Refresh();
         }
 
@@ -163,44 +97,21 @@ namespace QuanLyCuaHangBanSach.GUI
 
         private bool validateForm()
         {
-            if (this.textBox1.Text.Equals("") || this.textBox1.Text.Equals("Enter your email"))
-            {
-                this.textBox1.Focus();
-                this.errorMsg1.Text = "This field is a required field";
-                this.line1.BackColor = Color.FromArgb(239, 68, 68);
-                return false;
-            } else
-            {
-                this.errorMsg1.Text = "";
-                this.line1.BackColor = Color.FromArgb(45, 212, 191);
-            }
+            bool isCheckTxt1 = CustomValidation.Instance.checkTextbox(
+                this.emailTxt,
+                this.errorMsg1,
+                this.line1,
+                new string[] { "required", "email" }
+            );
 
-            if (!Regex.Match(textBox1.Text, @"^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$").Success)
-            {
-                this.textBox1.Focus();
-                this.errorMsg1.Text = "This field is an email field";
-                this.line1.BackColor = Color.FromArgb(239, 68, 68);
-                return false;
-            } else
-            {
-                this.errorMsg1.Text = "";
-                this.line1.BackColor = Color.FromArgb(45, 212, 191);
-            }
+            bool isCheckTxt2 = CustomValidation.Instance.checkTextbox(
+                this.pwdTxt,
+                this.errorMsg2,
+                this.line2,
+                new string[] { "required"}
+            );
 
-            if (this.textBox2.Text.Equals("") || this.textBox2.Text.Equals("Enter your password"))
-            {
-                this.textBox2.Focus();
-                this.errorMsg2.Text = "This field is a required field";
-                this.line2.BackColor = Color.FromArgb(239, 68, 68);
-                return false;
-            } else
-            {
-                this.errorMsg2.Text = "";
-                this.line2.BackColor = Color.FromArgb(45, 212, 191);
-            }
-
-            
-            return true;
+            return isCheckTxt1 && isCheckTxt2;
         }
 
         private void handleLogin()
@@ -209,7 +120,7 @@ namespace QuanLyCuaHangBanSach.GUI
 
             if (!isValid) return;
 
-            AccountDTO account = AccountBUS.Instance.login(this.textBox1.Text, this.textBox2.Text);
+            AccountDTO account = AccountBUS.Instance.login(this.emailTxt.Text, this.pwdTxt.Text);
 
             if (account == null)
             {
@@ -220,8 +131,8 @@ namespace QuanLyCuaHangBanSach.GUI
 
             if (checkBox1.Checked == true)
             {
-                Properties.Settings.Default.Email = this.textBox1.Text;
-                Properties.Settings.Default.Password = this.textBox2.Text;
+                Properties.Settings.Default.Email = this.emailTxt.Text;
+                Properties.Settings.Default.Password = this.pwdTxt.Text;
                 Properties.Settings.Default.Save();
             }
             else
@@ -237,7 +148,7 @@ namespace QuanLyCuaHangBanSach.GUI
             this.handleLogin();
         }
 
-        private void textBox1_KeyDown(object sender, KeyEventArgs e)
+        private void emailTxt_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
@@ -245,7 +156,7 @@ namespace QuanLyCuaHangBanSach.GUI
             }
         }
 
-        private void textBox2_KeyDown(object sender, KeyEventArgs e)
+        private void pwdTxt_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
@@ -258,6 +169,26 @@ namespace QuanLyCuaHangBanSach.GUI
             this.Hide();
             SendCodeGUI sendCode = new SendCodeGUI();
             sendCode.Show();
+        }
+
+        private void emailTxt_TextChanged(object sender, EventArgs e)
+        {
+            CustomValidation.Instance.checkTextbox(
+                this.emailTxt,
+                this.errorMsg1,
+                this.line1,
+                new string[] { "required", "email" }
+            );
+        }
+
+        private void pwdTxt_TextChanged(object sender, EventArgs e)
+        {
+            CustomValidation.Instance.checkTextbox(
+                this.pwdTxt,
+                this.errorMsg2,
+                this.line2,
+                new string[] { "required" }
+            );
         }
     }
 }

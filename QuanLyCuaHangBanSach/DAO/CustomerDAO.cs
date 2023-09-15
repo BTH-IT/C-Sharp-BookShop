@@ -27,13 +27,21 @@ namespace QuanLyCuaHangBanSach.DAO
 
         
         public DataTable getAll() {
+<<<<<<< HEAD
             return DataProvider.Instance.ExecuteQuery("select * from khachhang");
+=======
+            return DataProvider.Instance.ExecuteQuery("select * from khachhang WHERE hienThi = 1;");
+>>>>>>> ea07d7a9067a18489695d148b1192d3f56f5ad61
         }
 
         public CustomerDTO getById(string id)
         {
             DataTable dataTable = DataProvider.Instance.ExecuteQuery(
+<<<<<<< HEAD
                 "SELECT * FROM khachhang WHERE maKhachHang=@MaKhachHang",
+=======
+                "SELECT * FROM khachhang WHERE maKhachHang=@MaKhachHang AND hienThi = 1;",
+>>>>>>> ea07d7a9067a18489695d148b1192d3f56f5ad61
                 new MySqlParameter[] { new MySqlParameter("@MaKhachHang", id) }
             );
 
@@ -47,7 +55,11 @@ namespace QuanLyCuaHangBanSach.DAO
         public List<CustomerDTO> SearchByPhoneNum(string num)
         {
             DataTable dataTable = DataProvider.Instance.ExecuteQuery(
+<<<<<<< HEAD
                 "SELECT * FROM khachhang WHERE soDienThoai LIKE @SoDienThoai",
+=======
+                "SELECT * FROM khachhang WHERE soDienThoai LIKE @SoDienThoai AND hienThi = 1;",
+>>>>>>> ea07d7a9067a18489695d148b1192d3f56f5ad61
                 new MySqlParameter[] { new MySqlParameter("@SoDienThoai", $"%{num}%") }
             );
 
@@ -72,8 +84,13 @@ namespace QuanLyCuaHangBanSach.DAO
 
             int rowChanged = DataProvider.Instance.ExecuteNonQuery(sql,
                 new MySqlParameter[] {
+<<<<<<< HEAD
                     new MySqlParameter("@MaKhachHang", data.MaKhachHang),
                     new MySqlParameter("@TenKhachHang", data.TenKhachHang),
+=======
+                    new MySqlParameter("@MaKhachHang", data.Ma),
+                    new MySqlParameter("@TenKhachHang", data.Ten),
+>>>>>>> ea07d7a9067a18489695d148b1192d3f56f5ad61
                     new MySqlParameter("@SoDienThoai", data.SoDienThoai),
                     new MySqlParameter("@GioiTinh", data.GioiTinh),
                     new MySqlParameter("@NamSinh", data.NamSinh),
@@ -89,8 +106,8 @@ namespace QuanLyCuaHangBanSach.DAO
 
             int rowChanged = DataProvider.Instance.ExecuteNonQuery(sql,
                 new MySqlParameter[] {
-                    new MySqlParameter("@MaKhachHang", data.MaKhachHang),
-                    new MySqlParameter("@TenKhachHang", data.TenKhachHang),
+                    new MySqlParameter("@MaKhachHang", data.Ma),
+                    new MySqlParameter("@TenKhachHang", data.Ten),
                     new MySqlParameter("@SoDienThoai", data.SoDienThoai),
                     new MySqlParameter("@GioiTinh", data.GioiTinh),
                     new MySqlParameter("@NamSinh", data.NamSinh),

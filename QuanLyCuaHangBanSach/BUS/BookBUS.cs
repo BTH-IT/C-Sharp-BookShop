@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Org.BouncyCastle.Utilities;
 using QuanLyCuaHangBanSach.DAO;
 using QuanLyCuaHangBanSach.DTO;
 
@@ -79,6 +74,16 @@ namespace QuanLyCuaHangBanSach.BUS
         public bool delete(string id)
         {
             return BookDAO.Instance.delete(id);
+        }
+
+        public bool deleteBookAmount(string id, int amount)
+        {
+            return BookDAO.Instance.deleteBookAmount(id, amount);
+        }
+
+        public bool createBookAmount(string id, int amount)
+        {
+            return BookDAO.Instance.createBookAmount(id, amount);
         }
     }
 }

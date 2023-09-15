@@ -33,7 +33,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblLogin = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.errorMsg1 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.line1 = new System.Windows.Forms.Panel();
@@ -43,7 +42,6 @@
             this.errorMsg2 = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.line2 = new System.Windows.Forms.Panel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -54,6 +52,8 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.emailTxt = new Guna.UI2.WinForms.Guna2TextBox();
+            this.pwdTxt = new Guna.UI2.WinForms.Guna2TextBox();
             customButton1 = new QuanLyCuaHangBanSach.CustomButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -114,7 +114,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.emailTxt);
             this.panel1.Controls.Add(this.errorMsg1);
             this.panel1.Controls.Add(this.pictureBox3);
             this.panel1.Controls.Add(this.line1);
@@ -124,29 +124,12 @@
             this.panel1.Size = new System.Drawing.Size(445, 94);
             this.panel1.TabIndex = 0;
             // 
-            // textBox1
-            // 
-            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox1.BackColor = System.Drawing.SystemColors.Window;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.textBox1.ForeColor = System.Drawing.Color.LightGray;
-            this.textBox1.Location = new System.Drawing.Point(170, 19);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(253, 19);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.Text = "Enter your email";
-            this.textBox1.Click += new System.EventHandler(this.textBox1_Click);
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
-            this.textBox1.Leave += new System.EventHandler(this.textBox1_Leave);
-            // 
             // errorMsg1
             // 
             this.errorMsg1.AutoSize = true;
             this.errorMsg1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.errorMsg1.ForeColor = System.Drawing.Color.Red;
-            this.errorMsg1.Location = new System.Drawing.Point(165, 54);
+            this.errorMsg1.Location = new System.Drawing.Point(173, 57);
             this.errorMsg1.Name = "errorMsg1";
             this.errorMsg1.Size = new System.Drawing.Size(0, 20);
             this.errorMsg1.TabIndex = 2;
@@ -154,7 +137,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(3, 7);
+            this.pictureBox3.Location = new System.Drawing.Point(4, 5);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(63, 49);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -172,22 +155,22 @@
             // 
             // label3
             // 
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label3.Location = new System.Drawing.Point(58, 7);
+            this.label3.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label3.Location = new System.Drawing.Point(58, 14);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(106, 49);
+            this.label3.Size = new System.Drawing.Size(107, 40);
             this.label3.TabIndex = 0;
-            this.label3.Text = "Email";
+            this.label3.Text = "Email :";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Transparent;
+            this.panel3.Controls.Add(this.pwdTxt);
             this.panel3.Controls.Add(this.pictureBox5);
             this.panel3.Controls.Add(this.errorMsg2);
             this.panel3.Controls.Add(this.pictureBox4);
             this.panel3.Controls.Add(this.line2);
-            this.panel3.Controls.Add(this.textBox2);
             this.panel3.Controls.Add(this.label6);
             this.panel3.Location = new System.Drawing.Point(434, 214);
             this.panel3.Name = "panel3";
@@ -211,7 +194,7 @@
             this.errorMsg2.AutoSize = true;
             this.errorMsg2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.errorMsg2.ForeColor = System.Drawing.Color.Red;
-            this.errorMsg2.Location = new System.Drawing.Point(165, 61);
+            this.errorMsg2.Location = new System.Drawing.Point(171, 61);
             this.errorMsg2.Name = "errorMsg2";
             this.errorMsg2.Size = new System.Drawing.Size(0, 20);
             this.errorMsg2.TabIndex = 2;
@@ -235,31 +218,14 @@
             this.line2.Size = new System.Drawing.Size(253, 1);
             this.line2.TabIndex = 4;
             // 
-            // textBox2
-            // 
-            this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox2.BackColor = System.Drawing.SystemColors.Window;
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.textBox2.ForeColor = System.Drawing.Color.LightGray;
-            this.textBox2.Location = new System.Drawing.Point(170, 22);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(206, 19);
-            this.textBox2.TabIndex = 1;
-            this.textBox2.Text = "Enter your password";
-            this.textBox2.Click += new System.EventHandler(this.textBox2_Click);
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
-            this.textBox2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox2_KeyDown);
-            this.textBox2.Leave += new System.EventHandler(this.textBox2_Leave);
-            // 
             // label6
             // 
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label6.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label6.Location = new System.Drawing.Point(58, 14);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(117, 41);
+            this.label6.Size = new System.Drawing.Size(113, 43);
             this.label6.TabIndex = 0;
-            this.label6.Text = "Password";
+            this.label6.Text = "Mật khẩu :";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label2
@@ -302,7 +268,7 @@
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(139, 30);
             this.label9.TabIndex = 5;
-            this.label9.Text = "Forgot password?";
+            this.label9.Text = "Quên mật khẩu?";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
@@ -313,9 +279,9 @@
             this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.checkBox1.Location = new System.Drawing.Point(455, 309);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(119, 21);
+            this.checkBox1.Size = new System.Drawing.Size(134, 30);
             this.checkBox1.TabIndex = 6;
-            this.checkBox1.Text = "Remember me";
+            this.checkBox1.Text = "Nhớ tài khoản";
             this.checkBox1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
@@ -363,6 +329,66 @@
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox6.TabIndex = 0;
             this.pictureBox6.TabStop = false;
+            // 
+            // emailTxt
+            // 
+            this.emailTxt.BackColor = System.Drawing.Color.Transparent;
+            this.emailTxt.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
+            this.emailTxt.BorderThickness = 0;
+            this.emailTxt.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.emailTxt.DefaultText = "";
+            this.emailTxt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.emailTxt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.emailTxt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.emailTxt.DisabledState.Parent = this.emailTxt;
+            this.emailTxt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.emailTxt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.emailTxt.FocusedState.Parent = this.emailTxt;
+            this.emailTxt.Font = new System.Drawing.Font("#9Slide03 Cabin", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.emailTxt.ForeColor = System.Drawing.Color.Black;
+            this.emailTxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.emailTxt.HoverState.Parent = this.emailTxt;
+            this.emailTxt.Location = new System.Drawing.Point(162, 19);
+            this.emailTxt.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
+            this.emailTxt.Name = "emailTxt";
+            this.emailTxt.PasswordChar = '\0';
+            this.emailTxt.PlaceholderText = "Nhập email";
+            this.emailTxt.SelectedText = "";
+            this.emailTxt.ShadowDecoration.Parent = this.emailTxt;
+            this.emailTxt.Size = new System.Drawing.Size(261, 30);
+            this.emailTxt.TabIndex = 34;
+            this.emailTxt.TextChanged += new System.EventHandler(this.emailTxt_TextChanged);
+            this.emailTxt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.emailTxt_KeyDown);
+            // 
+            // pwdTxt
+            // 
+            this.pwdTxt.BackColor = System.Drawing.Color.Transparent;
+            this.pwdTxt.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
+            this.pwdTxt.BorderThickness = 0;
+            this.pwdTxt.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.pwdTxt.DefaultText = "";
+            this.pwdTxt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.pwdTxt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.pwdTxt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.pwdTxt.DisabledState.Parent = this.pwdTxt;
+            this.pwdTxt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.pwdTxt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.pwdTxt.FocusedState.Parent = this.pwdTxt;
+            this.pwdTxt.Font = new System.Drawing.Font("#9Slide03 Cabin", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pwdTxt.ForeColor = System.Drawing.Color.Black;
+            this.pwdTxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.pwdTxt.HoverState.Parent = this.pwdTxt;
+            this.pwdTxt.Location = new System.Drawing.Point(162, 22);
+            this.pwdTxt.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
+            this.pwdTxt.Name = "pwdTxt";
+            this.pwdTxt.PasswordChar = '\0';
+            this.pwdTxt.PlaceholderText = "Nhập mật khẩu";
+            this.pwdTxt.SelectedText = "";
+            this.pwdTxt.ShadowDecoration.Parent = this.pwdTxt;
+            this.pwdTxt.Size = new System.Drawing.Size(212, 32);
+            this.pwdTxt.TabIndex = 35;
+            this.pwdTxt.TextChanged += new System.EventHandler(this.pwdTxt_TextChanged);
+            this.pwdTxt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.pwdTxt_KeyDown);
             // 
             // LoginGUI
             // 
@@ -419,9 +445,7 @@
         private System.Windows.Forms.Label errorMsg2;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Panel line2;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
@@ -429,5 +453,7 @@
         private System.Windows.Forms.CheckBox checkBox1;
         private GradientPanel gradientPanel2;
         private System.Windows.Forms.PictureBox pictureBox6;
+        private Guna.UI2.WinForms.Guna2TextBox emailTxt;
+        private Guna.UI2.WinForms.Guna2TextBox pwdTxt;
     }
 }

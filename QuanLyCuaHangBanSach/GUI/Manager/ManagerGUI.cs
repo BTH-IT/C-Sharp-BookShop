@@ -1,35 +1,30 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.IO.Ports;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using QuanLyCuaHangBanSach.BUS;
+using QuanLyCuaHangBanSach.DTO;
 using QuanLyCuaHangBanSach.GUI.Manager;
-using QuanLyCuaHangBanSach.GUI.Modal;
+using QuanLyCuaHangBanTacGia.GUI.Manager;
 
 namespace QuanLyCuaHangBanSach.GUI
 {
     public partial class ManagerGUI : Form
     {
+        public static StaffDTO currentStaff;
         private string contentActive = "homeBtn";
         private HomeManageGUI homeFrm = new HomeManageGUI() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle=FormBorderStyle.None, };
         private BookManageGUI bookFrm = new BookManageGUI() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle=FormBorderStyle.None, };
-        private test authorFrm = new test() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle=FormBorderStyle.None, };
+        private AuthorGUI authorFrm = new AuthorGUI() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle=FormBorderStyle.None, };
         private test bookTypeFrm = new test() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle=FormBorderStyle.None, };
         private test customerFrm = new test() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle=FormBorderStyle.None, };
         private test staffFrm = new test() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle=FormBorderStyle.None, };
-        private test supplierFrm = new test() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle=FormBorderStyle.None, };
-        private test importBillFrm = new test() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle=FormBorderStyle.None, };
-        private test billFrm = new test() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle=FormBorderStyle.None, };
+        private SupplierManagerGUI supplierFrm = new SupplierManagerGUI() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle=FormBorderStyle.None, };
+        private ImportBillGUI importBillFrm = new ImportBillGUI() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle=FormBorderStyle.None, };
+        private CustomerBillGUI customerBillFrm = new CustomerBillGUI() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle=FormBorderStyle.None, };
         private test seoFrm = new test() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle=FormBorderStyle.None, };
         private test publisherFrm = new test() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle=FormBorderStyle.None, };
         private test accountFrm = new test() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle=FormBorderStyle.None, };
-        public ManagerGUI()
+        
+        public ManagerGUI(int staffId)
         {
             InitializeComponent();
             this.manageContent.Controls.Add(this.homeFrm);
@@ -40,11 +35,12 @@ namespace QuanLyCuaHangBanSach.GUI
             this.manageContent.Controls.Add(this.staffFrm);
             this.manageContent.Controls.Add(this.supplierFrm);
             this.manageContent.Controls.Add(this.importBillFrm);
-            this.manageContent.Controls.Add(this.billFrm);
+            this.manageContent.Controls.Add(this.customerBillFrm);
             this.manageContent.Controls.Add(this.seoFrm);
             this.manageContent.Controls.Add(this.publisherFrm);
             this.manageContent.Controls.Add(this.accountFrm);
-            this.homeFrm.Show();                                
+            this.homeFrm.Show();
+            currentStaff = StaffBUS.Instance.getById(staffId.ToString());
         }
 
         private void homeBtn_Click(object sender, EventArgs e)
@@ -75,7 +71,7 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.staffFrm.Hide();
                 this.supplierFrm.Hide();
                 this.importBillFrm.Hide();
-                this.billFrm.Hide();
+                this.customerBillFrm.Hide();
                 this.seoFrm.Hide();
                 this.publisherFrm.Hide();
                 this.accountFrm.Hide();
@@ -111,7 +107,7 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.staffFrm.Hide();
                 this.supplierFrm.Hide();
                 this.importBillFrm.Hide();
-                this.billFrm.Hide();
+                this.customerBillFrm.Hide();
                 this.seoFrm.Hide();
                 this.publisherFrm.Hide();
                 this.accountFrm.Hide();
@@ -145,9 +141,9 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.bookTypeFrm.Hide();
                 this.customerFrm.Hide();
                 this.staffFrm.Hide();
-                this.supplierFrm.Hide();
+                this.supplierFrm.Show();
                 this.importBillFrm.Hide();
-                this.billFrm.Hide();
+                this.customerBillFrm.Hide();
                 this.seoFrm.Hide();
                 this.publisherFrm.Hide();
                 this.accountFrm.Hide();
@@ -183,7 +179,7 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.staffFrm.Hide();
                 this.supplierFrm.Hide();
                 this.importBillFrm.Hide();
-                this.billFrm.Hide();
+                this.customerBillFrm.Hide();
                 this.seoFrm.Hide();
                 this.publisherFrm.Hide();
                 this.accountFrm.Hide();
@@ -219,7 +215,7 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.staffFrm.Hide();
                 this.supplierFrm.Hide();
                 this.importBillFrm.Hide();
-                this.billFrm.Hide();
+                this.customerBillFrm.Hide();
                 this.seoFrm.Hide();
                 this.publisherFrm.Hide();
                 this.accountFrm.Hide();
@@ -255,7 +251,7 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.homeFrm.Hide();
                 this.supplierFrm.Hide();
                 this.importBillFrm.Hide();
-                this.billFrm.Hide();
+                this.customerBillFrm.Hide();
                 this.seoFrm.Hide();
                 this.publisherFrm.Hide();
                 this.accountFrm.Hide();
@@ -291,7 +287,7 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.staffFrm.Hide();
                 this.homeFrm.Hide();
                 this.importBillFrm.Hide();
-                this.billFrm.Hide();
+                this.customerBillFrm.Hide();
                 this.seoFrm.Hide();
                 this.publisherFrm.Hide();
                 this.accountFrm.Hide();
@@ -327,7 +323,7 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.staffFrm.Hide();
                 this.supplierFrm.Hide();
                 this.homeFrm.Hide();
-                this.billFrm.Hide();
+                this.customerBillFrm.Hide();
                 this.seoFrm.Hide();
                 this.publisherFrm.Hide();
                 this.accountFrm.Hide();
@@ -354,7 +350,7 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.publisherBtn.Checked = false;
                 this.accountBtn.Checked = false;
 
-                this.billFrm.Show();
+                this.customerBillFrm.Show();
 
                 this.bookFrm.Hide();
                 this.authorFrm.Hide();
@@ -399,7 +395,7 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.staffFrm.Hide();
                 this.supplierFrm.Hide();
                 this.importBillFrm.Hide();
-                this.billFrm.Hide();
+                this.customerBillFrm.Hide();
                 this.homeFrm.Hide();
                 this.publisherFrm.Hide();
                 this.accountFrm.Hide();
@@ -435,7 +431,7 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.staffFrm.Hide();
                 this.supplierFrm.Hide();
                 this.importBillFrm.Hide();
-                this.billFrm.Hide();
+                this.customerBillFrm.Hide();
                 this.seoFrm.Hide();
                 this.homeFrm.Hide();
                 this.accountFrm.Hide();
@@ -471,7 +467,7 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.staffFrm.Hide();
                 this.supplierFrm.Hide();
                 this.importBillFrm.Hide();
-                this.billFrm.Hide();
+                this.customerBillFrm.Hide();
                 this.seoFrm.Hide();
                 this.publisherFrm.Hide();
                 this.homeFrm.Hide();
