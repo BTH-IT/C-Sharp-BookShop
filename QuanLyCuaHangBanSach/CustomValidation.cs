@@ -101,6 +101,12 @@ namespace QuanLyCuaHangBanSach
                             return false;
                         }
                         break;
+                    case "phone-number":
+                        if (!checkTextboxWithRegex(txt,new Regex("^0(3[2-9]|5[6|8|9]|7[0|6-9]|8[0-6|8|9]|9[0-4|6-9])[0-9]{7}$"),"Trường này phải là một số điện thoại",errMsgLbl,line))
+                        {
+                            return false;
+                        }
+                        break;
                 }
             }
 

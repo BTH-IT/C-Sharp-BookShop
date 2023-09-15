@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Data;
+using System.IO.Packaging;
 using QuanLyCuaHangBanSach.DAO;
 using QuanLyCuaHangBanSach.DTO;
 
@@ -55,7 +56,6 @@ namespace QuanLyCuaHangBanSach.BUS
         {
             return CustomerDAO.Instance.SearchByPhoneNum(num);
         }
-
         public bool insert(CustomerDTO customer)
         {
             return CustomerDAO.Instance.insert(customer);

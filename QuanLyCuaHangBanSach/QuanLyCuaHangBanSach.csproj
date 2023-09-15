@@ -759,7 +759,7 @@
     <Compile Include="GUI\Vendor\VendorGUI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Vendor\VendorGUI.Designer.cs">
+    <Compile Include="GUI\Vendor\VendorGUI.designer.cs">
       <DependentUpon>VendorGUI.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -890,6 +890,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\UserControls\PhoneSearchResultControl.resx">
       <DependentUpon>PhoneSearchResultControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Vendor\VendorGUI.resx">
+      <DependentUpon>VendorGUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
