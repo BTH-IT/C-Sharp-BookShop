@@ -111,6 +111,10 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
         private void cameraCbx_SelectedIndexChanged(object sender, EventArgs e)
         {
+            this.videoCaptureDevice.Stop();
+
+            this.timer1.Stop();
+
             this.videoCaptureDevice = new VideoCaptureDevice(filterInfoCollection[cameraCbx.SelectedIndex].MonikerString);
 
             this.videoCaptureDevice.NewFrame += VideoCaptureDevice_NewFrame;
