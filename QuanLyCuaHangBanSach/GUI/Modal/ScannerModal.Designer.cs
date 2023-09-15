@@ -95,6 +95,7 @@
             this.cameraCbx.ShadowDecoration.Parent = this.cameraCbx;
             this.cameraCbx.Size = new System.Drawing.Size(606, 36);
             this.cameraCbx.TabIndex = 1;
+            this.cameraCbx.SelectedIndexChanged += new System.EventHandler(this.cameraCbx_SelectedIndexChanged);
             // 
             // ScannerModal
             // 
