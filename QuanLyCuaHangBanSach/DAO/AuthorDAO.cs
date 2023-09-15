@@ -44,10 +44,11 @@ namespace QuanLyCuaHangBanSach.DAO
 
             return account;
         }
-        
+
         public DataTable searchData(string value)
         {
-            string sql = $@"SELECT * FROM tacgia WHERE maTacGia LIKE @maTacGia OR tenTacGia LIKE @tenTacGia AND hienThi = 1;";
+            string sql = $@"SELECT * FROM tacgia WHERE (maTacGia LIKE @maTacGia OR tenTacGia LIKE @tenTacGia) AND hienThi = 1;";
+            
 
             return DataProvider.Instance.ExecuteQuery(sql,
                 new MySqlParameter[] {
