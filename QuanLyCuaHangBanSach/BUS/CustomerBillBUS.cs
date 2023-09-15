@@ -52,17 +52,6 @@ namespace QuanLyCuaHangBanSach.BUS
             return CustomerBillDAO.Instance.createCustomerBillDetail(customerBillDetail);
         }
 
-        public bool updateCustomerBillDetail(CustomerBillDetailDTO customerBillDetail)
-        {
-            return CustomerBillDAO.Instance.updateCustomerBillDetail(customerBillDetail);
-
-        }
-
-        public bool deleteCustomerBillDetail(string billId, string bookId)
-        {
-            return CustomerBillDAO.Instance.deleteCustomerBillDetail(billId, bookId);
-        }
-
         public List<CustomerBillDTO> search(string id)
         {
             DataTable dataTable = CustomerBillDAO.Instance.searchData(id);
@@ -81,58 +70,6 @@ namespace QuanLyCuaHangBanSach.BUS
         public bool insert(CustomerBillDTO customerBill)
         {
             return CustomerBillDAO.Instance.insert(customerBill);
-        }
-
-        public bool updateBillAndBillDetail(CustomerBillDTO customerBill, List<CustomerBillDetailDTO> customerBillDetailList)
-        {
-            try
-            {
-                if (CustomerBillDAO.Instance.update(customerBill))
-                {
-                    List<CustomerBillDetailDTO> oldCustomerBillDetailList = CustomerBillDAO.Instance.getCustomerBillDetailList(customerBill.MaDonKhachHang.ToString());
-
-                    oldCustomerBillDetailList = oldCustomerBillDetailList.FindAll(
-                        (oldCustomerBillDetail) =>
-                        {
-                            foreach (CustomerBillDetailDTO customerBillDetail in customerBillDetailList)
-                            {
-                                if (customerBillDetail.MaDon == oldCustomerBillDetail.MaDon
-                                    && customerBillDetail.MaSach == oldCustomerBillDetail.MaSach
-                                )
-                                {
-                                    return false;
-                                }
-                            }
-
-                            return true;
-                        }
-                    );
-
-                    foreach (CustomerBillDetailDTO customerBillDetail in customerBillDetailList)
-                    {
-                        if (CustomerBillDAO.Instance.getCustomerBillDetail(
-                            customerBillDetail.MaDon.ToString(),
-                            customerBillDetail.MaSach.ToString()
-                         ) == null)
-                        {
-                            CustomerBillDAO.Instance.createCustomerBillDetail(customerBillDetail);
-                            continue;
-                        }
-
-                        CustomerBillDAO.Instance.updateCustomerBillDetail(customerBillDetail);
-                    }
-
-                    foreach (CustomerBillDetailDTO customerBillDetail in oldCustomerBillDetailList)
-                    {
-                        CustomerBillDAO.Instance.deleteCustomerBillDetail(customerBillDetail.MaDon.ToString(), customerBillDetail.MaSach.ToString());
-                    }
-                }
-
-                return true;
-            } catch
-            {
-                return false;
-            }
         }
 
         public CustomerBillDTO insertReturnBill(CustomerBillDTO customerBill)

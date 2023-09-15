@@ -11,20 +11,18 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
     public partial class AddBookToCustomerBillModal : Form
     {
         private bool isSaved = false;
-        private CustomerBillDTO customerBill;
         private CheckBox headerCheckbox;
         private CheckBox headerCheckboxBillList;
         private List<BookDTO> bookList = BookBUS.Instance.getAllData();
 
-        public List<CustomerBillDetailDTO> selectedCustomerBillDetailList = new List<CustomerBillDetailDTO>();
+        public List<CustomerBillDetailDTO> selectedCustomerBillDetailList;
 
-        public AddBookToCustomerBillModal(CustomerBillDTO customerBill)
+        public AddBookToCustomerBillModal(List<CustomerBillDetailDTO> customerBillDetailList)
         {
             InitializeComponent();
 
-            this.customerBill = customerBill;
-
             this.selectedCustomerBillDetailList.Clear();
+            this.selectedCustomerBillDetailList = customerBillDetailList;
         }
 
         private void renderCheckBoxDgvBook()
@@ -321,7 +319,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                     if (idx == -1)
                     {
                         CustomerBillDetailDTO customerBillDetail = new CustomerBillDetailDTO(
-                            customerBill.MaDonKhachHang,
+                            0,
                             scannerModal.scannedBook.MaSach,
                             1,
                             scannerModal.scannedBook.GiaBan
@@ -419,7 +417,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                         if (idx == -1)
                         {
                             CustomerBillDetailDTO customerBillDetail = new CustomerBillDetailDTO(
-                                this.customerBill.MaDonKhachHang,
+                                0,
                                 maSach,
                                 1,
                                 giaBan

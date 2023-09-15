@@ -25,6 +25,7 @@ namespace QuanLyCuaHangBanSach.DTO
             this.MaSach = (int)row["maSach"];
             this.SoLuong = (int)row["soLuong"];
             this.DonGia = Convert.ToDouble(row["donGia"]);
+            this.ThanhTien = this.SoLuong * this.DonGia;
         }
     }
 }

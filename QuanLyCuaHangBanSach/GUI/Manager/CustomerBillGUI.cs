@@ -90,7 +90,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         {
             List<CustomerDTO> customerList = CustomerBUS.Instance.getAllData();
 
-            customerList.Insert(0, new CustomerDTO(0, "", "Tất cả khách hàng", "", 0));
+            customerList.Insert(0, new CustomerDTO(0, "", "Tất cả khách hàng", "", 0, 0));
 
             this.customerCbx.ValueMember = "Ma";
             this.customerCbx.DisplayMember = "SoDienThoai";
@@ -103,7 +103,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         {
             List<StaffDTO> staffList = StaffBUS.Instance.getAllData();
 
-            staffList.Insert(0, new StaffDTO(0, "Tất cả nhân viên", "", "", 0, 0, ""));
+            staffList.Insert(0, new StaffDTO(0, "Tất cả nhân viên", "", "", 0, 0, 0));
 
             this.staffCbx.ValueMember = "Ma";
             this.staffCbx.DisplayMember = "Ten";
@@ -116,8 +116,8 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         {
             List<SaleDTO> saleList = SaleBUS.Instance.getAllData();
 
-            saleList.Insert(0, new SaleDTO(0, "Tất cả khuyến mãi", 0, new DateTime(), new DateTime()));
-            saleList.Insert(1, new SaleDTO(-1, "Không có khuyến mãi", 0, new DateTime(), new DateTime()));
+            saleList.Insert(0, new SaleDTO(0, "Tất cả khuyến mãi", 0, new DateTime(), new DateTime(), 0));
+            saleList.Insert(1, new SaleDTO(-1, "Không có khuyến mãi", 0, new DateTime(), new DateTime(), 0));
 
             this.saleCbx.ValueMember = "MaKhuyenMai";
             this.saleCbx.DisplayMember = "TenKhuyenMai";
@@ -360,23 +360,23 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             }
         }
 
-        private void deleteBtn_Click(object sender, EventArgs e)
+        private bool isCheckSeletedRows()
         {
-            bool isHaveSelect = false;
-
             foreach (DataGridViewRow row in this.dgvCustomerBill.Rows)
             {
                 if ((bool)row.Cells[0].Value)
                 {
-                    isHaveSelect = true;
+                    return true;
                 }
             }
 
-            if (!isHaveSelect)
-            {
-                MessageBox.Show("Bạn chưa chọn những đơn hàng cần xóa");
-                return;
-            }
+            MessageBox.Show("Bạn chưa chọn những đơn hàng cần xóa");
+            return false;
+        }
+
+        private void deleteBtn_Click(object sender, EventArgs e)
+        {
+            if (!isCheckSeletedRows()) return;
 
             DialogResult dlgResult = MessageBox.Show(
                 "Bạn chắc chắn muốn xóa các đơn hàng đã chọn chứ chứ?",
@@ -392,19 +392,15 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                 {
                     if ((bool)row.Cells[0].Value == true)
                     {
-                        if (BookBUS.Instance.delete(row.Cells[1].Value.ToString()))
-                        {
-                            List<CustomerBillDTO> customerBillList = handleFilter(this.searchInput.Text.ToString());
-
-                            this.loadCustomerBillListToDataView(customerBillList);
-
-                            row.Cells[0].Value = false;
-                        }
+                        BookBUS.Instance.delete(row.Cells[1].Value.ToString());
                     }
 
                 }
 
-                this.dgvCustomerBill.RefreshEdit();
+                List<CustomerBillDTO> customerBillList = handleFilter(this.searchInput.Text.ToString());
+
+                this.loadCustomerBillListToDataView(customerBillList);
+
                 MessageBox.Show("Delete successful");
             }
         }
@@ -453,6 +449,37 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         {
             this.dateTimeFrom.Enabled = this.filterCkx.Checked;
             this.dateTimeTo.Enabled = this.filterCkx.Checked;
+        }
+
+        private void printPdfBtn_Click(object sender, EventArgs e)
+        {
+            if (!isCheckSeletedRows()) return;
+
+            DialogResult dlgResult = MessageBox.Show(
+                "Bạn chắc chắn muốn xóa các đơn hàng đã chọn chứ chứ?",
+                "Xác nhận",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question,
+                MessageBoxDefaultButton.Button1
+            );
+
+            if (dlgResult == DialogResult.Yes)
+            {
+                foreach (DataGridViewRow row in this.dgvCustomerBill.Rows)
+                {
+                    if ((bool)row.Cells[0].Value == true)
+                    {
+                        int maSach = Convert.ToInt32(row.Cells[1].Value.ToString());
+                    }
+
+                }
+
+                List<CustomerBillDTO> customerBillList = handleFilter(this.searchInput.Text.ToString());
+
+                this.loadCustomerBillListToDataView(customerBillList);
+
+                MessageBox.Show("Print PDF successful");
+            }
         }
     }
 }

@@ -76,7 +76,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         {
             List<StaffDTO> staffList = StaffBUS.Instance.getAllData();
 
-            staffList.Insert(0, new StaffDTO(0, "Tất cả nhân viên", "", "", 0, 0, ""));
+            staffList.Insert(0, new StaffDTO(0, "Tất cả nhân viên", "", "", 0, 0, 0));
 
             this.staffCbx.ValueMember = "Ma";
             this.staffCbx.DisplayMember = "Ten";
@@ -383,7 +383,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         {
             DataTable dt = CustomExcel.Instance.ImportFile();
 
-            ImportBillDTO newImportBill = new ImportBillDTO(0, 1, ManagerGUI.currentStaff.Ma, new DateTime(), 0);
+            ImportBillDTO newImportBill = new ImportBillDTO(0, 1, 0, ManagerGUI.currentStaff.Ma, DateTime.Now, 0);
 
             ImportBillDTO importBill = ImportBillBUS.Instance.insertReturnBill(newImportBill);
 
