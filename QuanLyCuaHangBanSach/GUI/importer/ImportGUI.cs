@@ -15,6 +15,7 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
         public ImportGUI()
         {
             InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.None;
         }
     }
 }

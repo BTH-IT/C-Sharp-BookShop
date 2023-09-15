@@ -595,7 +595,7 @@
             // FilterContainer
             // 
             this.FilterContainer.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.FilterContainer.Location = new System.Drawing.Point(206, 124);
+            this.FilterContainer.Location = new System.Drawing.Point(206, 119);
             this.FilterContainer.Name = "FilterContainer";
             this.FilterContainer.Size = new System.Drawing.Size(334, 221);
             this.FilterContainer.TabIndex = 7;
@@ -615,7 +615,7 @@
             this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "VendorGUI";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "MainPage";
+            this.Text = "Main Page";
             this.Load += new System.EventHandler(this.Vendor_Load);
             this.flowLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.LogoImg)).EndInit();
