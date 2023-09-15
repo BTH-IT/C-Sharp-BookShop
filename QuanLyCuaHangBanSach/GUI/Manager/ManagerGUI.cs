@@ -3,6 +3,7 @@ using System.Windows.Forms;
 using QuanLyCuaHangBanSach.BUS;
 using QuanLyCuaHangBanSach.DTO;
 using QuanLyCuaHangBanSach.GUI.Manager;
+using QuanLyCuaHangBanTacGia.GUI.Manager;
 
 namespace QuanLyCuaHangBanSach.GUI
 {
@@ -12,16 +13,20 @@ namespace QuanLyCuaHangBanSach.GUI
         private string contentActive = "homeBtn";
         private HomeManageGUI homeFrm = new HomeManageGUI() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle=FormBorderStyle.None, };
         private BookManageGUI bookFrm = new BookManageGUI() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle=FormBorderStyle.None, };
-        private test authorFrm = new test() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle=FormBorderStyle.None, };
-        private test bookTypeFrm = new test() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle=FormBorderStyle.None, };
-        private test customerFrm = new test() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle=FormBorderStyle.None, };
-        private test staffFrm = new test() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle=FormBorderStyle.None, };
-        private test supplierFrm = new test() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle=FormBorderStyle.None, };
+        private AuthorGUI authorFrm = new AuthorGUI() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle=FormBorderStyle.None, };
+        private CustomerManagerGUI customerFrm = new CustomerManagerGUI() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle=FormBorderStyle.None, };
+        private StaffManageGUI staffFrm = new StaffManageGUI() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle=FormBorderStyle.None, };
+        private SupplierManagerGUI supplierFrm = new SupplierManagerGUI() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle=FormBorderStyle.None, };
         private ImportBillGUI importBillFrm = new ImportBillGUI() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle=FormBorderStyle.None, };
         private CustomerBillGUI customerBillFrm = new CustomerBillGUI() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle=FormBorderStyle.None, };
-        private test seoFrm = new test() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle=FormBorderStyle.None, };
+        private SeoManageGUI seoFrm = new SeoManageGUI() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle=FormBorderStyle.None, };
+        private AccountManageGUI accountFrm = new AccountManageGUI() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle=FormBorderStyle.None, };
+        private PositionManageGUI positionFrm = new PositionManageGUI() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle=FormBorderStyle.None, };
+        private PermissionManageGUI permissionFrm = new PermissionManageGUI() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle=FormBorderStyle.None, };
+        private PaymentBillManageGUI paymentBillFrm = new PaymentBillManageGUI() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle=FormBorderStyle.None, };
+        private test refundFrm = new test() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle=FormBorderStyle.None, };
+        private test bookTypeFrm = new test() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle=FormBorderStyle.None, };
         private test publisherFrm = new test() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle=FormBorderStyle.None, };
-        private test accountFrm = new test() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle=FormBorderStyle.None, };
         
         public ManagerGUI(int staffId)
         {
@@ -38,6 +43,10 @@ namespace QuanLyCuaHangBanSach.GUI
             this.manageContent.Controls.Add(this.seoFrm);
             this.manageContent.Controls.Add(this.publisherFrm);
             this.manageContent.Controls.Add(this.accountFrm);
+            this.manageContent.Controls.Add(this.positionFrm);
+            this.manageContent.Controls.Add(this.permissionFrm);
+            this.manageContent.Controls.Add(this.paymentBillFrm);
+            this.manageContent.Controls.Add(this.refundFrm);
             this.homeFrm.Show();
             currentStaff = StaffBUS.Instance.getById(staffId.ToString());
         }
@@ -60,6 +69,10 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.seoBtn.Checked = false;
                 this.publisherBtn.Checked = false;
                 this.accountBtn.Checked = false;
+                this.positionBtn.Checked = false;
+                this.permissionBtn.Checked = false;
+                this.paymentBtn.Checked = false;
+                this.refundBtn.Checked = false;
 
                 this.homeFrm.Show();
 
@@ -74,6 +87,10 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.seoFrm.Hide();
                 this.publisherFrm.Hide();
                 this.accountFrm.Hide();
+                this.positionFrm.Hide();
+                this.permissionFrm.Hide();
+                this.paymentBillFrm.Hide();
+                this.refundFrm.Hide();
             }
         }
 
@@ -96,6 +113,10 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.seoBtn.Checked = false;
                 this.publisherBtn.Checked = false;
                 this.accountBtn.Checked = false;
+                this.positionBtn.Checked = false;
+                this.permissionBtn.Checked = false;
+                this.paymentBtn.Checked = false;
+                this.refundBtn.Checked = false;
 
                 this.bookFrm.Show();
 
@@ -110,6 +131,10 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.seoFrm.Hide();
                 this.publisherFrm.Hide();
                 this.accountFrm.Hide();
+                this.positionFrm.Hide();
+                this.permissionFrm.Hide();
+                this.paymentBillFrm.Hide();
+                this.refundFrm.Hide();
             }
         }
 
@@ -132,6 +157,10 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.seoBtn.Checked = false;
                 this.publisherBtn.Checked = false;
                 this.accountBtn.Checked = false;
+                this.positionBtn.Checked = false;
+                this.permissionBtn.Checked = false;
+                this.paymentBtn.Checked = false;
+                this.refundBtn.Checked = false;
 
                 this.authorFrm.Show();
 
@@ -140,12 +169,16 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.bookTypeFrm.Hide();
                 this.customerFrm.Hide();
                 this.staffFrm.Hide();
-                this.supplierFrm.Hide();
+                this.supplierFrm.Show();
                 this.importBillFrm.Hide();
                 this.customerBillFrm.Hide();
                 this.seoFrm.Hide();
                 this.publisherFrm.Hide();
                 this.accountFrm.Hide();
+                this.positionFrm.Hide();
+                this.permissionFrm.Hide();
+                this.paymentBillFrm.Hide();
+                this.refundFrm.Hide();
             }
         }
 
@@ -168,6 +201,10 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.seoBtn.Checked = false;
                 this.publisherBtn.Checked = false;
                 this.accountBtn.Checked = false;
+                this.positionBtn.Checked = false;
+                this.permissionBtn.Checked = false;
+                this.paymentBtn.Checked = false;
+                this.refundBtn.Checked = false;
 
                 this.bookTypeFrm.Show();
 
@@ -182,6 +219,10 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.seoFrm.Hide();
                 this.publisherFrm.Hide();
                 this.accountFrm.Hide();
+                this.positionFrm.Hide();
+                this.permissionFrm.Hide();
+                this.paymentBillFrm.Hide();
+                this.refundFrm.Hide();
             }
         }
 
@@ -204,6 +245,10 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.seoBtn.Checked = false;
                 this.publisherBtn.Checked = false;
                 this.accountBtn.Checked = false;
+                this.positionBtn.Checked = false;
+                this.permissionBtn.Checked = false;
+                this.paymentBtn.Checked = false;
+                this.refundBtn.Checked = false;
 
                 this.customerFrm.Show();
 
@@ -218,6 +263,10 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.seoFrm.Hide();
                 this.publisherFrm.Hide();
                 this.accountFrm.Hide();
+                this.positionFrm.Hide();
+                this.permissionFrm.Hide();
+                this.paymentBillFrm.Hide();
+                this.refundFrm.Hide();
             }
         }
 
@@ -240,6 +289,10 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.seoBtn.Checked = false;
                 this.publisherBtn.Checked = false;
                 this.accountBtn.Checked = false;
+                this.positionBtn.Checked = false;
+                this.permissionBtn.Checked = false;
+                this.paymentBtn.Checked = false;
+                this.refundBtn.Checked = false;
 
                 this.staffFrm.Show();
 
@@ -254,6 +307,10 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.seoFrm.Hide();
                 this.publisherFrm.Hide();
                 this.accountFrm.Hide();
+                this.positionFrm.Hide();
+                this.permissionFrm.Hide();
+                this.paymentBillFrm.Hide();
+                this.refundFrm.Hide();
             }
         }
 
@@ -276,6 +333,10 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.seoBtn.Checked = false;
                 this.publisherBtn.Checked = false;
                 this.accountBtn.Checked = false;
+                this.positionBtn.Checked = false;
+                this.permissionBtn.Checked = false;
+                this.paymentBtn.Checked = false;
+                this.refundBtn.Checked = false;
 
                 this.supplierFrm.Show();
 
@@ -290,6 +351,10 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.seoFrm.Hide();
                 this.publisherFrm.Hide();
                 this.accountFrm.Hide();
+                this.positionFrm.Hide();
+                this.permissionFrm.Hide();
+                this.paymentBillFrm.Hide();
+                this.refundFrm.Hide();
             }
         }
 
@@ -312,6 +377,10 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.seoBtn.Checked = false;
                 this.publisherBtn.Checked = false;
                 this.accountBtn.Checked = false;
+                this.positionBtn.Checked = false;
+                this.permissionBtn.Checked = false;
+                this.paymentBtn.Checked = false;
+                this.refundBtn.Checked = false;
 
                 this.importBillFrm.Show();
 
@@ -326,6 +395,10 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.seoFrm.Hide();
                 this.publisherFrm.Hide();
                 this.accountFrm.Hide();
+                this.positionFrm.Hide();
+                this.permissionFrm.Hide();
+                this.paymentBillFrm.Hide();
+                this.refundFrm.Hide();
             }
         }
 
@@ -348,6 +421,10 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.seoBtn.Checked = false;
                 this.publisherBtn.Checked = false;
                 this.accountBtn.Checked = false;
+                this.positionBtn.Checked = false;
+                this.permissionBtn.Checked = false;
+                this.paymentBtn.Checked = false;
+                this.refundBtn.Checked = false;
 
                 this.customerBillFrm.Show();
 
@@ -362,6 +439,10 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.seoFrm.Hide();
                 this.publisherFrm.Hide();
                 this.accountFrm.Hide();
+                this.positionFrm.Hide();
+                this.permissionFrm.Hide();
+                this.paymentBillFrm.Hide();
+                this.refundFrm.Hide();
             }
         }
 
@@ -384,6 +465,10 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.billBtn.Checked = false;
                 this.publisherBtn.Checked = false;
                 this.accountBtn.Checked = false;
+                this.positionBtn.Checked = false;
+                this.permissionBtn.Checked = false;
+                this.paymentBtn.Checked = false;
+                this.refundBtn.Checked = false;
 
                 this.seoFrm.Show();
 
@@ -398,6 +483,10 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.homeFrm.Hide();
                 this.publisherFrm.Hide();
                 this.accountFrm.Hide();
+                this.positionFrm.Hide();
+                this.permissionFrm.Hide();
+                this.paymentBillFrm.Hide();
+                this.refundFrm.Hide();
             }
         }
 
@@ -420,6 +509,10 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.billBtn.Checked = false;
                 this.seoBtn.Checked = false;
                 this.accountBtn.Checked = false;
+                this.positionBtn.Checked = false;
+                this.permissionBtn.Checked = false;
+                this.paymentBtn.Checked = false;
+                this.refundBtn.Checked = false;
 
                 this.publisherFrm.Show();
 
@@ -434,6 +527,10 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.seoFrm.Hide();
                 this.homeFrm.Hide();
                 this.accountFrm.Hide();
+                this.positionFrm.Hide();
+                this.permissionFrm.Hide();
+                this.paymentBillFrm.Hide();
+                this.refundFrm.Hide();
             }
         }
 
@@ -456,6 +553,10 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.billBtn.Checked = false;
                 this.seoBtn.Checked = false;
                 this.publisherBtn.Checked = false;
+                this.positionBtn.Checked = false;
+                this.permissionBtn.Checked = false;
+                this.paymentBtn.Checked = false;
+                this.refundBtn.Checked = false;
 
                 this.accountFrm.Show();
 
@@ -470,6 +571,186 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.seoFrm.Hide();
                 this.publisherFrm.Hide();
                 this.homeFrm.Hide();
+                this.positionFrm.Hide();
+                this.permissionFrm.Hide();
+                this.paymentBillFrm.Hide();
+                this.refundFrm.Hide();
+            }
+        }
+
+        private void permissionBtn_Click(object sender, EventArgs e)
+        {
+            if (!contentActive.Equals("permissionBtn"))
+            {
+                this.contentActive = "permissionBtn";
+
+                this.permissionBtn.Checked = true;
+
+                this.homeBtn.Checked = false;
+                this.bookBtn.Checked = false;
+                this.authorBtn.Checked = false;
+                this.bookTypeBtn.Checked = false;
+                this.customerBtn.Checked = false;
+                this.staffBtn.Checked = false;
+                this.supplierBtn.Checked = false;
+                this.importBilBtn.Checked = false;
+                this.billBtn.Checked = false;
+                this.seoBtn.Checked = false;
+                this.publisherBtn.Checked = false;
+                this.positionBtn.Checked = false;
+                this.accountBtn.Checked = false;
+                this.paymentBtn.Checked = false;
+                this.refundBtn.Checked = false;
+
+                this.permissionFrm.Show();
+
+                this.bookFrm.Hide();
+                this.authorFrm.Hide();
+                this.bookTypeFrm.Hide();
+                this.customerFrm.Hide();
+                this.staffFrm.Hide();
+                this.supplierFrm.Hide();
+                this.importBillFrm.Hide();
+                this.customerBillFrm.Hide();
+                this.seoFrm.Hide();
+                this.publisherFrm.Hide();
+                this.homeFrm.Hide();
+                this.positionFrm.Hide();
+                this.accountFrm.Hide();
+                this.paymentBillFrm.Hide();
+                this.refundFrm.Hide();
+            }
+        }
+
+        private void refundBtn_Click(object sender, EventArgs e)
+        {
+            if (!contentActive.Equals("refundBtn"))
+            {
+                this.contentActive = "refundBtn";
+
+                this.refundBtn.Checked = true;
+
+                this.homeBtn.Checked = false;
+                this.bookBtn.Checked = false;
+                this.authorBtn.Checked = false;
+                this.bookTypeBtn.Checked = false;
+                this.customerBtn.Checked = false;
+                this.staffBtn.Checked = false;
+                this.supplierBtn.Checked = false;
+                this.importBilBtn.Checked = false;
+                this.billBtn.Checked = false;
+                this.seoBtn.Checked = false;
+                this.publisherBtn.Checked = false;
+                this.positionBtn.Checked = false;
+                this.accountBtn.Checked = false;
+                this.paymentBtn.Checked = false;
+                this.permissionBtn.Checked = false;
+
+                this.refundFrm.Show();
+
+                this.bookFrm.Hide();
+                this.authorFrm.Hide();
+                this.bookTypeFrm.Hide();
+                this.customerFrm.Hide();
+                this.staffFrm.Hide();
+                this.supplierFrm.Hide();
+                this.importBillFrm.Hide();
+                this.customerBillFrm.Hide();
+                this.seoFrm.Hide();
+                this.publisherFrm.Hide();
+                this.homeFrm.Hide();
+                this.positionFrm.Hide();
+                this.accountFrm.Hide();
+                this.paymentBillFrm.Hide();
+                this.permissionFrm.Hide();
+            }
+        }
+
+        private void paymentBtn_Click(object sender, EventArgs e)
+        {
+            if (!contentActive.Equals("paymentBtn"))
+            {
+                this.contentActive = "paymentBtn";
+
+                this.paymentBtn.Checked = true;
+
+                this.homeBtn.Checked = false;
+                this.bookBtn.Checked = false;
+                this.authorBtn.Checked = false;
+                this.bookTypeBtn.Checked = false;
+                this.customerBtn.Checked = false;
+                this.staffBtn.Checked = false;
+                this.supplierBtn.Checked = false;
+                this.importBilBtn.Checked = false;
+                this.billBtn.Checked = false;
+                this.seoBtn.Checked = false;
+                this.publisherBtn.Checked = false;
+                this.positionBtn.Checked = false;
+                this.accountBtn.Checked = false;
+                this.refundBtn.Checked = false;
+                this.permissionBtn.Checked = false;
+
+                this.paymentBillFrm.Show();
+
+                this.bookFrm.Hide();
+                this.authorFrm.Hide();
+                this.bookTypeFrm.Hide();
+                this.customerFrm.Hide();
+                this.staffFrm.Hide();
+                this.supplierFrm.Hide();
+                this.importBillFrm.Hide();
+                this.customerBillFrm.Hide();
+                this.seoFrm.Hide();
+                this.publisherFrm.Hide();
+                this.homeFrm.Hide();
+                this.positionFrm.Hide();
+                this.accountFrm.Hide();
+                this.refundFrm.Hide();
+                this.permissionFrm.Hide();
+            }
+        }
+
+        private void positionBtn_Click(object sender, EventArgs e)
+        {
+            if (!contentActive.Equals("positionBtn"))
+            {
+                this.contentActive = "positionBtn";
+
+                this.positionBtn.Checked = true;
+
+                this.homeBtn.Checked = false;
+                this.bookBtn.Checked = false;
+                this.authorBtn.Checked = false;
+                this.bookTypeBtn.Checked = false;
+                this.customerBtn.Checked = false;
+                this.staffBtn.Checked = false;
+                this.supplierBtn.Checked = false;
+                this.importBilBtn.Checked = false;
+                this.billBtn.Checked = false;
+                this.seoBtn.Checked = false;
+                this.publisherBtn.Checked = false;
+                this.paymentBtn.Checked = false;
+                this.accountBtn.Checked = false;
+                this.refundBtn.Checked = false;
+                this.permissionBtn.Checked = false;
+
+                this.positionFrm.Show();
+
+                this.bookFrm.Hide();
+                this.authorFrm.Hide();
+                this.bookTypeFrm.Hide();
+                this.customerFrm.Hide();
+                this.staffFrm.Hide();
+                this.supplierFrm.Hide();
+                this.importBillFrm.Hide();
+                this.customerBillFrm.Hide();
+                this.seoFrm.Hide();
+                this.publisherFrm.Hide();
+                this.homeFrm.Hide();
+                this.paymentBillFrm.Hide();
+                this.accountFrm.Hide();
+                this.refundFrm.Hide();
+                this.permissionFrm.Hide();
             }
         }
 

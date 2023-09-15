@@ -57,6 +57,7 @@
             this.bookTypeCbx = new Guna.UI.WinForms.GunaComboBox();
             this.publisherCbx = new Guna.UI.WinForms.GunaComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.searchInput = new Guna.UI2.WinForms.Guna2TextBox();
             this.gradientPanel1 = new QuanLyCuaHangBanSach.GradientPanel();
             this.priceTo = new Guna.UI2.WinForms.Guna2TextBox();
             this.priceFrom = new Guna.UI2.WinForms.Guna2TextBox();
@@ -64,7 +65,6 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.searchInput = new Guna.UI2.WinForms.Guna2TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBook)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -93,7 +93,7 @@
             this.dgvBook.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("#9Slide03 Cabin", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
@@ -115,7 +115,7 @@
             this.Column6});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("#9Slide03 Cabin", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
@@ -127,7 +127,7 @@
             this.dgvBook.Name = "dgvBook";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("#9Slide03 Cabin", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
@@ -158,14 +158,14 @@
             this.dgvBook.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvBook.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.dgvBook.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.dgvBook.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("#9Slide03 Cabin", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvBook.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvBook.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.dgvBook.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvBook.ThemeStyle.HeaderStyle.Height = 50;
             this.dgvBook.ThemeStyle.ReadOnly = false;
             this.dgvBook.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvBook.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgvBook.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("#9Slide03 Cabin", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvBook.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvBook.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dgvBook.ThemeStyle.RowsStyle.Height = 75;
             this.dgvBook.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
@@ -300,7 +300,7 @@
             this.exportBtn.CheckedLineColor = System.Drawing.Color.DimGray;
             this.exportBtn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.exportBtn.FocusedColor = System.Drawing.Color.Empty;
-            this.exportBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.exportBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold);
             this.exportBtn.ForeColor = System.Drawing.Color.White;
             this.exportBtn.Image = ((System.Drawing.Image)(resources.GetObject("exportBtn.Image")));
             this.exportBtn.ImageSize = new System.Drawing.Size(20, 20);
@@ -333,7 +333,7 @@
             this.refreshBtn.CheckedLineColor = System.Drawing.Color.DimGray;
             this.refreshBtn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.refreshBtn.FocusedColor = System.Drawing.Color.Empty;
-            this.refreshBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.refreshBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold);
             this.refreshBtn.ForeColor = System.Drawing.Color.White;
             this.refreshBtn.Image = ((System.Drawing.Image)(resources.GetObject("refreshBtn.Image")));
             this.refreshBtn.ImageSize = new System.Drawing.Size(20, 20);
@@ -366,7 +366,7 @@
             this.deleteBtn.CheckedLineColor = System.Drawing.Color.DimGray;
             this.deleteBtn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.deleteBtn.FocusedColor = System.Drawing.Color.Empty;
-            this.deleteBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deleteBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold);
             this.deleteBtn.ForeColor = System.Drawing.Color.White;
             this.deleteBtn.Image = ((System.Drawing.Image)(resources.GetObject("deleteBtn.Image")));
             this.deleteBtn.ImageSize = new System.Drawing.Size(20, 20);
@@ -399,7 +399,7 @@
             this.editBtn.CheckedLineColor = System.Drawing.Color.DimGray;
             this.editBtn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.editBtn.FocusedColor = System.Drawing.Color.Empty;
-            this.editBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.editBtn.ForeColor = System.Drawing.Color.White;
             this.editBtn.Image = ((System.Drawing.Image)(resources.GetObject("editBtn.Image")));
             this.editBtn.ImageSize = new System.Drawing.Size(20, 20);
@@ -432,7 +432,7 @@
             this.addBtn.CheckedLineColor = System.Drawing.Color.DimGray;
             this.addBtn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.addBtn.FocusedColor = System.Drawing.Color.Empty;
-            this.addBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.addBtn.ForeColor = System.Drawing.Color.White;
             this.addBtn.Image = ((System.Drawing.Image)(resources.GetObject("addBtn.Image")));
             this.addBtn.ImageSize = new System.Drawing.Size(20, 20);
@@ -461,7 +461,7 @@
             this.authorCbx.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.authorCbx.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.authorCbx.FocusedColor = System.Drawing.Color.Empty;
-            this.authorCbx.Font = new System.Drawing.Font("#9Slide03 Cabin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.authorCbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.authorCbx.ForeColor = System.Drawing.Color.Black;
             this.authorCbx.FormattingEnabled = true;
             this.authorCbx.ItemHeight = 30;
@@ -485,7 +485,7 @@
             this.bookTypeCbx.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.bookTypeCbx.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.bookTypeCbx.FocusedColor = System.Drawing.Color.Empty;
-            this.bookTypeCbx.Font = new System.Drawing.Font("#9Slide03 Cabin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bookTypeCbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bookTypeCbx.ForeColor = System.Drawing.Color.Black;
             this.bookTypeCbx.FormattingEnabled = true;
             this.bookTypeCbx.ItemHeight = 30;
@@ -509,7 +509,7 @@
             this.publisherCbx.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.publisherCbx.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.publisherCbx.FocusedColor = System.Drawing.Color.Empty;
-            this.publisherCbx.Font = new System.Drawing.Font("#9Slide03 Cabin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.publisherCbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.publisherCbx.ForeColor = System.Drawing.Color.Black;
             this.publisherCbx.FormattingEnabled = true;
             this.publisherCbx.ImeMode = System.Windows.Forms.ImeMode.NoControl;
@@ -534,6 +534,36 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 22;
             this.pictureBox1.TabStop = false;
+            // 
+            // searchInput
+            // 
+            this.searchInput.BackColor = System.Drawing.Color.Transparent;
+            this.searchInput.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
+            this.searchInput.BorderThickness = 0;
+            this.searchInput.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.searchInput.DefaultText = "";
+            this.searchInput.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.searchInput.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.searchInput.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.searchInput.DisabledState.Parent = this.searchInput;
+            this.searchInput.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.searchInput.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
+            this.searchInput.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.searchInput.FocusedState.Parent = this.searchInput;
+            this.searchInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchInput.ForeColor = System.Drawing.Color.Black;
+            this.searchInput.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.searchInput.HoverState.Parent = this.searchInput;
+            this.searchInput.Location = new System.Drawing.Point(15, 7);
+            this.searchInput.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.searchInput.Name = "searchInput";
+            this.searchInput.PasswordChar = '\0';
+            this.searchInput.PlaceholderText = "Tìm kiếm theo mã, tên";
+            this.searchInput.SelectedText = "";
+            this.searchInput.ShadowDecoration.Parent = this.searchInput;
+            this.searchInput.Size = new System.Drawing.Size(236, 36);
+            this.searchInput.TabIndex = 31;
+            this.searchInput.TextChanged += new System.EventHandler(this.searchInput_TextChanged);
             // 
             // gradientPanel1
             // 
@@ -565,7 +595,7 @@
             this.priceTo.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
             this.priceTo.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.priceTo.FocusedState.Parent = this.priceTo;
-            this.priceTo.Font = new System.Drawing.Font("#9Slide03 Cabin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.priceTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.priceTo.ForeColor = System.Drawing.Color.Black;
             this.priceTo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.priceTo.HoverState.Parent = this.priceTo;
@@ -595,7 +625,7 @@
             this.priceFrom.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
             this.priceFrom.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.priceFrom.FocusedState.Parent = this.priceFrom;
-            this.priceFrom.Font = new System.Drawing.Font("#9Slide03 Cabin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.priceFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.priceFrom.ForeColor = System.Drawing.Color.Black;
             this.priceFrom.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.priceFrom.HoverState.Parent = this.priceFrom;
@@ -640,7 +670,7 @@
             // label1
             // 
             this.label1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label1.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(212)))), ((int)(((byte)(191)))));
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
@@ -649,42 +679,12 @@
             this.label1.Text = "$";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // searchInput
-            // 
-            this.searchInput.BackColor = System.Drawing.Color.Transparent;
-            this.searchInput.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
-            this.searchInput.BorderThickness = 0;
-            this.searchInput.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.searchInput.DefaultText = "";
-            this.searchInput.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.searchInput.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.searchInput.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.searchInput.DisabledState.Parent = this.searchInput;
-            this.searchInput.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.searchInput.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
-            this.searchInput.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.searchInput.FocusedState.Parent = this.searchInput;
-            this.searchInput.Font = new System.Drawing.Font("#9Slide03 Cabin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchInput.ForeColor = System.Drawing.Color.Black;
-            this.searchInput.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.searchInput.HoverState.Parent = this.searchInput;
-            this.searchInput.Location = new System.Drawing.Point(15, 7);
-            this.searchInput.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.searchInput.Name = "searchInput";
-            this.searchInput.PasswordChar = '\0';
-            this.searchInput.PlaceholderText = "Tìm kiếm theo mã, tên";
-            this.searchInput.SelectedText = "";
-            this.searchInput.ShadowDecoration.Parent = this.searchInput;
-            this.searchInput.Size = new System.Drawing.Size(236, 36);
-            this.searchInput.TabIndex = 31;
-            this.searchInput.TextChanged += new System.EventHandler(this.searchInput_TextChanged);
-            // 
             // BookManageGUI
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
-            this.ClientSize = new System.Drawing.Size(1400, 890);
+            this.ClientSize = new System.Drawing.Size(1400, 845);
             this.Controls.Add(this.searchInput);
             this.Controls.Add(this.gradientPanel1);
             this.Controls.Add(this.publisherCbx);
@@ -694,7 +694,7 @@
             this.Controls.Add(this.dgvBook);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.line1);
-            this.Font = new System.Drawing.Font("#9Slide03 Cabin", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "BookManageGUI";
