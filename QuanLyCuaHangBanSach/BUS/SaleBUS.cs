@@ -47,6 +47,11 @@ namespace QuanLyCuaHangBanSach.BUS
             return saleList;
         }
 
+        public List<SaleDTO> getAllNotExpired()
+        {
+            return SaleDAO.Instance.getAllNotExpired();
+        }
+
         public SaleDTO getById(string id)
         {
             return SaleDAO.Instance.getById(id);

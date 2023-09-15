@@ -1,6 +1,7 @@
-﻿using System.Data;
+using System.Data;
 using MySql.Data.MySqlClient;
 using QuanLyCuaHangBanSach.DTO;
+using QuanLyCuaHangBanSach.GUI.UserControls;
 
 namespace QuanLyCuaHangBanSach.DAO
 {
