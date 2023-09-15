@@ -468,6 +468,12 @@
     <Compile Include="GUI\Auth\LoginGUI.Designer.cs">
       <DependentUpon>LoginGUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Importer\ImportGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Importer\ImportGUI.Designer.cs">
+      <DependentUpon>ImportGUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Manager\BookManageGUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -591,6 +597,9 @@
     <Compile Include="GUI\Vendor\VendorGUI.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="GUI\Vendor\VendorGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="GUI\Vendor\VendorGUI.Designer.cs">
       <DependentUpon>VendorGUI.cs</DependentUpon>
     </Compile>
@@ -685,9 +694,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="GUI\Importer\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="assets\hidden-eye-icon-new.png" />
   </ItemGroup>

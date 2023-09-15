@@ -29,7 +29,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 this.cameraCbx.Items.Add(device.Name);
             }
 
-            this.cameraCbx.SelectedIndex = 0;
+            this.cameraCbx.SelectedIndex = 2;
 
             this.videoCaptureDevice = new VideoCaptureDevice(filterInfoCollection[cameraCbx.SelectedIndex].MonikerString);
 

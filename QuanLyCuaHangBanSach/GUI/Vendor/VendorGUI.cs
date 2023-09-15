@@ -5,6 +5,7 @@ using System.Windows.Controls;
 using System.Windows.Forms;
 using QuanLyCuaHangBanSach.BUS;
 using QuanLyCuaHangBanSach.DTO;
+using QuanLyCuaHangBanSach.GUI.Modal;
 using QuanLyCuaHangBanSach.GUI.UserControls;
 using QuanLyCuaHangBanSach.GUI.Vendor;
 using static ZXing.QrCode.Internal.Mode;
@@ -201,6 +202,12 @@ namespace QuanLyCuaHangBanSach.GUI
                 }
             }
             catch (Exception ex) { Console.WriteLine(ex); }
+        }
+
+        private void QRScanBtn_Click(object sender, EventArgs e)
+        {
+            var modal = new ScannerModal();
+            modal.ShowDialog();
         }
 
         private List<int> cart = new List<int>();
@@ -446,6 +453,11 @@ namespace QuanLyCuaHangBanSach.GUI
         private void LogOutBtn_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void BookContainer_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

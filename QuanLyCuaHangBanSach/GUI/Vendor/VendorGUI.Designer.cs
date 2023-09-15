@@ -43,6 +43,7 @@
             this.ProductSearchInp = new System.Windows.Forms.TextBox();
             this.FilterBtn = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.QRScanBtn = new Guna.UI.WinForms.GunaButton();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.DiscountCb = new Guna.UI.WinForms.GunaComboBox();
@@ -75,6 +76,7 @@
             this.flowLayoutPanel4.SuspendLayout();
             this.flowLayoutPanel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.SuspendLayout();
@@ -141,11 +143,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.Location = new System.Drawing.Point(20, 12);
-            this.label1.Margin = new System.Windows.Forms.Padding(20, 12, 3, 5);
+            this.label1.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label1.Location = new System.Drawing.Point(20, 14);
+            this.label1.Margin = new System.Windows.Forms.Padding(20, 14, 3, 2);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(162, 30);
+            this.label1.Size = new System.Drawing.Size(156, 33);
             this.label1.TabIndex = 2;
             this.label1.Text = "Welcome, Huy";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -153,12 +155,12 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label2.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label2.ForeColor = System.Drawing.Color.Gray;
-            this.label2.Location = new System.Drawing.Point(20, 51);
-            this.label2.Margin = new System.Windows.Forms.Padding(20, 4, 3, 0);
+            this.label2.Location = new System.Drawing.Point(20, 50);
+            this.label2.Margin = new System.Windows.Forms.Padding(20, 1, 3, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(428, 15);
+            this.label2.Size = new System.Drawing.Size(411, 18);
             this.label2.TabIndex = 3;
             this.label2.Text = "Easily find whatever you need then you and manage book stock in your shop";
             // 
@@ -197,12 +199,12 @@
             // 
             this.ProductSearchInp.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ProductSearchInp.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.ProductSearchInp.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.ProductSearchInp.Font = new System.Drawing.Font("#9Slide03 Cabin", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.ProductSearchInp.ForeColor = System.Drawing.Color.DarkGray;
-            this.ProductSearchInp.Location = new System.Drawing.Point(35, 12);
-            this.ProductSearchInp.Margin = new System.Windows.Forms.Padding(3, 12, 3, 10);
+            this.ProductSearchInp.Location = new System.Drawing.Point(35, 9);
+            this.ProductSearchInp.Margin = new System.Windows.Forms.Padding(3, 9, 3, 10);
             this.ProductSearchInp.Name = "ProductSearchInp";
-            this.ProductSearchInp.Size = new System.Drawing.Size(212, 18);
+            this.ProductSearchInp.Size = new System.Drawing.Size(212, 22);
             this.ProductSearchInp.TabIndex = 1;
             this.ProductSearchInp.Text = "Search ...";
             this.ProductSearchInp.Click += new System.EventHandler(this.ProductSearchInp_Click);
@@ -225,11 +227,40 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.QRScanBtn);
             this.panel1.Location = new System.Drawing.Point(294, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(492, 48);
             this.panel1.TabIndex = 1;
+            // 
+            // QRScanBtn
+            // 
+            this.QRScanBtn.AnimationHoverSpeed = 0.07F;
+            this.QRScanBtn.AnimationSpeed = 0.03F;
+            this.QRScanBtn.BackColor = System.Drawing.Color.Transparent;
+            this.QRScanBtn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.QRScanBtn.BorderColor = System.Drawing.Color.White;
+            this.QRScanBtn.BorderSize = 1;
+            this.QRScanBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.QRScanBtn.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.QRScanBtn.FocusedColor = System.Drawing.Color.Empty;
+            this.QRScanBtn.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.QRScanBtn.ForeColor = System.Drawing.Color.White;
+            this.QRScanBtn.Image = ((System.Drawing.Image)(resources.GetObject("QRScanBtn.Image")));
+            this.QRScanBtn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.QRScanBtn.ImageSize = new System.Drawing.Size(26, 26);
+            this.QRScanBtn.Location = new System.Drawing.Point(446, 3);
+            this.QRScanBtn.Name = "QRScanBtn";
+            this.QRScanBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.QRScanBtn.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.QRScanBtn.OnHoverForeColor = System.Drawing.Color.White;
+            this.QRScanBtn.OnHoverImage = null;
+            this.QRScanBtn.OnPressedColor = System.Drawing.Color.Black;
+            this.QRScanBtn.Radius = 8;
+            this.QRScanBtn.Size = new System.Drawing.Size(42, 42);
+            this.QRScanBtn.TabIndex = 0;
+            this.QRScanBtn.Click += new System.EventHandler(this.QRScanBtn_Click);
             // 
             // panel3
             // 
@@ -278,7 +309,7 @@
             this.DiscountCb.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.DiscountCb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.DiscountCb.FocusedColor = System.Drawing.Color.Empty;
-            this.DiscountCb.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.DiscountCb.Font = new System.Drawing.Font("#9Slide03 Cabin", 10F);
             this.DiscountCb.ForeColor = System.Drawing.Color.Black;
             this.DiscountCb.FormattingEnabled = true;
             this.DiscountCb.Location = new System.Drawing.Point(14, 447);
@@ -286,7 +317,7 @@
             this.DiscountCb.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.DiscountCb.OnHoverItemForeColor = System.Drawing.Color.White;
             this.DiscountCb.Radius = 5;
-            this.DiscountCb.Size = new System.Drawing.Size(162, 26);
+            this.DiscountCb.Size = new System.Drawing.Size(162, 28);
             this.DiscountCb.TabIndex = 34;
             this.DiscountCb.SelectedIndexChanged += new System.EventHandler(this.DiscountCb_SelectedIndexChanged);
             // 
@@ -299,10 +330,10 @@
             this.RefundBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.RefundBtn.CustomImages.Parent = this.RefundBtn;
             this.RefundBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.RefundBtn.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.RefundBtn.Font = new System.Drawing.Font("#9Slide03 Cabin", 10F, System.Drawing.FontStyle.Bold);
             this.RefundBtn.ForeColor = System.Drawing.Color.White;
             this.RefundBtn.HoverState.Parent = this.RefundBtn;
-            this.RefundBtn.Location = new System.Drawing.Point(215, 8);
+            this.RefundBtn.Location = new System.Drawing.Point(215, 17);
             this.RefundBtn.Name = "RefundBtn";
             this.RefundBtn.ShadowDecoration.Parent = this.RefundBtn;
             this.RefundBtn.Size = new System.Drawing.Size(79, 27);
@@ -311,7 +342,7 @@
             // 
             // FinalTotalMoneyLb
             // 
-            this.FinalTotalMoneyLb.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.FinalTotalMoneyLb.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.FinalTotalMoneyLb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.FinalTotalMoneyLb.Location = new System.Drawing.Point(138, 516);
             this.FinalTotalMoneyLb.Margin = new System.Windows.Forms.Padding(20, 30, 3, 5);
@@ -324,18 +355,18 @@
             // FinalTotalLb
             // 
             this.FinalTotalLb.AutoSize = true;
-            this.FinalTotalLb.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.FinalTotalLb.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.FinalTotalLb.Location = new System.Drawing.Point(11, 515);
             this.FinalTotalLb.Margin = new System.Windows.Forms.Padding(20, 30, 3, 5);
             this.FinalTotalLb.Name = "FinalTotalLb";
-            this.FinalTotalLb.Size = new System.Drawing.Size(124, 21);
+            this.FinalTotalLb.Size = new System.Drawing.Size(116, 25);
             this.FinalTotalLb.TabIndex = 30;
             this.FinalTotalLb.Text = "Khách phải trả:";
             this.FinalTotalLb.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // DiscountMoneyLb
             // 
-            this.DiscountMoneyLb.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.DiscountMoneyLb.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.DiscountMoneyLb.Location = new System.Drawing.Point(96, 485);
             this.DiscountMoneyLb.Margin = new System.Windows.Forms.Padding(20, 30, 3, 5);
             this.DiscountMoneyLb.Name = "DiscountMoneyLb";
@@ -347,11 +378,11 @@
             // DiscountLb
             // 
             this.DiscountLb.AutoSize = true;
-            this.DiscountLb.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.DiscountLb.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.DiscountLb.Location = new System.Drawing.Point(10, 485);
             this.DiscountLb.Margin = new System.Windows.Forms.Padding(20, 30, 3, 5);
             this.DiscountLb.Name = "DiscountLb";
-            this.DiscountLb.Size = new System.Drawing.Size(86, 21);
+            this.DiscountLb.Size = new System.Drawing.Size(81, 25);
             this.DiscountLb.TabIndex = 28;
             this.DiscountLb.Text = "Giảm giá: ";
             this.DiscountLb.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -359,11 +390,11 @@
             // VndLb
             // 
             this.VndLb.AutoSize = true;
-            this.VndLb.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.VndLb.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.VndLb.Location = new System.Drawing.Point(250, 551);
             this.VndLb.Margin = new System.Windows.Forms.Padding(20, 30, 3, 5);
             this.VndLb.Name = "VndLb";
-            this.VndLb.Size = new System.Drawing.Size(46, 21);
+            this.VndLb.Size = new System.Drawing.Size(45, 25);
             this.VndLb.TabIndex = 26;
             this.VndLb.Text = "VND";
             this.VndLb.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -376,7 +407,7 @@
             this.CustomerCashTxb.FocusedBaseColor = System.Drawing.Color.White;
             this.CustomerCashTxb.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.CustomerCashTxb.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.CustomerCashTxb.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.CustomerCashTxb.Font = new System.Drawing.Font("#9Slide03 Cabin Medium", 10F);
             this.CustomerCashTxb.ForeColor = System.Drawing.Color.DarkGray;
             this.CustomerCashTxb.Location = new System.Drawing.Point(9, 548);
             this.CustomerCashTxb.Name = "CustomerCashTxb";
@@ -391,7 +422,7 @@
             // 
             // ChangeMoneyLb
             // 
-            this.ChangeMoneyLb.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.ChangeMoneyLb.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.ChangeMoneyLb.Location = new System.Drawing.Point(100, 586);
             this.ChangeMoneyLb.Margin = new System.Windows.Forms.Padding(20, 30, 3, 5);
             this.ChangeMoneyLb.Name = "ChangeMoneyLb";
@@ -403,11 +434,11 @@
             // ChangeLb
             // 
             this.ChangeLb.AutoSize = true;
-            this.ChangeLb.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.ChangeLb.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.ChangeLb.Location = new System.Drawing.Point(11, 585);
             this.ChangeLb.Margin = new System.Windows.Forms.Padding(20, 30, 3, 5);
             this.ChangeLb.Name = "ChangeLb";
-            this.ChangeLb.Size = new System.Drawing.Size(87, 21);
+            this.ChangeLb.Size = new System.Drawing.Size(82, 25);
             this.ChangeLb.TabIndex = 23;
             this.ChangeLb.Text = "Tiền thừa:";
             this.ChangeLb.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -415,11 +446,11 @@
             // RecipientNameLb
             // 
             this.RecipientNameLb.AutoSize = true;
-            this.RecipientNameLb.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.RecipientNameLb.Location = new System.Drawing.Point(105, 92);
+            this.RecipientNameLb.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.RecipientNameLb.Location = new System.Drawing.Point(96, 92);
             this.RecipientNameLb.Margin = new System.Windows.Forms.Padding(20, 30, 3, 5);
             this.RecipientNameLb.Name = "RecipientNameLb";
-            this.RecipientNameLb.Size = new System.Drawing.Size(0, 21);
+            this.RecipientNameLb.Size = new System.Drawing.Size(0, 25);
             this.RecipientNameLb.TabIndex = 22;
             this.RecipientNameLb.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -428,7 +459,7 @@
             this.PhoneInp.BackColor = System.Drawing.SystemColors.Window;
             this.PhoneInp.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.PhoneInp.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.PhoneInp.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.PhoneInp.Font = new System.Drawing.Font("#9Slide03 Cabin", 12F);
             this.PhoneInp.ForeColor = System.Drawing.Color.DarkGray;
             this.PhoneInp.LineColor = System.Drawing.Color.Black;
             this.PhoneInp.LineSize = 1;
@@ -436,7 +467,7 @@
             this.PhoneInp.Name = "PhoneInp";
             this.PhoneInp.PasswordChar = '\0';
             this.PhoneInp.SelectedText = "";
-            this.PhoneInp.Size = new System.Drawing.Size(244, 32);
+            this.PhoneInp.Size = new System.Drawing.Size(244, 36);
             this.PhoneInp.TabIndex = 1;
             this.PhoneInp.Text = "Phone Number ...";
             this.PhoneInp.TextChanged += new System.EventHandler(this.PhoneInp_TextChanged);
@@ -446,7 +477,7 @@
             // 
             // TotalMoneyLb
             // 
-            this.TotalMoneyLb.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.TotalMoneyLb.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.TotalMoneyLb.Location = new System.Drawing.Point(144, 412);
             this.TotalMoneyLb.Margin = new System.Windows.Forms.Padding(20, 30, 3, 5);
             this.TotalMoneyLb.Name = "TotalMoneyLb";
@@ -477,11 +508,11 @@
             // RecipientLb
             // 
             this.RecipientLb.AutoSize = true;
-            this.RecipientLb.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.RecipientLb.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.RecipientLb.Location = new System.Drawing.Point(-1, 92);
             this.RecipientLb.Margin = new System.Windows.Forms.Padding(20, 30, 3, 5);
             this.RecipientLb.Name = "RecipientLb";
-            this.RecipientLb.Size = new System.Drawing.Size(106, 21);
+            this.RecipientLb.Size = new System.Drawing.Size(100, 25);
             this.RecipientLb.TabIndex = 18;
             this.RecipientLb.Text = "Khách Hàng:";
             this.RecipientLb.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -503,11 +534,11 @@
             // TotalLb
             // 
             this.TotalLb.AutoSize = true;
-            this.TotalLb.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.TotalLb.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.TotalLb.Location = new System.Drawing.Point(10, 412);
             this.TotalLb.Margin = new System.Windows.Forms.Padding(20, 30, 3, 5);
             this.TotalLb.Name = "TotalLb";
-            this.TotalLb.Size = new System.Drawing.Size(130, 21);
+            this.TotalLb.Size = new System.Drawing.Size(120, 25);
             this.TotalLb.TabIndex = 16;
             this.TotalLb.Text = "Tổng tiền hàng:";
             this.TotalLb.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -527,7 +558,7 @@
             // AddCustomerBtn
             // 
             this.AddCustomerBtn.Image = ((System.Drawing.Image)(resources.GetObject("AddCustomerBtn.Image")));
-            this.AddCustomerBtn.Location = new System.Drawing.Point(250, 49);
+            this.AddCustomerBtn.Location = new System.Drawing.Point(255, 55);
             this.AddCustomerBtn.Name = "AddCustomerBtn";
             this.AddCustomerBtn.Size = new System.Drawing.Size(30, 30);
             this.AddCustomerBtn.TabIndex = 12;
@@ -536,11 +567,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label3.Location = new System.Drawing.Point(-5, 10);
+            this.label3.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label3.Location = new System.Drawing.Point(-3, 12);
             this.label3.Margin = new System.Windows.Forms.Padding(20, 30, 3, 5);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(132, 30);
+            this.label3.Size = new System.Drawing.Size(127, 33);
             this.label3.TabIndex = 8;
             this.label3.Text = "Thanh Toán";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -559,6 +590,7 @@
             this.BookContainer.Name = "BookContainer";
             this.BookContainer.Size = new System.Drawing.Size(787, 520);
             this.BookContainer.TabIndex = 6;
+            this.BookContainer.Paint += new System.Windows.Forms.PaintEventHandler(this.BookContainer_Paint);
             // 
             // FilterContainer
             // 
@@ -593,6 +625,7 @@
             this.flowLayoutPanel5.ResumeLayout(false);
             this.flowLayoutPanel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
@@ -641,5 +674,6 @@
         private System.Windows.Forms.Panel panel1;
         private Guna.UI2.WinForms.Guna2Button RefundBtn;
         private Guna.UI.WinForms.GunaComboBox DiscountCb;
+        private Guna.UI.WinForms.GunaButton QRScanBtn;
     }
 }
