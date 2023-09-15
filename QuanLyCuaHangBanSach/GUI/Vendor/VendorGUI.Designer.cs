@@ -294,7 +294,7 @@
             // 
             this.RefundBtn.Animated = true;
             this.RefundBtn.AutoRoundedCorners = true;
-            this.RefundBtn.BorderRadius = 17;
+            this.RefundBtn.BorderRadius = 12;
             this.RefundBtn.CheckedState.Parent = this.RefundBtn;
             this.RefundBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.RefundBtn.CustomImages.Parent = this.RefundBtn;
@@ -302,25 +302,24 @@
             this.RefundBtn.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.RefundBtn.ForeColor = System.Drawing.Color.White;
             this.RefundBtn.HoverState.Parent = this.RefundBtn;
-            this.RefundBtn.Location = new System.Drawing.Point(201, 6);
+            this.RefundBtn.Location = new System.Drawing.Point(215, 8);
             this.RefundBtn.Name = "RefundBtn";
             this.RefundBtn.ShadowDecoration.Parent = this.RefundBtn;
-            this.RefundBtn.Size = new System.Drawing.Size(96, 37);
+            this.RefundBtn.Size = new System.Drawing.Size(79, 27);
             this.RefundBtn.TabIndex = 0;
             this.RefundBtn.Text = "Trả hàng";
             // 
             // FinalTotalMoneyLb
             // 
-            this.FinalTotalMoneyLb.AutoSize = true;
             this.FinalTotalMoneyLb.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.FinalTotalMoneyLb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.FinalTotalMoneyLb.Location = new System.Drawing.Point(131, 515);
+            this.FinalTotalMoneyLb.Location = new System.Drawing.Point(138, 516);
             this.FinalTotalMoneyLb.Margin = new System.Windows.Forms.Padding(20, 30, 3, 5);
             this.FinalTotalMoneyLb.Name = "FinalTotalMoneyLb";
-            this.FinalTotalMoneyLb.Size = new System.Drawing.Size(59, 21);
+            this.FinalTotalMoneyLb.Size = new System.Drawing.Size(159, 21);
             this.FinalTotalMoneyLb.TabIndex = 31;
             this.FinalTotalMoneyLb.Text = "0 VND";
-            this.FinalTotalMoneyLb.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.FinalTotalMoneyLb.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // FinalTotalLb
             // 
@@ -336,15 +335,14 @@
             // 
             // DiscountMoneyLb
             // 
-            this.DiscountMoneyLb.AutoSize = true;
             this.DiscountMoneyLb.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.DiscountMoneyLb.Location = new System.Drawing.Point(88, 485);
+            this.DiscountMoneyLb.Location = new System.Drawing.Point(96, 485);
             this.DiscountMoneyLb.Margin = new System.Windows.Forms.Padding(20, 30, 3, 5);
             this.DiscountMoneyLb.Name = "DiscountMoneyLb";
-            this.DiscountMoneyLb.Size = new System.Drawing.Size(59, 21);
+            this.DiscountMoneyLb.Size = new System.Drawing.Size(201, 21);
             this.DiscountMoneyLb.TabIndex = 29;
             this.DiscountMoneyLb.Text = "0 VND";
-            this.DiscountMoneyLb.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.DiscountMoneyLb.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // DiscountLb
             // 
@@ -362,7 +360,7 @@
             // 
             this.VndLb.AutoSize = true;
             this.VndLb.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.VndLb.Location = new System.Drawing.Point(251, 551);
+            this.VndLb.Location = new System.Drawing.Point(250, 551);
             this.VndLb.Margin = new System.Windows.Forms.Padding(20, 30, 3, 5);
             this.VndLb.Name = "VndLb";
             this.VndLb.Size = new System.Drawing.Size(46, 21);
@@ -384,7 +382,7 @@
             this.CustomerCashTxb.Name = "CustomerCashTxb";
             this.CustomerCashTxb.PasswordChar = '\0';
             this.CustomerCashTxb.SelectedText = "";
-            this.CustomerCashTxb.Size = new System.Drawing.Size(238, 30);
+            this.CustomerCashTxb.Size = new System.Drawing.Size(235, 30);
             this.CustomerCashTxb.TabIndex = 25;
             this.CustomerCashTxb.Text = "Khách đưa ...";
             this.CustomerCashTxb.Enter += new System.EventHandler(this.CustomerCashTxb_Click);
@@ -393,15 +391,14 @@
             // 
             // ChangeMoneyLb
             // 
-            this.ChangeMoneyLb.AutoSize = true;
             this.ChangeMoneyLb.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.ChangeMoneyLb.Location = new System.Drawing.Point(94, 586);
+            this.ChangeMoneyLb.Location = new System.Drawing.Point(100, 586);
             this.ChangeMoneyLb.Margin = new System.Windows.Forms.Padding(20, 30, 3, 5);
             this.ChangeMoneyLb.Name = "ChangeMoneyLb";
-            this.ChangeMoneyLb.Size = new System.Drawing.Size(33, 21);
+            this.ChangeMoneyLb.Size = new System.Drawing.Size(197, 21);
             this.ChangeMoneyLb.TabIndex = 24;
-            this.ChangeMoneyLb.Text = "0 đ";
-            this.ChangeMoneyLb.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ChangeMoneyLb.Text = "0 VND";
+            this.ChangeMoneyLb.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // ChangeLb
             // 
@@ -449,15 +446,14 @@
             // 
             // TotalMoneyLb
             // 
-            this.TotalMoneyLb.AutoSize = true;
             this.TotalMoneyLb.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.TotalMoneyLb.Location = new System.Drawing.Point(136, 412);
+            this.TotalMoneyLb.Location = new System.Drawing.Point(144, 412);
             this.TotalMoneyLb.Margin = new System.Windows.Forms.Padding(20, 30, 3, 5);
             this.TotalMoneyLb.Name = "TotalMoneyLb";
-            this.TotalMoneyLb.Size = new System.Drawing.Size(59, 21);
+            this.TotalMoneyLb.Size = new System.Drawing.Size(154, 21);
             this.TotalMoneyLb.TabIndex = 21;
             this.TotalMoneyLb.Text = "0 VND";
-            this.TotalMoneyLb.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.TotalMoneyLb.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // PhoneResultContainer
             // 
