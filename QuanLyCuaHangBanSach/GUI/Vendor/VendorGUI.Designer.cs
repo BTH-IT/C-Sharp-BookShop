@@ -590,7 +590,6 @@
             this.BookContainer.Name = "BookContainer";
             this.BookContainer.Size = new System.Drawing.Size(787, 520);
             this.BookContainer.TabIndex = 6;
-            this.BookContainer.Paint += new System.Windows.Forms.PaintEventHandler(this.BookContainer_Paint);
             // 
             // FilterContainer
             // 

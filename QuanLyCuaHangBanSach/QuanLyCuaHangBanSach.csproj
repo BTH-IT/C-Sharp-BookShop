@@ -699,9 +699,6 @@
     <Compile Include="GUI\UserControls\FilterUserControl.Designer.cs">
       <DependentUpon>FilterUserControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\UserControls\FilterUserControl.Designer.cs">
-      <DependentUpon>FilterUserControl.cs</DependentUpon>
-    </Compile>
     <Compile Include="GUI\UserControls\PhoneSearchResultControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -747,6 +744,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Manager\SupplierManagerGUI.resx">
       <DependentUpon>SupplierManagerGUI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Manager\PaymentBillManageGUI.resx">
       <DependentUpon>PaymentBillManageGUI.cs</DependentUpon>
     </EmbeddedResource>
@@ -764,6 +762,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Modal\AuthorModal.resx">
       <DependentUpon>AuthorModal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Modal\AuthorizeModal.resx">
       <DependentUpon>AuthorizeModal.cs</DependentUpon>
     </EmbeddedResource>
@@ -778,6 +777,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Modal\SupplierModal.resx">
       <DependentUpon>SupplierModal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Modal\PermissionModal.resx">
       <DependentUpon>PermissionModal.cs</DependentUpon>
     </EmbeddedResource>
@@ -815,6 +815,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\UserControls\PhoneSearchResultControl.resx">
       <DependentUpon>PhoneSearchResultControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Vendor\VendorGUI.resx">
+      <DependentUpon>VendorGUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -854,7 +857,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\Release\" />
-    <Folder Include="GUI\Importer\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="assets\hidden-eye-icon-new.png" />
@@ -912,7 +914,6 @@
     <Content Include="FodyWeavers.xml" />
     <Content Include="obj\Debug\QuanLyCuaHangBanSach.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Debug\TempPE\Properties.Resources.Designer.cs.dll" />
-    <Content Include="qlchs.sql" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />

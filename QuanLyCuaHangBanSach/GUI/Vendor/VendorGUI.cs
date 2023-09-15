@@ -36,12 +36,12 @@ namespace QuanLyCuaHangBanSach.GUI
                     product.details(book);
                     BookContainer.Controls.Add(product);
 
-                    FilterUserControl filter = new FilterUserControl();
-                    FilterContainer.Controls.Add(filter);
                 }
+                FilterUserControl filter = new FilterUserControl();
+                FilterContainer.Controls.Add(filter);
 
-                List<SaleDTO> discounts = SaleBUS.Instance.getAllNotExpired();
-                discounts.Insert(0, new SaleDTO(0, "Không có khuyến mãi", 0, new DateTime(), new DateTime()));
+                List<SaleDTO> discounts = SaleBUS.Instance.getAllNotExpired() ?? new List<SaleDTO>();
+                discounts.Insert(0, new SaleDTO(0, "Không có khuyến mãi", 0, new DateTime(), new DateTime(), 1));
                 DiscountCb.DataSource = discounts;
                 DiscountCb.DisplayMember = "tenKhuyenMai";
                 DiscountCb.ValueMember = "phanTram";
@@ -324,6 +324,10 @@ namespace QuanLyCuaHangBanSach.GUI
                     CustommerCash = double.Parse(CustomerCashTxb.Text);
                     Change = CustommerCash - finalTotalMoney;
                 }
+                else
+                {
+                    Change = -finalTotalMoney;
+                }
                 ChangeMoneyLb.Text = string.Format("{0:N0} VND", Change);
 
                 if (Change < 0)
@@ -453,11 +457,6 @@ namespace QuanLyCuaHangBanSach.GUI
         private void LogOutBtn_Click(object sender, EventArgs e)
         {
             Close();
-        }
-
-        private void BookContainer_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }
