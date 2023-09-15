@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.SqlServer.Types.160.1000.6\build\net462\Microsoft.SqlServer.Types.props" Condition="Exists('..\packages\Microsoft.SqlServer.Types.160.1000.6\build\net462\Microsoft.SqlServer.Types.props')" />
   <Import Project="..\packages\Costura.Fody.5.7.0\build\Costura.Fody.props" Condition="Exists('..\packages\Costura.Fody.5.7.0\build\Costura.Fody.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -104,6 +105,15 @@
     </Reference>
     <Reference Include="Microsoft.IO.RecyclableMemoryStream, Version=1.4.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.IO.RecyclableMemoryStream.1.4.1\lib\net46\Microsoft.IO.RecyclableMemoryStream.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1586.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1586.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.160.1000.6\lib\net462\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Microsoft.Win32.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
@@ -404,13 +414,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BUS\AuthDetailBUS.cs" />
+    <Compile Include="BUS\CustomerTypeBUS.cs" />
+    <Compile Include="BUS\CustomerRefundBillBUS.cs" />
+    <Compile Include="BUS\PaymentBillBUS.cs" />
+    <Compile Include="BUS\ImportRefundBillBUS.cs" />
     <Compile Include="BUS\ImportBillBUS.cs" />
+    <Compile Include="BUS\PerrmissionBUS.cs" />
+    <Compile Include="BUS\PositionBUS.cs" />
     <Compile Include="BUS\SaleBUS.cs" />
-    <Compile Include="BUS\SaleBUS.cs" />
-    <Compile Include="BUS\StaffBUS.cs" />
     <Compile Include="BUS\StaffBUS.cs" />
     <Compile Include="BUS\SupplierBUS.cs" />
-    <Compile Include="BUS\ImportBillBUS.cs" />
     <Compile Include="BUS\CustomerBillBUS.cs" />
     <Compile Include="BUS\CustomerBUS.cs" />
     <Compile Include="BUS\PublisherBUS.cs" />
@@ -423,20 +437,35 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="CustomValidation.cs" />
+    <Compile Include="DAO\AuthDetailDAO.cs" />
+    <Compile Include="DAO\CustomerTypeDAO.cs" />
+    <Compile Include="DAO\PaymentBillDAO.cs" />
+    <Compile Include="DAO\ImportRefundBillDAO.cs" />
+    <Compile Include="DAO\CustomerRefundBillDAO.cs" />
     <Compile Include="DAO\CustomerBillDAO.cs" />
     <Compile Include="DAO\ImportBillDAO.cs" />
-    <Compile Include="DAO\SaleDAO.cs" />
+    <Compile Include="DAO\PositionDAO.cs" />
+    <Compile Include="DAO\PermissionDAO.cs" />
     <Compile Include="DAO\SaleDAO.cs" />
     <Compile Include="DAO\StaffDAO.cs" />
     <Compile Include="DAO\ImportBillDAO.cs" />
     <Compile Include="DAO\CustomerBillDAO.cs" />
     <Compile Include="DAO\CustomerDAO.cs" />
-    <Compile Include="DAO\StaffDAO.cs" />
     <Compile Include="DAO\SupplierDAO.cs" />
+    <Compile Include="DTO\AuthDetailDTO.cs" />
     <Compile Include="DTO\BookDTO.cs" />
+    <Compile Include="DTO\CustomerRefundBillDetailDTO.cs" />
+    <Compile Include="DTO\CustomerRefundBillDTO.cs" />
+    <Compile Include="DTO\CustomerTypeDTO.cs" />
+    <Compile Include="DTO\ImportRefundBillDetailDTO.cs" />
+    <Compile Include="DTO\ImportRefundBillDTO.cs" />
+    <Compile Include="DTO\PaymentBillDTO.cs" />
+    <Compile Include="DTO\PermissionDTO.cs" />
+    <Compile Include="DTO\PositionDTO.cs" />
+    <Compile Include="DTO\RefundBillDTO.cs" />
     <Compile Include="DTO\SupplierDTO.cs" />
     <Compile Include="DTO\SaleDTO.cs" />
-    <Compile Include="DTO\BillDetailDTO .cs" />
+    <Compile Include="DTO\BillDetailDTO.cs" />
     <Compile Include="DTO\BillDTO.cs" />
     <Compile Include="DTO\CustomerBillDetailDTO.cs" />
     <Compile Include="DTO\StaffDTO.cs" />
@@ -509,6 +538,24 @@
     <Compile Include="GUI\Auth\SendCodeGUI.Designer.cs">
       <DependentUpon>SendCodeGUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Manager\PaymentBillManageGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Manager\PaymentBillManageGUI.Designer.cs">
+      <DependentUpon>PaymentBillManageGUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Manager\PermissionManageGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Manager\PermissionManageGUI.Designer.cs">
+      <DependentUpon>PermissionManageGUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Manager\PositionManageGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Manager\PositionManageGUI.Designer.cs">
+      <DependentUpon>PositionManageGUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Modal\AddBookToCustomerBillModal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -520,6 +567,12 @@
     </Compile>
     <Compile Include="GUI\Modal\AddBookToImportBillModal.Designer.cs">
       <DependentUpon>AddBookToImportBillModal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modal\AuthorizeModal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Modal\AuthorizeModal.Designer.cs">
+      <DependentUpon>AuthorizeModal.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modal\BookModal.cs">
       <SubType>Form</SubType>
@@ -539,17 +592,55 @@
     <Compile Include="GUI\Modal\ImportBillModal.Designer.cs">
       <DependentUpon>ImportBillModal.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Modal\PermissionModal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Modal\PermissionModal.Designer.cs">
+      <DependentUpon>PermissionModal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modal\PositionModal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Modal\PositionModal.Designer.cs">
+      <DependentUpon>PositionModal.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Modal\ScannerModal.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\Modal\ScannerModal.Designer.cs">
       <DependentUpon>ScannerModal.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Report\bookDataSet.cs">
+      <DependentUpon>bookDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Report\bookDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>bookDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Report\CustomerBillPrintForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Report\CustomerBillPrintForm.Designer.cs">
+      <DependentUpon>CustomerBillPrintForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Report\ImportBillPrintForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Report\ImportBillPrintForm.Designer.cs">
+      <DependentUpon>ImportBillPrintForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\test.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\test.Designer.cs">
       <DependentUpon>test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UserControls\AuthorizeCkb.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UserControls\AuthorizeCkb.Designer.cs">
+      <DependentUpon>AuthorizeCkb.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\UserControls\BookBill.cs">
       <SubType>UserControl</SubType>
@@ -574,9 +665,6 @@
     </Compile>
     <Compile Include="GUI\UserControls\PhoneSearchResultControl.Designer.cs">
       <DependentUpon>PhoneSearchResultControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Vendor\VendorGUI.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\Vendor\VendorGUI.cs">
       <SubType>Form</SubType>
@@ -612,11 +700,23 @@
     <EmbeddedResource Include="GUI\Auth\SendCodeGUI.resx">
       <DependentUpon>SendCodeGUI.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Manager\PaymentBillManageGUI.resx">
+      <DependentUpon>PaymentBillManageGUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Manager\PermissionManageGUI.resx">
+      <DependentUpon>PermissionManageGUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Manager\PositionManageGUI.resx">
+      <DependentUpon>PositionManageGUI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Modal\AddBookToCustomerBillModal.resx">
       <DependentUpon>AddBookToCustomerBillModal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Modal\AddBookToImportBillModal.resx">
       <DependentUpon>AddBookToImportBillModal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Modal\AuthorizeModal.resx">
+      <DependentUpon>AuthorizeModal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Modal\BookModal.resx">
       <DependentUpon>BookModal.cs</DependentUpon>
@@ -627,11 +727,28 @@
     <EmbeddedResource Include="GUI\Modal\ImportBillModal.resx">
       <DependentUpon>ImportBillModal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Modal\PermissionModal.resx">
+      <DependentUpon>PermissionModal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Modal\PositionModal.resx">
+      <DependentUpon>PositionModal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Modal\ScannerModal.resx">
       <DependentUpon>ScannerModal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Report\CustomerBillPrintForm.resx">
+      <DependentUpon>CustomerBillPrintForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Report\ImportBillPrintForm.resx">
+      <DependentUpon>ImportBillPrintForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Report\ImportBillReport.rdlc" />
+    <EmbeddedResource Include="GUI\Report\CustomerBillReport.rdlc" />
     <EmbeddedResource Include="GUI\test.resx">
       <DependentUpon>test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UserControls\AuthorizeCkb.resx">
+      <DependentUpon>AuthorizeCkb.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\UserControls\BookBill.resx">
       <DependentUpon>BookBill.cs</DependentUpon>
@@ -645,15 +762,24 @@
     <EmbeddedResource Include="GUI\UserControls\PhoneSearchResultControl.resx">
       <DependentUpon>PhoneSearchResultControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Vendor\VendorGUI.resx">
-      <DependentUpon>VendorGUI.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="GUI\Report\bookDataSet.xsc">
+      <DependentUpon>bookDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="GUI\Report\bookDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>bookDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="GUI\Report\bookDataSet.xss">
+      <DependentUpon>bookDataSet.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\QuanLyCuaHangBanSach.DTO.CustomerBillDetailDTO.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -705,6 +831,7 @@
     <Error Condition="!Exists('..\packages\Fody.6.8.0\build\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Fody.6.8.0\build\Fody.targets'))" />
     <Error Condition="!Exists('..\packages\Costura.Fody.5.7.0\build\Costura.Fody.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Costura.Fody.5.7.0\build\Costura.Fody.props'))" />
     <Error Condition="!Exists('..\packages\Costura.Fody.5.7.0\build\Costura.Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Costura.Fody.5.7.0\build\Costura.Fody.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.SqlServer.Types.160.1000.6\build\net462\Microsoft.SqlServer.Types.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.SqlServer.Types.160.1000.6\build\net462\Microsoft.SqlServer.Types.props'))" />
   </Target>
   <Import Project="..\packages\Fody.6.8.0\build\Fody.targets" Condition="Exists('..\packages\Fody.6.8.0\build\Fody.targets')" />
   <Import Project="..\packages\Costura.Fody.5.7.0\build\Costura.Fody.targets" Condition="Exists('..\packages\Costura.Fody.5.7.0\build\Costura.Fody.targets')" />

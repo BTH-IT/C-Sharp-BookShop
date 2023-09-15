@@ -29,19 +29,19 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerBillGUI));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.saleCbx = new Guna.UI.WinForms.GunaComboBox();
             this.staffCbx = new Guna.UI.WinForms.GunaComboBox();
             this.customerCbx = new Guna.UI.WinForms.GunaComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.printPdfBtn = new Guna.UI.WinForms.GunaAdvenceButton();
             this.exportBtn = new Guna.UI.WinForms.GunaAdvenceButton();
             this.refreshBtn = new Guna.UI.WinForms.GunaAdvenceButton();
             this.deleteBtn = new Guna.UI.WinForms.GunaAdvenceButton();
-            this.editBtn = new Guna.UI.WinForms.GunaAdvenceButton();
             this.addBtn = new Guna.UI.WinForms.GunaAdvenceButton();
             this.dgvCustomerBill = new Guna.UI.WinForms.GunaDataGridView();
             this.Column9 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
@@ -63,13 +63,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.gradientPanel1 = new QuanLyCuaHangBanSach.GradientPanel();
+            this.toPriceTxt = new Guna.UI2.WinForms.Guna2TextBox();
+            this.fromPriceTxt = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.searchInput = new Guna.UI2.WinForms.Guna2TextBox();
-            this.fromPriceTxt = new Guna.UI2.WinForms.Guna2TextBox();
-            this.toPriceTxt = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomerBill)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -154,15 +154,48 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
+            this.panel1.Controls.Add(this.printPdfBtn);
             this.panel1.Controls.Add(this.exportBtn);
             this.panel1.Controls.Add(this.refreshBtn);
             this.panel1.Controls.Add(this.deleteBtn);
-            this.panel1.Controls.Add(this.editBtn);
             this.panel1.Controls.Add(this.addBtn);
-            this.panel1.Location = new System.Drawing.Point(12, 790);
+            this.panel1.Location = new System.Drawing.Point(12, 836);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1371, 54);
             this.panel1.TabIndex = 35;
+            // 
+            // printPdfBtn
+            // 
+            this.printPdfBtn.AnimationHoverSpeed = 0.07F;
+            this.printPdfBtn.AnimationSpeed = 0.03F;
+            this.printPdfBtn.BackColor = System.Drawing.Color.Transparent;
+            this.printPdfBtn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.printPdfBtn.BorderColor = System.Drawing.Color.Black;
+            this.printPdfBtn.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.printPdfBtn.CheckedBorderColor = System.Drawing.Color.Black;
+            this.printPdfBtn.CheckedForeColor = System.Drawing.Color.White;
+            this.printPdfBtn.CheckedImage = ((System.Drawing.Image)(resources.GetObject("printPdfBtn.CheckedImage")));
+            this.printPdfBtn.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.printPdfBtn.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.printPdfBtn.FocusedColor = System.Drawing.Color.Empty;
+            this.printPdfBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.printPdfBtn.ForeColor = System.Drawing.Color.White;
+            this.printPdfBtn.Image = ((System.Drawing.Image)(resources.GetObject("printPdfBtn.Image")));
+            this.printPdfBtn.ImageSize = new System.Drawing.Size(20, 20);
+            this.printPdfBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.printPdfBtn.Location = new System.Drawing.Point(243, 6);
+            this.printPdfBtn.Name = "printPdfBtn";
+            this.printPdfBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.printPdfBtn.OnHoverBorderColor = System.Drawing.Color.Transparent;
+            this.printPdfBtn.OnHoverForeColor = System.Drawing.Color.White;
+            this.printPdfBtn.OnHoverImage = null;
+            this.printPdfBtn.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.printPdfBtn.OnPressedColor = System.Drawing.Color.Black;
+            this.printPdfBtn.Radius = 6;
+            this.printPdfBtn.Size = new System.Drawing.Size(92, 42);
+            this.printPdfBtn.TabIndex = 9;
+            this.printPdfBtn.Text = "In PDF";
+            this.printPdfBtn.Click += new System.EventHandler(this.printPdfBtn_Click);
             // 
             // exportBtn
             // 
@@ -263,39 +296,6 @@
             this.deleteBtn.Text = "Xóa";
             this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
             // 
-            // editBtn
-            // 
-            this.editBtn.AnimationHoverSpeed = 0.07F;
-            this.editBtn.AnimationSpeed = 0.03F;
-            this.editBtn.BackColor = System.Drawing.Color.Transparent;
-            this.editBtn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.editBtn.BorderColor = System.Drawing.Color.Black;
-            this.editBtn.CheckedBaseColor = System.Drawing.Color.Gray;
-            this.editBtn.CheckedBorderColor = System.Drawing.Color.Black;
-            this.editBtn.CheckedForeColor = System.Drawing.Color.White;
-            this.editBtn.CheckedImage = ((System.Drawing.Image)(resources.GetObject("editBtn.CheckedImage")));
-            this.editBtn.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.editBtn.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.editBtn.FocusedColor = System.Drawing.Color.Empty;
-            this.editBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.editBtn.ForeColor = System.Drawing.Color.White;
-            this.editBtn.Image = ((System.Drawing.Image)(resources.GetObject("editBtn.Image")));
-            this.editBtn.ImageSize = new System.Drawing.Size(20, 20);
-            this.editBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.editBtn.Location = new System.Drawing.Point(1167, 6);
-            this.editBtn.Name = "editBtn";
-            this.editBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.editBtn.OnHoverBorderColor = System.Drawing.Color.Transparent;
-            this.editBtn.OnHoverForeColor = System.Drawing.Color.White;
-            this.editBtn.OnHoverImage = null;
-            this.editBtn.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.editBtn.OnPressedColor = System.Drawing.Color.Black;
-            this.editBtn.Radius = 6;
-            this.editBtn.Size = new System.Drawing.Size(113, 42);
-            this.editBtn.TabIndex = 5;
-            this.editBtn.Text = "Chỉnh sửa";
-            this.editBtn.Click += new System.EventHandler(this.editBtn_Click);
-            // 
             // addBtn
             // 
             this.addBtn.AnimationHoverSpeed = 0.07F;
@@ -315,7 +315,7 @@
             this.addBtn.Image = ((System.Drawing.Image)(resources.GetObject("addBtn.Image")));
             this.addBtn.ImageSize = new System.Drawing.Size(20, 20);
             this.addBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.addBtn.Location = new System.Drawing.Point(1044, 6);
+            this.addBtn.Location = new System.Drawing.Point(1163, 6);
             this.addBtn.Name = "addBtn";
             this.addBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.addBtn.OnHoverBorderColor = System.Drawing.Color.Transparent;
@@ -334,21 +334,21 @@
             this.dgvCustomerBill.AllowUserToAddRows = false;
             this.dgvCustomerBill.AllowUserToDeleteRows = false;
             this.dgvCustomerBill.AllowUserToResizeRows = false;
-            dataGridViewCellStyle21.BackColor = System.Drawing.Color.White;
-            this.dgvCustomerBill.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dgvCustomerBill.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvCustomerBill.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvCustomerBill.BackgroundColor = System.Drawing.Color.White;
             this.dgvCustomerBill.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvCustomerBill.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvCustomerBill.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle22.Font = new System.Drawing.Font("#9Slide03 Cabin", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle22.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvCustomerBill.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("#9Slide03 Cabin", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvCustomerBill.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvCustomerBill.ColumnHeadersHeight = 50;
             this.dgvCustomerBill.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvCustomerBill.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -361,39 +361,39 @@
             this.Column8,
             this.Column4,
             this.Column7});
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle23.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle23.Font = new System.Drawing.Font("#9Slide03 Cabin", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvCustomerBill.DefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("#9Slide03 Cabin", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvCustomerBill.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvCustomerBill.EnableHeadersVisualStyles = false;
             this.dgvCustomerBill.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvCustomerBill.Location = new System.Drawing.Point(12, 67);
             this.dgvCustomerBill.Name = "dgvCustomerBill";
-            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle24.Font = new System.Drawing.Font("#9Slide03 Cabin", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle24.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvCustomerBill.RowHeadersDefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("#9Slide03 Cabin", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvCustomerBill.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvCustomerBill.RowHeadersVisible = false;
             this.dgvCustomerBill.RowHeadersWidth = 51;
             this.dgvCustomerBill.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvCustomerBill.RowsDefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvCustomerBill.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvCustomerBill.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dgvCustomerBill.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvCustomerBill.RowTemplate.Height = 75;
             this.dgvCustomerBill.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvCustomerBill.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvCustomerBill.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCustomerBill.Size = new System.Drawing.Size(1371, 717);
+            this.dgvCustomerBill.Size = new System.Drawing.Size(1371, 763);
             this.dgvCustomerBill.TabIndex = 34;
             this.dgvCustomerBill.TabStop = false;
             this.dgvCustomerBill.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna;
@@ -509,7 +509,7 @@
             // 
             this.line1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.line1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(212)))), ((int)(((byte)(191)))));
-            this.line1.Location = new System.Drawing.Point(18, 44);
+            this.line1.Location = new System.Drawing.Point(18, 57);
             this.line1.Name = "line1";
             this.line1.Size = new System.Drawing.Size(168, 1);
             this.line1.TabIndex = 32;
@@ -646,6 +646,66 @@
             this.gradientPanel1.Size = new System.Drawing.Size(291, 36);
             this.gradientPanel1.TabIndex = 39;
             // 
+            // toPriceTxt
+            // 
+            this.toPriceTxt.BackColor = System.Drawing.Color.Transparent;
+            this.toPriceTxt.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
+            this.toPriceTxt.BorderThickness = 0;
+            this.toPriceTxt.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.toPriceTxt.DefaultText = "";
+            this.toPriceTxt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.toPriceTxt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.toPriceTxt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.toPriceTxt.DisabledState.Parent = this.toPriceTxt;
+            this.toPriceTxt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.toPriceTxt.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
+            this.toPriceTxt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.toPriceTxt.FocusedState.Parent = this.toPriceTxt;
+            this.toPriceTxt.Font = new System.Drawing.Font("#9Slide03 Cabin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toPriceTxt.ForeColor = System.Drawing.Color.Black;
+            this.toPriceTxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.toPriceTxt.HoverState.Parent = this.toPriceTxt;
+            this.toPriceTxt.Location = new System.Drawing.Point(177, 2);
+            this.toPriceTxt.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.toPriceTxt.Name = "toPriceTxt";
+            this.toPriceTxt.PasswordChar = '\0';
+            this.toPriceTxt.PlaceholderText = "Tổng tiền đến";
+            this.toPriceTxt.SelectedText = "";
+            this.toPriceTxt.ShadowDecoration.Parent = this.toPriceTxt;
+            this.toPriceTxt.Size = new System.Drawing.Size(110, 25);
+            this.toPriceTxt.TabIndex = 44;
+            this.toPriceTxt.TextChanged += new System.EventHandler(this.toPriceTxt_TextChanged);
+            // 
+            // fromPriceTxt
+            // 
+            this.fromPriceTxt.BackColor = System.Drawing.Color.Transparent;
+            this.fromPriceTxt.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
+            this.fromPriceTxt.BorderThickness = 0;
+            this.fromPriceTxt.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.fromPriceTxt.DefaultText = "";
+            this.fromPriceTxt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.fromPriceTxt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.fromPriceTxt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.fromPriceTxt.DisabledState.Parent = this.fromPriceTxt;
+            this.fromPriceTxt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.fromPriceTxt.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
+            this.fromPriceTxt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.fromPriceTxt.FocusedState.Parent = this.fromPriceTxt;
+            this.fromPriceTxt.Font = new System.Drawing.Font("#9Slide03 Cabin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fromPriceTxt.ForeColor = System.Drawing.Color.Black;
+            this.fromPriceTxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.fromPriceTxt.HoverState.Parent = this.fromPriceTxt;
+            this.fromPriceTxt.Location = new System.Drawing.Point(21, 4);
+            this.fromPriceTxt.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.fromPriceTxt.Name = "fromPriceTxt";
+            this.fromPriceTxt.PasswordChar = '\0';
+            this.fromPriceTxt.PlaceholderText = "Tổng tiền từ";
+            this.fromPriceTxt.SelectedText = "";
+            this.fromPriceTxt.ShadowDecoration.Parent = this.fromPriceTxt;
+            this.fromPriceTxt.Size = new System.Drawing.Size(110, 25);
+            this.fromPriceTxt.TabIndex = 43;
+            this.fromPriceTxt.TextChanged += new System.EventHandler(this.fromPriceTxt_TextChanged);
+            // 
             // panel3
             // 
             this.panel3.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -715,72 +775,12 @@
             this.searchInput.TabIndex = 42;
             this.searchInput.TextChanged += new System.EventHandler(this.searchInput_TextChanged);
             // 
-            // fromPriceTxt
-            // 
-            this.fromPriceTxt.BackColor = System.Drawing.Color.Transparent;
-            this.fromPriceTxt.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
-            this.fromPriceTxt.BorderThickness = 0;
-            this.fromPriceTxt.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.fromPriceTxt.DefaultText = "";
-            this.fromPriceTxt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.fromPriceTxt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.fromPriceTxt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.fromPriceTxt.DisabledState.Parent = this.fromPriceTxt;
-            this.fromPriceTxt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.fromPriceTxt.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
-            this.fromPriceTxt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.fromPriceTxt.FocusedState.Parent = this.fromPriceTxt;
-            this.fromPriceTxt.Font = new System.Drawing.Font("#9Slide03 Cabin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fromPriceTxt.ForeColor = System.Drawing.Color.Black;
-            this.fromPriceTxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.fromPriceTxt.HoverState.Parent = this.fromPriceTxt;
-            this.fromPriceTxt.Location = new System.Drawing.Point(21, 4);
-            this.fromPriceTxt.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.fromPriceTxt.Name = "fromPriceTxt";
-            this.fromPriceTxt.PasswordChar = '\0';
-            this.fromPriceTxt.PlaceholderText = "Tổng tiền từ";
-            this.fromPriceTxt.SelectedText = "";
-            this.fromPriceTxt.ShadowDecoration.Parent = this.fromPriceTxt;
-            this.fromPriceTxt.Size = new System.Drawing.Size(110, 25);
-            this.fromPriceTxt.TabIndex = 43;
-            this.fromPriceTxt.TextChanged += new System.EventHandler(this.fromPriceTxt_TextChanged);
-            // 
-            // toPriceTxt
-            // 
-            this.toPriceTxt.BackColor = System.Drawing.Color.Transparent;
-            this.toPriceTxt.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
-            this.toPriceTxt.BorderThickness = 0;
-            this.toPriceTxt.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.toPriceTxt.DefaultText = "";
-            this.toPriceTxt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.toPriceTxt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.toPriceTxt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.toPriceTxt.DisabledState.Parent = this.toPriceTxt;
-            this.toPriceTxt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.toPriceTxt.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
-            this.toPriceTxt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.toPriceTxt.FocusedState.Parent = this.toPriceTxt;
-            this.toPriceTxt.Font = new System.Drawing.Font("#9Slide03 Cabin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toPriceTxt.ForeColor = System.Drawing.Color.Black;
-            this.toPriceTxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.toPriceTxt.HoverState.Parent = this.toPriceTxt;
-            this.toPriceTxt.Location = new System.Drawing.Point(177, 2);
-            this.toPriceTxt.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.toPriceTxt.Name = "toPriceTxt";
-            this.toPriceTxt.PasswordChar = '\0';
-            this.toPriceTxt.PlaceholderText = "Tổng tiền đến";
-            this.toPriceTxt.SelectedText = "";
-            this.toPriceTxt.ShadowDecoration.Parent = this.toPriceTxt;
-            this.toPriceTxt.Size = new System.Drawing.Size(110, 25);
-            this.toPriceTxt.TabIndex = 44;
-            this.toPriceTxt.TextChanged += new System.EventHandler(this.toPriceTxt_TextChanged);
-            // 
             // CustomerBillGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
-            this.ClientSize = new System.Drawing.Size(1400, 864);
+            this.ClientSize = new System.Drawing.Size(1400, 890);
             this.Controls.Add(this.searchInput);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.gradientPanel1);
@@ -822,7 +822,6 @@
         private Guna.UI.WinForms.GunaAdvenceButton exportBtn;
         private Guna.UI.WinForms.GunaAdvenceButton refreshBtn;
         private Guna.UI.WinForms.GunaAdvenceButton deleteBtn;
-        private Guna.UI.WinForms.GunaAdvenceButton editBtn;
         private Guna.UI.WinForms.GunaAdvenceButton addBtn;
         private Guna.UI.WinForms.GunaDataGridView dgvCustomerBill;
         private System.Windows.Forms.Panel line1;
@@ -845,5 +844,6 @@
         private Guna.UI2.WinForms.Guna2TextBox toPriceTxt;
         private Guna.UI2.WinForms.Guna2TextBox fromPriceTxt;
         private Guna.UI2.WinForms.Guna2TextBox searchInput;
+        private Guna.UI.WinForms.GunaAdvenceButton printPdfBtn;
     }
 }

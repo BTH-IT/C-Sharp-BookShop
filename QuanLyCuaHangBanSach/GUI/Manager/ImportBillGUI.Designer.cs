@@ -38,7 +38,6 @@
             this.exportBtn = new Guna.UI.WinForms.GunaAdvenceButton();
             this.refreshBtn = new Guna.UI.WinForms.GunaAdvenceButton();
             this.deleteBtn = new Guna.UI.WinForms.GunaAdvenceButton();
-            this.editBtn = new Guna.UI.WinForms.GunaAdvenceButton();
             this.searchInput = new Guna.UI2.WinForms.Guna2TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.toPriceTxt = new Guna.UI2.WinForms.Guna2TextBox();
@@ -58,6 +57,7 @@
             this.staffCbx = new Guna.UI.WinForms.GunaComboBox();
             this.supplierCbx = new Guna.UI.WinForms.GunaComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.importExcelBtn = new Guna.UI.WinForms.GunaAdvenceButton();
             this.dgvImportBill = new Guna.UI.WinForms.GunaDataGridView();
             this.Column9 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,7 +66,6 @@
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.line1 = new System.Windows.Forms.Panel();
-            this.importExcelBtn = new Guna.UI.WinForms.GunaAdvenceButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gradientPanel1.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -181,39 +180,6 @@
             this.deleteBtn.TabIndex = 6;
             this.deleteBtn.Text = "Xóa";
             this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
-            // 
-            // editBtn
-            // 
-            this.editBtn.AnimationHoverSpeed = 0.07F;
-            this.editBtn.AnimationSpeed = 0.03F;
-            this.editBtn.BackColor = System.Drawing.Color.Transparent;
-            this.editBtn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.editBtn.BorderColor = System.Drawing.Color.Black;
-            this.editBtn.CheckedBaseColor = System.Drawing.Color.Gray;
-            this.editBtn.CheckedBorderColor = System.Drawing.Color.Black;
-            this.editBtn.CheckedForeColor = System.Drawing.Color.White;
-            this.editBtn.CheckedImage = ((System.Drawing.Image)(resources.GetObject("editBtn.CheckedImage")));
-            this.editBtn.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.editBtn.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.editBtn.FocusedColor = System.Drawing.Color.Empty;
-            this.editBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.editBtn.ForeColor = System.Drawing.Color.White;
-            this.editBtn.Image = ((System.Drawing.Image)(resources.GetObject("editBtn.Image")));
-            this.editBtn.ImageSize = new System.Drawing.Size(20, 20);
-            this.editBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.editBtn.Location = new System.Drawing.Point(1172, 6);
-            this.editBtn.Name = "editBtn";
-            this.editBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.editBtn.OnHoverBorderColor = System.Drawing.Color.Transparent;
-            this.editBtn.OnHoverForeColor = System.Drawing.Color.White;
-            this.editBtn.OnHoverImage = null;
-            this.editBtn.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.editBtn.OnPressedColor = System.Drawing.Color.Black;
-            this.editBtn.Radius = 6;
-            this.editBtn.Size = new System.Drawing.Size(113, 42);
-            this.editBtn.TabIndex = 5;
-            this.editBtn.Text = "Chỉnh sửa";
-            this.editBtn.Click += new System.EventHandler(this.editBtn_Click);
             // 
             // searchInput
             // 
@@ -388,7 +354,7 @@
             this.addBtn.Image = ((System.Drawing.Image)(resources.GetObject("addBtn.Image")));
             this.addBtn.ImageSize = new System.Drawing.Size(20, 20);
             this.addBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.addBtn.Location = new System.Drawing.Point(1049, 6);
+            this.addBtn.Location = new System.Drawing.Point(1162, 6);
             this.addBtn.Name = "addBtn";
             this.addBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.addBtn.OnHoverBorderColor = System.Drawing.Color.Transparent;
@@ -555,12 +521,44 @@
             this.panel1.Controls.Add(this.exportBtn);
             this.panel1.Controls.Add(this.refreshBtn);
             this.panel1.Controls.Add(this.deleteBtn);
-            this.panel1.Controls.Add(this.editBtn);
             this.panel1.Controls.Add(this.addBtn);
-            this.panel1.Location = new System.Drawing.Point(11, 795);
+            this.panel1.Location = new System.Drawing.Point(11, 836);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1378, 54);
             this.panel1.TabIndex = 46;
+            // 
+            // importExcelBtn
+            // 
+            this.importExcelBtn.AnimationHoverSpeed = 0.07F;
+            this.importExcelBtn.AnimationSpeed = 0.03F;
+            this.importExcelBtn.BackColor = System.Drawing.Color.Transparent;
+            this.importExcelBtn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.importExcelBtn.BorderColor = System.Drawing.Color.Black;
+            this.importExcelBtn.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.importExcelBtn.CheckedBorderColor = System.Drawing.Color.Black;
+            this.importExcelBtn.CheckedForeColor = System.Drawing.Color.White;
+            this.importExcelBtn.CheckedImage = ((System.Drawing.Image)(resources.GetObject("importExcelBtn.CheckedImage")));
+            this.importExcelBtn.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.importExcelBtn.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.importExcelBtn.FocusedColor = System.Drawing.Color.Empty;
+            this.importExcelBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.importExcelBtn.ForeColor = System.Drawing.Color.White;
+            this.importExcelBtn.Image = ((System.Drawing.Image)(resources.GetObject("importExcelBtn.Image")));
+            this.importExcelBtn.ImageSize = new System.Drawing.Size(20, 20);
+            this.importExcelBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.importExcelBtn.Location = new System.Drawing.Point(243, 6);
+            this.importExcelBtn.Name = "importExcelBtn";
+            this.importExcelBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.importExcelBtn.OnHoverBorderColor = System.Drawing.Color.Transparent;
+            this.importExcelBtn.OnHoverForeColor = System.Drawing.Color.White;
+            this.importExcelBtn.OnHoverImage = null;
+            this.importExcelBtn.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.importExcelBtn.OnPressedColor = System.Drawing.Color.Black;
+            this.importExcelBtn.Radius = 6;
+            this.importExcelBtn.Size = new System.Drawing.Size(167, 42);
+            this.importExcelBtn.TabIndex = 9;
+            this.importExcelBtn.Text = "Nhập hàng từ excel";
+            this.importExcelBtn.Click += new System.EventHandler(this.importExcelBtn_Click);
             // 
             // dgvImportBill
             // 
@@ -623,7 +621,7 @@
             this.dgvImportBill.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvImportBill.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvImportBill.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvImportBill.Size = new System.Drawing.Size(1378, 717);
+            this.dgvImportBill.Size = new System.Drawing.Size(1378, 758);
             this.dgvImportBill.TabIndex = 45;
             this.dgvImportBill.TabStop = false;
             this.dgvImportBill.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna;
@@ -712,50 +710,17 @@
             // 
             this.line1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.line1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(212)))), ((int)(((byte)(191)))));
-            this.line1.Location = new System.Drawing.Point(23, 48);
+            this.line1.Location = new System.Drawing.Point(23, 61);
             this.line1.Name = "line1";
             this.line1.Size = new System.Drawing.Size(234, 1);
             this.line1.TabIndex = 43;
-            // 
-            // importExcelBtn
-            // 
-            this.importExcelBtn.AnimationHoverSpeed = 0.07F;
-            this.importExcelBtn.AnimationSpeed = 0.03F;
-            this.importExcelBtn.BackColor = System.Drawing.Color.Transparent;
-            this.importExcelBtn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.importExcelBtn.BorderColor = System.Drawing.Color.Black;
-            this.importExcelBtn.CheckedBaseColor = System.Drawing.Color.Gray;
-            this.importExcelBtn.CheckedBorderColor = System.Drawing.Color.Black;
-            this.importExcelBtn.CheckedForeColor = System.Drawing.Color.White;
-            this.importExcelBtn.CheckedImage = ((System.Drawing.Image)(resources.GetObject("importExcelBtn.CheckedImage")));
-            this.importExcelBtn.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.importExcelBtn.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.importExcelBtn.FocusedColor = System.Drawing.Color.Empty;
-            this.importExcelBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.importExcelBtn.ForeColor = System.Drawing.Color.White;
-            this.importExcelBtn.Image = ((System.Drawing.Image)(resources.GetObject("importExcelBtn.Image")));
-            this.importExcelBtn.ImageSize = new System.Drawing.Size(20, 20);
-            this.importExcelBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.importExcelBtn.Location = new System.Drawing.Point(243, 6);
-            this.importExcelBtn.Name = "importExcelBtn";
-            this.importExcelBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.importExcelBtn.OnHoverBorderColor = System.Drawing.Color.Transparent;
-            this.importExcelBtn.OnHoverForeColor = System.Drawing.Color.White;
-            this.importExcelBtn.OnHoverImage = null;
-            this.importExcelBtn.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.importExcelBtn.OnPressedColor = System.Drawing.Color.Black;
-            this.importExcelBtn.Radius = 6;
-            this.importExcelBtn.Size = new System.Drawing.Size(167, 42);
-            this.importExcelBtn.TabIndex = 9;
-            this.importExcelBtn.Text = "Nhập hàng từ excel";
-            this.importExcelBtn.Click += new System.EventHandler(this.importExcelBtn_Click);
             // 
             // ImportBillGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
-            this.ClientSize = new System.Drawing.Size(1400, 864);
+            this.ClientSize = new System.Drawing.Size(1400, 890);
             this.Controls.Add(this.searchInput);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.gradientPanel1);
@@ -787,7 +752,6 @@
         private Guna.UI.WinForms.GunaAdvenceButton exportBtn;
         private Guna.UI.WinForms.GunaAdvenceButton refreshBtn;
         private Guna.UI.WinForms.GunaAdvenceButton deleteBtn;
-        private Guna.UI.WinForms.GunaAdvenceButton editBtn;
         private Guna.UI2.WinForms.Guna2TextBox searchInput;
         private System.Windows.Forms.PictureBox pictureBox1;
         private Guna.UI2.WinForms.Guna2TextBox toPriceTxt;
