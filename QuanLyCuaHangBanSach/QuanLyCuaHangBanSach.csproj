@@ -505,6 +505,12 @@
     <Compile Include="GUI\Importer\ImportGUI.Designer.cs">
       <DependentUpon>ImportGUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Manager\AccountManageGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Manager\AccountManageGUI.Designer.cs">
+      <DependentUpon>AccountManageGUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Manager\BookManageGUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -522,6 +528,24 @@
     </Compile>
     <Compile Include="GUI\Manager\AuthorGUl.Designer.cs">
       <DependentUpon>AuthorGUl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Manager\CustomerManagerGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Manager\CustomerManagerGUI.designer.cs">
+      <DependentUpon>CustomerManagerGUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Manager\SeoManageGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Manager\SeoManageGUI.Designer.cs">
+      <DependentUpon>SeoManageGUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Manager\StaffManageGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Manager\StaffManageGUI.designer.cs">
+      <DependentUpon>StaffManageGUI.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Manager\SupplierManagerGUI.cs">
       <SubType>Form</SubType>
@@ -577,6 +601,12 @@
     <Compile Include="GUI\Manager\PositionManageGUI.Designer.cs">
       <DependentUpon>PositionManageGUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Modal\AccountModal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Modal\AccountModal.designer.cs">
+      <DependentUpon>AccountModal.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Modal\AddBookToCustomerBillModal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -612,6 +642,24 @@
     </Compile>
     <Compile Include="GUI\Modal\AuthorModal.Designer.cs">
       <DependentUpon>AuthorModal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modal\CustomerModal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Modal\CustomerModal.Designer.cs">
+      <DependentUpon>CustomerModal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modal\SaleModal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Modal\SaleModal.Designer.cs">
+      <DependentUpon>SaleModal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modal\StaffModal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Modal\StaffModal.Designer.cs">
+      <DependentUpon>StaffModal.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modal\SupplierModal.cs">
       <SubType>Form</SubType>
@@ -721,6 +769,9 @@
     <EmbeddedResource Include="GUI\Auth\LoginGUI.resx">
       <DependentUpon>LoginGUI.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Manager\AccountManageGUI.resx">
+      <DependentUpon>AccountManageGUI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Manager\AuthorGUl.resx">
       <DependentUpon>AuthorGUl.cs</DependentUpon>
     </EmbeddedResource>
@@ -729,6 +780,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Manager\CustomerBillGUI.resx">
       <DependentUpon>CustomerBillGUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Manager\CustomerManagerGUI.resx">
+      <DependentUpon>CustomerManagerGUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Manager\HomeManageGUI.resx">
       <DependentUpon>HomeManageGUI.cs</DependentUpon>
@@ -745,8 +799,15 @@
     <EmbeddedResource Include="GUI\Auth\SendCodeGUI.resx">
       <DependentUpon>SendCodeGUI.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Manager\SeoManageGUI.resx">
+      <DependentUpon>SeoManageGUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Manager\StaffManageGUI.resx">
+      <DependentUpon>StaffManageGUI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Manager\SupplierManagerGUI.resx">
       <DependentUpon>SupplierManagerGUI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Manager\PaymentBillManageGUI.resx">
       <DependentUpon>PaymentBillManageGUI.cs</DependentUpon>
     </EmbeddedResource>
@@ -756,6 +817,9 @@
     <EmbeddedResource Include="GUI\Manager\PositionManageGUI.resx">
       <DependentUpon>PositionManageGUI.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Modal\AccountModal.resx">
+      <DependentUpon>AccountModal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Modal\AddBookToCustomerBillModal.resx">
       <DependentUpon>AddBookToCustomerBillModal.cs</DependentUpon>
     </EmbeddedResource>
@@ -764,6 +828,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Modal\AuthorModal.resx">
       <DependentUpon>AuthorModal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Modal\AuthorizeModal.resx">
       <DependentUpon>AuthorizeModal.cs</DependentUpon>
     </EmbeddedResource>
@@ -773,11 +838,21 @@
     <EmbeddedResource Include="GUI\Modal\CustomerBillModal.resx">
       <DependentUpon>CustomerBillModal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Modal\CustomerModal.resx">
+      <DependentUpon>CustomerModal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Modal\ImportBillModal.resx">
       <DependentUpon>ImportBillModal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Modal\SaleModal.resx">
+      <DependentUpon>SaleModal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Modal\StaffModal.resx">
+      <DependentUpon>StaffModal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Modal\SupplierModal.resx">
       <DependentUpon>SupplierModal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Modal\PermissionModal.resx">
       <DependentUpon>PermissionModal.cs</DependentUpon>
     </EmbeddedResource>
@@ -854,7 +929,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\Release\" />
-    <Folder Include="GUI\Importer\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="assets\hidden-eye-icon-new.png" />
@@ -910,8 +984,6 @@
     <Content Include="bin\Debug\System.Threading.AccessControl.xml" />
     <Content Include="bin\Debug\System.Threading.Tasks.Extensions.xml" />
     <Content Include="FodyWeavers.xml" />
-    <Content Include="obj\Debug\QuanLyCuaHangBanSach.csproj.FileListAbsolute.txt" />
-    <Content Include="obj\Debug\TempPE\Properties.Resources.Designer.cs.dll" />
     <Content Include="qlchs.sql" />
   </ItemGroup>
   <ItemGroup>

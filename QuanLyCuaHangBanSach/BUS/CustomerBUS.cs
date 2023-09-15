@@ -46,6 +46,11 @@ namespace QuanLyCuaHangBanSach.BUS
         {
             return CustomerDAO.Instance.getById(id);
         }
+        
+        public List<CustomerDTO> Search(string id)
+        {
+            return CustomerDAO.Instance.Search(id);
+        }
         public List<CustomerDTO> SearchByPhoneNum(string num)
         {
             return CustomerDAO.Instance.SearchByPhoneNum(num);

@@ -33,16 +33,12 @@
             this.manageContent = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.line1 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.permissionBtn = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.paymentBtn = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.refundBtn = new Guna.UI.WinForms.GunaAdvenceButton();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.gunaAdvenceButton4 = new Guna.UI.WinForms.GunaAdvenceButton();
-            this.gunaAdvenceButton3 = new Guna.UI.WinForms.GunaAdvenceButton();
-            this.gunaAdvenceButton1 = new Guna.UI.WinForms.GunaAdvenceButton();
-            this.gunaAdvenceButton2 = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.logoutBtn = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.positionBtn = new Guna.UI.WinForms.GunaAdvenceButton();
             this.accountBtn = new Guna.UI.WinForms.GunaAdvenceButton();
             this.publisherBtn = new Guna.UI.WinForms.GunaAdvenceButton();
             this.seoBtn = new Guna.UI.WinForms.GunaAdvenceButton();
@@ -55,16 +51,20 @@
             this.authorBtn = new Guna.UI.WinForms.GunaAdvenceButton();
             this.bookBtn = new Guna.UI.WinForms.GunaAdvenceButton();
             this.homeBtn = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.line1 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.gunaCirclePictureBox1 = new Guna.UI.WinForms.GunaCirclePictureBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.gunaAdvenceButton5 = new Guna.UI.WinForms.GunaAdvenceButton();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).BeginInit();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -107,11 +107,11 @@
             // 
             this.panel5.AccessibleRole = System.Windows.Forms.AccessibleRole.ScrollBar;
             this.panel5.AutoScrollMargin = new System.Drawing.Size(0, 10);
-            this.panel5.Controls.Add(this.gunaAdvenceButton5);
-            this.panel5.Controls.Add(this.gunaAdvenceButton4);
-            this.panel5.Controls.Add(this.gunaAdvenceButton3);
+            this.panel5.Controls.Add(this.permissionBtn);
+            this.panel5.Controls.Add(this.paymentBtn);
+            this.panel5.Controls.Add(this.refundBtn);
             this.panel5.Controls.Add(this.panel4);
-            this.panel5.Controls.Add(this.gunaAdvenceButton2);
+            this.panel5.Controls.Add(this.positionBtn);
             this.panel5.Controls.Add(this.accountBtn);
             this.panel5.Controls.Add(this.publisherBtn);
             this.panel5.Controls.Add(this.seoBtn);
@@ -130,201 +130,188 @@
             this.panel5.Size = new System.Drawing.Size(236, 805);
             this.panel5.TabIndex = 6;
             // 
-            // line1
+            // permissionBtn
             // 
-            this.line1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(212)))), ((int)(((byte)(212)))));
-            this.line1.Location = new System.Drawing.Point(0, 78);
-            this.line1.Name = "line1";
-            this.line1.Size = new System.Drawing.Size(236, 1);
-            this.line1.TabIndex = 5;
+            this.permissionBtn.Animated = true;
+            this.permissionBtn.AnimationHoverSpeed = 0.3F;
+            this.permissionBtn.AnimationSpeed = 0.5F;
+            this.permissionBtn.BackColor = System.Drawing.Color.Transparent;
+            this.permissionBtn.BaseColor = System.Drawing.Color.White;
+            this.permissionBtn.BorderColor = System.Drawing.Color.Black;
+            this.permissionBtn.CheckedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.permissionBtn.CheckedBorderColor = System.Drawing.Color.Transparent;
+            this.permissionBtn.CheckedForeColor = System.Drawing.Color.White;
+            this.permissionBtn.CheckedImage = ((System.Drawing.Image)(resources.GetObject("permissionBtn.CheckedImage")));
+            this.permissionBtn.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.permissionBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.permissionBtn.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.permissionBtn.FocusedColor = System.Drawing.Color.Empty;
+            this.permissionBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.permissionBtn.ForeColor = System.Drawing.Color.Black;
+            this.permissionBtn.Image = ((System.Drawing.Image)(resources.GetObject("permissionBtn.Image")));
+            this.permissionBtn.ImageSize = new System.Drawing.Size(20, 20);
+            this.permissionBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.permissionBtn.Location = new System.Drawing.Point(17, 603);
+            this.permissionBtn.Name = "permissionBtn";
+            this.permissionBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.permissionBtn.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.permissionBtn.OnHoverForeColor = System.Drawing.Color.White;
+            this.permissionBtn.OnHoverImage = ((System.Drawing.Image)(resources.GetObject("permissionBtn.OnHoverImage")));
+            this.permissionBtn.OnHoverLineColor = System.Drawing.Color.Transparent;
+            this.permissionBtn.OnPressedColor = System.Drawing.Color.Black;
+            this.permissionBtn.Radius = 8;
+            this.permissionBtn.Size = new System.Drawing.Size(205, 40);
+            this.permissionBtn.TabIndex = 35;
+            this.permissionBtn.Text = "Quyền";
+            this.permissionBtn.Click += new System.EventHandler(this.permissionBtn_Click);
             // 
-            // label3
+            // paymentBtn
             // 
-            this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(115)))), ((int)(((byte)(115)))));
-            this.label3.Location = new System.Drawing.Point(74, 42);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(122, 23);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Nhân viên quản lý";
+            this.paymentBtn.Animated = true;
+            this.paymentBtn.AnimationHoverSpeed = 0.3F;
+            this.paymentBtn.AnimationSpeed = 0.5F;
+            this.paymentBtn.BackColor = System.Drawing.Color.Transparent;
+            this.paymentBtn.BaseColor = System.Drawing.Color.White;
+            this.paymentBtn.BorderColor = System.Drawing.Color.Black;
+            this.paymentBtn.CheckedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.paymentBtn.CheckedBorderColor = System.Drawing.Color.Transparent;
+            this.paymentBtn.CheckedForeColor = System.Drawing.Color.White;
+            this.paymentBtn.CheckedImage = ((System.Drawing.Image)(resources.GetObject("paymentBtn.CheckedImage")));
+            this.paymentBtn.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.paymentBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.paymentBtn.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.paymentBtn.FocusedColor = System.Drawing.Color.Empty;
+            this.paymentBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.paymentBtn.ForeColor = System.Drawing.Color.Black;
+            this.paymentBtn.Image = ((System.Drawing.Image)(resources.GetObject("paymentBtn.Image")));
+            this.paymentBtn.ImageSize = new System.Drawing.Size(20, 20);
+            this.paymentBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.paymentBtn.Location = new System.Drawing.Point(17, 695);
+            this.paymentBtn.Name = "paymentBtn";
+            this.paymentBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.paymentBtn.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.paymentBtn.OnHoverForeColor = System.Drawing.Color.White;
+            this.paymentBtn.OnHoverImage = ((System.Drawing.Image)(resources.GetObject("paymentBtn.OnHoverImage")));
+            this.paymentBtn.OnHoverLineColor = System.Drawing.Color.Transparent;
+            this.paymentBtn.OnPressedColor = System.Drawing.Color.Black;
+            this.paymentBtn.Radius = 8;
+            this.paymentBtn.Size = new System.Drawing.Size(205, 40);
+            this.paymentBtn.TabIndex = 34;
+            this.paymentBtn.Text = "Phiếu chi";
+            this.paymentBtn.Click += new System.EventHandler(this.paymentBtn_Click);
             // 
-            // label2
+            // refundBtn
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("#9Slide03 Cabin Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(73, 15);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(149, 26);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Biện Thành Hưng";
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.pictureBox2);
-            this.panel2.Controls.Add(this.pictureBox1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1636, 36);
-            this.panel2.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label1.Font = new System.Drawing.Font("#9Slide03 Cabin", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(38, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(86, 36);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Manager";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.refundBtn.Animated = true;
+            this.refundBtn.AnimationHoverSpeed = 0.3F;
+            this.refundBtn.AnimationSpeed = 0.5F;
+            this.refundBtn.BackColor = System.Drawing.Color.Transparent;
+            this.refundBtn.BaseColor = System.Drawing.Color.White;
+            this.refundBtn.BorderColor = System.Drawing.Color.Black;
+            this.refundBtn.CheckedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.refundBtn.CheckedBorderColor = System.Drawing.Color.Transparent;
+            this.refundBtn.CheckedForeColor = System.Drawing.Color.White;
+            this.refundBtn.CheckedImage = ((System.Drawing.Image)(resources.GetObject("refundBtn.CheckedImage")));
+            this.refundBtn.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.refundBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.refundBtn.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.refundBtn.FocusedColor = System.Drawing.Color.Empty;
+            this.refundBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.refundBtn.ForeColor = System.Drawing.Color.Black;
+            this.refundBtn.Image = ((System.Drawing.Image)(resources.GetObject("refundBtn.Image")));
+            this.refundBtn.ImageSize = new System.Drawing.Size(20, 20);
+            this.refundBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.refundBtn.Location = new System.Drawing.Point(17, 649);
+            this.refundBtn.Name = "refundBtn";
+            this.refundBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.refundBtn.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.refundBtn.OnHoverForeColor = System.Drawing.Color.White;
+            this.refundBtn.OnHoverImage = ((System.Drawing.Image)(resources.GetObject("refundBtn.OnHoverImage")));
+            this.refundBtn.OnHoverLineColor = System.Drawing.Color.Transparent;
+            this.refundBtn.OnPressedColor = System.Drawing.Color.Black;
+            this.refundBtn.Radius = 8;
+            this.refundBtn.Size = new System.Drawing.Size(205, 40);
+            this.refundBtn.TabIndex = 33;
+            this.refundBtn.Text = "Quản lý trả hàng";
+            this.refundBtn.Click += new System.EventHandler(this.refundBtn_Click);
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.gunaAdvenceButton1);
+            this.panel4.Controls.Add(this.logoutBtn);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel4.Location = new System.Drawing.Point(0, 753);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(236, 52);
             this.panel4.TabIndex = 32;
             // 
-            // gunaAdvenceButton4
+            // logoutBtn
             // 
-            this.gunaAdvenceButton4.Animated = true;
-            this.gunaAdvenceButton4.AnimationHoverSpeed = 0.3F;
-            this.gunaAdvenceButton4.AnimationSpeed = 0.5F;
-            this.gunaAdvenceButton4.BackColor = System.Drawing.Color.Transparent;
-            this.gunaAdvenceButton4.BaseColor = System.Drawing.Color.White;
-            this.gunaAdvenceButton4.BorderColor = System.Drawing.Color.Black;
-            this.gunaAdvenceButton4.CheckedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.gunaAdvenceButton4.CheckedBorderColor = System.Drawing.Color.Transparent;
-            this.gunaAdvenceButton4.CheckedForeColor = System.Drawing.Color.White;
-            this.gunaAdvenceButton4.CheckedImage = ((System.Drawing.Image)(resources.GetObject("gunaAdvenceButton4.CheckedImage")));
-            this.gunaAdvenceButton4.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.gunaAdvenceButton4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.gunaAdvenceButton4.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaAdvenceButton4.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaAdvenceButton4.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaAdvenceButton4.ForeColor = System.Drawing.Color.Black;
-            this.gunaAdvenceButton4.Image = ((System.Drawing.Image)(resources.GetObject("gunaAdvenceButton4.Image")));
-            this.gunaAdvenceButton4.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaAdvenceButton4.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.gunaAdvenceButton4.Location = new System.Drawing.Point(17, 695);
-            this.gunaAdvenceButton4.Name = "gunaAdvenceButton4";
-            this.gunaAdvenceButton4.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.gunaAdvenceButton4.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaAdvenceButton4.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaAdvenceButton4.OnHoverImage = ((System.Drawing.Image)(resources.GetObject("gunaAdvenceButton4.OnHoverImage")));
-            this.gunaAdvenceButton4.OnHoverLineColor = System.Drawing.Color.Transparent;
-            this.gunaAdvenceButton4.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaAdvenceButton4.Radius = 8;
-            this.gunaAdvenceButton4.Size = new System.Drawing.Size(205, 40);
-            this.gunaAdvenceButton4.TabIndex = 34;
-            this.gunaAdvenceButton4.Text = "Phiếu chi";
+            this.logoutBtn.Animated = true;
+            this.logoutBtn.AnimationHoverSpeed = 0.3F;
+            this.logoutBtn.AnimationSpeed = 0.5F;
+            this.logoutBtn.BackColor = System.Drawing.Color.Transparent;
+            this.logoutBtn.BaseColor = System.Drawing.Color.White;
+            this.logoutBtn.BorderColor = System.Drawing.Color.Black;
+            this.logoutBtn.CheckedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.logoutBtn.CheckedBorderColor = System.Drawing.Color.Transparent;
+            this.logoutBtn.CheckedForeColor = System.Drawing.Color.White;
+            this.logoutBtn.CheckedImage = ((System.Drawing.Image)(resources.GetObject("logoutBtn.CheckedImage")));
+            this.logoutBtn.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.logoutBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.logoutBtn.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.logoutBtn.FocusedColor = System.Drawing.Color.Empty;
+            this.logoutBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.logoutBtn.ForeColor = System.Drawing.Color.Black;
+            this.logoutBtn.Image = ((System.Drawing.Image)(resources.GetObject("logoutBtn.Image")));
+            this.logoutBtn.ImageSize = new System.Drawing.Size(20, 20);
+            this.logoutBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.logoutBtn.Location = new System.Drawing.Point(17, 6);
+            this.logoutBtn.Name = "logoutBtn";
+            this.logoutBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.logoutBtn.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.logoutBtn.OnHoverForeColor = System.Drawing.Color.White;
+            this.logoutBtn.OnHoverImage = ((System.Drawing.Image)(resources.GetObject("logoutBtn.OnHoverImage")));
+            this.logoutBtn.OnHoverLineColor = System.Drawing.Color.Transparent;
+            this.logoutBtn.OnPressedColor = System.Drawing.Color.Black;
+            this.logoutBtn.Radius = 8;
+            this.logoutBtn.Size = new System.Drawing.Size(205, 40);
+            this.logoutBtn.TabIndex = 31;
+            this.logoutBtn.Text = "Đăng xuất";
             // 
-            // gunaAdvenceButton3
+            // positionBtn
             // 
-            this.gunaAdvenceButton3.Animated = true;
-            this.gunaAdvenceButton3.AnimationHoverSpeed = 0.3F;
-            this.gunaAdvenceButton3.AnimationSpeed = 0.5F;
-            this.gunaAdvenceButton3.BackColor = System.Drawing.Color.Transparent;
-            this.gunaAdvenceButton3.BaseColor = System.Drawing.Color.White;
-            this.gunaAdvenceButton3.BorderColor = System.Drawing.Color.Black;
-            this.gunaAdvenceButton3.CheckedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.gunaAdvenceButton3.CheckedBorderColor = System.Drawing.Color.Transparent;
-            this.gunaAdvenceButton3.CheckedForeColor = System.Drawing.Color.White;
-            this.gunaAdvenceButton3.CheckedImage = ((System.Drawing.Image)(resources.GetObject("gunaAdvenceButton3.CheckedImage")));
-            this.gunaAdvenceButton3.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.gunaAdvenceButton3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.gunaAdvenceButton3.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaAdvenceButton3.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaAdvenceButton3.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaAdvenceButton3.ForeColor = System.Drawing.Color.Black;
-            this.gunaAdvenceButton3.Image = ((System.Drawing.Image)(resources.GetObject("gunaAdvenceButton3.Image")));
-            this.gunaAdvenceButton3.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaAdvenceButton3.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.gunaAdvenceButton3.Location = new System.Drawing.Point(17, 649);
-            this.gunaAdvenceButton3.Name = "gunaAdvenceButton3";
-            this.gunaAdvenceButton3.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.gunaAdvenceButton3.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaAdvenceButton3.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaAdvenceButton3.OnHoverImage = ((System.Drawing.Image)(resources.GetObject("gunaAdvenceButton3.OnHoverImage")));
-            this.gunaAdvenceButton3.OnHoverLineColor = System.Drawing.Color.Transparent;
-            this.gunaAdvenceButton3.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaAdvenceButton3.Radius = 8;
-            this.gunaAdvenceButton3.Size = new System.Drawing.Size(205, 40);
-            this.gunaAdvenceButton3.TabIndex = 33;
-            this.gunaAdvenceButton3.Text = "Quản lý trả hàng";
-            // 
-            // gunaAdvenceButton1
-            // 
-            this.gunaAdvenceButton1.Animated = true;
-            this.gunaAdvenceButton1.AnimationHoverSpeed = 0.3F;
-            this.gunaAdvenceButton1.AnimationSpeed = 0.5F;
-            this.gunaAdvenceButton1.BackColor = System.Drawing.Color.Transparent;
-            this.gunaAdvenceButton1.BaseColor = System.Drawing.Color.White;
-            this.gunaAdvenceButton1.BorderColor = System.Drawing.Color.Black;
-            this.gunaAdvenceButton1.CheckedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.gunaAdvenceButton1.CheckedBorderColor = System.Drawing.Color.Transparent;
-            this.gunaAdvenceButton1.CheckedForeColor = System.Drawing.Color.White;
-            this.gunaAdvenceButton1.CheckedImage = ((System.Drawing.Image)(resources.GetObject("gunaAdvenceButton1.CheckedImage")));
-            this.gunaAdvenceButton1.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.gunaAdvenceButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.gunaAdvenceButton1.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaAdvenceButton1.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaAdvenceButton1.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaAdvenceButton1.ForeColor = System.Drawing.Color.Black;
-            this.gunaAdvenceButton1.Image = ((System.Drawing.Image)(resources.GetObject("gunaAdvenceButton1.Image")));
-            this.gunaAdvenceButton1.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaAdvenceButton1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.gunaAdvenceButton1.Location = new System.Drawing.Point(17, 6);
-            this.gunaAdvenceButton1.Name = "gunaAdvenceButton1";
-            this.gunaAdvenceButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.gunaAdvenceButton1.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaAdvenceButton1.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaAdvenceButton1.OnHoverImage = ((System.Drawing.Image)(resources.GetObject("gunaAdvenceButton1.OnHoverImage")));
-            this.gunaAdvenceButton1.OnHoverLineColor = System.Drawing.Color.Transparent;
-            this.gunaAdvenceButton1.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaAdvenceButton1.Radius = 8;
-            this.gunaAdvenceButton1.Size = new System.Drawing.Size(205, 40);
-            this.gunaAdvenceButton1.TabIndex = 31;
-            this.gunaAdvenceButton1.Text = "Đăng xuất";
-            // 
-            // gunaAdvenceButton2
-            // 
-            this.gunaAdvenceButton2.Animated = true;
-            this.gunaAdvenceButton2.AnimationHoverSpeed = 0.3F;
-            this.gunaAdvenceButton2.AnimationSpeed = 0.5F;
-            this.gunaAdvenceButton2.BackColor = System.Drawing.Color.Transparent;
-            this.gunaAdvenceButton2.BaseColor = System.Drawing.Color.White;
-            this.gunaAdvenceButton2.BorderColor = System.Drawing.Color.Black;
-            this.gunaAdvenceButton2.CheckedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.gunaAdvenceButton2.CheckedBorderColor = System.Drawing.Color.Transparent;
-            this.gunaAdvenceButton2.CheckedForeColor = System.Drawing.Color.White;
-            this.gunaAdvenceButton2.CheckedImage = ((System.Drawing.Image)(resources.GetObject("gunaAdvenceButton2.CheckedImage")));
-            this.gunaAdvenceButton2.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.gunaAdvenceButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.gunaAdvenceButton2.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaAdvenceButton2.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaAdvenceButton2.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaAdvenceButton2.ForeColor = System.Drawing.Color.Black;
-            this.gunaAdvenceButton2.Image = ((System.Drawing.Image)(resources.GetObject("gunaAdvenceButton2.Image")));
-            this.gunaAdvenceButton2.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaAdvenceButton2.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.gunaAdvenceButton2.Location = new System.Drawing.Point(17, 557);
-            this.gunaAdvenceButton2.Name = "gunaAdvenceButton2";
-            this.gunaAdvenceButton2.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.gunaAdvenceButton2.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaAdvenceButton2.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaAdvenceButton2.OnHoverImage = ((System.Drawing.Image)(resources.GetObject("gunaAdvenceButton2.OnHoverImage")));
-            this.gunaAdvenceButton2.OnHoverLineColor = System.Drawing.Color.Transparent;
-            this.gunaAdvenceButton2.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaAdvenceButton2.Radius = 8;
-            this.gunaAdvenceButton2.Size = new System.Drawing.Size(205, 40);
-            this.gunaAdvenceButton2.TabIndex = 30;
-            this.gunaAdvenceButton2.Text = "Chức vụ";
+            this.positionBtn.Animated = true;
+            this.positionBtn.AnimationHoverSpeed = 0.3F;
+            this.positionBtn.AnimationSpeed = 0.5F;
+            this.positionBtn.BackColor = System.Drawing.Color.Transparent;
+            this.positionBtn.BaseColor = System.Drawing.Color.White;
+            this.positionBtn.BorderColor = System.Drawing.Color.Black;
+            this.positionBtn.CheckedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.positionBtn.CheckedBorderColor = System.Drawing.Color.Transparent;
+            this.positionBtn.CheckedForeColor = System.Drawing.Color.White;
+            this.positionBtn.CheckedImage = ((System.Drawing.Image)(resources.GetObject("positionBtn.CheckedImage")));
+            this.positionBtn.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.positionBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.positionBtn.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.positionBtn.FocusedColor = System.Drawing.Color.Empty;
+            this.positionBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.positionBtn.ForeColor = System.Drawing.Color.Black;
+            this.positionBtn.Image = ((System.Drawing.Image)(resources.GetObject("positionBtn.Image")));
+            this.positionBtn.ImageSize = new System.Drawing.Size(20, 20);
+            this.positionBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.positionBtn.Location = new System.Drawing.Point(17, 557);
+            this.positionBtn.Name = "positionBtn";
+            this.positionBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.positionBtn.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.positionBtn.OnHoverForeColor = System.Drawing.Color.White;
+            this.positionBtn.OnHoverImage = ((System.Drawing.Image)(resources.GetObject("positionBtn.OnHoverImage")));
+            this.positionBtn.OnHoverLineColor = System.Drawing.Color.Transparent;
+            this.positionBtn.OnPressedColor = System.Drawing.Color.Black;
+            this.positionBtn.Radius = 8;
+            this.positionBtn.Size = new System.Drawing.Size(205, 40);
+            this.positionBtn.TabIndex = 30;
+            this.positionBtn.Text = "Chức vụ";
+            this.positionBtn.Click += new System.EventHandler(this.positionBtn_Click);
             // 
             // accountBtn
             // 
@@ -747,6 +734,34 @@
             this.homeBtn.Text = "Trang chủ";
             this.homeBtn.Click += new System.EventHandler(this.homeBtn_Click);
             // 
+            // line1
+            // 
+            this.line1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(212)))), ((int)(((byte)(212)))));
+            this.line1.Location = new System.Drawing.Point(0, 78);
+            this.line1.Name = "line1";
+            this.line1.Size = new System.Drawing.Size(236, 1);
+            this.line1.TabIndex = 5;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(115)))), ((int)(((byte)(115)))));
+            this.label3.Location = new System.Drawing.Point(74, 42);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(122, 23);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Nhân viên quản lý";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("#9Slide03 Cabin Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(73, 15);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(149, 26);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Biện Thành Hưng";
+            // 
             // gunaCirclePictureBox1
             // 
             this.gunaCirclePictureBox1.BaseColor = System.Drawing.Color.White;
@@ -758,6 +773,29 @@
             this.gunaCirclePictureBox1.TabIndex = 0;
             this.gunaCirclePictureBox1.TabStop = false;
             this.gunaCirclePictureBox1.UseTransfarantBackground = false;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.pictureBox2);
+            this.panel2.Controls.Add(this.pictureBox1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1636, 36);
+            this.panel2.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label1.Font = new System.Drawing.Font("#9Slide03 Cabin", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(38, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(86, 36);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Manager";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pictureBox2
             // 
@@ -783,40 +821,6 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // gunaAdvenceButton5
-            // 
-            this.gunaAdvenceButton5.Animated = true;
-            this.gunaAdvenceButton5.AnimationHoverSpeed = 0.3F;
-            this.gunaAdvenceButton5.AnimationSpeed = 0.5F;
-            this.gunaAdvenceButton5.BackColor = System.Drawing.Color.Transparent;
-            this.gunaAdvenceButton5.BaseColor = System.Drawing.Color.White;
-            this.gunaAdvenceButton5.BorderColor = System.Drawing.Color.Black;
-            this.gunaAdvenceButton5.CheckedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.gunaAdvenceButton5.CheckedBorderColor = System.Drawing.Color.Transparent;
-            this.gunaAdvenceButton5.CheckedForeColor = System.Drawing.Color.White;
-            this.gunaAdvenceButton5.CheckedImage = ((System.Drawing.Image)(resources.GetObject("gunaAdvenceButton5.CheckedImage")));
-            this.gunaAdvenceButton5.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.gunaAdvenceButton5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.gunaAdvenceButton5.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaAdvenceButton5.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaAdvenceButton5.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaAdvenceButton5.ForeColor = System.Drawing.Color.Black;
-            this.gunaAdvenceButton5.Image = ((System.Drawing.Image)(resources.GetObject("gunaAdvenceButton5.Image")));
-            this.gunaAdvenceButton5.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaAdvenceButton5.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.gunaAdvenceButton5.Location = new System.Drawing.Point(17, 603);
-            this.gunaAdvenceButton5.Name = "gunaAdvenceButton5";
-            this.gunaAdvenceButton5.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.gunaAdvenceButton5.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaAdvenceButton5.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaAdvenceButton5.OnHoverImage = ((System.Drawing.Image)(resources.GetObject("gunaAdvenceButton5.OnHoverImage")));
-            this.gunaAdvenceButton5.OnHoverLineColor = System.Drawing.Color.Transparent;
-            this.gunaAdvenceButton5.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaAdvenceButton5.Radius = 8;
-            this.gunaAdvenceButton5.Size = new System.Drawing.Size(205, 40);
-            this.gunaAdvenceButton5.TabIndex = 35;
-            this.gunaAdvenceButton5.Text = "Quyền";
-            // 
             // ManagerGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 23F);
@@ -834,9 +838,9 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel5.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).EndInit();
+            this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -869,11 +873,11 @@
         private Guna.UI.WinForms.GunaAdvenceButton authorBtn;
         private Guna.UI.WinForms.GunaAdvenceButton bookBtn;
         private Guna.UI.WinForms.GunaAdvenceButton homeBtn;
-        private Guna.UI.WinForms.GunaAdvenceButton gunaAdvenceButton2;
-        private Guna.UI.WinForms.GunaAdvenceButton gunaAdvenceButton1;
-        private Guna.UI.WinForms.GunaAdvenceButton gunaAdvenceButton4;
-        private Guna.UI.WinForms.GunaAdvenceButton gunaAdvenceButton3;
+        private Guna.UI.WinForms.GunaAdvenceButton positionBtn;
+        private Guna.UI.WinForms.GunaAdvenceButton logoutBtn;
+        private Guna.UI.WinForms.GunaAdvenceButton paymentBtn;
+        private Guna.UI.WinForms.GunaAdvenceButton refundBtn;
         private System.Windows.Forms.Panel panel4;
-        private Guna.UI.WinForms.GunaAdvenceButton gunaAdvenceButton5;
+        private Guna.UI.WinForms.GunaAdvenceButton permissionBtn;
     }
 }
