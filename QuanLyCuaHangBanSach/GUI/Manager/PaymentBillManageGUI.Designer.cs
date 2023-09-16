@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PaymentBillManageGUI));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle66 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle67 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle68 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle69 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle70 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel5 = new System.Windows.Forms.Panel();
             this.filterCkx = new Guna.UI.WinForms.GunaMediumCheckBox();
@@ -105,6 +105,7 @@
             this.filterCkx.Name = "filterCkx";
             this.filterCkx.Size = new System.Drawing.Size(20, 20);
             this.filterCkx.TabIndex = 42;
+            this.filterCkx.CheckedChanged += new System.EventHandler(this.filterCkx_CheckedChanged);
             // 
             // dateTimeTo
             // 
@@ -131,6 +132,7 @@
             this.dateTimeTo.TabIndex = 42;
             this.dateTimeTo.Text = "8/30/2023";
             this.dateTimeTo.Value = new System.DateTime(2023, 8, 30, 19, 55, 8, 854);
+            this.dateTimeTo.ValueChanged += new System.EventHandler(this.dateTimeTo_ValueChanged);
             // 
             // label3
             // 
@@ -177,6 +179,7 @@
             this.dateTimeFrom.TabIndex = 40;
             this.dateTimeFrom.Text = "8/30/2023";
             this.dateTimeFrom.Value = new System.DateTime(2023, 8, 30, 19, 55, 8, 854);
+            this.dateTimeFrom.ValueChanged += new System.EventHandler(this.dateTimeFrom_ValueChanged);
             // 
             // pictureBox1
             // 
@@ -240,6 +243,7 @@
             this.toPriceTxt.ShadowDecoration.Parent = this.toPriceTxt;
             this.toPriceTxt.Size = new System.Drawing.Size(110, 25);
             this.toPriceTxt.TabIndex = 44;
+            this.toPriceTxt.TextChanged += new System.EventHandler(this.toPriceTxt_TextChanged);
             // 
             // fromPriceTxt
             // 
@@ -269,6 +273,7 @@
             this.fromPriceTxt.ShadowDecoration.Parent = this.fromPriceTxt;
             this.fromPriceTxt.Size = new System.Drawing.Size(110, 25);
             this.fromPriceTxt.TabIndex = 43;
+            this.fromPriceTxt.TextChanged += new System.EventHandler(this.fromPriceTxt_TextChanged);
             // 
             // panel3
             // 
@@ -337,6 +342,7 @@
             this.searchInput.ShadowDecoration.Parent = this.searchInput;
             this.searchInput.Size = new System.Drawing.Size(274, 32);
             this.searchInput.TabIndex = 52;
+            this.searchInput.TextChanged += new System.EventHandler(this.searchInput_TextChanged);
             // 
             // staffCbx
             // 
@@ -352,14 +358,15 @@
             this.staffCbx.ForeColor = System.Drawing.Color.Black;
             this.staffCbx.FormattingEnabled = true;
             this.staffCbx.ItemHeight = 30;
-            this.staffCbx.Location = new System.Drawing.Point(523, 5);
+            this.staffCbx.Location = new System.Drawing.Point(493, 5);
             this.staffCbx.Name = "staffCbx";
             this.staffCbx.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.staffCbx.OnHoverItemForeColor = System.Drawing.Color.White;
             this.staffCbx.Radius = 6;
-            this.staffCbx.Size = new System.Drawing.Size(153, 36);
+            this.staffCbx.Size = new System.Drawing.Size(183, 36);
             this.staffCbx.TabIndex = 48;
             this.staffCbx.TabStop = false;
+            this.staffCbx.SelectedIndexChanged += new System.EventHandler(this.staffCbx_SelectedIndexChanged);
             // 
             // panel1
             // 
@@ -405,6 +412,7 @@
             this.printPdfBtn.Size = new System.Drawing.Size(92, 42);
             this.printPdfBtn.TabIndex = 9;
             this.printPdfBtn.Text = "In PDF";
+            this.printPdfBtn.Click += new System.EventHandler(this.printPdfBtn_Click);
             // 
             // exportBtn
             // 
@@ -437,6 +445,7 @@
             this.exportBtn.Size = new System.Drawing.Size(121, 42);
             this.exportBtn.TabIndex = 8;
             this.exportBtn.Text = "Xuất excel";
+            this.exportBtn.Click += new System.EventHandler(this.exportBtn_Click);
             // 
             // refreshBtn
             // 
@@ -469,6 +478,7 @@
             this.refreshBtn.Size = new System.Drawing.Size(107, 42);
             this.refreshBtn.TabIndex = 7;
             this.refreshBtn.Text = "Làm mới";
+            this.refreshBtn.Click += new System.EventHandler(this.refreshBtn_Click);
             // 
             // deleteBtn
             // 
@@ -501,6 +511,7 @@
             this.deleteBtn.Size = new System.Drawing.Size(78, 42);
             this.deleteBtn.TabIndex = 6;
             this.deleteBtn.Text = "Xóa";
+            this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
             // 
             // addBtn
             // 
@@ -533,27 +544,28 @@
             this.addBtn.Size = new System.Drawing.Size(117, 42);
             this.addBtn.TabIndex = 4;
             this.addBtn.Text = "Thêm mới";
+            this.addBtn.Click += new System.EventHandler(this.addBtn_Click);
             // 
             // dgvPaymentBill
             // 
             this.dgvPaymentBill.AllowUserToAddRows = false;
             this.dgvPaymentBill.AllowUserToDeleteRows = false;
             this.dgvPaymentBill.AllowUserToResizeRows = false;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.White;
-            this.dgvPaymentBill.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle66.BackColor = System.Drawing.Color.White;
+            this.dgvPaymentBill.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle66;
             this.dgvPaymentBill.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPaymentBill.BackgroundColor = System.Drawing.Color.White;
             this.dgvPaymentBill.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvPaymentBill.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvPaymentBill.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("#9Slide03 Cabin", 9F);
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPaymentBill.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle67.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle67.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle67.Font = new System.Drawing.Font("#9Slide03 Cabin", 9F);
+            dataGridViewCellStyle67.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle67.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle67.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle67.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPaymentBill.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle67;
             this.dgvPaymentBill.ColumnHeadersHeight = 50;
             this.dgvPaymentBill.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvPaymentBill.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -565,32 +577,32 @@
             this.Column5,
             this.Column8,
             this.Column7});
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("#9Slide03 Cabin", 9F);
-            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPaymentBill.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle68.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle68.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle68.Font = new System.Drawing.Font("#9Slide03 Cabin", 9F);
+            dataGridViewCellStyle68.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle68.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle68.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle68.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPaymentBill.DefaultCellStyle = dataGridViewCellStyle68;
             this.dgvPaymentBill.EnableHeadersVisualStyles = false;
             this.dgvPaymentBill.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvPaymentBill.Location = new System.Drawing.Point(16, 62);
             this.dgvPaymentBill.Name = "dgvPaymentBill";
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("#9Slide03 Cabin", 9F);
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPaymentBill.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle69.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle69.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle69.Font = new System.Drawing.Font("#9Slide03 Cabin", 9F);
+            dataGridViewCellStyle69.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle69.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle69.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle69.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPaymentBill.RowHeadersDefaultCellStyle = dataGridViewCellStyle69;
             this.dgvPaymentBill.RowHeadersVisible = false;
             this.dgvPaymentBill.RowHeadersWidth = 51;
             this.dgvPaymentBill.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPaymentBill.RowsDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle70.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle70.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPaymentBill.RowsDefaultCellStyle = dataGridViewCellStyle70;
             this.dgvPaymentBill.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dgvPaymentBill.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvPaymentBill.RowTemplate.Height = 75;
@@ -718,6 +730,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "PaymentBillManageGUI";
             this.Text = "PaymentBillManageGUI";
+            this.Load += new System.EventHandler(this.PaymentBillManageGUI_Load);
             this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.gradientPanel1.ResumeLayout(false);

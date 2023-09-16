@@ -1,12 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using QuanLyCuaHangBanSach.BUS;
 using QuanLyCuaHangBanSach.DTO;
@@ -82,20 +78,6 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             this.staffCbx.SelectedIndex = 0;
         }
 
-        private void PaymentBillGUI_Load(object sender, EventArgs e)
-        {
-            this.dateTimeFrom.Enabled = this.filterCkx.Checked;
-            this.dateTimeTo.Enabled = this.filterCkx.Checked;
-
-            List<PaymentBillDTO> paymentBillList = PaymentBillBUS.Instance.getAllData();
-            this.loadPaymentBillListToDataView(paymentBillList);
-
-            this.loadStaffCbx();
-            this.renderCheckBoxDgv();
-
-            headerCheckbox.MouseClick += new MouseEventHandler(headerCheckbox_Clicked);
-        }
-
         private void headerCheckbox_Clicked(object sender, EventArgs e)
         {
             foreach (DataGridViewRow row in this.dgvPaymentBill.Rows)
@@ -145,50 +127,13 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                 }
             }
 
-            int paymentId = Convert.ToInt32(this.paymentCbx.SelectedValue);
             int staffId = Convert.ToInt32(this.staffCbx.SelectedValue);
-            int saleId = Convert.ToInt32(this.saleCbx.SelectedValue);
 
             List<PaymentBillDTO> newPaymentBillList = paymentBillList.FindAll(paymentBill =>
             {
-                if (paymentId != 0 && staffId != 0 && saleId != 0)
+                if (staffId != 0)
                 {
-                    return paymentBill.MaKhachHang == paymentId &&
-                           paymentBill.MaNhanVien == staffId &&
-                           paymentBill.MaKhuyenMai == saleId;
-                }
-
-                if (paymentId == 0 && staffId != 0 && saleId != 0)
-                {
-                    return paymentBill.MaNhanVien == staffId &&
-                           paymentBill.MaKhuyenMai == saleId;
-                }
-
-                if (paymentId == 0 && staffId == 0 && saleId != 0)
-                {
-                    return paymentBill.MaKhuyenMai == saleId;
-                }
-
-                if (paymentId == 0 && staffId != 0 && saleId == 0)
-                {
-                    return paymentBill.MaNhanVien == staffId;
-                }
-
-                if (paymentId != 0 && staffId == 0 && saleId == 0)
-                {
-                    return paymentBill.MaKhachHang == paymentId;
-                }
-
-                if (paymentId != 0 && staffId != 0 && saleId == 0)
-                {
-                    return paymentBill.MaKhachHang == paymentId &&
-                           paymentBill.MaNhanVien == staffId;
-                }
-
-                if (paymentId != 0 && staffId == 0 && saleId != 0)
-                {
-                    return paymentBill.MaKhachHang == paymentId &&
-                           paymentBill.MaKhuyenMai == saleId;
+                    return  paymentBill.MaNhanVien == staffId;
                 }
 
                 return true;
@@ -227,9 +172,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             this.fromPriceTxt.Clear();
             this.toPriceTxt.Clear();
 
-            this.paymentCbx.SelectedIndex = 0;
             this.staffCbx.SelectedIndex = 0;
-            this.saleCbx.SelectedIndex = 0;
 
             this.filterCkx.Checked = false;
             this.dateTimeFrom.Enabled = false;
@@ -359,14 +302,6 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             }
         }
 
-        private void dgvBook_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex < 0 || e.ColumnIndex <= 0)
-            {
-                return;
-            }
-        }
-
         private void dateTimeFrom_ValueChanged(object sender, EventArgs e)
         {
             bool isValid = DateTime.Compare(dateTimeFrom.Value, dateTimeTo.Value) > 0;
@@ -410,7 +345,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             if (!isCheckSeletedRows()) return;
 
             DialogResult dlgResult = MessageBox.Show(
-                "Bạn chắc chắn muốn xóa các đơn hàng đã chọn chứ chứ?",
+                "Bạn chắc chắn muốn in các phiếu chi đã chọn chứ chứ?",
                 "Xác nhận",
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question,
@@ -434,6 +369,20 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
                 MessageBox.Show("Print PDF successful");
             }
+        }
+
+        private void PaymentBillManageGUI_Load(object sender, EventArgs e)
+        {
+            this.dateTimeFrom.Enabled = this.filterCkx.Checked;
+            this.dateTimeTo.Enabled = this.filterCkx.Checked;
+
+            List<PaymentBillDTO> paymentBillList = PaymentBillBUS.Instance.getAllData();
+            this.loadPaymentBillListToDataView(paymentBillList);
+
+            this.loadStaffCbx();
+            this.renderCheckBoxDgv();
+
+            headerCheckbox.MouseClick += new MouseEventHandler(headerCheckbox_Clicked);
         }
     }
 }
