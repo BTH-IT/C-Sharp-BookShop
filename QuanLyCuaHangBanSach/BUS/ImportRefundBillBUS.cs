@@ -5,81 +5,90 @@ using QuanLyCuaHangBanSach.DTO;
 
 namespace QuanLyCuaHangBanSach.BUS
 {
-    public class PaymentBillBUS : IBUS<PaymentBillDTO>
+    public class ImportRefundBillBUS : IBUS<ImportRefundBillDTO>
     {
-        private static PaymentBillBUS instance;
+        private static ImportRefundBillBUS instance;
 
-        public static PaymentBillBUS Instance
+        public static ImportRefundBillBUS Instance
         {
             get
             {
                 if (instance == null)
                 {
-                    instance = new PaymentBillBUS();
+                    instance = new ImportRefundBillBUS();
                 }
 
-                return PaymentBillBUS.instance;
+                return ImportRefundBillBUS.instance;
             }
-            private set { PaymentBillBUS.instance = value; }
+            private set { ImportRefundBillBUS.instance = value; }
         }
 
         public DataTable getAll()
         {
-            return PaymentBillDAO.Instance.getAll();
+            return ImportRefundBillDAO.Instance.getAll();
         }
 
-        public List<PaymentBillDTO> getAllData()
+        public List<ImportRefundBillDTO> getAllData()
         {
-            List<PaymentBillDTO> paymentBillList = new List<PaymentBillDTO>();
-            DataTable dt = PaymentBillDAO.Instance.getAll();
+            List<ImportRefundBillDTO> importRefundBillList = new List<ImportRefundBillDTO>();
+            DataTable dt = ImportRefundBillDAO.Instance.getAll();
 
             foreach (DataRow row in dt.Rows)
             {
-                PaymentBillDTO paymentBill = new PaymentBillDTO(row);
-                paymentBillList.Add(paymentBill);
+                ImportRefundBillDTO importRefundBill = new ImportRefundBillDTO(row);
+                importRefundBillList.Add(importRefundBill);
             }
 
-            return paymentBillList;
+            return importRefundBillList;
         }
 
-        public List<PaymentBillDTO> search(string value)
+        public List<ImportRefundBillDTO> search(string value)
         {
-            DataTable dataTable = PaymentBillDAO.Instance.searchData(value);
+            DataTable dataTable = ImportRefundBillDAO.Instance.searchData(value);
 
-            List<PaymentBillDTO> paymentBillList = new List<PaymentBillDTO>();
+            List<ImportRefundBillDTO> importRefundBillList = new List<ImportRefundBillDTO>();
 
             foreach (DataRow row in dataTable.Rows)
             {
-                PaymentBillDTO paymentBill = new PaymentBillDTO(row);
-                paymentBillList.Add(paymentBill);
+                ImportRefundBillDTO importRefundBill = new ImportRefundBillDTO(row);
+                importRefundBillList.Add(importRefundBill);
             }
 
-            return paymentBillList;
+            return importRefundBillList;
         }
 
-        public bool insert(PaymentBillDTO paymentBill)
+        public List<ImportRefundBillDetailDTO> getImportRefundBillDetailList(string id)
         {
-            return PaymentBillDAO.Instance.insert(paymentBill);
+            return ImportRefundBillDAO.Instance.getImportRefundBillDetailList(id);
         }
 
-        public PaymentBillDTO insertReturnBill(PaymentBillDTO paymentBill)
+        public bool createImportRefundBillDetail(ImportRefundBillDetailDTO importRefundBillDetail)
         {
-            return PaymentBillDAO.Instance.insertReturnBill(paymentBill);
+            return ImportRefundBillDAO.Instance.createImportRefundBillDetail(importRefundBillDetail);
+        }
+        public bool insert(ImportRefundBillDTO importRefundBill)
+        {
+            return ImportRefundBillDAO.Instance.insert(importRefundBill);
         }
 
-        public bool update(PaymentBillDTO paymentBill)
+        public ImportRefundBillDTO insertReturnBill(ImportRefundBillDTO importRefundBill)
         {
-            return PaymentBillDAO.Instance.update(paymentBill);
+            return ImportRefundBillDAO.Instance.insertReturnBill(importRefundBill);
+        }
+
+        public bool update(ImportRefundBillDTO importRefundBill)
+        {
+            return ImportRefundBillDAO.Instance.update(importRefundBill);
         }
 
         public bool delete(string id)
         {
-            return PaymentBillDAO.Instance.delete(id);
+            return ImportRefundBillDAO.Instance.delete(id);
         }
 
-        public PaymentBillDTO getById(string id)
+        public ImportRefundBillDTO getById(string id)
         {
-            return PaymentBillDAO.Instance.getById(id);
+            return ImportRefundBillDAO.Instance.getById(id);
         }
     }
 }
