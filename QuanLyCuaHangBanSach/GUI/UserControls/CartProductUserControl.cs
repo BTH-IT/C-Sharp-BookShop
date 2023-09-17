@@ -40,8 +40,11 @@ namespace QuanLyCuaHangBanSach.GUI.Vendor
 
         private void PlusBtn_Click(object sender, EventArgs e)
         {
-            AmountTxt.Text = (int.Parse(AmountTxt.Text) + 1).ToString();
-            ChangeAmount();
+            if (Convert.ToInt32(AmountTxt.Text) < stock)
+            {
+                AmountTxt.Text = (int.Parse(AmountTxt.Text) + 1).ToString();
+                ChangeAmount();
+            }
         }
 
         private void MinusBtn_Click(object sender, EventArgs e)
@@ -79,6 +82,11 @@ namespace QuanLyCuaHangBanSach.GUI.Vendor
             }
         }
 
+        private void AmountTxt_MouseLeave(object sender, EventArgs e)
+        {
+            NameLb.Focus();
+        }
+
         private void AmountTxt_Leave(object sender, EventArgs e)
         {
             AmountTxt_Validation();
@@ -86,9 +94,11 @@ namespace QuanLyCuaHangBanSach.GUI.Vendor
         }
 
         public static bool AmountChanged = false;
+        public static string AmountChangedId = "";
         private void ChangeAmount()
         {
             AmountChanged = true;
+            AmountChangedId = IdLb.Text;
         }
 
         public static bool deletePress = false;

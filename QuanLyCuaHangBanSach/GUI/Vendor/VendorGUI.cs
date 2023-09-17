@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Controls;
 using System.Windows.Forms;
 using QuanLyCuaHangBanSach.BUS;
@@ -41,10 +42,10 @@ namespace QuanLyCuaHangBanSach.GUI
                 FilterContainer.Controls.Add(filter);
 
                 List<SaleDTO> discounts = SaleBUS.Instance.getAllNotExpired() ?? new List<SaleDTO>();
-                discounts.Insert(0, new SaleDTO(0, "Không có khuyến mãi", 0, new DateTime(), new DateTime(), 1));
+                discounts.Insert(0, new SaleDTO(0, "Không có khuyến mãi", 0, new DateTime(), new DateTime()));
                 DiscountCb.DataSource = discounts;
                 DiscountCb.DisplayMember = "tenKhuyenMai";
-                DiscountCb.ValueMember = "phanTram";
+                DiscountCb.ValueMember = "maKhuyenMai";
                 DiscountCb.SelectedIndex = 0;
             }
             catch (Exception ex) { Console.WriteLine(ex); }
@@ -210,30 +211,50 @@ namespace QuanLyCuaHangBanSach.GUI
             modal.ShowDialog();
         }
 
-        private List<int> cart = new List<int>();
+        private int customerID = -1;
+        private List<CustomerBillDetailDTO> customerBillDetails = new List<CustomerBillDetailDTO>();
         private void checkUser_Tick(object sender, EventArgs e)
         {
             try
             {
                 if (BookUserControl.clicked)
                 {
-                    int ChoseId_int = int.Parse(BookUserControl.ChoseId);
-                    if (cart.Count == 0 || !cart.Contains(ChoseId_int))
+                    int ChoseId_int = Convert.ToInt32(BookUserControl.ChoseId);
+                    if (customerBillDetails.Count == 0 || !customerBillDetails.Any(item => item.MaSach == ChoseId_int))
                     {
-                        cart.Add(ChoseId_int);
                         BookDTO book = BookBUS.Instance.getById(BookUserControl.ChoseId);
+                        CustomerBillDetailDTO customerBillDetail = new CustomerBillDetailDTO(0, ChoseId_int, 1, book.GiaBan);
+                        customerBillDetails.Add(customerBillDetail);
                         CartProductUserControl product = new CartProductUserControl();
                         product.details(book);
                         CartContainer.Controls.Add(product);
                     }
                     else
                     {
-                        foreach (System.Windows.Forms.Control ctrl in CartContainer.Controls)
+                        int idx = 0;
+
+                        foreach (var customerBillDetail in customerBillDetails)
                         {
-                            if (ctrl is CartProductUserControl cartProduct && cartProduct.IdLb.Text.Equals(BookUserControl.ChoseId))
+                            if (customerBillDetail.MaSach == ChoseId_int)
                             {
-                                cartProduct.AmountTxt.Text = (int.Parse(cartProduct.AmountTxt.Text) + 1).ToString();
+                                int stock = BookBUS.Instance.getById(BookUserControl.ChoseId).SoLuongConLai;
+                                if (customerBillDetail.SoLuong >= stock)
+                                {
+                                    BookUserControl.ChoseId = "";
+                                    BookUserControl.clicked = false;
+                                    MessageBox.Show("Out of stock");
+                                    return;
+                                }
+                                else
+                                {
+                                    customerBillDetail.SoLuong += 1;
+
+                                    CartProductUserControl cartProduct = CartContainer.Controls[idx] as CartProductUserControl;
+                                    cartProduct.AmountTxt.Text = (Convert.ToInt32(cartProduct.AmountTxt.Text) + 1).ToString();
+                                    break;
+                                }
                             }
+                            idx++;
                         }
                     }
 
@@ -244,26 +265,48 @@ namespace QuanLyCuaHangBanSach.GUI
 
                 if (CartProductUserControl.deletePress)
                 {
-                    for (int i = 0; i < CartContainer.Controls.Count; i++)
+                    int idx = 0;
+
+                    foreach (var customerBillDetail in customerBillDetails)
                     {
-                        System.Windows.Forms.Control ctrl = CartContainer.Controls[i];
-                        if (ctrl is CartProductUserControl cartProduct)
+                        if (customerBillDetail.MaSach == Convert.ToInt32(CartProductUserControl.deleteId))
                         {
-                            if (cartProduct.IdLb.Text.Equals(CartProductUserControl.deleteId))
-                            {
-                                cart.RemoveAt(i);
-                                CartContainer.Controls.RemoveAt(i);
-                                cartProduct.Dispose();
-                            }
+                            customerBillDetails.RemoveAt(idx);
+
+                            CartProductUserControl cartProduct = CartContainer.Controls[idx] as CartProductUserControl;
+                            CartContainer.Controls.RemoveAt(idx);
+                            cartProduct.Dispose();
+                            break;
                         }
+                        idx++;
                     }
+
                     CartHandler();
                     CartProductUserControl.deleteId = "";
                     CartProductUserControl.deletePress = false;
                 }
 
+                if (CartProductUserControl.AmountChanged)
+                {
+                    int idx = 0;
+
+                    foreach (var customerBillDetail in customerBillDetails)
+                    {
+                        if (customerBillDetail.MaSach == Convert.ToInt32(CartProductUserControl.AmountChangedId))
+                        {
+                            CartProductUserControl cartProduct = CartContainer.Controls[idx] as CartProductUserControl;
+                            customerBillDetail.SoLuong = Convert.ToInt32(cartProduct.AmountTxt.Text);
+                            break;
+                        }
+                        idx++;
+                    }
+                    CartHandler();
+                    CartProductUserControl.AmountChanged = false;
+                }
+
                 if (PhoneSearchResultControl.clicked)
                 {
+                    customerID = PhoneSearchResultControl.id;
                     CustomerDTO customer = CustomerBUS.Instance.getById(PhoneSearchResultControl.id.ToString());
                     RecipientNameLb.Text = customer.Ten;
                     PhoneResultContainer.Height = 0;
@@ -271,12 +314,6 @@ namespace QuanLyCuaHangBanSach.GUI
                     PhoneInp.ForeColor = Color.DarkGray;
                     CartHandler();
                     PhoneSearchResultControl.clicked = false;
-                }
-
-                if (CartProductUserControl.AmountChanged)
-                {
-                    CartHandler();
-                    CartProductUserControl.AmountChanged = false;
                 }
 
                 if (FilterUserControl.ApplyClicked)
@@ -296,24 +333,20 @@ namespace QuanLyCuaHangBanSach.GUI
             catch (Exception ex) { Console.WriteLine(ex); }
         }
 
-        private bool PrintBtnAllowed;
+        private bool PrintBtnAllowed = false;
+        private double finalTotalMoney = 0;
         private void CartHandler()
         {
             try
             {
                 double total = 0;
-                for (int i = 0; i < CartContainer.Controls.Count; i++)
+                foreach (var customerBillDetail in customerBillDetails)
                 {
-                    System.Windows.Forms.Control ctrl = CartContainer.Controls[i];
-                    if (ctrl is CartProductUserControl cartProduct)
-                    {
-                        BookDTO book = BookBUS.Instance.getById(cartProduct.IdLb.Text);
-                        double price = book.GiaBan * int.Parse(cartProduct.AmountTxt.Text);
-                        total += price;
-                    }
+                    total += customerBillDetail.SoLuong * customerBillDetail.DonGia;
                 }
+
                 TotalMoneyLb.Text = string.Format("{0:N0} VND", total);
-                double finalTotalMoney = total - discount;
+                finalTotalMoney = total - discount;
                 DiscountMoneyLb.Text = string.Format("{0:N0} VND", discount);
                 FinalTotalMoneyLb.Text = string.Format("{0:N0} VND", finalTotalMoney);
 
@@ -321,7 +354,7 @@ namespace QuanLyCuaHangBanSach.GUI
                 double Change = 0;
                 if (CustomerCashTxb.Text.Length > 0 && !CustomerCashTxb.Text.Equals("Khách đưa ...") && total > 0)
                 {
-                    CustommerCash = double.Parse(CustomerCashTxb.Text);
+                    CustommerCash = Convert.ToDouble(CustomerCashTxb.Text);
                     Change = CustommerCash - finalTotalMoney;
                 }
                 else
@@ -360,8 +393,9 @@ namespace QuanLyCuaHangBanSach.GUI
             {
                 if (DiscountCb.SelectedIndex != 0)
                 {
-                    double percent = double.Parse(DiscountCb.SelectedValue.ToString()) / 100;
-                    double total = double.Parse(TotalMoneyLb.Text.Replace(".", "").Replace(" VND", ""));
+                    string discountID = DiscountCb.SelectedValue.ToString();
+                    double percent = SaleBUS.Instance.getById(discountID).PhanTram / 100;
+                    double total = Convert.ToDouble(TotalMoneyLb.Text.Replace(".", "").Replace(" VND", ""));
                     discount = total * percent;
                     CartHandler();
                 }
@@ -404,6 +438,11 @@ namespace QuanLyCuaHangBanSach.GUI
             catch (Exception ex) { Console.WriteLine(ex); }
         }
 
+        private void CustomerCashTxb_MouseLeave(object sender, EventArgs e)
+        {
+            VndLb.Focus();
+        }
+
         private void CustomerCashTxb_Leave(object sender, System.EventArgs e)
         {
             try
@@ -428,18 +467,43 @@ namespace QuanLyCuaHangBanSach.GUI
             {
                 if (PrintBtnAllowed)
                 {
-                    foreach (System.Windows.Forms.Control ctrl in CartContainer.Controls)
+                    CustomerBillDTO customerBill = new CustomerBillDTO();
+                    customerBill.TongTien = finalTotalMoney;
+                    customerBill.TienKhachDua = Convert.ToDouble(CustomerCashTxb.Text);
+                    customerBill.MaNhanVien = 1;
+                    customerBill.MaKhachHang = customerID;
+                    customerBill.MaKhuyenMai = Convert.ToInt32(DiscountCb.SelectedValue);
+                    customerBill.NgayLap = DateTime.Now;
+
+                    CustomerBillDTO newCustomerBill = CustomerBillBUS.Instance.insertReturnBill(customerBill);
+
+                    if (newCustomerBill == null)
                     {
-                        if (ctrl is CartProductUserControl cartProduct)
+                        MessageBox.Show("Failure");
+                    }
+                    else
+                    {
+                        foreach (var customerBillDetail in customerBillDetails)
                         {
-                            BookDTO book = BookBUS.Instance.getById(cartProduct.IdLb.Text);
-                            book.SoLuongConLai -= int.Parse(cartProduct.AmountTxt.Text);
-                            BookBUS.Instance.update(book);
+                            CustomerBillDetailDTO newCustomerBillDetail = new CustomerBillDetailDTO(
+                                newCustomerBill.MaDonKhachHang,
+                                customerBillDetail.MaSach,
+                                customerBillDetail.SoLuong,
+                                customerBillDetail.DonGia
+                            );
+
+                            CustomerBillBUS.Instance.createCustomerBillDetail(newCustomerBillDetail);
                         }
+
+                        MessageBox.Show("Success");
                     }
 
                     CartContainer.Controls.Clear();
-                    cart.Clear();
+                    foreach (var item in customerBillDetails)
+                    {
+                        Console.WriteLine(item.ToString());
+                    }
+                    customerBillDetails.Clear();
                     CustomerCashTxb.Text = "";
                     CustomerCashTxb.Text = "Khách đưa ...";
                     CustomerCashTxb.ForeColor = Color.DarkGray;
@@ -447,6 +511,7 @@ namespace QuanLyCuaHangBanSach.GUI
                     DiscountMoneyLb.Text = "0 VND";
                     DiscountCb.SelectedIndex = 0;
                     RecipientNameLb.Text = string.Empty;
+                    customerID = -1;
                     CartHandler();
                     RenderBookContainer();
                 }

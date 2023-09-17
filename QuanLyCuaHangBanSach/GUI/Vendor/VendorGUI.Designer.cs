@@ -344,7 +344,7 @@
             // 
             this.FinalTotalMoneyLb.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.FinalTotalMoneyLb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.FinalTotalMoneyLb.Location = new System.Drawing.Point(138, 516);
+            this.FinalTotalMoneyLb.Location = new System.Drawing.Point(137, 516);
             this.FinalTotalMoneyLb.Margin = new System.Windows.Forms.Padding(20, 30, 3, 5);
             this.FinalTotalMoneyLb.Name = "FinalTotalMoneyLb";
             this.FinalTotalMoneyLb.Size = new System.Drawing.Size(159, 21);
@@ -367,7 +367,7 @@
             // DiscountMoneyLb
             // 
             this.DiscountMoneyLb.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.DiscountMoneyLb.Location = new System.Drawing.Point(96, 485);
+            this.DiscountMoneyLb.Location = new System.Drawing.Point(95, 485);
             this.DiscountMoneyLb.Margin = new System.Windows.Forms.Padding(20, 30, 3, 5);
             this.DiscountMoneyLb.Name = "DiscountMoneyLb";
             this.DiscountMoneyLb.Size = new System.Drawing.Size(201, 21);
@@ -419,11 +419,12 @@
             this.CustomerCashTxb.Enter += new System.EventHandler(this.CustomerCashTxb_Click);
             this.CustomerCashTxb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CustomerCashTxb_KeyPress);
             this.CustomerCashTxb.Leave += new System.EventHandler(this.CustomerCashTxb_Leave);
+            this.CustomerCashTxb.MouseLeave += new System.EventHandler(this.CustomerCashTxb_MouseLeave);
             // 
             // ChangeMoneyLb
             // 
             this.ChangeMoneyLb.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.ChangeMoneyLb.Location = new System.Drawing.Point(100, 586);
+            this.ChangeMoneyLb.Location = new System.Drawing.Point(98, 586);
             this.ChangeMoneyLb.Margin = new System.Windows.Forms.Padding(20, 30, 3, 5);
             this.ChangeMoneyLb.Name = "ChangeMoneyLb";
             this.ChangeMoneyLb.Size = new System.Drawing.Size(197, 21);
@@ -478,7 +479,7 @@
             // TotalMoneyLb
             // 
             this.TotalMoneyLb.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.TotalMoneyLb.Location = new System.Drawing.Point(144, 412);
+            this.TotalMoneyLb.Location = new System.Drawing.Point(142, 413);
             this.TotalMoneyLb.Margin = new System.Windows.Forms.Padding(20, 30, 3, 5);
             this.TotalMoneyLb.Name = "TotalMoneyLb";
             this.TotalMoneyLb.Size = new System.Drawing.Size(154, 21);

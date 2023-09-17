@@ -27,7 +27,7 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
             this.ActiveControl = null;
         }
 
-        private void Vendor_Load(object sender, EventArgs e)
+        /*private void Import_Load(object sender, EventArgs e)
         {
             try
             {
@@ -460,6 +460,6 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
         private void LogOutBtn_Click(object sender, EventArgs e)
         {
             Close();
-        }
+        }*/
     }
 }

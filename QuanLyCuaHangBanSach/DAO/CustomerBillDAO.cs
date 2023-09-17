@@ -80,8 +80,8 @@ namespace QuanLyCuaHangBanSach.DAO
         public bool insert(CustomerBillDTO data)
         {
 
-            string sql = $@"INSERT INTO phieuban (maKhachHang, maNhanVien, ngayLap, tongTien, maKhuyenMai)
-                            VALUES (@maKhachHang, @maNhanVien, @ngayLap, @tongTien, @maKhuyenMai);";
+            string sql = $@"INSERT INTO phieuban (maKhachHang, maNhanVien, ngayLap, tongTien, maKhuyenMai, tienKhachDua)
+                            VALUES (@maKhachHang, @maNhanVien, @ngayLap, @tongTien, @maKhuyenMai, @tienKhachDua);";
 
             int rowChanged = DataProvider.Instance.ExecuteNonQuery(sql,
                 new MySqlParameter[] {
@@ -90,6 +90,7 @@ namespace QuanLyCuaHangBanSach.DAO
                     new MySqlParameter("@ngayLap", data.NgayLap),
                     new MySqlParameter("@tongTien", data.TongTien),
                     new MySqlParameter("@maKhuyenMai", data.MaKhuyenMai),
+                    new MySqlParameter("@tienKhachDua", data.TienKhachDua),
                 });
 
             return rowChanged > 0;
@@ -139,7 +140,7 @@ namespace QuanLyCuaHangBanSach.DAO
         {
             string sql = $@"UPDATE phieuban SET 
                             maKhachHang=@maKhachHang, maNhanVien=@maNhanVien, ngayLap=@ngayLap, 
-                            tongTien=@tongTien, maKhuyenMai=@maKhuyenMai WHERE maDonKhachHang=@maDonKhachHang;";
+                            tongTien=@tongTien, maKhuyenMai=@maKhuyenMai, tienKhachDua=@tienKhachDua WHERE maDonKhachHang=@maDonKhachHang;";
 
             int rowChanged = DataProvider.Instance.ExecuteNonQuery(sql,
                 new MySqlParameter[] {
@@ -148,6 +149,7 @@ namespace QuanLyCuaHangBanSach.DAO
                     new MySqlParameter("@ngayLap", data.NgayLap),
                     new MySqlParameter("@tongTien", data.TongTien),
                     new MySqlParameter("@maKhuyenMai", data.MaKhuyenMai == -1 ? null : data.MaKhuyenMai.ToString()),
+                    new MySqlParameter("@tienKhachDua", data.MaDonKhachHang),
                     new MySqlParameter("@maDonKhachHang", data.MaDonKhachHang),
                 });
 
