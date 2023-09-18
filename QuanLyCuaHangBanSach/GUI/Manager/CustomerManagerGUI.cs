@@ -60,8 +60,8 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                     customer.Ten,
                     customer.GioiTinh,
                     customer.NamSinh,
-                    customer.SoDienThoai
-
+                    customer.SoDienThoai,
+                    customer.Diem
                     });
                 }
 

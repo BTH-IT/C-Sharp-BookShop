@@ -39,17 +39,18 @@
             this.btnExport = new Guna.UI.WinForms.GunaAdvenceButton();
             this.btnRefresh = new Guna.UI.WinForms.GunaAdvenceButton();
             this.dgvCustomer = new Guna.UI.WinForms.GunaDataGridView();
+            this.line1 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.deleteBtn = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.editBtn = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.addBtn = new Guna.UI.WinForms.GunaAdvenceButton();
             this.Column11 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.ma_khach_hang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ten_khach_hang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gioi_tinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nam_sinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.so_dien_thoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.line1 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.deleteBtn = new Guna.UI.WinForms.GunaAdvenceButton();
-            this.editBtn = new Guna.UI.WinForms.GunaAdvenceButton();
-            this.addBtn = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomer)).BeginInit();
             this.panel1.SuspendLayout();
@@ -189,7 +190,8 @@
             this.ten_khach_hang,
             this.gioi_tinh,
             this.nam_sinh,
-            this.so_dien_thoai});
+            this.so_dien_thoai,
+            this.Column1});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
@@ -248,51 +250,6 @@
             this.dgvCustomer.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvCustomer.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dgvCustomer.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.cellCustomer_DblClick);
-            // 
-            // Column11
-            // 
-            this.Column11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Column11.FillWeight = 50F;
-            this.Column11.Frozen = true;
-            this.Column11.HeaderText = "";
-            this.Column11.MinimumWidth = 50;
-            this.Column11.Name = "Column11";
-            this.Column11.Width = 50;
-            // 
-            // ma_khach_hang
-            // 
-            this.ma_khach_hang.HeaderText = "Mã Khách hàng";
-            this.ma_khach_hang.MinimumWidth = 6;
-            this.ma_khach_hang.Name = "ma_khach_hang";
-            this.ma_khach_hang.ReadOnly = true;
-            // 
-            // ten_khach_hang
-            // 
-            this.ten_khach_hang.HeaderText = "Tên khách hàng";
-            this.ten_khach_hang.MinimumWidth = 6;
-            this.ten_khach_hang.Name = "ten_khach_hang";
-            this.ten_khach_hang.ReadOnly = true;
-            // 
-            // gioi_tinh
-            // 
-            this.gioi_tinh.HeaderText = "Giới tính";
-            this.gioi_tinh.MinimumWidth = 6;
-            this.gioi_tinh.Name = "gioi_tinh";
-            this.gioi_tinh.ReadOnly = true;
-            // 
-            // nam_sinh
-            // 
-            this.nam_sinh.HeaderText = "Năm sinh";
-            this.nam_sinh.MinimumWidth = 6;
-            this.nam_sinh.Name = "nam_sinh";
-            this.nam_sinh.ReadOnly = true;
-            // 
-            // so_dien_thoai
-            // 
-            this.so_dien_thoai.HeaderText = "Số điện thoại";
-            this.so_dien_thoai.MinimumWidth = 6;
-            this.so_dien_thoai.Name = "so_dien_thoai";
-            this.so_dien_thoai.ReadOnly = true;
             // 
             // line1
             // 
@@ -414,6 +371,59 @@
             this.addBtn.Text = "Thêm mới";
             this.addBtn.Click += new System.EventHandler(this.btnAdd_Click);
             // 
+            // Column11
+            // 
+            this.Column11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Column11.FillWeight = 50F;
+            this.Column11.Frozen = true;
+            this.Column11.HeaderText = "";
+            this.Column11.MinimumWidth = 50;
+            this.Column11.Name = "Column11";
+            this.Column11.Width = 50;
+            // 
+            // ma_khach_hang
+            // 
+            this.ma_khach_hang.HeaderText = "Mã Khách hàng";
+            this.ma_khach_hang.MinimumWidth = 6;
+            this.ma_khach_hang.Name = "ma_khach_hang";
+            this.ma_khach_hang.ReadOnly = true;
+            // 
+            // ten_khach_hang
+            // 
+            this.ten_khach_hang.HeaderText = "Tên khách hàng";
+            this.ten_khach_hang.MinimumWidth = 6;
+            this.ten_khach_hang.Name = "ten_khach_hang";
+            this.ten_khach_hang.ReadOnly = true;
+            // 
+            // gioi_tinh
+            // 
+            this.gioi_tinh.HeaderText = "Giới tính";
+            this.gioi_tinh.MinimumWidth = 6;
+            this.gioi_tinh.Name = "gioi_tinh";
+            this.gioi_tinh.ReadOnly = true;
+            // 
+            // nam_sinh
+            // 
+            this.nam_sinh.HeaderText = "Năm sinh";
+            this.nam_sinh.MinimumWidth = 6;
+            this.nam_sinh.Name = "nam_sinh";
+            this.nam_sinh.ReadOnly = true;
+            // 
+            // so_dien_thoai
+            // 
+            this.so_dien_thoai.HeaderText = "Số điện thoại";
+            this.so_dien_thoai.MinimumWidth = 6;
+            this.so_dien_thoai.Name = "so_dien_thoai";
+            this.so_dien_thoai.ReadOnly = true;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Điểm";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.ToolTipText = "Điểm";
+            // 
             // CustomerManagerGUI
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -455,5 +465,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn gioi_tinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn nam_sinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn so_dien_thoai;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
     }
 }
