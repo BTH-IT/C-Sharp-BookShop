@@ -5,16 +5,14 @@ namespace QuanLyCuaHangBanSach.DTO
 {
     public class PaymentBillDTO : RefundBillDTO
     {
-        public int MaNhanVien {  get; set; }
         public string GhiChu {  get; set; }
         public int MaDonNhapHang {  get; set; }
 
         public PaymentBillDTO() { }
 
         public PaymentBillDTO(int maPhieu, double tongTien, bool trangThai, string liDo, int maNhanVien, string ghiChu, DateTime ngayLap, int maDonNhapHang)
-            : base(maPhieu, tongTien, trangThai, liDo, ngayLap)
+            : base(maPhieu, tongTien, trangThai, liDo, ngayLap, maNhanVien)
         {
-            this.MaNhanVien = maNhanVien;
             this.GhiChu = ghiChu;
             this.MaDonNhapHang = maDonNhapHang;
         }
