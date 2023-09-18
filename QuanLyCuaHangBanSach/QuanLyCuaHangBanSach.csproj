@@ -653,6 +653,12 @@
     <Compile Include="GUI\Modal\CustomerModal.Designer.cs">
       <DependentUpon>CustomerModal.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Modal\PaymentBillModal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Modal\PaymentBillModal.Designer.cs">
+      <DependentUpon>PaymentBillModal.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Modal\SaleModal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -850,6 +856,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Modal\ImportBillModal.resx">
       <DependentUpon>ImportBillModal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Modal\PaymentBillModal.resx">
+      <DependentUpon>PaymentBillModal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Modal\SaleModal.resx">
       <DependentUpon>SaleModal.cs</DependentUpon>
