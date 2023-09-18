@@ -23,6 +23,32 @@ namespace QuanLyCuaHangBanSach.DAO
             private set { BookDAO.instance = value; }
         }
 
+        private DataTable getBookRemain(DataTable dataTable)
+        {
+            dataTable.Columns.Add("soLuongConLai");
+
+            foreach (DataRow row in dataTable.Rows)
+            {
+                DataTable dataTable1 = DataProvider.Instance.ExecuteQuery(
+                    "SELECT COUNT(*) as soLuongConLai FROM chitietsach WHERE maSach=@MaSach;",
+                    new MySqlParameter[] {
+                        new MySqlParameter("@MaSach", row["maSach"])
+                    }
+                );
+
+                row["soLuongConLai"] = dataTable1.Rows[0]["soLuongConLai"];
+            }
+
+            return dataTable;
+        }
+
+        public DataTable getAll() {
+            DataTable dataTable = DataProvider.Instance.ExecuteQuery(
+                "SELECT * FROM sach WHERE hienThi = 1;"
+            );
+
+            return getBookRemain(dataTable);
+        }
 
         public DataTable getAllDataFiltered(int SortMode, string Type, string Author, string Publisher)
         {
@@ -51,7 +77,7 @@ namespace QuanLyCuaHangBanSach.DAO
                     sql += " ORDER BY giaBan DESC;";
                     break;
                 case 2:
-                    sql += " ORDER BY tenSach DESC;";
+                    sql += " ORDER BY tenSach ASC;";
                     break;
                 case 3:
                     sql += " ORDER BY tenSach DESC;";
@@ -61,39 +87,12 @@ namespace QuanLyCuaHangBanSach.DAO
                     break;
             }
 
-            return DataProvider.Instance.ExecuteQuery(sql,
+            DataTable dataTable = DataProvider.Instance.ExecuteQuery(sql,
                 new MySqlParameter[] {
-                    new MySqlParameter("@maTheLoai", Type),
-                    new MySqlParameter("@maTacGia", Author),
-                    new MySqlParameter("@maNhaXuatBan", Publisher)
-                }
-            );
-        }
-
-        private DataTable getBookRemain(DataTable dataTable)
-        {
-            dataTable.Columns.Add("soLuongConLai");
-
-            foreach (DataRow row in dataTable.Rows)
-            {
-                DataTable dataTable1 = DataProvider.Instance.ExecuteQuery(
-                    "SELECT COUNT(*) as soLuongConLai FROM chitietsach WHERE maSach=@MaSach;",
-                    new MySqlParameter[] {
-                        new MySqlParameter("@MaSach", row["maSach"])
-                    }
-                );
-
-                row["soLuongConLai"] = dataTable1.Rows[0]["soLuongConLai"];
-            }
-
-            return dataTable;
-        }
-
-        public DataTable getAll() {
-            DataTable dataTable = DataProvider.Instance.ExecuteQuery(
-                "SELECT * FROM sach WHERE hienThi = 1;"
-            );
-
+                    new MySqlParameter("@maTheLoai", Type.ToString()),
+                    new MySqlParameter("@maTacGia", Author.ToString()),
+                    new MySqlParameter("@maNhaXuatBan", Publisher.ToString())
+                });
             return getBookRemain(dataTable);
         }
 

@@ -751,9 +751,6 @@
     <Compile Include="GUI\UserControls\FilterUserControl.Designer.cs">
       <DependentUpon>FilterUserControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\UserControls\FilterUserControl.Designer.cs">
-      <DependentUpon>FilterUserControl.cs</DependentUpon>
-    </Compile>
     <Compile Include="GUI\UserControls\PhoneSearchResultControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -772,6 +769,9 @@
     <Compile Include="CustomTimer.cs" />
     <EmbeddedResource Include="GUI\Auth\LoginGUI.resx">
       <DependentUpon>LoginGUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Importer\ImportGUI.resx">
+      <DependentUpon>ImportGUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Manager\AccountManageGUI.resx">
       <DependentUpon>AccountManageGUI.cs</DependentUpon>

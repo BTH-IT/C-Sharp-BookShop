@@ -13,12 +13,14 @@ namespace QuanLyCuaHangBanSach.DTO
         public int MaKhachHang { get; set; }
         public int MaKhuyenMai { get; set; }
 
+        public double TienKhachDua { get; set; }
+
         public CustomerBillDTO() : base()
         {
         }
 
         public CustomerBillDTO(
-            int maDonKhachHang, int maKhachHang, int maNhanVien, DateTime ngayLap, double tongTien, int maKhuyenMai
+            int maDonKhachHang, int maKhachHang, int maNhanVien, DateTime ngayLap, double tongTien, int maKhuyenMai, double tienKhachDua
         ) : base(ngayLap, maNhanVien, tongTien)
         {
             this.MaDonKhachHang = maDonKhachHang;
@@ -34,6 +36,7 @@ namespace QuanLyCuaHangBanSach.DTO
             this.NgayLap = (DateTime)row["ngayLap"];
             this.MaNhanVien = (int)row["maNhanVien"];
             this.TongTien = (double)row["tongTien"];
+            this.TienKhachDua = (double)row["tienKhachDua"];
         }
     }
 }
