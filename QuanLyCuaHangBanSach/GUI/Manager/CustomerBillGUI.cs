@@ -57,30 +57,62 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
                 if (sale == null)
                 {
-                    this.dgvCustomerBill.Rows.Add(new object[] {
-                        false,
-                        customerBill.MaDonKhachHang,
-                        customer.Ten,
-                        customer.SoDienThoai,
-                        StaffBUS.Instance.getById(customerBill.MaNhanVien.ToString()).Ten,
-                        "Không có",
-                        "0",
-                        customerBill.NgayLap.GetDateTimeFormats()[0],
-                        customerBill.TongTien,
-                    });
+                    if (customer == null)
+                    {
+                        this.dgvCustomerBill.Rows.Add(new object[] {
+                            false,
+                            customerBill.MaDonKhachHang,
+                            "Không có",
+                            "Không có",
+                            StaffBUS.Instance.getById(customerBill.MaNhanVien.ToString()).Ten,
+                            "Không có",
+                            "0",
+                            customerBill.NgayLap.GetDateTimeFormats()[0],
+                            customerBill.TongTien,
+                        });
+                    } else
+                    {
+                        this.dgvCustomerBill.Rows.Add(new object[] {
+                            false,
+                            customerBill.MaDonKhachHang,
+                            customer.Ten,
+                            customer.SoDienThoai,
+                            StaffBUS.Instance.getById(customerBill.MaNhanVien.ToString()).Ten,
+                            "Không có",
+                            "0",
+                            customerBill.NgayLap.GetDateTimeFormats()[0],
+                            customerBill.TongTien,
+                        });
+                    }
                 } else
                 {
-                    this.dgvCustomerBill.Rows.Add(new object[] {
-                        false,
-                        customerBill.MaDonKhachHang,
-                        customer.Ten,
-                        customer.SoDienThoai,
-                        StaffBUS.Instance.getById(customerBill.MaNhanVien.ToString()).Ten,
-                        sale.TenKhuyenMai,
-                        sale.PhanTram + "%",
-                        customerBill.NgayLap.GetDateTimeFormats()[0],
-                        customerBill.TongTien,
-                    });
+                    if (customer == null)
+                    {
+                        this.dgvCustomerBill.Rows.Add(new object[] {
+                            false,
+                            customerBill.MaDonKhachHang,
+                            "Không có",
+                            "Không có",
+                            StaffBUS.Instance.getById(customerBill.MaNhanVien.ToString()).Ten,
+                            sale.TenKhuyenMai,
+                            sale.PhanTram + "%",
+                            customerBill.NgayLap.GetDateTimeFormats()[0],
+                            customerBill.TongTien,
+                        });
+                    } else
+                    {
+                        this.dgvCustomerBill.Rows.Add(new object[] {
+                            false,
+                            customerBill.MaDonKhachHang,
+                            customer.Ten,
+                            customer.SoDienThoai,
+                            StaffBUS.Instance.getById(customerBill.MaNhanVien.ToString()).Ten,
+                            sale.TenKhuyenMai,
+                            sale.PhanTram + "%",
+                            customerBill.NgayLap.GetDateTimeFormats()[0],
+                            customerBill.TongTien,
+                        });
+                    }
                 }
             }
 
@@ -90,7 +122,8 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         {
             List<CustomerDTO> customerList = CustomerBUS.Instance.getAllData();
 
-            customerList.Insert(0, new CustomerDTO(0, "", "Tất cả khách hàng", "", 0));
+            customerList.Insert(0, new CustomerDTO(-1, "", "Tất cả khách hàng", "", 0));
+            customerList.Insert(1, new CustomerDTO(0, "", "Không có", "", 0));
 
             this.customerCbx.ValueMember = "Ma";
             this.customerCbx.DisplayMember = "SoDienThoai";
@@ -116,8 +149,8 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         {
             List<SaleDTO> saleList = SaleBUS.Instance.getAllData();
 
-            saleList.Insert(0, new SaleDTO(0, "Tất cả khuyến mãi", 0, new DateTime(), new DateTime()));
-            saleList.Insert(1, new SaleDTO(-1, "Không có khuyến mãi", 0, new DateTime(), new DateTime()));
+            saleList.Insert(0, new SaleDTO(-1, "Tất cả khuyến mãi", 0, new DateTime(), new DateTime()));
+            saleList.Insert(1, new SaleDTO(0, "Không có khuyến mãi", 0, new DateTime(), new DateTime()));
 
             this.saleCbx.ValueMember = "MaKhuyenMai";
             this.saleCbx.DisplayMember = "TenKhuyenMai";
@@ -197,41 +230,41 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
             List<CustomerBillDTO> newCustomerBillList = customerBillList.FindAll(customerBill =>
             {
-                if (customerId != 0 && staffId != 0 && saleId != 0)
+                if (customerId != -1 && staffId != 0 && saleId != -1)
                 {
                     return customerBill.MaKhachHang == customerId &&
                            customerBill.MaNhanVien == staffId &&
                            customerBill.MaKhuyenMai == saleId;
                 }
 
-                if (customerId == 0 && staffId != 0 && saleId != 0)
+                if (customerId == -1 && staffId != 0 && saleId != -1)
                 {
                     return customerBill.MaNhanVien == staffId &&
                            customerBill.MaKhuyenMai == saleId;
                 }
 
-                if (customerId == 0 && staffId == 0 && saleId != 0)
+                if (customerId == -1 && staffId == 0 && saleId != -1)
                 {
                     return customerBill.MaKhuyenMai == saleId;
                 }
 
-                if (customerId == 0 && staffId != 0 && saleId == 0)
+                if (customerId == -1 && staffId != 0 && saleId == -1)
                 {
                     return customerBill.MaNhanVien == staffId;
                 }
 
-                if (customerId != 0 && staffId == 0 && saleId == 0)
+                if (customerId != -1 && staffId == 0 && saleId == -1)
                 {
                     return customerBill.MaKhachHang == customerId;
                 }
 
-                if (customerId != 0 && staffId != 0 && saleId == 0)
+                if (customerId != -1 && staffId != 0 && saleId == -1)
                 {
                     return customerBill.MaKhachHang == customerId &&
                            customerBill.MaNhanVien == staffId;
                 }
 
-                if (customerId != 0 && staffId == 0 && saleId != 0)
+                if (customerId != -1 && staffId == 0 && saleId != -1)
                 {
                     return customerBill.MaKhachHang == customerId &&
                            customerBill.MaKhuyenMai == saleId;
