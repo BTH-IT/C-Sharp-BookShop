@@ -432,7 +432,6 @@
     <Compile Include="BUS\BookTypeBUS.cs" />
     <Compile Include="BUS\AuthorBUS.cs" />
     <Compile Include="BUS\BookBUS.cs" />
-    <Compile Include="BUS\CustomerBUS.cs" />
     <Compile Include="BUS\AccountBUS.cs" />
     <Compile Include="BUS\IBUS.cs" />
     <Compile Include="CustomButton.cs">
@@ -450,12 +449,9 @@
     <Compile Include="DAO\PermissionDAO.cs" />
     <Compile Include="DAO\SaleDAO.cs" />
     <Compile Include="DAO\StaffDAO.cs" />
-    <Compile Include="DAO\ImportBillDAO.cs" />
-    <Compile Include="DAO\CustomerBillDAO.cs" />
     <Compile Include="DAO\CustomerDAO.cs" />
     <Compile Include="DAO\SupplierDAO.cs" />
     <Compile Include="DTO\AuthDetailDTO.cs" />
-    <Compile Include="DTO\BookDTO.cs" />
     <Compile Include="DTO\CustomerRefundBillDetailDTO.cs" />
     <Compile Include="DTO\CustomerRefundBillDTO.cs" />
     <Compile Include="DTO\CustomerTypeDTO.cs" />
@@ -481,7 +477,6 @@
     <Compile Include="DAO\AuthorDAO.cs" />
     <Compile Include="DAO\BookDAO.cs" />
     <Compile Include="DAO\AccountDAO.cs" />
-    <Compile Include="DAO\CustomerDAO.cs" />
     <Compile Include="DAO\IDAO.cs" />
     <Compile Include="DTO\AuthorDTO.cs" />
     <Compile Include="DTO\PublisherDTO.cs" />
@@ -541,11 +536,11 @@
     <Compile Include="GUI\Manager\SeoManageGUI.designer.cs">
       <DependentUpon>SeoManageGUI.cs</DependentUpon>
     </Compile>
+	<Compile Include="GUI\Manager\StaffManageGUI.Designer.cs">
+		<DependentUpon>StaffManageGUI.cs</DependentUpon>
+	</Compile>
     <Compile Include="GUI\Manager\StaffManageGUI.cs">
       <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\Manager\StaffManageGUI.designer.cs">
-      <DependentUpon>StaffManageGUI.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Manager\SupplierManagerGUI.cs">
       <SubType>Form</SubType>
@@ -604,7 +599,7 @@
     <Compile Include="GUI\Modal\AccountModal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Modal\AccountModal.designer.cs">
+    <Compile Include="GUI\Modal\AccountModal.Designer.cs">
       <DependentUpon>AccountModal.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modal\AddBookToCustomerBillModal.cs">
@@ -743,9 +738,6 @@
     </Compile>
     <Compile Include="GUI\UserControls\FilterUserControl.cs">
       <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="GUI\UserControls\FilterUserControl.Designer.cs">
-      <DependentUpon>FilterUserControl.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\UserControls\FilterUserControl.Designer.cs">
       <DependentUpon>FilterUserControl.cs</DependentUpon>

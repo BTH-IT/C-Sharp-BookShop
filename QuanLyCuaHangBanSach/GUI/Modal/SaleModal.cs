@@ -100,7 +100,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                             errorLine.BackColor = Color.FromArgb(45, 212, 191);
                             return true;
                         }
-                        break;
+                       
                     default:
                         return false;
                 }
