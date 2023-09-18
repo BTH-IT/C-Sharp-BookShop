@@ -73,7 +73,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             PaymentBillDTO paymentBill = new PaymentBillDTO(
                 0,
                 Convert.ToDouble(this.totalPriceTxt.Text),
-                1,
+                true,
                 this.reasonTxt.Text,
                 staffId,
                 this.noteTxt.Text,
