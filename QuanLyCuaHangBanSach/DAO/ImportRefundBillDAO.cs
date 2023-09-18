@@ -152,7 +152,7 @@ namespace QuanLyCuaHangBanSach.DAO
 
         public bool delete(string id)
         {
-            string sql = $@"DELETE FROM phieutranhaphang WHERE maPhieuTraNhapHang=@maPhieuTraNhapHang;";
+            string sql = $@"UPDATE phieutranhaphang SET hienThi=0 WHERE maPhieuTraNhapHang=@maPhieuTraNhapHang;";
 
             int rowChanged = DataProvider.Instance.ExecuteNonQuery(sql,
                 new MySqlParameter[] {

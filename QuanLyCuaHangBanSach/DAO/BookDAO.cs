@@ -42,12 +42,57 @@ namespace QuanLyCuaHangBanSach.DAO
             return dataTable;
         }
 
-        
         public DataTable getAll() {
             DataTable dataTable = DataProvider.Instance.ExecuteQuery(
                 "SELECT * FROM sach WHERE hienThi = 1;"
             );
 
+            return getBookRemain(dataTable);
+        }
+
+        public DataTable getAllDataFiltered(int SortMode, string Type, string Author, string Publisher)
+        {
+            string sql = $@"SELECT * FROM sach WHERE hienThi = 1";
+            if (!Type.Equals("0"))
+            {
+                sql += " AND maTheLoai=@maTheLoai";
+            }
+            if (!Author.Equals("0"))
+            {
+                sql += " AND maTacGia=@maTacGia";
+            }
+            if (!Publisher.Equals("0"))
+            {
+                sql += " AND maNhaXuatBan=@maNhaXuatBan";
+            }
+            switch (SortMode)
+            {
+                case -1:
+                    sql += ";";
+                    break;
+                case 0:
+                    sql += " ORDER BY giaBan ASC;";
+                    break;
+                case 1:
+                    sql += " ORDER BY giaBan DESC;";
+                    break;
+                case 2:
+                    sql += " ORDER BY tenSach ASC;";
+                    break;
+                case 3:
+                    sql += " ORDER BY tenSach DESC;";
+                    break;
+                default:
+                    sql += ";";
+                    break;
+            }
+
+            DataTable dataTable = DataProvider.Instance.ExecuteQuery(sql,
+                new MySqlParameter[] {
+                    new MySqlParameter("@maTheLoai", Type.ToString()),
+                    new MySqlParameter("@maTacGia", Author.ToString()),
+                    new MySqlParameter("@maNhaXuatBan", Publisher.ToString())
+                });
             return getBookRemain(dataTable);
         }
 

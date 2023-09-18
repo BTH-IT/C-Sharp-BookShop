@@ -23,8 +23,9 @@ namespace QuanLyCuaHangBanSach.DAO
             private set { PositionDAO.instance = value; }
         }
 
-        
-        public DataTable getAll() {
+
+        public DataTable getAll()
+        {
             return DataProvider.Instance.ExecuteQuery("select * from chucvu");
         }
 
@@ -43,7 +44,6 @@ namespace QuanLyCuaHangBanSach.DAO
 
             return account;
         }
-        
         public DataTable searchData(string value)
         {
             string sql = $@"SELECT * FROM chucvu WHERE maChucVu LIKE @maChucVu OR tenChucVu LIKE @tenChucVu;";

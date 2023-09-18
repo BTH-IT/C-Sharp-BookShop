@@ -10,7 +10,7 @@ namespace QuanLyCuaHangBanSach.DAO
         private string databaseName = "qlchs";
         private string username = "root";
         private string password = "";
-        private string port = "3306";
+        private string port = "2003";
         private MySqlConnection connect = null;
         private static DataProvider instance;
 

@@ -17,7 +17,7 @@ namespace QuanLyCuaHangBanSach
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ScannerModal());
+            Application.Run(new VendorGUI());
         }
     }
 }
