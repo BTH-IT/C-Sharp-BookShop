@@ -150,8 +150,9 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                 {
                       if ((bool)row.Cells[0].Value)
                        {
-                           CustomerBUS.Instance.delete(row.Cells[4].Value.ToString());
-                       } 
+                          CustomerBUS.Instance.delete(row.Cells[5].Value.ToString());
+                         
+                        } 
                 }
              
                 List<CustomerDTO> customers = this.handleFilter(this.searchInput.Text.ToString()); ;

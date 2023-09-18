@@ -74,7 +74,7 @@
 			this.submitBtn.ForeColor = System.Drawing.Color.White;
 			this.submitBtn.Image = null;
 			this.submitBtn.ImageSize = new System.Drawing.Size(20, 20);
-			this.submitBtn.Location = new System.Drawing.Point(412, 545);
+			this.submitBtn.Location = new System.Drawing.Point(409, 614);
 			this.submitBtn.Name = "submitBtn";
 			this.submitBtn.OnHoverBaseColor = System.Drawing.Color.White;
 			this.submitBtn.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
@@ -94,11 +94,12 @@
 			this.title.AutoSize = true;
 			this.title.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.title.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-			this.title.Location = new System.Drawing.Point(319, 9);
+			this.title.Location = new System.Drawing.Point(265, 9);
 			this.title.Name = "title";
 			this.title.Size = new System.Drawing.Size(228, 36);
 			this.title.TabIndex = 9;
 			this.title.Text = "Thêm Tài khoản";
+			this.title.Click += new System.EventHandler(this.title_Click);
 			// 
 			// passwordTxt
 			// 
@@ -134,7 +135,7 @@
 			this.errorPasswordMsg.AutoSize = true;
 			this.errorPasswordMsg.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
 			this.errorPasswordMsg.ForeColor = System.Drawing.Color.Red;
-			this.errorPasswordMsg.Location = new System.Drawing.Point(154, 51);
+			this.errorPasswordMsg.Location = new System.Drawing.Point(154, 63);
 			this.errorPasswordMsg.Name = "errorPasswordMsg";
 			this.errorPasswordMsg.Size = new System.Drawing.Size(0, 25);
 			this.errorPasswordMsg.TabIndex = 7;
@@ -190,7 +191,7 @@
 			this.errorEmailMsg.AutoSize = true;
 			this.errorEmailMsg.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
 			this.errorEmailMsg.ForeColor = System.Drawing.Color.Red;
-			this.errorEmailMsg.Location = new System.Drawing.Point(154, 50);
+			this.errorEmailMsg.Location = new System.Drawing.Point(151, 60);
 			this.errorEmailMsg.Name = "errorEmailMsg";
 			this.errorEmailMsg.Size = new System.Drawing.Size(0, 25);
 			this.errorEmailMsg.TabIndex = 7;
@@ -209,9 +210,9 @@
 			this.panel4.Controls.Add(this.errorPasswordMsg);
 			this.panel4.Controls.Add(this.passwordLine);
 			this.panel4.Controls.Add(this.label6);
-			this.panel4.Location = new System.Drawing.Point(3, 97);
+			this.panel4.Location = new System.Drawing.Point(3, 124);
 			this.panel4.Name = "panel4";
-			this.panel4.Size = new System.Drawing.Size(701, 88);
+			this.panel4.Size = new System.Drawing.Size(701, 115);
 			this.panel4.TabIndex = 9;
 			// 
 			// label3
@@ -240,7 +241,7 @@
 			this.cancelBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
 			this.cancelBtn.Image = null;
 			this.cancelBtn.ImageSize = new System.Drawing.Size(20, 20);
-			this.cancelBtn.Location = new System.Drawing.Point(187, 545);
+			this.cancelBtn.Location = new System.Drawing.Point(184, 614);
 			this.cancelBtn.Name = "cancelBtn";
 			this.cancelBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
 			this.cancelBtn.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
@@ -263,7 +264,7 @@
 			this.panel1.Controls.Add(this.label3);
 			this.panel1.Location = new System.Drawing.Point(3, 3);
 			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(701, 88);
+			this.panel1.Size = new System.Drawing.Size(701, 115);
 			this.panel1.TabIndex = 0;
 			// 
 			// flowLayoutPanel1
@@ -274,9 +275,9 @@
 			this.flowLayoutPanel1.Controls.Add(this.panel4);
 			this.flowLayoutPanel1.Controls.Add(this.confirmPasswordPanel);
 			this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-			this.flowLayoutPanel1.Location = new System.Drawing.Point(45, 170);
+			this.flowLayoutPanel1.Location = new System.Drawing.Point(45, 191);
 			this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-			this.flowLayoutPanel1.Size = new System.Drawing.Size(725, 345);
+			this.flowLayoutPanel1.Size = new System.Drawing.Size(725, 372);
 			this.flowLayoutPanel1.TabIndex = 12;
 			// 
 			// confirmPasswordPanel
@@ -285,9 +286,9 @@
 			this.confirmPasswordPanel.Controls.Add(this.errorConfirmPasswordMsg);
 			this.confirmPasswordPanel.Controls.Add(this.confirmPasswordLine);
 			this.confirmPasswordPanel.Controls.Add(this.label2);
-			this.confirmPasswordPanel.Location = new System.Drawing.Point(3, 191);
+			this.confirmPasswordPanel.Location = new System.Drawing.Point(3, 245);
 			this.confirmPasswordPanel.Name = "confirmPasswordPanel";
-			this.confirmPasswordPanel.Size = new System.Drawing.Size(701, 88);
+			this.confirmPasswordPanel.Size = new System.Drawing.Size(701, 109);
 			this.confirmPasswordPanel.TabIndex = 10;
 			// 
 			// confirmPasswordTxt
@@ -323,7 +324,7 @@
 			this.errorConfirmPasswordMsg.AutoSize = true;
 			this.errorConfirmPasswordMsg.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
 			this.errorConfirmPasswordMsg.ForeColor = System.Drawing.Color.Red;
-			this.errorConfirmPasswordMsg.Location = new System.Drawing.Point(154, 49);
+			this.errorConfirmPasswordMsg.Location = new System.Drawing.Point(154, 62);
 			this.errorConfirmPasswordMsg.Name = "errorConfirmPasswordMsg";
 			this.errorConfirmPasswordMsg.Size = new System.Drawing.Size(0, 25);
 			this.errorConfirmPasswordMsg.TabIndex = 7;
@@ -353,7 +354,7 @@
 			this.panel3.Controls.Add(this.label1);
 			this.panel3.Location = new System.Drawing.Point(45, 79);
 			this.panel3.Name = "panel3";
-			this.panel3.Size = new System.Drawing.Size(727, 85);
+			this.panel3.Size = new System.Drawing.Size(727, 106);
 			this.panel3.TabIndex = 13;
 			// 
 			// staffLine
@@ -361,7 +362,7 @@
 			this.staffLine.AutoSize = true;
 			this.staffLine.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
 			this.staffLine.ForeColor = System.Drawing.Color.Red;
-			this.staffLine.Location = new System.Drawing.Point(157, 33);
+			this.staffLine.Location = new System.Drawing.Point(157, 51);
 			this.staffLine.Name = "staffLine";
 			this.staffLine.Size = new System.Drawing.Size(0, 25);
 			this.staffLine.TabIndex = 27;
@@ -405,7 +406,7 @@
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.White;
-			this.ClientSize = new System.Drawing.Size(800, 637);
+			this.ClientSize = new System.Drawing.Size(800, 701);
 			this.Controls.Add(this.panel3);
 			this.Controls.Add(this.submitBtn);
 			this.Controls.Add(this.title);
