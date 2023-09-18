@@ -440,6 +440,7 @@
     </Compile>
     <Compile Include="CustomValidation.cs" />
     <Compile Include="DAO\AuthDetailDAO.cs" />
+    <Compile Include="DAO\CustomerChangeBillDAO.cs" />
     <Compile Include="DAO\PaymentBillDAO.cs" />
     <Compile Include="DAO\ImportRefundBillDAO.cs" />
     <Compile Include="DAO\CustomerRefundBillDAO.cs" />
@@ -455,9 +456,12 @@
     <Compile Include="DAO\SupplierDAO.cs" />
     <Compile Include="DTO\AuthDetailDTO.cs" />
     <Compile Include="DTO\BookDTO.cs" />
+    <Compile Include="DTO\ChangeBillDTO.cs" />
     <Compile Include="DTO\CustomerRefundBillDetailDTO.cs" />
+    <Compile Include="DTO\CustomerChangeBillDTO.cs" />
     <Compile Include="DTO\CustomerRefundBillDTO.cs" />
     <Compile Include="DTO\ImportRefundBillDetailDTO.cs" />
+    <Compile Include="DTO\ImportChangeBillDTO.cs" />
     <Compile Include="DTO\ImportRefundBillDTO.cs" />
     <Compile Include="DTO\PaymentBillDTO.cs" />
     <Compile Include="DTO\PermissionDTO.cs" />
