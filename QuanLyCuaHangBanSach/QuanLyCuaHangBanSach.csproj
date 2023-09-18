@@ -440,6 +440,7 @@
     </Compile>
     <Compile Include="CustomValidation.cs" />
     <Compile Include="DAO\AuthDetailDAO.cs" />
+    <Compile Include="DAO\CustomerChangeBillDAO.cs" />
     <Compile Include="DAO\PaymentBillDAO.cs" />
     <Compile Include="DAO\ImportRefundBillDAO.cs" />
     <Compile Include="DAO\CustomerRefundBillDAO.cs" />
@@ -455,9 +456,12 @@
     <Compile Include="DAO\SupplierDAO.cs" />
     <Compile Include="DTO\AuthDetailDTO.cs" />
     <Compile Include="DTO\BookDTO.cs" />
+    <Compile Include="DTO\ChangeBillDTO.cs" />
     <Compile Include="DTO\CustomerRefundBillDetailDTO.cs" />
+    <Compile Include="DTO\CustomerChangeBillDTO.cs" />
     <Compile Include="DTO\CustomerRefundBillDTO.cs" />
     <Compile Include="DTO\ImportRefundBillDetailDTO.cs" />
+    <Compile Include="DTO\ImportChangeBillDTO.cs" />
     <Compile Include="DTO\ImportRefundBillDTO.cs" />
     <Compile Include="DTO\PaymentBillDTO.cs" />
     <Compile Include="DTO\PermissionDTO.cs" />
@@ -757,9 +761,6 @@
     <Compile Include="GUI\UserControls\FilterUserControl.Designer.cs">
       <DependentUpon>FilterUserControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\UserControls\FilterUserControl.Designer.cs">
-      <DependentUpon>FilterUserControl.cs</DependentUpon>
-    </Compile>
     <Compile Include="GUI\UserControls\PhoneSearchResultControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -778,6 +779,9 @@
     <Compile Include="CustomTimer.cs" />
     <EmbeddedResource Include="GUI\Auth\LoginGUI.resx">
       <DependentUpon>LoginGUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Importer\ImportGUI.resx">
+      <DependentUpon>ImportGUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Manager\AccountManageGUI.resx">
       <DependentUpon>AccountManageGUI.cs</DependentUpon>
@@ -1003,7 +1007,6 @@
     <Content Include="bin\Debug\System.Threading.AccessControl.xml" />
     <Content Include="bin\Debug\System.Threading.Tasks.Extensions.xml" />
     <Content Include="FodyWeavers.xml" />
-    <Content Include="qlchs.sql" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
