@@ -747,6 +747,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Manager\SupplierManagerGUI.resx">
       <DependentUpon>SupplierManagerGUI.cs</DependentUpon>
+      </EmbeddedResource>
     <EmbeddedResource Include="GUI\Manager\PaymentBillManageGUI.resx">
       <DependentUpon>PaymentBillManageGUI.cs</DependentUpon>
     </EmbeddedResource>
@@ -764,6 +765,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Modal\AuthorModal.resx">
       <DependentUpon>AuthorModal.cs</DependentUpon>
+      </EmbeddedResource>
     <EmbeddedResource Include="GUI\Modal\AuthorizeModal.resx">
       <DependentUpon>AuthorizeModal.cs</DependentUpon>
     </EmbeddedResource>
@@ -778,6 +780,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Modal\SupplierModal.resx">
       <DependentUpon>SupplierModal.cs</DependentUpon>
+      </EmbeddedResource>
     <EmbeddedResource Include="GUI\Modal\PermissionModal.resx">
       <DependentUpon>PermissionModal.cs</DependentUpon>
     </EmbeddedResource>
