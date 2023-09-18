@@ -21,7 +21,6 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             InitializeComponent();
             this.title.Text = title;    
             this.Text = title;
-            
         }
    
 
@@ -39,8 +38,9 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                string phoneNumber = this.phoneNumberTxtBox.Text;
                string gender = this.genderCbx.SelectedItem.ToString();
                int id = this.currentCustomer != null ? currentCustomer.Ma : 0;
+               int score = this.currentCustomer != null ? currentCustomer.Diem : 0;
 
-               CustomerDTO customer = new CustomerDTO(maKhachHang: id, tenKhachHang: customerName,soDienThoai:phoneNumber,gioiTinh:gender,namSinh: birthYear);
+                CustomerDTO customer = new CustomerDTO(maKhachHang: id, tenKhachHang: customerName,soDienThoai:phoneNumber,gioiTinh:gender,namSinh: birthYear, diem: score);
                 
                 bool isSuccess = currentCustomer != null ? CustomerBUS.Instance.update(customer) : CustomerBUS.Instance.insert(customer);
 
