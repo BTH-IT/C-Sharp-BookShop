@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
+using Guna.UI.WinForms;
 using QuanLyCuaHangBanSach.BUS;
 using QuanLyCuaHangBanSach.DTO;
 using QuanLyCuaHangBanSach.GUI.Manager;
@@ -10,7 +13,8 @@ namespace QuanLyCuaHangBanSach.GUI
     public partial class ManagerGUI : Form
     {
         public static StaffDTO currentStaff;
-        private string contentActive = "homeBtn";
+        public static Authorization authorization;
+        private string contentActive;
         private HomeManageGUI homeFrm = new HomeManageGUI() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle=FormBorderStyle.None, };
         private BookManageGUI bookFrm = new BookManageGUI() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle=FormBorderStyle.None, };
         private AuthorGUI authorFrm = new AuthorGUI() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle=FormBorderStyle.None, };
@@ -31,24 +35,132 @@ namespace QuanLyCuaHangBanSach.GUI
         public ManagerGUI(int staffId)
         {
             InitializeComponent();
-            this.manageContent.Controls.Add(this.homeFrm);
-            this.manageContent.Controls.Add(this.bookFrm);
-            this.manageContent.Controls.Add(this.authorFrm);
-            this.manageContent.Controls.Add(this.bookTypeFrm);
-            this.manageContent.Controls.Add(this.customerFrm);
-            this.manageContent.Controls.Add(this.staffFrm);
-            this.manageContent.Controls.Add(this.supplierFrm);
-            this.manageContent.Controls.Add(this.importBillFrm);
-            this.manageContent.Controls.Add(this.customerBillFrm);
-            this.manageContent.Controls.Add(this.seoFrm);
-            this.manageContent.Controls.Add(this.publisherFrm);
-            this.manageContent.Controls.Add(this.accountFrm);
-            this.manageContent.Controls.Add(this.positionFrm);
-            this.manageContent.Controls.Add(this.permissionFrm);
-            this.manageContent.Controls.Add(this.paymentBillFrm);
-            this.manageContent.Controls.Add(this.refundFrm);
-            this.homeFrm.Show();
+
             currentStaff = StaffBUS.Instance.getById(staffId.ToString());
+
+            authorization = new Authorization(staffId);
+
+            foreach (var item in authorization.getPermissionObject())
+            {
+                bool isCheckPermission = authorization.checkAuthorize(Convert.ToInt32(item.Key));
+
+                if (!isCheckPermission)
+                {
+                    switch (item.Key)
+                    {
+                        case "1":
+                            this.navBar.Controls.Remove(this.bookBtn);
+                            break;
+                        case "2":
+                            this.navBar.Controls.Remove(this.staffBtn);
+                            break;
+                        case "3":
+                            this.navBar.Controls.Remove(this.supplierBtn);
+                            break;
+                        case "4":
+                            this.navBar.Controls.Remove(this.bookTypeBtn);
+                            break;
+                        case "5":
+                            this.navBar.Controls.Remove(this.publisherBtn);
+                            break;
+                        case "8":
+                            this.navBar.Controls.Remove(this.refundBtn);
+                            break;
+                        case "9":
+                            this.navBar.Controls.Remove(this.customerBtn);
+                            break;
+                        case "10":
+                            this.navBar.Controls.Remove(this.authorBtn);
+                            break;
+                        case "11":
+                            this.navBar.Controls.Remove(this.seoBtn);
+                            break;
+                        case "12":
+                            this.navBar.Controls.Remove(this.permissionBtn);
+                            break;
+                        case "13":
+                            this.navBar.Controls.Remove(this.positionBtn);
+                            break;
+                        case "14":
+                            this.navBar.Controls.Remove(this.paymentBtn);
+                            break;
+                        case "15":
+                            this.navBar.Controls.Remove(this.billBtn);
+                            break;
+                        case "16":
+                            this.navBar.Controls.Remove(this.importBilBtn);
+                            break;
+                        case "17":
+                            this.navBar.Controls.Remove(this.accountBtn);
+                            break;
+                        case "18":
+                            this.navBar.Controls.Remove(this.homeBtn);
+                            break;
+                    }
+                } else
+                {
+                    switch (item.Key)
+                    {
+                        case "1":
+                            this.manageContent.Controls.Add(this.bookFrm);
+                            break;
+                        case "2":
+                            this.manageContent.Controls.Add(this.staffFrm);
+                            break;
+                        case "3":
+                            this.manageContent.Controls.Add(this.supplierFrm);
+                            break;
+                        case "4":
+                            this.manageContent.Controls.Add(this.bookTypeFrm);
+                            break;
+                        case "5":
+                            this.manageContent.Controls.Add(this.publisherFrm);
+                            break;
+                        case "8":
+                            this.manageContent.Controls.Add(this.refundFrm);
+                            break;
+                        case "9":
+                            this.manageContent.Controls.Add(this.customerFrm);
+                            break;
+                        case "10":
+                            this.manageContent.Controls.Add(this.authorFrm);
+                            break;
+                        case "11":
+                            this.manageContent.Controls.Add(this.seoFrm);
+                            break;
+                        case "12":
+                            this.manageContent.Controls.Add(this.permissionFrm);
+                            break;
+                        case "13":
+                            this.manageContent.Controls.Add(this.positionFrm);
+                            break;
+                        case "14":
+                            this.manageContent.Controls.Add(this.paymentBillFrm);
+                            break;
+                        case "15":
+                            this.manageContent.Controls.Add(this.customerBillFrm);
+                            break;
+                        case "16":
+                            this.manageContent.Controls.Add(this.importBillFrm);
+                            break;
+                        case "17":
+                            this.manageContent.Controls.Add(this.accountFrm);
+                            break;
+                        case "18":
+                            this.manageContent.Controls.Add(this.homeFrm);
+                            break;
+                    }
+                }
+            }
+
+            GunaAdvenceButton btn = this.navBar.Controls.OfType<GunaAdvenceButton>().FirstOrDefault();
+            Form frm = this.manageContent.Controls.OfType<Form>().FirstOrDefault();
+
+            this.contentActive = btn.Name;
+
+            btn.Checked = true;
+
+            frm.Show();
         }
 
         private void homeBtn_Click(object sender, EventArgs e)

@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using MySql.Data.MySqlClient;
+using QuanLyCuaHangBanSach.BUS;
 using QuanLyCuaHangBanSach.DTO;
 
 namespace QuanLyCuaHangBanSach.DAO
@@ -26,13 +28,13 @@ namespace QuanLyCuaHangBanSach.DAO
 
         public DataTable getAll()
         {
-            return DataProvider.Instance.ExecuteQuery("select * from chucvu");
+            return DataProvider.Instance.ExecuteQuery("select * from chucvu WHERE hienThi=1;");
         }
 
         public PositionDTO getById(string id)
         {
             DataTable dataTable = DataProvider.Instance.ExecuteQuery(
-                "SELECT * FROM chucvu WHERE maChucVu=@maChucVu;",
+                "SELECT * FROM chucvu WHERE maChucVu=@maChucVu AND hienThi=1;",
                 new MySqlParameter[] {
                     new MySqlParameter("@maChucVu", id)
                 }
@@ -46,7 +48,7 @@ namespace QuanLyCuaHangBanSach.DAO
         }
         public DataTable searchData(string value)
         {
-            string sql = $@"SELECT * FROM chucvu WHERE maChucVu LIKE @maChucVu OR tenChucVu LIKE @tenChucVu;";
+            string sql = $@"SELECT * FROM chucvu WHERE (maChucVu LIKE @maChucVu OR tenChucVu LIKE @tenChucVu) AND hienThi=1;";
 
             return DataProvider.Instance.ExecuteQuery(sql,
                 new MySqlParameter[] {
@@ -68,6 +70,23 @@ namespace QuanLyCuaHangBanSach.DAO
                     new MySqlParameter("@moTa", data.MoTa),
                     new MySqlParameter("@trangThai", data.TrangThai),
                 });
+
+            if (rowChanged > 0 )
+            {
+                List<PermissionDTO> permissionList = PermissionBUS.Instance.getAllData();
+
+                sql = $@"INSERT INTO chitietphanquyen (maChucVu, maQuyenHang)
+                            VALUES (@maChucVu, @maQuyenHang);";
+
+                foreach (PermissionDTO permission in permissionList)
+                {
+                    DataProvider.Instance.ExecuteNonQuery(sql,
+                    new MySqlParameter[] {
+                        new MySqlParameter("@maChucVu", data.MaChucVu),
+                        new MySqlParameter("@maQuyenHang", permission.MaQuyenHang),
+                    });
+                }
+            }
 
             return rowChanged > 0;
         }
@@ -97,6 +116,11 @@ namespace QuanLyCuaHangBanSach.DAO
                 new MySqlParameter[] {
                     new MySqlParameter("@maChucVu", id),
                 });
+
+            if (rowChanged > 0 )
+            {
+                AuthDetailBUS.Instance.deleteAllByPositionId(id);
+            }
 
             return rowChanged > 0;
         }
