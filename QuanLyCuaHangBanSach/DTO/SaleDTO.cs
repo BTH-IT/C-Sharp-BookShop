@@ -10,7 +10,6 @@ namespace QuanLyCuaHangBanSach.DTO
         public byte PhanTram { get; set; }
         public DateTime NgayBatDau { get; set; }
         public DateTime NgayKetThuc { get; set; }
-
         public SaleDTO() { }
 
         public SaleDTO(int maKhuyenMai, string tenKhuyenMai, byte phanTram, DateTime ngayBatDau, DateTime ngayKetThuc)

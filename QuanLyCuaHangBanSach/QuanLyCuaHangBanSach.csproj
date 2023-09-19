@@ -415,8 +415,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Authorization.cs" />
     <Compile Include="BUS\AuthDetailBUS.cs" />
-    <Compile Include="BUS\CustomerTypeBUS.cs" />
     <Compile Include="BUS\CustomerRefundBillBUS.cs" />
     <Compile Include="BUS\PaymentBillBUS.cs" />
     <Compile Include="BUS\ImportRefundBillBUS.cs" />
@@ -439,7 +439,7 @@
     </Compile>
     <Compile Include="CustomValidation.cs" />
     <Compile Include="DAO\AuthDetailDAO.cs" />
-    <Compile Include="DAO\CustomerTypeDAO.cs" />
+    <Compile Include="DAO\CustomerChangeBillDAO.cs" />
     <Compile Include="DAO\PaymentBillDAO.cs" />
     <Compile Include="DAO\ImportRefundBillDAO.cs" />
     <Compile Include="DAO\CustomerRefundBillDAO.cs" />
@@ -452,10 +452,13 @@
     <Compile Include="DAO\CustomerDAO.cs" />
     <Compile Include="DAO\SupplierDAO.cs" />
     <Compile Include="DTO\AuthDetailDTO.cs" />
+    <Compile Include="DTO\BookDTO.cs" />
+    <Compile Include="DTO\ChangeBillDTO.cs" />
     <Compile Include="DTO\CustomerRefundBillDetailDTO.cs" />
+    <Compile Include="DTO\CustomerChangeBillDTO.cs" />
     <Compile Include="DTO\CustomerRefundBillDTO.cs" />
-    <Compile Include="DTO\CustomerTypeDTO.cs" />
     <Compile Include="DTO\ImportRefundBillDetailDTO.cs" />
+    <Compile Include="DTO\ImportChangeBillDTO.cs" />
     <Compile Include="DTO\ImportRefundBillDTO.cs" />
     <Compile Include="DTO\PaymentBillDTO.cs" />
     <Compile Include="DTO\PermissionDTO.cs" />
@@ -527,13 +530,13 @@
     <Compile Include="GUI\Manager\CustomerManagerGUI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Manager\CustomerManagerGUI.Designer.cs">
+    <Compile Include="GUI\Manager\CustomerManagerGUI.designer.cs">
       <DependentUpon>CustomerManagerGUI.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Manager\SeoManageGUI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Manager\SeoManageGUI.designer.cs">
+    <Compile Include="GUI\Manager\SeoManageGUI.Designer.cs">
       <DependentUpon>SeoManageGUI.cs</DependentUpon>
     </Compile>
 	<Compile Include="GUI\Manager\StaffManageGUI.Designer.cs">
@@ -596,6 +599,12 @@
     <Compile Include="GUI\Manager\PositionManageGUI.Designer.cs">
       <DependentUpon>PositionManageGUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\MenuGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\MenuGUI.Designer.cs">
+      <DependentUpon>MenuGUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Modal\AccountModal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -644,16 +653,22 @@
     <Compile Include="GUI\Modal\CustomerModal.Designer.cs">
       <DependentUpon>CustomerModal.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Modal\PaymentBillModal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Modal\PaymentBillModal.Designer.cs">
+      <DependentUpon>PaymentBillModal.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Modal\SaleModal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Modal\SaleModal.designer.cs">
+    <Compile Include="GUI\Modal\SaleModal.Designer.cs">
       <DependentUpon>SaleModal.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modal\StaffModal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Modal\StaffModal.designer.cs">
+    <Compile Include="GUI\Modal\StaffModal.Designer.cs">
       <DependentUpon>StaffModal.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modal\SupplierModal.cs">
@@ -761,6 +776,9 @@
     <EmbeddedResource Include="GUI\Auth\LoginGUI.resx">
       <DependentUpon>LoginGUI.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Importer\ImportGUI.resx">
+      <DependentUpon>ImportGUI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Manager\AccountManageGUI.resx">
       <DependentUpon>AccountManageGUI.cs</DependentUpon>
     </EmbeddedResource>
@@ -809,6 +827,9 @@
     <EmbeddedResource Include="GUI\Manager\PositionManageGUI.resx">
       <DependentUpon>PositionManageGUI.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\MenuGUI.resx">
+      <DependentUpon>MenuGUI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Modal\AccountModal.resx">
       <DependentUpon>AccountModal.cs</DependentUpon>
     </EmbeddedResource>
@@ -835,6 +856,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Modal\ImportBillModal.resx">
       <DependentUpon>ImportBillModal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Modal\PaymentBillModal.resx">
+      <DependentUpon>PaymentBillModal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Modal\SaleModal.resx">
       <DependentUpon>SaleModal.cs</DependentUpon>
@@ -979,7 +1003,6 @@
     <Content Include="bin\Debug\System.Threading.AccessControl.xml" />
     <Content Include="bin\Debug\System.Threading.Tasks.Extensions.xml" />
     <Content Include="FodyWeavers.xml" />
-    <Content Include="qlchs.sql" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />

@@ -53,6 +53,15 @@ namespace QuanLyCuaHangBanSach.DAO
                     new MySqlParameter("@tongTienChi", data.TongTien),
                 });
 
+            if (rowChanged > 0)
+            {
+                ImportBillDTO importBill = ImportBillDAO.Instance.getById(data.MaDonNhapHang.ToString());
+
+                importBill.DaTra += data.TongTien;
+
+                return ImportBillDAO.Instance.update(importBill);
+            }
+
             return rowChanged > 0;
         }
 
@@ -95,6 +104,14 @@ namespace QuanLyCuaHangBanSach.DAO
 
         public bool delete(string id)
         {
+            PaymentBillDTO paymentBill = getById(id);
+
+            ImportBillDTO importBill = ImportBillDAO.Instance.getById(id);
+
+            importBill.DaTra -= paymentBill.TongTien;
+
+            ImportBillDAO.Instance.update(importBill);
+
             string sql = $@"DELETE FROM phieuchi WHERE maPhieuChi=@maPhieuChi;";
 
             int rowChanged = DataProvider.Instance.ExecuteNonQuery(sql,

@@ -169,7 +169,7 @@ namespace QuanLyCuaHangBanSach.DAO
         public ImportBillDTO getById(string id)
         {
             DataTable dataTable = DataProvider.Instance.ExecuteQuery(
-                "SELECT * FROM phieunhap WHERE maDonNhapHang=@maDonNhapHang;",
+                "SELECT * FROM phieunhap WHERE maDonNhapHang=@maDonNhapHang AND hienThi=1;",
                 new MySqlParameter[] {
                     new MySqlParameter("@maDonNhapHang", id),
                 }

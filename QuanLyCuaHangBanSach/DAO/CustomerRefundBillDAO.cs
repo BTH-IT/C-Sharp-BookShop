@@ -24,7 +24,7 @@ namespace QuanLyCuaHangBanSach.DAO
             private set { CustomerRefundBillDAO.instance = value; }
         }
         public DataTable getAll() {
-            return DataProvider.Instance.ExecuteQuery("select * from phieutrabanhang;");
+            return DataProvider.Instance.ExecuteQuery("select * from phieutrabanhang WHERE hienThi=1;");
         }
 
         public CustomerRefundBillDetailDTO getCustomerRefundBillDetail(string billId, string bookId)
@@ -68,7 +68,7 @@ namespace QuanLyCuaHangBanSach.DAO
 
         public DataTable searchData(string value)
         {
-            string sql = $@"SELECT * FROM phieutrabanhang WHERE maPhieuTraBanHang LIKE @maPhieuTraBanHang;";
+            string sql = $@"SELECT * FROM phieutrabanhang WHERE maPhieuTraBanHang LIKE @maPhieuTraBanHang AND hienThi=1;";
 
             return DataProvider.Instance.ExecuteQuery(sql,
                 new MySqlParameter[] {
@@ -80,12 +80,13 @@ namespace QuanLyCuaHangBanSach.DAO
         public bool insert(CustomerRefundBillDTO data)
         {
 
-            string sql = $@"INSERT INTO phieutrabanhang (maDonKhachHang, ngayLap, liDo, tongTien, daTraKhach, trangThai)
-                            VALUES (@maDonKhachHang, @ngayLap, @liDo, @tongTien, @daTraKhach, @trangThai);";
+            string sql = $@"INSERT INTO phieutrabanhang (maDonKhachHang, maNhanVien, ngayLap, liDo, tongTien, daTraKhach, trangThai)
+                            VALUES (@maDonKhachHang, @maNhanVien, @ngayLap, @liDo, @tongTien, @daTraKhach, @trangThai);";
 
             int rowChanged = DataProvider.Instance.ExecuteNonQuery(sql,
                 new MySqlParameter[] {
                     new MySqlParameter("@maDonKhachHang", data.MaDonKhachHang),
+                    new MySqlParameter("@maNhanVien", data.MaNhanVien),
                     new MySqlParameter("@ngayLap", data.NgayLap),
                     new MySqlParameter("@liDo", data.LiDo),
                     new MySqlParameter("@tongTien", data.TongTien),
@@ -143,12 +144,13 @@ namespace QuanLyCuaHangBanSach.DAO
         public bool update(CustomerRefundBillDTO data)
         {
             string sql = $@"UPDATE phieutrabanhang SET 
-                            maDonKhachHang=@maDonKhachHang, liDo=@liDo, ngayLap=@ngayLap, 
+                            maDonKhachHang=@maDonKhachHang, maNhanVien=@maNhanVien, liDo=@liDo, ngayLap=@ngayLap, 
                             tongTien=@tongTien, daTraKhach=@daTraKhach, trangThai=@trangThai WHERE maPhieuTraBanHang=@maPhieuTraBanHang;";
 
             int rowChanged = DataProvider.Instance.ExecuteNonQuery(sql,
                 new MySqlParameter[] {
                     new MySqlParameter("@maDonKhachHang", data.MaDonKhachHang),
+                    new MySqlParameter("@maNhanVien", data.MaNhanVien),
                     new MySqlParameter("@liDo", data.LiDo),
                     new MySqlParameter("@ngayLap", data.NgayLap),
                     new MySqlParameter("@tongTien", data.TongTien),
@@ -161,7 +163,7 @@ namespace QuanLyCuaHangBanSach.DAO
 
         public bool delete(string id)
         {
-            string sql = $@"DELETE FROM phieutrabanhang WHERE maPhieuTraBanHang=@maPhieuTraBanHang;";
+            string sql = $@"UPDATE phieutrabanhang SET hienThi=0 WHERE maPhieuTraBanHang=@maPhieuTraBanHang;";
 
             int rowChanged = DataProvider.Instance.ExecuteNonQuery(sql,
                 new MySqlParameter[] {
@@ -174,7 +176,7 @@ namespace QuanLyCuaHangBanSach.DAO
         public CustomerRefundBillDTO getById(string id)
         {
             DataTable dataTable = DataProvider.Instance.ExecuteQuery(
-                "SELECT * FROM phieutrabanhang WHERE maPhieuTraBanHang=@maPhieuTraBanHang;",
+                "SELECT * FROM phieutrabanhang WHERE maPhieuTraBanHang=@maPhieuTraBanHang AND hienThi=1;",
                 new MySqlParameter[] {
                     new MySqlParameter("@maPhieuTraBanHang", id),
                 }
