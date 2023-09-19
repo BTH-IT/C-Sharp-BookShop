@@ -761,6 +761,9 @@
     <Compile Include="GUI\UserControls\FilterUserControl.Designer.cs">
       <DependentUpon>FilterUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\UserControls\FilterUserControl.Designer.cs">
+      <DependentUpon>FilterUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\UserControls\PhoneSearchResultControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
