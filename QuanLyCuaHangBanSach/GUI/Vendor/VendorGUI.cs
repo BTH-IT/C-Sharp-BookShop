@@ -94,7 +94,7 @@ namespace QuanLyCuaHangBanSach.GUI
             catch (Exception ex) { Console.WriteLine(ex); }
         }
 
-        private void ProductSearchInp_Click(object sender, System.EventArgs e)
+        private void ProductSearchInp_Enter(object sender, System.EventArgs e)
         {
             try
             {
@@ -136,7 +136,7 @@ namespace QuanLyCuaHangBanSach.GUI
 
         }
 
-        private void PhoneInp_Click(object sender, EventArgs e)
+        private void PhoneInp_Enter(object sender, EventArgs e)
         {
             if (PhoneInp.Text.Equals("Phone Number ..."))
             {
@@ -408,7 +408,7 @@ namespace QuanLyCuaHangBanSach.GUI
             catch (Exception ex) { Console.WriteLine(ex); }
         }
 
-        private void CustomerCashTxb_Click(object sender, System.EventArgs e)
+        private void CustomerCashTxb_Enter(object sender, System.EventArgs e)
         {
             try
             {
@@ -522,6 +522,7 @@ namespace QuanLyCuaHangBanSach.GUI
         private void LogOutBtn_Click(object sender, EventArgs e)
         {
             Close();
+            /*Application.Run(new LoginGUI());*/
         }
     }
 }

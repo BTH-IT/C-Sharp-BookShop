@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using QuanLyCuaHangBanSach.GUI;
+using QuanLyCuaHangBanSach.GUI.Importer;
 using QuanLyCuaHangBanSach.GUI.Manager;
 using QuanLyCuaHangBanSach.GUI.Modal;
 using QuanLyCuaHangBanSach.GUI.Report;
@@ -17,7 +18,7 @@ namespace QuanLyCuaHangBanSach
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new VendorGUI());
+            Application.Run(new ImportGUI());
         }
     }
 }

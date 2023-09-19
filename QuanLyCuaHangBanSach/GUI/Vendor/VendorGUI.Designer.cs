@@ -207,7 +207,7 @@
             this.ProductSearchInp.Size = new System.Drawing.Size(212, 22);
             this.ProductSearchInp.TabIndex = 1;
             this.ProductSearchInp.Text = "Search ...";
-            this.ProductSearchInp.Click += new System.EventHandler(this.ProductSearchInp_Click);
+            this.ProductSearchInp.Click += new System.EventHandler(this.ProductSearchInp_Enter);
             this.ProductSearchInp.TextChanged += new System.EventHandler(this.ProductSearchInp_TextChanged);
             this.ProductSearchInp.Leave += new System.EventHandler(this.ProductSearchInp_Leave);
             // 
@@ -416,7 +416,7 @@
             this.CustomerCashTxb.Size = new System.Drawing.Size(235, 30);
             this.CustomerCashTxb.TabIndex = 25;
             this.CustomerCashTxb.Text = "Khách đưa ...";
-            this.CustomerCashTxb.Enter += new System.EventHandler(this.CustomerCashTxb_Click);
+            this.CustomerCashTxb.Enter += new System.EventHandler(this.CustomerCashTxb_Enter);
             this.CustomerCashTxb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CustomerCashTxb_KeyPress);
             this.CustomerCashTxb.Leave += new System.EventHandler(this.CustomerCashTxb_Leave);
             this.CustomerCashTxb.MouseLeave += new System.EventHandler(this.CustomerCashTxb_MouseLeave);
@@ -448,6 +448,7 @@
             // 
             this.RecipientNameLb.AutoSize = true;
             this.RecipientNameLb.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.RecipientNameLb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.RecipientNameLb.Location = new System.Drawing.Point(96, 92);
             this.RecipientNameLb.Margin = new System.Windows.Forms.Padding(20, 30, 3, 5);
             this.RecipientNameLb.Name = "RecipientNameLb";
@@ -472,7 +473,7 @@
             this.PhoneInp.TabIndex = 1;
             this.PhoneInp.Text = "Phone Number ...";
             this.PhoneInp.TextChanged += new System.EventHandler(this.PhoneInp_TextChanged);
-            this.PhoneInp.Enter += new System.EventHandler(this.PhoneInp_Click);
+            this.PhoneInp.Enter += new System.EventHandler(this.PhoneInp_Enter);
             this.PhoneInp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PhoneInp_KeyPress);
             this.PhoneInp.Leave += new System.EventHandler(this.PhoneInp_Leave);
             // 
