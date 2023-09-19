@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Data;
-using System.Windows.Documents;
 using MySql.Data.MySqlClient;
 using QuanLyCuaHangBanSach.DTO;
 
@@ -27,13 +26,13 @@ namespace QuanLyCuaHangBanSach.DAO
 
         public DataTable getAll()
         {
-            return DataProvider.Instance.ExecuteQuery("select * from chitietphanquyen");
+            return DataProvider.Instance.ExecuteQuery("select * from chitietphanquyen WHERE hienThi=1;");
         }
 
         public AuthDetailDTO getById(string positionId, string permissionId)
         {
             DataTable dataTable = DataProvider.Instance.ExecuteQuery(
-                "SELECT * FROM chitietphanquyen WHERE maChucVu=@maChucVu AND maQuyenHang=@maQuyenHang;",
+                "SELECT * FROM chitietphanquyen WHERE maChucVu=@maChucVu AND maQuyenHang=@maQuyenHang AND hienThi=1;",
                 new MySqlParameter[] { 
                     new MySqlParameter("@maChucVu", positionId),
                     new MySqlParameter("@maQuyenHang", permissionId),
@@ -50,7 +49,7 @@ namespace QuanLyCuaHangBanSach.DAO
         public List<AuthDetailDTO> getByPositionId(string positionId)
         {
             DataTable dataTable = DataProvider.Instance.ExecuteQuery(
-                "SELECT * FROM chitietphanquyen WHERE maChucVu=@maChucVu",
+                "SELECT * FROM chitietphanquyen WHERE maChucVu=@maChucVu AND hienThi=1;",
                 new MySqlParameter[] {
                     new MySqlParameter("@maChucVu", positionId),
                 }
@@ -101,13 +100,26 @@ namespace QuanLyCuaHangBanSach.DAO
 
         public bool delete(string positionId, string permissionId)
         {
-            string sql = $@"DELETE FROM chitietphanquyen
+            string sql = $@"UPDATE chitietphanquyen SET hienThi=0
                             WHERE maChucVu=@maChucVu AND maQuyenHang=@maQuyenHang;";
 
             int rowChanged = DataProvider.Instance.ExecuteNonQuery(sql,
             new MySqlParameter[] {
                     new MySqlParameter("@maChucVu", positionId),
                     new MySqlParameter("@maQuyenHang", permissionId),
+                });
+
+            return rowChanged > 0;
+        }
+
+        public bool deleteAllByPositionId(string positionId)
+        {
+            string sql = $@"UPDATE chitietphanquyen SET hienThi=0
+                            WHERE maChucVu=@maChucVu;";
+
+            int rowChanged = DataProvider.Instance.ExecuteNonQuery(sql,
+                new MySqlParameter[] {
+                    new MySqlParameter("@maChucVu", positionId),
                 });
 
             return rowChanged > 0;

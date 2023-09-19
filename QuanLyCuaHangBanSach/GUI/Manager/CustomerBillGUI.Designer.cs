@@ -509,7 +509,7 @@
             // 
             this.line1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.line1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(212)))), ((int)(((byte)(191)))));
-            this.line1.Location = new System.Drawing.Point(18, 57);
+            this.line1.Location = new System.Drawing.Point(18, 46);
             this.line1.Name = "line1";
             this.line1.Size = new System.Drawing.Size(168, 1);
             this.line1.TabIndex = 32;
