@@ -719,11 +719,41 @@
     <Compile Include="GUI\Report\CustomerBillPrintForm.Designer.cs">
       <DependentUpon>CustomerBillPrintForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Report\CustomerChangeBillPrintForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Report\CustomerChangeBillPrintForm.Designer.cs">
+      <DependentUpon>CustomerChangeBillPrintForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Report\CustomerRefundBillPrintForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Report\CustomerRefundBillPrintForm.Designer.cs">
+      <DependentUpon>CustomerRefundBillPrintForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Report\ImportBillPrintForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\Report\ImportBillPrintForm.Designer.cs">
       <DependentUpon>ImportBillPrintForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Report\ImportChangeBillPrintForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Report\ImportChangeBillPrintForm.Designer.cs">
+      <DependentUpon>ImportChangeBillPrintForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Report\ImportRefundBillPrintForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Report\ImportRefundBillPrintForm.Designer.cs">
+      <DependentUpon>ImportRefundBillPrintForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Report\PaymentBillPrintForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Report\PaymentBillPrintForm.Designer.cs">
+      <DependentUpon>PaymentBillPrintForm.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\test.cs">
       <SubType>Form</SubType>
@@ -885,11 +915,31 @@
     <EmbeddedResource Include="GUI\Report\CustomerBillPrintForm.resx">
       <DependentUpon>CustomerBillPrintForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Report\CustomerReportBillReport.rdlc" />
+    <EmbeddedResource Include="GUI\Report\CustomerChangeBillReport.rdlc" />
+    <EmbeddedResource Include="GUI\Report\CustomerChangeBillPrintForm.resx">
+      <DependentUpon>CustomerChangeBillPrintForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Report\CustomerRefundBillPrintForm.resx">
+      <DependentUpon>CustomerRefundBillPrintForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Report\ImportBillPrintForm.resx">
       <DependentUpon>ImportBillPrintForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Report\PaymentBillReport.rdlc" />
+    <EmbeddedResource Include="GUI\Report\ImportRefundBillReport.rdlc" />
+    <EmbeddedResource Include="GUI\Report\ImportChangeBillReport.rdlc" />
     <EmbeddedResource Include="GUI\Report\ImportBillReport.rdlc" />
     <EmbeddedResource Include="GUI\Report\CustomerBillReport.rdlc" />
+    <EmbeddedResource Include="GUI\Report\ImportChangeBillPrintForm.resx">
+      <DependentUpon>ImportChangeBillPrintForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Report\ImportRefundBillPrintForm.resx">
+      <DependentUpon>ImportRefundBillPrintForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Report\PaymentBillPrintForm.resx">
+      <DependentUpon>PaymentBillPrintForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\test.resx">
       <DependentUpon>test.cs</DependentUpon>
     </EmbeddedResource>
