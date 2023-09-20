@@ -80,8 +80,8 @@ namespace QuanLyCuaHangBanSach.DAO
         public bool insert(CustomerRefundBillDTO data)
         {
 
-            string sql = $@"INSERT INTO phieutrabanhang (maDonKhachHang, maNhanVien, ngayLap, liDo, tongTien, daTraKhach, trangThai)
-                            VALUES (@maDonKhachHang, @maNhanVien, @ngayLap, @liDo, @tongTien, @daTraKhach, @trangThai);";
+            string sql = $@"INSERT INTO phieutrabanhang (maDonKhachHang, maNhanVien, ngayLap, liDo, tongTien)
+                            VALUES (@maDonKhachHang, @maNhanVien, @ngayLap, @liDo, @tongTien);";
 
             int rowChanged = DataProvider.Instance.ExecuteNonQuery(sql,
                 new MySqlParameter[] {
@@ -90,8 +90,6 @@ namespace QuanLyCuaHangBanSach.DAO
                     new MySqlParameter("@ngayLap", data.NgayLap),
                     new MySqlParameter("@liDo", data.LiDo),
                     new MySqlParameter("@tongTien", data.TongTien),
-                    new MySqlParameter("@daTraKhach", data.DaTraKhach),
-                    new MySqlParameter("@trangThai", data.TrangThai),
                 });
 
             return rowChanged > 0;
@@ -145,7 +143,7 @@ namespace QuanLyCuaHangBanSach.DAO
         {
             string sql = $@"UPDATE phieutrabanhang SET 
                             maDonKhachHang=@maDonKhachHang, maNhanVien=@maNhanVien, liDo=@liDo, ngayLap=@ngayLap, 
-                            tongTien=@tongTien, daTraKhach=@daTraKhach, trangThai=@trangThai WHERE maPhieuTraBanHang=@maPhieuTraBanHang;";
+                            tongTien=@tongTien WHERE maPhieuTraBanHang=@maPhieuTraBanHang;";
 
             int rowChanged = DataProvider.Instance.ExecuteNonQuery(sql,
                 new MySqlParameter[] {
@@ -154,7 +152,6 @@ namespace QuanLyCuaHangBanSach.DAO
                     new MySqlParameter("@liDo", data.LiDo),
                     new MySqlParameter("@ngayLap", data.NgayLap),
                     new MySqlParameter("@tongTien", data.TongTien),
-                    new MySqlParameter("@daTraKhach", data.DaTraKhach),
                     new MySqlParameter("@maPhieuTraBanHang", data.MaPhieu),
                 });
 

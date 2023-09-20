@@ -417,7 +417,9 @@
   <ItemGroup>
     <Compile Include="Authorization.cs" />
     <Compile Include="BUS\AuthDetailBUS.cs" />
+    <Compile Include="BUS\CustomerChangeBillBUS.cs" />
     <Compile Include="BUS\CustomerRefundBillBUS.cs" />
+    <Compile Include="BUS\ImportChangeBillBUS.cs" />
     <Compile Include="BUS\PaymentBillBUS.cs" />
     <Compile Include="BUS\ImportRefundBillBUS.cs" />
     <Compile Include="BUS\ImportBillBUS.cs" />
@@ -441,6 +443,7 @@
     <Compile Include="CustomValidation.cs" />
     <Compile Include="DAO\AuthDetailDAO.cs" />
     <Compile Include="DAO\CustomerChangeBillDAO.cs" />
+    <Compile Include="DAO\ImportChangeBillDAO.cs" />
     <Compile Include="DAO\PaymentBillDAO.cs" />
     <Compile Include="DAO\ImportRefundBillDAO.cs" />
     <Compile Include="DAO\CustomerRefundBillDAO.cs" />
@@ -918,7 +921,7 @@
     <EmbeddedResource Include="GUI\Report\CustomerBillPrintForm.resx">
       <DependentUpon>CustomerBillPrintForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Report\CustomerReportBillReport.rdlc" />
+    <EmbeddedResource Include="GUI\Report\CustomerRefundBillReport.rdlc" />
     <EmbeddedResource Include="GUI\Report\CustomerChangeBillReport.rdlc" />
     <EmbeddedResource Include="GUI\Report\CustomerChangeBillPrintForm.resx">
       <DependentUpon>CustomerChangeBillPrintForm.cs</DependentUpon>
