@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Data;
 using MySql.Data.MySqlClient;
-using QuanLyCuaHangBanSach.BUS;
 using QuanLyCuaHangBanSach.DTO;
 
 namespace QuanLyCuaHangBanSach.DAO
@@ -80,8 +79,8 @@ namespace QuanLyCuaHangBanSach.DAO
         public bool insert(ImportRefundBillDTO data)
         {
 
-            string sql = $@"INSERT INTO phieutranhaphang (maDonNhapHang, maNhanVien, liDo, tongTien, nhaCungCapDaTra, ngayLap, trangThai)
-                            VALUES (@maDonNhapHang, @maNhanVien, @liDo, @tongTien, @nhaCungCapDaTra, @ngayLap, @trangThai);";
+            string sql = $@"INSERT INTO phieutranhaphang (maDonNhapHang, maNhanVien, liDo, tongTien, ngayLap)
+                            VALUES (@maDonNhapHang, @maNhanVien, @liDo, @tongTien, @ngayLap);";
 
             int rowChanged = DataProvider.Instance.ExecuteNonQuery(sql,
                 new MySqlParameter[] {
@@ -90,8 +89,6 @@ namespace QuanLyCuaHangBanSach.DAO
                     new MySqlParameter("@ngayLap", data.NgayLap),
                     new MySqlParameter("@liDo", data.LiDo),
                     new MySqlParameter("@tongTien", data.TongTien),
-                    new MySqlParameter("@nhaCungCapDaTra", data.NhaCungCapDaTra),
-                    new MySqlParameter("@trangThai", data.TrangThai),
                 });
 
             return rowChanged > 0;
@@ -135,7 +132,7 @@ namespace QuanLyCuaHangBanSach.DAO
         {
             string sql = $@"UPDATE phieutranhaphang SET 
                             maDonNhapHang=@maDonNhapHang, maNhanVien=@maNhanVien, liDo=@liDo, ngayLap=@ngayLap, 
-                            tongTien=@tongTien, nhaCungCapDaTra=@nhaCungCapDaTra, trangThai=@trangThai 
+                            tongTien=@tongTien
                             WHERE maPhieuTraNhapHang=@maPhieuTraNhapHang;";
 
             int rowChanged = DataProvider.Instance.ExecuteNonQuery(sql,
@@ -144,8 +141,6 @@ namespace QuanLyCuaHangBanSach.DAO
                     new MySqlParameter("@ngayLap", data.NgayLap),
                     new MySqlParameter("@liDo", data.LiDo),
                     new MySqlParameter("@tongTien", data.TongTien),
-                    new MySqlParameter("@nhaCungCapDaTra", data.NhaCungCapDaTra),
-                    new MySqlParameter("@trangThai", data.TrangThai),
                     new MySqlParameter("@maPhieuTraNhapHang", data.MaPhieu),
                 });
 
