@@ -8,8 +8,8 @@ namespace QuanLyCuaHangBanSach.DAO
     {
         private string serverName = "localhost";
         private string databaseName = "qlchs";
-        private string username = "root";
-        private string password = "hung";
+        private string username = "huy";
+        private string password = "7008";
         private string port = "3306";
         private MySqlConnection connect = null;
         private static DataProvider instance;
