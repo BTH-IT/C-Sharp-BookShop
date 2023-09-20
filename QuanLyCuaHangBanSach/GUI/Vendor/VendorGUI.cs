@@ -240,6 +240,29 @@ namespace QuanLyCuaHangBanSach.GUI
             catch (Exception ex) { Console.WriteLine(ex); }
         }
 
+        private void AddCustomerBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                PhoneInp.Text = "Phone Number ...";
+                PhoneInp.ForeColor = Color.DarkGray;
+                PhoneResultContainer.Height = 0;
+                RecipientNameLb.Text = "";
+                PointToggleBtn.Checked = false;
+
+                using (CustomerModal modal = new CustomerModal())
+                {
+                    modal.ShowDialog();
+
+                    if (modal.isSubmitSuccess)
+                    {
+                        CustomerBUS.Instance.insert(modal.currentCustomer);
+                    }
+                }
+            }
+            catch (Exception ex) { Console.WriteLine(ex); }
+        }
+
         private void QRScanBtn_Click(object sender, EventArgs e)
         {
             var modal = new ScannerModal();

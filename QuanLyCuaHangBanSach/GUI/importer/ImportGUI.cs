@@ -422,7 +422,7 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
             catch (Exception ex) { Console.WriteLine(ex); }
         }
 
-        /*private void PrintBtn_Click(object sender, EventArgs e)
+        private void PrintBtn_Click(object sender, EventArgs e)
         {
             try
             {
@@ -478,7 +478,7 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
                 }
             }
             catch (Exception ex) { Console.WriteLine(ex); }
-        }*/
+        }
 
         private void LogOutBtn_Click(object sender, EventArgs e)
         {
