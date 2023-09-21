@@ -34,7 +34,7 @@
             // reportViewer1
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "QuanLyCuaHangBanSach.GUI.Report.ImportBillReport.rdlc";
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "QuanLyCuaHangBanSach.GUI.Report.CustomerChangeBillReport.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
@@ -49,6 +49,7 @@
             this.Controls.Add(this.reportViewer1);
             this.Name = "CustomerChangeBillPrintForm";
             this.Text = "CustomerChangeBillPrintForm";
+            this.Load += new System.EventHandler(this.CustomerChangeBillPrintForm_Load);
             this.ResumeLayout(false);
 
         }

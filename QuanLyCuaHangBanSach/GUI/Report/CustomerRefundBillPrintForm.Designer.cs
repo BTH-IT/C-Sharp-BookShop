@@ -28,18 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.bookDataSet1 = new QuanLyCuaHangBanSach.GUI.Report.BookDataSet();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.bookDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // reportViewer1
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "QuanLyCuaHangBanSach.GUI.Report.ImportBillReport.rdlc";
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "QuanLyCuaHangBanSach.GUI.Report.CustomerRefundBillReport.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
             this.reportViewer1.Size = new System.Drawing.Size(800, 877);
             this.reportViewer1.TabIndex = 3;
+            // 
+            // bookDataSet1
+            // 
+            this.bookDataSet1.DataSetName = "BookDataSet";
+            this.bookDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // CustomerRefundBillPrintForm
             // 
@@ -49,6 +59,9 @@
             this.Controls.Add(this.reportViewer1);
             this.Name = "CustomerRefundBillPrintForm";
             this.Text = "CustomerRefundBillPrintForm";
+            this.Load += new System.EventHandler(this.CustomerRefundBillPrintForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.bookDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -56,5 +69,7 @@
         #endregion
 
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private BookDataSet bookDataSet1;
+        private System.Windows.Forms.BindingSource bindingSource1;
     }
 }

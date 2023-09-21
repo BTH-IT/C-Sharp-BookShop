@@ -10,8 +10,8 @@ namespace QuanLyCuaHangBanSach.DTO
 
         public PaymentBillDTO() { }
 
-        public PaymentBillDTO(int maPhieu, double tongTien, bool trangThai, string liDo, int maNhanVien, string ghiChu, DateTime ngayLap, int maDonNhapHang)
-            : base(maPhieu, tongTien, trangThai, liDo, ngayLap, maNhanVien)
+        public PaymentBillDTO(int maPhieu, double tongTien, string liDo, int maNhanVien, string ghiChu, DateTime ngayLap, int maDonNhapHang)
+            : base(maPhieu, tongTien, liDo, ngayLap, maNhanVien)
         {
             this.GhiChu = ghiChu;
             this.MaDonNhapHang = maDonNhapHang;
