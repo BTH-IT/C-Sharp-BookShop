@@ -574,7 +574,7 @@
             // 
             this.PhoneResultContainer.AutoScroll = true;
             this.PhoneResultContainer.AutoScrollMinSize = new System.Drawing.Size(1, 1);
-            this.PhoneResultContainer.Location = new System.Drawing.Point(37, 78);
+            this.PhoneResultContainer.Location = new System.Drawing.Point(28, 78);
             this.PhoneResultContainer.Margin = new System.Windows.Forms.Padding(0);
             this.PhoneResultContainer.MaximumSize = new System.Drawing.Size(262, 180);
             this.PhoneResultContainer.Name = "PhoneResultContainer";

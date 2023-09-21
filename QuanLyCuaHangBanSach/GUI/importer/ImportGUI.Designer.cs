@@ -53,12 +53,12 @@
             this.ShopPaidTxb = new Guna.UI.WinForms.GunaTextBox();
             this.ArrearMoneyLb = new System.Windows.Forms.Label();
             this.ArrearLb = new System.Windows.Forms.Label();
-            this.ProviderNameLb = new System.Windows.Forms.Label();
-            this.PhoneInp = new Guna.UI.WinForms.GunaLineTextBox();
+            this.SupplierNameLb = new System.Windows.Forms.Label();
+            this.NameInp = new Guna.UI.WinForms.GunaLineTextBox();
             this.TotalMoneyLb = new System.Windows.Forms.Label();
-            this.PhoneResultContainer = new System.Windows.Forms.FlowLayoutPanel();
+            this.NameResultContainer = new System.Windows.Forms.FlowLayoutPanel();
             this.CartContainer = new System.Windows.Forms.FlowLayoutPanel();
-            this.ProviderLb = new System.Windows.Forms.Label();
+            this.SupplierLb = new System.Windows.Forms.Label();
             this.PrintBtn = new System.Windows.Forms.Button();
             this.AddCustomerBtn = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
@@ -122,6 +122,7 @@
             this.LogOutBtn.Size = new System.Drawing.Size(30, 30);
             this.LogOutBtn.TabIndex = 3;
             this.LogOutBtn.UseVisualStyleBackColor = false;
+            this.LogOutBtn.Click += new System.EventHandler(this.LogOutBtn_Click);
             // 
             // flowLayoutPanel2
             // 
@@ -290,12 +291,12 @@
             this.panel4.Controls.Add(this.ShopPaidTxb);
             this.panel4.Controls.Add(this.ArrearMoneyLb);
             this.panel4.Controls.Add(this.ArrearLb);
-            this.panel4.Controls.Add(this.ProviderNameLb);
-            this.panel4.Controls.Add(this.PhoneInp);
+            this.panel4.Controls.Add(this.SupplierNameLb);
+            this.panel4.Controls.Add(this.NameInp);
             this.panel4.Controls.Add(this.TotalMoneyLb);
-            this.panel4.Controls.Add(this.PhoneResultContainer);
+            this.panel4.Controls.Add(this.NameResultContainer);
             this.panel4.Controls.Add(this.CartContainer);
-            this.panel4.Controls.Add(this.ProviderLb);
+            this.panel4.Controls.Add(this.SupplierLb);
             this.panel4.Controls.Add(this.PrintBtn);
             this.panel4.Controls.Add(this.AddCustomerBtn);
             this.panel4.Controls.Add(this.label3);
@@ -352,7 +353,7 @@
             this.ShopPaidTxb.SelectedText = "";
             this.ShopPaidTxb.Size = new System.Drawing.Size(235, 30);
             this.ShopPaidTxb.TabIndex = 25;
-            this.ShopPaidTxb.Text = "Tiền đưa Nhà cung cấp ...";
+            this.ShopPaidTxb.Text = "Shop Paid ...";
             this.ShopPaidTxb.Enter += new System.EventHandler(this.ShopPaidTxb_Enter);
             this.ShopPaidTxb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ShopPaidTxb_KeyPress);
             this.ShopPaidTxb.Leave += new System.EventHandler(this.ShopPaidTxb_Leave);
@@ -381,38 +382,37 @@
             this.ArrearLb.Text = "Còn nợ:";
             this.ArrearLb.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // ProviderNameLb
+            // SupplierNameLb
             // 
-            this.ProviderNameLb.AutoSize = true;
-            this.ProviderNameLb.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.ProviderNameLb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.ProviderNameLb.Location = new System.Drawing.Point(101, 92);
-            this.ProviderNameLb.Margin = new System.Windows.Forms.Padding(20, 30, 3, 5);
-            this.ProviderNameLb.Name = "ProviderNameLb";
-            this.ProviderNameLb.Size = new System.Drawing.Size(0, 25);
-            this.ProviderNameLb.TabIndex = 22;
-            this.ProviderNameLb.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.SupplierNameLb.AutoSize = true;
+            this.SupplierNameLb.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.SupplierNameLb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.SupplierNameLb.Location = new System.Drawing.Point(101, 92);
+            this.SupplierNameLb.Margin = new System.Windows.Forms.Padding(20, 30, 3, 5);
+            this.SupplierNameLb.Name = "SupplierNameLb";
+            this.SupplierNameLb.Size = new System.Drawing.Size(0, 25);
+            this.SupplierNameLb.TabIndex = 22;
+            this.SupplierNameLb.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // PhoneInp
+            // NameInp
             // 
-            this.PhoneInp.BackColor = System.Drawing.SystemColors.Window;
-            this.PhoneInp.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.PhoneInp.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.PhoneInp.Font = new System.Drawing.Font("#9Slide03 Cabin", 12F);
-            this.PhoneInp.ForeColor = System.Drawing.Color.DarkGray;
-            this.PhoneInp.LineColor = System.Drawing.Color.Black;
-            this.PhoneInp.LineSize = 1;
-            this.PhoneInp.Location = new System.Drawing.Point(0, 49);
-            this.PhoneInp.Name = "PhoneInp";
-            this.PhoneInp.PasswordChar = '\0';
-            this.PhoneInp.SelectedText = "";
-            this.PhoneInp.Size = new System.Drawing.Size(244, 36);
-            this.PhoneInp.TabIndex = 1;
-            this.PhoneInp.Text = "Phone Number ...";
-            this.PhoneInp.TextChanged += new System.EventHandler(this.PhoneInp_TextChanged);
-            this.PhoneInp.Enter += new System.EventHandler(this.PhoneInp_Enter);
-            this.PhoneInp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PhoneInp_KeyPress);
-            this.PhoneInp.Leave += new System.EventHandler(this.PhoneInp_Leave);
+            this.NameInp.BackColor = System.Drawing.SystemColors.Window;
+            this.NameInp.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.NameInp.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.NameInp.Font = new System.Drawing.Font("#9Slide03 Cabin", 12F);
+            this.NameInp.ForeColor = System.Drawing.Color.DarkGray;
+            this.NameInp.LineColor = System.Drawing.Color.Black;
+            this.NameInp.LineSize = 1;
+            this.NameInp.Location = new System.Drawing.Point(4, 49);
+            this.NameInp.Name = "NameInp";
+            this.NameInp.PasswordChar = '\0';
+            this.NameInp.SelectedText = "";
+            this.NameInp.Size = new System.Drawing.Size(244, 36);
+            this.NameInp.TabIndex = 1;
+            this.NameInp.Text = "Supplier Name ...";
+            this.NameInp.TextChanged += new System.EventHandler(this.NameInp_TextChanged);
+            this.NameInp.Enter += new System.EventHandler(this.NameInp_Enter);
+            this.NameInp.Leave += new System.EventHandler(this.NameInp_Leave);
             // 
             // TotalMoneyLb
             // 
@@ -425,16 +425,16 @@
             this.TotalMoneyLb.Text = "0 VND";
             this.TotalMoneyLb.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // PhoneResultContainer
+            // NameResultContainer
             // 
-            this.PhoneResultContainer.AutoScroll = true;
-            this.PhoneResultContainer.AutoScrollMinSize = new System.Drawing.Size(1, 1);
-            this.PhoneResultContainer.Location = new System.Drawing.Point(0, 95);
-            this.PhoneResultContainer.Margin = new System.Windows.Forms.Padding(0);
-            this.PhoneResultContainer.MaximumSize = new System.Drawing.Size(262, 180);
-            this.PhoneResultContainer.Name = "PhoneResultContainer";
-            this.PhoneResultContainer.Size = new System.Drawing.Size(244, 0);
-            this.PhoneResultContainer.TabIndex = 19;
+            this.NameResultContainer.AutoScroll = true;
+            this.NameResultContainer.AutoScrollMinSize = new System.Drawing.Size(1, 1);
+            this.NameResultContainer.Location = new System.Drawing.Point(0, 95);
+            this.NameResultContainer.Margin = new System.Windows.Forms.Padding(0);
+            this.NameResultContainer.MaximumSize = new System.Drawing.Size(262, 180);
+            this.NameResultContainer.Name = "NameResultContainer";
+            this.NameResultContainer.Size = new System.Drawing.Size(244, 0);
+            this.NameResultContainer.TabIndex = 19;
             // 
             // CartContainer
             // 
@@ -444,17 +444,17 @@
             this.CartContainer.Size = new System.Drawing.Size(300, 411);
             this.CartContainer.TabIndex = 20;
             // 
-            // ProviderLb
+            // SupplierLb
             // 
-            this.ProviderLb.AutoSize = true;
-            this.ProviderLb.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.ProviderLb.Location = new System.Drawing.Point(-1, 92);
-            this.ProviderLb.Margin = new System.Windows.Forms.Padding(20, 30, 3, 5);
-            this.ProviderLb.Name = "ProviderLb";
-            this.ProviderLb.Size = new System.Drawing.Size(109, 25);
-            this.ProviderLb.TabIndex = 18;
-            this.ProviderLb.Text = "Nhà cung cấp:";
-            this.ProviderLb.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.SupplierLb.AutoSize = true;
+            this.SupplierLb.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.SupplierLb.Location = new System.Drawing.Point(-1, 92);
+            this.SupplierLb.Margin = new System.Windows.Forms.Padding(20, 30, 3, 5);
+            this.SupplierLb.Name = "SupplierLb";
+            this.SupplierLb.Size = new System.Drawing.Size(109, 25);
+            this.SupplierLb.TabIndex = 18;
+            this.SupplierLb.Text = "Nhà cung cấp:";
+            this.SupplierLb.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // PrintBtn
             // 
@@ -468,6 +468,7 @@
             this.PrintBtn.TabIndex = 17;
             this.PrintBtn.Text = "Print Receipt";
             this.PrintBtn.UseVisualStyleBackColor = false;
+            this.PrintBtn.Click += new System.EventHandler(this.PrintBtn_Click);
             // 
             // AddCustomerBtn
             // 
@@ -565,12 +566,12 @@
         private Guna.UI.WinForms.GunaTextBox ShopPaidTxb;
         private System.Windows.Forms.Label ArrearMoneyLb;
         private System.Windows.Forms.Label ArrearLb;
-        private System.Windows.Forms.Label ProviderNameLb;
-        private Guna.UI.WinForms.GunaLineTextBox PhoneInp;
+        private System.Windows.Forms.Label SupplierNameLb;
+        private Guna.UI.WinForms.GunaLineTextBox NameInp;
         private System.Windows.Forms.Label TotalMoneyLb;
-        private System.Windows.Forms.FlowLayoutPanel PhoneResultContainer;
+        private System.Windows.Forms.FlowLayoutPanel NameResultContainer;
         private System.Windows.Forms.FlowLayoutPanel CartContainer;
-        private System.Windows.Forms.Label ProviderLb;
+        private System.Windows.Forms.Label SupplierLb;
         private System.Windows.Forms.Button PrintBtn;
         private System.Windows.Forms.Label TotalLb;
         private System.Windows.Forms.Button AddCustomerBtn;

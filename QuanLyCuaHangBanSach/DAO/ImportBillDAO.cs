@@ -92,7 +92,7 @@ namespace QuanLyCuaHangBanSach.DAO
                     new MySqlParameter("@donGia", data.DonGia),
                 });
 
-            // xóa số lượng còn lại của sách
+            // thêm sách
             if (rowChanged > 0)
             {
                 return BookBUS.Instance.createBookAmount(data.MaSach.ToString(), data.SoLuong);
