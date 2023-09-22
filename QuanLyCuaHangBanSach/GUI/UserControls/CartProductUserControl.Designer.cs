@@ -143,10 +143,9 @@
             this.DeleteBtn.ForeColor = System.Drawing.Color.White;
             this.DeleteBtn.HoverState.Parent = this.DeleteBtn;
             this.DeleteBtn.Image = ((System.Drawing.Image)(resources.GetObject("DeleteBtn.Image")));
-            this.DeleteBtn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.DeleteBtn.ImageOffset = new System.Drawing.Point(-6, -1);
+            this.DeleteBtn.ImageOffset = new System.Drawing.Point(0, -1);
             this.DeleteBtn.ImageSize = new System.Drawing.Size(23, 23);
-            this.DeleteBtn.Location = new System.Drawing.Point(249, 4);
+            this.DeleteBtn.Location = new System.Drawing.Point(250, 4);
             this.DeleteBtn.Name = "DeleteBtn";
             this.DeleteBtn.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.DeleteBtn.ShadowDecoration.Parent = this.DeleteBtn;
