@@ -45,7 +45,6 @@
             this.seoBtn = new Guna.UI.WinForms.GunaAdvenceButton();
             this.permissionBtn = new Guna.UI.WinForms.GunaAdvenceButton();
             this.positionBtn = new Guna.UI.WinForms.GunaAdvenceButton();
-            this.paymentBtn = new Guna.UI.WinForms.GunaAdvenceButton();
             this.billBtn = new Guna.UI.WinForms.GunaAdvenceButton();
             this.importBilBtn = new Guna.UI.WinForms.GunaAdvenceButton();
             this.accountBtn = new Guna.UI.WinForms.GunaAdvenceButton();
@@ -130,7 +129,6 @@
             this.navBar.Controls.Add(this.seoBtn);
             this.navBar.Controls.Add(this.permissionBtn);
             this.navBar.Controls.Add(this.positionBtn);
-            this.navBar.Controls.Add(this.paymentBtn);
             this.navBar.Controls.Add(this.billBtn);
             this.navBar.Controls.Add(this.importBilBtn);
             this.navBar.Controls.Add(this.accountBtn);
@@ -527,41 +525,6 @@
             this.positionBtn.Text = "Chức vụ";
             this.positionBtn.Click += new System.EventHandler(this.positionBtn_Click);
             // 
-            // paymentBtn
-            // 
-            this.paymentBtn.Animated = true;
-            this.paymentBtn.AnimationHoverSpeed = 0.3F;
-            this.paymentBtn.AnimationSpeed = 0.5F;
-            this.paymentBtn.BackColor = System.Drawing.Color.Transparent;
-            this.paymentBtn.BaseColor = System.Drawing.Color.White;
-            this.paymentBtn.BorderColor = System.Drawing.Color.Black;
-            this.paymentBtn.CheckedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.paymentBtn.CheckedBorderColor = System.Drawing.Color.Transparent;
-            this.paymentBtn.CheckedForeColor = System.Drawing.Color.White;
-            this.paymentBtn.CheckedImage = ((System.Drawing.Image)(resources.GetObject("paymentBtn.CheckedImage")));
-            this.paymentBtn.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.paymentBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.paymentBtn.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.paymentBtn.FocusedColor = System.Drawing.Color.Empty;
-            this.paymentBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.paymentBtn.ForeColor = System.Drawing.Color.Black;
-            this.paymentBtn.Image = ((System.Drawing.Image)(resources.GetObject("paymentBtn.Image")));
-            this.paymentBtn.ImageSize = new System.Drawing.Size(20, 20);
-            this.paymentBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.paymentBtn.Location = new System.Drawing.Point(3, 509);
-            this.paymentBtn.Name = "paymentBtn";
-            this.paymentBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.paymentBtn.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.paymentBtn.OnHoverForeColor = System.Drawing.Color.White;
-            this.paymentBtn.OnHoverImage = ((System.Drawing.Image)(resources.GetObject("paymentBtn.OnHoverImage")));
-            this.paymentBtn.OnHoverLineColor = System.Drawing.Color.Transparent;
-            this.paymentBtn.OnPressedColor = System.Drawing.Color.Black;
-            this.paymentBtn.Radius = 8;
-            this.paymentBtn.Size = new System.Drawing.Size(230, 40);
-            this.paymentBtn.TabIndex = 50;
-            this.paymentBtn.Text = "Phiếu chi";
-            this.paymentBtn.Click += new System.EventHandler(this.paymentBtn_Click);
-            // 
             // billBtn
             // 
             this.billBtn.Animated = true;
@@ -583,7 +546,7 @@
             this.billBtn.Image = ((System.Drawing.Image)(resources.GetObject("billBtn.Image")));
             this.billBtn.ImageSize = new System.Drawing.Size(20, 20);
             this.billBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.billBtn.Location = new System.Drawing.Point(3, 555);
+            this.billBtn.Location = new System.Drawing.Point(3, 509);
             this.billBtn.Name = "billBtn";
             this.billBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.billBtn.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -618,7 +581,7 @@
             this.importBilBtn.Image = ((System.Drawing.Image)(resources.GetObject("importBilBtn.Image")));
             this.importBilBtn.ImageSize = new System.Drawing.Size(20, 20);
             this.importBilBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.importBilBtn.Location = new System.Drawing.Point(3, 601);
+            this.importBilBtn.Location = new System.Drawing.Point(3, 555);
             this.importBilBtn.Name = "importBilBtn";
             this.importBilBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.importBilBtn.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -653,7 +616,7 @@
             this.accountBtn.Image = ((System.Drawing.Image)(resources.GetObject("accountBtn.Image")));
             this.accountBtn.ImageSize = new System.Drawing.Size(20, 20);
             this.accountBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.accountBtn.Location = new System.Drawing.Point(3, 647);
+            this.accountBtn.Location = new System.Drawing.Point(3, 601);
             this.accountBtn.Name = "accountBtn";
             this.accountBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.accountBtn.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -688,7 +651,7 @@
             this.homeBtn.Image = ((System.Drawing.Image)(resources.GetObject("homeBtn.Image")));
             this.homeBtn.ImageSize = new System.Drawing.Size(20, 20);
             this.homeBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.homeBtn.Location = new System.Drawing.Point(3, 693);
+            this.homeBtn.Location = new System.Drawing.Point(3, 647);
             this.homeBtn.Name = "homeBtn";
             this.homeBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.homeBtn.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -878,7 +841,6 @@
         private System.Windows.Forms.FlowLayoutPanel navBar;
         private Guna.UI.WinForms.GunaAdvenceButton bookTypeBtn;
         private Guna.UI.WinForms.GunaAdvenceButton permissionBtn;
-        private Guna.UI.WinForms.GunaAdvenceButton paymentBtn;
         private Guna.UI.WinForms.GunaAdvenceButton refundBtn;
         private Guna.UI.WinForms.GunaAdvenceButton positionBtn;
         private Guna.UI.WinForms.GunaAdvenceButton accountBtn;
