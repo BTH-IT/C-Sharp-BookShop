@@ -17,7 +17,7 @@ namespace QuanLyCuaHangBanSach.DTO
 
         public ImportRefundBillDTO(DataRow row)
         {
-            this.MaPhieu = (int)row["maPhieu"];
+            this.MaPhieu = (int)row["maPhieuTraNhapHang"];
             this.MaDonNhapHang = (int)row["maDonNhapHang"];
             this.MaNhanVien = (int)row["maNhanVien"];
             this.NhaCungCapDaTra = Convert.ToDouble(row["nhaCungCapDaTra"]);

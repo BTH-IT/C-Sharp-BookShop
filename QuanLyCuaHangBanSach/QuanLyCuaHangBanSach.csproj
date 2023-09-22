@@ -533,15 +533,33 @@
     <Compile Include="GUI\Manager\CustomerManagerGUI.designer.cs">
       <DependentUpon>CustomerManagerGUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Manager\CustomerRefundBillGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Manager\CustomerRefundBillGUI.Designer.cs">
+      <DependentUpon>CustomerRefundBillGUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Manager\ImportRefundBillGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Manager\ImportRefundBillGUI.Designer.cs">
+      <DependentUpon>ImportRefundBillGUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Manager\RefundFormMenuGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Manager\RefundFormMenuGUI.Designer.cs">
+      <DependentUpon>RefundFormMenuGUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Manager\SeoManageGUI.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\Manager\SeoManageGUI.Designer.cs">
       <DependentUpon>SeoManageGUI.cs</DependentUpon>
     </Compile>
-	<Compile Include="GUI\Manager\StaffManageGUI.Designer.cs">
-		<DependentUpon>StaffManageGUI.cs</DependentUpon>
-	</Compile>
+    <Compile Include="GUI\Manager\StaffManageGUI.Designer.cs">
+      <DependentUpon>StaffManageGUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Manager\StaffManageGUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -653,6 +671,12 @@
     <Compile Include="GUI\Modal\CustomerModal.Designer.cs">
       <DependentUpon>CustomerModal.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Modal\ImportRefundBillModal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Modal\ImportRefundBillModal.Designer.cs">
+      <DependentUpon>ImportRefundBillModal.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Modal\PaymentBillModal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -757,11 +781,23 @@
     <Compile Include="GUI\UserControls\FilterUserControl.Designer.cs">
       <DependentUpon>FilterUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\UserControls\ImportBookControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UserControls\ImportBookControl.Designer.cs">
+      <DependentUpon>ImportBookControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\UserControls\PhoneSearchResultControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="GUI\UserControls\PhoneSearchResultControl.Designer.cs">
       <DependentUpon>PhoneSearchResultControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UserControls\RefundBookControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UserControls\RefundBookControl.Designer.cs">
+      <DependentUpon>RefundBookControl.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Vendor\VendorGUI.cs">
       <SubType>Form</SubType>
@@ -794,11 +830,17 @@
     <EmbeddedResource Include="GUI\Manager\CustomerManagerGUI.resx">
       <DependentUpon>CustomerManagerGUI.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Manager\CustomerRefundBillGUI.resx">
+      <DependentUpon>CustomerRefundBillGUI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Manager\HomeManageGUI.resx">
       <DependentUpon>HomeManageGUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Manager\ImportBillGUI.resx">
       <DependentUpon>ImportBillGUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Manager\ImportRefundBillGUI.resx">
+      <DependentUpon>ImportRefundBillGUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Manager\ManagerGUI.resx">
       <DependentUpon>ManagerGUI.cs</DependentUpon>
@@ -808,6 +850,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Auth\SendCodeGUI.resx">
       <DependentUpon>SendCodeGUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Manager\RefundFormMenuGUI.resx">
+      <DependentUpon>RefundFormMenuGUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Manager\SeoManageGUI.resx">
       <DependentUpon>SeoManageGUI.cs</DependentUpon>
@@ -857,6 +902,9 @@
     <EmbeddedResource Include="GUI\Modal\ImportBillModal.resx">
       <DependentUpon>ImportBillModal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Modal\ImportRefundBillModal.resx">
+      <DependentUpon>ImportRefundBillModal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Modal\PaymentBillModal.resx">
       <DependentUpon>PaymentBillModal.cs</DependentUpon>
     </EmbeddedResource>
@@ -904,8 +952,14 @@
     <EmbeddedResource Include="GUI\UserControls\FilterUserControl.resx">
       <DependentUpon>FilterUserControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UserControls\ImportBookControl.resx">
+      <DependentUpon>ImportBookControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\UserControls\PhoneSearchResultControl.resx">
       <DependentUpon>PhoneSearchResultControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UserControls\RefundBookControl.resx">
+      <DependentUpon>RefundBookControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Vendor\VendorGUI.resx">
       <DependentUpon>VendorGUI.cs</DependentUpon>

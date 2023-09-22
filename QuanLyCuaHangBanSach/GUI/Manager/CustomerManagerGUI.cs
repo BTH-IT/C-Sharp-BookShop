@@ -3,19 +3,14 @@ using QuanLyCuaHangBanSach.DTO;
 using QuanLyCuaHangBanSach.GUI.Modal;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Windows.Media.Media3D;
 
 namespace QuanLyCuaHangBanSach.GUI.Manager
 {
-    public partial class CustomerManagerGUI : Form
+	public partial class CustomerManagerGUI : Form
     {
         private CheckBox headerCheckbox;
 		string[] genders = new string[] { "Chọn giới tính", "Nam", "Nữ" };
@@ -232,6 +227,11 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 		{
             List<CustomerDTO> customers = handleFilter(this.searchInput.Text);
             loadCustomerListToDataGridView(customers);
+		}
+
+		private void dgvCustomer_CellContentClick(object sender, DataGridViewCellEventArgs e)
+		{
+
 		}
 	}
 }
