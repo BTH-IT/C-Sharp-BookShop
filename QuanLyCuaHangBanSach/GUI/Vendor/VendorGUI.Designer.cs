@@ -304,7 +304,6 @@
             this.panel4.Controls.Add(this.CustomerCashTxb);
             this.panel4.Controls.Add(this.ChangeMoneyLb);
             this.panel4.Controls.Add(this.ChangeLb);
-            this.panel4.Controls.Add(this.RecipientNameLb);
             this.panel4.Controls.Add(this.PhoneInp);
             this.panel4.Controls.Add(this.TotalMoneyLb);
             this.panel4.Controls.Add(this.PhoneResultContainer);
@@ -315,11 +314,11 @@
             this.panel4.Controls.Add(this.CustomerInfoLb);
             this.panel4.Controls.Add(this.AddCustomerBtn);
             this.panel4.Controls.Add(this.label3);
+            this.panel4.Controls.Add(this.RecipientNameLb);
             this.panel4.Location = new System.Drawing.Point(24, 8);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(300, 668);
             this.panel4.TabIndex = 3;
-            this.panel4.Click += new System.EventHandler(this.panel4_Click);
             // 
             // PointToggleBtn
             // 

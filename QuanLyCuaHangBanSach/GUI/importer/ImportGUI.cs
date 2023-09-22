@@ -20,17 +20,15 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
         private bool search = false;
         private bool PrintBtnAllowed = false;
         private int supplierID = 0;
+        private int staffID;
         private double total = 0;
         private List<ImportBillDetailDTO> importBillDetails = new List<ImportBillDetailDTO>();
 
-        public ImportGUI()
+        public ImportGUI(int staffID)
         {
             InitializeComponent();
-            this.FormBorderStyle = FormBorderStyle.None;
-        }
-        private void panel4_Click(object sender, EventArgs e)
-        {
-            this.ActiveControl = null;
+            FormBorderStyle = FormBorderStyle.None;
+            this.staffID = staffID;
         }
 
         private void Import_Load(object sender, EventArgs e)
@@ -194,10 +192,78 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
             catch (Exception ex) { Console.WriteLine(ex); }
         }
 
+        private void AddSupplierBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                NameInp.Text = "Supplier Name ...";
+                NameInp.ForeColor = Color.DarkGray;
+                NameResultContainer.Height = 0;
+                SupplierNameLb.Text = "";
+
+                using (SupplierModal modal = new SupplierModal())
+                {
+                    modal.ShowDialog();
+
+                    if (modal.isSubmitSuccess)
+                    {
+                        SupplierBUS.Instance.insert(modal.updateSupplier);
+                    }
+                }
+            }
+            catch (Exception ex) { Console.WriteLine(ex); }
+        }
+
         private void QRScanBtn_Click(object sender, EventArgs e)
         {
-            var modal = new ScannerModal();
-            modal.ShowDialog();
+            try
+            {
+                var modal = new ScannerModal();
+                modal.ShowDialog();
+                BookDTO book = modal.scannedBook;
+                if (book != null)
+                {
+                    AddProductToCart(book);
+                }
+            }
+            catch (Exception ex) { Console.WriteLine(ex); }
+        }
+
+        private void AddProductToCart(BookDTO book)
+        {
+            try
+            {
+                if (importBillDetails.Count == 0 || !importBillDetails.Any(item => item.MaSach == book.MaSach))
+                {
+                    ImportBillDetailDTO importBillDetail = new ImportBillDetailDTO(0, book.MaSach, 1, book.GiaNhap);
+                    importBillDetails.Add(importBillDetail);
+                    CartProductUserControl product = new CartProductUserControl(1);
+                    product.details(book);
+                    CartContainer.Controls.Add(product);
+                }
+                else
+                {
+                    int idx = 0;
+
+                    foreach (var importBillDetail in importBillDetails)
+                    {
+                        if (importBillDetail.MaSach == book.MaSach)
+                        {
+                            importBillDetail.SoLuong += 1;
+
+                            CartProductUserControl cartProduct = CartContainer.Controls[idx] as CartProductUserControl;
+                            cartProduct.AmountTxt.Text = (Convert.ToInt32(cartProduct.AmountTxt.Text) + 1).ToString();
+                            break;
+                        }
+                        idx++;
+                    }
+                }
+
+                CartHandler();
+                BookUserControl.ChoseId = "";
+                BookUserControl.clicked = false;
+            }
+            catch (Exception ex) { Console.WriteLine(ex); }
         }
 
         private void checkUser_Tick(object sender, EventArgs e)
@@ -207,36 +273,8 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
                 if (BookUserControl.clicked)
                 {
                     int ChoseId_int = Convert.ToInt32(BookUserControl.ChoseId);
-                    if (importBillDetails.Count == 0 || !importBillDetails.Any(item => item.MaSach == ChoseId_int))
-                    {
-                        BookDTO book = BookBUS.Instance.getById(BookUserControl.ChoseId);
-                        ImportBillDetailDTO importBillDetail = new ImportBillDetailDTO(0, ChoseId_int, 1, book.GiaNhap);
-                        importBillDetails.Add(importBillDetail);
-                        CartProductUserControl product = new CartProductUserControl(1);
-                        product.details(book);
-                        CartContainer.Controls.Add(product);
-                    }
-                    else
-                    {
-                        int idx = 0;
-
-                        foreach (var importBillDetail in importBillDetails)
-                        {
-                            if (importBillDetail.MaSach == ChoseId_int)
-                            {
-                                importBillDetail.SoLuong += 1;
-
-                                CartProductUserControl cartProduct = CartContainer.Controls[idx] as CartProductUserControl;
-                                cartProduct.AmountTxt.Text = (Convert.ToInt32(cartProduct.AmountTxt.Text) + 1).ToString();
-                                break;
-                            }
-                            idx++;
-                        }
-                    }
-
-                    CartHandler();
-                    BookUserControl.ChoseId = "";
-                    BookUserControl.clicked = false;
+                    BookDTO book = BookBUS.Instance.getById(BookUserControl.ChoseId);
+                    AddProductToCart(book);
                 }
 
                 if (CartProductUserControl.deletePress)
@@ -335,11 +373,20 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
                 }
                 else
                 {
-                    arrear = -total;
+                    arrear = total;
                 }
                 ArrearMoneyLb.Text = string.Format("{0:N0} VND", arrear);
 
-                if (CartContainer.Controls.Count > 0 && !String.IsNullOrEmpty(SupplierNameLb.Text) && ShopPaidTxb.Text.Length > 0 && arrear >= 0)
+                if (arrear > 0)
+                {
+                    ArrearMoneyLb.ForeColor = Color.Red;
+                }
+                else
+                {
+                    ArrearMoneyLb.ForeColor = Color.Black;
+                }
+
+                if (CartContainer.Controls.Count > 0 && !String.IsNullOrEmpty(SupplierNameLb.Text) && ShopPaidTxb.Text.Length > 0 && arrear == 0)
                 {
                     PrintBtn.Cursor = Cursors.Hand;
                     PrintBtnAllowed = true;
@@ -414,9 +461,8 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
                 {
                     ImportBillDTO importBill = new ImportBillDTO();
                     importBill.TongTien = total;
-                    importBill.MaNhanVien = 1;
+                    importBill.MaNhanVien = staffID;
                     importBill.MaNhaCungCap = supplierID;
-                    importBill.DaTra = Convert.ToDouble(ShopPaidTxb.Text);
                     importBill.NgayLap = DateTime.Now;
 
                     ImportBillDTO newImportBill = ImportBillBUS.Instance.insertReturnBill(importBill);
@@ -444,7 +490,7 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
 
                     CartContainer.Controls.Clear();
                     importBillDetails.Clear();
-                    ShopPaidTxb.Text = "Tiền đưa Nhà cung cấp ...";
+                    ShopPaidTxb.Text = "Shop Paid ...";
                     ShopPaidTxb.ForeColor = Color.DarkGray;
                     SupplierNameLb.Text = "";
                     supplierID = 0;

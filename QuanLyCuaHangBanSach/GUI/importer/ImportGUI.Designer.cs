@@ -53,7 +53,6 @@
             this.ShopPaidTxb = new Guna.UI.WinForms.GunaTextBox();
             this.ArrearMoneyLb = new System.Windows.Forms.Label();
             this.ArrearLb = new System.Windows.Forms.Label();
-            this.SupplierNameLb = new System.Windows.Forms.Label();
             this.NameInp = new Guna.UI.WinForms.GunaLineTextBox();
             this.TotalMoneyLb = new System.Windows.Forms.Label();
             this.NameResultContainer = new System.Windows.Forms.FlowLayoutPanel();
@@ -63,6 +62,7 @@
             this.AddCustomerBtn = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.TotalLb = new System.Windows.Forms.Label();
+            this.SupplierNameLb = new System.Windows.Forms.Label();
             this.checkUser = new System.Windows.Forms.Timer(this.components);
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LogoImg)).BeginInit();
@@ -291,7 +291,6 @@
             this.panel4.Controls.Add(this.ShopPaidTxb);
             this.panel4.Controls.Add(this.ArrearMoneyLb);
             this.panel4.Controls.Add(this.ArrearLb);
-            this.panel4.Controls.Add(this.SupplierNameLb);
             this.panel4.Controls.Add(this.NameInp);
             this.panel4.Controls.Add(this.TotalMoneyLb);
             this.panel4.Controls.Add(this.NameResultContainer);
@@ -301,6 +300,7 @@
             this.panel4.Controls.Add(this.AddCustomerBtn);
             this.panel4.Controls.Add(this.label3);
             this.panel4.Controls.Add(this.TotalLb);
+            this.panel4.Controls.Add(this.SupplierNameLb);
             this.panel4.Location = new System.Drawing.Point(24, 8);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(300, 668);
@@ -377,22 +377,10 @@
             this.ArrearLb.Location = new System.Drawing.Point(11, 594);
             this.ArrearLb.Margin = new System.Windows.Forms.Padding(20, 30, 3, 5);
             this.ArrearLb.Name = "ArrearLb";
-            this.ArrearLb.Size = new System.Drawing.Size(66, 25);
+            this.ArrearLb.Size = new System.Drawing.Size(84, 25);
             this.ArrearLb.TabIndex = 23;
-            this.ArrearLb.Text = "Còn nợ:";
+            this.ArrearLb.Text = "Còn thiếu:";
             this.ArrearLb.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // SupplierNameLb
-            // 
-            this.SupplierNameLb.AutoSize = true;
-            this.SupplierNameLb.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.SupplierNameLb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.SupplierNameLb.Location = new System.Drawing.Point(101, 92);
-            this.SupplierNameLb.Margin = new System.Windows.Forms.Padding(20, 30, 3, 5);
-            this.SupplierNameLb.Name = "SupplierNameLb";
-            this.SupplierNameLb.Size = new System.Drawing.Size(0, 25);
-            this.SupplierNameLb.TabIndex = 22;
-            this.SupplierNameLb.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // NameInp
             // 
@@ -472,12 +460,14 @@
             // 
             // AddCustomerBtn
             // 
+            this.AddCustomerBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.AddCustomerBtn.Image = ((System.Drawing.Image)(resources.GetObject("AddCustomerBtn.Image")));
             this.AddCustomerBtn.Location = new System.Drawing.Point(255, 55);
             this.AddCustomerBtn.Name = "AddCustomerBtn";
             this.AddCustomerBtn.Size = new System.Drawing.Size(30, 30);
             this.AddCustomerBtn.TabIndex = 12;
             this.AddCustomerBtn.UseVisualStyleBackColor = true;
+            this.AddCustomerBtn.Click += new System.EventHandler(this.AddSupplierBtn_Click);
             // 
             // label3
             // 
@@ -502,6 +492,18 @@
             this.TotalLb.TabIndex = 16;
             this.TotalLb.Text = "Tổng tiền hàng:";
             this.TotalLb.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // SupplierNameLb
+            // 
+            this.SupplierNameLb.AutoSize = true;
+            this.SupplierNameLb.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.SupplierNameLb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.SupplierNameLb.Location = new System.Drawing.Point(103, 92);
+            this.SupplierNameLb.Margin = new System.Windows.Forms.Padding(20, 30, 3, 5);
+            this.SupplierNameLb.Name = "SupplierNameLb";
+            this.SupplierNameLb.Size = new System.Drawing.Size(0, 25);
+            this.SupplierNameLb.TabIndex = 22;
+            this.SupplierNameLb.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // checkUser
             // 
