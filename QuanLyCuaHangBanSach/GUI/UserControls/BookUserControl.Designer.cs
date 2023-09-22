@@ -33,9 +33,9 @@
             this.NameLb = new System.Windows.Forms.Label();
             this.StockLb = new System.Windows.Forms.Label();
             this.PriceLb = new System.Windows.Forms.Label();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.BookImage = new System.Windows.Forms.PictureBox();
             this.IdLb = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.BookImage)).BeginInit();
             this.SuspendLayout();
             // 
@@ -124,7 +124,7 @@
         private System.Windows.Forms.Label NameLb;
         private System.Windows.Forms.Label StockLb;
         private System.Windows.Forms.Label PriceLb;
-        private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Label IdLb;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

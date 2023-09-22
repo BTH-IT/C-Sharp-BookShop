@@ -147,10 +147,8 @@ namespace QuanLyCuaHangBanSach.DAO
                     new MySqlParameter("@maNhanVien", data.MaNhanVien),
                     new MySqlParameter("@ngayLap", data.NgayLap),
                     new MySqlParameter("@tongTien", data.TongTien),
-                    new MySqlParameter("@daTra", data.DaTra),
                     new MySqlParameter("@maDonNhapHang", data.MaDonNhapHang),
                 });
-
             return rowChanged > 0;
         }
 

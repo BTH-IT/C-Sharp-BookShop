@@ -40,6 +40,11 @@
 			this.supplierNameMsg = new System.Windows.Forms.Label();
 			this.supplierNameLine = new System.Windows.Forms.Panel();
 			this.label3 = new System.Windows.Forms.Label();
+			this.panel3 = new System.Windows.Forms.Panel();
+			this.reasonTxt = new Guna.UI2.WinForms.Guna2TextBox();
+			this.reasonMsg = new System.Windows.Forms.Label();
+			this.reasonLine = new System.Windows.Forms.Panel();
+			this.label6 = new System.Windows.Forms.Label();
 			this.panel4 = new System.Windows.Forms.Panel();
 			this.panel5 = new System.Windows.Forms.Panel();
 			this.staffTxt = new Guna.UI2.WinForms.Guna2TextBox();
@@ -48,11 +53,6 @@
 			this.dateTimeTo = new Guna.UI.WinForms.GunaDateTimePicker();
 			this.dateTimeToLine = new System.Windows.Forms.Panel();
 			this.label7 = new System.Windows.Forms.Label();
-			this.panel3 = new System.Windows.Forms.Panel();
-			this.reasonTxt = new Guna.UI2.WinForms.Guna2TextBox();
-			this.reasonMsg = new System.Windows.Forms.Label();
-			this.reasonLine = new System.Windows.Forms.Panel();
-			this.label6 = new System.Windows.Forms.Label();
 			this.panel8 = new System.Windows.Forms.Panel();
 			this.totalMoney = new Guna.UI2.WinForms.Guna2TextBox();
 			this.panel9 = new System.Windows.Forms.Panel();
@@ -65,9 +65,9 @@
 			this.panel1.SuspendLayout();
 			this.flowLayoutPanel1.SuspendLayout();
 			this.panel2.SuspendLayout();
+			this.panel3.SuspendLayout();
 			this.panel4.SuspendLayout();
 			this.panel6.SuspendLayout();
-			this.panel3.SuspendLayout();
 			this.panel8.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -169,6 +169,7 @@
 			this.supplierNameTxt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
 			this.supplierNameTxt.DisabledState.Parent = this.supplierNameTxt;
 			this.supplierNameTxt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+			this.supplierNameTxt.Enabled = false;
 			this.supplierNameTxt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
 			this.supplierNameTxt.FocusedState.Parent = this.supplierNameTxt;
 			this.supplierNameTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -214,6 +215,75 @@
 			this.label3.Text = "Tên nhà cung cấp";
 			this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
+			// panel3
+			// 
+			this.panel3.BackColor = System.Drawing.Color.White;
+			this.panel3.Controls.Add(this.reasonTxt);
+			this.panel3.Controls.Add(this.reasonMsg);
+			this.panel3.Controls.Add(this.reasonLine);
+			this.panel3.Controls.Add(this.label6);
+			this.panel3.Location = new System.Drawing.Point(520, 10);
+			this.panel3.Margin = new System.Windows.Forms.Padding(5, 10, 5, 20);
+			this.panel3.Name = "panel3";
+			this.panel3.Size = new System.Drawing.Size(492, 88);
+			this.panel3.TabIndex = 4;
+			// 
+			// reasonTxt
+			// 
+			this.reasonTxt.BackColor = System.Drawing.Color.Transparent;
+			this.reasonTxt.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
+			this.reasonTxt.BorderThickness = 0;
+			this.reasonTxt.Cursor = System.Windows.Forms.Cursors.IBeam;
+			this.reasonTxt.DefaultText = "";
+			this.reasonTxt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+			this.reasonTxt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+			this.reasonTxt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+			this.reasonTxt.DisabledState.Parent = this.reasonTxt;
+			this.reasonTxt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+			this.reasonTxt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+			this.reasonTxt.FocusedState.Parent = this.reasonTxt;
+			this.reasonTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.reasonTxt.ForeColor = System.Drawing.Color.Black;
+			this.reasonTxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+			this.reasonTxt.HoverState.Parent = this.reasonTxt;
+			this.reasonTxt.Location = new System.Drawing.Point(168, 8);
+			this.reasonTxt.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+			this.reasonTxt.Name = "reasonTxt";
+			this.reasonTxt.PasswordChar = '\0';
+			this.reasonTxt.PlaceholderText = "Nhập lý do...";
+			this.reasonTxt.SelectedText = "";
+			this.reasonTxt.ShadowDecoration.Parent = this.reasonTxt;
+			this.reasonTxt.Size = new System.Drawing.Size(305, 36);
+			this.reasonTxt.TabIndex = 32;
+			// 
+			// reasonMsg
+			// 
+			this.reasonMsg.AutoSize = true;
+			this.reasonMsg.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+			this.reasonMsg.ForeColor = System.Drawing.Color.Red;
+			this.reasonMsg.Location = new System.Drawing.Point(163, 50);
+			this.reasonMsg.Name = "reasonMsg";
+			this.reasonMsg.Size = new System.Drawing.Size(0, 25);
+			this.reasonMsg.TabIndex = 7;
+			// 
+			// reasonLine
+			// 
+			this.reasonLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(212)))), ((int)(((byte)(191)))));
+			this.reasonLine.Location = new System.Drawing.Point(168, 45);
+			this.reasonLine.Name = "reasonLine";
+			this.reasonLine.Size = new System.Drawing.Size(300, 1);
+			this.reasonLine.TabIndex = 8;
+			// 
+			// label6
+			// 
+			this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+			this.label6.Location = new System.Drawing.Point(3, 3);
+			this.label6.Name = "label6";
+			this.label6.Size = new System.Drawing.Size(188, 49);
+			this.label6.TabIndex = 5;
+			this.label6.Text = "Lý do:";
+			this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			// 
 			// panel4
 			// 
 			this.panel4.BackColor = System.Drawing.Color.White;
@@ -246,6 +316,7 @@
 			this.staffTxt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
 			this.staffTxt.DisabledState.Parent = this.staffTxt;
 			this.staffTxt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+			this.staffTxt.Enabled = false;
 			this.staffTxt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
 			this.staffTxt.FocusedState.Parent = this.staffTxt;
 			this.staffTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -328,75 +399,6 @@
 			this.label7.Text = "Ngày lập:";
 			this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
-			// panel3
-			// 
-			this.panel3.BackColor = System.Drawing.Color.White;
-			this.panel3.Controls.Add(this.reasonTxt);
-			this.panel3.Controls.Add(this.reasonMsg);
-			this.panel3.Controls.Add(this.reasonLine);
-			this.panel3.Controls.Add(this.label6);
-			this.panel3.Location = new System.Drawing.Point(520, 10);
-			this.panel3.Margin = new System.Windows.Forms.Padding(5, 10, 5, 20);
-			this.panel3.Name = "panel3";
-			this.panel3.Size = new System.Drawing.Size(492, 88);
-			this.panel3.TabIndex = 4;
-			// 
-			// reasonTxt
-			// 
-			this.reasonTxt.BackColor = System.Drawing.Color.Transparent;
-			this.reasonTxt.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
-			this.reasonTxt.BorderThickness = 0;
-			this.reasonTxt.Cursor = System.Windows.Forms.Cursors.IBeam;
-			this.reasonTxt.DefaultText = "";
-			this.reasonTxt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-			this.reasonTxt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-			this.reasonTxt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-			this.reasonTxt.DisabledState.Parent = this.reasonTxt;
-			this.reasonTxt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-			this.reasonTxt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-			this.reasonTxt.FocusedState.Parent = this.reasonTxt;
-			this.reasonTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.reasonTxt.ForeColor = System.Drawing.Color.Black;
-			this.reasonTxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-			this.reasonTxt.HoverState.Parent = this.reasonTxt;
-			this.reasonTxt.Location = new System.Drawing.Point(168, 8);
-			this.reasonTxt.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-			this.reasonTxt.Name = "reasonTxt";
-			this.reasonTxt.PasswordChar = '\0';
-			this.reasonTxt.PlaceholderText = "Nhập lý do...";
-			this.reasonTxt.SelectedText = "";
-			this.reasonTxt.ShadowDecoration.Parent = this.reasonTxt;
-			this.reasonTxt.Size = new System.Drawing.Size(305, 36);
-			this.reasonTxt.TabIndex = 32;
-			// 
-			// reasonMsg
-			// 
-			this.reasonMsg.AutoSize = true;
-			this.reasonMsg.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-			this.reasonMsg.ForeColor = System.Drawing.Color.Red;
-			this.reasonMsg.Location = new System.Drawing.Point(163, 50);
-			this.reasonMsg.Name = "reasonMsg";
-			this.reasonMsg.Size = new System.Drawing.Size(0, 25);
-			this.reasonMsg.TabIndex = 7;
-			// 
-			// reasonLine
-			// 
-			this.reasonLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(212)))), ((int)(((byte)(191)))));
-			this.reasonLine.Location = new System.Drawing.Point(168, 45);
-			this.reasonLine.Name = "reasonLine";
-			this.reasonLine.Size = new System.Drawing.Size(300, 1);
-			this.reasonLine.TabIndex = 8;
-			// 
-			// label6
-			// 
-			this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-			this.label6.Location = new System.Drawing.Point(3, 3);
-			this.label6.Name = "label6";
-			this.label6.Size = new System.Drawing.Size(188, 49);
-			this.label6.TabIndex = 5;
-			this.label6.Text = "Lý do:";
-			this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			// 
 			// panel8
 			// 
 			this.panel8.BackColor = System.Drawing.Color.White;
@@ -421,6 +423,7 @@
 			this.totalMoney.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
 			this.totalMoney.DisabledState.Parent = this.totalMoney;
 			this.totalMoney.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+			this.totalMoney.Enabled = false;
 			this.totalMoney.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
 			this.totalMoney.FocusedState.Parent = this.totalMoney;
 			this.totalMoney.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -567,10 +570,10 @@
 			this.flowLayoutPanel1.ResumeLayout(false);
 			this.panel2.ResumeLayout(false);
 			this.panel2.PerformLayout();
-			this.panel4.ResumeLayout(false);
-			this.panel6.ResumeLayout(false);
 			this.panel3.ResumeLayout(false);
 			this.panel3.PerformLayout();
+			this.panel4.ResumeLayout(false);
+			this.panel6.ResumeLayout(false);
 			this.panel8.ResumeLayout(false);
 			this.ResumeLayout(false);
 

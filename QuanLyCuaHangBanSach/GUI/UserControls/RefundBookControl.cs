@@ -33,7 +33,7 @@ namespace QuanLyCuaHangBanSach.GUI.UserControls
 			
 			}catch (Exception ex)
 			{
-
+				Console.WriteLine(ex.Message);
 			}
 			IdLb.Text = book.MaSach.ToString();
 			NameLb.Text = book.TenSach;

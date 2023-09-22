@@ -39,7 +39,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 				this.importBillInput.Text = importRefundBill.MaDonNhapHang.ToString();
 				this.importBillInput.Enabled = false;
 				this.staffTxt.Text = StaffBUS.Instance.getById(importRefundBill.MaNhanVien.ToString()).Ten;
-				this.supplierNameTxt.Text= SupplierBUS.Instance.getById(importRefundBill.NhaCungCapDaTra.ToString()).TenNhaCungCap;
+				//this.supplierNameTxt.Text= SupplierBUS.Instance.getById(importRefundBill.NhaCungCapDaTra.ToString()).TenNhaCungCap;
 				this.dateTimeTo.Value = importRefundBill.NgayLap;
 				this.reasonTxt.Text = importRefundBill.LiDo;
 				List<ImportBillDetailDTO> importBillDetail = ImportBillBUS.Instance.getImportBillDetailList(importRefundBill.MaDonNhapHang.ToString());
@@ -106,9 +106,10 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 			}
 			catch(Exception ex)
 			{
+				Console.WriteLine(ex.Message);
 
 			}
-			
+
 		}
 
 		private void importBillInput_TextChanged(object sender, EventArgs e)
@@ -132,6 +133,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 			}
 			catch(Exception ex)
 			{
+				Console.WriteLine(ex.Message);
 
 			}
 		}
@@ -167,10 +169,8 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 					ImportRefundBillDTO importRefundBill = new ImportRefundBillDTO(
 							0,
 							Convert.ToDouble(this.totalMoney.Text),
-							false,
 							this.reasonTxt.Text,
 							Convert.ToInt32(this.importBillInput.Text),
-							this.maNhaCungCap,
 							this.dateTimeTo.Value,
 							1
 						);
@@ -191,6 +191,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 										control.getPrice()
 								);
 							ImportRefundBillBUS.Instance.createImportRefundBillDetail(item);
+							
 						}
 						this.isSubmitSucces = true;
 						this.Close();

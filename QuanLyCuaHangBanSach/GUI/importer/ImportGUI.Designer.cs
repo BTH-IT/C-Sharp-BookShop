@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ImportGUI));
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.LogoImg = new System.Windows.Forms.PictureBox();
@@ -59,9 +60,10 @@
             this.CartContainer = new System.Windows.Forms.FlowLayoutPanel();
             this.ProviderLb = new System.Windows.Forms.Label();
             this.PrintBtn = new System.Windows.Forms.Button();
-            this.TotalLb = new System.Windows.Forms.Label();
             this.AddCustomerBtn = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.TotalLb = new System.Windows.Forms.Label();
+            this.checkUser = new System.Windows.Forms.Timer(this.components);
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LogoImg)).BeginInit();
             this.flowLayoutPanel2.SuspendLayout();
@@ -198,6 +200,9 @@
             this.ProductSearchInp.Size = new System.Drawing.Size(212, 22);
             this.ProductSearchInp.TabIndex = 1;
             this.ProductSearchInp.Text = "Search ...";
+            this.ProductSearchInp.TextChanged += new System.EventHandler(this.ProductSearchInp_TextChanged);
+            this.ProductSearchInp.Enter += new System.EventHandler(this.ProductSearchInp_Enter);
+            this.ProductSearchInp.Leave += new System.EventHandler(this.ProductSearchInp_Leave);
             // 
             // FilterBtn
             // 
@@ -211,6 +216,7 @@
             this.FilterBtn.TabIndex = 2;
             this.FilterBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.FilterBtn.UseVisualStyleBackColor = false;
+            this.FilterBtn.Click += new System.EventHandler(this.FilterBtn_Click);
             // 
             // panel1
             // 
@@ -247,6 +253,7 @@
             this.QRScanBtn.Radius = 8;
             this.QRScanBtn.Size = new System.Drawing.Size(42, 42);
             this.QRScanBtn.TabIndex = 0;
+            this.QRScanBtn.Click += new System.EventHandler(this.QRScanBtn_Click);
             // 
             // FilterContainer
             // 
@@ -261,6 +268,7 @@
             // 
             this.BookContainer.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.BookContainer.AutoScroll = true;
+            this.BookContainer.BackColor = System.Drawing.Color.White;
             this.BookContainer.Location = new System.Drawing.Point(102, 146);
             this.BookContainer.Name = "BookContainer";
             this.BookContainer.Size = new System.Drawing.Size(787, 520);
@@ -289,9 +297,9 @@
             this.panel4.Controls.Add(this.CartContainer);
             this.panel4.Controls.Add(this.ProviderLb);
             this.panel4.Controls.Add(this.PrintBtn);
-            this.panel4.Controls.Add(this.TotalLb);
             this.panel4.Controls.Add(this.AddCustomerBtn);
             this.panel4.Controls.Add(this.label3);
+            this.panel4.Controls.Add(this.TotalLb);
             this.panel4.Location = new System.Drawing.Point(24, 8);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(300, 668);
@@ -320,7 +328,7 @@
             // 
             this.VndLb.AutoSize = true;
             this.VndLb.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.VndLb.Location = new System.Drawing.Point(248, 543);
+            this.VndLb.Location = new System.Drawing.Point(248, 565);
             this.VndLb.Margin = new System.Windows.Forms.Padding(20, 30, 3, 5);
             this.VndLb.Name = "VndLb";
             this.VndLb.Size = new System.Drawing.Size(45, 25);
@@ -338,18 +346,22 @@
             this.ShopPaidTxb.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.ShopPaidTxb.Font = new System.Drawing.Font("#9Slide03 Cabin Medium", 10F);
             this.ShopPaidTxb.ForeColor = System.Drawing.Color.DarkGray;
-            this.ShopPaidTxb.Location = new System.Drawing.Point(9, 541);
+            this.ShopPaidTxb.Location = new System.Drawing.Point(9, 563);
             this.ShopPaidTxb.Name = "ShopPaidTxb";
             this.ShopPaidTxb.PasswordChar = '\0';
             this.ShopPaidTxb.SelectedText = "";
             this.ShopPaidTxb.Size = new System.Drawing.Size(235, 30);
             this.ShopPaidTxb.TabIndex = 25;
             this.ShopPaidTxb.Text = "Tiền đưa Nhà cung cấp ...";
+            this.ShopPaidTxb.Enter += new System.EventHandler(this.ShopPaidTxb_Enter);
+            this.ShopPaidTxb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ShopPaidTxb_KeyPress);
+            this.ShopPaidTxb.Leave += new System.EventHandler(this.ShopPaidTxb_Leave);
+            this.ShopPaidTxb.MouseLeave += new System.EventHandler(this.ShopPaidTxb_MouseLeave);
             // 
             // ArrearMoneyLb
             // 
             this.ArrearMoneyLb.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.ArrearMoneyLb.Location = new System.Drawing.Point(96, 581);
+            this.ArrearMoneyLb.Location = new System.Drawing.Point(96, 596);
             this.ArrearMoneyLb.Margin = new System.Windows.Forms.Padding(20, 30, 3, 5);
             this.ArrearMoneyLb.Name = "ArrearMoneyLb";
             this.ArrearMoneyLb.Size = new System.Drawing.Size(197, 21);
@@ -361,7 +373,7 @@
             // 
             this.ArrearLb.AutoSize = true;
             this.ArrearLb.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.ArrearLb.Location = new System.Drawing.Point(11, 579);
+            this.ArrearLb.Location = new System.Drawing.Point(11, 594);
             this.ArrearLb.Margin = new System.Windows.Forms.Padding(20, 30, 3, 5);
             this.ArrearLb.Name = "ArrearLb";
             this.ArrearLb.Size = new System.Drawing.Size(66, 25);
@@ -373,6 +385,7 @@
             // 
             this.ProviderNameLb.AutoSize = true;
             this.ProviderNameLb.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.ProviderNameLb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.ProviderNameLb.Location = new System.Drawing.Point(101, 92);
             this.ProviderNameLb.Margin = new System.Windows.Forms.Padding(20, 30, 3, 5);
             this.ProviderNameLb.Name = "ProviderNameLb";
@@ -396,11 +409,15 @@
             this.PhoneInp.Size = new System.Drawing.Size(244, 36);
             this.PhoneInp.TabIndex = 1;
             this.PhoneInp.Text = "Phone Number ...";
+            this.PhoneInp.TextChanged += new System.EventHandler(this.PhoneInp_TextChanged);
+            this.PhoneInp.Enter += new System.EventHandler(this.PhoneInp_Enter);
+            this.PhoneInp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PhoneInp_KeyPress);
+            this.PhoneInp.Leave += new System.EventHandler(this.PhoneInp_Leave);
             // 
             // TotalMoneyLb
             // 
             this.TotalMoneyLb.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.TotalMoneyLb.Location = new System.Drawing.Point(139, 421);
+            this.TotalMoneyLb.Location = new System.Drawing.Point(139, 536);
             this.TotalMoneyLb.Margin = new System.Windows.Forms.Padding(20, 30, 3, 5);
             this.TotalMoneyLb.Name = "TotalMoneyLb";
             this.TotalMoneyLb.Size = new System.Drawing.Size(154, 21);
@@ -424,7 +441,7 @@
             this.CartContainer.AutoScroll = true;
             this.CartContainer.Location = new System.Drawing.Point(0, 122);
             this.CartContainer.Name = "CartContainer";
-            this.CartContainer.Size = new System.Drawing.Size(300, 274);
+            this.CartContainer.Size = new System.Drawing.Size(300, 411);
             this.CartContainer.TabIndex = 20;
             // 
             // ProviderLb
@@ -452,18 +469,6 @@
             this.PrintBtn.Text = "Print Receipt";
             this.PrintBtn.UseVisualStyleBackColor = false;
             // 
-            // TotalLb
-            // 
-            this.TotalLb.AutoSize = true;
-            this.TotalLb.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.TotalLb.Location = new System.Drawing.Point(10, 419);
-            this.TotalLb.Margin = new System.Windows.Forms.Padding(20, 30, 3, 5);
-            this.TotalLb.Name = "TotalLb";
-            this.TotalLb.Size = new System.Drawing.Size(120, 25);
-            this.TotalLb.TabIndex = 16;
-            this.TotalLb.Text = "Tổng tiền hàng:";
-            this.TotalLb.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // AddCustomerBtn
             // 
             this.AddCustomerBtn.Image = ((System.Drawing.Image)(resources.GetObject("AddCustomerBtn.Image")));
@@ -485,10 +490,29 @@
             this.label3.Text = "Hoá đơn";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // TotalLb
+            // 
+            this.TotalLb.AutoSize = true;
+            this.TotalLb.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.TotalLb.Location = new System.Drawing.Point(10, 534);
+            this.TotalLb.Margin = new System.Windows.Forms.Padding(20, 30, 3, 5);
+            this.TotalLb.Name = "TotalLb";
+            this.TotalLb.Size = new System.Drawing.Size(120, 25);
+            this.TotalLb.TabIndex = 16;
+            this.TotalLb.Text = "Tổng tiền hàng:";
+            this.TotalLb.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // checkUser
+            // 
+            this.checkUser.Enabled = true;
+            this.checkUser.Interval = 1;
+            this.checkUser.Tick += new System.EventHandler(this.checkUser_Tick);
+            // 
             // ImportGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1264, 681);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.FilterContainer);
@@ -499,6 +523,7 @@
             this.Name = "ImportGUI";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Import Products";
+            this.Load += new System.EventHandler(this.Import_Load);
             this.flowLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.LogoImg)).EndInit();
             this.flowLayoutPanel2.ResumeLayout(false);
@@ -550,5 +575,6 @@
         private System.Windows.Forms.Label TotalLb;
         private System.Windows.Forms.Button AddCustomerBtn;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Timer checkUser;
     }
 }

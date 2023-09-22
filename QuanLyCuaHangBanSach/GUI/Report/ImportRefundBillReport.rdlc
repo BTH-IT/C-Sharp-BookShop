@@ -68,7 +68,7 @@
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
             <Top>1.94385cm</Top>
-            <Left>3.74671cm</Left>
+            <Left>5.26895cm</Left>
             <Height>0.6cm</Height>
             <Width>3.66417cm</Width>
             <Style>
@@ -89,7 +89,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Người nhập       :</Value>
+                    <Value>Người lập       :</Value>
                     <Style>
                       <FontWeight>Bold</FontWeight>
                     </Style>
@@ -153,7 +153,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Ngày nhập       :</Value>
+                    <Value>Ngày lập                      :</Value>
                     <Style>
                       <FontWeight>Bold</FontWeight>
                     </Style>
@@ -166,7 +166,7 @@
             <Top>2.68496cm</Top>
             <Left>0.69786cm</Left>
             <Height>0.63528cm</Height>
-            <Width>2.90774cm</Width>
+            <Width>4.3947cm</Width>
             <ZIndex>3</ZIndex>
             <Style>
               <Border>
@@ -195,7 +195,7 @@
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
             <Top>2.72024cm</Top>
-            <Left>3.74671cm</Left>
+            <Left>5.26895cm</Left>
             <Height>0.6cm</Height>
             <Width>3.66417cm</Width>
             <ZIndex>4</ZIndex>
@@ -217,7 +217,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Mã hoá đơn     :</Value>
+                    <Value>Mã hoá đơn                    :</Value>
                     <Style>
                       <FontWeight>Bold</FontWeight>
                     </Style>
@@ -230,7 +230,7 @@
             <Top>1.94385cm</Top>
             <Left>0.69786cm</Left>
             <Height>0.6cm</Height>
-            <Width>2.90774cm</Width>
+            <Width>4.3947cm</Width>
             <ZIndex>5</ZIndex>
             <Style>
               <Border>
@@ -663,8 +663,8 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>BookDataList</DataSetName>
-            <Top>3.95499cm</Top>
-            <Left>0.69786cm</Left>
+            <Top>5.26732cm</Top>
+            <Left>0.72568cm</Left>
             <Height>1.2cm</Height>
             <Width>19.19396cm</Width>
             <ZIndex>8</ZIndex>
@@ -721,6 +721,130 @@
               <PaddingBottom>2pt</PaddingBottom>
             </Style>
           </Textbox>
+          <Textbox Name="Textbox28">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Mã hóa đơn nhập hàng  :</Value>
+                    <Style>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox2</rd:DefaultName>
+            <Top>3.46135cm</Top>
+            <Left>0.69786cm</Left>
+            <Height>0.6cm</Height>
+            <Width>4.3947cm</Width>
+            <ZIndex>10</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox31">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=Parameters!pImportBill.Value</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox3</rd:DefaultName>
+            <Top>3.46135cm</Top>
+            <Left>5.26895cm</Left>
+            <Height>0.6cm</Height>
+            <Width>3.66417cm</Width>
+            <ZIndex>11</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox12">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Lý do                :</Value>
+                    <Style>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox2</rd:DefaultName>
+            <Top>3.46135cm</Top>
+            <Left>12.95649cm</Left>
+            <Height>0.6cm</Height>
+            <Width>3.00862cm</Width>
+            <ZIndex>12</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox13">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=Parameters!pReason.Value</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox3</rd:DefaultName>
+            <Top>3.46135cm</Top>
+            <Left>16.32812cm</Left>
+            <Height>0.6cm</Height>
+            <Width>3.59153cm</Width>
+            <ZIndex>13</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
         </ReportItems>
         <Height>4.25208in</Height>
         <Style />
@@ -739,7 +863,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>HOÁ ĐƠN NHẬP HÀNG</Value>
+                      <Value>HOÁ ĐƠN TRẢ NHẬP HÀNG</Value>
                       <Style>
                         <FontSize>26pt</FontSize>
                       </Style>
@@ -784,7 +908,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>Tổng Tiền         :</Value>
+                      <Value>Tổng tiền nhà cung cấp phải trả       :</Value>
                       <Style>
                         <FontWeight>Bold</FontWeight>
                       </Style>
@@ -795,9 +919,9 @@
               </Paragraphs>
               <rd:DefaultName>Textbox2</rd:DefaultName>
               <Top>1.09389cm</Top>
-              <Left>13.30933cm</Left>
+              <Left>9.88033cm</Left>
               <Height>0.6cm</Height>
-              <Width>2.90774cm</Width>
+              <Width>6.33674cm</Width>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -816,7 +940,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>Tổng số lượng :</Value>
+                      <Value>Tổng số lượng                                 :</Value>
                       <Style>
                         <FontWeight>Bold</FontWeight>
                       </Style>
@@ -827,9 +951,9 @@
               </Paragraphs>
               <rd:DefaultName>Textbox2</rd:DefaultName>
               <Top>0.3175cm</Top>
-              <Left>13.27922cm</Left>
+              <Left>9.88033cm</Left>
               <Height>0.6cm</Height>
-              <Width>2.90774cm</Width>
+              <Width>6.30663cm</Width>
               <ZIndex>1</ZIndex>
               <Style>
                 <Border>
@@ -990,7 +1114,7 @@
       <DataType>String</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
-    <ReportParameter Name="pSalePrice">
+    <ReportParameter Name="pImportBill">
       <DataType>String</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
@@ -999,6 +1123,10 @@
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
     <ReportParameter Name="pTotalPrice">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="pReason">
       <DataType>String</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
@@ -1031,7 +1159,7 @@
         <CellDefinition>
           <ColumnIndex>2</ColumnIndex>
           <RowIndex>1</RowIndex>
-          <ParameterName>pSalePrice</ParameterName>
+          <ParameterName>pImportBill</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>3</ColumnIndex>
@@ -1042,6 +1170,11 @@
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>2</RowIndex>
           <ParameterName>pTotalPrice</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>1</ColumnIndex>
+          <RowIndex>2</RowIndex>
+          <ParameterName>pReason</ParameterName>
         </CellDefinition>
       </CellDefinitions>
     </GridLayoutDefinition>

@@ -29,11 +29,11 @@
 		private void InitializeComponent()
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ImportRefundBillGUI));
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.closeBtn = new System.Windows.Forms.PictureBox();
 			this.deleteBtn = new Guna.UI.WinForms.GunaAdvenceButton();
 			this.detailsBtn = new Guna.UI.WinForms.GunaAdvenceButton();
@@ -43,23 +43,21 @@
 			this.btnRefresh = new Guna.UI.WinForms.GunaAdvenceButton();
 			this.addBtn = new Guna.UI.WinForms.GunaAdvenceButton();
 			this.dgvImportRefund = new Guna.UI.WinForms.GunaDataGridView();
-			this.Column11 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-			this.maPhieuTraNhapHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.maDonNhapHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.nhanVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.liDo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.nhaCungCapDaTra = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.tongTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.ngayLap = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.searchInput = new Guna.UI2.WinForms.Guna2TextBox();
-			this.supplierCbx = new Guna.UI.WinForms.GunaComboBox();
 			this.panel5 = new System.Windows.Forms.Panel();
 			this.filterCkx = new Guna.UI.WinForms.GunaMediumCheckBox();
 			this.dateTimeTo = new Guna.UI.WinForms.GunaDateTimePicker();
 			this.label3 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
 			this.dateTimeFrom = new Guna.UI.WinForms.GunaDateTimePicker();
+			this.Column11 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+			this.maPhieuTraNhapHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.maDonNhapHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.nhanVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.liDo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.tongTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.ngayLap = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			((System.ComponentModel.ISupportInitialize)(this.closeBtn)).BeginInit();
 			this.panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dgvImportRefund)).BeginInit();
@@ -268,21 +266,21 @@
 			this.dgvImportRefund.AllowUserToAddRows = false;
 			this.dgvImportRefund.AllowUserToDeleteRows = false;
 			this.dgvImportRefund.AllowUserToResizeRows = false;
-			dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-			this.dgvImportRefund.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+			dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+			this.dgvImportRefund.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
 			this.dgvImportRefund.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
 			this.dgvImportRefund.BackgroundColor = System.Drawing.Color.White;
 			this.dgvImportRefund.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.dgvImportRefund.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
 			this.dgvImportRefund.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-			dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-			dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-			dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-			dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-			dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-			dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-			dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-			this.dgvImportRefund.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+			dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+			dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+			dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+			dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+			dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+			dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
+			dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.dgvImportRefund.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
 			this.dgvImportRefund.ColumnHeadersHeight = 50;
 			this.dgvImportRefund.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
 			this.dgvImportRefund.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -291,35 +289,34 @@
             this.maDonNhapHang,
             this.nhanVien,
             this.liDo,
-            this.nhaCungCapDaTra,
             this.tongTien,
             this.ngayLap});
-			dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-			dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-			dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-			dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-			dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-			dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-			dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-			this.dgvImportRefund.DefaultCellStyle = dataGridViewCellStyle3;
+			dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+			dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
+			dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+			dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+			dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+			dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+			dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.dgvImportRefund.DefaultCellStyle = dataGridViewCellStyle8;
 			this.dgvImportRefund.EnableHeadersVisualStyles = false;
 			this.dgvImportRefund.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
 			this.dgvImportRefund.Location = new System.Drawing.Point(12, 69);
 			this.dgvImportRefund.Name = "dgvImportRefund";
-			dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-			dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-			dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-			dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-			dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-			dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-			dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-			this.dgvImportRefund.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+			dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+			dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+			dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+			dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
+			dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+			dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
+			dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.dgvImportRefund.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
 			this.dgvImportRefund.RowHeadersVisible = false;
 			this.dgvImportRefund.RowHeadersWidth = 51;
 			this.dgvImportRefund.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-			dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-			dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-			this.dgvImportRefund.RowsDefaultCellStyle = dataGridViewCellStyle5;
+			dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+			dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.dgvImportRefund.RowsDefaultCellStyle = dataGridViewCellStyle10;
 			this.dgvImportRefund.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
 			this.dgvImportRefund.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
 			this.dgvImportRefund.RowTemplate.Height = 75;
@@ -352,64 +349,6 @@
 			this.dgvImportRefund.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
 			this.dgvImportRefund.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
 			this.dgvImportRefund.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvImportRefund_CellContentClick);
-			// 
-			// Column11
-			// 
-			this.Column11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-			this.Column11.FillWeight = 50F;
-			this.Column11.Frozen = true;
-			this.Column11.HeaderText = "";
-			this.Column11.MinimumWidth = 50;
-			this.Column11.Name = "Column11";
-			this.Column11.Width = 50;
-			// 
-			// maPhieuTraNhapHang
-			// 
-			this.maPhieuTraNhapHang.HeaderText = "Mã phiếu";
-			this.maPhieuTraNhapHang.MinimumWidth = 6;
-			this.maPhieuTraNhapHang.Name = "maPhieuTraNhapHang";
-			this.maPhieuTraNhapHang.ReadOnly = true;
-			// 
-			// maDonNhapHang
-			// 
-			this.maDonNhapHang.HeaderText = "Mã Đơn Nhập";
-			this.maDonNhapHang.MinimumWidth = 6;
-			this.maDonNhapHang.Name = "maDonNhapHang";
-			this.maDonNhapHang.ReadOnly = true;
-			// 
-			// nhanVien
-			// 
-			this.nhanVien.HeaderText = "Nhân Viên Lập";
-			this.nhanVien.MinimumWidth = 6;
-			this.nhanVien.Name = "nhanVien";
-			this.nhanVien.ReadOnly = true;
-			// 
-			// liDo
-			// 
-			this.liDo.HeaderText = "Lí Do";
-			this.liDo.MinimumWidth = 6;
-			this.liDo.Name = "liDo";
-			this.liDo.ReadOnly = true;
-			// 
-			// nhaCungCapDaTra
-			// 
-			this.nhaCungCapDaTra.HeaderText = "Nhà Cung Cấp";
-			this.nhaCungCapDaTra.MinimumWidth = 6;
-			this.nhaCungCapDaTra.Name = "nhaCungCapDaTra";
-			this.nhaCungCapDaTra.ReadOnly = true;
-			// 
-			// tongTien
-			// 
-			this.tongTien.HeaderText = "Tổng Tiền";
-			this.tongTien.MinimumWidth = 6;
-			this.tongTien.Name = "tongTien";
-			// 
-			// ngayLap
-			// 
-			this.ngayLap.HeaderText = "Ngày Lập";
-			this.ngayLap.MinimumWidth = 6;
-			this.ngayLap.Name = "ngayLap";
-			this.ngayLap.ReadOnly = true;
 			// 
 			// pictureBox1
 			// 
@@ -449,32 +388,6 @@
 			this.searchInput.ShadowDecoration.Parent = this.searchInput;
 			this.searchInput.Size = new System.Drawing.Size(248, 36);
 			this.searchInput.TabIndex = 46;
-			// 
-			// supplierCbx
-			// 
-			this.supplierCbx.BackColor = System.Drawing.Color.Transparent;
-			this.supplierCbx.BaseColor = System.Drawing.Color.White;
-			this.supplierCbx.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-			this.supplierCbx.BorderSize = 1;
-			this.supplierCbx.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.supplierCbx.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-			this.supplierCbx.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.supplierCbx.FocusedColor = System.Drawing.Color.Empty;
-			this.supplierCbx.Font = new System.Drawing.Font("#9Slide03 Cabin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.supplierCbx.ForeColor = System.Drawing.Color.Black;
-			this.supplierCbx.FormattingEnabled = true;
-			this.supplierCbx.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.supplierCbx.ItemHeight = 30;
-			this.supplierCbx.Location = new System.Drawing.Point(302, 17);
-			this.supplierCbx.Margin = new System.Windows.Forms.Padding(3, 3, 100, 3);
-			this.supplierCbx.Name = "supplierCbx";
-			this.supplierCbx.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-			this.supplierCbx.OnHoverItemForeColor = System.Drawing.Color.White;
-			this.supplierCbx.Radius = 6;
-			this.supplierCbx.Size = new System.Drawing.Size(184, 36);
-			this.supplierCbx.TabIndex = 48;
-			this.supplierCbx.TabStop = false;
-			this.supplierCbx.SelectedIndexChanged += new System.EventHandler(this.supplierCbx_SelectedIndexChanged);
 			// 
 			// panel5
 			// 
@@ -574,13 +487,63 @@
 			this.dateTimeFrom.Value = new System.DateTime(2023, 8, 30, 19, 55, 8, 854);
 			this.dateTimeFrom.ValueChanged += new System.EventHandler(this.dateTimeFrom_ValueChanged);
 			// 
+			// Column11
+			// 
+			this.Column11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+			this.Column11.FillWeight = 50F;
+			this.Column11.Frozen = true;
+			this.Column11.HeaderText = "";
+			this.Column11.MinimumWidth = 50;
+			this.Column11.Name = "Column11";
+			this.Column11.Width = 50;
+			// 
+			// maPhieuTraNhapHang
+			// 
+			this.maPhieuTraNhapHang.HeaderText = "Mã phiếu";
+			this.maPhieuTraNhapHang.MinimumWidth = 6;
+			this.maPhieuTraNhapHang.Name = "maPhieuTraNhapHang";
+			this.maPhieuTraNhapHang.ReadOnly = true;
+			// 
+			// maDonNhapHang
+			// 
+			this.maDonNhapHang.HeaderText = "Mã Đơn Nhập";
+			this.maDonNhapHang.MinimumWidth = 6;
+			this.maDonNhapHang.Name = "maDonNhapHang";
+			this.maDonNhapHang.ReadOnly = true;
+			// 
+			// nhanVien
+			// 
+			this.nhanVien.HeaderText = "Nhân Viên Lập";
+			this.nhanVien.MinimumWidth = 6;
+			this.nhanVien.Name = "nhanVien";
+			this.nhanVien.ReadOnly = true;
+			// 
+			// liDo
+			// 
+			this.liDo.HeaderText = "Lí Do";
+			this.liDo.MinimumWidth = 6;
+			this.liDo.Name = "liDo";
+			this.liDo.ReadOnly = true;
+			// 
+			// tongTien
+			// 
+			this.tongTien.HeaderText = "Tổng Tiền";
+			this.tongTien.MinimumWidth = 6;
+			this.tongTien.Name = "tongTien";
+			// 
+			// ngayLap
+			// 
+			this.ngayLap.HeaderText = "Ngày Lập";
+			this.ngayLap.MinimumWidth = 6;
+			this.ngayLap.Name = "ngayLap";
+			this.ngayLap.ReadOnly = true;
+			// 
 			// ImportRefundBillGUI
 			// 
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
 			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
 			this.ClientSize = new System.Drawing.Size(1400, 845);
 			this.Controls.Add(this.panel5);
-			this.Controls.Add(this.supplierCbx);
 			this.Controls.Add(this.line1);
 			this.Controls.Add(this.panel1);
 			this.Controls.Add(this.dgvImportRefund);
@@ -616,7 +579,6 @@
 		private Guna.UI.WinForms.GunaDataGridView dgvImportRefund;
 		private System.Windows.Forms.PictureBox pictureBox1;
 		private Guna.UI2.WinForms.Guna2TextBox searchInput;
-		private Guna.UI.WinForms.GunaComboBox supplierCbx;
 		private System.Windows.Forms.Panel panel5;
 		private Guna.UI.WinForms.GunaMediumCheckBox filterCkx;
 		private Guna.UI.WinForms.GunaDateTimePicker dateTimeTo;
@@ -628,7 +590,6 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn maDonNhapHang;
 		private System.Windows.Forms.DataGridViewTextBoxColumn nhanVien;
 		private System.Windows.Forms.DataGridViewTextBoxColumn liDo;
-		private System.Windows.Forms.DataGridViewTextBoxColumn nhaCungCapDaTra;
 		private System.Windows.Forms.DataGridViewTextBoxColumn tongTien;
 		private System.Windows.Forms.DataGridViewTextBoxColumn ngayLap;
 	}

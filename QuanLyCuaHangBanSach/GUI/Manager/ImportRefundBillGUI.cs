@@ -60,14 +60,15 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 				{
 					foreach(var importRefundBill in importRefundBills)
 					{
+					    ImportBillDTO importBillDTO = ImportBillBUS.Instance.getById(importRefundBill.MaDonNhapHang.ToString());
 						dgvImportRefund.Rows.Add(new object[]
 						{
 							false,
 							importRefundBill.MaPhieu,
-							importRefundBill.MaDonNhapHang,
+							importBillDTO.MaNhanVien,
 							importRefundBill.MaNhanVien,
 							importRefundBill.LiDo,
-							SupplierBUS.Instance.getById(importRefundBill.NhaCungCapDaTra.ToString()).TenNhaCungCap,
+							SupplierBUS.Instance.getById(importBillDTO.MaNhaCungCap.ToString()).TenNhaCungCap,
 							importRefundBill.TongTien,
 							importRefundBill.NgayLap,
 						});
@@ -88,11 +89,11 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 		{
 			List<SupplierDTO> suppliers = SupplierBUS.Instance.getAllData();
 			suppliers.Insert(0,new SupplierDTO(0,"Chọn nhà cung cấp","",""));
-			this.supplierCbx.DisplayMember = "TenNhaCungCap";
-			this.supplierCbx.ValueMember = "MaNhaCungCap";
-			this.supplierCbx.DataSource = suppliers;
+			//this.supplierCbx.DisplayMember = "TenNhaCungCap";
+			//this.supplierCbx.ValueMember = "MaNhaCungCap";
+			//this.supplierCbx.DataSource = suppliers;
 
-			this.supplierCbx.SelectedIndex = 0;
+			//this.supplierCbx.SelectedIndex = 0;
 		}
 
 		private void deleteBtn_Click(object sender, EventArgs e)
@@ -115,7 +116,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 						}
 						catch (Exception ex)
 						{
-
+							Console.WriteLine(ex.Message);
 						}
 					}
 				}
@@ -160,21 +161,19 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 						MessageBox.Show("Lọc theo khoảng thời gian không hợp lệ");
 					}
 				}
-				if (supplierCbx.SelectedIndex != 0)
-				{
-					importRefundBills = importRefundBills.Where(item =>
-								item.NhaCungCapDaTra == Convert.ToInt32( supplierCbx.SelectedValue)
-						).ToList();
-				}
+			
 			}
-			catch (Exception ex) { }
+			catch (Exception ex) {
+				Console.WriteLine(ex.Message);
+
+			}
 
 			return importRefundBills;
 		}
 		private void btnRefresh_Click(object sender, EventArgs e)
 		{
 			this.searchInput.Clear();
-			this.supplierCbx.SelectedIndex = 0;
+			//this.supplierCbx.SelectedIndex = 0;
 			List<ImportRefundBillDTO> importRefundBills = ImportRefundBillBUS.Instance.getAllData();
 			this.loadDataToDGV(importRefundBills);
 		}
