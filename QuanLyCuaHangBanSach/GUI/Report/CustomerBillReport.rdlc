@@ -67,7 +67,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
-            <Top>0.35635cm</Top>
+            <Top>2.33899cm</Top>
             <Left>3.27928cm</Left>
             <Height>0.6cm</Height>
             <Width>3.66417cm</Width>
@@ -88,7 +88,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Người bán:</Value>
+                    <Value>Người bán         :</Value>
                     <Style>
                       <FontWeight>Bold</FontWeight>
                     </Style>
@@ -98,7 +98,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox2</rd:DefaultName>
-            <Top>0.35635cm</Top>
+            <Top>2.33899cm</Top>
             <Left>12.89862cm</Left>
             <Height>0.6cm</Height>
             <Width>3.06649cm</Width>
@@ -128,7 +128,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
-            <Top>0.35635cm</Top>
+            <Top>2.33899cm</Top>
             <Left>16.30025cm</Left>
             <Height>0.6cm</Height>
             <Width>3.59156cm</Width>
@@ -150,7 +150,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>SDT khách hàng:</Value>
+                    <Value>Số điểm             :</Value>
                     <Style>
                       <FontWeight>Bold</FontWeight>
                     </Style>
@@ -160,7 +160,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox2</rd:DefaultName>
-            <Top>1.06218cm</Top>
+            <Top>3.04482cm</Top>
             <Left>12.89862cm</Left>
             <Height>0.6cm</Height>
             <Width>3.06649cm</Width>
@@ -182,7 +182,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=Parameters!pPhone.Value</Value>
+                    <Value>=Parameters!pScore.Value</Value>
                     <Style />
                   </TextRun>
                 </TextRuns>
@@ -190,7 +190,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
-            <Top>1.09746cm</Top>
+            <Top>3.0801cm</Top>
             <Left>16.30025cm</Left>
             <Height>0.6cm</Height>
             <Width>3.59156cm</Width>
@@ -212,7 +212,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Tên khách hàng:</Value>
+                    <Value>Tên khách hàng :</Value>
                     <Style>
                       <FontWeight>Bold</FontWeight>
                     </Style>
@@ -222,7 +222,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox2</rd:DefaultName>
-            <Top>1.87385cm</Top>
+            <Top>3.85649cm</Top>
             <Left>12.89862cm</Left>
             <Height>0.6cm</Height>
             <Width>3.06649cm</Width>
@@ -252,7 +252,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
-            <Top>1.87385cm</Top>
+            <Top>3.85649cm</Top>
             <Left>16.30025cm</Left>
             <Height>0.6cm</Height>
             <Width>3.59156cm</Width>
@@ -284,7 +284,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox2</rd:DefaultName>
-            <Top>1.09746cm</Top>
+            <Top>3.0801cm</Top>
             <Left>0.69786cm</Left>
             <Height>0.6cm</Height>
             <Width>2.40503cm</Width>
@@ -314,7 +314,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
-            <Top>1.13274cm</Top>
+            <Top>3.11538cm</Top>
             <Left>3.27928cm</Left>
             <Height>0.6cm</Height>
             <Width>3.66417cm</Width>
@@ -346,7 +346,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox8</rd:DefaultName>
-            <Top>0.35635cm</Top>
+            <Top>2.33899cm</Top>
             <Left>0.69786cm</Left>
             <Height>0.6cm</Height>
             <Width>2.40503cm</Width>
@@ -378,7 +378,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox2</rd:DefaultName>
-            <Top>1.87385cm</Top>
+            <Top>3.85649cm</Top>
             <Left>0.69786cm</Left>
             <Height>0.6cm</Height>
             <Width>2.40503cm</Width>
@@ -408,7 +408,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
-            <Top>1.87385cm</Top>
+            <Top>3.85649cm</Top>
             <Left>3.27928cm</Left>
             <Height>0.6cm</Height>
             <Width>3.66417cm</Width>
@@ -779,7 +779,7 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>BookDataList</DataSetName>
-            <Top>3.25649cm</Top>
+            <Top>5.23913cm</Top>
             <Left>0.69786cm</Left>
             <Height>1.2cm</Height>
             <Width>19.19396cm</Width>
@@ -790,8 +790,55 @@
               </Border>
             </Style>
           </Tablix>
+          <Textbox Name="Textbox4">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>17 Thái Nguyên, Phước Tân</Value>
+                    <Style>
+                      <FontSize>12pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Thành Phố Nha Trang</Value>
+                    <Style>
+                      <FontSize>12pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox2</rd:DefaultName>
+            <Top>0.37998cm</Top>
+            <Left>0.66774cm</Left>
+            <Height>1.15033cm</Height>
+            <Width>19.19396cm</Width>
+            <ZIndex>13</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
         </ReportItems>
-        <Height>3.09375in</Height>
+        <Height>3.59375in</Height>
         <Style />
       </Body>
       <Width>8.12808in</Width>
@@ -842,7 +889,7 @@
           </Style>
         </PageHeader>
         <PageFooter>
-          <Height>1.42346cm</Height>
+          <Height>5.99546cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -853,7 +900,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>Tổng Tiền:</Value>
+                      <Value>Tổng Tiền         :</Value>
                       <Style>
                         <FontWeight>Bold</FontWeight>
                       </Style>
@@ -863,10 +910,10 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox2</rd:DefaultName>
-              <Top>0.30854cm</Top>
-              <Left>13.57254cm</Left>
+              <Top>1.92398cm</Top>
+              <Left>13.2514cm</Left>
               <Height>0.6cm</Height>
-              <Width>2.6167cm</Width>
+              <Width>2.90774cm</Width>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -885,7 +932,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>Giảm giá:</Value>
+                      <Value>Giảm giá           :</Value>
                       <Style>
                         <FontWeight>Bold</FontWeight>
                       </Style>
@@ -895,10 +942,10 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox2</rd:DefaultName>
-              <Top>0.30854cm</Top>
-              <Left>7.68551cm</Left>
+              <Top>0.99265cm</Top>
+              <Left>13.2514cm</Left>
               <Height>0.6cm</Height>
-              <Width>1.93405cm</Width>
+              <Width>2.87246cm</Width>
               <ZIndex>1</ZIndex>
               <Style>
                 <Border>
@@ -918,7 +965,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>Tổng số lượng:</Value>
+                      <Value>Tổng số lượng :</Value>
                       <Style>
                         <FontWeight>Bold</FontWeight>
                       </Style>
@@ -928,8 +975,8 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox2</rd:DefaultName>
-              <Top>0.30854cm</Top>
-              <Left>0.69786cm</Left>
+              <Top>0.21626cm</Top>
+              <Left>13.2514cm</Left>
               <Height>0.6cm</Height>
               <Width>2.90774cm</Width>
               <ZIndex>2</ZIndex>
@@ -959,10 +1006,10 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox3</rd:DefaultName>
-              <Top>0.30854cm</Top>
-              <Left>3.74671cm</Left>
+              <Top>0.21626cm</Top>
+              <Left>16.30025cm</Left>
               <Height>0.6cm</Height>
-              <Width>3.66417cm</Width>
+              <Width>3.56146cm</Width>
               <ZIndex>3</ZIndex>
               <Style>
                 <Border>
@@ -992,10 +1039,10 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox3</rd:DefaultName>
-              <Top>0.30854cm</Top>
-              <Left>9.72539cm</Left>
+              <Top>0.99265cm</Top>
+              <Left>16.30025cm</Left>
               <Height>0.6cm</Height>
-              <Width>3.66417cm</Width>
+              <Width>3.56145cm</Width>
               <ZIndex>4</ZIndex>
               <Style>
                 <Border>
@@ -1025,8 +1072,8 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox3</rd:DefaultName>
-              <Top>0.30854cm</Top>
-              <Left>16.33035cm</Left>
+              <Top>1.92398cm</Top>
+              <Left>16.30025cm</Left>
               <Height>0.6cm</Height>
               <Width>3.56146cm</Width>
               <ZIndex>5</ZIndex>
@@ -1035,6 +1082,102 @@
                   <Style>None</Style>
                 </Border>
                 <VerticalAlign>Middle</VerticalAlign>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox2">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>Hotline: 19002003</Value>
+                      <Style>
+                        <FontStyle>Normal</FontStyle>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>Cảm Ơn Quý Khách Và Hẹn Gặp Lại!</Value>
+                      <Style>
+                        <FontStyle>Normal</FontStyle>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox2</rd:DefaultName>
+              <Top>4.76046cm</Top>
+              <Left>0.69787cm</Left>
+              <Height>1.0445cm</Height>
+              <Width>19.19396cm</Width>
+              <ZIndex>6</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox3">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>Cứ 50,000 đ trên một hóa đơn, bạn sẽ được tích 1 điểm.</Value>
+                      <Style>
+                        <FontStyle>Italic</FontStyle>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>Với 1 điểm sẽ quy đổi thành 1,000 đ trong phiên mua hàng tiếp theo</Value>
+                      <Style>
+                        <FontStyle>Italic</FontStyle>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox2</rd:DefaultName>
+              <Top>3.28619cm</Top>
+              <Left>0.69786cm</Left>
+              <Height>1.0445cm</Height>
+              <Width>19.19396cm</Width>
+              <ZIndex>7</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
                 <PaddingLeft>2pt</PaddingLeft>
                 <PaddingRight>2pt</PaddingRight>
                 <PaddingTop>2pt</PaddingTop>
@@ -1072,7 +1215,7 @@
       <DataType>String</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
-    <ReportParameter Name="pPhone">
+    <ReportParameter Name="pScore">
       <DataType>String</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
@@ -1120,7 +1263,7 @@
         <CellDefinition>
           <ColumnIndex>3</ColumnIndex>
           <RowIndex>0</RowIndex>
-          <ParameterName>pPhone</ParameterName>
+          <ParameterName>pScore</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>

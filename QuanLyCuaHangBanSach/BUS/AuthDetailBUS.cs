@@ -66,5 +66,10 @@ namespace QuanLyCuaHangBanSach.BUS
         {
             return AuthDetailDAO.Instance.delete(positionId, permissionId);
         }
+
+        public bool deleteAllByPositionId(string positionId)
+        {
+            return AuthDetailDAO.Instance.deleteAllByPositionId(positionId);
+        }
     }
 }

@@ -33,21 +33,22 @@
             this.NameLb = new System.Windows.Forms.Label();
             this.StockLb = new System.Windows.Forms.Label();
             this.PriceLb = new System.Windows.Forms.Label();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.BookImage = new System.Windows.Forms.PictureBox();
             this.IdLb = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.BookImage)).BeginInit();
             this.SuspendLayout();
             // 
             // NameLb
             // 
             this.NameLb.AutoEllipsis = true;
-            this.NameLb.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.NameLb.AutoSize = true;
+            this.NameLb.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.NameLb.ForeColor = System.Drawing.Color.Black;
             this.NameLb.Location = new System.Drawing.Point(95, 9);
             this.NameLb.MaximumSize = new System.Drawing.Size(148, 40);
             this.NameLb.Name = "NameLb";
-            this.NameLb.Size = new System.Drawing.Size(148, 24);
+            this.NameLb.Size = new System.Drawing.Size(81, 21);
             this.NameLb.TabIndex = 3;
             this.NameLb.Text = "Book Name";
             // 
@@ -55,11 +56,11 @@
             // 
             this.StockLb.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.StockLb.AutoSize = true;
-            this.StockLb.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.StockLb.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.StockLb.ForeColor = System.Drawing.Color.Gray;
             this.StockLb.Location = new System.Drawing.Point(95, 62);
             this.StockLb.Name = "StockLb";
-            this.StockLb.Size = new System.Drawing.Size(23, 15);
+            this.StockLb.Size = new System.Drawing.Size(24, 18);
             this.StockLb.TabIndex = 5;
             this.StockLb.Text = "SL:";
             // 
@@ -67,11 +68,11 @@
             // 
             this.PriceLb.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.PriceLb.AutoSize = true;
-            this.PriceLb.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.PriceLb.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.PriceLb.ForeColor = System.Drawing.Color.Blue;
             this.PriceLb.Location = new System.Drawing.Point(94, 82);
             this.PriceLb.Name = "PriceLb";
-            this.PriceLb.Size = new System.Drawing.Size(48, 21);
+            this.PriceLb.Size = new System.Drawing.Size(46, 25);
             this.PriceLb.TabIndex = 6;
             this.PriceLb.Text = "Price";
             // 
@@ -123,7 +124,7 @@
         private System.Windows.Forms.Label NameLb;
         private System.Windows.Forms.Label StockLb;
         private System.Windows.Forms.Label PriceLb;
-        private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Label IdLb;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

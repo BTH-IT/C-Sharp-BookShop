@@ -5,8 +5,7 @@ namespace QuanLyCuaHangBanSach.DTO
     public class CustomerDTO : HumanDTO
     {
         public string SoDienThoai { get; private set; }
-        public int MaNhomKhachHang { get; private set; }
-
+        public int Diem { get; set; }
         public CustomerDTO() { }
         public CustomerDTO(
             int maKhachHang,
@@ -14,11 +13,11 @@ namespace QuanLyCuaHangBanSach.DTO
             string soDienThoai,
             string gioiTinh,
             int namSinh,
-            int maNhomKhachHang)
+            int diem)
         : base(maKhachHang, tenKhachHang, gioiTinh, namSinh)
         {
             this.SoDienThoai = soDienThoai;
-            this.MaNhomKhachHang = maNhomKhachHang;
+            this.Diem = diem;
         }
 
         public CustomerDTO(DataRow row)
@@ -28,7 +27,7 @@ namespace QuanLyCuaHangBanSach.DTO
             this.SoDienThoai = row["soDienThoai"].ToString();
             this.GioiTinh = row["gioiTinh"].ToString();
             this.NamSinh = (int)row["namSinh"];
-            this.MaNhomKhachHang = (int)row["maNhomKhachHang"];
+            this.Diem = (int)row["diem"];
         }
 
         public override string ToString()

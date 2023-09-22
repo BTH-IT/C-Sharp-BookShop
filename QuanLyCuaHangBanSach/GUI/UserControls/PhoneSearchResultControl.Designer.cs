@@ -38,21 +38,21 @@
             // NameLb
             // 
             this.NameLb.AutoSize = true;
-            this.NameLb.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.NameLb.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 12F, System.Drawing.FontStyle.Bold);
             this.NameLb.Location = new System.Drawing.Point(44, 0);
             this.NameLb.Name = "NameLb";
-            this.NameLb.Size = new System.Drawing.Size(148, 21);
+            this.NameLb.Size = new System.Drawing.Size(139, 25);
             this.NameLb.TabIndex = 0;
             this.NameLb.Text = "Nguyen Phuc Huy";
             // 
             // PhoneLb
             // 
             this.PhoneLb.AutoSize = true;
-            this.PhoneLb.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
+            this.PhoneLb.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 8F, System.Drawing.FontStyle.Bold);
             this.PhoneLb.ForeColor = System.Drawing.Color.Gray;
             this.PhoneLb.Location = new System.Drawing.Point(46, 21);
             this.PhoneLb.Name = "PhoneLb";
-            this.PhoneLb.Size = new System.Drawing.Size(67, 13);
+            this.PhoneLb.Size = new System.Drawing.Size(75, 17);
             this.PhoneLb.TabIndex = 1;
             this.PhoneLb.Text = "0889966850";
             // 

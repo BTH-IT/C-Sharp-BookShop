@@ -50,21 +50,22 @@
             // NameLb
             // 
             this.NameLb.AutoEllipsis = true;
-            this.NameLb.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.NameLb.AutoSize = true;
+            this.NameLb.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.NameLb.Location = new System.Drawing.Point(107, 14);
             this.NameLb.Name = "NameLb";
-            this.NameLb.Size = new System.Drawing.Size(137, 23);
+            this.NameLb.Size = new System.Drawing.Size(81, 21);
             this.NameLb.TabIndex = 1;
             this.NameLb.Text = "Book Name";
             // 
             // StockLb
             // 
             this.StockLb.AutoSize = true;
-            this.StockLb.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.StockLb.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.StockLb.ForeColor = System.Drawing.Color.Gray;
             this.StockLb.Location = new System.Drawing.Point(108, 51);
             this.StockLb.Name = "StockLb";
-            this.StockLb.Size = new System.Drawing.Size(23, 15);
+            this.StockLb.Size = new System.Drawing.Size(24, 18);
             this.StockLb.TabIndex = 2;
             this.StockLb.Text = "SL:";
             // 
@@ -72,11 +73,11 @@
             // 
             this.PriceLb.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.PriceLb.AutoSize = true;
-            this.PriceLb.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.PriceLb.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.PriceLb.ForeColor = System.Drawing.Color.Blue;
             this.PriceLb.Location = new System.Drawing.Point(105, 68);
             this.PriceLb.Name = "PriceLb";
-            this.PriceLb.Size = new System.Drawing.Size(48, 21);
+            this.PriceLb.Size = new System.Drawing.Size(46, 25);
             this.PriceLb.TabIndex = 7;
             this.PriceLb.Text = "Price";
             // 
@@ -120,16 +121,17 @@
             // 
             this.AmountTxt.BackColor = System.Drawing.Color.White;
             this.AmountTxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.AmountTxt.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.AmountTxt.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.AmountTxt.Location = new System.Drawing.Point(26, 3);
             this.AmountTxt.MaxLength = 999;
             this.AmountTxt.Name = "AmountTxt";
-            this.AmountTxt.Size = new System.Drawing.Size(38, 18);
+            this.AmountTxt.Size = new System.Drawing.Size(38, 20);
             this.AmountTxt.TabIndex = 2;
             this.AmountTxt.Text = "1";
             this.AmountTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.AmountTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AmountTxt_KeyPress);
             this.AmountTxt.Leave += new System.EventHandler(this.AmountTxt_Leave);
+            this.AmountTxt.MouseLeave += new System.EventHandler(this.AmountTxt_MouseLeave);
             // 
             // DeleteBtn
             // 

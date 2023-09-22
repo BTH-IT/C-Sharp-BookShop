@@ -1,45 +1,159 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
+using Guna.UI.WinForms;
 using QuanLyCuaHangBanSach.BUS;
 using QuanLyCuaHangBanSach.DTO;
 using QuanLyCuaHangBanSach.GUI.Manager;
+using QuanLyCuaHangBanTacGia.GUI.Manager;
 
 namespace QuanLyCuaHangBanSach.GUI
 {
     public partial class ManagerGUI : Form
     {
         public static StaffDTO currentStaff;
-        private string contentActive = "homeBtn";
+        public static Authorization authorization;
+        private string contentActive;
         private HomeManageGUI homeFrm = new HomeManageGUI() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle=FormBorderStyle.None, };
         private BookManageGUI bookFrm = new BookManageGUI() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle=FormBorderStyle.None, };
-        private test authorFrm = new test() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle=FormBorderStyle.None, };
-        private test bookTypeFrm = new test() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle=FormBorderStyle.None, };
-        private test customerFrm = new test() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle=FormBorderStyle.None, };
-        private test staffFrm = new test() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle=FormBorderStyle.None, };
-        private test supplierFrm = new test() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle=FormBorderStyle.None, };
+        private AuthorGUI authorFrm = new AuthorGUI() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle=FormBorderStyle.None, };
+        private CustomerManagerGUI customerFrm = new CustomerManagerGUI() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle=FormBorderStyle.None, };
+        private StaffManageGUI staffFrm = new StaffManageGUI() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle=FormBorderStyle.None, };
+        private SupplierManagerGUI supplierFrm = new SupplierManagerGUI() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle=FormBorderStyle.None, };
         private ImportBillGUI importBillFrm = new ImportBillGUI() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle=FormBorderStyle.None, };
         private CustomerBillGUI customerBillFrm = new CustomerBillGUI() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle=FormBorderStyle.None, };
-        private test seoFrm = new test() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle=FormBorderStyle.None, };
+        private SeoManageGUI seoFrm = new SeoManageGUI() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle=FormBorderStyle.None, };
+        private AccountManageGUI accountFrm = new AccountManageGUI() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle=FormBorderStyle.None, };
+        private PositionManageGUI positionFrm = new PositionManageGUI() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle=FormBorderStyle.None, };
+        private PermissionManageGUI permissionFrm = new PermissionManageGUI() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle=FormBorderStyle.None, };
+        private test refundFrm = new test() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle=FormBorderStyle.None, };
+        private test bookTypeFrm = new test() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle=FormBorderStyle.None, };
         private test publisherFrm = new test() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle=FormBorderStyle.None, };
-        private test accountFrm = new test() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle=FormBorderStyle.None, };
         
         public ManagerGUI(int staffId)
         {
             InitializeComponent();
-            this.manageContent.Controls.Add(this.homeFrm);
-            this.manageContent.Controls.Add(this.bookFrm);
-            this.manageContent.Controls.Add(this.authorFrm);
-            this.manageContent.Controls.Add(this.bookTypeFrm);
-            this.manageContent.Controls.Add(this.customerFrm);
-            this.manageContent.Controls.Add(this.staffFrm);
-            this.manageContent.Controls.Add(this.supplierFrm);
-            this.manageContent.Controls.Add(this.importBillFrm);
-            this.manageContent.Controls.Add(this.customerBillFrm);
-            this.manageContent.Controls.Add(this.seoFrm);
-            this.manageContent.Controls.Add(this.publisherFrm);
-            this.manageContent.Controls.Add(this.accountFrm);
-            this.homeFrm.Show();
+
             currentStaff = StaffBUS.Instance.getById(staffId.ToString());
+
+            authorization = new Authorization(staffId);
+
+            foreach (var item in authorization.getPermissionObject())
+            {
+                bool isCheckPermission = authorization.checkAuthorize(Convert.ToInt32(item.Key));
+
+                if (!isCheckPermission)
+                {
+                    switch (item.Key)
+                    {
+                        case "1":
+                            this.navBar.Controls.Remove(this.bookBtn);
+                            break;
+                        case "2":
+                            this.navBar.Controls.Remove(this.staffBtn);
+                            break;
+                        case "3":
+                            this.navBar.Controls.Remove(this.supplierBtn);
+                            break;
+                        case "4":
+                            this.navBar.Controls.Remove(this.bookTypeBtn);
+                            break;
+                        case "5":
+                            this.navBar.Controls.Remove(this.publisherBtn);
+                            break;
+                        case "8":
+                            this.navBar.Controls.Remove(this.refundBtn);
+                            break;
+                        case "9":
+                            this.navBar.Controls.Remove(this.customerBtn);
+                            break;
+                        case "10":
+                            this.navBar.Controls.Remove(this.authorBtn);
+                            break;
+                        case "11":
+                            this.navBar.Controls.Remove(this.seoBtn);
+                            break;
+                        case "12":
+                            this.navBar.Controls.Remove(this.permissionBtn);
+                            break;
+                        case "13":
+                            this.navBar.Controls.Remove(this.positionBtn);
+                            break;
+                        case "14":
+                            this.navBar.Controls.Remove(this.billBtn);
+                            break;
+                        case "15":
+                            this.navBar.Controls.Remove(this.importBilBtn);
+                            break;
+                        case "16":
+                            this.navBar.Controls.Remove(this.accountBtn);
+                            break;
+                        case "17":
+                            this.navBar.Controls.Remove(this.homeBtn);
+                            break;
+                    }
+                } else
+                {
+                    switch (item.Key)
+                    {
+                        case "1":
+                            this.manageContent.Controls.Add(this.bookFrm);
+                            break;
+                        case "2":
+                            this.manageContent.Controls.Add(this.staffFrm);
+                            break;
+                        case "3":
+                            this.manageContent.Controls.Add(this.supplierFrm);
+                            break;
+                        case "4":
+                            this.manageContent.Controls.Add(this.bookTypeFrm);
+                            break;
+                        case "5":
+                            this.manageContent.Controls.Add(this.publisherFrm);
+                            break;
+                        case "8":
+                            this.manageContent.Controls.Add(this.refundFrm);
+                            break;
+                        case "9":
+                            this.manageContent.Controls.Add(this.customerFrm);
+                            break;
+                        case "10":
+                            this.manageContent.Controls.Add(this.authorFrm);
+                            break;
+                        case "11":
+                            this.manageContent.Controls.Add(this.seoFrm);
+                            break;
+                        case "12":
+                            this.manageContent.Controls.Add(this.permissionFrm);
+                            break;
+                        case "13":
+                            this.manageContent.Controls.Add(this.positionFrm);
+                            break;
+                        case "14":
+                            this.manageContent.Controls.Add(this.customerBillFrm);
+                            break;
+                        case "15":
+                            this.manageContent.Controls.Add(this.importBillFrm);
+                            break;
+                        case "16":
+                            this.manageContent.Controls.Add(this.accountFrm);
+                            break;
+                        case "17":
+                            this.manageContent.Controls.Add(this.homeFrm);
+                            break;
+                    }
+                }
+            }
+
+            GunaAdvenceButton btn = this.navBar.Controls.OfType<GunaAdvenceButton>().FirstOrDefault();
+            Form frm = this.manageContent.Controls.OfType<Form>().FirstOrDefault();
+
+            this.contentActive = btn.Name;
+
+            btn.Checked = true;
+
+            frm.Show();
         }
 
         private void homeBtn_Click(object sender, EventArgs e)
@@ -60,6 +174,9 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.seoBtn.Checked = false;
                 this.publisherBtn.Checked = false;
                 this.accountBtn.Checked = false;
+                this.positionBtn.Checked = false;
+                this.permissionBtn.Checked = false;
+                this.refundBtn.Checked = false;
 
                 this.homeFrm.Show();
 
@@ -74,6 +191,9 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.seoFrm.Hide();
                 this.publisherFrm.Hide();
                 this.accountFrm.Hide();
+                this.positionFrm.Hide();
+                this.permissionFrm.Hide();
+                this.refundFrm.Hide();
             }
         }
 
@@ -96,6 +216,10 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.seoBtn.Checked = false;
                 this.publisherBtn.Checked = false;
                 this.accountBtn.Checked = false;
+                this.positionBtn.Checked = false;
+                this.permissionBtn.Checked = false;
+                
+                this.refundBtn.Checked = false;
 
                 this.bookFrm.Show();
 
@@ -110,6 +234,10 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.seoFrm.Hide();
                 this.publisherFrm.Hide();
                 this.accountFrm.Hide();
+                this.positionFrm.Hide();
+                this.permissionFrm.Hide();
+                
+                this.refundFrm.Hide();
             }
         }
 
@@ -132,6 +260,10 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.seoBtn.Checked = false;
                 this.publisherBtn.Checked = false;
                 this.accountBtn.Checked = false;
+                this.positionBtn.Checked = false;
+                this.permissionBtn.Checked = false;
+                
+                this.refundBtn.Checked = false;
 
                 this.authorFrm.Show();
 
@@ -140,12 +272,16 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.bookTypeFrm.Hide();
                 this.customerFrm.Hide();
                 this.staffFrm.Hide();
-                this.supplierFrm.Hide();
+                this.supplierFrm.Show();
                 this.importBillFrm.Hide();
                 this.customerBillFrm.Hide();
                 this.seoFrm.Hide();
                 this.publisherFrm.Hide();
                 this.accountFrm.Hide();
+                this.positionFrm.Hide();
+                this.permissionFrm.Hide();
+                
+                this.refundFrm.Hide();
             }
         }
 
@@ -168,6 +304,10 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.seoBtn.Checked = false;
                 this.publisherBtn.Checked = false;
                 this.accountBtn.Checked = false;
+                this.positionBtn.Checked = false;
+                this.permissionBtn.Checked = false;
+                
+                this.refundBtn.Checked = false;
 
                 this.bookTypeFrm.Show();
 
@@ -182,6 +322,10 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.seoFrm.Hide();
                 this.publisherFrm.Hide();
                 this.accountFrm.Hide();
+                this.positionFrm.Hide();
+                this.permissionFrm.Hide();
+                
+                this.refundFrm.Hide();
             }
         }
 
@@ -204,6 +348,10 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.seoBtn.Checked = false;
                 this.publisherBtn.Checked = false;
                 this.accountBtn.Checked = false;
+                this.positionBtn.Checked = false;
+                this.permissionBtn.Checked = false;
+                
+                this.refundBtn.Checked = false;
 
                 this.customerFrm.Show();
 
@@ -218,6 +366,10 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.seoFrm.Hide();
                 this.publisherFrm.Hide();
                 this.accountFrm.Hide();
+                this.positionFrm.Hide();
+                this.permissionFrm.Hide();
+                
+                this.refundFrm.Hide();
             }
         }
 
@@ -240,6 +392,10 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.seoBtn.Checked = false;
                 this.publisherBtn.Checked = false;
                 this.accountBtn.Checked = false;
+                this.positionBtn.Checked = false;
+                this.permissionBtn.Checked = false;
+                
+                this.refundBtn.Checked = false;
 
                 this.staffFrm.Show();
 
@@ -254,6 +410,10 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.seoFrm.Hide();
                 this.publisherFrm.Hide();
                 this.accountFrm.Hide();
+                this.positionFrm.Hide();
+                this.permissionFrm.Hide();
+                
+                this.refundFrm.Hide();
             }
         }
 
@@ -276,6 +436,10 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.seoBtn.Checked = false;
                 this.publisherBtn.Checked = false;
                 this.accountBtn.Checked = false;
+                this.positionBtn.Checked = false;
+                this.permissionBtn.Checked = false;
+                
+                this.refundBtn.Checked = false;
 
                 this.supplierFrm.Show();
 
@@ -290,6 +454,10 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.seoFrm.Hide();
                 this.publisherFrm.Hide();
                 this.accountFrm.Hide();
+                this.positionFrm.Hide();
+                this.permissionFrm.Hide();
+                
+                this.refundFrm.Hide();
             }
         }
 
@@ -312,6 +480,10 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.seoBtn.Checked = false;
                 this.publisherBtn.Checked = false;
                 this.accountBtn.Checked = false;
+                this.positionBtn.Checked = false;
+                this.permissionBtn.Checked = false;
+                
+                this.refundBtn.Checked = false;
 
                 this.importBillFrm.Show();
 
@@ -326,6 +498,10 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.seoFrm.Hide();
                 this.publisherFrm.Hide();
                 this.accountFrm.Hide();
+                this.positionFrm.Hide();
+                this.permissionFrm.Hide();
+                
+                this.refundFrm.Hide();
             }
         }
 
@@ -348,6 +524,10 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.seoBtn.Checked = false;
                 this.publisherBtn.Checked = false;
                 this.accountBtn.Checked = false;
+                this.positionBtn.Checked = false;
+                this.permissionBtn.Checked = false;
+                
+                this.refundBtn.Checked = false;
 
                 this.customerBillFrm.Show();
 
@@ -362,6 +542,10 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.seoFrm.Hide();
                 this.publisherFrm.Hide();
                 this.accountFrm.Hide();
+                this.positionFrm.Hide();
+                this.permissionFrm.Hide();
+                
+                this.refundFrm.Hide();
             }
         }
 
@@ -384,6 +568,10 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.billBtn.Checked = false;
                 this.publisherBtn.Checked = false;
                 this.accountBtn.Checked = false;
+                this.positionBtn.Checked = false;
+                this.permissionBtn.Checked = false;
+                
+                this.refundBtn.Checked = false;
 
                 this.seoFrm.Show();
 
@@ -398,6 +586,10 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.homeFrm.Hide();
                 this.publisherFrm.Hide();
                 this.accountFrm.Hide();
+                this.positionFrm.Hide();
+                this.permissionFrm.Hide();
+                
+                this.refundFrm.Hide();
             }
         }
 
@@ -420,6 +612,10 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.billBtn.Checked = false;
                 this.seoBtn.Checked = false;
                 this.accountBtn.Checked = false;
+                this.positionBtn.Checked = false;
+                this.permissionBtn.Checked = false;
+                
+                this.refundBtn.Checked = false;
 
                 this.publisherFrm.Show();
 
@@ -434,6 +630,10 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.seoFrm.Hide();
                 this.homeFrm.Hide();
                 this.accountFrm.Hide();
+                this.positionFrm.Hide();
+                this.permissionFrm.Hide();
+                
+                this.refundFrm.Hide();
             }
         }
 
@@ -456,6 +656,10 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.billBtn.Checked = false;
                 this.seoBtn.Checked = false;
                 this.publisherBtn.Checked = false;
+                this.positionBtn.Checked = false;
+                this.permissionBtn.Checked = false;
+                
+                this.refundBtn.Checked = false;
 
                 this.accountFrm.Show();
 
@@ -470,6 +674,141 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.seoFrm.Hide();
                 this.publisherFrm.Hide();
                 this.homeFrm.Hide();
+                this.positionFrm.Hide();
+                this.permissionFrm.Hide();
+                
+                this.refundFrm.Hide();
+            }
+        }
+
+        private void permissionBtn_Click(object sender, EventArgs e)
+        {
+            if (!contentActive.Equals("permissionBtn"))
+            {
+                this.contentActive = "permissionBtn";
+
+                this.permissionBtn.Checked = true;
+
+                this.homeBtn.Checked = false;
+                this.bookBtn.Checked = false;
+                this.authorBtn.Checked = false;
+                this.bookTypeBtn.Checked = false;
+                this.customerBtn.Checked = false;
+                this.staffBtn.Checked = false;
+                this.supplierBtn.Checked = false;
+                this.importBilBtn.Checked = false;
+                this.billBtn.Checked = false;
+                this.seoBtn.Checked = false;
+                this.publisherBtn.Checked = false;
+                this.positionBtn.Checked = false;
+                this.accountBtn.Checked = false;
+                
+                this.refundBtn.Checked = false;
+
+                this.permissionFrm.Show();
+
+                this.bookFrm.Hide();
+                this.authorFrm.Hide();
+                this.bookTypeFrm.Hide();
+                this.customerFrm.Hide();
+                this.staffFrm.Hide();
+                this.supplierFrm.Hide();
+                this.importBillFrm.Hide();
+                this.customerBillFrm.Hide();
+                this.seoFrm.Hide();
+                this.publisherFrm.Hide();
+                this.homeFrm.Hide();
+                this.positionFrm.Hide();
+                this.accountFrm.Hide();
+                
+                this.refundFrm.Hide();
+            }
+        }
+
+        private void refundBtn_Click(object sender, EventArgs e)
+        {
+            if (!contentActive.Equals("refundBtn"))
+            {
+                this.contentActive = "refundBtn";
+
+                this.refundBtn.Checked = true;
+
+                this.homeBtn.Checked = false;
+                this.bookBtn.Checked = false;
+                this.authorBtn.Checked = false;
+                this.bookTypeBtn.Checked = false;
+                this.customerBtn.Checked = false;
+                this.staffBtn.Checked = false;
+                this.supplierBtn.Checked = false;
+                this.importBilBtn.Checked = false;
+                this.billBtn.Checked = false;
+                this.seoBtn.Checked = false;
+                this.publisherBtn.Checked = false;
+                this.positionBtn.Checked = false;
+                this.accountBtn.Checked = false;
+                
+                this.permissionBtn.Checked = false;
+
+                this.refundFrm.Show();
+
+                this.bookFrm.Hide();
+                this.authorFrm.Hide();
+                this.bookTypeFrm.Hide();
+                this.customerFrm.Hide();
+                this.staffFrm.Hide();
+                this.supplierFrm.Hide();
+                this.importBillFrm.Hide();
+                this.customerBillFrm.Hide();
+                this.seoFrm.Hide();
+                this.publisherFrm.Hide();
+                this.homeFrm.Hide();
+                this.positionFrm.Hide();
+                this.accountFrm.Hide();
+                
+                this.permissionFrm.Hide();
+            }
+        }
+        private void positionBtn_Click(object sender, EventArgs e)
+        {
+            if (!contentActive.Equals("positionBtn"))
+            {
+                this.contentActive = "positionBtn";
+
+                this.positionBtn.Checked = true;
+
+                this.homeBtn.Checked = false;
+                this.bookBtn.Checked = false;
+                this.authorBtn.Checked = false;
+                this.bookTypeBtn.Checked = false;
+                this.customerBtn.Checked = false;
+                this.staffBtn.Checked = false;
+                this.supplierBtn.Checked = false;
+                this.importBilBtn.Checked = false;
+                this.billBtn.Checked = false;
+                this.seoBtn.Checked = false;
+                this.publisherBtn.Checked = false;
+                
+                this.accountBtn.Checked = false;
+                this.refundBtn.Checked = false;
+                this.permissionBtn.Checked = false;
+
+                this.positionFrm.Show();
+
+                this.bookFrm.Hide();
+                this.authorFrm.Hide();
+                this.bookTypeFrm.Hide();
+                this.customerFrm.Hide();
+                this.staffFrm.Hide();
+                this.supplierFrm.Hide();
+                this.importBillFrm.Hide();
+                this.customerBillFrm.Hide();
+                this.seoFrm.Hide();
+                this.publisherFrm.Hide();
+                this.homeFrm.Hide();
+                
+                this.accountFrm.Hide();
+                this.refundFrm.Hide();
+                this.permissionFrm.Hide();
             }
         }
 

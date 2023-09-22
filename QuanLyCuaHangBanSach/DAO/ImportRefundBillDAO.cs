@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Data;
 using MySql.Data.MySqlClient;
-using QuanLyCuaHangBanSach.BUS;
 using QuanLyCuaHangBanSach.DTO;
 
 namespace QuanLyCuaHangBanSach.DAO
@@ -24,7 +23,7 @@ namespace QuanLyCuaHangBanSach.DAO
             private set { ImportRefundBillDAO.instance = value; }
         }
         public DataTable getAll() {
-            return DataProvider.Instance.ExecuteQuery("select * from phieutranhaphang;");
+            return DataProvider.Instance.ExecuteQuery("select * from phieutranhaphang WHERE hienThi=1;");
         }
 
         public ImportRefundBillDetailDTO getImportRefundBillDetail(string billId, string bookId)
@@ -68,7 +67,7 @@ namespace QuanLyCuaHangBanSach.DAO
 
         public DataTable searchData(string value)
         {
-            string sql = $@"SELECT * FROM phieutranhaphang WHERE maPhieuTraNhapHang LIKE @maPhieuTraNhapHang;";
+            string sql = $@"SELECT * FROM phieutranhaphang WHERE maPhieuTraNhapHang LIKE @maPhieuTraNhapHang AND hienThi=1;";
 
             return DataProvider.Instance.ExecuteQuery(sql,
                 new MySqlParameter[] {
@@ -80,17 +79,16 @@ namespace QuanLyCuaHangBanSach.DAO
         public bool insert(ImportRefundBillDTO data)
         {
 
-            string sql = $@"INSERT INTO phieutranhaphang (maDonNhapHang, liDo, tongTien, nhaCungCapDaTra, ngayLap, trangThai)
-                            VALUES (@maDonNhapHang, @liDo, @tongTien, @nhaCungCapDaTra, @ngayLap, @trangThai);";
+            string sql = $@"INSERT INTO phieutranhaphang (maDonNhapHang, maNhanVien, liDo, tongTien, ngayLap)
+                            VALUES (@maDonNhapHang, @maNhanVien, @liDo, @tongTien, @ngayLap);";
 
             int rowChanged = DataProvider.Instance.ExecuteNonQuery(sql,
                 new MySqlParameter[] {
                     new MySqlParameter("@maDonNhapHang", data.MaDonNhapHang),
+                    new MySqlParameter("@maNhanVien", data.MaNhanVien),
                     new MySqlParameter("@ngayLap", data.NgayLap),
                     new MySqlParameter("@liDo", data.LiDo),
                     new MySqlParameter("@tongTien", data.TongTien),
-                    new MySqlParameter("@nhaCungCapDaTra", data.NhaCungCapDaTra),
-                    new MySqlParameter("@trangThai", data.TrangThai),
                 });
 
             return rowChanged > 0;
@@ -133,8 +131,9 @@ namespace QuanLyCuaHangBanSach.DAO
         public bool update(ImportRefundBillDTO data)
         {
             string sql = $@"UPDATE phieutranhaphang SET 
-                            maDonNhapHang=@maDonNhapHang, liDo=@liDo, ngayLap=@ngayLap, 
-                            tongTien=@tongTien, nhaCungCapDaTra=@nhaCungCapDaTra, trangThai=@trangThai WHERE maPhieuTraNhapHang=@maPhieuTraNhapHang;";
+                            maDonNhapHang=@maDonNhapHang, maNhanVien=@maNhanVien, liDo=@liDo, ngayLap=@ngayLap, 
+                            tongTien=@tongTien
+                            WHERE maPhieuTraNhapHang=@maPhieuTraNhapHang;";
 
             int rowChanged = DataProvider.Instance.ExecuteNonQuery(sql,
                 new MySqlParameter[] {
@@ -142,8 +141,6 @@ namespace QuanLyCuaHangBanSach.DAO
                     new MySqlParameter("@ngayLap", data.NgayLap),
                     new MySqlParameter("@liDo", data.LiDo),
                     new MySqlParameter("@tongTien", data.TongTien),
-                    new MySqlParameter("@nhaCungCapDaTra", data.NhaCungCapDaTra),
-                    new MySqlParameter("@trangThai", data.TrangThai),
                     new MySqlParameter("@maPhieuTraNhapHang", data.MaPhieu),
                 });
 
@@ -152,7 +149,7 @@ namespace QuanLyCuaHangBanSach.DAO
 
         public bool delete(string id)
         {
-            string sql = $@"DELETE FROM phieutranhaphang WHERE maPhieuTraNhapHang=@maPhieuTraNhapHang;";
+            string sql = $@"UPDATE phieutranhaphang SET hienThi=0 WHERE maPhieuTraNhapHang=@maPhieuTraNhapHang;";
 
             int rowChanged = DataProvider.Instance.ExecuteNonQuery(sql,
                 new MySqlParameter[] {
@@ -165,7 +162,7 @@ namespace QuanLyCuaHangBanSach.DAO
         public ImportRefundBillDTO getById(string id)
         {
             DataTable dataTable = DataProvider.Instance.ExecuteQuery(
-                "SELECT * FROM phieutranhaphang WHERE maPhieuTraNhapHang=@maPhieuTraNhapHang;",
+                "SELECT * FROM phieutranhaphang WHERE maPhieuTraNhapHang=@maPhieuTraNhapHang AND hienThi=1;",
                 new MySqlParameter[] {
                     new MySqlParameter("@maPhieuTraNhapHang", id),
                 }

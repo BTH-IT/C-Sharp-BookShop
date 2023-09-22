@@ -117,9 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="BookImage.ErrorImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -249,7 +246,7 @@
   <data name="BookImage.InitialImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAQAAAAEACAYAAABccqhmAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vwAADr8BOAVTJAAAG+ZJREFUeF7t3X/kv3t9x/HMzMzMJJOZyUwmSTKTJJMcySQ5kiSTJEeSyXEkI0eO
+        vQAADr0BR/uQrQAAG+ZJREFUeF7t3X/kv3t9x/HMzMzMJJOZyUwmSTKTJJMcySQ5kiSTJEeSyXEkI0eO
         yXEkOY4kSZJJkiNJjiRHkuSYJJOZzMzMzMzMtOet07u+389e3/P5fK7363Vdr+t6Px7c/zjOOZ/39b7e
         1/V6PV/Pn8+LoiiKoiiKoiiKoiiKoiiKoiiKoiiKoiiKoiiKoiiKJtVvFK8uHijeV7y7eHPxJ8WvFVEU
         HVB/VHyy+PfiZ/fAv/tW8WjxluIPiiiKdq53Ff9RtF766/jH4ovFgwXL4beKWApRtAN5Ue3m/1u0Xu4l
@@ -371,4 +368,7 @@
         URRFURRFURRF0SA973n/B9v8vKqLDbpyAAAAAElFTkSuQmCC
 </value>
   </data>
+  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
 </root>

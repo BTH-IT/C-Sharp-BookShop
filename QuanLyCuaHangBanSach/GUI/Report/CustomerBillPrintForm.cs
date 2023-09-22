@@ -1,12 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Documents;
 using System.Windows.Forms;
 using Microsoft.Reporting.WinForms;
 using QuanLyCuaHangBanSach.BUS;
@@ -67,8 +60,8 @@ namespace QuanLyCuaHangBanSach.GUI.Report
                 new Microsoft.Reporting.WinForms.ReportParameter("pInvoiceCode", customerBill.MaDonKhachHang.ToString()),
                 new Microsoft.Reporting.WinForms.ReportParameter("pEmployee", staff.Ten.ToString()),
                 new Microsoft.Reporting.WinForms.ReportParameter("pDate", customerBill.NgayLap.GetDateTimeFormats()[0].ToString()),
-                new Microsoft.Reporting.WinForms.ReportParameter("pPhone", customer.Ten.ToString()),
-                new Microsoft.Reporting.WinForms.ReportParameter("pCustomerName", customer.SoDienThoai.ToString()),
+                new Microsoft.Reporting.WinForms.ReportParameter("pScore", customer.Diem.ToString()),
+                new Microsoft.Reporting.WinForms.ReportParameter("pCustomerName", customer == null ? "Không có" : customer.Ten.ToString()),
                 new Microsoft.Reporting.WinForms.ReportParameter("pSale", sale == null ? "Không có" : sale.TenKhuyenMai.ToString()),
                 new Microsoft.Reporting.WinForms.ReportParameter("pSalePrice", salePrice.ToString()),
                 new Microsoft.Reporting.WinForms.ReportParameter("pTotalPrice", (customerBill.TongTien - salePrice).ToString()),

@@ -1,6 +1,4 @@
-﻿using System;
-using System.Data;
-using System.Windows.Documents;
+﻿using System.Data;
 using MySql.Data.MySqlClient;
 using QuanLyCuaHangBanSach.DTO;
 
@@ -26,13 +24,13 @@ namespace QuanLyCuaHangBanSach.DAO
 
         
         public DataTable getAll() {
-            return DataProvider.Instance.ExecuteQuery("select * from theloai");
+            return DataProvider.Instance.ExecuteQuery("select * from theloai WHERE hienThi=1;");
         }
 
         public BookTypeDTO getById(string id)
         {
             DataTable dataTable = DataProvider.Instance.ExecuteQuery(
-                "SELECT * FROM theloai WHERE maTheLoai=@maTheLoai;",
+                "SELECT * FROM theloai WHERE maTheLoai=@maTheLoai AND hienThi=1;",
                 new MySqlParameter[] {
                     new MySqlParameter("@maTheLoai", id)
                 }
@@ -47,7 +45,7 @@ namespace QuanLyCuaHangBanSach.DAO
         
         public DataTable searchData(string value)
         {
-            string sql = $@"SELECT * FROM theloai WHERE maTheLoai LIKE @maTheLoai OR tenTheLoai LIKE @tenTheLoai;";
+            string sql = $@"SELECT * FROM theloai WHERE (maTheLoai LIKE @maTheLoai OR tenTheLoai LIKE @tenTheLoai) AND hienThi=1;";
 
             return DataProvider.Instance.ExecuteQuery(sql,
                 new MySqlParameter[] {
@@ -73,7 +71,7 @@ namespace QuanLyCuaHangBanSach.DAO
 
         public bool update(BookTypeDTO data)
         {
-            string sql = $@"UPDATE theloai SET tenTheLoai=@tenTheLoai WHERE maTheLoai=@maTheLoai;";
+            string sql = $@"UPDATE theloai SET tenTheLoai=@tenTheLoai WHERE maTheLoai=@maTheLoai AND hienThi=1;";
 
             int rowChanged = DataProvider.Instance.ExecuteNonQuery(sql,
                 new MySqlParameter[] {
