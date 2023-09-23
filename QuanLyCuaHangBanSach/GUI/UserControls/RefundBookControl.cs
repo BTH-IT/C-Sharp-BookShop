@@ -21,7 +21,7 @@ namespace QuanLyCuaHangBanSach.GUI.UserControls
 		{
 			InitializeComponent();
 		}
-		public void details(BookDTO book)
+		public void details(BookDTO book,int mode = 0)
 		{
 			try
 			{
@@ -38,7 +38,7 @@ namespace QuanLyCuaHangBanSach.GUI.UserControls
 			IdLb.Text = book.MaSach.ToString();
 			NameLb.Text = book.TenSach;
 			StockLb.Text = book.SoLuongConLai.ToString();
-			PriceLb.Text = string.Format("{0:N0} đ", book.GiaBan);
+			PriceLb.Text = string.Format("{0:N0} đ", mode == 0 ? book.GiaNhap : book.GiaBan );
 			toolTip1.SetToolTip(NameLb, NameLb.Text);
 
 		}

@@ -412,6 +412,7 @@
 			this.Controls.Add(this.title);
 			this.Controls.Add(this.cancelBtn);
 			this.Controls.Add(this.flowLayoutPanel1);
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
 			this.Name = "AccountModal";
 			this.Text = "AccountModal";
 			this.Load += new System.EventHandler(this.AccountModal_Load);

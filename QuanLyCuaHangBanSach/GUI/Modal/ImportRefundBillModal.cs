@@ -42,6 +42,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 				//this.supplierNameTxt.Text= SupplierBUS.Instance.getById(importRefundBill.NhaCungCapDaTra.ToString()).TenNhaCungCap;
 				this.dateTimeTo.Value = importRefundBill.NgayLap;
 				this.reasonTxt.Text = importRefundBill.LiDo;
+				this.reasonTxt.Enabled = false;
 				List<ImportBillDetailDTO> importBillDetail = ImportBillBUS.Instance.getImportBillDetailList(importRefundBill.MaDonNhapHang.ToString());
 				loadDataToImportBookDetail(importBillDetail);
 				List<ImportRefundBillDetailDTO> importRefundBillDetail = ImportRefundBillBUS.Instance.getImportRefundBillDetailList(importRefundBill.MaPhieu.ToString());
@@ -232,9 +233,8 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 				double totalMoney = 0;	
 				foreach(RefundBookControl control in refundBookContainer.Controls)
 				{
-					BookDTO book = BookBUS.Instance.getById(control.getId().ToString());
 					int sl = control.GetBookAmount();
-					totalMoney += book.GiaNhap * sl;
+					totalMoney += control.getPrice() * sl;
 				}
 				this.totalMoney.Text = totalMoney.ToString();
 			}

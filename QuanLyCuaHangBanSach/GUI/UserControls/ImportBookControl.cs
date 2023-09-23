@@ -19,7 +19,7 @@ namespace QuanLyCuaHangBanSach.GUI.UserControls
 			InitializeComponent();
 		}
 		
-		public void details(BookDTO book,int soLuongMua)
+		public void details(BookDTO book,int soLuongMua,int mode=0)
 		{
 			try
 			{
@@ -37,7 +37,7 @@ namespace QuanLyCuaHangBanSach.GUI.UserControls
 			IdLb.Text = book.MaSach.ToString();
 			NameLb.Text = book.TenSach;
 			StockLb.Text = "SL: " + soLuongMua;
-			PriceLb.Text = string.Format("{0:N0} VND", book.GiaBan);
+			PriceLb.Text = string.Format("{0:N0} VND", mode == 0 ? book.GiaNhap : book.GiaBan);
 			toolTip1.SetToolTip(NameLb, NameLb.Text);
 		}
 		private void ImportBookControl_Click(object sender, EventArgs e)

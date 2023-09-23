@@ -16,7 +16,6 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 	public partial class ImportRefundBillGUI : Form
 	{
 		private CheckBox headerCheckbox;
-		private string[] status = {"Chọn trạng thái" ,"Mot", "Hai", "Ba" };
 		public ImportRefundBillGUI()
 		{
 			InitializeComponent();
@@ -65,10 +64,9 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 						{
 							false,
 							importRefundBill.MaPhieu,
-							importBillDTO.MaNhanVien,
-							importRefundBill.MaNhanVien,
+							importRefundBill.MaDonNhapHang,
+							StaffBUS.Instance.getById(importRefundBill.MaNhanVien.ToString()).Ten,
 							importRefundBill.LiDo,
-							SupplierBUS.Instance.getById(importBillDTO.MaNhaCungCap.ToString()).TenNhaCungCap,
 							importRefundBill.TongTien,
 							importRefundBill.NgayLap,
 						});
@@ -80,26 +78,13 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 			renderCheckBoxDgv();
 			this.dateTimeFrom.Enabled = this.filterCkx.Checked;
 			this.dateTimeTo.Enabled = this.filterCkx.Checked;
-			// load supplier cbx
-			loadSupplierCbx();
 			List<ImportRefundBillDTO> importRefundBills = ImportRefundBillBUS.Instance.getAllData();
 			loadDataToDGV(importRefundBills);
 		}
-		private void loadSupplierCbx()
-		{
-			List<SupplierDTO> suppliers = SupplierBUS.Instance.getAllData();
-			suppliers.Insert(0,new SupplierDTO(0,"Chọn nhà cung cấp","",""));
-			//this.supplierCbx.DisplayMember = "TenNhaCungCap";
-			//this.supplierCbx.ValueMember = "MaNhaCungCap";
-			//this.supplierCbx.DataSource = suppliers;
-
-			//this.supplierCbx.SelectedIndex = 0;
-		}
-
 		private void deleteBtn_Click(object sender, EventArgs e)
 		{
 			DialogResult deleteDialogResult = MessageBox.Show(
-					"Bạn có chắc chắn muốn xóa các khách hàng đã chọn",
+					"Bạn có chắc chắn muốn xóa các phiếu đã chọn",
 					"Xác nhận",
 					MessageBoxButtons.YesNo,
 					MessageBoxIcon.None
@@ -173,6 +158,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 		private void btnRefresh_Click(object sender, EventArgs e)
 		{
 			this.searchInput.Clear();
+			this.filterCkx.Checked = false;
 			//this.supplierCbx.SelectedIndex = 0;
 			List<ImportRefundBillDTO> importRefundBills = ImportRefundBillBUS.Instance.getAllData();
 			this.loadDataToDGV(importRefundBills);
@@ -182,10 +168,10 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 		{
 			if (this.dgvImportRefund.CurrentCell.RowIndex < 0)
 			{
-				MessageBox.Show("Hãy chọn khách hàng muốn chỉnh sửa");
+				MessageBox.Show("Hãy chọn phiếu trả muốn xem");
 				return;
 			}
-			using (var modal = new ImportRefundBillModal())
+			using (var modal = new ImportRefundBillModal("Xem chi tiết phiếu trả nhập hàng"))
 			{
 				DataGridViewRow selectedRow = dgvImportRefund.Rows[dgvImportRefund.CurrentCell.RowIndex];
 				ImportRefundBillDTO importRefundBill = ImportRefundBillBUS.Instance.getById(selectedRow.Cells[1].Value.ToString());
@@ -233,12 +219,6 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 				return;
 			}
 			List<ImportRefundBillDTO> importRefundBills = this.handleFilter(this.searchInput.Text);
-			loadDataToDGV(importRefundBills);
-		}
-
-		private void supplierCbx_SelectedIndexChanged(object sender, EventArgs e)
-		{
-			var importRefundBills = this.handleFilter(this.searchInput.Text);
 			loadDataToDGV(importRefundBills);
 		}
 	}
