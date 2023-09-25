@@ -157,6 +157,7 @@
             this.cancelBtn.TabStop = false;
             this.cancelBtn.Text = "Thoát";
             this.cancelBtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
             // 
             // panel2
             // 
@@ -289,6 +290,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "ViewCustomerBillModal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ViewCustomerBillModal";
             this.panel2.ResumeLayout(false);
             this.panel6.ResumeLayout(false);

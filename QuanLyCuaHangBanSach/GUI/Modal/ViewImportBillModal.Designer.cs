@@ -52,11 +52,11 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("#9Slide03 Cabin", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.label1.Location = new System.Drawing.Point(466, 5);
+            this.label1.Location = new System.Drawing.Point(490, 5);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(291, 45);
+            this.label1.Size = new System.Drawing.Size(243, 45);
             this.label1.TabIndex = 13;
-            this.label1.Text = "Xem Đơn Nhập Hàng";
+            this.label1.Text = "Xem Chi Tiết Đơn";
             // 
             // bookList
             // 
@@ -226,6 +226,7 @@
             this.cancelBtn.TabStop = false;
             this.cancelBtn.Text = "Thoát";
             this.cancelBtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
             // 
             // ViewImportBillModal
             // 
@@ -239,6 +240,7 @@
             this.Font = new System.Drawing.Font("#9Slide03 Cabin", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "ViewImportBillModal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ViewImportBillModal";
             this.panel1.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);

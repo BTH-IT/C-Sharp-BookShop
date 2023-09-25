@@ -42,7 +42,7 @@
             this.PriceLb.AutoSize = true;
             this.PriceLb.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.PriceLb.ForeColor = System.Drawing.Color.Blue;
-            this.PriceLb.Location = new System.Drawing.Point(118, 103);
+            this.PriceLb.Location = new System.Drawing.Point(155, 103);
             this.PriceLb.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.PriceLb.Name = "PriceLb";
             this.PriceLb.Size = new System.Drawing.Size(56, 30);
@@ -55,7 +55,7 @@
             this.StockLb.AutoSize = true;
             this.StockLb.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.StockLb.ForeColor = System.Drawing.Color.Gray;
-            this.StockLb.Location = new System.Drawing.Point(120, 78);
+            this.StockLb.Location = new System.Drawing.Point(157, 78);
             this.StockLb.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.StockLb.Name = "StockLb";
             this.StockLb.Size = new System.Drawing.Size(30, 23);
@@ -68,7 +68,7 @@
             this.NameLb.AutoSize = true;
             this.NameLb.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.NameLb.ForeColor = System.Drawing.Color.Black;
-            this.NameLb.Location = new System.Drawing.Point(120, 13);
+            this.NameLb.Location = new System.Drawing.Point(157, 13);
             this.NameLb.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.NameLb.MaximumSize = new System.Drawing.Size(197, 49);
             this.NameLb.Name = "NameLb";
@@ -83,7 +83,7 @@
             this.BookImage.Location = new System.Drawing.Point(4, 8);
             this.BookImage.Margin = new System.Windows.Forms.Padding(4);
             this.BookImage.Name = "BookImage";
-            this.BookImage.Size = new System.Drawing.Size(109, 133);
+            this.BookImage.Size = new System.Drawing.Size(143, 133);
             this.BookImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.BookImage.TabIndex = 7;
             this.BookImage.TabStop = false;

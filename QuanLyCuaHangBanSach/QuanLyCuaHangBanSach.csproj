@@ -834,9 +834,6 @@
     <Compile Include="GUI\UserControls\FilterUserControl.Designer.cs">
       <DependentUpon>FilterUserControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\UserControls\PhoneSearchResultControl.cs">
-      <DependentUpon>PhoneSearchResultControl.cs</DependentUpon>
-    </Compile>
     <Compile Include="GUI\UserControls\ImportBookControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -978,7 +975,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Modal\ImportRefundBillModal.resx">
       <DependentUpon>ImportRefundBillModal.cs</DependentUpon>
-      </EmbeddedResource>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Modal\SaleModal.resx">
       <DependentUpon>SaleModal.cs</DependentUpon>
@@ -1048,9 +1044,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\UserControls\ImportBookControl.resx">
       <DependentUpon>ImportBookControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\UserControls\PhoneSearchResultControl.resx">
-      <DependentUpon>PhoneSearchResultControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\UserControls\ViewBookBill.resx">
       <DependentUpon>ViewBookBill.cs</DependentUpon>
