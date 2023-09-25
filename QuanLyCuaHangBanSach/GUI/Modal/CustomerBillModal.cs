@@ -11,7 +11,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
     public partial class CustomerBillModal : Form
     {
         public bool isSubmitSuccess = false;
-        private List<CustomerBillDetailDTO> customerBillDetailList;
+        private List<CustomerBillDetailDTO> customerBillDetailList = new List<CustomerBillDetailDTO>();
         private int staffId;
 
         public CustomerBillModal(int staffId)

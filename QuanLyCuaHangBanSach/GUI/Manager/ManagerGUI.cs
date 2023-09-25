@@ -27,7 +27,7 @@ namespace QuanLyCuaHangBanSach.GUI
         private AccountManageGUI accountFrm = new AccountManageGUI() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle=FormBorderStyle.None, };
         private PositionManageGUI positionFrm = new PositionManageGUI() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle=FormBorderStyle.None, };
         private PermissionManageGUI permissionFrm = new PermissionManageGUI() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle=FormBorderStyle.None, };
-        private test refundFrm = new test() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle=FormBorderStyle.None, };
+        private RefundFormMenuGUI refundFrm = new RefundFormMenuGUI() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle=FormBorderStyle.None, };
         private test bookTypeFrm = new test() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle=FormBorderStyle.None, };
         private test publisherFrm = new test() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle=FormBorderStyle.None, };
         
@@ -272,7 +272,7 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.bookTypeFrm.Hide();
                 this.customerFrm.Hide();
                 this.staffFrm.Hide();
-                this.supplierFrm.Show();
+                this.supplierFrm.Hide();
                 this.importBillFrm.Hide();
                 this.customerBillFrm.Hide();
                 this.seoFrm.Hide();

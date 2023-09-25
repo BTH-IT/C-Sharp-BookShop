@@ -76,10 +76,11 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 );
             bool isPasswordValid = CustomValidation.Instance.checkTextbox(
                     this.passwordTxt,
-                    this.errorEmailMsg,
+                    this.errorPasswordMsg,
                     this.errorEmailLine,
                     new string[] { "required"}
                 );
+            Console.WriteLine(isPasswordValid);
             bool isConfirmPasswordValid = CustomValidation.Instance.checkTextboxMatchWithOtherTextBox(
                     this.confirmPasswordTxt,
                     this.passwordTxt,
@@ -123,5 +124,10 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
         {
 
         }
-    }
+
+		private void title_Click(object sender, EventArgs e)
+		{
+
+		}
+	}
 }

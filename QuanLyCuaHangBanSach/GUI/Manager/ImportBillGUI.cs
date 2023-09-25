@@ -358,7 +358,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         {
             DataTable dt = CustomExcel.Instance.ImportFile();
 
-            ImportBillDTO newImportBill = new ImportBillDTO(0, 1, 0, ManagerGUI.currentStaff.Ma, DateTime.Now, 0);
+            ImportBillDTO newImportBill = new ImportBillDTO(0, 1, ManagerGUI.currentStaff.Ma, DateTime.Now, 0);
 
             ImportBillDTO importBill = ImportBillBUS.Instance.insertReturnBill(newImportBill);
 

@@ -85,7 +85,11 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         {
             this.dateTimeFrom.Enabled = this.filterCkx.Checked;
             this.dateTimeTo.Enabled = this.filterCkx.Checked;
-        }
+           
+				var sales = handleFilter(this.searchInput.Text);
+                loadDataToDataGridView(sales);
+			
+		}
 
         private void dateTimeTo_ValueChanged(object sender, EventArgs e)
         {
@@ -94,7 +98,8 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             {
              
                 MessageBox.Show("Bạn không thể chọn ngày nhỏ hơn ngày " + dateTimeFrom.Value.GetDateTimeFormats()[0]);
-                return;
+				dateTimeTo.Value= dateTimeFrom.Value ;
+				return;
             }
             List<SaleDTO> sales = handleFilter(searchInput.Text);
             loadDataToDataGridView(sales);
@@ -106,7 +111,8 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             if (!validateFromTo)
             {
                
-                MessageBox.Show("Bạn không thể chọn ngày lơn hơn ngày " + dateTimeTo.Value.GetDateTimeFormats()[0]);
+                MessageBox.Show("Bạn không thể chọn ngày lớn hơn ngày " + dateTimeTo.Value.GetDateTimeFormats()[0]);
+                dateTimeFrom.Value = dateTimeTo.Value;
                 return;
             }
             List<SaleDTO> sales = handleFilter(searchInput.Text);
@@ -180,10 +186,9 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             using (SaleModal modal = new SaleModal("Sửa thông tin khuyến mãi"))
             {
                 DataGridViewRow selectedRow = this.dgvSale.Rows[this.dgvSale.CurrentCell.RowIndex];
-                SaleDTO sale = SaleBUS.Instance.getById(selectedRow.Cells[1].ToString());
-                
+                SaleDTO sale = SaleBUS.Instance.getById(selectedRow.Cells[1].Value.ToString());
                 modal.sale = sale;
-
+            
                 modal.ShowDialog();
 
                 if (modal.isSubmitSuccess)
@@ -225,12 +230,12 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             if (DateTime.Compare(dateTimeTo.Value,dateTimeFrom.Value) >= 0 && filterCkx.Checked)
             {
                 try
-                {
+                { 
                     sales = sales.Where(item =>
-                           (DateTime.Compare(item.NgayBatDau, dateTimeFrom.Value) >= 0) &&
-                           (DateTime.Compare(dateTimeTo.Value, item.NgayKetThuc) <=0)
-
-                    ).ToList();
+                   
+                         DateTime.Compare(item.NgayBatDau, dateTimeFrom.Value) >= 0 &&
+						 DateTime.Compare(item.NgayKetThuc, dateTimeTo.Value) <=0
+					).ToList();
                 }
                 catch
                 {

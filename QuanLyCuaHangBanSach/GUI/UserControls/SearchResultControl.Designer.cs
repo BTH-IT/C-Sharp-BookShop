@@ -1,6 +1,6 @@
 ﻿namespace QuanLyCuaHangBanSach.GUI.Vendor
 {
-    partial class PhoneSearchResultControl
+    partial class SearchResultControl
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PhoneSearchResultControl));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SearchResultControl));
             this.NameLb = new Guna.UI.WinForms.GunaLabel();
             this.PhoneLb = new Guna.UI.WinForms.GunaLabel();
             this.gunaCirclePictureBox1 = new Guna.UI.WinForms.GunaCirclePictureBox();

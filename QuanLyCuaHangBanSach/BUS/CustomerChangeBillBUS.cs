@@ -30,46 +30,46 @@ namespace QuanLyCuaHangBanSach.BUS
 
         public List<CustomerChangeBillDTO> getAllData()
         {
-            List<CustomerChangeBillDTO> importChangeBillList = new List<CustomerChangeBillDTO>();
+            List<CustomerChangeBillDTO> customerChangeBillList = new List<CustomerChangeBillDTO>();
             DataTable dt = CustomerChangeBillDAO.Instance.getAll();
 
             foreach (DataRow row in dt.Rows)
             {
-                CustomerChangeBillDTO importChangeBill = new CustomerChangeBillDTO(row);
-                importChangeBillList.Add(importChangeBill);
+                CustomerChangeBillDTO customerChangeBill = new CustomerChangeBillDTO(row);
+                customerChangeBillList.Add(customerChangeBill);
             }
 
-            return importChangeBillList;
+            return customerChangeBillList;
         }
 
         public List<CustomerChangeBillDTO> search(string value)
         {
             DataTable dataTable = CustomerChangeBillDAO.Instance.searchData(value);
 
-            List<CustomerChangeBillDTO> importChangeBillList = new List<CustomerChangeBillDTO>();
+            List<CustomerChangeBillDTO> customerChangeBillList = new List<CustomerChangeBillDTO>();
 
             foreach (DataRow row in dataTable.Rows)
             {
-                CustomerChangeBillDTO importChangeBill = new CustomerChangeBillDTO(row);
-                importChangeBillList.Add(importChangeBill);
+                CustomerChangeBillDTO customerChangeBill = new CustomerChangeBillDTO(row);
+                customerChangeBillList.Add(customerChangeBill);
             }
 
-            return importChangeBillList;
+            return customerChangeBillList;
         }
 
-        public bool insert(CustomerChangeBillDTO importChangeBill)
+        public bool insert(CustomerChangeBillDTO customerChangeBill)
         {
-            return CustomerChangeBillDAO.Instance.insert(importChangeBill);
+            return CustomerChangeBillDAO.Instance.insert(customerChangeBill);
         }
 
-        public CustomerChangeBillDTO insertReturnBill(CustomerChangeBillDTO importChangeBill)
+        public CustomerChangeBillDTO insertReturnBill(CustomerChangeBillDTO customerChangeBill)
         {
-            return CustomerChangeBillDAO.Instance.insertReturnBill(importChangeBill);
+            return CustomerChangeBillDAO.Instance.insertReturnBill(customerChangeBill);
         }
 
-        public bool update(CustomerChangeBillDTO importChangeBill)
+        public bool update(CustomerChangeBillDTO customerChangeBill)
         {
-            return CustomerChangeBillDAO.Instance.update(importChangeBill);
+            return CustomerChangeBillDAO.Instance.update(customerChangeBill);
         }
 
         public bool delete(string id)

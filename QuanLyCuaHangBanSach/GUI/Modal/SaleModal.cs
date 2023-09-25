@@ -40,7 +40,11 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 this.phanTramTxt.Text = sale.PhanTram.ToString();
                 this.dateTimeFrom.Value = sale.NgayBatDau;
                 this.dateTimeTo.Value = sale.NgayKetThuc;
-            }    
+            }
+            else
+            {
+                Console.WriteLine("null");
+            }   
         }
         private bool validateSubmitForm()
         {
@@ -56,13 +60,6 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                     this.phanTramLine,
                     new string[] { "required", "positive-numbe" }
                 );
-            bool isDateTimeTo = checkDateTimePicker(
-                this.dateTimeFrom,
-                this.errorDateTimeFromMsg,
-                this.dateTimeFromLine,
-                new string[] { "after" },
-                DateTime.Now
-                );
             bool isDateTimeFrom = checkDateTimePicker(
                this.dateTimeFrom,
                this.errorDateTimeFromMsg,
@@ -75,10 +72,10 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                     this.errorDateTimeToMsg,
                     this.dateTimeToLine,
                     new string[] { "after" },
-                    this.dateTimeTo.Value,
-                    "Thời gian kết thúc phải lớn hơn hoặc bằng thời gian bắt đầu"
+                    this.dateTimeFrom.Value,
+                    "Thời gian kết thúc phải lớn hơn hoặc bằng thời \n gian bắt đầu"
                 );
-            return isPhanTramValid && isTenKhuyenMaiValid && isDateTimeTo && isDateTimeFrom && DateFromGreaterOrEqual;  
+            return isPhanTramValid && isTenKhuyenMaiValid  && isDateTimeFrom && DateFromGreaterOrEqual;  
         }
 
         private bool checkDateTimePicker(GunaDateTimePicker guna , Label errorLabel, Panel errorLine, string[] requirements,DateTime dateTimeToCompare,string errorMessage = null)
@@ -90,17 +87,18 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                     case "after":
                         if (DateTime.Compare(guna.Value, dateTimeToCompare) >= 0)
                         {
-                            errorLabel.Text = errorMessage != null ? errorMessage : "Ngày giờ phải lớn hơn hoặc bằng thời gian hiện tại";
-                            errorLine.BackColor = Color.FromArgb(239, 68, 68);
-                            return false;
-                        }
+							errorLabel.Text = "";
+							errorLine.BackColor = Color.FromArgb(45, 212, 191);
+							return true;
+						}
                         else
                         {
-                            errorLabel.Text = "";
-                            errorLine.BackColor = Color.FromArgb(45, 212, 191);
-                            return true;
-                        }
-                        break;
+                           
+							errorLabel.Text = errorMessage != null ? errorMessage : "Ngày giờ phải lớn hơn hoặc bằng thời gian hiện tại";
+							errorLine.BackColor = Color.FromArgb(239, 68, 68);
+							return false;
+						}
+                       
                     default:
                         return false;
                 }

@@ -35,13 +35,15 @@ namespace QuanLyCuaHangBanSach.DAO
                 "SELECT * FROM nhanvien WHERE maNhanVien=@MaNhanVien AND hienThi = 1;",
                 new MySqlParameter[] { new MySqlParameter("@MaNhanVien", id) }
             );
-
-            if (dataTable.Rows.Count <= 0) return null;
-
-            StaffDTO customer = new StaffDTO(dataTable.Rows[0]);
-
-            return customer;
+       
+            if (dataTable.Rows.Count <= 0)
+            {
+				return null;
+			}
+			StaffDTO staff = new StaffDTO(dataTable.Rows[0]);
+            return staff;
         }
+
 
         public List<StaffDTO> searchData(string value)
         {
