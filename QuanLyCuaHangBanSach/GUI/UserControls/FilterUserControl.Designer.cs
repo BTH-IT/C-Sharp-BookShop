@@ -166,7 +166,6 @@
             this.TypeCb.Size = new System.Drawing.Size(154, 28);
             this.TypeCb.TabIndex = 6;
             this.TypeCb.Tag = "";
-            this.TypeCb.SelectedIndexChanged += new System.EventHandler(this.TypeCb_SelectedIndexChanged);
             // 
             // AuthorCb
             // 
@@ -190,7 +189,6 @@
             this.AuthorCb.Size = new System.Drawing.Size(154, 28);
             this.AuthorCb.TabIndex = 7;
             this.AuthorCb.Tag = "";
-            this.AuthorCb.SelectedIndexChanged += new System.EventHandler(this.AuthorCb_SelectedIndexChanged);
             // 
             // PublisherCb
             // 
@@ -214,7 +212,6 @@
             this.PublisherCb.Size = new System.Drawing.Size(154, 28);
             this.PublisherCb.TabIndex = 8;
             this.PublisherCb.Tag = "";
-            this.PublisherCb.SelectedIndexChanged += new System.EventHandler(this.PublisherCb_SelectedIndexChanged);
             // 
             // Typelb
             // 

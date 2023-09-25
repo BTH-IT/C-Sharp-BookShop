@@ -804,11 +804,11 @@
     <Compile Include="GUI\UserControls\ImportBookControl.Designer.cs">
       <DependentUpon>ImportBookControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\UserControls\PhoneSearchResultControl.cs">
+    <Compile Include="GUI\UserControls\SearchResultControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\UserControls\PhoneSearchResultControl.Designer.cs">
-      <DependentUpon>PhoneSearchResultControl.cs</DependentUpon>
+    <Compile Include="GUI\UserControls\SearchResultControl.Designer.cs">
+      <DependentUpon>SearchResultControl.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\UserControls\RefundBookControl.cs">
       <SubType>UserControl</SubType>
