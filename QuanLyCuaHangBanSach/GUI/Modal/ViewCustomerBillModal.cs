@@ -29,7 +29,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             {
                 BookDTO book = BookBUS.Instance.getById(customerBillDetail.MaSach.ToString());
 
-                ViewBookBill viewBook = new ViewBookBill(book.TenSach, customerBillDetail.SoLuong, customerBillDetail.DonGia);
+                ViewBookBill viewBook = new ViewBookBill(book.TenSach, customerBillDetail.SoLuong, customerBillDetail.DonGia, book.HinhAnh);
 
                 this.bookList.Controls.Add(viewBook);
             }

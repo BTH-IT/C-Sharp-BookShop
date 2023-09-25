@@ -28,11 +28,11 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
             this.bookList.Controls.Clear();
 
-            foreach (ImportBillDetailDTO supplierBillDetail in ImportBillBUS.Instance.getImportBillDetailList(supplierBill.MaDonNhapHang.ToString()))
+            foreach (ImportBillDetailDTO importBillDetail in ImportBillBUS.Instance.getImportBillDetailList(supplierBill.MaDonNhapHang.ToString()))
             {
-                BookDTO book = BookBUS.Instance.getById(supplierBillDetail.MaSach.ToString());
+                BookDTO book = BookBUS.Instance.getById(importBillDetail.MaSach.ToString());
 
-                ViewBookBill viewBook = new ViewBookBill(book.TenSach, supplierBillDetail.SoLuong, supplierBillDetail.DonGia);
+                ViewBookBill viewBook = new ViewBookBill(book.TenSach, importBillDetail.SoLuong, importBillDetail.DonGia, book.HinhAnh);
 
                 this.bookList.Controls.Add(viewBook);
             }
