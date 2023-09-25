@@ -33,11 +33,10 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 int  namSinh =int.Parse(this.birthYearTxt.Text);
                 int maChucVu = (int)this.positionCbx.SelectedValue;
                 string gioiTinh = this.genderCbx.SelectedItem.ToString();
-                int soNgayNghi = int.Parse(this.dayOffTxt.Text.ToString());
 
                 int maNhanVien = this.staff != null ? this.staff.Ma : 0;
 
-                StaffDTO staff = new StaffDTO(maNhanVien, tenNhanVien, soDienThoai, gioiTinh, namSinh, soNgayNghi, maChucVu, luong);
+                StaffDTO staff = new StaffDTO(maNhanVien, tenNhanVien, soDienThoai, gioiTinh, namSinh, maChucVu, luong);
 
                 bool isSubmitSuccess = this.staff != null ? StaffBUS.Instance.update(staff) : StaffBUS.Instance.insert(staff);
 

@@ -33,7 +33,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
         private void loadStaffCbx()
         {
             List<StaffDTO> staffs = StaffBUS.Instance.getAllData();
-            staffs.Insert(0, new StaffDTO(0,"Chọn nhân viên","","",0,0,0,0));
+            staffs.Insert(0, new StaffDTO(0,"Chọn nhân viên","","",0,0,0));
 
             this.staffComboBox.ValueMember = "Ma";
             this.staffComboBox.DisplayMember = "Ten";
