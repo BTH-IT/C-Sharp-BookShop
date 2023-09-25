@@ -63,7 +63,18 @@ namespace QuanLyCuaHangBanSach.BUS
 
             return accountList;
         }
-
+        public List<AccountDTO> search(string searchInput) 
+        { 
+            List<AccountDTO> accounts = new List<AccountDTO>();  
+            DataTable dt =AccountDAO.Instance.search(searchInput);
+            if (dt == null) return accounts;    
+            foreach(DataRow row in dt.Rows)
+            {
+                AccountDTO account = new AccountDTO(row);
+                accounts.Add(account);
+            }
+            return accounts;
+        }
         public AccountDTO getById(string id)
         {
             return AccountDAO.Instance.getById(id);

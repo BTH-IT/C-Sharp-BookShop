@@ -11,13 +11,15 @@ using QuanLyCuaHangBanSach.DTO;
 using QuanLyCuaHangBanSach.GUI.Modal;
 using QuanLyCuaHangBanSach;
 using MySqlX.XDevAPI.Relational;
+using System.Linq;
 
 namespace QuanLyCuaHangBanTacGia.GUI.Manager
 {
     public partial class AuthorGUI : Form
     {
         private CheckBox headerCheckbox;
-        public AuthorGUI()
+		string[] genders = new string[] { "Chọn giới tính", "Nam", "Nữ" };
+		public AuthorGUI()
         {
             InitializeComponent();
         }
@@ -68,8 +70,9 @@ namespace QuanLyCuaHangBanTacGia.GUI.Manager
 
             List<AuthorDTO> AuthorList = AuthorBUS.Instance.getAllData();
             this.loadAuthorListToDataView(AuthorList);
-
-            this.renderCheckBoxDgv();
+			this.genderCbx.Items.AddRange(genders);
+			this.genderCbx.SelectedIndex = 0;
+			this.renderCheckBoxDgv();
             headerCheckbox.MouseClick += new MouseEventHandler(headerCheckbox_Clicked);
         }
 
@@ -89,8 +92,12 @@ namespace QuanLyCuaHangBanTacGia.GUI.Manager
             this.searchInput.ForeColor = Color.Black;
 
             List<AuthorDTO> AuthorList = AuthorBUS.Instance.search(this.searchInput.Text.ToString());
-
-            this.loadAuthorListToDataView(AuthorList);
+            string selectedGender = this.genderCbx.SelectedItem.ToString();
+            if (selectedGender != genders[0])
+			{
+				AuthorList = AuthorList.Where(a => a.GioiTinh == selectedGender).ToList();
+			}
+			this.loadAuthorListToDataView(AuthorList);
         }
 
         
@@ -225,7 +232,7 @@ namespace QuanLyCuaHangBanTacGia.GUI.Manager
         private void refreshBtn_Click(object sender, EventArgs e)
         {
             this.searchInput.Clear();
-
+            this.genderCbx.SelectedIndex = 0;
             List<AuthorDTO> AuthorList = AuthorBUS.Instance.search("");
             this.loadAuthorListToDataView(AuthorList);
         }
@@ -250,5 +257,16 @@ namespace QuanLyCuaHangBanTacGia.GUI.Manager
         {
 
         }
-    }
+
+		private void genderCbx_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			List<AuthorDTO> authors = AuthorBUS.Instance.search(this.searchInput.Text.ToString());
+            string selectedGender = this.genderCbx.SelectedItem.ToString();
+            if (selectedGender != genders[0])
+            {
+                authors = authors.Where(a => a.GioiTinh == selectedGender).ToList();
+            }    
+            loadAuthorListToDataView(authors);
+		}
+	}
 }

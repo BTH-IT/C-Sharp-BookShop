@@ -480,7 +480,6 @@ namespace QuanLyCuaHangBanTacGia.GUI.Manager
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
-
         }
 
         #endregion
@@ -504,5 +503,6 @@ namespace QuanLyCuaHangBanTacGia.GUI.Manager
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private Guna.UI2.WinForms.Guna2TextBox searchInput;
-    }
+		private Guna.UI.WinForms.GunaComboBox genderCbx;
+	}
 }

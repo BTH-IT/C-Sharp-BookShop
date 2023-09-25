@@ -12,20 +12,26 @@ using QuanLyCuaHangBanSach.DTO;
 
 namespace QuanLyCuaHangBanSach.GUI.Vendor
 {
-    public partial class PhoneSearchResultControl : UserControl
+    public partial class SearchResultControl : UserControl
     {
         int temp_id;
         public static int id;
-        public PhoneSearchResultControl()
+        public SearchResultControl()
         {
             InitializeComponent();
         }
 
-        public void details(CustomerDTO customer)
+        public void details_Vendor(CustomerDTO customer)
         {
             NameLb.Text = customer.Ten;
             PhoneLb.Text = customer.SoDienThoai;
             temp_id = customer.Ma;
+        }
+        public void details_Import(SupplierDTO supplier)
+        {
+            NameLb.Text = supplier.TenNhaCungCap;
+            PhoneLb.Text = supplier.SoDienThoai;
+            temp_id = supplier.MaNhaCungCap;
         }
 
         private void PhoneSearchResultControl_MouseHover(object sender, EventArgs e)

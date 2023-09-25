@@ -107,7 +107,14 @@ namespace QuanLyCuaHangBanSach
                             return false;
                         }
                         break;
-                }
+                    case "custom-supplier-required":
+						if (!checkTextboxEmptyWithMsg(txt, "Vui lòng chọn Nhà Cung cấp qua Phiếu nhập", errMsgLbl, line))
+						{
+							return false;
+						}
+						break;
+
+				}
             }
 
             return true;
