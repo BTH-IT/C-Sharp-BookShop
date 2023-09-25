@@ -93,7 +93,6 @@ namespace QuanLyCuaHangBanSach.BUS
         {
             return BookDAO.Instance.deleteBookAmount(id, amount);
         }
-
         public bool createBookAmount(string id, int amount)
         {
             return BookDAO.Instance.createBookAmount(id, amount);
