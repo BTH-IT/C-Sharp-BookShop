@@ -1,6 +1,8 @@
 ﻿using QuanLyCuaHangBanSach.BUS;
 using QuanLyCuaHangBanSach.DAO;
 using QuanLyCuaHangBanSach.DTO;
+using QuanLyCuaHangBanSach.GUI.Report;
+using QuanLyCuaHangBanSach.GUI.Modal;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -220,56 +222,38 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
         private void addBtn_Click(object sender, EventArgs e)
         {
-            /*using (ImportChangeBillModal ImportChangeBillModal = new ImportChangeBillModal())
+            using (ImportChangeBillModal importChangeBillModal = new ImportChangeBillModal(1))
             {
-                ImportChangeBillModal.ShowDialog();
+                importChangeBillModal.ShowDialog();
 
 
-                if (ImportChangeBillModal.isSubmitSuccess)
+                if (importChangeBillModal.isSubmitSuccess)
                 {
-                    List<ImportChangeBillDTO> ImportChangeBillList = ImportChangeBillBUS.Instance.search(this.searchInput.Text.ToString());
+                    List<ImportChangeBillDTO> importChangeBillList = ImportChangeBillBUS.Instance.search(this.searchInput.Text.ToString());
 
-                    this.loadImportChangeBillListToDataView(ImportChangeBillList);
+                    this.loadImportChangeBillListToDataView(importChangeBillList);
                 }
-            }*/
+            }
         }
 
         private void printPdfBtn_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void dgvImportChangeBill_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            /*if (e.RowIndex < 0 || e.ColumnIndex <= 0)
+            if (this.dgvImportChangeBill.CurrentCell.RowIndex < 0)
             {
+                MessageBox.Show("Hãy chọn dòng dữ liệu muốn thao tác");
                 return;
             }
 
-            using (ImportChangeBillModal ImportChangeBillModal = new ImportChangeBillModal("Sửa sách"))
+            DataGridViewRow row = this.dgvImportChangeBill.Rows[this.dgvImportChangeBill.CurrentCell.RowIndex];
+
+            using (ImportChangeBillPrintForm importChangeBillPrintForm = new ImportChangeBillPrintForm(Convert.ToInt32(row.Cells[1].Value)))
             {
-                DataGridViewRow row = this.dgvImportChangeBill.Rows[e.RowIndex];
 
-                ImportChangeBillDTO ImportChangeBill = ImportChangeBillBUS.Instance.getById(row.Cells[1].Value.ToString());
+                importChangeBillPrintForm.ShowDialog();
 
-                ImportChangeBillModal.updateImportChangeBill = ImportChangeBill;
-
-                if (ImportChangeBillModal.updateImportChangeBill == null)
-                {
-                    MessageBox.Show("Đã xảy ra lỗi vui lòng thử lại sau!!");
-                    return;
-                }
-
-                ImportChangeBillModal.ShowDialog();
-
-                if (ImportChangeBillModal.isSubmitSuccess)
-                {
-                    List<ImportChangeBillDTO> ImportChangeBillList = ImportChangeBillBUS.Instance.search(this.searchInput.Text.ToString());
-
-                    this.loadImportChangeBillListToDataView(ImportChangeBillList);
-                }
-            }*/
+            }
         }
+
 
         private List<ImportChangeBillDTO> handleFilter(string searchText)
         {

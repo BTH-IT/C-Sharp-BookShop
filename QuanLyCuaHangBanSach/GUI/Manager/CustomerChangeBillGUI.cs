@@ -249,7 +249,20 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         private void printPdfBtn_Click(object sender, EventArgs e)
         {
 
-           
+            if (this.dgvCustomerChangeBill.CurrentCell.RowIndex < 0)
+            {
+                MessageBox.Show("Hãy chọn dòng dữ liệu muốn thao tác");
+                return;
+            }
+
+            DataGridViewRow row = this.dgvCustomerChangeBill.Rows[this.dgvCustomerChangeBill.CurrentCell.RowIndex];
+
+            using (CustomerChangeBillPrintForm customerChangeBillPrintForm = new CustomerChangeBillPrintForm(Convert.ToInt32(row.Cells[1].Value)))
+            {
+
+                customerChangeBillPrintForm.ShowDialog();
+
+            }
         }
 
         private void dgvCustomerChangeBill_CellDoubleClick(object sender, DataGridViewCellEventArgs e)

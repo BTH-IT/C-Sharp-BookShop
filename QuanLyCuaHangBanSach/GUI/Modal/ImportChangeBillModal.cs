@@ -21,17 +21,15 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             this.staffId = staffId;
         }
 
-        private void loadCustomerCbx()
+        private void loadSupplierCbx()
         {
-            List<CustomerDTO> customerList = CustomerBUS.Instance.getAllData();
+            List<SupplierDTO> supplierList = SupplierBUS.Instance.getAllData();
 
-            customerList.Insert(0, new CustomerDTO(-1, "", "Chọn khách hàng", "", 0, 0));
-            customerList.Insert(1, new CustomerDTO(0, "", "Không có khách hàng", "", 0, 0));
+            supplierList.Insert(0, new SupplierDTO(0,"Chọn nhà cung cấp","","0"));
 
-            this.supplierCbx.ValueMember = "Ma";
+            this.supplierCbx.ValueMember = "MaNhaCungCap";
             this.supplierCbx.DisplayMember = "SoDienThoai";
-            this.supplierCbx.DataSource = customerList;
-
+            this.supplierCbx.DataSource = supplierList;
             this.supplierCbx.SelectedIndex = 0;
         }
 
@@ -63,39 +61,13 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
         private void ImportChangeBillModal_Load(object sender, EventArgs e)
         {
-            this.loadCustomerCbx(); ;
+            this.loadSupplierCbx(); ;
             this.loadBookNeedChangeCbx();
             this.loadBookWantChangeCbx();
 
             this.supplierCbx.SelectedValue = 0;
             this.bookNeedChangeCbx.SelectedValue = 0;
             this.supplierCbx.SelectedValue = 0;
-        }
-
-        private void gunaButton1_Click(object sender, EventArgs e)
-        {
-            /*using (AddBookToImportChangeBillModal addBookToBillModal = new AddBookToImportChangeBillModal(customerChangeBillDetailList))
-            {
-                addBookToBillModal.ShowDialog();
-
-
-                foreach (ImportChangeBillDetailDTO customerChangeBillDetail in addBookToBillModal.selectedImportChangeBillDetailList)
-                {
-                    int idx = this.customerChangeBillDetailList.FindIndex(
-                        book => book.MaSach == customerChangeBillDetail.MaSach
-                    );
-
-                    if (idx == -1)
-                    {
-                        this.customerChangeBillDetailList.Add(customerChangeBillDetail);
-                        continue;
-                    }
-
-                    this.customerChangeBillDetailList[idx].SoLuong += customerChangeBillDetail.SoLuong;
-                }
-
-                this.loadImportChangeBillDetailList();
-            }*/
         }
 
         private bool validate()
@@ -140,17 +112,17 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
             if (!isValid) return;
 
-            ImportChangeBillDTO customerChangeBill = new ImportChangeBillDTO();
+            ImportChangeBillDTO importChangeBillBill = new ImportChangeBillDTO();
 
-            customerChangeBill.MaNhanVien = this.staffId;
-            customerChangeBill.MaNhaCungCap = Convert.ToInt32(this.supplierCbx.SelectedValue);
-            customerChangeBill.SachCanDoi = Convert.ToInt32(this.bookNeedChangeCbx.SelectedValue);
-            customerChangeBill.SachMuonDoi = Convert.ToInt32(this.bookWantChangeCbx.SelectedValue);
-            customerChangeBill.LiDo = this.reasonTxt.Text;
-            customerChangeBill.TinhTrangSanPham = this.conditionTxt.Text;
-            customerChangeBill.NgayLap = DateTime.Now;
+            importChangeBillBill.MaNhanVien = this.staffId;
+            importChangeBillBill.MaNhaCungCap = Convert.ToInt32(this.supplierCbx.SelectedValue);
+            importChangeBillBill.SachCanDoi = Convert.ToInt32(this.bookNeedChangeCbx.SelectedValue);
+            importChangeBillBill.SachMuonDoi = Convert.ToInt32(this.bookWantChangeCbx.SelectedValue);
+            importChangeBillBill.LiDo = this.reasonTxt.Text;
+            importChangeBillBill.TinhTrangSanPham = this.conditionTxt.Text;
+            importChangeBillBill.NgayLap = DateTime.Now;
 
-            ImportChangeBillDTO newImportChangeBill = ImportChangeBillBUS.Instance.insertReturnBill(customerChangeBill);
+            ImportChangeBillDTO newImportChangeBill = ImportChangeBillBUS.Instance.insertReturnBill(importChangeBillBill);
 
 
             if (newImportChangeBill == null)
@@ -162,8 +134,8 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             else
             {
 
-                BookBUS.Instance.deleteBookAmount(customerChangeBill.SachCanDoi.ToString(), 1);
-                BookBUS.Instance.createBookAmount(customerChangeBill.SachMuonDoi.ToString(), 1);
+                BookBUS.Instance.deleteBookAmount(importChangeBillBill.SachCanDoi.ToString(), 1);
+                BookBUS.Instance.createBookAmount(importChangeBillBill.SachMuonDoi.ToString(), 1);
                 MessageBox.Show("Success");
 
                 this.isSubmitSuccess = true;

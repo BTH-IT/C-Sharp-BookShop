@@ -115,6 +115,7 @@
             this.printPdfBtn.Size = new System.Drawing.Size(92, 42);
             this.printPdfBtn.TabIndex = 9;
             this.printPdfBtn.Text = "In PDF";
+            this.printPdfBtn.Click += new System.EventHandler(this.printPdfBtn_Click);
             // 
             // exportBtn
             // 
