@@ -742,6 +742,18 @@
     <Compile Include="GUI\Modal\ScannerModal.Designer.cs">
       <DependentUpon>ScannerModal.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Modal\ViewCustomerBillModal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Modal\ViewCustomerBillModal.Designer.cs">
+      <DependentUpon>ViewCustomerBillModal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modal\ViewImportBillModal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Modal\ViewImportBillModal.Designer.cs">
+      <DependentUpon>ViewImportBillModal.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Report\bookDataSet.cs">
       <DependentUpon>bookDataSet.xsd</DependentUpon>
     </Compile>
@@ -822,6 +834,9 @@
     <Compile Include="GUI\UserControls\FilterUserControl.Designer.cs">
       <DependentUpon>FilterUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\UserControls\PhoneSearchResultControl.cs">
+      <DependentUpon>PhoneSearchResultControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\UserControls\ImportBookControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -839,6 +854,12 @@
     </Compile>
     <Compile Include="GUI\UserControls\RefundBookControl.Designer.cs">
       <DependentUpon>RefundBookControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UserControls\ViewBookBill.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UserControls\ViewBookBill.Designer.cs">
+      <DependentUpon>ViewBookBill.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Vendor\VendorGUI.cs">
       <SubType>Form</SubType>
@@ -977,6 +998,12 @@
     <EmbeddedResource Include="GUI\Modal\ScannerModal.resx">
       <DependentUpon>ScannerModal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Modal\ViewCustomerBillModal.resx">
+      <DependentUpon>ViewCustomerBillModal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Modal\ViewImportBillModal.resx">
+      <DependentUpon>ViewImportBillModal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Report\CustomerBillPrintForm.resx">
       <DependentUpon>CustomerBillPrintForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -1024,6 +1051,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\UserControls\PhoneSearchResultControl.resx">
       <DependentUpon>PhoneSearchResultControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UserControls\ViewBookBill.resx">
+      <DependentUpon>ViewBookBill.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\UserControls\RefundBookControl.resx">
       <DependentUpon>RefundBookControl.cs</DependentUpon>

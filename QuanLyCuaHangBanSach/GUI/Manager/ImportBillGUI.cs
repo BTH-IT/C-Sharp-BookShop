@@ -76,7 +76,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         {
             List<StaffDTO> staffList = StaffBUS.Instance.getAllData();
 
-            staffList.Insert(0, new StaffDTO(0, "Tất cả nhân viên", "", "", 0, 0, 0,0));
+            staffList.Insert(0, new StaffDTO(0, "Tất cả nhân viên", "", "", 0, 0,0));
 
             this.staffCbx.ValueMember = "Ma";
             this.staffCbx.DisplayMember = "Ten";
@@ -244,31 +244,6 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             CustomExcel.Instance.ExportFile(dataTable, "Import Bill Manage", "Cửa hàng bán sách", headerList);
         }
 
-        private void editBtn_Click(object sender, EventArgs e)
-        {
-            if (this.dgvImportBill.CurrentCell.RowIndex < 0)
-            {
-                MessageBox.Show("Hãy chọn dòng dữ liệu muốn thao tác");
-                return;
-            }
-
-            DataGridViewRow row = this.dgvImportBill.Rows[this.dgvImportBill.CurrentCell.RowIndex];
-
-            using (ImportBillModal importBillModal = new ImportBillModal(Convert.ToInt32(row.Cells[1].Value)))
-            {
-                BookDTO importBill = BookBUS.Instance.getById(row.Cells[1].Value.ToString());
-
-                importBillModal.ShowDialog();
-
-                if (importBillModal.isSubmitSuccess)
-                {
-                    List<ImportBillDTO> importBillList = handleFilter(this.searchInput.Text.ToString());
-
-                    this.loadImportBillListToDataView(importBillList);
-                }
-            }
-        }
-
         private void deleteBtn_Click(object sender, EventArgs e)
         {
             bool isHaveSelect = false;
@@ -405,6 +380,24 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                         BookBUS.Instance.update(book);
                     };
                 }
+            }
+        }
+
+        private void viewMoreBtn_Click(object sender, EventArgs e)
+        {
+            if (this.dgvImportBill.CurrentCell.RowIndex < 0)
+            {
+                MessageBox.Show("Hãy chọn dòng dữ liệu muốn thao tác");
+                return;
+            }
+
+            DataGridViewRow row = this.dgvImportBill.Rows[this.dgvImportBill.CurrentCell.RowIndex];
+
+            ImportBillDTO importBill = ImportBillBUS.Instance.getById(row.Cells[1].Value.ToString());
+
+            using (ViewImportBillModal viewImportBillModal = new ViewImportBillModal(importBill))
+            {
+                viewImportBillModal.ShowDialog();
             }
         }
     }
