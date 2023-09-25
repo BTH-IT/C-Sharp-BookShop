@@ -149,7 +149,6 @@ namespace QuanLyCuaHangBanSach.DAO
                     new MySqlParameter("@tongTien", data.TongTien),
                     new MySqlParameter("@maDonNhapHang", data.MaDonNhapHang),
                 });
-
             return rowChanged > 0;
         }
 

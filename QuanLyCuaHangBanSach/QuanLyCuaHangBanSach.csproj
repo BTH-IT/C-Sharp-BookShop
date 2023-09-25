@@ -433,7 +433,6 @@
     <Compile Include="BUS\BookTypeBUS.cs" />
     <Compile Include="BUS\AuthorBUS.cs" />
     <Compile Include="BUS\BookBUS.cs" />
-    <Compile Include="BUS\CustomerBUS.cs" />
     <Compile Include="BUS\AccountBUS.cs" />
     <Compile Include="BUS\IBUS.cs" />
     <Compile Include="CustomButton.cs">
@@ -451,8 +450,6 @@
     <Compile Include="DAO\PermissionDAO.cs" />
     <Compile Include="DAO\SaleDAO.cs" />
     <Compile Include="DAO\StaffDAO.cs" />
-    <Compile Include="DAO\ImportBillDAO.cs" />
-    <Compile Include="DAO\CustomerBillDAO.cs" />
     <Compile Include="DAO\CustomerDAO.cs" />
     <Compile Include="DAO\SupplierDAO.cs" />
     <Compile Include="DTO\AuthDetailDTO.cs" />
@@ -483,12 +480,10 @@
     <Compile Include="DAO\AuthorDAO.cs" />
     <Compile Include="DAO\BookDAO.cs" />
     <Compile Include="DAO\AccountDAO.cs" />
-    <Compile Include="DAO\CustomerDAO.cs" />
     <Compile Include="DAO\IDAO.cs" />
     <Compile Include="DTO\AuthorDTO.cs" />
     <Compile Include="DTO\PublisherDTO.cs" />
     <Compile Include="DTO\BookTypeDTO.cs" />
-    <Compile Include="DTO\BookDTO.cs" />
     <Compile Include="DTO\AccountDTO.cs" />
     <Compile Include="CustomExcel.cs" />
     <Compile Include="GradientPanel.cs">
@@ -537,17 +532,35 @@
     <Compile Include="GUI\Manager\CustomerManagerGUI.designer.cs">
       <DependentUpon>CustomerManagerGUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Manager\CustomerRefundBillGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Manager\CustomerRefundBillGUI.Designer.cs">
+      <DependentUpon>CustomerRefundBillGUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Manager\ImportRefundBillGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Manager\ImportRefundBillGUI.Designer.cs">
+      <DependentUpon>ImportRefundBillGUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Manager\RefundFormMenuGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Manager\RefundFormMenuGUI.Designer.cs">
+      <DependentUpon>RefundFormMenuGUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Manager\SeoManageGUI.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\Manager\SeoManageGUI.Designer.cs">
       <DependentUpon>SeoManageGUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Manager\StaffManageGUI.Designer.cs">
+      <DependentUpon>StaffManageGUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Manager\StaffManageGUI.cs">
       <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\Manager\StaffManageGUI.designer.cs">
-      <DependentUpon>StaffManageGUI.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Manager\SupplierManagerGUI.cs">
       <SubType>Form</SubType>
@@ -606,7 +619,7 @@
     <Compile Include="GUI\Modal\AccountModal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Modal\AccountModal.designer.cs">
+    <Compile Include="GUI\Modal\AccountModal.Designer.cs">
       <DependentUpon>AccountModal.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modal\AddBookToCustomerBillModal.cs">
@@ -650,6 +663,18 @@
     </Compile>
     <Compile Include="GUI\Modal\CustomerModal.Designer.cs">
       <DependentUpon>CustomerModal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modal\CustomerRefundBillModal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Modal\CustomerRefundBillModal.Designer.cs">
+      <DependentUpon>CustomerRefundBillModal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modal\ImportRefundBillModal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Modal\ImportRefundBillModal.Designer.cs">
+      <DependentUpon>ImportRefundBillModal.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modal\SaleModal.cs">
       <SubType>Form</SubType>
@@ -773,14 +798,23 @@
     <Compile Include="GUI\UserControls\FilterUserControl.Designer.cs">
       <DependentUpon>FilterUserControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\UserControls\FilterUserControl.Designer.cs">
-      <DependentUpon>FilterUserControl.cs</DependentUpon>
+    <Compile Include="GUI\UserControls\ImportBookControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UserControls\ImportBookControl.Designer.cs">
+      <DependentUpon>ImportBookControl.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\UserControls\SearchResultControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="GUI\UserControls\SearchResultControl.Designer.cs">
       <DependentUpon>SearchResultControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UserControls\RefundBookControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UserControls\RefundBookControl.Designer.cs">
+      <DependentUpon>RefundBookControl.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Vendor\VendorGUI.cs">
       <SubType>Form</SubType>
@@ -813,11 +847,17 @@
     <EmbeddedResource Include="GUI\Manager\CustomerManagerGUI.resx">
       <DependentUpon>CustomerManagerGUI.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Manager\CustomerRefundBillGUI.resx">
+      <DependentUpon>CustomerRefundBillGUI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Manager\HomeManageGUI.resx">
       <DependentUpon>HomeManageGUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Manager\ImportBillGUI.resx">
       <DependentUpon>ImportBillGUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Manager\ImportRefundBillGUI.resx">
+      <DependentUpon>ImportRefundBillGUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Manager\ManagerGUI.resx">
       <DependentUpon>ManagerGUI.cs</DependentUpon>
@@ -827,6 +867,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Auth\SendCodeGUI.resx">
       <DependentUpon>SendCodeGUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Manager\RefundFormMenuGUI.resx">
+      <DependentUpon>RefundFormMenuGUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Manager\SeoManageGUI.resx">
       <DependentUpon>SeoManageGUI.cs</DependentUpon>
@@ -870,8 +913,14 @@
     <EmbeddedResource Include="GUI\Modal\CustomerModal.resx">
       <DependentUpon>CustomerModal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Modal\CustomerRefundBillModal.resx">
+      <DependentUpon>CustomerRefundBillModal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Modal\ImportBillModal.resx">
       <DependentUpon>ImportBillModal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Modal\ImportRefundBillModal.resx">
+      <DependentUpon>ImportRefundBillModal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Modal\SaleModal.resx">
       <DependentUpon>SaleModal.cs</DependentUpon>
@@ -933,8 +982,14 @@
     <EmbeddedResource Include="GUI\UserControls\FilterUserControl.resx">
       <DependentUpon>FilterUserControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\UserControls\SearchResultControl.resx">
-      <DependentUpon>SearchResultControl.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\UserControls\ImportBookControl.resx">
+      <DependentUpon>ImportBookControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UserControls\PhoneSearchResultControl.resx">
+      <DependentUpon>PhoneSearchResultControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UserControls\RefundBookControl.resx">
+      <DependentUpon>RefundBookControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Vendor\VendorGUI.resx">
       <DependentUpon>VendorGUI.cs</DependentUpon>

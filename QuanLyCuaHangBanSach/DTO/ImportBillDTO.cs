@@ -7,6 +7,7 @@ namespace QuanLyCuaHangBanSach.DTO
     {
         public int MaDonNhapHang { get; set; }
         public int MaNhaCungCap { get; set; }
+
         public ImportBillDTO() : base()
         {
         }
