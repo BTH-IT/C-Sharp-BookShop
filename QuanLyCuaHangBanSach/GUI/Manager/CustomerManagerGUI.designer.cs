@@ -1,33 +1,33 @@
 ﻿namespace QuanLyCuaHangBanSach.GUI.Manager
 {
-    partial class CustomerManagerGUI
-    {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
-        private System.ComponentModel.IContainer components = null;
+	partial class CustomerManagerGUI
+	{
+		/// <summary>
+		/// Required designer variable.
+		/// </summary>
+		private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+		/// <summary>
+		/// Clean up any resources being used.
+		/// </summary>
+		/// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+		protected override void Dispose(bool disposing)
+		{
+			if (disposing && (components != null))
+			{
+				components.Dispose();
+			}
+			base.Dispose(disposing);
+		}
 
-        #region Windows Form Designer generated code
+		#region Windows Form Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
-        private void InitializeComponent()
-        {
+		/// <summary>
+		/// Required method for Designer support - do not modify
+		/// the contents of this method with the code editor.
+		/// </summary>
+		private void InitializeComponent()
+		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerManagerGUI));
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -45,13 +45,11 @@
 			this.gioi_tinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.nam_sinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.so_dien_thoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.line1 = new System.Windows.Forms.Panel();
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.deleteBtn = new Guna.UI.WinForms.GunaAdvenceButton();
 			this.editBtn = new Guna.UI.WinForms.GunaAdvenceButton();
 			this.addBtn = new Guna.UI.WinForms.GunaAdvenceButton();
-			this.genderCbx = new Guna.UI.WinForms.GunaComboBox();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.dgvCustomer)).BeginInit();
 			this.panel1.SuspendLayout();
@@ -76,21 +74,21 @@
 			this.searchInput.ForeColor = System.Drawing.Color.Black;
 			this.searchInput.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
 			this.searchInput.HoverState.Parent = this.searchInput;
-			this.searchInput.Location = new System.Drawing.Point(3, 12);
+			this.searchInput.Location = new System.Drawing.Point(15, 12);
 			this.searchInput.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
 			this.searchInput.Name = "searchInput";
 			this.searchInput.PasswordChar = '\0';
 			this.searchInput.PlaceholderText = "Tìm kiếm theo mã, tên,SĐT";
 			this.searchInput.SelectedText = "";
 			this.searchInput.ShadowDecoration.Parent = this.searchInput;
-			this.searchInput.Size = new System.Drawing.Size(248, 36);
+			this.searchInput.Size = new System.Drawing.Size(236, 36);
 			this.searchInput.TabIndex = 40;
 			this.searchInput.TextChanged += new System.EventHandler(this.searchInput_TextChanged);
 			// 
 			// pictureBox1
 			// 
 			this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-			this.pictureBox1.Location = new System.Drawing.Point(258, 15);
+			this.pictureBox1.Location = new System.Drawing.Point(258, 12);
 			this.pictureBox1.Name = "pictureBox1";
 			this.pictureBox1.Size = new System.Drawing.Size(36, 30);
 			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -186,13 +184,12 @@
 			this.dgvCustomer.ColumnHeadersHeight = 50;
 			this.dgvCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
 			this.dgvCustomer.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column11,
-            this.ma_khach_hang,
-            this.ten_khach_hang,
-            this.gioi_tinh,
-            this.nam_sinh,
-            this.so_dien_thoai,
-            this.Column1});
+			this.Column11,
+			this.ma_khach_hang,
+			this.ten_khach_hang,
+			this.gioi_tinh,
+			this.nam_sinh,
+			this.so_dien_thoai});
 			dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
 			dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
 			dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
@@ -250,7 +247,6 @@
 			this.dgvCustomer.ThemeStyle.RowsStyle.Height = 75;
 			this.dgvCustomer.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
 			this.dgvCustomer.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-			this.dgvCustomer.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCustomer_CellContentClick);
 			this.dgvCustomer.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.cellCustomer_DblClick);
 			// 
 			// Column11
@@ -298,20 +294,12 @@
 			this.so_dien_thoai.Name = "so_dien_thoai";
 			this.so_dien_thoai.ReadOnly = true;
 			// 
-			// Column1
-			// 
-			this.Column1.HeaderText = "Điểm";
-			this.Column1.MinimumWidth = 6;
-			this.Column1.Name = "Column1";
-			this.Column1.ReadOnly = true;
-			this.Column1.ToolTipText = "Điểm";
-			// 
 			// line1
 			// 
 			this.line1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(212)))), ((int)(((byte)(191)))));
 			this.line1.Location = new System.Drawing.Point(15, 48);
 			this.line1.Name = "line1";
-			this.line1.Size = new System.Drawing.Size(281, 1);
+			this.line1.Size = new System.Drawing.Size(268, 1);
 			this.line1.TabIndex = 32;
 			// 
 			// panel1
@@ -426,36 +414,11 @@
 			this.addBtn.Text = "Thêm mới";
 			this.addBtn.Click += new System.EventHandler(this.btnAdd_Click);
 			// 
-			// genderCbx
-			// 
-			this.genderCbx.BackColor = System.Drawing.Color.Transparent;
-			this.genderCbx.BaseColor = System.Drawing.Color.White;
-			this.genderCbx.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-			this.genderCbx.BorderSize = 1;
-			this.genderCbx.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.genderCbx.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-			this.genderCbx.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.genderCbx.FocusedColor = System.Drawing.Color.Empty;
-			this.genderCbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.genderCbx.ForeColor = System.Drawing.Color.Black;
-			this.genderCbx.FormattingEnabled = true;
-			this.genderCbx.ItemHeight = 30;
-			this.genderCbx.Location = new System.Drawing.Point(539, 13);
-			this.genderCbx.Name = "genderCbx";
-			this.genderCbx.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-			this.genderCbx.OnHoverItemForeColor = System.Drawing.Color.White;
-			this.genderCbx.Radius = 6;
-			this.genderCbx.Size = new System.Drawing.Size(166, 36);
-			this.genderCbx.TabIndex = 41;
-			this.genderCbx.TabStop = false;
-			this.genderCbx.SelectedIndexChanged += new System.EventHandler(this.genderCbx_SelectedIndexChanged);
-			// 
 			// CustomerManagerGUI
 			// 
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
 			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
 			this.ClientSize = new System.Drawing.Size(1400, 845);
-			this.Controls.Add(this.genderCbx);
 			this.Controls.Add(this.searchInput);
 			this.Controls.Add(this.pictureBox1);
 			this.Controls.Add(this.dgvCustomer);
@@ -472,27 +435,25 @@
 			this.panel1.ResumeLayout(false);
 			this.ResumeLayout(false);
 
-        }
+		}
 
-        #endregion
+		#endregion
 
-        private Guna.UI2.WinForms.Guna2TextBox searchInput;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private Guna.UI.WinForms.GunaAdvenceButton btnExport;
-        private Guna.UI.WinForms.GunaAdvenceButton btnRefresh;
-        private Guna.UI.WinForms.GunaDataGridView dgvCustomer;
-        private System.Windows.Forms.Panel line1;
-        private System.Windows.Forms.Panel panel1;
-        private Guna.UI.WinForms.GunaAdvenceButton deleteBtn;
-        private Guna.UI.WinForms.GunaAdvenceButton editBtn;
-        private Guna.UI.WinForms.GunaAdvenceButton addBtn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Column11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ma_khach_hang;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ten_khach_hang;
-        private System.Windows.Forms.DataGridViewTextBoxColumn gioi_tinh;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nam_sinh;
-        private System.Windows.Forms.DataGridViewTextBoxColumn so_dien_thoai;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-		private Guna.UI.WinForms.GunaComboBox genderCbx;
+		private Guna.UI2.WinForms.Guna2TextBox searchInput;
+		private System.Windows.Forms.PictureBox pictureBox1;
+		private Guna.UI.WinForms.GunaAdvenceButton btnExport;
+		private Guna.UI.WinForms.GunaAdvenceButton btnRefresh;
+		private Guna.UI.WinForms.GunaDataGridView dgvCustomer;
+		private System.Windows.Forms.Panel line1;
+		private System.Windows.Forms.Panel panel1;
+		private Guna.UI.WinForms.GunaAdvenceButton deleteBtn;
+		private Guna.UI.WinForms.GunaAdvenceButton editBtn;
+		private Guna.UI.WinForms.GunaAdvenceButton addBtn;
+		private System.Windows.Forms.DataGridViewCheckBoxColumn Column11;
+		private System.Windows.Forms.DataGridViewTextBoxColumn ma_khach_hang;
+		private System.Windows.Forms.DataGridViewTextBoxColumn ten_khach_hang;
+		private System.Windows.Forms.DataGridViewTextBoxColumn gioi_tinh;
+		private System.Windows.Forms.DataGridViewTextBoxColumn nam_sinh;
+		private System.Windows.Forms.DataGridViewTextBoxColumn so_dien_thoai;
 	}
 }
