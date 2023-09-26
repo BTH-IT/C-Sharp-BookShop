@@ -130,6 +130,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 				{
 					importBillDetail = new List<ImportBillDetailDTO>();
 					this.supplierNameTxt.Text = "";
+					this.totalMoney.Text = "0";
 				}
 				this.loadDataToImportBookDetail(importBillDetail);
 			}

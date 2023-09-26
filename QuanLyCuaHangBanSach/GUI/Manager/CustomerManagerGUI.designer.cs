@@ -440,7 +440,7 @@
 			this.genderCbx.ForeColor = System.Drawing.Color.Black;
 			this.genderCbx.FormattingEnabled = true;
 			this.genderCbx.ItemHeight = 30;
-			this.genderCbx.Location = new System.Drawing.Point(539, 13);
+			this.genderCbx.Location = new System.Drawing.Point(341, 13);
 			this.genderCbx.Name = "genderCbx";
 			this.genderCbx.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
 			this.genderCbx.OnHoverItemForeColor = System.Drawing.Color.White;

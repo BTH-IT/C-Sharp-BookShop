@@ -92,7 +92,6 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 				Console.WriteLine(ex.Message);
 
 			}
-			Console.WriteLine();	
 		}
 
 		private void CaculateTotalMoney()
@@ -106,10 +105,6 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 					totalMoney += control.getPrice() * sl;
 				}
 				this.totalMoney.Text = totalMoney.ToString();
-			}
-			else
-			{
-				this.totalMoney.Text = "0";
 			}
 		}
 		private void loadDataToCustomerBillBookDetail(List<CustomerBillDetailDTO> customerBillDetails)
@@ -143,6 +138,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 				{
 					customerBillDetails = new List<CustomerBillDetailDTO>();
 					this.supplierNameTxt.Text = "";
+					this.totalMoney.Text = "0";
 				}
 				this.loadDataToCustomerBillBookDetail(customerBillDetails);
 			}
