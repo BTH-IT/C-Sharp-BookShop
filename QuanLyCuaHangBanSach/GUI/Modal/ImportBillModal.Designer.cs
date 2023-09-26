@@ -36,6 +36,7 @@
             this.totalPriceTxt = new Guna.UI2.WinForms.Guna2TextBox();
             this.nameLine = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
             this.cancelBtn = new Guna.UI.WinForms.GunaButton();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -43,7 +44,6 @@
             this.label13 = new System.Windows.Forms.Label();
             this.supplierCbx = new Guna.UI.WinForms.GunaComboBox();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -129,7 +129,7 @@
             this.bookList.AutoScroll = true;
             this.bookList.Location = new System.Drawing.Point(3, 85);
             this.bookList.Name = "bookList";
-            this.bookList.Size = new System.Drawing.Size(1188, 334);
+            this.bookList.Size = new System.Drawing.Size(1188, 432);
             this.bookList.TabIndex = 29;
             // 
             // label2
@@ -188,6 +188,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(594, 88);
             this.panel1.TabIndex = 3;
+            // 
+            // label3
+            // 
+            this.label3.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label3.Location = new System.Drawing.Point(3, 3);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(145, 49);
+            this.label3.TabIndex = 28;
+            this.label3.Text = "Tổng tiền:";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // cancelBtn
             // 
@@ -293,16 +303,6 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1194, 422);
             this.panel4.TabIndex = 9;
-            // 
-            // label3
-            // 
-            this.label3.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label3.Location = new System.Drawing.Point(3, 3);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(145, 49);
-            this.label3.TabIndex = 28;
-            this.label3.Text = "Tổng tiền:";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // ImportBillModal
             // 
