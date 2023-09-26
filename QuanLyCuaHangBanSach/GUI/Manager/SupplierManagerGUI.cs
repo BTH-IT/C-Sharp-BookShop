@@ -22,212 +22,295 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         }
         private void renderCheckBoxDgv()
         {
-            int size = 25;
+            try
+            {
+                int size = 25;
 
-            Rectangle rect = this.dgvSupplier.GetCellDisplayRectangle(0, -1, false);
+                Rectangle rect = this.dgvSupplier.GetCellDisplayRectangle(0, -1, false);
+                headerCheckbox = new CheckBox();
 
-            headerCheckbox = new CheckBox();
+                headerCheckbox.BackColor = Color.FromArgb(45, 210, 192);
+                headerCheckbox.Name = "chkHeader";
+                headerCheckbox.Size = new Size(size, size);
 
-            headerCheckbox.BackColor = Color.FromArgb(45, 210, 192);
-            headerCheckbox.Name = "chkHeader";
-            headerCheckbox.Size = new Size(size, size);
+                rect.X = (rect.Width / 2) - (size / 4);
+                rect.Y = (rect.Height / 2) - (size / 2);
 
-            rect.X = (rect.Width / 2) - (size / 4);
-            rect.Y = (rect.Height / 2) - (size / 2);
+                headerCheckbox.Location = rect.Location;
 
-            headerCheckbox.Location = rect.Location;
+                this.dgvSupplier.Controls.Add(headerCheckbox);
+            }
+            catch (Exception er)
+            {
 
-
-            this.dgvSupplier.Controls.Add(headerCheckbox);
+                Console.WriteLine(er);
+            }
         }
 
         private void loadSupplierListToDataView(List<SupplierDTO> SupplierList)
         {
-            this.dgvSupplier.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(45, 210, 192);
-            this.dgvSupplier.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-
-            this.dgvSupplier.Rows.Clear();
-
-            foreach (SupplierDTO Supplier in SupplierList)
+            try
             {
-                this.dgvSupplier.Rows.Add(new object[] {
+                this.dgvSupplier.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(45, 210, 192);
+                this.dgvSupplier.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+
+                this.dgvSupplier.Rows.Clear();
+
+                foreach (SupplierDTO Supplier in SupplierList)
+                {
+                    this.dgvSupplier.Rows.Add(new object[] {
                     false,
                     Supplier.MaNhaCungCap,
                     Supplier.TenNhaCungCap,
                     Supplier.DiaChi,
                     Supplier.SoDienThoai,
                 });
+                }
+            }
+            catch (Exception er)
+            {
+
+                Console.WriteLine(er);
             }
 
         }
 
-        
-
         private void headerCheckbox_Clicked(object sender, EventArgs e)
         {
-            foreach (DataGridViewRow row in this.dgvSupplier.Rows)
+            try
             {
-                row.Cells[0].Value = headerCheckbox.Checked;
-            }
+                foreach (DataGridViewRow row in this.dgvSupplier.Rows)
+                {
+                    row.Cells[0].Value = headerCheckbox.Checked;
+                }
 
-            this.dgvSupplier.RefreshEdit();
+                this.dgvSupplier.RefreshEdit();
+            }
+            catch (Exception er)
+            {
+
+                Console.WriteLine(er);
+            }
         }
 
         private void searchInput_TextChanged(object sender, EventArgs e)
         {
-            this.searchInput.ForeColor = Color.Black;
-            List<SupplierDTO> SupplierList = SupplierBUS.Instance.search(this.searchInput.Text.ToString());
-            this.loadSupplierListToDataView(SupplierList);
+            try
+            {
+                this.searchInput.ForeColor = Color.Black;
+                List<SupplierDTO> SupplierList = SupplierBUS.Instance.search(this.searchInput.Text.ToString());
+                this.loadSupplierListToDataView(SupplierList);
+            }
+            catch (Exception er)
+            {
+
+                Console.WriteLine(er);
+            }
         }
 
-        // export excel
         private void exportBtn_Click(object sender, EventArgs e)
         {
-            List<SupplierDTO> SupplierList = SupplierBUS.Instance.search(this.searchInput.Text.ToString());
-            DataTable dataTable = CustomExcel.Instance.ConvertListToDataTable(SupplierList);
-            string[] headerList = new string[] { "Mã nhà cung cấp", "Tên nhà cung cấp", "Địa chỉ", "Số điện thoại" };
-            CustomExcel.Instance.ExportFile(dataTable, "Supplier Manage", "Cửa hàng bán sách", headerList);
+            try
+            {
+                List<SupplierDTO> SupplierList = SupplierBUS.Instance.search(this.searchInput.Text.ToString());
+                DataTable dataTable = CustomExcel.Instance.ConvertListToDataTable(SupplierList);
+                string[] headerList = new string[] { "Mã nhà cung cấp", "Tên nhà cung cấp", "Địa chỉ", "Số điện thoại" };
+                CustomExcel.Instance.ExportFile(dataTable, "Supplier Manage", "Cửa hàng bán sách", headerList);
+            }
+            catch (Exception er)
+            {
+
+                Console.WriteLine(er);
+            }
         }
 
         private void editBtn_Click(object sender, EventArgs e)
         {
-            if (this.dgvSupplier.CurrentCell.RowIndex < 0)
+            try
             {
-                MessageBox.Show("Hãy chọn dòng dữ liệu muốn thao tác");
-                return;
-            }
-
-            using (SupplierModal SupplierModal = new SupplierModal("Sửa nhà cung cấp"))
-            {
-                DataGridViewRow row = this.dgvSupplier.Rows[this.dgvSupplier.CurrentCell.RowIndex];
-
-                SupplierDTO Supplier = SupplierBUS.Instance.getById(row.Cells[1].Value.ToString());
-
-                SupplierModal.updateSupplier = Supplier;
-
-                if (SupplierModal.updateSupplier == null)
+                if (this.dgvSupplier.CurrentCell.RowIndex < 0)
                 {
-                    MessageBox.Show("Đã xảy ra lỗi vui lòng thử lại sau!!");
+                    MessageBox.Show("Hãy chọn dòng dữ liệu muốn thao tác");
                     return;
                 }
 
-                SupplierModal.ShowDialog();
-
-                if (SupplierModal.isSubmitSuccess)
+                using (SupplierModal SupplierModal = new SupplierModal("Sửa nhà cung cấp"))
                 {
-                    List<SupplierDTO> SupplierList = SupplierBUS.Instance.search(this.searchInput.Text.ToString());
+                    DataGridViewRow row = this.dgvSupplier.Rows[this.dgvSupplier.CurrentCell.RowIndex];
 
-                    this.loadSupplierListToDataView(SupplierList);
+                    SupplierDTO Supplier = SupplierBUS.Instance.getById(row.Cells[1].Value.ToString());
+
+                    SupplierModal.updateSupplier = Supplier;
+
+                    if (SupplierModal.updateSupplier == null)
+                    {
+                        MessageBox.Show("Đã xảy ra lỗi vui lòng thử lại sau!!");
+                        return;
+                    }
+
+                    SupplierModal.ShowDialog();
+
+                    if (SupplierModal.isSubmitSuccess)
+                    {
+                        List<SupplierDTO> SupplierList = SupplierBUS.Instance.search(this.searchInput.Text.ToString());
+
+                        this.loadSupplierListToDataView(SupplierList);
+                    }
                 }
+            }
+            catch (Exception er)
+            {
+
+                Console.WriteLine(er);
             }
         }
 
         private void deleteBtn_Click(object sender, EventArgs e)
         {
-            bool isHaveSelect = false;
-
-            foreach (DataGridViewRow row in this.dgvSupplier.Rows)
+            try
             {
-                if ((bool)row.Cells[0].Value)
-                {
-                    isHaveSelect = true;
-                    break;
-                }
-            }
+                bool isHaveSelect = false;
 
-            if (!isHaveSelect)
-            {
-                MessageBox.Show("Bạn chưa chọn những nhà cung cấp cần xóa");
-                return;
-            }
-
-            DialogResult dlgResult = MessageBox.Show(
-                "Bạn chắc chắn muốn xóa các nhà cung cấp đã chọn chứ?",
-                "Xác nhận",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Question,
-                MessageBoxDefaultButton.Button1
-            );
-
-            if (dlgResult == DialogResult.Yes)
-            {
                 foreach (DataGridViewRow row in this.dgvSupplier.Rows)
                 {
-                    if ((bool)row.Cells[0].Value == true)
+                    if ((bool)row.Cells[0].Value)
                     {
-                        SupplierBUS.Instance.delete(row.Cells[1].Value.ToString());
+                        isHaveSelect = true;
+                        break;
                     }
-
                 }
-                List<SupplierDTO> SupplierList = SupplierBUS.Instance.search(this.searchInput.Text.ToString());
-                this.loadSupplierListToDataView(SupplierList);
 
-                MessageBox.Show("Delete successful");
+                if (!isHaveSelect)
+                {
+                    MessageBox.Show("Bạn chưa chọn những nhà cung cấp cần xóa");
+                    return;
+                }
+
+                DialogResult dlgResult = MessageBox.Show(
+                    "Bạn chắc chắn muốn xóa các nhà cung cấp đã chọn chứ?",
+                    "Xác nhận",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question,
+                    MessageBoxDefaultButton.Button1
+                );
+
+                if (dlgResult == DialogResult.Yes)
+                {
+                    foreach (DataGridViewRow row in this.dgvSupplier.Rows)
+                    {
+                        if ((bool)row.Cells[0].Value == true)
+                        {
+                            SupplierBUS.Instance.delete(row.Cells[1].Value.ToString());
+                        }
+
+                    }
+                    List<SupplierDTO> SupplierList = SupplierBUS.Instance.search(this.searchInput.Text.ToString());
+                    this.loadSupplierListToDataView(SupplierList);
+
+                    MessageBox.Show("Delete successful");
+                }
+            }
+            catch (Exception er)
+            {
+
+                Console.WriteLine(er);
             }
         }
 
         private void dgvSupplier_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex < 0 || e.ColumnIndex <= 0)
+            try
             {
-                return;
-            }
-
-            using (SupplierModal SupplierModal = new SupplierModal("Sửa nhà cung cấp"))
-            {
-                DataGridViewRow row = this.dgvSupplier.Rows[e.RowIndex];
-
-                SupplierDTO Supplier = SupplierBUS.Instance.getById(row.Cells[1].Value.ToString());
-
-                SupplierModal.updateSupplier = Supplier;
-                if (SupplierModal.updateSupplier == null)
+                if (e.RowIndex < 0 || e.ColumnIndex <= 0)
                 {
-                    MessageBox.Show("Đã xảy ra lỗi vui lòng thử lại sau!!");
                     return;
                 }
 
-                SupplierModal.ShowDialog();
-
-                if (SupplierModal.isSubmitSuccess)
+                using (SupplierModal SupplierModal = new SupplierModal("Sửa nhà cung cấp"))
                 {
-                    List<SupplierDTO> SupplierList = SupplierBUS.Instance.search(this.searchInput.Text.ToString());
+                    DataGridViewRow row = this.dgvSupplier.Rows[e.RowIndex];
 
-                    this.loadSupplierListToDataView(SupplierList);
+                    SupplierDTO Supplier = SupplierBUS.Instance.getById(row.Cells[1].Value.ToString());
+
+                    SupplierModal.updateSupplier = Supplier;
+                    if (SupplierModal.updateSupplier == null)
+                    {
+                        MessageBox.Show("Đã xảy ra lỗi vui lòng thử lại sau!!");
+                        return;
+                    }
+
+                    SupplierModal.ShowDialog();
+
+                    if (SupplierModal.isSubmitSuccess)
+                    {
+                        List<SupplierDTO> SupplierList = SupplierBUS.Instance.search(this.searchInput.Text.ToString());
+
+                        this.loadSupplierListToDataView(SupplierList);
+                    }
                 }
+            }
+            catch (Exception er)
+            {
+
+                Console.WriteLine(er);
             }
         }
 
         private void refreshBtn_Click(object sender, EventArgs e)
         {
-            this.searchInput.Clear();
+            try
+            {
+                this.searchInput.Clear();
 
-            List<SupplierDTO> SupplierList = SupplierBUS.Instance.search("");
-            this.loadSupplierListToDataView(SupplierList);
+                List<SupplierDTO> SupplierList = SupplierBUS.Instance.search("");
+                this.loadSupplierListToDataView(SupplierList);
+            }
+            catch (Exception er)
+            {
+
+                Console.WriteLine(er);
+            }
         }
 
         private void addBtn_Click(object sender, EventArgs e)
         {
-            using (SupplierModal SupplierModal = new SupplierModal())
+            try
             {
-                SupplierModal.ShowDialog();
-
-
-                if (SupplierModal.isSubmitSuccess)
+                using (SupplierModal SupplierModal = new SupplierModal())
                 {
-                    List<SupplierDTO> SupplierList = SupplierBUS.Instance.search(this.searchInput.Text.ToString());
+                    SupplierModal.ShowDialog();
 
-                    this.loadSupplierListToDataView(SupplierList);
+
+                    if (SupplierModal.isSubmitSuccess)
+                    {
+                        List<SupplierDTO> SupplierList = SupplierBUS.Instance.search(this.searchInput.Text.ToString());
+
+                        this.loadSupplierListToDataView(SupplierList);
+                    }
                 }
+            }
+            catch (Exception er)
+            {
+
+                Console.WriteLine(er);
             }
         }
 
         private void SupplierManagerGUI_Load(object sender, EventArgs e)
         {
-            List<SupplierDTO> SupplierList = SupplierBUS.Instance.getAllData();
-            this.loadSupplierListToDataView(SupplierList);
+            try
+            {
+                List<SupplierDTO> SupplierList = SupplierBUS.Instance.getAllData();
+                this.loadSupplierListToDataView(SupplierList);
 
-            this.renderCheckBoxDgv();
-            headerCheckbox.MouseClick += new MouseEventHandler(headerCheckbox_Clicked);
+                this.renderCheckBoxDgv();
+                headerCheckbox.MouseClick += new MouseEventHandler(headerCheckbox_Clicked);
+            }
+            catch (Exception er)
+            {
+
+                Console.WriteLine(er);
+            }
         }
     }
 }
