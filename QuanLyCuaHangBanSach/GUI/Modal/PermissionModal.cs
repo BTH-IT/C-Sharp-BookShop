@@ -52,44 +52,58 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
         private void submitBtn_Click(object sender, EventArgs e)
         {
-            bool isValid = this.validateForm();
-
-            if (!isValid) return;
-
-            string permissionName = this.permissionNameTxt.Text;
-            bool isActive = this.activeCkx.Checked;
-
-            int id = updatePermission != null ? updatePermission.MaQuyenHang : 0;
-
-            PermissionDTO permission = new PermissionDTO(id, permissionName, isActive);
-
-            bool isSuccess = updatePermission != null ? PermissionBUS.Instance.update(permission) : PermissionBUS.Instance.insert(permission);
-
-
-            if (isSuccess)
+            try
             {
+                bool isValid = this.validateForm();
+
+                if (!isValid) return;
+
+                string permissionName = this.permissionNameTxt.Text;
+                bool isActive = this.activeCkx.Checked;
+
+                int id = updatePermission != null ? updatePermission.MaQuyenHang : 0;
+
+                PermissionDTO permission = new PermissionDTO(id, permissionName, isActive);
+
+                bool isSuccess = updatePermission != null ? PermissionBUS.Instance.update(permission) : PermissionBUS.Instance.insert(permission);
+
+
+                if (isSuccess)
+                {
+                    this.isSubmitSuccess = isSuccess;
+                    MessageBox.Show(updatePermission != null ? "Update Success" : "Insert Success");
+                    this.Close();
+                    return;
+                }
+
                 this.isSubmitSuccess = isSuccess;
-                MessageBox.Show(updatePermission != null ? "Update Success" : "Insert Success");
-                this.Close();
-                return;
+
+                MessageBox.Show(updatePermission != null ? "Update Failure" : "Insert Failure");
             }
-
-            this.isSubmitSuccess = isSuccess;
-
-            MessageBox.Show(updatePermission != null ? "Update Failure" : "Insert Failure");
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
         }
 
         private void PermissionModal_Load(object sender, EventArgs e)
         {
-            this.Location = new Point(
-                (Screen.PrimaryScreen.Bounds.Size.Width / 2) - (this.Size.Width / 2),
-                (Screen.PrimaryScreen.Bounds.Size.Height / 2) - (this.Size.Height / 2)
-            );
-
-            if (updatePermission != null)
+            try
             {
-                this.permissionNameTxt.Text = updatePermission.TenQuyenHang;
-                this.activeCkx.Checked = updatePermission.TrangThai;
+                this.Location = new Point(
+                        (Screen.PrimaryScreen.Bounds.Size.Width / 2) - (this.Size.Width / 2),
+                        (Screen.PrimaryScreen.Bounds.Size.Height / 2) - (this.Size.Height / 2)
+                    );
+
+                if (updatePermission != null)
+                {
+                    this.permissionNameTxt.Text = updatePermission.TenQuyenHang;
+                    this.activeCkx.Checked = updatePermission.TrangThai;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
             }
         }
     }
