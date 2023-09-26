@@ -46,18 +46,6 @@ namespace QuanLyCuaHangBanSach.GUI.UserControls
             PublisherCb.SelectedIndex = 0;
         }
 
-        private void TypeCb_SelectedIndexChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void AuthorCb_SelectedIndexChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void PublisherCb_SelectedIndexChanged(object sender, EventArgs e)
-        {
-        }
-
         private void PriceUpCkb_CheckedChanged(object sender, EventArgs e)
         {
             if (PriceUpCkb.Checked)

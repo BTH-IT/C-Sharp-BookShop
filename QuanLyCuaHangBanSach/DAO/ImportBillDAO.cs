@@ -92,7 +92,7 @@ namespace QuanLyCuaHangBanSach.DAO
                     new MySqlParameter("@donGia", data.DonGia),
                 });
 
-            // xóa số lượng còn lại của sách
+            // thêm sách
             if (rowChanged > 0)
             {
                 return BookBUS.Instance.createBookAmount(data.MaSach.ToString(), data.SoLuong);
@@ -139,7 +139,7 @@ namespace QuanLyCuaHangBanSach.DAO
         {
             string sql = $@"UPDATE phieunhap SET 
                             maNhaCungCap=@maNhaCungCap, maNhanVien=@maNhanVien, ngayLap=@ngayLap, 
-                            tongTien=@tongTien, daTra=@daTra WHERE maDonNhapHang=@maDonNhapHang;";
+                            tongTien=@tongTien WHERE maDonNhapHang=@maDonNhapHang;";
 
             int rowChanged = DataProvider.Instance.ExecuteNonQuery(sql,
                 new MySqlParameter[] {
