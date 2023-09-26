@@ -81,14 +81,14 @@
             this.searchInput.ForeColor = System.Drawing.Color.Black;
             this.searchInput.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.searchInput.HoverState.Parent = this.searchInput;
-            this.searchInput.Location = new System.Drawing.Point(13, 12);
+            this.searchInput.Location = new System.Drawing.Point(26, 17);
             this.searchInput.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.searchInput.Name = "searchInput";
             this.searchInput.PasswordChar = '\0';
             this.searchInput.PlaceholderText = "Tìm kiếm theo mã, tên";
             this.searchInput.SelectedText = "";
             this.searchInput.ShadowDecoration.Parent = this.searchInput;
-            this.searchInput.Size = new System.Drawing.Size(236, 36);
+            this.searchInput.Size = new System.Drawing.Size(223, 32);
             this.searchInput.TabIndex = 40;
             this.searchInput.TextChanged += new System.EventHandler(this.searchInput_TextChanged);
             // 
@@ -418,7 +418,7 @@
             this.panel5.Controls.Add(this.label3);
             this.panel5.Controls.Add(this.label2);
             this.panel5.Controls.Add(this.dateTimeFrom);
-            this.panel5.Location = new System.Drawing.Point(882, 12);
+            this.panel5.Location = new System.Drawing.Point(988, 17);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(400, 36);
             this.panel5.TabIndex = 42;
@@ -512,7 +512,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(258, 17);
+            this.pictureBox1.Location = new System.Drawing.Point(256, 21);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(36, 30);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -524,7 +524,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
-            this.ClientSize = new System.Drawing.Size(1400, 845);
+            this.ClientSize = new System.Drawing.Size(1400, 890);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.searchInput);
             this.Controls.Add(this.pictureBox1);

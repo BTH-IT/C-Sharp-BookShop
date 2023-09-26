@@ -1,26 +1,26 @@
 ﻿namespace QuanLyCuaHangBanSach.GUI.Manager
 {
-    partial class StaffManageGUI
-    {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
-        private System.ComponentModel.IContainer components = null;
+	partial class StaffManageGUI
+	{
+		/// <summary>
+		/// Required designer variable.
+		/// </summary>
+		private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+		/// <summary>
+		/// Clean up any resources being used.
+		/// </summary>
+		/// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+		protected override void Dispose(bool disposing)
+		{
+			if (disposing && (components != null))
+			{
+				components.Dispose();
+			}
+			base.Dispose(disposing);
+		}
 
-        #region Windows Form Designer generated code
+		#region Windows Form Designer generated code
 
         /// <summary>
         /// Required method for Designer support - do not modify
@@ -38,15 +38,6 @@
             this.genderCbx = new Guna.UI.WinForms.GunaComboBox();
             this.positionCbx = new Guna.UI.WinForms.GunaComboBox();
             this.dgvStaff = new Guna.UI.WinForms.GunaDataGridView();
-            this.Column11 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.maNhanVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tenNhanVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.namSinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.soDienThoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.soNgayNghi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.luong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chucVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.line1 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.exportBtn = new Guna.UI.WinForms.GunaAdvenceButton();
@@ -63,6 +54,14 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.Column11 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.maNhanVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenNhanVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.namSinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.soDienThoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.luong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chucVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStaff)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -88,7 +87,7 @@
             this.searchInput.ForeColor = System.Drawing.Color.Black;
             this.searchInput.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.searchInput.HoverState.Parent = this.searchInput;
-            this.searchInput.Location = new System.Drawing.Point(15, 7);
+            this.searchInput.Location = new System.Drawing.Point(15, 14);
             this.searchInput.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.searchInput.Name = "searchInput";
             this.searchInput.PasswordChar = '\0';
@@ -113,7 +112,7 @@
             this.genderCbx.ForeColor = System.Drawing.Color.Black;
             this.genderCbx.FormattingEnabled = true;
             this.genderCbx.ItemHeight = 30;
-            this.genderCbx.Location = new System.Drawing.Point(703, 9);
+            this.genderCbx.Location = new System.Drawing.Point(902, 15);
             this.genderCbx.Name = "genderCbx";
             this.genderCbx.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.genderCbx.OnHoverItemForeColor = System.Drawing.Color.White;
@@ -137,7 +136,7 @@
             this.positionCbx.ForeColor = System.Drawing.Color.Black;
             this.positionCbx.FormattingEnabled = true;
             this.positionCbx.ItemHeight = 30;
-            this.positionCbx.Location = new System.Drawing.Point(522, 9);
+            this.positionCbx.Location = new System.Drawing.Point(721, 15);
             this.positionCbx.Name = "positionCbx";
             this.positionCbx.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.positionCbx.OnHoverItemForeColor = System.Drawing.Color.White;
@@ -176,7 +175,6 @@
             this.namSinh,
             this.gioiTinh,
             this.soDienThoai,
-            this.soNgayNghi,
             this.luong,
             this.chucVu});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -237,75 +235,10 @@
             this.dgvStaff.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvStaff.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
-            // Column11
-            // 
-            this.Column11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Column11.FillWeight = 50F;
-            this.Column11.Frozen = true;
-            this.Column11.HeaderText = "";
-            this.Column11.MinimumWidth = 50;
-            this.Column11.Name = "Column11";
-            this.Column11.Width = 50;
-            // 
-            // maNhanVien
-            // 
-            this.maNhanVien.HeaderText = "Mã Nhân viên";
-            this.maNhanVien.MinimumWidth = 6;
-            this.maNhanVien.Name = "maNhanVien";
-            this.maNhanVien.ReadOnly = true;
-            // 
-            // tenNhanVien
-            // 
-            this.tenNhanVien.HeaderText = "Tên nhân viên";
-            this.tenNhanVien.MinimumWidth = 6;
-            this.tenNhanVien.Name = "tenNhanVien";
-            this.tenNhanVien.ReadOnly = true;
-            // 
-            // namSinh
-            // 
-            this.namSinh.HeaderText = "Năm sinh";
-            this.namSinh.MinimumWidth = 6;
-            this.namSinh.Name = "namSinh";
-            this.namSinh.ReadOnly = true;
-            // 
-            // gioiTinh
-            // 
-            this.gioiTinh.HeaderText = " Giới Tính";
-            this.gioiTinh.MinimumWidth = 6;
-            this.gioiTinh.Name = "gioiTinh";
-            this.gioiTinh.ReadOnly = true;
-            // 
-            // soDienThoai
-            // 
-            this.soDienThoai.HeaderText = "Số điện thoại";
-            this.soDienThoai.MinimumWidth = 6;
-            this.soDienThoai.Name = "soDienThoai";
-            this.soDienThoai.ReadOnly = true;
-            // 
-            // soNgayNghi
-            // 
-            this.soNgayNghi.HeaderText = "Ngày nghỉ";
-            this.soNgayNghi.MinimumWidth = 6;
-            this.soNgayNghi.Name = "soNgayNghi";
-            this.soNgayNghi.ReadOnly = true;
-            // 
-            // luong
-            // 
-            this.luong.HeaderText = "Lương";
-            this.luong.MinimumWidth = 6;
-            this.luong.Name = "luong";
-            // 
-            // chucVu
-            // 
-            this.chucVu.HeaderText = "Chức vụ";
-            this.chucVu.MinimumWidth = 6;
-            this.chucVu.Name = "chucVu";
-            this.chucVu.ReadOnly = true;
-            // 
             // line1
             // 
             this.line1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(212)))), ((int)(((byte)(191)))));
-            this.line1.Location = new System.Drawing.Point(26, 44);
+            this.line1.Location = new System.Drawing.Point(26, 50);
             this.line1.Name = "line1";
             this.line1.Size = new System.Drawing.Size(268, 1);
             this.line1.TabIndex = 32;
@@ -500,7 +433,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(258, 5);
+            this.pictureBox1.Location = new System.Drawing.Point(258, 18);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(36, 30);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -517,7 +450,7 @@
             this.gradientPanel1.Controls.Add(this.panel4);
             this.gradientPanel1.Controls.Add(this.panel2);
             this.gradientPanel1.Controls.Add(this.label1);
-            this.gradientPanel1.Location = new System.Drawing.Point(1087, 9);
+            this.gradientPanel1.Location = new System.Drawing.Point(1095, 15);
             this.gradientPanel1.Name = "gradientPanel1";
             this.gradientPanel1.Size = new System.Drawing.Size(291, 36);
             this.gradientPanel1.TabIndex = 41;
@@ -621,6 +554,64 @@
             this.label1.Text = "$";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // Column11
+            // 
+            this.Column11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Column11.FillWeight = 50F;
+            this.Column11.Frozen = true;
+            this.Column11.HeaderText = "";
+            this.Column11.MinimumWidth = 50;
+            this.Column11.Name = "Column11";
+            this.Column11.Width = 50;
+            // 
+            // maNhanVien
+            // 
+            this.maNhanVien.HeaderText = "Mã Nhân viên";
+            this.maNhanVien.MinimumWidth = 6;
+            this.maNhanVien.Name = "maNhanVien";
+            this.maNhanVien.ReadOnly = true;
+            // 
+            // tenNhanVien
+            // 
+            this.tenNhanVien.HeaderText = "Tên nhân viên";
+            this.tenNhanVien.MinimumWidth = 6;
+            this.tenNhanVien.Name = "tenNhanVien";
+            this.tenNhanVien.ReadOnly = true;
+            // 
+            // namSinh
+            // 
+            this.namSinh.HeaderText = "Năm sinh";
+            this.namSinh.MinimumWidth = 6;
+            this.namSinh.Name = "namSinh";
+            this.namSinh.ReadOnly = true;
+            // 
+            // gioiTinh
+            // 
+            this.gioiTinh.HeaderText = " Giới Tính";
+            this.gioiTinh.MinimumWidth = 6;
+            this.gioiTinh.Name = "gioiTinh";
+            this.gioiTinh.ReadOnly = true;
+            // 
+            // soDienThoai
+            // 
+            this.soDienThoai.HeaderText = "Số điện thoại";
+            this.soDienThoai.MinimumWidth = 6;
+            this.soDienThoai.Name = "soDienThoai";
+            this.soDienThoai.ReadOnly = true;
+            // 
+            // luong
+            // 
+            this.luong.HeaderText = "Lương";
+            this.luong.MinimumWidth = 6;
+            this.luong.Name = "luong";
+            // 
+            // chucVu
+            // 
+            this.chucVu.HeaderText = "Chức vụ";
+            this.chucVu.MinimumWidth = 6;
+            this.chucVu.Name = "chucVu";
+            this.chucVu.ReadOnly = true;
+            // 
             // StaffManageGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -647,7 +638,7 @@
             this.gradientPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
-        }
+		}
 
         #endregion
         private Guna.UI2.WinForms.Guna2TextBox searchInput;
@@ -663,15 +654,6 @@
         private Guna.UI.WinForms.GunaAdvenceButton editBtn;
         private Guna.UI.WinForms.GunaAdvenceButton addBtn;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Column11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn maNhanVien;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tenNhanVien;
-        private System.Windows.Forms.DataGridViewTextBoxColumn namSinh;
-        private System.Windows.Forms.DataGridViewTextBoxColumn gioiTinh;
-        private System.Windows.Forms.DataGridViewTextBoxColumn soDienThoai;
-        private System.Windows.Forms.DataGridViewTextBoxColumn soNgayNghi;
-        private System.Windows.Forms.DataGridViewTextBoxColumn luong;
-        private System.Windows.Forms.DataGridViewTextBoxColumn chucVu;
         private GradientPanel gradientPanel1;
         private Guna.UI2.WinForms.Guna2TextBox salaryTo;
         private Guna.UI2.WinForms.Guna2TextBox salaryFrom;
@@ -679,5 +661,13 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Column11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn maNhanVien;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tenNhanVien;
+        private System.Windows.Forms.DataGridViewTextBoxColumn namSinh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gioiTinh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn soDienThoai;
+        private System.Windows.Forms.DataGridViewTextBoxColumn luong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn chucVu;
     }
 }

@@ -62,7 +62,6 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                                 staff.NamSinh,
                                 staff.GioiTinh,
                                 staff.SoDienThoai,
-                                staff.SoNgayNghi,
                                 staff.Luong.ToString() ,
                                 PositionBUS.Instance.getById(staff.MaChucVu.ToString()).TenChucVu
                             }
@@ -252,13 +251,21 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                 {
                     if ((bool)row.Cells[0].Value)
                     {
-                        StaffBUS.Instance.delete(row.Cells[1].Value.ToString());
+                        var isExistAccount= AccountBUS.Instance.getAllData().Where(account => account.MaNhanVien ==(int)row.Cells[1].Value).Any();
+                        if (isExistAccount)
+                       {
+                           MessageBox.Show("Vui lòng xóa tài khoản của " + row.Cells[2].Value.ToString() +"trước" );
+                        }
+                        else
+                        {
+                            StaffBUS.Instance.delete(row.Cells[1].Value.ToString());
+							List<StaffDTO> staffs = handleFilter(this.searchInput.Text);
+							loadDataToDataGridView(staffs);
+							MessageBox.Show("Xóa thành công");
+						}    
                     }
-                        
                 }
-                List<StaffDTO> staffs = handleFilter(this.searchInput.Text);
-                loadDataToDataGridView(staffs);
-                MessageBox.Show("Xóa thành công");
+               
             }    
         }
 

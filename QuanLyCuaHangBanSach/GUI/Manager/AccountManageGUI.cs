@@ -58,20 +58,26 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             {
                 foreach(AccountDTO account in accounts)
                 {
-                    this.dgvAccount.Rows.Add(new object[]
+                    StaffDTO STAFF = StaffBUS.Instance.getById(account.MaNhanVien.ToString());
+                    if (STAFF != null)
                     {
-                        false,
-                        StaffBUS.Instance.getById(account.MaNhanVien.ToString()).Ten,
-                        account.Email,
-                        account.MatKhau
-                    });
+					    this.dgvAccount.Rows.Add(new object[]
+					     {
+								    false,
+									STAFF.Ten,
+								    account.Email,
+								    account.MatKhau
+					      });
+					}    
+					
                 } 
                     
             }    
         }
         private List<AccountDTO> handleFilter(string searchString)
         {
-            return new List<AccountDTO>();
+            List<AccountDTO> accounts = AccountBUS.Instance.search(searchString);
+            return accounts;
         }
         private void btnExport_Click(object sender, EventArgs e)
         {
@@ -96,7 +102,9 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-            this.searchInput.Clear();   
+            this.searchInput.Clear();
+            List<AccountDTO> accounts = AccountBUS.Instance.getAllData();
+            this.loadDataToDataGridView(accounts);
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -108,7 +116,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                 if (modal.isSubmitSuccess)
                 {
                     List<AccountDTO> accounts = handleFilter(this.searchInput.Text);
-
+                    this.loadDataToDataGridView(accounts);
                 }    
             }
         }
@@ -160,11 +168,12 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                 {
                     if ((bool)row.Cells[0].Value)
                     {
-                        AccountBUS.Instance.delete(row.Cells[2].Value.ToString());
+                       bool check = AccountBUS.Instance.delete(row.Cells[2].Value.ToString());
+                        Console.WriteLine(check);
                     }  
                 }
                 //
-                List<AccountDTO> accounts = AccountBUS.Instance.getAllData();
+                List<AccountDTO> accounts = handleFilter(this.searchInput.Text);
                 this.loadDataToDataGridView(accounts);
                 MessageBox.Show("Xóa thành công các tài khoản đã chọn");
             }    
@@ -201,5 +210,11 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                 }
             }
         }
-    }
+
+		private void searchInput_TextChanged(object sender, EventArgs e)
+		{
+            List<AccountDTO> account = handleFilter(this.searchInput.Text);
+            loadDataToDataGridView(account);
+		}
+	}
 }

@@ -151,7 +151,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             {
                 List<StaffDTO> staffList = StaffBUS.Instance.getAllData();
 
-                staffList.Insert(0, new StaffDTO(0, "Tất cả nhân viên", "", "", 0, 0, 0, 0));
+                staffList.Insert(0, new StaffDTO(0, "Tất cả nhân viên", "", "", 0, 0, 0));
 
                 this.staffCbx.ValueMember = "Ma";
                 this.staffCbx.DisplayMember = "Ten";
@@ -171,6 +171,8 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
             try
             {
+                this.dateTimeFrom.Enabled = this.filterCkx.Checked;
+                this.dateTimeTo.Enabled = this.filterCkx.Checked;
                 List<CustomerChangeBillDTO> CustomerChangeBillList = CustomerChangeBillBUS.Instance.getAllData();
                 this.loadCustomerChangeBillListToDataView(CustomerChangeBillList);
                 this.loadCustomerCbx();
@@ -231,6 +233,8 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                 this.bookNeedChangeCbx.SelectedIndex = 0;
                 this.bookWantChangeCbx.SelectedIndex = 0;
                 this.staffCbx.SelectedIndex = 0;
+                this.dateTimeFrom.Enabled = false;
+                this.dateTimeTo.Enabled = false;
                 List<CustomerChangeBillDTO> CustomerChangeBillList = CustomerChangeBillBUS.Instance.search("");
                 this.loadCustomerChangeBillListToDataView(CustomerChangeBillList);
             }
@@ -583,6 +587,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         {
             try
             {
+
                 this.dateTimeFrom.Enabled = this.filterCkx.Checked;
                 this.dateTimeTo.Enabled = this.filterCkx.Checked;
             }
@@ -639,6 +644,11 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
                 Console.WriteLine(er);
             }
+        }
+
+        private void closeBtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
         }
     }
 }

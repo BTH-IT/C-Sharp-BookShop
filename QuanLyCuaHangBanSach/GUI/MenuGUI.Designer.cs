@@ -202,7 +202,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(232, 98);
+            this.ClientSize = new System.Drawing.Size(229, 102);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.menuFlow);
             this.Controls.Add(this.label1);

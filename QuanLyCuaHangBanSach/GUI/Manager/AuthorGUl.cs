@@ -1,17 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Reflection;
-using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using QuanLyCuaHangBanSach.BUS;
 using QuanLyCuaHangBanSach.DTO;
 using QuanLyCuaHangBanSach.GUI.Modal;
 using QuanLyCuaHangBanSach;
-using MySqlX.XDevAPI.Relational;
-using System.Linq;
 
 namespace QuanLyCuaHangBanTacGia.GUI.Manager
 {
@@ -95,7 +90,6 @@ namespace QuanLyCuaHangBanTacGia.GUI.Manager
             }
             catch (Exception ex)
             {
-
                 Console.WriteLine(ex);
             }
         }
@@ -123,7 +117,6 @@ namespace QuanLyCuaHangBanTacGia.GUI.Manager
             try
             {
                 this.searchInput.ForeColor = Color.Black;
-
                 List<AuthorDTO> AuthorList = AuthorBUS.Instance.search(this.searchInput.Text.ToString());
 
                 this.loadAuthorListToDataView(AuthorList);
