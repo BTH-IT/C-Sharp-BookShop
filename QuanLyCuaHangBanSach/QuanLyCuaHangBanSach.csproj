@@ -840,17 +840,17 @@
     <Compile Include="GUI\UserControls\ImportBookControl.Designer.cs">
       <DependentUpon>ImportBookControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\UserControls\SearchResultControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="GUI\UserControls\SearchResultControl.Designer.cs">
-      <DependentUpon>SearchResultControl.cs</DependentUpon>
-    </Compile>
     <Compile Include="GUI\UserControls\RefundBookControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="GUI\UserControls\RefundBookControl.Designer.cs">
       <DependentUpon>RefundBookControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UserControls\SearchResultControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UserControls\SearchResultControl.designer.cs">
+      <DependentUpon>SearchResultControl.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\UserControls\ViewBookBill.cs">
       <SubType>UserControl</SubType>
@@ -1045,9 +1045,12 @@
     <EmbeddedResource Include="GUI\UserControls\ImportBookControl.resx">
       <DependentUpon>ImportBookControl.cs</DependentUpon>
     </EmbeddedResource>
-	<EmbeddedResource Include="GUI\UserControls\ViewBookBill.resx">
-		  <DependentUpon>ViewBookBill.cs</DependentUpon>
-	</EmbeddedResource>
+    <EmbeddedResource Include="GUI\UserControls\SearchResultControl.resx">
+      <DependentUpon>SearchResultControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UserControls\ViewBookBill.resx">
+      <DependentUpon>ViewBookBill.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\UserControls\RefundBookControl.resx">
       <DependentUpon>RefundBookControl.cs</DependentUpon>
     </EmbeddedResource>

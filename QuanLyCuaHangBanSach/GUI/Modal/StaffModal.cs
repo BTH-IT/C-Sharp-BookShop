@@ -79,7 +79,6 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 					this.birthYearTxt.Text = staff.NamSinh.ToString();
 					this.salaryTxt.Text = staff.Luong.ToString();
 					this.genderCbx.SelectedItem = staff.GioiTinh == "Nam" ? genders[1] : genders[2];
-					this.dayOffTxt.Text = staff.SoNgayNghi.ToString();
 					this.phoneNumberTxt.Text = staff.SoDienThoai;
 
 					this.positionCbx.SelectedValue = staff.MaChucVu;
@@ -131,13 +130,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 						this.phoneNumberLine,
 						new string[] { "required", "phone-number" }
 					);
-				bool isDayOffValid = CustomValidation.Instance.checkTextbox(
-						this.dayOffTxt,
-						this.errorDayOffMsg,
-						this.dayOffLine,
-						new string[] { "required", "positive-number" }
-					);
-				return isStaffNameValid && isSalaryValid && isGenderValid && isPhoneNumber && isBirthYearValid && isPositionValid && isDayOffValid;
+				return isStaffNameValid && isSalaryValid && isGenderValid && isPhoneNumber && isBirthYearValid && isPositionValid ;
 			}
             catch
             {

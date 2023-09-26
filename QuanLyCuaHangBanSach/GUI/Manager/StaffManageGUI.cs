@@ -64,7 +64,6 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 								staff.NamSinh,
 								staff.GioiTinh,
 								staff.SoDienThoai,
-								staff.SoNgayNghi,
 								staff.Luong.ToString() ,
 								PositionBUS.Instance.getById(staff.MaChucVu.ToString()).TenChucVu
 								}

@@ -20,41 +20,55 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
         private void renderCheckBoxDgv()
         {
-            int size = 25;
+            try
+            {
+                int size = 25;
 
-            Rectangle rect = this.dgvPosition.GetCellDisplayRectangle(0, -1, false);
+                Rectangle rect = this.dgvPosition.GetCellDisplayRectangle(0, -1, false);
 
-            headerCheckbox = new CheckBox();
+                headerCheckbox = new CheckBox();
 
-            headerCheckbox.BackColor = Color.FromArgb(45, 210, 192);
-            headerCheckbox.Name = "chkHeader";
-            headerCheckbox.Size = new Size(size, size);
+                headerCheckbox.BackColor = Color.FromArgb(45, 210, 192);
+                headerCheckbox.Name = "chkHeader";
+                headerCheckbox.Size = new Size(size, size);
 
-            rect.X = (rect.Width / 2) - (size / 4);
-            rect.Y = (rect.Height / 2) - (size / 2);
+                rect.X = (rect.Width / 2) - (size / 4);
+                rect.Y = (rect.Height / 2) - (size / 2);
 
-            headerCheckbox.Location = rect.Location;
+                headerCheckbox.Location = rect.Location;
 
 
-            this.dgvPosition.Controls.Add(headerCheckbox);
+                this.dgvPosition.Controls.Add(headerCheckbox);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
         }
 
         private void loadPositionListToDataView(List<PositionDTO> positionList)
         {
-            this.dgvPosition.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(45, 210, 192);
-            this.dgvPosition.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-
-            this.dgvPosition.Rows.Clear();
-
-            foreach (PositionDTO position in positionList)
+            try
             {
-                this.dgvPosition.Rows.Add(new object[] {
+                this.dgvPosition.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(45, 210, 192);
+                this.dgvPosition.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+
+                this.dgvPosition.Rows.Clear();
+
+                foreach (PositionDTO position in positionList)
+                {
+                    this.dgvPosition.Rows.Add(new object[] {
                     false,
                     position.MaChucVu,
                     position.TenChucVu,
                     position.MoTa,
                     position.TrangThai ? "Đang hoạt động" : "Ngưng hoạt động",
                 });
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
             }
 
         }
@@ -63,149 +77,198 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         private void PositionManageGUI_Load(object sender, EventArgs e)
         {
 
-            List<PositionDTO> positionList = PositionBUS.Instance.getAllData();
-            this.loadPositionListToDataView(positionList);
+            try
+            {
+                List<PositionDTO> positionList = PositionBUS.Instance.getAllData();
+                this.loadPositionListToDataView(positionList);
 
-            this.renderCheckBoxDgv();
-            headerCheckbox.MouseClick += new MouseEventHandler(headerCheckbox_Clicked);
+                this.renderCheckBoxDgv();
+                headerCheckbox.MouseClick += new MouseEventHandler(headerCheckbox_Clicked);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
         }
 
         private void headerCheckbox_Clicked(object sender, EventArgs e)
         {
-            foreach (DataGridViewRow row in this.dgvPosition.Rows)
+            try
             {
-                row.Cells[0].Value = headerCheckbox.Checked;
-            }
+                foreach (DataGridViewRow row in this.dgvPosition.Rows)
+                {
+                    row.Cells[0].Value = headerCheckbox.Checked;
+                }
 
-            this.dgvPosition.RefreshEdit();
+                this.dgvPosition.RefreshEdit();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
         }
 
         private void searchInput_TextChanged(object sender, EventArgs e)
         {
-            this.searchInput.ForeColor = Color.Black;
+            try
+            {
+                this.searchInput.ForeColor = Color.Black;
 
-            List<PositionDTO> positionList = PositionBUS.Instance.search(this.searchInput.Text);
+                List<PositionDTO> positionList = PositionBUS.Instance.search(this.searchInput.Text);
 
-            this.loadPositionListToDataView(positionList);
+                this.loadPositionListToDataView(positionList);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
         }
 
         private void exportBtn_Click(object sender, EventArgs e)
         {
-            List<PositionDTO> positionList = PositionBUS.Instance.search(this.searchInput.Text);
+            try
+            {
+                List<PositionDTO> positionList = PositionBUS.Instance.search(this.searchInput.Text);
 
-            DataTable dataTable = CustomExcel.Instance.ConvertListToDataTable(positionList);
+                DataTable dataTable = CustomExcel.Instance.ConvertListToDataTable(positionList);
 
-            string[] headerList = new string[] { "Mã chức vụ", "Tên chức vụ", "Mô tả", "Trạng thái"};
+                string[] headerList = new string[] { "Mã chức vụ", "Tên chức vụ", "Mô tả", "Trạng thái" };
 
-            CustomExcel.Instance.ExportFile(dataTable, "Position Manage", "Cửa hàng bán chức vụ", headerList);
+                CustomExcel.Instance.ExportFile(dataTable, "Position Manage", "Cửa hàng bán chức vụ", headerList);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
         }
 
         private void editBtn_Click(object sender, EventArgs e)
         {
-            if (this.dgvPosition.CurrentCell.RowIndex < 0)
+            try
             {
-                MessageBox.Show("Hãy chọn dòng dữ liệu muốn thao tác");
-                return;
-            }
-
-            using (PositionModal positionModal = new PositionModal("Sửa chức vụ"))
-            {
-                DataGridViewRow row = this.dgvPosition.Rows[this.dgvPosition.CurrentCell.RowIndex];
-
-                PositionDTO position = PositionBUS.Instance.getById(row.Cells[1].Value.ToString());
-
-                positionModal.updatePosition = position;
-
-                if (positionModal.updatePosition == null)
+                if (this.dgvPosition.CurrentCell.RowIndex < 0)
                 {
-                    MessageBox.Show("Đã xảy ra lỗi vui lòng thử lại sau!!");
+                    MessageBox.Show("Hãy chọn dòng dữ liệu muốn thao tác");
                     return;
                 }
 
-                positionModal.ShowDialog();
-
-                if (positionModal.isSubmitSuccess)
+                using (PositionModal positionModal = new PositionModal("Sửa chức vụ"))
                 {
-                    List<PositionDTO> positionList = PositionBUS.Instance.search(this.searchInput.Text);
+                    DataGridViewRow row = this.dgvPosition.Rows[this.dgvPosition.CurrentCell.RowIndex];
 
-                    this.loadPositionListToDataView(positionList);
+                    PositionDTO position = PositionBUS.Instance.getById(row.Cells[1].Value.ToString());
+
+                    positionModal.updatePosition = position;
+
+                    if (positionModal.updatePosition == null)
+                    {
+                        MessageBox.Show("Đã xảy ra lỗi vui lòng thử lại sau!!");
+                        return;
+                    }
+
+                    positionModal.ShowDialog();
+
+                    if (positionModal.isSubmitSuccess)
+                    {
+                        List<PositionDTO> positionList = PositionBUS.Instance.search(this.searchInput.Text);
+
+                        this.loadPositionListToDataView(positionList);
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
             }
         }
 
         private void deleteBtn_Click(object sender, EventArgs e)
         {
-            bool isHaveSelect = false;
-
-            foreach (DataGridViewRow row in this.dgvPosition.Rows)
+            try
             {
-                if ((bool)row.Cells[0].Value)
-                {
-                    isHaveSelect = true;
-                    break;
-                }
-            }
+                bool isHaveSelect = false;
 
-            if (!isHaveSelect)
-            {
-                MessageBox.Show("Bạn chưa chọn những chức vụ cần xóa");
-                return;
-            }
-
-            DialogResult dlgResult = MessageBox.Show(
-                "Bạn chắc chắn muốn xóa các chức vụ đã chọn chứ?",
-                "Xác nhận",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Question,
-                MessageBoxDefaultButton.Button1
-            );
-
-            if (dlgResult == DialogResult.Yes)
-            {
                 foreach (DataGridViewRow row in this.dgvPosition.Rows)
                 {
-                    if ((bool)row.Cells[0].Value == true)
+                    if ((bool)row.Cells[0].Value)
                     {
-                        PositionBUS.Instance.delete(row.Cells[1].Value.ToString());
+                        isHaveSelect = true;
+                        break;
                     }
-
                 }
-                List<PositionDTO> positionList = PositionBUS.Instance.search(this.searchInput.Text);
-                this.loadPositionListToDataView(positionList);
 
-                MessageBox.Show("Delete successful");
+                if (!isHaveSelect)
+                {
+                    MessageBox.Show("Bạn chưa chọn những chức vụ cần xóa");
+                    return;
+                }
+
+                DialogResult dlgResult = MessageBox.Show(
+                    "Bạn chắc chắn muốn xóa các chức vụ đã chọn chứ?",
+                    "Xác nhận",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question,
+                    MessageBoxDefaultButton.Button1
+                );
+
+                if (dlgResult == DialogResult.Yes)
+                {
+                    foreach (DataGridViewRow row in this.dgvPosition.Rows)
+                    {
+                        if ((bool)row.Cells[0].Value == true)
+                        {
+                            PositionBUS.Instance.delete(row.Cells[1].Value.ToString());
+                        }
+
+                    }
+                    List<PositionDTO> positionList = PositionBUS.Instance.search(this.searchInput.Text);
+                    this.loadPositionListToDataView(positionList);
+
+                    MessageBox.Show("Delete successful");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
             }
         }
 
         private void dgvPosition_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex < 0 || e.ColumnIndex <= 0)
+            try
             {
-                return;
-            }
-
-            using (PositionModal positionModal = new PositionModal("Sửa chức vụ"))
-            {
-                DataGridViewRow row = this.dgvPosition.Rows[e.RowIndex];
-
-                PositionDTO position = PositionBUS.Instance.getById(row.Cells[1].Value.ToString());
-
-                positionModal.updatePosition = position;
-
-                if (positionModal.updatePosition == null)
+                if (e.RowIndex < 0 || e.ColumnIndex <= 0)
                 {
-                    MessageBox.Show("Đã xảy ra lỗi vui lòng thử lại sau!!");
                     return;
                 }
 
-                positionModal.ShowDialog();
-
-                if (positionModal.isSubmitSuccess)
+                using (PositionModal positionModal = new PositionModal("Sửa chức vụ"))
                 {
-                    List<PositionDTO> positionList = PositionBUS.Instance.search(this.searchInput.Text);
+                    DataGridViewRow row = this.dgvPosition.Rows[e.RowIndex];
 
-                    this.loadPositionListToDataView(positionList);
+                    PositionDTO position = PositionBUS.Instance.getById(row.Cells[1].Value.ToString());
+
+                    positionModal.updatePosition = position;
+
+                    if (positionModal.updatePosition == null)
+                    {
+                        MessageBox.Show("Đã xảy ra lỗi vui lòng thử lại sau!!");
+                        return;
+                    }
+
+                    positionModal.ShowDialog();
+
+                    if (positionModal.isSubmitSuccess)
+                    {
+                        List<PositionDTO> positionList = PositionBUS.Instance.search(this.searchInput.Text);
+
+                        this.loadPositionListToDataView(positionList);
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
             }
         }
 
@@ -227,25 +290,39 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
         private void refreshBtn_Click(object sender, EventArgs e)
         {
-            this.searchInput.Clear();
+            try
+            {
+                this.searchInput.Clear();
 
-            List<PositionDTO> positionList = PositionBUS.Instance.search("");
-            this.loadPositionListToDataView(positionList);
+                List<PositionDTO> positionList = PositionBUS.Instance.search("");
+                this.loadPositionListToDataView(positionList);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
         }
 
         private void authorizeBtn_Click(object sender, EventArgs e)
         {
-            if (this.dgvPosition.CurrentCell.RowIndex < 0)
+            try
             {
-                MessageBox.Show("Hãy chọn dòng dữ liệu muốn thao tác");
-                return;
+                if (this.dgvPosition.CurrentCell.RowIndex < 0)
+                {
+                    MessageBox.Show("Hãy chọn dòng dữ liệu muốn thao tác");
+                    return;
+                }
+
+                DataGridViewRow row = this.dgvPosition.Rows[this.dgvPosition.CurrentCell.RowIndex];
+
+                using (AuthorizeModal authorizeModal = new AuthorizeModal(Convert.ToInt32(row.Cells[1].Value)))
+                {
+                    authorizeModal.ShowDialog();
+                }
             }
-
-            DataGridViewRow row = this.dgvPosition.Rows[this.dgvPosition.CurrentCell.RowIndex];
-
-            using (AuthorizeModal authorizeModal = new AuthorizeModal(Convert.ToInt32(row.Cells[1].Value)))
+            catch (Exception ex)
             {
-                authorizeModal.ShowDialog();
+                Console.WriteLine(ex);
             }
         }
     }
