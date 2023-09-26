@@ -99,6 +99,10 @@
 			this.AmountTxt.TabIndex = 2;
 			this.AmountTxt.Text = "1";
 			this.AmountTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			this.AmountTxt.TextChanged += new System.EventHandler(this.AmountTxt_TextChanged);
+			this.AmountTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AmountTxt_KeyPress);
+			this.AmountTxt.Leave += new System.EventHandler(this.AmountTxt_Leave);
+			this.AmountTxt.MouseLeave += new System.EventHandler(this.AmountTxt_MouseLeave);
 			// 
 			// PriceLb
 			// 

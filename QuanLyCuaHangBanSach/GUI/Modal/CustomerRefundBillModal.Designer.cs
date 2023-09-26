@@ -91,7 +91,7 @@
 			this.submitBtn.ForeColor = System.Drawing.Color.White;
 			this.submitBtn.Image = null;
 			this.submitBtn.ImageSize = new System.Drawing.Size(20, 20);
-			this.submitBtn.Location = new System.Drawing.Point(904, 771);
+			this.submitBtn.Location = new System.Drawing.Point(825, 647);
 			this.submitBtn.Name = "submitBtn";
 			this.submitBtn.OnHoverBaseColor = System.Drawing.Color.White;
 			this.submitBtn.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
@@ -111,7 +111,7 @@
 			this.refundBookContainer.AutoScroll = true;
 			this.refundBookContainer.Location = new System.Drawing.Point(15, 283);
 			this.refundBookContainer.Name = "refundBookContainer";
-			this.refundBookContainer.Size = new System.Drawing.Size(1089, 437);
+			this.refundBookContainer.Size = new System.Drawing.Size(919, 332);
 			this.refundBookContainer.TabIndex = 14;
 			// 
 			// label8
@@ -154,7 +154,7 @@
 			this.panel2.Location = new System.Drawing.Point(5, 10);
 			this.panel2.Margin = new System.Windows.Forms.Padding(5, 10, 5, 20);
 			this.panel2.Name = "panel2";
-			this.panel2.Size = new System.Drawing.Size(505, 88);
+			this.panel2.Size = new System.Drawing.Size(481, 88);
 			this.panel2.TabIndex = 1;
 			// 
 			// supplierNameTxt
@@ -180,21 +180,21 @@
 			this.supplierNameTxt.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
 			this.supplierNameTxt.Name = "supplierNameTxt";
 			this.supplierNameTxt.PasswordChar = '\0';
-			this.supplierNameTxt.PlaceholderText = "Nhà cung cấp";
+			this.supplierNameTxt.PlaceholderText = "Khách Hàng";
 			this.supplierNameTxt.ReadOnly = true;
 			this.supplierNameTxt.SelectedText = "";
 			this.supplierNameTxt.ShadowDecoration.Parent = this.supplierNameTxt;
-			this.supplierNameTxt.Size = new System.Drawing.Size(332, 36);
+			this.supplierNameTxt.Size = new System.Drawing.Size(309, 36);
 			this.supplierNameTxt.TabIndex = 32;
 			// 
 			// supplierNameMsg
 			// 
 			this.supplierNameMsg.AutoSize = true;
-			this.supplierNameMsg.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+			this.supplierNameMsg.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
 			this.supplierNameMsg.ForeColor = System.Drawing.Color.Red;
 			this.supplierNameMsg.Location = new System.Drawing.Point(12, 52);
 			this.supplierNameMsg.Name = "supplierNameMsg";
-			this.supplierNameMsg.Size = new System.Drawing.Size(0, 25);
+			this.supplierNameMsg.Size = new System.Drawing.Size(0, 18);
 			this.supplierNameMsg.TabIndex = 7;
 			// 
 			// supplierNameLine
@@ -252,10 +252,10 @@
 			this.panel8.Controls.Add(this.totalMoney);
 			this.panel8.Controls.Add(this.panel9);
 			this.panel8.Controls.Add(this.label9);
-			this.panel8.Location = new System.Drawing.Point(1130, 632);
+			this.panel8.Location = new System.Drawing.Point(942, 515);
 			this.panel8.Margin = new System.Windows.Forms.Padding(5, 10, 5, 20);
 			this.panel8.Name = "panel8";
-			this.panel8.Size = new System.Drawing.Size(400, 88);
+			this.panel8.Size = new System.Drawing.Size(398, 88);
 			this.panel8.TabIndex = 12;
 			// 
 			// dateTimeToLine
@@ -283,10 +283,10 @@
 			this.panel3.Controls.Add(this.reasonMsg);
 			this.panel3.Controls.Add(this.reasonLine);
 			this.panel3.Controls.Add(this.label6);
-			this.panel3.Location = new System.Drawing.Point(520, 10);
+			this.panel3.Location = new System.Drawing.Point(496, 10);
 			this.panel3.Margin = new System.Windows.Forms.Padding(5, 10, 5, 20);
 			this.panel3.Name = "panel3";
-			this.panel3.Size = new System.Drawing.Size(492, 88);
+			this.panel3.Size = new System.Drawing.Size(403, 88);
 			this.panel3.TabIndex = 4;
 			// 
 			// reasonTxt
@@ -307,7 +307,7 @@
 			this.reasonTxt.ForeColor = System.Drawing.Color.Black;
 			this.reasonTxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
 			this.reasonTxt.HoverState.Parent = this.reasonTxt;
-			this.reasonTxt.Location = new System.Drawing.Point(168, 8);
+			this.reasonTxt.Location = new System.Drawing.Point(90, 8);
 			this.reasonTxt.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
 			this.reasonTxt.Name = "reasonTxt";
 			this.reasonTxt.PasswordChar = '\0';
@@ -320,17 +320,17 @@
 			// reasonMsg
 			// 
 			this.reasonMsg.AutoSize = true;
-			this.reasonMsg.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+			this.reasonMsg.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
 			this.reasonMsg.ForeColor = System.Drawing.Color.Red;
-			this.reasonMsg.Location = new System.Drawing.Point(163, 50);
+			this.reasonMsg.Location = new System.Drawing.Point(21, 57);
 			this.reasonMsg.Name = "reasonMsg";
-			this.reasonMsg.Size = new System.Drawing.Size(0, 25);
+			this.reasonMsg.Size = new System.Drawing.Size(0, 18);
 			this.reasonMsg.TabIndex = 7;
 			// 
 			// reasonLine
 			// 
 			this.reasonLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(212)))), ((int)(((byte)(191)))));
-			this.reasonLine.Location = new System.Drawing.Point(168, 45);
+			this.reasonLine.Location = new System.Drawing.Point(90, 45);
 			this.reasonLine.Name = "reasonLine";
 			this.reasonLine.Size = new System.Drawing.Size(300, 1);
 			this.reasonLine.TabIndex = 8;
@@ -340,7 +340,7 @@
 			this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
 			this.label6.Location = new System.Drawing.Point(3, 3);
 			this.label6.Name = "label6";
-			this.label6.Size = new System.Drawing.Size(188, 49);
+			this.label6.Size = new System.Drawing.Size(78, 49);
 			this.label6.TabIndex = 5;
 			this.label6.Text = "Lý do:";
 			this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -427,7 +427,7 @@
 			this.panel4.Location = new System.Drawing.Point(5, 128);
 			this.panel4.Margin = new System.Windows.Forms.Padding(5, 10, 5, 20);
 			this.panel4.Name = "panel4";
-			this.panel4.Size = new System.Drawing.Size(518, 60);
+			this.panel4.Size = new System.Drawing.Size(423, 60);
 			this.panel4.TabIndex = 3;
 			// 
 			// panel6
@@ -436,7 +436,7 @@
 			this.panel6.Controls.Add(this.dateTimeTo);
 			this.panel6.Controls.Add(this.dateTimeToLine);
 			this.panel6.Controls.Add(this.label7);
-			this.panel6.Location = new System.Drawing.Point(533, 128);
+			this.panel6.Location = new System.Drawing.Point(438, 128);
 			this.panel6.Margin = new System.Windows.Forms.Padding(5, 10, 5, 20);
 			this.panel6.Name = "panel6";
 			this.panel6.Size = new System.Drawing.Size(394, 60);
@@ -452,23 +452,23 @@
 			this.flowLayoutPanel1.Controls.Add(this.panel6);
 			this.flowLayoutPanel1.Location = new System.Drawing.Point(15, 17);
 			this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-			this.flowLayoutPanel1.Size = new System.Drawing.Size(1094, 211);
+			this.flowLayoutPanel1.Size = new System.Drawing.Size(919, 211);
 			this.flowLayoutPanel1.TabIndex = 11;
 			// 
 			// customerBookContainer
 			// 
 			this.customerBookContainer.AutoScroll = true;
-			this.customerBookContainer.Location = new System.Drawing.Point(0, 197);
+			this.customerBookContainer.Location = new System.Drawing.Point(0, 138);
 			this.customerBookContainer.Margin = new System.Windows.Forms.Padding(4);
 			this.customerBookContainer.Name = "customerBookContainer";
-			this.customerBookContainer.Size = new System.Drawing.Size(400, 388);
+			this.customerBookContainer.Size = new System.Drawing.Size(396, 343);
 			this.customerBookContainer.TabIndex = 21;
 			// 
 			// label2
 			// 
 			this.label2.AutoSize = true;
 			this.label2.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 16F, System.Drawing.FontStyle.Bold);
-			this.label2.Location = new System.Drawing.Point(14, 131);
+			this.label2.Location = new System.Drawing.Point(14, 94);
 			this.label2.Margin = new System.Windows.Forms.Padding(27, 37, 4, 6);
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(253, 40);
@@ -484,12 +484,12 @@
 			this.customerBillInput.ForeColor = System.Drawing.Color.DarkGray;
 			this.customerBillInput.LineColor = System.Drawing.Color.Black;
 			this.customerBillInput.LineSize = 1;
-			this.customerBillInput.Location = new System.Drawing.Point(21, 50);
+			this.customerBillInput.Location = new System.Drawing.Point(21, 45);
 			this.customerBillInput.Margin = new System.Windows.Forms.Padding(4);
 			this.customerBillInput.Name = "customerBillInput";
 			this.customerBillInput.PasswordChar = '\0';
 			this.customerBillInput.SelectedText = "";
-			this.customerBillInput.Size = new System.Drawing.Size(325, 49);
+			this.customerBillInput.Size = new System.Drawing.Size(325, 40);
 			this.customerBillInput.TabIndex = 2;
 			this.customerBillInput.TextChanged += new System.EventHandler(this.customerBillInput_TextChanged);
 			// 
@@ -497,7 +497,7 @@
 			// 
 			this.label1.AutoSize = true;
 			this.label1.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 16F, System.Drawing.FontStyle.Bold);
-			this.label1.Location = new System.Drawing.Point(14, 9);
+			this.label1.Location = new System.Drawing.Point(14, 0);
 			this.label1.Margin = new System.Windows.Forms.Padding(27, 37, 4, 6);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(121, 40);
@@ -520,7 +520,7 @@
 			this.cancelBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
 			this.cancelBtn.Image = null;
 			this.cancelBtn.ImageSize = new System.Drawing.Size(20, 20);
-			this.cancelBtn.Location = new System.Drawing.Point(642, 771);
+			this.cancelBtn.Location = new System.Drawing.Point(535, 647);
 			this.cancelBtn.Name = "cancelBtn";
 			this.cancelBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
 			this.cancelBtn.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
@@ -541,9 +541,9 @@
 			this.panel1.Controls.Add(this.label2);
 			this.panel1.Controls.Add(this.customerBillInput);
 			this.panel1.Controls.Add(this.label1);
-			this.panel1.Location = new System.Drawing.Point(1130, 17);
+			this.panel1.Location = new System.Drawing.Point(940, 17);
 			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(400, 602);
+			this.panel1.Size = new System.Drawing.Size(400, 485);
 			this.panel1.TabIndex = 10;
 			// 
 			// CustomerRefundBillModal
@@ -551,7 +551,7 @@
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 23F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.White;
-			this.ClientSize = new System.Drawing.Size(1542, 838);
+			this.ClientSize = new System.Drawing.Size(1347, 719);
 			this.Controls.Add(this.submitBtn);
 			this.Controls.Add(this.refundBookContainer);
 			this.Controls.Add(this.label8);

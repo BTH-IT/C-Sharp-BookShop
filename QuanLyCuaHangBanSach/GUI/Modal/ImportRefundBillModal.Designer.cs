@@ -154,7 +154,7 @@
 			this.panel2.Location = new System.Drawing.Point(5, 10);
 			this.panel2.Margin = new System.Windows.Forms.Padding(5, 10, 5, 20);
 			this.panel2.Name = "panel2";
-			this.panel2.Size = new System.Drawing.Size(505, 88);
+			this.panel2.Size = new System.Drawing.Size(475, 88);
 			this.panel2.TabIndex = 1;
 			// 
 			// supplierNameTxt
@@ -184,7 +184,7 @@
 			this.supplierNameTxt.ReadOnly = true;
 			this.supplierNameTxt.SelectedText = "";
 			this.supplierNameTxt.ShadowDecoration.Parent = this.supplierNameTxt;
-			this.supplierNameTxt.Size = new System.Drawing.Size(332, 36);
+			this.supplierNameTxt.Size = new System.Drawing.Size(300, 36);
 			this.supplierNameTxt.TabIndex = 32;
 			// 
 			// supplierNameMsg
@@ -222,7 +222,7 @@
 			this.panel3.Controls.Add(this.reasonMsg);
 			this.panel3.Controls.Add(this.reasonLine);
 			this.panel3.Controls.Add(this.label6);
-			this.panel3.Location = new System.Drawing.Point(520, 10);
+			this.panel3.Location = new System.Drawing.Point(490, 10);
 			this.panel3.Margin = new System.Windows.Forms.Padding(5, 10, 5, 20);
 			this.panel3.Name = "panel3";
 			this.panel3.Size = new System.Drawing.Size(492, 88);
@@ -261,7 +261,7 @@
 			this.reasonMsg.AutoSize = true;
 			this.reasonMsg.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
 			this.reasonMsg.ForeColor = System.Drawing.Color.Red;
-			this.reasonMsg.Location = new System.Drawing.Point(163, 50);
+			this.reasonMsg.Location = new System.Drawing.Point(10, 50);
 			this.reasonMsg.Name = "reasonMsg";
 			this.reasonMsg.Size = new System.Drawing.Size(0, 25);
 			this.reasonMsg.TabIndex = 7;
@@ -279,7 +279,7 @@
 			this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
 			this.label6.Location = new System.Drawing.Point(3, 3);
 			this.label6.Name = "label6";
-			this.label6.Size = new System.Drawing.Size(188, 49);
+			this.label6.Size = new System.Drawing.Size(82, 49);
 			this.label6.TabIndex = 5;
 			this.label6.Text = "Lý do:";
 			this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
