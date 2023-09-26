@@ -73,8 +73,9 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 																.ToList();
 						if (!bookControls.Any(a => a.getId() == book.MaSach))
 						{
+							CustomerBillDetailDTO customerBillDetail = CustomerBillBUS.Instance.getCustomerBillDetailList(this.customerBillInput.Text).Where(c => c.MaSach == book.MaSach).FirstOrDefault();
 							RefundBookControl control = new RefundBookControl();
-							control.details(book,1);
+							control.details(book,customerBillDetail.SoLuong,1);
 							this.refundBookContainer.Controls.Add(control);
 							CaculateTotalMoney();
 						};
@@ -104,10 +105,6 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 					totalMoney += control.getPrice() * sl;
 				}
 				this.totalMoney.Text = totalMoney.ToString();
-			}
-			else
-			{
-				this.totalMoney.Text = "0";
 			}
 		}
 		private void loadDataToCustomerBillBookDetail(List<CustomerBillDetailDTO> customerBillDetails)
@@ -141,6 +138,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 				{
 					customerBillDetails = new List<CustomerBillDetailDTO>();
 					this.supplierNameTxt.Text = "";
+					this.totalMoney.Text = "0";
 				}
 				this.loadDataToCustomerBillBookDetail(customerBillDetails);
 			}
@@ -178,10 +176,11 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 					if (control.check)
 					{
 						BookDTO book = BookBUS.Instance.getById(control.getId().ToString());
-						CustomerRefundBillDetailDTO importRefundBillDetail = new CustomerRefundBillDetailDTO(0, book.MaSach, 1, book.GiaNhap);
-						listRefundBillDetail.Add(importRefundBillDetail);
+						CustomerRefundBillDetailDTO customerRefundBillDetail = new CustomerRefundBillDetailDTO(0, book.MaSach, 1, book.GiaNhap);
+						listRefundBillDetail.Add(customerRefundBillDetail);
 					}
 				}
+				
 			}
 			loadDataToBookList(listRefundBillDetail);
 		}

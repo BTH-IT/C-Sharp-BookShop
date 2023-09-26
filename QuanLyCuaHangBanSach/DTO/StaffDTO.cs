@@ -7,7 +7,6 @@ namespace QuanLyCuaHangBanSach.DTO
     {
         public string SoDienThoai { get; set; }
         public double Luong { get; set; }
-        public int SoNgayNghi { get; set; }
         public int MaChucVu { get; set; }
         public StaffDTO() { }
         public StaffDTO(

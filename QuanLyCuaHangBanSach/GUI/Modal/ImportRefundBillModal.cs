@@ -92,8 +92,9 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 																.ToList();
 						if (!bookControls.Any(a => a.getId() == book.MaSach))
 						{
+							ImportBillDetailDTO importBillDetail = ImportBillBUS.Instance.getImportBillDetailList(this.importBillInput.Text).Where(c => c.MaSach == book.MaSach).FirstOrDefault();
 							RefundBookControl control = new RefundBookControl();
-							control.details(book);
+							control.details(book,importBillDetail.SoLuong);
 							this.refundBookContainer.Controls.Add(control);
 							CaculateTotalMoney();
 						};
@@ -129,6 +130,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 				{
 					importBillDetail = new List<ImportBillDetailDTO>();
 					this.supplierNameTxt.Text = "";
+					this.totalMoney.Text = "0";
 				}
 				this.loadDataToImportBookDetail(importBillDetail);
 			}
