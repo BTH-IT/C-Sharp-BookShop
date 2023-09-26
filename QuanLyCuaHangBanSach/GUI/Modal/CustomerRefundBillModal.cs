@@ -27,33 +27,41 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
 		private void CustomerRefundBillModal_Load(object sender, EventArgs e)
 		{
-			this.Location = new Point(
-			   (Screen.PrimaryScreen.Bounds.Size.Width / 2) - (this.Size.Width / 2),
-			   (Screen.PrimaryScreen.Bounds.Size.Height / 2) - (this.Size.Height / 2)
-			);
-			RefundBookControl.OnChangeRefundBookAmount = CaculateTotalMoney;
-			RefundBookControl.OnDeleteRefundBook = DeleteRefundBook;
-			if (customerRefundBill != null)
+			try
 			{
-				this.customerBillInput.Text = customerRefundBill.MaDonKhachHang.ToString();
-				this.customerBillInput.Enabled = false;
-				this.staffTxt.Text = StaffBUS.Instance.getById(customerRefundBill.MaNhanVien.ToString()).Ten;
-				//this.supplierNameTxt.Text= SupplierBUS.Instance.getById(customerRefundBill.NhaCungCapDaTra.ToString()).TenNhaCungCap;
-				this.dateTimeTo.Value = customerRefundBill.NgayLap;
-				this.reasonTxt.Text = customerRefundBill.LiDo;
-				this.reasonTxt.Enabled = false;
-				List<CustomerBillDetailDTO> customerBillDetails = CustomerBillBUS.Instance.getCustomerBillDetailList(customerRefundBill.MaPhieu.ToString());
-				loadDataToCustomerBillBookDetail(customerBillDetails);
-				List<CustomerRefundBillDetailDTO> customerRefundBillDetail = CustomerRefundBillBUS.Instance.getCustomerRefundBillDetailList(customerRefundBill.MaPhieu.ToString());
-				loadDataToBookList(customerRefundBillDetail);
+				this.Location = new Point(
+							   (Screen.PrimaryScreen.Bounds.Size.Width / 2) - (this.Size.Width / 2),
+							   (Screen.PrimaryScreen.Bounds.Size.Height / 2) - (this.Size.Height / 2)
+							);
+				RefundBookControl.OnChangeRefundBookAmount = CaculateTotalMoney;
+				RefundBookControl.OnDeleteRefundBook = DeleteRefundBook;
+				if (customerRefundBill != null)
+				{
+					this.customerBillInput.Text = customerRefundBill.MaDonKhachHang.ToString();
+					this.customerBillInput.Enabled = false;
+					this.staffTxt.Text = StaffBUS.Instance.getById(customerRefundBill.MaNhanVien.ToString()).Ten;
+					//this.supplierNameTxt.Text= SupplierBUS.Instance.getById(customerRefundBill.NhaCungCapDaTra.ToString()).TenNhaCungCap;
+					this.dateTimeTo.Value = customerRefundBill.NgayLap;
+					this.reasonTxt.Text = customerRefundBill.LiDo;
+					this.reasonTxt.Enabled = false;
+					List<CustomerBillDetailDTO> customerBillDetails = CustomerBillBUS.Instance.getCustomerBillDetailList(customerRefundBill.MaPhieu.ToString());
+					loadDataToCustomerBillBookDetail(customerBillDetails);
+					List<CustomerRefundBillDetailDTO> customerRefundBillDetail = CustomerRefundBillBUS.Instance.getCustomerRefundBillDetailList(customerRefundBill.MaPhieu.ToString());
+					loadDataToBookList(customerRefundBillDetail);
+				}
+				else
+				{
+					this.dateTimeTo.Value = DateTime.Now;
+					// tìm cách lấy thông tin user hiện tại đăng nhập
+					this.staffTxt.Text = "Lê Toàn";
+					timer1.Start();
+				}
 			}
-			else
+			catch
 			{
-				this.dateTimeTo.Value = DateTime.Now;
-				// tìm cách lấy thông tin user hiện tại đăng nhập
-				this.staffTxt.Text = "Lê Toàn";
-				timer1.Start();
+
 			}
+			
 		}
 
 		private void loadDataToBookList(List<CustomerRefundBillDetailDTO> customerRefundBillDetails)
@@ -96,30 +104,45 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
 		private void CaculateTotalMoney()
 		{
-			if (refundBookContainer.Controls.Count > 0)
+			try
 			{
-				double totalMoney = 0;
-				foreach (RefundBookControl control in refundBookContainer.Controls)
+				if (refundBookContainer.Controls.Count > 0)
 				{
-					int sl = control.GetBookAmount();
-					totalMoney += control.getPrice() * sl;
+					double totalMoney = 0;
+					foreach (RefundBookControl control in refundBookContainer.Controls)
+					{
+						int sl = control.GetBookAmount();
+						totalMoney += control.getPrice() * sl;
+					}
+					this.totalMoney.Text = totalMoney.ToString();
 				}
-				this.totalMoney.Text = totalMoney.ToString();
+			}
+			catch
+			{
+
 			}
 		}
 		private void loadDataToCustomerBillBookDetail(List<CustomerBillDetailDTO> customerBillDetails)
 		{
-			customerBookContainer.Controls.Clear();
-			if (customerBillDetails != null)
+			try
 			{
-				foreach (var customerBillDetailsDTO in customerBillDetails)
+				customerBookContainer.Controls.Clear();
+				if (customerBillDetails != null)
 				{
-					BookDTO book = BookBUS.Instance.getById(customerBillDetailsDTO.MaSach.ToString());
-					ImportBookControl control = new ImportBookControl();
-					control.details(book, customerBillDetailsDTO.SoLuong,1);
-					this.customerBookContainer.Controls.Add(control);
+					foreach (var customerBillDetailsDTO in customerBillDetails)
+					{
+						BookDTO book = BookBUS.Instance.getById(customerBillDetailsDTO.MaSach.ToString());
+						ImportBookControl control = new ImportBookControl();
+						control.details(book, customerBillDetailsDTO.SoLuong, 1);
+						this.customerBookContainer.Controls.Add(control);
+					}
 				}
 			}
+			catch
+			{
+
+			}
+		
 		}
 		private void customerBillInput_TextChanged(object sender, EventArgs e)
 		{
@@ -151,38 +174,55 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
 		private void DeleteRefundBook(string id)
 		{
-			ImportBookControl importControl = customerBookContainer.Controls.OfType<ImportBookControl>()
+			try
+			{
+				ImportBookControl importControl = customerBookContainer.Controls.OfType<ImportBookControl>()
 				.Where(c => c.getId().ToString() == id)
 				.FirstOrDefault();
-			if (importControl != null)
-			{
-				importControl.UncheckStatus();
+				if (importControl != null)
+				{
+					importControl.UncheckStatus();
+				}
+				RefundBookControl bookControl = refundBookContainer.Controls.OfType<RefundBookControl>()
+						.Where(c => c.getId().ToString() == id)
+						.FirstOrDefault();
+				refundBookContainer.Controls.Remove(bookControl);
+				refundBookContainer.Refresh();
+				CaculateTotalMoney();
+
 			}
-			RefundBookControl bookControl = refundBookContainer.Controls.OfType<RefundBookControl>()
-					.Where(c => c.getId().ToString() == id)
-					.FirstOrDefault();
-			refundBookContainer.Controls.Remove(bookControl);
-			refundBookContainer.Refresh();
-			CaculateTotalMoney();
+			catch
+			{
+
+			}
+			
 		}
 
 		private void timer1_Tick(object sender, EventArgs e)
 		{
-			List<CustomerRefundBillDetailDTO> listRefundBillDetail = new List<CustomerRefundBillDetailDTO>();
-			if (this.customerBookContainer.Controls.Count > 0)
+			try
 			{
-				foreach (ImportBookControl control in customerBookContainer.Controls)
+				List<CustomerRefundBillDetailDTO> listRefundBillDetail = new List<CustomerRefundBillDetailDTO>();
+				if (this.customerBookContainer.Controls.Count > 0)
 				{
-					if (control.check)
+					foreach (ImportBookControl control in customerBookContainer.Controls)
 					{
-						BookDTO book = BookBUS.Instance.getById(control.getId().ToString());
-						CustomerRefundBillDetailDTO customerRefundBillDetail = new CustomerRefundBillDetailDTO(0, book.MaSach, 1, book.GiaNhap);
-						listRefundBillDetail.Add(customerRefundBillDetail);
+						if (control.check)
+						{
+							BookDTO book = BookBUS.Instance.getById(control.getId().ToString());
+							CustomerRefundBillDetailDTO customerRefundBillDetail = new CustomerRefundBillDetailDTO(0, book.MaSach, 1, book.GiaNhap);
+							listRefundBillDetail.Add(customerRefundBillDetail);
+						}
 					}
+
 				}
-				
+				loadDataToBookList(listRefundBillDetail);
 			}
-			loadDataToBookList(listRefundBillDetail);
+			catch
+			{
+
+			}
+			
 		}
 
 		private void cancelBtn_Click(object sender, EventArgs e)
@@ -191,62 +231,78 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 		}
 		private bool validateForm()
 		{
-			bool isCustomer = CustomValidation.Instance.checkTextbox(
-				this.supplierNameTxt,
-				this.supplierNameMsg,
-				this.supplierNameLine,
-				new string[] { "custom-supplier-required" }
-			);
-			bool isReasonValid = CustomValidation.Instance.checkTextbox(
-					this.reasonTxt,
-					this.reasonMsg,
-					this.reasonLine,
-					new string[] { "required" }
-				);
-			bool hasRefundBookSeletected = refundBookContainer.Controls.Count > 0 ? true : false;
-			if (!hasRefundBookSeletected) MessageBox.Show("Vui lòng chọn ít nhất một sản phẩm để trả");
-			return isCustomer && isReasonValid && hasRefundBookSeletected;
+			try
+			{
+				bool isCustomer = CustomValidation.Instance.checkTextbox(
+								this.supplierNameTxt,
+								this.supplierNameMsg,
+								this.supplierNameLine,
+								new string[] { "custom-supplier-required" }
+							);
+				bool isReasonValid = CustomValidation.Instance.checkTextbox(
+						this.reasonTxt,
+						this.reasonMsg,
+						this.reasonLine,
+						new string[] { "required" }
+					);
+				bool hasRefundBookSeletected = refundBookContainer.Controls.Count > 0 ? true : false;
+				if (!hasRefundBookSeletected) MessageBox.Show("Vui lòng chọn ít nhất một sản phẩm để trả");
+				return isCustomer && isReasonValid && hasRefundBookSeletected;
+			}
+			catch
+			{
+				return false;
+			}
+			
 
 		}
 		private void submitBtn_Click(object sender, EventArgs e)
 		{
-			if (this.customerRefundBill == null)
+			try
 			{
-				if (validateForm())
+				if (this.customerRefundBill == null)
 				{
-					CustomerRefundBillDTO importRefundBill = new CustomerRefundBillDTO(
-							0,
-							Convert.ToDouble(this.totalMoney.Text),
-							this.reasonTxt.Text,
-							Convert.ToInt32(this.customerBillInput.Text),
-							this.dateTimeTo.Value,
-							1
-						);
-					CustomerRefundBillDTO newCustomerRefundBill = CustomerRefundBillBUS.Instance.insertReturnBill(importRefundBill);
-					if (newCustomerRefundBill == null)
+					if (validateForm())
 					{
-						MessageBox.Show("Có lỗi xảy ra");
-						this.isSubmitSuccess = false;
-					}
-					else
-					{
-						foreach (RefundBookControl control in this.refundBookContainer.Controls)
+						CustomerRefundBillDTO importRefundBill = new CustomerRefundBillDTO(
+								0,
+								Convert.ToDouble(this.totalMoney.Text),
+								this.reasonTxt.Text,
+								Convert.ToInt32(this.customerBillInput.Text),
+								this.dateTimeTo.Value,
+								1
+							);
+						CustomerRefundBillDTO newCustomerRefundBill = CustomerRefundBillBUS.Instance.insertReturnBill(importRefundBill);
+						if (newCustomerRefundBill == null)
 						{
-							CustomerRefundBillDetailDTO item = new CustomerRefundBillDetailDTO(
-										newCustomerRefundBill.MaPhieu,
-										control.getId(),
-										control.GetBookAmount(),
-										control.getPrice()
-								);
-							CustomerRefundBillBUS.Instance.createCustomerRefundBillDetail(item);
-
+							MessageBox.Show("Có lỗi xảy ra");
+							this.isSubmitSuccess = false;
 						}
-						this.isSubmitSuccess = true;
-						this.Close();
+						else
+						{
+							foreach (RefundBookControl control in this.refundBookContainer.Controls)
+							{
+								CustomerRefundBillDetailDTO item = new CustomerRefundBillDetailDTO(
+											newCustomerRefundBill.MaPhieu,
+											control.getId(),
+											control.GetBookAmount(),
+											control.getPrice()
+									);
+								CustomerRefundBillBUS.Instance.createCustomerRefundBillDetail(item);
+
+							}
+							this.isSubmitSuccess = true;
+							this.Close();
+						}
 					}
+
 				}
+			}
+			catch
+			{
 
 			}
+			
 
 
 		}

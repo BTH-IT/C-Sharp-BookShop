@@ -43,45 +43,60 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
 		private void customerRefundBillPanel_Click(object sender, EventArgs e)
 		{
-			
-			customerRefundFrm.Show();
-			customerRefundFrm.BringToFront();
-			importChangeBillFrm.Hide();
-			customerChangeBillFrm.Hide();
-			importRefundBillFrm.Hide();
+			try
+			{
+				customerRefundFrm.Show();
+				customerRefundFrm.BringToFront();
+				importChangeBillFrm.Hide();
+				customerChangeBillFrm.Hide();
+				importRefundBillFrm.Hide();
+			}
+			catch { 
+			}
+	
 
 		}
 
 		private void importRefundBillPanel_Click(object sender, EventArgs e)
 		{
-				
-			importRefundBillFrm.Show();
-			importRefundBillFrm.BringToFront();
-			customerRefundFrm.Hide();
-			importChangeBillFrm.Hide();
-			customerChangeBillFrm.Hide();
-
-
+			try
+			{
+				importRefundBillFrm.Show();
+				importRefundBillFrm.BringToFront();
+				customerRefundFrm.Hide();
+				importChangeBillFrm.Hide();
+				customerChangeBillFrm.Hide();
+			}catch { }
 		}
 
 		private void RefundFormMenuGUI_Load(object sender, EventArgs e)
 		{
-			//loadClickEvent(this.importChangeBillPanel,importChangeBillPanel_Click);
-			//loadClickEvent(this.customerChangeBillPanel, customerChangeBillPanel_Click);
-			loadClickEvent(this.customerRefundBillPanel, customerRefundBillPanel_Click);
-			loadClickEvent(this.importRefundBillPanel, importRefundBillPanel_Click);
+			try
+			{
+				//loadClickEvent(this.importChangeBillPanel,importChangeBillPanel_Click);
+				//loadClickEvent(this.customerChangeBillPanel, customerChangeBillPanel_Click);
+				loadClickEvent(this.customerRefundBillPanel, customerRefundBillPanel_Click);
+				loadClickEvent(this.importRefundBillPanel, importRefundBillPanel_Click);
+			}
+			catch { }
+			
 		
 		}
 
 		private void loadClickEvent(GunaGradient2Panel panel, Action<object, EventArgs> ClickHandler)
 		{
-			foreach(Control control in panel.Controls)
+			try
 			{
-				control.Click += (s, ev) =>
+				foreach (Control control in panel.Controls)
 				{
-					ClickHandler.Invoke(s, ev);
-				};
-			}	
+					control.Click += (s, ev) =>
+					{
+						ClickHandler.Invoke(s, ev);
+					};
+				}
+			}
+			catch { }
+				
 		}
 
 		private void importRefundBillPanel_Paint(object sender, PaintEventArgs e)

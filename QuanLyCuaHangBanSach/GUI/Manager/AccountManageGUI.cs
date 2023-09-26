@@ -42,50 +42,81 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         }
         private void headerCheckBox_Clicked(object sender, EventArgs e)
         {
-            foreach (DataGridViewRow row in this.dgvAccount.Rows)
+            try
             {
-                row.Cells[0].Value = headerCheckbox.Checked;
-                this.dgvAccount.RefreshEdit();
+				foreach (DataGridViewRow row in this.dgvAccount.Rows)
+				{
+					row.Cells[0].Value = headerCheckbox.Checked;
+					this.dgvAccount.RefreshEdit();
+				}
+			}
+			catch
+            {
+
             }
+          
         }
         private void loadDataToDataGridView(List<AccountDTO> accounts)
         {
             this.dgvAccount.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(45, 210, 192);
             this.dgvAccount.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             this.dgvAccount.Rows.Clear();
-
-            if (accounts != null)
+            try
             {
-                foreach(AccountDTO account in accounts)
-                {
-                    StaffDTO STAFF = StaffBUS.Instance.getById(account.MaNhanVien.ToString());
-                    if (STAFF != null)
-                    {
-					    this.dgvAccount.Rows.Add(new object[]
-					     {
-								    false,
+				if (accounts != null)
+				{
+					foreach (AccountDTO account in accounts)
+					{
+						StaffDTO STAFF = StaffBUS.Instance.getById(account.MaNhanVien.ToString());
+						if (STAFF != null)
+						{
+							this.dgvAccount.Rows.Add(new object[]
+							 {
+									false,
 									STAFF.Ten,
-								    account.Email,
-								    account.MatKhau
-					      });
-					}    
-					
-                } 
-                    
-            }    
+									account.Email,
+									account.MatKhau
+							  });
+						}
+
+					}
+
+				}
+			}
+            catch
+            {
+
+            }
+            
         }
         private List<AccountDTO> handleFilter(string searchString)
         {
-            List<AccountDTO> accounts = AccountBUS.Instance.search(searchString);
-            return accounts;
+            try
+            {
+				List<AccountDTO> accounts = AccountBUS.Instance.search(searchString);
+				return accounts;
+            }
+            catch
+            {
+				return null;
+			}
+            
+           
         }
         private void btnExport_Click(object sender, EventArgs e)
         {
+            try
+            {
+				List<AccountDTO> accounts = handleFilter(this.searchInput.Text);
+				DataTable dataTable = CustomExcel.Instance.ConvertListToDataTable(accounts);
+				string[] headerList = new string[] { "Mã Nhân viên", "Email", "Mật khẩu" };
+				CustomExcel.Instance.ExportFile(dataTable: dataTable, sheetName: "Quản lý tài khoản", title: "Cửa hàng bán sách", headerList: headerList);
+			}
+            catch
+            {
+
+            }
            
-            List<AccountDTO> accounts = handleFilter(this.searchInput.Text);
-            DataTable dataTable = CustomExcel.Instance.ConvertListToDataTable(accounts);
-            string[] headerList = new string[] { "Mã Nhân viên", "Email", "Mật khẩu" };
-            CustomExcel.Instance.ExportFile(dataTable: dataTable, sheetName: "Quản lý tài khoản", title: "Cửa hàng bán sách", headerList: headerList);
         }
         private void AccountMangeGUI_Load(object sender, EventArgs e)
         {
@@ -93,128 +124,184 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                (Screen.PrimaryScreen.Bounds.Size.Width / 2) - (this.Size.Width / 2),
                (Screen.PrimaryScreen.Bounds.Size.Height / 2) - (this.Size.Height / 2)
            );
-            List<AccountDTO> accounts = AccountBUS.Instance.getAllData();
-            this.loadDataToDataGridView(accounts);
+            try
+            {
+				List<AccountDTO> accounts = AccountBUS.Instance.getAllData();
+				this.loadDataToDataGridView(accounts);
 
-            renderCheckBoxDgv();
-            headerCheckbox.MouseClick += new MouseEventHandler(headerCheckBox_Clicked);
+				renderCheckBoxDgv();
+				headerCheckbox.MouseClick += new MouseEventHandler(headerCheckBox_Clicked);
+            }
+            catch
+            {
+
+            }
+           
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-            this.searchInput.Clear();
-            List<AccountDTO> accounts = AccountBUS.Instance.getAllData();
-            this.loadDataToDataGridView(accounts);
+            try
+            {
+				this.searchInput.Clear();
+				List<AccountDTO> accounts = AccountBUS.Instance.getAllData();
+				this.loadDataToDataGridView(accounts);
+			}
+            catch
+            {
+
+            }
+          
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            using (var modal = new AccountModal())
+            try
             {
-                modal.ShowDialog();
+				using (var modal = new AccountModal())
+				{
+					modal.ShowDialog();
 
-                if (modal.isSubmitSuccess)
-                {
-                    List<AccountDTO> accounts = handleFilter(this.searchInput.Text);
-                    this.loadDataToDataGridView(accounts);
-                }    
+					if (modal.isSubmitSuccess)
+					{
+						List<AccountDTO> accounts = handleFilter(this.searchInput.Text);
+						this.loadDataToDataGridView(accounts);
+					}
+				}
+			}
+            catch
+            {
+
             }
+           
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            if (this.dgvAccount.CurrentCell.RowIndex < 0)
+            try
             {
-                MessageBox.Show("Hãy chọn dòng dữ liệu muốn thao tác");
-                return;
-            }
+				if (this.dgvAccount.CurrentCell.RowIndex < 0)
+				{
+					MessageBox.Show("Hãy chọn dòng dữ liệu muốn thao tác");
+					return;
+				}
 
-            using (AccountModal accountModal = new AccountModal("Sửa thông tin tài khoản"))
+				using (AccountModal accountModal = new AccountModal("Sửa thông tin tài khoản"))
+				{
+					DataGridViewRow row = this.dgvAccount.Rows[this.dgvAccount.CurrentCell.RowIndex];
+
+					AccountDTO account = AccountBUS.Instance.getById(row.Cells[2].Value.ToString());
+
+					accountModal.account = account;
+
+					if (accountModal.account == null)
+					{
+						MessageBox.Show("Đã xảy ra lỗi vui lòng thử lại sau!!");
+						return;
+					}
+
+					accountModal.ShowDialog();
+
+					if (accountModal.isSubmitSuccess)
+					{
+						// 
+						List<AccountDTO> accounts = AccountBUS.Instance.getAllData();
+						this.loadDataToDataGridView(accounts);
+					}
+				}
+			}
+            catch
             {
-                DataGridViewRow row = this.dgvAccount.Rows[this.dgvAccount.CurrentCell.RowIndex];
 
-                AccountDTO account = AccountBUS.Instance.getById(row.Cells[2].Value.ToString()) ;
-
-                accountModal.account = account; 
-
-                if (accountModal.account == null)
-                {
-                    MessageBox.Show("Đã xảy ra lỗi vui lòng thử lại sau!!");
-                    return;
-                }
-
-                accountModal.ShowDialog();
-
-                if (accountModal.isSubmitSuccess)
-                {
-                    // 
-                    List<AccountDTO> accounts = AccountBUS.Instance.getAllData();
-                    this.loadDataToDataGridView(accounts);
-                }
             }
+           
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show(
-                    "Bạn có chắc rằng muốn xóa các tài khoản đã chọn",
-                    "Xác nhận",
-                    MessageBoxButtons.YesNo,
-                    MessageBoxIcon.None
-                );
-            if(result == DialogResult.Yes)
+            try
             {
-                foreach(DataGridViewRow row in this.dgvAccount.Rows)
-                {
-                    if ((bool)row.Cells[0].Value)
-                    {
-                       bool check = AccountBUS.Instance.delete(row.Cells[2].Value.ToString());
-                        Console.WriteLine(check);
-                    }  
-                }
-                //
-                List<AccountDTO> accounts = handleFilter(this.searchInput.Text);
-                this.loadDataToDataGridView(accounts);
-                MessageBox.Show("Xóa thành công các tài khoản đã chọn");
-            }    
+				DialogResult result = MessageBox.Show(
+					"Bạn có chắc rằng muốn xóa các tài khoản đã chọn",
+					"Xác nhận",
+					MessageBoxButtons.YesNo,
+					MessageBoxIcon.None
+				);
+				if (result == DialogResult.Yes)
+				{
+					foreach (DataGridViewRow row in this.dgvAccount.Rows)
+					{
+						if ((bool)row.Cells[0].Value)
+						{
+							bool check = AccountBUS.Instance.delete(row.Cells[2].Value.ToString());
+							Console.WriteLine(check);
+						}
+					}
+					//
+					List<AccountDTO> accounts = handleFilter(this.searchInput.Text);
+					this.loadDataToDataGridView(accounts);
+					MessageBox.Show("Xóa thành công các tài khoản đã chọn");
+				}
+			}
+            catch
+            {
+
+            }
+            
 
         }
 
         private void dgvAccountCell_DoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex < 0 || e.ColumnIndex <= 0)
+            try
             {
-                return;
-            }
-            using (AccountModal accountModal = new AccountModal("Sửa thông tin tài khoản"))
+				if (e.RowIndex < 0 || e.ColumnIndex <= 0)
+				{
+					return;
+				}
+				using (AccountModal accountModal = new AccountModal("Sửa thông tin tài khoản"))
+				{
+					DataGridViewRow row = this.dgvAccount.Rows[this.dgvAccount.CurrentCell.RowIndex];
+
+					AccountDTO account = AccountBUS.Instance.getById(row.Cells[2].Value.ToString());
+
+					accountModal.account = account;
+
+					if (accountModal.account == null)
+					{
+						MessageBox.Show("Đã xảy ra lỗi vui lòng thử lại sau!!");
+						return;
+					}
+
+					accountModal.ShowDialog();
+
+					if (accountModal.isSubmitSuccess)
+					{
+						// 
+						List<AccountDTO> accounts = AccountBUS.Instance.getAllData();
+						this.loadDataToDataGridView(accounts);
+					}
+				}
+			}
+            catch
             {
-                DataGridViewRow row = this.dgvAccount.Rows[this.dgvAccount.CurrentCell.RowIndex];
 
-                AccountDTO account = AccountBUS.Instance.getById(row.Cells[2].Value.ToString());
-
-                accountModal.account = account;
-
-                if (accountModal.account == null)
-                {
-                    MessageBox.Show("Đã xảy ra lỗi vui lòng thử lại sau!!");
-                    return;
-                }
-
-                accountModal.ShowDialog();
-
-                if (accountModal.isSubmitSuccess)
-                {
-                    // 
-                    List<AccountDTO> accounts = AccountBUS.Instance.getAllData();
-                    this.loadDataToDataGridView(accounts);
-                }
             }
+           
         }
 
 		private void searchInput_TextChanged(object sender, EventArgs e)
 		{
-            List<AccountDTO> account = handleFilter(this.searchInput.Text);
-            loadDataToDataGridView(account);
+			try
+			{
+				List<AccountDTO> account = handleFilter(this.searchInput.Text);
+				loadDataToDataGridView(account);
+			}
+			catch
+			{
+
+			}
+         
 		}
 	}
 }

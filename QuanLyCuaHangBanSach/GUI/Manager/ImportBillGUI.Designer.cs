@@ -57,6 +57,7 @@
             this.staffCbx = new Guna.UI.WinForms.GunaComboBox();
             this.supplierCbx = new Guna.UI.WinForms.GunaComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.viewMoreBtn = new Guna.UI.WinForms.GunaAdvenceButton();
             this.importExcelBtn = new Guna.UI.WinForms.GunaAdvenceButton();
             this.dgvImportBill = new Guna.UI.WinForms.GunaDataGridView();
             this.Column9 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
@@ -354,7 +355,7 @@
             this.addBtn.Image = ((System.Drawing.Image)(resources.GetObject("addBtn.Image")));
             this.addBtn.ImageSize = new System.Drawing.Size(20, 20);
             this.addBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.addBtn.Location = new System.Drawing.Point(1162, 6);
+            this.addBtn.Location = new System.Drawing.Point(1036, 6);
             this.addBtn.Name = "addBtn";
             this.addBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.addBtn.OnHoverBorderColor = System.Drawing.Color.Transparent;
@@ -517,6 +518,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
+            this.panel1.Controls.Add(this.viewMoreBtn);
             this.panel1.Controls.Add(this.importExcelBtn);
             this.panel1.Controls.Add(this.exportBtn);
             this.panel1.Controls.Add(this.refreshBtn);
@@ -526,6 +528,39 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1378, 54);
             this.panel1.TabIndex = 46;
+            // 
+            // viewMoreBtn
+            // 
+            this.viewMoreBtn.AnimationHoverSpeed = 0.07F;
+            this.viewMoreBtn.AnimationSpeed = 0.03F;
+            this.viewMoreBtn.BackColor = System.Drawing.Color.Transparent;
+            this.viewMoreBtn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.viewMoreBtn.BorderColor = System.Drawing.Color.Black;
+            this.viewMoreBtn.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.viewMoreBtn.CheckedBorderColor = System.Drawing.Color.Black;
+            this.viewMoreBtn.CheckedForeColor = System.Drawing.Color.White;
+            this.viewMoreBtn.CheckedImage = ((System.Drawing.Image)(resources.GetObject("viewMoreBtn.CheckedImage")));
+            this.viewMoreBtn.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.viewMoreBtn.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.viewMoreBtn.FocusedColor = System.Drawing.Color.Empty;
+            this.viewMoreBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.viewMoreBtn.ForeColor = System.Drawing.Color.White;
+            this.viewMoreBtn.Image = ((System.Drawing.Image)(resources.GetObject("viewMoreBtn.Image")));
+            this.viewMoreBtn.ImageSize = new System.Drawing.Size(20, 20);
+            this.viewMoreBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.viewMoreBtn.Location = new System.Drawing.Point(1159, 6);
+            this.viewMoreBtn.Name = "viewMoreBtn";
+            this.viewMoreBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.viewMoreBtn.OnHoverBorderColor = System.Drawing.Color.Transparent;
+            this.viewMoreBtn.OnHoverForeColor = System.Drawing.Color.White;
+            this.viewMoreBtn.OnHoverImage = null;
+            this.viewMoreBtn.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.viewMoreBtn.OnPressedColor = System.Drawing.Color.Black;
+            this.viewMoreBtn.Radius = 6;
+            this.viewMoreBtn.Size = new System.Drawing.Size(126, 42);
+            this.viewMoreBtn.TabIndex = 11;
+            this.viewMoreBtn.Text = "Xem chi tiết";
+            this.viewMoreBtn.Click += new System.EventHandler(this.viewMoreBtn_Click);
             // 
             // importExcelBtn
             // 
@@ -780,5 +815,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private Guna.UI.WinForms.GunaAdvenceButton importExcelBtn;
+        private Guna.UI.WinForms.GunaAdvenceButton viewMoreBtn;
     }
 }

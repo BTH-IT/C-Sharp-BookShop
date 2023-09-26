@@ -526,11 +526,23 @@
     <Compile Include="GUI\Manager\AuthorGUl.Designer.cs">
       <DependentUpon>AuthorGUl.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Manager\CustomerChangeBillGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Manager\CustomerChangeBillGUI.Designer.cs">
+      <DependentUpon>CustomerChangeBillGUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Manager\CustomerManagerGUI.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\Manager\CustomerManagerGUI.designer.cs">
       <DependentUpon>CustomerManagerGUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Manager\ImportChangeBillGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Manager\ImportChangeBillGUI.Designer.cs">
+      <DependentUpon>ImportChangeBillGUI.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Manager\CustomerRefundBillGUI.cs">
       <SubType>Form</SubType>
@@ -658,11 +670,23 @@
     <Compile Include="GUI\Modal\AuthorModal.Designer.cs">
       <DependentUpon>AuthorModal.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Modal\CustomerChangeBillModal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Modal\CustomerChangeBillModal.Designer.cs">
+      <DependentUpon>CustomerChangeBillModal.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Modal\CustomerModal.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\Modal\CustomerModal.Designer.cs">
       <DependentUpon>CustomerModal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modal\ImportChangeBillModal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Modal\ImportChangeBillModal.Designer.cs">
+      <DependentUpon>ImportChangeBillModal.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modal\CustomerRefundBillModal.cs">
       <SubType>Form</SubType>
@@ -717,6 +741,18 @@
     </Compile>
     <Compile Include="GUI\Modal\ScannerModal.Designer.cs">
       <DependentUpon>ScannerModal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modal\ViewCustomerBillModal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Modal\ViewCustomerBillModal.Designer.cs">
+      <DependentUpon>ViewCustomerBillModal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modal\ViewImportBillModal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Modal\ViewImportBillModal.Designer.cs">
+      <DependentUpon>ViewImportBillModal.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Report\bookDataSet.cs">
       <DependentUpon>bookDataSet.xsd</DependentUpon>
@@ -816,6 +852,12 @@
     <Compile Include="GUI\UserControls\RefundBookControl.Designer.cs">
       <DependentUpon>RefundBookControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\UserControls\ViewBookBill.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UserControls\ViewBookBill.Designer.cs">
+      <DependentUpon>ViewBookBill.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Vendor\VendorGUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -844,6 +886,9 @@
     <EmbeddedResource Include="GUI\Manager\CustomerBillGUI.resx">
       <DependentUpon>CustomerBillGUI.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Manager\CustomerChangeBillGUI.resx">
+      <DependentUpon>CustomerChangeBillGUI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Manager\CustomerManagerGUI.resx">
       <DependentUpon>CustomerManagerGUI.cs</DependentUpon>
     </EmbeddedResource>
@@ -855,6 +900,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Manager\ImportBillGUI.resx">
       <DependentUpon>ImportBillGUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Manager\ImportChangeBillGUI.resx">
+      <DependentUpon>ImportChangeBillGUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Manager\ImportRefundBillGUI.resx">
       <DependentUpon>ImportRefundBillGUI.cs</DependentUpon>
@@ -910,6 +958,9 @@
     <EmbeddedResource Include="GUI\Modal\CustomerBillModal.resx">
       <DependentUpon>CustomerBillModal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Modal\CustomerChangeBillModal.resx">
+      <DependentUpon>CustomerChangeBillModal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Modal\CustomerModal.resx">
       <DependentUpon>CustomerModal.cs</DependentUpon>
     </EmbeddedResource>
@@ -918,6 +969,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Modal\ImportBillModal.resx">
       <DependentUpon>ImportBillModal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Modal\ImportChangeBillModal.resx">
+      <DependentUpon>ImportChangeBillModal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Modal\ImportRefundBillModal.resx">
       <DependentUpon>ImportRefundBillModal.cs</DependentUpon>
@@ -939,6 +993,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Modal\ScannerModal.resx">
       <DependentUpon>ScannerModal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Modal\ViewCustomerBillModal.resx">
+      <DependentUpon>ViewCustomerBillModal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Modal\ViewImportBillModal.resx">
+      <DependentUpon>ViewImportBillModal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Report\CustomerBillPrintForm.resx">
       <DependentUpon>CustomerBillPrintForm.cs</DependentUpon>
@@ -985,9 +1045,9 @@
     <EmbeddedResource Include="GUI\UserControls\ImportBookControl.resx">
       <DependentUpon>ImportBookControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\UserControls\SearchResultControl.resx">
-      <DependentUpon>SearchResultControl.cs</DependentUpon>
-    </EmbeddedResource>
+	<EmbeddedResource Include="GUI\UserControls\ViewBookBill.resx">
+		  <DependentUpon>ViewBookBill.cs</DependentUpon>
+	</EmbeddedResource>
     <EmbeddedResource Include="GUI\UserControls\RefundBookControl.resx">
       <DependentUpon>RefundBookControl.cs</DependentUpon>
     </EmbeddedResource>

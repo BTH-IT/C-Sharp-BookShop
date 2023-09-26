@@ -7,6 +7,7 @@ using System.Windows.Forms;
 using QuanLyCuaHangBanSach.BUS;
 using QuanLyCuaHangBanSach.DTO;
 using QuanLyCuaHangBanSach.GUI.Modal;
+using QuanLyCuaHangBanSach.GUI.Report;
 
 namespace QuanLyCuaHangBanSach.GUI.Manager
 {
@@ -136,7 +137,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         {
             List<StaffDTO> staffList = StaffBUS.Instance.getAllData();
 
-            staffList.Insert(0, new StaffDTO(0, "Tất cả nhân viên", "", "", 0, 0, 0, 0));
+            staffList.Insert(0, new StaffDTO(0, "Tất cả nhân viên", "", "", 0, 0, 0));
 
             this.staffCbx.ValueMember = "Ma";
             this.staffCbx.DisplayMember = "Ten";
@@ -368,7 +369,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             CustomExcel.Instance.ExportFile(dataTable, "Customer Bill Manage", "Cửa hàng bán sách", headerList);
         }
 
-        private void editBtn_Click(object sender, EventArgs e)
+        private void viewMoreBtn_Click(object sender, EventArgs e)
         {
             if (this.dgvCustomerBill.CurrentCell.RowIndex < 0)
             {
@@ -377,19 +378,12 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             }
 
             DataGridViewRow row = this.dgvCustomerBill.Rows[this.dgvCustomerBill.CurrentCell.RowIndex];
+
+            CustomerBillDTO customerBill = CustomerBillBUS.Instance.getById(row.Cells[1].Value.ToString());
             
-            using (CustomerBillModal customerBillModal = new CustomerBillModal(Convert.ToInt32(row.Cells[1].Value)))
+            using (ViewCustomerBillModal viewCustomerBillModal = new ViewCustomerBillModal(customerBill))
             {
-                BookDTO customerBill = BookBUS.Instance.getById(row.Cells[1].Value.ToString());
-
-                customerBillModal.ShowDialog();
-
-                if (customerBillModal.isSubmitSuccess)
-                {
-                    List<CustomerBillDTO> customerBillList = handleFilter(this.searchInput.Text.ToString());
-
-                    this.loadCustomerBillListToDataView(customerBillList);
-                }
+                viewCustomerBillModal.ShowDialog();
             }
         }
 
@@ -486,32 +480,17 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
         private void printPdfBtn_Click(object sender, EventArgs e)
         {
-            if (!isCheckSeletedRows()) return;
-
-            DialogResult dlgResult = MessageBox.Show(
-                "Bạn chắc chắn muốn xóa các đơn hàng đã chọn chứ chứ?",
-                "Xác nhận",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Question,
-                MessageBoxDefaultButton.Button1
-            );
-
-            if (dlgResult == DialogResult.Yes)
+            if (this.dgvCustomerBill.CurrentCell.RowIndex < 0)
             {
-                foreach (DataGridViewRow row in this.dgvCustomerBill.Rows)
-                {
-                    if ((bool)row.Cells[0].Value == true)
-                    {
-                        int maSach = Convert.ToInt32(row.Cells[1].Value.ToString());
-                    }
+                MessageBox.Show("Hãy chọn dòng dữ liệu muốn thao tác");
+                return;
+            }
 
-                }
+            DataGridViewRow row = this.dgvCustomerBill.Rows[this.dgvCustomerBill.CurrentCell.RowIndex];
 
-                List<CustomerBillDTO> customerBillList = handleFilter(this.searchInput.Text.ToString());
-
-                this.loadCustomerBillListToDataView(customerBillList);
-
-                MessageBox.Show("Print PDF successful");
+            using (CustomerBillPrintForm customerBillPrintForm = new CustomerBillPrintForm(Convert.ToInt32(row.Cells[1].Value)))
+            {
+                customerBillPrintForm.ShowDialog();
             }
         }
     }

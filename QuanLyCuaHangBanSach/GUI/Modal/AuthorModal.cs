@@ -46,9 +46,6 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             }
         }
 
-
-
-
         private bool validateForm()
         {
             bool isCheckTxt1 = CustomValidation.Instance.checkTextbox(

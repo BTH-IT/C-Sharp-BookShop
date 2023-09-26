@@ -1,33 +1,29 @@
 ﻿namespace QuanLyCuaHangBanSach.GUI.Manager
 {
-    partial class StaffManageGUI
-    {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
-        private System.ComponentModel.IContainer components = null;
+	partial class StaffManageGUI
+	{
+		/// <summary>
+		/// Required designer variable.
+		/// </summary>
+		private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+		/// <summary>
+		/// Clean up any resources being used.
+		/// </summary>
+		/// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+		protected override void Dispose(bool disposing)
+		{
+			if (disposing && (components != null))
+			{
+				components.Dispose();
+			}
+			base.Dispose(disposing);
+		}
 
-        #region Windows Form Designer generated code
+		#region Windows Form Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
-        private void InitializeComponent()
-        {
+		private void InitializeComponent()
+		{
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -647,37 +643,37 @@
 			this.gradientPanel1.ResumeLayout(false);
 			this.ResumeLayout(false);
 
-        }
+		}
 
-        #endregion
-        private Guna.UI2.WinForms.Guna2TextBox searchInput;
-        private Guna.UI.WinForms.GunaComboBox genderCbx;
-        private Guna.UI.WinForms.GunaComboBox positionCbx;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private Guna.UI.WinForms.GunaAdvenceButton exportBtn;
-        private Guna.UI.WinForms.GunaAdvenceButton refreshBtn;
-        private Guna.UI.WinForms.GunaDataGridView dgvStaff;
-        private System.Windows.Forms.Panel line1;
-        private System.Windows.Forms.Panel panel1;
-        private Guna.UI.WinForms.GunaAdvenceButton deleteBtn;
-        private Guna.UI.WinForms.GunaAdvenceButton editBtn;
-        private Guna.UI.WinForms.GunaAdvenceButton addBtn;
-        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Column11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn maNhanVien;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tenNhanVien;
-        private System.Windows.Forms.DataGridViewTextBoxColumn namSinh;
-        private System.Windows.Forms.DataGridViewTextBoxColumn gioiTinh;
-        private System.Windows.Forms.DataGridViewTextBoxColumn soDienThoai;
-        private System.Windows.Forms.DataGridViewTextBoxColumn soNgayNghi;
-        private System.Windows.Forms.DataGridViewTextBoxColumn luong;
-        private System.Windows.Forms.DataGridViewTextBoxColumn chucVu;
-        private GradientPanel gradientPanel1;
-        private Guna.UI2.WinForms.Guna2TextBox salaryTo;
-        private Guna.UI2.WinForms.Guna2TextBox salaryFrom;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label1;
-    }
+		#endregion
+		private Guna.UI2.WinForms.Guna2TextBox searchInput;
+		private Guna.UI.WinForms.GunaComboBox genderCbx;
+		private Guna.UI.WinForms.GunaComboBox positionCbx;
+		private System.Windows.Forms.PictureBox pictureBox1;
+		private Guna.UI.WinForms.GunaAdvenceButton exportBtn;
+		private Guna.UI.WinForms.GunaAdvenceButton refreshBtn;
+		private Guna.UI.WinForms.GunaDataGridView dgvStaff;
+		private System.Windows.Forms.Panel line1;
+		private System.Windows.Forms.Panel panel1;
+		private Guna.UI.WinForms.GunaAdvenceButton deleteBtn;
+		private Guna.UI.WinForms.GunaAdvenceButton editBtn;
+		private Guna.UI.WinForms.GunaAdvenceButton addBtn;
+		private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
+		private System.Windows.Forms.DataGridViewCheckBoxColumn Column11;
+		private System.Windows.Forms.DataGridViewTextBoxColumn maNhanVien;
+		private System.Windows.Forms.DataGridViewTextBoxColumn tenNhanVien;
+		private System.Windows.Forms.DataGridViewTextBoxColumn namSinh;
+		private System.Windows.Forms.DataGridViewTextBoxColumn gioiTinh;
+		private System.Windows.Forms.DataGridViewTextBoxColumn soDienThoai;
+		private System.Windows.Forms.DataGridViewTextBoxColumn soNgayNghi;
+		private System.Windows.Forms.DataGridViewTextBoxColumn luong;
+		private System.Windows.Forms.DataGridViewTextBoxColumn chucVu;
+		private GradientPanel gradientPanel1;
+		private Guna.UI2.WinForms.Guna2TextBox salaryTo;
+		private Guna.UI2.WinForms.Guna2TextBox salaryFrom;
+		private System.Windows.Forms.Panel panel3;
+		private System.Windows.Forms.Panel panel4;
+		private System.Windows.Forms.Panel panel2;
+		private System.Windows.Forms.Label label1;
+	}
 }
