@@ -19,7 +19,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
     
         FilterInfoCollection filterInfoCollection;
         VideoCaptureDevice videoCaptureDevice;
-
+        
         private void ScannerModal_Load(object sender, EventArgs e)
         {
             filterInfoCollection = new FilterInfoCollection(FilterCategory.VideoInputDevice);
