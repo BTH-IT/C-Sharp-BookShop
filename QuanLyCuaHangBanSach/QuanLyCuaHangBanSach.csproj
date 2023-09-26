@@ -985,9 +985,6 @@
     <EmbeddedResource Include="GUI\UserControls\ImportBookControl.resx">
       <DependentUpon>ImportBookControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\UserControls\PhoneSearchResultControl.resx">
-      <DependentUpon>PhoneSearchResultControl.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="GUI\UserControls\RefundBookControl.resx">
       <DependentUpon>RefundBookControl.cs</DependentUpon>
     </EmbeddedResource>

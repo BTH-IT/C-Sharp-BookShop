@@ -24,7 +24,7 @@ namespace QuanLyCuaHangBanSach.DAO
 
         
         public DataTable getAll() {
-            return DataProvider.Instance.ExecuteQuery("select * from taikhoan where hienThi = 1");
+            return DataProvider.Instance.ExecuteQuery("select * from taikhoan");
         }
 
         public AccountDTO getById(string id)
@@ -85,7 +85,7 @@ namespace QuanLyCuaHangBanSach.DAO
         public DataTable search(string searchInput)
         {
             DataTable dataTable = DataProvider.Instance.ExecuteQuery(
-					"select * from taikhoan where (email=@Email or  maNhanVien in  (select maNhanVien  from nhanvien  where tenNhanVien LIKE @tenNhanVien)) and hienThi = 1",
+					"select * from taikhoan where (email=@Email or  maNhanVien in  (select maNhanVien  from nhanvien  where tenNhanVien LIKE @tenNhanVien))",
                     new MySqlParameter[] {new MySqlParameter("@Email",searchInput),new MySqlParameter("@tenNhanVien",$"%{searchInput}%") }
                 );  
             if (dataTable.Rows.Count <= 0) return null;
