@@ -20,40 +20,54 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
         private void renderCheckBoxDgv()
         {
-            int size = 25;
+            try
+            {
+                int size = 25;
 
-            Rectangle rect = this.dgvPermission.GetCellDisplayRectangle(0, -1, false);
+                Rectangle rect = this.dgvPermission.GetCellDisplayRectangle(0, -1, false);
 
-            headerCheckbox = new CheckBox();
+                headerCheckbox = new CheckBox();
 
-            headerCheckbox.BackColor = Color.FromArgb(45, 210, 192);
-            headerCheckbox.Name = "chkHeader";
-            headerCheckbox.Size = new Size(size, size);
+                headerCheckbox.BackColor = Color.FromArgb(45, 210, 192);
+                headerCheckbox.Name = "chkHeader";
+                headerCheckbox.Size = new Size(size, size);
 
-            rect.X = (rect.Width / 2) - (size / 4);
-            rect.Y = (rect.Height / 2) - (size / 2);
+                rect.X = (rect.Width / 2) - (size / 4);
+                rect.Y = (rect.Height / 2) - (size / 2);
 
-            headerCheckbox.Location = rect.Location;
+                headerCheckbox.Location = rect.Location;
 
 
-            this.dgvPermission.Controls.Add(headerCheckbox);
+                this.dgvPermission.Controls.Add(headerCheckbox);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
         }
 
         private void loadPermissionListToDataView(List<PermissionDTO> positionList)
         {
-            this.dgvPermission.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(45, 210, 192);
-            this.dgvPermission.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-
-            this.dgvPermission.Rows.Clear();
-
-            foreach (PermissionDTO position in positionList)
+            try
             {
-                this.dgvPermission.Rows.Add(new object[] {
+                this.dgvPermission.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(45, 210, 192);
+                this.dgvPermission.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+
+                this.dgvPermission.Rows.Clear();
+
+                foreach (PermissionDTO position in positionList)
+                {
+                    this.dgvPermission.Rows.Add(new object[] {
                     false,
                     position.MaQuyenHang,
                     position.TenQuyenHang,
                     position.TrangThai ? "Đang hoạt động" : "Ngưng hoạt động",
                 });
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
             }
 
         }
@@ -61,150 +75,199 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
         private void PermissionManageGUI_Load(object sender, EventArgs e)
         {
+            try
+            {
 
-            List<PermissionDTO> positionList = PermissionBUS.Instance.getAllData();
-            this.loadPermissionListToDataView(positionList);
+                List<PermissionDTO> positionList = PermissionBUS.Instance.getAllData();
+                this.loadPermissionListToDataView(positionList);
 
-            this.renderCheckBoxDgv();
-            headerCheckbox.MouseClick += new MouseEventHandler(headerCheckbox_Clicked);
+                this.renderCheckBoxDgv();
+                headerCheckbox.MouseClick += new MouseEventHandler(headerCheckbox_Clicked);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
         }
 
         private void headerCheckbox_Clicked(object sender, EventArgs e)
         {
-            foreach (DataGridViewRow row in this.dgvPermission.Rows)
+            try
             {
-                row.Cells[0].Value = headerCheckbox.Checked;
-            }
+                foreach (DataGridViewRow row in this.dgvPermission.Rows)
+                {
+                    row.Cells[0].Value = headerCheckbox.Checked;
+                }
 
-            this.dgvPermission.RefreshEdit();
+                this.dgvPermission.RefreshEdit();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
         }
 
         private void searchInput_TextChanged(object sender, EventArgs e)
         {
-            this.searchInput.ForeColor = Color.Black;
+            try
+            {
+                this.searchInput.ForeColor = Color.Black;
 
-            List<PermissionDTO> positionList = PermissionBUS.Instance.search(this.searchInput.Text);
+                List<PermissionDTO> positionList = PermissionBUS.Instance.search(this.searchInput.Text);
 
-            this.loadPermissionListToDataView(positionList);
+                this.loadPermissionListToDataView(positionList);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
         }
 
         private void exportBtn_Click(object sender, EventArgs e)
         {
-            List<PermissionDTO> positionList = PermissionBUS.Instance.search(this.searchInput.Text);
+            try
+            {
+                List<PermissionDTO> positionList = PermissionBUS.Instance.search(this.searchInput.Text);
 
-            DataTable dataTable = CustomExcel.Instance.ConvertListToDataTable(positionList);
+                DataTable dataTable = CustomExcel.Instance.ConvertListToDataTable(positionList);
 
-            string[] headerList = new string[] { "Mã quyền hạng", "Tên quyền hạng", "Trạng thái" };
+                string[] headerList = new string[] { "Mã quyền hạng", "Tên quyền hạng", "Trạng thái" };
 
-            CustomExcel.Instance.ExportFile(dataTable, "Permission Manage", "Cửa hàng bán quyền hạng", headerList);
+                CustomExcel.Instance.ExportFile(dataTable, "Permission Manage", "Cửa hàng bán quyền hạng", headerList);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
         }
 
         private void editBtn_Click(object sender, EventArgs e)
         {
-            if (this.dgvPermission.CurrentCell.RowIndex < 0)
+            try
             {
-                MessageBox.Show("Hãy chọn dòng dữ liệu muốn thao tác");
-                return;
-            }
-
-            using (PermissionModal positionModal = new PermissionModal("Sửa quyền hạng"))
-            {
-                DataGridViewRow row = this.dgvPermission.Rows[this.dgvPermission.CurrentCell.RowIndex];
-
-                PermissionDTO position = PermissionBUS.Instance.getById(row.Cells[1].Value.ToString());
-
-                positionModal.updatePermission = position;
-
-                if (positionModal.updatePermission == null)
+                if (this.dgvPermission.CurrentCell.RowIndex < 0)
                 {
-                    MessageBox.Show("Đã xảy ra lỗi vui lòng thử lại sau!!");
+                    MessageBox.Show("Hãy chọn dòng dữ liệu muốn thao tác");
                     return;
                 }
 
-                positionModal.ShowDialog();
-
-                if (positionModal.isSubmitSuccess)
+                using (PermissionModal positionModal = new PermissionModal("Sửa quyền hạng"))
                 {
-                    List<PermissionDTO> positionList = PermissionBUS.Instance.search(this.searchInput.Text);
+                    DataGridViewRow row = this.dgvPermission.Rows[this.dgvPermission.CurrentCell.RowIndex];
 
-                    this.loadPermissionListToDataView(positionList);
+                    PermissionDTO position = PermissionBUS.Instance.getById(row.Cells[1].Value.ToString());
+
+                    positionModal.updatePermission = position;
+
+                    if (positionModal.updatePermission == null)
+                    {
+                        MessageBox.Show("Đã xảy ra lỗi vui lòng thử lại sau!!");
+                        return;
+                    }
+
+                    positionModal.ShowDialog();
+
+                    if (positionModal.isSubmitSuccess)
+                    {
+                        List<PermissionDTO> positionList = PermissionBUS.Instance.search(this.searchInput.Text);
+
+                        this.loadPermissionListToDataView(positionList);
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
             }
         }
 
         private void deleteBtn_Click(object sender, EventArgs e)
         {
-            bool isHaveSelect = false;
-
-            foreach (DataGridViewRow row in this.dgvPermission.Rows)
+            try
             {
-                if ((bool)row.Cells[0].Value)
-                {
-                    isHaveSelect = true;
-                    break;
-                }
-            }
+                bool isHaveSelect = false;
 
-            if (!isHaveSelect)
-            {
-                MessageBox.Show("Bạn chưa chọn những quyền hạng cần xóa");
-                return;
-            }
-
-            DialogResult dlgResult = MessageBox.Show(
-                "Bạn chắc chắn muốn xóa các quyền hạng đã chọn chứ?",
-                "Xác nhận",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Question,
-                MessageBoxDefaultButton.Button1
-            );
-
-            if (dlgResult == DialogResult.Yes)
-            {
                 foreach (DataGridViewRow row in this.dgvPermission.Rows)
                 {
-                    if ((bool)row.Cells[0].Value == true)
+                    if ((bool)row.Cells[0].Value)
                     {
-                        PermissionBUS.Instance.delete(row.Cells[1].Value.ToString());
+                        isHaveSelect = true;
+                        break;
                     }
-
                 }
-                List<PermissionDTO> positionList = PermissionBUS.Instance.search(this.searchInput.Text);
-                this.loadPermissionListToDataView(positionList);
 
-                MessageBox.Show("Delete successful");
+                if (!isHaveSelect)
+                {
+                    MessageBox.Show("Bạn chưa chọn những quyền hạng cần xóa");
+                    return;
+                }
+
+                DialogResult dlgResult = MessageBox.Show(
+                    "Bạn chắc chắn muốn xóa các quyền hạng đã chọn chứ?",
+                    "Xác nhận",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question,
+                    MessageBoxDefaultButton.Button1
+                );
+
+                if (dlgResult == DialogResult.Yes)
+                {
+                    foreach (DataGridViewRow row in this.dgvPermission.Rows)
+                    {
+                        if ((bool)row.Cells[0].Value == true)
+                        {
+                            PermissionBUS.Instance.delete(row.Cells[1].Value.ToString());
+                        }
+
+                    }
+                    List<PermissionDTO> positionList = PermissionBUS.Instance.search(this.searchInput.Text);
+                    this.loadPermissionListToDataView(positionList);
+
+                    MessageBox.Show("Delete successful");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
             }
         }
 
         private void dgvPermission_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex < 0 || e.ColumnIndex <= 0)
+            try
             {
-                return;
-            }
-
-            using (PermissionModal positionModal = new PermissionModal("Sửa quyền hạng"))
-            {
-                DataGridViewRow row = this.dgvPermission.Rows[e.RowIndex];
-
-                PermissionDTO position = PermissionBUS.Instance.getById(row.Cells[1].Value.ToString());
-
-                positionModal.updatePermission = position;
-
-                if (positionModal.updatePermission == null)
+                if (e.RowIndex < 0 || e.ColumnIndex <= 0)
                 {
-                    MessageBox.Show("Đã xảy ra lỗi vui lòng thử lại sau!!");
                     return;
                 }
 
-                positionModal.ShowDialog();
-
-                if (positionModal.isSubmitSuccess)
+                using (PermissionModal positionModal = new PermissionModal("Sửa quyền hạng"))
                 {
-                    List<PermissionDTO> positionList = PermissionBUS.Instance.search(this.searchInput.Text);
+                    DataGridViewRow row = this.dgvPermission.Rows[e.RowIndex];
 
-                    this.loadPermissionListToDataView(positionList);
+                    PermissionDTO position = PermissionBUS.Instance.getById(row.Cells[1].Value.ToString());
+
+                    positionModal.updatePermission = position;
+
+                    if (positionModal.updatePermission == null)
+                    {
+                        MessageBox.Show("Đã xảy ra lỗi vui lòng thử lại sau!!");
+                        return;
+                    }
+
+                    positionModal.ShowDialog();
+
+                    if (positionModal.isSubmitSuccess)
+                    {
+                        List<PermissionDTO> positionList = PermissionBUS.Instance.search(this.searchInput.Text);
+
+                        this.loadPermissionListToDataView(positionList);
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
             }
         }
 
@@ -226,10 +289,17 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
         private void refreshBtn_Click(object sender, EventArgs e)
         {
-            this.searchInput.Clear();
+            try
+            {
+                this.searchInput.Clear();
 
-            List<PermissionDTO> positionList = PermissionBUS.Instance.search("");
-            this.loadPermissionListToDataView(positionList);
+                List<PermissionDTO> positionList = PermissionBUS.Instance.search("");
+                this.loadPermissionListToDataView(positionList);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
         }
     }
 }

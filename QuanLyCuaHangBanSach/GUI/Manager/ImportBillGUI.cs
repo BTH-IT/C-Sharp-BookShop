@@ -21,33 +21,42 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
         private void renderCheckBoxDgv()
         {
-            int size = 25;
-            Rectangle rect = this.dgvImportBill.GetCellDisplayRectangle(0, -1, false);
+            try
+            {
+                int size = 25;
+                Rectangle rect = this.dgvImportBill.GetCellDisplayRectangle(0, -1, false);
 
-            headerCheckbox = new CheckBox();
+                headerCheckbox = new CheckBox();
 
-            headerCheckbox.BackColor = Color.FromArgb(45, 210, 192);
-            headerCheckbox.Name = "chkHeader";
-            headerCheckbox.Size = new Size(size, size);
+                headerCheckbox.BackColor = Color.FromArgb(45, 210, 192);
+                headerCheckbox.Name = "chkHeader";
+                headerCheckbox.Size = new Size(size, size);
 
-            rect.X = (rect.Width / 2) - (size / 4);
-            rect.Y = (rect.Height / 2) - (size / 2);
+                rect.X = (rect.Width / 2) - (size / 4);
+                rect.Y = (rect.Height / 2) - (size / 2);
 
-            headerCheckbox.Location = rect.Location;
+                headerCheckbox.Location = rect.Location;
 
-            this.dgvImportBill.Controls.Add(headerCheckbox);
+                this.dgvImportBill.Controls.Add(headerCheckbox);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
         }
 
         private void loadImportBillListToDataView(List<ImportBillDTO> importBillList)
         {
-            this.dgvImportBill.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(45, 210, 192);
-            this.dgvImportBill.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-
-            this.dgvImportBill.Rows.Clear();
-
-            foreach (ImportBillDTO importBill in importBillList)
+            try
             {
-                this.dgvImportBill.Rows.Add(new object[] {
+                this.dgvImportBill.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(45, 210, 192);
+                this.dgvImportBill.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+
+                this.dgvImportBill.Rows.Clear();
+
+                foreach (ImportBillDTO importBill in importBillList)
+                {
+                    this.dgvImportBill.Rows.Add(new object[] {
                     false,
                     importBill.MaDonNhapHang,
                     SupplierBUS.Instance.getById(importBill.MaNhaCungCap.ToString()).TenNhaCungCap,
@@ -55,118 +64,157 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                     importBill.NgayLap.GetDateTimeFormats()[0],
                     importBill.TongTien,
                 });
+                }
             }
-
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
         }
 
         private void loadSupplierCbx()
         {
-            List<SupplierDTO> supplierList = SupplierBUS.Instance.getAllData();
+            try
+            {
+                List<SupplierDTO> supplierList = SupplierBUS.Instance.getAllData();
 
-            supplierList.Insert(0, new SupplierDTO(0, "Tất cả nhà cung cấp", "", ""));
+                supplierList.Insert(0, new SupplierDTO(0, "Tất cả nhà cung cấp", "", ""));
 
-            this.supplierCbx.ValueMember = "MaNhaCungCap";
-            this.supplierCbx.DisplayMember = "TenNhaCungCap";
-            this.supplierCbx.DataSource = supplierList;
+                this.supplierCbx.ValueMember = "MaNhaCungCap";
+                this.supplierCbx.DisplayMember = "TenNhaCungCap";
+                this.supplierCbx.DataSource = supplierList;
 
-            this.supplierCbx.SelectedIndex = 0;
+                this.supplierCbx.SelectedIndex = 0;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
         }
 
         private void loadStaffCbx()
         {
-            List<StaffDTO> staffList = StaffBUS.Instance.getAllData();
+            try
+            {
+                List<StaffDTO> staffList = StaffBUS.Instance.getAllData();
 
-            staffList.Insert(0, new StaffDTO(0, "Tất cả nhân viên", "", "", 0, 0,0));
+                staffList.Insert(0, new StaffDTO(0, "Tất cả nhân viên", "", "", 0, 0, 0));
 
-            this.staffCbx.ValueMember = "Ma";
-            this.staffCbx.DisplayMember = "Ten";
-            this.staffCbx.DataSource = staffList;
+                this.staffCbx.ValueMember = "Ma";
+                this.staffCbx.DisplayMember = "Ten";
+                this.staffCbx.DataSource = staffList;
 
-            this.staffCbx.SelectedIndex = 0;
+                this.staffCbx.SelectedIndex = 0;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
         }
 
         private void headerCheckbox_Clicked(object sender, EventArgs e)
         {
-            foreach (DataGridViewRow row in this.dgvImportBill.Rows)
+            try
             {
-                row.Cells[0].Value = headerCheckbox.Checked;
-            }
+                foreach (DataGridViewRow row in this.dgvImportBill.Rows)
+                {
+                    row.Cells[0].Value = headerCheckbox.Checked;
+                }
 
-            this.dgvImportBill.RefreshEdit();
+                this.dgvImportBill.RefreshEdit();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
         }
 
         private List<ImportBillDTO> handleFilter(string searchText)
         {
-            List<ImportBillDTO> importBillList = ImportBillBUS.Instance.search(searchText);
-
-            if (this.fromPriceTxt.Text.ToString() != string.Empty
-                && this.toPriceTxt.Text.ToString() != string.Empty)
+            try
             {
-                Regex isNum = new Regex(@"^\d+$");
+                List<ImportBillDTO> importBillList = ImportBillBUS.Instance.search(searchText);
 
-                if (!isNum.IsMatch(this.fromPriceTxt.Text.ToString()) || !isNum.IsMatch(this.toPriceTxt.Text.ToString()))
+                if (this.fromPriceTxt.Text.ToString() != string.Empty
+                    && this.toPriceTxt.Text.ToString() != string.Empty)
                 {
-                    this.fromPriceTxt.Clear();
-                    this.toPriceTxt.Clear();
-                    MessageBox.Show("Tổng tiền là một số dương");
+                    Regex isNum = new Regex(@"^\d+$");
+
+                    if (!isNum.IsMatch(this.fromPriceTxt.Text.ToString()) || !isNum.IsMatch(this.toPriceTxt.Text.ToString()))
+                    {
+                        this.fromPriceTxt.Clear();
+                        this.toPriceTxt.Clear();
+                        MessageBox.Show("Tổng tiền là một số dương");
+                    }
+                    else
+                    {
+                        importBillList = importBillList.FindAll(
+                            item => item.TongTien >= Convert.ToDouble(this.fromPriceTxt.Text.ToString())
+                                    && item.TongTien <= Convert.ToDouble(this.toPriceTxt.Text.ToString()
+                        ));
+                    }
                 }
-                else
+
+                if (DateTime.Compare(this.dateTimeFrom.Value, this.dateTimeTo.Value) <= 0 && this.filterCkx.Checked)
                 {
-                    importBillList = importBillList.FindAll(
-                        item => item.TongTien >= Convert.ToDouble(this.fromPriceTxt.Text.ToString())
-                                && item.TongTien <= Convert.ToDouble(this.toPriceTxt.Text.ToString()
-                    ));
+                    try
+                    {
+                        importBillList = importBillList.FindAll(
+                            item => (DateTime.Compare(item.NgayLap, this.dateTimeFrom.Value) >= 0)
+                                    && (DateTime.Compare(item.NgayLap, this.dateTimeTo.Value) <= 0)
+                        );
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Lọc theo khoảng thời gian không hợp lệ");
+                    }
                 }
+
+                int supplierId = Convert.ToInt32(this.supplierCbx.SelectedValue);
+                int staffId = Convert.ToInt32(this.staffCbx.SelectedValue);
+
+                List<ImportBillDTO> newImportBillList = importBillList.FindAll(importBill =>
+                {
+                    if (supplierId != 0 && staffId != 0)
+                    {
+                        return importBill.MaNhaCungCap == supplierId &&
+                               importBill.MaNhanVien == staffId;
+                    }
+
+                    if (supplierId == 0 && staffId != 0)
+                    {
+                        return importBill.MaNhanVien == staffId;
+                    }
+
+                    if (supplierId != 0 && staffId == 0)
+                    {
+                        return importBill.MaNhaCungCap == supplierId;
+                    }
+
+                    return true;
+                });
+
+
+                return newImportBillList;
             }
-
-            if (DateTime.Compare(this.dateTimeFrom.Value, this.dateTimeTo.Value) <= 0 && this.filterCkx.Checked)
+            catch (Exception ex)
             {
-                try
-                {
-                    importBillList = importBillList.FindAll(
-                        item => (DateTime.Compare(item.NgayLap, this.dateTimeFrom.Value) >= 0)
-                                && (DateTime.Compare(item.NgayLap, this.dateTimeTo.Value) <= 0)
-                    );
-                }
-                catch
-                {
-                    MessageBox.Show("Lọc theo khoảng thời gian không hợp lệ");
-                }
+                return new List<ImportBillDTO>();
             }
-
-            int supplierId = Convert.ToInt32(this.supplierCbx.SelectedValue);
-            int staffId = Convert.ToInt32(this.staffCbx.SelectedValue);
-
-            List<ImportBillDTO> newImportBillList = importBillList.FindAll(importBill =>
-            {
-                if (supplierId != 0 && staffId != 0 )
-                {
-                    return importBill.MaNhaCungCap == supplierId &&
-                           importBill.MaNhanVien == staffId;
-                }
-
-                if (supplierId == 0 && staffId != 0)
-                {
-                    return importBill.MaNhanVien == staffId;
-                }
-
-                if (supplierId != 0 && staffId == 0)
-                {
-                    return importBill.MaNhaCungCap == supplierId;
-                }
-
-                return true;
-            });
-
-
-            return newImportBillList;
         }
 
         private void searchInput_TextChanged(object sender, EventArgs e)
         {
-            List<ImportBillDTO> importBillList = handleFilter(this.searchInput.Text.ToString());
+            try
+            {
+                List<ImportBillDTO> importBillList = handleFilter(this.searchInput.Text.ToString());
 
-            this.loadImportBillListToDataView(importBillList);
+                this.loadImportBillListToDataView(importBillList);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
         }
 
         private void addBtn_Click(object sender, EventArgs e)
@@ -186,143 +234,206 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
         private void refreshBtn_Click(object sender, EventArgs e)
         {
-            this.searchInput.Clear();
-            this.fromPriceTxt.Clear();
-            this.toPriceTxt.Clear();
+            try
+            {
+                this.searchInput.Clear();
+                this.fromPriceTxt.Clear();
+                this.toPriceTxt.Clear();
 
-            this.supplierCbx.SelectedIndex = 0;
-            this.staffCbx.SelectedIndex = 0;
+                this.supplierCbx.SelectedIndex = 0;
+                this.staffCbx.SelectedIndex = 0;
 
-            this.filterCkx.Checked = false;
-            this.dateTimeFrom.Enabled = false;
-            this.dateTimeTo.Enabled = false;
+                this.filterCkx.Checked = false;
+                this.dateTimeFrom.Enabled = false;
+                this.dateTimeTo.Enabled = false;
 
-            this.dateTimeFrom.Refresh();
-            this.dateTimeTo.Refresh();
+                this.dateTimeFrom.Refresh();
+                this.dateTimeTo.Refresh();
 
-            List<ImportBillDTO> importBillList = handleFilter("");
+                List<ImportBillDTO> importBillList = handleFilter("");
 
-            this.loadImportBillListToDataView(importBillList);
+                this.loadImportBillListToDataView(importBillList);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
         }
 
         private void supplierCbx_SelectedIndexChanged(object sender, EventArgs e)
         {
-            List<ImportBillDTO> importBillList = handleFilter(this.searchInput.Text.ToString());
+            try
+            {
+                List<ImportBillDTO> importBillList = handleFilter(this.searchInput.Text.ToString());
 
-            this.loadImportBillListToDataView(importBillList);
+                this.loadImportBillListToDataView(importBillList);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
         }
 
         private void staffCbx_SelectedIndexChanged(object sender, EventArgs e)
         {
-            List<ImportBillDTO> importBillList = handleFilter(this.searchInput.Text.ToString());
+            try
+            {
+                List<ImportBillDTO> importBillList = handleFilter(this.searchInput.Text.ToString());
 
-            this.loadImportBillListToDataView(importBillList);
+                this.loadImportBillListToDataView(importBillList);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
         }
 
         private void fromPriceTxt_TextChanged(object sender, EventArgs e)
         {
-            List<ImportBillDTO> importBillList = handleFilter(this.searchInput.Text.ToString());
+            try
+            {
+                List<ImportBillDTO> importBillList = handleFilter(this.searchInput.Text.ToString());
 
-            this.loadImportBillListToDataView(importBillList);
+                this.loadImportBillListToDataView(importBillList);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
         }
 
         private void toPriceTxt_TextChanged(object sender, EventArgs e)
         {
-            List<ImportBillDTO> importBillList = handleFilter(this.searchInput.Text.ToString());
+            try
+            {
+                List<ImportBillDTO> importBillList = handleFilter(this.searchInput.Text.ToString());
 
-            this.loadImportBillListToDataView(importBillList);
+                this.loadImportBillListToDataView(importBillList);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
         }
 
         private void exportBtn_Click(object sender, EventArgs e)
         {
-            List<ImportBillDTO> importBillList = handleFilter(this.searchInput.Text.ToString());
+            try
+            {
+                List<ImportBillDTO> importBillList = handleFilter(this.searchInput.Text.ToString());
 
-            DataTable dataTable = CustomExcel.Instance.ConvertListToDataTable(importBillList);
+                DataTable dataTable = CustomExcel.Instance.ConvertListToDataTable(importBillList);
 
-            string[] headerList = new string[] { "Mã điwn", "Nhà cung cấp", "Nhân viên", "Ngày lập", "Tổng tiền"};
+                string[] headerList = new string[] { "Mã điwn", "Nhà cung cấp", "Nhân viên", "Ngày lập", "Tổng tiền" };
 
-            CustomExcel.Instance.ExportFile(dataTable, "Import Bill Manage", "Cửa hàng bán sách", headerList);
+                CustomExcel.Instance.ExportFile(dataTable, "Import Bill Manage", "Cửa hàng bán sách", headerList);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
         }
 
         private void deleteBtn_Click(object sender, EventArgs e)
         {
-            bool isHaveSelect = false;
-
-            foreach (DataGridViewRow row in this.dgvImportBill.Rows)
+            try
             {
-                if ((bool)row.Cells[0].Value)
-                {
-                    isHaveSelect = true;
-                }
-            }
+                bool isHaveSelect = false;
 
-            if (!isHaveSelect)
-            {
-                MessageBox.Show("Bạn chưa chọn những đơn hàng cần xóa");
-                return;
-            }
-
-            DialogResult dlgResult = MessageBox.Show(
-                "Bạn chắc chắn muốn xóa các đơn hàng đã chọn chứ chứ?",
-                "Xác nhận",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Question,
-                MessageBoxDefaultButton.Button1
-            );
-
-            if (dlgResult == DialogResult.Yes)
-            {
                 foreach (DataGridViewRow row in this.dgvImportBill.Rows)
                 {
-                    if ((bool)row.Cells[0].Value == true)
+                    if ((bool)row.Cells[0].Value)
                     {
-                        if (BookBUS.Instance.delete(row.Cells[1].Value.ToString()))
-                        {
-                            List<ImportBillDTO> importBillList = handleFilter(this.searchInput.Text.ToString());
-
-                            this.loadImportBillListToDataView(importBillList);
-
-                            row.Cells[0].Value = false;
-                        }
+                        isHaveSelect = true;
                     }
-
                 }
 
-                this.dgvImportBill.RefreshEdit();
-                MessageBox.Show("Delete successful");
+                if (!isHaveSelect)
+                {
+                    MessageBox.Show("Bạn chưa chọn những đơn hàng cần xóa");
+                    return;
+                }
+
+                DialogResult dlgResult = MessageBox.Show(
+                    "Bạn chắc chắn muốn xóa các đơn hàng đã chọn chứ chứ?",
+                    "Xác nhận",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question,
+                    MessageBoxDefaultButton.Button1
+                );
+
+                if (dlgResult == DialogResult.Yes)
+                {
+                    foreach (DataGridViewRow row in this.dgvImportBill.Rows)
+                    {
+                        if ((bool)row.Cells[0].Value == true)
+                        {
+                            if (BookBUS.Instance.delete(row.Cells[1].Value.ToString()))
+                            {
+                                List<ImportBillDTO> importBillList = handleFilter(this.searchInput.Text.ToString());
+
+                                this.loadImportBillListToDataView(importBillList);
+
+                                row.Cells[0].Value = false;
+                            }
+                        }
+
+                    }
+
+                    this.dgvImportBill.RefreshEdit();
+                    MessageBox.Show("Delete successful");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
             }
         }
 
         private void dateTimeFrom_ValueChanged(object sender, EventArgs e)
         {
-            bool isValid = DateTime.Compare(dateTimeFrom.Value, dateTimeTo.Value) > 0;
-
-            if (isValid)
+            try
             {
-                dateTimeFrom.Value = dateTimeTo.Value;
-                MessageBox.Show("Bạn không thể chọn ngày lớn hơn ngày " + dateTimeTo.Value.GetDateTimeFormats()[0]);
-                return;
+                bool isValid = DateTime.Compare(dateTimeFrom.Value, dateTimeTo.Value) > 0;
+
+                if (isValid)
+                {
+                    dateTimeFrom.Value = dateTimeTo.Value;
+                    MessageBox.Show("Bạn không thể chọn ngày lớn hơn ngày " + dateTimeTo.Value.GetDateTimeFormats()[0]);
+                    return;
+                }
+
+                List<ImportBillDTO> importBillList = handleFilter(this.searchInput.Text.ToString());
+
+                this.loadImportBillListToDataView(importBillList);
             }
-
-            List<ImportBillDTO> importBillList = handleFilter(this.searchInput.Text.ToString());
-
-            this.loadImportBillListToDataView(importBillList);
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
         }
 
         private void dateTimeTo_ValueChanged(object sender, EventArgs e)
         {
-            bool isValid = DateTime.Compare(dateTimeTo.Value, dateTimeFrom.Value) < 0;
-
-            if (isValid)
+            try
             {
-                dateTimeTo.Value = dateTimeFrom.Value;
-                MessageBox.Show("Bạn không thể chọn ngày nhỏ hơn ngày " + dateTimeFrom.Value.GetDateTimeFormats()[0]);
-                return;
+                bool isValid = DateTime.Compare(dateTimeTo.Value, dateTimeFrom.Value) < 0;
+
+                if (isValid)
+                {
+                    dateTimeTo.Value = dateTimeFrom.Value;
+                    MessageBox.Show("Bạn không thể chọn ngày nhỏ hơn ngày " + dateTimeFrom.Value.GetDateTimeFormats()[0]);
+                    return;
+                }
+
+                List<ImportBillDTO> importBillList = handleFilter(this.searchInput.Text.ToString());
+
+                this.loadImportBillListToDataView(importBillList);
             }
-
-            List<ImportBillDTO> importBillList = handleFilter(this.searchInput.Text.ToString());
-
-            this.loadImportBillListToDataView(importBillList);
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
         }
 
         private void filterCkx_CheckedChanged(object sender, EventArgs e)
@@ -341,63 +452,84 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
         private void ImportBillGUI_Load_1(object sender, EventArgs e)
         {
-            this.dateTimeFrom.Enabled = this.filterCkx.Checked;
-            this.dateTimeTo.Enabled = this.filterCkx.Checked;
+            try
+            {
+                this.dateTimeFrom.Enabled = this.filterCkx.Checked;
+                this.dateTimeTo.Enabled = this.filterCkx.Checked;
 
-            List<ImportBillDTO> importBillList = ImportBillBUS.Instance.getAllData();
-            this.loadImportBillListToDataView(importBillList);
+                List<ImportBillDTO> importBillList = ImportBillBUS.Instance.getAllData();
+                this.loadImportBillListToDataView(importBillList);
 
-            this.loadSupplierCbx();
-            this.loadStaffCbx();
-            this.renderCheckBoxDgv();
+                this.loadSupplierCbx();
+                this.loadStaffCbx();
+                this.renderCheckBoxDgv();
 
-            headerCheckbox.MouseClick += new MouseEventHandler(headerCheckbox_Clicked);
+                headerCheckbox.MouseClick += new MouseEventHandler(headerCheckbox_Clicked);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
         }
 
         private void importExcelBtn_Click(object sender, EventArgs e)
         {
-            DataTable dt = CustomExcel.Instance.ImportFile();
-
-            ImportBillDTO newImportBill = new ImportBillDTO(0, 1, ManagerGUI.currentStaff.Ma, DateTime.Now, 0);
-
-            ImportBillDTO importBill = ImportBillBUS.Instance.insertReturnBill(newImportBill);
-
-            if (importBill != null)
+            try
             {
-                foreach (DataRow row in dt.Rows)
+                DataTable dt = CustomExcel.Instance.ImportFile();
+
+                ImportBillDTO newImportBill = new ImportBillDTO(0, 1, ManagerGUI.currentStaff.Ma, DateTime.Now, 0);
+
+                ImportBillDTO importBill = ImportBillBUS.Instance.insertReturnBill(newImportBill);
+
+                if (importBill != null)
                 {
-                    BookDTO book = BookBUS.Instance.getById(row[0].ToString());
-
-                    if (book == null) continue;
-
-                    ImportBillDetailDTO importBillDetail = new ImportBillDetailDTO(importBill.MaDonNhapHang, book.MaSach, Convert.ToInt32(row[2].ToString()), Convert.ToDouble(row[3].ToString()));
-
-                    if (ImportBillBUS.Instance.createImportBillDetail(importBillDetail))
+                    foreach (DataRow row in dt.Rows)
                     {
-                        book.SoLuongConLai += Convert.ToInt32(row[2].ToString());
-                        book.GiaNhap = Convert.ToDouble(row[3].ToString());
+                        BookDTO book = BookBUS.Instance.getById(row[0].ToString());
 
-                        BookBUS.Instance.update(book);
-                    };
+                        if (book == null) continue;
+
+                        ImportBillDetailDTO importBillDetail = new ImportBillDetailDTO(importBill.MaDonNhapHang, book.MaSach, Convert.ToInt32(row[2].ToString()), Convert.ToDouble(row[3].ToString()));
+
+                        if (ImportBillBUS.Instance.createImportBillDetail(importBillDetail))
+                        {
+                            book.SoLuongConLai += Convert.ToInt32(row[2].ToString());
+                            book.GiaNhap = Convert.ToDouble(row[3].ToString());
+
+                            BookBUS.Instance.update(book);
+                        };
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
             }
         }
 
         private void viewMoreBtn_Click(object sender, EventArgs e)
         {
-            if (this.dgvImportBill.CurrentCell.RowIndex < 0)
+            try
             {
-                MessageBox.Show("Hãy chọn dòng dữ liệu muốn thao tác");
-                return;
+                if (this.dgvImportBill.CurrentCell.RowIndex < 0)
+                {
+                    MessageBox.Show("Hãy chọn dòng dữ liệu muốn thao tác");
+                    return;
+                }
+
+                DataGridViewRow row = this.dgvImportBill.Rows[this.dgvImportBill.CurrentCell.RowIndex];
+
+                ImportBillDTO importBill = ImportBillBUS.Instance.getById(row.Cells[1].Value.ToString());
+
+                using (ViewImportBillModal viewImportBillModal = new ViewImportBillModal(importBill))
+                {
+                    viewImportBillModal.ShowDialog();
+                }
             }
-
-            DataGridViewRow row = this.dgvImportBill.Rows[this.dgvImportBill.CurrentCell.RowIndex];
-
-            ImportBillDTO importBill = ImportBillBUS.Instance.getById(row.Cells[1].Value.ToString());
-
-            using (ViewImportBillModal viewImportBillModal = new ViewImportBillModal(importBill))
+            catch (Exception ex)
             {
-                viewImportBillModal.ShowDialog();
+                Console.WriteLine(ex);
             }
         }
     }
