@@ -14,10 +14,10 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 {
 	public partial class RefundFormMenuGUI : Form
 	{
-		private test customerChangeBillFrm = new test() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None, };
-		private test importChangeBillFrm = new test() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None, };
-		private CustomerRefundBillGUI customerRefundFrm = new CustomerRefundBillGUI() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None, Visible = false};
-		private ImportRefundBillGUI importRefundBillFrm = new ImportRefundBillGUI() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None,Visible = false };
+		private CustomerChangeBillGUI customerChangeBillFrm = new CustomerChangeBillGUI() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None, };
+		private ImportChangeBillGUI importChangeBillFrm = new ImportChangeBillGUI() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None, };
+		private CustomerRefundBillGUI customerRefundFrm = new CustomerRefundBillGUI() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None, };
+		private ImportRefundBillGUI importRefundBillFrm = new ImportRefundBillGUI() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None, };
 		public RefundFormMenuGUI()
 		{
 			InitializeComponent();
@@ -33,17 +33,26 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 		}
 		private void customerChangeBillPanel_Click(object sender, EventArgs e)
 		{
+			customerChangeBillFrm.Show();
+			customerChangeBillFrm.BringToFront();
+			importChangeBillFrm.Hide();
+			customerRefundFrm.Hide();
+			importRefundBillFrm.Hide();
 
 		}
 
 		private void importChangeBillPanel_Click(object sender, EventArgs e)
 		{
-
+			importChangeBillFrm.Show();
+			importChangeBillFrm.BringToFront();
+			customerRefundFrm.Hide();
+			customerChangeBillFrm.Hide();
+			importRefundBillFrm.Hide();
 		}
 
 		private void customerRefundBillPanel_Click(object sender, EventArgs e)
 		{
-			
+
 			customerRefundFrm.Show();
 			customerRefundFrm.BringToFront();
 			importChangeBillFrm.Hide();
@@ -54,7 +63,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
 		private void importRefundBillPanel_Click(object sender, EventArgs e)
 		{
-				
+
 			importRefundBillFrm.Show();
 			importRefundBillFrm.BringToFront();
 			customerRefundFrm.Hide();
@@ -66,27 +75,27 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
 		private void RefundFormMenuGUI_Load(object sender, EventArgs e)
 		{
-			//loadClickEvent(this.importChangeBillPanel,importChangeBillPanel_Click);
-			//loadClickEvent(this.customerChangeBillPanel, customerChangeBillPanel_Click);
+			loadClickEvent(this.importChangeBillPanel, importChangeBillPanel_Click);
+			loadClickEvent(this.customerChangeBillPanel, customerChangeBillPanel_Click);
 			loadClickEvent(this.customerRefundBillPanel, customerRefundBillPanel_Click);
 			loadClickEvent(this.importRefundBillPanel, importRefundBillPanel_Click);
-		
+
 		}
 
 		private void loadClickEvent(GunaGradient2Panel panel, Action<object, EventArgs> ClickHandler)
 		{
-			foreach(Control control in panel.Controls)
+			foreach (Control control in panel.Controls)
 			{
 				control.Click += (s, ev) =>
 				{
 					ClickHandler.Invoke(s, ev);
 				};
-			}	
+			}
 		}
 
 		private void importRefundBillPanel_Paint(object sender, PaintEventArgs e)
 		{
 
 		}
-	}
+    }
 }
