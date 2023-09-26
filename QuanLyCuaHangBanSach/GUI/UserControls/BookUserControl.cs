@@ -10,47 +10,82 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ZXing.QrCode.Internal;
+using static Guna.UI2.Native.WinApi;
 
 namespace QuanLyCuaHangBanSach.GUI.Vendor
 {
     public partial class BookUserControl : UserControl
     {
-        public BookUserControl()
+        private int mode; // 0: Vendor; 1: Import
+        public static bool clicked = false;
+        public static string ChoseId = "";
+        public BookUserControl(int mode) 
         {
             InitializeComponent();
+            this.mode = mode;
         }
 
         public void details(BookDTO book)
         {
-            using (MemoryStream ms = new MemoryStream(book.HinhAnh))
+            try
             {
-                Image image = Image.FromStream(ms);
-                BookImage.Image = image;
+                using (var stream = new System.IO.MemoryStream(book.HinhAnh))
+                {
+                    Bitmap bitmap = new Bitmap(stream);
+                    BookImage.Image = bitmap;
+                }
             }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+
+            if (mode == 0)
+            {
+                PriceLb.Text = string.Format("{0:N0} VND", book.GiaBan);
+                StockLb.Text = "SL: " + book.SoLuongConLai;
+                if (book.SoLuongConLai == 0)
+                {
+                    Cursor = Cursors.No;
+                }
+            }
+            else
+            {
+                StockLb.Visible = false;
+                PriceLb.Text = string.Format("{0:N0} VND", book.GiaNhap);
+            }
+
             IdLb.Text = book.MaSach.ToString();
             NameLb.Text = book.TenSach;
-            StockLb.Text = "ST: " + book.SoLuongConLai;
-            PriceLb.Text = string.Format("{0:N0} VND", book.GiaBan);
             toolTip1.SetToolTip(NameLb, NameLb.Text);
         }
 
         private void BookUserControl_Hover(object sender, EventArgs e)
         {
-            this.BackColor = Color.Gainsboro;
+            BackColor = Color.Gainsboro;
         }
 
         private void BookUserControl_Leave(object sender, EventArgs e)
         {
-            this.BackColor = Color.White;
+            BackColor = Color.White;
         }
-
-        public static bool clicked = false;
-        public static string ChoseId = "";
 
         private void BookUserControl_Click(object sender, EventArgs e)
         {
-            clicked = true;
-            ChoseId = IdLb.Text;
+            if (mode == 0)
+            {
+                if (!StockLb.Text.Equals("SL: 0"))
+                {
+                    clicked = true;
+                    ChoseId = IdLb.Text;
+                } 
+            }
+            else
+            {
+                clicked = true;
+                ChoseId = IdLb.Text;
+            }
         }
     }
 }

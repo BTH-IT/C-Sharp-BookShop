@@ -1,26 +1,26 @@
 ﻿namespace QuanLyCuaHangBanSach.GUI
 {
-    partial class VendorGUI
-    {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
-        private System.ComponentModel.IContainer components = null;
+	partial class VendorGUI
+	{
+		/// <summary>
+		/// Required designer variable.
+		/// </summary>
+		private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+		/// <summary>
+		/// Clean up any resources being used.
+		/// </summary>
+		/// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+		protected override void Dispose(bool disposing)
+		{
+			if (disposing && (components != null))
+			{
+				components.Dispose();
+			}
+			base.Dispose(disposing);
+		}
 
-        #region Windows Form Designer generated code
+		#region Windows Form Designer generated code
 
         /// <summary>
         /// Required method for Designer support - do not modify
@@ -44,10 +44,15 @@
             this.FilterBtn = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.QRScanBtn = new Guna.UI.WinForms.GunaButton();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.checkUser = new System.Windows.Forms.Timer(this.components);
+            this.BookContainer = new System.Windows.Forms.FlowLayoutPanel();
+            this.FilterContainer = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.PointToggleBtn = new Guna.UI2.WinForms.Guna2ToggleSwitch();
+            this.PointLb = new System.Windows.Forms.Label();
             this.DiscountCb = new Guna.UI.WinForms.GunaComboBox();
             this.RefundBtn = new Guna.UI2.WinForms.Guna2Button();
+            this.CustomerToggleBtn = new Guna.UI2.WinForms.Guna2ToggleSwitch();
             this.FinalTotalMoneyLb = new System.Windows.Forms.Label();
             this.FinalTotalLb = new System.Windows.Forms.Label();
             this.DiscountMoneyLb = new System.Windows.Forms.Label();
@@ -67,9 +72,7 @@
             this.CustomerInfoLb = new System.Windows.Forms.Label();
             this.AddCustomerBtn = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.checkUser = new System.Windows.Forms.Timer(this.components);
-            this.BookContainer = new System.Windows.Forms.FlowLayoutPanel();
-            this.FilterContainer = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LogoImg)).BeginInit();
             this.flowLayoutPanel2.SuspendLayout();
@@ -77,8 +80,8 @@
             this.flowLayoutPanel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -207,7 +210,7 @@
             this.ProductSearchInp.Size = new System.Drawing.Size(212, 22);
             this.ProductSearchInp.TabIndex = 1;
             this.ProductSearchInp.Text = "Search ...";
-            this.ProductSearchInp.Click += new System.EventHandler(this.ProductSearchInp_Click);
+            this.ProductSearchInp.Click += new System.EventHandler(this.ProductSearchInp_Enter);
             this.ProductSearchInp.TextChanged += new System.EventHandler(this.ProductSearchInp_TextChanged);
             this.ProductSearchInp.Leave += new System.EventHandler(this.ProductSearchInp_Leave);
             // 
@@ -262,19 +265,37 @@
             this.QRScanBtn.TabIndex = 0;
             this.QRScanBtn.Click += new System.EventHandler(this.QRScanBtn_Click);
             // 
-            // panel3
+            // checkUser
             // 
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.panel4);
-            this.panel3.Location = new System.Drawing.Point(913, -8);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(359, 702);
-            this.panel3.TabIndex = 5;
+            this.checkUser.Enabled = true;
+            this.checkUser.Interval = 1;
+            this.checkUser.Tick += new System.EventHandler(this.checkUser_Tick);
+            // 
+            // BookContainer
+            // 
+            this.BookContainer.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.BookContainer.AutoScroll = true;
+            this.BookContainer.Location = new System.Drawing.Point(102, 146);
+            this.BookContainer.Name = "BookContainer";
+            this.BookContainer.Size = new System.Drawing.Size(787, 520);
+            this.BookContainer.TabIndex = 6;
+            // 
+            // FilterContainer
+            // 
+            this.FilterContainer.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.FilterContainer.Location = new System.Drawing.Point(206, 119);
+            this.FilterContainer.Name = "FilterContainer";
+            this.FilterContainer.Size = new System.Drawing.Size(334, 221);
+            this.FilterContainer.TabIndex = 7;
+            this.FilterContainer.Visible = false;
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.PointToggleBtn);
+            this.panel4.Controls.Add(this.PointLb);
             this.panel4.Controls.Add(this.DiscountCb);
             this.panel4.Controls.Add(this.RefundBtn);
+            this.panel4.Controls.Add(this.CustomerToggleBtn);
             this.panel4.Controls.Add(this.FinalTotalMoneyLb);
             this.panel4.Controls.Add(this.FinalTotalLb);
             this.panel4.Controls.Add(this.DiscountMoneyLb);
@@ -283,7 +304,6 @@
             this.panel4.Controls.Add(this.CustomerCashTxb);
             this.panel4.Controls.Add(this.ChangeMoneyLb);
             this.panel4.Controls.Add(this.ChangeLb);
-            this.panel4.Controls.Add(this.RecipientNameLb);
             this.panel4.Controls.Add(this.PhoneInp);
             this.panel4.Controls.Add(this.TotalMoneyLb);
             this.panel4.Controls.Add(this.PhoneResultContainer);
@@ -294,11 +314,49 @@
             this.panel4.Controls.Add(this.CustomerInfoLb);
             this.panel4.Controls.Add(this.AddCustomerBtn);
             this.panel4.Controls.Add(this.label3);
+            this.panel4.Controls.Add(this.RecipientNameLb);
             this.panel4.Location = new System.Drawing.Point(24, 8);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(300, 668);
             this.panel4.TabIndex = 3;
-            this.panel4.Click += new System.EventHandler(this.panel4_Click);
+            // 
+            // PointToggleBtn
+            // 
+            this.PointToggleBtn.Animated = true;
+            this.PointToggleBtn.AutoRoundedCorners = true;
+            this.PointToggleBtn.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.PointToggleBtn.CheckedState.BorderRadius = 10;
+            this.PointToggleBtn.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.PointToggleBtn.CheckedState.InnerBorderColor = System.Drawing.Color.White;
+            this.PointToggleBtn.CheckedState.InnerBorderRadius = 6;
+            this.PointToggleBtn.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.PointToggleBtn.CheckedState.Parent = this.PointToggleBtn;
+            this.PointToggleBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PointToggleBtn.Enabled = false;
+            this.PointToggleBtn.Location = new System.Drawing.Point(240, 457);
+            this.PointToggleBtn.Name = "PointToggleBtn";
+            this.PointToggleBtn.ShadowDecoration.Parent = this.PointToggleBtn;
+            this.PointToggleBtn.Size = new System.Drawing.Size(48, 22);
+            this.PointToggleBtn.TabIndex = 43;
+            this.PointToggleBtn.UncheckedState.BorderColor = System.Drawing.Color.Gray;
+            this.PointToggleBtn.UncheckedState.BorderRadius = 10;
+            this.PointToggleBtn.UncheckedState.BorderThickness = 1;
+            this.PointToggleBtn.UncheckedState.FillColor = System.Drawing.Color.White;
+            this.PointToggleBtn.UncheckedState.InnerBorderColor = System.Drawing.Color.Gray;
+            this.PointToggleBtn.UncheckedState.InnerBorderRadius = 6;
+            this.PointToggleBtn.UncheckedState.InnerColor = System.Drawing.Color.Gray;
+            this.PointToggleBtn.UncheckedState.Parent = this.PointToggleBtn;
+            this.PointToggleBtn.CheckedChanged += new System.EventHandler(this.PointToggleBtn_CheckedChanged);
+            // 
+            // PointLb
+            // 
+            this.PointLb.AutoSize = true;
+            this.PointLb.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.PointLb.Location = new System.Drawing.Point(11, 455);
+            this.PointLb.Name = "PointLb";
+            this.PointLb.Size = new System.Drawing.Size(80, 25);
+            this.PointLb.TabIndex = 42;
+            this.PointLb.Text = "Đổi điểm:";
             // 
             // DiscountCb
             // 
@@ -312,7 +370,7 @@
             this.DiscountCb.Font = new System.Drawing.Font("#9Slide03 Cabin", 10F);
             this.DiscountCb.ForeColor = System.Drawing.Color.Black;
             this.DiscountCb.FormattingEnabled = true;
-            this.DiscountCb.Location = new System.Drawing.Point(14, 447);
+            this.DiscountCb.Location = new System.Drawing.Point(14, 422);
             this.DiscountCb.Name = "DiscountCb";
             this.DiscountCb.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.DiscountCb.OnHoverItemForeColor = System.Drawing.Color.White;
@@ -333,18 +391,40 @@
             this.RefundBtn.Font = new System.Drawing.Font("#9Slide03 Cabin", 10F, System.Drawing.FontStyle.Bold);
             this.RefundBtn.ForeColor = System.Drawing.Color.White;
             this.RefundBtn.HoverState.Parent = this.RefundBtn;
-            this.RefundBtn.Location = new System.Drawing.Point(215, 17);
+            this.RefundBtn.Location = new System.Drawing.Point(215, 4);
             this.RefundBtn.Name = "RefundBtn";
             this.RefundBtn.ShadowDecoration.Parent = this.RefundBtn;
             this.RefundBtn.Size = new System.Drawing.Size(79, 27);
             this.RefundBtn.TabIndex = 0;
             this.RefundBtn.Text = "Trả hàng";
             // 
+            // CustomerToggleBtn
+            // 
+            this.CustomerToggleBtn.Animated = true;
+            this.CustomerToggleBtn.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.CustomerToggleBtn.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.CustomerToggleBtn.CheckedState.InnerBorderColor = System.Drawing.Color.White;
+            this.CustomerToggleBtn.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.CustomerToggleBtn.CheckedState.Parent = this.CustomerToggleBtn;
+            this.CustomerToggleBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.CustomerToggleBtn.Location = new System.Drawing.Point(4, 51);
+            this.CustomerToggleBtn.Name = "CustomerToggleBtn";
+            this.CustomerToggleBtn.ShadowDecoration.Parent = this.CustomerToggleBtn;
+            this.CustomerToggleBtn.Size = new System.Drawing.Size(44, 19);
+            this.CustomerToggleBtn.TabIndex = 36;
+            this.CustomerToggleBtn.UncheckedState.BorderColor = System.Drawing.Color.Gray;
+            this.CustomerToggleBtn.UncheckedState.BorderThickness = 1;
+            this.CustomerToggleBtn.UncheckedState.FillColor = System.Drawing.Color.White;
+            this.CustomerToggleBtn.UncheckedState.InnerBorderColor = System.Drawing.Color.Gray;
+            this.CustomerToggleBtn.UncheckedState.InnerColor = System.Drawing.Color.Gray;
+            this.CustomerToggleBtn.UncheckedState.Parent = this.CustomerToggleBtn;
+            this.CustomerToggleBtn.CheckedChanged += new System.EventHandler(this.CustomerToggleBtn_CheckedChanged);
+            // 
             // FinalTotalMoneyLb
             // 
             this.FinalTotalMoneyLb.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.FinalTotalMoneyLb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.FinalTotalMoneyLb.Location = new System.Drawing.Point(138, 516);
+            this.FinalTotalMoneyLb.Location = new System.Drawing.Point(137, 516);
             this.FinalTotalMoneyLb.Margin = new System.Windows.Forms.Padding(20, 30, 3, 5);
             this.FinalTotalMoneyLb.Name = "FinalTotalMoneyLb";
             this.FinalTotalMoneyLb.Size = new System.Drawing.Size(159, 21);
@@ -367,7 +447,7 @@
             // DiscountMoneyLb
             // 
             this.DiscountMoneyLb.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.DiscountMoneyLb.Location = new System.Drawing.Point(96, 485);
+            this.DiscountMoneyLb.Location = new System.Drawing.Point(95, 485);
             this.DiscountMoneyLb.Margin = new System.Windows.Forms.Padding(20, 30, 3, 5);
             this.DiscountMoneyLb.Name = "DiscountMoneyLb";
             this.DiscountMoneyLb.Size = new System.Drawing.Size(201, 21);
@@ -416,14 +496,15 @@
             this.CustomerCashTxb.Size = new System.Drawing.Size(235, 30);
             this.CustomerCashTxb.TabIndex = 25;
             this.CustomerCashTxb.Text = "Khách đưa ...";
-            this.CustomerCashTxb.Enter += new System.EventHandler(this.CustomerCashTxb_Click);
+            this.CustomerCashTxb.Enter += new System.EventHandler(this.CustomerCashTxb_Enter);
             this.CustomerCashTxb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CustomerCashTxb_KeyPress);
             this.CustomerCashTxb.Leave += new System.EventHandler(this.CustomerCashTxb_Leave);
+            this.CustomerCashTxb.MouseLeave += new System.EventHandler(this.CustomerCashTxb_MouseLeave);
             // 
             // ChangeMoneyLb
             // 
             this.ChangeMoneyLb.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.ChangeMoneyLb.Location = new System.Drawing.Point(100, 586);
+            this.ChangeMoneyLb.Location = new System.Drawing.Point(98, 586);
             this.ChangeMoneyLb.Margin = new System.Windows.Forms.Padding(20, 30, 3, 5);
             this.ChangeMoneyLb.Name = "ChangeMoneyLb";
             this.ChangeMoneyLb.Size = new System.Drawing.Size(197, 21);
@@ -435,7 +516,7 @@
             // 
             this.ChangeLb.AutoSize = true;
             this.ChangeLb.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.ChangeLb.Location = new System.Drawing.Point(11, 585);
+            this.ChangeLb.Location = new System.Drawing.Point(11, 586);
             this.ChangeLb.Margin = new System.Windows.Forms.Padding(20, 30, 3, 5);
             this.ChangeLb.Name = "ChangeLb";
             this.ChangeLb.Size = new System.Drawing.Size(82, 25);
@@ -447,38 +528,40 @@
             // 
             this.RecipientNameLb.AutoSize = true;
             this.RecipientNameLb.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.RecipientNameLb.Location = new System.Drawing.Point(96, 92);
+            this.RecipientNameLb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.RecipientNameLb.Location = new System.Drawing.Point(93, 81);
             this.RecipientNameLb.Margin = new System.Windows.Forms.Padding(20, 30, 3, 5);
             this.RecipientNameLb.Name = "RecipientNameLb";
-            this.RecipientNameLb.Size = new System.Drawing.Size(0, 25);
+            this.RecipientNameLb.Size = new System.Drawing.Size(67, 25);
             this.RecipientNameLb.TabIndex = 22;
+            this.RecipientNameLb.Text = "Vãng lai";
             this.RecipientNameLb.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // PhoneInp
             // 
-            this.PhoneInp.BackColor = System.Drawing.SystemColors.Window;
+            this.PhoneInp.BackColor = System.Drawing.Color.White;
             this.PhoneInp.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.PhoneInp.Enabled = false;
             this.PhoneInp.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.PhoneInp.Font = new System.Drawing.Font("#9Slide03 Cabin", 12F);
             this.PhoneInp.ForeColor = System.Drawing.Color.DarkGray;
             this.PhoneInp.LineColor = System.Drawing.Color.Black;
             this.PhoneInp.LineSize = 1;
-            this.PhoneInp.Location = new System.Drawing.Point(0, 49);
+            this.PhoneInp.Location = new System.Drawing.Point(60, 41);
             this.PhoneInp.Name = "PhoneInp";
             this.PhoneInp.PasswordChar = '\0';
             this.PhoneInp.SelectedText = "";
-            this.PhoneInp.Size = new System.Drawing.Size(244, 36);
+            this.PhoneInp.Size = new System.Drawing.Size(192, 36);
             this.PhoneInp.TabIndex = 1;
-            this.PhoneInp.Text = "Phone Number ...";
             this.PhoneInp.TextChanged += new System.EventHandler(this.PhoneInp_TextChanged);
-            this.PhoneInp.Enter += new System.EventHandler(this.PhoneInp_Click);
+            this.PhoneInp.Enter += new System.EventHandler(this.PhoneInp_Enter);
             this.PhoneInp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PhoneInp_KeyPress);
             this.PhoneInp.Leave += new System.EventHandler(this.PhoneInp_Leave);
             // 
             // TotalMoneyLb
             // 
             this.TotalMoneyLb.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.TotalMoneyLb.Location = new System.Drawing.Point(144, 412);
+            this.TotalMoneyLb.Location = new System.Drawing.Point(141, 393);
             this.TotalMoneyLb.Margin = new System.Windows.Forms.Padding(20, 30, 3, 5);
             this.TotalMoneyLb.Name = "TotalMoneyLb";
             this.TotalMoneyLb.Size = new System.Drawing.Size(154, 21);
@@ -490,7 +573,7 @@
             // 
             this.PhoneResultContainer.AutoScroll = true;
             this.PhoneResultContainer.AutoScrollMinSize = new System.Drawing.Size(1, 1);
-            this.PhoneResultContainer.Location = new System.Drawing.Point(0, 95);
+            this.PhoneResultContainer.Location = new System.Drawing.Point(28, 78);
             this.PhoneResultContainer.Margin = new System.Windows.Forms.Padding(0);
             this.PhoneResultContainer.MaximumSize = new System.Drawing.Size(262, 180);
             this.PhoneResultContainer.Name = "PhoneResultContainer";
@@ -500,7 +583,7 @@
             // CartContainer
             // 
             this.CartContainer.AutoScroll = true;
-            this.CartContainer.Location = new System.Drawing.Point(0, 122);
+            this.CartContainer.Location = new System.Drawing.Point(0, 110);
             this.CartContainer.Name = "CartContainer";
             this.CartContainer.Size = new System.Drawing.Size(300, 274);
             this.CartContainer.TabIndex = 20;
@@ -509,7 +592,7 @@
             // 
             this.RecipientLb.AutoSize = true;
             this.RecipientLb.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.RecipientLb.Location = new System.Drawing.Point(-1, 92);
+            this.RecipientLb.Location = new System.Drawing.Point(-1, 81);
             this.RecipientLb.Margin = new System.Windows.Forms.Padding(20, 30, 3, 5);
             this.RecipientLb.Name = "RecipientLb";
             this.RecipientLb.Size = new System.Drawing.Size(100, 25);
@@ -535,7 +618,7 @@
             // 
             this.TotalLb.AutoSize = true;
             this.TotalLb.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.TotalLb.Location = new System.Drawing.Point(10, 412);
+            this.TotalLb.Location = new System.Drawing.Point(9, 391);
             this.TotalLb.Margin = new System.Windows.Forms.Padding(20, 30, 3, 5);
             this.TotalLb.Name = "TotalLb";
             this.TotalLb.Size = new System.Drawing.Size(120, 25);
@@ -557,18 +640,20 @@
             // 
             // AddCustomerBtn
             // 
+            this.AddCustomerBtn.Enabled = false;
             this.AddCustomerBtn.Image = ((System.Drawing.Image)(resources.GetObject("AddCustomerBtn.Image")));
-            this.AddCustomerBtn.Location = new System.Drawing.Point(255, 55);
+            this.AddCustomerBtn.Location = new System.Drawing.Point(264, 45);
             this.AddCustomerBtn.Name = "AddCustomerBtn";
             this.AddCustomerBtn.Size = new System.Drawing.Size(30, 30);
             this.AddCustomerBtn.TabIndex = 12;
             this.AddCustomerBtn.UseVisualStyleBackColor = true;
+            this.AddCustomerBtn.Click += new System.EventHandler(this.AddCustomerBtn_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label3.Location = new System.Drawing.Point(-3, 12);
+            this.label3.Location = new System.Drawing.Point(-3, 1);
             this.label3.Margin = new System.Windows.Forms.Padding(20, 30, 3, 5);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(127, 33);
@@ -576,30 +661,14 @@
             this.label3.Text = "Thanh Toán";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // checkUser
+            // panel3
             // 
-            this.checkUser.Enabled = true;
-            this.checkUser.Interval = 1;
-            this.checkUser.Tick += new System.EventHandler(this.checkUser_Tick);
-            // 
-            // BookContainer
-            // 
-            this.BookContainer.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.BookContainer.AutoScroll = true;
-            this.BookContainer.Location = new System.Drawing.Point(102, 146);
-            this.BookContainer.Name = "BookContainer";
-            this.BookContainer.Size = new System.Drawing.Size(787, 520);
-            this.BookContainer.TabIndex = 6;
-            this.BookContainer.Paint += new System.Windows.Forms.PaintEventHandler(this.BookContainer_Paint);
-            // 
-            // FilterContainer
-            // 
-            this.FilterContainer.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.FilterContainer.Location = new System.Drawing.Point(206, 124);
-            this.FilterContainer.Name = "FilterContainer";
-            this.FilterContainer.Size = new System.Drawing.Size(334, 221);
-            this.FilterContainer.TabIndex = 7;
-            this.FilterContainer.Visible = false;
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.panel4);
+            this.panel3.Location = new System.Drawing.Point(913, -8);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(359, 702);
+            this.panel3.TabIndex = 5;
             // 
             // VendorGUI
             // 
@@ -615,7 +684,7 @@
             this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "VendorGUI";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "MainPage";
+            this.Text = "Main Page";
             this.Load += new System.EventHandler(this.Vendor_Load);
             this.flowLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.LogoImg)).EndInit();
@@ -626,14 +695,14 @@
             this.flowLayoutPanel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel1.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
-        }
+		}
 
-        #endregion
+		#endregion
 
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
@@ -647,33 +716,36 @@
         private System.Windows.Forms.Button LogOutBtn;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Button AddCustomerBtn;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label CustomerInfoLb;
-        private System.Windows.Forms.Label TotalLb;
-        private System.Windows.Forms.Button PrintBtn;
-        private System.Windows.Forms.Label RecipientLb;
-        private System.Windows.Forms.FlowLayoutPanel PhoneResultContainer;
         private System.Windows.Forms.Timer checkUser;
         private System.Windows.Forms.FlowLayoutPanel BookContainer;
-        private System.Windows.Forms.FlowLayoutPanel CartContainer;
-        private System.Windows.Forms.Label TotalMoneyLb;
-        private Guna.UI.WinForms.GunaLineTextBox PhoneInp;
-        private System.Windows.Forms.Label RecipientNameLb;
         private System.Windows.Forms.Panel FilterContainer;
-        private System.Windows.Forms.Label ChangeMoneyLb;
-        private System.Windows.Forms.Label ChangeLb;
-        private Guna.UI.WinForms.GunaTextBox CustomerCashTxb;
-        private System.Windows.Forms.Label VndLb;
-        private System.Windows.Forms.Label DiscountMoneyLb;
-        private System.Windows.Forms.Label DiscountLb;
+        private System.Windows.Forms.Panel panel1;
+        private Guna.UI.WinForms.GunaButton QRScanBtn;
+        private System.Windows.Forms.Panel panel4;
+        private Guna.UI2.WinForms.Guna2ToggleSwitch PointToggleBtn;
+        private System.Windows.Forms.Label PointLb;
+        private Guna.UI.WinForms.GunaComboBox DiscountCb;
+        private Guna.UI2.WinForms.Guna2Button RefundBtn;
+        private Guna.UI2.WinForms.Guna2ToggleSwitch CustomerToggleBtn;
         private System.Windows.Forms.Label FinalTotalMoneyLb;
         private System.Windows.Forms.Label FinalTotalLb;
-        private System.Windows.Forms.Panel panel1;
-        private Guna.UI2.WinForms.Guna2Button RefundBtn;
-        private Guna.UI.WinForms.GunaComboBox DiscountCb;
-        private Guna.UI.WinForms.GunaButton QRScanBtn;
+        private System.Windows.Forms.Label DiscountMoneyLb;
+        private System.Windows.Forms.Label DiscountLb;
+        private System.Windows.Forms.Label VndLb;
+        private Guna.UI.WinForms.GunaTextBox CustomerCashTxb;
+        private System.Windows.Forms.Label ChangeMoneyLb;
+        private System.Windows.Forms.Label ChangeLb;
+        private System.Windows.Forms.Label RecipientNameLb;
+        private Guna.UI.WinForms.GunaLineTextBox PhoneInp;
+        private System.Windows.Forms.Label TotalMoneyLb;
+        private System.Windows.Forms.FlowLayoutPanel PhoneResultContainer;
+        private System.Windows.Forms.FlowLayoutPanel CartContainer;
+        private System.Windows.Forms.Label RecipientLb;
+        private System.Windows.Forms.Button PrintBtn;
+        private System.Windows.Forms.Label TotalLb;
+        private System.Windows.Forms.Label CustomerInfoLb;
+        private System.Windows.Forms.Button AddCustomerBtn;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Panel panel3;
     }
 }

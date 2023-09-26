@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using QuanLyCuaHangBanSach.DAO;
 using QuanLyCuaHangBanSach.DTO;
@@ -46,7 +47,7 @@ namespace QuanLyCuaHangBanSach.BUS
         {
             return StaffDAO.Instance.getById(id);
         }
-        public List<StaffDTO> search(string value)
+		public List<StaffDTO> search(string value)
         {
             return StaffDAO.Instance.searchData(value);
         }

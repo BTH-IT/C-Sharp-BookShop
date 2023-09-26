@@ -16,32 +16,64 @@ namespace QuanLyCuaHangBanSach.GUI.Vendor
 {
     public partial class CartProductUserControl : UserControl
     {
-        public CartProductUserControl()
+        private int stock = 0;
+        private int mode = 0; // 0: Vendor; 1: Import
+        public static bool AmountChanged = false;
+        public static bool deletePress = false;
+        public static string AmountChangedId = "";
+        public static string deleteId = "";
+
+        public CartProductUserControl(int mode)
         {
             InitializeComponent();
+            this.mode = mode;
         }
-
-        private int stock = 0;
 
         public void details(BookDTO book)
         {
-            using (MemoryStream ms = new MemoryStream(book.HinhAnh))
+            try
             {
-                Image image = Image.FromStream(ms);
-                BookImage.Image = image;
+                using (MemoryStream ms = new MemoryStream(book.HinhAnh))
+                {
+                    Image image = Image.FromStream(ms);
+                    BookImage.Image = image;
+                }
             }
+            catch (Exception ex) { Console.WriteLine(ex); }
+
+            if (mode == 0)
+            {
+                StockLb.Text = "ST: " + book.SoLuongConLai;
+                stock = book.SoLuongConLai;
+                PriceLb.Text = string.Format("{0:N0} đ", book.GiaBan);
+            }
+            else
+            {
+                StockLb.Visible = false;
+                stock = -1;
+                PriceLb.Text = string.Format("{0:N0} đ", book.GiaNhap);
+            }
+
             IdLb.Text = book.MaSach.ToString();
             NameLb.Text = book.TenSach;
-            StockLb.Text = "ST: " + book.SoLuongConLai;
-            stock = book.SoLuongConLai;
-            PriceLb.Text = string.Format("{0:N0} đ", book.GiaBan);
             toolTip1.SetToolTip(NameLb, NameLb.Text);
         }
 
         private void PlusBtn_Click(object sender, EventArgs e)
         {
-            AmountTxt.Text = (int.Parse(AmountTxt.Text) + 1).ToString();
-            ChangeAmount();
+            if (mode == 0)
+            {
+                if (Convert.ToInt32(AmountTxt.Text) < stock)
+                {
+                    AmountTxt.Text = (int.Parse(AmountTxt.Text) + 1).ToString();
+                    ChangeAmount();
+                } 
+            }
+            else
+            {
+                AmountTxt.Text = (int.Parse(AmountTxt.Text) + 1).ToString();
+                ChangeAmount();
+            }
         }
 
         private void MinusBtn_Click(object sender, EventArgs e)
@@ -59,9 +91,12 @@ namespace QuanLyCuaHangBanSach.GUI.Vendor
             {
                 AmountTxt.Text = "1";
             }
-            if (int.Parse(AmountTxt.Text) > stock)
+            if (mode == 0)
             {
-                AmountTxt.Text = stock.ToString();
+                if (int.Parse(AmountTxt.Text) > stock)
+                {
+                    AmountTxt.Text = stock.ToString();
+                }
             }
         }
 
@@ -79,20 +114,23 @@ namespace QuanLyCuaHangBanSach.GUI.Vendor
             }
         }
 
+        private void AmountTxt_MouseLeave(object sender, EventArgs e)
+        {
+            NameLb.Focus();
+        }
+
         private void AmountTxt_Leave(object sender, EventArgs e)
         {
             AmountTxt_Validation();
             ChangeAmount();
         }
 
-        public static bool AmountChanged = false;
         private void ChangeAmount()
         {
             AmountChanged = true;
+            AmountChangedId = IdLb.Text;
         }
 
-        public static bool deletePress = false;
-        public static string deleteId = "";
         private void DeleteBtn_Click(object sender, EventArgs e)
         {
             deletePress = true;

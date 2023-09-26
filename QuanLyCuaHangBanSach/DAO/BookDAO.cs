@@ -42,7 +42,15 @@ namespace QuanLyCuaHangBanSach.DAO
             return dataTable;
         }
 
-        public DataTable getAllDataFiltered(int SortMode, string Type, string Author, string Publisher)
+        public DataTable getAll() {
+            DataTable dataTable = DataProvider.Instance.ExecuteQuery(
+                "SELECT * FROM sach WHERE hienThi = 1;"
+            );
+
+            return getBookRemain(dataTable);
+        }
+
+        public DataTable getAllDataFiltered(int SortMode, string Type, string Author, string Publisher, bool Import)
         {
             string sql = $@"SELECT * FROM sach WHERE hienThi = 1";
             if (!Type.Equals("0"))
@@ -63,13 +71,27 @@ namespace QuanLyCuaHangBanSach.DAO
                     sql += ";";
                     break;
                 case 0:
-                    sql += " ORDER BY giaBan ASC;";
+                    if (Import) // If filtering in Import page
+                    {
+                        sql += " ORDER BY giaNhap ASC;";
+                    }
+                    else
+                    {
+                        sql += " ORDER BY giaBan ASC;";
+                    }
                     break;
                 case 1:
-                    sql += " ORDER BY giaBan DESC;";
+                    if (Import) // If filtering in Import page
+                    {
+                        sql += " ORDER BY giaNhap DESC;";
+                    }
+                    else
+                    {
+                        sql += " ORDER BY giaBan DESC;";
+                    }
                     break;
                 case 2:
-                    sql += " ORDER BY tenSach DESC;";
+                    sql += " ORDER BY tenSach ASC;";
                     break;
                 case 3:
                     sql += " ORDER BY tenSach DESC;";
@@ -79,19 +101,12 @@ namespace QuanLyCuaHangBanSach.DAO
                     break;
             }
 
-            return DataProvider.Instance.ExecuteQuery(sql,
+            DataTable dataTable = DataProvider.Instance.ExecuteQuery(sql,
                 new MySqlParameter[] {
-                    new MySqlParameter("@maTheLoai", Type),
-                    new MySqlParameter("@maTacGia", Author),
-                    new MySqlParameter("@maNhaXuatBan", Publisher)
-                }
-            );
-        }
-        public DataTable getAll() {
-            DataTable dataTable = DataProvider.Instance.ExecuteQuery(
-                "SELECT * FROM sach WHERE hienThi = 1;"
-            );
-
+                    new MySqlParameter("@maTheLoai", Type.ToString()),
+                    new MySqlParameter("@maTacGia", Author.ToString()),
+                    new MySqlParameter("@maNhaXuatBan", Publisher.ToString())
+                });
             return getBookRemain(dataTable);
         }
 

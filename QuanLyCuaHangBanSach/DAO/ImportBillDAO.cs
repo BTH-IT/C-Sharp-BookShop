@@ -92,7 +92,7 @@ namespace QuanLyCuaHangBanSach.DAO
                     new MySqlParameter("@donGia", data.DonGia),
                 });
 
-            // xóa số lượng còn lại của sách
+            // thêm sách
             if (rowChanged > 0)
             {
                 return BookBUS.Instance.createBookAmount(data.MaSach.ToString(), data.SoLuong);
@@ -139,7 +139,7 @@ namespace QuanLyCuaHangBanSach.DAO
         {
             string sql = $@"UPDATE phieunhap SET 
                             maNhaCungCap=@maNhaCungCap, maNhanVien=@maNhanVien, ngayLap=@ngayLap, 
-                            tongTien=@tongTien, daTra=@daTra WHERE maDonNhapHang=@maDonNhapHang;";
+                            tongTien=@tongTien WHERE maDonNhapHang=@maDonNhapHang;";
 
             int rowChanged = DataProvider.Instance.ExecuteNonQuery(sql,
                 new MySqlParameter[] {
@@ -147,10 +147,8 @@ namespace QuanLyCuaHangBanSach.DAO
                     new MySqlParameter("@maNhanVien", data.MaNhanVien),
                     new MySqlParameter("@ngayLap", data.NgayLap),
                     new MySqlParameter("@tongTien", data.TongTien),
-                    new MySqlParameter("@daTra", data.DaTra),
                     new MySqlParameter("@maDonNhapHang", data.MaDonNhapHang),
                 });
-
             return rowChanged > 0;
         }
 
@@ -169,7 +167,7 @@ namespace QuanLyCuaHangBanSach.DAO
         public ImportBillDTO getById(string id)
         {
             DataTable dataTable = DataProvider.Instance.ExecuteQuery(
-                "SELECT * FROM phieunhap WHERE maDonNhapHang=@maDonNhapHang;",
+                "SELECT * FROM phieunhap WHERE maDonNhapHang=@maDonNhapHang AND hienThi=1;",
                 new MySqlParameter[] {
                     new MySqlParameter("@maDonNhapHang", id),
                 }

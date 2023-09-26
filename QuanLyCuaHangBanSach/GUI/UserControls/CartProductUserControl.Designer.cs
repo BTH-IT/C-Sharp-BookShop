@@ -1,27 +1,27 @@
 ﻿namespace QuanLyCuaHangBanSach.GUI.Vendor
 {
-    partial class CartProductUserControl
-    {
-        /// <summary> 
-        /// Required designer variable.
-        /// </summary>
-        private System.ComponentModel.IContainer components = null;
+	partial class CartProductUserControl
+	{
+		/// <summary> 
+		/// Required designer variable.
+		/// </summary>
+		private System.ComponentModel.IContainer components = null;
 
-        /// <summary> 
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+		/// <summary> 
+		/// Clean up any resources being used.
+		/// </summary>
+		/// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+		protected override void Dispose(bool disposing)
+		{
+			if (disposing && (components != null))
+			{
+				components.Dispose();
+			}
+			base.Dispose(disposing);
+		}
 
-        #region Component Designer generated code
-
+		#region Component Designer generated code
+      
         /// <summary> 
         /// Required method for Designer support - do not modify 
         /// the contents of this method with the code editor.
@@ -131,6 +131,7 @@
             this.AmountTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.AmountTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AmountTxt_KeyPress);
             this.AmountTxt.Leave += new System.EventHandler(this.AmountTxt_Leave);
+            this.AmountTxt.MouseLeave += new System.EventHandler(this.AmountTxt_MouseLeave);
             // 
             // DeleteBtn
             // 
@@ -142,10 +143,9 @@
             this.DeleteBtn.ForeColor = System.Drawing.Color.White;
             this.DeleteBtn.HoverState.Parent = this.DeleteBtn;
             this.DeleteBtn.Image = ((System.Drawing.Image)(resources.GetObject("DeleteBtn.Image")));
-            this.DeleteBtn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.DeleteBtn.ImageOffset = new System.Drawing.Point(-6, -1);
+            this.DeleteBtn.ImageOffset = new System.Drawing.Point(0, -1);
             this.DeleteBtn.ImageSize = new System.Drawing.Size(23, 23);
-            this.DeleteBtn.Location = new System.Drawing.Point(249, 4);
+            this.DeleteBtn.Location = new System.Drawing.Point(250, 4);
             this.DeleteBtn.Name = "DeleteBtn";
             this.DeleteBtn.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.DeleteBtn.ShadowDecoration.Parent = this.DeleteBtn;
@@ -194,20 +194,20 @@
             this.ResumeLayout(false);
             this.PerformLayout();
 
-        }
+		}
 
-        #endregion
+		#endregion
 
-        private System.Windows.Forms.PictureBox BookImage;
-        private System.Windows.Forms.Label NameLb;
-        private System.Windows.Forms.Label StockLb;
-        private System.Windows.Forms.Label PriceLb;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox PlusBtn;
-        private System.Windows.Forms.PictureBox MinusBtn;
-        private System.Windows.Forms.ToolTip toolTip1;
-        private Guna.UI2.WinForms.Guna2CircleButton DeleteBtn;
-        internal System.Windows.Forms.Label IdLb;
-        internal System.Windows.Forms.TextBox AmountTxt;
-    }
+		private System.Windows.Forms.PictureBox BookImage;
+		private System.Windows.Forms.Label NameLb;
+		private System.Windows.Forms.Label StockLb;
+		private System.Windows.Forms.Label PriceLb;
+		private System.Windows.Forms.Panel panel1;
+		private System.Windows.Forms.PictureBox PlusBtn;
+		private System.Windows.Forms.PictureBox MinusBtn;
+		private System.Windows.Forms.ToolTip toolTip1;
+		private Guna.UI2.WinForms.Guna2CircleButton DeleteBtn;
+		internal System.Windows.Forms.Label IdLb;
+		internal System.Windows.Forms.TextBox AmountTxt;
+	}
 }
