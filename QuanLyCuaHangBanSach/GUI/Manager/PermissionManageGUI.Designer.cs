@@ -73,7 +73,7 @@
             this.searchInput.ForeColor = System.Drawing.Color.Black;
             this.searchInput.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.searchInput.HoverState.Parent = this.searchInput;
-            this.searchInput.Location = new System.Drawing.Point(15, 10);
+            this.searchInput.Location = new System.Drawing.Point(4, 10);
             this.searchInput.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.searchInput.Name = "searchInput";
             this.searchInput.PasswordChar = '\0';
@@ -121,7 +121,7 @@
             this.dgvPermission.DefaultCellStyle = dataGridViewCellStyle8;
             this.dgvPermission.EnableHeadersVisualStyles = false;
             this.dgvPermission.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvPermission.Location = new System.Drawing.Point(12, 68);
+            this.dgvPermission.Location = new System.Drawing.Point(12, 51);
             this.dgvPermission.Name = "dgvPermission";
             dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
@@ -143,7 +143,7 @@
             this.dgvPermission.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvPermission.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvPermission.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPermission.Size = new System.Drawing.Size(1376, 757);
+            this.dgvPermission.Size = new System.Drawing.Size(1376, 774);
             this.dgvPermission.TabIndex = 34;
             this.dgvPermission.TabStop = false;
             this.dgvPermission.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna;
@@ -210,7 +210,7 @@
             // line1
             // 
             this.line1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(212)))), ((int)(((byte)(191)))));
-            this.line1.Location = new System.Drawing.Point(26, 43);
+            this.line1.Location = new System.Drawing.Point(15, 43);
             this.line1.Name = "line1";
             this.line1.Size = new System.Drawing.Size(268, 1);
             this.line1.TabIndex = 32;
@@ -405,7 +405,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(258, 10);
+            this.pictureBox1.Location = new System.Drawing.Point(247, 10);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(36, 30);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;

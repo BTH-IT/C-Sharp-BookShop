@@ -202,7 +202,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             this.flowLayoutPanel1.Controls.Add(this.panel1);
             this.flowLayoutPanel1.Controls.Add(this.panel2);
             this.flowLayoutPanel1.Controls.Add(this.panel4);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(63, 50);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(68, 50);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(452, 448);
             this.flowLayoutPanel1.TabIndex = 4;
@@ -231,10 +231,13 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             this.genderCbx.ForeColor = System.Drawing.Color.Black;
             this.genderCbx.FormattingEnabled = true;
             this.genderCbx.ItemHeight = 30;
-            this.genderCbx.Items.AddRange(new object[] {
+            /*this.genderCbx.Items.AddRange(new object[] {
             "Chọn giới tính",
             "Nam",
-            "Nữ"});
+            "Nữ"});*/
+            string[] genders = new string[] { "Chọn giới tính", "Nam", "Nữ" };
+            this.genderCbx.Items.AddRange(genders);
+            this.genderCbx.SelectedItem = genders[0];
             this.genderCbx.Location = new System.Drawing.Point(17, 64);
             this.genderCbx.Name = "genderCbx";
             this.genderCbx.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));

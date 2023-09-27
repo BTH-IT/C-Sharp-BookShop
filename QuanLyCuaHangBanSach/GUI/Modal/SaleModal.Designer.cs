@@ -65,7 +65,7 @@
             label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             label2.Location = new System.Drawing.Point(3, 3);
             label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(167, 49);
+            label2.Size = new System.Drawing.Size(136, 49);
             label2.TabIndex = 5;
             label2.Text = "Phần trăm :";
             label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -86,7 +86,7 @@
             this.btnSubmit.ForeColor = System.Drawing.Color.White;
             this.btnSubmit.Image = null;
             this.btnSubmit.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnSubmit.Location = new System.Drawing.Point(603, 402);
+            this.btnSubmit.Location = new System.Drawing.Point(529, 364);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.OnHoverBaseColor = System.Drawing.Color.White;
             this.btnSubmit.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
@@ -106,7 +106,7 @@
             this.title.AutoSize = true;
             this.title.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.title.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.title.Location = new System.Drawing.Point(428, 23);
+            this.title.Location = new System.Drawing.Point(398, 23);
             this.title.Name = "title";
             this.title.Size = new System.Drawing.Size(253, 36);
             this.title.TabIndex = 9;
@@ -128,7 +128,7 @@
             this.btnCancel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.btnCancel.Image = null;
             this.btnCancel.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnCancel.Location = new System.Drawing.Point(338, 402);
+            this.btnCancel.Location = new System.Drawing.Point(264, 364);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.btnCancel.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
@@ -147,13 +147,13 @@
             // 
             this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.AutoScrollMargin = new System.Drawing.Size(10, 10);
-            this.flowLayoutPanel1.Controls.Add(this.panel1);
             this.flowLayoutPanel1.Controls.Add(this.panel2);
+            this.flowLayoutPanel1.Controls.Add(this.panel1);
             this.flowLayoutPanel1.Controls.Add(this.panel4);
             this.flowLayoutPanel1.Controls.Add(this.panel6);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(24, 82);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1042, 294);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1003, 255);
             this.flowLayoutPanel1.TabIndex = 2;
             // 
             // panel1
@@ -163,10 +163,10 @@
             this.panel1.Controls.Add(this.errorSaleNameMsg);
             this.panel1.Controls.Add(this.saleNameLine);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Location = new System.Drawing.Point(5, 10);
+            this.panel1.Location = new System.Drawing.Point(505, 10);
             this.panel1.Margin = new System.Windows.Forms.Padding(5, 10, 5, 20);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(568, 88);
+            this.panel1.Size = new System.Drawing.Size(490, 88);
             this.panel1.TabIndex = 1;
             // 
             // saleNameTxt
@@ -194,7 +194,7 @@
             this.saleNameTxt.PlaceholderText = "Nhập khuyến mãi";
             this.saleNameTxt.SelectedText = "";
             this.saleNameTxt.ShadowDecoration.Parent = this.saleNameTxt;
-            this.saleNameTxt.Size = new System.Drawing.Size(393, 36);
+            this.saleNameTxt.Size = new System.Drawing.Size(311, 36);
             this.saleNameTxt.TabIndex = 32;
             // 
             // errorSaleNameMsg
@@ -202,7 +202,7 @@
             this.errorSaleNameMsg.AutoSize = true;
             this.errorSaleNameMsg.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.errorSaleNameMsg.ForeColor = System.Drawing.Color.Red;
-            this.errorSaleNameMsg.Location = new System.Drawing.Point(163, 50);
+            this.errorSaleNameMsg.Location = new System.Drawing.Point(165, 54);
             this.errorSaleNameMsg.Name = "errorSaleNameMsg";
             this.errorSaleNameMsg.Size = new System.Drawing.Size(0, 25);
             this.errorSaleNameMsg.TabIndex = 7;
@@ -212,7 +212,7 @@
             this.saleNameLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(212)))), ((int)(((byte)(191)))));
             this.saleNameLine.Location = new System.Drawing.Point(160, 45);
             this.saleNameLine.Name = "saleNameLine";
-            this.saleNameLine.Size = new System.Drawing.Size(400, 1);
+            this.saleNameLine.Size = new System.Drawing.Size(311, 1);
             this.saleNameLine.TabIndex = 8;
             // 
             // label3
@@ -232,10 +232,10 @@
             this.panel2.Controls.Add(this.errorPhanTramMsg);
             this.panel2.Controls.Add(this.phanTramLine);
             this.panel2.Controls.Add(label2);
-            this.panel2.Location = new System.Drawing.Point(583, 10);
+            this.panel2.Location = new System.Drawing.Point(5, 10);
             this.panel2.Margin = new System.Windows.Forms.Padding(5, 10, 5, 20);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(445, 88);
+            this.panel2.Size = new System.Drawing.Size(490, 88);
             this.panel2.TabIndex = 2;
             // 
             // phanTramTxt
@@ -256,14 +256,14 @@
             this.phanTramTxt.ForeColor = System.Drawing.Color.Black;
             this.phanTramTxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.phanTramTxt.HoverState.Parent = this.phanTramTxt;
-            this.phanTramTxt.Location = new System.Drawing.Point(110, 10);
+            this.phanTramTxt.Location = new System.Drawing.Point(160, 10);
             this.phanTramTxt.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.phanTramTxt.Name = "phanTramTxt";
             this.phanTramTxt.PasswordChar = '\0';
             this.phanTramTxt.PlaceholderText = "Nhập phần trăm khuyến mãi";
             this.phanTramTxt.SelectedText = "";
             this.phanTramTxt.ShadowDecoration.Parent = this.phanTramTxt;
-            this.phanTramTxt.Size = new System.Drawing.Size(257, 36);
+            this.phanTramTxt.Size = new System.Drawing.Size(308, 36);
             this.phanTramTxt.TabIndex = 32;
             // 
             // errorPhanTramMsg
@@ -271,7 +271,7 @@
             this.errorPhanTramMsg.AutoSize = true;
             this.errorPhanTramMsg.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.errorPhanTramMsg.ForeColor = System.Drawing.Color.Red;
-            this.errorPhanTramMsg.Location = new System.Drawing.Point(112, 50);
+            this.errorPhanTramMsg.Location = new System.Drawing.Point(169, 55);
             this.errorPhanTramMsg.Name = "errorPhanTramMsg";
             this.errorPhanTramMsg.Size = new System.Drawing.Size(0, 25);
             this.errorPhanTramMsg.TabIndex = 7;
@@ -279,9 +279,9 @@
             // phanTramLine
             // 
             this.phanTramLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(212)))), ((int)(((byte)(191)))));
-            this.phanTramLine.Location = new System.Drawing.Point(117, 46);
+            this.phanTramLine.Location = new System.Drawing.Point(167, 46);
             this.phanTramLine.Name = "phanTramLine";
-            this.phanTramLine.Size = new System.Drawing.Size(250, 1);
+            this.phanTramLine.Size = new System.Drawing.Size(301, 1);
             this.phanTramLine.TabIndex = 8;
             // 
             // panel4
@@ -294,7 +294,7 @@
             this.panel4.Location = new System.Drawing.Point(5, 128);
             this.panel4.Margin = new System.Windows.Forms.Padding(5, 10, 5, 20);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(518, 146);
+            this.panel4.Size = new System.Drawing.Size(490, 104);
             this.panel4.TabIndex = 3;
             // 
             // dateTimeFrom
@@ -317,7 +317,7 @@
             this.dateTimeFrom.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.dateTimeFrom.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.dateTimeFrom.OnPressedColor = System.Drawing.Color.Black;
-            this.dateTimeFrom.Size = new System.Drawing.Size(154, 39);
+            this.dateTimeFrom.Size = new System.Drawing.Size(308, 39);
             this.dateTimeFrom.TabIndex = 9;
             this.dateTimeFrom.Text = "9/10/2023";
             this.dateTimeFrom.Value = new System.DateTime(2023, 9, 10, 15, 52, 49, 679);
@@ -345,7 +345,7 @@
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label5.Location = new System.Drawing.Point(3, 3);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(167, 49);
+            this.label5.Size = new System.Drawing.Size(136, 49);
             this.label5.TabIndex = 5;
             this.label5.Text = "Ngày bắt đầu:";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -357,10 +357,10 @@
             this.panel6.Controls.Add(this.errorDateTimeToMsg);
             this.panel6.Controls.Add(this.dateTimeToLine);
             this.panel6.Controls.Add(this.label7);
-            this.panel6.Location = new System.Drawing.Point(533, 128);
+            this.panel6.Location = new System.Drawing.Point(505, 128);
             this.panel6.Margin = new System.Windows.Forms.Padding(5, 10, 5, 20);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(502, 146);
+            this.panel6.Size = new System.Drawing.Size(490, 104);
             this.panel6.TabIndex = 4;
             // 
             // dateTimeTo
@@ -383,7 +383,7 @@
             this.dateTimeTo.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.dateTimeTo.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.dateTimeTo.OnPressedColor = System.Drawing.Color.Black;
-            this.dateTimeTo.Size = new System.Drawing.Size(154, 39);
+            this.dateTimeTo.Size = new System.Drawing.Size(311, 39);
             this.dateTimeTo.TabIndex = 10;
             this.dateTimeTo.Text = "9/10/2023";
             this.dateTimeTo.Value = new System.DateTime(2023, 9, 10, 15, 52, 49, 679);
@@ -421,7 +421,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1085, 473);
+            this.ClientSize = new System.Drawing.Size(1048, 437);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.title);

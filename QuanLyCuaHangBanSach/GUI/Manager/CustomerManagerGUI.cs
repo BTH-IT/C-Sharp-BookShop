@@ -13,8 +13,8 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 	public partial class CustomerManagerGUI : Form
     {
         private CheckBox headerCheckbox;
-		string[] genders = new string[] { "Chọn giới tính", "Nam", "Nữ" };
-		public CustomerManagerGUI()
+        string[] genders = new string[] { "Chọn giới tính", "Nam", "Nữ" };
+        public CustomerManagerGUI()
         {
             InitializeComponent();
         }
@@ -43,35 +43,48 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             this.dgvCustomer.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(45, 210, 192);
             this.dgvCustomer.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
 
-            this.dgvCustomer.Rows.Clear();  
+            this.dgvCustomer.Rows.Clear();
+            try {
+				if (customers != null)
+				{
+					foreach (CustomerDTO customer in customers)
+					{
+						this.dgvCustomer.Rows.Add(new object[]
+						{
+							false,
+							customer.Ma,
+							customer.Ten,
+							customer.GioiTinh,
+							customer.NamSinh,
+							customer.SoDienThoai,
+							customer.Diem
+						});
+					}
 
-            if (customers != null )
+				}
+			}
+            catch
             {
-                foreach (CustomerDTO customer in customers)
-                {
-                    this.dgvCustomer.Rows.Add(new object[]
-                    {
-                    false,
-                    customer.Ma,
-                    customer.Ten,
-                    customer.GioiTinh,
-                    customer.NamSinh,
-                    customer.SoDienThoai,
-                    customer.Diem
-                    });
-                }
 
             }
-           
         }
         private void CustomerManagerGUI_Load(object sender, EventArgs e)
         {
-            List<CustomerDTO> customerList  = CustomerBUS.Instance.getAllData();
-            this.loadCustomerListToDataGridView(customerList);
-			this.genderCbx.Items.AddRange(genders);
-			this.genderCbx.SelectedIndex = 0;
-			this.renderCheckBoxDgv();
-            headerCheckbox.MouseClick += new MouseEventHandler(headerCheckbox_Clicked);
+            try
+            {
+				List<CustomerDTO> customerList = CustomerBUS.Instance.getAllData();
+
+				this.loadCustomerListToDataGridView(customerList);
+                this.genderCbx.Items.AddRange(genders);
+                this.genderCbx.SelectedIndex = 0;
+                this.renderCheckBoxDgv();
+				headerCheckbox.MouseClick += new MouseEventHandler(headerCheckbox_Clicked);
+			}
+            catch
+            {
+
+            }
+           
         }
         private void headerCheckbox_Clicked(object sender, EventArgs e)
         {
@@ -89,149 +102,222 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            if (this.dgvCustomer.CurrentCell.RowIndex < 0 )
+            try
             {
-                MessageBox.Show("Hãy chọn khách hàng muốn chỉnh sửa");
-                return;
+				if (this.dgvCustomer.CurrentCell.RowIndex < 0)
+				{
+					MessageBox.Show("Hãy chọn khách hàng muốn chỉnh sửa");
+					return;
+				}
+				using (CustomerModal modal = new CustomerModal("Sửa thông tin khách hàng"))
+				{
+					DataGridViewRow selectedRow = this.dgvCustomer.Rows[this.dgvCustomer.CurrentCell.RowIndex];
+
+					CustomerDTO customer = CustomerBUS.Instance.getById(selectedRow.Cells[1].Value.ToString());
+
+					if (customer == null)
+					{
+						MessageBox.Show("Đã có lỗi xảy ra vui lòng thử lại");
+						return;
+					}
+
+					modal.currentCustomer = customer;
+					modal.ShowDialog();
+
+					if (modal.isSubmitSuccess)
+					{
+
+						List<CustomerDTO> customers = this.handleFilter(this.searchInput.Text.ToString());
+						this.loadCustomerListToDataGridView(customers);
+					}
+
+				}
+			}
+            catch
+            {
+
             }
-            using (CustomerModal modal = new CustomerModal("Sửa thông tin khách hàng"))
-            {
-                DataGridViewRow selectedRow = this.dgvCustomer.Rows[this.dgvCustomer.CurrentCell.RowIndex];
-
-                CustomerDTO customer = CustomerBUS.Instance.getById(selectedRow.Cells[1].Value.ToString());
-
-                if (customer == null)
-                {
-                    MessageBox.Show("Đã có lỗi xảy ra vui lòng thử lại");
-                    return;
-                }   
-
-                modal.currentCustomer = customer;   
-                modal.ShowDialog();
-
-                if (modal.isSubmitSuccess)
-                {   
-                        
-                        List<CustomerDTO> customers = this.handleFilter(this.searchInput.Text.ToString()); 
-                        this.loadCustomerListToDataGridView(customers); 
-                }    
-                    
-            }    
+              
         }   
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            using (CustomerModal modal =  new CustomerModal())
+            try
             {
-                modal.ShowDialog();
+				using (CustomerModal modal = new CustomerModal())
+				{
+					modal.ShowDialog();
 
-                if(modal.isSubmitSuccess)
-                {
-                    List<CustomerDTO> customers =this.handleFilter(this.searchInput.Text.ToString());
-                    this.loadCustomerListToDataGridView(customers);
-                }
+					if (modal.isSubmitSuccess)
+					{
+						List<CustomerDTO> customers = this.handleFilter(this.searchInput.Text.ToString());
+						this.loadCustomerListToDataGridView(customers);
+					}
+				}
+			}
+			catch { 
             }
+            
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            DialogResult deleteDialogResult = MessageBox.Show(
-                    "Bạn có chắc chắn muốn xóa các khách hàng đã chọn",
-                    "Xác nhận",
-                    MessageBoxButtons.YesNo,
-                    MessageBoxIcon.None
-                );
-           if(deleteDialogResult == DialogResult.Yes)
+            try
             {
-                
-                foreach(DataGridViewRow row in this.dgvCustomer.Rows)
-                {
-                      if ((bool)row.Cells[0].Value)
-                       {
-                          CustomerBUS.Instance.delete(row.Cells[5].Value.ToString());
-                         
-                        } 
-                }
-             
-                List<CustomerDTO> customers = this.handleFilter(this.searchInput.Text.ToString()); ;
-                this.loadCustomerListToDataGridView(customers);
-                MessageBox.Show("Xóa khách hàng thành công");
-            }
+				DialogResult deleteDialogResult = MessageBox.Show(
+				 "Bạn có chắc chắn muốn xóa các khách hàng đã chọn",
+				 "Xác nhận",
+				 MessageBoxButtons.YesNo,
+				 MessageBoxIcon.None
+			 );
+				if (deleteDialogResult == DialogResult.Yes)
+				{
 
+					foreach (DataGridViewRow row in this.dgvCustomer.Rows)
+					{
+						if ((bool)row.Cells[0].Value)
+						{
+							CustomerBUS.Instance.delete(row.Cells[5].Value.ToString());
+
+						}
+					}
+
+					List<CustomerDTO> customers = this.handleFilter(this.searchInput.Text.ToString()); ;
+					this.loadCustomerListToDataGridView(customers);
+					MessageBox.Show("Xóa khách hàng thành công");
+				}
+			}
+            catch
+            {
+
+            }
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-            this.searchInput.Clear();
-            this.genderCbx.SelectedIndex = 0;
-            List<CustomerDTO> customers = CustomerBUS.Instance.getAllData();
-            this.loadCustomerListToDataGridView(customers);
+            try
+            {
+				this.searchInput.Clear();
+                this.genderCbx.SelectedIndex = 0;
+                List<CustomerDTO> customers = CustomerBUS.Instance.getAllData();
+				this.loadCustomerListToDataGridView(customers);
+			}
+            catch
+            {
+
+            }
         }
         private List<CustomerDTO> handleFilter(string searchInput)
         {
-            var customers = CustomerBUS.Instance.Search(searchInput);
-            string selectedGender = this.genderCbx.SelectedItem.ToString();
-            if (selectedGender != genders[0])
+            try
             {
-                customers = customers.Where(c => c.GioiTinh == selectedGender).ToList();
+				var customers = CustomerBUS.Instance.Search(searchInput);
+
+                string selectedGender = this.genderCbx.SelectedItem.ToString();
+
+
+                List<CustomerDTO> newCustomers = customers.FindAll(authorList =>
+                {
+                    if (selectedGender != "Chọn giới tính")
+                    {
+                        return authorList.GioiTinh == selectedGender;
+                    }
+                    return true;
+                }
+                );
+                return newCustomers;
             }
-            return customers;   
+            catch
+            {
+                return new List<CustomerDTO>();
+            }
+         
         }
         private void searchInput_TextChanged(object sender, EventArgs e)
         {
-            this.searchInput.ForeColor = Color.Black;
-            List<CustomerDTO> customers = handleFilter(this.searchInput.Text.ToString());
-            this.loadCustomerListToDataGridView(customers);
+            try
+            {
+				this.searchInput.ForeColor = Color.Black;
+				List<CustomerDTO> customers = handleFilter(this.searchInput.Text.ToString());
+				this.loadCustomerListToDataGridView(customers);
+            }
+            catch
+            {
 
+            }
         }
 
         private void btnExport_Click(object sender, EventArgs e)
         {
-            List<CustomerDTO> customers = handleFilter(this.searchInput.Text.ToString());
-            DataTable dataTable = CustomExcel.Instance.ConvertListToDataTable(customers);
-            string[] headerList = new string[] { "Mã khách hàng","Tên khách hàng","SĐT","Giới tính","Năm sinh" };
-            CustomExcel.Instance.ExportFile(dataTable, "Quản lý khách hàng", "Cửa hàng bán sách", headerList);
+            try
+            {
+				List<CustomerDTO> customers = handleFilter(this.searchInput.Text.ToString());
+				DataTable dataTable = CustomExcel.Instance.ConvertListToDataTable(customers);
+				string[] headerList = new string[] { "Mã khách hàng", "Tên khách hàng", "SĐT", "Giới tính", "Năm sinh" };
+				CustomExcel.Instance.ExportFile(dataTable, "Quản lý khách hàng", "Cửa hàng bán sách", headerList);
+			}
+            catch
+            {
+
+            }
+           
         }
 
         private void cellCustomer_DblClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex < 0 || e.ColumnIndex < 0) 
+            try
             {
-                return;
-            }
-            using (CustomerModal modal = new CustomerModal("Sửa thông tin khách hàng"))
+				if (e.RowIndex < 0 || e.ColumnIndex < 0)
+				{
+					return;
+				}
+				using (CustomerModal modal = new CustomerModal("Sửa thông tin khách hàng"))
+				{
+					DataGridViewRow selectedRow = this.dgvCustomer.Rows[this.dgvCustomer.CurrentCell.RowIndex];
+
+					CustomerDTO customer = CustomerBUS.Instance.getById(selectedRow.Cells[1].Value.ToString());
+
+					if (customer == null)
+					{
+						MessageBox.Show("Đã có lỗi xảy ra vui lòng thử lại");
+						return;
+					}
+
+					modal.currentCustomer = customer;
+					modal.ShowDialog();
+
+					if (modal.isSubmitSuccess)
+					{
+						List<CustomerDTO> customers = CustomerBUS.Instance.getAllData();
+						this.loadCustomerListToDataGridView(customers);
+					}
+
+				}
+			}
+            catch
             {
-                DataGridViewRow selectedRow = this.dgvCustomer.Rows[this.dgvCustomer.CurrentCell.RowIndex];
-
-                CustomerDTO customer = CustomerBUS.Instance.getById(selectedRow.Cells[1].Value.ToString());
-
-                if (customer == null)
-                {
-                    MessageBox.Show("Đã có lỗi xảy ra vui lòng thử lại");
-                    return;
-                }
-
-                modal.currentCustomer = customer;
-                modal.ShowDialog();
-
-                if (modal.isSubmitSuccess)
-                {
-                    List<CustomerDTO> customers = CustomerBUS.Instance.getAllData();
-                    this.loadCustomerListToDataGridView(customers);
-                }
 
             }
+           
         }
 
 		private void genderCbx_SelectedIndexChanged(object sender, EventArgs e)
 		{
-            List<CustomerDTO> customers = handleFilter(this.searchInput.Text);
-            loadCustomerListToDataGridView(customers);
-		}
+            try
+            {
+                List<CustomerDTO> customerList = handleFilter(this.searchInput.Text.ToString());
+                this.loadCustomerListToDataGridView(customerList);
+            }
+            catch (Exception er)
+            {
 
-		private void dgvCustomer_CellContentClick(object sender, DataGridViewCellEventArgs e)
+                Console.WriteLine(er);
+            }
+        }
+
+        private void dgvCustomer_CellContentClick(object sender, DataGridViewCellEventArgs e)
 		{
 
 		}
-	}
+    }
 }

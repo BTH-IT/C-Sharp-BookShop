@@ -55,6 +55,7 @@ namespace QuanLyCuaHangBanTacGia.GUI.Manager
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.searchInput = new Guna.UI2.WinForms.Guna2TextBox();
+            this.genderCbx = new Guna.UI.WinForms.GunaComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAuthor)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -458,12 +459,37 @@ namespace QuanLyCuaHangBanTacGia.GUI.Manager
             this.searchInput.TabIndex = 31;
             this.searchInput.TextChanged += new System.EventHandler(this.searchInput_TextChanged);
             // 
+            // genderCbx
+            // 
+            this.genderCbx.BackColor = System.Drawing.Color.Transparent;
+            this.genderCbx.BaseColor = System.Drawing.Color.White;
+            this.genderCbx.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.genderCbx.BorderSize = 1;
+            this.genderCbx.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.genderCbx.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.genderCbx.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.genderCbx.FocusedColor = System.Drawing.Color.Empty;
+            this.genderCbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.genderCbx.ForeColor = System.Drawing.Color.Black;
+            this.genderCbx.FormattingEnabled = true;
+            this.genderCbx.ItemHeight = 30;
+            this.genderCbx.Location = new System.Drawing.Point(1200, 12);
+            this.genderCbx.Name = "genderCbx";
+            this.genderCbx.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.genderCbx.OnHoverItemForeColor = System.Drawing.Color.White;
+            this.genderCbx.Radius = 6;
+            this.genderCbx.Size = new System.Drawing.Size(185, 36);
+            this.genderCbx.TabIndex = 32;
+            this.genderCbx.TabStop = false;
+            this.genderCbx.SelectedIndexChanged += new System.EventHandler(this.genderCbx_SelectedIndexChanged);
+            // 
             // AuthorGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
             this.ClientSize = new System.Drawing.Size(1400, 864);
+            this.Controls.Add(this.genderCbx);
             this.Controls.Add(this.searchInput);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dgvAuthor);
@@ -480,6 +506,7 @@ namespace QuanLyCuaHangBanTacGia.GUI.Manager
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+
         }
 
         #endregion
@@ -503,6 +530,6 @@ namespace QuanLyCuaHangBanTacGia.GUI.Manager
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private Guna.UI2.WinForms.Guna2TextBox searchInput;
-		private Guna.UI.WinForms.GunaComboBox genderCbx;
-	}
+        private Guna.UI.WinForms.GunaComboBox genderCbx;
+    }
 }

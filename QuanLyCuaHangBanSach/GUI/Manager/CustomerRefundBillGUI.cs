@@ -50,17 +50,19 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 		}
 		private void loadDataToDGV(List<CustomerRefundBillDTO> customerRefundBills)
 		{
-			this.dgvImportRefund.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(45, 210, 192);
-			this.dgvImportRefund.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-
-			this.dgvImportRefund.Rows.Clear();
-			if (customerRefundBills != null)
+			try
 			{
-				foreach (var customerRefundBill in customerRefundBills)
+				this.dgvImportRefund.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(45, 210, 192);
+				this.dgvImportRefund.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+
+				this.dgvImportRefund.Rows.Clear();
+				if (customerRefundBills != null)
 				{
-					CustomerBillDTO customerBillDTO = CustomerBillBUS.Instance.getById(customerRefundBill.MaDonKhachHang.ToString());
-					dgvImportRefund.Rows.Add(new object[]
+					foreach (var customerRefundBill in customerRefundBills)
 					{
+						CustomerBillDTO customerBillDTO = CustomerBillBUS.Instance.getById(customerRefundBill.MaDonKhachHang.ToString());
+						dgvImportRefund.Rows.Add(new object[]
+						{
 							false,
 							customerRefundBill.MaPhieu,
 							customerRefundBill.MaDonKhachHang,
@@ -68,26 +70,43 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 							customerRefundBill.LiDo,
 							customerRefundBill.TongTien,
 							customerRefundBill.NgayLap
-					}) ;
+						});
+					}
 				}
 			}
+			catch { 
+			}
+			
 		}
 		private void CustomerRefundBillGUI_Load(object sender, EventArgs e)
 		{
-			renderCheckBoxDgv();
-			this.dateTimeFrom.Enabled = this.filterCkx.Checked;
-			this.dateTimeTo.Enabled = this.filterCkx.Checked;
-			List<CustomerRefundBillDTO> customerRefundBills = CustomerRefundBillBUS.Instance.getAllData();
-			loadDataToDGV(customerRefundBills);	
+			try
+			{
+				renderCheckBoxDgv();
+				this.dateTimeFrom.Enabled = this.filterCkx.Checked;
+				this.dateTimeTo.Enabled = this.filterCkx.Checked;
+				List<CustomerRefundBillDTO> customerRefundBills = CustomerRefundBillBUS.Instance.getAllData();
+				loadDataToDGV(customerRefundBills);
+			}
+			catch
+			{
+
+			}
 		}
 
 		private void filterCkx_CheckedChanged(object sender, EventArgs e)
 		{
-			this.dateTimeFrom.Enabled = this.filterCkx.Checked;
-			this.dateTimeTo.Enabled = this.filterCkx.Checked;
+			try
+			{
+				this.dateTimeFrom.Enabled = this.filterCkx.Checked;
+				this.dateTimeTo.Enabled = this.filterCkx.Checked;
 
-			var customerRefundBills = handleFilter(this.searchInput.Text);
-			loadDataToDGV(customerRefundBills);
+				var customerRefundBills = handleFilter(this.searchInput.Text);
+				loadDataToDGV(customerRefundBills);
+
+			}
+			catch { 
+			}	
 		}
 
 		private List<CustomerRefundBillDTO> handleFilter(string text)
@@ -120,97 +139,142 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
 		private void dateTimeFrom_ValueChanged(object sender, EventArgs e)
 		{
-			bool validateTimeTo = DateTime.Compare(dateTimeTo.Value, dateTimeFrom.Value) >= 0;
-			if (!validateTimeTo)
+			try
 			{
+				bool validateTimeTo = DateTime.Compare(dateTimeTo.Value, dateTimeFrom.Value) >= 0;
+				if (!validateTimeTo)
+				{
 
-				MessageBox.Show("Bạn không thể chọn ngày nhỏ hơn ngày " + dateTimeFrom.Value.GetDateTimeFormats()[0]);
-				dateTimeTo.Value = dateTimeFrom.Value;
-				return;
+					MessageBox.Show("Bạn không thể chọn ngày nhỏ hơn ngày " + dateTimeFrom.Value.GetDateTimeFormats()[0]);
+					dateTimeTo.Value = dateTimeFrom.Value;
+					return;
+				}
+				List<CustomerRefundBillDTO> customerRefundBills = this.handleFilter(this.searchInput.Text);
+				loadDataToDGV(customerRefundBills);
 			}
-			List<CustomerRefundBillDTO> customerRefundBills = this.handleFilter(this.searchInput.Text);
-			loadDataToDGV(customerRefundBills);
+			catch 
+			{
+			}	
+			
 		}
 
 		private void dateTimeTo_ValueChanged(object sender, EventArgs e)
 		{
-			bool validateFromTo = DateTime.Compare(dateTimeFrom.Value, dateTimeTo.Value) <= 0;
-			if (!validateFromTo)
+			try
+			{
+				bool validateFromTo = DateTime.Compare(dateTimeFrom.Value, dateTimeTo.Value) <= 0;
+				if (!validateFromTo)
+				{
+
+					MessageBox.Show("Bạn không thể chọn ngày lớn hơn ngày " + dateTimeTo.Value.GetDateTimeFormats()[0]);
+					dateTimeFrom.Value = dateTimeTo.Value;
+					return;
+				}
+				List<CustomerRefundBillDTO> customerRefundBills = this.handleFilter(this.searchInput.Text);
+				loadDataToDGV(customerRefundBills);
+			}
+			catch
 			{
 
-				MessageBox.Show("Bạn không thể chọn ngày lớn hơn ngày " + dateTimeTo.Value.GetDateTimeFormats()[0]);
-				dateTimeFrom.Value = dateTimeTo.Value;
-				return;
 			}
-			List<CustomerRefundBillDTO> customerRefundBills = this.handleFilter(this.searchInput.Text);
-			loadDataToDGV(customerRefundBills);
+			
 		}
 
 		private void btnRefresh_Click(object sender, EventArgs e)
 		{
-			this.searchInput.Clear();
-			this.filterCkx.Checked = false;
-			List<CustomerRefundBillDTO> customerRefundBills = CustomerRefundBillBUS.Instance.getAllData();
-			loadDataToDGV(customerRefundBills);
+			try
+			{
+				this.searchInput.Clear();
+				this.filterCkx.Checked = false;
+				List<CustomerRefundBillDTO> customerRefundBills = CustomerRefundBillBUS.Instance.getAllData();
+				loadDataToDGV(customerRefundBills);
+			}
+			catch
+			{
+
+			}
+			
 		}
 
 		private void addBtn_Click(object sender, EventArgs e)
 		{
-			using (var modal = new CustomerRefundBillModal())
+			try
 			{
-				modal.ShowDialog();
-				if (modal.isSubmitSuccess)
+				using (var modal = new CustomerRefundBillModal())
 				{
-					List<CustomerRefundBillDTO> customerRefundBills = this.handleFilter(this.searchInput.Text);
-					loadDataToDGV(customerRefundBills);
+					modal.ShowDialog();
+					if (modal.isSubmitSuccess)
+					{
+						List<CustomerRefundBillDTO> customerRefundBills = this.handleFilter(this.searchInput.Text);
+						loadDataToDGV(customerRefundBills);
+					}
 				}
 			}
+			catch
+			{
+
+			}
+			
 		}
 
 		private void detailsBtn_Click(object sender, EventArgs e)
 		{
-			if (this.dgvImportRefund.CurrentCell.RowIndex < 0)
+			try
 			{
-				MessageBox.Show("Hãy chọn phiếu trả muốn xem");
-				return;
+				if (this.dgvImportRefund.CurrentCell.RowIndex < 0)
+				{
+					MessageBox.Show("Hãy chọn phiếu trả muốn xem");
+					return;
+				}
+				using (var modal = new CustomerRefundBillModal("Xem chi tiết phiếu trả bán hàng"))
+				{
+					DataGridViewRow selectedRow = dgvImportRefund.Rows[dgvImportRefund.CurrentCell.RowIndex];
+					CustomerRefundBillDTO customerRefundBill = CustomerRefundBillBUS.Instance.getById(selectedRow.Cells[1].Value.ToString());
+					modal.customerRefundBill = customerRefundBill;
+					modal.ShowDialog();
+				}
 			}
-			using (var modal = new CustomerRefundBillModal("Xem chi tiết phiếu trả bán hàng"))
-			{
-				DataGridViewRow selectedRow = dgvImportRefund.Rows[dgvImportRefund.CurrentCell.RowIndex];
-				CustomerRefundBillDTO customerRefundBill = CustomerRefundBillBUS.Instance.getById(selectedRow.Cells[1].Value.ToString());
-				modal.customerRefundBill = customerRefundBill;
-				modal.ShowDialog();
-			}
+			catch 
+			{ }
+			
 		}
 
 		private void deleteBtn_Click(object sender, EventArgs e)
 		{
-			DialogResult deleteDialogResult = MessageBox.Show(
+			try
+			{
+				DialogResult deleteDialogResult = MessageBox.Show(
 					"Bạn có chắc chắn muốn xóa các phiếu đã chọn",
 					"Xác nhận",
 					MessageBoxButtons.YesNo,
 					MessageBoxIcon.None
 				);
-			if (deleteDialogResult == DialogResult.Yes)
-			{
-				foreach (DataGridViewRow row in dgvImportRefund.Rows)
+				if (deleteDialogResult == DialogResult.Yes)
 				{
-					if ((bool)row.Cells[0].Value)
+					foreach (DataGridViewRow row in dgvImportRefund.Rows)
 					{
-						try
+						if ((bool)row.Cells[0].Value)
 						{
-							CustomerRefundBillBUS.Instance.delete(row.Cells[1].Value.ToString());
-						}
-						catch (Exception ex)
-						{
-							Console.WriteLine(ex.Message);
+							try
+							{
+								CustomerRefundBillBUS.Instance.delete(row.Cells[1].Value.ToString());
+							}
+							catch (Exception ex)
+							{
+								Console.WriteLine(ex.Message);
+							}
 						}
 					}
+					List<CustomerRefundBillDTO> customerRefundBills = this.handleFilter(this.searchInput.Text);
+					loadDataToDGV(customerRefundBills);
+
 				}
-				List<CustomerRefundBillDTO> customerRefundBills = this.handleFilter(this.searchInput.Text);
-				loadDataToDGV(customerRefundBills);
+			}
+			catch
+			{
 
 			}
+			
 		}
 
 		private void closeBtn_Click(object sender, EventArgs e)

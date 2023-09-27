@@ -21,7 +21,7 @@ namespace QuanLyCuaHangBanSach.GUI.UserControls
 		{
 			InitializeComponent();
 		}
-		public void details(BookDTO book,int mode = 0)
+		public void details(BookDTO book, int stock, int mode = 0)
 		{
 			try
 			{
@@ -30,21 +30,22 @@ namespace QuanLyCuaHangBanSach.GUI.UserControls
 					Image image = Image.FromStream(ms);
 					BookImage.Image = image;
 				}
-			
-			}catch (Exception ex)
+
+			}
+			catch (Exception ex)
 			{
 				Console.WriteLine(ex.Message);
 			}
 			IdLb.Text = book.MaSach.ToString();
 			NameLb.Text = book.TenSach;
-			StockLb.Text = book.SoLuongConLai.ToString();
-			PriceLb.Text = string.Format("{0:N0} đ", mode == 0 ? book.GiaNhap : book.GiaBan );
+			StockLb.Text = stock.ToString();
+			PriceLb.Text = string.Format("{0:N0} đ", mode == 0 ? book.GiaNhap : book.GiaBan);
 			toolTip1.SetToolTip(NameLb, NameLb.Text);
 
 		}
 		public bool checkValidStock()
 		{
-			return false;
+			return GetBookAmount() <= Convert.ToInt32(StockLb.Text);
 		}
 		public int getId()
 		{
@@ -52,7 +53,7 @@ namespace QuanLyCuaHangBanSach.GUI.UserControls
 		}
 		public double getPrice()
 		{
-			return Convert.ToDouble(PriceLb.Text.Split(' ')[0]);	
+			return Convert.ToDouble(PriceLb.Text.Split(' ')[0]);
 		}
 		private void PlusBtn_Click(object sender, EventArgs e)
 		{
@@ -65,7 +66,15 @@ namespace QuanLyCuaHangBanSach.GUI.UserControls
 
 		private void ChangeAmount()
 		{
-			RefundBookControl.OnChangeRefundBookAmount();
+			if (checkValidStock())
+			{
+				RefundBookControl.OnChangeRefundBookAmount();
+			}
+			else
+			{
+				MessageBox.Show("Không thể trả quá số lượng sách đã đặt");
+				AmountTxt.Text = (int.Parse(StockLb.Text)).ToString();
+			}
 		}
 		public int GetBookAmount()
 		{
@@ -84,6 +93,47 @@ namespace QuanLyCuaHangBanSach.GUI.UserControls
 		private void DeleteBtn_Click(object sender, EventArgs e)
 		{
 			RefundBookControl.OnDeleteRefundBook(this.IdLb.Text);
+		}
+
+		private void AmountTxt_TextChanged(object sender, EventArgs e)
+		{
+
+		}
+		private void AmountTxt_KeyPress(object sender, KeyPressEventArgs e)
+		{
+			if (e.KeyChar == '\r')
+			{
+				NameLb.Focus();
+				return;
+			}
+
+			if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+			{
+				e.Handled = true; // Cancel the key press event
+			}
+		}
+
+		private void AmountTxt_MouseLeave(object sender, EventArgs e)
+		{
+			NameLb.Focus();
+		}
+
+		private void AmountTxt_Leave(object sender, EventArgs e)
+		{
+			AmountTxt_Validation();
+			ChangeAmount();
+		}
+		private void AmountTxt_Validation()
+		{
+			if (String.IsNullOrEmpty(AmountTxt.Text))
+			{
+				AmountTxt.Text = "1";
+			}
+			if (int.Parse(AmountTxt.Text) > stock)
+			{
+				AmountTxt.Text = stock.ToString();
+
+			}
 		}
 	}
 }

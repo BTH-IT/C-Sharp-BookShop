@@ -15,22 +15,24 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 {
     public partial class ViewImportBillModal : Form
     {
-        private ImportBillDTO supplierBill = null;
+        private ImportBillDTO importBill = null;
 
-        public ViewImportBillModal(ImportBillDTO supplierBill)
+        public ViewImportBillModal(ImportBillDTO importBill)
         {
             InitializeComponent();
             try
             {
-                this.supplierBill = supplierBill;
+                this.importBill = importBill;
 
                 this.loadSupplierCbx();
+                this.loadStaffCbx();
 
-                this.supplierCbx.SelectedValue = 0;
+                this.supplierCbx.SelectedValue = importBill.MaNhaCungCap;
+                this.staffCbx.SelectedValue = importBill.MaNhanVien;
 
                 this.bookList.Controls.Clear();
 
-                foreach (ImportBillDetailDTO importBillDetail in ImportBillBUS.Instance.getImportBillDetailList(supplierBill.MaDonNhapHang.ToString()))
+                foreach (ImportBillDetailDTO importBillDetail in ImportBillBUS.Instance.getImportBillDetailList(importBill.MaDonNhapHang.ToString()))
                 {
                     BookDTO book = BookBUS.Instance.getById(importBillDetail.MaSach.ToString());
 
@@ -39,7 +41,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                     this.bookList.Controls.Add(viewBook);
                 }
 
-                this.totalPriceTxt.Text = this.supplierBill.TongTien.ToString();
+                this.totalPriceTxt.Text = this.importBill.TongTien.ToString();
             }
             catch (Exception ex)
             {
@@ -60,6 +62,24 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 this.supplierCbx.DataSource = supplierList;
 
                 this.supplierCbx.SelectedIndex = 0;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+        }
+
+        private void loadStaffCbx()
+        {
+            try
+            {
+                List<StaffDTO> staffList = StaffBUS.Instance.getAllData();
+
+                this.staffCbx.ValueMember = "Ma";
+                this.staffCbx.DisplayMember = "Ten";
+                this.staffCbx.DataSource = staffList;
+
+                this.staffCbx.SelectedIndex = 0;
             }
             catch (Exception ex)
             {

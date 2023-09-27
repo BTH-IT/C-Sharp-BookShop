@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using QuanLyCuaHangBanSach.BUS;
 using QuanLyCuaHangBanSach.DTO;
+using QuanLyCuaHangBanSach.GUI.Importer;
 
 namespace QuanLyCuaHangBanSach.GUI
 {
@@ -53,24 +54,38 @@ namespace QuanLyCuaHangBanSach.GUI
             this.Top += SystemInformation.VirtualScreen.Height / 2 - this.Height / 2;
         }
 
-        private void sell_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void manage_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void import_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
+            this.Close();
+            LoginGUI.Instance.Close();
+        }
 
+        private void guna2PictureBox2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+
+            ManagerGUI managerGUI = new ManagerGUI(staff.Ma);
+
+            managerGUI.Show();
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            this.Close();
+
+            ImportGUI importGUI = new ImportGUI(staff.Ma);
+
+            importGUI.Show();
+        }
+
+        private void sell_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+
+            VendorGUI vendorGUI = new VendorGUI(staff.Ma);
+
+            vendorGUI.Show();
         }
     }
 }
