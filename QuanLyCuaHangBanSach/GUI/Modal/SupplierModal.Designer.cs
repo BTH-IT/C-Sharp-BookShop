@@ -203,7 +203,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             this.flowLayoutPanel1.Controls.Add(this.panel1);
             this.flowLayoutPanel1.Controls.Add(this.panel2);
             this.flowLayoutPanel1.Controls.Add(this.panel4);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(63, 50);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(68, 50);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(452, 448);
             this.flowLayoutPanel1.TabIndex = 4;
@@ -358,7 +358,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "SupplierModal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Thêm sách";
+            this.Text = "Thêm nhà cung cấp";
             this.Load += new System.EventHandler(this.SupplierModal_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
