@@ -463,15 +463,13 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             try
             {
                 int idx = this.bookList.FindIndex(
-                        book => book.MaSach == Convert.ToInt32(row.Cells[1].Value)
-                    );
+                    book => book.MaSach == Convert.ToInt32(row.Cells[1].Value)
+                );
 
                 if (idx >= 0)
                 {
                     this.bookList[idx].SoLuongConLai -= amount;
                 }
-
-                this.loadBookListToDataView(this.searchInput.Text.ToString());
             }
             catch (Exception ex)
             {
@@ -484,15 +482,13 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             try
             {
                 int idx = this.bookList.FindIndex(
-                        book => book.MaSach == Convert.ToInt32(row.Cells[1].Value)
-                    );
+                    book => book.MaSach == Convert.ToInt32(row.Cells[1].Value)
+                );
 
                 if (idx >= 0)
                 {
                     this.bookList[idx].SoLuongConLai += amount;
                 }
-
-                this.loadBookListToDataView(this.searchInput.Text.ToString());
             }
             catch (Exception ex)
             {
@@ -559,12 +555,11 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                             }
 
                             this.handleAddRemain(row, 1);
-
-                            this.loadAddBookBillListToDataView();
                         }
                     }
 
                     this.loadBookListToDataView((this.searchInput.Text.ToString()));
+                    this.loadAddBookBillListToDataView();
 
                     headerCheckbox.Checked = false;
                 }

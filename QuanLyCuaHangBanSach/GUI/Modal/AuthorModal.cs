@@ -1,13 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.IO;
 using System.Windows.Forms;
-using System.Windows.Markup;
-using Guna.UI2.WinForms.Suite;
 using QuanLyCuaHangBanSach.BUS;
 using QuanLyCuaHangBanSach.DTO;
-using static Guna.UI2.Native.WinApi;
 
 namespace QuanLyCuaHangBanSach.GUI.Modal
 {
@@ -35,16 +30,12 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             try
             {
                 this.authorName.ForeColor = Color.Black;
-
-                if (this.authorName.Text.Length > 0)
-                {
-                    CustomValidation.Instance.checkTextbox(
-                        this.authorName,
-                        this.authorNameMsg,
-                        this.nameLine,
-                        new string[] { "required" }
-                    );
-                }
+                CustomValidation.Instance.checkTextbox(
+                    this.authorName,
+                    this.authorNameMsg,
+                    this.nameLine,
+                    new string[] { "required" }
+                );
             }
             catch (Exception er)
             {
@@ -153,15 +144,12 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             {
                 this.birthYear.ForeColor = Color.Black;
 
-                if (this.birthYear.Text.Length > 0)
-                {
-                    CustomValidation.Instance.checkTextbox(
-                        this.birthYear,
-                        this.birthYearMsg,
-                        this.birthYearLine,
-                        new string[] { "required", "positive-number" }
-                    );
-                }
+                CustomValidation.Instance.checkTextbox(
+                    this.birthYear,
+                    this.birthYearMsg,
+                    this.birthYearLine,
+                    new string[] { "required", "positive-number" }
+                );
             }
             catch (Exception er)
             {

@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text.RegularExpressions;
 using System.Windows.Forms;
-using System.Windows.Markup;
 using QuanLyCuaHangBanSach.BUS;
 using QuanLyCuaHangBanSach.DTO;
-using QuanLyCuaHangBanSach.GUI.UserControls;
 
 namespace QuanLyCuaHangBanSach.GUI.Modal
 {
@@ -130,6 +127,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                     this.reasonLine,
                     new string[] { "required" }
             );
+
             bool isCheckTxt2 = CustomValidation.Instance.checkTextbox(
                     this.conditionTxt,
                     this.errorConditionMsg,
@@ -190,6 +188,53 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
         private void cancelBtn_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void reasonTxt_TextChanged(object sender, EventArgs e)
+        {
+            CustomValidation.Instance.checkTextbox(
+                this.reasonTxt,
+                this.errorReasonMsg,
+                this.reasonLine,
+                new string[] { "required" }
+            );
+        }
+
+        private void customerCbx_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CustomValidation.Instance.checkCombobox(
+                this.customerCbx,
+                this.errorCustomerMsg,
+                new string[] { "required" }
+            );
+        }
+
+        private void bookNeedChangeCbx_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CustomValidation.Instance.checkCombobox(
+                this.bookNeedChangeCbx,
+                this.errorBookNeedChangeMsg,
+                new string[] { "required" }
+            );
+        }
+
+        private void bookWantChangeCbx_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CustomValidation.Instance.checkCombobox(
+                this.bookWantChangeCbx,
+                this.errorBookWantChangeCbx4Msg,
+                new string[] { "required" }
+            );
+        }
+
+        private void conditionTxt_TextChanged(object sender, EventArgs e)
+        {
+            CustomValidation.Instance.checkTextbox(
+                this.conditionTxt,
+                this.errorConditionMsg,
+                this.conditionLine,
+                new string[] { "required" }
+            );
         }
     }
 }

@@ -278,6 +278,17 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                     this.errorSaleMsg,
                     new string[] { "required" }
                 );
+
+                if (this.customerBillDetailList.Count <= 0)
+                {
+                    this.errorBookListMsg.Text = "Danh sách sản phẩm không được để trống";
+                    return false;
+                }
+                else
+                {
+                    this.errorBookListMsg.Text = "";
+                }
+
                 return isCheckCbx1 && isCheckCbx2;
             }
             catch (Exception ex)

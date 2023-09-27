@@ -65,11 +65,11 @@
             this.nameLine = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.errorImageMsg = new System.Windows.Forms.Label();
-            this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.errorImageMsg = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.panel12.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -78,9 +78,9 @@
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
+            this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
-            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -199,11 +199,11 @@
             // errorPublishYearMsg
             // 
             this.errorPublishYearMsg.AutoSize = true;
-            this.errorPublishYearMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed SemiB", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.errorPublishYearMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.errorPublishYearMsg.ForeColor = System.Drawing.Color.Red;
             this.errorPublishYearMsg.Location = new System.Drawing.Point(163, 49);
             this.errorPublishYearMsg.Name = "errorPublishYearMsg";
-            this.errorPublishYearMsg.Size = new System.Drawing.Size(0, 30);
+            this.errorPublishYearMsg.Size = new System.Drawing.Size(0, 26);
             this.errorPublishYearMsg.TabIndex = 7;
             // 
             // publishYearLine
@@ -305,11 +305,11 @@
             // errorPublisherMsg
             // 
             this.errorPublisherMsg.AutoSize = true;
-            this.errorPublisherMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed SemiB", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.errorPublisherMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.errorPublisherMsg.ForeColor = System.Drawing.Color.Red;
             this.errorPublisherMsg.Location = new System.Drawing.Point(163, 52);
             this.errorPublisherMsg.Name = "errorPublisherMsg";
-            this.errorPublisherMsg.Size = new System.Drawing.Size(0, 30);
+            this.errorPublisherMsg.Size = new System.Drawing.Size(0, 26);
             this.errorPublisherMsg.TabIndex = 33;
             // 
             // label18
@@ -390,11 +390,11 @@
             // errorSellPriceMsg
             // 
             this.errorSellPriceMsg.AutoSize = true;
-            this.errorSellPriceMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed SemiB", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.errorSellPriceMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.errorSellPriceMsg.ForeColor = System.Drawing.Color.Red;
             this.errorSellPriceMsg.Location = new System.Drawing.Point(163, 49);
             this.errorSellPriceMsg.Name = "errorSellPriceMsg";
-            this.errorSellPriceMsg.Size = new System.Drawing.Size(0, 30);
+            this.errorSellPriceMsg.Size = new System.Drawing.Size(0, 26);
             this.errorSellPriceMsg.TabIndex = 7;
             // 
             // sellPriceLine
@@ -428,11 +428,11 @@
             // errorBookTypeMsg
             // 
             this.errorBookTypeMsg.AutoSize = true;
-            this.errorBookTypeMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed SemiB", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.errorBookTypeMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.errorBookTypeMsg.ForeColor = System.Drawing.Color.Red;
             this.errorBookTypeMsg.Location = new System.Drawing.Point(163, 52);
             this.errorBookTypeMsg.Name = "errorBookTypeMsg";
-            this.errorBookTypeMsg.Size = new System.Drawing.Size(0, 30);
+            this.errorBookTypeMsg.Size = new System.Drawing.Size(0, 26);
             this.errorBookTypeMsg.TabIndex = 30;
             // 
             // label16
@@ -483,11 +483,11 @@
             // errorAuthorMsg
             // 
             this.errorAuthorMsg.AutoSize = true;
-            this.errorAuthorMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed SemiB", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.errorAuthorMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.errorAuthorMsg.ForeColor = System.Drawing.Color.Red;
             this.errorAuthorMsg.Location = new System.Drawing.Point(163, 52);
             this.errorAuthorMsg.Name = "errorAuthorMsg";
-            this.errorAuthorMsg.Size = new System.Drawing.Size(0, 30);
+            this.errorAuthorMsg.Size = new System.Drawing.Size(0, 26);
             this.errorAuthorMsg.TabIndex = 27;
             // 
             // label13
@@ -568,11 +568,11 @@
             // errorBookNameMsg
             // 
             this.errorBookNameMsg.AutoSize = true;
-            this.errorBookNameMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed SemiB", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.errorBookNameMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.errorBookNameMsg.ForeColor = System.Drawing.Color.Red;
             this.errorBookNameMsg.Location = new System.Drawing.Point(163, 50);
             this.errorBookNameMsg.Name = "errorBookNameMsg";
-            this.errorBookNameMsg.Size = new System.Drawing.Size(0, 30);
+            this.errorBookNameMsg.Size = new System.Drawing.Size(0, 26);
             this.errorBookNameMsg.TabIndex = 7;
             // 
             // nameLine
@@ -610,6 +610,38 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(1200, 485);
             this.flowLayoutPanel1.TabIndex = 4;
             // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.errorImageMsg);
+            this.panel5.Controls.Add(this.label2);
+            this.panel5.Controls.Add(this.guna2PictureBox1);
+            this.panel5.Controls.Add(this.guna2PictureBox2);
+            this.panel5.Location = new System.Drawing.Point(603, 285);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(594, 193);
+            this.panel5.TabIndex = 34;
+            // 
+            // errorImageMsg
+            // 
+            this.errorImageMsg.AutoSize = true;
+            this.errorImageMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.errorImageMsg.ForeColor = System.Drawing.Color.Red;
+            this.errorImageMsg.Location = new System.Drawing.Point(165, 157);
+            this.errorImageMsg.Name = "errorImageMsg";
+            this.errorImageMsg.Size = new System.Drawing.Size(0, 26);
+            this.errorImageMsg.TabIndex = 11;
+            this.errorImageMsg.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label2.Location = new System.Drawing.Point(3, 7);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(151, 49);
+            this.label2.TabIndex = 34;
+            this.label2.Text = "Hình ảnh:";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // guna2PictureBox1
             // 
             this.guna2PictureBox1.BorderRadius = 16;
@@ -624,17 +656,6 @@
             this.guna2PictureBox1.TabStop = false;
             this.guna2PictureBox1.Click += new System.EventHandler(this.guna2PictureBox1_Click);
             // 
-            // errorImageMsg
-            // 
-            this.errorImageMsg.AutoSize = true;
-            this.errorImageMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed SemiB", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.errorImageMsg.ForeColor = System.Drawing.Color.Red;
-            this.errorImageMsg.Location = new System.Drawing.Point(165, 157);
-            this.errorImageMsg.Name = "errorImageMsg";
-            this.errorImageMsg.Size = new System.Drawing.Size(0, 30);
-            this.errorImageMsg.TabIndex = 11;
-            this.errorImageMsg.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // guna2PictureBox2
             // 
             this.guna2PictureBox2.BorderRadius = 16;
@@ -648,27 +669,6 @@
             this.guna2PictureBox2.TabIndex = 14;
             this.guna2PictureBox2.TabStop = false;
             this.guna2PictureBox2.Visible = false;
-            // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.errorImageMsg);
-            this.panel5.Controls.Add(this.label2);
-            this.panel5.Controls.Add(this.guna2PictureBox1);
-            this.panel5.Controls.Add(this.guna2PictureBox2);
-            this.panel5.Location = new System.Drawing.Point(603, 285);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(594, 193);
-            this.panel5.TabIndex = 34;
-            // 
-            // label2
-            // 
-            this.label2.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label2.Location = new System.Drawing.Point(3, 7);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(151, 49);
-            this.label2.TabIndex = 34;
-            this.label2.Text = "Hình ảnh:";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // BookModal
             // 
@@ -702,10 +702,10 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
