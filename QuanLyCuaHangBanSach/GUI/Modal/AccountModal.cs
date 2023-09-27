@@ -32,14 +32,22 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
         }
         private void loadStaffCbx()
         {
-            List<StaffDTO> staffs = StaffBUS.Instance.getAllData();
-            staffs.Insert(0, new StaffDTO(0,"Chọn nhân viên","","",0,0,0,0));
+            try
+            {
+				List<StaffDTO> staffs = StaffBUS.Instance.getAllData();
+				staffs.Insert(0, new StaffDTO(0, "Chọn nhân viên", "", "", 0, 0, 0));
 
-            this.staffComboBox.ValueMember = "Ma";
-            this.staffComboBox.DisplayMember = "Ten";
-            this.staffComboBox.DataSource = staffs;
+				this.staffComboBox.ValueMember = "Ma";
+				this.staffComboBox.DisplayMember = "Ten";
+				this.staffComboBox.DataSource = staffs;
 
-            this.staffComboBox.SelectedIndex = 0;
+				this.staffComboBox.SelectedIndex = 0;
+			}
+            catch
+            {
+
+            }
+          
         }
         private void AccountModal_Load(object sender, EventArgs e)
         {
@@ -48,21 +56,26 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
               (Screen.PrimaryScreen.Bounds.Size.Height / 2) - (this.Size.Height / 2)
             );
             this.loadStaffCbx();
-            if (account != null)
-            {
-                StaffDTO staff = StaffBUS.Instance.getById(account.MaNhanVien.ToString());
-                this.staffComboBox.SelectedValue = staff.Ma;
-                this.staffComboBox.SelectedItem = staff;
-                this.emailTxt.Text = account.Email;
-                this.passwordTxt.Text = account.MatKhau;
-                this.confirmPasswordTxt.Text = account.MatKhau;
-            }
+            try {
+				if (account != null)
+				{
+					StaffDTO staff = StaffBUS.Instance.getById(account.MaNhanVien.ToString());
+					this.staffComboBox.SelectedValue = staff.Ma;
+					this.staffComboBox.SelectedItem = staff;
+					this.emailTxt.Text = account.Email;
+					this.passwordTxt.Text = account.MatKhau;
+					this.confirmPasswordTxt.Text = account.MatKhau;
+				}
 
 
+			}
+			catch { }
+           
         }
         private bool validateSubmitForm()
         {
-            isStaffCbx = CustomValidation.Instance.checkCombobox(
+            try {
+              isStaffCbx = CustomValidation.Instance.checkCombobox(
                     this.staffComboBox,
                     this.staffLine,
                     new string[] {"required" }
@@ -76,10 +89,11 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 );
             bool isPasswordValid = CustomValidation.Instance.checkTextbox(
                     this.passwordTxt,
-                    this.errorEmailMsg,
+                    this.errorPasswordMsg,
                     this.errorEmailLine,
                     new string[] { "required"}
                 );
+            Console.WriteLine(isPasswordValid);
             bool isConfirmPasswordValid = CustomValidation.Instance.checkTextboxMatchWithOtherTextBox(
                     this.confirmPasswordTxt,
                     this.passwordTxt,
@@ -87,8 +101,16 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                     this.errorConfirmPasswordMsg,
                     this.confirmPasswordLine
                 );
+				return isStaffCbx && isPasswordValid && isPasswordValid && isConfirmPasswordValid && isEmailValid;
+			}
+            catch
+            {
+                return false;
 
-            return isStaffCbx && isPasswordValid && isPasswordValid && isConfirmPasswordValid && isEmailValid;
+            }
+          
+
+           
 
         }
 
@@ -99,29 +121,38 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
         private void submitBtn_Click(object sender, EventArgs e)
         {
-            if (this.validateSubmitForm())
-            {
-                string email = this.emailTxt.Text;
-                string password = this.passwordTxt.Text;
-                int maNhanVien = Convert.ToInt32(this.staffComboBox.SelectedValue);
+            try {
+				if (this.validateSubmitForm())
+				{
+					string email = this.emailTxt.Text;
+					string password = this.passwordTxt.Text;
+					int maNhanVien = Convert.ToInt32(this.staffComboBox.SelectedValue);
 
-                AccountDTO account = new AccountDTO (maNhanVien, email, password);
-                bool isSuccess = this.account != null ? AccountBUS.Instance.update(account) : AccountBUS.Instance.insert(account);
+					AccountDTO account = new AccountDTO(maNhanVien, email, password);
+					bool isSuccess = this.account != null ? AccountBUS.Instance.update(account) : AccountBUS.Instance.insert(account);
 
-                if (isSuccess)
-                {
-                    this.isSubmitSuccess = isSuccess;
-                    MessageBox.Show(this.account != null ? "Cập nhật thành công" : "Thêm dữ liệu thành công");
-                    this.Close();
-                    return;
-                }
+					if (isSuccess)
+					{
+						this.isSubmitSuccess = isSuccess;
+						MessageBox.Show(this.account != null ? "Cập nhật thành công" : "Thêm dữ liệu thành công");
+						this.Close();
+						return;
+					}
 
-            }    
+				}
+			}
+            catch { }
+              
         }
 
         private void staffComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
-    }
+
+		private void title_Click(object sender, EventArgs e)
+		{
+
+		}
+	}
 }

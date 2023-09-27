@@ -7,6 +7,10 @@ namespace QuanLyCuaHangBanSach.DTO
     {
         public int MaNhaCungCap { get; set; }
 
+        public ImportChangeBillDTO()
+        {
+        }
+
         public ImportChangeBillDTO(int maPhieu, string tinhTrangSanPham, string liDo,
             int maNhaCungCap, DateTime ngayLap, int maSachCanDoi, int maSachMuonDoi, int maNhanVien)
             : base(maPhieu, tinhTrangSanPham, liDo, ngayLap, maSachCanDoi, maSachMuonDoi, maNhanVien)
@@ -16,7 +20,7 @@ namespace QuanLyCuaHangBanSach.DTO
 
         public ImportChangeBillDTO(DataRow row)
         {
-            this.MaPhieu = (int)row["maPhieuNhapHang"];
+            this.MaPhieu = (int)row["maPhieuDoiNhapHang"];
             this.MaNhaCungCap = (int)row["maNhaCungCap"];
             this.SachCanDoi = (int)row["maSachCanDoi"];
             this.SachMuonDoi = (int)row["maSachMuonDoi"];
@@ -25,5 +29,7 @@ namespace QuanLyCuaHangBanSach.DTO
             this.LiDo = row["liDo"].ToString();
             this.NgayLap = (DateTime)row["ngayLap"];
         }
+
+        
     }
 }

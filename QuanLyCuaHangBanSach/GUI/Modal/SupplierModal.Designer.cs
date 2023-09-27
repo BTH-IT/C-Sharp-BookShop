@@ -78,7 +78,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             this.cancelBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cancelBtn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.cancelBtn.FocusedColor = System.Drawing.Color.Empty;
-            this.cancelBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cancelBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cancelBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.cancelBtn.Image = null;
             this.cancelBtn.ImageSize = new System.Drawing.Size(20, 20);
@@ -109,7 +109,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             this.submitBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.submitBtn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.submitBtn.FocusedColor = System.Drawing.Color.Empty;
-            this.submitBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.submitBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.submitBtn.ForeColor = System.Drawing.Color.White;
             this.submitBtn.Image = null;
             this.submitBtn.ImageSize = new System.Drawing.Size(20, 20);
@@ -203,7 +203,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             this.flowLayoutPanel1.Controls.Add(this.panel1);
             this.flowLayoutPanel1.Controls.Add(this.panel2);
             this.flowLayoutPanel1.Controls.Add(this.panel4);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(63, 50);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(68, 50);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(452, 448);
             this.flowLayoutPanel1.TabIndex = 4;
@@ -358,7 +358,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "SupplierModal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Thêm sách";
+            this.Text = "Thêm nhà cung cấp";
             this.Load += new System.EventHandler(this.SupplierModal_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

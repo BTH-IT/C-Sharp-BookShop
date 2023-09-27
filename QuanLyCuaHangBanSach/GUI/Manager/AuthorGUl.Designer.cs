@@ -30,11 +30,11 @@ namespace QuanLyCuaHangBanTacGia.GUI.Manager
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AuthorGUI));
             this.line1 = new System.Windows.Forms.Panel();
             this.dgvAuthor = new Guna.UI.WinForms.GunaDataGridView();
@@ -55,6 +55,7 @@ namespace QuanLyCuaHangBanTacGia.GUI.Manager
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.searchInput = new Guna.UI2.WinForms.Guna2TextBox();
+            this.genderCbx = new Guna.UI.WinForms.GunaComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAuthor)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -73,21 +74,21 @@ namespace QuanLyCuaHangBanTacGia.GUI.Manager
             this.dgvAuthor.AllowUserToAddRows = false;
             this.dgvAuthor.AllowUserToDeleteRows = false;
             this.dgvAuthor.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dgvAuthor.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            this.dgvAuthor.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvAuthor.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvAuthor.BackgroundColor = System.Drawing.Color.White;
             this.dgvAuthor.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvAuthor.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvAuthor.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvAuthor.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvAuthor.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvAuthor.ColumnHeadersHeight = 50;
             this.dgvAuthor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvAuthor.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -96,39 +97,39 @@ namespace QuanLyCuaHangBanTacGia.GUI.Manager
             this.Column2,
             this.Column3,
             this.Column9});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvAuthor.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvAuthor.DefaultCellStyle = dataGridViewCellStyle8;
             this.dgvAuthor.EnableHeadersVisualStyles = false;
             this.dgvAuthor.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvAuthor.Location = new System.Drawing.Point(12, 69);
             this.dgvAuthor.Name = "dgvAuthor";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvAuthor.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvAuthor.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvAuthor.RowHeadersVisible = false;
             this.dgvAuthor.RowHeadersWidth = 51;
             this.dgvAuthor.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvAuthor.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvAuthor.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvAuthor.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dgvAuthor.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvAuthor.RowTemplate.Height = 75;
             this.dgvAuthor.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvAuthor.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvAuthor.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvAuthor.Size = new System.Drawing.Size(1376, 717);
+            this.dgvAuthor.Size = new System.Drawing.Size(1376, 756);
             this.dgvAuthor.TabIndex = 23;
             this.dgvAuthor.TabStop = false;
             this.dgvAuthor.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna;
@@ -153,7 +154,6 @@ namespace QuanLyCuaHangBanTacGia.GUI.Manager
             this.dgvAuthor.ThemeStyle.RowsStyle.Height = 75;
             this.dgvAuthor.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvAuthor.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.dgvAuthor.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAuthor_CellContentClick);
             this.dgvAuthor.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAuthor_CellDoubleClick);
             // 
             // Column11
@@ -210,9 +210,9 @@ namespace QuanLyCuaHangBanTacGia.GUI.Manager
             this.panel1.Controls.Add(this.deleteBtn);
             this.panel1.Controls.Add(this.editBtn);
             this.panel1.Controls.Add(this.addBtn);
-            this.panel1.Location = new System.Drawing.Point(12, 792);
+            this.panel1.Location = new System.Drawing.Point(13, 832);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1376, 54);
+            this.panel1.Size = new System.Drawing.Size(1372, 54);
             this.panel1.TabIndex = 24;
             // 
             // exportBtn
@@ -229,7 +229,7 @@ namespace QuanLyCuaHangBanTacGia.GUI.Manager
             this.exportBtn.CheckedLineColor = System.Drawing.Color.DimGray;
             this.exportBtn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.exportBtn.FocusedColor = System.Drawing.Color.Empty;
-            this.exportBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.exportBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.exportBtn.ForeColor = System.Drawing.Color.White;
             this.exportBtn.Image = ((System.Drawing.Image)(resources.GetObject("exportBtn.Image")));
             this.exportBtn.ImageSize = new System.Drawing.Size(20, 20);
@@ -262,7 +262,7 @@ namespace QuanLyCuaHangBanTacGia.GUI.Manager
             this.refreshBtn.CheckedLineColor = System.Drawing.Color.DimGray;
             this.refreshBtn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.refreshBtn.FocusedColor = System.Drawing.Color.Empty;
-            this.refreshBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.refreshBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.refreshBtn.ForeColor = System.Drawing.Color.White;
             this.refreshBtn.Image = ((System.Drawing.Image)(resources.GetObject("refreshBtn.Image")));
             this.refreshBtn.ImageSize = new System.Drawing.Size(20, 20);
@@ -295,7 +295,7 @@ namespace QuanLyCuaHangBanTacGia.GUI.Manager
             this.deleteBtn.CheckedLineColor = System.Drawing.Color.DimGray;
             this.deleteBtn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.deleteBtn.FocusedColor = System.Drawing.Color.Empty;
-            this.deleteBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deleteBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.deleteBtn.ForeColor = System.Drawing.Color.White;
             this.deleteBtn.Image = ((System.Drawing.Image)(resources.GetObject("deleteBtn.Image")));
             this.deleteBtn.ImageSize = new System.Drawing.Size(20, 20);
@@ -328,7 +328,7 @@ namespace QuanLyCuaHangBanTacGia.GUI.Manager
             this.editBtn.CheckedLineColor = System.Drawing.Color.DimGray;
             this.editBtn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.editBtn.FocusedColor = System.Drawing.Color.Empty;
-            this.editBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.editBtn.ForeColor = System.Drawing.Color.White;
             this.editBtn.Image = ((System.Drawing.Image)(resources.GetObject("editBtn.Image")));
             this.editBtn.ImageSize = new System.Drawing.Size(20, 20);
@@ -361,7 +361,7 @@ namespace QuanLyCuaHangBanTacGia.GUI.Manager
             this.addBtn.CheckedLineColor = System.Drawing.Color.DimGray;
             this.addBtn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.addBtn.FocusedColor = System.Drawing.Color.Empty;
-            this.addBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addBtn.ForeColor = System.Drawing.Color.White;
             this.addBtn.Image = ((System.Drawing.Image)(resources.GetObject("addBtn.Image")));
             this.addBtn.ImageSize = new System.Drawing.Size(20, 20);
@@ -459,12 +459,37 @@ namespace QuanLyCuaHangBanTacGia.GUI.Manager
             this.searchInput.TabIndex = 31;
             this.searchInput.TextChanged += new System.EventHandler(this.searchInput_TextChanged);
             // 
+            // genderCbx
+            // 
+            this.genderCbx.BackColor = System.Drawing.Color.Transparent;
+            this.genderCbx.BaseColor = System.Drawing.Color.White;
+            this.genderCbx.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.genderCbx.BorderSize = 1;
+            this.genderCbx.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.genderCbx.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.genderCbx.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.genderCbx.FocusedColor = System.Drawing.Color.Empty;
+            this.genderCbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.genderCbx.ForeColor = System.Drawing.Color.Black;
+            this.genderCbx.FormattingEnabled = true;
+            this.genderCbx.ItemHeight = 30;
+            this.genderCbx.Location = new System.Drawing.Point(1200, 12);
+            this.genderCbx.Name = "genderCbx";
+            this.genderCbx.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.genderCbx.OnHoverItemForeColor = System.Drawing.Color.White;
+            this.genderCbx.Radius = 6;
+            this.genderCbx.Size = new System.Drawing.Size(185, 36);
+            this.genderCbx.TabIndex = 32;
+            this.genderCbx.TabStop = false;
+            this.genderCbx.SelectedIndexChanged += new System.EventHandler(this.genderCbx_SelectedIndexChanged);
+            // 
             // AuthorGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
             this.ClientSize = new System.Drawing.Size(1400, 864);
+            this.Controls.Add(this.genderCbx);
             this.Controls.Add(this.searchInput);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dgvAuthor);
@@ -505,5 +530,6 @@ namespace QuanLyCuaHangBanTacGia.GUI.Manager
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private Guna.UI2.WinForms.Guna2TextBox searchInput;
+        private Guna.UI.WinForms.GunaComboBox genderCbx;
     }
 }

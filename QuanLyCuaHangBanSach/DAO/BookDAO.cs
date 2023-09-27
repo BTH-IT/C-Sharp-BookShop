@@ -50,7 +50,7 @@ namespace QuanLyCuaHangBanSach.DAO
             return getBookRemain(dataTable);
         }
 
-        public DataTable getAllDataFiltered(int SortMode, string Type, string Author, string Publisher)
+        public DataTable getAllDataFiltered(int SortMode, string Type, string Author, string Publisher, bool Import)
         {
             string sql = $@"SELECT * FROM sach WHERE hienThi = 1";
             if (!Type.Equals("0"))
@@ -71,10 +71,24 @@ namespace QuanLyCuaHangBanSach.DAO
                     sql += ";";
                     break;
                 case 0:
-                    sql += " ORDER BY giaBan ASC;";
+                    if (Import) // If filtering in Import page
+                    {
+                        sql += " ORDER BY giaNhap ASC;";
+                    }
+                    else
+                    {
+                        sql += " ORDER BY giaBan ASC;";
+                    }
                     break;
                 case 1:
-                    sql += " ORDER BY giaBan DESC;";
+                    if (Import) // If filtering in Import page
+                    {
+                        sql += " ORDER BY giaNhap DESC;";
+                    }
+                    else
+                    {
+                        sql += " ORDER BY giaBan DESC;";
+                    }
                     break;
                 case 2:
                     sql += " ORDER BY tenSach ASC;";

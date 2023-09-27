@@ -45,11 +45,13 @@
             this.gioi_tinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nam_sinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.so_dien_thoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.line1 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.deleteBtn = new Guna.UI.WinForms.GunaAdvenceButton();
             this.editBtn = new Guna.UI.WinForms.GunaAdvenceButton();
             this.addBtn = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.genderCbx = new Guna.UI.WinForms.GunaComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomer)).BeginInit();
             this.panel1.SuspendLayout();
@@ -189,7 +191,8 @@
             this.ten_khach_hang,
             this.gioi_tinh,
             this.nam_sinh,
-            this.so_dien_thoai});
+            this.so_dien_thoai,
+            this.Column1});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
@@ -200,7 +203,7 @@
             this.dgvCustomer.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvCustomer.EnableHeadersVisualStyles = false;
             this.dgvCustomer.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvCustomer.Location = new System.Drawing.Point(12, 69);
+            this.dgvCustomer.Location = new System.Drawing.Point(12, 57);
             this.dgvCustomer.Name = "dgvCustomer";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
@@ -222,7 +225,7 @@
             this.dgvCustomer.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvCustomer.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvCustomer.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCustomer.Size = new System.Drawing.Size(1376, 757);
+            this.dgvCustomer.Size = new System.Drawing.Size(1376, 769);
             this.dgvCustomer.TabIndex = 34;
             this.dgvCustomer.TabStop = false;
             this.dgvCustomer.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna;
@@ -247,6 +250,7 @@
             this.dgvCustomer.ThemeStyle.RowsStyle.Height = 75;
             this.dgvCustomer.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvCustomer.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgvCustomer.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCustomer_CellContentClick);
             this.dgvCustomer.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.cellCustomer_DblClick);
             // 
             // Column11
@@ -293,6 +297,14 @@
             this.so_dien_thoai.MinimumWidth = 6;
             this.so_dien_thoai.Name = "so_dien_thoai";
             this.so_dien_thoai.ReadOnly = true;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Điểm";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.ToolTipText = "Điểm";
             // 
             // line1
             // 
@@ -414,11 +426,36 @@
             this.addBtn.Text = "Thêm mới";
             this.addBtn.Click += new System.EventHandler(this.btnAdd_Click);
             // 
+            // genderCbx
+            // 
+            this.genderCbx.BackColor = System.Drawing.Color.Transparent;
+            this.genderCbx.BaseColor = System.Drawing.Color.White;
+            this.genderCbx.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.genderCbx.BorderSize = 1;
+            this.genderCbx.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.genderCbx.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.genderCbx.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.genderCbx.FocusedColor = System.Drawing.Color.Empty;
+            this.genderCbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.genderCbx.ForeColor = System.Drawing.Color.Black;
+            this.genderCbx.FormattingEnabled = true;
+            this.genderCbx.ItemHeight = 30;
+            this.genderCbx.Location = new System.Drawing.Point(1222, 12);
+            this.genderCbx.Name = "genderCbx";
+            this.genderCbx.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.genderCbx.OnHoverItemForeColor = System.Drawing.Color.White;
+            this.genderCbx.Radius = 6;
+            this.genderCbx.Size = new System.Drawing.Size(166, 36);
+            this.genderCbx.TabIndex = 41;
+            this.genderCbx.TabStop = false;
+            this.genderCbx.SelectedIndexChanged += new System.EventHandler(this.genderCbx_SelectedIndexChanged);
+            // 
             // CustomerManagerGUI
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
-            this.ClientSize = new System.Drawing.Size(1400, 845);
+            this.ClientSize = new System.Drawing.Size(1400, 890);
+            this.Controls.Add(this.genderCbx);
             this.Controls.Add(this.searchInput);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dgvCustomer);
@@ -455,5 +492,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn gioi_tinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn nam_sinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn so_dien_thoai;
-    }
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+		private Guna.UI.WinForms.GunaComboBox genderCbx;
+	}
 }

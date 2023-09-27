@@ -6,7 +6,9 @@ namespace QuanLyCuaHangBanSach.DTO
     public class CustomerChangeBillDTO : ChangeBillDTO
     {
         public int MaKhachHang { get; set; }
-
+        public CustomerChangeBillDTO()
+        {
+        }
         public CustomerChangeBillDTO(int maPhieu, string tinhTrangSanPham, string liDo,
             int maKhachHang, DateTime ngayLap, int maSachCanDoi, int maSachMuonDoi, int maNhanVien)
             :base(maPhieu, tinhTrangSanPham, liDo, ngayLap, maSachCanDoi, maSachMuonDoi, maNhanVien)
@@ -15,10 +17,9 @@ namespace QuanLyCuaHangBanSach.DTO
         }
 
         public CustomerChangeBillDTO(DataRow row){
-            this.MaPhieu = (int)row["maPhieuBanHang"];
+            this.MaPhieu = (int)row["maPhieuDoiBanHang"];
             this.MaKhachHang = (int)row["maKhachHang"];
             this.SachCanDoi = (int)row["maSachCanDoi"];
-            this.SachMuonDoi = (int)row["maSachMuonDoi"];
             this.SachMuonDoi = (int)row["maSachMuonDoi"];
             this.MaNhanVien = (int)row["maNhanVien"];
             this.TinhTrangSanPham = row["tinhTrangSanPham"].ToString();
