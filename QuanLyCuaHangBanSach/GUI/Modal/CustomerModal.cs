@@ -92,28 +92,32 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             try
             {
 				bool isCustomerNameValid = CustomValidation.Instance.checkTextbox(
-									this.customerNameTxtBox,
-									this.errorCustomerNameMsg,
-									this.customerNameLine,
-									new string[] { "required" }
-								);
+					this.customerNameTxtBox,
+					this.errorCustomerNameMsg,
+					this.customerNameLine,
+					new string[] { "required" }
+				);
+
 				bool isBirthYearValid = CustomValidation.Instance.checkTextbox(
-					   this.birthYearTxtBox,
-					   this.errorBirthYearMsg,
-					   this.birthYearLine,
-					   new string[] { "required", "positive-number" }
-					);
+					this.birthYearTxtBox,
+					this.errorBirthYearMsg,
+					this.birthYearLine,
+					new string[] { "required", "positive-number" }
+				);
+
 				bool isPhoneNumberValid = CustomValidation.Instance.checkTextbox(
-					   this.phoneNumberTxtBox,
-					   this.errorPhoneNumberMsg,
-					   this.phoneNumberLine,
-					   new string[] { "required", "phone-number" }
-					);
+					this.phoneNumberTxtBox,
+					this.errorPhoneNumberMsg,
+					this.phoneNumberLine,
+					new string[] { "required", "phone-number" }
+				);
+
 				bool isGenderValid = CustomValidation.Instance.checkCombobox(
-						this.genderCbx,
-						this.errorGenderMsg,
-						new string[] { "required" }
-					);
+					this.genderCbx,
+					this.errorGenderMsg,
+					new string[] { "required" }
+				);
+
 				return isBirthYearValid && isCustomerNameValid && isGenderValid && isPhoneNumberValid;
 			}
             catch
@@ -121,6 +125,45 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 				return false;
             }
             
+        }
+
+        private void customerNameTxtBox_TextChanged(object sender, EventArgs e)
+        {
+            CustomValidation.Instance.checkTextbox(
+                    this.customerNameTxtBox,
+                    this.errorCustomerNameMsg,
+                    this.customerNameLine,
+                    new string[] { "required" }
+                );
+        }
+
+        private void birthYearTxtBox_TextChanged(object sender, EventArgs e)
+        {
+            CustomValidation.Instance.checkTextbox(
+                    this.birthYearTxtBox,
+                    this.errorBirthYearMsg,
+                    this.birthYearLine,
+                    new string[] { "required", "positive-number" }
+                );
+        }
+
+        private void phoneNumberTxtBox_TextChanged(object sender, EventArgs e)
+        {
+            CustomValidation.Instance.checkTextbox(
+                    this.phoneNumberTxtBox,
+                    this.errorPhoneNumberMsg,
+                    this.phoneNumberLine,
+                    new string[] { "required", "phone-number" }
+                );
+        }
+
+        private void genderCbx_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CustomValidation.Instance.checkCombobox(
+                    this.genderCbx,
+                    this.errorGenderMsg,
+                    new string[] { "required" }
+                );
         }
     }
 }

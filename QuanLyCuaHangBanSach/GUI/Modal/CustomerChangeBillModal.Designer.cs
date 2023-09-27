@@ -42,6 +42,10 @@
             this.errorReasonMsg = new System.Windows.Forms.Label();
             this.reasonLine = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.errorBookWantChangeCbx4Msg = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.bookWantChangeCbx = new Guna.UI.WinForms.GunaComboBox();
             this.panel10 = new System.Windows.Forms.Panel();
             this.conditionTxt = new Guna.UI2.WinForms.Guna2TextBox();
             this.errorConditionMsg = new System.Windows.Forms.Label();
@@ -50,16 +54,12 @@
             this.submitBtn = new Guna.UI.WinForms.GunaButton();
             this.cancelBtn = new Guna.UI.WinForms.GunaButton();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.errorBookWantChangeCbx4Msg = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.bookWantChangeCbx = new Guna.UI.WinForms.GunaComboBox();
             this.panel2.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
-            this.panel10.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel10.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -75,11 +75,11 @@
             // errorCustomerMsg
             // 
             this.errorCustomerMsg.AutoSize = true;
-            this.errorCustomerMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed SemiB", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.errorCustomerMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.errorCustomerMsg.ForeColor = System.Drawing.Color.Red;
-            this.errorCustomerMsg.Location = new System.Drawing.Point(165, 52);
+            this.errorCustomerMsg.Location = new System.Drawing.Point(165, 54);
             this.errorCustomerMsg.Name = "errorCustomerMsg";
-            this.errorCustomerMsg.Size = new System.Drawing.Size(0, 30);
+            this.errorCustomerMsg.Size = new System.Drawing.Size(0, 26);
             this.errorCustomerMsg.TabIndex = 27;
             // 
             // label13
@@ -114,6 +114,7 @@
             this.customerCbx.Size = new System.Drawing.Size(408, 36);
             this.customerCbx.TabIndex = 26;
             this.customerCbx.TabStop = false;
+            this.customerCbx.SelectedIndexChanged += new System.EventHandler(this.customerCbx_SelectedIndexChanged);
             // 
             // flowLayoutPanel1
             // 
@@ -142,11 +143,11 @@
             // errorBookNeedChangeMsg
             // 
             this.errorBookNeedChangeMsg.AutoSize = true;
-            this.errorBookNeedChangeMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed SemiB", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.errorBookNeedChangeMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.errorBookNeedChangeMsg.ForeColor = System.Drawing.Color.Red;
-            this.errorBookNeedChangeMsg.Location = new System.Drawing.Point(166, 52);
+            this.errorBookNeedChangeMsg.Location = new System.Drawing.Point(166, 54);
             this.errorBookNeedChangeMsg.Name = "errorBookNeedChangeMsg";
-            this.errorBookNeedChangeMsg.Size = new System.Drawing.Size(0, 30);
+            this.errorBookNeedChangeMsg.Size = new System.Drawing.Size(0, 26);
             this.errorBookNeedChangeMsg.TabIndex = 27;
             // 
             // label3
@@ -181,6 +182,7 @@
             this.bookNeedChangeCbx.Size = new System.Drawing.Size(408, 36);
             this.bookNeedChangeCbx.TabIndex = 26;
             this.bookNeedChangeCbx.TabStop = false;
+            this.bookNeedChangeCbx.SelectedIndexChanged += new System.EventHandler(this.bookNeedChangeCbx_SelectedIndexChanged);
             // 
             // panel4
             // 
@@ -207,7 +209,7 @@
             this.reasonTxt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.reasonTxt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.reasonTxt.FocusedState.Parent = this.reasonTxt;
-            this.reasonTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reasonTxt.Font = new System.Drawing.Font("#9Slide03 Cabin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.reasonTxt.ForeColor = System.Drawing.Color.Black;
             this.reasonTxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.reasonTxt.HoverState.Parent = this.reasonTxt;
@@ -220,15 +222,16 @@
             this.reasonTxt.ShadowDecoration.Parent = this.reasonTxt;
             this.reasonTxt.Size = new System.Drawing.Size(425, 36);
             this.reasonTxt.TabIndex = 32;
+            this.reasonTxt.TextChanged += new System.EventHandler(this.reasonTxt_TextChanged);
             // 
             // errorReasonMsg
             // 
             this.errorReasonMsg.AutoSize = true;
-            this.errorReasonMsg.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.errorReasonMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.errorReasonMsg.ForeColor = System.Drawing.Color.Red;
             this.errorReasonMsg.Location = new System.Drawing.Point(163, 50);
             this.errorReasonMsg.Name = "errorReasonMsg";
-            this.errorReasonMsg.Size = new System.Drawing.Size(0, 25);
+            this.errorReasonMsg.Size = new System.Drawing.Size(0, 26);
             this.errorReasonMsg.TabIndex = 7;
             // 
             // reasonLine
@@ -248,6 +251,60 @@
             this.label6.TabIndex = 5;
             this.label6.Text = "Lý do:";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.errorBookWantChangeCbx4Msg);
+            this.panel3.Controls.Add(this.label5);
+            this.panel3.Controls.Add(this.bookWantChangeCbx);
+            this.panel3.Location = new System.Drawing.Point(603, 97);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(594, 88);
+            this.panel3.TabIndex = 7;
+            // 
+            // errorBookWantChangeCbx4Msg
+            // 
+            this.errorBookWantChangeCbx4Msg.AutoSize = true;
+            this.errorBookWantChangeCbx4Msg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.errorBookWantChangeCbx4Msg.ForeColor = System.Drawing.Color.Red;
+            this.errorBookWantChangeCbx4Msg.Location = new System.Drawing.Point(165, 54);
+            this.errorBookWantChangeCbx4Msg.Name = "errorBookWantChangeCbx4Msg";
+            this.errorBookWantChangeCbx4Msg.Size = new System.Drawing.Size(0, 26);
+            this.errorBookWantChangeCbx4Msg.TabIndex = 33;
+            // 
+            // label5
+            // 
+            this.label5.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label5.Location = new System.Drawing.Point(3, 3);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(154, 49);
+            this.label5.TabIndex = 31;
+            this.label5.Text = "Mã sách muốn đổi:";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // bookWantChangeCbx
+            // 
+            this.bookWantChangeCbx.BackColor = System.Drawing.Color.Transparent;
+            this.bookWantChangeCbx.BaseColor = System.Drawing.Color.White;
+            this.bookWantChangeCbx.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.bookWantChangeCbx.BorderSize = 1;
+            this.bookWantChangeCbx.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bookWantChangeCbx.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.bookWantChangeCbx.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.bookWantChangeCbx.FocusedColor = System.Drawing.Color.Empty;
+            this.bookWantChangeCbx.Font = new System.Drawing.Font("#9Slide03 Cabin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bookWantChangeCbx.ForeColor = System.Drawing.Color.Black;
+            this.bookWantChangeCbx.FormattingEnabled = true;
+            this.bookWantChangeCbx.ItemHeight = 30;
+            this.bookWantChangeCbx.Location = new System.Drawing.Point(160, 12);
+            this.bookWantChangeCbx.Name = "bookWantChangeCbx";
+            this.bookWantChangeCbx.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.bookWantChangeCbx.OnHoverItemForeColor = System.Drawing.Color.White;
+            this.bookWantChangeCbx.Radius = 6;
+            this.bookWantChangeCbx.Size = new System.Drawing.Size(408, 36);
+            this.bookWantChangeCbx.TabIndex = 32;
+            this.bookWantChangeCbx.TabStop = false;
+            this.bookWantChangeCbx.SelectedIndexChanged += new System.EventHandler(this.bookWantChangeCbx_SelectedIndexChanged);
             // 
             // panel10
             // 
@@ -274,7 +331,7 @@
             this.conditionTxt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.conditionTxt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.conditionTxt.FocusedState.Parent = this.conditionTxt;
-            this.conditionTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.conditionTxt.Font = new System.Drawing.Font("#9Slide03 Cabin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.conditionTxt.ForeColor = System.Drawing.Color.Black;
             this.conditionTxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.conditionTxt.HoverState.Parent = this.conditionTxt;
@@ -287,15 +344,16 @@
             this.conditionTxt.ShadowDecoration.Parent = this.conditionTxt;
             this.conditionTxt.Size = new System.Drawing.Size(986, 36);
             this.conditionTxt.TabIndex = 33;
+            this.conditionTxt.TextChanged += new System.EventHandler(this.conditionTxt_TextChanged);
             // 
             // errorConditionMsg
             // 
             this.errorConditionMsg.AutoSize = true;
-            this.errorConditionMsg.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.errorConditionMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.errorConditionMsg.ForeColor = System.Drawing.Color.Red;
-            this.errorConditionMsg.Location = new System.Drawing.Point(201, 53);
+            this.errorConditionMsg.Location = new System.Drawing.Point(201, 54);
             this.errorConditionMsg.Name = "errorConditionMsg";
-            this.errorConditionMsg.Size = new System.Drawing.Size(0, 25);
+            this.errorConditionMsg.Size = new System.Drawing.Size(0, 26);
             this.errorConditionMsg.TabIndex = 7;
             // 
             // conditionLine
@@ -389,59 +447,6 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "Tạo Đơn Khách Hàng Thay Đổi";
             // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.errorBookWantChangeCbx4Msg);
-            this.panel3.Controls.Add(this.label5);
-            this.panel3.Controls.Add(this.bookWantChangeCbx);
-            this.panel3.Location = new System.Drawing.Point(603, 97);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(594, 88);
-            this.panel3.TabIndex = 7;
-            // 
-            // errorBookWantChangeCbx4Msg
-            // 
-            this.errorBookWantChangeCbx4Msg.AutoSize = true;
-            this.errorBookWantChangeCbx4Msg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed SemiB", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.errorBookWantChangeCbx4Msg.ForeColor = System.Drawing.Color.Red;
-            this.errorBookWantChangeCbx4Msg.Location = new System.Drawing.Point(165, 52);
-            this.errorBookWantChangeCbx4Msg.Name = "errorBookWantChangeCbx4Msg";
-            this.errorBookWantChangeCbx4Msg.Size = new System.Drawing.Size(0, 30);
-            this.errorBookWantChangeCbx4Msg.TabIndex = 33;
-            // 
-            // label5
-            // 
-            this.label5.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label5.Location = new System.Drawing.Point(3, 3);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(154, 49);
-            this.label5.TabIndex = 31;
-            this.label5.Text = "Mã sách muốn đổi:";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // bookWantChangeCbx
-            // 
-            this.bookWantChangeCbx.BackColor = System.Drawing.Color.Transparent;
-            this.bookWantChangeCbx.BaseColor = System.Drawing.Color.White;
-            this.bookWantChangeCbx.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.bookWantChangeCbx.BorderSize = 1;
-            this.bookWantChangeCbx.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bookWantChangeCbx.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.bookWantChangeCbx.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.bookWantChangeCbx.FocusedColor = System.Drawing.Color.Empty;
-            this.bookWantChangeCbx.Font = new System.Drawing.Font("#9Slide03 Cabin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bookWantChangeCbx.ForeColor = System.Drawing.Color.Black;
-            this.bookWantChangeCbx.FormattingEnabled = true;
-            this.bookWantChangeCbx.ItemHeight = 30;
-            this.bookWantChangeCbx.Location = new System.Drawing.Point(160, 12);
-            this.bookWantChangeCbx.Name = "bookWantChangeCbx";
-            this.bookWantChangeCbx.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.bookWantChangeCbx.OnHoverItemForeColor = System.Drawing.Color.White;
-            this.bookWantChangeCbx.Radius = 6;
-            this.bookWantChangeCbx.Size = new System.Drawing.Size(408, 36);
-            this.bookWantChangeCbx.TabIndex = 32;
-            this.bookWantChangeCbx.TabStop = false;
-            // 
             // CustomerChangeBillModal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 23F);
@@ -467,10 +472,10 @@
             this.panel1.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            this.panel10.ResumeLayout(false);
-            this.panel10.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panel10.ResumeLayout(false);
+            this.panel10.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

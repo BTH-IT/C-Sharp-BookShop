@@ -38,6 +38,14 @@
             this.genderCbx = new Guna.UI.WinForms.GunaComboBox();
             this.positionCbx = new Guna.UI.WinForms.GunaComboBox();
             this.dgvStaff = new Guna.UI.WinForms.GunaDataGridView();
+            this.Column11 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.maNhanVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenNhanVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.namSinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.soDienThoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.luong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chucVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.line1 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.exportBtn = new Guna.UI.WinForms.GunaAdvenceButton();
@@ -54,14 +62,6 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.Column11 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.maNhanVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tenNhanVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.namSinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.soDienThoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.luong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chucVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStaff)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -234,6 +234,64 @@
             this.dgvStaff.ThemeStyle.RowsStyle.Height = 75;
             this.dgvStaff.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvStaff.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            // 
+            // Column11
+            // 
+            this.Column11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Column11.FillWeight = 50F;
+            this.Column11.Frozen = true;
+            this.Column11.HeaderText = "";
+            this.Column11.MinimumWidth = 50;
+            this.Column11.Name = "Column11";
+            this.Column11.Width = 50;
+            // 
+            // maNhanVien
+            // 
+            this.maNhanVien.HeaderText = "Mã Nhân viên";
+            this.maNhanVien.MinimumWidth = 6;
+            this.maNhanVien.Name = "maNhanVien";
+            this.maNhanVien.ReadOnly = true;
+            // 
+            // tenNhanVien
+            // 
+            this.tenNhanVien.HeaderText = "Tên nhân viên";
+            this.tenNhanVien.MinimumWidth = 6;
+            this.tenNhanVien.Name = "tenNhanVien";
+            this.tenNhanVien.ReadOnly = true;
+            // 
+            // namSinh
+            // 
+            this.namSinh.HeaderText = "Năm sinh";
+            this.namSinh.MinimumWidth = 6;
+            this.namSinh.Name = "namSinh";
+            this.namSinh.ReadOnly = true;
+            // 
+            // gioiTinh
+            // 
+            this.gioiTinh.HeaderText = " Giới Tính";
+            this.gioiTinh.MinimumWidth = 6;
+            this.gioiTinh.Name = "gioiTinh";
+            this.gioiTinh.ReadOnly = true;
+            // 
+            // soDienThoai
+            // 
+            this.soDienThoai.HeaderText = "Số điện thoại";
+            this.soDienThoai.MinimumWidth = 6;
+            this.soDienThoai.Name = "soDienThoai";
+            this.soDienThoai.ReadOnly = true;
+            // 
+            // luong
+            // 
+            this.luong.HeaderText = "Lương";
+            this.luong.MinimumWidth = 6;
+            this.luong.Name = "luong";
+            // 
+            // chucVu
+            // 
+            this.chucVu.HeaderText = "Chức vụ";
+            this.chucVu.MinimumWidth = 6;
+            this.chucVu.Name = "chucVu";
+            this.chucVu.ReadOnly = true;
             // 
             // line1
             // 
@@ -554,70 +612,12 @@
             this.label1.Text = "$";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // Column11
-            // 
-            this.Column11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Column11.FillWeight = 50F;
-            this.Column11.Frozen = true;
-            this.Column11.HeaderText = "";
-            this.Column11.MinimumWidth = 50;
-            this.Column11.Name = "Column11";
-            this.Column11.Width = 50;
-            // 
-            // maNhanVien
-            // 
-            this.maNhanVien.HeaderText = "Mã Nhân viên";
-            this.maNhanVien.MinimumWidth = 6;
-            this.maNhanVien.Name = "maNhanVien";
-            this.maNhanVien.ReadOnly = true;
-            // 
-            // tenNhanVien
-            // 
-            this.tenNhanVien.HeaderText = "Tên nhân viên";
-            this.tenNhanVien.MinimumWidth = 6;
-            this.tenNhanVien.Name = "tenNhanVien";
-            this.tenNhanVien.ReadOnly = true;
-            // 
-            // namSinh
-            // 
-            this.namSinh.HeaderText = "Năm sinh";
-            this.namSinh.MinimumWidth = 6;
-            this.namSinh.Name = "namSinh";
-            this.namSinh.ReadOnly = true;
-            // 
-            // gioiTinh
-            // 
-            this.gioiTinh.HeaderText = " Giới Tính";
-            this.gioiTinh.MinimumWidth = 6;
-            this.gioiTinh.Name = "gioiTinh";
-            this.gioiTinh.ReadOnly = true;
-            // 
-            // soDienThoai
-            // 
-            this.soDienThoai.HeaderText = "Số điện thoại";
-            this.soDienThoai.MinimumWidth = 6;
-            this.soDienThoai.Name = "soDienThoai";
-            this.soDienThoai.ReadOnly = true;
-            // 
-            // luong
-            // 
-            this.luong.HeaderText = "Lương";
-            this.luong.MinimumWidth = 6;
-            this.luong.Name = "luong";
-            // 
-            // chucVu
-            // 
-            this.chucVu.HeaderText = "Chức vụ";
-            this.chucVu.MinimumWidth = 6;
-            this.chucVu.Name = "chucVu";
-            this.chucVu.ReadOnly = true;
-            // 
             // StaffManageGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
-            this.ClientSize = new System.Drawing.Size(1400, 845);
+            this.ClientSize = new System.Drawing.Size(1400, 894);
             this.Controls.Add(this.gradientPanel1);
             this.Controls.Add(this.searchInput);
             this.Controls.Add(this.genderCbx);
@@ -637,6 +637,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.gradientPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
+
 		}
 
         #endregion

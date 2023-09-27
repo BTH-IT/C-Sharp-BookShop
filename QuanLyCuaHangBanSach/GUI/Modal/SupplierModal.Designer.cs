@@ -58,11 +58,11 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.label1.Location = new System.Drawing.Point(147, 9);
+            this.label1.Location = new System.Drawing.Point(171, 2);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(294, 36);
+            this.label1.Size = new System.Drawing.Size(247, 45);
             this.label1.TabIndex = 0;
             this.label1.Text = "Thêm Nhà Cung Cấp";
             // 
@@ -153,7 +153,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             this.Suppliertxt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.Suppliertxt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.Suppliertxt.FocusedState.Parent = this.Suppliertxt;
-            this.Suppliertxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Suppliertxt.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F);
             this.Suppliertxt.ForeColor = System.Drawing.Color.Black;
             this.Suppliertxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.Suppliertxt.HoverState.Parent = this.Suppliertxt;
@@ -171,11 +171,11 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             // supplierNameMsg
             // 
             this.supplierNameMsg.AutoSize = true;
-            this.supplierNameMsg.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.supplierNameMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed SemiB", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.supplierNameMsg.ForeColor = System.Drawing.Color.Red;
             this.supplierNameMsg.Location = new System.Drawing.Point(20, 103);
             this.supplierNameMsg.Name = "supplierNameMsg";
-            this.supplierNameMsg.Size = new System.Drawing.Size(0, 25);
+            this.supplierNameMsg.Size = new System.Drawing.Size(0, 30);
             this.supplierNameMsg.TabIndex = 7;
             // 
             // nameLine
@@ -188,7 +188,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             // 
             // label3
             // 
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label3.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F);
             this.label3.Location = new System.Drawing.Point(12, 13);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(202, 42);
@@ -205,7 +205,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             this.flowLayoutPanel1.Controls.Add(this.panel4);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(68, 50);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(452, 448);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(452, 464);
             this.flowLayoutPanel1.TabIndex = 4;
             // 
             // panel2
@@ -216,7 +216,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             this.panel2.Controls.Add(this.label4);
             this.panel2.Location = new System.Drawing.Point(3, 148);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(445, 139);
+            this.panel2.Size = new System.Drawing.Size(445, 155);
             this.panel2.TabIndex = 1;
             // 
             // addressLine
@@ -241,7 +241,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             this.addressTxt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.addressTxt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.addressTxt.FocusedState.Parent = this.addressTxt;
-            this.addressTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addressTxt.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F);
             this.addressTxt.ForeColor = System.Drawing.Color.Black;
             this.addressTxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.addressTxt.HoverState.Parent = this.addressTxt;
@@ -258,16 +258,16 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             // addressMsg
             // 
             this.addressMsg.AutoSize = true;
-            this.addressMsg.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.addressMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed SemiB", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.addressMsg.ForeColor = System.Drawing.Color.Red;
-            this.addressMsg.Location = new System.Drawing.Point(20, 103);
+            this.addressMsg.Location = new System.Drawing.Point(20, 109);
             this.addressMsg.Name = "addressMsg";
-            this.addressMsg.Size = new System.Drawing.Size(0, 25);
+            this.addressMsg.Size = new System.Drawing.Size(0, 30);
             this.addressMsg.TabIndex = 7;
             // 
             // label4
             // 
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label4.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F);
             this.label4.Location = new System.Drawing.Point(12, 13);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(151, 42);
@@ -281,9 +281,9 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             this.panel4.Controls.Add(this.phoneNumberMsg);
             this.panel4.Controls.Add(this.phoneNumberLine);
             this.panel4.Controls.Add(this.label6);
-            this.panel4.Location = new System.Drawing.Point(3, 293);
+            this.panel4.Location = new System.Drawing.Point(3, 309);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(445, 139);
+            this.panel4.Size = new System.Drawing.Size(445, 145);
             this.panel4.TabIndex = 33;
             // 
             // phoneNumbertxt
@@ -300,7 +300,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             this.phoneNumbertxt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.phoneNumbertxt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.phoneNumbertxt.FocusedState.Parent = this.phoneNumbertxt;
-            this.phoneNumbertxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.phoneNumbertxt.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F);
             this.phoneNumbertxt.ForeColor = System.Drawing.Color.Black;
             this.phoneNumbertxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.phoneNumbertxt.HoverState.Parent = this.phoneNumbertxt;
@@ -318,11 +318,11 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             // phoneNumberMsg
             // 
             this.phoneNumberMsg.AutoSize = true;
-            this.phoneNumberMsg.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.phoneNumberMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed SemiB", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.phoneNumberMsg.ForeColor = System.Drawing.Color.Red;
-            this.phoneNumberMsg.Location = new System.Drawing.Point(20, 103);
+            this.phoneNumberMsg.Location = new System.Drawing.Point(20, 106);
             this.phoneNumberMsg.Name = "phoneNumberMsg";
-            this.phoneNumberMsg.Size = new System.Drawing.Size(0, 25);
+            this.phoneNumberMsg.Size = new System.Drawing.Size(0, 30);
             this.phoneNumberMsg.TabIndex = 7;
             // 
             // phoneNumberLine
@@ -335,7 +335,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             // 
             // label6
             // 
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label6.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F);
             this.label6.Location = new System.Drawing.Point(12, 13);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(151, 42);

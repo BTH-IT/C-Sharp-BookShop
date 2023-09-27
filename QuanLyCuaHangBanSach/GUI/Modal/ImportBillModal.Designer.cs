@@ -44,6 +44,7 @@
             this.label13 = new System.Windows.Forms.Label();
             this.supplierCbx = new Guna.UI.WinForms.GunaComboBox();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.errorBookListMsg = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -66,7 +67,7 @@
             this.submitBtn.ForeColor = System.Drawing.Color.White;
             this.submitBtn.Image = null;
             this.submitBtn.ImageSize = new System.Drawing.Size(20, 20);
-            this.submitBtn.Location = new System.Drawing.Point(634, 697);
+            this.submitBtn.Location = new System.Drawing.Point(634, 730);
             this.submitBtn.Name = "submitBtn";
             this.submitBtn.OnHoverBaseColor = System.Drawing.Color.White;
             this.submitBtn.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
@@ -129,7 +130,7 @@
             this.bookList.AutoScroll = true;
             this.bookList.Location = new System.Drawing.Point(3, 85);
             this.bookList.Name = "bookList";
-            this.bookList.Size = new System.Drawing.Size(1188, 432);
+            this.bookList.Size = new System.Drawing.Size(1188, 413);
             this.bookList.TabIndex = 29;
             // 
             // label2
@@ -215,7 +216,7 @@
             this.cancelBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.cancelBtn.Image = null;
             this.cancelBtn.ImageSize = new System.Drawing.Size(20, 20);
-            this.cancelBtn.Location = new System.Drawing.Point(388, 697);
+            this.cancelBtn.Location = new System.Drawing.Point(388, 730);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.cancelBtn.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
@@ -238,7 +239,7 @@
             this.flowLayoutPanel1.Controls.Add(this.panel4);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(11, 64);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1200, 627);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1200, 660);
             this.flowLayoutPanel1.TabIndex = 12;
             // 
             // panel2
@@ -296,20 +297,31 @@
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.errorBookListMsg);
             this.panel4.Controls.Add(this.gunaButton1);
             this.panel4.Controls.Add(this.bookList);
             this.panel4.Controls.Add(this.label2);
             this.panel4.Location = new System.Drawing.Point(3, 97);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1194, 422);
+            this.panel4.Size = new System.Drawing.Size(1194, 548);
             this.panel4.TabIndex = 9;
+            // 
+            // errorBookListMsg
+            // 
+            this.errorBookListMsg.AutoSize = true;
+            this.errorBookListMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.errorBookListMsg.ForeColor = System.Drawing.Color.Red;
+            this.errorBookListMsg.Location = new System.Drawing.Point(402, 512);
+            this.errorBookListMsg.Name = "errorBookListMsg";
+            this.errorBookListMsg.Size = new System.Drawing.Size(0, 26);
+            this.errorBookListMsg.TabIndex = 36;
             // 
             // ImportBillModal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1222, 753);
+            this.ClientSize = new System.Drawing.Size(1222, 792);
             this.Controls.Add(this.submitBtn);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cancelBtn);
@@ -326,6 +338,7 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -349,5 +362,6 @@
         private Guna.UI.WinForms.GunaComboBox supplierCbx;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label errorBookListMsg;
     }
 }

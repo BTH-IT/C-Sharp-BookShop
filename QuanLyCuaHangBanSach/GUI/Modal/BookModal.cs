@@ -128,16 +128,12 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             try
             {
                 this.bookNameTxt.ForeColor = Color.Black;
-
-                if (this.bookNameTxt.Text.Length > 0)
-                {
-                    CustomValidation.Instance.checkTextbox(
-                        this.bookNameTxt,
-                        this.errorBookNameMsg,
-                        this.nameLine,
-                        new string[] { "required" }
-                    );
-                }
+                CustomValidation.Instance.checkTextbox(
+                    this.bookNameTxt,
+                    this.errorBookNameMsg,
+                    this.nameLine,
+                    new string[] { "required" }
+                );
             }
             catch (Exception ex)
             {
@@ -151,15 +147,12 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             {
                 this.sellPriceTxt.ForeColor = Color.Black;
 
-                if (this.sellPriceTxt.Text.Length > 0)
-                {
-                    CustomValidation.Instance.checkTextbox(
-                        this.sellPriceTxt,
-                        this.errorSellPriceMsg,
-                        this.sellPriceLine,
-                        new string[] { "required", "positive-number" }
-                    );
-                }
+                CustomValidation.Instance.checkTextbox(
+                    this.sellPriceTxt,
+                    this.errorSellPriceMsg,
+                    this.sellPriceLine,
+                    new string[] { "required", "positive-number" }
+                );
             }
             catch (Exception ex)
             {
@@ -173,15 +166,12 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             {
                 this.importPriceTxt.ForeColor = Color.Black;
 
-                if (this.importPriceTxt.Text.Length > 0)
-                {
-                    CustomValidation.Instance.checkTextbox(
-                        this.importPriceTxt,
-                        this.errorImportPriceMsg,
-                        this.importPriceLine,
-                        new string[] { "required", "positive-number" }
-                    );
-                }
+                CustomValidation.Instance.checkTextbox(
+                    this.importPriceTxt,
+                    this.errorImportPriceMsg,
+                    this.importPriceLine,
+                    new string[] { "required", "positive-number" }
+                );
             }
             catch (Exception ex)
             {
@@ -196,15 +186,12 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             {
                 this.publishYearTxt.ForeColor = Color.Black;
 
-                if (this.publishYearTxt.Text.Length > 0)
-                {
-                    CustomValidation.Instance.checkTextbox(
-                        this.publishYearTxt,
-                        this.errorPublishYearMsg,
-                        this.publishYearLine,
-                        new string[] { "required", "positive-number" }
-                    );
-                }
+                CustomValidation.Instance.checkTextbox(
+                    this.publishYearTxt,
+                    this.errorPublishYearMsg,
+                    this.publishYearLine,
+                    new string[] { "required", "positive-number" }
+                );
             }
             catch (Exception ex)
             {
