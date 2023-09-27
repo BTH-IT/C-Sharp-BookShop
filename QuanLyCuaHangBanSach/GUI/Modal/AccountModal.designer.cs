@@ -28,7 +28,6 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-            this.submitBtn = new Guna.UI.WinForms.GunaButton();
             this.title = new System.Windows.Forms.Label();
             this.passwordTxt = new Guna.UI2.WinForms.Guna2TextBox();
             this.errorPasswordMsg = new System.Windows.Forms.Label();
@@ -39,7 +38,6 @@
             this.errorEmailLine = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
-            this.cancelBtn = new Guna.UI.WinForms.GunaButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.confirmPasswordPanel = new System.Windows.Forms.Panel();
@@ -51,6 +49,8 @@
             this.staffLine = new System.Windows.Forms.Label();
             this.staffComboBox = new Guna.UI.WinForms.GunaComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.submitBtn = new Guna.UI.WinForms.GunaButton();
+            this.cancelBtn = new Guna.UI.WinForms.GunaButton();
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -58,43 +58,12 @@
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
-            // submitBtn
-            // 
-            this.submitBtn.Animated = true;
-            this.submitBtn.AnimationHoverSpeed = 0.05F;
-            this.submitBtn.AnimationSpeed = 0.05F;
-            this.submitBtn.BackColor = System.Drawing.Color.Transparent;
-            this.submitBtn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.submitBtn.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.submitBtn.BorderSize = 2;
-            this.submitBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.submitBtn.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.submitBtn.FocusedColor = System.Drawing.Color.Empty;
-            this.submitBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.submitBtn.ForeColor = System.Drawing.Color.White;
-            this.submitBtn.Image = null;
-            this.submitBtn.ImageSize = new System.Drawing.Size(20, 20);
-            this.submitBtn.Location = new System.Drawing.Point(409, 588);
-            this.submitBtn.Name = "submitBtn";
-            this.submitBtn.OnHoverBaseColor = System.Drawing.Color.White;
-            this.submitBtn.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.submitBtn.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.submitBtn.OnHoverImage = null;
-            this.submitBtn.OnPressedColor = System.Drawing.Color.Black;
-            this.submitBtn.Radius = 22;
-            this.submitBtn.Size = new System.Drawing.Size(200, 50);
-            this.submitBtn.TabIndex = 11;
-            this.submitBtn.TabStop = false;
-            this.submitBtn.Text = "Lưu";
-            this.submitBtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.submitBtn.Click += new System.EventHandler(this.submitBtn_Click);
-            // 
             // title
             // 
             this.title.AutoSize = true;
             this.title.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.title.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.title.Location = new System.Drawing.Point(286, 9);
+            this.title.Location = new System.Drawing.Point(226, 11);
             this.title.Name = "title";
             this.title.Size = new System.Drawing.Size(228, 36);
             this.title.TabIndex = 9;
@@ -119,14 +88,14 @@
             this.passwordTxt.ForeColor = System.Drawing.Color.Black;
             this.passwordTxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.passwordTxt.HoverState.Parent = this.passwordTxt;
-            this.passwordTxt.Location = new System.Drawing.Point(204, 8);
-            this.passwordTxt.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.passwordTxt.Location = new System.Drawing.Point(178, 10);
+            this.passwordTxt.Margin = new System.Windows.Forms.Padding(4, 8, 4, 8);
             this.passwordTxt.Name = "passwordTxt";
             this.passwordTxt.PasswordChar = '\0';
             this.passwordTxt.PlaceholderText = "Nhập mật khẩu";
             this.passwordTxt.SelectedText = "";
             this.passwordTxt.ShadowDecoration.Parent = this.passwordTxt;
-            this.passwordTxt.Size = new System.Drawing.Size(425, 36);
+            this.passwordTxt.Size = new System.Drawing.Size(372, 45);
             this.passwordTxt.TabIndex = 3;
             this.passwordTxt.TextChanged += new System.EventHandler(this.birthYearTxtBox_TextChanged);
             // 
@@ -135,7 +104,7 @@
             this.errorPasswordMsg.AutoSize = true;
             this.errorPasswordMsg.Font = new System.Drawing.Font("#9Slide03 Cabin", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.errorPasswordMsg.ForeColor = System.Drawing.Color.Red;
-            this.errorPasswordMsg.Location = new System.Drawing.Point(205, 63);
+            this.errorPasswordMsg.Location = new System.Drawing.Point(179, 79);
             this.errorPasswordMsg.Name = "errorPasswordMsg";
             this.errorPasswordMsg.Size = new System.Drawing.Size(0, 26);
             this.errorPasswordMsg.TabIndex = 7;
@@ -143,17 +112,18 @@
             // passwordLine
             // 
             this.passwordLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(212)))), ((int)(((byte)(191)))));
-            this.passwordLine.Location = new System.Drawing.Point(204, 46);
+            this.passwordLine.Location = new System.Drawing.Point(178, 58);
+            this.passwordLine.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.passwordLine.Name = "passwordLine";
-            this.passwordLine.Size = new System.Drawing.Size(425, 1);
+            this.passwordLine.Size = new System.Drawing.Size(372, 1);
             this.passwordLine.TabIndex = 8;
             // 
             // label6
             // 
             this.label6.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(3, 3);
+            this.label6.Location = new System.Drawing.Point(3, 4);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(167, 49);
+            this.label6.Size = new System.Drawing.Size(168, 61);
             this.label6.TabIndex = 5;
             this.label6.Text = "Mật khẩu:";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -176,14 +146,14 @@
             this.emailTxt.ForeColor = System.Drawing.Color.Black;
             this.emailTxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.emailTxt.HoverState.Parent = this.emailTxt;
-            this.emailTxt.Location = new System.Drawing.Point(204, 8);
-            this.emailTxt.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.emailTxt.Location = new System.Drawing.Point(178, 10);
+            this.emailTxt.Margin = new System.Windows.Forms.Padding(4, 8, 4, 8);
             this.emailTxt.Name = "emailTxt";
             this.emailTxt.PasswordChar = '\0';
             this.emailTxt.PlaceholderText = "Nhập Email";
             this.emailTxt.SelectedText = "";
             this.emailTxt.ShadowDecoration.Parent = this.emailTxt;
-            this.emailTxt.Size = new System.Drawing.Size(425, 36);
+            this.emailTxt.Size = new System.Drawing.Size(372, 45);
             this.emailTxt.TabIndex = 2;
             // 
             // errorEmailMsg
@@ -191,7 +161,7 @@
             this.errorEmailMsg.AutoSize = true;
             this.errorEmailMsg.Font = new System.Drawing.Font("#9Slide03 Cabin", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.errorEmailMsg.ForeColor = System.Drawing.Color.Red;
-            this.errorEmailMsg.Location = new System.Drawing.Point(203, 65);
+            this.errorEmailMsg.Location = new System.Drawing.Point(178, 81);
             this.errorEmailMsg.Name = "errorEmailMsg";
             this.errorEmailMsg.Size = new System.Drawing.Size(0, 26);
             this.errorEmailMsg.TabIndex = 7;
@@ -199,9 +169,10 @@
             // errorEmailLine
             // 
             this.errorEmailLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(212)))), ((int)(((byte)(191)))));
-            this.errorEmailLine.Location = new System.Drawing.Point(204, 50);
+            this.errorEmailLine.Location = new System.Drawing.Point(178, 62);
+            this.errorEmailLine.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.errorEmailLine.Name = "errorEmailLine";
-            this.errorEmailLine.Size = new System.Drawing.Size(426, 1);
+            this.errorEmailLine.Size = new System.Drawing.Size(373, 1);
             this.errorEmailLine.TabIndex = 8;
             // 
             // panel4
@@ -210,9 +181,10 @@
             this.panel4.Controls.Add(this.errorPasswordMsg);
             this.panel4.Controls.Add(this.passwordLine);
             this.panel4.Controls.Add(this.label6);
-            this.panel4.Location = new System.Drawing.Point(3, 124);
+            this.panel4.Location = new System.Drawing.Point(3, 156);
+            this.panel4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(701, 115);
+            this.panel4.Size = new System.Drawing.Size(613, 144);
             this.panel4.TabIndex = 9;
             // 
             // label3
@@ -220,41 +192,10 @@
             this.label3.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(3, 2);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(167, 49);
+            this.label3.Size = new System.Drawing.Size(146, 61);
             this.label3.TabIndex = 5;
             this.label3.Text = "Email:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // cancelBtn
-            // 
-            this.cancelBtn.Animated = true;
-            this.cancelBtn.AnimationHoverSpeed = 0.05F;
-            this.cancelBtn.AnimationSpeed = 0.05F;
-            this.cancelBtn.BackColor = System.Drawing.Color.Transparent;
-            this.cancelBtn.BaseColor = System.Drawing.Color.White;
-            this.cancelBtn.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.cancelBtn.BorderSize = 2;
-            this.cancelBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cancelBtn.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.cancelBtn.FocusedColor = System.Drawing.Color.Empty;
-            this.cancelBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cancelBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.cancelBtn.Image = null;
-            this.cancelBtn.ImageSize = new System.Drawing.Size(20, 20);
-            this.cancelBtn.Location = new System.Drawing.Point(184, 588);
-            this.cancelBtn.Name = "cancelBtn";
-            this.cancelBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.cancelBtn.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.cancelBtn.OnHoverForeColor = System.Drawing.Color.White;
-            this.cancelBtn.OnHoverImage = null;
-            this.cancelBtn.OnPressedColor = System.Drawing.Color.White;
-            this.cancelBtn.Radius = 22;
-            this.cancelBtn.Size = new System.Drawing.Size(200, 50);
-            this.cancelBtn.TabIndex = 10;
-            this.cancelBtn.TabStop = false;
-            this.cancelBtn.Text = "Hủy";
-            this.cancelBtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
             // 
             // panel1
             // 
@@ -262,9 +203,10 @@
             this.panel1.Controls.Add(this.emailTxt);
             this.panel1.Controls.Add(this.errorEmailLine);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Location = new System.Drawing.Point(3, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(701, 115);
+            this.panel1.Size = new System.Drawing.Size(613, 144);
             this.panel1.TabIndex = 0;
             // 
             // flowLayoutPanel1
@@ -275,9 +217,10 @@
             this.flowLayoutPanel1.Controls.Add(this.panel4);
             this.flowLayoutPanel1.Controls.Add(this.confirmPasswordPanel);
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(45, 191);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(29, 210);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(712, 372);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(623, 465);
             this.flowLayoutPanel1.TabIndex = 12;
             // 
             // confirmPasswordPanel
@@ -286,9 +229,10 @@
             this.confirmPasswordPanel.Controls.Add(this.errorConfirmPasswordMsg);
             this.confirmPasswordPanel.Controls.Add(this.confirmPasswordLine);
             this.confirmPasswordPanel.Controls.Add(this.label2);
-            this.confirmPasswordPanel.Location = new System.Drawing.Point(3, 245);
+            this.confirmPasswordPanel.Location = new System.Drawing.Point(3, 308);
+            this.confirmPasswordPanel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.confirmPasswordPanel.Name = "confirmPasswordPanel";
-            this.confirmPasswordPanel.Size = new System.Drawing.Size(701, 109);
+            this.confirmPasswordPanel.Size = new System.Drawing.Size(613, 136);
             this.confirmPasswordPanel.TabIndex = 10;
             // 
             // confirmPasswordTxt
@@ -309,14 +253,14 @@
             this.confirmPasswordTxt.ForeColor = System.Drawing.Color.Black;
             this.confirmPasswordTxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.confirmPasswordTxt.HoverState.Parent = this.confirmPasswordTxt;
-            this.confirmPasswordTxt.Location = new System.Drawing.Point(204, 8);
-            this.confirmPasswordTxt.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.confirmPasswordTxt.Location = new System.Drawing.Point(178, 10);
+            this.confirmPasswordTxt.Margin = new System.Windows.Forms.Padding(4, 8, 4, 8);
             this.confirmPasswordTxt.Name = "confirmPasswordTxt";
             this.confirmPasswordTxt.PasswordChar = '\0';
             this.confirmPasswordTxt.PlaceholderText = "Nhập xác nhận mật khẩu";
             this.confirmPasswordTxt.SelectedText = "";
             this.confirmPasswordTxt.ShadowDecoration.Parent = this.confirmPasswordTxt;
-            this.confirmPasswordTxt.Size = new System.Drawing.Size(425, 36);
+            this.confirmPasswordTxt.Size = new System.Drawing.Size(372, 45);
             this.confirmPasswordTxt.TabIndex = 4;
             // 
             // errorConfirmPasswordMsg
@@ -324,7 +268,7 @@
             this.errorConfirmPasswordMsg.AutoSize = true;
             this.errorConfirmPasswordMsg.Font = new System.Drawing.Font("#9Slide03 Cabin", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.errorConfirmPasswordMsg.ForeColor = System.Drawing.Color.Red;
-            this.errorConfirmPasswordMsg.Location = new System.Drawing.Point(203, 63);
+            this.errorConfirmPasswordMsg.Location = new System.Drawing.Point(178, 79);
             this.errorConfirmPasswordMsg.Name = "errorConfirmPasswordMsg";
             this.errorConfirmPasswordMsg.Size = new System.Drawing.Size(0, 26);
             this.errorConfirmPasswordMsg.TabIndex = 7;
@@ -332,9 +276,10 @@
             // confirmPasswordLine
             // 
             this.confirmPasswordLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(212)))), ((int)(((byte)(191)))));
-            this.confirmPasswordLine.Location = new System.Drawing.Point(204, 49);
+            this.confirmPasswordLine.Location = new System.Drawing.Point(178, 61);
+            this.confirmPasswordLine.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.confirmPasswordLine.Name = "confirmPasswordLine";
-            this.confirmPasswordLine.Size = new System.Drawing.Size(414, 1);
+            this.confirmPasswordLine.Size = new System.Drawing.Size(362, 1);
             this.confirmPasswordLine.TabIndex = 8;
             // 
             // label2
@@ -342,7 +287,7 @@
             this.label2.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(3, 1);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(167, 49);
+            this.label2.Size = new System.Drawing.Size(177, 61);
             this.label2.TabIndex = 5;
             this.label2.Text = "Xác nhận mật khẩu:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -352,9 +297,10 @@
             this.panel3.Controls.Add(this.staffLine);
             this.panel3.Controls.Add(this.staffComboBox);
             this.panel3.Controls.Add(this.label1);
-            this.panel3.Location = new System.Drawing.Point(45, 79);
+            this.panel3.Location = new System.Drawing.Point(29, 70);
+            this.panel3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(704, 106);
+            this.panel3.Size = new System.Drawing.Size(616, 132);
             this.panel3.TabIndex = 13;
             // 
             // staffLine
@@ -362,7 +308,7 @@
             this.staffLine.AutoSize = true;
             this.staffLine.Font = new System.Drawing.Font("#9Slide03 Cabin", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.staffLine.ForeColor = System.Drawing.Color.Red;
-            this.staffLine.Location = new System.Drawing.Point(209, 58);
+            this.staffLine.Location = new System.Drawing.Point(183, 72);
             this.staffLine.Name = "staffLine";
             this.staffLine.Size = new System.Drawing.Size(0, 26);
             this.staffLine.TabIndex = 27;
@@ -381,12 +327,13 @@
             this.staffComboBox.ForeColor = System.Drawing.Color.Black;
             this.staffComboBox.FormattingEnabled = true;
             this.staffComboBox.ItemHeight = 30;
-            this.staffComboBox.Location = new System.Drawing.Point(207, 9);
+            this.staffComboBox.Location = new System.Drawing.Point(181, 11);
+            this.staffComboBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.staffComboBox.Name = "staffComboBox";
             this.staffComboBox.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.staffComboBox.OnHoverItemForeColor = System.Drawing.Color.White;
             this.staffComboBox.Radius = 6;
-            this.staffComboBox.Size = new System.Drawing.Size(425, 36);
+            this.staffComboBox.Size = new System.Drawing.Size(372, 36);
             this.staffComboBox.TabIndex = 26;
             this.staffComboBox.TabStop = false;
             this.staffComboBox.SelectedIndexChanged += new System.EventHandler(this.staffComboBox_SelectedIndexChanged);
@@ -394,25 +341,89 @@
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 9);
+            this.label1.Location = new System.Drawing.Point(3, 11);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(170, 36);
+            this.label1.Size = new System.Drawing.Size(149, 45);
             this.label1.TabIndex = 6;
             this.label1.Text = "Nhân viên:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // submitBtn
+            // 
+            this.submitBtn.Animated = true;
+            this.submitBtn.AnimationHoverSpeed = 0.05F;
+            this.submitBtn.AnimationSpeed = 0.05F;
+            this.submitBtn.BackColor = System.Drawing.Color.Transparent;
+            this.submitBtn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.submitBtn.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.submitBtn.BorderSize = 2;
+            this.submitBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.submitBtn.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.submitBtn.FocusedColor = System.Drawing.Color.Empty;
+            this.submitBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.submitBtn.ForeColor = System.Drawing.Color.White;
+            this.submitBtn.Image = null;
+            this.submitBtn.ImageSize = new System.Drawing.Size(20, 20);
+            this.submitBtn.Location = new System.Drawing.Point(360, 705);
+            this.submitBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.submitBtn.Name = "submitBtn";
+            this.submitBtn.OnHoverBaseColor = System.Drawing.Color.White;
+            this.submitBtn.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.submitBtn.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.submitBtn.OnHoverImage = null;
+            this.submitBtn.OnPressedColor = System.Drawing.Color.Black;
+            this.submitBtn.Radius = 22;
+            this.submitBtn.Size = new System.Drawing.Size(175, 62);
+            this.submitBtn.TabIndex = 29;
+            this.submitBtn.TabStop = false;
+            this.submitBtn.Text = "Lưu";
+            this.submitBtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // cancelBtn
+            // 
+            this.cancelBtn.Animated = true;
+            this.cancelBtn.AnimationHoverSpeed = 0.05F;
+            this.cancelBtn.AnimationSpeed = 0.05F;
+            this.cancelBtn.BackColor = System.Drawing.Color.Transparent;
+            this.cancelBtn.BaseColor = System.Drawing.Color.White;
+            this.cancelBtn.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.cancelBtn.BorderSize = 2;
+            this.cancelBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cancelBtn.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.cancelBtn.FocusedColor = System.Drawing.Color.Empty;
+            this.cancelBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cancelBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.cancelBtn.Image = null;
+            this.cancelBtn.ImageSize = new System.Drawing.Size(20, 20);
+            this.cancelBtn.Location = new System.Drawing.Point(145, 705);
+            this.cancelBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cancelBtn.Name = "cancelBtn";
+            this.cancelBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.cancelBtn.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.cancelBtn.OnHoverForeColor = System.Drawing.Color.White;
+            this.cancelBtn.OnHoverImage = null;
+            this.cancelBtn.OnPressedColor = System.Drawing.Color.White;
+            this.cancelBtn.Radius = 22;
+            this.cancelBtn.Size = new System.Drawing.Size(175, 62);
+            this.cancelBtn.TabIndex = 28;
+            this.cancelBtn.TabStop = false;
+            this.cancelBtn.Text = "Hủy";
+            this.cancelBtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // AccountModal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(800, 664);
-            this.Controls.Add(this.panel3);
+            this.ClientSize = new System.Drawing.Size(681, 787);
             this.Controls.Add(this.submitBtn);
-            this.Controls.Add(this.title);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.cancelBtn);
+            this.Controls.Add(this.title);
             this.Controls.Add(this.flowLayoutPanel1);
+            this.Font = new System.Drawing.Font("#9Slide03 Cabin", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "AccountModal";
             this.Text = "AccountModal";
             this.Load += new System.EventHandler(this.AccountModal_Load);
@@ -431,8 +442,6 @@
 		}
 
 		#endregion
-
-		private Guna.UI.WinForms.GunaButton submitBtn;
 		private System.Windows.Forms.Label title;
 		private Guna.UI2.WinForms.Guna2TextBox passwordTxt;
 		private System.Windows.Forms.Label errorPasswordMsg;
@@ -443,7 +452,6 @@
 		private System.Windows.Forms.Panel errorEmailLine;
 		private System.Windows.Forms.Panel panel4;
 		private System.Windows.Forms.Label label3;
-		private Guna.UI.WinForms.GunaButton cancelBtn;
 		private System.Windows.Forms.Panel panel1;
 		private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
 		private System.Windows.Forms.Panel confirmPasswordPanel;
@@ -455,5 +463,7 @@
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Label staffLine;
 		private Guna.UI.WinForms.GunaComboBox staffComboBox;
-	}
+        private Guna.UI.WinForms.GunaButton submitBtn;
+        private Guna.UI.WinForms.GunaButton cancelBtn;
+    }
 }

@@ -15,7 +15,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
         private CheckBox headerCheckboxBillList;
         private List<BookDTO> bookList = BookBUS.Instance.getAllData();
 
-        public List<CustomerBillDetailDTO> selectedCustomerBillDetailList;
+        public List<CustomerBillDetailDTO> selectedCustomerBillDetailList = new List<CustomerBillDetailDTO>();
 
         public AddBookToCustomerBillModal(List<CustomerBillDetailDTO> customerBillDetailList)
         {

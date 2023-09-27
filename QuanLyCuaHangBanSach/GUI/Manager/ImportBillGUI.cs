@@ -219,7 +219,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
         private void addBtn_Click(object sender, EventArgs e)
         {
-            using (BookModal importBillModal = new BookModal())
+            using (ImportBillModal importBillModal = new ImportBillModal(ManagerGUI.currentStaff.Ma))
             {
                 importBillModal.ShowDialog();
 
