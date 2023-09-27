@@ -13,8 +13,8 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 	public partial class CustomerManagerGUI : Form
     {
         private CheckBox headerCheckbox;
-		string[] genders = new string[] { "Chọn giới tính", "Nam", "Nữ" };
-		public CustomerManagerGUI()
+        string[] genders = new string[] { "Chọn giới tính", "Nam", "Nữ" };
+        public CustomerManagerGUI()
         {
             InitializeComponent();
         }
@@ -51,13 +51,13 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 					{
 						this.dgvCustomer.Rows.Add(new object[]
 						{
-					false,
-					customer.Ma,
-					customer.Ten,
-					customer.GioiTinh,
-					customer.NamSinh,
-					customer.SoDienThoai,
-					customer.Diem
+							false,
+							customer.Ma,
+							customer.Ten,
+							customer.GioiTinh,
+							customer.NamSinh,
+							customer.SoDienThoai,
+							customer.Diem
 						});
 					}
 
@@ -73,10 +73,11 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             try
             {
 				List<CustomerDTO> customerList = CustomerBUS.Instance.getAllData();
+
 				this.loadCustomerListToDataGridView(customerList);
-				this.genderCbx.Items.AddRange(genders);
-				this.genderCbx.SelectedIndex = 0;
-				this.renderCheckBoxDgv();
+                this.genderCbx.Items.AddRange(genders);
+                this.genderCbx.SelectedIndex = 0;
+                this.renderCheckBoxDgv();
 				headerCheckbox.MouseClick += new MouseEventHandler(headerCheckbox_Clicked);
 			}
             catch
@@ -197,8 +198,8 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             try
             {
 				this.searchInput.Clear();
-				this.genderCbx.SelectedIndex = 0;
-				List<CustomerDTO> customers = CustomerBUS.Instance.getAllData();
+                this.genderCbx.SelectedIndex = 0;
+                List<CustomerDTO> customers = CustomerBUS.Instance.getAllData();
 				this.loadCustomerListToDataGridView(customers);
 			}
             catch
@@ -211,16 +212,24 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             try
             {
 				var customers = CustomerBUS.Instance.Search(searchInput);
-				string selectedGender = this.genderCbx.SelectedItem.ToString();
-				if (selectedGender != genders[0])
-				{
-					customers = customers.Where(c => c.GioiTinh == selectedGender).ToList();
-				}
-				return customers;
-			}
+
+                string selectedGender = this.genderCbx.SelectedItem.ToString();
+
+
+                List<CustomerDTO> newCustomers = customers.FindAll(authorList =>
+                {
+                    if (selectedGender != "Chọn giới tính")
+                    {
+                        return authorList.GioiTinh == selectedGender;
+                    }
+                    return true;
+                }
+                );
+                return newCustomers;
+            }
             catch
             {
-                return null;
+                return new List<CustomerDTO>();
             }
          
         }
@@ -294,21 +303,21 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
 		private void genderCbx_SelectedIndexChanged(object sender, EventArgs e)
 		{
-			try
-			{
-				List<CustomerDTO> customers = handleFilter(this.searchInput.Text);
-				loadCustomerListToDataGridView(customers);
-			}
-			catch
-			{
+            try
+            {
+                List<CustomerDTO> customerList = handleFilter(this.searchInput.Text.ToString());
+                this.loadCustomerListToDataGridView(customerList);
+            }
+            catch (Exception er)
+            {
 
-			}
+                Console.WriteLine(er);
+            }
+        }
 
-		}
-
-		private void dgvCustomer_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvCustomer_CellContentClick(object sender, DataGridViewCellEventArgs e)
 		{
 
 		}
-	}
+    }
 }

@@ -1103,6 +1103,8 @@
   <ItemGroup>
     <Content Include="assets\email-icom.jpg" />
     <Content Include="assets\eye-icon.png" />
+    <None Include="assets\female.png" />
+    <None Include="assets\male-circle.png" />
     <Content Include="assets\password.png" />
     <Content Include="bin\Debug\BouncyCastle.Crypto.xml" />
     <Content Include="bin\Debug\Google.Protobuf.xml" />
@@ -1151,6 +1153,7 @@
     <Content Include="bin\Debug\System.Threading.AccessControl.xml" />
     <Content Include="bin\Debug\System.Threading.Tasks.Extensions.xml" />
     <Content Include="FodyWeavers.xml" />
+    <None Include="Resources\man.bmp" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />

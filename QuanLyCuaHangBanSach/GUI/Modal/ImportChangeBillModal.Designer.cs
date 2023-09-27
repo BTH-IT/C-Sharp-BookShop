@@ -120,9 +120,9 @@
             this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.AutoScrollMargin = new System.Drawing.Size(10, 10);
             this.flowLayoutPanel1.Controls.Add(this.panel2);
-            this.flowLayoutPanel1.Controls.Add(this.panel1);
             this.flowLayoutPanel1.Controls.Add(this.panel3);
             this.flowLayoutPanel1.Controls.Add(this.panel4);
+            this.flowLayoutPanel1.Controls.Add(this.panel1);
             this.flowLayoutPanel1.Controls.Add(this.panel10);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(11, 64);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -134,7 +134,7 @@
             this.panel1.Controls.Add(this.errorBookNeedChangeMsg);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.bookNeedChangeCbx);
-            this.panel1.Location = new System.Drawing.Point(603, 3);
+            this.panel1.Location = new System.Drawing.Point(603, 97);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(594, 88);
             this.panel1.TabIndex = 3;
@@ -187,7 +187,7 @@
             this.panel3.Controls.Add(this.errorBookWantChangeCbx4Msg);
             this.panel3.Controls.Add(this.label5);
             this.panel3.Controls.Add(this.bookWantChangeCbx);
-            this.panel3.Location = new System.Drawing.Point(3, 97);
+            this.panel3.Location = new System.Drawing.Point(603, 3);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(594, 88);
             this.panel3.TabIndex = 4;
@@ -241,7 +241,7 @@
             this.panel4.Controls.Add(this.errorReasonMsg);
             this.panel4.Controls.Add(this.reasonLine);
             this.panel4.Controls.Add(this.label6);
-            this.panel4.Location = new System.Drawing.Point(603, 97);
+            this.panel4.Location = new System.Drawing.Point(3, 97);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(594, 88);
             this.panel4.TabIndex = 5;

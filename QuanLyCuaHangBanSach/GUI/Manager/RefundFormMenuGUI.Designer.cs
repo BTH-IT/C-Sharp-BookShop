@@ -75,7 +75,7 @@
             this.menuFlowLayou.Controls.Add(this.importRefundBillPanel);
             this.menuFlowLayou.Location = new System.Drawing.Point(272, 117);
             this.menuFlowLayou.Name = "menuFlowLayou";
-            this.menuFlowLayou.Size = new System.Drawing.Size(780, 598);
+            this.menuFlowLayou.Size = new System.Drawing.Size(733, 566);
             this.menuFlowLayou.TabIndex = 10;
             // 
             // customerChangeBillPanel

@@ -74,7 +74,7 @@
             this.submitBtn.ForeColor = System.Drawing.Color.White;
             this.submitBtn.Image = null;
             this.submitBtn.ImageSize = new System.Drawing.Size(20, 20);
-            this.submitBtn.Location = new System.Drawing.Point(409, 614);
+            this.submitBtn.Location = new System.Drawing.Point(409, 588);
             this.submitBtn.Name = "submitBtn";
             this.submitBtn.OnHoverBaseColor = System.Drawing.Color.White;
             this.submitBtn.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
@@ -115,11 +115,11 @@
             this.passwordTxt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.passwordTxt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.passwordTxt.FocusedState.Parent = this.passwordTxt;
-            this.passwordTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.passwordTxt.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.passwordTxt.ForeColor = System.Drawing.Color.Black;
             this.passwordTxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.passwordTxt.HoverState.Parent = this.passwordTxt;
-            this.passwordTxt.Location = new System.Drawing.Point(204, 10);
+            this.passwordTxt.Location = new System.Drawing.Point(204, 8);
             this.passwordTxt.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.passwordTxt.Name = "passwordTxt";
             this.passwordTxt.PasswordChar = '\0';
@@ -133,27 +133,27 @@
             // errorPasswordMsg
             // 
             this.errorPasswordMsg.AutoSize = true;
-            this.errorPasswordMsg.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.errorPasswordMsg.Font = new System.Drawing.Font("#9Slide03 Cabin", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.errorPasswordMsg.ForeColor = System.Drawing.Color.Red;
-            this.errorPasswordMsg.Location = new System.Drawing.Point(154, 63);
+            this.errorPasswordMsg.Location = new System.Drawing.Point(205, 63);
             this.errorPasswordMsg.Name = "errorPasswordMsg";
-            this.errorPasswordMsg.Size = new System.Drawing.Size(0, 25);
+            this.errorPasswordMsg.Size = new System.Drawing.Size(0, 26);
             this.errorPasswordMsg.TabIndex = 7;
             // 
             // passwordLine
             // 
             this.passwordLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(212)))), ((int)(((byte)(191)))));
-            this.passwordLine.Location = new System.Drawing.Point(204, 51);
+            this.passwordLine.Location = new System.Drawing.Point(204, 46);
             this.passwordLine.Name = "passwordLine";
-            this.passwordLine.Size = new System.Drawing.Size(414, 1);
+            this.passwordLine.Size = new System.Drawing.Size(425, 1);
             this.passwordLine.TabIndex = 8;
             // 
             // label6
             // 
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label6.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(3, 3);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(151, 49);
+            this.label6.Size = new System.Drawing.Size(167, 49);
             this.label6.TabIndex = 5;
             this.label6.Text = "Mật khẩu:";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -172,7 +172,7 @@
             this.emailTxt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.emailTxt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.emailTxt.FocusedState.Parent = this.emailTxt;
-            this.emailTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.emailTxt.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.emailTxt.ForeColor = System.Drawing.Color.Black;
             this.emailTxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.emailTxt.HoverState.Parent = this.emailTxt;
@@ -189,11 +189,11 @@
             // errorEmailMsg
             // 
             this.errorEmailMsg.AutoSize = true;
-            this.errorEmailMsg.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.errorEmailMsg.Font = new System.Drawing.Font("#9Slide03 Cabin", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.errorEmailMsg.ForeColor = System.Drawing.Color.Red;
-            this.errorEmailMsg.Location = new System.Drawing.Point(151, 60);
+            this.errorEmailMsg.Location = new System.Drawing.Point(203, 65);
             this.errorEmailMsg.Name = "errorEmailMsg";
-            this.errorEmailMsg.Size = new System.Drawing.Size(0, 25);
+            this.errorEmailMsg.Size = new System.Drawing.Size(0, 26);
             this.errorEmailMsg.TabIndex = 7;
             // 
             // errorEmailLine
@@ -217,10 +217,10 @@
             // 
             // label3
             // 
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label3.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(3, 2);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(151, 49);
+            this.label3.Size = new System.Drawing.Size(167, 49);
             this.label3.TabIndex = 5;
             this.label3.Text = "Email:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -241,7 +241,7 @@
             this.cancelBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.cancelBtn.Image = null;
             this.cancelBtn.ImageSize = new System.Drawing.Size(20, 20);
-            this.cancelBtn.Location = new System.Drawing.Point(184, 614);
+            this.cancelBtn.Location = new System.Drawing.Point(184, 588);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.cancelBtn.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
@@ -277,7 +277,7 @@
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(45, 191);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(725, 372);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(712, 372);
             this.flowLayoutPanel1.TabIndex = 12;
             // 
             // confirmPasswordPanel
@@ -305,7 +305,7 @@
             this.confirmPasswordTxt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.confirmPasswordTxt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.confirmPasswordTxt.FocusedState.Parent = this.confirmPasswordTxt;
-            this.confirmPasswordTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.confirmPasswordTxt.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.confirmPasswordTxt.ForeColor = System.Drawing.Color.Black;
             this.confirmPasswordTxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.confirmPasswordTxt.HoverState.Parent = this.confirmPasswordTxt;
@@ -322,11 +322,11 @@
             // errorConfirmPasswordMsg
             // 
             this.errorConfirmPasswordMsg.AutoSize = true;
-            this.errorConfirmPasswordMsg.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.errorConfirmPasswordMsg.Font = new System.Drawing.Font("#9Slide03 Cabin", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.errorConfirmPasswordMsg.ForeColor = System.Drawing.Color.Red;
-            this.errorConfirmPasswordMsg.Location = new System.Drawing.Point(154, 62);
+            this.errorConfirmPasswordMsg.Location = new System.Drawing.Point(203, 63);
             this.errorConfirmPasswordMsg.Name = "errorConfirmPasswordMsg";
-            this.errorConfirmPasswordMsg.Size = new System.Drawing.Size(0, 25);
+            this.errorConfirmPasswordMsg.Size = new System.Drawing.Size(0, 26);
             this.errorConfirmPasswordMsg.TabIndex = 7;
             // 
             // confirmPasswordLine
@@ -339,10 +339,10 @@
             // 
             // label2
             // 
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label2.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(3, 1);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(217, 49);
+            this.label2.Size = new System.Drawing.Size(167, 49);
             this.label2.TabIndex = 5;
             this.label2.Text = "Xác nhận mật khẩu:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -354,17 +354,17 @@
             this.panel3.Controls.Add(this.label1);
             this.panel3.Location = new System.Drawing.Point(45, 79);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(727, 106);
+            this.panel3.Size = new System.Drawing.Size(704, 106);
             this.panel3.TabIndex = 13;
             // 
             // staffLine
             // 
             this.staffLine.AutoSize = true;
-            this.staffLine.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.staffLine.Font = new System.Drawing.Font("#9Slide03 Cabin", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.staffLine.ForeColor = System.Drawing.Color.Red;
-            this.staffLine.Location = new System.Drawing.Point(157, 51);
+            this.staffLine.Location = new System.Drawing.Point(209, 58);
             this.staffLine.Name = "staffLine";
-            this.staffLine.Size = new System.Drawing.Size(0, 25);
+            this.staffLine.Size = new System.Drawing.Size(0, 26);
             this.staffLine.TabIndex = 27;
             // 
             // staffComboBox
@@ -377,7 +377,7 @@
             this.staffComboBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.staffComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.staffComboBox.FocusedColor = System.Drawing.Color.Empty;
-            this.staffComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.staffComboBox.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.staffComboBox.ForeColor = System.Drawing.Color.Black;
             this.staffComboBox.FormattingEnabled = true;
             this.staffComboBox.ItemHeight = 30;
@@ -386,17 +386,17 @@
             this.staffComboBox.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.staffComboBox.OnHoverItemForeColor = System.Drawing.Color.White;
             this.staffComboBox.Radius = 6;
-            this.staffComboBox.Size = new System.Drawing.Size(266, 36);
+            this.staffComboBox.Size = new System.Drawing.Size(425, 36);
             this.staffComboBox.TabIndex = 26;
             this.staffComboBox.TabStop = false;
             this.staffComboBox.SelectedIndexChanged += new System.EventHandler(this.staffComboBox_SelectedIndexChanged);
             // 
             // label1
             // 
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label1.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(3, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(151, 49);
+            this.label1.Size = new System.Drawing.Size(170, 36);
             this.label1.TabIndex = 6;
             this.label1.Text = "Nhân viên:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -406,7 +406,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(800, 701);
+            this.ClientSize = new System.Drawing.Size(800, 664);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.submitBtn);
             this.Controls.Add(this.title);

@@ -3,6 +3,7 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 using QuanLyCuaHangBanSach.BUS;
+using QuanLyCuaHangBanSach.DAO;
 using QuanLyCuaHangBanSach.DTO;
 
 namespace QuanLyCuaHangBanSach.GUI
@@ -10,12 +11,31 @@ namespace QuanLyCuaHangBanSach.GUI
     public partial class LoginGUI : Form
     {
         private bool isHiddenPwd = true;
+
+        private static LoginGUI instance;
+
+        public static LoginGUI Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    instance = new LoginGUI();
+                }
+
+                return LoginGUI.instance;
+            }
+            private set { LoginGUI.instance = value; }
+        }
+
         public LoginGUI()
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
             this.Padding = new Padding(2);
-            
+            this.pwdTxt.UseSystemPasswordChar = isHiddenPwd;
+
+
             if (Properties.Settings.Default.Email != string.Empty) {
                 this.emailTxt.Text = Properties.Settings.Default.Email;
                 this.pwdTxt.Text = Properties.Settings.Default.Password;
@@ -92,7 +112,7 @@ namespace QuanLyCuaHangBanSach.GUI
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Instance.Close();
         }
 
         private bool validateForm()
@@ -124,7 +144,7 @@ namespace QuanLyCuaHangBanSach.GUI
 
             if (account == null)
             {
-                MessageBox.Show("Email or password is invalid, please try again!!");
+                MessageBox.Show("Email hoặc mật khẩu không chính xác, vui lòng thử lại!!");
                 checkBox1.Checked = false;
                 return;
             }
@@ -141,6 +161,13 @@ namespace QuanLyCuaHangBanSach.GUI
                 Properties.Settings.Default.Password = "";
                 Properties.Settings.Default.Save();
             }
+
+            MessageBox.Show("Đăng nhập thành công vào hệ thống!");
+
+            MenuGUI menu = new MenuGUI(account.MaNhanVien);
+
+            menu.Show();
+            Instance.Hide();
         }
 
         private void customButton1_Click(object sender, EventArgs e)

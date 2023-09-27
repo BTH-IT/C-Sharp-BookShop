@@ -338,6 +338,7 @@ namespace QuanLyCuaHangBanTacGia.GUI.Manager
                 Console.WriteLine(er);
             }
         }
+
         private List<AuthorDTO> handleFilter(string searchText)
         {
             try

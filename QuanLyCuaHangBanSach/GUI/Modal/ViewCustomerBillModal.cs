@@ -21,9 +21,11 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
                 this.loadCustomerCbx();
                 this.loadSaleCbx();
+                this.loadStaffCbx();
 
-                this.customerCbx.SelectedValue = 0;
-                this.saleCbx.SelectedValue = 0;
+                this.customerCbx.SelectedValue = customerBill.MaKhachHang;
+                this.saleCbx.SelectedValue = customerBill.MaKhuyenMai;
+                this.staffCbx.SelectedValue = customerBill.MaNhanVien;
 
                 this.bookList.Controls.Clear();
 
@@ -79,6 +81,24 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 this.saleCbx.DataSource = saleList;
 
                 this.saleCbx.SelectedIndex = 0;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+        }
+
+        private void loadStaffCbx()
+        {
+            try
+            {
+                List<StaffDTO> staffList = StaffBUS.Instance.getAllData();
+
+                this.staffCbx.ValueMember = "Ma";
+                this.staffCbx.DisplayMember = "Ten";
+                this.staffCbx.DataSource = staffList;
+
+                this.staffCbx.SelectedIndex = 0;
             }
             catch (Exception ex)
             {
