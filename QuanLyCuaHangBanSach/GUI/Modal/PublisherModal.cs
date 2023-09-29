@@ -171,10 +171,5 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
         {
             this.Close();
         }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

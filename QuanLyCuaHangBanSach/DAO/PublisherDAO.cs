@@ -47,7 +47,7 @@ namespace QuanLyCuaHangBanSach.DAO
         
         public DataTable searchData(string value)
         {
-            string sql = $@"SELECT * FROM nhaxuatban WHERE maNhaXuatBan LIKE @maNhaXuatBan OR tenNhaXuatBan LIKE @tenNhaXuatBan) AND hienThi=1;";
+            string sql = $@"SELECT * FROM nhaxuatban WHERE (maNhaXuatBan LIKE @maNhaXuatBan OR tenNhaXuatBan LIKE @tenNhaXuatBan) AND hienThi=1;";
 
             return DataProvider.Instance.ExecuteQuery(sql,
                 new MySqlParameter[] {
