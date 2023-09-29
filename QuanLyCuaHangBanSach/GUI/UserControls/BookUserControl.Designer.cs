@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BookUserControl));
             this.NameLb = new System.Windows.Forms.Label();
             this.StockLb = new System.Windows.Forms.Label();
             this.PriceLb = new System.Windows.Forms.Label();
@@ -45,11 +44,10 @@
             this.NameLb.AutoSize = true;
             this.NameLb.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.NameLb.ForeColor = System.Drawing.Color.Black;
-            this.NameLb.Location = new System.Drawing.Point(127, 11);
-            this.NameLb.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.NameLb.MaximumSize = new System.Drawing.Size(197, 49);
+            this.NameLb.Location = new System.Drawing.Point(97, 10);
+            this.NameLb.MaximumSize = new System.Drawing.Size(148, 40);
             this.NameLb.Name = "NameLb";
-            this.NameLb.Size = new System.Drawing.Size(99, 26);
+            this.NameLb.Size = new System.Drawing.Size(81, 21);
             this.NameLb.TabIndex = 3;
             this.NameLb.Text = "Book Name";
             // 
@@ -59,10 +57,9 @@
             this.StockLb.AutoSize = true;
             this.StockLb.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.StockLb.ForeColor = System.Drawing.Color.Gray;
-            this.StockLb.Location = new System.Drawing.Point(127, 76);
-            this.StockLb.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.StockLb.Location = new System.Drawing.Point(97, 70);
             this.StockLb.Name = "StockLb";
-            this.StockLb.Size = new System.Drawing.Size(30, 23);
+            this.StockLb.Size = new System.Drawing.Size(24, 18);
             this.StockLb.TabIndex = 5;
             this.StockLb.Text = "SL:";
             // 
@@ -72,37 +69,34 @@
             this.PriceLb.AutoSize = true;
             this.PriceLb.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.PriceLb.ForeColor = System.Drawing.Color.Blue;
-            this.PriceLb.Location = new System.Drawing.Point(125, 101);
-            this.PriceLb.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.PriceLb.Location = new System.Drawing.Point(96, 90);
             this.PriceLb.Name = "PriceLb";
-            this.PriceLb.Size = new System.Drawing.Size(56, 30);
+            this.PriceLb.Size = new System.Drawing.Size(46, 25);
             this.PriceLb.TabIndex = 6;
             this.PriceLb.Text = "Price";
             // 
             // BookImage
             // 
-            this.BookImage.ErrorImage = ((System.Drawing.Image)(resources.GetObject("BookImage.ErrorImage")));
-            this.BookImage.InitialImage = ((System.Drawing.Image)(resources.GetObject("BookImage.InitialImage")));
-            this.BookImage.Location = new System.Drawing.Point(11, 6);
-            this.BookImage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BookImage.ErrorImage = null;
+            this.BookImage.InitialImage = null;
+            this.BookImage.Location = new System.Drawing.Point(8, 10);
             this.BookImage.Name = "BookImage";
-            this.BookImage.Size = new System.Drawing.Size(109, 133);
+            this.BookImage.Size = new System.Drawing.Size(82, 108);
             this.BookImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.BookImage.TabIndex = 0;
             this.BookImage.TabStop = false;
             // 
             // IdLb
             // 
-            this.IdLb.Location = new System.Drawing.Point(317, 133);
-            this.IdLb.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.IdLb.Location = new System.Drawing.Point(238, 108);
             this.IdLb.Name = "IdLb";
-            this.IdLb.Size = new System.Drawing.Size(19, 12);
+            this.IdLb.Size = new System.Drawing.Size(14, 10);
             this.IdLb.TabIndex = 11;
             this.IdLb.Visible = false;
             // 
             // BookUserControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.IdLb);
             this.Controls.Add(this.PriceLb);
@@ -111,9 +105,9 @@
             this.Controls.Add(this.NameLb);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ForeColor = System.Drawing.Color.LightGray;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "BookUserControl";
-            this.Size = new System.Drawing.Size(336, 145);
+            this.Size = new System.Drawing.Size(252, 127);
             this.Click += new System.EventHandler(this.BookUserControl_Click);
             this.MouseLeave += new System.EventHandler(this.BookUserControl_Leave);
             this.MouseHover += new System.EventHandler(this.BookUserControl_Hover);

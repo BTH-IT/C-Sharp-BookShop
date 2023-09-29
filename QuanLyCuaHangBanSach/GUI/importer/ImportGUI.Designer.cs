@@ -92,8 +92,8 @@
             // 
             this.LogoImg.Image = ((System.Drawing.Image)(resources.GetObject("LogoImg.Image")));
             this.LogoImg.InitialImage = null;
-            this.LogoImg.Location = new System.Drawing.Point(3, 25);
-            this.LogoImg.Margin = new System.Windows.Forms.Padding(3, 25, 3, 3);
+            this.LogoImg.Location = new System.Drawing.Point(0, 25);
+            this.LogoImg.Margin = new System.Windows.Forms.Padding(0, 25, 3, 3);
             this.LogoImg.Name = "LogoImg";
             this.LogoImg.Padding = new System.Windows.Forms.Padding(18, 5, 10, 10);
             this.LogoImg.Size = new System.Drawing.Size(77, 54);
@@ -129,9 +129,9 @@
             this.flowLayoutPanel2.Controls.Add(this.label1);
             this.flowLayoutPanel2.Controls.Add(this.label2);
             this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(103, -8);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(103, 1);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(786, 84);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(786, 75);
             this.flowLayoutPanel2.TabIndex = 2;
             // 
             // label1
@@ -141,9 +141,9 @@
             this.label1.Location = new System.Drawing.Point(20, 14);
             this.label1.Margin = new System.Windows.Forms.Padding(20, 14, 3, 2);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(146, 33);
+            this.label1.Size = new System.Drawing.Size(114, 33);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Import Books";
+            this.label1.Text = "Nhập sách";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label2
@@ -154,9 +154,9 @@
             this.label2.Location = new System.Drawing.Point(20, 50);
             this.label2.Margin = new System.Windows.Forms.Padding(20, 1, 3, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(411, 18);
+            this.label2.Size = new System.Drawing.Size(196, 18);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Easily find whatever you need then you and manage book stock in your shop";
+            this.label2.Text = "Khám phá tri thức - chia sẻ niềm vui";
             // 
             // flowLayoutPanel4
             // 
