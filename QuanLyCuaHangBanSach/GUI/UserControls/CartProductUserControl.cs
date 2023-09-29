@@ -49,8 +49,7 @@ namespace QuanLyCuaHangBanSach.GUI.Vendor
             }
             else
             {
-                StockLb.Visible = false;
-                stock = -1;
+                StockLb.Text = "SL: " + book.SoLuongConLai;
                 PriceLb.Text = string.Format("{0:N0} đ", book.GiaNhap);
             }
 

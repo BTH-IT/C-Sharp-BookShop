@@ -4,9 +4,11 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Controls;
 using System.Windows.Forms;
+using MySqlX.XDevAPI.Relational;
 using QuanLyCuaHangBanSach.BUS;
 using QuanLyCuaHangBanSach.DTO;
 using QuanLyCuaHangBanSach.GUI.Modal;
+using QuanLyCuaHangBanSach.GUI.Report;
 using QuanLyCuaHangBanSach.GUI.UserControls;
 using QuanLyCuaHangBanSach.GUI.Vendor;
 using static ZXing.QrCode.Internal.Mode;
@@ -421,9 +423,8 @@ namespace QuanLyCuaHangBanSach.GUI
                 {
                     pointDiscount = CustomerBUS.Instance.getById(customerID.ToString()).Diem * 1000;
                 }
-                Console.WriteLine(PointEnabled);
-                Console.WriteLine(pointDiscount);
-                finalTotalMoney = total - discount - pointDiscount;
+                finalTotalMoney = Math.Max(total - discount - pointDiscount, 0);
+
                 DiscountMoneyLb.Text = string.Format("{0:N0} VND", discount);
                 FinalTotalMoneyLb.Text = string.Format("{0:N0} VND", finalTotalMoney);
 
@@ -615,6 +616,10 @@ namespace QuanLyCuaHangBanSach.GUI
                         {
                             MessageBox.Show("Khách hàng " + customer_addPoint.Ten + " được cộng: " + point + " điểm");
                         }
+                    }
+                    using (CustomerBillPrintForm customerBillPrintForm = new CustomerBillPrintForm(newCustomerBill.MaDonKhachHang))
+                    {
+                        customerBillPrintForm.ShowDialog();
                     }
 
                     CartContainer.Controls.Clear();
