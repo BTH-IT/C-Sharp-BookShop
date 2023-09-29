@@ -3,14 +3,10 @@ using QuanLyCuaHangBanSach.DTO;
 using QuanLyCuaHangBanSach.GUI.Modal;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QuanLyCuaHangBanSach.GUI.Manager
@@ -144,9 +140,9 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
 				DataTable dataTable = CustomExcel.Instance.ConvertListToDataTable(staff);
 
-				string[] headerList = new string[] { "Mã nhân viên", "Tên nhân viên", "Năm sinh", "SĐT", "Giới tính", "Lương", "Số ngày nghỉ", "Mã chức vụ" };
+                string[] headerList = new string[] { "Mã nhân viên", "Tên nhân viên", "Năm sinh", "SĐT", "Giới tính", "Lương", "Mã chức vụ" };
 
-				CustomExcel.Instance.ExportFile(dataTable, "Staff Manage", "Cửa hàng bán sách", headerList, 2);
+				CustomExcel.Instance.ExportFile(dataTable, "Staff Manage", "Cửa hàng bán sách", headerList);
 			}
             catch
             {

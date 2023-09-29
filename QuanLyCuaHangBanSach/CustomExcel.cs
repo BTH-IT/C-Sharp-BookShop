@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Data;
-using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -10,7 +8,6 @@ using System.Windows;
 using ExcelDataReader;
 using Microsoft.Win32;
 using OfficeOpenXml;
-using OfficeOpenXml.Drawing;
 using OfficeOpenXml.Style;
 
 namespace QuanLyCuaHangBanSach
@@ -153,6 +150,7 @@ namespace QuanLyCuaHangBanSach
             PropertyInfo[] Props = typeof(T).GetProperties(BindingFlags.Public | BindingFlags.Instance);
             foreach (PropertyInfo prop in Props)
             {
+                Console.WriteLine(prop.Name);
                 //Setting column names as Property names
                 dataTable.Columns.Add(prop.Name);
             }
