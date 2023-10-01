@@ -71,7 +71,7 @@ namespace QuanLyCuaHangBanSach.DAO
 
         public bool update(BookTypeDTO data)
         {
-            string sql = $@"UPDATE theloai SET tenTheLoai=@tenTheLoai WHERE maTheLoai=@maTheLoai AND hienThi=1;";
+            string sql = $@"UPDATE theloai SET tenTheLoai=@tenTheLoai WHERE maTheLoai=@maTheLoai;";
 
             int rowChanged = DataProvider.Instance.ExecuteNonQuery(sql,
                 new MySqlParameter[] {

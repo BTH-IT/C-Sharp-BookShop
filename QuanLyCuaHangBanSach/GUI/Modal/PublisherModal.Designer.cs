@@ -62,7 +62,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.label1.Location = new System.Drawing.Point(171, 2);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(239, 29);
+            this.label1.Size = new System.Drawing.Size(283, 36);
             this.label1.TabIndex = 0;
             this.label1.Text = "Thêm Nhà Xuất Bản";
             // 
@@ -78,7 +78,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             this.cancelBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cancelBtn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.cancelBtn.FocusedColor = System.Drawing.Color.Empty;
-            this.cancelBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cancelBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cancelBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.cancelBtn.Image = null;
             this.cancelBtn.ImageSize = new System.Drawing.Size(20, 20);
@@ -109,7 +109,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             this.submitBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.submitBtn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.submitBtn.FocusedColor = System.Drawing.Color.Empty;
-            this.submitBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.submitBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.submitBtn.ForeColor = System.Drawing.Color.White;
             this.submitBtn.Image = null;
             this.submitBtn.ImageSize = new System.Drawing.Size(20, 20);
@@ -175,7 +175,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             this.PublisherNameMsg.ForeColor = System.Drawing.Color.Red;
             this.PublisherNameMsg.Location = new System.Drawing.Point(20, 103);
             this.PublisherNameMsg.Name = "PublisherNameMsg";
-            this.PublisherNameMsg.Size = new System.Drawing.Size(0, 20);
+            this.PublisherNameMsg.Size = new System.Drawing.Size(0, 25);
             this.PublisherNameMsg.TabIndex = 7;
             // 
             // nameLine
@@ -195,7 +195,6 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             this.label3.TabIndex = 5;
             this.label3.Text = "Tên nhà xuất bản:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // flowLayoutPanel1
             // 
@@ -263,7 +262,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             this.addressMsg.ForeColor = System.Drawing.Color.Red;
             this.addressMsg.Location = new System.Drawing.Point(20, 109);
             this.addressMsg.Name = "addressMsg";
-            this.addressMsg.Size = new System.Drawing.Size(0, 20);
+            this.addressMsg.Size = new System.Drawing.Size(0, 25);
             this.addressMsg.TabIndex = 7;
             // 
             // label4
@@ -323,7 +322,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             this.phoneNumberMsg.ForeColor = System.Drawing.Color.Red;
             this.phoneNumberMsg.Location = new System.Drawing.Point(20, 106);
             this.phoneNumberMsg.Name = "phoneNumberMsg";
-            this.phoneNumberMsg.Size = new System.Drawing.Size(0, 20);
+            this.phoneNumberMsg.Size = new System.Drawing.Size(0, 25);
             this.phoneNumberMsg.TabIndex = 7;
             // 
             // phoneNumberLine
@@ -346,7 +345,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             // 
             // PublisherModal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(589, 603);

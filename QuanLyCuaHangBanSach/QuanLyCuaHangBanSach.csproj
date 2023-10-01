@@ -986,6 +986,9 @@
     <EmbeddedResource Include="GUI\Modal\BookModal.resx">
       <DependentUpon>BookModal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Modal\BookTypeModal.resx">
+      <DependentUpon>BookTypeModal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Modal\CustomerBillModal.resx">
       <DependentUpon>CustomerBillModal.cs</DependentUpon>
     </EmbeddedResource>
@@ -1006,6 +1009,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Modal\ImportRefundBillModal.resx">
       <DependentUpon>ImportRefundBillModal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Modal\PublisherModal.resx">
+      <DependentUpon>PublisherModal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Modal\SaleModal.resx">
       <DependentUpon>SaleModal.cs</DependentUpon>

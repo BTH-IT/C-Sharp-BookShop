@@ -48,7 +48,7 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.label1.Location = new System.Drawing.Point(228, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(177, 29);
+            this.label1.Size = new System.Drawing.Size(213, 36);
             this.label1.TabIndex = 0;
             this.label1.Text = "Thêm Thể Loại";
             // 
@@ -64,7 +64,7 @@
             this.cancelBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cancelBtn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.cancelBtn.FocusedColor = System.Drawing.Color.Empty;
-            this.cancelBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cancelBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cancelBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.cancelBtn.Image = null;
             this.cancelBtn.ImageSize = new System.Drawing.Size(20, 20);
@@ -95,7 +95,7 @@
             this.submitBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.submitBtn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.submitBtn.FocusedColor = System.Drawing.Color.Empty;
-            this.submitBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.submitBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.submitBtn.ForeColor = System.Drawing.Color.White;
             this.submitBtn.Image = null;
             this.submitBtn.ImageSize = new System.Drawing.Size(20, 20);
@@ -161,7 +161,7 @@
             this.errorBookTypeNameMsg.ForeColor = System.Drawing.Color.Red;
             this.errorBookTypeNameMsg.Location = new System.Drawing.Point(163, 50);
             this.errorBookTypeNameMsg.Name = "errorBookTypeNameMsg";
-            this.errorBookTypeNameMsg.Size = new System.Drawing.Size(0, 20);
+            this.errorBookTypeNameMsg.Size = new System.Drawing.Size(0, 25);
             this.errorBookTypeNameMsg.TabIndex = 7;
             // 
             // nameLine
@@ -194,7 +194,7 @@
             // 
             // BookTypeModal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(632, 308);
