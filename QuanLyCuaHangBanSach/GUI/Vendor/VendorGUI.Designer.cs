@@ -397,6 +397,7 @@
             this.RefundBtn.Size = new System.Drawing.Size(79, 27);
             this.RefundBtn.TabIndex = 0;
             this.RefundBtn.Text = "Trả hàng";
+            this.RefundBtn.Click += new System.EventHandler(this.RefundBtn_Click);
             // 
             // CustomerToggleBtn
             // 
