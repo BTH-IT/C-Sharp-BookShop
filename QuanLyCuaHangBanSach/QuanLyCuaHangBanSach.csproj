@@ -586,6 +586,12 @@
     <Compile Include="GUI\Manager\StaffManageGUI.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="GUI\Manager\StatisticMenuGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Manager\StatisticMenuGUI.Designer.cs">
+      <DependentUpon>StatisticMenuGUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Manager\SupplierManagerGUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -955,6 +961,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Manager\StaffManageGUI.resx">
       <DependentUpon>StaffManageGUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Manager\StatisticMenuGUI.resx">
+      <DependentUpon>StatisticMenuGUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Manager\SupplierManagerGUI.resx">
       <DependentUpon>SupplierManagerGUI.cs</DependentUpon>
