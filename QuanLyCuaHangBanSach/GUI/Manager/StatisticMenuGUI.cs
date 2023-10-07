@@ -12,18 +12,30 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 {
     public partial class StatisticMenuGUI : Form
     {
+        private ProductStatisticGUI ProductStatisticFrm = new ProductStatisticGUI(1) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None, };
+        /*private RevenueStatisticGUI RevenueStatisticFrm = new RevenueStatisticGUI() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None, };
+        private StaffStatisticGUI StaffStatisticFrm = new StaffStatisticGUI() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None, };
+        private CustomerStatisticGUI CustomerStatisticFrm = new CustomerStatisticGUI() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None, };*/
         public StatisticMenuGUI()
         {
             InitializeComponent();
-            /*this.Controls.Add(ProductStatisticGUI);
-            this.Controls.Add(RevenueStatisticGUI);
-            this.Controls.Add(StaffStatisticGUI);
-            this.Controls.Add(customerChangeBillFrm);*/
+            Controls.Add(ProductStatisticFrm);
+            /*this.Controls.Add(RevenueStatisticFrm);
+            this.Controls.Add(StaffStatisticFrm);
+            this.Controls.Add(CustomerStatisticFrm);*/
         }
 
         private void ProductPanel_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                ProductStatisticFrm.Show();
+                ProductStatisticFrm.BringToFront();
+                /*RevenueStatisticFrm.Hide();
+                StaffStatisticFrm.Hide();
+                CustomerStatisticFrm.Hide();*/
+            }
+            catch { }
         }
 
         private void RevenuePanel_Click(object sender, EventArgs e)

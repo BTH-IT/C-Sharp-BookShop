@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using MySql.Data.MySqlClient;
 using QuanLyCuaHangBanSach.BUS;
@@ -44,7 +45,95 @@ namespace QuanLyCuaHangBanSach.DAO
             return customerBillDetail;
         }
 
-        public List<CustomerBillDetailDTO> getCustomerBillDetailList(string billId)
+        public int getSoldQuantity(string bookId)
+        {
+            DataTable dataTable = DataProvider.Instance.ExecuteQuery(
+                "SELECT sum(soLuong) as daBan FROM chitietphieuban where maSach=@maSach;",
+                new MySqlParameter[] {
+                    new MySqlParameter("@maSach", bookId)
+                }
+            );
+            if (dataTable.Rows.Count <= 0 || dataTable.Rows[0]["daBan"] == DBNull.Value) return 0;
+
+            return Convert.ToInt32(dataTable.Rows[0]["daBan"]);
+        }
+
+        public double getRevenue(string bookId)
+        {
+            DataTable dataTable = DataProvider.Instance.ExecuteQuery(
+                "SELECT SUM(soLuong * donGia) AS doanhThu FROM chitietphieuban where maSach=@maSach;",
+                new MySqlParameter[] {
+                    new MySqlParameter("@maSach", bookId)
+                }
+            );
+
+            if (dataTable.Rows.Count <= 0 || dataTable.Rows[0]["doanhThu"] == DBNull.Value) return 0;
+
+            return Convert.ToDouble(dataTable.Rows[0]["doanhThu"]);
+        }
+
+		public double getRevenueInRange(string year, string startMonth, string endMonth)
+		{
+			DataTable dataTable = DataProvider.Instance.ExecuteQuery(
+				"SELECT SUM(tongTien) AS doanhThu FROM phieuban WHERE YEAR(ngayLap)=@nam AND MONTH(ngayLap) >= @thangBatDau AND MONTH(ngayLap) <= @thangKetThuc;",
+				new MySqlParameter[] {
+					new MySqlParameter("@nam", year),
+					new MySqlParameter("@thangBatDau", startMonth),
+					new MySqlParameter("@thangKetThuc", endMonth)
+				}
+
+			);
+
+			if (dataTable.Rows.Count <= 0 || dataTable.Rows[0]["doanhThu"] == DBNull.Value) return 0;
+
+			return Convert.ToDouble(dataTable.Rows[0]["doanhThu"]);
+		}
+
+		public List<NumberBookSoldDTO> getBookSoldInRange(string year, string startMonth, string endMonth)
+        {
+            DataTable dataTable = DataProvider.Instance.ExecuteQuery(
+                "SELECT MONTH(ngayLap) AS thang, SUM(chitietphieuban.soLuong) AS soLuong " +
+                "FROM phieuban JOIN chitietphieuban ON phieuban.maDonKhachHang = chitietphieuban.maDonKhachHang " +
+				"WHERE YEAR(ngayLap)=@nam AND MONTH(ngayLap) >= @thangBatDau AND MONTH(ngayLap) <= @thangKetThuc " +
+                "GROUP BY thang " +
+                "ORDER BY thang;",
+                new MySqlParameter[] {
+                    new MySqlParameter("@nam", year),
+                    new MySqlParameter("@thangBatDau", startMonth),
+                    new MySqlParameter("@thangKetThuc", endMonth)
+                }
+            );
+
+            if (dataTable.Rows.Count <= 0) return null;
+
+            List<NumberBookSoldDTO> numberBookSold = new List<NumberBookSoldDTO>();
+
+            foreach (DataRow row in dataTable.Rows)
+            {
+                NumberBookSoldDTO numberPerMonth = new NumberBookSoldDTO(row);
+                numberBookSold.Add(numberPerMonth);
+            }
+
+            return numberBookSold;
+        }
+
+		public int getNumberCustomerInRange(string year, string startMonth, string endMonth)
+		{
+			DataTable dataTable = DataProvider.Instance.ExecuteQuery(
+				"SELECT COUNT(maKhachHang) AS soLuongKhach FROM phieuban WHERE YEAR(ngayLap)=@nam AND MONTH(ngayLap) >= @thangBatDau AND MONTH(ngayLap) <= @thangKetThuc;",
+				new MySqlParameter[] {
+					new MySqlParameter("@nam", year),
+					new MySqlParameter("@thangBatDau", startMonth),
+					new MySqlParameter("@thangKetThuc", endMonth)
+				}
+			);
+
+			if (dataTable.Rows.Count <= 0 || dataTable.Rows[0]["soLuongKhach"] == DBNull.Value) return 0;
+
+			return Convert.ToInt32(dataTable.Rows[0]["soLuongKhach"]);
+		}
+
+		public List<CustomerBillDetailDTO> getCustomerBillDetailList(string billId)
         {
             DataTable dataTable = DataProvider.Instance.ExecuteQuery(
                 "SELECT * FROM chitietphieuban WHERE maDonKhachHang=@maDonKhachHang;",
