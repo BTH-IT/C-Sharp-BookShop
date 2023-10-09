@@ -110,7 +110,7 @@
             this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(16, 64);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(169, 30);
+            this.label2.Size = new System.Drawing.Size(137, 25);
             this.label2.TabIndex = 2;
             this.label2.Text = "12.000.000 VNĐ";
             // 
@@ -121,7 +121,7 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(174)))), ((int)(((byte)(192)))));
             this.label1.Location = new System.Drawing.Point(16, 30);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(127, 26);
+            this.label1.Size = new System.Drawing.Size(107, 21);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tổng doanh thu";
             // 
@@ -169,7 +169,7 @@
             this.label5.ForeColor = System.Drawing.Color.Black;
             this.label5.Location = new System.Drawing.Point(13, 64);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(121, 30);
+            this.label5.Size = new System.Drawing.Size(98, 25);
             this.label5.TabIndex = 8;
             this.label5.Text = "1000 Khách";
             // 
@@ -180,7 +180,7 @@
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(174)))), ((int)(((byte)(192)))));
             this.label6.Location = new System.Drawing.Point(13, 30);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(155, 26);
+            this.label6.Size = new System.Drawing.Size(130, 21);
             this.label6.TabIndex = 6;
             this.label6.Text = "Tổng số khách hàng";
             // 
@@ -228,7 +228,7 @@
             this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(15, 64);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(106, 30);
+            this.label3.Size = new System.Drawing.Size(85, 25);
             this.label3.TabIndex = 5;
             this.label3.Text = "1200 Sách";
             // 
@@ -239,7 +239,7 @@
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(174)))), ((int)(((byte)(192)))));
             this.label4.Location = new System.Drawing.Point(15, 30);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(159, 26);
+            this.label4.Size = new System.Drawing.Size(132, 21);
             this.label4.TabIndex = 3;
             this.label4.Text = "Tổng số sách đã bán";
             // 
@@ -249,7 +249,7 @@
             this.label7.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(8, 202);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(191, 35);
+            this.label7.Size = new System.Drawing.Size(160, 28);
             this.label7.TabIndex = 13;
             this.label7.Text = "BIỂU ĐỒ THỐNG KÊ";
             // 
@@ -351,12 +351,12 @@
             // 
             // HomeManageGUI
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.AutoScrollMargin = new System.Drawing.Size(0, 30);
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
-            this.ClientSize = new System.Drawing.Size(1400, 890);
+            this.ClientSize = new System.Drawing.Size(1370, 749);
             this.Controls.Add(this.elementHost1);
             this.Controls.Add(this.gunaDataGridView1);
             this.Controls.Add(this.label7);

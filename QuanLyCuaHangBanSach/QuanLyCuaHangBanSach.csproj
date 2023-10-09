@@ -486,10 +486,10 @@
     <Compile Include="DTO\BookTypeDTO.cs" />
     <Compile Include="DTO\AccountDTO.cs" />
     <Compile Include="CustomExcel.cs" />
+    <Compile Include="DAO\DataProvider.cs" />
     <Compile Include="GradientPanel.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="DAO\DataProvider.cs" />
     <Compile Include="GUI\Auth\LoginGUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -544,6 +544,9 @@
     <Compile Include="GUI\Manager\CustomerManagerGUI.designer.cs">
       <DependentUpon>CustomerManagerGUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Manager\HomeManageGUI.Designer.cs">
+      <DependentUpon>HomeManageGUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Manager\ImportChangeBillGUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -561,6 +564,12 @@
     </Compile>
     <Compile Include="GUI\Manager\ImportRefundBillGUI.Designer.cs">
       <DependentUpon>ImportRefundBillGUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Manager\ProductStatisticGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Manager\ProductStatisticGUI.Designer.cs">
+      <DependentUpon>ProductStatisticGUI.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Manager\PublisherGUI.cs">
       <SubType>Form</SubType>
@@ -585,6 +594,12 @@
     </Compile>
     <Compile Include="GUI\Manager\StaffManageGUI.cs">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Manager\StatisticMenuGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Manager\StatisticMenuGUI.Designer.cs">
+      <DependentUpon>StatisticMenuGUI.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Manager\SupplierManagerGUI.cs">
       <SubType>Form</SubType>
@@ -944,6 +959,9 @@
     <EmbeddedResource Include="GUI\Auth\SendCodeGUI.resx">
       <DependentUpon>SendCodeGUI.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Manager\ProductStatisticGUI.resx">
+      <DependentUpon>ProductStatisticGUI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Manager\PublisherGUI.resx">
       <DependentUpon>PublisherGUI.cs</DependentUpon>
     </EmbeddedResource>
@@ -955,6 +973,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Manager\StaffManageGUI.resx">
       <DependentUpon>StaffManageGUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Manager\StatisticMenuGUI.resx">
+      <DependentUpon>StatisticMenuGUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Manager\SupplierManagerGUI.resx">
       <DependentUpon>SupplierManagerGUI.cs</DependentUpon>

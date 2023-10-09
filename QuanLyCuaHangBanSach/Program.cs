@@ -20,7 +20,7 @@ namespace QuanLyCuaHangBanSach
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             /*Application.Run(LoginGUI.Instance);*/
-            Application.Run(new ImportBillPrintForm(1));
+            Application.Run(new ProductStatisticGUI(1));
         }
     }
 }
