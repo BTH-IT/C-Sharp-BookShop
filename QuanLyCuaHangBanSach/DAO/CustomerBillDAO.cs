@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Net;
 using MySql.Data.MySqlClient;
 using QuanLyCuaHangBanSach.BUS;
 using QuanLyCuaHangBanSach.DTO;
@@ -72,6 +73,24 @@ namespace QuanLyCuaHangBanSach.DAO
             return Convert.ToDouble(dataTable.Rows[0]["doanhThu"]);
         }
 
+        public DataTable getSoldQuantityAndRevenue(string query)
+        {
+			DataTable dataTable = DataProvider.Instance.ExecuteQuery(
+				"SELECT chitietphieuban.maSach, SUM(soLuong) as daBan, SUM(soLuong * donGia) AS doanhThu " +
+                "FROM chitietphieuban JOIN sach ON chitietphieuban.maSach=sach.maSach " +
+                "WHERE (sach.maSach LIKE @maSach OR tenSach LIKE @tenSach) AND hienThi = 1 " +
+                "GROUP BY maSach;",
+	            new MySqlParameter[] {
+					new MySqlParameter("@maSach", "%" + query + "%"),
+					new MySqlParameter("@tenSach", "%" + query + "%")
+	            }
+            );
+
+            if (dataTable.Rows.Count <= 0) return null;
+
+			return dataTable;
+		}
+
 		public double getRevenueInRange(string year, string startMonth, string endMonth)
 		{
 			DataTable dataTable = DataProvider.Instance.ExecuteQuery(
@@ -89,7 +108,7 @@ namespace QuanLyCuaHangBanSach.DAO
 			return Convert.ToDouble(dataTable.Rows[0]["doanhThu"]);
 		}
 
-		public List<NumberBookSoldDTO> getBookSoldInRange(string year, string startMonth, string endMonth)
+		public DataTable getBookSoldInRange(string year, string startMonth, string endMonth)
         {
             DataTable dataTable = DataProvider.Instance.ExecuteQuery(
                 "SELECT MONTH(ngayLap) AS thang, SUM(chitietphieuban.soLuong) AS soLuong " +
@@ -106,15 +125,7 @@ namespace QuanLyCuaHangBanSach.DAO
 
             if (dataTable.Rows.Count <= 0) return null;
 
-            List<NumberBookSoldDTO> numberBookSold = new List<NumberBookSoldDTO>();
-
-            foreach (DataRow row in dataTable.Rows)
-            {
-                NumberBookSoldDTO numberPerMonth = new NumberBookSoldDTO(row);
-                numberBookSold.Add(numberPerMonth);
-            }
-
-            return numberBookSold;
+            return dataTable;
         }
 
 		public int getNumberCustomerInRange(string year, string startMonth, string endMonth)
@@ -134,28 +145,28 @@ namespace QuanLyCuaHangBanSach.DAO
 		}
 
 		public List<CustomerBillDetailDTO> getCustomerBillDetailList(string billId)
-        {
-            DataTable dataTable = DataProvider.Instance.ExecuteQuery(
-                "SELECT * FROM chitietphieuban WHERE maDonKhachHang=@maDonKhachHang;",
-                new MySqlParameter[] {
-                    new MySqlParameter("@maDonKhachHang", billId),
-                }
-            );
+		{
+			DataTable dataTable = DataProvider.Instance.ExecuteQuery(
+				"SELECT * FROM chitietphieuban WHERE maDonKhachHang=@maDonKhachHang;",
+				new MySqlParameter[] {
+					new MySqlParameter("@maDonKhachHang", billId),
+				}
+			);
 
-            if (dataTable.Rows.Count <= 0) return null;
+			if (dataTable.Rows.Count <= 0) return null;
 
-            List<CustomerBillDetailDTO> customerBillDetailList = new List<CustomerBillDetailDTO>();
+			List<CustomerBillDetailDTO> customerBillDetailList = new List<CustomerBillDetailDTO>();
 
-            foreach (DataRow row in dataTable.Rows)
-            {
-                CustomerBillDetailDTO customerBillDetail = new CustomerBillDetailDTO(row);
-                customerBillDetailList.Add(customerBillDetail);
-            }
+			foreach (DataRow row in dataTable.Rows)
+			{
+				CustomerBillDetailDTO customerBillDetail = new CustomerBillDetailDTO(row);
+				customerBillDetailList.Add(customerBillDetail);
+			}
 
-            return customerBillDetailList;
-        }
+			return customerBillDetailList;
+		}
 
-        public DataTable searchData(string value)
+		public DataTable searchData(string value)
         {
             string sql = $@"SELECT * FROM phieuban WHERE maDonKhachHang LIKE @maDonKhachHang AND hienThi = 1;";
 

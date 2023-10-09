@@ -57,12 +57,17 @@ namespace QuanLyCuaHangBanSach.BUS
 			return CustomerBillDAO.Instance.getRevenue(id);
 		}
 
+		public DataTable getSoldQuantityAndRevenue(string query)
+		{
+			return CustomerBillDAO.Instance.getSoldQuantityAndRevenue(query);
+		}
+
 		public double getRevenueInRange(string year, string startMonth, string endMonth)
 		{
 			return CustomerBillDAO.Instance.getRevenueInRange(year, startMonth, endMonth);
 		}
 
-		public List<NumberBookSoldDTO> getBookSoldInRange(string year, string startMonth, string endMonth)
+		public DataTable getBookSoldInRange(string year, string startMonth, string endMonth)
 		{ 
 			return CustomerBillDAO.Instance.getBookSoldInRange(year, startMonth, endMonth);
 		}

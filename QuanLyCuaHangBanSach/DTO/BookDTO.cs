@@ -15,9 +15,6 @@ namespace QuanLyCuaHangBanSach.DTO
         public double GiaBan { get; set; }
         public double GiaNhap { get; set; }
         public int NamXuatBan { get; set; }
-        public int daBan { get; set; }
-        public double doanhThu { get; set; }
-
 
         public BookDTO() { }
         public BookDTO(

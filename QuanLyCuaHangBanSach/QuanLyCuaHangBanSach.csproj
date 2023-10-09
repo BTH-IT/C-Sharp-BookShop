@@ -455,7 +455,6 @@
     <Compile Include="DTO\AuthDetailDTO.cs" />
     <Compile Include="DTO\BookDTO.cs" />
     <Compile Include="DTO\ChangeBillDTO.cs" />
-    <Compile Include="DTO\NumberBookSoldDTO.cs" />
     <Compile Include="DTO\CustomerRefundBillDetailDTO.cs" />
     <Compile Include="DTO\CustomerChangeBillDTO.cs" />
     <Compile Include="DTO\CustomerRefundBillDTO.cs" />

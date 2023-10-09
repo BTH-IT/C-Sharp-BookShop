@@ -104,27 +104,27 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 				gradientBrush.GradientStops.Add(new GradientStop(System.Windows.Media.Color.FromRgb(153, 246, 228), 0));
 				gradientBrush.GradientStops.Add(new GradientStop(Colors.Transparent, 1));
 
-				List<NumberBookSoldDTO> numberBookSoldList = CustomerBillBUS.Instance.getBookSoldInRange(now.Year.ToString(), (month - 5).ToString(), month.ToString());
+				DataTable numberBookSoldDT = CustomerBillBUS.Instance.getBookSoldInRange(now.Year.ToString(), (month - 5).ToString(), month.ToString());
 				ChartValues<double> chartVals = new ChartValues<double>();
 
 				foreach (int m in months)
 				{
-					if (numberBookSoldList != null)
+					if (numberBookSoldDT != null)
 					{
 						bool found = false;
-						foreach (var item in numberBookSoldList)
+						foreach (DataRow row in numberBookSoldDT.Rows)
 						{
-							if (item.thang == m)
+							if (Convert.ToInt32(row["thang"]) == m)
 							{
 								found = true;
-								chartVals.Add(item.soLuong / 10.0);
+								chartVals.Add(Convert.ToInt32(row["soLuong"]) / 10.0);
 								break;
 							}
 						}
 						if (!found)
 						{
 							chartVals.Add(0);
-						}
+						} 
 					}
 					else
 					{
@@ -148,9 +148,9 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 				revenueLb.Text = string.Format("{0:N0} VNĐ", revenue);
 
 				int bookSold = 0;
-				foreach (var item in numberBookSoldList)
+				foreach (DataRow row in numberBookSoldDT.Rows)
 				{
-					bookSold += item.soLuong;
+					bookSold += Convert.ToInt32(row["soLuong"]);
 				}
 				bookSoldLb.Text = $@"{bookSold} quyển sách";
 
@@ -172,24 +172,23 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
 				dgvBook.Rows.Clear();
 
-
-				foreach (BookDTO book in bookList)
+				if (bookList != null)
 				{
-                    if (!string.IsNullOrEmpty(book.daBan.ToString()) && !string.IsNullOrEmpty(book.daBan.ToString()))
-                    {
-						book.daBan = CustomerBillBUS.Instance.getSoldQuantity(book.MaSach.ToString());
-						book.doanhThu = CustomerBillBUS.Instance.getRevenue(book.MaSach.ToString());
-                    }
+					foreach (BookDTO book in bookList)
+					{
+						int daBan = CustomerBillBUS.Instance.getSoldQuantity(book.MaSach.ToString());
+						double doanhThu = CustomerBillBUS.Instance.getRevenue(book.MaSach.ToString());
 
-					dgvBook.Rows.Add(new object[] {
-						book.MaSach,
-						book.TenSach,
-						book.HinhAnh,
-                        string.Format("{0:N0} VNĐ", book.GiaBan),
-                        string.Format("{0:N0} VNĐ", book.GiaNhap),
-                        book.daBan,
-						string.Format("{0:N0} VNĐ", book.doanhThu)
-					});
+						dgvBook.Rows.Add(new object[] {
+							book.MaSach,
+							book.TenSach,
+							book.HinhAnh,
+							string.Format("{0:N0} VNĐ", book.GiaBan),
+							string.Format("{0:N0} VNĐ", book.GiaNhap),
+							daBan,
+							string.Format("{0:N0} VNĐ", doanhThu)
+						});
+					} 
 				}
 			}
 			catch (Exception ex)
@@ -212,59 +211,129 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 			}
 		}
 
-		private List<BookDTO> handleFilter(string query)
+		private DataTable handleFilter(string query)
 		{
 			try
 			{
-				List<BookDTO> bookList = BookBUS.Instance.search(query);
+				DataTable bookListDT = CustomerBillBUS.Instance.getSoldQuantityAndRevenue(query);
 
-                foreach (BookDTO book in bookList)
+				if (!string.IsNullOrEmpty(lowSortInp.Text))
 				{
-					book.daBan = CustomerBillBUS.Instance.getSoldQuantity(book.MaSach.ToString());
-					book.doanhThu = CustomerBillBUS.Instance.getRevenue(book.MaSach.ToString());
+					List<DataRow> rowsToRemove = new List<DataRow>();
+
+					foreach (DataRow row in bookListDT.Rows)
+					{
+						if (Convert.ToInt32(row["daBan"]) >= Convert.ToInt32(lowSortInp.Text))
+						{
+							rowsToRemove.Add(row);
+						}
+					}
+
+					foreach (DataRow rowToRemove in rowsToRemove)
+					{
+						bookListDT.Rows.Remove(rowToRemove);
+					}
 				}
 
-                if (!string.IsNullOrEmpty(lowSortInp.Text))
-                {
-                    bookList = bookList.FindAll(item => item.daBan <= Convert.ToInt32(lowSortInp.Text));
-                    Console.WriteLine(Convert.ToInt32(lowSortInp.Text));
-                }
-
-                if (!string.IsNullOrEmpty(highSortInp.Text))
-                {
-                    bookList = bookList.FindAll(item => item.daBan >= Convert.ToInt32(highSortInp.Text));
-                    Console.WriteLine(Convert.ToInt32(highSortInp.Text));
-                }
-
-                if (!string.IsNullOrEmpty(revenueFrom.Text) && string.IsNullOrEmpty(revenueTo.Text))
-                {
-                    bookList = bookList.FindAll(item => item.doanhThu >= Convert.ToDouble(this.revenueFrom.Text));
-                }
-
-                if (string.IsNullOrEmpty(revenueFrom.Text) && !string.IsNullOrEmpty(revenueTo.Text))
-                {
-                    bookList = bookList.FindAll(item => item.doanhThu <= Convert.ToDouble(this.revenueTo.Text));
-                }
-
-                if (!string.IsNullOrEmpty(revenueFrom.Text) && !string.IsNullOrEmpty(revenueTo.Text))
+				if (!string.IsNullOrEmpty(highSortInp.Text))
 				{
-                    bookList = bookList.FindAll(item => item.doanhThu >= Convert.ToDouble(this.revenueFrom.Text)
-													&& item.doanhThu <= Convert.ToDouble(this.revenueTo.Text));
-                }
+					List<DataRow> rowsToRemove = new List<DataRow>();
 
-                return bookList;
+					foreach (DataRow row in bookListDT.Rows)
+					{
+						if (Convert.ToInt32(row["daBan"]) <= Convert.ToInt32(highSortInp.Text))
+						{
+							rowsToRemove.Add(row);
+						}
+					}
+
+					foreach (DataRow rowToRemove in rowsToRemove)
+					{
+						bookListDT.Rows.Remove(rowToRemove);
+					}
+				}
+
+				if (!string.IsNullOrEmpty(revenueFrom.Text) && string.IsNullOrEmpty(revenueTo.Text))
+				{
+					List<DataRow> rowsToRemove = new List<DataRow>();
+
+					foreach (DataRow row in bookListDT.Rows)
+					{
+						if (Convert.ToDouble(row["doanhThu"]) <= Convert.ToInt32(revenueFrom.Text))
+						{
+							rowsToRemove.Add(row);
+						}
+					}
+
+					foreach (DataRow rowToRemove in rowsToRemove)
+					{
+						bookListDT.Rows.Remove(rowToRemove);
+					}
+				}
+
+				if (string.IsNullOrEmpty(revenueFrom.Text) && !string.IsNullOrEmpty(revenueTo.Text))
+				{
+					List<DataRow> rowsToRemove = new List<DataRow>();
+
+					foreach (DataRow row in bookListDT.Rows)
+					{
+						if (Convert.ToDouble(row["doanhThu"]) >= Convert.ToInt32(revenueTo.Text))
+						{
+							rowsToRemove.Add(row);
+						}
+					}
+
+					foreach (DataRow rowToRemove in rowsToRemove)
+					{
+						bookListDT.Rows.Remove(rowToRemove);
+					}
+				}
+
+				if (!string.IsNullOrEmpty(revenueFrom.Text) && !string.IsNullOrEmpty(revenueTo.Text))
+				{
+					List<DataRow> rowsToRemove = new List<DataRow>();
+
+					foreach (DataRow row in bookListDT.Rows)
+					{
+						if (!(Convert.ToDouble(row["doanhThu"]) >= Convert.ToInt32(revenueFrom.Text) && Convert.ToDouble(row["doanhThu"]) <= Convert.ToInt32(revenueTo.Text)))
+						{
+							rowsToRemove.Add(row);
+						}
+					}
+
+					foreach (DataRow rowToRemove in rowsToRemove)
+					{
+						bookListDT.Rows.Remove(rowToRemove);
+					}
+				}
+
+				return bookListDT;
 			}
 			catch (Exception)
 			{
-				return new List<BookDTO>();
+				return new DataTable();
 			}
+		}
+
+		private List<BookDTO> convertTableToList(DataTable dt)
+		{
+			List<BookDTO> bookList = new List<BookDTO>();
+            foreach (DataRow row in dt.Rows)
+            {
+				BookDTO book = BookBUS.Instance.getById(row["maSach"].ToString());
+				bookList.Add(book);
+            }
+
+			if (bookList.Count == 0) return null;
+
+            return bookList;
 		}
 
 		private void searchInput_TextChanged(object sender, EventArgs e)
 		{
 			try
 			{
-                List<BookDTO> bookList = handleFilter(searchInput.Text);
+                List<BookDTO> bookList = convertTableToList(handleFilter(searchInput.Text));
 				loadBookListToDataView(bookList);
 
             }
@@ -299,7 +368,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 		{
 			try
 			{
-                List<BookDTO> bookList = handleFilter(searchInput.Text.ToString());
+                List<BookDTO> bookList = convertTableToList(handleFilter(searchInput.Text));
 
                 DataTable dataTable = CustomExcel.Instance.ConvertListToDataTable(bookList);
 
@@ -324,8 +393,8 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 				}
 				else
 				{
+					highSortInp.Text = "";
 					highSortInp.Enabled = false;
-					lowSortInp.Text = "";
 				}
 			}
 			catch (Exception ex)
@@ -345,8 +414,8 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 				}
 				else
 				{
+					lowSortInp.Text = "";
 					lowSortInp.Enabled = false;
-					highSortInp.Text = "";
 				}
 			}
 			catch (Exception ex)
