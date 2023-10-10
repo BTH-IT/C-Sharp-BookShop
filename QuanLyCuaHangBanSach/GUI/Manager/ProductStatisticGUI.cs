@@ -79,10 +79,17 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 					Title = "Tháng",
 					Labels = strLabel
 				});
+				DataTable numberBookSoldDT = CustomerBillBUS.Instance.getBookSoldInRange(now.Year.ToString(), (month - 5).ToString(), month.ToString());
+				int maxVal = 0;
+				foreach (DataRow row in numberBookSoldDT.Rows)
+				{
+					maxVal = Math.Max(maxVal, Convert.ToInt32(row["soLuong"]));
+				}
+				int maxValRounded = (int)Math.Ceiling((double)maxVal / 10) * 10;
 
 				List<string> strValueLabel = new List<string>();
 
-				for (int i = 0; i <= 2000; i += 10)
+				for (int i = 0; i <= maxValRounded; i += 10)
 				{
 					strValueLabel.Add(i.ToString());
 				}
@@ -104,7 +111,6 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 				gradientBrush.GradientStops.Add(new GradientStop(System.Windows.Media.Color.FromRgb(153, 246, 228), 0));
 				gradientBrush.GradientStops.Add(new GradientStop(Colors.Transparent, 1));
 
-				DataTable numberBookSoldDT = CustomerBillBUS.Instance.getBookSoldInRange(now.Year.ToString(), (month - 5).ToString(), month.ToString());
 				ChartValues<double> chartVals = new ChartValues<double>();
 
 				foreach (int m in months)

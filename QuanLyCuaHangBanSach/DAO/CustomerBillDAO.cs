@@ -29,7 +29,24 @@ namespace QuanLyCuaHangBanSach.DAO
             return DataProvider.Instance.ExecuteQuery("select * from phieuban WHERE hienThi = 1;");
         }
 
-        public CustomerBillDetailDTO getCustomerBillDetail(string billId, string bookId)
+		public DataTable getAllInRange(string year, string startMonth, string endMonth)
+		{
+			DataTable dataTable = DataProvider.Instance.ExecuteQuery(
+				"SELECT * FROM phieuban WHERE YEAR(ngayLap)=@nam AND MONTH(ngayLap) >= @thangBatDau AND MONTH(ngayLap) <= @thangKetThuc AND hienThi=1;",
+				new MySqlParameter[] {
+					new MySqlParameter("@nam", year),
+					new MySqlParameter("@thangBatDau", startMonth),
+					new MySqlParameter("@thangKetThuc", endMonth)
+				}
+
+			);
+
+			if (dataTable.Rows.Count <= 0) return null;
+
+			return dataTable;
+		}
+
+		public CustomerBillDetailDTO getCustomerBillDetail(string billId, string bookId)
         {
             DataTable dataTable = DataProvider.Instance.ExecuteQuery(
                 "SELECT * FROM chitietphieuban WHERE maDonKhachHang=@maDonKhachHang AND maSach=@maSach;",
@@ -72,7 +89,7 @@ namespace QuanLyCuaHangBanSach.DAO
 
             return Convert.ToDouble(dataTable.Rows[0]["doanhThu"]);
         }
-
+        
         public DataTable getSoldQuantityAndRevenue(string query)
         {
 			DataTable dataTable = DataProvider.Instance.ExecuteQuery(
@@ -94,7 +111,7 @@ namespace QuanLyCuaHangBanSach.DAO
 		public double getRevenueInRange(string year, string startMonth, string endMonth)
 		{
 			DataTable dataTable = DataProvider.Instance.ExecuteQuery(
-				"SELECT SUM(tongTien) AS doanhThu FROM phieuban WHERE YEAR(ngayLap)=@nam AND MONTH(ngayLap) >= @thangBatDau AND MONTH(ngayLap) <= @thangKetThuc;",
+				"SELECT SUM(tongTien) AS doanhThu FROM phieuban WHERE YEAR(ngayLap)=@nam AND MONTH(ngayLap) >= @thangBatDau AND MONTH(ngayLap) <= @thangKetThuc AND hienThi=1;",
 				new MySqlParameter[] {
 					new MySqlParameter("@nam", year),
 					new MySqlParameter("@thangBatDau", startMonth),
@@ -113,7 +130,7 @@ namespace QuanLyCuaHangBanSach.DAO
             DataTable dataTable = DataProvider.Instance.ExecuteQuery(
                 "SELECT MONTH(ngayLap) AS thang, SUM(chitietphieuban.soLuong) AS soLuong " +
                 "FROM phieuban JOIN chitietphieuban ON phieuban.maDonKhachHang = chitietphieuban.maDonKhachHang " +
-				"WHERE YEAR(ngayLap)=@nam AND MONTH(ngayLap) >= @thangBatDau AND MONTH(ngayLap) <= @thangKetThuc " +
+				"WHERE YEAR(ngayLap)=@nam AND MONTH(ngayLap) >= @thangBatDau AND MONTH(ngayLap) <= @thangKetThuc AND phieuban.hienThi=1 " +
                 "GROUP BY thang " +
                 "ORDER BY thang;",
                 new MySqlParameter[] {
@@ -131,7 +148,7 @@ namespace QuanLyCuaHangBanSach.DAO
 		public int getNumberCustomerInRange(string year, string startMonth, string endMonth)
 		{
 			DataTable dataTable = DataProvider.Instance.ExecuteQuery(
-				"SELECT COUNT(maKhachHang) AS soLuongKhach FROM phieuban WHERE YEAR(ngayLap)=@nam AND MONTH(ngayLap) >= @thangBatDau AND MONTH(ngayLap) <= @thangKetThuc;",
+				"SELECT COUNT(maKhachHang) AS soLuongKhach FROM phieuban WHERE YEAR(ngayLap)=@nam AND MONTH(ngayLap) >= @thangBatDau AND MONTH(ngayLap) <= @thangKetThuc AND hienThi=1;",
 				new MySqlParameter[] {
 					new MySqlParameter("@nam", year),
 					new MySqlParameter("@thangBatDau", startMonth),

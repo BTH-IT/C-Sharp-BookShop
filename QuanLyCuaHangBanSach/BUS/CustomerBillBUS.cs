@@ -28,10 +28,25 @@ namespace QuanLyCuaHangBanSach.BUS
 			return CustomerBillDAO.Instance.getAll();
 		}
 
+
 		public List<CustomerBillDTO> getAllData()
 		{
 			List<CustomerBillDTO> customerBillList = new List<CustomerBillDTO>();
 			DataTable dt = CustomerBillDAO.Instance.getAll();
+
+			foreach (DataRow row in dt.Rows)
+			{
+				CustomerBillDTO customerBill = new CustomerBillDTO(row);
+				customerBillList.Add(customerBill);
+			}
+
+			return customerBillList;
+		}
+
+		public List<CustomerBillDTO> getAllInRange(string year, string startMonth, string endMonth)
+		{
+			List<CustomerBillDTO> customerBillList = new List<CustomerBillDTO>();
+			DataTable dt = CustomerBillDAO.Instance.getAllInRange(year, startMonth, endMonth);
 
 			foreach (DataRow row in dt.Rows)
 			{
