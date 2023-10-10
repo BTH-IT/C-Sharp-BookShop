@@ -1,48 +1,50 @@
 ﻿namespace QuanLyCuaHangBanSach.GUI.Manager
 {
-    partial class ProductStatisticGUI
-    {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
-        private System.ComponentModel.IContainer components = null;
+	partial class RevenueStatisticGUI
+	{
+		/// <summary>
+		/// Required designer variable.
+		/// </summary>
+		private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+		/// <summary>
+		/// Clean up any resources being used.
+		/// </summary>
+		/// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+		protected override void Dispose(bool disposing)
+		{
+			if (disposing && (components != null))
+			{
+				components.Dispose();
+			}
+			base.Dispose(disposing);
+		}
 
-        #region Windows Form Designer generated code
+		#region Windows Form Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
-        private void InitializeComponent()
-        {
+		/// <summary>
+		/// Required method for Designer support - do not modify
+		/// the contents of this method with the code editor.
+		/// </summary>
+		private void InitializeComponent()
+		{
 			this.components = new System.ComponentModel.Container();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductStatisticGUI));
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RevenueStatisticGUI));
 			this.line1 = new System.Windows.Forms.Panel();
-			this.dgvBook = new Guna.UI.WinForms.GunaDataGridView();
+			this.dgvBill = new Guna.UI.WinForms.GunaDataGridView();
+			this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.optionPanel = new System.Windows.Forms.Panel();
 			this.chartBtn = new Guna.UI.WinForms.GunaAdvenceButton();
 			this.tableBtn = new Guna.UI.WinForms.GunaAdvenceButton();
@@ -50,12 +52,6 @@
 			this.refreshBtn = new Guna.UI.WinForms.GunaAdvenceButton();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.searchInput = new Guna.UI2.WinForms.Guna2TextBox();
-			this.highSortCkb = new Guna.UI.WinForms.GunaCheckBox();
-			this.highSortInp = new Guna.UI2.WinForms.Guna2TextBox();
-			this.panel5 = new System.Windows.Forms.Panel();
-			this.lowSortInp = new Guna.UI2.WinForms.Guna2TextBox();
-			this.panel6 = new System.Windows.Forms.Panel();
-			this.lowSortCkb = new Guna.UI.WinForms.GunaCheckBox();
 			this.modeCheck = new System.Windows.Forms.Timer(this.components);
 			this.tablePanel = new System.Windows.Forms.Panel();
 			this.gradientPanel1 = new QuanLyCuaHangBanSach.GradientPanel();
@@ -84,14 +80,7 @@
 			this.pictureBox4 = new System.Windows.Forms.PictureBox();
 			this.revenueLb = new System.Windows.Forms.Label();
 			this.label8 = new System.Windows.Forms.Label();
-			this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column10 = new System.Windows.Forms.DataGridViewImageColumn();
-			this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			((System.ComponentModel.ISupportInitialize)(this.dgvBook)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.dgvBill)).BeginInit();
 			this.optionPanel.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.tablePanel.SuspendLayout();
@@ -116,93 +105,142 @@
 			this.line1.Size = new System.Drawing.Size(268, 1);
 			this.line1.TabIndex = 21;
 			// 
-			// dgvBook
+			// dgvBill
 			// 
-			this.dgvBook.AllowUserToAddRows = false;
-			this.dgvBook.AllowUserToDeleteRows = false;
-			this.dgvBook.AllowUserToResizeRows = false;
-			dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-			this.dgvBook.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-			this.dgvBook.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-			this.dgvBook.BackgroundColor = System.Drawing.Color.White;
-			this.dgvBook.BorderStyle = System.Windows.Forms.BorderStyle.None;
-			this.dgvBook.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-			this.dgvBook.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-			dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-			dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-			dataGridViewCellStyle2.Font = new System.Drawing.Font("#9Slide03 Cabin", 10F);
-			dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-			dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-			dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-			dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-			this.dgvBook.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-			this.dgvBook.ColumnHeadersHeight = 50;
-			this.dgvBook.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-			this.dgvBook.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
+			this.dgvBill.AllowUserToAddRows = false;
+			this.dgvBill.AllowUserToDeleteRows = false;
+			this.dgvBill.AllowUserToResizeRows = false;
+			dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
+			this.dgvBill.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+			this.dgvBill.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+			this.dgvBill.BackgroundColor = System.Drawing.Color.White;
+			this.dgvBill.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.dgvBill.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+			this.dgvBill.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+			dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+			dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+			dataGridViewCellStyle11.Font = new System.Drawing.Font("#9Slide03 Cabin", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
+			dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+			dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.White;
+			dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.dgvBill.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+			this.dgvBill.ColumnHeadersHeight = 50;
+			this.dgvBill.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+			this.dgvBill.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column2,
-            this.Column10,
             this.Column7,
             this.Column8,
-            this.Column9,
             this.Column6});
-			dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-			dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-			dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-			dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-			dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-			dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-			this.dgvBook.DefaultCellStyle = dataGridViewCellStyle9;
-			this.dgvBook.EnableHeadersVisualStyles = false;
-			this.dgvBook.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-			this.dgvBook.Location = new System.Drawing.Point(3, 63);
-			this.dgvBook.Name = "dgvBook";
-			dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-			dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-			dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
-			dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-			dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.White;
-			dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-			this.dgvBook.RowHeadersDefaultCellStyle = dataGridViewCellStyle10;
-			this.dgvBook.RowHeadersVisible = false;
-			this.dgvBook.RowHeadersWidth = 51;
-			this.dgvBook.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-			dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-			dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-			this.dgvBook.RowsDefaultCellStyle = dataGridViewCellStyle11;
-			this.dgvBook.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-			this.dgvBook.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-			this.dgvBook.RowTemplate.Height = 75;
-			this.dgvBook.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-			this.dgvBook.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-			this.dgvBook.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.dgvBook.Size = new System.Drawing.Size(1247, 575);
-			this.dgvBook.TabIndex = 23;
-			this.dgvBook.TabStop = false;
-			this.dgvBook.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna;
-			this.dgvBook.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-			this.dgvBook.ThemeStyle.AlternatingRowsStyle.Font = null;
-			this.dgvBook.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-			this.dgvBook.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-			this.dgvBook.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-			this.dgvBook.ThemeStyle.BackColor = System.Drawing.Color.White;
-			this.dgvBook.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-			this.dgvBook.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-			this.dgvBook.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-			this.dgvBook.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.dgvBook.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-			this.dgvBook.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-			this.dgvBook.ThemeStyle.HeaderStyle.Height = 50;
-			this.dgvBook.ThemeStyle.ReadOnly = false;
-			this.dgvBook.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-			this.dgvBook.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-			this.dgvBook.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.dgvBook.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-			this.dgvBook.ThemeStyle.RowsStyle.Height = 75;
-			this.dgvBook.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-			this.dgvBook.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+			dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+			dataGridViewCellStyle16.BackColor = System.Drawing.Color.White;
+			dataGridViewCellStyle16.Font = new System.Drawing.Font("#9Slide03 Cabin", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+			dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+			dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+			dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.dgvBill.DefaultCellStyle = dataGridViewCellStyle16;
+			this.dgvBill.EnableHeadersVisualStyles = false;
+			this.dgvBill.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+			this.dgvBill.Location = new System.Drawing.Point(3, 63);
+			this.dgvBill.Name = "dgvBill";
+			dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+			dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+			dataGridViewCellStyle17.Font = new System.Drawing.Font("#9Slide03 Cabin", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle17.ForeColor = System.Drawing.Color.White;
+			dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+			dataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.White;
+			dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.dgvBill.RowHeadersDefaultCellStyle = dataGridViewCellStyle17;
+			this.dgvBill.RowHeadersVisible = false;
+			this.dgvBill.RowHeadersWidth = 51;
+			this.dgvBill.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+			dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+			dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.dgvBill.RowsDefaultCellStyle = dataGridViewCellStyle18;
+			this.dgvBill.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+			this.dgvBill.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.dgvBill.RowTemplate.Height = 75;
+			this.dgvBill.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+			this.dgvBill.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+			this.dgvBill.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+			this.dgvBill.Size = new System.Drawing.Size(1247, 575);
+			this.dgvBill.TabIndex = 23;
+			this.dgvBill.TabStop = false;
+			this.dgvBill.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna;
+			this.dgvBill.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+			this.dgvBill.ThemeStyle.AlternatingRowsStyle.Font = null;
+			this.dgvBill.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+			this.dgvBill.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+			this.dgvBill.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+			this.dgvBill.ThemeStyle.BackColor = System.Drawing.Color.White;
+			this.dgvBill.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+			this.dgvBill.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+			this.dgvBill.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+			this.dgvBill.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("#9Slide03 Cabin", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.dgvBill.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+			this.dgvBill.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+			this.dgvBill.ThemeStyle.HeaderStyle.Height = 50;
+			this.dgvBill.ThemeStyle.ReadOnly = false;
+			this.dgvBill.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+			this.dgvBill.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+			this.dgvBill.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("#9Slide03 Cabin", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.dgvBill.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+			this.dgvBill.ThemeStyle.RowsStyle.Height = 75;
+			this.dgvBill.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+			this.dgvBill.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+			// 
+			// Column2
+			// 
+			dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+			dataGridViewCellStyle12.Font = new System.Drawing.Font("#9Slide03 Cabin", 10F);
+			this.Column2.DefaultCellStyle = dataGridViewCellStyle12;
+			this.Column2.FillWeight = 70F;
+			this.Column2.HeaderText = "Ngày lập hóa đơn";
+			this.Column2.MinimumWidth = 6;
+			this.Column2.Name = "Column2";
+			this.Column2.ReadOnly = true;
+			this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+			this.Column2.ToolTipText = "Ngày lập hóa đơn";
+			// 
+			// Column7
+			// 
+			dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+			dataGridViewCellStyle13.Font = new System.Drawing.Font("#9Slide03 Cabin", 10F);
+			this.Column7.DefaultCellStyle = dataGridViewCellStyle13;
+			this.Column7.FillWeight = 70F;
+			this.Column7.HeaderText = "Mã hóa đơn";
+			this.Column7.MinimumWidth = 6;
+			this.Column7.Name = "Column7";
+			this.Column7.ReadOnly = true;
+			this.Column7.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+			this.Column7.ToolTipText = "Mã hóa đơn";
+			// 
+			// Column8
+			// 
+			dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+			dataGridViewCellStyle14.Font = new System.Drawing.Font("#9Slide03 Cabin", 10F);
+			this.Column8.DefaultCellStyle = dataGridViewCellStyle14;
+			this.Column8.FillWeight = 120F;
+			this.Column8.HeaderText = "Khuyến mãi";
+			this.Column8.MinimumWidth = 6;
+			this.Column8.Name = "Column8";
+			this.Column8.ReadOnly = true;
+			this.Column8.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+			this.Column8.ToolTipText = "Tiền khuyến mãi";
+			// 
+			// Column6
+			// 
+			dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+			dataGridViewCellStyle15.Font = new System.Drawing.Font("#9Slide03 Cabin", 10F);
+			this.Column6.DefaultCellStyle = dataGridViewCellStyle15;
+			this.Column6.FillWeight = 120F;
+			this.Column6.HeaderText = "Doanh thu";
+			this.Column6.MinimumWidth = 6;
+			this.Column6.Name = "Column6";
+			this.Column6.ReadOnly = true;
+			this.Column6.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+			this.Column6.ToolTipText = "Doanh thu";
 			// 
 			// optionPanel
 			// 
@@ -381,120 +419,13 @@
 			this.searchInput.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
 			this.searchInput.Name = "searchInput";
 			this.searchInput.PasswordChar = '\0';
-			this.searchInput.PlaceholderText = "Tìm kiếm theo mã, tên ...";
+			this.searchInput.PlaceholderText = "Tìm kiếm theo mã hóa đơn ...";
 			this.searchInput.SelectedText = "";
 			this.searchInput.ShadowDecoration.Parent = this.searchInput;
 			this.searchInput.Size = new System.Drawing.Size(236, 36);
 			this.searchInput.TabIndex = 31;
 			this.searchInput.TextChanged += new System.EventHandler(this.searchInput_TextChanged);
 			this.searchInput.MouseLeave += new System.EventHandler(this.searchInput_MouseLeave);
-			// 
-			// highSortCkb
-			// 
-			this.highSortCkb.BaseColor = System.Drawing.Color.White;
-			this.highSortCkb.CheckedOffColor = System.Drawing.Color.Gray;
-			this.highSortCkb.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-			this.highSortCkb.FillColor = System.Drawing.Color.White;
-			this.highSortCkb.Location = new System.Drawing.Point(417, 21);
-			this.highSortCkb.Name = "highSortCkb";
-			this.highSortCkb.Size = new System.Drawing.Size(53, 20);
-			this.highSortCkb.TabIndex = 32;
-			this.highSortCkb.Text = "Trên";
-			this.highSortCkb.CheckedChanged += new System.EventHandler(this.highSortCkb_CheckedChanged);
-			// 
-			// highSortInp
-			// 
-			this.highSortInp.Animated = true;
-			this.highSortInp.BackColor = System.Drawing.Color.Transparent;
-			this.highSortInp.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
-			this.highSortInp.BorderThickness = 0;
-			this.highSortInp.Cursor = System.Windows.Forms.Cursors.IBeam;
-			this.highSortInp.DefaultText = "";
-			this.highSortInp.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-			this.highSortInp.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-			this.highSortInp.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-			this.highSortInp.DisabledState.Parent = this.highSortInp;
-			this.highSortInp.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-			this.highSortInp.Enabled = false;
-			this.highSortInp.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
-			this.highSortInp.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-			this.highSortInp.FocusedState.Parent = this.highSortInp;
-			this.highSortInp.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.highSortInp.ForeColor = System.Drawing.Color.Black;
-			this.highSortInp.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-			this.highSortInp.HoverState.Parent = this.highSortInp;
-			this.highSortInp.Location = new System.Drawing.Point(475, 17);
-			this.highSortInp.Margin = new System.Windows.Forms.Padding(0);
-			this.highSortInp.Name = "highSortInp";
-			this.highSortInp.PasswordChar = '\0';
-			this.highSortInp.PlaceholderText = "Đã bán trên ...";
-			this.highSortInp.SelectedText = "";
-			this.highSortInp.ShadowDecoration.Parent = this.highSortInp;
-			this.highSortInp.Size = new System.Drawing.Size(110, 25);
-			this.highSortInp.TabIndex = 34;
-			this.highSortInp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.highSortInp_KeyPress);
-			// 
-			// panel5
-			// 
-			this.panel5.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(212)))), ((int)(((byte)(191)))));
-			this.panel5.Location = new System.Drawing.Point(475, 44);
-			this.panel5.Name = "panel5";
-			this.panel5.Size = new System.Drawing.Size(100, 1);
-			this.panel5.TabIndex = 33;
-			// 
-			// lowSortInp
-			// 
-			this.lowSortInp.Animated = true;
-			this.lowSortInp.BackColor = System.Drawing.Color.Transparent;
-			this.lowSortInp.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
-			this.lowSortInp.BorderThickness = 0;
-			this.lowSortInp.Cursor = System.Windows.Forms.Cursors.IBeam;
-			this.lowSortInp.DefaultText = "";
-			this.lowSortInp.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-			this.lowSortInp.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-			this.lowSortInp.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-			this.lowSortInp.DisabledState.Parent = this.lowSortInp;
-			this.lowSortInp.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-			this.lowSortInp.Enabled = false;
-			this.lowSortInp.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
-			this.lowSortInp.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-			this.lowSortInp.FocusedState.Parent = this.lowSortInp;
-			this.lowSortInp.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lowSortInp.ForeColor = System.Drawing.Color.Black;
-			this.lowSortInp.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-			this.lowSortInp.HoverState.Parent = this.lowSortInp;
-			this.lowSortInp.Location = new System.Drawing.Point(676, 17);
-			this.lowSortInp.Margin = new System.Windows.Forms.Padding(0);
-			this.lowSortInp.Name = "lowSortInp";
-			this.lowSortInp.PasswordChar = '\0';
-			this.lowSortInp.PlaceholderText = "Đã bán dưới ...";
-			this.lowSortInp.SelectedText = "";
-			this.lowSortInp.ShadowDecoration.Parent = this.lowSortInp;
-			this.lowSortInp.Size = new System.Drawing.Size(110, 25);
-			this.lowSortInp.TabIndex = 37;
-			// 
-			// panel6
-			// 
-			this.panel6.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(212)))), ((int)(((byte)(191)))));
-			this.panel6.Location = new System.Drawing.Point(676, 44);
-			this.panel6.Name = "panel6";
-			this.panel6.Size = new System.Drawing.Size(100, 1);
-			this.panel6.TabIndex = 36;
-			// 
-			// lowSortCkb
-			// 
-			this.lowSortCkb.BaseColor = System.Drawing.Color.White;
-			this.lowSortCkb.CheckedOffColor = System.Drawing.Color.Gray;
-			this.lowSortCkb.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-			this.lowSortCkb.FillColor = System.Drawing.Color.White;
-			this.lowSortCkb.Location = new System.Drawing.Point(619, 22);
-			this.lowSortCkb.Name = "lowSortCkb";
-			this.lowSortCkb.Size = new System.Drawing.Size(53, 20);
-			this.lowSortCkb.TabIndex = 38;
-			this.lowSortCkb.Text = "Dưới";
-			this.lowSortCkb.CheckedChanged += new System.EventHandler(this.lowSortCkb_CheckedChanged);
 			// 
 			// modeCheck
 			// 
@@ -503,17 +434,11 @@
 			// 
 			// tablePanel
 			// 
-			this.tablePanel.Controls.Add(this.lowSortCkb);
-			this.tablePanel.Controls.Add(this.lowSortInp);
-			this.tablePanel.Controls.Add(this.panel6);
-			this.tablePanel.Controls.Add(this.highSortInp);
-			this.tablePanel.Controls.Add(this.panel5);
-			this.tablePanel.Controls.Add(this.highSortCkb);
 			this.tablePanel.Controls.Add(this.searchInput);
 			this.tablePanel.Controls.Add(this.pictureBox1);
 			this.tablePanel.Controls.Add(this.gradientPanel1);
 			this.tablePanel.Controls.Add(this.line1);
-			this.tablePanel.Controls.Add(this.dgvBook);
+			this.tablePanel.Controls.Add(this.dgvBill);
 			this.tablePanel.Location = new System.Drawing.Point(15, 12);
 			this.tablePanel.Name = "tablePanel";
 			this.tablePanel.Size = new System.Drawing.Size(1253, 636);
@@ -593,6 +518,7 @@
 			this.revenueFrom.ShadowDecoration.Parent = this.revenueFrom;
 			this.revenueFrom.Size = new System.Drawing.Size(125, 25);
 			this.revenueFrom.TabIndex = 32;
+			this.revenueFrom.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.revenueFrom_KeyPress);
 			// 
 			// panel3
 			// 
@@ -838,114 +764,26 @@
 			this.label8.TabIndex = 0;
 			this.label8.Text = "Tổng doanh thu 6 tháng gần đây";
 			// 
-			// Column1
+			// RevenueStatisticGUI
 			// 
-			dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-			dataGridViewCellStyle3.Font = new System.Drawing.Font("#9Slide03 Cabin", 10F);
-			this.Column1.DefaultCellStyle = dataGridViewCellStyle3;
-			this.Column1.FillWeight = 50F;
-			this.Column1.HeaderText = "Mã Sách";
-			this.Column1.MinimumWidth = 6;
-			this.Column1.Name = "Column1";
-			this.Column1.ReadOnly = true;
-			this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-			this.Column1.ToolTipText = "Mã Sách";
-			// 
-			// Column2
-			// 
-			dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-			dataGridViewCellStyle4.Font = new System.Drawing.Font("#9Slide03 Cabin", 10F);
-			this.Column2.DefaultCellStyle = dataGridViewCellStyle4;
-			this.Column2.FillWeight = 150F;
-			this.Column2.HeaderText = "Tên Sách";
-			this.Column2.MinimumWidth = 6;
-			this.Column2.Name = "Column2";
-			this.Column2.ReadOnly = true;
-			this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-			this.Column2.ToolTipText = "Tên Sách";
-			// 
-			// Column10
-			// 
-			this.Column10.HeaderText = "Hình Ảnh";
-			this.Column10.Image = ((System.Drawing.Image)(resources.GetObject("Column10.Image")));
-			this.Column10.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
-			this.Column10.MinimumWidth = 100;
-			this.Column10.Name = "Column10";
-			// 
-			// Column7
-			// 
-			dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-			dataGridViewCellStyle5.Font = new System.Drawing.Font("#9Slide03 Cabin", 10F);
-			this.Column7.DefaultCellStyle = dataGridViewCellStyle5;
-			this.Column7.FillWeight = 150F;
-			this.Column7.HeaderText = "Giá Bán";
-			this.Column7.MinimumWidth = 6;
-			this.Column7.Name = "Column7";
-			this.Column7.ReadOnly = true;
-			this.Column7.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-			this.Column7.ToolTipText = "Giá Bán";
-			// 
-			// Column8
-			// 
-			dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-			dataGridViewCellStyle6.Font = new System.Drawing.Font("#9Slide03 Cabin", 10F);
-			this.Column8.DefaultCellStyle = dataGridViewCellStyle6;
-			this.Column8.FillWeight = 150F;
-			this.Column8.HeaderText = "Giá Nhập";
-			this.Column8.MinimumWidth = 6;
-			this.Column8.Name = "Column8";
-			this.Column8.ReadOnly = true;
-			this.Column8.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-			this.Column8.ToolTipText = "Giá Nhập";
-			// 
-			// Column9
-			// 
-			dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-			dataGridViewCellStyle7.Font = new System.Drawing.Font("#9Slide03 Cabin", 10F);
-			this.Column9.DefaultCellStyle = dataGridViewCellStyle7;
-			this.Column9.FillWeight = 70F;
-			this.Column9.HeaderText = "Đã bán";
-			this.Column9.MinimumWidth = 6;
-			this.Column9.Name = "Column9";
-			this.Column9.ReadOnly = true;
-			this.Column9.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-			this.Column9.ToolTipText = "Đã bán";
-			// 
-			// Column6
-			// 
-			this.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-			dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-			dataGridViewCellStyle8.Font = new System.Drawing.Font("#9Slide03 Cabin", 10F);
-			this.Column6.DefaultCellStyle = dataGridViewCellStyle8;
-			this.Column6.HeaderText = "Doanh thu";
-			this.Column6.MinimumWidth = 6;
-			this.Column6.Name = "Column6";
-			this.Column6.ReadOnly = true;
-			this.Column6.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-			this.Column6.ToolTipText = "Doanh thu";
-			this.Column6.Width = 250;
-			// 
-			// ProductStatisticGUI
-			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
 			this.ClientSize = new System.Drawing.Size(1280, 720);
-			this.Controls.Add(this.tablePanel);
 			this.Controls.Add(this.chartPanel);
+			this.Controls.Add(this.tablePanel);
 			this.Controls.Add(this.optionPanel);
-			this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.Font = new System.Drawing.Font("#9Slide03 Cabin", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-			this.Name = "ProductStatisticGUI";
+			this.Name = "RevenueStatisticGUI";
 			this.ShowInTaskbar = false;
-			this.Text = "ProductStatisticGUI";
-			this.Load += new System.EventHandler(this.ProductStatisticGUI_Load);
-			((System.ComponentModel.ISupportInitialize)(this.dgvBook)).EndInit();
+			this.Text = "RevenueStatisticGUI";
+			this.Load += new System.EventHandler(this.RevenueStatisticGUI_Load);
+			((System.ComponentModel.ISupportInitialize)(this.dgvBill)).EndInit();
 			this.optionPanel.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			this.tablePanel.ResumeLayout(false);
-			this.tablePanel.PerformLayout();
 			this.gradientPanel1.ResumeLayout(false);
 			this.chartPanel.ResumeLayout(false);
 			this.chartPanel.PerformLayout();
@@ -963,58 +801,49 @@
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
 			this.ResumeLayout(false);
 
-        }
+		}
 
-        #endregion
-        private System.Windows.Forms.Panel line1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private Guna.UI.WinForms.GunaDataGridView dgvBook;
-        private System.Windows.Forms.Panel optionPanel;
-        private Guna.UI.WinForms.GunaAdvenceButton refreshBtn;
-        private GradientPanel gradientPanel1;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label1;
-        private Guna.UI.WinForms.GunaAdvenceButton exportBtn;
-        private Guna.UI2.WinForms.Guna2TextBox searchInput;
-        private Guna.UI2.WinForms.Guna2TextBox revenueTo;
-        private Guna.UI2.WinForms.Guna2TextBox revenueFrom;
-        private Guna.UI.WinForms.GunaAdvenceButton chartBtn;
-        private Guna.UI.WinForms.GunaAdvenceButton tableBtn;
-        private Guna.UI.WinForms.GunaCheckBox highSortCkb;
-        private Guna.UI2.WinForms.Guna2TextBox highSortInp;
-        private System.Windows.Forms.Panel panel5;
-        private Guna.UI2.WinForms.Guna2TextBox lowSortInp;
-        private System.Windows.Forms.Panel panel6;
-        private Guna.UI.WinForms.GunaCheckBox lowSortCkb;
-        private System.Windows.Forms.Timer modeCheck;
-        private System.Windows.Forms.Panel tablePanel;
-        private System.Windows.Forms.Panel chartPanel;
-        private System.Windows.Forms.Integration.ElementHost elementHost1;
-        private LiveCharts.Wpf.CartesianChart cartesianChart1;
-        private System.Windows.Forms.Label label7;
-        private Guna.UI.WinForms.GunaGradient2Panel gunaGradient2Panel3;
-        private Guna.UI.WinForms.GunaGradient2Panel gunaGradient2Panel5;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label bookSoldLb;
-        private System.Windows.Forms.Label label4;
-        private Guna.UI.WinForms.GunaGradient2Panel gunaGradient2Panel2;
-        private Guna.UI.WinForms.GunaGradient2Panel gunaGradient2Panel6;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Label customerNumLb;
-        private System.Windows.Forms.Label label6;
-        private Guna.UI.WinForms.GunaGradient2Panel gunaGradient2Panel1;
-        private Guna.UI.WinForms.GunaGradient2Panel gunaGradient2Panel4;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.Label revenueLb;
-        private System.Windows.Forms.Label label8;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+		#endregion
+		private System.Windows.Forms.Panel line1;
+		private System.Windows.Forms.PictureBox pictureBox1;
+		private Guna.UI.WinForms.GunaDataGridView dgvBill;
+		private System.Windows.Forms.Panel optionPanel;
+		private Guna.UI.WinForms.GunaAdvenceButton refreshBtn;
+		private GradientPanel gradientPanel1;
+		private System.Windows.Forms.Panel panel3;
+		private System.Windows.Forms.Panel panel4;
+		private System.Windows.Forms.Panel panel2;
+		private System.Windows.Forms.Label label1;
+		private Guna.UI.WinForms.GunaAdvenceButton exportBtn;
+		private Guna.UI2.WinForms.Guna2TextBox searchInput;
+		private Guna.UI2.WinForms.Guna2TextBox revenueTo;
+		private Guna.UI2.WinForms.Guna2TextBox revenueFrom;
+		private Guna.UI.WinForms.GunaAdvenceButton chartBtn;
+		private Guna.UI.WinForms.GunaAdvenceButton tableBtn;
+		private System.Windows.Forms.Timer modeCheck;
+		private System.Windows.Forms.Panel tablePanel;
+		private System.Windows.Forms.Panel chartPanel;
+		private System.Windows.Forms.Integration.ElementHost elementHost1;
+		private LiveCharts.Wpf.CartesianChart cartesianChart1;
+		private System.Windows.Forms.Label label7;
+		private Guna.UI.WinForms.GunaGradient2Panel gunaGradient2Panel3;
+		private Guna.UI.WinForms.GunaGradient2Panel gunaGradient2Panel5;
+		private System.Windows.Forms.PictureBox pictureBox2;
+		private System.Windows.Forms.Label bookSoldLb;
+		private System.Windows.Forms.Label label4;
+		private Guna.UI.WinForms.GunaGradient2Panel gunaGradient2Panel2;
+		private Guna.UI.WinForms.GunaGradient2Panel gunaGradient2Panel6;
+		private System.Windows.Forms.PictureBox pictureBox3;
+		private System.Windows.Forms.Label customerNumLb;
+		private System.Windows.Forms.Label label6;
+		private Guna.UI.WinForms.GunaGradient2Panel gunaGradient2Panel1;
+		private Guna.UI.WinForms.GunaGradient2Panel gunaGradient2Panel4;
+		private System.Windows.Forms.PictureBox pictureBox4;
+		private System.Windows.Forms.Label revenueLb;
+		private System.Windows.Forms.Label label8;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-		private System.Windows.Forms.DataGridViewImageColumn Column10;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
 	}
 }

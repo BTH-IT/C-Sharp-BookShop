@@ -13,16 +13,16 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
     public partial class StatisticMenuGUI : Form
     {
         private ProductStatisticGUI ProductStatisticFrm = new ProductStatisticGUI(1) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None, };
-        /*private RevenueStatisticGUI RevenueStatisticFrm = new RevenueStatisticGUI() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None, };
-        private StaffStatisticGUI StaffStatisticFrm = new StaffStatisticGUI() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None, };
-        private CustomerStatisticGUI CustomerStatisticFrm = new CustomerStatisticGUI() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None, };*/
+        private RevenueStatisticGUI RevenueStatisticFrm = new RevenueStatisticGUI(1) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None, };
+        //private StaffStatisticGUI StaffStatisticFrm = new StaffStatisticGUI() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None, };
+        //private CustomerStatisticGUI CustomerStatisticFrm = new CustomerStatisticGUI(1) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None, };
         public StatisticMenuGUI()
         {
             InitializeComponent();
             Controls.Add(ProductStatisticFrm);
-            /*this.Controls.Add(RevenueStatisticFrm);
-            this.Controls.Add(StaffStatisticFrm);
-            this.Controls.Add(CustomerStatisticFrm);*/
+            Controls.Add(RevenueStatisticFrm);
+            //Controls.Add(StaffStatisticFrm);
+            //Controls.Add(CustomerStatisticFrm);
         }
 
         private void ProductPanel_Click(object sender, EventArgs e)
@@ -31,16 +31,24 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             {
                 ProductStatisticFrm.Show();
                 ProductStatisticFrm.BringToFront();
-                /*RevenueStatisticFrm.Hide();
-                StaffStatisticFrm.Hide();
-                CustomerStatisticFrm.Hide();*/
+                RevenueStatisticFrm.Hide();
+                //StaffStatisticFrm.Hide();
+                //CustomerStatisticFrm.Hide();
             }
-            catch { }
-        }
+            catch (Exception ex) { Console.WriteLine(ex); }
+		}
 
-        private void RevenuePanel_Click(object sender, EventArgs e)
+		private void RevenuePanel_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+				RevenueStatisticFrm.Show();
+				RevenueStatisticFrm.BringToFront();
+				ProductStatisticFrm.Hide();
+				//StaffStatisticFrm.Hide();
+				//CustomerStatisticFrm.Hide();
+			}
+			catch (Exception ex) { Console.WriteLine(ex); }
         }
 
         private void StaffPanel_Click(object sender, EventArgs e)
