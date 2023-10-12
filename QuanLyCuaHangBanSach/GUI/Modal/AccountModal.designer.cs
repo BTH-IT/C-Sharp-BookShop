@@ -99,7 +99,6 @@
 			this.title.Size = new System.Drawing.Size(228, 36);
 			this.title.TabIndex = 9;
 			this.title.Text = "Thêm Tài khoản";
-			this.title.Click += new System.EventHandler(this.title_Click);
 			// 
 			// passwordTxt
 			// 
@@ -128,7 +127,6 @@
 			this.passwordTxt.ShadowDecoration.Parent = this.passwordTxt;
 			this.passwordTxt.Size = new System.Drawing.Size(425, 36);
 			this.passwordTxt.TabIndex = 3;
-			this.passwordTxt.TextChanged += new System.EventHandler(this.birthYearTxtBox_TextChanged);
 			// 
 			// errorPasswordMsg
 			// 

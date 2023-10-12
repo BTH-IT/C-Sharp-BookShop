@@ -372,6 +372,7 @@
             this.btnExport.Size = new System.Drawing.Size(121, 42);
             this.btnExport.TabIndex = 8;
             this.btnExport.Text = "Xuất excel";
+            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
             // 
             // btnRefresh
             // 

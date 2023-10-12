@@ -1,16 +1,14 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Data;
-using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Windows;
 using ExcelDataReader;
+using Guna.UI.WinForms;
 using Microsoft.Win32;
 using OfficeOpenXml;
-using OfficeOpenXml.Drawing;
 using OfficeOpenXml.Style;
 
 namespace QuanLyCuaHangBanSach
@@ -34,7 +32,7 @@ namespace QuanLyCuaHangBanSach
         }
         public CustomExcel() { }
 
-        public void ExportFile(DataTable dataTable, string sheetName, string title, string[] headerList, int imgCol = -1)
+        public void ExportFileDatagridView(DataTable dataTable, string sheetName, int startPosition, string title, string[] headerList, int imgCol = -1)
         {
             string filePath = "";
             // tạo SaveFileDialog để lưu file excel
@@ -124,7 +122,7 @@ namespace QuanLyCuaHangBanSach
                     {
                         DataRow dataRow = dataTable.Rows[row];
                         colIndex = 0;
-                        for (int col = 0; col < dataTable.Columns.Count; col++)
+                        for (int col = startPosition; col < dataTable.Columns.Count; col++)
                         {
 
                             Console.Write(dataRow[col] + "--");
@@ -153,63 +151,45 @@ namespace QuanLyCuaHangBanSach
             DataTable dataTable = new DataTable(typeof(T).Name);
             //Get all the properties
             PropertyInfo[] Props = typeof(T).GetProperties(BindingFlags.Public | BindingFlags.Instance);
-			PropertyInfo[] parentProperties = typeof(T).BaseType.GetProperties();
-            if (parentProperties != null && parentProperties.Count() > 0)
+            foreach (PropertyInfo prop in Props)
             {
-                PropertyInfo[] childProperties = typeof(T).GetProperties(BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.Instance);
-				foreach (PropertyInfo prop in parentProperties)
-				{
-					dataTable.Columns.Add(prop.Name);
-				}
-                foreach (PropertyInfo prop in childProperties)
+                Console.WriteLine(prop.Name);
+                //Setting column names as Property names
+                dataTable.Columns.Add(prop.Name);
+            }
+            foreach (T item in items)
+            {
+                var values = new object[Props.Length];
+                for (int i = 0; i < Props.Length; i++)
                 {
-					dataTable.Columns.Add(prop.Name);
-				}
-                // 5 
-                // 3
-                // 8
-                // 0 1 2 3 4 
-                // 5 => 8-5-3
-           
-				foreach (T item in items)
-				{
-                    int totalPropertiesCount = parentProperties.Length + childProperties.Length;
-					var values = new object[totalPropertiesCount];
-					
-                    for (int i = 0; i < parentProperties.Length; i++)
-					{
-						//inserting property values to datatable rows
-						values[i] = parentProperties[i].GetValue(item, null);
-					}
-					for (int i = parentProperties.Length; i < totalPropertiesCount;i++ )
-					{
-						values[i] = childProperties[childProperties.Length- (totalPropertiesCount-i)].GetValue(item, null);
-					}
-
-					dataTable.Rows.Add(values);
-				}
-			}
-            else
-            {
-				foreach (PropertyInfo prop in Props)
-				{
-					dataTable.Columns.Add(prop.Name);
-				}
-
-				foreach (T item in items)
-				{
-					var values = new object[Props.Length];
-					for (int i = 0; i < Props.Length; i++)
-					{
-						//inserting property values to datatable rows
-						values[i] = Props[i].GetValue(item, null);
-					}
-
-					dataTable.Rows.Add(values);
-				}
-			} 
+                    //inserting property values to datatable rows
+                    values[i] = Props[i].GetValue(item, null);
+                }
+        
+                dataTable.Rows.Add(values);
+            }
             //put a breakpoint here and check datatable
             return dataTable;
+        }
+
+
+        public DataTable ConvertDataGridViewToDataTable(GunaDataGridView dgv)
+        {
+            DataTable ExportDataTable = new DataTable();
+            foreach (System.Windows.Forms.DataGridViewColumn col in dgv.Columns)
+            {
+                ExportDataTable.Columns.Add(col.Name);
+            }
+            foreach (System.Windows.Forms.DataGridViewRow row in dgv.Rows)
+            {
+                DataRow dRow = ExportDataTable.NewRow();
+                foreach (System.Windows.Forms.DataGridViewCell cell in row.Cells)
+                {
+                    dRow[cell.ColumnIndex] = cell.Value;
+                }
+                ExportDataTable.Rows.Add(dRow);
+            }
+            return ExportDataTable;
         }
 
         public DataTable ImportFile()

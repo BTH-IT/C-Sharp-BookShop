@@ -3,14 +3,10 @@ using QuanLyCuaHangBanSach.DTO;
 using QuanLyCuaHangBanSach.GUI.Modal;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QuanLyCuaHangBanSach.GUI.Manager
@@ -140,14 +136,12 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         {
             try
             {
-				List<StaffDTO> staffs = StaffBUS.Instance.getAllData();
+                string[] headerList = new string[] { "Mã nhân viên", "Tên nhân viên", "Năm sinh", "SĐT", "Giới tính", "Lương", "Mã chức vụ" };
 
-                DataTable dataTable = CustomExcel.Instance.ConvertListToDataTable(staffs);
+                DataTable dt = CustomExcel.Instance.ConvertDataGridViewToDataTable(dgvStaff);
 
-				string[] headerList = new string[] { "Mã nhân viên", "Tên nhân viên", "Năm sinh", "Giới tính","SĐT", "Lương", "Chức vụ" };
-
-				CustomExcel.Instance.ExportFile(dataTable, "Staff Manage", "Cửa hàng bán sách", headerList);
-			}
+                CustomExcel.Instance.ExportFileDatagridView(dt, "Book Manage", 1, "Cửa hàng bán sách", headerList);
+            }
             catch
             {
 

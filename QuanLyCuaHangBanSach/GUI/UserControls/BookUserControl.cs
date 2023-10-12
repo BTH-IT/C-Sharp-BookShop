@@ -52,7 +52,7 @@ namespace QuanLyCuaHangBanSach.GUI.Vendor
             }
             else
             {
-                StockLb.Visible = false;
+                StockLb.Text = "SL: " + book.SoLuongConLai;
                 PriceLb.Text = string.Format("{0:N0} VND", book.GiaNhap);
             }
 

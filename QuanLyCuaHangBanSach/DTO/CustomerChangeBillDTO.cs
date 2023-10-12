@@ -21,6 +21,7 @@ namespace QuanLyCuaHangBanSach.DTO
             this.MaKhachHang = (int)row["maKhachHang"];
             this.SachCanDoi = (int)row["maSachCanDoi"];
             this.SachMuonDoi = (int)row["maSachMuonDoi"];
+            this.SachMuonDoi = (int)row["maSachMuonDoi"];
             this.MaNhanVien = (int)row["maNhanVien"];
             this.TinhTrangSanPham = row["tinhTrangSanPham"].ToString();
             this.LiDo = row["liDo"].ToString();

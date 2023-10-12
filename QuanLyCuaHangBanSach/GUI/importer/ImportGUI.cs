@@ -1,6 +1,7 @@
 ﻿using QuanLyCuaHangBanSach.BUS;
 using QuanLyCuaHangBanSach.DTO;
 using QuanLyCuaHangBanSach.GUI.Modal;
+using QuanLyCuaHangBanSach.GUI.Report;
 using QuanLyCuaHangBanSach.GUI.UserControls;
 using QuanLyCuaHangBanSach.GUI.Vendor;
 using System;
@@ -481,11 +482,15 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
                                 importBillDetail.SoLuong,
                                 importBillDetail.DonGia
                             );
-
                             ImportBillBUS.Instance.createImportBillDetail(newImportBillDetail);
                         }
 
                         MessageBox.Show("Success");
+                    }
+
+                    using (ImportBillPrintForm importBillPrintForm = new ImportBillPrintForm(newImportBill.MaDonNhapHang))
+                    {
+                        importBillPrintForm.ShowDialog();
                     }
 
                     CartContainer.Controls.Clear();
@@ -505,6 +510,14 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
         {
             Close();
             /*Application.Run(new LoginGUI());*/
+        }
+
+        private void RefundBtn_Click(object sender, EventArgs e)
+        {
+            using (var modal = new ImportRefundBillModal())
+            {
+                modal.ShowDialog();
+            }
         }
     }
 }

@@ -254,9 +254,11 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                 List<CustomerDTO> customers = CustomerBUS.Instance.getAllData();
 				//List<CustomerDTO> customers = handleFilter(this.searchInput.Text.ToString());
 				DataTable dataTable = CustomExcel.Instance.ConvertListToDataTable(customers);
-				string[] headerList = new string[] { "Mã khách hàng", "Tên khách hàng", "Giới tính","Năm sinh","Số Điện thoại","Điểm" };
-				CustomExcel.Instance.ExportFile(dataTable, "Quản lý khách hàng", "Cửa hàng bán sách", headerList);
-			}
+				string[] headerList = new string[] { "Mã khách hàng", "Tên khách hàng", "SĐT", "Giới tính", "Năm sinh" };
+                DataTable dt = CustomExcel.Instance.ConvertDataGridViewToDataTable(dgvCustomer);
+
+                CustomExcel.Instance.ExportFileDatagridView(dt, "Book Manage", 1, "Cửa hàng bán sách", headerList);
+            }
             catch
             {
 
@@ -304,21 +306,16 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
 		private void genderCbx_SelectedIndexChanged(object sender, EventArgs e)
 		{
-            try
-            {
-                List<CustomerDTO> customerList = handleFilter(this.searchInput.Text.ToString());
-                this.loadCustomerListToDataGridView(customerList);
-            }
-            catch (Exception er)
-            {
+			try
+			{
+				List<CustomerDTO> customerList = handleFilter(this.searchInput.Text.ToString());
+				this.loadCustomerListToDataGridView(customerList);
+			}
+			catch (Exception er)
+			{
 
-                Console.WriteLine(er);
-            }
-        }
-
-        private void dgvCustomer_CellContentClick(object sender, DataGridViewCellEventArgs e)
-		{
-
+				Console.WriteLine(er);
+			}
 		}
     }
 }

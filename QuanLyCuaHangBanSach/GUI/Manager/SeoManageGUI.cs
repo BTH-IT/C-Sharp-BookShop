@@ -201,11 +201,11 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         {
             try
             {
-				List<SaleDTO> sales = handleFilter(this.searchInput.Text);
-				DataTable dataTable = CustomExcel.Instance.ConvertListToDataTable(sales);
 				string[] headerList = new string[] { "Mã Khuyến mãi", "Tên khuyến mãi", "Phẩn trăm", "Ngày bắt đầu", "Ngày kết thúc" };
-				CustomExcel.Instance.ExportFile(dataTable: dataTable, sheetName: "Quản lý khuyến mãi", title: "Cửa hàng bán sách", headerList: headerList);
-			}
+                DataTable dt = CustomExcel.Instance.ConvertDataGridViewToDataTable(dgvSale);
+
+                CustomExcel.Instance.ExportFileDatagridView(dt, "Book Manage", 1, "Cửa hàng bán sách", headerList);
+            }
             catch
             {
 

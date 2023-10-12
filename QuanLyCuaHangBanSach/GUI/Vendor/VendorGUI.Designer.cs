@@ -61,7 +61,6 @@
             this.CustomerCashTxb = new Guna.UI.WinForms.GunaTextBox();
             this.ChangeMoneyLb = new System.Windows.Forms.Label();
             this.ChangeLb = new System.Windows.Forms.Label();
-            this.RecipientNameLb = new System.Windows.Forms.Label();
             this.PhoneInp = new Guna.UI.WinForms.GunaLineTextBox();
             this.TotalMoneyLb = new System.Windows.Forms.Label();
             this.PhoneResultContainer = new System.Windows.Forms.FlowLayoutPanel();
@@ -72,6 +71,7 @@
             this.CustomerInfoLb = new System.Windows.Forms.Label();
             this.AddCustomerBtn = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.RecipientNameLb = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LogoImg)).BeginInit();
@@ -138,9 +138,9 @@
             this.flowLayoutPanel2.Controls.Add(this.label1);
             this.flowLayoutPanel2.Controls.Add(this.label2);
             this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(103, -8);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(103, 2);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(786, 84);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(786, 71);
             this.flowLayoutPanel2.TabIndex = 1;
             // 
             // label1
@@ -150,9 +150,9 @@
             this.label1.Location = new System.Drawing.Point(20, 14);
             this.label1.Margin = new System.Windows.Forms.Padding(20, 14, 3, 2);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(156, 33);
+            this.label1.Size = new System.Drawing.Size(99, 33);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Welcome, Huy";
+            this.label1.Text = "Bán sách";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label2
@@ -163,9 +163,9 @@
             this.label2.Location = new System.Drawing.Point(20, 50);
             this.label2.Margin = new System.Windows.Forms.Padding(20, 1, 3, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(411, 18);
+            this.label2.Size = new System.Drawing.Size(196, 18);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Easily find whatever you need then you and manage book stock in your shop";
+            this.label2.Text = "Khám phá tri thức - chia sẻ niềm vui";
             // 
             // flowLayoutPanel4
             // 
@@ -397,6 +397,7 @@
             this.RefundBtn.Size = new System.Drawing.Size(79, 27);
             this.RefundBtn.TabIndex = 0;
             this.RefundBtn.Text = "Trả hàng";
+            this.RefundBtn.Click += new System.EventHandler(this.RefundBtn_Click);
             // 
             // CustomerToggleBtn
             // 
@@ -524,19 +525,6 @@
             this.ChangeLb.Text = "Tiền thừa:";
             this.ChangeLb.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // RecipientNameLb
-            // 
-            this.RecipientNameLb.AutoSize = true;
-            this.RecipientNameLb.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.RecipientNameLb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.RecipientNameLb.Location = new System.Drawing.Point(93, 81);
-            this.RecipientNameLb.Margin = new System.Windows.Forms.Padding(20, 30, 3, 5);
-            this.RecipientNameLb.Name = "RecipientNameLb";
-            this.RecipientNameLb.Size = new System.Drawing.Size(67, 25);
-            this.RecipientNameLb.TabIndex = 22;
-            this.RecipientNameLb.Text = "Vãng lai";
-            this.RecipientNameLb.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // PhoneInp
             // 
             this.PhoneInp.BackColor = System.Drawing.Color.White;
@@ -661,6 +649,19 @@
             this.label3.Text = "Thanh Toán";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // RecipientNameLb
+            // 
+            this.RecipientNameLb.AutoSize = true;
+            this.RecipientNameLb.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.RecipientNameLb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.RecipientNameLb.Location = new System.Drawing.Point(93, 81);
+            this.RecipientNameLb.Margin = new System.Windows.Forms.Padding(20, 30, 3, 5);
+            this.RecipientNameLb.Name = "RecipientNameLb";
+            this.RecipientNameLb.Size = new System.Drawing.Size(67, 25);
+            this.RecipientNameLb.TabIndex = 22;
+            this.RecipientNameLb.Text = "Vãng lai";
+            this.RecipientNameLb.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -707,7 +708,6 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel4;
-        private System.Windows.Forms.PictureBox LogoImg;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel5;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.TextBox ProductSearchInp;
@@ -747,5 +747,6 @@
         private System.Windows.Forms.Button AddCustomerBtn;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.PictureBox LogoImg;
     }
 }
