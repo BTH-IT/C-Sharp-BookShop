@@ -47,11 +47,6 @@
             this.errorGenderMsg = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.genderCbx = new Guna.UI.WinForms.GunaComboBox();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.dayOffTxt = new Guna.UI2.WinForms.Guna2TextBox();
-            this.errorDayOffMsg = new System.Windows.Forms.Label();
-            this.dayOffLine = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.phoneNumberTxt = new Guna.UI2.WinForms.Guna2TextBox();
             this.errorPhoneNumberMsg = new System.Windows.Forms.Label();
@@ -70,7 +65,6 @@
             this.panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel12.SuspendLayout();
             this.SuspendLayout();
@@ -137,7 +131,7 @@
             this.label4.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label4.Location = new System.Drawing.Point(3, 3);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(151, 49);
+            this.label4.Size = new System.Drawing.Size(127, 49);
             this.label4.TabIndex = 5;
             this.label4.Text = "Năm sinh:";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -167,7 +161,7 @@
             this.label13.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label13.Location = new System.Drawing.Point(3, 3);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(145, 49);
+            this.label13.Size = new System.Drawing.Size(109, 49);
             this.label13.TabIndex = 9;
             this.label13.Text = "Chức vụ:";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -257,7 +251,7 @@
             this.label3.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label3.Location = new System.Drawing.Point(3, 3);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(151, 49);
+            this.label3.Size = new System.Drawing.Size(127, 49);
             this.label3.TabIndex = 5;
             this.label3.Text = "Tên nhân viên:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -270,12 +264,11 @@
             this.flowLayoutPanel1.Controls.Add(this.panel2);
             this.flowLayoutPanel1.Controls.Add(this.panel10);
             this.flowLayoutPanel1.Controls.Add(this.panel3);
-            this.flowLayoutPanel1.Controls.Add(this.panel4);
             this.flowLayoutPanel1.Controls.Add(this.panel7);
             this.flowLayoutPanel1.Controls.Add(this.panel12);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(12, 69);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1200, 388);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1200, 297);
             this.flowLayoutPanel1.TabIndex = 8;
             // 
             // panel3
@@ -300,10 +293,10 @@
             // 
             // label16
             // 
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label16.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F);
             this.label16.Location = new System.Drawing.Point(3, 3);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(145, 49);
+            this.label16.Size = new System.Drawing.Size(109, 49);
             this.label16.TabIndex = 28;
             this.label16.Text = "Giới tính:";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -331,80 +324,13 @@
             this.genderCbx.TabIndex = 29;
             this.genderCbx.TabStop = false;
             // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.dayOffTxt);
-            this.panel4.Controls.Add(this.errorDayOffMsg);
-            this.panel4.Controls.Add(this.dayOffLine);
-            this.panel4.Controls.Add(this.label6);
-            this.panel4.Location = new System.Drawing.Point(3, 191);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(594, 88);
-            this.panel4.TabIndex = 9;
-            // 
-            // dayOffTxt
-            // 
-            this.dayOffTxt.BackColor = System.Drawing.Color.Transparent;
-            this.dayOffTxt.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
-            this.dayOffTxt.BorderThickness = 0;
-            this.dayOffTxt.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.dayOffTxt.DefaultText = "";
-            this.dayOffTxt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.dayOffTxt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.dayOffTxt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.dayOffTxt.DisabledState.Parent = this.dayOffTxt;
-            this.dayOffTxt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.dayOffTxt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.dayOffTxt.FocusedState.Parent = this.dayOffTxt;
-            this.dayOffTxt.Font = new System.Drawing.Font("#9Slide03 Cabin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dayOffTxt.ForeColor = System.Drawing.Color.Black;
-            this.dayOffTxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.dayOffTxt.HoverState.Parent = this.dayOffTxt;
-            this.dayOffTxt.Location = new System.Drawing.Point(149, 7);
-            this.dayOffTxt.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.dayOffTxt.Name = "dayOffTxt";
-            this.dayOffTxt.PasswordChar = '\0';
-            this.dayOffTxt.PlaceholderText = "Nhập số ngày nghỉ";
-            this.dayOffTxt.SelectedText = "";
-            this.dayOffTxt.ShadowDecoration.Parent = this.dayOffTxt;
-            this.dayOffTxt.Size = new System.Drawing.Size(425, 36);
-            this.dayOffTxt.TabIndex = 33;
-            // 
-            // errorDayOffMsg
-            // 
-            this.errorDayOffMsg.AutoSize = true;
-            this.errorDayOffMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed SemiB", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.errorDayOffMsg.ForeColor = System.Drawing.Color.Red;
-            this.errorDayOffMsg.Location = new System.Drawing.Point(163, 49);
-            this.errorDayOffMsg.Name = "errorDayOffMsg";
-            this.errorDayOffMsg.Size = new System.Drawing.Size(0, 30);
-            this.errorDayOffMsg.TabIndex = 7;
-            // 
-            // dayOffLine
-            // 
-            this.dayOffLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(212)))), ((int)(((byte)(191)))));
-            this.dayOffLine.Location = new System.Drawing.Point(160, 45);
-            this.dayOffLine.Name = "dayOffLine";
-            this.dayOffLine.Size = new System.Drawing.Size(414, 1);
-            this.dayOffLine.TabIndex = 8;
-            // 
-            // label6
-            // 
-            this.label6.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label6.Location = new System.Drawing.Point(3, 3);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(151, 49);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "Số ngày nghỉ:";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // panel7
             // 
             this.panel7.Controls.Add(this.phoneNumberTxt);
             this.panel7.Controls.Add(this.errorPhoneNumberMsg);
             this.panel7.Controls.Add(this.phoneNumberLine);
             this.panel7.Controls.Add(this.label8);
-            this.panel7.Location = new System.Drawing.Point(603, 191);
+            this.panel7.Location = new System.Drawing.Point(3, 191);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(594, 88);
             this.panel7.TabIndex = 10;
@@ -460,7 +386,7 @@
             this.label8.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label8.Location = new System.Drawing.Point(3, 3);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(151, 49);
+            this.label8.Size = new System.Drawing.Size(127, 49);
             this.label8.TabIndex = 5;
             this.label8.Text = "Số điện thoại";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -471,7 +397,7 @@
             this.panel12.Controls.Add(this.errorSalaryMsg);
             this.panel12.Controls.Add(this.salaryLine);
             this.panel12.Controls.Add(this.label10);
-            this.panel12.Location = new System.Drawing.Point(3, 285);
+            this.panel12.Location = new System.Drawing.Point(603, 191);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(594, 88);
             this.panel12.TabIndex = 11;
@@ -527,7 +453,7 @@
             this.label10.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label10.Location = new System.Drawing.Point(3, 3);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(151, 49);
+            this.label10.Size = new System.Drawing.Size(109, 49);
             this.label10.TabIndex = 5;
             this.label10.Text = "Lương:";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -548,7 +474,7 @@
             this.submitBtn.ForeColor = System.Drawing.Color.White;
             this.submitBtn.Image = null;
             this.submitBtn.ImageSize = new System.Drawing.Size(20, 20);
-            this.submitBtn.Location = new System.Drawing.Point(623, 492);
+            this.submitBtn.Location = new System.Drawing.Point(631, 407);
             this.submitBtn.Name = "submitBtn";
             this.submitBtn.OnHoverBaseColor = System.Drawing.Color.White;
             this.submitBtn.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
@@ -579,7 +505,7 @@
             this.cancelBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.cancelBtn.Image = null;
             this.cancelBtn.ImageSize = new System.Drawing.Size(20, 20);
-            this.cancelBtn.Location = new System.Drawing.Point(389, 492);
+            this.cancelBtn.Location = new System.Drawing.Point(397, 407);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.cancelBtn.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
@@ -599,18 +525,18 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("#9Slide03 Cabin", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.label1.Location = new System.Drawing.Point(541, 9);
+            this.label1.Location = new System.Drawing.Point(496, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(162, 45);
+            this.label1.Size = new System.Drawing.Size(231, 45);
             this.label1.TabIndex = 5;
-            this.label1.Text = "Thêm Sách";
+            this.label1.Text = "Thêm Nhân Viên";
             // 
             // StaffModal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1222, 583);
+            this.ClientSize = new System.Drawing.Size(1222, 489);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.submitBtn);
             this.Controls.Add(this.cancelBtn);
@@ -629,8 +555,6 @@
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             this.panel12.ResumeLayout(false);
@@ -669,11 +593,6 @@
         private Guna.UI.WinForms.GunaButton submitBtn;
         private Guna.UI.WinForms.GunaButton cancelBtn;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel4;
-        private Guna.UI2.WinForms.Guna2TextBox dayOffTxt;
-        private System.Windows.Forms.Label errorDayOffMsg;
-        private System.Windows.Forms.Panel dayOffLine;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label errorGenderMsg;
         private System.Windows.Forms.Label label16;

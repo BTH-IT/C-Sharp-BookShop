@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 using Guna.UI.WinForms;
@@ -15,7 +14,7 @@ namespace QuanLyCuaHangBanSach.GUI
         public static StaffDTO currentStaff;
         public static Authorization authorization;
         private string contentActive;
-        private HomeManageGUI homeFrm = new HomeManageGUI() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle=FormBorderStyle.None, };
+        private StatisticMenuGUI statisticFrm = new StatisticMenuGUI() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle=FormBorderStyle.None, };
         private BookManageGUI bookFrm = new BookManageGUI() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle=FormBorderStyle.None, };
         private AuthorGUI authorFrm = new AuthorGUI() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle=FormBorderStyle.None, };
         private CustomerManagerGUI customerFrm = new CustomerManagerGUI() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle=FormBorderStyle.None, };
@@ -27,10 +26,9 @@ namespace QuanLyCuaHangBanSach.GUI
         private AccountManageGUI accountFrm = new AccountManageGUI() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle=FormBorderStyle.None, };
         private PositionManageGUI positionFrm = new PositionManageGUI() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle=FormBorderStyle.None, };
         private PermissionManageGUI permissionFrm = new PermissionManageGUI() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle=FormBorderStyle.None, };
-        private PaymentBillManageGUI paymentBillFrm = new PaymentBillManageGUI() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle=FormBorderStyle.None, };
-        private test refundFrm = new test() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle=FormBorderStyle.None, };
-        private test bookTypeFrm = new test() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle=FormBorderStyle.None, };
-        private test publisherFrm = new test() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle=FormBorderStyle.None, };
+        private RefundFormMenuGUI refundFrm = new RefundFormMenuGUI() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle=FormBorderStyle.None, };
+        private BookTypeGUI bookTypeFrm = new BookTypeGUI() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle=FormBorderStyle.None, };
+        private PublisherGUI publisherFrm = new PublisherGUI() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle=FormBorderStyle.None, };
         
         public ManagerGUI(int staffId)
         {
@@ -82,18 +80,15 @@ namespace QuanLyCuaHangBanSach.GUI
                             this.navBar.Controls.Remove(this.positionBtn);
                             break;
                         case "14":
-                            this.navBar.Controls.Remove(this.paymentBtn);
-                            break;
-                        case "15":
                             this.navBar.Controls.Remove(this.billBtn);
                             break;
-                        case "16":
+                        case "15":
                             this.navBar.Controls.Remove(this.importBilBtn);
                             break;
-                        case "17":
+                        case "16":
                             this.navBar.Controls.Remove(this.accountBtn);
                             break;
-                        case "18":
+                        case "17":
                             this.navBar.Controls.Remove(this.homeBtn);
                             break;
                     }
@@ -135,19 +130,16 @@ namespace QuanLyCuaHangBanSach.GUI
                             this.manageContent.Controls.Add(this.positionFrm);
                             break;
                         case "14":
-                            this.manageContent.Controls.Add(this.paymentBillFrm);
-                            break;
-                        case "15":
                             this.manageContent.Controls.Add(this.customerBillFrm);
                             break;
-                        case "16":
+                        case "15":
                             this.manageContent.Controls.Add(this.importBillFrm);
                             break;
-                        case "17":
+                        case "16":
                             this.manageContent.Controls.Add(this.accountFrm);
                             break;
-                        case "18":
-                            this.manageContent.Controls.Add(this.homeFrm);
+                        case "17":
+                            this.manageContent.Controls.Add(this.statisticFrm);
                             break;
                     }
                 }
@@ -161,6 +153,18 @@ namespace QuanLyCuaHangBanSach.GUI
             btn.Checked = true;
 
             frm.Show();
+
+            this.staffName.Text = currentStaff.Ten;
+            this.staffPosition.Text = PositionBUS.Instance.getById(currentStaff.MaChucVu.ToString()).TenChucVu;
+
+            if (currentStaff.GioiTinh == "Nam")
+            {
+                this.staffImg.Image = QuanLyCuaHangBanSach.Properties.Resources.male_circle;
+            }
+            else
+            {
+                this.staffImg.Image = QuanLyCuaHangBanSach.Properties.Resources.female;
+            }
         }
 
         private void homeBtn_Click(object sender, EventArgs e)
@@ -183,10 +187,9 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.accountBtn.Checked = false;
                 this.positionBtn.Checked = false;
                 this.permissionBtn.Checked = false;
-                this.paymentBtn.Checked = false;
                 this.refundBtn.Checked = false;
 
-                this.homeFrm.Show();
+                this.statisticFrm.Show();
 
                 this.bookFrm.Hide();
                 this.authorFrm.Hide();
@@ -201,7 +204,6 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.accountFrm.Hide();
                 this.positionFrm.Hide();
                 this.permissionFrm.Hide();
-                this.paymentBillFrm.Hide();
                 this.refundFrm.Hide();
             }
         }
@@ -227,12 +229,12 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.accountBtn.Checked = false;
                 this.positionBtn.Checked = false;
                 this.permissionBtn.Checked = false;
-                this.paymentBtn.Checked = false;
+                
                 this.refundBtn.Checked = false;
 
                 this.bookFrm.Show();
 
-                this.homeFrm.Hide();
+                this.statisticFrm.Hide();
                 this.authorFrm.Hide();
                 this.bookTypeFrm.Hide();
                 this.customerFrm.Hide();
@@ -245,7 +247,7 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.accountFrm.Hide();
                 this.positionFrm.Hide();
                 this.permissionFrm.Hide();
-                this.paymentBillFrm.Hide();
+                
                 this.refundFrm.Hide();
             }
         }
@@ -271,17 +273,17 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.accountBtn.Checked = false;
                 this.positionBtn.Checked = false;
                 this.permissionBtn.Checked = false;
-                this.paymentBtn.Checked = false;
+                
                 this.refundBtn.Checked = false;
 
                 this.authorFrm.Show();
 
                 this.bookFrm.Hide();
-                this.homeFrm.Hide();
+                this.statisticFrm.Hide();
                 this.bookTypeFrm.Hide();
                 this.customerFrm.Hide();
                 this.staffFrm.Hide();
-                this.supplierFrm.Show();
+                this.supplierFrm.Hide();
                 this.importBillFrm.Hide();
                 this.customerBillFrm.Hide();
                 this.seoFrm.Hide();
@@ -289,7 +291,7 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.accountFrm.Hide();
                 this.positionFrm.Hide();
                 this.permissionFrm.Hide();
-                this.paymentBillFrm.Hide();
+                
                 this.refundFrm.Hide();
             }
         }
@@ -315,14 +317,14 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.accountBtn.Checked = false;
                 this.positionBtn.Checked = false;
                 this.permissionBtn.Checked = false;
-                this.paymentBtn.Checked = false;
+                
                 this.refundBtn.Checked = false;
 
                 this.bookTypeFrm.Show();
 
                 this.bookFrm.Hide();
                 this.authorFrm.Hide();
-                this.homeFrm.Hide();
+                this.statisticFrm.Hide();
                 this.customerFrm.Hide();
                 this.staffFrm.Hide();
                 this.supplierFrm.Hide();
@@ -333,7 +335,7 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.accountFrm.Hide();
                 this.positionFrm.Hide();
                 this.permissionFrm.Hide();
-                this.paymentBillFrm.Hide();
+                
                 this.refundFrm.Hide();
             }
         }
@@ -359,7 +361,7 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.accountBtn.Checked = false;
                 this.positionBtn.Checked = false;
                 this.permissionBtn.Checked = false;
-                this.paymentBtn.Checked = false;
+                
                 this.refundBtn.Checked = false;
 
                 this.customerFrm.Show();
@@ -367,7 +369,7 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.bookFrm.Hide();
                 this.authorFrm.Hide();
                 this.bookTypeFrm.Hide();
-                this.homeFrm.Hide();
+                this.statisticFrm.Hide();
                 this.staffFrm.Hide();
                 this.supplierFrm.Hide();
                 this.importBillFrm.Hide();
@@ -377,7 +379,7 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.accountFrm.Hide();
                 this.positionFrm.Hide();
                 this.permissionFrm.Hide();
-                this.paymentBillFrm.Hide();
+                
                 this.refundFrm.Hide();
             }
         }
@@ -403,7 +405,7 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.accountBtn.Checked = false;
                 this.positionBtn.Checked = false;
                 this.permissionBtn.Checked = false;
-                this.paymentBtn.Checked = false;
+                
                 this.refundBtn.Checked = false;
 
                 this.staffFrm.Show();
@@ -412,7 +414,7 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.authorFrm.Hide();
                 this.bookTypeFrm.Hide();
                 this.customerFrm.Hide();
-                this.homeFrm.Hide();
+                this.statisticFrm.Hide();
                 this.supplierFrm.Hide();
                 this.importBillFrm.Hide();
                 this.customerBillFrm.Hide();
@@ -421,7 +423,7 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.accountFrm.Hide();
                 this.positionFrm.Hide();
                 this.permissionFrm.Hide();
-                this.paymentBillFrm.Hide();
+                
                 this.refundFrm.Hide();
             }
         }
@@ -447,7 +449,7 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.accountBtn.Checked = false;
                 this.positionBtn.Checked = false;
                 this.permissionBtn.Checked = false;
-                this.paymentBtn.Checked = false;
+                
                 this.refundBtn.Checked = false;
 
                 this.supplierFrm.Show();
@@ -457,7 +459,7 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.bookTypeFrm.Hide();
                 this.customerFrm.Hide();
                 this.staffFrm.Hide();
-                this.homeFrm.Hide();
+                this.statisticFrm.Hide();
                 this.importBillFrm.Hide();
                 this.customerBillFrm.Hide();
                 this.seoFrm.Hide();
@@ -465,7 +467,7 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.accountFrm.Hide();
                 this.positionFrm.Hide();
                 this.permissionFrm.Hide();
-                this.paymentBillFrm.Hide();
+                
                 this.refundFrm.Hide();
             }
         }
@@ -491,7 +493,7 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.accountBtn.Checked = false;
                 this.positionBtn.Checked = false;
                 this.permissionBtn.Checked = false;
-                this.paymentBtn.Checked = false;
+                
                 this.refundBtn.Checked = false;
 
                 this.importBillFrm.Show();
@@ -502,14 +504,14 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.customerFrm.Hide();
                 this.staffFrm.Hide();
                 this.supplierFrm.Hide();
-                this.homeFrm.Hide();
+                this.statisticFrm.Hide();
                 this.customerBillFrm.Hide();
                 this.seoFrm.Hide();
                 this.publisherFrm.Hide();
                 this.accountFrm.Hide();
                 this.positionFrm.Hide();
                 this.permissionFrm.Hide();
-                this.paymentBillFrm.Hide();
+                
                 this.refundFrm.Hide();
             }
         }
@@ -535,7 +537,7 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.accountBtn.Checked = false;
                 this.positionBtn.Checked = false;
                 this.permissionBtn.Checked = false;
-                this.paymentBtn.Checked = false;
+                
                 this.refundBtn.Checked = false;
 
                 this.customerBillFrm.Show();
@@ -547,13 +549,13 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.staffFrm.Hide();
                 this.supplierFrm.Hide();
                 this.importBillFrm.Hide();
-                this.homeFrm.Hide();
+                this.statisticFrm.Hide();
                 this.seoFrm.Hide();
                 this.publisherFrm.Hide();
                 this.accountFrm.Hide();
                 this.positionFrm.Hide();
                 this.permissionFrm.Hide();
-                this.paymentBillFrm.Hide();
+                
                 this.refundFrm.Hide();
             }
         }
@@ -579,7 +581,7 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.accountBtn.Checked = false;
                 this.positionBtn.Checked = false;
                 this.permissionBtn.Checked = false;
-                this.paymentBtn.Checked = false;
+                
                 this.refundBtn.Checked = false;
 
                 this.seoFrm.Show();
@@ -592,12 +594,12 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.supplierFrm.Hide();
                 this.importBillFrm.Hide();
                 this.customerBillFrm.Hide();
-                this.homeFrm.Hide();
+                this.statisticFrm.Hide();
                 this.publisherFrm.Hide();
                 this.accountFrm.Hide();
                 this.positionFrm.Hide();
                 this.permissionFrm.Hide();
-                this.paymentBillFrm.Hide();
+                
                 this.refundFrm.Hide();
             }
         }
@@ -623,7 +625,7 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.accountBtn.Checked = false;
                 this.positionBtn.Checked = false;
                 this.permissionBtn.Checked = false;
-                this.paymentBtn.Checked = false;
+                
                 this.refundBtn.Checked = false;
 
                 this.publisherFrm.Show();
@@ -637,11 +639,11 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.importBillFrm.Hide();
                 this.customerBillFrm.Hide();
                 this.seoFrm.Hide();
-                this.homeFrm.Hide();
+                this.statisticFrm.Hide();
                 this.accountFrm.Hide();
                 this.positionFrm.Hide();
                 this.permissionFrm.Hide();
-                this.paymentBillFrm.Hide();
+                
                 this.refundFrm.Hide();
             }
         }
@@ -667,7 +669,7 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.publisherBtn.Checked = false;
                 this.positionBtn.Checked = false;
                 this.permissionBtn.Checked = false;
-                this.paymentBtn.Checked = false;
+                
                 this.refundBtn.Checked = false;
 
                 this.accountFrm.Show();
@@ -682,10 +684,10 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.customerBillFrm.Hide();
                 this.seoFrm.Hide();
                 this.publisherFrm.Hide();
-                this.homeFrm.Hide();
+                this.statisticFrm.Hide();
                 this.positionFrm.Hide();
                 this.permissionFrm.Hide();
-                this.paymentBillFrm.Hide();
+                
                 this.refundFrm.Hide();
             }
         }
@@ -711,7 +713,7 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.publisherBtn.Checked = false;
                 this.positionBtn.Checked = false;
                 this.accountBtn.Checked = false;
-                this.paymentBtn.Checked = false;
+                
                 this.refundBtn.Checked = false;
 
                 this.permissionFrm.Show();
@@ -726,10 +728,10 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.customerBillFrm.Hide();
                 this.seoFrm.Hide();
                 this.publisherFrm.Hide();
-                this.homeFrm.Hide();
+                this.statisticFrm.Hide();
                 this.positionFrm.Hide();
                 this.accountFrm.Hide();
-                this.paymentBillFrm.Hide();
+                
                 this.refundFrm.Hide();
             }
         }
@@ -755,7 +757,7 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.publisherBtn.Checked = false;
                 this.positionBtn.Checked = false;
                 this.accountBtn.Checked = false;
-                this.paymentBtn.Checked = false;
+                
                 this.permissionBtn.Checked = false;
 
                 this.refundFrm.Show();
@@ -770,58 +772,13 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.customerBillFrm.Hide();
                 this.seoFrm.Hide();
                 this.publisherFrm.Hide();
-                this.homeFrm.Hide();
+                this.statisticFrm.Hide();
                 this.positionFrm.Hide();
                 this.accountFrm.Hide();
-                this.paymentBillFrm.Hide();
+                
                 this.permissionFrm.Hide();
             }
         }
-
-        private void paymentBtn_Click(object sender, EventArgs e)
-        {
-            if (!contentActive.Equals("paymentBtn"))
-            {
-                this.contentActive = "paymentBtn";
-
-                this.paymentBtn.Checked = true;
-
-                this.homeBtn.Checked = false;
-                this.bookBtn.Checked = false;
-                this.authorBtn.Checked = false;
-                this.bookTypeBtn.Checked = false;
-                this.customerBtn.Checked = false;
-                this.staffBtn.Checked = false;
-                this.supplierBtn.Checked = false;
-                this.importBilBtn.Checked = false;
-                this.billBtn.Checked = false;
-                this.seoBtn.Checked = false;
-                this.publisherBtn.Checked = false;
-                this.positionBtn.Checked = false;
-                this.accountBtn.Checked = false;
-                this.refundBtn.Checked = false;
-                this.permissionBtn.Checked = false;
-
-                this.paymentBillFrm.Show();
-
-                this.bookFrm.Hide();
-                this.authorFrm.Hide();
-                this.bookTypeFrm.Hide();
-                this.customerFrm.Hide();
-                this.staffFrm.Hide();
-                this.supplierFrm.Hide();
-                this.importBillFrm.Hide();
-                this.customerBillFrm.Hide();
-                this.seoFrm.Hide();
-                this.publisherFrm.Hide();
-                this.homeFrm.Hide();
-                this.positionFrm.Hide();
-                this.accountFrm.Hide();
-                this.refundFrm.Hide();
-                this.permissionFrm.Hide();
-            }
-        }
-
         private void positionBtn_Click(object sender, EventArgs e)
         {
             if (!contentActive.Equals("positionBtn"))
@@ -841,7 +798,7 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.billBtn.Checked = false;
                 this.seoBtn.Checked = false;
                 this.publisherBtn.Checked = false;
-                this.paymentBtn.Checked = false;
+                
                 this.accountBtn.Checked = false;
                 this.refundBtn.Checked = false;
                 this.permissionBtn.Checked = false;
@@ -858,8 +815,8 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.customerBillFrm.Hide();
                 this.seoFrm.Hide();
                 this.publisherFrm.Hide();
-                this.homeFrm.Hide();
-                this.paymentBillFrm.Hide();
+                this.statisticFrm.Hide();
+                
                 this.accountFrm.Hide();
                 this.refundFrm.Hide();
                 this.permissionFrm.Hide();
@@ -868,11 +825,19 @@ namespace QuanLyCuaHangBanSach.GUI
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            LoginGUI.Instance.Close();
         }
 
         private void ManagerGUI_Load(object sender, EventArgs e)
         {
+        }
+
+        private void backBtn_Click(object sender, EventArgs e)
+        {
+            MenuGUI menu = new MenuGUI(currentStaff.Ma);
+
+            menu.Show();
+            this.Close();
         }
     }
 }

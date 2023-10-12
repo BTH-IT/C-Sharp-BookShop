@@ -60,10 +60,10 @@ namespace QuanLyCuaHangBanSach.BUS
         {
             return BookDAO.Instance.getById(id);
         }
-        public List<BookDTO> getAllDataFiltered(int SortMode, string Type, string Author, string Publisher)
+        public List<BookDTO> getAllDataFiltered(int SortMode, string Type, string Author, string Publisher, bool Import)
         {
             List<BookDTO> bookList = new List<BookDTO>();
-            DataTable dt = BookDAO.Instance.getAllDataFiltered(SortMode, Type, Author, Publisher);
+            DataTable dt = BookDAO.Instance.getAllDataFiltered(SortMode, Type, Author, Publisher, Import);
 
             foreach (DataRow row in dt.Rows)
             {
@@ -93,7 +93,6 @@ namespace QuanLyCuaHangBanSach.BUS
         {
             return BookDAO.Instance.deleteBookAmount(id, amount);
         }
-
         public bool createBookAmount(string id, int amount)
         {
             return BookDAO.Instance.createBookAmount(id, amount);

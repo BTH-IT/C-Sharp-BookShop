@@ -11,7 +11,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
     public partial class CustomerBillModal : Form
     {
         public bool isSubmitSuccess = false;
-        private List<CustomerBillDetailDTO> customerBillDetailList;
+        private List<CustomerBillDetailDTO> customerBillDetailList = new List<CustomerBillDetailDTO>();
         private int staffId;
 
         public CustomerBillModal(int staffId)
@@ -23,266 +23,330 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
         private void loadCustomerCbx()
         {
-            List<CustomerDTO> customerList = CustomerBUS.Instance.getAllData();
+            try
+            {
+                List<CustomerDTO> customerList = CustomerBUS.Instance.getAllData();
 
-            customerList.Insert(0, new CustomerDTO(0, "", "Chọn khách hàng", "", 0));
+                customerList.Insert(0, new CustomerDTO(-1, "", "Chọn khách hàng", "", 0, 0));
+                customerList.Insert(1, new CustomerDTO(0, "", "Không có khách hàng", "", 0, 0));
 
-            this.customerCbx.ValueMember = "Ma";
-            this.customerCbx.DisplayMember = "SoDienThoai";
-            this.customerCbx.DataSource = customerList;
+                this.customerCbx.ValueMember = "Ma";
+                this.customerCbx.DisplayMember = "SoDienThoai";
+                this.customerCbx.DataSource = customerList;
 
-            this.customerCbx.SelectedIndex = 0;
+                this.customerCbx.SelectedIndex = 0;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
         }
 
         private void loadSaleCbx()
         {
-            List<SaleDTO> saleList = SaleBUS.Instance.getAllData();
+            try
+            {
+                List<SaleDTO> saleList = SaleBUS.Instance.getAllData();
 
-            saleList.Insert(0, new SaleDTO(-1, "Chọn khuyến mãi", 0, new DateTime(), new DateTime()));
-            saleList.Insert(1, new SaleDTO(0, "Không có khuyến mãi", 0, new DateTime(), new DateTime()));
+                saleList.Insert(0, new SaleDTO(-1, "Chọn khuyến mãi", 0, new DateTime(), new DateTime()));
+                saleList.Insert(1, new SaleDTO(0, "Không có khuyến mãi", 0, new DateTime(), new DateTime()));
 
-            this.saleCbx.ValueMember = "MaKhuyenMai";
-            this.saleCbx.DisplayMember = "TenKhuyenMai";
-            this.saleCbx.DataSource = saleList;
+                this.saleCbx.ValueMember = "MaKhuyenMai";
+                this.saleCbx.DisplayMember = "TenKhuyenMai";
+                this.saleCbx.DataSource = saleList;
 
-            this.saleCbx.SelectedIndex = 0;
+                this.saleCbx.SelectedIndex = 0;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
         }
 
         private void loadCustomerBillDetailList()
         {
-            this.bookList.Controls.Clear();
-
-            double total = 0;
-
-            foreach (CustomerBillDetailDTO customerBillDetail in customerBillDetailList)
+            try
             {
-                BookBill bookBill = new BookBill();
-                
-                total += customerBillDetail.SoLuong * customerBillDetail.DonGia;
+                this.bookList.Controls.Clear();
 
-                bookBill.addData(customerBillDetail.MaSach, customerBillDetail.SoLuong, customerBillDetail.DonGia);
+                double total = 0;
 
-                int remain = BookBUS.Instance.getById(customerBillDetail.MaSach.ToString()).SoLuongConLai + customerBillDetail.SoLuong;
-
-                bookBill.close.MouseClick += (object sender, MouseEventArgs e) =>
+                foreach (CustomerBillDetailDTO customerBillDetail in customerBillDetailList)
                 {
-                    this.bookList.Controls.Remove(bookBill);
+                    BookBill bookBill = new BookBill();
 
-                    this.customerBillDetailList.Remove(customerBillDetail);
+                    total += customerBillDetail.SoLuong * customerBillDetail.DonGia;
 
-                    this.loadCustomerBillDetailList();
-                };
+                    bookBill.addData(customerBillDetail.MaSach, customerBillDetail.SoLuong, customerBillDetail.DonGia);
 
-                bookBill.plus.MouseClick += (object sender, MouseEventArgs e) =>
-                {
-                    bookBill.minus.Enabled = true;
+                    int remain = BookBUS.Instance.getById(customerBillDetail.MaSach.ToString()).SoLuongConLai + customerBillDetail.SoLuong;
 
-                    int amount = Convert.ToInt32(bookBill.amountInput.Text.ToString());
-
-                    if (amount < remain)
+                    bookBill.close.MouseClick += (object sender, MouseEventArgs e) =>
                     {
-                        bookBill.plus.Enabled = true;
-                        bookBill.amountInput.Text = (amount + 1).ToString();
+                        this.bookList.Controls.Remove(bookBill);
 
-                        int idx = this.customerBillDetailList.FindIndex(
-                            book => book.MaSach == customerBillDetail.MaSach
-                        );
+                        this.customerBillDetailList.Remove(customerBillDetail);
 
-                        this.customerBillDetailList[idx].SoLuong = amount + 1;
+                        this.loadCustomerBillDetailList();
+                    };
 
-                        total += customerBillDetail.DonGia;
-
-                        this.totalPriceTxt.Text = total.ToString();
-
-                        if (amount == remain) bookBill.plus.Enabled = false;
-                    }
-                    else
-                    {
-                        bookBill.plus.Enabled = false;
-                    }
-                };
-
-                bookBill.minus.MouseClick += (object sender, MouseEventArgs e) =>
-                {
-                    bookBill.plus.Enabled = true;
-
-                    int amount = Convert.ToInt32(bookBill.amountInput.Text.ToString());
-
-                    int idx = this.customerBillDetailList.FindIndex(
-                        book => book.MaSach == customerBillDetail.MaSach
-                    );
-
-                    if (amount <= 2)
-                    {
-                        bookBill.minus.Enabled = false;
-                    } else
+                    bookBill.plus.MouseClick += (object sender, MouseEventArgs e) =>
                     {
                         bookBill.minus.Enabled = true;
-                    }
 
-                    bookBill.amountInput.Text = (amount - 1).ToString();
+                        int amount = Convert.ToInt32(bookBill.amountInput.Text.ToString());
 
-                    this.customerBillDetailList[idx].SoLuong = amount - 1;
+                        if (amount < remain)
+                        {
+                            bookBill.plus.Enabled = true;
+                            bookBill.amountInput.Text = (amount + 1).ToString();
 
-                    total -= customerBillDetail.DonGia;
+                            int idx = this.customerBillDetailList.FindIndex(
+                                book => book.MaSach == customerBillDetail.MaSach
+                            );
 
-                    this.totalPriceTxt.Text = total.ToString();
-                };
+                            this.customerBillDetailList[idx].SoLuong = amount + 1;
 
-                bookBill.amountInput.MouseLeave += (object sender, EventArgs e) =>
-                {
-                    try
+                            total += customerBillDetail.DonGia;
+
+                            this.totalPriceTxt.Text = total.ToString();
+
+                            if (amount == remain) bookBill.plus.Enabled = false;
+                        }
+                        else
+                        {
+                            bookBill.plus.Enabled = false;
+                        }
+                    };
+
+                    bookBill.minus.MouseClick += (object sender, MouseEventArgs e) =>
                     {
-                        this.ActiveControl = null;
+                        bookBill.plus.Enabled = true;
 
-                        Regex isNum = new Regex(@"^\d+$");
+                        int amount = Convert.ToInt32(bookBill.amountInput.Text.ToString());
 
                         int idx = this.customerBillDetailList.FindIndex(
                             book => book.MaSach == customerBillDetail.MaSach
                         );
 
-                        if (!isNum.IsMatch(bookBill.amountInput.Text))
+                        if (amount <= 2)
                         {
-                            bookBill.amountInput.Text = this.customerBillDetailList[idx].SoLuong.ToString();
-                            MessageBox.Show("Số lượng là một số");
-                            return;
+                            bookBill.minus.Enabled = false;
+                        }
+                        else
+                        {
+                            bookBill.minus.Enabled = true;
                         }
 
-                        int amount = Convert.ToInt32(bookBill.amountInput.Text.ToString());
-                        
-                        if (amount < 1 || amount > remain || this.customerBillDetailList[idx].SoLuong == amount)
-                        {
-                            bookBill.amountInput.Text = this.customerBillDetailList[idx].SoLuong.ToString();
-                            return;
-                        }
+                        bookBill.amountInput.Text = (amount - 1).ToString();
 
-                        if (amount == 1) bookBill.minus.Enabled = false;
-                        else bookBill.minus.Enabled = true;
+                        this.customerBillDetailList[idx].SoLuong = amount - 1;
 
-                        if (amount == remain) bookBill.plus.Enabled = false;
-                        else bookBill.minus.Enabled = true;
-
-                        total -= this.customerBillDetailList[idx].SoLuong * customerBillDetail.DonGia;
-
-                        this.customerBillDetailList[idx].SoLuong = amount;
-
-                        total += this.customerBillDetailList[idx].SoLuong * customerBillDetail.DonGia;
+                        total -= customerBillDetail.DonGia;
 
                         this.totalPriceTxt.Text = total.ToString();
-                    } catch
+                    };
+
+                    bookBill.amountInput.MouseLeave += (object sender, EventArgs e) =>
                     {
-                        MessageBox.Show("Số lượng là một số");
-                    }
-                };
+                        try
+                        {
+                            this.ActiveControl = null;
 
-                bookBill.amountInput.KeyPress += (object sender, KeyPressEventArgs e) =>
-                {
-                    if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar)) {
-                        e.Handled = true;
-                    }
-                };
+                            Regex isNum = new Regex(@"^\d+$");
 
-                this.bookList.Controls.Add(bookBill);
+                            int idx = this.customerBillDetailList.FindIndex(
+                                book => book.MaSach == customerBillDetail.MaSach
+                            );
+
+                            if (!isNum.IsMatch(bookBill.amountInput.Text))
+                            {
+                                bookBill.amountInput.Text = this.customerBillDetailList[idx].SoLuong.ToString();
+                                MessageBox.Show("Số lượng là một số");
+                                return;
+                            }
+
+                            int amount = Convert.ToInt32(bookBill.amountInput.Text.ToString());
+
+                            if (amount < 1 || amount > remain || this.customerBillDetailList[idx].SoLuong == amount)
+                            {
+                                bookBill.amountInput.Text = this.customerBillDetailList[idx].SoLuong.ToString();
+                                return;
+                            }
+
+                            if (amount == 1) bookBill.minus.Enabled = false;
+                            else bookBill.minus.Enabled = true;
+
+                            if (amount == remain) bookBill.plus.Enabled = false;
+                            else bookBill.minus.Enabled = true;
+
+                            total -= this.customerBillDetailList[idx].SoLuong * customerBillDetail.DonGia;
+
+                            this.customerBillDetailList[idx].SoLuong = amount;
+
+                            total += this.customerBillDetailList[idx].SoLuong * customerBillDetail.DonGia;
+
+                            this.totalPriceTxt.Text = total.ToString();
+                        }
+                        catch
+                        {
+                            MessageBox.Show("Số lượng là một số");
+                        }
+                    };
+
+                    bookBill.amountInput.KeyPress += (object sender, KeyPressEventArgs e) =>
+                    {
+                        if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+                        {
+                            e.Handled = true;
+                        }
+                    };
+
+                    this.bookList.Controls.Add(bookBill);
+                }
+
+                this.totalPriceTxt.Text = total.ToString();
             }
-
-            this.totalPriceTxt.Text = total.ToString();
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
         }
 
         private void CustomerBillModal_Load(object sender, EventArgs e)
         {
-            this.loadCustomerBillDetailList();
-            this.loadCustomerCbx();
-            this.loadSaleCbx();
+            try
+            {
+                this.loadCustomerBillDetailList();
+                this.loadCustomerCbx();
+                this.loadSaleCbx();
 
-            this.customerCbx.SelectedValue = 0;
-            this.saleCbx.SelectedValue = 0;
+                this.customerCbx.SelectedValue = 0;
+                this.saleCbx.SelectedValue = 0;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
         }
 
         private void gunaButton1_Click(object sender, EventArgs e)
         {
-            using (AddBookToCustomerBillModal addBookToBillModal = new AddBookToCustomerBillModal(customerBillDetailList))
+            try
             {
-                addBookToBillModal.ShowDialog();
-
-
-                foreach (CustomerBillDetailDTO customerBillDetail in addBookToBillModal.selectedCustomerBillDetailList)
+                using (AddBookToCustomerBillModal addBookToBillModal = new AddBookToCustomerBillModal(customerBillDetailList))
                 {
-                    int idx = this.customerBillDetailList.FindIndex(
-                        book => book.MaSach == customerBillDetail.MaSach
-                    );
+                    addBookToBillModal.ShowDialog();
 
-                    if (idx == -1)
+
+                    foreach (CustomerBillDetailDTO customerBillDetail in addBookToBillModal.selectedCustomerBillDetailList)
                     {
-                        this.customerBillDetailList.Add(customerBillDetail);
-                        continue;
-                    }
-                    
-                    this.customerBillDetailList[idx].SoLuong += customerBillDetail.SoLuong;
-                }
+                        int idx = this.customerBillDetailList.FindIndex(
+                            book => book.MaSach == customerBillDetail.MaSach
+                        );
 
-                this.loadCustomerBillDetailList();
+                        if (idx == -1)
+                        {
+                            this.customerBillDetailList.Add(customerBillDetail);
+                            continue;
+                        }
+
+                        this.customerBillDetailList[idx].SoLuong += customerBillDetail.SoLuong;
+                    }
+
+                    this.loadCustomerBillDetailList();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
             }
         }
 
         private bool validate()
         {
-            bool isCheckCbx1 = CustomValidation.Instance.checkCombobox(
-                this.customerCbx,
-                this.errorCustomerMsg,
-                new string[] { "required" }
-            );
+            try
+            {
+                bool isCheckCbx1 = CustomValidation.Instance.checkCombobox(
+                        this.customerCbx,
+                        this.errorCustomerMsg,
+                        new string[] { "required" }
+                    );
 
-            bool isCheckCbx2 = CustomValidation.Instance.checkCombobox(
-                this.saleCbx,
-                this.errorSaleMsg,
-                new string[] { "required" }
-            );
+                bool isCheckCbx2 = CustomValidation.Instance.checkCombobox(
+                    this.saleCbx,
+                    this.errorSaleMsg,
+                    new string[] { "required" }
+                );
 
-            return isCheckCbx1 && isCheckCbx2;
+                if (this.customerBillDetailList.Count <= 0)
+                {
+                    this.errorBookListMsg.Text = "Danh sách sản phẩm không được để trống";
+                    return false;
+                }
+                else
+                {
+                    this.errorBookListMsg.Text = "";
+                }
+
+                return isCheckCbx1 && isCheckCbx2;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+
         }
 
         private void submitBtn_Click(object sender, EventArgs e)
         {
-            bool isValid = this.validate();
-
-            if (!isValid) return;
-
-            CustomerBillDTO customerBill = new CustomerBillDTO();
-
-            customerBill.TongTien = Convert.ToDouble(this.totalPriceTxt.Text);
-            customerBill.MaNhanVien = this.staffId;
-            customerBill.MaKhachHang = Convert.ToInt32(this.customerCbx.SelectedValue);
-            customerBill.MaKhuyenMai = Convert.ToInt32(this.saleCbx.SelectedValue);
-            customerBill.NgayLap = DateTime.Now;
-
-            CustomerBillDTO newCustomerBill = CustomerBillBUS.Instance.insertReturnBill(customerBill);
-
-            if (newCustomerBill == null)
+            try
             {
-                
-                MessageBox.Show("Failure");
-                this.isSubmitSuccess = false;
-            }
-            else
-            {
-                foreach (CustomerBillDetailDTO customerBillDetail in this.customerBillDetailList)
+                bool isValid = this.validate();
+
+                if (!isValid) return;
+
+                CustomerBillDTO customerBill = new CustomerBillDTO();
+
+                customerBill.TongTien = Convert.ToDouble(this.totalPriceTxt.Text);
+                customerBill.MaNhanVien = this.staffId;
+                customerBill.MaKhachHang = Convert.ToInt32(this.customerCbx.SelectedValue);
+                customerBill.MaKhuyenMai = Convert.ToInt32(this.saleCbx.SelectedValue);
+                customerBill.NgayLap = DateTime.Now;
+
+                CustomerBillDTO newCustomerBill = CustomerBillBUS.Instance.insertReturnBill(customerBill);
+
+                if (newCustomerBill == null)
                 {
-                    CustomerBillDetailDTO newCustomerBillDetail = new CustomerBillDetailDTO(
-                        newCustomerBill.MaDonKhachHang,
-                        customerBillDetail.MaSach,
-                        customerBillDetail.SoLuong,
-                        customerBillDetail.DonGia
-                    );
 
-                    CustomerBillBUS.Instance.createCustomerBillDetail(newCustomerBillDetail);
+                    MessageBox.Show("Failure");
+                    this.isSubmitSuccess = false;
                 }
+                else
+                {
+                    foreach (CustomerBillDetailDTO customerBillDetail in this.customerBillDetailList)
+                    {
+                        CustomerBillDetailDTO newCustomerBillDetail = new CustomerBillDetailDTO(
+                            newCustomerBill.MaDonKhachHang,
+                            customerBillDetail.MaSach,
+                            customerBillDetail.SoLuong,
+                            customerBillDetail.DonGia
+                        );
 
-                MessageBox.Show("Success");
+                        CustomerBillBUS.Instance.createCustomerBillDetail(newCustomerBillDetail);
+                    }
 
-                this.isSubmitSuccess = true;
-                this.Close();
+                    MessageBox.Show("Success");
+
+                    this.isSubmitSuccess = true;
+                    this.Close();
+                }
             }
-            
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+
         }
 
         private void cancelBtn_Click(object sender, EventArgs e)

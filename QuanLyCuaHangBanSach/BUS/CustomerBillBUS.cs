@@ -5,91 +5,136 @@ using QuanLyCuaHangBanSach.DTO;
 
 namespace QuanLyCuaHangBanSach.BUS
 {
-    public class CustomerBillBUS : IBUS<CustomerBillDTO>
-    {
-        private static CustomerBillBUS instance;
+	public class CustomerBillBUS : IBUS<CustomerBillDTO>
+	{
+		private static CustomerBillBUS instance;
 
-        public static CustomerBillBUS Instance
-        {
-            get
-            {
-                if (instance == null)
-                {
-                    instance = new CustomerBillBUS();
-                }
+		public static CustomerBillBUS Instance
+		{
+			get
+			{
+				if (instance == null)
+				{
+					instance = new CustomerBillBUS();
+				}
 
-                return CustomerBillBUS.instance;
-            }
-            private set { CustomerBillBUS.instance = value; }
-        }
+				return CustomerBillBUS.instance;
+			}
+			private set { CustomerBillBUS.instance = value; }
+		}
 
-        public DataTable getAll()
-        {
-            return CustomerBillDAO.Instance.getAll();
-        }
+		public DataTable getAll()
+		{
+			return CustomerBillDAO.Instance.getAll();
+		}
 
-        public List<CustomerBillDTO> getAllData()
-        {
-            List<CustomerBillDTO> customerBillList = new List<CustomerBillDTO>();
-            DataTable dt = CustomerBillDAO.Instance.getAll();
 
-            foreach (DataRow row in dt.Rows)
-            {
-                CustomerBillDTO customerBill = new CustomerBillDTO(row);
-                customerBillList.Add(customerBill);
-            }
+		public List<CustomerBillDTO> getAllData()
+		{
+			List<CustomerBillDTO> customerBillList = new List<CustomerBillDTO>();
+			DataTable dt = CustomerBillDAO.Instance.getAll();
 
-            return customerBillList;
-        }
+			foreach (DataRow row in dt.Rows)
+			{
+				CustomerBillDTO customerBill = new CustomerBillDTO(row);
+				customerBillList.Add(customerBill);
+			}
 
-        public List<CustomerBillDetailDTO> getCustomerBillDetailList(string id)
-        {
-            return CustomerBillDAO.Instance.getCustomerBillDetailList(id);
-        }
+			return customerBillList;
+		}
 
-        public bool createCustomerBillDetail(CustomerBillDetailDTO customerBillDetail)
-        {
-            return CustomerBillDAO.Instance.createCustomerBillDetail(customerBillDetail);
-        }
+		public List<CustomerBillDTO> getAllInRange(string year, string startMonth, string endMonth)
+		{
+			List<CustomerBillDTO> customerBillList = new List<CustomerBillDTO>();
+			DataTable dt = CustomerBillDAO.Instance.getAllInRange(year, startMonth, endMonth);
 
-        public List<CustomerBillDTO> search(string id)
-        {
-            DataTable dataTable = CustomerBillDAO.Instance.searchData(id);
+			foreach (DataRow row in dt.Rows)
+			{
+				CustomerBillDTO customerBill = new CustomerBillDTO(row);
+				customerBillList.Add(customerBill);
+			}
 
-            List<CustomerBillDTO> customerBillList = new List<CustomerBillDTO>();
+			return customerBillList;
+		}
 
-            foreach (DataRow row in dataTable.Rows)
-            {
-                CustomerBillDTO customerBill = new CustomerBillDTO(row);
-                customerBillList.Add(customerBill);
-            }
+		public List<CustomerBillDetailDTO> getCustomerBillDetailList(string id)
+		{
+			return CustomerBillDAO.Instance.getCustomerBillDetailList(id);
+		}
 
-            return customerBillList;
-        }
+		public int getSoldQuantity(string id)
+		{
+			return CustomerBillDAO.Instance.getSoldQuantity(id);
+		}
 
-        public bool insert(CustomerBillDTO customerBill)
-        {
-            return CustomerBillDAO.Instance.insert(customerBill);
-        }
+		public double getRevenue(string id)
+		{ 
+			return CustomerBillDAO.Instance.getRevenue(id);
+		}
 
-        public CustomerBillDTO insertReturnBill(CustomerBillDTO customerBill)
-        {
-            return CustomerBillDAO.Instance.insertReturnBill(customerBill);
-        }
+		public DataTable getSoldQuantityAndRevenue(string query)
+		{
+			return CustomerBillDAO.Instance.getSoldQuantityAndRevenue(query);
+		}
 
-        public bool delete(string id)
-        {
-            return CustomerBillDAO.Instance.delete(id);
-        }
+		public double getRevenueInRange(string year, string startMonth, string endMonth)
+		{
+			return CustomerBillDAO.Instance.getRevenueInRange(year, startMonth, endMonth);
+		}
 
-        public bool update(CustomerBillDTO customerBill)
-        {
-            return CustomerBillDAO.Instance.update(customerBill);
-        }
+		public DataTable getBookSoldInRange(string year, string startMonth, string endMonth)
+		{ 
+			return CustomerBillDAO.Instance.getBookSoldInRange(year, startMonth, endMonth);
+		}
 
-        public CustomerBillDTO getById(string id)
-        {
-            return CustomerBillDAO.Instance.getById(id);
-        }
-    }
+		public int getNumberCustomerInRange(string year, string startMonth, string endMonth)
+		{
+			return CustomerBillDAO.Instance.getNumberCustomerInRange(year, startMonth, endMonth);
+		}
+
+		public bool createCustomerBillDetail(CustomerBillDetailDTO customerBillDetail)
+		{
+			return CustomerBillDAO.Instance.createCustomerBillDetail(customerBillDetail);
+		}
+
+		public List<CustomerBillDTO> search(string id)
+		{
+			DataTable dataTable = CustomerBillDAO.Instance.searchData(id);
+
+			List<CustomerBillDTO> customerBillList = new List<CustomerBillDTO>();
+
+			foreach (DataRow row in dataTable.Rows)
+			{
+				CustomerBillDTO customerBill = new CustomerBillDTO(row);
+				customerBillList.Add(customerBill);
+			}
+
+			return customerBillList;
+		}
+
+		public bool insert(CustomerBillDTO customerBill)
+		{
+			return CustomerBillDAO.Instance.insert(customerBill);
+		}
+
+		public CustomerBillDTO insertReturnBill(CustomerBillDTO customerBill)
+		{
+			return CustomerBillDAO.Instance.insertReturnBill(customerBill);
+		}
+
+		public bool delete(string id)
+		{
+			return CustomerBillDAO.Instance.delete(id);
+		}
+
+		public bool update(CustomerBillDTO customerBill)
+		{
+			return CustomerBillDAO.Instance.update(customerBill);
+		}
+
+		public CustomerBillDTO getById(string id)
+		{
+			return CustomerBillDAO.Instance.getById(id);
+		}
+	}
 }

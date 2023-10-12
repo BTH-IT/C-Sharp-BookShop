@@ -48,6 +48,7 @@
             this.submitBtn = new Guna.UI.WinForms.GunaButton();
             this.cancelBtn = new Guna.UI.WinForms.GunaButton();
             this.label1 = new System.Windows.Forms.Label();
+            this.errorBookListMsg = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -68,11 +69,11 @@
             // errorCustomerMsg
             // 
             this.errorCustomerMsg.AutoSize = true;
-            this.errorCustomerMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed SemiB", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.errorCustomerMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.errorCustomerMsg.ForeColor = System.Drawing.Color.Red;
             this.errorCustomerMsg.Location = new System.Drawing.Point(163, 52);
             this.errorCustomerMsg.Name = "errorCustomerMsg";
-            this.errorCustomerMsg.Size = new System.Drawing.Size(0, 30);
+            this.errorCustomerMsg.Size = new System.Drawing.Size(0, 26);
             this.errorCustomerMsg.TabIndex = 27;
             // 
             // label13
@@ -118,7 +119,7 @@
             this.flowLayoutPanel1.Controls.Add(this.panel4);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(11, 64);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1200, 627);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1200, 681);
             this.flowLayoutPanel1.TabIndex = 8;
             // 
             // panel6
@@ -134,11 +135,11 @@
             // errorSaleMsg
             // 
             this.errorSaleMsg.AutoSize = true;
-            this.errorSaleMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed SemiB", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.errorSaleMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.errorSaleMsg.ForeColor = System.Drawing.Color.Red;
             this.errorSaleMsg.Location = new System.Drawing.Point(163, 52);
             this.errorSaleMsg.Name = "errorSaleMsg";
-            this.errorSaleMsg.Size = new System.Drawing.Size(0, 30);
+            this.errorSaleMsg.Size = new System.Drawing.Size(0, 26);
             this.errorSaleMsg.TabIndex = 33;
             // 
             // label18
@@ -234,12 +235,13 @@
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.errorBookListMsg);
             this.panel4.Controls.Add(this.gunaButton1);
             this.panel4.Controls.Add(this.bookList);
             this.panel4.Controls.Add(this.label2);
             this.panel4.Location = new System.Drawing.Point(3, 191);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1194, 424);
+            this.panel4.Size = new System.Drawing.Size(1194, 478);
             this.panel4.TabIndex = 9;
             // 
             // gunaButton1
@@ -308,7 +310,7 @@
             this.submitBtn.ForeColor = System.Drawing.Color.White;
             this.submitBtn.Image = null;
             this.submitBtn.ImageSize = new System.Drawing.Size(20, 20);
-            this.submitBtn.Location = new System.Drawing.Point(634, 697);
+            this.submitBtn.Location = new System.Drawing.Point(634, 778);
             this.submitBtn.Name = "submitBtn";
             this.submitBtn.OnHoverBaseColor = System.Drawing.Color.White;
             this.submitBtn.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
@@ -339,7 +341,7 @@
             this.cancelBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.cancelBtn.Image = null;
             this.cancelBtn.ImageSize = new System.Drawing.Size(20, 20);
-            this.cancelBtn.Location = new System.Drawing.Point(388, 697);
+            this.cancelBtn.Location = new System.Drawing.Point(388, 778);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.cancelBtn.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
@@ -365,12 +367,22 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "Tạo Đơn Khách Hàng";
             // 
+            // errorBookListMsg
+            // 
+            this.errorBookListMsg.AutoSize = true;
+            this.errorBookListMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.errorBookListMsg.ForeColor = System.Drawing.Color.Red;
+            this.errorBookListMsg.Location = new System.Drawing.Point(422, 435);
+            this.errorBookListMsg.Name = "errorBookListMsg";
+            this.errorBookListMsg.Size = new System.Drawing.Size(0, 26);
+            this.errorBookListMsg.TabIndex = 35;
+            // 
             // CustomerBillModal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1222, 753);
+            this.ClientSize = new System.Drawing.Size(1222, 843);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.submitBtn);
             this.Controls.Add(this.cancelBtn);
@@ -390,6 +402,7 @@
             this.panel6.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -416,5 +429,6 @@
         private System.Windows.Forms.FlowLayoutPanel bookList;
         private Guna.UI2.WinForms.Guna2TextBox totalPriceTxt;
         private Guna.UI.WinForms.GunaButton gunaButton1;
+        private System.Windows.Forms.Label errorBookListMsg;
     }
 }

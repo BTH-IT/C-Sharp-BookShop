@@ -119,7 +119,7 @@
             this.flowLayoutPanel1.AutoScrollMargin = new System.Drawing.Size(10, 10);
             this.flowLayoutPanel1.Controls.Add(this.panel1);
             this.flowLayoutPanel1.Controls.Add(this.panel12);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(155, 81);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(30, 81);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(600, 188);
             this.flowLayoutPanel1.TabIndex = 12;
@@ -142,7 +142,7 @@
             this.activeCkx.Font = new System.Drawing.Font("#9Slide03 Cabin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.activeCkx.Location = new System.Drawing.Point(160, 9);
             this.activeCkx.Name = "activeCkx";
-            this.activeCkx.Size = new System.Drawing.Size(150, 29);
+            this.activeCkx.Size = new System.Drawing.Size(414, 29);
             this.activeCkx.TabIndex = 6;
             this.activeCkx.Text = "Đang hoạt động";
             // 
@@ -172,7 +172,7 @@
             this.submitBtn.ForeColor = System.Drawing.Color.White;
             this.submitBtn.Image = null;
             this.submitBtn.ImageSize = new System.Drawing.Size(20, 20);
-            this.submitBtn.Location = new System.Drawing.Point(483, 292);
+            this.submitBtn.Location = new System.Drawing.Point(358, 292);
             this.submitBtn.Name = "submitBtn";
             this.submitBtn.OnHoverBaseColor = System.Drawing.Color.White;
             this.submitBtn.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
@@ -202,7 +202,7 @@
             this.cancelBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.cancelBtn.Image = null;
             this.cancelBtn.ImageSize = new System.Drawing.Size(20, 20);
-            this.cancelBtn.Location = new System.Drawing.Point(237, 292);
+            this.cancelBtn.Location = new System.Drawing.Point(112, 292);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.cancelBtn.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
@@ -215,13 +215,14 @@
             this.cancelBtn.TabStop = false;
             this.cancelBtn.Text = "Hủy";
             this.cancelBtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("#9Slide03 Cabin", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.label1.Location = new System.Drawing.Point(331, 16);
+            this.label1.Location = new System.Drawing.Point(207, 16);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(249, 45);
             this.label1.TabIndex = 9;
@@ -232,7 +233,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(911, 355);
+            this.ClientSize = new System.Drawing.Size(663, 355);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.submitBtn);
             this.Controls.Add(this.cancelBtn);
@@ -246,7 +247,6 @@
             this.panel1.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panel12.ResumeLayout(false);
-            this.panel12.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -23,16 +23,23 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
         private void AuthorizeModal_Load(object sender, EventArgs e)
         {
-            foreach (AuthDetailDTO authDetail in authDetailList)
+            try
             {
-                AuthorizeCkb checkBox = new AuthorizeCkb(
-                    PermissionBUS.Instance.getById(authDetail.MaQuyenHang.ToString()).TenQuyenHang,
-                    authDetail.MaChucVu,
-                    authDetail.MaQuyenHang,
-                    authDetail.TrangThai
-                );
+                foreach (AuthDetailDTO authDetail in authDetailList)
+                {
+                    AuthorizeCkb checkBox = new AuthorizeCkb(
+                        PermissionBUS.Instance.getById(authDetail.MaQuyenHang.ToString()).TenQuyenHang,
+                        authDetail.MaChucVu,
+                        authDetail.MaQuyenHang,
+                        authDetail.TrangThai
+                    );
 
-                this.authorizeList.Controls.Add(checkBox);
+                    this.authorizeList.Controls.Add(checkBox);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
             }
         }
 

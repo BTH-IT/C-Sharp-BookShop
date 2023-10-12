@@ -60,10 +60,10 @@
             // 
             // label16
             // 
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label16.Location = new System.Drawing.Point(3, 3);
+            this.label16.Font = new System.Drawing.Font("#9Slide03 Cabin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label16.Location = new System.Drawing.Point(3, 6);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(145, 49);
+            this.label16.Size = new System.Drawing.Size(145, 36);
             this.label16.TabIndex = 28;
             this.label16.Text = "Giới tính:";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -82,7 +82,7 @@
             this.genderCbx.ForeColor = System.Drawing.Color.Black;
             this.genderCbx.FormattingEnabled = true;
             this.genderCbx.ItemHeight = 30;
-            this.genderCbx.Location = new System.Drawing.Point(160, 12);
+            this.genderCbx.Location = new System.Drawing.Point(160, 6);
             this.genderCbx.Name = "genderCbx";
             this.genderCbx.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.genderCbx.OnHoverItemForeColor = System.Drawing.Color.White;
@@ -90,6 +90,7 @@
             this.genderCbx.Size = new System.Drawing.Size(408, 36);
             this.genderCbx.TabIndex = 29;
             this.genderCbx.TabStop = false;
+            this.genderCbx.SelectedIndexChanged += new System.EventHandler(this.genderCbx_SelectedIndexChanged);
             // 
             // panel10
             // 
@@ -127,15 +128,16 @@
             this.phoneNumberTxtBox.PlaceholderText = "Nhập số điện thoại";
             this.phoneNumberTxtBox.SelectedText = "";
             this.phoneNumberTxtBox.ShadowDecoration.Parent = this.phoneNumberTxtBox;
-            this.phoneNumberTxtBox.Size = new System.Drawing.Size(425, 36);
+            this.phoneNumberTxtBox.Size = new System.Drawing.Size(425, 29);
             this.phoneNumberTxtBox.TabIndex = 33;
+            this.phoneNumberTxtBox.TextChanged += new System.EventHandler(this.phoneNumberTxtBox_TextChanged);
             // 
             // errorPhoneNumberMsg
             // 
             this.errorPhoneNumberMsg.AutoSize = true;
             this.errorPhoneNumberMsg.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.errorPhoneNumberMsg.ForeColor = System.Drawing.Color.Red;
-            this.errorPhoneNumberMsg.Location = new System.Drawing.Point(163, 49);
+            this.errorPhoneNumberMsg.Location = new System.Drawing.Point(163, 48);
             this.errorPhoneNumberMsg.Name = "errorPhoneNumberMsg";
             this.errorPhoneNumberMsg.Size = new System.Drawing.Size(0, 25);
             this.errorPhoneNumberMsg.TabIndex = 7;
@@ -143,17 +145,17 @@
             // phoneNumberLine
             // 
             this.phoneNumberLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(212)))), ((int)(((byte)(191)))));
-            this.phoneNumberLine.Location = new System.Drawing.Point(160, 45);
+            this.phoneNumberLine.Location = new System.Drawing.Point(160, 38);
             this.phoneNumberLine.Name = "phoneNumberLine";
             this.phoneNumberLine.Size = new System.Drawing.Size(414, 1);
             this.phoneNumberLine.TabIndex = 8;
             // 
             // label4
             // 
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label4.Location = new System.Drawing.Point(3, 3);
+            this.label4.Font = new System.Drawing.Font("#9Slide03 Cabin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label4.Location = new System.Drawing.Point(3, 7);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(151, 49);
+            this.label4.Size = new System.Drawing.Size(151, 29);
             this.label4.TabIndex = 5;
             this.label4.Text = "Số điện thoại:";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -187,22 +189,23 @@
             this.customerNameTxtBox.ForeColor = System.Drawing.Color.Black;
             this.customerNameTxtBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.customerNameTxtBox.HoverState.Parent = this.customerNameTxtBox;
-            this.customerNameTxtBox.Location = new System.Drawing.Point(149, 8);
+            this.customerNameTxtBox.Location = new System.Drawing.Point(168, 8);
             this.customerNameTxtBox.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.customerNameTxtBox.Name = "customerNameTxtBox";
             this.customerNameTxtBox.PasswordChar = '\0';
             this.customerNameTxtBox.PlaceholderText = "Nhập tên khách hàng";
             this.customerNameTxtBox.SelectedText = "";
             this.customerNameTxtBox.ShadowDecoration.Parent = this.customerNameTxtBox;
-            this.customerNameTxtBox.Size = new System.Drawing.Size(425, 36);
+            this.customerNameTxtBox.Size = new System.Drawing.Size(406, 28);
             this.customerNameTxtBox.TabIndex = 32;
+            this.customerNameTxtBox.TextChanged += new System.EventHandler(this.customerNameTxtBox_TextChanged);
             // 
             // errorCustomerNameMsg
             // 
             this.errorCustomerNameMsg.AutoSize = true;
             this.errorCustomerNameMsg.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.errorCustomerNameMsg.ForeColor = System.Drawing.Color.Red;
-            this.errorCustomerNameMsg.Location = new System.Drawing.Point(163, 50);
+            this.errorCustomerNameMsg.Location = new System.Drawing.Point(181, 52);
             this.errorCustomerNameMsg.Name = "errorCustomerNameMsg";
             this.errorCustomerNameMsg.Size = new System.Drawing.Size(0, 25);
             this.errorCustomerNameMsg.TabIndex = 7;
@@ -210,17 +213,17 @@
             // customerNameLine
             // 
             this.customerNameLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(212)))), ((int)(((byte)(191)))));
-            this.customerNameLine.Location = new System.Drawing.Point(160, 45);
+            this.customerNameLine.Location = new System.Drawing.Point(179, 38);
             this.customerNameLine.Name = "customerNameLine";
-            this.customerNameLine.Size = new System.Drawing.Size(414, 1);
+            this.customerNameLine.Size = new System.Drawing.Size(395, 1);
             this.customerNameLine.TabIndex = 8;
             // 
             // label3
             // 
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label3.Font = new System.Drawing.Font("#9Slide03 Cabin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label3.Location = new System.Drawing.Point(3, 3);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(151, 49);
+            this.label3.Size = new System.Drawing.Size(168, 33);
             this.label3.TabIndex = 5;
             this.label3.Text = "Tên khách hàng:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -267,22 +270,23 @@
             this.birthYearTxtBox.ForeColor = System.Drawing.Color.Black;
             this.birthYearTxtBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.birthYearTxtBox.HoverState.Parent = this.birthYearTxtBox;
-            this.birthYearTxtBox.Location = new System.Drawing.Point(149, 7);
+            this.birthYearTxtBox.Location = new System.Drawing.Point(168, 3);
             this.birthYearTxtBox.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.birthYearTxtBox.Name = "birthYearTxtBox";
             this.birthYearTxtBox.PasswordChar = '\0';
             this.birthYearTxtBox.PlaceholderText = "Nhập năm sinh";
             this.birthYearTxtBox.SelectedText = "";
             this.birthYearTxtBox.ShadowDecoration.Parent = this.birthYearTxtBox;
-            this.birthYearTxtBox.Size = new System.Drawing.Size(425, 36);
+            this.birthYearTxtBox.Size = new System.Drawing.Size(406, 31);
             this.birthYearTxtBox.TabIndex = 33;
+            this.birthYearTxtBox.TextChanged += new System.EventHandler(this.birthYearTxtBox_TextChanged);
             // 
             // errorBirthYearMsg
             // 
             this.errorBirthYearMsg.AutoSize = true;
             this.errorBirthYearMsg.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.errorBirthYearMsg.ForeColor = System.Drawing.Color.Red;
-            this.errorBirthYearMsg.Location = new System.Drawing.Point(163, 49);
+            this.errorBirthYearMsg.Location = new System.Drawing.Point(177, 45);
             this.errorBirthYearMsg.Name = "errorBirthYearMsg";
             this.errorBirthYearMsg.Size = new System.Drawing.Size(0, 25);
             this.errorBirthYearMsg.TabIndex = 7;
@@ -290,17 +294,17 @@
             // birthYearLine
             // 
             this.birthYearLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(212)))), ((int)(((byte)(191)))));
-            this.birthYearLine.Location = new System.Drawing.Point(160, 45);
+            this.birthYearLine.Location = new System.Drawing.Point(175, 36);
             this.birthYearLine.Name = "birthYearLine";
-            this.birthYearLine.Size = new System.Drawing.Size(414, 1);
+            this.birthYearLine.Size = new System.Drawing.Size(395, 1);
             this.birthYearLine.TabIndex = 8;
             // 
             // label6
             // 
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label6.Font = new System.Drawing.Font("#9Slide03 Cabin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label6.Location = new System.Drawing.Point(3, 3);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(151, 49);
+            this.label6.Size = new System.Drawing.Size(168, 31);
             this.label6.TabIndex = 5;
             this.label6.Text = "Năm sinh:";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -320,7 +324,7 @@
             this.errorGenderMsg.AutoSize = true;
             this.errorGenderMsg.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.errorGenderMsg.ForeColor = System.Drawing.Color.Red;
-            this.errorGenderMsg.Location = new System.Drawing.Point(163, 52);
+            this.errorGenderMsg.Location = new System.Drawing.Point(164, 52);
             this.errorGenderMsg.Name = "errorGenderMsg";
             this.errorGenderMsg.Size = new System.Drawing.Size(0, 25);
             this.errorGenderMsg.TabIndex = 30;
@@ -341,7 +345,7 @@
             this.submitBtn.ForeColor = System.Drawing.Color.White;
             this.submitBtn.Image = null;
             this.submitBtn.ImageSize = new System.Drawing.Size(20, 20);
-            this.submitBtn.Location = new System.Drawing.Point(614, 387);
+            this.submitBtn.Location = new System.Drawing.Point(620, 306);
             this.submitBtn.Name = "submitBtn";
             this.submitBtn.OnHoverBaseColor = System.Drawing.Color.White;
             this.submitBtn.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
@@ -372,7 +376,7 @@
             this.cancelBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.cancelBtn.Image = null;
             this.cancelBtn.ImageSize = new System.Drawing.Size(20, 20);
-            this.cancelBtn.Location = new System.Drawing.Point(397, 387);
+            this.cancelBtn.Location = new System.Drawing.Point(403, 306);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.cancelBtn.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
@@ -392,7 +396,7 @@
             this.title.AutoSize = true;
             this.title.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.title.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.title.Location = new System.Drawing.Point(530, 5);
+            this.title.Location = new System.Drawing.Point(483, 5);
             this.title.Name = "title";
             this.title.Size = new System.Drawing.Size(257, 36);
             this.title.TabIndex = 5;
@@ -403,7 +407,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1222, 456);
+            this.ClientSize = new System.Drawing.Size(1222, 376);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.submitBtn);
             this.Controls.Add(this.cancelBtn);

@@ -55,6 +55,7 @@ namespace QuanLyCuaHangBanTacGia.GUI.Manager
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.searchInput = new Guna.UI2.WinForms.Guna2TextBox();
+            this.genderCbx = new Guna.UI.WinForms.GunaComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAuthor)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -128,7 +129,7 @@ namespace QuanLyCuaHangBanTacGia.GUI.Manager
             this.dgvAuthor.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvAuthor.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvAuthor.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvAuthor.Size = new System.Drawing.Size(1376, 717);
+            this.dgvAuthor.Size = new System.Drawing.Size(1376, 756);
             this.dgvAuthor.TabIndex = 23;
             this.dgvAuthor.TabStop = false;
             this.dgvAuthor.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna;
@@ -153,7 +154,6 @@ namespace QuanLyCuaHangBanTacGia.GUI.Manager
             this.dgvAuthor.ThemeStyle.RowsStyle.Height = 75;
             this.dgvAuthor.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvAuthor.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.dgvAuthor.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAuthor_CellContentClick);
             this.dgvAuthor.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAuthor_CellDoubleClick);
             // 
             // Column11
@@ -210,9 +210,9 @@ namespace QuanLyCuaHangBanTacGia.GUI.Manager
             this.panel1.Controls.Add(this.deleteBtn);
             this.panel1.Controls.Add(this.editBtn);
             this.panel1.Controls.Add(this.addBtn);
-            this.panel1.Location = new System.Drawing.Point(12, 792);
+            this.panel1.Location = new System.Drawing.Point(13, 832);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1376, 54);
+            this.panel1.Size = new System.Drawing.Size(1372, 54);
             this.panel1.TabIndex = 24;
             // 
             // exportBtn
@@ -229,7 +229,7 @@ namespace QuanLyCuaHangBanTacGia.GUI.Manager
             this.exportBtn.CheckedLineColor = System.Drawing.Color.DimGray;
             this.exportBtn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.exportBtn.FocusedColor = System.Drawing.Color.Empty;
-            this.exportBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.exportBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.exportBtn.ForeColor = System.Drawing.Color.White;
             this.exportBtn.Image = ((System.Drawing.Image)(resources.GetObject("exportBtn.Image")));
             this.exportBtn.ImageSize = new System.Drawing.Size(20, 20);
@@ -262,7 +262,7 @@ namespace QuanLyCuaHangBanTacGia.GUI.Manager
             this.refreshBtn.CheckedLineColor = System.Drawing.Color.DimGray;
             this.refreshBtn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.refreshBtn.FocusedColor = System.Drawing.Color.Empty;
-            this.refreshBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.refreshBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.refreshBtn.ForeColor = System.Drawing.Color.White;
             this.refreshBtn.Image = ((System.Drawing.Image)(resources.GetObject("refreshBtn.Image")));
             this.refreshBtn.ImageSize = new System.Drawing.Size(20, 20);
@@ -295,7 +295,7 @@ namespace QuanLyCuaHangBanTacGia.GUI.Manager
             this.deleteBtn.CheckedLineColor = System.Drawing.Color.DimGray;
             this.deleteBtn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.deleteBtn.FocusedColor = System.Drawing.Color.Empty;
-            this.deleteBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deleteBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.deleteBtn.ForeColor = System.Drawing.Color.White;
             this.deleteBtn.Image = ((System.Drawing.Image)(resources.GetObject("deleteBtn.Image")));
             this.deleteBtn.ImageSize = new System.Drawing.Size(20, 20);
@@ -328,7 +328,7 @@ namespace QuanLyCuaHangBanTacGia.GUI.Manager
             this.editBtn.CheckedLineColor = System.Drawing.Color.DimGray;
             this.editBtn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.editBtn.FocusedColor = System.Drawing.Color.Empty;
-            this.editBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.editBtn.ForeColor = System.Drawing.Color.White;
             this.editBtn.Image = ((System.Drawing.Image)(resources.GetObject("editBtn.Image")));
             this.editBtn.ImageSize = new System.Drawing.Size(20, 20);
@@ -361,7 +361,7 @@ namespace QuanLyCuaHangBanTacGia.GUI.Manager
             this.addBtn.CheckedLineColor = System.Drawing.Color.DimGray;
             this.addBtn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.addBtn.FocusedColor = System.Drawing.Color.Empty;
-            this.addBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addBtn.ForeColor = System.Drawing.Color.White;
             this.addBtn.Image = ((System.Drawing.Image)(resources.GetObject("addBtn.Image")));
             this.addBtn.ImageSize = new System.Drawing.Size(20, 20);
@@ -459,12 +459,37 @@ namespace QuanLyCuaHangBanTacGia.GUI.Manager
             this.searchInput.TabIndex = 31;
             this.searchInput.TextChanged += new System.EventHandler(this.searchInput_TextChanged);
             // 
+            // genderCbx
+            // 
+            this.genderCbx.BackColor = System.Drawing.Color.Transparent;
+            this.genderCbx.BaseColor = System.Drawing.Color.White;
+            this.genderCbx.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.genderCbx.BorderSize = 1;
+            this.genderCbx.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.genderCbx.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.genderCbx.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.genderCbx.FocusedColor = System.Drawing.Color.Empty;
+            this.genderCbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.genderCbx.ForeColor = System.Drawing.Color.Black;
+            this.genderCbx.FormattingEnabled = true;
+            this.genderCbx.ItemHeight = 30;
+            this.genderCbx.Location = new System.Drawing.Point(1200, 12);
+            this.genderCbx.Name = "genderCbx";
+            this.genderCbx.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.genderCbx.OnHoverItemForeColor = System.Drawing.Color.White;
+            this.genderCbx.Radius = 6;
+            this.genderCbx.Size = new System.Drawing.Size(185, 36);
+            this.genderCbx.TabIndex = 32;
+            this.genderCbx.TabStop = false;
+            this.genderCbx.SelectedIndexChanged += new System.EventHandler(this.genderCbx_SelectedIndexChanged);
+            // 
             // AuthorGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
-            this.ClientSize = new System.Drawing.Size(1400, 864);
+            this.ClientSize = new System.Drawing.Size(1400, 896);
+            this.Controls.Add(this.genderCbx);
             this.Controls.Add(this.searchInput);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dgvAuthor);
@@ -505,5 +530,6 @@ namespace QuanLyCuaHangBanTacGia.GUI.Manager
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private Guna.UI2.WinForms.Guna2TextBox searchInput;
+        private Guna.UI.WinForms.GunaComboBox genderCbx;
     }
 }

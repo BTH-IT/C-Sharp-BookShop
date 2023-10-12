@@ -94,7 +94,7 @@
             this.btnExport.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnExport.OnPressedColor = System.Drawing.Color.Black;
             this.btnExport.Radius = 6;
-            this.btnExport.Size = new System.Drawing.Size(136, 47);
+            this.btnExport.Size = new System.Drawing.Size(121, 42);
             this.btnExport.TabIndex = 8;
             this.btnExport.Text = "Xuất excel";
             this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
@@ -127,7 +127,7 @@
             this.btnRefresh.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnRefresh.OnPressedColor = System.Drawing.Color.Black;
             this.btnRefresh.Radius = 6;
-            this.btnRefresh.Size = new System.Drawing.Size(120, 47);
+            this.btnRefresh.Size = new System.Drawing.Size(107, 42);
             this.btnRefresh.TabIndex = 7;
             this.btnRefresh.Text = "Làm mới";
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
@@ -160,7 +160,7 @@
             this.deleteBtn.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.deleteBtn.OnPressedColor = System.Drawing.Color.Black;
             this.deleteBtn.Radius = 6;
-            this.deleteBtn.Size = new System.Drawing.Size(88, 42);
+            this.deleteBtn.Size = new System.Drawing.Size(78, 42);
             this.deleteBtn.TabIndex = 6;
             this.deleteBtn.Text = "Xóa";
             this.deleteBtn.Click += new System.EventHandler(this.btnDelete_Click);
@@ -193,7 +193,7 @@
             this.btnEdit.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnEdit.OnPressedColor = System.Drawing.Color.Black;
             this.btnEdit.Radius = 6;
-            this.btnEdit.Size = new System.Drawing.Size(127, 42);
+            this.btnEdit.Size = new System.Drawing.Size(113, 42);
             this.btnEdit.TabIndex = 5;
             this.btnEdit.Text = "Chỉnh sửa";
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
@@ -226,7 +226,7 @@
             this.btnAdd.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnAdd.OnPressedColor = System.Drawing.Color.Black;
             this.btnAdd.Radius = 6;
-            this.btnAdd.Size = new System.Drawing.Size(132, 42);
+            this.btnAdd.Size = new System.Drawing.Size(117, 42);
             this.btnAdd.TabIndex = 4;
             this.btnAdd.Text = "Thêm mới";
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -250,15 +250,16 @@
             this.searchInput.ForeColor = System.Drawing.Color.Black;
             this.searchInput.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.searchInput.HoverState.Parent = this.searchInput;
-            this.searchInput.Location = new System.Drawing.Point(15, -3);
+            this.searchInput.Location = new System.Drawing.Point(19, 25);
             this.searchInput.Margin = new System.Windows.Forms.Padding(4, 7, 4, 7);
             this.searchInput.Name = "searchInput";
             this.searchInput.PasswordChar = '\0';
-            this.searchInput.PlaceholderText = "Tìm kiếm theo nhân viên,email";
+            this.searchInput.PlaceholderText = "Tìm kiếm theo tên nhân viên,email";
             this.searchInput.SelectedText = "";
             this.searchInput.ShadowDecoration.Parent = this.searchInput;
-            this.searchInput.Size = new System.Drawing.Size(266, 40);
+            this.searchInput.Size = new System.Drawing.Size(266, 34);
             this.searchInput.TabIndex = 47;
+            this.searchInput.TextChanged += new System.EventHandler(this.searchInput_TextChanged);
             // 
             // dgvAccount
             // 
@@ -380,7 +381,7 @@
             // line1
             // 
             this.line1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(212)))), ((int)(((byte)(191)))));
-            this.line1.Location = new System.Drawing.Point(19, 43);
+            this.line1.Location = new System.Drawing.Point(19, 60);
             this.line1.Name = "line1";
             this.line1.Size = new System.Drawing.Size(302, 1);
             this.line1.TabIndex = 43;
@@ -388,9 +389,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(280, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(285, 28);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(40, 34);
+            this.pictureBox1.Size = new System.Drawing.Size(36, 30);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 44;
             this.pictureBox1.TabStop = false;
@@ -400,7 +401,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
-            this.ClientSize = new System.Drawing.Size(1400, 845);
+            this.ClientSize = new System.Drawing.Size(1400, 893);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.searchInput);

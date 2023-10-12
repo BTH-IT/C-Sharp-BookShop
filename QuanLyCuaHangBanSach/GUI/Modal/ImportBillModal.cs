@@ -23,142 +23,156 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
         private void loadSupplierCbx()
         {
-            List<SupplierDTO> supplierList = SupplierBUS.Instance.getAllData();
+            try
+            {
+                List<SupplierDTO> supplierList = SupplierBUS.Instance.getAllData();
 
-            supplierList.Insert(0, new SupplierDTO(0, "Chọn nhà cung cấp", "", ""));
+                supplierList.Insert(0, new SupplierDTO(0, "Chọn nhà cung cấp", "", ""));
 
-            this.supplierCbx.ValueMember = "MaNhaCungCap";
-            this.supplierCbx.DisplayMember = "TenNhaCungCap";
-            this.supplierCbx.DataSource = supplierList;
+                this.supplierCbx.ValueMember = "MaNhaCungCap";
+                this.supplierCbx.DisplayMember = "TenNhaCungCap";
+                this.supplierCbx.DataSource = supplierList;
 
-            this.supplierCbx.SelectedIndex = 0;
+                this.supplierCbx.SelectedIndex = 0;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
         }
 
         private void loadImportBillDetailList()
         {
-            this.bookList.Controls.Clear();
-
-            double total = 0;
-
-            foreach (ImportBillDetailDTO importBillDetail in importBillDetailList)
+            try
             {
-                BookBill bookBill = new BookBill();
+                this.bookList.Controls.Clear();
 
-                int remain = BookBUS.Instance.getById(importBillDetail.MaSach.ToString()).SoLuongConLai;
+                double total = 0;
 
-                total += importBillDetail.SoLuong * importBillDetail.DonGia;
-
-                bookBill.addData(importBillDetail.MaSach, importBillDetail.SoLuong, importBillDetail.DonGia);
-
-                bookBill.close.MouseClick += (object sender, MouseEventArgs e) =>
+                foreach (ImportBillDetailDTO importBillDetail in importBillDetailList)
                 {
-                    this.bookList.Controls.Remove(bookBill);
+                    BookBill bookBill = new BookBill();
 
-                    this.importBillDetailList.Remove(importBillDetail);
+                    int remain = BookBUS.Instance.getById(importBillDetail.MaSach.ToString()).SoLuongConLai;
 
-                    this.loadImportBillDetailList();
-                };
+                    total += importBillDetail.SoLuong * importBillDetail.DonGia;
 
-                bookBill.plus.MouseClick += (object sender, MouseEventArgs e) =>
-                {
-                    bookBill.minus.Enabled = true;
+                    bookBill.addData(importBillDetail.MaSach, importBillDetail.SoLuong, importBillDetail.DonGia);
 
-                    int amount = Convert.ToInt32(bookBill.amountInput.Text.ToString());
-
-                    bookBill.amountInput.Text = (amount + 1).ToString();
-
-                    int idx = this.importBillDetailList.FindIndex(
-                        book => book.MaSach == importBillDetail.MaSach
-                    );
-
-                    this.importBillDetailList[idx].SoLuong = amount + 1;
-
-                    total += importBillDetail.DonGia;
-                };
-
-                bookBill.minus.MouseClick += (object sender, MouseEventArgs e) =>
-                {
-                    int amount = Convert.ToInt32(bookBill.amountInput.Text.ToString());
-
-                    int idx = this.importBillDetailList.FindIndex(
-                        book => book.MaSach == importBillDetail.MaSach
-                    );
-
-                    if (amount <= 2)
+                    bookBill.close.MouseClick += (object sender, MouseEventArgs e) =>
                     {
-                        bookBill.minus.Enabled = false;
-                    }
-                    else
+                        this.bookList.Controls.Remove(bookBill);
+
+                        this.importBillDetailList.Remove(importBillDetail);
+
+                        this.loadImportBillDetailList();
+                    };
+
+                    bookBill.plus.MouseClick += (object sender, MouseEventArgs e) =>
                     {
                         bookBill.minus.Enabled = true;
-                    }
 
-                    bookBill.amountInput.Text = (amount - 1).ToString();
+                        int amount = Convert.ToInt32(bookBill.amountInput.Text.ToString());
 
-                    this.importBillDetailList[idx].SoLuong = amount - 1;
-
-                    total -= importBillDetail.DonGia;
-
-                    this.totalPriceTxt.Text = total.ToString();
-                };
-
-                bookBill.amountInput.MouseLeave += (object sender, EventArgs e) =>
-                {
-                    try
-                    {
-                        this.ActiveControl = null;
-
-                        Regex isNum = new Regex(@"^\d+$");
+                        bookBill.amountInput.Text = (amount + 1).ToString();
 
                         int idx = this.importBillDetailList.FindIndex(
                             book => book.MaSach == importBillDetail.MaSach
                         );
 
-                        if (!isNum.IsMatch(bookBill.amountInput.Text))
-                        {
-                            bookBill.amountInput.Text = this.importBillDetailList[idx].SoLuong.ToString();
-                            MessageBox.Show("Số lượng là một số");
-                            return;
-                        }
+                        this.importBillDetailList[idx].SoLuong = amount + 1;
 
+                        total += importBillDetail.DonGia;
+                    };
+
+                    bookBill.minus.MouseClick += (object sender, MouseEventArgs e) =>
+                    {
                         int amount = Convert.ToInt32(bookBill.amountInput.Text.ToString());
 
-                        if (amount < 1 || this.importBillDetailList[idx].SoLuong == amount)
+                        int idx = this.importBillDetailList.FindIndex(
+                            book => book.MaSach == importBillDetail.MaSach
+                        );
+
+                        if (amount <= 2)
                         {
-                            bookBill.amountInput.Text = this.importBillDetailList[idx].SoLuong.ToString();
-                            return;
+                            bookBill.minus.Enabled = false;
+                        }
+                        else
+                        {
+                            bookBill.minus.Enabled = true;
                         }
 
-                        if (amount == 1) bookBill.minus.Enabled = false;
-                        else bookBill.minus.Enabled = true;
+                        bookBill.amountInput.Text = (amount - 1).ToString();
 
-                        total -= this.importBillDetailList[idx].SoLuong * importBillDetail.DonGia;
+                        this.importBillDetailList[idx].SoLuong = amount - 1;
 
-                        this.importBillDetailList[idx].SoLuong = amount;
-
-                        total += this.importBillDetailList[idx].SoLuong * importBillDetail.DonGia;
+                        total -= importBillDetail.DonGia;
 
                         this.totalPriceTxt.Text = total.ToString();
+                    };
 
-                    }
-                    catch
+                    bookBill.amountInput.MouseLeave += (object sender, EventArgs e) =>
                     {
-                        MessageBox.Show("Số lượng là một số");
-                    }
-                };
+                        try
+                        {
+                            this.ActiveControl = null;
 
-                bookBill.amountInput.KeyPress += (object sender, KeyPressEventArgs e) =>
-                {
-                    if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+                            Regex isNum = new Regex(@"^\d+$");
+
+                            int idx = this.importBillDetailList.FindIndex(
+                                book => book.MaSach == importBillDetail.MaSach
+                            );
+
+                            if (!isNum.IsMatch(bookBill.amountInput.Text))
+                            {
+                                bookBill.amountInput.Text = this.importBillDetailList[idx].SoLuong.ToString();
+                                MessageBox.Show("Số lượng là một số");
+                                return;
+                            }
+
+                            int amount = Convert.ToInt32(bookBill.amountInput.Text.ToString());
+
+                            if (amount < 1 || this.importBillDetailList[idx].SoLuong == amount)
+                            {
+                                bookBill.amountInput.Text = this.importBillDetailList[idx].SoLuong.ToString();
+                                return;
+                            }
+
+                            if (amount == 1) bookBill.minus.Enabled = false;
+                            else bookBill.minus.Enabled = true;
+
+                            total -= this.importBillDetailList[idx].SoLuong * importBillDetail.DonGia;
+
+                            this.importBillDetailList[idx].SoLuong = amount;
+
+                            total += this.importBillDetailList[idx].SoLuong * importBillDetail.DonGia;
+
+                            this.totalPriceTxt.Text = total.ToString();
+
+                        }
+                        catch
+                        {
+                            MessageBox.Show("Số lượng là một số");
+                        }
+                    };
+
+                    bookBill.amountInput.KeyPress += (object sender, KeyPressEventArgs e) =>
                     {
-                        e.Handled = true;
-                    }
-                };
+                        if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+                        {
+                            e.Handled = true;
+                        }
+                    };
 
-                this.bookList.Controls.Add(bookBill);
+                    this.bookList.Controls.Add(bookBill);
+                }
+
+                this.totalPriceTxt.Text = total.ToString();
             }
-
-            this.totalPriceTxt.Text = total.ToString();
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
         }
 
         private void ImportBillModal_Load(object sender, EventArgs e)
@@ -171,31 +185,48 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
         private void gunaButton1_Click(object sender, EventArgs e)
         {
-            using (AddBookToImportBillModal addBookToBillModal = new AddBookToImportBillModal(importBillDetailList))
+            try
             {
-                addBookToBillModal.ShowDialog();
-
-                foreach (ImportBillDetailDTO importBillDetail in addBookToBillModal.selectedImportBillDetailList)
+                using (AddBookToImportBillModal addBookToBillModal = new AddBookToImportBillModal(importBillDetailList))
                 {
-                    int idx = this.importBillDetailList.FindIndex(
-                        book => book.MaSach == importBillDetail.MaSach
-                    );
+                    addBookToBillModal.ShowDialog();
 
-                    if (idx == -1)
+                    foreach (ImportBillDetailDTO importBillDetail in addBookToBillModal.selectedImportBillDetailList)
                     {
-                        this.importBillDetailList.Add(importBillDetail);
-                        continue;
+                        int idx = this.importBillDetailList.FindIndex(
+                            book => book.MaSach == importBillDetail.MaSach
+                        );
+
+                        if (idx == -1)
+                        {
+                            this.importBillDetailList.Add(importBillDetail);
+                            continue;
+                        }
+
+                        this.importBillDetailList[idx].SoLuong += importBillDetail.SoLuong;
                     }
 
-                    this.importBillDetailList[idx].SoLuong += importBillDetail.SoLuong;
+                    this.loadImportBillDetailList();
                 }
-
-                this.loadImportBillDetailList();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
             }
         }
 
         private bool validate()
         {
+            if (this.importBillDetailList.Count <= 0)
+            {
+                this.errorBookListMsg.Text = "Danh sách sản phẩm không được để trống";
+                return false;
+            }
+            else
+            {
+                this.errorBookListMsg.Text = "";
+            }
+
             return CustomValidation.Instance.checkCombobox(
                 this.supplierCbx,
                 this.errorCustomerMsg,
@@ -205,43 +236,51 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
         private void submitBtn_Click(object sender, EventArgs e)
         {
-            bool isValid = this.validate();
-
-            if (!isValid) return;
-
-            ImportBillDTO importBill = new ImportBillDTO();
-
-            importBill.TongTien = Convert.ToDouble(this.totalPriceTxt.Text);
-            importBill.MaNhanVien = this.staffId;
-            importBill.MaNhaCungCap = Convert.ToInt32(this.supplierCbx.SelectedValue);
-            importBill.NgayLap = DateTime.Now;
-
-            ImportBillDTO newImportBill = ImportBillBUS.Instance.insertReturnBill(importBill);
-
-            if (newImportBill == null)
+            try
             {
-                MessageBox.Show("Failure");
-                this.isSubmitSuccess = false;
-                return;
-            }
-            else {
+                bool isValid = this.validate();
 
-                foreach (ImportBillDetailDTO importBillDetail in this.importBillDetailList)
+                if (!isValid) return;
+
+                ImportBillDTO importBill = new ImportBillDTO();
+
+                importBill.TongTien = Convert.ToDouble(this.totalPriceTxt.Text);
+                importBill.MaNhanVien = this.staffId;
+                importBill.MaNhaCungCap = Convert.ToInt32(this.supplierCbx.SelectedValue);
+                importBill.NgayLap = DateTime.Now;
+
+                ImportBillDTO newImportBill = ImportBillBUS.Instance.insertReturnBill(importBill);
+
+                if (newImportBill == null)
                 {
-                    ImportBillDetailDTO newImportBillDetail = new ImportBillDetailDTO(
-                        newImportBill.MaDonNhapHang,
-                        importBillDetail.MaSach,
-                        importBillDetail.SoLuong,
-                        importBillDetail.DonGia
-                    );
-
-                    ImportBillBUS.Instance.createImportBillDetail(newImportBillDetail);
+                    MessageBox.Show("Failure");
+                    this.isSubmitSuccess = false;
+                    return;
                 }
+                else
+                {
 
-                MessageBox.Show("Success");
+                    foreach (ImportBillDetailDTO importBillDetail in this.importBillDetailList)
+                    {
+                        ImportBillDetailDTO newImportBillDetail = new ImportBillDetailDTO(
+                            newImportBill.MaDonNhapHang,
+                            importBillDetail.MaSach,
+                            importBillDetail.SoLuong,
+                            importBillDetail.DonGia
+                        );
 
-                this.isSubmitSuccess = true;
-                this.Close();
+                        ImportBillBUS.Instance.createImportBillDetail(newImportBillDetail);
+                    }
+
+                    MessageBox.Show("Success");
+
+                    this.isSubmitSuccess = true;
+                    this.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
             }
         }
 

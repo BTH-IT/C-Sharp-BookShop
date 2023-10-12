@@ -129,7 +129,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             this.dgvSupplier.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvSupplier.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvSupplier.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSupplier.Size = new System.Drawing.Size(1376, 717);
+            this.dgvSupplier.Size = new System.Drawing.Size(1376, 757);
             this.dgvSupplier.TabIndex = 23;
             this.dgvSupplier.TabStop = false;
             this.dgvSupplier.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna;
@@ -210,7 +210,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             this.panel1.Controls.Add(this.deleteBtn);
             this.panel1.Controls.Add(this.editBtn);
             this.panel1.Controls.Add(this.addBtn);
-            this.panel1.Location = new System.Drawing.Point(12, 792);
+            this.panel1.Location = new System.Drawing.Point(12, 832);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1376, 54);
             this.panel1.TabIndex = 24;
@@ -229,7 +229,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             this.exportBtn.CheckedLineColor = System.Drawing.Color.DimGray;
             this.exportBtn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.exportBtn.FocusedColor = System.Drawing.Color.Empty;
-            this.exportBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.exportBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.exportBtn.ForeColor = System.Drawing.Color.White;
             this.exportBtn.Image = ((System.Drawing.Image)(resources.GetObject("exportBtn.Image")));
             this.exportBtn.ImageSize = new System.Drawing.Size(20, 20);
@@ -262,7 +262,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             this.refreshBtn.CheckedLineColor = System.Drawing.Color.DimGray;
             this.refreshBtn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.refreshBtn.FocusedColor = System.Drawing.Color.Empty;
-            this.refreshBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.refreshBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.refreshBtn.ForeColor = System.Drawing.Color.White;
             this.refreshBtn.Image = ((System.Drawing.Image)(resources.GetObject("refreshBtn.Image")));
             this.refreshBtn.ImageSize = new System.Drawing.Size(20, 20);
@@ -295,7 +295,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             this.deleteBtn.CheckedLineColor = System.Drawing.Color.DimGray;
             this.deleteBtn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.deleteBtn.FocusedColor = System.Drawing.Color.Empty;
-            this.deleteBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deleteBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.deleteBtn.ForeColor = System.Drawing.Color.White;
             this.deleteBtn.Image = ((System.Drawing.Image)(resources.GetObject("deleteBtn.Image")));
             this.deleteBtn.ImageSize = new System.Drawing.Size(20, 20);
@@ -328,7 +328,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             this.editBtn.CheckedLineColor = System.Drawing.Color.DimGray;
             this.editBtn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.editBtn.FocusedColor = System.Drawing.Color.Empty;
-            this.editBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.editBtn.ForeColor = System.Drawing.Color.White;
             this.editBtn.Image = ((System.Drawing.Image)(resources.GetObject("editBtn.Image")));
             this.editBtn.ImageSize = new System.Drawing.Size(20, 20);
@@ -361,7 +361,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             this.addBtn.CheckedLineColor = System.Drawing.Color.DimGray;
             this.addBtn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.addBtn.FocusedColor = System.Drawing.Color.Empty;
-            this.addBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addBtn.ForeColor = System.Drawing.Color.White;
             this.addBtn.Image = ((System.Drawing.Image)(resources.GetObject("addBtn.Image")));
             this.addBtn.ImageSize = new System.Drawing.Size(20, 20);
@@ -464,7 +464,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
-            this.ClientSize = new System.Drawing.Size(1400, 864);
+            this.ClientSize = new System.Drawing.Size(1400, 894);
             this.Controls.Add(this.searchInput);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dgvSupplier);

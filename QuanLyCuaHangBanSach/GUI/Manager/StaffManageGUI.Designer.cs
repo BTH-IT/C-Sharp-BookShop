@@ -1,26 +1,26 @@
 ﻿namespace QuanLyCuaHangBanSach.GUI.Manager
 {
-    partial class StaffManageGUI
-    {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
-        private System.ComponentModel.IContainer components = null;
+	partial class StaffManageGUI
+	{
+		/// <summary>
+		/// Required designer variable.
+		/// </summary>
+		private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+		/// <summary>
+		/// Clean up any resources being used.
+		/// </summary>
+		/// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+		protected override void Dispose(bool disposing)
+		{
+			if (disposing && (components != null))
+			{
+				components.Dispose();
+			}
+			base.Dispose(disposing);
+		}
 
-        #region Windows Form Designer generated code
+		#region Windows Form Designer generated code
 
         /// <summary>
         /// Required method for Designer support - do not modify
@@ -44,7 +44,6 @@
             this.namSinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.soDienThoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.soNgayNghi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.luong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.chucVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.line1 = new System.Windows.Forms.Panel();
@@ -88,7 +87,7 @@
             this.searchInput.ForeColor = System.Drawing.Color.Black;
             this.searchInput.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.searchInput.HoverState.Parent = this.searchInput;
-            this.searchInput.Location = new System.Drawing.Point(15, 7);
+            this.searchInput.Location = new System.Drawing.Point(15, 14);
             this.searchInput.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.searchInput.Name = "searchInput";
             this.searchInput.PasswordChar = '\0';
@@ -113,7 +112,7 @@
             this.genderCbx.ForeColor = System.Drawing.Color.Black;
             this.genderCbx.FormattingEnabled = true;
             this.genderCbx.ItemHeight = 30;
-            this.genderCbx.Location = new System.Drawing.Point(703, 9);
+            this.genderCbx.Location = new System.Drawing.Point(902, 15);
             this.genderCbx.Name = "genderCbx";
             this.genderCbx.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.genderCbx.OnHoverItemForeColor = System.Drawing.Color.White;
@@ -137,7 +136,7 @@
             this.positionCbx.ForeColor = System.Drawing.Color.Black;
             this.positionCbx.FormattingEnabled = true;
             this.positionCbx.ItemHeight = 30;
-            this.positionCbx.Location = new System.Drawing.Point(522, 9);
+            this.positionCbx.Location = new System.Drawing.Point(721, 15);
             this.positionCbx.Name = "positionCbx";
             this.positionCbx.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.positionCbx.OnHoverItemForeColor = System.Drawing.Color.White;
@@ -176,7 +175,6 @@
             this.namSinh,
             this.gioiTinh,
             this.soDienThoai,
-            this.soNgayNghi,
             this.luong,
             this.chucVu});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -282,13 +280,6 @@
             this.soDienThoai.Name = "soDienThoai";
             this.soDienThoai.ReadOnly = true;
             // 
-            // soNgayNghi
-            // 
-            this.soNgayNghi.HeaderText = "Ngày nghỉ";
-            this.soNgayNghi.MinimumWidth = 6;
-            this.soNgayNghi.Name = "soNgayNghi";
-            this.soNgayNghi.ReadOnly = true;
-            // 
             // luong
             // 
             this.luong.HeaderText = "Lương";
@@ -305,7 +296,7 @@
             // line1
             // 
             this.line1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(212)))), ((int)(((byte)(191)))));
-            this.line1.Location = new System.Drawing.Point(26, 44);
+            this.line1.Location = new System.Drawing.Point(26, 50);
             this.line1.Name = "line1";
             this.line1.Size = new System.Drawing.Size(268, 1);
             this.line1.TabIndex = 32;
@@ -500,7 +491,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(258, 5);
+            this.pictureBox1.Location = new System.Drawing.Point(258, 18);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(36, 30);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -517,7 +508,7 @@
             this.gradientPanel1.Controls.Add(this.panel4);
             this.gradientPanel1.Controls.Add(this.panel2);
             this.gradientPanel1.Controls.Add(this.label1);
-            this.gradientPanel1.Location = new System.Drawing.Point(1087, 9);
+            this.gradientPanel1.Location = new System.Drawing.Point(1095, 15);
             this.gradientPanel1.Name = "gradientPanel1";
             this.gradientPanel1.Size = new System.Drawing.Size(291, 36);
             this.gradientPanel1.TabIndex = 41;
@@ -626,7 +617,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
-            this.ClientSize = new System.Drawing.Size(1400, 845);
+            this.ClientSize = new System.Drawing.Size(1400, 894);
             this.Controls.Add(this.gradientPanel1);
             this.Controls.Add(this.searchInput);
             this.Controls.Add(this.genderCbx);
@@ -647,7 +638,7 @@
             this.gradientPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
-        }
+		}
 
         #endregion
         private Guna.UI2.WinForms.Guna2TextBox searchInput;
@@ -663,15 +654,6 @@
         private Guna.UI.WinForms.GunaAdvenceButton editBtn;
         private Guna.UI.WinForms.GunaAdvenceButton addBtn;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Column11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn maNhanVien;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tenNhanVien;
-        private System.Windows.Forms.DataGridViewTextBoxColumn namSinh;
-        private System.Windows.Forms.DataGridViewTextBoxColumn gioiTinh;
-        private System.Windows.Forms.DataGridViewTextBoxColumn soDienThoai;
-        private System.Windows.Forms.DataGridViewTextBoxColumn soNgayNghi;
-        private System.Windows.Forms.DataGridViewTextBoxColumn luong;
-        private System.Windows.Forms.DataGridViewTextBoxColumn chucVu;
         private GradientPanel gradientPanel1;
         private Guna.UI2.WinForms.Guna2TextBox salaryTo;
         private Guna.UI2.WinForms.Guna2TextBox salaryFrom;
@@ -679,5 +661,13 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Column11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn maNhanVien;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tenNhanVien;
+        private System.Windows.Forms.DataGridViewTextBoxColumn namSinh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gioiTinh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn soDienThoai;
+        private System.Windows.Forms.DataGridViewTextBoxColumn luong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn chucVu;
     }
 }

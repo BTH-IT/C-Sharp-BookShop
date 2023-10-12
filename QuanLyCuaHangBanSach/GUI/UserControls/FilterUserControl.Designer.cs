@@ -48,17 +48,17 @@
             this.PriceUpCkb.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.PriceUpCkb.CheckedState.BorderRadius = 2;
             this.PriceUpCkb.CheckedState.BorderThickness = 0;
-            this.PriceUpCkb.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.PriceUpCkb.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.PriceUpCkb.Font = new System.Drawing.Font("#9Slide03 Cabin Medium", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.PriceUpCkb.Location = new System.Drawing.Point(20, 20);
             this.PriceUpCkb.Name = "PriceUpCkb";
             this.PriceUpCkb.Size = new System.Drawing.Size(104, 25);
             this.PriceUpCkb.TabIndex = 0;
             this.PriceUpCkb.Text = "Giá tăng dần";
-            this.PriceUpCkb.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.PriceUpCkb.UncheckedState.BorderColor = System.Drawing.Color.DimGray;
             this.PriceUpCkb.UncheckedState.BorderRadius = 2;
-            this.PriceUpCkb.UncheckedState.BorderThickness = 0;
-            this.PriceUpCkb.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.PriceUpCkb.UncheckedState.BorderThickness = 1;
+            this.PriceUpCkb.UncheckedState.FillColor = System.Drawing.Color.WhiteSmoke;
             this.PriceUpCkb.UseVisualStyleBackColor = true;
             this.PriceUpCkb.CheckedChanged += new System.EventHandler(this.PriceUpCkb_CheckedChanged);
             // 
@@ -69,17 +69,17 @@
             this.PriceDownCkb.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.PriceDownCkb.CheckedState.BorderRadius = 2;
             this.PriceDownCkb.CheckedState.BorderThickness = 0;
-            this.PriceDownCkb.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.PriceDownCkb.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.PriceDownCkb.Font = new System.Drawing.Font("#9Slide03 Cabin Medium", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.PriceDownCkb.Location = new System.Drawing.Point(20, 60);
             this.PriceDownCkb.Name = "PriceDownCkb";
             this.PriceDownCkb.Size = new System.Drawing.Size(106, 25);
             this.PriceDownCkb.TabIndex = 1;
             this.PriceDownCkb.Text = "Giá giảm dần";
-            this.PriceDownCkb.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.PriceDownCkb.UncheckedState.BorderColor = System.Drawing.Color.DimGray;
             this.PriceDownCkb.UncheckedState.BorderRadius = 2;
-            this.PriceDownCkb.UncheckedState.BorderThickness = 0;
-            this.PriceDownCkb.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.PriceDownCkb.UncheckedState.BorderThickness = 1;
+            this.PriceDownCkb.UncheckedState.FillColor = System.Drawing.Color.WhiteSmoke;
             this.PriceDownCkb.UseVisualStyleBackColor = true;
             this.PriceDownCkb.CheckedChanged += new System.EventHandler(this.PriceDownCkb_CheckedChanged);
             // 
@@ -87,20 +87,20 @@
             // 
             this.NameAZCkb.Animated = true;
             this.NameAZCkb.AutoSize = true;
-            this.NameAZCkb.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.NameAZCkb.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.NameAZCkb.CheckedState.BorderRadius = 2;
             this.NameAZCkb.CheckedState.BorderThickness = 0;
-            this.NameAZCkb.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.NameAZCkb.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.NameAZCkb.Font = new System.Drawing.Font("#9Slide03 Cabin Medium", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.NameAZCkb.Location = new System.Drawing.Point(20, 100);
             this.NameAZCkb.Name = "NameAZCkb";
             this.NameAZCkb.Size = new System.Drawing.Size(94, 25);
             this.NameAZCkb.TabIndex = 2;
             this.NameAZCkb.Text = "Tên từ A-Z";
-            this.NameAZCkb.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.NameAZCkb.UncheckedState.BorderColor = System.Drawing.Color.DimGray;
             this.NameAZCkb.UncheckedState.BorderRadius = 2;
-            this.NameAZCkb.UncheckedState.BorderThickness = 0;
-            this.NameAZCkb.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.NameAZCkb.UncheckedState.BorderThickness = 1;
+            this.NameAZCkb.UncheckedState.FillColor = System.Drawing.Color.WhiteSmoke;
             this.NameAZCkb.UseVisualStyleBackColor = true;
             this.NameAZCkb.CheckedChanged += new System.EventHandler(this.NameAZCkb_CheckedChanged);
             // 
@@ -108,20 +108,20 @@
             // 
             this.NameZACkb.Animated = true;
             this.NameZACkb.AutoSize = true;
-            this.NameZACkb.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.NameZACkb.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.NameZACkb.CheckedState.BorderRadius = 2;
             this.NameZACkb.CheckedState.BorderThickness = 0;
-            this.NameZACkb.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.NameZACkb.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.NameZACkb.Font = new System.Drawing.Font("#9Slide03 Cabin Medium", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.NameZACkb.Location = new System.Drawing.Point(20, 139);
             this.NameZACkb.Name = "NameZACkb";
             this.NameZACkb.Size = new System.Drawing.Size(94, 25);
             this.NameZACkb.TabIndex = 3;
             this.NameZACkb.Text = "Tên từ Z-A";
-            this.NameZACkb.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.NameZACkb.UncheckedState.BorderColor = System.Drawing.Color.DimGray;
             this.NameZACkb.UncheckedState.BorderRadius = 2;
-            this.NameZACkb.UncheckedState.BorderThickness = 0;
-            this.NameZACkb.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.NameZACkb.UncheckedState.BorderThickness = 1;
+            this.NameZACkb.UncheckedState.FillColor = System.Drawing.Color.WhiteSmoke;
             this.NameZACkb.UseVisualStyleBackColor = true;
             this.NameZACkb.CheckedChanged += new System.EventHandler(this.NameZACkb_CheckedChanged);
             // 
@@ -166,7 +166,6 @@
             this.TypeCb.Size = new System.Drawing.Size(154, 28);
             this.TypeCb.TabIndex = 6;
             this.TypeCb.Tag = "";
-            this.TypeCb.SelectedIndexChanged += new System.EventHandler(this.TypeCb_SelectedIndexChanged);
             // 
             // AuthorCb
             // 
@@ -190,7 +189,6 @@
             this.AuthorCb.Size = new System.Drawing.Size(154, 28);
             this.AuthorCb.TabIndex = 7;
             this.AuthorCb.Tag = "";
-            this.AuthorCb.SelectedIndexChanged += new System.EventHandler(this.AuthorCb_SelectedIndexChanged);
             // 
             // PublisherCb
             // 
@@ -214,7 +212,6 @@
             this.PublisherCb.Size = new System.Drawing.Size(154, 28);
             this.PublisherCb.TabIndex = 8;
             this.PublisherCb.Tag = "";
-            this.PublisherCb.SelectedIndexChanged += new System.EventHandler(this.PublisherCb_SelectedIndexChanged);
             // 
             // Typelb
             // 

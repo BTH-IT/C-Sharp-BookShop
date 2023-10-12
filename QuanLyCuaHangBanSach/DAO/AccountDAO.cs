@@ -44,8 +44,8 @@ namespace QuanLyCuaHangBanSach.DAO
         public bool insert(AccountDTO data)
         {
 
-            string sql = $@"INSERT INTO taikhoan (maNhanVien, email, matKhau, hienThi)
-                            VALUES (@MaNhanVien, @Email, @MatKhau, 1);";
+            string sql = $@"INSERT INTO taikhoan (maNhanVien, email, matKhau)
+                            VALUES (@MaNhanVien, @Email, @MatKhau);";
 
             int rowChanged = DataProvider.Instance.ExecuteNonQuery(sql,
                 new MySqlParameter[] {
@@ -73,7 +73,7 @@ namespace QuanLyCuaHangBanSach.DAO
 
         public bool delete(string id)
         {
-            string sql = $@"UPDATE taikhoan SET hienThi = 0 WHERE email=@Email;";
+            string sql = $@"DELETE FROM taikhoan WHERE email=@Email;";
 
             int rowChanged = DataProvider.Instance.ExecuteNonQuery(sql,
                 new MySqlParameter[] {
@@ -81,6 +81,15 @@ namespace QuanLyCuaHangBanSach.DAO
                 });
 
             return rowChanged > 0;
+        }
+        public DataTable search(string searchInput)
+        {
+            DataTable dataTable = DataProvider.Instance.ExecuteQuery(
+					"select * from taikhoan where (email=@Email or  maNhanVien in  (select maNhanVien  from nhanvien  where tenNhanVien LIKE @tenNhanVien))",
+                    new MySqlParameter[] {new MySqlParameter("@Email",searchInput),new MySqlParameter("@tenNhanVien",$"%{searchInput}%") }
+                );  
+            if (dataTable.Rows.Count <= 0) return null;
+            return dataTable;
         }
     }
 }
