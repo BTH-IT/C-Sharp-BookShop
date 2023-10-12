@@ -132,13 +132,11 @@ namespace QuanLyCuaHangBanTacGia.GUI.Manager
         {
             try
             {
-                List<AuthorDTO> AuthorList = AuthorBUS.Instance.search(this.searchInput.Text.ToString());
-
-                DataTable dataTable = CustomExcel.Instance.ConvertListToDataTable(AuthorList);
-
                 string[] headerList = new string[] { "Mã tác giả", "Tên tác giả", "Giới tính", "Năm sinh" };
 
-                CustomExcel.Instance.ExportFile(dataTable, "Author Manage", "Cửa hàng bán sách", headerList);
+                DataTable dt = CustomExcel.Instance.ConvertDataGridViewToDataTable(dgvAuthor);
+
+                CustomExcel.Instance.ExportFileDatagridView(dt, "Book Manage", 1, "Cửa hàng bán sách", headerList);
             }
             catch (Exception ex)
             {

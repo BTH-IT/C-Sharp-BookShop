@@ -126,13 +126,11 @@ namespace QuanLyCuaHangBanTacGia.GUI.Manager
         {
             try
             {
-                List<BookTypeDTO> BookTypeList = BookTypeBUS.Instance.search(this.searchInput.Text.ToString());
-
-                DataTable dataTable = CustomExcel.Instance.ConvertListToDataTable(BookTypeList);
-
                 string[] headerList = new string[] { "Mã Thể Loại, Tên Thể Loại" };
 
-                CustomExcel.Instance.ExportFile(dataTable, "BookType Manage", "Cửa hàng bán sách", headerList);
+                DataTable dt = CustomExcel.Instance.ConvertDataGridViewToDataTable(dgvBookType);
+
+                CustomExcel.Instance.ExportFileDatagridView(dt, "Book Manage", 1, "Cửa hàng bán sách", headerList);
             }
             catch (Exception ex)
             {

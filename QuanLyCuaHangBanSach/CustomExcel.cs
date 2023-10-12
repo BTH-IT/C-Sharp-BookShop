@@ -6,6 +6,7 @@ using System.Linq;
 using System.Reflection;
 using System.Windows;
 using ExcelDataReader;
+using Guna.UI.WinForms;
 using Microsoft.Win32;
 using OfficeOpenXml;
 using OfficeOpenXml.Style;
@@ -31,7 +32,7 @@ namespace QuanLyCuaHangBanSach
         }
         public CustomExcel() { }
 
-        public void ExportFile(DataTable dataTable, string sheetName, string title, string[] headerList, int imgCol = -1)
+        public void ExportFileDatagridView(DataTable dataTable, string sheetName, int startPosition, string title, string[] headerList, int imgCol = -1)
         {
             string filePath = "";
             // tạo SaveFileDialog để lưu file excel
@@ -121,7 +122,7 @@ namespace QuanLyCuaHangBanSach
                     {
                         DataRow dataRow = dataTable.Rows[row];
                         colIndex = 0;
-                        for (int col = 0; col < dataTable.Columns.Count; col++)
+                        for (int col = startPosition; col < dataTable.Columns.Count; col++)
                         {
 
                             if (col == imgCol) continue;
@@ -167,6 +168,26 @@ namespace QuanLyCuaHangBanSach
             }
             //put a breakpoint here and check datatable
             return dataTable;
+        }
+
+
+        public DataTable ConvertDataGridViewToDataTable(GunaDataGridView dgv)
+        {
+            DataTable ExportDataTable = new DataTable();
+            foreach (System.Windows.Forms.DataGridViewColumn col in dgv.Columns)
+            {
+                ExportDataTable.Columns.Add(col.Name);
+            }
+            foreach (System.Windows.Forms.DataGridViewRow row in dgv.Rows)
+            {
+                DataRow dRow = ExportDataTable.NewRow();
+                foreach (System.Windows.Forms.DataGridViewCell cell in row.Cells)
+                {
+                    dRow[cell.ColumnIndex] = cell.Value;
+                }
+                ExportDataTable.Rows.Add(dRow);
+            }
+            return ExportDataTable;
         }
 
         public DataTable ImportFile()

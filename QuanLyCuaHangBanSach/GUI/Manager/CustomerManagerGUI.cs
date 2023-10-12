@@ -254,8 +254,10 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 				List<CustomerDTO> customers = handleFilter(this.searchInput.Text.ToString());
 				DataTable dataTable = CustomExcel.Instance.ConvertListToDataTable(customers);
 				string[] headerList = new string[] { "Mã khách hàng", "Tên khách hàng", "SĐT", "Giới tính", "Năm sinh" };
-				CustomExcel.Instance.ExportFile(dataTable, "Quản lý khách hàng", "Cửa hàng bán sách", headerList);
-			}
+                DataTable dt = CustomExcel.Instance.ConvertDataGridViewToDataTable(dgvCustomer);
+
+                CustomExcel.Instance.ExportFileDatagridView(dt, "Book Manage", 1, "Cửa hàng bán sách", headerList);
+            }
             catch
             {
 
