@@ -183,6 +183,34 @@ namespace QuanLyCuaHangBanSach.DAO
 			return customerBillDetailList;
 		}
 
+        public int countBillByCustomerID(string customerId)
+        {
+			DataTable dataTable = DataProvider.Instance.ExecuteQuery(
+				"SELECT COUNT(maDonKhachHang) AS soDon FROM phieuban WHERE maKhachHang=@maKhachHang;",
+				new MySqlParameter[] {
+					new MySqlParameter("@maKhachHang", customerId),
+				}
+			);
+
+			if (dataTable.Rows.Count <= 0 || dataTable.Rows[0]["soDon"] == DBNull.Value) return 0;
+
+			return Convert.ToInt32(dataTable.Rows[0]["soDon"]);
+		}
+
+		public double getCustomerBoughtTotal(string customerId)
+		{
+			DataTable dataTable = DataProvider.Instance.ExecuteQuery(
+				"SELECT SUM(tongTien) AS daMua FROM phieuban WHERE maKhachHang=@maKhachHang;",
+				new MySqlParameter[] {
+					new MySqlParameter("@maKhachHang", customerId),
+				}
+			);
+
+			if (dataTable.Rows.Count <= 0 || dataTable.Rows[0]["daMua"] == DBNull.Value) return 0;
+
+			return Convert.ToDouble(dataTable.Rows[0]["daMua"]);
+		}
+
 		public DataTable searchData(string value)
         {
             string sql = $@"SELECT * FROM phieuban WHERE maDonKhachHang LIKE @maDonKhachHang AND hienThi = 1;";

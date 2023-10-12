@@ -544,6 +544,12 @@
     <Compile Include="GUI\Manager\CustomerManagerGUI.designer.cs">
       <DependentUpon>CustomerManagerGUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Manager\CustomerStatisticGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Manager\CustomerStatisticGUI.Designer.cs">
+      <DependentUpon>CustomerStatisticGUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Manager\HomeManageGUI.Designer.cs">
       <DependentUpon>HomeManageGUI.cs</DependentUpon>
     </Compile>
@@ -943,6 +949,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Manager\CustomerRefundBillGUI.resx">
       <DependentUpon>CustomerRefundBillGUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Manager\CustomerStatisticGUI.resx">
+      <DependentUpon>CustomerStatisticGUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Manager\HomeManageGUI.resx">
       <DependentUpon>HomeManageGUI.cs</DependentUpon>
