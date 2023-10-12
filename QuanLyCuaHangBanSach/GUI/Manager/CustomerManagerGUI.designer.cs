@@ -1,26 +1,26 @@
 ﻿namespace QuanLyCuaHangBanSach.GUI.Manager
 {
-    partial class CustomerManagerGUI
-    {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
-        private System.ComponentModel.IContainer components = null;
+	partial class CustomerManagerGUI
+	{
+		/// <summary>
+		/// Required designer variable.
+		/// </summary>
+		private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+		/// <summary>
+		/// Clean up any resources being used.
+		/// </summary>
+		/// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+		protected override void Dispose(bool disposing)
+		{
+			if (disposing && (components != null))
+			{
+				components.Dispose();
+			}
+			base.Dispose(disposing);
+		}
 
-        #region Windows Form Designer generated code
+		#region Windows Form Designer generated code
 
         /// <summary>
         /// Required method for Designer support - do not modify
@@ -304,7 +304,6 @@
             this.Column1.MinimumWidth = 6;
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
-            this.Column1.ToolTipText = "Điểm";
             // 
             // line1
             // 
@@ -440,12 +439,12 @@
             this.genderCbx.ForeColor = System.Drawing.Color.Black;
             this.genderCbx.FormattingEnabled = true;
             this.genderCbx.ItemHeight = 30;
-            this.genderCbx.Location = new System.Drawing.Point(1222, 12);
+            this.genderCbx.Location = new System.Drawing.Point(1203, 9);
             this.genderCbx.Name = "genderCbx";
             this.genderCbx.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.genderCbx.OnHoverItemForeColor = System.Drawing.Color.White;
             this.genderCbx.Radius = 6;
-            this.genderCbx.Size = new System.Drawing.Size(166, 36);
+            this.genderCbx.Size = new System.Drawing.Size(185, 36);
             this.genderCbx.TabIndex = 41;
             this.genderCbx.TabStop = false;
             this.genderCbx.SelectedIndexChanged += new System.EventHandler(this.genderCbx_SelectedIndexChanged);
@@ -454,7 +453,7 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
-            this.ClientSize = new System.Drawing.Size(1400, 890);
+            this.ClientSize = new System.Drawing.Size(1400, 894);
             this.Controls.Add(this.genderCbx);
             this.Controls.Add(this.searchInput);
             this.Controls.Add(this.pictureBox1);
@@ -472,27 +471,27 @@
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
-        }
+		}
 
-        #endregion
+		#endregion
 
-        private Guna.UI2.WinForms.Guna2TextBox searchInput;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private Guna.UI.WinForms.GunaAdvenceButton btnExport;
-        private Guna.UI.WinForms.GunaAdvenceButton btnRefresh;
-        private Guna.UI.WinForms.GunaDataGridView dgvCustomer;
-        private System.Windows.Forms.Panel line1;
-        private System.Windows.Forms.Panel panel1;
-        private Guna.UI.WinForms.GunaAdvenceButton deleteBtn;
-        private Guna.UI.WinForms.GunaAdvenceButton editBtn;
-        private Guna.UI.WinForms.GunaAdvenceButton addBtn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Column11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ma_khach_hang;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ten_khach_hang;
-        private System.Windows.Forms.DataGridViewTextBoxColumn gioi_tinh;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nam_sinh;
-        private System.Windows.Forms.DataGridViewTextBoxColumn so_dien_thoai;
+		private Guna.UI2.WinForms.Guna2TextBox searchInput;
+		private System.Windows.Forms.PictureBox pictureBox1;
+		private Guna.UI.WinForms.GunaAdvenceButton btnExport;
+		private Guna.UI.WinForms.GunaAdvenceButton btnRefresh;
+		private Guna.UI.WinForms.GunaDataGridView dgvCustomer;
+		private System.Windows.Forms.Panel line1;
+		private System.Windows.Forms.Panel panel1;
+		private Guna.UI.WinForms.GunaAdvenceButton deleteBtn;
+		private Guna.UI.WinForms.GunaAdvenceButton editBtn;
+		private Guna.UI.WinForms.GunaAdvenceButton addBtn;
+		private System.Windows.Forms.DataGridViewCheckBoxColumn Column11;
+		private System.Windows.Forms.DataGridViewTextBoxColumn ma_khach_hang;
+		private System.Windows.Forms.DataGridViewTextBoxColumn ten_khach_hang;
+		private System.Windows.Forms.DataGridViewTextBoxColumn gioi_tinh;
+		private System.Windows.Forms.DataGridViewTextBoxColumn nam_sinh;
+		private System.Windows.Forms.DataGridViewTextBoxColumn so_dien_thoai;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-		private Guna.UI.WinForms.GunaComboBox genderCbx;
-	}
+        private Guna.UI.WinForms.GunaComboBox genderCbx;
+    }
 }

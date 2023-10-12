@@ -6,7 +6,6 @@ namespace QuanLyCuaHangBanSach.DTO
     {
         public int Ma { get; protected set; }
         public string Ten { get; set; }
-
         public string GioiTinh { get; set; }
         public int NamSinh { get; set; }
 

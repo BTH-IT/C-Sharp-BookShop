@@ -140,13 +140,13 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         {
             try
             {
-				List<StaffDTO> staff = handleFilter(this.searchInput.Text.ToString());
+				List<StaffDTO> staffs = StaffBUS.Instance.getAllData();
 
-				DataTable dataTable = CustomExcel.Instance.ConvertListToDataTable(staff);
+                DataTable dataTable = CustomExcel.Instance.ConvertListToDataTable(staffs);
 
-				string[] headerList = new string[] { "Mã nhân viên", "Tên nhân viên", "Năm sinh", "SĐT", "Giới tính", "Lương", "Số ngày nghỉ", "Mã chức vụ" };
+				string[] headerList = new string[] { "Mã nhân viên", "Tên nhân viên", "Năm sinh", "Giới tính","SĐT", "Lương", "Chức vụ" };
 
-				CustomExcel.Instance.ExportFile(dataTable, "Staff Manage", "Cửa hàng bán sách", headerList, 2);
+				CustomExcel.Instance.ExportFile(dataTable, "Staff Manage", "Cửa hàng bán sách", headerList);
 			}
             catch
             {

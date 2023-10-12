@@ -217,6 +217,16 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
         private bool validate()
         {
+            if (this.importBillDetailList.Count <= 0)
+            {
+                this.errorBookListMsg.Text = "Danh sách sản phẩm không được để trống";
+                return false;
+            }
+            else
+            {
+                this.errorBookListMsg.Text = "";
+            }
+
             return CustomValidation.Instance.checkCombobox(
                 this.supplierCbx,
                 this.errorCustomerMsg,

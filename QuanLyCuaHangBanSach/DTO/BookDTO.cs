@@ -11,12 +11,12 @@ namespace QuanLyCuaHangBanSach.DTO
         public int MaTheLoai { get; set; }
         public int MaTacGia { get; set; }
         public int MaNhaXuatBan { get; set; }
-        public int SoLuongConLai { get; set; }
         public double GiaBan { get; set; }
         public double GiaNhap { get; set; }
         public int NamXuatBan { get; set; }
+		public int SoLuongConLai { get; set; }
 
-        public BookDTO() { }
+		public BookDTO() { }
         public BookDTO(
             int maSach,
             string tenSach,

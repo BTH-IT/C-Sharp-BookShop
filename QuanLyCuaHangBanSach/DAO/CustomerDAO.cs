@@ -33,10 +33,10 @@ namespace QuanLyCuaHangBanSach.DAO
         public List<CustomerDTO> Search(string searchInput)
         {
             DataTable dataTable = DataProvider.Instance.ExecuteQuery(
-                    "SELECT * FROM khachhang WHERE (hienthi = 1 ) AND (soDienThoai = @SoDienThoai OR maKhachHang = @MaKhachHang OR tenKhachHang LIKE @TenKhachHang) ",
+					"SELECT * FROM khachhang WHERE (hienthi = 1 ) AND (maKhachHang = @MaKhachHang OR soDienThoai = @SoDienThoai OR tenKhachHang LIKE @TenKhachHang) ",
                     new MySqlParameter[] {
-                            new MySqlParameter("@SoDienThoai" ,$"{searchInput}"),
-                            new MySqlParameter("@MaKhachHang" ,$"{searchInput}"),
+						    new MySqlParameter("@MaKhachHang" ,$"{searchInput}"),
+							new MySqlParameter("@SoDienThoai" ,$"{searchInput}"),
                             new MySqlParameter("@TenKhachHang" ,$"%{searchInput}%"),
                     }
                 );

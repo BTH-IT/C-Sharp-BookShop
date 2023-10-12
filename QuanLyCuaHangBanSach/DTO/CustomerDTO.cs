@@ -4,10 +4,10 @@ namespace QuanLyCuaHangBanSach.DTO
 {
     public class CustomerDTO : HumanDTO
     {
-        public string SoDienThoai { get; private set; }
-        public int Diem { get; set; }
+   
         public CustomerDTO() { }
-        public CustomerDTO(
+	
+		public CustomerDTO(
             int maKhachHang,
             string tenKhachHang,
             string soDienThoai,
@@ -19,8 +19,9 @@ namespace QuanLyCuaHangBanSach.DTO
             this.SoDienThoai = soDienThoai;
             this.Diem = diem;
         }
-
-        public CustomerDTO(DataRow row)
+		public string SoDienThoai { get; private set; }
+		public int Diem { get; set; }
+		public CustomerDTO(DataRow row)
         {
             this.Ma = (int)row["maKhachHang"];
             this.Ten = row["tenKhachHang"].ToString();

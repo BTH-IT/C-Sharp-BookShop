@@ -120,17 +120,19 @@ namespace QuanLyCuaHangBanSach
 
                     rowIndex++;
 
-                    for (int row = 0; row < dataTable.Rows.Count; row++)
+					for (int row = 0; row < dataTable.Rows.Count; row++)
                     {
                         DataRow dataRow = dataTable.Rows[row];
                         colIndex = 0;
                         for (int col = 0; col < dataTable.Columns.Count; col++)
                         {
 
+                            Console.Write(dataRow[col] + "--");
                             if (col == imgCol) continue;
 
                             ws.Cells[rowIndex, ++colIndex].Value = dataRow[col]; 
                        }
+                        Console.WriteLine("");
                         rowIndex++;
                     }
 
@@ -151,22 +153,61 @@ namespace QuanLyCuaHangBanSach
             DataTable dataTable = new DataTable(typeof(T).Name);
             //Get all the properties
             PropertyInfo[] Props = typeof(T).GetProperties(BindingFlags.Public | BindingFlags.Instance);
-            foreach (PropertyInfo prop in Props)
+			PropertyInfo[] parentProperties = typeof(T).BaseType.GetProperties();
+            if (parentProperties != null && parentProperties.Count() > 0)
             {
-                //Setting column names as Property names
-                dataTable.Columns.Add(prop.Name);
-            }
-            foreach (T item in items)
-            {
-                var values = new object[Props.Length];
-                for (int i = 0; i < Props.Length; i++)
+                PropertyInfo[] childProperties = typeof(T).GetProperties(BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.Instance);
+				foreach (PropertyInfo prop in parentProperties)
+				{
+					dataTable.Columns.Add(prop.Name);
+				}
+                foreach (PropertyInfo prop in childProperties)
                 {
-                    //inserting property values to datatable rows
-                    values[i] = Props[i].GetValue(item, null);
-                }
-        
-                dataTable.Rows.Add(values);
-            }
+					dataTable.Columns.Add(prop.Name);
+				}
+                // 5 
+                // 3
+                // 8
+                // 0 1 2 3 4 
+                // 5 => 8-5-3
+           
+				foreach (T item in items)
+				{
+                    int totalPropertiesCount = parentProperties.Length + childProperties.Length;
+					var values = new object[totalPropertiesCount];
+					
+                    for (int i = 0; i < parentProperties.Length; i++)
+					{
+						//inserting property values to datatable rows
+						values[i] = parentProperties[i].GetValue(item, null);
+					}
+					for (int i = parentProperties.Length; i < totalPropertiesCount;i++ )
+					{
+						values[i] = childProperties[childProperties.Length- (totalPropertiesCount-i)].GetValue(item, null);
+					}
+
+					dataTable.Rows.Add(values);
+				}
+			}
+            else
+            {
+				foreach (PropertyInfo prop in Props)
+				{
+					dataTable.Columns.Add(prop.Name);
+				}
+
+				foreach (T item in items)
+				{
+					var values = new object[Props.Length];
+					for (int i = 0; i < Props.Length; i++)
+					{
+						//inserting property values to datatable rows
+						values[i] = Props[i].GetValue(item, null);
+					}
+
+					dataTable.Rows.Add(values);
+				}
+			} 
             //put a breakpoint here and check datatable
             return dataTable;
         }

@@ -131,7 +131,7 @@
             this.label4.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label4.Location = new System.Drawing.Point(3, 3);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(151, 49);
+            this.label4.Size = new System.Drawing.Size(127, 49);
             this.label4.TabIndex = 5;
             this.label4.Text = "Năm sinh:";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -161,7 +161,7 @@
             this.label13.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label13.Location = new System.Drawing.Point(3, 3);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(145, 49);
+            this.label13.Size = new System.Drawing.Size(109, 49);
             this.label13.TabIndex = 9;
             this.label13.Text = "Chức vụ:";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -251,7 +251,7 @@
             this.label3.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label3.Location = new System.Drawing.Point(3, 3);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(151, 49);
+            this.label3.Size = new System.Drawing.Size(127, 49);
             this.label3.TabIndex = 5;
             this.label3.Text = "Tên nhân viên:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -293,10 +293,10 @@
             // 
             // label16
             // 
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label16.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F);
             this.label16.Location = new System.Drawing.Point(3, 3);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(145, 49);
+            this.label16.Size = new System.Drawing.Size(109, 49);
             this.label16.TabIndex = 28;
             this.label16.Text = "Giới tính:";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -386,7 +386,7 @@
             this.label8.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label8.Location = new System.Drawing.Point(3, 3);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(151, 49);
+            this.label8.Size = new System.Drawing.Size(127, 49);
             this.label8.TabIndex = 5;
             this.label8.Text = "Số điện thoại";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -453,7 +453,7 @@
             this.label10.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label10.Location = new System.Drawing.Point(3, 3);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(151, 49);
+            this.label10.Size = new System.Drawing.Size(109, 49);
             this.label10.TabIndex = 5;
             this.label10.Text = "Lương:";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;

@@ -57,7 +57,7 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.label1.Location = new System.Drawing.Point(2, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(147, 52);
+            this.label1.Size = new System.Drawing.Size(147, 43);
             this.label1.TabIndex = 0;
             this.label1.Text = "MENU";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -86,7 +86,7 @@
             this.import.Size = new System.Drawing.Size(200, 175);
             this.import.TabIndex = 11;
             this.import.Visible = false;
-            this.import.Click += new System.EventHandler(this.import_Click);
+            this.import.Click += new System.EventHandler(this.label4_Click);
             // 
             // label4
             // 
@@ -98,6 +98,7 @@
             this.label4.TabIndex = 8;
             this.label4.Text = "Nhập Hàng";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // guna2PictureBox3
             // 
@@ -109,6 +110,7 @@
             this.guna2PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2PictureBox3.TabIndex = 7;
             this.guna2PictureBox3.TabStop = false;
+            this.guna2PictureBox3.Click += new System.EventHandler(this.label4_Click);
             // 
             // manage
             // 
@@ -124,7 +126,7 @@
             this.manage.Size = new System.Drawing.Size(200, 175);
             this.manage.TabIndex = 10;
             this.manage.Visible = false;
-            this.manage.Click += new System.EventHandler(this.manage_Click);
+            this.manage.Click += new System.EventHandler(this.guna2PictureBox2_Click);
             // 
             // label3
             // 
@@ -136,6 +138,7 @@
             this.label3.TabIndex = 8;
             this.label3.Text = "Quản Lý";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label3.Click += new System.EventHandler(this.guna2PictureBox2_Click);
             // 
             // guna2PictureBox2
             // 
@@ -147,6 +150,7 @@
             this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2PictureBox2.TabIndex = 7;
             this.guna2PictureBox2.TabStop = false;
+            this.guna2PictureBox2.Click += new System.EventHandler(this.guna2PictureBox2_Click);
             // 
             // sell
             // 
@@ -162,7 +166,7 @@
             this.sell.Size = new System.Drawing.Size(200, 175);
             this.sell.TabIndex = 9;
             this.sell.Visible = false;
-            this.sell.Click += new System.EventHandler(this.sell_Click);
+            this.sell.Click += new System.EventHandler(this.sell_Click_1);
             // 
             // label2
             // 
@@ -174,6 +178,7 @@
             this.label2.TabIndex = 6;
             this.label2.Text = "Bán Hàng";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label2.Click += new System.EventHandler(this.sell_Click_1);
             // 
             // guna2PictureBox1
             // 
@@ -185,9 +190,11 @@
             this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2PictureBox1.TabIndex = 5;
             this.guna2PictureBox1.TabStop = false;
+            this.guna2PictureBox1.Click += new System.EventHandler(this.sell_Click_1);
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(185, 12);
             this.pictureBox1.Name = "pictureBox1";
@@ -202,12 +209,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(229, 102);
+            this.ClientSize = new System.Drawing.Size(229, 133);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.menuFlow);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("#9Slide03 Cabin", 9F);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "MenuGUI";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;

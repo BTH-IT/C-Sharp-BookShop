@@ -204,7 +204,7 @@
             this.activeCkx.Font = new System.Drawing.Font("#9Slide03 Cabin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.activeCkx.Location = new System.Drawing.Point(160, 9);
             this.activeCkx.Name = "activeCkx";
-            this.activeCkx.Size = new System.Drawing.Size(150, 29);
+            this.activeCkx.Size = new System.Drawing.Size(414, 29);
             this.activeCkx.TabIndex = 6;
             this.activeCkx.Text = "Đang hoạt động";
             // 
@@ -313,7 +313,6 @@
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel12.ResumeLayout(false);
-            this.panel12.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

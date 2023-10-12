@@ -2,12 +2,7 @@
 using QuanLyCuaHangBanSach.DTO;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QuanLyCuaHangBanSach.GUI.Modal
@@ -24,11 +19,6 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             InitializeComponent();
             this.title.Text = title;
             this.Text = title;  
-        }
-
-        private void birthYearTxtBox_TextChanged(object sender, EventArgs e)
-        {
-                
         }
         private void loadStaffCbx()
         {
@@ -75,32 +65,34 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
         private bool validateSubmitForm()
         {
             try {
-              isStaffCbx = CustomValidation.Instance.checkCombobox(
+                isStaffCbx = CustomValidation.Instance.checkCombobox(
                     this.staffComboBox,
                     this.staffLine,
                     new string[] {"required" }
-
                 );
-            bool isEmailValid = CustomValidation.Instance.checkTextbox(
+
+                bool isEmailValid = CustomValidation.Instance.checkTextbox(
                     this.emailTxt,
                     this.errorEmailMsg,
                     this.errorEmailLine,
                     new string[] { "required", "email"}
                 );
-            bool isPasswordValid = CustomValidation.Instance.checkTextbox(
+
+                bool isPasswordValid = CustomValidation.Instance.checkTextbox(
                     this.passwordTxt,
                     this.errorPasswordMsg,
                     this.errorEmailLine,
                     new string[] { "required"}
                 );
-            Console.WriteLine(isPasswordValid);
-            bool isConfirmPasswordValid = CustomValidation.Instance.checkTextboxMatchWithOtherTextBox(
+
+                bool isConfirmPasswordValid = CustomValidation.Instance.checkTextboxMatchWithOtherTextBox(
                     this.confirmPasswordTxt,
                     this.passwordTxt,
                     "Mật khẩu nhập lại không chính xác",
                     this.errorConfirmPasswordMsg,
                     this.confirmPasswordLine
                 );
+
 				return isStaffCbx && isPasswordValid && isPasswordValid && isConfirmPasswordValid && isEmailValid;
 			}
             catch
@@ -108,10 +100,6 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 return false;
 
             }
-          
-
-           
-
         }
 
         private void cancelBtn_Click(object sender, EventArgs e)
@@ -145,9 +133,44 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
               
         }
 
-		private void title_Click(object sender, EventArgs e)
-		{
+        private void staffComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            isStaffCbx = CustomValidation.Instance.checkCombobox(
+                this.staffComboBox,
+                this.staffLine,
+                new string[] { "required" }
+            );
+        }
 
-		}
-	}
+        private void emailTxt_TextChanged(object sender, EventArgs e)
+        {
+            CustomValidation.Instance.checkTextbox(
+                this.emailTxt,
+                this.errorEmailMsg,
+                this.errorEmailLine,
+                new string[] { "required", "email" }
+            );
+        }
+
+        private void passwordTxt_TextChanged(object sender, EventArgs e)
+        {
+            CustomValidation.Instance.checkTextbox(
+                this.passwordTxt,
+                this.errorPasswordMsg,
+                this.errorEmailLine,
+                new string[] { "required" }
+            );
+        }
+
+        private void confirmPasswordTxt_TextChanged(object sender, EventArgs e)
+        {
+            CustomValidation.Instance.checkTextboxMatchWithOtherTextBox(
+                this.confirmPasswordTxt,
+                this.passwordTxt,
+                "Mật khẩu nhập lại không chính xác",
+                this.errorConfirmPasswordMsg,
+                this.confirmPasswordLine
+            );
+        }
+    }
 }

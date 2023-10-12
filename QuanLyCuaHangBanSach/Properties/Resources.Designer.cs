@@ -73,9 +73,29 @@ namespace QuanLyCuaHangBanSach.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap female {
+            get {
+                object obj = ResourceManager.GetObject("female", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap hidden_eye_icon_new {
             get {
                 object obj = ResourceManager.GetObject("hidden-eye-icon-new", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap male_circle {
+            get {
+                object obj = ResourceManager.GetObject("male_circle", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

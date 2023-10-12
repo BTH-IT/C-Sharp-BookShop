@@ -464,7 +464,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
-            this.ClientSize = new System.Drawing.Size(1400, 864);
+            this.ClientSize = new System.Drawing.Size(1400, 894);
             this.Controls.Add(this.searchInput);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dgvSupplier);

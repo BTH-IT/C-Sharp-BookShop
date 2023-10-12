@@ -44,11 +44,15 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.staffCbx = new Guna.UI.WinForms.GunaComboBox();
             this.panel2.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel4.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -99,34 +103,34 @@
             this.totalPriceTxt.ForeColor = System.Drawing.Color.Black;
             this.totalPriceTxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.totalPriceTxt.HoverState.Parent = this.totalPriceTxt;
-            this.totalPriceTxt.Location = new System.Drawing.Point(390, 43);
+            this.totalPriceTxt.Location = new System.Drawing.Point(160, 22);
             this.totalPriceTxt.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.totalPriceTxt.Name = "totalPriceTxt";
             this.totalPriceTxt.PasswordChar = '\0';
             this.totalPriceTxt.PlaceholderText = "Tổng tiền";
             this.totalPriceTxt.SelectedText = "";
             this.totalPriceTxt.ShadowDecoration.Parent = this.totalPriceTxt;
-            this.totalPriceTxt.Size = new System.Drawing.Size(414, 36);
+            this.totalPriceTxt.Size = new System.Drawing.Size(408, 36);
             this.totalPriceTxt.TabIndex = 34;
             this.totalPriceTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // nameLine
             // 
             this.nameLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(212)))), ((int)(((byte)(191)))));
-            this.nameLine.Location = new System.Drawing.Point(395, 80);
+            this.nameLine.Location = new System.Drawing.Point(165, 59);
             this.nameLine.Name = "nameLine";
-            this.nameLine.Size = new System.Drawing.Size(414, 1);
+            this.nameLine.Size = new System.Drawing.Size(408, 1);
             this.nameLine.TabIndex = 8;
             // 
             // label3
             // 
             this.label3.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label3.Location = new System.Drawing.Point(523, 0);
+            this.label3.Location = new System.Drawing.Point(4, 22);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(151, 37);
+            this.label3.Size = new System.Drawing.Size(144, 37);
             this.label3.TabIndex = 5;
-            this.label3.Text = "Tổng tiền";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label3.Text = "Tổng tiền:";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // cancelBtn
             // 
@@ -261,6 +265,7 @@
             this.flowLayoutPanel1.Controls.Add(this.panel2);
             this.flowLayoutPanel1.Controls.Add(this.panel6);
             this.flowLayoutPanel1.Controls.Add(this.panel1);
+            this.flowLayoutPanel1.Controls.Add(this.panel3);
             this.flowLayoutPanel1.Controls.Add(this.panel4);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(11, 64);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -274,8 +279,51 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Location = new System.Drawing.Point(3, 97);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1194, 88);
+            this.panel1.Size = new System.Drawing.Size(594, 88);
             this.panel1.TabIndex = 3;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.label4);
+            this.panel3.Controls.Add(this.staffCbx);
+            this.panel3.Location = new System.Drawing.Point(603, 97);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(594, 88);
+            this.panel3.TabIndex = 33;
+            // 
+            // label4
+            // 
+            this.label4.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label4.Location = new System.Drawing.Point(3, 3);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(145, 49);
+            this.label4.TabIndex = 31;
+            this.label4.Text = "Nhân viên:";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // staffCbx
+            // 
+            this.staffCbx.BackColor = System.Drawing.Color.Transparent;
+            this.staffCbx.BaseColor = System.Drawing.Color.White;
+            this.staffCbx.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.staffCbx.BorderSize = 1;
+            this.staffCbx.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.staffCbx.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.staffCbx.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.staffCbx.Enabled = false;
+            this.staffCbx.FocusedColor = System.Drawing.Color.Empty;
+            this.staffCbx.Font = new System.Drawing.Font("#9Slide03 Cabin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.staffCbx.ForeColor = System.Drawing.Color.Black;
+            this.staffCbx.FormattingEnabled = true;
+            this.staffCbx.ItemHeight = 30;
+            this.staffCbx.Location = new System.Drawing.Point(160, 12);
+            this.staffCbx.Name = "staffCbx";
+            this.staffCbx.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.staffCbx.OnHoverItemForeColor = System.Drawing.Color.White;
+            this.staffCbx.Radius = 6;
+            this.staffCbx.Size = new System.Drawing.Size(408, 36);
+            this.staffCbx.TabIndex = 32;
+            this.staffCbx.TabStop = false;
             // 
             // ViewCustomerBillModal
             // 
@@ -297,6 +345,7 @@
             this.panel4.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -319,5 +368,8 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label4;
+        private Guna.UI.WinForms.GunaComboBox staffCbx;
     }
 }

@@ -37,15 +37,15 @@
             this.errorBookNeedChangeMsg = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.bookNeedChangeCbx = new Guna.UI.WinForms.GunaComboBox();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.errorBookWantChangeCbx4Msg = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.bookWantChangeCbx = new Guna.UI.WinForms.GunaComboBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.reasonTxt = new Guna.UI2.WinForms.Guna2TextBox();
             this.errorReasonMsg = new System.Windows.Forms.Label();
             this.reasonLine = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.errorBookWantChangeCbx4Msg = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.bookWantChangeCbx = new Guna.UI.WinForms.GunaComboBox();
             this.panel10 = new System.Windows.Forms.Panel();
             this.conditionTxt = new Guna.UI2.WinForms.Guna2TextBox();
             this.errorConditionMsg = new System.Windows.Forms.Label();
@@ -57,8 +57,8 @@
             this.panel2.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.panel10.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -75,11 +75,11 @@
             // errorCustomerMsg
             // 
             this.errorCustomerMsg.AutoSize = true;
-            this.errorCustomerMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed SemiB", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.errorCustomerMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.errorCustomerMsg.ForeColor = System.Drawing.Color.Red;
-            this.errorCustomerMsg.Location = new System.Drawing.Point(163, 52);
+            this.errorCustomerMsg.Location = new System.Drawing.Point(165, 54);
             this.errorCustomerMsg.Name = "errorCustomerMsg";
-            this.errorCustomerMsg.Size = new System.Drawing.Size(0, 30);
+            this.errorCustomerMsg.Size = new System.Drawing.Size(0, 26);
             this.errorCustomerMsg.TabIndex = 27;
             // 
             // label13
@@ -114,6 +114,7 @@
             this.customerCbx.Size = new System.Drawing.Size(408, 36);
             this.customerCbx.TabIndex = 26;
             this.customerCbx.TabStop = false;
+            this.customerCbx.SelectedIndexChanged += new System.EventHandler(this.customerCbx_SelectedIndexChanged);
             // 
             // flowLayoutPanel1
             // 
@@ -121,12 +122,12 @@
             this.flowLayoutPanel1.AutoScrollMargin = new System.Drawing.Size(10, 10);
             this.flowLayoutPanel1.Controls.Add(this.panel2);
             this.flowLayoutPanel1.Controls.Add(this.panel1);
-            this.flowLayoutPanel1.Controls.Add(this.panel3);
             this.flowLayoutPanel1.Controls.Add(this.panel4);
+            this.flowLayoutPanel1.Controls.Add(this.panel3);
             this.flowLayoutPanel1.Controls.Add(this.panel10);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(11, 64);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1200, 290);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1200, 305);
             this.flowLayoutPanel1.TabIndex = 8;
             // 
             // panel1
@@ -142,11 +143,11 @@
             // errorBookNeedChangeMsg
             // 
             this.errorBookNeedChangeMsg.AutoSize = true;
-            this.errorBookNeedChangeMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed SemiB", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.errorBookNeedChangeMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.errorBookNeedChangeMsg.ForeColor = System.Drawing.Color.Red;
-            this.errorBookNeedChangeMsg.Location = new System.Drawing.Point(163, 52);
+            this.errorBookNeedChangeMsg.Location = new System.Drawing.Point(166, 54);
             this.errorBookNeedChangeMsg.Name = "errorBookNeedChangeMsg";
-            this.errorBookNeedChangeMsg.Size = new System.Drawing.Size(0, 30);
+            this.errorBookNeedChangeMsg.Size = new System.Drawing.Size(0, 26);
             this.errorBookNeedChangeMsg.TabIndex = 27;
             // 
             // label3
@@ -181,25 +182,94 @@
             this.bookNeedChangeCbx.Size = new System.Drawing.Size(408, 36);
             this.bookNeedChangeCbx.TabIndex = 26;
             this.bookNeedChangeCbx.TabStop = false;
+            this.bookNeedChangeCbx.SelectedIndexChanged += new System.EventHandler(this.bookNeedChangeCbx_SelectedIndexChanged);
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.reasonTxt);
+            this.panel4.Controls.Add(this.errorReasonMsg);
+            this.panel4.Controls.Add(this.reasonLine);
+            this.panel4.Controls.Add(this.label6);
+            this.panel4.Location = new System.Drawing.Point(3, 97);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(594, 88);
+            this.panel4.TabIndex = 5;
+            // 
+            // reasonTxt
+            // 
+            this.reasonTxt.BackColor = System.Drawing.Color.Transparent;
+            this.reasonTxt.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
+            this.reasonTxt.BorderThickness = 0;
+            this.reasonTxt.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.reasonTxt.DefaultText = "";
+            this.reasonTxt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.reasonTxt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.reasonTxt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.reasonTxt.DisabledState.Parent = this.reasonTxt;
+            this.reasonTxt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.reasonTxt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.reasonTxt.FocusedState.Parent = this.reasonTxt;
+            this.reasonTxt.Font = new System.Drawing.Font("#9Slide03 Cabin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reasonTxt.ForeColor = System.Drawing.Color.Black;
+            this.reasonTxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.reasonTxt.HoverState.Parent = this.reasonTxt;
+            this.reasonTxt.Location = new System.Drawing.Point(149, 8);
+            this.reasonTxt.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.reasonTxt.Name = "reasonTxt";
+            this.reasonTxt.PasswordChar = '\0';
+            this.reasonTxt.PlaceholderText = "Nhập lý do";
+            this.reasonTxt.SelectedText = "";
+            this.reasonTxt.ShadowDecoration.Parent = this.reasonTxt;
+            this.reasonTxt.Size = new System.Drawing.Size(425, 36);
+            this.reasonTxt.TabIndex = 32;
+            this.reasonTxt.TextChanged += new System.EventHandler(this.reasonTxt_TextChanged);
+            // 
+            // errorReasonMsg
+            // 
+            this.errorReasonMsg.AutoSize = true;
+            this.errorReasonMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.errorReasonMsg.ForeColor = System.Drawing.Color.Red;
+            this.errorReasonMsg.Location = new System.Drawing.Point(163, 50);
+            this.errorReasonMsg.Name = "errorReasonMsg";
+            this.errorReasonMsg.Size = new System.Drawing.Size(0, 26);
+            this.errorReasonMsg.TabIndex = 7;
+            // 
+            // reasonLine
+            // 
+            this.reasonLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(212)))), ((int)(((byte)(191)))));
+            this.reasonLine.Location = new System.Drawing.Point(160, 45);
+            this.reasonLine.Name = "reasonLine";
+            this.reasonLine.Size = new System.Drawing.Size(414, 1);
+            this.reasonLine.TabIndex = 8;
+            // 
+            // label6
+            // 
+            this.label6.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label6.Location = new System.Drawing.Point(3, 3);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(151, 49);
+            this.label6.TabIndex = 5;
+            this.label6.Text = "Lý do:";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panel3
             // 
             this.panel3.Controls.Add(this.errorBookWantChangeCbx4Msg);
             this.panel3.Controls.Add(this.label5);
             this.panel3.Controls.Add(this.bookWantChangeCbx);
-            this.panel3.Location = new System.Drawing.Point(3, 97);
+            this.panel3.Location = new System.Drawing.Point(603, 97);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(594, 88);
-            this.panel3.TabIndex = 4;
+            this.panel3.TabIndex = 7;
             // 
             // errorBookWantChangeCbx4Msg
             // 
             this.errorBookWantChangeCbx4Msg.AutoSize = true;
-            this.errorBookWantChangeCbx4Msg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed SemiB", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.errorBookWantChangeCbx4Msg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.errorBookWantChangeCbx4Msg.ForeColor = System.Drawing.Color.Red;
-            this.errorBookWantChangeCbx4Msg.Location = new System.Drawing.Point(163, 52);
+            this.errorBookWantChangeCbx4Msg.Location = new System.Drawing.Point(165, 54);
             this.errorBookWantChangeCbx4Msg.Name = "errorBookWantChangeCbx4Msg";
-            this.errorBookWantChangeCbx4Msg.Size = new System.Drawing.Size(0, 30);
+            this.errorBookWantChangeCbx4Msg.Size = new System.Drawing.Size(0, 26);
             this.errorBookWantChangeCbx4Msg.TabIndex = 33;
             // 
             // label5
@@ -234,73 +304,7 @@
             this.bookWantChangeCbx.Size = new System.Drawing.Size(408, 36);
             this.bookWantChangeCbx.TabIndex = 32;
             this.bookWantChangeCbx.TabStop = false;
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.reasonTxt);
-            this.panel4.Controls.Add(this.errorReasonMsg);
-            this.panel4.Controls.Add(this.reasonLine);
-            this.panel4.Controls.Add(this.label6);
-            this.panel4.Location = new System.Drawing.Point(603, 97);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(594, 88);
-            this.panel4.TabIndex = 5;
-            // 
-            // reasonTxt
-            // 
-            this.reasonTxt.BackColor = System.Drawing.Color.Transparent;
-            this.reasonTxt.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
-            this.reasonTxt.BorderThickness = 0;
-            this.reasonTxt.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.reasonTxt.DefaultText = "";
-            this.reasonTxt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.reasonTxt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.reasonTxt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.reasonTxt.DisabledState.Parent = this.reasonTxt;
-            this.reasonTxt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.reasonTxt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.reasonTxt.FocusedState.Parent = this.reasonTxt;
-            this.reasonTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.reasonTxt.ForeColor = System.Drawing.Color.Black;
-            this.reasonTxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.reasonTxt.HoverState.Parent = this.reasonTxt;
-            this.reasonTxt.Location = new System.Drawing.Point(149, 8);
-            this.reasonTxt.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.reasonTxt.Name = "reasonTxt";
-            this.reasonTxt.PasswordChar = '\0';
-            this.reasonTxt.PlaceholderText = "Nhập lý do";
-            this.reasonTxt.SelectedText = "";
-            this.reasonTxt.ShadowDecoration.Parent = this.reasonTxt;
-            this.reasonTxt.Size = new System.Drawing.Size(425, 36);
-            this.reasonTxt.TabIndex = 32;
-            // 
-            // errorReasonMsg
-            // 
-            this.errorReasonMsg.AutoSize = true;
-            this.errorReasonMsg.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.errorReasonMsg.ForeColor = System.Drawing.Color.Red;
-            this.errorReasonMsg.Location = new System.Drawing.Point(163, 50);
-            this.errorReasonMsg.Name = "errorReasonMsg";
-            this.errorReasonMsg.Size = new System.Drawing.Size(0, 25);
-            this.errorReasonMsg.TabIndex = 7;
-            // 
-            // reasonLine
-            // 
-            this.reasonLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(212)))), ((int)(((byte)(191)))));
-            this.reasonLine.Location = new System.Drawing.Point(160, 45);
-            this.reasonLine.Name = "reasonLine";
-            this.reasonLine.Size = new System.Drawing.Size(414, 1);
-            this.reasonLine.TabIndex = 8;
-            // 
-            // label6
-            // 
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label6.Location = new System.Drawing.Point(3, 3);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(151, 49);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "Lý do:";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bookWantChangeCbx.SelectedIndexChanged += new System.EventHandler(this.bookWantChangeCbx_SelectedIndexChanged);
             // 
             // panel10
             // 
@@ -310,7 +314,7 @@
             this.panel10.Controls.Add(this.label7);
             this.panel10.Location = new System.Drawing.Point(3, 191);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(1194, 88);
+            this.panel10.Size = new System.Drawing.Size(1194, 95);
             this.panel10.TabIndex = 6;
             // 
             // conditionTxt
@@ -327,44 +331,45 @@
             this.conditionTxt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.conditionTxt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.conditionTxt.FocusedState.Parent = this.conditionTxt;
-            this.conditionTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.conditionTxt.Font = new System.Drawing.Font("#9Slide03 Cabin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.conditionTxt.ForeColor = System.Drawing.Color.Black;
             this.conditionTxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.conditionTxt.HoverState.Parent = this.conditionTxt;
-            this.conditionTxt.Location = new System.Drawing.Point(214, 7);
+            this.conditionTxt.Location = new System.Drawing.Point(188, 7);
             this.conditionTxt.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.conditionTxt.Name = "conditionTxt";
             this.conditionTxt.PasswordChar = '\0';
             this.conditionTxt.PlaceholderText = "Nhập tình trạng sản phẩm";
             this.conditionTxt.SelectedText = "";
             this.conditionTxt.ShadowDecoration.Parent = this.conditionTxt;
-            this.conditionTxt.Size = new System.Drawing.Size(960, 36);
+            this.conditionTxt.Size = new System.Drawing.Size(986, 36);
             this.conditionTxt.TabIndex = 33;
+            this.conditionTxt.TextChanged += new System.EventHandler(this.conditionTxt_TextChanged);
             // 
             // errorConditionMsg
             // 
             this.errorConditionMsg.AutoSize = true;
-            this.errorConditionMsg.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.errorConditionMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.errorConditionMsg.ForeColor = System.Drawing.Color.Red;
-            this.errorConditionMsg.Location = new System.Drawing.Point(230, 50);
+            this.errorConditionMsg.Location = new System.Drawing.Point(201, 54);
             this.errorConditionMsg.Name = "errorConditionMsg";
-            this.errorConditionMsg.Size = new System.Drawing.Size(0, 25);
+            this.errorConditionMsg.Size = new System.Drawing.Size(0, 26);
             this.errorConditionMsg.TabIndex = 7;
             // 
             // conditionLine
             // 
             this.conditionLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(212)))), ((int)(((byte)(191)))));
-            this.conditionLine.Location = new System.Drawing.Point(226, 45);
+            this.conditionLine.Location = new System.Drawing.Point(200, 45);
             this.conditionLine.Name = "conditionLine";
-            this.conditionLine.Size = new System.Drawing.Size(950, 1);
+            this.conditionLine.Size = new System.Drawing.Size(976, 1);
             this.conditionLine.TabIndex = 8;
             // 
             // label7
             // 
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label7.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label7.Location = new System.Drawing.Point(3, 3);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(198, 49);
+            this.label7.Size = new System.Drawing.Size(178, 49);
             this.label7.TabIndex = 5;
             this.label7.Text = "Tình trạng sản phẩm:";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -385,7 +390,7 @@
             this.submitBtn.ForeColor = System.Drawing.Color.White;
             this.submitBtn.Image = null;
             this.submitBtn.ImageSize = new System.Drawing.Size(20, 20);
-            this.submitBtn.Location = new System.Drawing.Point(634, 375);
+            this.submitBtn.Location = new System.Drawing.Point(634, 382);
             this.submitBtn.Name = "submitBtn";
             this.submitBtn.OnHoverBaseColor = System.Drawing.Color.White;
             this.submitBtn.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
@@ -416,7 +421,7 @@
             this.cancelBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.cancelBtn.Image = null;
             this.cancelBtn.ImageSize = new System.Drawing.Size(20, 20);
-            this.cancelBtn.Location = new System.Drawing.Point(388, 375);
+            this.cancelBtn.Location = new System.Drawing.Point(388, 382);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.cancelBtn.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
@@ -458,17 +463,17 @@
             this.Name = "CustomerChangeBillModal";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Tạo đơn khách hàng thay đổi";
+            this.Text = "s";
             this.Load += new System.EventHandler(this.CustomerChangeBillModal_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.panel10.ResumeLayout(false);
             this.panel10.PerformLayout();
             this.ResumeLayout(false);
@@ -489,10 +494,6 @@
         private System.Windows.Forms.Label errorBookNeedChangeMsg;
         private System.Windows.Forms.Label label3;
         private Guna.UI.WinForms.GunaComboBox bookNeedChangeCbx;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label errorBookWantChangeCbx4Msg;
-        private System.Windows.Forms.Label label5;
-        private Guna.UI.WinForms.GunaComboBox bookWantChangeCbx;
         private System.Windows.Forms.Panel panel4;
         private Guna.UI2.WinForms.Guna2TextBox reasonTxt;
         private System.Windows.Forms.Label errorReasonMsg;
@@ -503,5 +504,9 @@
         private System.Windows.Forms.Label errorConditionMsg;
         private System.Windows.Forms.Panel conditionLine;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label errorBookWantChangeCbx4Msg;
+        private System.Windows.Forms.Label label5;
+        private Guna.UI.WinForms.GunaComboBox bookWantChangeCbx;
     }
 }

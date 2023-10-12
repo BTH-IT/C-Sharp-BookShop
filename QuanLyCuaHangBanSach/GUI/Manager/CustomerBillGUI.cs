@@ -354,7 +354,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
         private void addBtn_Click(object sender, EventArgs e)
         {
-            using (BookModal customerBillModal = new BookModal())
+            using (CustomerBillModal customerBillModal = new CustomerBillModal(ManagerGUI.currentStaff.Ma))
             {
                 customerBillModal.ShowDialog();
 

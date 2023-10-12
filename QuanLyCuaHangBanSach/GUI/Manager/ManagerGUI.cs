@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 using Guna.UI.WinForms;
@@ -154,6 +153,18 @@ namespace QuanLyCuaHangBanSach.GUI
             btn.Checked = true;
 
             frm.Show();
+
+            this.staffName.Text = currentStaff.Ten;
+            this.staffPosition.Text = PositionBUS.Instance.getById(currentStaff.MaChucVu.ToString()).TenChucVu;
+
+            if (currentStaff.GioiTinh == "Nam")
+            {
+                this.staffImg.Image = QuanLyCuaHangBanSach.Properties.Resources.male_circle;
+            }
+            else
+            {
+                this.staffImg.Image = QuanLyCuaHangBanSach.Properties.Resources.female;
+            }
         }
 
         private void homeBtn_Click(object sender, EventArgs e)
@@ -814,11 +825,19 @@ namespace QuanLyCuaHangBanSach.GUI
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            LoginGUI.Instance.Close();
         }
 
         private void ManagerGUI_Load(object sender, EventArgs e)
         {
+        }
+
+        private void backBtn_Click(object sender, EventArgs e)
+        {
+            MenuGUI menu = new MenuGUI(currentStaff.Ma);
+
+            menu.Show();
+            this.Close();
         }
     }
 }
