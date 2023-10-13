@@ -320,13 +320,11 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         {
             try
             {
-                List<ImportBillDTO> importBillList = handleFilter(this.searchInput.Text.ToString());
-
-                DataTable dataTable = CustomExcel.Instance.ConvertListToDataTable(importBillList);
-
                 string[] headerList = new string[] { "Mã điwn", "Nhà cung cấp", "Nhân viên", "Ngày lập", "Tổng tiền" };
 
-                CustomExcel.Instance.ExportFile(dataTable, "Import Bill Manage", "Cửa hàng bán sách", headerList);
+                DataTable dt = CustomExcel.Instance.ConvertDataGridViewToDataTable(dgvImportBill);
+
+                CustomExcel.Instance.ExportFileDatagridView(dt, "Book Manage", 1, "Cửa hàng bán sách", headerList);
             }
             catch (Exception ex)
             {

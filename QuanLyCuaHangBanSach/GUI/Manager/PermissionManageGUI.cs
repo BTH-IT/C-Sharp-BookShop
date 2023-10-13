@@ -127,13 +127,12 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         {
             try
             {
-                List<PermissionDTO> positionList = PermissionBUS.Instance.search(this.searchInput.Text);
-
-                DataTable dataTable = CustomExcel.Instance.ConvertListToDataTable(positionList);
 
                 string[] headerList = new string[] { "Mã quyền hạng", "Tên quyền hạng", "Trạng thái" };
 
-                CustomExcel.Instance.ExportFile(dataTable, "Permission Manage", "Cửa hàng bán quyền hạng", headerList);
+                DataTable dt = CustomExcel.Instance.ConvertDataGridViewToDataTable(dgvPermission);
+
+                CustomExcel.Instance.ExportFileDatagridView(dt, "Book Manage", 1, "Cửa hàng bán sách", headerList);
             }
             catch (Exception ex)
             {

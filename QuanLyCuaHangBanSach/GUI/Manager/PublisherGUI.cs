@@ -112,10 +112,10 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         {
             try
             {
-                List<PublisherDTO> PublisherList = PublisherBUS.Instance.search(this.searchInput.Text.ToString());
-                DataTable dataTable = CustomExcel.Instance.ConvertListToDataTable(PublisherList);
                 string[] headerList = new string[] { "Mã nhà xuất bản", "Tên nhà xuất bản", "Địa chỉ", "Số điện thoại" };
-                CustomExcel.Instance.ExportFile(dataTable, "Publisher Manage", "Cửa hàng bán sách", headerList);
+                DataTable dt = CustomExcel.Instance.ConvertDataGridViewToDataTable(dgvPublisher);
+
+                CustomExcel.Instance.ExportFileDatagridView(dt, "Book Manage", 1, "Cửa hàng bán sách", headerList);
             }
             catch (Exception er)
             {

@@ -112,10 +112,10 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         {
             try
             {
-                List<SupplierDTO> SupplierList = SupplierBUS.Instance.search(this.searchInput.Text.ToString());
-                DataTable dataTable = CustomExcel.Instance.ConvertListToDataTable(SupplierList);
                 string[] headerList = new string[] { "Mã nhà cung cấp", "Tên nhà cung cấp", "Địa chỉ", "Số điện thoại" };
-                CustomExcel.Instance.ExportFile(dataTable, "Supplier Manage", "Cửa hàng bán sách", headerList);
+                DataTable dt = CustomExcel.Instance.ConvertDataGridViewToDataTable(dgvSupplier);
+
+                CustomExcel.Instance.ExportFileDatagridView(dt, "Book Manage", 1, "Cửa hàng bán sách", headerList);
             }
             catch (Exception er)
             {

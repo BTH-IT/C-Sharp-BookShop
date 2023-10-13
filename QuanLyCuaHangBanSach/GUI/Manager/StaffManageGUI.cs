@@ -136,14 +136,12 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         {
             try
             {
-				List<StaffDTO> staff = handleFilter(this.searchInput.Text.ToString());
-
-				DataTable dataTable = CustomExcel.Instance.ConvertListToDataTable(staff);
-
                 string[] headerList = new string[] { "Mã nhân viên", "Tên nhân viên", "Năm sinh", "SĐT", "Giới tính", "Lương", "Mã chức vụ" };
 
-				CustomExcel.Instance.ExportFile(dataTable, "Staff Manage", "Cửa hàng bán sách", headerList);
-			}
+                DataTable dt = CustomExcel.Instance.ConvertDataGridViewToDataTable(dgvStaff);
+
+                CustomExcel.Instance.ExportFileDatagridView(dt, "Book Manage", 1, "Cửa hàng bán sách", headerList);
+            }
             catch
             {
 

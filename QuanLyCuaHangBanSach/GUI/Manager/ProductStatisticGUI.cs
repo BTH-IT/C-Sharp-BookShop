@@ -374,13 +374,11 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 		{
 			try
 			{
-                List<BookDTO> bookList = convertTableToList(handleFilter(searchInput.Text));
+				string[] headerList = new string[] { "Mã sách", "Tên sách", "Giá bán", "Giá nhập", "Đã bán", "Doanh thu" };
 
-                DataTable dataTable = CustomExcel.Instance.ConvertListToDataTable(bookList);
+                DataTable dt = CustomExcel.Instance.ConvertDataGridViewToDataTable(dgvBook);
 
-                string[] headerList = new string[] { "Mã sách", "Tên sách", "Giá bán", "Giá nhập", "Đã bán", "Doanh thu" };
-
-                CustomExcel.Instance.ExportFile(dataTable, "Product Statistic", "Cửa hàng bán sách", headerList, 2);
+                CustomExcel.Instance.ExportFileDatagridView(dt, "Book Manage", 0, "Cửa hàng bán sách", headerList, 2);
             }
 			catch (Exception ex)
 			{

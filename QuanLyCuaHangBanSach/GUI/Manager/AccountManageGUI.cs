@@ -107,11 +107,11 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         {
             try
             {
-				List<AccountDTO> accounts = handleFilter(this.searchInput.Text);
-				DataTable dataTable = CustomExcel.Instance.ConvertListToDataTable(accounts);
-				string[] headerList = new string[] { "Mã Nhân viên", "Email", "Mật khẩu" };
-				CustomExcel.Instance.ExportFile(dataTable: dataTable, sheetName: "Quản lý tài khoản", title: "Cửa hàng bán sách", headerList: headerList);
-			}
+				string[] headerList = new string[] { "Nhân viên", "Email", "Mật khẩu" };
+                DataTable dt = CustomExcel.Instance.ConvertDataGridViewToDataTable(dgvAccount);
+
+                CustomExcel.Instance.ExportFileDatagridView(dt, "Book Manage", 1, "Cửa hàng bán sách", headerList);
+            }
             catch
             {
 

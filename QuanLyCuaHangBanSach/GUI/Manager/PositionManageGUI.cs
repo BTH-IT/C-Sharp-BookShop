@@ -128,13 +128,11 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         {
             try
             {
-                List<PositionDTO> positionList = PositionBUS.Instance.search(this.searchInput.Text);
-
-                DataTable dataTable = CustomExcel.Instance.ConvertListToDataTable(positionList);
-
                 string[] headerList = new string[] { "Mã chức vụ", "Tên chức vụ", "Mô tả", "Trạng thái" };
 
-                CustomExcel.Instance.ExportFile(dataTable, "Position Manage", "Cửa hàng bán chức vụ", headerList);
+                DataTable dt = CustomExcel.Instance.ConvertDataGridViewToDataTable(dgvPosition);
+
+                CustomExcel.Instance.ExportFileDatagridView(dt, "Book Manage", 1, "Cửa hàng bán sách", headerList);
             }
             catch (Exception ex)
             {

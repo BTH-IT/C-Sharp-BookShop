@@ -281,5 +281,10 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 		{
 			this.Hide();	
 		}
-	}
+
+        private void btnExport_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
 }

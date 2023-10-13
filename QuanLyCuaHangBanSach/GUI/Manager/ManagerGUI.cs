@@ -14,7 +14,7 @@ namespace QuanLyCuaHangBanSach.GUI
         public static StaffDTO currentStaff;
         public static Authorization authorization;
         private string contentActive;
-        private HomeManageGUI homeFrm = new HomeManageGUI() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle=FormBorderStyle.None, };
+        private StatisticMenuGUI statisticFrm = new StatisticMenuGUI() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle=FormBorderStyle.None, };
         private BookManageGUI bookFrm = new BookManageGUI() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle=FormBorderStyle.None, };
         private AuthorGUI authorFrm = new AuthorGUI() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle=FormBorderStyle.None, };
         private CustomerManagerGUI customerFrm = new CustomerManagerGUI() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle=FormBorderStyle.None, };
@@ -139,7 +139,7 @@ namespace QuanLyCuaHangBanSach.GUI
                             this.manageContent.Controls.Add(this.accountFrm);
                             break;
                         case "17":
-                            this.manageContent.Controls.Add(this.homeFrm);
+                            this.manageContent.Controls.Add(this.statisticFrm);
                             break;
                     }
                 }
@@ -189,7 +189,7 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.permissionBtn.Checked = false;
                 this.refundBtn.Checked = false;
 
-                this.homeFrm.Show();
+                this.statisticFrm.Show();
 
                 this.bookFrm.Hide();
                 this.authorFrm.Hide();
@@ -234,7 +234,7 @@ namespace QuanLyCuaHangBanSach.GUI
 
                 this.bookFrm.Show();
 
-                this.homeFrm.Hide();
+                this.statisticFrm.Hide();
                 this.authorFrm.Hide();
                 this.bookTypeFrm.Hide();
                 this.customerFrm.Hide();
@@ -279,7 +279,7 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.authorFrm.Show();
 
                 this.bookFrm.Hide();
-                this.homeFrm.Hide();
+                this.statisticFrm.Hide();
                 this.bookTypeFrm.Hide();
                 this.customerFrm.Hide();
                 this.staffFrm.Hide();
@@ -324,7 +324,7 @@ namespace QuanLyCuaHangBanSach.GUI
 
                 this.bookFrm.Hide();
                 this.authorFrm.Hide();
-                this.homeFrm.Hide();
+                this.statisticFrm.Hide();
                 this.customerFrm.Hide();
                 this.staffFrm.Hide();
                 this.supplierFrm.Hide();
@@ -369,7 +369,7 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.bookFrm.Hide();
                 this.authorFrm.Hide();
                 this.bookTypeFrm.Hide();
-                this.homeFrm.Hide();
+                this.statisticFrm.Hide();
                 this.staffFrm.Hide();
                 this.supplierFrm.Hide();
                 this.importBillFrm.Hide();
@@ -414,7 +414,7 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.authorFrm.Hide();
                 this.bookTypeFrm.Hide();
                 this.customerFrm.Hide();
-                this.homeFrm.Hide();
+                this.statisticFrm.Hide();
                 this.supplierFrm.Hide();
                 this.importBillFrm.Hide();
                 this.customerBillFrm.Hide();
@@ -459,7 +459,7 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.bookTypeFrm.Hide();
                 this.customerFrm.Hide();
                 this.staffFrm.Hide();
-                this.homeFrm.Hide();
+                this.statisticFrm.Hide();
                 this.importBillFrm.Hide();
                 this.customerBillFrm.Hide();
                 this.seoFrm.Hide();
@@ -504,7 +504,7 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.customerFrm.Hide();
                 this.staffFrm.Hide();
                 this.supplierFrm.Hide();
-                this.homeFrm.Hide();
+                this.statisticFrm.Hide();
                 this.customerBillFrm.Hide();
                 this.seoFrm.Hide();
                 this.publisherFrm.Hide();
@@ -549,7 +549,7 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.staffFrm.Hide();
                 this.supplierFrm.Hide();
                 this.importBillFrm.Hide();
-                this.homeFrm.Hide();
+                this.statisticFrm.Hide();
                 this.seoFrm.Hide();
                 this.publisherFrm.Hide();
                 this.accountFrm.Hide();
@@ -594,7 +594,7 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.supplierFrm.Hide();
                 this.importBillFrm.Hide();
                 this.customerBillFrm.Hide();
-                this.homeFrm.Hide();
+                this.statisticFrm.Hide();
                 this.publisherFrm.Hide();
                 this.accountFrm.Hide();
                 this.positionFrm.Hide();
@@ -639,7 +639,7 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.importBillFrm.Hide();
                 this.customerBillFrm.Hide();
                 this.seoFrm.Hide();
-                this.homeFrm.Hide();
+                this.statisticFrm.Hide();
                 this.accountFrm.Hide();
                 this.positionFrm.Hide();
                 this.permissionFrm.Hide();
@@ -684,7 +684,7 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.customerBillFrm.Hide();
                 this.seoFrm.Hide();
                 this.publisherFrm.Hide();
-                this.homeFrm.Hide();
+                this.statisticFrm.Hide();
                 this.positionFrm.Hide();
                 this.permissionFrm.Hide();
                 
@@ -728,7 +728,7 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.customerBillFrm.Hide();
                 this.seoFrm.Hide();
                 this.publisherFrm.Hide();
-                this.homeFrm.Hide();
+                this.statisticFrm.Hide();
                 this.positionFrm.Hide();
                 this.accountFrm.Hide();
                 
@@ -772,7 +772,7 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.customerBillFrm.Hide();
                 this.seoFrm.Hide();
                 this.publisherFrm.Hide();
-                this.homeFrm.Hide();
+                this.statisticFrm.Hide();
                 this.positionFrm.Hide();
                 this.accountFrm.Hide();
                 
@@ -815,7 +815,7 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.customerBillFrm.Hide();
                 this.seoFrm.Hide();
                 this.publisherFrm.Hide();
-                this.homeFrm.Hide();
+                this.statisticFrm.Hide();
                 
                 this.accountFrm.Hide();
                 this.refundFrm.Hide();

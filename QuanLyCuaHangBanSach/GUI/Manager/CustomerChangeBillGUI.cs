@@ -249,13 +249,10 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         {
             try
             {
-                List<CustomerChangeBillDTO> CustomerChangeBillList = CustomerChangeBillBUS.Instance.search(this.searchInput.Text.ToString());
-
-                DataTable dataTable = CustomExcel.Instance.ConvertListToDataTable(CustomerChangeBillList);
-
                 string[] headerList = new string[] { "Mã phiếu", "Mã khách hàng", "Mã sách cần đổi", "Mã sách muốn đổi", "Mã nhân viên", "Tình trạng đổi hàng", "Lý do", "Ngày lập" };
+                DataTable dt = CustomExcel.Instance.ConvertDataGridViewToDataTable(dgvCustomerChangeBill);
 
-                CustomExcel.Instance.ExportFile(dataTable, "CustomerChangeBill Manage", "Cửa hàng bán sách", headerList);
+                CustomExcel.Instance.ExportFileDatagridView(dt, "Book Manage", 1, "Cửa hàng bán sách", headerList);
             }
             catch (Exception er)
             {
