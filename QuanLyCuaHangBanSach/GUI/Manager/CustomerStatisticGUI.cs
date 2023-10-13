@@ -12,30 +12,31 @@ using ZXing.QrCode.Internal;
 using Color = System.Drawing.Color;
 using QuanLyCuaHangBanSach.DAO;
 using System.Windows.Ink;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace QuanLyCuaHangBanSach.GUI.Manager
 {
-    public partial class CustomerStatisticGUI : Form
+	public partial class CustomerStatisticGUI : Form
 	{
 		private int mode;
 
-        private Dictionary<int, string> stringMonth = new Dictionary<int, string>
-        {
-            { 1,  "Jan" },
-            { 2,  "Feb" },
-            { 3,  "Mar" },
-            { 4,  "Abr" },
-            { 5,  "May" },
-            { 6,  "Jun" },
-            { 7,  "Jul" },
-            { 8,  "Aug" },
-            { 9,  "Sep" },
-            { 10, "Oct" },
-            { 11, "Nov" },
-            { 12, "Dec" },
-        };
+		private Dictionary<int, string> stringMonth = new Dictionary<int, string>
+		{
+			{ 1,  "Jan" },
+			{ 2,  "Feb" },
+			{ 3,  "Mar" },
+			{ 4,  "Abr" },
+			{ 5,  "May" },
+			{ 6,  "Jun" },
+			{ 7,  "Jul" },
+			{ 8,  "Aug" },
+			{ 9,  "Sep" },
+			{ 10, "Oct" },
+			{ 11, "Nov" },
+			{ 12, "Dec" },
+		};
 
-        public CustomerStatisticGUI(int mode)
+		public CustomerStatisticGUI(int mode)
 		{
 			InitializeComponent();
 			this.mode = mode;
@@ -43,136 +44,59 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 			//
 			// Event Assign
 			//
-            boughtFrom.MouseLeave += searchInput_MouseLeave;
-            boughtTo.MouseLeave += searchInput_MouseLeave;
+			boughtFrom.MouseLeave += searchInput_MouseLeave;
+			boughtTo.MouseLeave += searchInput_MouseLeave;
 
-            boughtFrom.TextChanged += searchInput_TextChanged;
-            boughtTo.TextChanged += searchInput_TextChanged;
+			boughtFrom.TextChanged += searchInput_TextChanged;
+			boughtTo.TextChanged += searchInput_TextChanged;
 
-            boughtTo.KeyPress += boughtFrom_KeyPress;
-        }
-
-		//private double RoundToNearestTenThousand(double money)
-		//{
-		//	double remainder = money * 1.0 % 10000;
-
-		//	if (remainder < 5000)
-		//	{
-		//		return money - remainder;
-		//	}
-		//	else
-		//	{
-		//		return money + (10000.0 - remainder);
-		//	}
-		//}
+			boughtTo.KeyPress += boughtFrom_KeyPress;
+		}
 
 		private void loadChartView()
 		{
-			//try
-			//{
-			//	// Chart
-			//	DateTime now = DateTime.Now;
-			//	int month = now.Month;
-			//	List<int> months = new List<int>();
-			//	List<string> strLabel = new List<string>();
-			//	for (int m = month - 5; m <= month; m++)
-			//	{
-			//		months.Add(m);
-			//		strLabel.Add(stringMonth[m]);
-			//	}
+			DateTime now = DateTime.Now;
+			int month = now.Month;
 
-			//	cartesianChart1.AxisX.Add(new LiveCharts.Wpf.Axis
-			//	{
-			//		Title = "Tháng",
-			//		Labels = strLabel
-			//	});
-			//	List<CustomerDTO> customerList = CustomerBillBUS.Instance.getAllInRange(now.Year.ToString(), (month - 5).ToString(), month.ToString());
-			//	double tongTienBill = 0;
-			//	foreach (CustomerDTO customer in customerList)
-   //             {
-			//		tongTienBill += customer.TongTien;
-   //             }
-			//	double maxValRounded = RoundToNearestTenThousand(tongTienBill);
-
-			//	List<string> strValueLabel = new List<string>();
-
-			//	for (double i = 0; i <= maxValRounded; i += 50000)
-			//	{
-			//		strValueLabel.Add(i.ToString());
-			//	}
-
-			//	cartesianChart1.AxisY.Add(new LiveCharts.Wpf.Axis
-			//	{
-			//		Title = "Doanh thu",
-			//		MinValue = 0,
-			//		Labels = strValueLabel
-			//	});
-			//	cartesianChart1.Series.Clear();
-			//	cartesianChart1.LegendLocation = LiveCharts.LegendLocation.Right;
-
-			//	var gradientBrush = new LinearGradientBrush
-			//	{
-			//		StartPoint = new System.Windows.Point(0, 0),
-			//		EndPoint = new System.Windows.Point(0, 1)
-			//	};
-			//	gradientBrush.GradientStops.Add(new GradientStop(System.Windows.Media.Color.FromRgb(153, 246, 228), 0));
-			//	gradientBrush.GradientStops.Add(new GradientStop(Colors.Transparent, 1));
-
-			//	ChartValues<double> chartVals = new ChartValues<double>();
-
-			//	foreach (int m in months)
-			//	{
-			//		if (customerList != null)
-			//		{
-			//			double doanhThu = 0;
-			//			foreach (CustomerDTO customer in customerList)
-			//			{
-			//				if (customer.NgayLap.Month == m)
-			//				{
-			//					doanhThu += customer.TongTien;
-			//				}
-			//			}
-			//			chartVals.Add(doanhThu / 50000.0);
-			//		}
-			//		else
-			//		{
-			//			chartVals.Add(0);
-			//		}
-			//	}
-
-			//	cartesianChart1.Series.Add(new LineSeries
-			//	{
-			//		Title = "Doanh thu",
-			//		Values = chartVals,
-			//		Stroke = new SolidColorBrush(System.Windows.Media.Color.FromRgb(45, 210, 192)),
-			//		LineSmoothness = 0,
-			//		Fill = gradientBrush,
-			//		Margin = new System.Windows.Thickness(100),
-			//		LabelPoint = point => ": " + string.Format("{0:N0} VNĐ", point.Y * 50000.0)
-			//	});
+			pieChart1.Series = new LiveCharts.SeriesCollection();
+			pieChart1.LegendLocation = LegendLocation.Bottom;
+			
+			List<CustomerDTO> customerList = CustomerBUS.Instance.loadCustomerChartData();
+			bool pushed = false;
+			foreach (CustomerDTO customer in customerList)
+			{
+                if (CustomerBillBUS.Instance.countBillByCustomerID(customer.Ma.ToString()) > 0)
+                {
+					pieChart1.Series.Add(new PieSeries
+					{
+						Title = customer.Ten,
+						Values = new ChartValues<double> { CustomerBillBUS.Instance.getCustomerBoughtTotal(customer.Ma.ToString()) },
+						PushOut = pushed ? 0 : 5,
+						DataLabels = true,
+						FontSize = 12,
+						LabelPoint = chartPoint => string.Format("{0}: {1:P}", customer.Ten, chartPoint.Participation),
+					});
+					pushed = true;
+                }
+			}
 
 			//	// Revenue
-			//	double revenue = CustomerBillBUS.Instance.getRevenueInRange(now.Year.ToString(), (month - 5).ToString(), month.ToString());
-			//	revenueLb.Text = string.Format("{0:N0} VNĐ", revenue);
+			double revenue = CustomerBillBUS.Instance.getRevenueInRange(now.Year.ToString(), (month - 5).ToString(), month.ToString());
+			revenueLb.Text = string.Format("{0:N0} VNĐ", revenue);
 
-			//	DataTable numberBookSoldDT = CustomerBillBUS.Instance.getBookSoldInRange(now.Year.ToString(), (month - 5).ToString(), month.ToString());
-			//	int bookSold = 0;
-			//	foreach (DataRow row in numberBookSoldDT.Rows)
-			//	{
-			//		bookSold += Convert.ToInt32(row["soLuong"]);
-			//	}
-			//	bookSoldLb.Text = $@"{bookSold} quyển sách";
+			DataTable numberBookSoldDT = CustomerBillBUS.Instance.getBookSoldInRange(now.Year.ToString(), (month - 5).ToString(), month.ToString());
+			int bookSold = 0;
+			foreach (DataRow row in numberBookSoldDT.Rows)
+			{
+				bookSold += Convert.ToInt32(row["soLuong"]);
+			}
+			bookSoldLb.Text = $@"{bookSold} quyển sách";
 
-			//	int customerNumber = CustomerBillBUS.Instance.getNumberCustomerInRange(now.Year.ToString(), (month - 5).ToString(), month.ToString());
-			//	customerNumLb.Text = $@"{customerNumber} khách hàng";
-			//}
-			//catch (Exception ex)
-			//{
-			//	Console.WriteLine(ex);
-			//}
+			int customerNumber = CustomerBillBUS.Instance.getNumberCustomerInRange(now.Year.ToString(), (month - 5).ToString(), month.ToString());
+			customerNumLb.Text = $@"{customerNumber} khách hàng";
 		}
 
-        private void loadBillListToDataView(List<CustomerDTO> customerList)
+		private void loadBillListToDataView(List<CustomerDTO> customerList)
 		{
 			try
 			{
@@ -201,8 +125,42 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 			}
 		}
 
-		private void CustomerStatisticGUI_Load(object sender, EventArgs e)
+		private void dgvCustomer_SortCompare(object sender, DataGridViewSortCompareEventArgs e)
 		{
+			if (e.Column.Index == dgvCustomer.Columns.Count - 1) // Check if sorting the last column
+			{
+				// Extract the values for sorting from the cell values
+				double value1 = GetSortingValue(e.CellValue1);
+				double value2 = GetSortingValue(e.CellValue2);
+
+				// Compare the extracted values
+				e.SortResult = value1.CompareTo(value2);
+
+				// Mark the comparison as handled to prevent default sorting
+				e.Handled = true;
+			}
+		}
+
+		private double GetSortingValue(object cellValue)
+		{
+			if (cellValue == null)
+				return 0;
+
+			// Extract the numerical value from the string (remove " VNĐ" and parse)
+			string stringValue = cellValue.ToString();
+			stringValue = stringValue.Replace(".", "").Replace(" VNĐ", "");
+
+			if (double.TryParse(stringValue, out double numericValue))
+			{
+				// Convert the numeric value to a sortable string
+				return numericValue;
+			}
+
+			return 0;
+		}
+
+		private void CustomerStatisticGUI_Load(object sender, EventArgs e)
+		{ 	
 			try
 			{
 				List<CustomerDTO> customerList = CustomerBUS.Instance.getAllData();
@@ -282,14 +240,12 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 		{
 			try
 			{
-                List<CustomerDTO> customerList = handleFilter(searchInput.Text);
-
-                DataTable dataTable = CustomExcel.Instance.ConvertListToDataTable(customerList);
-
                 string[] headerList = new string[] { "Ngày lập hóa đơn", "Mã hóa đơn", "Khuyến mãi", "Doanh thu" };
 
-                CustomExcel.Instance.ExportFile(dataTable, "Revenue Statistic", "Cửa hàng bán sách", headerList, 2);
-            }
+				DataTable dt = CustomExcel.Instance.ConvertDataGridViewToDataTable(dgvCustomer);
+
+				CustomExcel.Instance.ExportFileDatagridView(dt, "Book Manage", 0, "Cửa hàng bán sách", headerList);
+			}
 			catch (Exception ex)
 			{
 				Console.WriteLine(ex);

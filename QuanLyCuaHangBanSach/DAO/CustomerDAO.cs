@@ -85,7 +85,30 @@ namespace QuanLyCuaHangBanSach.DAO
             return customers;
         }
 
-        public bool insert(CustomerDTO data)
+		public List<CustomerDTO> loadCustomerChartData()
+		{
+			DataTable dataTable = DataProvider.Instance.ExecuteQuery(
+				"SELECT khachhang.*, COALESCE((" +
+				"SELECT SUM(tongTien) FROM phieuban WHERE khachhang.maKhachHang = phieuban.maKhachHang), 0) AS daMua " +
+				"FROM khachhang " +
+				"WHERE hienThi=1 " +
+				"ORDER BY daMua DESC " +
+				"LIMIT 5;"
+			);
+			if (dataTable.Rows.Count <= 0) return null;
+
+			List<CustomerDTO> customers = new List<CustomerDTO>();
+
+			foreach (DataRow row in dataTable.Rows)
+			{
+				CustomerDTO customer = new CustomerDTO(row);
+				customers.Add(customer);
+			}
+
+            return customers;
+		}
+
+		public bool insert(CustomerDTO data)
         {
 
             string sql = $@"INSERT INTO khachhang (maKhachHang, tenKhachHang, soDienThoai, gioiTinh, namSinh, diem, hienThi)
