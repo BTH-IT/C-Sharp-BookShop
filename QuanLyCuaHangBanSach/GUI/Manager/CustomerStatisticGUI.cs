@@ -240,7 +240,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 		{
 			try
 			{
-                string[] headerList = new string[] { "Ngày lập hóa đơn", "Mã hóa đơn", "Khuyến mãi", "Doanh thu" };
+                string[] headerList = new string[] { "Mã khách hàng", "Tên khách hàng", "Số điện thoại", "Số lượng hóa đơn", "Đã mua" };
 
 				DataTable dt = CustomExcel.Instance.ConvertDataGridViewToDataTable(dgvCustomer);
 
@@ -310,5 +310,10 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         {
 			mode = 2;
         }
-    }
+
+		private void closeBtn_Click(object sender, EventArgs e)
+		{
+			Hide();
+		}
+	}
 }

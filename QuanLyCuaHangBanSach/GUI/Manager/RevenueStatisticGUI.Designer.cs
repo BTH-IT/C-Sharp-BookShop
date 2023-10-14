@@ -80,6 +80,7 @@
 			this.pictureBox4 = new System.Windows.Forms.PictureBox();
 			this.revenueLb = new System.Windows.Forms.Label();
 			this.label8 = new System.Windows.Forms.Label();
+			this.closeBtn = new System.Windows.Forms.PictureBox();
 			((System.ComponentModel.ISupportInitialize)(this.dgvBill)).BeginInit();
 			this.optionPanel.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -95,6 +96,7 @@
 			this.gunaGradient2Panel1.SuspendLayout();
 			this.gunaGradient2Panel4.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.closeBtn)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// line1
@@ -435,6 +437,7 @@
 			// 
 			// tablePanel
 			// 
+			this.tablePanel.Controls.Add(this.closeBtn);
 			this.tablePanel.Controls.Add(this.searchInput);
 			this.tablePanel.Controls.Add(this.pictureBox1);
 			this.tablePanel.Controls.Add(this.gradientPanel1);
@@ -455,7 +458,7 @@
 			this.gradientPanel1.Controls.Add(this.panel4);
 			this.gradientPanel1.Controls.Add(this.panel2);
 			this.gradientPanel1.Controls.Add(this.label1);
-			this.gradientPanel1.Location = new System.Drawing.Point(910, 11);
+			this.gradientPanel1.Location = new System.Drawing.Point(842, 11);
 			this.gradientPanel1.Name = "gradientPanel1";
 			this.gradientPanel1.Size = new System.Drawing.Size(337, 36);
 			this.gradientPanel1.TabIndex = 30;
@@ -765,6 +768,17 @@
 			this.label8.TabIndex = 0;
 			this.label8.Text = "Tổng doanh thu 6 tháng gần đây";
 			// 
+			// closeBtn
+			// 
+			this.closeBtn.Image = ((System.Drawing.Image)(resources.GetObject("closeBtn.Image")));
+			this.closeBtn.Location = new System.Drawing.Point(1181, 9);
+			this.closeBtn.Name = "closeBtn";
+			this.closeBtn.Size = new System.Drawing.Size(69, 40);
+			this.closeBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+			this.closeBtn.TabIndex = 51;
+			this.closeBtn.TabStop = false;
+			this.closeBtn.Click += new System.EventHandler(this.closeBtn_Click);
+			// 
 			// RevenueStatisticGUI
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 20F);
@@ -800,6 +814,7 @@
 			this.gunaGradient2Panel1.PerformLayout();
 			this.gunaGradient2Panel4.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.closeBtn)).EndInit();
 			this.ResumeLayout(false);
 
 		}
@@ -846,5 +861,6 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+		private System.Windows.Forms.PictureBox closeBtn;
 	}
 }

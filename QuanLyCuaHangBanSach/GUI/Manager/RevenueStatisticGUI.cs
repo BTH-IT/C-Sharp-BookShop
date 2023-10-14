@@ -425,5 +425,10 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         {
 			mode = 2;
         }
-    }
+
+		private void closeBtn_Click(object sender, EventArgs e)
+		{
+			Hide();
+		}
+	}
 }
