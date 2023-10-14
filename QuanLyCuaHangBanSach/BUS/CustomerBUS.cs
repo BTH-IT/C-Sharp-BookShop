@@ -56,7 +56,12 @@ namespace QuanLyCuaHangBanSach.BUS
         {
             return CustomerDAO.Instance.SearchByPhoneNum(num);
         }
-        public bool insert(CustomerDTO customer)
+		public List<CustomerDTO> loadCustomerChartData()
+        {
+            return CustomerDAO.Instance.loadCustomerChartData();
+		}
+
+		public bool insert(CustomerDTO customer)
         {
             return CustomerDAO.Instance.insert(customer);
         }

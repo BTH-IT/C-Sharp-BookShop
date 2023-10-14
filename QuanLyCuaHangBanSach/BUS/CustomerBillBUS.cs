@@ -92,6 +92,16 @@ namespace QuanLyCuaHangBanSach.BUS
 			return CustomerBillDAO.Instance.getNumberCustomerInRange(year, startMonth, endMonth);
 		}
 
+		public int countBillByCustomerID(string customerId)
+		{
+			return CustomerBillDAO.Instance.countBillByCustomerID(customerId);
+		}
+
+		public double getCustomerBoughtTotal(string customerId)
+		{
+			return CustomerBillDAO.Instance.getCustomerBoughtTotal(customerId);
+		}
+
 		public bool createCustomerBillDetail(CustomerBillDetailDTO customerBillDetail)
 		{
 			return CustomerBillDAO.Instance.createCustomerBillDetail(customerBillDetail);
