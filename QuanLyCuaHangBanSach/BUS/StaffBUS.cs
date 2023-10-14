@@ -47,6 +47,12 @@ namespace QuanLyCuaHangBanSach.BUS
         {
             return StaffDAO.Instance.getById(id);
         }
+
+		public double getSoldRevenue(string id)
+        {
+			return StaffDAO.Instance.getSoldRevenue(id);
+		}
+
 		public List<StaffDTO> search(string value)
         {
             return StaffDAO.Instance.searchData(value);
