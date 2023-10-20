@@ -27,13 +27,13 @@ namespace QuanLyCuaHangBanSach.DAO
 
         
         public DataTable getAll() {
-            return DataProvider.Instance.ExecuteQuery("select * from khachhang WHERE hienThi = 1;");
+            return DataProvider.Instance.ExecuteQuery("select * from khachhang;");
         }
 
         public List<CustomerDTO> Search(string searchInput)
         {
             DataTable dataTable = DataProvider.Instance.ExecuteQuery(
-                    "SELECT * FROM khachhang WHERE (hienthi = 1 ) AND (soDienThoai = @SoDienThoai OR maKhachHang = @MaKhachHang OR tenKhachHang LIKE @TenKhachHang) ",
+                    "SELECT * FROM khachhang WHERE (soDienThoai = @SoDienThoai OR maKhachHang = @MaKhachHang OR tenKhachHang LIKE @TenKhachHang) ",
                     new MySqlParameter[] {
                             new MySqlParameter("@SoDienThoai" ,$"{searchInput}"),
                             new MySqlParameter("@MaKhachHang" ,$"{searchInput}"),
@@ -54,7 +54,7 @@ namespace QuanLyCuaHangBanSach.DAO
         public CustomerDTO getById(string id)
         {
             DataTable dataTable = DataProvider.Instance.ExecuteQuery(
-                "SELECT * FROM khachhang WHERE maKhachHang=@MaKhachHang AND hienThi = 1;",
+                "SELECT * FROM khachhang WHERE maKhachHang=@MaKhachHang;",
                 new MySqlParameter[] { new MySqlParameter("@MaKhachHang", id) }
             );
 
@@ -68,7 +68,7 @@ namespace QuanLyCuaHangBanSach.DAO
         public List<CustomerDTO> SearchByPhoneNum(string num)
         {
             DataTable dataTable = DataProvider.Instance.ExecuteQuery(
-                "SELECT * FROM khachhang WHERE soDienThoai LIKE @SoDienThoai AND hienThi = 1;",
+                "SELECT * FROM khachhang WHERE soDienThoai LIKE @SoDienThoai;",
                 new MySqlParameter[] { new MySqlParameter("@SoDienThoai", $"%{num}%") }
             );
 
@@ -91,7 +91,7 @@ namespace QuanLyCuaHangBanSach.DAO
 				"SELECT khachhang.*, COALESCE((" +
 				"SELECT SUM(tongTien) FROM phieuban WHERE khachhang.maKhachHang = phieuban.maKhachHang), 0) AS daMua " +
 				"FROM khachhang " +
-				"WHERE hienThi=1 " +
+				"WHERE trangThai=1 " +
 				"ORDER BY daMua DESC " +
 				"LIMIT 5;"
 			);
@@ -111,8 +111,8 @@ namespace QuanLyCuaHangBanSach.DAO
 		public bool insert(CustomerDTO data)
         {
 
-            string sql = $@"INSERT INTO khachhang (maKhachHang, tenKhachHang, soDienThoai, gioiTinh, namSinh, diem, hienThi)
-                            VALUES (@MaKhachHang, @TenKhachHang, @SoDienThoai, @GioiTinh, @NamSinh, @Diem, 1);";
+            string sql = $@"INSERT INTO khachhang (maKhachHang, tenKhachHang, soDienThoai, gioiTinh, namSinh, diem, trangThai)
+                            VALUES (@MaKhachHang, @TenKhachHang, @SoDienThoai, @GioiTinh, @NamSinh, @Diem, @trangThai);";
 
             int rowChanged = DataProvider.Instance.ExecuteNonQuery(sql,
                 new MySqlParameter[] {
@@ -122,6 +122,7 @@ namespace QuanLyCuaHangBanSach.DAO
                     new MySqlParameter("@GioiTinh", data.GioiTinh),
                     new MySqlParameter("@NamSinh", data.NamSinh),
                     new MySqlParameter("@Diem", data.Diem),
+                    new MySqlParameter("@TrangThai", data.TrangThai),
                 });
 
             return rowChanged > 0;

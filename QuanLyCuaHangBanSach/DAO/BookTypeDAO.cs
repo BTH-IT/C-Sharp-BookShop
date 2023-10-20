@@ -24,13 +24,13 @@ namespace QuanLyCuaHangBanSach.DAO
 
         
         public DataTable getAll() {
-            return DataProvider.Instance.ExecuteQuery("select * from theloai WHERE hienThi=1;");
+            return DataProvider.Instance.ExecuteQuery("select * from theloai;");
         }
 
         public BookTypeDTO getById(string id)
         {
             DataTable dataTable = DataProvider.Instance.ExecuteQuery(
-                "SELECT * FROM theloai WHERE maTheLoai=@maTheLoai AND hienThi=1;",
+                "SELECT * FROM theloai WHERE maTheLoai=@maTheLoai;",
                 new MySqlParameter[] {
                     new MySqlParameter("@maTheLoai", id)
                 }
@@ -45,7 +45,7 @@ namespace QuanLyCuaHangBanSach.DAO
         
         public DataTable searchData(string value)
         {
-            string sql = $@"SELECT * FROM theloai WHERE (maTheLoai LIKE @maTheLoai OR tenTheLoai LIKE @tenTheLoai) AND hienThi=1;";
+            string sql = $@"SELECT * FROM theloai WHERE (maTheLoai LIKE @maTheLoai OR tenTheLoai LIKE @tenTheLoai);";
 
             return DataProvider.Instance.ExecuteQuery(sql,
                 new MySqlParameter[] {
@@ -58,12 +58,13 @@ namespace QuanLyCuaHangBanSach.DAO
         public bool insert(BookTypeDTO data)
         {
 
-            string sql = $@"INSERT INTO theloai (tenTheLoai)
-                            VALUES (@tenTheLoai);";
+            string sql = $@"INSERT INTO theloai (tenTheLoai, trangThai)
+                            VALUES (@tenTheLoai, @trangThai);";
 
             int rowChanged = DataProvider.Instance.ExecuteNonQuery(sql,
                 new MySqlParameter[] {
                     new MySqlParameter("@tenTheLoai", data.TenTheLoai),
+                    new MySqlParameter("@tenTheLoai", data.TrangThai),
                 });
 
             return rowChanged > 0;

@@ -28,13 +28,13 @@ namespace QuanLyCuaHangBanSach.DAO
 
         
         public DataTable getAll() {
-            return DataProvider.Instance.ExecuteQuery("select * from quyenhang WHERE hienThi=1;");
+            return DataProvider.Instance.ExecuteQuery("select * from quyenhang;");
         }
 
         public PermissionDTO getById(string id)
         {
             DataTable dataTable = DataProvider.Instance.ExecuteQuery(
-                "SELECT * FROM quyenhang WHERE maQuyenHang=@maQuyenHang AND hienThi=1;",
+                "SELECT * FROM quyenhang WHERE maQuyenHang=@maQuyenHang;",
                 new MySqlParameter[] {
                     new MySqlParameter("@maQuyenHang", id)
                 }
@@ -50,8 +50,7 @@ namespace QuanLyCuaHangBanSach.DAO
         public DataTable searchData(string value)
         {
             string sql = $@"SELECT * FROM quyenhang 
-                            WHERE (maQuyenHang LIKE @maQuyenHang OR tenQuyenHang LIKE @tenQuyenHang)
-                            AND hienThi=1;";
+                            WHERE (maQuyenHang LIKE @maQuyenHang OR tenQuyenHang LIKE @tenQuyenHang);";
 
             return DataProvider.Instance.ExecuteQuery(sql,
                 new MySqlParameter[] {
@@ -111,14 +110,14 @@ namespace QuanLyCuaHangBanSach.DAO
 
         public bool delete(string id)
         {
-            string sql = $@"UPDATE quyenhang SET hienThi = 0 WHERE maQuyenHang=@maQuyenHang;";
+            string sql = $@"DELETE FROM quyenhang WHERE maQuyenHang=@maQuyenHang;";
 
             int rowChanged = DataProvider.Instance.ExecuteNonQuery(sql,
                 new MySqlParameter[] {
                     new MySqlParameter("@maQuyenHang", id),
                 });
 
-            if (rowChanged > 0)
+            /*if (rowChanged > 0)
             {
                 List<PositionDTO> positionList = PositionBUS.Instance.getAllData();
 
@@ -132,7 +131,7 @@ namespace QuanLyCuaHangBanSach.DAO
                         new MySqlParameter("@maQuyenHang", id),
                     });
                 }
-            }
+            }*/
 
             return rowChanged > 0;
         }

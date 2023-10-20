@@ -28,13 +28,13 @@ namespace QuanLyCuaHangBanSach.DAO
 
         public DataTable getAll()
         {
-            return DataProvider.Instance.ExecuteQuery("select * from chucvu WHERE hienThi=1;");
+            return DataProvider.Instance.ExecuteQuery("select * from chucvu;");
         }
 
         public PositionDTO getById(string id)
         {
             DataTable dataTable = DataProvider.Instance.ExecuteQuery(
-                "SELECT * FROM chucvu WHERE maChucVu=@maChucVu AND hienThi=1;",
+                "SELECT * FROM chucvu WHERE maChucVu=@maChucVu;",
                 new MySqlParameter[] {
                     new MySqlParameter("@maChucVu", id)
                 }
@@ -48,7 +48,7 @@ namespace QuanLyCuaHangBanSach.DAO
         }
         public DataTable searchData(string value)
         {
-            string sql = $@"SELECT * FROM chucvu WHERE (maChucVu LIKE @maChucVu OR tenChucVu LIKE @tenChucVu) AND hienThi=1;";
+            string sql = $@"SELECT * FROM chucvu WHERE (maChucVu LIKE @maChucVu OR tenChucVu LIKE @tenChucVu);";
 
             return DataProvider.Instance.ExecuteQuery(sql,
                 new MySqlParameter[] {
@@ -110,7 +110,7 @@ namespace QuanLyCuaHangBanSach.DAO
 
         public bool delete(string id)
         {
-            string sql = $@"UPDATE chucvu SET hienThi = 0 WHERE maChucVu=@maChucVu;";
+            string sql = $@"DELETE FROM chucvu WHERE maChucVu=@maChucVu;";
 
             int rowChanged = DataProvider.Instance.ExecuteNonQuery(sql,
                 new MySqlParameter[] {

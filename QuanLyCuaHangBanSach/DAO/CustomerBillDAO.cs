@@ -26,13 +26,13 @@ namespace QuanLyCuaHangBanSach.DAO
             private set { CustomerBillDAO.instance = value; }
         }
         public DataTable getAll() {
-            return DataProvider.Instance.ExecuteQuery("select * from phieuban WHERE hienThi = 1;");
+            return DataProvider.Instance.ExecuteQuery("select * from phieuban;");
         }
 
 		public DataTable getAllInRange(string year, string startMonth, string endMonth)
 		{
 			DataTable dataTable = DataProvider.Instance.ExecuteQuery(
-				"SELECT * FROM phieuban WHERE YEAR(ngayLap)=@nam AND MONTH(ngayLap) >= @thangBatDau AND MONTH(ngayLap) <= @thangKetThuc AND hienThi=1;",
+				"SELECT * FROM phieuban WHERE YEAR(ngayLap)=@nam AND MONTH(ngayLap) >= @thangBatDau AND MONTH(ngayLap) <= @thangKetThuc;",
 				new MySqlParameter[] {
 					new MySqlParameter("@nam", year),
 					new MySqlParameter("@thangBatDau", startMonth),
@@ -95,7 +95,7 @@ namespace QuanLyCuaHangBanSach.DAO
 			DataTable dataTable = DataProvider.Instance.ExecuteQuery(
 				"SELECT chitietphieuban.maSach, SUM(soLuong) as daBan, SUM(soLuong * donGia) AS doanhThu " +
                 "FROM chitietphieuban JOIN sach ON chitietphieuban.maSach=sach.maSach " +
-                "WHERE (sach.maSach LIKE @maSach OR tenSach LIKE @tenSach) AND hienThi = 1 " +
+                "WHERE (sach.maSach LIKE @maSach OR tenSach LIKE @tenSach) " +
                 "GROUP BY maSach;",
 	            new MySqlParameter[] {
 					new MySqlParameter("@maSach", "%" + query + "%"),
@@ -111,7 +111,7 @@ namespace QuanLyCuaHangBanSach.DAO
 		public double getRevenueInRange(string year, string startMonth, string endMonth)
 		{
 			DataTable dataTable = DataProvider.Instance.ExecuteQuery(
-				"SELECT SUM(tongTien) AS doanhThu FROM phieuban WHERE YEAR(ngayLap)=@nam AND MONTH(ngayLap) >= @thangBatDau AND MONTH(ngayLap) <= @thangKetThuc AND hienThi=1;",
+				"SELECT SUM(tongTien) AS doanhThu FROM phieuban WHERE YEAR(ngayLap)=@nam AND MONTH(ngayLap) >= @thangBatDau AND MONTH(ngayLap) <= @thangKetThuc;",
 				new MySqlParameter[] {
 					new MySqlParameter("@nam", year),
 					new MySqlParameter("@thangBatDau", startMonth),
@@ -130,7 +130,7 @@ namespace QuanLyCuaHangBanSach.DAO
             DataTable dataTable = DataProvider.Instance.ExecuteQuery(
                 "SELECT MONTH(ngayLap) AS thang, SUM(chitietphieuban.soLuong) AS soLuong " +
                 "FROM phieuban JOIN chitietphieuban ON phieuban.maDonKhachHang = chitietphieuban.maDonKhachHang " +
-				"WHERE YEAR(ngayLap)=@nam AND MONTH(ngayLap) >= @thangBatDau AND MONTH(ngayLap) <= @thangKetThuc AND phieuban.hienThi=1 " +
+				"WHERE YEAR(ngayLap)=@nam AND MONTH(ngayLap) >= @thangBatDau AND MONTH(ngayLap) <= @thangKetThuc " +
                 "GROUP BY thang " +
                 "ORDER BY thang;",
                 new MySqlParameter[] {
@@ -148,7 +148,7 @@ namespace QuanLyCuaHangBanSach.DAO
 		public int getNumberCustomerInRange(string year, string startMonth, string endMonth)
 		{
 			DataTable dataTable = DataProvider.Instance.ExecuteQuery(
-				"SELECT COUNT(maKhachHang) AS soLuongKhach FROM phieuban WHERE YEAR(ngayLap)=@nam AND MONTH(ngayLap) >= @thangBatDau AND MONTH(ngayLap) <= @thangKetThuc AND hienThi=1;",
+				"SELECT COUNT(maKhachHang) AS soLuongKhach FROM phieuban WHERE YEAR(ngayLap)=@nam AND MONTH(ngayLap) >= @thangBatDau AND MONTH(ngayLap) <= @thangKetThuc;",
 				new MySqlParameter[] {
 					new MySqlParameter("@nam", year),
 					new MySqlParameter("@thangBatDau", startMonth),
@@ -213,7 +213,7 @@ namespace QuanLyCuaHangBanSach.DAO
 
 		public DataTable searchData(string value)
         {
-            string sql = $@"SELECT * FROM phieuban WHERE maDonKhachHang LIKE @maDonKhachHang AND hienThi = 1;";
+            string sql = $@"SELECT * FROM phieuban WHERE maDonKhachHang LIKE @maDonKhachHang;";
 
             return DataProvider.Instance.ExecuteQuery(sql,
                 new MySqlParameter[] {
@@ -303,7 +303,7 @@ namespace QuanLyCuaHangBanSach.DAO
 
         public bool delete(string id)
         {
-            string sql = $@"UPDATE phieuban SET hienThi = 0 WHERE maDonKhachHang=@maDonKhachHang;";
+            string sql = $@"DELETE FROM phieuban WHERE maDonKhachHang=@maDonKhachHang;";
 
             int rowChanged = DataProvider.Instance.ExecuteNonQuery(sql,
                 new MySqlParameter[] {

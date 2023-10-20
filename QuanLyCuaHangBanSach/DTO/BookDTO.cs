@@ -15,8 +15,8 @@ namespace QuanLyCuaHangBanSach.DTO
         public double GiaBan { get; set; }
         public double GiaNhap { get; set; }
         public int NamXuatBan { get; set; }
-
         public BookDTO() { }
+
         public BookDTO(
             int maSach,
             string tenSach,

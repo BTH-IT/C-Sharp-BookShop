@@ -9,20 +9,24 @@ namespace QuanLyCuaHangBanSach.DTO
     {
         public int MaTheLoai { get; private set; }
         public string TenTheLoai { get; set; }
+        public bool TrangThai { get; set; }
 
         public BookTypeDTO() { }
         public BookTypeDTO(
             int maTheLoai,
-            string tenTheLoai
+            string tenTheLoai,
+            bool trangThai
         ) {
             this.MaTheLoai = maTheLoai;
             this.TenTheLoai = tenTheLoai;
+            this.TrangThai = trangThai;
         }
 
         public BookTypeDTO(DataRow row)
         {
             this.MaTheLoai = (int) row["maTheLoai"];
             this.TenTheLoai = row["tenTheLoai"].ToString();
+            this.TrangThai = Convert.ToBoolean(row["trangThai"].ToString());
         }
 
         public override string ToString()

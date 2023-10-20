@@ -26,13 +26,13 @@ namespace QuanLyCuaHangBanSach.DAO
 
         
         public DataTable getAll() {
-            return DataProvider.Instance.ExecuteQuery("select * from nhacungcap WHERE hienThi = 1;");
+            return DataProvider.Instance.ExecuteQuery("select * from nhacungcap;");
         }
 
         public SupplierDTO getById(string id)
         {
             DataTable dataTable = DataProvider.Instance.ExecuteQuery(
-                "SELECT * FROM nhacungcap WHERE maNhaCungCap=@maNhaCungCap AND hienThi = 1;",
+                "SELECT * FROM nhacungcap WHERE maNhaCungCap=@maNhaCungCap;",
                 new MySqlParameter[] {
                     new MySqlParameter("@maNhaCungCap", id)
                 }
@@ -47,7 +47,7 @@ namespace QuanLyCuaHangBanSach.DAO
         
         public DataTable searchData(string value)
         {
-            string sql = $@"SELECT * FROM nhacungcap WHERE (maNhaCungCap LIKE @maNhaCungCap OR tenNhaCungCap LIKE @tenNhaCungCap) AND hienThi = 1;";
+            string sql = $@"SELECT * FROM nhacungcap WHERE (maNhaCungCap LIKE @maNhaCungCap OR tenNhaCungCap LIKE @tenNhaCungCap);";
 
             return DataProvider.Instance.ExecuteQuery(sql,
                 new MySqlParameter[] {
