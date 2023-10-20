@@ -522,6 +522,12 @@
     <Compile Include="GUI\Manager\CustomerManagerGUI.designer.cs">
       <DependentUpon>CustomerManagerGUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Manager\CustomerStatisticGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Manager\CustomerStatisticGUI.Designer.cs">
+      <DependentUpon>CustomerStatisticGUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Manager\ProductStatisticGUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -551,6 +557,12 @@
     </Compile>
     <Compile Include="GUI\Manager\StaffManageGUI.cs">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Manager\StaffStatisticGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Manager\StaffStatisticGUI.Designer.cs">
+      <DependentUpon>StaffStatisticGUI.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Manager\StatisticMenuGUI.cs">
       <SubType>Form</SubType>
@@ -829,6 +841,9 @@
     <EmbeddedResource Include="GUI\Manager\CustomerManagerGUI.resx">
       <DependentUpon>CustomerManagerGUI.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Manager\CustomerStatisticGUI.resx">
+      <DependentUpon>CustomerStatisticGUI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Manager\ImportBillGUI.resx">
       <DependentUpon>ImportBillGUI.cs</DependentUpon>
     </EmbeddedResource>
@@ -855,6 +870,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Manager\StaffManageGUI.resx">
       <DependentUpon>StaffManageGUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Manager\StaffStatisticGUI.resx">
+      <DependentUpon>StaffStatisticGUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Manager\StatisticMenuGUI.resx">
       <DependentUpon>StatisticMenuGUI.cs</DependentUpon>

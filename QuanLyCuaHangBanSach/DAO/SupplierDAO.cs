@@ -76,7 +76,7 @@ namespace QuanLyCuaHangBanSach.DAO
         public bool update(SupplierDTO data)
         {
             string sql = $@"UPDATE nhacungcap
-                            SET tenNhaCungCap=@tenNhaCungCap, diaChi=@diaChi, soDienThoai=@soDienThoai
+                            SET tenNhaCungCap=@tenNhaCungCap, diaChi=@diaChi, soDienThoai=@soDienThoai, trangThai=@trangThai
                             WHERE maNhaCungCap=@maNhaCungCap;";
 
             int rowChanged = DataProvider.Instance.ExecuteNonQuery(sql,
@@ -85,6 +85,7 @@ namespace QuanLyCuaHangBanSach.DAO
                     new MySqlParameter("@tenNhaCungCap", data.TenNhaCungCap),
                     new MySqlParameter("@diaChi", data.DiaChi),
                     new MySqlParameter("@soDienThoai", data.SoDienThoai),
+                    new MySqlParameter("@trangThai", data.TrangThai),
                 });
 
             return rowChanged > 0;
@@ -92,7 +93,7 @@ namespace QuanLyCuaHangBanSach.DAO
 
         public bool delete(string id)
         {
-            string sql = $@"UPDATE nhacungcap SET hienThi = 0 WHERE maNhaCungCap=@maNhaCungCap;";
+            string sql = $@"DELETE FROM nhacungcap WHERE maNhaCungCap=@maNhaCungCap;";
 
             int rowChanged = DataProvider.Instance.ExecuteNonQuery(sql,
                 new MySqlParameter[] {

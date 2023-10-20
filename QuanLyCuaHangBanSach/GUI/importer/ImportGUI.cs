@@ -511,13 +511,5 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
             Close();
             /*Application.Run(new LoginGUI());*/
         }
-
-        private void RefundBtn_Click(object sender, EventArgs e)
-        {
-            using (var modal = new ImportRefundBillModal())
-            {
-                modal.ShowDialog();
-            }
-        }
     }
 }

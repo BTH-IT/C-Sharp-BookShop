@@ -14,7 +14,7 @@ namespace QuanLyCuaHangBanSach.DTO
             string tenTacGia,
             string gioiTinh,
             int namSinh,
-            int trangThai
+            bool trangThai
         ): base(maTacGia, tenTacGia, gioiTinh, namSinh, trangThai) {
         }
 
@@ -24,7 +24,7 @@ namespace QuanLyCuaHangBanSach.DTO
             this.Ten = row["tenTacGia"].ToString();
             this.GioiTinh = row["gioiTinh"].ToString();
             this.NamSinh = (int)row["namSinh"];
-            this.TrangThai = (bool)row["trangThai"];
+            this.TrangThai = Convert.ToBoolean(Convert.ToInt32(row["trangThai"]));
         }
 
         public override string ToString()

@@ -26,7 +26,7 @@ namespace QuanLyCuaHangBanSach.DTO
         {
             this.MaTheLoai = (int) row["maTheLoai"];
             this.TenTheLoai = row["tenTheLoai"].ToString();
-            this.TrangThai = Convert.ToBoolean(row["trangThai"].ToString());
+            this.TrangThai = Convert.ToBoolean(Convert.ToInt32(row["trangThai"]));
         }
 
         public override string ToString()

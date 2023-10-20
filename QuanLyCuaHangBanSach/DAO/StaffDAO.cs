@@ -47,7 +47,7 @@ namespace QuanLyCuaHangBanSach.DAO
         public double getSoldRevenue(string id)
         {
 			DataTable dataTable = DataProvider.Instance.ExecuteQuery(
-	            "SELECT SUM(tongtien) AS doanhThu FROM phieuban WHERE maNhanVien=@MaNhanVien AND hienThi = 1;",
+	            "SELECT SUM(tongtien) AS doanhThu FROM phieuban WHERE maNhanVien=@MaNhanVien;",
 	            new MySqlParameter[] { new MySqlParameter("@MaNhanVien", id) }
             );
 

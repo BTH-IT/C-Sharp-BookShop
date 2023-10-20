@@ -81,8 +81,9 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 int birthYear = Convert.ToInt32(this.birthYear.Text);
                 string genderCbx = this.genderCbx.SelectedItem.ToString();
                 int id = updateAuthor != null ? updateAuthor.Ma : 0;
+                bool trangThai = false;
 
-                AuthorDTO book = new AuthorDTO(id, authorName, genderCbx, birthYear);
+                AuthorDTO book = new AuthorDTO(id, authorName, genderCbx, birthYear, trangThai);
 
                 bool isSuccess = updateAuthor != null ? AuthorBUS.Instance.update(book) : AuthorBUS.Instance.insert(book);
 

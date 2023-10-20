@@ -180,57 +180,6 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             }
         }
 
-        private void deleteBtn_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                bool isHaveSelect = false;
-
-                foreach (DataGridViewRow row in this.dgvPosition.Rows)
-                {
-                    if ((bool)row.Cells[0].Value)
-                    {
-                        isHaveSelect = true;
-                        break;
-                    }
-                }
-
-                if (!isHaveSelect)
-                {
-                    MessageBox.Show("Bạn chưa chọn những chức vụ cần xóa");
-                    return;
-                }
-
-                DialogResult dlgResult = MessageBox.Show(
-                    "Bạn chắc chắn muốn xóa các chức vụ đã chọn chứ?",
-                    "Xác nhận",
-                    MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Question,
-                    MessageBoxDefaultButton.Button1
-                );
-
-                if (dlgResult == DialogResult.Yes)
-                {
-                    foreach (DataGridViewRow row in this.dgvPosition.Rows)
-                    {
-                        if ((bool)row.Cells[0].Value == true)
-                        {
-                            PositionBUS.Instance.delete(row.Cells[1].Value.ToString());
-                        }
-
-                    }
-                    List<PositionDTO> positionList = PositionBUS.Instance.search(this.searchInput.Text);
-                    this.loadPositionListToDataView(positionList);
-
-                    MessageBox.Show("Delete successful");
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex);
-            }
-        }
-
         private void dgvPosition_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             try

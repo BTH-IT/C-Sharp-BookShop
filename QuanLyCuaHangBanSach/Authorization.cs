@@ -21,7 +21,7 @@ namespace QuanLyCuaHangBanSach
 
             foreach (PermissionDTO permission in permissions)
             {
-                permissionObj.Add(permission.MaQuyenHang.ToString(), permission.TenQuyenHang);
+                permissionObj.Add(permission.MaQuyenHan.ToString(), permission.TenQuyenHan);
             }
         }
 

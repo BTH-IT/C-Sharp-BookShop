@@ -32,7 +32,7 @@ namespace QuanLyCuaHangBanSach.DTO
             this.TenNhaXuatBan = row["tenNhaXuatBan"].ToString();
             this.DiaChi = row["diaChi"].ToString();
             this.SoDienThoai = row["soDienThoai"].ToString();
-            this.TrangThai = Convert.ToBoolean(row["soDienThoai"].ToString());
+            this.TrangThai = Convert.ToBoolean(Convert.ToInt32(row["trangThai"]));
         }
 
         public override string ToString()

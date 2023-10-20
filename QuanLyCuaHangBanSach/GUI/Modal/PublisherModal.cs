@@ -95,8 +95,9 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 string addressTxt = this.addressTxt.Text;
 
                 int id = updatePublisher != null ? updatePublisher.MaNhaXuatBan : 0;
+                bool trangThai = false;
 
-                PublisherDTO book = new PublisherDTO(id, PublisherName, addressTxt, phoneNumbertxt);
+                PublisherDTO book = new PublisherDTO(id, PublisherName, addressTxt, phoneNumbertxt, trangThai);
 
                 bool isSuccess = updatePublisher != null ? PublisherBUS.Instance.update(book) : PublisherBUS.Instance.insert(book);
 

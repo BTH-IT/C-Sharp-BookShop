@@ -649,12 +649,5 @@ namespace QuanLyCuaHangBanSach.GUI
             /*Application.Run(new LoginGUI());*/
         }
 
-        private void RefundBtn_Click(object sender, EventArgs e)
-        {
-            using (var modal = new CustomerRefundBillModal())
-            {
-                modal.ShowDialog();
-            }
-        }
     }
 }

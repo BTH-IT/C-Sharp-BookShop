@@ -57,8 +57,9 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 							customer.GioiTinh,
 							customer.NamSinh,
 							customer.SoDienThoai,
-							customer.Diem
-						});
+							customer.Diem,
+							customer.TrangThai ? "Đang hoạt động" : "Ngưng hoạt động",
+                        });
 					}
 
 				}
@@ -158,39 +159,6 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 			catch { 
             }
             
-        }
-
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-            try
-            {
-				DialogResult deleteDialogResult = MessageBox.Show(
-				 "Bạn có chắc chắn muốn xóa các khách hàng đã chọn",
-				 "Xác nhận",
-				 MessageBoxButtons.YesNo,
-				 MessageBoxIcon.None
-			 );
-				if (deleteDialogResult == DialogResult.Yes)
-				{
-
-					foreach (DataGridViewRow row in this.dgvCustomer.Rows)
-					{
-						if ((bool)row.Cells[0].Value)
-						{
-							CustomerBUS.Instance.delete(row.Cells[5].Value.ToString());
-
-						}
-					}
-
-					List<CustomerDTO> customers = this.handleFilter(this.searchInput.Text.ToString()); ;
-					this.loadCustomerListToDataGridView(customers);
-					MessageBox.Show("Xóa khách hàng thành công");
-				}
-			}
-            catch
-            {
-
-            }
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)

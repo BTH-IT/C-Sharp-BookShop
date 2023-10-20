@@ -30,7 +30,7 @@ namespace QuanLyCuaHangBanSach.DTO
             this.GioiTinh = row["gioiTinh"].ToString();
             this.NamSinh = (int)row["namSinh"];
             this.Diem = (int)row["diem"];
-            this.TrangThai = Convert.ToBoolean(row["diem"].ToString());
+            this.TrangThai = Convert.ToBoolean(Convert.ToInt32(row["trangThai"]));
         }
     }
 }

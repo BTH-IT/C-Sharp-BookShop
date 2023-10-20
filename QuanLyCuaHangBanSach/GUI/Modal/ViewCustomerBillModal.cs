@@ -52,8 +52,8 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             {
                 List<CustomerDTO> customerList = CustomerBUS.Instance.getAllData();
 
-                customerList.Insert(0, new CustomerDTO(-1, "", "Chọn khách hàng", "", 0, 0));
-                customerList.Insert(1, new CustomerDTO(0, "", "Không có khách hàng", "", 0, 0));
+                customerList.Insert(0, new CustomerDTO(-1, "", "Chọn khách hàng", "", 0, 0, false));
+                customerList.Insert(1, new CustomerDTO(0, "", "Không có khách hàng", "", 0, 0, false));
 
                 this.customerCbx.ValueMember = "Ma";
                 this.customerCbx.DisplayMember = "SoDienThoai";

@@ -80,8 +80,9 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             string BookTypeName = this.BookTypeNameTxt.Text;
 
             int id = updateBookType != null ? updateBookType.MaTheLoai : 0;
+            bool trangThai = false;
 
-            BookTypeDTO BookType = new BookTypeDTO(id, BookTypeName);
+            BookTypeDTO BookType = new BookTypeDTO(id, BookTypeName, trangThai);
 
             bool isSuccess = updateBookType != null ? BookTypeBUS.Instance.update(BookType) : BookTypeBUS.Instance.insert(BookType);
 

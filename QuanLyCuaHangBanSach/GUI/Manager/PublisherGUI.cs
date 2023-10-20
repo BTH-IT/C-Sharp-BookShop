@@ -64,6 +64,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                     Publisher.TenNhaXuatBan,
                     Publisher.DiaChi,
                     Publisher.SoDienThoai,
+                    Publisher.TrangThai ? "Đang hoạt động" : "Ngưng hoạt động",
                 });
                 }
             }
@@ -156,58 +157,6 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
                         this.loadPublisherListToDataView(PublisherList);
                     }
-                }
-            }
-            catch (Exception er)
-            {
-
-                Console.WriteLine(er);
-            }
-        }
-
-        private void deleteBtn_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                bool isHaveSelect = false;
-
-                foreach (DataGridViewRow row in this.dgvPublisher.Rows)
-                {
-                    if ((bool)row.Cells[0].Value)
-                    {
-                        isHaveSelect = true;
-                        break;
-                    }
-                }
-
-                if (!isHaveSelect)
-                {
-                    MessageBox.Show("Bạn chưa chọn những nhà xuất bản cần xóa");
-                    return;
-                }
-
-                DialogResult dlgResult = MessageBox.Show(
-                    "Bạn chắc chắn muốn xóa các nhà xuất bản đã chọn chứ?",
-                    "Xác nhận",
-                    MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Question,
-                    MessageBoxDefaultButton.Button1
-                );
-
-                if (dlgResult == DialogResult.Yes)
-                {
-                    foreach (DataGridViewRow row in this.dgvPublisher.Rows)
-                    {
-                        if ((bool)row.Cells[0].Value == true)
-                        {
-                            PublisherBUS.Instance.delete(row.Cells[1].Value.ToString());
-                        }
-
-                    }
-                    List<PublisherDTO> PublisherList = PublisherBUS.Instance.search(this.searchInput.Text.ToString());
-                    this.loadPublisherListToDataView(PublisherList);
-
-                    MessageBox.Show("Delete successful");
                 }
             }
             catch (Exception er)

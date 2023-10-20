@@ -3,8 +3,13 @@ using System.Data;
 
 namespace QuanLyCuaHangBanSach.DTO
 {
-    public class StaffDTO : HumanDTO
+    public class StaffDTO
     {
+        public int Ma { get; protected set; }
+        public string Ten { get; set; }
+        public string GioiTinh { get; set; }
+        public int NamSinh { get; set; }
+        public bool TrangThai { get; set; }
         public string SoDienThoai { get; set; }
         public double Luong { get; set; }
         public int MaChucVu { get; set; }
@@ -18,8 +23,11 @@ namespace QuanLyCuaHangBanSach.DTO
             int maChucVu,
             double luong
             )
-        : base(maNhanVien, tenNhanVien, gioiTinh, namSinh)
         {
+            this.Ma = maNhanVien;
+            this.Ten = tenNhanVien;
+            this.GioiTinh = gioiTinh;
+            this.NamSinh = namSinh;
             this.SoDienThoai = soDienThoai;
             this.MaChucVu = maChucVu;
             this.Luong = luong;

@@ -83,7 +83,7 @@ namespace QuanLyCuaHangBanSach.DAO
                     DataProvider.Instance.ExecuteNonQuery(sql,
                     new MySqlParameter[] {
                         new MySqlParameter("@maChucVu", data.MaChucVu),
-                        new MySqlParameter("@maQuyenHang", permission.MaQuyenHang),
+                        new MySqlParameter("@maQuyenHang", permission.MaQuyenHan),
                     });
                 }
             }
