@@ -215,17 +215,24 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
                 string selectedGender = this.genderCbx.SelectedItem.ToString();
 
-
-                List<CustomerDTO> newCustomers = customers.FindAll(authorList =>
+                if (customers != null)
                 {
-                    if (selectedGender != "Chọn giới tính")
-                    {
-                        return authorList.GioiTinh == selectedGender;
-                    }
-                    return true;
+					List<CustomerDTO> newCustomers = customers.FindAll(authorList =>
+					{
+						if (selectedGender != "Chọn giới tính")
+						{
+							return authorList.GioiTinh == selectedGender;
+						}
+						return true;
+					}
+			         );
+					return newCustomers;
                 }
-                );
-                return newCustomers;
+                else
+                {
+                    return customers;
+                }   
+              
             }
             catch
             {
