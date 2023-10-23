@@ -61,7 +61,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 string permissionName = this.permissionNameTxt.Text;
                 bool isActive = this.activeCkx.Checked;
 
-                int id = updatePermission != null ? updatePermission.MaQuyenHang : 0;
+                int id = updatePermission != null ? updatePermission.MaQuyenHan : 0;
 
                 PermissionDTO permission = new PermissionDTO(id, permissionName, isActive);
 
@@ -97,7 +97,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
                 if (updatePermission != null)
                 {
-                    this.permissionNameTxt.Text = updatePermission.TenQuyenHang;
+                    this.permissionNameTxt.Text = updatePermission.TenQuyenHan;
                     this.activeCkx.Checked = updatePermission.TrangThai;
                 }
             }

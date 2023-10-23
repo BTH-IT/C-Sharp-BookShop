@@ -26,13 +26,13 @@ namespace QuanLyCuaHangBanSach.DAO
 
         public DataTable getAll()
         {
-            return DataProvider.Instance.ExecuteQuery("select * from chitietphanquyen WHERE hienThi=1;");
+            return DataProvider.Instance.ExecuteQuery("select * from chitietphanquyen");
         }
 
         public AuthDetailDTO getById(string positionId, string permissionId)
         {
             DataTable dataTable = DataProvider.Instance.ExecuteQuery(
-                "SELECT * FROM chitietphanquyen WHERE maChucVu=@maChucVu AND maQuyenHang=@maQuyenHang AND hienThi=1;",
+                "SELECT * FROM chitietphanquyen WHERE maChucVu=@maChucVu AND maQuyenHang=@maQuyenHang;",
                 new MySqlParameter[] { 
                     new MySqlParameter("@maChucVu", positionId),
                     new MySqlParameter("@maQuyenHang", permissionId),
@@ -49,7 +49,7 @@ namespace QuanLyCuaHangBanSach.DAO
         public List<AuthDetailDTO> getByPositionId(string positionId)
         {
             DataTable dataTable = DataProvider.Instance.ExecuteQuery(
-                "SELECT * FROM chitietphanquyen WHERE maChucVu=@maChucVu AND hienThi=1;",
+                "SELECT * FROM chitietphanquyen WHERE maChucVu=@maChucVu;",
                 new MySqlParameter[] {
                     new MySqlParameter("@maChucVu", positionId),
                 }
@@ -100,7 +100,7 @@ namespace QuanLyCuaHangBanSach.DAO
 
         public bool delete(string positionId, string permissionId)
         {
-            string sql = $@"UPDATE chitietphanquyen SET hienThi=0
+            string sql = $@"DELETE FROM chitietphanquyen
                             WHERE maChucVu=@maChucVu AND maQuyenHang=@maQuyenHang;";
 
             int rowChanged = DataProvider.Instance.ExecuteNonQuery(sql,
@@ -114,7 +114,7 @@ namespace QuanLyCuaHangBanSach.DAO
 
         public bool deleteAllByPositionId(string positionId)
         {
-            string sql = $@"UPDATE chitietphanquyen SET hienThi=0
+            string sql = $@"DELETE FROM chitietphanquyen
                             WHERE maChucVu=@maChucVu;";
 
             int rowChanged = DataProvider.Instance.ExecuteNonQuery(sql,

@@ -1,4 +1,5 @@
-﻿using System.Data;
+﻿using System;
+using System.Data;
 
 namespace QuanLyCuaHangBanSach.DTO
 {
@@ -13,8 +14,9 @@ namespace QuanLyCuaHangBanSach.DTO
             string soDienThoai,
             string gioiTinh,
             int namSinh,
-            int diem)
-        : base(maKhachHang, tenKhachHang, gioiTinh, namSinh)
+            int diem,
+            bool trangThai)
+        : base(maKhachHang, tenKhachHang, gioiTinh, namSinh, trangThai)
         {
             this.SoDienThoai = soDienThoai;
             this.Diem = diem;
@@ -29,11 +31,7 @@ namespace QuanLyCuaHangBanSach.DTO
             this.GioiTinh = row["gioiTinh"].ToString();
             this.NamSinh = (int)row["namSinh"];
             this.Diem = (int)row["diem"];
-        }
-
-        public override string ToString()
-        {
-            return this.Ma + " " + this.Ten + " " + this.SoDienThoai + " " + this.GioiTinh + " " + this.NamSinh;
+            this.TrangThai = Convert.ToBoolean(Convert.ToInt32(row["trangThai"]));
         }
     }
 }

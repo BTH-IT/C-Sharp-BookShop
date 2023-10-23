@@ -59,12 +59,13 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                 foreach (SupplierDTO Supplier in SupplierList)
                 {
                     this.dgvSupplier.Rows.Add(new object[] {
-                    false,
-                    Supplier.MaNhaCungCap,
-                    Supplier.TenNhaCungCap,
-                    Supplier.DiaChi,
-                    Supplier.SoDienThoai,
-                });
+                        false,
+                        Supplier.MaNhaCungCap,
+                        Supplier.TenNhaCungCap,
+                        Supplier.DiaChi,
+                        Supplier.SoDienThoai,
+                        Supplier.TrangThai ? "Đang hoạt động" : "Ngưng hoạt động",
+                    });
                 }
             }
             catch (Exception er)
@@ -156,58 +157,6 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
                         this.loadSupplierListToDataView(SupplierList);
                     }
-                }
-            }
-            catch (Exception er)
-            {
-
-                Console.WriteLine(er);
-            }
-        }
-
-        private void deleteBtn_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                bool isHaveSelect = false;
-
-                foreach (DataGridViewRow row in this.dgvSupplier.Rows)
-                {
-                    if ((bool)row.Cells[0].Value)
-                    {
-                        isHaveSelect = true;
-                        break;
-                    }
-                }
-
-                if (!isHaveSelect)
-                {
-                    MessageBox.Show("Bạn chưa chọn những nhà cung cấp cần xóa");
-                    return;
-                }
-
-                DialogResult dlgResult = MessageBox.Show(
-                    "Bạn chắc chắn muốn xóa các nhà cung cấp đã chọn chứ?",
-                    "Xác nhận",
-                    MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Question,
-                    MessageBoxDefaultButton.Button1
-                );
-
-                if (dlgResult == DialogResult.Yes)
-                {
-                    foreach (DataGridViewRow row in this.dgvSupplier.Rows)
-                    {
-                        if ((bool)row.Cells[0].Value == true)
-                        {
-                            SupplierBUS.Instance.delete(row.Cells[1].Value.ToString());
-                        }
-
-                    }
-                    List<SupplierDTO> SupplierList = SupplierBUS.Instance.search(this.searchInput.Text.ToString());
-                    this.loadSupplierListToDataView(SupplierList);
-
-                    MessageBox.Show("Delete successful");
                 }
             }
             catch (Exception er)

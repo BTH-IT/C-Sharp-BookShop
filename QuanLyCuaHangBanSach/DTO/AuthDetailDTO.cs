@@ -20,7 +20,7 @@ namespace QuanLyCuaHangBanSach.DTO
         public AuthDetailDTO(DataRow row) {
             this.MaChucVu = (int)row["maChucVu"];
             this.MaQuyenHang = (int)row["maQuyenHang"];
-            this.TrangThai = Convert.ToBoolean(row["trangThai"]);
+            this.TrangThai = Convert.ToBoolean(Convert.ToInt32(row["trangThai"]));
         }
     }
 }

@@ -42,7 +42,8 @@ namespace QuanLyCuaHangBanSach.DAO
             return dataTable;
         }
 
-        public DataTable getAll() {
+        public DataTable getAll()
+        {
             DataTable dataTable = DataProvider.Instance.ExecuteQuery(
                 "SELECT * FROM sach WHERE hienThi = 1;"
             );
@@ -146,7 +147,7 @@ namespace QuanLyCuaHangBanSach.DAO
                     new MySqlParameter("@tenSach", "%" + value + "%")
                 }
             );
-            
+
             return getBookRemain(dataTable);
         }
 

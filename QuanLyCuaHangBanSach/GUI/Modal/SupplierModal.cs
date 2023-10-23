@@ -95,8 +95,9 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 string addressTxt = this.addressTxt.Text;
 
                 int id = updateSupplier != null ? updateSupplier.MaNhaCungCap : 0;
+                bool trangThai = false;
 
-                SupplierDTO book = new SupplierDTO(id, SupplierName, addressTxt, phoneNumbertxt);
+                SupplierDTO book = new SupplierDTO(id, SupplierName, addressTxt, phoneNumbertxt, trangThai);
 
                 bool isSuccess = updateSupplier != null ? SupplierBUS.Instance.update(book) : SupplierBUS.Instance.insert(book);
 

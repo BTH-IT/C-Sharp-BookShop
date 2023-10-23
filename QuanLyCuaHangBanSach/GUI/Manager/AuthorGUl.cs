@@ -66,6 +66,7 @@ namespace QuanLyCuaHangBanTacGia.GUI.Manager
                     Author.Ten,
                     Author.GioiTinh,
                     Author.NamSinh,
+                    Author.TrangThai ? "Đang hoạt động" : "Ngưng hoạt động",
                 });
                 }
             }
@@ -181,59 +182,6 @@ namespace QuanLyCuaHangBanTacGia.GUI.Manager
 
                         this.loadAuthorListToDataView(AuthorList);
                     }
-                }
-            }
-            catch (Exception ex)
-            {
-
-                Console.WriteLine(ex);
-            }
-        }
-
-        private void deleteBtn_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                bool isHaveSelect = false;
-
-                foreach (DataGridViewRow row in this.dgvAuthor.Rows)
-                {
-                    if ((bool)row.Cells[0].Value)
-                    {
-                        isHaveSelect = true;
-                        break;
-                    }
-                }
-
-                if (!isHaveSelect)
-                {
-                    MessageBox.Show("Bạn chưa chọn những tác giả cần xóa");
-                    return;
-                }
-
-                DialogResult dlgResult = MessageBox.Show(
-                    "Bạn chắc chắn muốn xóa các tác giả đã chọn chứ?",
-                    "Xác nhận",
-                    MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Question,
-                    MessageBoxDefaultButton.Button1
-                );
-
-                if (dlgResult == DialogResult.Yes)
-                {
-                    foreach (DataGridViewRow row in this.dgvAuthor.Rows)
-                    {
-                        if ((bool)row.Cells[0].Value == true)
-                        {
-                            AuthorBUS.Instance.delete(row.Cells[1].Value.ToString());
-                        }
-
-                    }
-                    List<AuthorDTO> AuthorList = AuthorBUS.Instance.search(this.searchInput.Text.ToString());
-
-                    this.loadAuthorListToDataView(AuthorList);
-
-                    MessageBox.Show("Delete successful");
                 }
             }
             catch (Exception ex)

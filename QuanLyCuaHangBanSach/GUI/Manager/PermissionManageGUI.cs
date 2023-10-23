@@ -59,8 +59,8 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                 {
                     this.dgvPermission.Rows.Add(new object[] {
                     false,
-                    position.MaQuyenHang,
-                    position.TenQuyenHang,
+                    position.MaQuyenHan,
+                    position.TenQuyenHan,
                     position.TrangThai ? "Đang hoạt động" : "Ngưng hoạt động",
                 });
                 }
@@ -172,57 +172,6 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
                         this.loadPermissionListToDataView(positionList);
                     }
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex);
-            }
-        }
-
-        private void deleteBtn_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                bool isHaveSelect = false;
-
-                foreach (DataGridViewRow row in this.dgvPermission.Rows)
-                {
-                    if ((bool)row.Cells[0].Value)
-                    {
-                        isHaveSelect = true;
-                        break;
-                    }
-                }
-
-                if (!isHaveSelect)
-                {
-                    MessageBox.Show("Bạn chưa chọn những quyền hạng cần xóa");
-                    return;
-                }
-
-                DialogResult dlgResult = MessageBox.Show(
-                    "Bạn chắc chắn muốn xóa các quyền hạng đã chọn chứ?",
-                    "Xác nhận",
-                    MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Question,
-                    MessageBoxDefaultButton.Button1
-                );
-
-                if (dlgResult == DialogResult.Yes)
-                {
-                    foreach (DataGridViewRow row in this.dgvPermission.Rows)
-                    {
-                        if ((bool)row.Cells[0].Value == true)
-                        {
-                            PermissionBUS.Instance.delete(row.Cells[1].Value.ToString());
-                        }
-
-                    }
-                    List<PermissionDTO> positionList = PermissionBUS.Instance.search(this.searchInput.Text);
-                    this.loadPermissionListToDataView(positionList);
-
-                    MessageBox.Show("Delete successful");
                 }
             }
             catch (Exception ex)

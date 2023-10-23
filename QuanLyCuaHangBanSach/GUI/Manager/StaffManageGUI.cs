@@ -54,14 +54,14 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 						this.dgvStaff.Rows.Add(
 								new object[]
 								{
-								false,
-								staff.Ma,
-								staff.Ten,
-								staff.NamSinh,
-								staff.GioiTinh,
-								staff.SoDienThoai,
-								staff.Luong.ToString() ,
-								PositionBUS.Instance.getById(staff.MaChucVu.ToString()).TenChucVu
+									false,
+									staff.Ma,
+									staff.Ten,
+									staff.NamSinh,
+									staff.GioiTinh,
+									staff.SoDienThoai,
+									staff.Luong.ToString(),
+									PositionBUS.Instance.getById(staff.MaChucVu.ToString()).TenChucVu
 								}
 							);
 					}

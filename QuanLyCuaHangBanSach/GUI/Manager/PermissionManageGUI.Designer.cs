@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PermissionManageGUI));
             this.searchInput = new Guna.UI2.WinForms.Guna2TextBox();
             this.dgvPermission = new Guna.UI.WinForms.GunaDataGridView();
@@ -44,7 +44,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.exportBtn = new Guna.UI.WinForms.GunaAdvenceButton();
             this.refreshBtn = new Guna.UI.WinForms.GunaAdvenceButton();
-            this.deleteBtn = new Guna.UI.WinForms.GunaAdvenceButton();
             this.editBtn = new Guna.UI.WinForms.GunaAdvenceButton();
             this.addBtn = new Guna.UI.WinForms.GunaAdvenceButton();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
@@ -89,21 +88,21 @@
             this.dgvPermission.AllowUserToAddRows = false;
             this.dgvPermission.AllowUserToDeleteRows = false;
             this.dgvPermission.AllowUserToResizeRows = false;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            this.dgvPermission.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dgvPermission.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvPermission.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPermission.BackgroundColor = System.Drawing.Color.White;
             this.dgvPermission.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvPermission.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvPermission.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("#9Slide03 Cabin", 9F);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPermission.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("#9Slide03 Cabin", 9F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPermission.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvPermission.ColumnHeadersHeight = 50;
             this.dgvPermission.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvPermission.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -111,32 +110,32 @@
             this.Column1,
             this.Column2,
             this.Column3});
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("#9Slide03 Cabin", 9F);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPermission.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("#9Slide03 Cabin", 9F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPermission.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvPermission.EnableHeadersVisualStyles = false;
             this.dgvPermission.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvPermission.Location = new System.Drawing.Point(12, 51);
             this.dgvPermission.Name = "dgvPermission";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("#9Slide03 Cabin", 9F);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPermission.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("#9Slide03 Cabin", 9F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPermission.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvPermission.RowHeadersVisible = false;
             this.dgvPermission.RowHeadersWidth = 51;
             this.dgvPermission.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPermission.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPermission.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvPermission.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dgvPermission.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvPermission.RowTemplate.Height = 75;
@@ -220,7 +219,6 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
             this.panel1.Controls.Add(this.exportBtn);
             this.panel1.Controls.Add(this.refreshBtn);
-            this.panel1.Controls.Add(this.deleteBtn);
             this.panel1.Controls.Add(this.editBtn);
             this.panel1.Controls.Add(this.addBtn);
             this.panel1.Location = new System.Drawing.Point(12, 831);
@@ -294,39 +292,6 @@
             this.refreshBtn.Text = "Làm mới";
             this.refreshBtn.Click += new System.EventHandler(this.refreshBtn_Click);
             // 
-            // deleteBtn
-            // 
-            this.deleteBtn.AnimationHoverSpeed = 0.07F;
-            this.deleteBtn.AnimationSpeed = 0.03F;
-            this.deleteBtn.BackColor = System.Drawing.Color.Transparent;
-            this.deleteBtn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.deleteBtn.BorderColor = System.Drawing.Color.Black;
-            this.deleteBtn.CheckedBaseColor = System.Drawing.Color.Gray;
-            this.deleteBtn.CheckedBorderColor = System.Drawing.Color.Black;
-            this.deleteBtn.CheckedForeColor = System.Drawing.Color.White;
-            this.deleteBtn.CheckedImage = ((System.Drawing.Image)(resources.GetObject("deleteBtn.CheckedImage")));
-            this.deleteBtn.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.deleteBtn.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.deleteBtn.FocusedColor = System.Drawing.Color.Empty;
-            this.deleteBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.deleteBtn.ForeColor = System.Drawing.Color.White;
-            this.deleteBtn.Image = ((System.Drawing.Image)(resources.GetObject("deleteBtn.Image")));
-            this.deleteBtn.ImageSize = new System.Drawing.Size(20, 20);
-            this.deleteBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.deleteBtn.Location = new System.Drawing.Point(1288, 6);
-            this.deleteBtn.Name = "deleteBtn";
-            this.deleteBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.deleteBtn.OnHoverBorderColor = System.Drawing.Color.Transparent;
-            this.deleteBtn.OnHoverForeColor = System.Drawing.Color.White;
-            this.deleteBtn.OnHoverImage = null;
-            this.deleteBtn.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.deleteBtn.OnPressedColor = System.Drawing.Color.Black;
-            this.deleteBtn.Radius = 6;
-            this.deleteBtn.Size = new System.Drawing.Size(78, 42);
-            this.deleteBtn.TabIndex = 6;
-            this.deleteBtn.Text = "Xóa";
-            this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
-            // 
             // editBtn
             // 
             this.editBtn.AnimationHoverSpeed = 0.07F;
@@ -346,7 +311,7 @@
             this.editBtn.Image = ((System.Drawing.Image)(resources.GetObject("editBtn.Image")));
             this.editBtn.ImageSize = new System.Drawing.Size(20, 20);
             this.editBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.editBtn.Location = new System.Drawing.Point(1169, 6);
+            this.editBtn.Location = new System.Drawing.Point(1253, 6);
             this.editBtn.Name = "editBtn";
             this.editBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.editBtn.OnHoverBorderColor = System.Drawing.Color.Transparent;
@@ -379,7 +344,7 @@
             this.addBtn.Image = ((System.Drawing.Image)(resources.GetObject("addBtn.Image")));
             this.addBtn.ImageSize = new System.Drawing.Size(20, 20);
             this.addBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.addBtn.Location = new System.Drawing.Point(1046, 6);
+            this.addBtn.Location = new System.Drawing.Point(1130, 6);
             this.addBtn.Name = "addBtn";
             this.addBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.addBtn.OnHoverBorderColor = System.Drawing.Color.Transparent;
@@ -445,7 +410,6 @@
         private Guna.UI.WinForms.GunaDataGridView dgvPermission;
         private System.Windows.Forms.Panel line1;
         private System.Windows.Forms.Panel panel1;
-        private Guna.UI.WinForms.GunaAdvenceButton deleteBtn;
         private Guna.UI.WinForms.GunaAdvenceButton editBtn;
         private Guna.UI.WinForms.GunaAdvenceButton addBtn;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;

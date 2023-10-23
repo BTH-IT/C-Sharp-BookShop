@@ -26,7 +26,7 @@ namespace QuanLyCuaHangBanSach.DAO
 
         
         public DataTable getAll() {
-            return DataProvider.Instance.ExecuteQuery("select * from phieunhap WHERE hienThi = 1;");
+            return DataProvider.Instance.ExecuteQuery("select * from phieunhap;");
         }
 
         public ImportBillDetailDTO getImportBillDetail(string billId, string bookId)
@@ -70,7 +70,7 @@ namespace QuanLyCuaHangBanSach.DAO
 
         public DataTable searchData(string value)
         {
-            string sql = $@"SELECT * FROM phieunhap WHERE maDonNhapHang LIKE @maDonNhapHang AND hienThi = 1;";
+            string sql = $@"SELECT * FROM phieunhap WHERE maDonNhapHang LIKE @maDonNhapHang;";
 
             return DataProvider.Instance.ExecuteQuery(sql,
                 new MySqlParameter[] {
@@ -154,7 +154,7 @@ namespace QuanLyCuaHangBanSach.DAO
 
         public bool delete(string id)
         {
-            string sql = $@"UPDATE phieunhap SET hienThi = 0 WHERE maDonNhapHang=@maDonNhapHang;";
+            string sql = $@"DELETE FROM WHERE maDonNhapHang=@maDonNhapHang;";
 
             int rowChanged = DataProvider.Instance.ExecuteNonQuery(sql,
                 new MySqlParameter[] {
@@ -167,7 +167,7 @@ namespace QuanLyCuaHangBanSach.DAO
         public ImportBillDTO getById(string id)
         {
             DataTable dataTable = DataProvider.Instance.ExecuteQuery(
-                "SELECT * FROM phieunhap WHERE maDonNhapHang=@maDonNhapHang AND hienThi=1;",
+                "SELECT * FROM phieunhap WHERE maDonNhapHang=@maDonNhapHang;",
                 new MySqlParameter[] {
                     new MySqlParameter("@maDonNhapHang", id),
                 }

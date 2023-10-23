@@ -41,8 +41,9 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 					string gender = this.genderCbx.SelectedItem.ToString();
 					int id = this.currentCustomer != null ? currentCustomer.Ma : 0;
 					int score = this.currentCustomer != null ? currentCustomer.Diem : 0;
+                    bool trangThai = false;
 
-					CustomerDTO customer = new CustomerDTO(maKhachHang: id, tenKhachHang: customerName, soDienThoai: phoneNumber, gioiTinh: gender, namSinh: birthYear, diem: score);
+					CustomerDTO customer = new CustomerDTO(maKhachHang: id, tenKhachHang: customerName, soDienThoai: phoneNumber, gioiTinh: gender, namSinh: birthYear, diem: score, trangThai);
 
 					bool isSuccess = currentCustomer != null ? CustomerBUS.Instance.update(customer) : CustomerBUS.Instance.insert(customer);
 

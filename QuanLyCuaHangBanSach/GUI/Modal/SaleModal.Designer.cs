@@ -45,13 +45,13 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.dateTimeFrom = new Guna.UI.WinForms.GunaDateTimePicker();
             this.errorDateTimeFromMsg = new System.Windows.Forms.Label();
+            this.dateTimeFromLine = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.dateTimeTo = new Guna.UI.WinForms.GunaDateTimePicker();
             this.errorDateTimeToMsg = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.dateTimeToLine = new System.Windows.Forms.Panel();
-            this.dateTimeFromLine = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
             label2 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -104,11 +104,11 @@
             // title
             // 
             this.title.AutoSize = true;
-            this.title.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.title.Font = new System.Drawing.Font("#9Slide03 Cabin SemiBold", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.title.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.title.Location = new System.Drawing.Point(385, 9);
+            this.title.Location = new System.Drawing.Point(369, 9);
             this.title.Name = "title";
-            this.title.Size = new System.Drawing.Size(278, 55);
+            this.title.Size = new System.Drawing.Size(311, 55);
             this.title.TabIndex = 9;
             this.title.Text = "Thêm Khuyến mãi";
             // 
@@ -332,6 +332,14 @@
             this.errorDateTimeFromMsg.Size = new System.Drawing.Size(0, 25);
             this.errorDateTimeFromMsg.TabIndex = 7;
             // 
+            // dateTimeFromLine
+            // 
+            this.dateTimeFromLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(212)))), ((int)(((byte)(191)))));
+            this.dateTimeFromLine.Location = new System.Drawing.Point(160, 45);
+            this.dateTimeFromLine.Name = "dateTimeFromLine";
+            this.dateTimeFromLine.Size = new System.Drawing.Size(150, 1);
+            this.dateTimeFromLine.TabIndex = 8;
+            // 
             // label5
             // 
             this.label5.Font = new System.Drawing.Font("#9Slide03 Cabin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
@@ -390,6 +398,14 @@
             this.errorDateTimeToMsg.Size = new System.Drawing.Size(0, 25);
             this.errorDateTimeToMsg.TabIndex = 7;
             // 
+            // dateTimeToLine
+            // 
+            this.dateTimeToLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(212)))), ((int)(((byte)(191)))));
+            this.dateTimeToLine.Location = new System.Drawing.Point(160, 45);
+            this.dateTimeToLine.Name = "dateTimeToLine";
+            this.dateTimeToLine.Size = new System.Drawing.Size(150, 1);
+            this.dateTimeToLine.TabIndex = 8;
+            // 
             // label7
             // 
             this.label7.Font = new System.Drawing.Font("#9Slide03 Cabin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
@@ -399,22 +415,6 @@
             this.label7.TabIndex = 5;
             this.label7.Text = "Ngày kết thúc:";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // dateTimeToLine
-            // 
-            this.dateTimeToLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(212)))), ((int)(((byte)(191)))));
-            this.dateTimeToLine.Location = new System.Drawing.Point(160, 45);
-            this.dateTimeToLine.Name = "dateTimeToLine";
-            this.dateTimeToLine.Size = new System.Drawing.Size(150, 1);
-            this.dateTimeToLine.TabIndex = 8;
-            // 
-            // dateTimeFromLine
-            // 
-            this.dateTimeFromLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(212)))), ((int)(((byte)(191)))));
-            this.dateTimeFromLine.Location = new System.Drawing.Point(160, 45);
-            this.dateTimeFromLine.Name = "dateTimeFromLine";
-            this.dateTimeFromLine.Size = new System.Drawing.Size(150, 1);
-            this.dateTimeFromLine.TabIndex = 8;
             // 
             // SaleModal
             // 

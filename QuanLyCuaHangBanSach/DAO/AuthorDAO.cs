@@ -26,13 +26,13 @@ namespace QuanLyCuaHangBanSach.DAO
 
         
         public DataTable getAll() {
-            return DataProvider.Instance.ExecuteQuery("select * from tacgia WHERE hienThi = 1;");
+            return DataProvider.Instance.ExecuteQuery("select * from tacgia");
         }
 
         public AuthorDTO getById(string id)
         {
             DataTable dataTable = DataProvider.Instance.ExecuteQuery(
-                "SELECT * FROM tacgia WHERE maTacGia=@maTacGia AND hienThi = 1;",
+                "SELECT * FROM tacgia WHERE maTacGia=@maTacGia;",
                 new MySqlParameter[] {
                     new MySqlParameter("@maTacGia", id)
                 }
@@ -47,7 +47,7 @@ namespace QuanLyCuaHangBanSach.DAO
 
         public DataTable searchData(string value)
         {
-            string sql = $@"SELECT * FROM tacgia WHERE (maTacGia LIKE @maTacGia OR tenTacGia LIKE @tenTacGia) AND hienThi = 1;";
+            string sql = $@"SELECT * FROM tacgia WHERE (maTacGia LIKE @maTacGia OR tenTacGia LIKE @tenTacGia);";
             
 
             return DataProvider.Instance.ExecuteQuery(sql,
@@ -61,14 +61,15 @@ namespace QuanLyCuaHangBanSach.DAO
         public bool insert(AuthorDTO data)
         {
 
-            string sql = $@"INSERT INTO tacgia (tenTacGia, gioiTinh, namSinh)
-                            VALUES (@tenTacGia, @gioiTinh, @namSinh);";
+            string sql = $@"INSERT INTO tacgia (tenTacGia, gioiTinh, namSinh, trangThai)
+                            VALUES (@tenTacGia, @gioiTinh, @namSinh, @trangThai);";
 
             int rowChanged = DataProvider.Instance.ExecuteNonQuery(sql,
                 new MySqlParameter[] {
                     new MySqlParameter("@tenTacGia", data.Ten),
                     new MySqlParameter("@gioiTinh", data.GioiTinh),
                     new MySqlParameter("@namSinh", data.NamSinh),
+                    new MySqlParameter("@trangThai", data.TrangThai),
                 });
 
             return rowChanged > 0;
@@ -77,7 +78,7 @@ namespace QuanLyCuaHangBanSach.DAO
         public bool update(AuthorDTO data)
         {
             string sql = $@"UPDATE tacgia
-                            SET tenTacGia=@tenTacGia, gioiTinh=@gioiTinh, namSinh=@namSinh
+                            SET tenTacGia=@tenTacGia, gioiTinh=@gioiTinh, namSinh=@namSinh, trangThai=@trangThai
                             WHERE maTacGia=@maTacGia;";
 
             int rowChanged = DataProvider.Instance.ExecuteNonQuery(sql,
@@ -86,6 +87,7 @@ namespace QuanLyCuaHangBanSach.DAO
                     new MySqlParameter("@tenTacGia", data.Ten),
                     new MySqlParameter("@gioiTinh", data.GioiTinh),
                     new MySqlParameter("@namSinh", data.NamSinh),
+                    new MySqlParameter("@trangThai", data.TrangThai ? 1 : 0),
                 });
 
             return rowChanged > 0;
@@ -93,7 +95,7 @@ namespace QuanLyCuaHangBanSach.DAO
 
         public bool delete(string id)
         {
-            string sql = $@"UPDATE tacgia SET hienThi = 0 WHERE maTacGia=@maTacGia;";
+            string sql = $@"DELETE FROM tacgia WHERE maTacGia=@maTacGia;";
 
             int rowChanged = DataProvider.Instance.ExecuteNonQuery(sql,
                 new MySqlParameter[] {

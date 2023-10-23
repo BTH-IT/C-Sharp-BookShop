@@ -44,6 +44,17 @@ namespace QuanLyCuaHangBanSach.DAO
             return staff;
         }
 
+        public double getSoldRevenue(string id)
+        {
+			DataTable dataTable = DataProvider.Instance.ExecuteQuery(
+	            "SELECT SUM(tongtien) AS doanhThu FROM phieuban WHERE maNhanVien=@MaNhanVien;",
+	            new MySqlParameter[] { new MySqlParameter("@MaNhanVien", id) }
+            );
+
+			if (dataTable.Rows.Count <= 0 || dataTable.Rows[0]["doanhThu"] == DBNull.Value) return 0;
+
+			return Convert.ToDouble(dataTable.Rows[0]["doanhThu"]);
+		}
 
         public List<StaffDTO> searchData(string value)
         {
