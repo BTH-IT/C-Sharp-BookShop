@@ -35,8 +35,8 @@ namespace QuanLyCuaHangBanSach.DAO
             DataTable dataTable = DataProvider.Instance.ExecuteQuery(
                     "SELECT * FROM khachhang WHERE (soDienThoai = @SoDienThoai OR maKhachHang = @MaKhachHang OR tenKhachHang LIKE @TenKhachHang) ",
                     new MySqlParameter[] {
-                            new MySqlParameter("@SoDienThoai" ,$"{searchInput}"),
-                            new MySqlParameter("@MaKhachHang" ,$"{searchInput}"),
+						    new MySqlParameter("@MaKhachHang" ,$"{searchInput}"),
+							new MySqlParameter("@SoDienThoai" ,$"{searchInput}"),
                             new MySqlParameter("@TenKhachHang" ,$"%{searchInput}%"),
                     }
                 );

@@ -118,17 +118,19 @@ namespace QuanLyCuaHangBanSach
 
                     rowIndex++;
 
-                    for (int row = 0; row < dataTable.Rows.Count; row++)
+					for (int row = 0; row < dataTable.Rows.Count; row++)
                     {
                         DataRow dataRow = dataTable.Rows[row];
                         colIndex = 0;
                         for (int col = startPosition; col < dataTable.Columns.Count; col++)
                         {
 
+                            Console.Write(dataRow[col] + "--");
                             if (col == imgCol) continue;
 
                             ws.Cells[rowIndex, ++colIndex].Value = dataRow[col]; 
                        }
+                        Console.WriteLine("");
                         rowIndex++;
                     }
 
