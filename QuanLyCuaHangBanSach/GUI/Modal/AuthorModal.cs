@@ -81,7 +81,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 int birthYear = Convert.ToInt32(this.birthYear.Text);
                 string genderCbx = this.genderCbx.SelectedItem.ToString();
                 int id = updateAuthor != null ? updateAuthor.Ma : 0;
-                bool trangThai = false;
+                bool trangThai = this.statusSwitch.Checked;
 
                 AuthorDTO book = new AuthorDTO(id, authorName, genderCbx, birthYear, trangThai);
 
@@ -174,6 +174,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                     this.authorName.Text = updateAuthor.Ten;
                     this.genderCbx.SelectedItem = updateAuthor.GioiTinh;
                     this.birthYear.Text = updateAuthor.NamSinh.ToString();
+                    this.statusSwitch.Checked = updateAuthor.TrangThai;
 
                 }
             }

@@ -16,6 +16,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
     {
         public CustomerDTO currentCustomer = null;
         public bool isSubmitSuccess = false;
+        private bool isFirstTimeLoaded = true;
         public CustomerModal(string title = "Thêm khách hàng")
         {
             InitializeComponent();
@@ -41,7 +42,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 					string gender = this.genderCbx.SelectedItem.ToString();
 					int id = this.currentCustomer != null ? currentCustomer.Ma : 0;
 					int score = this.currentCustomer != null ? currentCustomer.Diem : 0;
-                    bool trangThai = false;
+                    bool trangThai = this.statusSwitch.Checked;
 
 					CustomerDTO customer = new CustomerDTO(maKhachHang: id, tenKhachHang: customerName, soDienThoai: phoneNumber, gioiTinh: gender, namSinh: birthYear, diem: score, trangThai);
 
@@ -80,6 +81,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 					this.phoneNumberTxtBox.Text = currentCustomer.SoDienThoai;
 					this.birthYearTxtBox.Text = currentCustomer.NamSinh.ToString();
 					this.genderCbx.Text = currentCustomer.GioiTinh == "Nam" ? genders[1] : genders[2];
+                    this.statusSwitch.Checked = currentCustomer.TrangThai;
 				}
 			}
             catch
@@ -160,11 +162,19 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
         private void genderCbx_SelectedIndexChanged(object sender, EventArgs e)
         {
-            CustomValidation.Instance.checkCombobox(
-                    this.genderCbx,
-                    this.errorGenderMsg,
-                    new string[] { "required" }
-                );
+            if(isFirstTimeLoaded)
+            {
+				isFirstTimeLoaded = false;
+            }
+            else
+            {
+				CustomValidation.Instance.checkCombobox(
+									this.genderCbx,
+									this.errorGenderMsg,
+									new string[] { "required" }
+								);
+			}  
+           
         }
-    }
+	}
 }

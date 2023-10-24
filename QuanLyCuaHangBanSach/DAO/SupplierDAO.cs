@@ -78,7 +78,6 @@ namespace QuanLyCuaHangBanSach.DAO
             string sql = $@"UPDATE nhacungcap
                             SET tenNhaCungCap=@tenNhaCungCap, diaChi=@diaChi, soDienThoai=@soDienThoai, trangThai=@trangThai
                             WHERE maNhaCungCap=@maNhaCungCap;";
-
             int rowChanged = DataProvider.Instance.ExecuteNonQuery(sql,
                 new MySqlParameter[] {
                     new MySqlParameter("@maNhaCungCap", data.MaNhaCungCap),
