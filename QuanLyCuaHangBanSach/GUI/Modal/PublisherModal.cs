@@ -95,7 +95,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 string addressTxt = this.addressTxt.Text;
 
                 int id = updatePublisher != null ? updatePublisher.MaNhaXuatBan : 0;
-                bool trangThai = false;
+                bool trangThai = this.statusSwitch.Checked;
 
                 PublisherDTO book = new PublisherDTO(id, PublisherName, addressTxt, phoneNumbertxt, trangThai);
 
@@ -158,7 +158,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                     this.Publishertxt.Text = updatePublisher.TenNhaXuatBan;
                     this.addressTxt.Text = updatePublisher.DiaChi;
                     this.phoneNumbertxt.Text = updatePublisher.SoDienThoai;
-
+                    this.statusSwitch.Checked = updatePublisher.TrangThai;
                 }
             }
             catch (Exception er)

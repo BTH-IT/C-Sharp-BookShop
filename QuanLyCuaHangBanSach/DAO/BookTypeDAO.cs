@@ -72,13 +72,14 @@ namespace QuanLyCuaHangBanSach.DAO
 
         public bool update(BookTypeDTO data)
         {
-            string sql = $@"UPDATE theloai SET tenTheLoai=@tenTheLoai WHERE maTheLoai=@maTheLoai;";
+            string sql = $@"UPDATE theloai SET tenTheLoai=@tenTheLoai , trangThai = @trangThai WHERE maTheLoai=@maTheLoai;";
 
             int rowChanged = DataProvider.Instance.ExecuteNonQuery(sql,
                 new MySqlParameter[] {
                     new MySqlParameter("@maTheLoai", data.MaTheLoai),
                     new MySqlParameter("@tenTheLoai", data.TenTheLoai),
-                });
+					new MySqlParameter("@trangThai", data.TrangThai),
+				});
 
             return rowChanged > 0;
         }

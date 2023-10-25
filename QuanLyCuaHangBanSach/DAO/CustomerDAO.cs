@@ -130,7 +130,7 @@ namespace QuanLyCuaHangBanSach.DAO
 
         public bool update(CustomerDTO data)
         {
-            string sql = $@"UPDATE khachhang SET maKhachHang=@MaKhachHang, tenKhachHang=@TenKhachHang, gioiTinh=@GioiTinh, namSinh=@NamSinh, diem=@Diem
+            string sql = $@"UPDATE khachhang SET maKhachHang=@MaKhachHang, tenKhachHang=@TenKhachHang, gioiTinh=@GioiTinh, namSinh=@NamSinh, diem=@Diem ,trangThai=@TrangThai
                             WHERE soDienThoai=@SoDienThoai;";
 
             int rowChanged = DataProvider.Instance.ExecuteNonQuery(sql,
@@ -141,7 +141,8 @@ namespace QuanLyCuaHangBanSach.DAO
                     new MySqlParameter("@GioiTinh", data.GioiTinh),
                     new MySqlParameter("@NamSinh", data.NamSinh),
                     new MySqlParameter("@Diem", data.Diem),
-                });
+					new MySqlParameter("@TrangThai", data.TrangThai),
+				});
 
             return rowChanged > 0;
         }

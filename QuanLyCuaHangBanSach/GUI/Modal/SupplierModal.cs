@@ -95,7 +95,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 string addressTxt = this.addressTxt.Text;
 
                 int id = updateSupplier != null ? updateSupplier.MaNhaCungCap : 0;
-                bool trangThai = false;
+                bool trangThai = this.statusSwitch.Checked;
 
                 SupplierDTO book = new SupplierDTO(id, SupplierName, addressTxt, phoneNumbertxt, trangThai);
 
@@ -158,7 +158,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                     this.Suppliertxt.Text = updateSupplier.TenNhaCungCap;
                     this.addressTxt.Text = updateSupplier.DiaChi;
                     this.phoneNumbertxt.Text = updateSupplier.SoDienThoai;
-
+                    this.statusSwitch.Checked = updateSupplier.TrangThai;
                 }
             }
             catch (Exception er)

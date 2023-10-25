@@ -37,6 +37,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             if (updateBookType != null)
             {
                 this.BookTypeNameTxt.Text = updateBookType.TenTheLoai;
+                this.statusSwitch.Checked = updateBookType.TrangThai;
             }
         }
 
@@ -80,8 +81,8 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             string BookTypeName = this.BookTypeNameTxt.Text;
 
             int id = updateBookType != null ? updateBookType.MaTheLoai : 0;
-            bool trangThai = false;
-
+            bool trangThai = this.statusSwitch.Checked ;
+        
             BookTypeDTO BookType = new BookTypeDTO(id, BookTypeName, trangThai);
 
             bool isSuccess = updateBookType != null ? BookTypeBUS.Instance.update(BookType) : BookTypeBUS.Instance.insert(BookType);
