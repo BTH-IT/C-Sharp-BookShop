@@ -43,6 +43,40 @@ namespace QuanLyCuaHangBanSach
             return true;
         }
 
+        public bool checkTextboxMax(Guna2TextBox txt, string errMsg, Label errMsgLbl, Panel line, int max)
+        {
+
+            if (int.TryParse(txt.Text, out int result) && result > max)
+            {
+                errMsgLbl.Text = errMsg;
+                line.BackColor = Color.FromArgb(239, 68, 68);
+                return false;
+            }
+            else
+            {
+                errMsgLbl.Text = "";
+                line.BackColor = Color.FromArgb(45, 212, 191);
+            }
+            return true;
+        }
+
+        public bool checkTextboxMin(Guna2TextBox txt, string errMsg, Label errMsgLbl, Panel line, int min)
+        {
+
+            if (int.TryParse(txt.Text, out int result) && result < min)
+            {
+                errMsgLbl.Text = errMsg;
+                line.BackColor = Color.FromArgb(239, 68, 68);
+                return false;
+            }
+            else
+            {
+                errMsgLbl.Text = "";
+                line.BackColor = Color.FromArgb(45, 212, 191);
+            }
+            return true;
+        }
+
         public bool checkTextboxMatchWithOtherTextBox(Guna2TextBox txt1, Guna2TextBox txt2, string errMsg, Label errMsgLbl, Panel line)
         {
 
@@ -93,6 +127,19 @@ namespace QuanLyCuaHangBanSach
                         if (!checkTextboxWithRegex(txt, new Regex("^\\d+$"), "Trường này phải là một số dương", errMsgLbl, line))
                         {
                             return false;
+                        }
+                        break;
+                    case "max-current-year":
+                        int currentYear = DateTime.Now.Year;
+                        if (int.TryParse(txt.Text, out int result) && result > currentYear)
+                        {
+                            errMsgLbl.Text = "Trường này không được lớn hơn " + currentYear;
+                            line.BackColor = Color.FromArgb(239, 68, 68);
+                        }
+                        else
+                        {
+                            errMsgLbl.Text = "";
+                            line.BackColor = Color.FromArgb(45, 212, 191);
                         }
                         break;
                     case "email":
@@ -176,6 +223,40 @@ namespace QuanLyCuaHangBanSach
             }
 
             return true;
+        }
+
+        public bool checkDateTimePicker(GunaDateTimePicker guna, Label errorLabel, string[] requirements, DateTime dateTimeToCompare, string errorMessage = null)
+        {
+            try
+            {
+                foreach (string rule in requirements)
+                {
+                    switch (rule)
+                    {
+                        case "after":
+                            if (DateTime.Compare(guna.Value, dateTimeToCompare) >= 0)
+                            {
+                                errorLabel.Text = "";
+                                return true;
+                            }
+                            else
+                            {
+
+                                errorLabel.Text = errorMessage != null ? errorMessage : "Ngày giờ phải lớn hơn hoặc bằng thời gian hiện tại";
+                                return false;
+                            }
+
+                        default:
+                            return false;
+                    }
+                }
+            }
+            catch
+            {
+
+            }
+
+            return false;
         }
     }
 }

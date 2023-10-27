@@ -28,9 +28,9 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 foreach (AuthDetailDTO authDetail in authDetailList)
                 {
                     AuthorizeCkb checkBox = new AuthorizeCkb(
-                        PermissionBUS.Instance.getById(authDetail.MaQuyenHang.ToString()).TenQuyenHan,
+                        PermissionBUS.Instance.getById(authDetail.MaQuyenHan.ToString()).TenQuyenHan,
                         authDetail.MaChucVu,
-                        authDetail.MaQuyenHang,
+                        authDetail.MaQuyenHan,
                         authDetail.TrangThai
                     );
 

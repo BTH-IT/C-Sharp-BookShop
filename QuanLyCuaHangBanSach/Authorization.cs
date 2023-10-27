@@ -30,9 +30,9 @@ namespace QuanLyCuaHangBanSach
             return permissionObj;
         }
 
-        public bool checkAuthorize(int maQuyenHang)
+        public bool checkAuthorize(int maQuyenHan)
         {
-            AuthDetailDTO authDetail = AuthDetailBUS.Instance.getById(this.MaChucVu.ToString(), maQuyenHang.ToString());
+            AuthDetailDTO authDetail = AuthDetailBUS.Instance.getById(this.MaChucVu.ToString(), maQuyenHan.ToString());
 
             if (authDetail == null || !authDetail.TrangThai) return false;
             

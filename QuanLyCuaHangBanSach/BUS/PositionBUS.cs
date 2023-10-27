@@ -63,7 +63,7 @@ namespace QuanLyCuaHangBanSach.BUS
 
         public bool insert(PositionDTO position)
         {
-            return PositionDAO.Instance.insert(position);
+            return PositionDAO.Instance.advanceInsert(position);
         }
 
         public bool update(PositionDTO position)

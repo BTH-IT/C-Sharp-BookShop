@@ -11,10 +11,10 @@ namespace QuanLyCuaHangBanSach.DTO
 
         public PermissionDTO() { }
 
-        public PermissionDTO(int maQuyenHang, string tenQuyenHang, bool trangThai)
+        public PermissionDTO(int maQuyenHan, string tenQuyenHan, bool trangThai)
         {
-            this.MaQuyenHan = maQuyenHang;
-            this.TenQuyenHan = tenQuyenHang;
+            this.MaQuyenHan = maQuyenHan;
+            this.TenQuyenHan = tenQuyenHan;
             this.TrangThai = trangThai;
         }
 

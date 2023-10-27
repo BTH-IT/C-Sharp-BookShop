@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data;
 using MySql.Data.MySqlClient;
 using QuanLyCuaHangBanSach.BUS;
@@ -73,22 +72,45 @@ namespace QuanLyCuaHangBanSach.DAO
 
             if (rowChanged > 0 )
             {
-                List<PermissionDTO> permissionList = PermissionBUS.Instance.getAllData();
-
-                sql = $@"INSERT INTO chitietphanquyen (maChucVu, maQuyenHang)
-                            VALUES (@maChucVu, @maQuyenHang);";
-
-                foreach (PermissionDTO permission in permissionList)
-                {
-                    DataProvider.Instance.ExecuteNonQuery(sql,
-                    new MySqlParameter[] {
-                        new MySqlParameter("@maChucVu", data.MaChucVu),
-                        new MySqlParameter("@maQuyenHang", permission.MaQuyenHan),
-                    });
-                }
+                
             }
 
             return rowChanged > 0;
+        }
+
+        public bool advanceInsert(PositionDTO data)
+        {
+            string sql = "SELECT * FROM chucvu ORDER BY maChucVu DESC LIMIT 1;";
+            if (this.insert(data))
+            {
+
+                DataTable dataTable = DataProvider.Instance.ExecuteQuery(sql);
+
+                if (dataTable.Rows.Count <= 0) return false;
+
+                PositionDTO position = new PositionDTO(dataTable.Rows[0]);
+
+                if (position != null)
+                {
+                    List<PermissionDTO> permissionList = PermissionBUS.Instance.getAllData();
+                    
+                    sql = $@"INSERT INTO chitietphanquyen (maChucVu, maQuyenHan)
+                            VALUES (@maChucVu, @maQuyenHan);";
+
+                    foreach (PermissionDTO permission in permissionList)
+                    {
+                        DataProvider.Instance.ExecuteNonQuery(sql,
+                                new MySqlParameter[] {
+                                new MySqlParameter("@maChucVu", position.MaChucVu),
+                                new MySqlParameter("@maQuyenHan", permission.MaQuyenHan),
+                            });
+                    }
+                }
+
+                return position != null;
+            };
+
+            return false;
         }
 
         public bool update(PositionDTO data)

@@ -1,13 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.IO;
 using System.Windows.Forms;
-using System.Windows.Markup;
-using Guna.UI2.WinForms.Suite;
 using QuanLyCuaHangBanSach.BUS;
 using QuanLyCuaHangBanSach.DTO;
-using static Guna.UI2.Native.WinApi;
 
 namespace QuanLyCuaHangBanSach.GUI.Modal
 {
@@ -21,6 +16,10 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             InitializeComponent();
             this.label1.Text = title;
             this.Text = title;
+
+            this.Suppliertxt.TextChanged += Suppliertxt_TextChanged;
+            this.addressTxt.TextChanged += addressTxt_TextChanged;
+            this.phoneNumbertxt.TextChanged += phoneNumbertxt_TextChanged;
         }
 
         private void bookNameTxt_TextChanged(object sender, EventArgs e)
@@ -173,5 +172,34 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             this.Close();
         }
 
+        private void Suppliertxt_TextChanged(object sender, EventArgs e)
+        {
+            CustomValidation.Instance.checkTextbox(
+                this.Suppliertxt,
+                this.supplierNameMsg,
+                this.nameLine,
+                new string[] { "required" }
+            );
+        }
+
+        private void addressTxt_TextChanged(object sender, EventArgs e)
+        {
+            CustomValidation.Instance.checkTextbox(
+                this.addressTxt,
+                this.addressMsg,
+                this.addressLine,
+                new string[] { "required" }
+            );
+        }
+
+        private void phoneNumbertxt_TextChanged(object sender, EventArgs e)
+        {
+            CustomValidation.Instance.checkTextbox(
+                this.phoneNumbertxt,
+                this.phoneNumberMsg,
+                this.phoneNumberLine,
+                new string[] { "required", "phone-number" }
+            );
+        }
     }
 }

@@ -1,17 +1,8 @@
-﻿using Guna.UI.WinForms;
-using OfficeOpenXml.FormulaParsing.ExpressionGraph.FunctionCompilers;
-using QuanLyCuaHangBanSach.BUS;
+﻿using QuanLyCuaHangBanSach.BUS;
 using QuanLyCuaHangBanSach.DTO;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Windows.Shapes;
 
 namespace QuanLyCuaHangBanSach.GUI.Modal
 {
@@ -23,7 +14,12 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
         {
             InitializeComponent();
             this.title.Text = title;
-            this.Text = title;  
+            this.Text = title;
+
+            this.phanTramTxt.TextChanged += phanTramTxt_TextChanged;
+            this.saleNameTxt.TextChanged += saleNameTxt_TextChanged;
+            this.dateTimeFrom.TextChanged += dateTimeFrom_TextChanged;
+            this.dateTimeTo.TextChanged += dateTimeTo_TextChanged;
         }
 
         private void SaleModal_Load(object sender, EventArgs e)
@@ -64,27 +60,29 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 					this.saleNameLine,
 					new string[] { "required" }
 				);
+
 				bool isPhanTramValid = CustomValidation.Instance.checkTextbox(
-						this.phanTramTxt,
-						this.errorPhanTramMsg,
-						this.phanTramLine,
-						new string[] { "required", "positive-numbe" }
-					);
-				bool isDateTimeFrom = checkDateTimePicker(
-				   this.dateTimeFrom,
-				   this.errorDateTimeFromMsg,
-				   this.dateTimeFromLine,
-				   new string[] { "after" },
-				   DateTime.Now
-				   );
-				bool DateFromGreaterOrEqual = checkDateTimePicker(
-						this.dateTimeTo,
-						this.errorDateTimeToMsg,
-						this.dateTimeToLine,
-						new string[] { "after" },
-						this.dateTimeFrom.Value,
-						"Thời gian kết thúc phải lớn hơn hoặc bằng thời \n gian bắt đầu"
-					);
+					this.phanTramTxt,
+					this.errorPhanTramMsg,
+					this.phanTramLine,
+					new string[] { "required", "positive-number" }
+				);
+
+				bool isDateTimeFrom = CustomValidation.Instance.checkDateTimePicker(
+				    this.dateTimeFrom,
+				    this.errorDateTimeFromMsg,
+				    new string[] { "after" },
+				    DateTime.Now
+				);
+
+				bool DateFromGreaterOrEqual = CustomValidation.Instance.checkDateTimePicker(
+					this.dateTimeTo,
+					this.errorDateTimeToMsg,
+					new string[] { "after" },
+					this.dateTimeFrom.Value,
+					"Thời gian kết thúc phải lớn hơn hoặc bằng thời \n gian bắt đầu"
+				);
+
 				return isPhanTramValid && isTenKhuyenMaiValid && isDateTimeFrom && DateFromGreaterOrEqual;
 			}
             catch
@@ -94,41 +92,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             
         }
 
-        private bool checkDateTimePicker(GunaDateTimePicker guna , Label errorLabel, Panel errorLine, string[] requirements,DateTime dateTimeToCompare,string errorMessage = null)
-        {
-            try
-            {
-				foreach (string rule in requirements)
-				{
-					switch (rule)
-					{
-						case "after":
-							if (DateTime.Compare(guna.Value, dateTimeToCompare) >= 0)
-							{
-								errorLabel.Text = "";
-								errorLine.BackColor = Color.FromArgb(45, 212, 191);
-								return true;
-							}
-							else
-							{
-
-								errorLabel.Text = errorMessage != null ? errorMessage : "Ngày giờ phải lớn hơn hoặc bằng thời gian hiện tại";
-								errorLine.BackColor = Color.FromArgb(239, 68, 68);
-								return false;
-							}
-
-						default:
-							return false;
-					}
-				}
-			}
-            catch
-            {
-
-            }
         
-            return false;
-        }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
@@ -166,6 +130,55 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             catch { }
          
         }
-     
+
+
+        private void phanTramTxt_TextChanged(object sender, EventArgs e)
+        {
+            CustomValidation.Instance.checkTextbox(
+                this.phanTramTxt,
+                this.errorPhanTramMsg,
+                this.phanTramLine,
+                new string[] { "required", "positive-number" }
+            );
+
+            CustomValidation.Instance.checkTextboxMax(
+                this.phanTramTxt,
+                "Trường này phải bé hơn 100",
+                this.errorPhanTramMsg,
+                this.phanTramLine,
+                100
+            );
+        }
+
+        private void saleNameTxt_TextChanged(object sender, EventArgs e)
+        {
+            CustomValidation.Instance.checkTextbox(
+                this.saleNameTxt,
+                this.errorSaleNameMsg,
+                this.saleNameLine,
+                new string[] { "required" }
+            );
+        }
+
+        private void dateTimeFrom_TextChanged(object sender, EventArgs e)
+        {
+            CustomValidation.Instance.checkDateTimePicker(
+                this.dateTimeFrom,
+                this.errorDateTimeFromMsg,
+                new string[] { "after" },
+                DateTime.Now
+            );
+        }
+
+        private void dateTimeTo_TextChanged(object sender, EventArgs e)
+        {
+            CustomValidation.Instance.checkDateTimePicker(
+                this.dateTimeTo,
+                this.errorDateTimeToMsg,
+                new string[] { "after" },
+                this.dateTimeFrom.Value,
+                "Thời gian kết thúc phải lớn hơn hoặc bằng thời \n gian bắt đầu"
+            );
+        }
     }
 }

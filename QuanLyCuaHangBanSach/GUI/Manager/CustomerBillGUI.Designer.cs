@@ -453,6 +453,8 @@
             this.dgvCustomerBill.ThemeStyle.RowsStyle.Height = 75;
             this.dgvCustomerBill.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvCustomerBill.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgvCustomerBill.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCustomerBill_CellDoubleClick);
+            this.dgvCustomerBill.SortCompare += new System.Windows.Forms.DataGridViewSortCompareEventHandler(this.dgvCustomerBill_SortCompare);
             // 
             // Column9
             // 

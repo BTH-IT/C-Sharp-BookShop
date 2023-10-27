@@ -1,13 +1,7 @@
 ﻿using QuanLyCuaHangBanSach.BUS;
 using QuanLyCuaHangBanSach.DTO;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QuanLyCuaHangBanSach.GUI.Modal
@@ -105,7 +99,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 					this.birthYearTxtBox,
 					this.errorBirthYearMsg,
 					this.birthYearLine,
-					new string[] { "required", "positive-number" }
+					new string[] { "required", "positive-number", "max-current-year" }
 				);
 
 				bool isPhoneNumberValid = CustomValidation.Instance.checkTextbox(
@@ -133,11 +127,11 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
         private void customerNameTxtBox_TextChanged(object sender, EventArgs e)
         {
             CustomValidation.Instance.checkTextbox(
-                    this.customerNameTxtBox,
-                    this.errorCustomerNameMsg,
-                    this.customerNameLine,
-                    new string[] { "required" }
-                );
+                this.customerNameTxtBox,
+                this.errorCustomerNameMsg,
+                this.customerNameLine,
+                new string[] { "required" }
+            );
         }
 
         private void birthYearTxtBox_TextChanged(object sender, EventArgs e)
@@ -146,7 +140,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                     this.birthYearTxtBox,
                     this.errorBirthYearMsg,
                     this.birthYearLine,
-                    new string[] { "required", "positive-number" }
+                    new string[] { "required", "positive-number", "max-current-year" }
                 );
         }
 
@@ -169,10 +163,10 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             else
             {
 				CustomValidation.Instance.checkCombobox(
-									this.genderCbx,
-									this.errorGenderMsg,
-									new string[] { "required" }
-								);
+					this.genderCbx,
+					this.errorGenderMsg,
+					new string[] { "required" }
+				);
 			}  
            
         }

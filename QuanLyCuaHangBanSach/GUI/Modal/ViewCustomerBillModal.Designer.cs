@@ -47,6 +47,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.staffCbx = new Guna.UI.WinForms.GunaComboBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -110,7 +111,7 @@
             this.totalPriceTxt.PlaceholderText = "Tổng tiền";
             this.totalPriceTxt.SelectedText = "";
             this.totalPriceTxt.ShadowDecoration.Parent = this.totalPriceTxt;
-            this.totalPriceTxt.Size = new System.Drawing.Size(408, 36);
+            this.totalPriceTxt.Size = new System.Drawing.Size(356, 36);
             this.totalPriceTxt.TabIndex = 34;
             this.totalPriceTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -274,6 +275,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.totalPriceTxt);
             this.panel1.Controls.Add(this.nameLine);
             this.panel1.Controls.Add(this.label3);
@@ -325,6 +327,16 @@
             this.staffCbx.TabIndex = 32;
             this.staffCbx.TabStop = false;
             // 
+            // label5
+            // 
+            this.label5.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label5.Location = new System.Drawing.Point(523, 21);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(50, 36);
+            this.label5.TabIndex = 35;
+            this.label5.Text = "VNĐ";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // ViewCustomerBillModal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 23F);
@@ -371,5 +383,6 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label4;
         private Guna.UI.WinForms.GunaComboBox staffCbx;
+        private System.Windows.Forms.Label label5;
     }
 }

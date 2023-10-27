@@ -2,12 +2,7 @@
 using QuanLyCuaHangBanSach.DTO;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QuanLyCuaHangBanSach.GUI.Modal
@@ -20,7 +15,14 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
         {
             InitializeComponent();
             this.Text = title;
-            this.label1.Text = title;   
+            this.label1.Text = title;
+
+            this.staffNameTxt.TextChanged += staffNameTxt_TextChanged;
+            this.birthYearTxt.TextChanged += birthYearTxt_TextChanged;
+            this.phoneNumberTxt.TextChanged += phoneNumberTxt_TextChanged;
+            this.salaryTxt.TextChanged += salaryTxt_TextChanged;
+            this.genderCbx.TextChanged += genderCbx_TextChanged;
+            this.positionCbx.TextChanged += positionCbx_TextChanged;
         }
 
         private void submitBtn_Click(object sender, EventArgs e)
@@ -84,7 +86,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 					this.positionCbx.SelectedValue = staff.MaChucVu;
 
 				}
-			}
+            }
             catch
             {
 
@@ -105,7 +107,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 					 this.birthYearTxt,
 					 this.errorBirthYearMsg,
 					 this.birthYearLine,
-					 new string[] { "required", "positive-number" }
+					 new string[] { "required", "positive-number", "max-current-year" }
 				 );
 				bool isSalaryValid = CustomValidation.Instance.checkTextbox(
 						this.salaryTxt,
@@ -154,7 +156,63 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 			}
          
         }
-    }
 
-       
+        private void staffNameTxt_TextChanged(object sender, EventArgs e)
+        {
+            CustomValidation.Instance.checkTextbox(
+                this.staffNameTxt,
+                this.errorStaffNameMsg,
+                this.staffNameLine,
+                new string[] { "required" }
+            );
+        }
+
+        private void birthYearTxt_TextChanged(object sender, EventArgs e)
+        {
+            CustomValidation.Instance.checkTextbox(
+                this.birthYearTxt,
+                this.errorBirthYearMsg,
+                this.birthYearLine,
+                new string[] { "required", "positive-number", "max-current-year" }
+            );
+        }
+
+        private void phoneNumberTxt_TextChanged(object sender, EventArgs e)
+        {
+            CustomValidation.Instance.checkTextbox(
+                this.phoneNumberTxt,
+                this.errorPhoneNumberMsg,
+                this.phoneNumberLine,
+                new string[] { "required", "phone-number" }
+            );
+        }
+		
+		private void salaryTxt_TextChanged(object sender, EventArgs e)
+        {
+            CustomValidation.Instance.checkTextbox(
+                this.salaryTxt,
+                this.errorSalaryMsg,
+                this.salaryLine,
+                new string[] { "required", "positive-number" }
+            );
+        }
+
+        private void positionCbx_TextChanged(object sender, EventArgs e)
+        {
+            CustomValidation.Instance.checkCombobox(
+                this.positionCbx,
+                this.errorPositionMsg,
+                new string[] { "required" }
+            );
+        }
+
+        private void genderCbx_TextChanged(object sender, EventArgs e)
+        {
+            CustomValidation.Instance.checkCombobox(
+                this.genderCbx,
+                this.errorGenderMsg,
+                new string[] { "required" }
+            );
+        }
+    }
  }
