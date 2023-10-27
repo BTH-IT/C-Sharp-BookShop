@@ -38,6 +38,7 @@
             this.publishYearLine = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
             this.importPriceTxt = new Guna.UI2.WinForms.Guna2TextBox();
             this.errorImportPriceMsg = new System.Windows.Forms.Label();
             this.importPriceLine = new System.Windows.Forms.Panel();
@@ -47,6 +48,7 @@
             this.label18 = new System.Windows.Forms.Label();
             this.publisherCbx = new Guna.UI.WinForms.GunaComboBox();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
             this.sellPriceTxt = new Guna.UI2.WinForms.Guna2TextBox();
             this.errorSellPriceMsg = new System.Windows.Forms.Label();
             this.sellPriceLine = new System.Windows.Forms.Panel();
@@ -226,6 +228,7 @@
             // 
             // panel7
             // 
+            this.panel7.Controls.Add(this.label5);
             this.panel7.Controls.Add(this.importPriceTxt);
             this.panel7.Controls.Add(this.errorImportPriceMsg);
             this.panel7.Controls.Add(this.importPriceLine);
@@ -234,6 +237,16 @@
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(594, 88);
             this.panel7.TabIndex = 10;
+            // 
+            // label5
+            // 
+            this.label5.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label5.Location = new System.Drawing.Point(524, 7);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(50, 36);
+            this.label5.TabIndex = 34;
+            this.label5.Text = "VNĐ";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // importPriceTxt
             // 
@@ -260,7 +273,7 @@
             this.importPriceTxt.PlaceholderText = "Nhập giá nhập";
             this.importPriceTxt.SelectedText = "";
             this.importPriceTxt.ShadowDecoration.Parent = this.importPriceTxt;
-            this.importPriceTxt.Size = new System.Drawing.Size(425, 36);
+            this.importPriceTxt.Size = new System.Drawing.Size(354, 36);
             this.importPriceTxt.TabIndex = 33;
             this.importPriceTxt.TextChanged += new System.EventHandler(this.importPriceTxt_TextChanged);
             // 
@@ -349,6 +362,7 @@
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.label4);
             this.panel4.Controls.Add(this.sellPriceTxt);
             this.panel4.Controls.Add(this.errorSellPriceMsg);
             this.panel4.Controls.Add(this.sellPriceLine);
@@ -357,6 +371,16 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(594, 88);
             this.panel4.TabIndex = 9;
+            // 
+            // label4
+            // 
+            this.label4.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label4.Location = new System.Drawing.Point(524, 7);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(50, 36);
+            this.label4.TabIndex = 28;
+            this.label4.Text = "VNĐ";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // sellPriceTxt
             // 
@@ -383,7 +407,7 @@
             this.sellPriceTxt.PlaceholderText = "Nhập giá bán";
             this.sellPriceTxt.SelectedText = "";
             this.sellPriceTxt.ShadowDecoration.Parent = this.sellPriceTxt;
-            this.sellPriceTxt.Size = new System.Drawing.Size(425, 36);
+            this.sellPriceTxt.Size = new System.Drawing.Size(354, 36);
             this.sellPriceTxt.TabIndex = 33;
             this.sellPriceTxt.TextChanged += new System.EventHandler(this.sellPriceTxt_TextChanged);
             // 
@@ -754,5 +778,7 @@
         private Guna.UI2.WinForms.Guna2TextBox publishYearTxt;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
     }
 }

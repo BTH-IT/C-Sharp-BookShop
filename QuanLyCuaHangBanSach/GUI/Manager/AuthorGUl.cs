@@ -200,7 +200,7 @@ namespace QuanLyCuaHangBanTacGia.GUI.Manager
                     return;
                 }
 
-                using (AuthorModal AuthorModal = new AuthorModal("Sửa sách"))
+                using (AuthorModal AuthorModal = new AuthorModal("Sửa tác giả"))
                 {
                     DataGridViewRow row = this.dgvAuthor.Rows[e.RowIndex];
 

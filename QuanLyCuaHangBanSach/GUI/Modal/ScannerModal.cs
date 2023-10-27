@@ -171,5 +171,24 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 Console.WriteLine(ex);
             }
         }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (this.videoCaptureDevice != null)
+                {
+                    this.videoCaptureDevice.Stop();
+
+                    this.timer1.Stop();
+
+                    this.scanBtn.Enabled = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+        }
     }
 }

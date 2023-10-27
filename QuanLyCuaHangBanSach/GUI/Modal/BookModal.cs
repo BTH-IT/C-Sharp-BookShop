@@ -190,7 +190,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                     this.publishYearTxt,
                     this.errorPublishYearMsg,
                     this.publishYearLine,
-                    new string[] { "required", "positive-number" }
+                    new string[] { "required", "positive-number", "max-current-year" }
                 );
             }
             catch (Exception ex)
@@ -228,7 +228,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                     this.publishYearTxt,
                     this.errorPublishYearMsg,
                     this.publishYearLine,
-                    new string[] { "required", "positive-number" }
+                    new string[] { "required", "positive-number", "max-current-year" }
                 );
 
                 bool isCheckCbx1 = CustomValidation.Instance.checkCombobox(

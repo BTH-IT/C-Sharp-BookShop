@@ -57,7 +57,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 this.birthYear,
                     this.birthYearMsg,
                     this.birthYearLine,
-                    new string[] { "required", "positive-number" }
+                    new string[] { "required", "positive-number", "max-current-year" }
             );
 
 
@@ -149,7 +149,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                     this.birthYear,
                     this.birthYearMsg,
                     this.birthYearLine,
-                    new string[] { "required", "positive-number" }
+                    new string[] { "required", "positive-number", "max-current-year" }
                 );
             }
             catch (Exception er)

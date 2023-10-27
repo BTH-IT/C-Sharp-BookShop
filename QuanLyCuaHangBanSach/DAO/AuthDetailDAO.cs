@@ -32,10 +32,10 @@ namespace QuanLyCuaHangBanSach.DAO
         public AuthDetailDTO getById(string positionId, string permissionId)
         {
             DataTable dataTable = DataProvider.Instance.ExecuteQuery(
-                "SELECT * FROM chitietphanquyen WHERE maChucVu=@maChucVu AND maQuyenHang=@maQuyenHang;",
+                "SELECT * FROM chitietphanquyen WHERE maChucVu=@maChucVu AND maQuyenHan=@maQuyenHan;",
                 new MySqlParameter[] { 
                     new MySqlParameter("@maChucVu", positionId),
-                    new MySqlParameter("@maQuyenHang", permissionId),
+                    new MySqlParameter("@maQuyenHan", permissionId),
                 }
             );
 
@@ -71,13 +71,13 @@ namespace QuanLyCuaHangBanSach.DAO
         public bool insert(AuthDetailDTO data)
         {
 
-            string sql = $@"INSERT INTO chitietphanquyen (maChucVu, maQuyenHang)
-                            VALUES (@maChucVu, @maQuyenHang);";
+            string sql = $@"INSERT INTO chitietphanquyen (maChucVu, maQuyenHan)
+                            VALUES (@maChucVu, @maQuyenHan);";
 
             int rowChanged = DataProvider.Instance.ExecuteNonQuery(sql,
                 new MySqlParameter[] {
                     new MySqlParameter("@maChucVu", data.MaChucVu),
-                    new MySqlParameter("@maQuyenHang", data.MaQuyenHang),
+                    new MySqlParameter("@maQuyenHan", data.MaQuyenHan),
                 });
 
             return rowChanged > 0;
@@ -86,13 +86,13 @@ namespace QuanLyCuaHangBanSach.DAO
         public bool update(AuthDetailDTO data)
         {
             string sql = $@"UPDATE chitietphanquyen SET trangThai=@trangThai 
-                            WHERE maChucVu=@maChucVu AND maQuyenHang=@maQuyenHang;";
+                            WHERE maChucVu=@maChucVu AND maQuyenHan=@maQuyenHan;";
 
             int rowChanged = DataProvider.Instance.ExecuteNonQuery(sql,
                 new MySqlParameter[] {
                     new MySqlParameter("@trangThai", data.TrangThai),
                     new MySqlParameter("@maChucVu", data.MaChucVu),
-                    new MySqlParameter("@maQuyenHang", data.MaQuyenHang),
+                    new MySqlParameter("@maQuyenHan", data.MaQuyenHan),
                 });
 
             return rowChanged > 0;
@@ -101,12 +101,12 @@ namespace QuanLyCuaHangBanSach.DAO
         public bool delete(string positionId, string permissionId)
         {
             string sql = $@"DELETE FROM chitietphanquyen
-                            WHERE maChucVu=@maChucVu AND maQuyenHang=@maQuyenHang;";
+                            WHERE maChucVu=@maChucVu AND maQuyenHan=@maQuyenHan;";
 
             int rowChanged = DataProvider.Instance.ExecuteNonQuery(sql,
             new MySqlParameter[] {
                     new MySqlParameter("@maChucVu", positionId),
-                    new MySqlParameter("@maQuyenHang", permissionId),
+                    new MySqlParameter("@maQuyenHan", permissionId),
                 });
 
             return rowChanged > 0;

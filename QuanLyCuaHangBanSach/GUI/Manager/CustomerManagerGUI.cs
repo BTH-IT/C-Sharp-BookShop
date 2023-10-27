@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using static Guna.UI2.Native.WinApi;
 
 namespace QuanLyCuaHangBanSach.GUI.Manager
 {
@@ -57,8 +58,8 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 							customer.GioiTinh,
 							customer.NamSinh,
 							customer.SoDienThoai,
-							customer.Diem,
-							customer.TrangThai == true ? "Đang hoạt động" : "Ngưng hoạt động",
+                            string.Format("{0:N0}", customer.Diem),
+                            customer.TrangThai == true ? "Đang hoạt động" : "Ngưng hoạt động",
                         });
 					}
 
@@ -292,5 +293,39 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 				Console.WriteLine(er);
 			}
 		}
+
+        private void dgvCustomer_SortCompare(object sender, DataGridViewSortCompareEventArgs e)
+        {
+            if (e.Column.Index == 6) // Check if sorting the last column
+            {
+                // Extract the values for sorting from the cell values
+                double value1 = GetSortingValue(e.CellValue1);
+                double value2 = GetSortingValue(e.CellValue2);
+
+                // Compare the extracted values
+                e.SortResult = value1.CompareTo(value2);
+
+                // Mark the comparison as handled to prevent default sorting
+                e.Handled = true;
+            }
+        }
+
+        private double GetSortingValue(object cellValue)
+        {
+            if (cellValue == null)
+                return 0;
+
+            // Extract the numerical value from the string (remove " VNĐ" and parse)
+            string stringValue = cellValue.ToString();
+            stringValue = stringValue.Replace(".", "").Replace(" VNĐ", "");
+
+            if (double.TryParse(stringValue, out double numericValue))
+            {
+                // Convert the numeric value to a sortable string
+                return numericValue;
+            }
+
+            return 0;
+        }
     }
 }

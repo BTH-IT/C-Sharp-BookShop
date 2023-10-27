@@ -76,9 +76,9 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                             "Không có",
                             StaffBUS.Instance.getById(customerBill.MaNhanVien.ToString()).Ten,
                             "Không có",
-                            "0",
+                            "0%",
                             customerBill.NgayLap.GetDateTimeFormats()[0],
-                            customerBill.TongTien,
+                            string.Format("{0:N0} VNĐ", customerBill.TongTien),
                         });
                         }
                         else
@@ -90,9 +90,9 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                             customer.SoDienThoai,
                             StaffBUS.Instance.getById(customerBill.MaNhanVien.ToString()).Ten,
                             "Không có",
-                            "0",
+                            "0%",
                             customerBill.NgayLap.GetDateTimeFormats()[0],
-                            customerBill.TongTien,
+                            string.Format("{0:N0} VNĐ", customerBill.TongTien),
                         });
                         }
                     }
@@ -109,7 +109,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                             sale.TenKhuyenMai,
                             sale.PhanTram + "%",
                             customerBill.NgayLap.GetDateTimeFormats()[0],
-                            customerBill.TongTien,
+                            string.Format("{0:N0} VNĐ", customerBill.TongTien),
                         });
                         }
                         else
@@ -123,7 +123,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                             sale.TenKhuyenMai,
                             sale.PhanTram + "%",
                             customerBill.NgayLap.GetDateTimeFormats()[0],
-                            customerBill.TongTien,
+                            string.Format("{0:N0} VNĐ", customerBill.TongTien),
                         });
                         }
                     }
@@ -635,6 +635,64 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                 using (CustomerBillPrintForm customerBillPrintForm = new CustomerBillPrintForm(Convert.ToInt32(row.Cells[1].Value)))
                 {
                     customerBillPrintForm.ShowDialog();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+        }
+
+        private void dgvCustomerBill_SortCompare(object sender, DataGridViewSortCompareEventArgs e)
+        {
+            if (e.Column.Index == dgvCustomerBill.Columns.Count - 1) // Check if sorting the last column
+            {
+                // Extract the values for sorting from the cell values
+                double value1 = GetSortingValue(e.CellValue1);
+                double value2 = GetSortingValue(e.CellValue2);
+
+                // Compare the extracted values
+                e.SortResult = value1.CompareTo(value2);
+
+                // Mark the comparison as handled to prevent default sorting
+                e.Handled = true;
+            }
+        }
+
+        private double GetSortingValue(object cellValue)
+        {
+            if (cellValue == null)
+                return 0;
+
+            // Extract the numerical value from the string (remove " VNĐ" and parse)
+            string stringValue = cellValue.ToString();
+            stringValue = stringValue.Replace(".", "").Replace(" VNĐ", "");
+
+            if (double.TryParse(stringValue, out double numericValue))
+            {
+                // Convert the numeric value to a sortable string
+                return numericValue;
+            }
+
+            return 0;
+        }
+
+        private void dgvCustomerBill_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (e.RowIndex < 0 || e.ColumnIndex <= 0)
+                {
+                    return;
+                }
+
+                DataGridViewRow row = this.dgvCustomerBill.Rows[e.RowIndex];
+
+                CustomerBillDTO customerBill = CustomerBillBUS.Instance.getById(row.Cells[1].Value.ToString());
+
+                using (ViewCustomerBillModal viewCustomerBillModal = new ViewCustomerBillModal(customerBill))
+                {
+                    viewCustomerBillModal.ShowDialog();
                 }
             }
             catch (Exception ex)

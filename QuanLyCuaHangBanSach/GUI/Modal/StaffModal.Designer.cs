@@ -113,7 +113,7 @@
             this.errorBirthYearMsg.AutoSize = true;
             this.errorBirthYearMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed SemiB", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.errorBirthYearMsg.ForeColor = System.Drawing.Color.Red;
-            this.errorBirthYearMsg.Location = new System.Drawing.Point(163, 49);
+            this.errorBirthYearMsg.Location = new System.Drawing.Point(156, 49);
             this.errorBirthYearMsg.Name = "errorBirthYearMsg";
             this.errorBirthYearMsg.Size = new System.Drawing.Size(0, 30);
             this.errorBirthYearMsg.TabIndex = 7;

@@ -226,9 +226,9 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
 			// Extract the numerical value from the string (remove " VNĐ" and parse)
 			string stringValue = cellValue.ToString();
-			stringValue = stringValue.Replace(".", "").Replace(" VNĐ", "");
+			stringValue = stringValue.Replace(",", "").Replace(" VNĐ", "");
 
-			if (double.TryParse(stringValue, out double numericValue))
+            if (double.TryParse(stringValue, out double numericValue))
 			{
 				// Convert the numeric value to a sortable string
 				return numericValue;

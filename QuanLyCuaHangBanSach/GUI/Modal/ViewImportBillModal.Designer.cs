@@ -32,23 +32,24 @@
             this.bookList = new System.Windows.Forms.FlowLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.staffCbx = new Guna.UI.WinForms.GunaComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label13 = new System.Windows.Forms.Label();
             this.supplierCbx = new Guna.UI.WinForms.GunaComboBox();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.cancelBtn = new Guna.UI.WinForms.GunaButton();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.totalPriceTxt = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.staffCbx = new Guna.UI.WinForms.GunaComboBox();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.cancelBtn = new Guna.UI.WinForms.GunaButton();
+            this.label3 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.panel6.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -93,6 +94,49 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(606, 686);
             this.flowLayoutPanel1.TabIndex = 16;
             // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.label5);
+            this.panel6.Controls.Add(this.staffCbx);
+            this.panel6.Location = new System.Drawing.Point(3, 3);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(594, 88);
+            this.panel6.TabIndex = 37;
+            // 
+            // label5
+            // 
+            this.label5.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label5.Location = new System.Drawing.Point(3, 3);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(145, 49);
+            this.label5.TabIndex = 31;
+            this.label5.Text = "Nhân viên:";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // staffCbx
+            // 
+            this.staffCbx.BackColor = System.Drawing.Color.Transparent;
+            this.staffCbx.BaseColor = System.Drawing.Color.White;
+            this.staffCbx.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.staffCbx.BorderSize = 1;
+            this.staffCbx.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.staffCbx.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.staffCbx.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.staffCbx.Enabled = false;
+            this.staffCbx.FocusedColor = System.Drawing.Color.Empty;
+            this.staffCbx.Font = new System.Drawing.Font("#9Slide03 Cabin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.staffCbx.ForeColor = System.Drawing.Color.Black;
+            this.staffCbx.FormattingEnabled = true;
+            this.staffCbx.ItemHeight = 30;
+            this.staffCbx.Location = new System.Drawing.Point(160, 12);
+            this.staffCbx.Name = "staffCbx";
+            this.staffCbx.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.staffCbx.OnHoverItemForeColor = System.Drawing.Color.White;
+            this.staffCbx.Radius = 6;
+            this.staffCbx.Size = new System.Drawing.Size(408, 36);
+            this.staffCbx.TabIndex = 32;
+            this.staffCbx.TabStop = false;
+            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.label13);
@@ -136,48 +180,9 @@
             this.supplierCbx.TabIndex = 26;
             this.supplierCbx.TabStop = false;
             // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.bookList);
-            this.panel4.Controls.Add(this.label2);
-            this.panel4.Location = new System.Drawing.Point(3, 285);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(594, 389);
-            this.panel4.TabIndex = 9;
-            // 
-            // cancelBtn
-            // 
-            this.cancelBtn.Animated = true;
-            this.cancelBtn.AnimationHoverSpeed = 0.05F;
-            this.cancelBtn.AnimationSpeed = 0.05F;
-            this.cancelBtn.BackColor = System.Drawing.Color.Transparent;
-            this.cancelBtn.BaseColor = System.Drawing.Color.White;
-            this.cancelBtn.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.cancelBtn.BorderSize = 2;
-            this.cancelBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cancelBtn.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.cancelBtn.FocusedColor = System.Drawing.Color.Empty;
-            this.cancelBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cancelBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.cancelBtn.Image = null;
-            this.cancelBtn.ImageSize = new System.Drawing.Size(20, 20);
-            this.cancelBtn.Location = new System.Drawing.Point(206, 775);
-            this.cancelBtn.Name = "cancelBtn";
-            this.cancelBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.cancelBtn.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.cancelBtn.OnHoverForeColor = System.Drawing.Color.White;
-            this.cancelBtn.OnHoverImage = null;
-            this.cancelBtn.OnPressedColor = System.Drawing.Color.White;
-            this.cancelBtn.Radius = 22;
-            this.cancelBtn.Size = new System.Drawing.Size(200, 50);
-            this.cancelBtn.TabIndex = 17;
-            this.cancelBtn.TabStop = false;
-            this.cancelBtn.Text = "Thoát";
-            this.cancelBtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
-            // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.totalPriceTxt);
             this.panel3.Controls.Add(this.panel5);
@@ -222,7 +227,7 @@
             this.totalPriceTxt.PlaceholderText = "Tổng tiền";
             this.totalPriceTxt.SelectedText = "";
             this.totalPriceTxt.ShadowDecoration.Parent = this.totalPriceTxt;
-            this.totalPriceTxt.Size = new System.Drawing.Size(414, 34);
+            this.totalPriceTxt.Size = new System.Drawing.Size(346, 34);
             this.totalPriceTxt.TabIndex = 34;
             // 
             // panel5
@@ -233,48 +238,55 @@
             this.panel5.Size = new System.Drawing.Size(414, 1);
             this.panel5.TabIndex = 8;
             // 
-            // panel6
+            // panel4
             // 
-            this.panel6.Controls.Add(this.label5);
-            this.panel6.Controls.Add(this.staffCbx);
-            this.panel6.Location = new System.Drawing.Point(3, 3);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(594, 88);
-            this.panel6.TabIndex = 37;
+            this.panel4.Controls.Add(this.bookList);
+            this.panel4.Controls.Add(this.label2);
+            this.panel4.Location = new System.Drawing.Point(3, 285);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(594, 389);
+            this.panel4.TabIndex = 9;
             // 
-            // label5
+            // cancelBtn
             // 
-            this.label5.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label5.Location = new System.Drawing.Point(3, 3);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(145, 49);
-            this.label5.TabIndex = 31;
-            this.label5.Text = "Nhân viên:";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.cancelBtn.Animated = true;
+            this.cancelBtn.AnimationHoverSpeed = 0.05F;
+            this.cancelBtn.AnimationSpeed = 0.05F;
+            this.cancelBtn.BackColor = System.Drawing.Color.Transparent;
+            this.cancelBtn.BaseColor = System.Drawing.Color.White;
+            this.cancelBtn.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.cancelBtn.BorderSize = 2;
+            this.cancelBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cancelBtn.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.cancelBtn.FocusedColor = System.Drawing.Color.Empty;
+            this.cancelBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cancelBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.cancelBtn.Image = null;
+            this.cancelBtn.ImageSize = new System.Drawing.Size(20, 20);
+            this.cancelBtn.Location = new System.Drawing.Point(206, 775);
+            this.cancelBtn.Name = "cancelBtn";
+            this.cancelBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.cancelBtn.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.cancelBtn.OnHoverForeColor = System.Drawing.Color.White;
+            this.cancelBtn.OnHoverImage = null;
+            this.cancelBtn.OnPressedColor = System.Drawing.Color.White;
+            this.cancelBtn.Radius = 22;
+            this.cancelBtn.Size = new System.Drawing.Size(200, 50);
+            this.cancelBtn.TabIndex = 17;
+            this.cancelBtn.TabStop = false;
+            this.cancelBtn.Text = "Thoát";
+            this.cancelBtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
             // 
-            // staffCbx
+            // label3
             // 
-            this.staffCbx.BackColor = System.Drawing.Color.Transparent;
-            this.staffCbx.BaseColor = System.Drawing.Color.White;
-            this.staffCbx.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.staffCbx.BorderSize = 1;
-            this.staffCbx.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.staffCbx.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.staffCbx.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.staffCbx.Enabled = false;
-            this.staffCbx.FocusedColor = System.Drawing.Color.Empty;
-            this.staffCbx.Font = new System.Drawing.Font("#9Slide03 Cabin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.staffCbx.ForeColor = System.Drawing.Color.Black;
-            this.staffCbx.FormattingEnabled = true;
-            this.staffCbx.ItemHeight = 30;
-            this.staffCbx.Location = new System.Drawing.Point(160, 12);
-            this.staffCbx.Name = "staffCbx";
-            this.staffCbx.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.staffCbx.OnHoverItemForeColor = System.Drawing.Color.White;
-            this.staffCbx.Radius = 6;
-            this.staffCbx.Size = new System.Drawing.Size(408, 36);
-            this.staffCbx.TabIndex = 32;
-            this.staffCbx.TabStop = false;
+            this.label3.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label3.Location = new System.Drawing.Point(518, 12);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(50, 36);
+            this.label3.TabIndex = 35;
+            this.label3.Text = "VNĐ";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // ViewImportBillModal
             // 
@@ -291,10 +303,10 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ViewImportBillModal";
             this.flowLayoutPanel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -317,5 +329,6 @@
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label5;
         private Guna.UI.WinForms.GunaComboBox staffCbx;
+        private System.Windows.Forms.Label label3;
     }
 }

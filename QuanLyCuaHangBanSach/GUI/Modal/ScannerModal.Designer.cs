@@ -34,6 +34,7 @@
             this.scanBtn = new Guna.UI2.WinForms.Guna2Button();
             this.label1 = new System.Windows.Forms.Label();
             this.cameraCbx = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,7 +60,7 @@
             this.scanBtn.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.scanBtn.ForeColor = System.Drawing.Color.White;
             this.scanBtn.HoverState.Parent = this.scanBtn;
-            this.scanBtn.Location = new System.Drawing.Point(335, 574);
+            this.scanBtn.Location = new System.Drawing.Point(542, 572);
             this.scanBtn.Name = "scanBtn";
             this.scanBtn.ShadowDecoration.Parent = this.scanBtn;
             this.scanBtn.Size = new System.Drawing.Size(180, 45);
@@ -97,11 +98,30 @@
             this.cameraCbx.TabIndex = 1;
             this.cameraCbx.SelectedIndexChanged += new System.EventHandler(this.cameraCbx_SelectedIndexChanged);
             // 
+            // guna2Button1
+            // 
+            this.guna2Button1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2Button1.BorderThickness = 1;
+            this.guna2Button1.CheckedState.Parent = this.guna2Button1;
+            this.guna2Button1.CustomImages.Parent = this.guna2Button1;
+            this.guna2Button1.FillColor = System.Drawing.Color.Transparent;
+            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2Button1.HoverState.Parent = this.guna2Button1;
+            this.guna2Button1.Location = new System.Drawing.Point(144, 572);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
+            this.guna2Button1.Size = new System.Drawing.Size(180, 45);
+            this.guna2Button1.TabIndex = 4;
+            this.guna2Button1.Text = "Hủy Scan";
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
+            // 
             // ScannerModal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(850, 647);
+            this.Controls.Add(this.guna2Button1);
             this.Controls.Add(this.scanBtn);
             this.Controls.Add(this.pictureBox);
             this.Controls.Add(this.cameraCbx);
@@ -125,5 +145,6 @@
         private Guna.UI2.WinForms.Guna2Button scanBtn;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2ComboBox cameraCbx;
+        private Guna.UI2.WinForms.Guna2Button guna2Button1;
     }
 }
