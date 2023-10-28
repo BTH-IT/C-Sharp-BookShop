@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data;
-using System.Windows.Markup;
 using MySql.Data.MySqlClient;
 using QuanLyCuaHangBanSach.BUS;
 using QuanLyCuaHangBanSach.DTO;
@@ -116,22 +114,6 @@ namespace QuanLyCuaHangBanSach.DAO
                 new MySqlParameter[] {
                     new MySqlParameter("@maQuyenHan", id),
                 });
-
-            /*if (rowChanged > 0)
-            {
-                List<PositionDTO> positionList = PositionBUS.Instance.getAllData();
-
-                sql = $@"UPDATE chitietphanquyen SET hienThi = 0 WHERE maChucVu=@maChucVu AND maQuyenHan=@maQuyenHan;";
-
-                foreach (PositionDTO position in positionList)
-                {
-                    DataProvider.Instance.ExecuteNonQuery(sql,
-                    new MySqlParameter[] {
-                        new MySqlParameter("@maChucVu", position.MaChucVu),
-                        new MySqlParameter("@maQuyenHan", id),
-                    });
-                }
-            }*/
 
             return rowChanged > 0;
         }

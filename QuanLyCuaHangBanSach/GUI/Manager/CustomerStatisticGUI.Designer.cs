@@ -83,6 +83,7 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.revenueLb = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomer)).BeginInit();
             this.optionPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -99,6 +100,7 @@
             this.gunaGradient2Panel1.SuspendLayout();
             this.gunaGradient2Panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // line1
@@ -145,10 +147,10 @@
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvCustomer.DefaultCellStyle = dataGridViewCellStyle8;
-            this.dgvCustomer.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dgvCustomer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvCustomer.EnableHeadersVisualStyles = false;
             this.dgvCustomer.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvCustomer.Location = new System.Drawing.Point(0, 68);
+            this.dgvCustomer.Location = new System.Drawing.Point(0, 62);
             this.dgvCustomer.Name = "dgvCustomer";
             dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
@@ -170,7 +172,7 @@
             this.dgvCustomer.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvCustomer.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvCustomer.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCustomer.Size = new System.Drawing.Size(1400, 772);
+            this.dgvCustomer.Size = new System.Drawing.Size(1280, 604);
             this.dgvCustomer.TabIndex = 23;
             this.dgvCustomer.TabStop = false;
             this.dgvCustomer.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna;
@@ -269,9 +271,9 @@
             this.optionPanel.Controls.Add(this.exportBtn);
             this.optionPanel.Controls.Add(this.refreshBtn);
             this.optionPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.optionPanel.Location = new System.Drawing.Point(0, 840);
+            this.optionPanel.Location = new System.Drawing.Point(0, 666);
             this.optionPanel.Name = "optionPanel";
-            this.optionPanel.Size = new System.Drawing.Size(1400, 54);
+            this.optionPanel.Size = new System.Drawing.Size(1280, 54);
             this.optionPanel.TabIndex = 24;
             // 
             // chartBtn
@@ -295,7 +297,7 @@
             this.chartBtn.Image = ((System.Drawing.Image)(resources.GetObject("chartBtn.Image")));
             this.chartBtn.ImageSize = new System.Drawing.Size(20, 20);
             this.chartBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.chartBtn.Location = new System.Drawing.Point(1292, 6);
+            this.chartBtn.Location = new System.Drawing.Point(1172, 6);
             this.chartBtn.Name = "chartBtn";
             this.chartBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.chartBtn.OnHoverBorderColor = System.Drawing.Color.Transparent;
@@ -330,7 +332,7 @@
             this.tableBtn.Image = ((System.Drawing.Image)(resources.GetObject("tableBtn.Image")));
             this.tableBtn.ImageSize = new System.Drawing.Size(20, 20);
             this.tableBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.tableBtn.Location = new System.Drawing.Point(1183, 6);
+            this.tableBtn.Location = new System.Drawing.Point(1063, 6);
             this.tableBtn.Name = "tableBtn";
             this.tableBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.tableBtn.OnHoverBorderColor = System.Drawing.Color.Transparent;
@@ -462,23 +464,19 @@
             // 
             // tablePanel
             // 
-            this.tablePanel.Controls.Add(this.closeBtn);
-            this.tablePanel.Controls.Add(this.searchInput);
-            this.tablePanel.Controls.Add(this.pictureBox1);
-            this.tablePanel.Controls.Add(this.gradientPanel1);
-            this.tablePanel.Controls.Add(this.line1);
             this.tablePanel.Controls.Add(this.dgvCustomer);
+            this.tablePanel.Controls.Add(this.panel1);
             this.tablePanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tablePanel.Location = new System.Drawing.Point(0, 0);
             this.tablePanel.Name = "tablePanel";
-            this.tablePanel.Size = new System.Drawing.Size(1400, 840);
+            this.tablePanel.Size = new System.Drawing.Size(1280, 666);
             this.tablePanel.TabIndex = 39;
             // 
             // closeBtn
             // 
             this.closeBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.closeBtn.Image = ((System.Drawing.Image)(resources.GetObject("closeBtn.Image")));
-            this.closeBtn.Location = new System.Drawing.Point(1328, 9);
+            this.closeBtn.Location = new System.Drawing.Point(1208, 9);
             this.closeBtn.Name = "closeBtn";
             this.closeBtn.Size = new System.Drawing.Size(69, 40);
             this.closeBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -497,7 +495,7 @@
             this.gradientPanel1.Controls.Add(this.panel4);
             this.gradientPanel1.Controls.Add(this.panel2);
             this.gradientPanel1.Controls.Add(this.label1);
-            this.gradientPanel1.Location = new System.Drawing.Point(986, 9);
+            this.gradientPanel1.Location = new System.Drawing.Point(866, 9);
             this.gradientPanel1.Name = "gradientPanel1";
             this.gradientPanel1.Size = new System.Drawing.Size(337, 40);
             this.gradientPanel1.TabIndex = 30;
@@ -612,7 +610,7 @@
             this.chartPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chartPanel.Location = new System.Drawing.Point(0, 0);
             this.chartPanel.Name = "chartPanel";
-            this.chartPanel.Size = new System.Drawing.Size(1400, 840);
+            this.chartPanel.Size = new System.Drawing.Size(1280, 666);
             this.chartPanel.TabIndex = 40;
             // 
             // elementHost1
@@ -808,12 +806,25 @@
             this.label8.TabIndex = 0;
             this.label8.Text = "Tổng doanh thu 6 tháng gần đây";
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.line1);
+            this.panel1.Controls.Add(this.closeBtn);
+            this.panel1.Controls.Add(this.searchInput);
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.gradientPanel1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1280, 62);
+            this.panel1.TabIndex = 52;
+            // 
             // CustomerStatisticGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 26F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
-            this.ClientSize = new System.Drawing.Size(1400, 894);
+            this.ClientSize = new System.Drawing.Size(1280, 720);
             this.Controls.Add(this.tablePanel);
             this.Controls.Add(this.chartPanel);
             this.Controls.Add(this.optionPanel);
@@ -844,6 +855,7 @@
             this.gunaGradient2Panel1.PerformLayout();
             this.gunaGradient2Panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
 		}
@@ -892,5 +904,6 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
 		private System.Windows.Forms.PictureBox closeBtn;
-	}
+        private System.Windows.Forms.Panel panel1;
+    }
 }
