@@ -14,9 +14,6 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
     public partial class BookTypeModal : Form
     {
         public BookTypeDTO updateBookType = null;
-        private bool isTouchBookTypeCbx = false;
-        private bool isTouchBookTypeTypeCbx = false;
-        private bool isTouchPublisherCbx = false;
         public bool isSubmitSuccess = false;
         public BookTypeModal(string title = "Thêm thể loại")
         {

@@ -58,12 +58,14 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStaff)).BeginInit();
             this.optionPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tablePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.closeBtn)).BeginInit();
             this.gradientPanel1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // line1
@@ -109,10 +111,10 @@
             dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvStaff.DefaultCellStyle = dataGridViewCellStyle7;
-            this.dgvStaff.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dgvStaff.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvStaff.EnableHeadersVisualStyles = false;
             this.dgvStaff.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvStaff.Location = new System.Drawing.Point(0, 73);
+            this.dgvStaff.Location = new System.Drawing.Point(0, 61);
             this.dgvStaff.Name = "dgvStaff";
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
@@ -134,7 +136,7 @@
             this.dgvStaff.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvStaff.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvStaff.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvStaff.Size = new System.Drawing.Size(1400, 767);
+            this.dgvStaff.Size = new System.Drawing.Size(1280, 605);
             this.dgvStaff.TabIndex = 23;
             this.dgvStaff.TabStop = false;
             this.dgvStaff.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna;
@@ -218,9 +220,9 @@
             this.optionPanel.Controls.Add(this.exportBtn);
             this.optionPanel.Controls.Add(this.refreshBtn);
             this.optionPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.optionPanel.Location = new System.Drawing.Point(0, 840);
+            this.optionPanel.Location = new System.Drawing.Point(0, 666);
             this.optionPanel.Name = "optionPanel";
-            this.optionPanel.Size = new System.Drawing.Size(1400, 54);
+            this.optionPanel.Size = new System.Drawing.Size(1280, 54);
             this.optionPanel.TabIndex = 24;
             // 
             // exportBtn
@@ -332,23 +334,19 @@
             // 
             // tablePanel
             // 
-            this.tablePanel.Controls.Add(this.closeBtn);
-            this.tablePanel.Controls.Add(this.searchInput);
-            this.tablePanel.Controls.Add(this.pictureBox1);
-            this.tablePanel.Controls.Add(this.gradientPanel1);
-            this.tablePanel.Controls.Add(this.line1);
             this.tablePanel.Controls.Add(this.dgvStaff);
+            this.tablePanel.Controls.Add(this.panel1);
             this.tablePanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tablePanel.Location = new System.Drawing.Point(0, 0);
             this.tablePanel.Name = "tablePanel";
-            this.tablePanel.Size = new System.Drawing.Size(1400, 840);
+            this.tablePanel.Size = new System.Drawing.Size(1280, 666);
             this.tablePanel.TabIndex = 39;
             // 
             // closeBtn
             // 
             this.closeBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.closeBtn.Image = ((System.Drawing.Image)(resources.GetObject("closeBtn.Image")));
-            this.closeBtn.Location = new System.Drawing.Point(1319, 9);
+            this.closeBtn.Location = new System.Drawing.Point(1199, 9);
             this.closeBtn.Name = "closeBtn";
             this.closeBtn.Size = new System.Drawing.Size(69, 40);
             this.closeBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -367,7 +365,7 @@
             this.gradientPanel1.Controls.Add(this.panel4);
             this.gradientPanel1.Controls.Add(this.panel2);
             this.gradientPanel1.Controls.Add(this.label1);
-            this.gradientPanel1.Location = new System.Drawing.Point(979, 11);
+            this.gradientPanel1.Location = new System.Drawing.Point(859, 11);
             this.gradientPanel1.Name = "gradientPanel1";
             this.gradientPanel1.Size = new System.Drawing.Size(337, 36);
             this.gradientPanel1.TabIndex = 30;
@@ -472,12 +470,25 @@
             this.label1.Text = "$";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.line1);
+            this.panel1.Controls.Add(this.gradientPanel1);
+            this.panel1.Controls.Add(this.closeBtn);
+            this.panel1.Controls.Add(this.searchInput);
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1280, 61);
+            this.panel1.TabIndex = 52;
+            // 
             // StaffStatisticGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 26F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
-            this.ClientSize = new System.Drawing.Size(1400, 894);
+            this.ClientSize = new System.Drawing.Size(1280, 720);
             this.Controls.Add(this.tablePanel);
             this.Controls.Add(this.optionPanel);
             this.Font = new System.Drawing.Font("#9Slide03 Cabin", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -493,6 +504,7 @@
             this.tablePanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.closeBtn)).EndInit();
             this.gradientPanel1.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
 		}
@@ -518,5 +530,6 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
 		private System.Windows.Forms.PictureBox closeBtn;
-	}
+        private System.Windows.Forms.Panel panel1;
+    }
 }

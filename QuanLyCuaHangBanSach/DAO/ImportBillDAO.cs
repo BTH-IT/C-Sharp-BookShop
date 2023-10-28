@@ -95,7 +95,14 @@ namespace QuanLyCuaHangBanSach.DAO
             // thêm sách
             if (rowChanged > 0)
             {
-                return BookBUS.Instance.createBookAmount(data.MaSach.ToString(), data.SoLuong);
+                sql = $@"UPDATE sach SET giaNhap=@giaNhap WHERE maSach=@maSach;";
+                rowChanged = DataProvider.Instance.ExecuteNonQuery(sql,
+                    new MySqlParameter[] {
+                        new MySqlParameter("@maSach", data.MaSach),
+                        new MySqlParameter("@giaNhap", data.DonGia),
+                    });
+
+                return rowChanged > 0 ? BookBUS.Instance.createBookAmount(data.MaSach.ToString(), data.SoLuong) : false;
             }
 
             return rowChanged > 0;
