@@ -85,10 +85,6 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 Console.WriteLine(ex);
             }
         }
-		private void statusSwitch_CheckedChanged(object sender, EventArgs e)
-		{
-
-		}
 		private void PermissionModal_Load(object sender, EventArgs e)
         {
             try
