@@ -184,5 +184,13 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 Console.WriteLine(er);
             }
         }
-    }
+
+		private void statusSwitch_CheckedChanged(object sender, EventArgs e)
+		{
+			if (this.statusSwitch.Checked)
+			{
+				this.statusSwitch.CheckedState.FillColor = Color.FromArgb(45, 210, 192);
+			}
+		}
+	}
 }

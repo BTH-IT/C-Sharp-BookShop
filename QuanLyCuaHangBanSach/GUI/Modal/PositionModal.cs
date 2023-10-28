@@ -67,7 +67,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
                 string positionName = this.positionNameTxt.Text;
                 string desc = this.descTxt.Text == "" ? "Không có" : this.descTxt.Text;
-                bool isActive = this.activeCkx.Checked;
+                bool isActive = this.statusSwitch.Checked;
 
                 int id = updatePosition != null ? updatePosition.MaChucVu : 0;
 
@@ -107,7 +107,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 {
                     this.positionNameTxt.Text = updatePosition.TenChucVu;
                     this.descTxt.Text = updatePosition.MoTa;
-                    this.activeCkx.Checked = updatePosition.TrangThai;
+                    this.statusSwitch.Checked = updatePosition.TrangThai;
                 }
             }
             catch (Exception ex)
@@ -115,5 +115,13 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 Console.WriteLine(ex);
             }
         }
-    }
+
+		private void statusSwitch_CheckedChanged(object sender, EventArgs e)
+		{
+            if(this.statusSwitch.Checked) 
+            {
+                this.statusSwitch.CheckedState.FillColor = Color.FromArgb(45, 210, 192);
+            }
+		}
+	}
 }

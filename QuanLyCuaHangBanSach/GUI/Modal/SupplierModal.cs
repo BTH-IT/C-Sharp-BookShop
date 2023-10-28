@@ -201,5 +201,13 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 new string[] { "required", "phone-number" }
             );
         }
-    }
+
+		private void statusSwitch_CheckedChanged(object sender, EventArgs e)
+		{
+			if (this.statusSwitch.Checked)
+			{
+				this.statusSwitch.CheckedState.FillColor = Color.FromArgb(45, 210, 192);
+			}
+		}
+	}
 }

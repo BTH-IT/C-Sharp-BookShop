@@ -127,6 +127,7 @@
             this.passwordTxt.ShadowDecoration.Parent = this.passwordTxt;
             this.passwordTxt.Size = new System.Drawing.Size(425, 36);
             this.passwordTxt.TabIndex = 3;
+            this.passwordTxt.TextChanged += new System.EventHandler(this.passwordTxt_TextChanged);
             // 
             // errorPasswordMsg
             // 
@@ -183,6 +184,7 @@
             this.emailTxt.ShadowDecoration.Parent = this.emailTxt;
             this.emailTxt.Size = new System.Drawing.Size(425, 36);
             this.emailTxt.TabIndex = 2;
+            this.emailTxt.TextChanged += new System.EventHandler(this.emailTxt_TextChanged);
             // 
             // errorEmailMsg
             // 
@@ -316,6 +318,7 @@
             this.confirmPasswordTxt.ShadowDecoration.Parent = this.confirmPasswordTxt;
             this.confirmPasswordTxt.Size = new System.Drawing.Size(425, 36);
             this.confirmPasswordTxt.TabIndex = 4;
+            this.confirmPasswordTxt.TextChanged += new System.EventHandler(this.confirmPasswordTxt_TextChanged);
             // 
             // errorConfirmPasswordMsg
             // 

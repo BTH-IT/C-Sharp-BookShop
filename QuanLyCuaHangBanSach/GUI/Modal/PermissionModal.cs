@@ -59,7 +59,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 if (!isValid) return;
 
                 string permissionName = this.permissionNameTxt.Text;
-                bool isActive = this.activeCkx.Checked;
+                bool isActive = this.statusSwitch.Checked;
 
                 int id = updatePermission != null ? updatePermission.MaQuyenHan : 0;
 
@@ -85,8 +85,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 Console.WriteLine(ex);
             }
         }
-
-        private void PermissionModal_Load(object sender, EventArgs e)
+		private void PermissionModal_Load(object sender, EventArgs e)
         {
             try
             {
@@ -98,7 +97,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 if (updatePermission != null)
                 {
                     this.permissionNameTxt.Text = updatePermission.TenQuyenHan;
-                    this.activeCkx.Checked = updatePermission.TrangThai;
+                    this.statusSwitch.Checked = updatePermission.TrangThai;
                 }
             }
             catch (Exception ex)
@@ -106,5 +105,13 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 Console.WriteLine(ex);
             }
         }
-    }
+
+		private void statusSwitch_CheckedChanged_1(object sender, EventArgs e)
+		{
+			if (this.statusSwitch.Checked)
+			{
+				this.statusSwitch.CheckedState.FillColor = Color.FromArgb(45, 210, 192);
+			}
+		}
+	}
 }
