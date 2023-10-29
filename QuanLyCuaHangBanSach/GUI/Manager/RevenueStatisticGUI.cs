@@ -12,45 +12,48 @@ using ZXing.QrCode.Internal;
 using Color = System.Drawing.Color;
 using QuanLyCuaHangBanSach.DAO;
 using System.Windows.Ink;
+using System.ComponentModel;
 
 namespace QuanLyCuaHangBanSach.GUI.Manager
 {
-    public partial class RevenueStatisticGUI : Form
+	public partial class RevenueStatisticGUI : Form
 	{
 		private int mode;
 
-        private Dictionary<int, string> stringMonth = new Dictionary<int, string>
-        {
-            { 1,  "Jan" },
-            { 2,  "Feb" },
-            { 3,  "Mar" },
-            { 4,  "Abr" },
-            { 5,  "May" },
-            { 6,  "Jun" },
-            { 7,  "Jul" },
-            { 8,  "Aug" },
-            { 9,  "Sep" },
-            { 10, "Oct" },
-            { 11, "Nov" },
-            { 12, "Dec" },
-        };
+		private Dictionary<int, string> stringMonth = new Dictionary<int, string>
+		{
+			{ 1,  "Jan" },
+			{ 2,  "Feb" },
+			{ 3,  "Mar" },
+			{ 4,  "Abr" },
+			{ 5,  "May" },
+			{ 6,  "Jun" },
+			{ 7,  "Jul" },
+			{ 8,  "Aug" },
+			{ 9,  "Sep" },
+			{ 10, "Oct" },
+			{ 11, "Nov" },
+			{ 12, "Dec" },
+		};
 
-        public RevenueStatisticGUI(int mode)
+		public RevenueStatisticGUI(int mode)
 		{
 			InitializeComponent();
 			this.mode = mode;
 
+			toDate.Value = DateTime.Now;
+
 			//
 			// Event Assign
 			//
-            revenueFrom.MouseLeave += searchInput_MouseLeave;
-            revenueTo.MouseLeave += searchInput_MouseLeave;
+			revenueFrom.MouseLeave += searchInput_MouseLeave;
+			revenueTo.MouseLeave += searchInput_MouseLeave;
 
-            revenueFrom.TextChanged += searchInput_TextChanged;
-            revenueTo.TextChanged += searchInput_TextChanged;
+			revenueFrom.TextChanged += searchInput_TextChanged;
+			revenueTo.TextChanged += searchInput_TextChanged;
 
-            revenueTo.KeyPress += revenueFrom_KeyPress;
-        }
+			revenueTo.KeyPress += revenueFrom_KeyPress;
+		}
 
 		private double RoundToNearestTenThousand(double money)
 		{
@@ -89,9 +92,9 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 				List<CustomerBillDTO> billList = CustomerBillBUS.Instance.getAllInRange(now.Year.ToString(), (month - 5).ToString(), month.ToString());
 				double tongTienBill = 0;
 				foreach (CustomerBillDTO bill in billList)
-                {
+				{
 					tongTienBill += bill.TongTien;
-                }
+				}
 				double maxValRounded = RoundToNearestTenThousand(tongTienBill);
 
 				List<string> strValueLabel = new List<string>();
@@ -177,7 +180,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 			return tongTien / km;
 		}
 
-        private void loadBillListToDataView(List<CustomerBillDTO> billList)
+		private void loadBillListToDataView(List<CustomerBillDTO> billList)
 		{
 			try
 			{
@@ -197,9 +200,11 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 							bill.MaKhuyenMai != 0 ? string.Format("{0:N0} VNĐ", DiscountMoneyCal(phanTramKM, bill.TongTien)) : "Không khuyến mãi",
 							string.Format("{0:N0} VNĐ", bill.TongTien)
 						});
-					} 
+					}
 				}
+				dgvBill.Sort(dgvBill.Columns["Column6"], System.ComponentModel.ListSortDirection.Descending);
 			}
+
 			catch (Exception ex)
 			{
 				Console.WriteLine(ex);
@@ -220,8 +225,8 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 				// Mark the comparison as handled to prevent default sorting
 				e.Handled = true;
 			}
-            if (e.Column.Index == dgvBill.Columns.Count - 2)
-            {
+			if (e.Column.Index == dgvBill.Columns.Count - 2)
+			{
 				// Extract the values for sorting from the cell values
 				double value1 = GetDiscountSortingValue(e.CellValue1);
 				double value2 = GetDiscountSortingValue(e.CellValue2);
@@ -232,7 +237,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 				// Mark the comparison as handled to prevent default sorting
 				e.Handled = true;
 			}
-        }
+		}
 
 		private double GetRevenueSortingValue(object cellValue)
 		{
@@ -258,12 +263,12 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
 			// Extract the numerical value from the string (remove " VNĐ" and parse)
 			string stringValue = cellValue.ToString();
-            if (stringValue.Equals("Không khuyến mãi"))
-            {
+			if (stringValue.Equals("Không khuyến mãi"))
+			{
 				return 0;
-            }
+			}
 
-            stringValue = stringValue.Replace(".", "").Replace(" VNĐ", "");
+			stringValue = stringValue.Replace(".", "").Replace(" VNĐ", "");
 
 			if (double.TryParse(stringValue, out double numericValue))
 			{
@@ -294,6 +299,25 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 			{
 				List<CustomerBillDTO> billList = CustomerBillBUS.Instance.search(query);
 
+                if (fromDateCkb.Checked && !toDateCkb.Checked)
+                {
+					DateTime fromDateVal = new DateTime(fromDate.Value.Year, fromDate.Value.Month, fromDate.Value.Day);
+					billList = billList.FindAll(bill => bill.NgayLap >= fromDateVal);
+				}
+
+				if (!fromDateCkb.Checked && toDateCkb.Checked)
+				{
+					DateTime toDateVal = new DateTime(toDate.Value.Year, toDate.Value.Month, toDate.Value.Day);
+					billList = billList.FindAll(bill => bill.NgayLap <= toDateVal);
+				}
+
+				if (fromDateCkb.Checked && toDateCkb.Checked)
+				{
+					DateTime fromDateVal = new DateTime(fromDate.Value.Year, fromDate.Value.Month, fromDate.Value.Day);
+					DateTime toDateVal = new DateTime(toDate.Value.Year, toDate.Value.Month, toDate.Value.Day);
+					billList = billList.FindAll(bill => bill.NgayLap >= fromDateVal && bill.NgayLap <= toDateVal);
+				}
+
 				if (!string.IsNullOrEmpty(revenueFrom.Text) && string.IsNullOrEmpty(revenueTo.Text))
 				{
 					billList = billList.FindAll(bill => bill.TongTien >= Convert.ToDouble(revenueFrom.Text));
@@ -322,10 +346,10 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 		{
 			try
 			{
-                List<CustomerBillDTO> billList = handleFilter(searchInput.Text);
+				List<CustomerBillDTO> billList = handleFilter(searchInput.Text);
 				loadBillListToDataView(billList);
 
-            }
+			}
 			catch (Exception ex)
 			{
 				Console.WriteLine(ex);
@@ -355,12 +379,12 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 		{
 			try
 			{
-                string[] headerList = new string[] { "Ngày lập hóa đơn", "Mã hóa đơn", "Khuyến mãi", "Doanh thu" };
+				string[] headerList = new string[] { "Ngày lập hóa đơn", "Mã hóa đơn", "Khuyến mãi", "Doanh thu" };
 
-                DataTable dt = CustomExcel.Instance.ConvertDataGridViewToDataTable(dgvBill);
+				DataTable dt = CustomExcel.Instance.ConvertDataGridViewToDataTable(dgvBill);
 
-                CustomExcel.Instance.ExportFileDatagridView(dt, "Book Manage", 0, "Cửa hàng bán sách", headerList);
-            }
+				CustomExcel.Instance.ExportFileDatagridView(dt, "Book Manage", 0, "Cửa hàng bán sách", headerList);
+			}
 			catch (Exception ex)
 			{
 				Console.WriteLine(ex);
@@ -379,56 +403,111 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 			catch (Exception ex) { Console.WriteLine(ex); }
 		}
 
-        private void searchInput_MouseLeave(object sender, EventArgs e)
-        {
+		private void searchInput_MouseLeave(object sender, EventArgs e)
+		{
 			try
 			{
 				optionPanel.Focus();
 			}
-            catch (Exception ex) { Console.WriteLine(ex); }
-        }
+			catch (Exception ex) { Console.WriteLine(ex); }
+		}
 
-        private void modeCheck_Tick(object sender, EventArgs e)
-        {
-            if (mode == 1)
-            {
+		private void modeCheck_Tick(object sender, EventArgs e)
+		{
+			if (mode == 1)
+			{
 				tablePanel.BringToFront();
 				tableBtn.Checked = true;
 				tableBtn.Cursor = Cursors.No;
 				chartBtn.Checked = false;
-                chartBtn.Cursor = Cursors.Default;
-                refreshBtn.Checked = false;
-                refreshBtn.Cursor = Cursors.Default;
-                exportBtn.Checked = false;
-                exportBtn.Cursor = Cursors.Default;
-            }
-            else
-            {
-                chartPanel.BringToFront();
+				chartBtn.Cursor = Cursors.Default;
+				refreshBtn.Checked = false;
+				refreshBtn.Cursor = Cursors.Default;
+				exportBtn.Checked = false;
+				exportBtn.Cursor = Cursors.Default;
+			}
+			else
+			{
+				chartPanel.BringToFront();
 				tableBtn.Checked = false;
 				tableBtn.Cursor = Cursors.Default;
 				chartBtn.Checked = true;
-                chartBtn.Cursor = Cursors.No;
+				chartBtn.Cursor = Cursors.No;
 				refreshBtn.Checked = true;
 				refreshBtn.Cursor = Cursors.No;
 				exportBtn.Checked = true;
 				exportBtn.Cursor = Cursors.No;
-            }
-        }
+			}
+		}
 
-        private void tableBtn_Click(object sender, EventArgs e)
-        {
+		private void tableBtn_Click(object sender, EventArgs e)
+		{
 			mode = 1;
-        }
+		}
 
-        private void chartBtn_Click(object sender, EventArgs e)
-        {
+		private void chartBtn_Click(object sender, EventArgs e)
+		{
 			mode = 2;
-        }
+		}
 
 		private void closeBtn_Click(object sender, EventArgs e)
 		{
 			Hide();
+		}
+
+		private void fromDateCkb_CheckedChanged(object sender, EventArgs e)
+		{
+			try
+			{
+				fromDate.Enabled = fromDate.Enabled ? false : true;
+				List<CustomerBillDTO> billList = handleFilter(searchInput.Text);
+				loadBillListToDataView(billList);
+			}
+			catch (Exception ex)
+			{
+				Console.WriteLine(ex);
+			}
+		}
+
+		private void toDateCkb_CheckedChanged(object sender, EventArgs e)
+		{
+			try
+			{
+				toDate.Enabled = toDate.Enabled ? false : true;
+				List<CustomerBillDTO> billList = handleFilter(searchInput.Text);
+				loadBillListToDataView(billList);
+			}
+			catch (Exception ex)
+			{
+				Console.WriteLine(ex);
+			}
+		}
+
+		private void fromDate_ValueChanged(object sender, EventArgs e)
+		{
+			try
+			{
+				List<CustomerBillDTO> billList = handleFilter(searchInput.Text);
+				loadBillListToDataView(billList);
+
+			}
+			catch (Exception ex)
+			{
+				Console.WriteLine(ex);
+			}
+		}
+
+		private void toDate_ValueChanged(object sender, EventArgs e)
+		{
+			try
+			{
+				List<CustomerBillDTO> billList = handleFilter(searchInput.Text);
+				loadBillListToDataView(billList);
+			}
+			catch (Exception ex)
+			{
+				Console.WriteLine(ex);
+			}
 		}
 	}
 }
