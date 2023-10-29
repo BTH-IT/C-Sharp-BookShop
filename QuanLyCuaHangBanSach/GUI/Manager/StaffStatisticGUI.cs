@@ -52,6 +52,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 						});
 					} 
 				}
+				dgvStaff.Sort(dgvStaff.Columns["Column1"], System.ComponentModel.ListSortDirection.Descending);
 			}
 			catch (Exception ex)
 			{

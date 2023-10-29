@@ -12,6 +12,7 @@ using ZXing.QrCode.Internal;
 using Color = System.Drawing.Color;
 using QuanLyCuaHangBanSach.DAO;
 using System.Windows.Ink;
+using System.IO;
 
 namespace QuanLyCuaHangBanSach.GUI.Manager
 {
@@ -189,13 +190,12 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 							book.MaSach,
 							book.TenSach,
 							book.HinhAnh,
-							string.Format("{0:N0} VNĐ", book.GiaBan),
-							string.Format("{0:N0} VNĐ", book.GiaNhap),
 							daBan,
 							string.Format("{0:N0} VNĐ", doanhThu)
 						});
 					} 
 				}
+				dgvBook.Sort(dgvBook.Columns["Column6"], System.ComponentModel.ListSortDirection.Descending);
 			}
 			catch (Exception ex)
 			{
@@ -205,7 +205,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
 		private void dgvBook_SortCompare(object sender, DataGridViewSortCompareEventArgs e)
 		{
-			if (e.Column.Index == dgvBook.Columns.Count - 1 || e.Column.Index == dgvBook.Columns.Count - 3 || e.Column.Index == dgvBook.Columns.Count - 4) // Check if sorting the last column
+			if (e.Column.Index == dgvBook.Columns.Count - 1) // Check if sorting the last column
 			{
 				// Extract the values for sorting from the cell values
 				double value1 = GetSortingValue(e.CellValue1);
