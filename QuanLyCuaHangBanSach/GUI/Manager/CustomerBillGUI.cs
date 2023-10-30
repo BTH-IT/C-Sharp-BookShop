@@ -700,5 +700,30 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                 Console.WriteLine(ex);
             }
         }
+
+        private void dgvCustomerBill_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (this.dgvCustomerBill.CurrentCell.RowIndex < 0)
+                {
+                    MessageBox.Show("Hãy chọn dòng dữ liệu muốn thao tác");
+                    return;
+                }
+
+                DataGridViewRow row = this.dgvCustomerBill.Rows[this.dgvCustomerBill.CurrentCell.RowIndex];
+
+                CustomerBillDTO customerBill = CustomerBillBUS.Instance.getById(row.Cells[1].Value.ToString());
+
+                using (ViewCustomerBillModal viewCustomerBillModal = new ViewCustomerBillModal(customerBill))
+                {
+                    viewCustomerBillModal.ShowDialog();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+        }
     }
 }

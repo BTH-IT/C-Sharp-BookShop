@@ -681,6 +681,7 @@
             this.dgvImportBill.ThemeStyle.RowsStyle.Height = 75;
             this.dgvImportBill.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvImportBill.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgvImportBill.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvImportBill_CellContentClick);
             this.dgvImportBill.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvImportBill_CellDoubleClick);
             this.dgvImportBill.SortCompare += new System.Windows.Forms.DataGridViewSortCompareEventHandler(this.dgvImportBill_SortCompare);
             // 

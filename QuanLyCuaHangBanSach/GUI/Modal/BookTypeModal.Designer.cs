@@ -231,7 +231,6 @@
             this.statusSwitch.UncheckedState.InnerBorderRadius = 8;
             this.statusSwitch.UncheckedState.InnerColor = System.Drawing.Color.White;
             this.statusSwitch.UncheckedState.Parent = this.statusSwitch;
-            this.statusSwitch.CheckedChanged += new System.EventHandler(this.statusSwitch_CheckedChanged);
             // 
             // label2
             // 

@@ -580,5 +580,30 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
             return 0;
         }
+
+        private void dgvImportBill_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (this.dgvImportBill.CurrentCell.RowIndex < 0)
+                {
+                    MessageBox.Show("Hãy chọn dòng dữ liệu muốn thao tác");
+                    return;
+                }
+
+                DataGridViewRow row = this.dgvImportBill.Rows[this.dgvImportBill.CurrentCell.RowIndex];
+
+                ImportBillDTO importBill = ImportBillBUS.Instance.getById(row.Cells[1].Value.ToString());
+
+                using (ViewImportBillModal viewImportBillModal = new ViewImportBillModal(importBill))
+                {
+                    viewImportBillModal.ShowDialog();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+        }
     }
 }
