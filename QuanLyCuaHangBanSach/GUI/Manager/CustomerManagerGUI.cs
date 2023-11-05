@@ -7,7 +7,6 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
-using static Guna.UI2.Native.WinApi;
 
 namespace QuanLyCuaHangBanSach.GUI.Manager
 {
@@ -58,8 +57,8 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 							customer.GioiTinh,
 							customer.NamSinh,
 							customer.SoDienThoai,
-                            string.Format("{0:N0}", customer.Diem),
-                            customer.TrangThai == true ? "Đang hoạt động" : "Ngưng hoạt động",
+							customer.Diem,
+                            customer.TrangThai ? "Đang hoạt động" : "Ngưng hoạt động",
                         });
 					}
 
@@ -162,6 +161,39 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             
         }
 
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+				DialogResult deleteDialogResult = MessageBox.Show(
+				 "Bạn có chắc chắn muốn xóa các khách hàng đã chọn",
+				 "Xác nhận",
+				 MessageBoxButtons.YesNo,
+				 MessageBoxIcon.None
+			 );
+				if (deleteDialogResult == DialogResult.Yes)
+				{
+
+					foreach (DataGridViewRow row in this.dgvCustomer.Rows)
+					{
+						if ((bool)row.Cells[0].Value)
+						{
+							CustomerBUS.Instance.delete(row.Cells[5].Value.ToString());
+
+						}
+					}
+
+					List<CustomerDTO> customers = this.handleFilter(this.searchInput.Text.ToString()); ;
+					this.loadCustomerListToDataGridView(customers);
+					MessageBox.Show("Xóa khách hàng thành công");
+				}
+			}
+            catch
+            {
+
+            }
+        }
+
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             try
@@ -184,24 +216,17 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
                 string selectedGender = this.genderCbx.SelectedItem.ToString();
 
-                if (customers != null)
+
+                List<CustomerDTO> newCustomers = customers.FindAll(authorList =>
                 {
-					List<CustomerDTO> newCustomers = customers.FindAll(authorList =>
-					{
-						if (selectedGender != "Chọn giới tính")
-						{
-							return authorList.GioiTinh == selectedGender;
-						}
-						return true;
-					}
-			         );
-					return newCustomers;
+                    if (selectedGender != "Chọn giới tính")
+                    {
+                        return authorList.GioiTinh == selectedGender;
+                    }
+                    return true;
                 }
-                else
-                {
-                    return customers;
-                }   
-              
+                );
+                return newCustomers;
             }
             catch
             {
@@ -227,8 +252,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         {
             try
             {
-                List<CustomerDTO> customers = CustomerBUS.Instance.getAllData();
-				//List<CustomerDTO> customers = handleFilter(this.searchInput.Text.ToString());
+				List<CustomerDTO> customers = handleFilter(this.searchInput.Text.ToString());
 				DataTable dataTable = CustomExcel.Instance.ConvertListToDataTable(customers);
 				string[] headerList = new string[] { "Mã khách hàng", "Tên khách hàng", "SĐT", "Giới tính", "Năm sinh" };
                 DataTable dt = CustomExcel.Instance.ConvertDataGridViewToDataTable(dgvCustomer);
@@ -282,50 +306,8 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
 		private void genderCbx_SelectedIndexChanged(object sender, EventArgs e)
 		{
-			try
-			{
-				List<CustomerDTO> customerList = handleFilter(this.searchInput.Text.ToString());
-				this.loadCustomerListToDataGridView(customerList);
-			}
-			catch (Exception er)
-			{
-
-				Console.WriteLine(er);
-			}
-		}
-
-        private void dgvCustomer_SortCompare(object sender, DataGridViewSortCompareEventArgs e)
-        {
-            if (e.Column.Index == 6) // Check if sorting the last column
-            {
-                // Extract the values for sorting from the cell values
-                double value1 = GetSortingValue(e.CellValue1);
-                double value2 = GetSortingValue(e.CellValue2);
-
-                // Compare the extracted values
-                e.SortResult = value1.CompareTo(value2);
-
-                // Mark the comparison as handled to prevent default sorting
-                e.Handled = true;
-            }
-        }
-
-        private double GetSortingValue(object cellValue)
-        {
-            if (cellValue == null)
-                return 0;
-
-            // Extract the numerical value from the string (remove " VNĐ" and parse)
-            string stringValue = cellValue.ToString();
-            stringValue = stringValue.Replace(".", "").Replace(" VNĐ", "");
-
-            if (double.TryParse(stringValue, out double numericValue))
-            {
-                // Convert the numeric value to a sortable string
-                return numericValue;
-            }
-
-            return 0;
+            List<CustomerDTO> customers = handleFilter(this.searchInput.Text.ToString());
+            this.loadCustomerListToDataGridView(customers);
         }
     }
 }

@@ -184,6 +184,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 		{
 			try
 			{
+				this.modeCheck.Start();
 				dgvBill.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(45, 210, 192);
 				dgvBill.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
 
@@ -442,17 +443,14 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
 		private void tableBtn_Click(object sender, EventArgs e)
 		{
+			if (!this.modeCheck.Enabled) this.modeCheck.Start();
 			mode = 1;
 		}
 
 		private void chartBtn_Click(object sender, EventArgs e)
 		{
+			if (!this.modeCheck.Enabled) this.modeCheck.Start();
 			mode = 2;
-		}
-
-		private void closeBtn_Click(object sender, EventArgs e)
-		{
-			Hide();
 		}
 
 		private void fromDateCkb_CheckedChanged(object sender, EventArgs e)
@@ -508,6 +506,12 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 			{
 				Console.WriteLine(ex);
 			}
+		}
+
+		private void closeBtn_Click(object sender, EventArgs e)
+		{
+			this.modeCheck.Stop();
+			Hide();
 		}
 	}
 }

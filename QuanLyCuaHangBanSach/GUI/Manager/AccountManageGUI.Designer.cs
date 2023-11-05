@@ -48,9 +48,11 @@
             this.matKhau = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.line1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAccount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -61,13 +63,15 @@
             this.panel1.Controls.Add(this.deleteBtn);
             this.panel1.Controls.Add(this.btnEdit);
             this.panel1.Controls.Add(this.btnAdd);
-            this.panel1.Location = new System.Drawing.Point(12, 832);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 630);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1376, 54);
+            this.panel1.Size = new System.Drawing.Size(1044, 54);
             this.panel1.TabIndex = 46;
             // 
             // btnExport
             // 
+            this.btnExport.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btnExport.AnimationHoverSpeed = 0.07F;
             this.btnExport.AnimationSpeed = 0.03F;
             this.btnExport.BackColor = System.Drawing.Color.Transparent;
@@ -101,6 +105,7 @@
             // 
             // btnRefresh
             // 
+            this.btnRefresh.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btnRefresh.AnimationHoverSpeed = 0.07F;
             this.btnRefresh.AnimationSpeed = 0.03F;
             this.btnRefresh.BackColor = System.Drawing.Color.Transparent;
@@ -118,7 +123,7 @@
             this.btnRefresh.Image = ((System.Drawing.Image)(resources.GetObject("btnRefresh.Image")));
             this.btnRefresh.ImageSize = new System.Drawing.Size(20, 20);
             this.btnRefresh.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnRefresh.Location = new System.Drawing.Point(3, 7);
+            this.btnRefresh.Location = new System.Drawing.Point(12, 7);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.btnRefresh.OnHoverBorderColor = System.Drawing.Color.Transparent;
@@ -134,6 +139,7 @@
             // 
             // deleteBtn
             // 
+            this.deleteBtn.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.deleteBtn.AnimationHoverSpeed = 0.07F;
             this.deleteBtn.AnimationSpeed = 0.03F;
             this.deleteBtn.BackColor = System.Drawing.Color.Transparent;
@@ -151,7 +157,7 @@
             this.deleteBtn.Image = ((System.Drawing.Image)(resources.GetObject("deleteBtn.Image")));
             this.deleteBtn.ImageSize = new System.Drawing.Size(20, 20);
             this.deleteBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.deleteBtn.Location = new System.Drawing.Point(1270, 6);
+            this.deleteBtn.Location = new System.Drawing.Point(954, 6);
             this.deleteBtn.Name = "deleteBtn";
             this.deleteBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.deleteBtn.OnHoverBorderColor = System.Drawing.Color.Transparent;
@@ -167,6 +173,7 @@
             // 
             // btnEdit
             // 
+            this.btnEdit.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btnEdit.AnimationHoverSpeed = 0.07F;
             this.btnEdit.AnimationSpeed = 0.03F;
             this.btnEdit.BackColor = System.Drawing.Color.Transparent;
@@ -184,7 +191,7 @@
             this.btnEdit.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit.Image")));
             this.btnEdit.ImageSize = new System.Drawing.Size(20, 20);
             this.btnEdit.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnEdit.Location = new System.Drawing.Point(1137, 6);
+            this.btnEdit.Location = new System.Drawing.Point(835, 6);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.btnEdit.OnHoverBorderColor = System.Drawing.Color.Transparent;
@@ -200,6 +207,7 @@
             // 
             // btnAdd
             // 
+            this.btnAdd.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btnAdd.AnimationHoverSpeed = 0.07F;
             this.btnAdd.AnimationSpeed = 0.03F;
             this.btnAdd.BackColor = System.Drawing.Color.Transparent;
@@ -217,7 +225,7 @@
             this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
             this.btnAdd.ImageSize = new System.Drawing.Size(20, 20);
             this.btnAdd.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnAdd.Location = new System.Drawing.Point(999, 6);
+            this.btnAdd.Location = new System.Drawing.Point(712, 6);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.btnAdd.OnHoverBorderColor = System.Drawing.Color.Transparent;
@@ -250,11 +258,11 @@
             this.searchInput.ForeColor = System.Drawing.Color.Black;
             this.searchInput.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.searchInput.HoverState.Parent = this.searchInput;
-            this.searchInput.Location = new System.Drawing.Point(19, 25);
+            this.searchInput.Location = new System.Drawing.Point(12, 16);
             this.searchInput.Margin = new System.Windows.Forms.Padding(4, 7, 4, 7);
             this.searchInput.Name = "searchInput";
             this.searchInput.PasswordChar = '\0';
-            this.searchInput.PlaceholderText = "Tìm kiếm theo tên nhân viên,email";
+            this.searchInput.PlaceholderText = "Tìm kiếm theo tên nhân viên, email";
             this.searchInput.SelectedText = "";
             this.searchInput.ShadowDecoration.Parent = this.searchInput;
             this.searchInput.Size = new System.Drawing.Size(266, 34);
@@ -296,9 +304,10 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvAccount.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvAccount.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvAccount.EnableHeadersVisualStyles = false;
             this.dgvAccount.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvAccount.Location = new System.Drawing.Point(12, 69);
+            this.dgvAccount.Location = new System.Drawing.Point(0, 63);
             this.dgvAccount.Name = "dgvAccount";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
@@ -320,7 +329,7 @@
             this.dgvAccount.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvAccount.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvAccount.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvAccount.Size = new System.Drawing.Size(1376, 757);
+            this.dgvAccount.Size = new System.Drawing.Size(1044, 621);
             this.dgvAccount.TabIndex = 45;
             this.dgvAccount.TabStop = false;
             this.dgvAccount.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna;
@@ -381,7 +390,7 @@
             // line1
             // 
             this.line1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(212)))), ((int)(((byte)(191)))));
-            this.line1.Location = new System.Drawing.Point(19, 60);
+            this.line1.Location = new System.Drawing.Point(19, 51);
             this.line1.Name = "line1";
             this.line1.Size = new System.Drawing.Size(302, 1);
             this.line1.TabIndex = 43;
@@ -389,24 +398,33 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(285, 28);
+            this.pictureBox1.Location = new System.Drawing.Point(285, 19);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(36, 30);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 44;
             this.pictureBox1.TabStop = false;
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.pictureBox1);
+            this.panel2.Controls.Add(this.searchInput);
+            this.panel2.Controls.Add(this.line1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1044, 63);
+            this.panel2.TabIndex = 48;
+            // 
             // AccountManageGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
-            this.ClientSize = new System.Drawing.Size(1400, 893);
-            this.Controls.Add(this.pictureBox1);
+            this.ClientSize = new System.Drawing.Size(1044, 684);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.searchInput);
             this.Controls.Add(this.dgvAccount);
-            this.Controls.Add(this.line1);
+            this.Controls.Add(this.panel2);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AccountManageGUI";
@@ -416,6 +434,7 @@
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAccount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -436,5 +455,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nhanVien;
         private System.Windows.Forms.DataGridViewTextBoxColumn eMail;
         private System.Windows.Forms.DataGridViewTextBoxColumn matKhau;
+        private System.Windows.Forms.Panel panel2;
     }
 }

@@ -1,4 +1,4 @@
-﻿using QuanLyCuaHangBanTacGia.GUI.Manager;
+﻿using QuanLyCuaHangBanSach.GUI.Manager;
 
 namespace QuanLyCuaHangBanSach.GUI.Manager
 {
@@ -55,10 +55,12 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             this.label1 = new System.Windows.Forms.Label();
             this.searchInput = new Guna.UI2.WinForms.Guna2TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.trangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPublisher)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // line1
@@ -97,7 +99,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             this.Column2,
             this.Column3,
             this.Column9,
-            this.trangThai});
+            this.Column4});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -106,9 +108,10 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvPublisher.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvPublisher.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvPublisher.EnableHeadersVisualStyles = false;
             this.dgvPublisher.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvPublisher.Location = new System.Drawing.Point(12, 69);
+            this.dgvPublisher.Location = new System.Drawing.Point(0, 63);
             this.dgvPublisher.Name = "dgvPublisher";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
@@ -130,7 +133,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             this.dgvPublisher.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvPublisher.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvPublisher.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPublisher.Size = new System.Drawing.Size(1376, 757);
+            this.dgvPublisher.Size = new System.Drawing.Size(1400, 831);
             this.dgvPublisher.TabIndex = 23;
             this.dgvPublisher.TabStop = false;
             this.dgvPublisher.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna;
@@ -210,9 +213,10 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             this.panel1.Controls.Add(this.refreshBtn);
             this.panel1.Controls.Add(this.editBtn);
             this.panel1.Controls.Add(this.addBtn);
-            this.panel1.Location = new System.Drawing.Point(12, 832);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 840);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1376, 54);
+            this.panel1.Size = new System.Drawing.Size(1400, 54);
             this.panel1.TabIndex = 24;
             // 
             // exportBtn
@@ -283,6 +287,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             // 
             // editBtn
             // 
+            this.editBtn.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.editBtn.AnimationHoverSpeed = 0.07F;
             this.editBtn.AnimationSpeed = 0.03F;
             this.editBtn.BackColor = System.Drawing.Color.Transparent;
@@ -300,7 +305,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             this.editBtn.Image = ((System.Drawing.Image)(resources.GetObject("editBtn.Image")));
             this.editBtn.ImageSize = new System.Drawing.Size(20, 20);
             this.editBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.editBtn.Location = new System.Drawing.Point(1253, 6);
+            this.editBtn.Location = new System.Drawing.Point(1275, 6);
             this.editBtn.Name = "editBtn";
             this.editBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.editBtn.OnHoverBorderColor = System.Drawing.Color.Transparent;
@@ -316,6 +321,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             // 
             // addBtn
             // 
+            this.addBtn.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.addBtn.AnimationHoverSpeed = 0.07F;
             this.addBtn.AnimationSpeed = 0.03F;
             this.addBtn.BackColor = System.Drawing.Color.Transparent;
@@ -333,7 +339,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             this.addBtn.Image = ((System.Drawing.Image)(resources.GetObject("addBtn.Image")));
             this.addBtn.ImageSize = new System.Drawing.Size(20, 20);
             this.addBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.addBtn.Location = new System.Drawing.Point(1130, 6);
+            this.addBtn.Location = new System.Drawing.Point(1152, 6);
             this.addBtn.Name = "addBtn";
             this.addBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.addBtn.OnHoverBorderColor = System.Drawing.Color.Transparent;
@@ -426,12 +432,23 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             this.pictureBox1.TabIndex = 22;
             this.pictureBox1.TabStop = false;
             // 
-            // trangThai
+            // panel5
             // 
-            this.trangThai.HeaderText = "Trạng Thái";
-            this.trangThai.MinimumWidth = 6;
-            this.trangThai.Name = "trangThai";
-            this.trangThai.ReadOnly = true;
+            this.panel5.Controls.Add(this.pictureBox1);
+            this.panel5.Controls.Add(this.line1);
+            this.panel5.Controls.Add(this.searchInput);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel5.Location = new System.Drawing.Point(0, 0);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(1400, 63);
+            this.panel5.TabIndex = 32;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Trạng Thái";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
             // 
             // PublisherGUI
             // 
@@ -439,11 +456,9 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
             this.ClientSize = new System.Drawing.Size(1400, 894);
-            this.Controls.Add(this.searchInput);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dgvPublisher);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.line1);
+            this.Controls.Add(this.panel5);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -454,6 +469,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             ((System.ComponentModel.ISupportInitialize)(this.dgvPublisher)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -478,6 +494,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private Guna.UI2.WinForms.Guna2TextBox searchInput;
-        private System.Windows.Forms.DataGridViewTextBoxColumn trangThai;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
     }
 }

@@ -137,7 +137,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                 List<ImportBillDTO> importBillList = ImportBillBUS.Instance.search(searchText);
 
                 if (this.fromPriceTxt.Text.ToString() != string.Empty
-                    && this.toPriceTxt.Text.ToString() != string.Empty)
+                    && this.toPriceTxt.Text.ToString() != string.Empty && this.gunaMediumCheckBox1.Checked)
                 {
                     Regex isNum = new Regex(@"^\d+$");
 
@@ -443,25 +443,9 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
         private void dgvImportBill_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            try
+            if (e.RowIndex < 0 || e.ColumnIndex <= 0)
             {
-                if (e.RowIndex < 0 || e.ColumnIndex <= 0)
-                {
-                    return;
-                }
-
-                DataGridViewRow row = this.dgvImportBill.Rows[e.RowIndex];
-
-                ImportBillDTO importBill = ImportBillBUS.Instance.getById(row.Cells[1].Value.ToString());
-
-                using (ViewImportBillModal viewImportBillModal = new ViewImportBillModal(importBill))
-                {
-                    viewImportBillModal.ShowDialog();
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex);
+                return;
             }
         }
 
@@ -471,6 +455,9 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             {
                 this.dateTimeFrom.Enabled = this.filterCkx.Checked;
                 this.dateTimeTo.Enabled = this.filterCkx.Checked;
+
+                this.fromPriceTxt.Enabled = this.gunaMediumCheckBox1.Checked;
+                this.toPriceTxt.Enabled = this.gunaMediumCheckBox1.Checked;
 
                 List<ImportBillDTO> importBillList = ImportBillBUS.Instance.getAllData();
                 this.loadImportBillListToDataView(importBillList);
@@ -548,6 +535,31 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             }
         }
 
+        private void dgvImportBill_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (this.dgvImportBill.CurrentCell.RowIndex < 0)
+                {
+                    MessageBox.Show("Hãy chọn dòng dữ liệu muốn thao tác");
+                    return;
+                }
+
+                DataGridViewRow row = this.dgvImportBill.Rows[this.dgvImportBill.CurrentCell.RowIndex];
+
+                ImportBillDTO importBill = ImportBillBUS.Instance.getById(row.Cells[1].Value.ToString());
+
+                using (ViewImportBillModal viewImportBillModal = new ViewImportBillModal(importBill))
+                {
+                    viewImportBillModal.ShowDialog();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+        }
+
         private void dgvImportBill_SortCompare(object sender, DataGridViewSortCompareEventArgs e)
         {
             if (e.Column.Index == dgvImportBill.Columns.Count - 1) // Check if sorting the last column
@@ -582,29 +594,10 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             return 0;
         }
 
-        private void dgvImportBill_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void gunaMediumCheckBox1_CheckedChanged(object sender, EventArgs e)
         {
-            try
-            {
-                if (this.dgvImportBill.CurrentCell.RowIndex < 0)
-                {
-                    MessageBox.Show("Hãy chọn dòng dữ liệu muốn thao tác");
-                    return;
-                }
-
-                DataGridViewRow row = this.dgvImportBill.Rows[this.dgvImportBill.CurrentCell.RowIndex];
-
-                ImportBillDTO importBill = ImportBillBUS.Instance.getById(row.Cells[1].Value.ToString());
-
-                using (ViewImportBillModal viewImportBillModal = new ViewImportBillModal(importBill))
-                {
-                    viewImportBillModal.ShowDialog();
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex);
-            }
+            this.fromPriceTxt.Enabled = this.gunaMediumCheckBox1.Checked;
+            this.toPriceTxt.Enabled = this.gunaMediumCheckBox1.Checked;
         }
 
         private void printPdfBtn_Click(object sender, EventArgs e)

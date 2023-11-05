@@ -19,10 +19,10 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         public StatisticMenuGUI()
         {
             InitializeComponent();
-            Controls.Add(ProductStatisticFrm);
-            Controls.Add(RevenueStatisticFrm);
-            Controls.Add(StaffStatisticFrm);
-            Controls.Add(CustomerStatisticFrm);
+            container.Controls.Add(ProductStatisticFrm);
+            container.Controls.Add(RevenueStatisticFrm);
+            container.Controls.Add(StaffStatisticFrm);
+			container.Controls.Add(CustomerStatisticFrm);
         }
 
         private void ProductPanel_Click(object sender, EventArgs e)

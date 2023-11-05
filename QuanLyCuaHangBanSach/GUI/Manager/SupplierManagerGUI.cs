@@ -3,12 +3,8 @@ using QuanLyCuaHangBanSach.DTO;
 using QuanLyCuaHangBanSach.GUI.Modal;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QuanLyCuaHangBanSach.GUI.Manager
@@ -59,13 +55,13 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                 foreach (SupplierDTO Supplier in SupplierList)
                 {
                     this.dgvSupplier.Rows.Add(new object[] {
-                        false,
-                        Supplier.MaNhaCungCap,
-                        Supplier.TenNhaCungCap,
-                        Supplier.DiaChi,
-                        Supplier.SoDienThoai,
-                        Supplier.TrangThai ? "Đang hoạt động" : "Ngưng hoạt động",
-                    });
+                    false,
+                    Supplier.MaNhaCungCap,
+                    Supplier.TenNhaCungCap,
+                    Supplier.DiaChi,
+                    Supplier.SoDienThoai,
+                    Supplier.TrangThai ? "Đang hoạt động" : "Ngưng hoạt động",
+                });
                 }
             }
             catch (Exception er)

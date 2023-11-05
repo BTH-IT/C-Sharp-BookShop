@@ -58,6 +58,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.panel6 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -67,6 +70,9 @@
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -93,10 +99,7 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
             this.panel3.Controls.Add(this.panel5);
-            this.panel3.Controls.Add(this.line1);
-            this.panel3.Controls.Add(this.staffPosition);
-            this.panel3.Controls.Add(this.staffName);
-            this.panel3.Controls.Add(this.staffImg);
+            this.panel3.Controls.Add(this.panel6);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel3.Location = new System.Drawing.Point(0, 36);
             this.panel3.Name = "panel3";
@@ -107,12 +110,12 @@
             // 
             this.panel5.AccessibleRole = System.Windows.Forms.AccessibleRole.ScrollBar;
             this.panel5.AutoScrollMargin = new System.Drawing.Size(0, 10);
-            this.panel5.Controls.Add(this.navBar);
             this.panel5.Controls.Add(this.panel4);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel5.Location = new System.Drawing.Point(0, 85);
+            this.panel5.Controls.Add(this.navBar);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel5.Location = new System.Drawing.Point(0, 94);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(236, 805);
+            this.panel5.Size = new System.Drawing.Size(236, 796);
             this.panel5.TabIndex = 6;
             // 
             // navBar
@@ -131,11 +134,11 @@
             this.navBar.Controls.Add(this.importBilBtn);
             this.navBar.Controls.Add(this.accountBtn);
             this.navBar.Controls.Add(this.homeBtn);
-            this.navBar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.navBar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.navBar.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.navBar.Location = new System.Drawing.Point(0, 0);
             this.navBar.Name = "navBar";
-            this.navBar.Size = new System.Drawing.Size(236, 747);
+            this.navBar.Size = new System.Drawing.Size(236, 796);
             this.navBar.TabIndex = 33;
             // 
             // bookBtn
@@ -632,7 +635,7 @@
             // 
             this.panel4.Controls.Add(this.backBtn);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(0, 753);
+            this.panel4.Location = new System.Drawing.Point(0, 744);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(236, 52);
             this.panel4.TabIndex = 32;
@@ -674,8 +677,9 @@
             // 
             // line1
             // 
+            this.line1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.line1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(212)))), ((int)(((byte)(212)))));
-            this.line1.Location = new System.Drawing.Point(0, 78);
+            this.line1.Location = new System.Drawing.Point(0, 80);
             this.line1.Name = "line1";
             this.line1.Size = new System.Drawing.Size(236, 1);
             this.line1.TabIndex = 5;
@@ -684,17 +688,18 @@
             // 
             this.staffPosition.AutoSize = true;
             this.staffPosition.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(115)))), ((int)(((byte)(115)))));
-            this.staffPosition.Location = new System.Drawing.Point(74, 42);
+            this.staffPosition.Location = new System.Drawing.Point(68, 43);
             this.staffPosition.Name = "staffPosition";
             this.staffPosition.Size = new System.Drawing.Size(122, 23);
             this.staffPosition.TabIndex = 2;
             this.staffPosition.Text = "Nhân viên quản lý";
+            this.staffPosition.Click += new System.EventHandler(this.staffPosition_Click);
             // 
             // staffName
             // 
             this.staffName.AutoSize = true;
             this.staffName.Font = new System.Drawing.Font("#9Slide03 Cabin Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.staffName.Location = new System.Drawing.Point(73, 15);
+            this.staffName.Location = new System.Drawing.Point(68, 12);
             this.staffName.Name = "staffName";
             this.staffName.Size = new System.Drawing.Size(149, 26);
             this.staffName.TabIndex = 1;
@@ -704,7 +709,7 @@
             // 
             this.staffImg.BaseColor = System.Drawing.Color.White;
             this.staffImg.Image = ((System.Drawing.Image)(resources.GetObject("staffImg.Image")));
-            this.staffImg.Location = new System.Drawing.Point(17, 15);
+            this.staffImg.Location = new System.Drawing.Point(12, 16);
             this.staffImg.Name = "staffImg";
             this.staffImg.Size = new System.Drawing.Size(50, 50);
             this.staffImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -715,6 +720,8 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
+            this.panel2.Controls.Add(this.pictureBox4);
+            this.panel2.Controls.Add(this.pictureBox3);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.pictureBox2);
             this.panel2.Controls.Add(this.pictureBox1);
@@ -759,6 +766,44 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(1522, 0);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(57, 36);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 3;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox4.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(1465, 0);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(57, 36);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 4;
+            this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.staffImg);
+            this.panel6.Controls.Add(this.staffName);
+            this.panel6.Controls.Add(this.staffPosition);
+            this.panel6.Controls.Add(this.line1);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel6.Location = new System.Drawing.Point(0, 0);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(236, 94);
+            this.panel6.TabIndex = 0;
+            // 
             // ManagerGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
@@ -774,7 +819,6 @@
             this.Load += new System.EventHandler(this.ManagerGUI_Load);
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.navBar.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
@@ -782,6 +826,10 @@
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -817,5 +865,8 @@
         private Guna.UI.WinForms.GunaAdvenceButton authorBtn;
         private Guna.UI.WinForms.GunaAdvenceButton bookBtn;
         private Guna.UI.WinForms.GunaAdvenceButton homeBtn;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Panel panel6;
     }
 }

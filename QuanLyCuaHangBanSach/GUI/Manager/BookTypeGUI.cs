@@ -8,7 +8,7 @@ using QuanLyCuaHangBanSach.DTO;
 using QuanLyCuaHangBanSach.GUI.Modal;
 using QuanLyCuaHangBanSach;
 
-namespace QuanLyCuaHangBanTacGia.GUI.Manager
+namespace QuanLyCuaHangBanSach.GUI.Manager
 {
     public partial class BookTypeGUI : Form
     {

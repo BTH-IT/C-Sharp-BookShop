@@ -143,7 +143,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                 List<CustomerDTO> customerList = CustomerBUS.Instance.getAllData();
 
                 customerList.Insert(0, new CustomerDTO(-1, "", "Tất cả khách hàng", "", 0, 0, false));
-                customerList.Insert(1, new CustomerDTO(0, "", "Không có", "", 0, 0, false));
+                customerList.Insert(1, new CustomerDTO(0, "", "Không có", "",0, 0, false));
 
                 this.customerCbx.ValueMember = "Ma";
                 this.customerCbx.DisplayMember = "SoDienThoai";
@@ -205,6 +205,9 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                 this.dateTimeFrom.Enabled = this.filterCkx.Checked;
                 this.dateTimeTo.Enabled = this.filterCkx.Checked;
 
+                this.fromPriceTxt.Enabled = this.gunaMediumCheckBox1.Checked;
+                this.toPriceTxt.Enabled = this.gunaMediumCheckBox1.Checked;
+
                 List<CustomerBillDTO> customerBillList = CustomerBillBUS.Instance.getAllData();
                 this.loadCustomerBillListToDataView(customerBillList);
 
@@ -245,7 +248,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                 List<CustomerBillDTO> customerBillList = CustomerBillBUS.Instance.search(searchText);
 
                 if (this.fromPriceTxt.Text.ToString() != string.Empty
-                    && this.toPriceTxt.Text.ToString() != string.Empty)
+                    && this.toPriceTxt.Text.ToString() != string.Empty && this.gunaMediumCheckBox1.Checked)
                 {
                     Regex isNum = new Regex(@"^\d+$");
 
@@ -677,7 +680,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             return 0;
         }
 
-        private void dgvCustomerBill_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvCustomerBill_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
@@ -701,29 +704,15 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             }
         }
 
-        private void dgvCustomerBill_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void panel6_Paint(object sender, PaintEventArgs e)
         {
-            try
-            {
-                if (this.dgvCustomerBill.CurrentCell.RowIndex < 0)
-                {
-                    MessageBox.Show("Hãy chọn dòng dữ liệu muốn thao tác");
-                    return;
-                }
 
-                DataGridViewRow row = this.dgvCustomerBill.Rows[this.dgvCustomerBill.CurrentCell.RowIndex];
+        }
 
-                CustomerBillDTO customerBill = CustomerBillBUS.Instance.getById(row.Cells[1].Value.ToString());
-
-                using (ViewCustomerBillModal viewCustomerBillModal = new ViewCustomerBillModal(customerBill))
-                {
-                    viewCustomerBillModal.ShowDialog();
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex);
-            }
+        private void gunaMediumCheckBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            this.fromPriceTxt.Enabled = this.gunaMediumCheckBox1.Checked;
+            this.toPriceTxt.Enabled = this.gunaMediumCheckBox1.Checked;
         }
     }
 }

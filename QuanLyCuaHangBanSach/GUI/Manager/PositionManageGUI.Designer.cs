@@ -50,9 +50,11 @@
             this.authorizeBtn = new Guna.UI.WinForms.GunaAdvenceButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPosition)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // searchInput
@@ -121,9 +123,10 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvPosition.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvPosition.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvPosition.EnableHeadersVisualStyles = false;
             this.dgvPosition.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvPosition.Location = new System.Drawing.Point(12, 49);
+            this.dgvPosition.Location = new System.Drawing.Point(0, 55);
             this.dgvPosition.Name = "dgvPosition";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
@@ -145,7 +148,7 @@
             this.dgvPosition.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvPosition.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvPosition.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPosition.Size = new System.Drawing.Size(1376, 774);
+            this.dgvPosition.Size = new System.Drawing.Size(1044, 575);
             this.dgvPosition.TabIndex = 43;
             this.dgvPosition.TabStop = false;
             this.dgvPosition.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna;
@@ -231,9 +234,10 @@
             this.panel1.Controls.Add(this.refreshBtn);
             this.panel1.Controls.Add(this.editBtn);
             this.panel1.Controls.Add(this.addBtn);
-            this.panel1.Location = new System.Drawing.Point(12, 829);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 630);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1376, 54);
+            this.panel1.Size = new System.Drawing.Size(1044, 54);
             this.panel1.TabIndex = 44;
             // 
             // exportBtn
@@ -255,7 +259,7 @@
             this.exportBtn.Image = ((System.Drawing.Image)(resources.GetObject("exportBtn.Image")));
             this.exportBtn.ImageSize = new System.Drawing.Size(20, 20);
             this.exportBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.exportBtn.Location = new System.Drawing.Point(116, 6);
+            this.exportBtn.Location = new System.Drawing.Point(121, 6);
             this.exportBtn.Name = "exportBtn";
             this.exportBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.exportBtn.OnHoverBorderColor = System.Drawing.Color.Transparent;
@@ -288,7 +292,7 @@
             this.refreshBtn.Image = ((System.Drawing.Image)(resources.GetObject("refreshBtn.Image")));
             this.refreshBtn.ImageSize = new System.Drawing.Size(20, 20);
             this.refreshBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.refreshBtn.Location = new System.Drawing.Point(3, 6);
+            this.refreshBtn.Location = new System.Drawing.Point(8, 6);
             this.refreshBtn.Name = "refreshBtn";
             this.refreshBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.refreshBtn.OnHoverBorderColor = System.Drawing.Color.Transparent;
@@ -304,6 +308,7 @@
             // 
             // editBtn
             // 
+            this.editBtn.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.editBtn.AnimationHoverSpeed = 0.07F;
             this.editBtn.AnimationSpeed = 0.03F;
             this.editBtn.BackColor = System.Drawing.Color.Transparent;
@@ -321,7 +326,7 @@
             this.editBtn.Image = ((System.Drawing.Image)(resources.GetObject("editBtn.Image")));
             this.editBtn.ImageSize = new System.Drawing.Size(20, 20);
             this.editBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.editBtn.Location = new System.Drawing.Point(1257, 7);
+            this.editBtn.Location = new System.Drawing.Point(919, 6);
             this.editBtn.Name = "editBtn";
             this.editBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.editBtn.OnHoverBorderColor = System.Drawing.Color.Transparent;
@@ -337,6 +342,7 @@
             // 
             // addBtn
             // 
+            this.addBtn.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.addBtn.AnimationHoverSpeed = 0.07F;
             this.addBtn.AnimationSpeed = 0.03F;
             this.addBtn.BackColor = System.Drawing.Color.Transparent;
@@ -354,7 +360,7 @@
             this.addBtn.Image = ((System.Drawing.Image)(resources.GetObject("addBtn.Image")));
             this.addBtn.ImageSize = new System.Drawing.Size(20, 20);
             this.addBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.addBtn.Location = new System.Drawing.Point(1134, 7);
+            this.addBtn.Location = new System.Drawing.Point(796, 6);
             this.addBtn.Name = "addBtn";
             this.addBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.addBtn.OnHoverBorderColor = System.Drawing.Color.Transparent;
@@ -370,6 +376,7 @@
             // 
             // authorizeBtn
             // 
+            this.authorizeBtn.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.authorizeBtn.AnimationHoverSpeed = 0.07F;
             this.authorizeBtn.AnimationSpeed = 0.03F;
             this.authorizeBtn.BackColor = System.Drawing.Color.Transparent;
@@ -387,7 +394,7 @@
             this.authorizeBtn.Image = ((System.Drawing.Image)(resources.GetObject("authorizeBtn.Image")));
             this.authorizeBtn.ImageSize = new System.Drawing.Size(20, 20);
             this.authorizeBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.authorizeBtn.Location = new System.Drawing.Point(1258, 8);
+            this.authorizeBtn.Location = new System.Drawing.Point(902, 8);
             this.authorizeBtn.Name = "authorizeBtn";
             this.authorizeBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.authorizeBtn.OnHoverBorderColor = System.Drawing.Color.Transparent;
@@ -420,18 +427,27 @@
             this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
             this.dataGridViewImageColumn1.Width = 108;
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.pictureBox1);
+            this.panel2.Controls.Add(this.line1);
+            this.panel2.Controls.Add(this.searchInput);
+            this.panel2.Controls.Add(this.authorizeBtn);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1044, 55);
+            this.panel2.TabIndex = 47;
+            // 
             // PositionManageGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
-            this.ClientSize = new System.Drawing.Size(1400, 890);
-            this.Controls.Add(this.authorizeBtn);
-            this.Controls.Add(this.searchInput);
+            this.ClientSize = new System.Drawing.Size(1044, 684);
             this.Controls.Add(this.dgvPosition);
-            this.Controls.Add(this.line1);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.panel2);
             this.Font = new System.Drawing.Font("#9Slide03 Cabin", 9F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -441,6 +457,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvPosition)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -463,5 +480,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private Guna.UI.WinForms.GunaAdvenceButton authorizeBtn;
+        private System.Windows.Forms.Panel panel2;
     }
 }

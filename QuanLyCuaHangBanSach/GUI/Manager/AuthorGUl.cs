@@ -6,9 +6,8 @@ using System.Windows.Forms;
 using QuanLyCuaHangBanSach.BUS;
 using QuanLyCuaHangBanSach.DTO;
 using QuanLyCuaHangBanSach.GUI.Modal;
-using QuanLyCuaHangBanSach;
 
-namespace QuanLyCuaHangBanTacGia.GUI.Manager
+namespace QuanLyCuaHangBanSach.GUI.Manager
 {
     public partial class AuthorGUI : Form
     {
@@ -200,7 +199,7 @@ namespace QuanLyCuaHangBanTacGia.GUI.Manager
                     return;
                 }
 
-                using (AuthorModal AuthorModal = new AuthorModal("Sửa tác giả"))
+                using (AuthorModal AuthorModal = new AuthorModal("Sửa sách"))
                 {
                     DataGridViewRow row = this.dgvAuthor.Rows[e.RowIndex];
 

@@ -8,7 +8,6 @@ using System.Drawing;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
-using static Guna.UI2.Native.WinApi;
 
 namespace QuanLyCuaHangBanSach.GUI.Manager
 {
@@ -61,11 +60,12 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 								staff.NamSinh,
 								staff.GioiTinh,
 								staff.SoDienThoai,
-                                string.Format("{0:N0} VNĐ", staff.Luong),
-                                PositionBUS.Instance.getById(staff.MaChucVu.ToString()).TenChucVu
+								staff.Luong.ToString() ,
+								PositionBUS.Instance.getById(staff.MaChucVu.ToString()).TenChucVu
 							}
 						);
 					}
+
 				}
 			}
             catch
@@ -369,79 +369,6 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 			catch { 
 			}	
             
-        }
-
-        private void dgvStaff_SortCompare(object sender, DataGridViewSortCompareEventArgs e)
-        {
-            if (e.Column.Index == 6) // Check if sorting the last column
-            {
-                // Extract the values for sorting from the cell values
-                double value1 = GetSortingValue(e.CellValue1);
-                double value2 = GetSortingValue(e.CellValue2);
-
-                // Compare the extracted values
-                e.SortResult = value1.CompareTo(value2);
-
-                // Mark the comparison as handled to prevent default sorting
-                e.Handled = true;
-            }
-        }
-
-        private double GetSortingValue(object cellValue)
-        {
-            if (cellValue == null)
-                return 0;
-
-            // Extract the numerical value from the string (remove " VNĐ" and parse)
-            string stringValue = cellValue.ToString();
-            stringValue = stringValue.Replace(".", "").Replace(" VNĐ", "");
-
-            if (double.TryParse(stringValue, out double numericValue))
-            {
-                // Convert the numeric value to a sortable string
-                return numericValue;
-            }
-
-            return 0;
-        }
-
-        private void dgvStaff_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            try
-            {
-                if (e.RowIndex < 0 || e.ColumnIndex <= 0)
-                {
-                    return;
-                }
-
-                using (StaffModal staffModal = new StaffModal("Sửa nhân viên"))
-                {
-                    DataGridViewRow row = this.dgvStaff.Rows[e.RowIndex];
-
-                    StaffDTO staff = StaffBUS.Instance.getById(row.Cells[1].Value.ToString());
-
-                    staffModal.staff = staff;
-
-                    if (staffModal.staff == null)
-                    {
-                        MessageBox.Show("Đã xảy ra lỗi vui lòng thử lại sau!!");
-                        return;
-                    }
-
-                    staffModal.ShowDialog();
-
-                    if (staffModal.isSubmitSuccess)
-                    {
-                        List<StaffDTO> staffList = handleFilter(this.searchInput.Text.ToString());
-
-                        this.loadDataToDataGridView(staffList);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex);
-            }
         }
     }
 }

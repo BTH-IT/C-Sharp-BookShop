@@ -36,24 +36,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BookManageGUI));
             this.line1 = new System.Windows.Forms.Panel();
             this.dgvBook = new Guna.UI.WinForms.GunaDataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.exportBtn = new Guna.UI.WinForms.GunaAdvenceButton();
-            this.refreshBtn = new Guna.UI.WinForms.GunaAdvenceButton();
-            this.deleteBtn = new Guna.UI.WinForms.GunaAdvenceButton();
-            this.editBtn = new Guna.UI.WinForms.GunaAdvenceButton();
-            this.addBtn = new Guna.UI.WinForms.GunaAdvenceButton();
-            this.authorCbx = new Guna.UI.WinForms.GunaComboBox();
-            this.bookTypeCbx = new Guna.UI.WinForms.GunaComboBox();
-            this.publisherCbx = new Guna.UI.WinForms.GunaComboBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.searchInput = new Guna.UI2.WinForms.Guna2TextBox();
-            this.gradientPanel1 = new QuanLyCuaHangBanSach.GradientPanel();
-            this.priceTo = new Guna.UI2.WinForms.Guna2TextBox();
-            this.priceFrom = new Guna.UI2.WinForms.Guna2TextBox();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.Column11 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,18 +47,38 @@
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.exportBtn = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.refreshBtn = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.deleteBtn = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.editBtn = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.addBtn = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.authorCbx = new Guna.UI.WinForms.GunaComboBox();
+            this.bookTypeCbx = new Guna.UI.WinForms.GunaComboBox();
+            this.publisherCbx = new Guna.UI.WinForms.GunaComboBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.searchInput = new Guna.UI2.WinForms.Guna2TextBox();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.gradientPanel1 = new QuanLyCuaHangBanSach.GradientPanel();
+            this.priceTo = new Guna.UI2.WinForms.Guna2TextBox();
+            this.priceFrom = new Guna.UI2.WinForms.Guna2TextBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBook)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel5.SuspendLayout();
             this.gradientPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // line1
             // 
             this.line1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(212)))), ((int)(((byte)(191)))));
-            this.line1.Location = new System.Drawing.Point(26, 44);
+            this.line1.Location = new System.Drawing.Point(26, 42);
             this.line1.Name = "line1";
-            this.line1.Size = new System.Drawing.Size(268, 1);
+            this.line1.Size = new System.Drawing.Size(211, 1);
             this.line1.TabIndex = 21;
             // 
             // dgvBook
@@ -121,9 +123,10 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvBook.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvBook.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvBook.EnableHeadersVisualStyles = false;
             this.dgvBook.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvBook.Location = new System.Drawing.Point(12, 69);
+            this.dgvBook.Location = new System.Drawing.Point(0, 61);
             this.dgvBook.Name = "dgvBook";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
@@ -145,7 +148,7 @@
             this.dgvBook.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvBook.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvBook.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvBook.Size = new System.Drawing.Size(1376, 757);
+            this.dgvBook.Size = new System.Drawing.Size(1044, 623);
             this.dgvBook.TabIndex = 23;
             this.dgvBook.TabStop = false;
             this.dgvBook.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna;
@@ -173,6 +176,105 @@
             this.dgvBook.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBook_CellDoubleClick);
             this.dgvBook.SortCompare += new System.Windows.Forms.DataGridViewSortCompareEventHandler(this.dgvBook_SortCompare);
             // 
+            // Column11
+            // 
+            this.Column11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Column11.FillWeight = 50F;
+            this.Column11.Frozen = true;
+            this.Column11.HeaderText = "";
+            this.Column11.MinimumWidth = 50;
+            this.Column11.Name = "Column11";
+            this.Column11.Width = 50;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Mã Sách";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column1.ToolTipText = "Mã Sách";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Tên Sách";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column2.ToolTipText = "Tên Sách";
+            // 
+            // Column10
+            // 
+            this.Column10.HeaderText = "Hình Ảnh";
+            this.Column10.Image = ((System.Drawing.Image)(resources.GetObject("Column10.Image")));
+            this.Column10.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.Column10.MinimumWidth = 80;
+            this.Column10.Name = "Column10";
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Tác Giả";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column3.ToolTipText = "Tác Giả";
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Thể Loại";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column4.ToolTipText = "Thể Loại";
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Nhà Xuất Bản";
+            this.Column5.MinimumWidth = 6;
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            this.Column5.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column5.ToolTipText = "Nhà Xuất Bản";
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "Giá Bán";
+            this.Column7.MinimumWidth = 6;
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            this.Column7.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column7.ToolTipText = "Giá Bán";
+            // 
+            // Column8
+            // 
+            this.Column8.HeaderText = "Giá Nhập";
+            this.Column8.MinimumWidth = 6;
+            this.Column8.Name = "Column8";
+            this.Column8.ReadOnly = true;
+            this.Column8.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column8.ToolTipText = "Giá Nhập";
+            // 
+            // Column9
+            // 
+            this.Column9.HeaderText = "Năm Xuất Bản";
+            this.Column9.MinimumWidth = 6;
+            this.Column9.Name = "Column9";
+            this.Column9.ReadOnly = true;
+            this.Column9.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column9.ToolTipText = "Năm Xuất Bản";
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Còn Lại";
+            this.Column6.MinimumWidth = 6;
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            this.Column6.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column6.ToolTipText = "Còn Lại";
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
@@ -181,9 +283,10 @@
             this.panel1.Controls.Add(this.deleteBtn);
             this.panel1.Controls.Add(this.editBtn);
             this.panel1.Controls.Add(this.addBtn);
-            this.panel1.Location = new System.Drawing.Point(12, 832);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 630);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1376, 54);
+            this.panel1.Size = new System.Drawing.Size(1044, 54);
             this.panel1.TabIndex = 24;
             // 
             // exportBtn
@@ -254,6 +357,7 @@
             // 
             // deleteBtn
             // 
+            this.deleteBtn.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.deleteBtn.AnimationHoverSpeed = 0.07F;
             this.deleteBtn.AnimationSpeed = 0.03F;
             this.deleteBtn.BackColor = System.Drawing.Color.Transparent;
@@ -271,7 +375,7 @@
             this.deleteBtn.Image = ((System.Drawing.Image)(resources.GetObject("deleteBtn.Image")));
             this.deleteBtn.ImageSize = new System.Drawing.Size(20, 20);
             this.deleteBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.deleteBtn.Location = new System.Drawing.Point(1288, 6);
+            this.deleteBtn.Location = new System.Drawing.Point(956, 6);
             this.deleteBtn.Name = "deleteBtn";
             this.deleteBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.deleteBtn.OnHoverBorderColor = System.Drawing.Color.Transparent;
@@ -287,6 +391,7 @@
             // 
             // editBtn
             // 
+            this.editBtn.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.editBtn.AnimationHoverSpeed = 0.07F;
             this.editBtn.AnimationSpeed = 0.03F;
             this.editBtn.BackColor = System.Drawing.Color.Transparent;
@@ -304,7 +409,7 @@
             this.editBtn.Image = ((System.Drawing.Image)(resources.GetObject("editBtn.Image")));
             this.editBtn.ImageSize = new System.Drawing.Size(20, 20);
             this.editBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.editBtn.Location = new System.Drawing.Point(1169, 6);
+            this.editBtn.Location = new System.Drawing.Point(837, 6);
             this.editBtn.Name = "editBtn";
             this.editBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.editBtn.OnHoverBorderColor = System.Drawing.Color.Transparent;
@@ -320,6 +425,7 @@
             // 
             // addBtn
             // 
+            this.addBtn.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.addBtn.AnimationHoverSpeed = 0.07F;
             this.addBtn.AnimationSpeed = 0.03F;
             this.addBtn.BackColor = System.Drawing.Color.Transparent;
@@ -337,7 +443,7 @@
             this.addBtn.Image = ((System.Drawing.Image)(resources.GetObject("addBtn.Image")));
             this.addBtn.ImageSize = new System.Drawing.Size(20, 20);
             this.addBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.addBtn.Location = new System.Drawing.Point(1046, 6);
+            this.addBtn.Location = new System.Drawing.Point(714, 6);
             this.addBtn.Name = "addBtn";
             this.addBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.addBtn.OnHoverBorderColor = System.Drawing.Color.Transparent;
@@ -353,6 +459,7 @@
             // 
             // authorCbx
             // 
+            this.authorCbx.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.authorCbx.BackColor = System.Drawing.Color.Transparent;
             this.authorCbx.BaseColor = System.Drawing.Color.White;
             this.authorCbx.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
@@ -365,18 +472,19 @@
             this.authorCbx.ForeColor = System.Drawing.Color.Black;
             this.authorCbx.FormattingEnabled = true;
             this.authorCbx.ItemHeight = 30;
-            this.authorCbx.Location = new System.Drawing.Point(525, 10);
+            this.authorCbx.Location = new System.Drawing.Point(270, 7);
             this.authorCbx.Name = "authorCbx";
             this.authorCbx.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.authorCbx.OnHoverItemForeColor = System.Drawing.Color.White;
             this.authorCbx.Radius = 6;
-            this.authorCbx.Size = new System.Drawing.Size(175, 36);
+            this.authorCbx.Size = new System.Drawing.Size(134, 36);
             this.authorCbx.TabIndex = 25;
             this.authorCbx.TabStop = false;
             this.authorCbx.SelectedIndexChanged += new System.EventHandler(this.authorCbx_SelectedIndexChanged);
             // 
             // bookTypeCbx
             // 
+            this.bookTypeCbx.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.bookTypeCbx.BackColor = System.Drawing.Color.Transparent;
             this.bookTypeCbx.BaseColor = System.Drawing.Color.White;
             this.bookTypeCbx.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
@@ -389,18 +497,19 @@
             this.bookTypeCbx.ForeColor = System.Drawing.Color.Black;
             this.bookTypeCbx.FormattingEnabled = true;
             this.bookTypeCbx.ItemHeight = 30;
-            this.bookTypeCbx.Location = new System.Drawing.Point(706, 10);
+            this.bookTypeCbx.Location = new System.Drawing.Point(410, 7);
             this.bookTypeCbx.Name = "bookTypeCbx";
             this.bookTypeCbx.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.bookTypeCbx.OnHoverItemForeColor = System.Drawing.Color.White;
             this.bookTypeCbx.Radius = 6;
-            this.bookTypeCbx.Size = new System.Drawing.Size(166, 36);
+            this.bookTypeCbx.Size = new System.Drawing.Size(149, 36);
             this.bookTypeCbx.TabIndex = 26;
             this.bookTypeCbx.TabStop = false;
             this.bookTypeCbx.SelectedIndexChanged += new System.EventHandler(this.bookTypeCbx_SelectedIndexChanged);
             // 
             // publisherCbx
             // 
+            this.publisherCbx.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.publisherCbx.BackColor = System.Drawing.Color.Transparent;
             this.publisherCbx.BaseColor = System.Drawing.Color.White;
             this.publisherCbx.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
@@ -414,13 +523,13 @@
             this.publisherCbx.FormattingEnabled = true;
             this.publisherCbx.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.publisherCbx.ItemHeight = 30;
-            this.publisherCbx.Location = new System.Drawing.Point(878, 10);
+            this.publisherCbx.Location = new System.Drawing.Point(565, 7);
             this.publisherCbx.Margin = new System.Windows.Forms.Padding(3, 3, 100, 3);
             this.publisherCbx.Name = "publisherCbx";
             this.publisherCbx.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.publisherCbx.OnHoverItemForeColor = System.Drawing.Color.White;
             this.publisherCbx.Radius = 6;
-            this.publisherCbx.Size = new System.Drawing.Size(200, 36);
+            this.publisherCbx.Size = new System.Drawing.Size(163, 36);
             this.publisherCbx.TabIndex = 27;
             this.publisherCbx.TabStop = false;
             this.publisherCbx.SelectedIndexChanged += new System.EventHandler(this.publisherCbx_SelectedIndexChanged);
@@ -428,7 +537,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(258, 11);
+            this.pictureBox1.Location = new System.Drawing.Point(201, 9);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(36, 30);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -461,12 +570,28 @@
             this.searchInput.PlaceholderText = "Tìm kiếm theo mã, tên";
             this.searchInput.SelectedText = "";
             this.searchInput.ShadowDecoration.Parent = this.searchInput;
-            this.searchInput.Size = new System.Drawing.Size(236, 36);
+            this.searchInput.Size = new System.Drawing.Size(179, 30);
             this.searchInput.TabIndex = 31;
             this.searchInput.TextChanged += new System.EventHandler(this.searchInput_TextChanged);
             // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.searchInput);
+            this.panel5.Controls.Add(this.bookTypeCbx);
+            this.panel5.Controls.Add(this.gradientPanel1);
+            this.panel5.Controls.Add(this.authorCbx);
+            this.panel5.Controls.Add(this.line1);
+            this.panel5.Controls.Add(this.pictureBox1);
+            this.panel5.Controls.Add(this.publisherCbx);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel5.Location = new System.Drawing.Point(0, 0);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(1044, 61);
+            this.panel5.TabIndex = 32;
+            // 
             // gradientPanel1
             // 
+            this.gradientPanel1.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.gradientPanel1.ColorLeft = System.Drawing.Color.Empty;
             this.gradientPanel1.ColorRight = System.Drawing.Color.Empty;
             this.gradientPanel1.Controls.Add(this.priceTo);
@@ -475,7 +600,7 @@
             this.gradientPanel1.Controls.Add(this.panel4);
             this.gradientPanel1.Controls.Add(this.panel2);
             this.gradientPanel1.Controls.Add(this.label1);
-            this.gradientPanel1.Location = new System.Drawing.Point(1097, 11);
+            this.gradientPanel1.Location = new System.Drawing.Point(743, 7);
             this.gradientPanel1.Name = "gradientPanel1";
             this.gradientPanel1.Size = new System.Drawing.Size(291, 36);
             this.gradientPanel1.TabIndex = 30;
@@ -579,138 +704,15 @@
             this.label1.Text = "$";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // Column11
-            // 
-            this.Column11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Column11.FillWeight = 50F;
-            this.Column11.Frozen = true;
-            this.Column11.HeaderText = "";
-            this.Column11.MinimumWidth = 50;
-            this.Column11.Name = "Column11";
-            this.Column11.Width = 50;
-            // 
-            // Column1
-            // 
-            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Column1.HeaderText = "Mã Sách";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column1.ToolTipText = "Mã Sách";
-            this.Column1.Width = 136;
-            // 
-            // Column2
-            // 
-            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Column2.HeaderText = "Tên Sách";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column2.ToolTipText = "Tên Sách";
-            this.Column2.Width = 137;
-            // 
-            // Column10
-            // 
-            this.Column10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Column10.HeaderText = "Hình Ảnh";
-            this.Column10.Image = ((System.Drawing.Image)(resources.GetObject("Column10.Image")));
-            this.Column10.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
-            this.Column10.MinimumWidth = 80;
-            this.Column10.Name = "Column10";
-            this.Column10.Width = 80;
-            // 
-            // Column3
-            // 
-            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Column3.HeaderText = "Tác Giả";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column3.ToolTipText = "Tác Giả";
-            this.Column3.Width = 137;
-            // 
-            // Column4
-            // 
-            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Column4.HeaderText = "Thể Loại";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            this.Column4.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column4.ToolTipText = "Thể Loại";
-            this.Column4.Width = 136;
-            // 
-            // Column5
-            // 
-            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Column5.HeaderText = "Nhà Xuất Bản";
-            this.Column5.MinimumWidth = 6;
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            this.Column5.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column5.ToolTipText = "Nhà Xuất Bản";
-            this.Column5.Width = 137;
-            // 
-            // Column7
-            // 
-            this.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Column7.HeaderText = "Giá Bán";
-            this.Column7.MinimumWidth = 6;
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
-            this.Column7.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column7.ToolTipText = "Giá Bán";
-            this.Column7.Width = 137;
-            // 
-            // Column8
-            // 
-            this.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Column8.HeaderText = "Giá Nhập";
-            this.Column8.MinimumWidth = 6;
-            this.Column8.Name = "Column8";
-            this.Column8.ReadOnly = true;
-            this.Column8.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column8.ToolTipText = "Giá Nhập";
-            this.Column8.Width = 136;
-            // 
-            // Column9
-            // 
-            this.Column9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Column9.HeaderText = "Năm Xuất Bản";
-            this.Column9.MinimumWidth = 6;
-            this.Column9.Name = "Column9";
-            this.Column9.ReadOnly = true;
-            this.Column9.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column9.ToolTipText = "Năm Xuất Bản";
-            this.Column9.Width = 137;
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Còn Lại";
-            this.Column6.MinimumWidth = 6;
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            this.Column6.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column6.ToolTipText = "Còn Lại";
-            // 
             // BookManageGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
-            this.ClientSize = new System.Drawing.Size(1400, 895);
-            this.Controls.Add(this.searchInput);
-            this.Controls.Add(this.gradientPanel1);
-            this.Controls.Add(this.publisherCbx);
-            this.Controls.Add(this.bookTypeCbx);
-            this.Controls.Add(this.authorCbx);
+            this.ClientSize = new System.Drawing.Size(1044, 684);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dgvBook);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.line1);
+            this.Controls.Add(this.panel5);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -721,6 +723,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvBook)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel5.ResumeLayout(false);
             this.gradientPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -747,6 +750,7 @@
         private Guna.UI2.WinForms.Guna2TextBox searchInput;
         private Guna.UI2.WinForms.Guna2TextBox priceTo;
         private Guna.UI2.WinForms.Guna2TextBox priceFrom;
+        private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Column11;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;

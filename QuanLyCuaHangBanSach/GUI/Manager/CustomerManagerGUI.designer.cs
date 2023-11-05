@@ -45,16 +45,17 @@
             this.gioi_tinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nam_sinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.so_dien_thoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.diem = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.trangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.line1 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.editBtn = new Guna.UI.WinForms.GunaAdvenceButton();
             this.addBtn = new Guna.UI.WinForms.GunaAdvenceButton();
             this.genderCbx = new Guna.UI.WinForms.GunaComboBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomer)).BeginInit();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // searchInput
@@ -76,21 +77,21 @@
             this.searchInput.ForeColor = System.Drawing.Color.Black;
             this.searchInput.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.searchInput.HoverState.Parent = this.searchInput;
-            this.searchInput.Location = new System.Drawing.Point(15, 12);
+            this.searchInput.Location = new System.Drawing.Point(15, 13);
             this.searchInput.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.searchInput.Name = "searchInput";
             this.searchInput.PasswordChar = '\0';
             this.searchInput.PlaceholderText = "Tìm kiếm theo mã, tên,SĐT";
             this.searchInput.SelectedText = "";
             this.searchInput.ShadowDecoration.Parent = this.searchInput;
-            this.searchInput.Size = new System.Drawing.Size(236, 36);
+            this.searchInput.Size = new System.Drawing.Size(244, 30);
             this.searchInput.TabIndex = 40;
             this.searchInput.TextChanged += new System.EventHandler(this.searchInput_TextChanged);
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(258, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(266, 13);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(36, 30);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -116,7 +117,7 @@
             this.btnExport.Image = ((System.Drawing.Image)(resources.GetObject("btnExport.Image")));
             this.btnExport.ImageSize = new System.Drawing.Size(20, 20);
             this.btnExport.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnExport.Location = new System.Drawing.Point(116, 6);
+            this.btnExport.Location = new System.Drawing.Point(122, 6);
             this.btnExport.Name = "btnExport";
             this.btnExport.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.btnExport.OnHoverBorderColor = System.Drawing.Color.Transparent;
@@ -149,7 +150,7 @@
             this.btnRefresh.Image = ((System.Drawing.Image)(resources.GetObject("btnRefresh.Image")));
             this.btnRefresh.ImageSize = new System.Drawing.Size(20, 20);
             this.btnRefresh.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnRefresh.Location = new System.Drawing.Point(3, 6);
+            this.btnRefresh.Location = new System.Drawing.Point(9, 6);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.btnRefresh.OnHoverBorderColor = System.Drawing.Color.Transparent;
@@ -192,8 +193,7 @@
             this.gioi_tinh,
             this.nam_sinh,
             this.so_dien_thoai,
-            this.diem,
-            this.trangThai});
+            this.Column1});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
@@ -202,9 +202,10 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvCustomer.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvCustomer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvCustomer.EnableHeadersVisualStyles = false;
             this.dgvCustomer.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvCustomer.Location = new System.Drawing.Point(12, 69);
+            this.dgvCustomer.Location = new System.Drawing.Point(0, 63);
             this.dgvCustomer.Name = "dgvCustomer";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
@@ -226,7 +227,7 @@
             this.dgvCustomer.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvCustomer.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvCustomer.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCustomer.Size = new System.Drawing.Size(1376, 757);
+            this.dgvCustomer.Size = new System.Drawing.Size(1044, 567);
             this.dgvCustomer.TabIndex = 34;
             this.dgvCustomer.TabStop = false;
             this.dgvCustomer.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna;
@@ -252,7 +253,6 @@
             this.dgvCustomer.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvCustomer.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dgvCustomer.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.cellCustomer_DblClick);
-            this.dgvCustomer.SortCompare += new System.Windows.Forms.DataGridViewSortCompareEventHandler(this.dgvCustomer_SortCompare);
             // 
             // Column11
             // 
@@ -299,25 +299,12 @@
             this.so_dien_thoai.Name = "so_dien_thoai";
             this.so_dien_thoai.ReadOnly = true;
             // 
-            // diem
-            // 
-            this.diem.HeaderText = "Điểm";
-            this.diem.MinimumWidth = 6;
-            this.diem.Name = "diem";
-            // 
-            // trangThai
-            // 
-            this.trangThai.HeaderText = "Trạng Thái";
-            this.trangThai.MinimumWidth = 6;
-            this.trangThai.Name = "trangThai";
-            this.trangThai.ReadOnly = true;
-            // 
             // line1
             // 
             this.line1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(212)))), ((int)(((byte)(191)))));
-            this.line1.Location = new System.Drawing.Point(15, 48);
+            this.line1.Location = new System.Drawing.Point(22, 45);
             this.line1.Name = "line1";
-            this.line1.Size = new System.Drawing.Size(268, 1);
+            this.line1.Size = new System.Drawing.Size(280, 1);
             this.line1.TabIndex = 32;
             // 
             // panel1
@@ -327,13 +314,15 @@
             this.panel1.Controls.Add(this.btnRefresh);
             this.panel1.Controls.Add(this.editBtn);
             this.panel1.Controls.Add(this.addBtn);
-            this.panel1.Location = new System.Drawing.Point(12, 832);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 630);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1376, 54);
+            this.panel1.Size = new System.Drawing.Size(1044, 54);
             this.panel1.TabIndex = 35;
             // 
             // editBtn
             // 
+            this.editBtn.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.editBtn.AnimationHoverSpeed = 0.07F;
             this.editBtn.AnimationSpeed = 0.03F;
             this.editBtn.BackColor = System.Drawing.Color.Transparent;
@@ -351,7 +340,7 @@
             this.editBtn.Image = ((System.Drawing.Image)(resources.GetObject("editBtn.Image")));
             this.editBtn.ImageSize = new System.Drawing.Size(20, 20);
             this.editBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.editBtn.Location = new System.Drawing.Point(1258, 6);
+            this.editBtn.Location = new System.Drawing.Point(919, 6);
             this.editBtn.Name = "editBtn";
             this.editBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.editBtn.OnHoverBorderColor = System.Drawing.Color.Transparent;
@@ -367,6 +356,7 @@
             // 
             // addBtn
             // 
+            this.addBtn.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.addBtn.AnimationHoverSpeed = 0.07F;
             this.addBtn.AnimationSpeed = 0.03F;
             this.addBtn.BackColor = System.Drawing.Color.Transparent;
@@ -384,7 +374,7 @@
             this.addBtn.Image = ((System.Drawing.Image)(resources.GetObject("addBtn.Image")));
             this.addBtn.ImageSize = new System.Drawing.Size(20, 20);
             this.addBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.addBtn.Location = new System.Drawing.Point(1135, 6);
+            this.addBtn.Location = new System.Drawing.Point(796, 6);
             this.addBtn.Name = "addBtn";
             this.addBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.addBtn.OnHoverBorderColor = System.Drawing.Color.Transparent;
@@ -400,6 +390,7 @@
             // 
             // genderCbx
             // 
+            this.genderCbx.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.genderCbx.BackColor = System.Drawing.Color.Transparent;
             this.genderCbx.BaseColor = System.Drawing.Color.White;
             this.genderCbx.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
@@ -412,7 +403,7 @@
             this.genderCbx.ForeColor = System.Drawing.Color.Black;
             this.genderCbx.FormattingEnabled = true;
             this.genderCbx.ItemHeight = 30;
-            this.genderCbx.Location = new System.Drawing.Point(1198, 12);
+            this.genderCbx.Location = new System.Drawing.Point(847, 12);
             this.genderCbx.Name = "genderCbx";
             this.genderCbx.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.genderCbx.OnHoverItemForeColor = System.Drawing.Color.White;
@@ -422,17 +413,33 @@
             this.genderCbx.TabStop = false;
             this.genderCbx.SelectedIndexChanged += new System.EventHandler(this.genderCbx_SelectedIndexChanged);
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.line1);
+            this.panel2.Controls.Add(this.pictureBox1);
+            this.panel2.Controls.Add(this.searchInput);
+            this.panel2.Controls.Add(this.genderCbx);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1044, 63);
+            this.panel2.TabIndex = 42;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Trạng Thái";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
             // CustomerManagerGUI
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
-            this.ClientSize = new System.Drawing.Size(1395, 893);
-            this.Controls.Add(this.genderCbx);
-            this.Controls.Add(this.searchInput);
-            this.Controls.Add(this.pictureBox1);
+            this.ClientSize = new System.Drawing.Size(1044, 684);
             this.Controls.Add(this.dgvCustomer);
-            this.Controls.Add(this.line1);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel2);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CustomerManagerGUI";
@@ -442,6 +449,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomer)).EndInit();
             this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
 		}
@@ -457,14 +465,14 @@
 		private System.Windows.Forms.Panel panel1;
 		private Guna.UI.WinForms.GunaAdvenceButton editBtn;
 		private Guna.UI.WinForms.GunaAdvenceButton addBtn;
-        private Guna.UI.WinForms.GunaComboBox genderCbx;
 		private System.Windows.Forms.DataGridViewCheckBoxColumn Column11;
 		private System.Windows.Forms.DataGridViewTextBoxColumn ma_khach_hang;
 		private System.Windows.Forms.DataGridViewTextBoxColumn ten_khach_hang;
 		private System.Windows.Forms.DataGridViewTextBoxColumn gioi_tinh;
 		private System.Windows.Forms.DataGridViewTextBoxColumn nam_sinh;
 		private System.Windows.Forms.DataGridViewTextBoxColumn so_dien_thoai;
-		private System.Windows.Forms.DataGridViewTextBoxColumn diem;
-		private System.Windows.Forms.DataGridViewTextBoxColumn trangThai;
-	}
+        private Guna.UI.WinForms.GunaComboBox genderCbx;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+    }
 }

@@ -5,7 +5,6 @@ using Guna.UI.WinForms;
 using QuanLyCuaHangBanSach.BUS;
 using QuanLyCuaHangBanSach.DTO;
 using QuanLyCuaHangBanSach.GUI.Manager;
-using QuanLyCuaHangBanTacGia.GUI.Manager;
 
 namespace QuanLyCuaHangBanSach.GUI
 {
@@ -736,6 +735,28 @@ namespace QuanLyCuaHangBanSach.GUI
 
             menu.Show();
             this.Close();
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Normal)
+            {
+                WindowState = FormWindowState.Maximized;
+            }
+            else
+            {
+                WindowState = FormWindowState.Normal;
+            }
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
+        }
+
+        private void staffPosition_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

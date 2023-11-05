@@ -128,7 +128,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             try
             {
 
-                string[] headerList = new string[] { "Mã quyền hạng", "Tên quyền hạng", "Trạng thái" };
+                string[] headerList = new string[] { "Mã quyền hạn", "Tên quyền hạn", "Trạng thái" };
 
                 DataTable dt = CustomExcel.Instance.ConvertDataGridViewToDataTable(dgvPermission);
 
@@ -150,7 +150,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                     return;
                 }
 
-                using (PermissionModal positionModal = new PermissionModal("Sửa quyền hạng"))
+                using (PermissionModal positionModal = new PermissionModal("Sửa quyền hạn"))
                 {
                     DataGridViewRow row = this.dgvPermission.Rows[this.dgvPermission.CurrentCell.RowIndex];
 
@@ -180,6 +180,57 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             }
         }
 
+        private void deleteBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                bool isHaveSelect = false;
+
+                foreach (DataGridViewRow row in this.dgvPermission.Rows)
+                {
+                    if ((bool)row.Cells[0].Value)
+                    {
+                        isHaveSelect = true;
+                        break;
+                    }
+                }
+
+                if (!isHaveSelect)
+                {
+                    MessageBox.Show("Bạn chưa chọn những quyền hạn cần xóa");
+                    return;
+                }
+
+                DialogResult dlgResult = MessageBox.Show(
+                    "Bạn chắc chắn muốn xóa các quyền hạn đã chọn chứ?",
+                    "Xác nhận",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question,
+                    MessageBoxDefaultButton.Button1
+                );
+
+                if (dlgResult == DialogResult.Yes)
+                {
+                    foreach (DataGridViewRow row in this.dgvPermission.Rows)
+                    {
+                        if ((bool)row.Cells[0].Value == true)
+                        {
+                            PermissionBUS.Instance.delete(row.Cells[1].Value.ToString());
+                        }
+
+                    }
+                    List<PermissionDTO> positionList = PermissionBUS.Instance.search(this.searchInput.Text);
+                    this.loadPermissionListToDataView(positionList);
+
+                    MessageBox.Show("Delete successful");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+        }
+
         private void dgvPermission_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -189,7 +240,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                     return;
                 }
 
-                using (PermissionModal positionModal = new PermissionModal("Sửa quyền hạng"))
+                using (PermissionModal positionModal = new PermissionModal("Sửa quyền hạn"))
                 {
                     DataGridViewRow row = this.dgvPermission.Rows[e.RowIndex];
 

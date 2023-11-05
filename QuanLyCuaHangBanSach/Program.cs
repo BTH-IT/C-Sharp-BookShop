@@ -5,8 +5,6 @@ using QuanLyCuaHangBanSach.GUI.Importer;
 using QuanLyCuaHangBanSach.GUI.Manager;
 using QuanLyCuaHangBanSach.GUI.Modal;
 using QuanLyCuaHangBanSach.GUI.Report;
-using QuanLyCuaHangBanTacGia.GUI.Manager;
-
 namespace QuanLyCuaHangBanSach
 {
     internal static class Program
