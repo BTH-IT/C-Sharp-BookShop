@@ -7,6 +7,7 @@ using System.Windows.Forms;
 using QuanLyCuaHangBanSach.BUS;
 using QuanLyCuaHangBanSach.DTO;
 using QuanLyCuaHangBanSach.GUI.Modal;
+using QuanLyCuaHangBanSach.GUI.Report;
 
 namespace QuanLyCuaHangBanSach.GUI.Manager
 {
@@ -598,6 +599,29 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                 using (ViewImportBillModal viewImportBillModal = new ViewImportBillModal(importBill))
                 {
                     viewImportBillModal.ShowDialog();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+        }
+
+        private void printPdfBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (this.dgvImportBill.CurrentCell.RowIndex < 0)
+                {
+                    MessageBox.Show("Hãy chọn dòng dữ liệu muốn thao tác");
+                    return;
+                }
+
+                DataGridViewRow row = this.dgvImportBill.Rows[this.dgvImportBill.CurrentCell.RowIndex];
+
+                using (ImportBillPrintForm importBillPrintForm = new ImportBillPrintForm(Convert.ToInt32(row.Cells[1].Value)))
+                {
+                    importBillPrintForm.ShowDialog();
                 }
             }
             catch (Exception ex)
