@@ -277,19 +277,35 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 					MessageBoxButtons.YesNo,
 					MessageBoxIcon.None
 				);
+				bool hasCheckedRow = false;
+				foreach (DataGridViewRow row in this.dgvSale.Rows)
+				{
+					if ((bool)row.Cells[0].Value)
+					{
+						hasCheckedRow = true;
+					}
+				}
 				if (dialogResult == DialogResult.Yes)
 				{
-					foreach (DataGridViewRow row in this.dgvSale.Rows)
-					{
-						if ((bool)row.Cells[0].Value)
+					if(hasCheckedRow)
+                    {
+						foreach (DataGridViewRow row in this.dgvSale.Rows)
 						{
-							SaleBUS.Instance.delete(row.Cells[1].Value.ToString());
+							if ((bool)row.Cells[0].Value)
+							{
+								SaleBUS.Instance.delete(row.Cells[1].Value.ToString());
+							}
 						}
-					}
-					MessageBox.Show("Bạn đã xóa thành công");
+						MessageBox.Show("Bạn đã xóa thành công");
 
-					List<SaleDTO> sales = handleFilter(this.searchInput.Text);
-					this.loadDataToDataGridView(sales);
+						List<SaleDTO> sales = handleFilter(this.searchInput.Text);
+						this.loadDataToDataGridView(sales);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Vui lòng chọn khuyến mãi để xóa", "Thông báo");
+                    }  
+					
 				}
 
 			}

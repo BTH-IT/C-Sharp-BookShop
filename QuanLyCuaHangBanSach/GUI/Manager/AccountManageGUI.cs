@@ -223,20 +223,37 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 					MessageBoxButtons.YesNo,
 					MessageBoxIcon.None
 				);
+				bool hasCheckedRow = false;
+				foreach (DataGridViewRow row in this.dgvAccount.Rows)
+				{
+					if ((bool)row.Cells[0].Value)
+					{
+						hasCheckedRow = true;
+						break;
+					}
+				}
 				if (result == DialogResult.Yes)
 				{
-					foreach (DataGridViewRow row in this.dgvAccount.Rows)
+					if (hasCheckedRow)
 					{
-						if ((bool)row.Cells[0].Value)
+						foreach (DataGridViewRow row in this.dgvAccount.Rows)
 						{
-							bool check = AccountBUS.Instance.delete(row.Cells[2].Value.ToString());
-							Console.WriteLine(check);
+							if ((bool)row.Cells[0].Value)
+							{
+								bool check = AccountBUS.Instance.delete(row.Cells[2].Value.ToString());
+								Console.WriteLine(check);
+							}
 						}
+						//
+						List<AccountDTO> accounts = handleFilter(this.searchInput.Text);
+						this.loadDataToDataGridView(accounts);
+						MessageBox.Show("Xóa thành công các tài khoản đã chọn");
 					}
-					//
-					List<AccountDTO> accounts = handleFilter(this.searchInput.Text);
-					this.loadDataToDataGridView(accounts);
-					MessageBox.Show("Xóa thành công các tài khoản đã chọn");
+					else
+					{
+						MessageBox.Show("Vui lòng chọn tài khoản để xóa", "Thông báo");
+					}
+				
 				}
 			}
             catch

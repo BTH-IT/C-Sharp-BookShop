@@ -40,7 +40,18 @@ namespace QuanLyCuaHangBanSach.DAO
 
             return account;
         }
+        public AccountDTO getByStaffId(string id)
+        {
+            DataTable dataTable = DataProvider.Instance.ExecuteQuery(
+                    "SELECT * FROM taikhoan WHERE maNhanVien = @maNhanVien",
+                    new MySqlParameter[] { new MySqlParameter("@maNhanVien",id)}
+                );
+			if (dataTable.Rows.Count <= 0) return null;
 
+			AccountDTO account = new AccountDTO(dataTable.Rows[0]);
+
+			return account;
+		}
         public bool insert(AccountDTO data)
         {
 
