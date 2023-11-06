@@ -116,17 +116,25 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 					string password = this.passwordTxt.Text;
 					int maNhanVien = Convert.ToInt32(this.staffComboBox.SelectedValue);
 
-					AccountDTO account = new AccountDTO(maNhanVien, email, password);
-					bool isSuccess = this.account != null ? AccountBUS.Instance.update(account) : AccountBUS.Instance.insert(account);
+                    bool isStaffHasAccount = AccountBUS.Instance.getByStaffId(maNhanVien.ToString()) != null ? true : false;
+                    if (isStaffHasAccount) 
+                    {
+                        MessageBox.Show("Nhân viên đã có tài khoản", "Thông báo");
+                        return;
+                    }
+                    else
+                    {
+						AccountDTO account = new AccountDTO(maNhanVien, email, password);
+						bool isSuccess = this.account != null ? AccountBUS.Instance.update(account) : AccountBUS.Instance.insert(account);
 
-					if (isSuccess)
-					{
-						this.isSubmitSuccess = isSuccess;
-						MessageBox.Show(this.account != null ? "Cập nhật thành công" : "Thêm dữ liệu thành công");
-						this.Close();
-						return;
+						if (isSuccess)
+						{
+							this.isSubmitSuccess = isSuccess;
+							MessageBox.Show(this.account != null ? "Cập nhật thành công" : "Thêm dữ liệu thành công");
+							this.Close();
+							return;
+						}
 					}
-
 				}
 			}
             catch { }
