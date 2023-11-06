@@ -91,14 +91,15 @@
             // 
             // title
             // 
-            this.title.AutoSize = true;
+            this.title.Dock = System.Windows.Forms.DockStyle.Top;
             this.title.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.title.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.title.Location = new System.Drawing.Point(255, 9);
+            this.title.Location = new System.Drawing.Point(0, 0);
             this.title.Name = "title";
-            this.title.Size = new System.Drawing.Size(228, 36);
+            this.title.Size = new System.Drawing.Size(745, 76);
             this.title.TabIndex = 9;
             this.title.Text = "Thêm Tài khoản";
+            this.title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // passwordTxt
             // 
@@ -132,11 +133,11 @@
             // errorPasswordMsg
             // 
             this.errorPasswordMsg.AutoSize = true;
-            this.errorPasswordMsg.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.errorPasswordMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Italic);
             this.errorPasswordMsg.ForeColor = System.Drawing.Color.Red;
-            this.errorPasswordMsg.Location = new System.Drawing.Point(154, 63);
+            this.errorPasswordMsg.Location = new System.Drawing.Point(204, 70);
             this.errorPasswordMsg.Name = "errorPasswordMsg";
-            this.errorPasswordMsg.Size = new System.Drawing.Size(0, 25);
+            this.errorPasswordMsg.Size = new System.Drawing.Size(0, 30);
             this.errorPasswordMsg.TabIndex = 7;
             // 
             // passwordLine
@@ -149,7 +150,7 @@
             // 
             // label6
             // 
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label6.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F);
             this.label6.Location = new System.Drawing.Point(3, 3);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(151, 49);
@@ -189,11 +190,11 @@
             // errorEmailMsg
             // 
             this.errorEmailMsg.AutoSize = true;
-            this.errorEmailMsg.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.errorEmailMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Italic);
             this.errorEmailMsg.ForeColor = System.Drawing.Color.Red;
-            this.errorEmailMsg.Location = new System.Drawing.Point(151, 60);
+            this.errorEmailMsg.Location = new System.Drawing.Point(203, 69);
             this.errorEmailMsg.Name = "errorEmailMsg";
-            this.errorEmailMsg.Size = new System.Drawing.Size(0, 25);
+            this.errorEmailMsg.Size = new System.Drawing.Size(0, 30);
             this.errorEmailMsg.TabIndex = 7;
             // 
             // errorEmailLine
@@ -217,7 +218,7 @@
             // 
             // label3
             // 
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label3.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F);
             this.label3.Location = new System.Drawing.Point(3, 2);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(151, 49);
@@ -323,11 +324,11 @@
             // errorConfirmPasswordMsg
             // 
             this.errorConfirmPasswordMsg.AutoSize = true;
-            this.errorConfirmPasswordMsg.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.errorConfirmPasswordMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Italic);
             this.errorConfirmPasswordMsg.ForeColor = System.Drawing.Color.Red;
-            this.errorConfirmPasswordMsg.Location = new System.Drawing.Point(154, 62);
+            this.errorConfirmPasswordMsg.Location = new System.Drawing.Point(202, 68);
             this.errorConfirmPasswordMsg.Name = "errorConfirmPasswordMsg";
-            this.errorConfirmPasswordMsg.Size = new System.Drawing.Size(0, 25);
+            this.errorConfirmPasswordMsg.Size = new System.Drawing.Size(0, 30);
             this.errorConfirmPasswordMsg.TabIndex = 7;
             // 
             // confirmPasswordLine
@@ -340,7 +341,7 @@
             // 
             // label2
             // 
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label2.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(3, 1);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(194, 49);
@@ -355,17 +356,17 @@
             this.panel3.Controls.Add(this.label1);
             this.panel3.Location = new System.Drawing.Point(45, 79);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(653, 106);
+            this.panel3.Size = new System.Drawing.Size(659, 106);
             this.panel3.TabIndex = 13;
             // 
             // staffLine
             // 
             this.staffLine.AutoSize = true;
-            this.staffLine.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.staffLine.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.staffLine.ForeColor = System.Drawing.Color.Red;
-            this.staffLine.Location = new System.Drawing.Point(168, 58);
+            this.staffLine.Location = new System.Drawing.Point(208, 67);
             this.staffLine.Name = "staffLine";
-            this.staffLine.Size = new System.Drawing.Size(0, 25);
+            this.staffLine.Size = new System.Drawing.Size(0, 30);
             this.staffLine.TabIndex = 27;
             // 
             // staffComboBox
@@ -394,7 +395,7 @@
             // 
             // label1
             // 
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label1.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F);
             this.label1.Location = new System.Drawing.Point(3, 7);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(151, 49);
@@ -426,7 +427,6 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
 		}
 

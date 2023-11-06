@@ -44,13 +44,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.dateTimeFrom = new Guna.UI.WinForms.GunaDateTimePicker();
+            this.errorDateTimeFromMsg = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.dateTimeTo = new Guna.UI.WinForms.GunaDateTimePicker();
+            this.errorDateTimeToMsg = new System.Windows.Forms.Label();
             this.dateTimeToLine = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
-            this.errorDateTimeToMsg = new System.Windows.Forms.Label();
-            this.errorDateTimeFromMsg = new System.Windows.Forms.Label();
             label2 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -102,14 +102,15 @@
             // 
             // title
             // 
-            this.title.AutoSize = true;
-            this.title.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.title.Dock = System.Windows.Forms.DockStyle.Top;
+            this.title.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.title.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.title.Location = new System.Drawing.Point(369, 9);
+            this.title.Location = new System.Drawing.Point(0, 0);
             this.title.Name = "title";
-            this.title.Size = new System.Drawing.Size(278, 55);
+            this.title.Size = new System.Drawing.Size(1048, 65);
             this.title.TabIndex = 9;
             this.title.Text = "Thêm Khuyến mãi";
+            this.title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnCancel
             // 
@@ -199,11 +200,11 @@
             // errorPhanTramMsg
             // 
             this.errorPhanTramMsg.AutoSize = true;
-            this.errorPhanTramMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed SemiB", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.errorPhanTramMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 10.2F, System.Drawing.FontStyle.Italic);
             this.errorPhanTramMsg.ForeColor = System.Drawing.Color.Red;
-            this.errorPhanTramMsg.Location = new System.Drawing.Point(169, 52);
+            this.errorPhanTramMsg.Location = new System.Drawing.Point(168, 54);
             this.errorPhanTramMsg.Name = "errorPhanTramMsg";
-            this.errorPhanTramMsg.Size = new System.Drawing.Size(0, 30);
+            this.errorPhanTramMsg.Size = new System.Drawing.Size(0, 26);
             this.errorPhanTramMsg.TabIndex = 7;
             // 
             // phanTramLine
@@ -258,11 +259,11 @@
             // errorSaleNameMsg
             // 
             this.errorSaleNameMsg.AutoSize = true;
-            this.errorSaleNameMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed SemiB", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.errorSaleNameMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 10.2F, System.Drawing.FontStyle.Italic);
             this.errorSaleNameMsg.ForeColor = System.Drawing.Color.Red;
-            this.errorSaleNameMsg.Location = new System.Drawing.Point(162, 52);
+            this.errorSaleNameMsg.Location = new System.Drawing.Point(161, 54);
             this.errorSaleNameMsg.Name = "errorSaleNameMsg";
-            this.errorSaleNameMsg.Size = new System.Drawing.Size(0, 30);
+            this.errorSaleNameMsg.Size = new System.Drawing.Size(0, 26);
             this.errorSaleNameMsg.TabIndex = 7;
             // 
             // saleNameLine
@@ -294,6 +295,7 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(490, 104);
             this.panel4.TabIndex = 3;
+            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
             // dateTimeFrom
             // 
@@ -319,6 +321,16 @@
             this.dateTimeFrom.TabIndex = 9;
             this.dateTimeFrom.Text = "9/10/2023";
             this.dateTimeFrom.Value = new System.DateTime(2023, 9, 10, 15, 52, 49, 679);
+            // 
+            // errorDateTimeFromMsg
+            // 
+            this.errorDateTimeFromMsg.AutoSize = true;
+            this.errorDateTimeFromMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 10.2F, System.Drawing.FontStyle.Italic);
+            this.errorDateTimeFromMsg.ForeColor = System.Drawing.Color.Red;
+            this.errorDateTimeFromMsg.Location = new System.Drawing.Point(13, 64);
+            this.errorDateTimeFromMsg.Name = "errorDateTimeFromMsg";
+            this.errorDateTimeFromMsg.Size = new System.Drawing.Size(0, 26);
+            this.errorDateTimeFromMsg.TabIndex = 7;
             // 
             // label5
             // 
@@ -368,6 +380,16 @@
             this.dateTimeTo.Text = "9/10/2023";
             this.dateTimeTo.Value = new System.DateTime(2023, 9, 10, 15, 52, 49, 679);
             // 
+            // errorDateTimeToMsg
+            // 
+            this.errorDateTimeToMsg.AutoSize = true;
+            this.errorDateTimeToMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 10.2F, System.Drawing.FontStyle.Italic);
+            this.errorDateTimeToMsg.ForeColor = System.Drawing.Color.Red;
+            this.errorDateTimeToMsg.Location = new System.Drawing.Point(12, 64);
+            this.errorDateTimeToMsg.Name = "errorDateTimeToMsg";
+            this.errorDateTimeToMsg.Size = new System.Drawing.Size(0, 26);
+            this.errorDateTimeToMsg.TabIndex = 7;
+            // 
             // dateTimeToLine
             // 
             this.dateTimeToLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(212)))), ((int)(((byte)(191)))));
@@ -385,26 +407,6 @@
             this.label7.TabIndex = 5;
             this.label7.Text = "Ngày kết thúc:";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // errorDateTimeToMsg
-            // 
-            this.errorDateTimeToMsg.AutoSize = true;
-            this.errorDateTimeToMsg.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.errorDateTimeToMsg.ForeColor = System.Drawing.Color.Red;
-            this.errorDateTimeToMsg.Location = new System.Drawing.Point(12, 45);
-            this.errorDateTimeToMsg.Name = "errorDateTimeToMsg";
-            this.errorDateTimeToMsg.Size = new System.Drawing.Size(0, 25);
-            this.errorDateTimeToMsg.TabIndex = 7;
-            // 
-            // errorDateTimeFromMsg
-            // 
-            this.errorDateTimeFromMsg.AutoSize = true;
-            this.errorDateTimeFromMsg.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.errorDateTimeFromMsg.ForeColor = System.Drawing.Color.Red;
-            this.errorDateTimeFromMsg.Location = new System.Drawing.Point(13, 45);
-            this.errorDateTimeFromMsg.Name = "errorDateTimeFromMsg";
-            this.errorDateTimeFromMsg.Size = new System.Drawing.Size(0, 25);
-            this.errorDateTimeFromMsg.TabIndex = 7;
             // 
             // SaleModal
             // 
@@ -431,7 +433,6 @@
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

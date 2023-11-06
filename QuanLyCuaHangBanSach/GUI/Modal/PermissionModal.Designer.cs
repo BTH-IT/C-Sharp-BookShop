@@ -35,11 +35,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel12 = new System.Windows.Forms.Panel();
+            this.statusSwitch = new Guna.UI2.WinForms.Guna2ToggleSwitch();
             this.label10 = new System.Windows.Forms.Label();
             this.submitBtn = new Guna.UI.WinForms.GunaButton();
             this.cancelBtn = new Guna.UI.WinForms.GunaButton();
             this.label1 = new System.Windows.Forms.Label();
-            this.statusSwitch = new Guna.UI2.WinForms.Guna2ToggleSwitch();
             this.panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel12.SuspendLayout();
@@ -133,6 +133,32 @@
             this.panel12.Size = new System.Drawing.Size(594, 74);
             this.panel12.TabIndex = 11;
             // 
+            // statusSwitch
+            // 
+            this.statusSwitch.Animated = true;
+            this.statusSwitch.AutoRoundedCorners = true;
+            this.statusSwitch.BackColor = System.Drawing.Color.White;
+            this.statusSwitch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.statusSwitch.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.statusSwitch.CheckedState.BorderRadius = 12;
+            this.statusSwitch.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.statusSwitch.CheckedState.InnerBorderColor = System.Drawing.Color.White;
+            this.statusSwitch.CheckedState.InnerBorderRadius = 8;
+            this.statusSwitch.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.statusSwitch.CheckedState.Parent = this.statusSwitch;
+            this.statusSwitch.Location = new System.Drawing.Point(498, 16);
+            this.statusSwitch.Name = "statusSwitch";
+            this.statusSwitch.ShadowDecoration.Parent = this.statusSwitch;
+            this.statusSwitch.Size = new System.Drawing.Size(76, 26);
+            this.statusSwitch.TabIndex = 9;
+            this.statusSwitch.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(228)))), ((int)(((byte)(231)))));
+            this.statusSwitch.UncheckedState.BorderRadius = 12;
+            this.statusSwitch.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(228)))), ((int)(((byte)(231)))));
+            this.statusSwitch.UncheckedState.InnerBorderColor = System.Drawing.Color.White;
+            this.statusSwitch.UncheckedState.InnerBorderRadius = 8;
+            this.statusSwitch.UncheckedState.InnerColor = System.Drawing.Color.White;
+            this.statusSwitch.UncheckedState.Parent = this.statusSwitch;
+            // 
             // label10
             // 
             this.label10.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
@@ -207,40 +233,15 @@
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
             this.label1.Font = new System.Drawing.Font("#9Slide03 Cabin", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.label1.Location = new System.Drawing.Point(207, 16);
+            this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(249, 45);
+            this.label1.Size = new System.Drawing.Size(663, 61);
             this.label1.TabIndex = 9;
             this.label1.Text = "Thêm quyền hạng";
-            // 
-            // statusSwitch
-            // 
-            this.statusSwitch.Animated = true;
-            this.statusSwitch.AutoRoundedCorners = true;
-            this.statusSwitch.BackColor = System.Drawing.Color.White;
-            this.statusSwitch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.statusSwitch.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.statusSwitch.CheckedState.BorderRadius = 12;
-            this.statusSwitch.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.statusSwitch.CheckedState.InnerBorderColor = System.Drawing.Color.White;
-            this.statusSwitch.CheckedState.InnerBorderRadius = 8;
-            this.statusSwitch.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.statusSwitch.CheckedState.Parent = this.statusSwitch;
-            this.statusSwitch.Location = new System.Drawing.Point(498, 16);
-            this.statusSwitch.Name = "statusSwitch";
-            this.statusSwitch.ShadowDecoration.Parent = this.statusSwitch;
-            this.statusSwitch.Size = new System.Drawing.Size(76, 26);
-            this.statusSwitch.TabIndex = 9;
-            this.statusSwitch.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(228)))), ((int)(((byte)(231)))));
-            this.statusSwitch.UncheckedState.BorderRadius = 12;
-            this.statusSwitch.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(228)))), ((int)(((byte)(231)))));
-            this.statusSwitch.UncheckedState.InnerBorderColor = System.Drawing.Color.White;
-            this.statusSwitch.UncheckedState.InnerBorderRadius = 8;
-            this.statusSwitch.UncheckedState.InnerColor = System.Drawing.Color.White;
-            this.statusSwitch.UncheckedState.Parent = this.statusSwitch;
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // PermissionModal
             // 
@@ -263,7 +264,6 @@
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panel12.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

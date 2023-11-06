@@ -43,6 +43,20 @@ namespace QuanLyCuaHangBanSach.BUS
             return customerList;
         }
 
+        public List<StaffDTO> getAllNoAccount()
+        {
+            List<StaffDTO> customerList = new List<StaffDTO>();
+            DataTable dt = StaffDAO.Instance.getAllNoAccount();
+
+            foreach (DataRow row in dt.Rows)
+            {
+                StaffDTO customer = new StaffDTO(row);
+                customerList.Add(customer);
+            }
+
+            return customerList;
+        }
+
         public StaffDTO getById(string id)
         {
             return StaffDAO.Instance.getById(id);

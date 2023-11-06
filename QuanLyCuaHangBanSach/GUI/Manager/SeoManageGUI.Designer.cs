@@ -426,9 +426,9 @@
             this.panel5.Controls.Add(this.label3);
             this.panel5.Controls.Add(this.label2);
             this.panel5.Controls.Add(this.dateTimeFrom);
-            this.panel5.Location = new System.Drawing.Point(632, 17);
+            this.panel5.Location = new System.Drawing.Point(628, 17);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(400, 36);
+            this.panel5.Size = new System.Drawing.Size(404, 36);
             this.panel5.TabIndex = 42;
             // 
             // filterCkx
@@ -437,7 +437,7 @@
             this.filterCkx.CheckedOffColor = System.Drawing.Color.LightGray;
             this.filterCkx.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.filterCkx.FillColor = System.Drawing.Color.White;
-            this.filterCkx.Location = new System.Drawing.Point(17, 9);
+            this.filterCkx.Location = new System.Drawing.Point(9, 9);
             this.filterCkx.Name = "filterCkx";
             this.filterCkx.Size = new System.Drawing.Size(20, 20);
             this.filterCkx.TabIndex = 42;
@@ -483,7 +483,7 @@
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(43, 0);
+            this.label2.Location = new System.Drawing.Point(35, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(40, 37);
             this.label2.TabIndex = 0;

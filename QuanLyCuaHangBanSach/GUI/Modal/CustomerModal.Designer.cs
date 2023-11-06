@@ -49,11 +49,11 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.errorGenderMsg = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.statusSwitch = new Guna.UI2.WinForms.Guna2ToggleSwitch();
             this.label2 = new System.Windows.Forms.Label();
             this.submitBtn = new Guna.UI.WinForms.GunaButton();
             this.cancelBtn = new Guna.UI.WinForms.GunaButton();
             this.title = new System.Windows.Forms.Label();
-            this.statusSwitch = new Guna.UI2.WinForms.Guna2ToggleSwitch();
             this.panel10.SuspendLayout();
             this.panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -86,12 +86,12 @@
             this.genderCbx.ForeColor = System.Drawing.Color.Black;
             this.genderCbx.FormattingEnabled = true;
             this.genderCbx.ItemHeight = 30;
-            this.genderCbx.Location = new System.Drawing.Point(160, 6);
+            this.genderCbx.Location = new System.Drawing.Point(168, 6);
             this.genderCbx.Name = "genderCbx";
             this.genderCbx.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.genderCbx.OnHoverItemForeColor = System.Drawing.Color.White;
             this.genderCbx.Radius = 6;
-            this.genderCbx.Size = new System.Drawing.Size(408, 36);
+            this.genderCbx.Size = new System.Drawing.Size(400, 36);
             this.genderCbx.TabIndex = 29;
             this.genderCbx.TabStop = false;
             this.genderCbx.SelectedIndexChanged += new System.EventHandler(this.genderCbx_SelectedIndexChanged);
@@ -125,33 +125,33 @@
             this.phoneNumberTxtBox.ForeColor = System.Drawing.Color.Black;
             this.phoneNumberTxtBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.phoneNumberTxtBox.HoverState.Parent = this.phoneNumberTxtBox;
-            this.phoneNumberTxtBox.Location = new System.Drawing.Point(149, 7);
+            this.phoneNumberTxtBox.Location = new System.Drawing.Point(168, 7);
             this.phoneNumberTxtBox.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.phoneNumberTxtBox.Name = "phoneNumberTxtBox";
             this.phoneNumberTxtBox.PasswordChar = '\0';
             this.phoneNumberTxtBox.PlaceholderText = "Nhập số điện thoại";
             this.phoneNumberTxtBox.SelectedText = "";
             this.phoneNumberTxtBox.ShadowDecoration.Parent = this.phoneNumberTxtBox;
-            this.phoneNumberTxtBox.Size = new System.Drawing.Size(425, 29);
+            this.phoneNumberTxtBox.Size = new System.Drawing.Size(406, 29);
             this.phoneNumberTxtBox.TabIndex = 33;
             this.phoneNumberTxtBox.TextChanged += new System.EventHandler(this.phoneNumberTxtBox_TextChanged);
             // 
             // errorPhoneNumberMsg
             // 
             this.errorPhoneNumberMsg.AutoSize = true;
-            this.errorPhoneNumberMsg.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.errorPhoneNumberMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.errorPhoneNumberMsg.ForeColor = System.Drawing.Color.Red;
-            this.errorPhoneNumberMsg.Location = new System.Drawing.Point(163, 48);
+            this.errorPhoneNumberMsg.Location = new System.Drawing.Point(176, 51);
             this.errorPhoneNumberMsg.Name = "errorPhoneNumberMsg";
-            this.errorPhoneNumberMsg.Size = new System.Drawing.Size(0, 25);
+            this.errorPhoneNumberMsg.Size = new System.Drawing.Size(0, 26);
             this.errorPhoneNumberMsg.TabIndex = 7;
             // 
             // phoneNumberLine
             // 
             this.phoneNumberLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(212)))), ((int)(((byte)(191)))));
-            this.phoneNumberLine.Location = new System.Drawing.Point(160, 38);
+            this.phoneNumberLine.Location = new System.Drawing.Point(179, 38);
             this.phoneNumberLine.Name = "phoneNumberLine";
-            this.phoneNumberLine.Size = new System.Drawing.Size(414, 1);
+            this.phoneNumberLine.Size = new System.Drawing.Size(395, 1);
             this.phoneNumberLine.TabIndex = 8;
             // 
             // label4
@@ -241,7 +241,7 @@
             this.flowLayoutPanel1.Controls.Add(this.panel4);
             this.flowLayoutPanel1.Controls.Add(this.panel3);
             this.flowLayoutPanel1.Controls.Add(this.panel2);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(11, 53);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(11, 64);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(601, 439);
             this.flowLayoutPanel1.TabIndex = 8;
@@ -289,11 +289,11 @@
             // errorBirthYearMsg
             // 
             this.errorBirthYearMsg.AutoSize = true;
-            this.errorBirthYearMsg.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.errorBirthYearMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.errorBirthYearMsg.ForeColor = System.Drawing.Color.Red;
-            this.errorBirthYearMsg.Location = new System.Drawing.Point(177, 45);
+            this.errorBirthYearMsg.Location = new System.Drawing.Point(177, 46);
             this.errorBirthYearMsg.Name = "errorBirthYearMsg";
-            this.errorBirthYearMsg.Size = new System.Drawing.Size(0, 25);
+            this.errorBirthYearMsg.Size = new System.Drawing.Size(0, 26);
             this.errorBirthYearMsg.TabIndex = 7;
             // 
             // birthYearLine
@@ -327,11 +327,11 @@
             // errorGenderMsg
             // 
             this.errorGenderMsg.AutoSize = true;
-            this.errorGenderMsg.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.errorGenderMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.errorGenderMsg.ForeColor = System.Drawing.Color.Red;
-            this.errorGenderMsg.Location = new System.Drawing.Point(164, 52);
+            this.errorGenderMsg.Location = new System.Drawing.Point(174, 52);
             this.errorGenderMsg.Name = "errorGenderMsg";
-            this.errorGenderMsg.Size = new System.Drawing.Size(0, 25);
+            this.errorGenderMsg.Size = new System.Drawing.Size(0, 26);
             this.errorGenderMsg.TabIndex = 30;
             // 
             // panel2
@@ -342,6 +342,32 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(594, 49);
             this.panel2.TabIndex = 4;
+            // 
+            // statusSwitch
+            // 
+            this.statusSwitch.Animated = true;
+            this.statusSwitch.AutoRoundedCorners = true;
+            this.statusSwitch.BackColor = System.Drawing.Color.White;
+            this.statusSwitch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.statusSwitch.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.statusSwitch.CheckedState.BorderRadius = 12;
+            this.statusSwitch.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.statusSwitch.CheckedState.InnerBorderColor = System.Drawing.Color.White;
+            this.statusSwitch.CheckedState.InnerBorderRadius = 8;
+            this.statusSwitch.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.statusSwitch.CheckedState.Parent = this.statusSwitch;
+            this.statusSwitch.Location = new System.Drawing.Point(492, 8);
+            this.statusSwitch.Name = "statusSwitch";
+            this.statusSwitch.ShadowDecoration.Parent = this.statusSwitch;
+            this.statusSwitch.Size = new System.Drawing.Size(76, 26);
+            this.statusSwitch.TabIndex = 8;
+            this.statusSwitch.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(228)))), ((int)(((byte)(231)))));
+            this.statusSwitch.UncheckedState.BorderRadius = 12;
+            this.statusSwitch.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(228)))), ((int)(((byte)(231)))));
+            this.statusSwitch.UncheckedState.InnerBorderColor = System.Drawing.Color.White;
+            this.statusSwitch.UncheckedState.InnerBorderRadius = 8;
+            this.statusSwitch.UncheckedState.InnerColor = System.Drawing.Color.White;
+            this.statusSwitch.UncheckedState.Parent = this.statusSwitch;
             // 
             // label2
             // 
@@ -369,7 +395,7 @@
             this.submitBtn.ForeColor = System.Drawing.Color.White;
             this.submitBtn.Image = null;
             this.submitBtn.ImageSize = new System.Drawing.Size(20, 20);
-            this.submitBtn.Location = new System.Drawing.Point(307, 511);
+            this.submitBtn.Location = new System.Drawing.Point(307, 522);
             this.submitBtn.Name = "submitBtn";
             this.submitBtn.OnHoverBaseColor = System.Drawing.Color.White;
             this.submitBtn.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
@@ -400,7 +426,7 @@
             this.cancelBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.cancelBtn.Image = null;
             this.cancelBtn.ImageSize = new System.Drawing.Size(20, 20);
-            this.cancelBtn.Location = new System.Drawing.Point(101, 511);
+            this.cancelBtn.Location = new System.Drawing.Point(101, 522);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.cancelBtn.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
@@ -417,40 +443,15 @@
             // 
             // title
             // 
-            this.title.AutoSize = true;
+            this.title.Dock = System.Windows.Forms.DockStyle.Top;
             this.title.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.title.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.title.Location = new System.Drawing.Point(168, 9);
+            this.title.Location = new System.Drawing.Point(0, 0);
             this.title.Name = "title";
-            this.title.Size = new System.Drawing.Size(257, 36);
+            this.title.Size = new System.Drawing.Size(624, 61);
             this.title.TabIndex = 5;
             this.title.Text = "Thêm Khách hàng";
-            // 
-            // statusSwitch
-            // 
-            this.statusSwitch.Animated = true;
-            this.statusSwitch.AutoRoundedCorners = true;
-            this.statusSwitch.BackColor = System.Drawing.Color.White;
-            this.statusSwitch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.statusSwitch.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.statusSwitch.CheckedState.BorderRadius = 12;
-            this.statusSwitch.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.statusSwitch.CheckedState.InnerBorderColor = System.Drawing.Color.White;
-            this.statusSwitch.CheckedState.InnerBorderRadius = 8;
-            this.statusSwitch.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.statusSwitch.CheckedState.Parent = this.statusSwitch;
-            this.statusSwitch.Location = new System.Drawing.Point(492, 8);
-            this.statusSwitch.Name = "statusSwitch";
-            this.statusSwitch.ShadowDecoration.Parent = this.statusSwitch;
-            this.statusSwitch.Size = new System.Drawing.Size(76, 26);
-            this.statusSwitch.TabIndex = 8;
-            this.statusSwitch.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(228)))), ((int)(((byte)(231)))));
-            this.statusSwitch.UncheckedState.BorderRadius = 12;
-            this.statusSwitch.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(228)))), ((int)(((byte)(231)))));
-            this.statusSwitch.UncheckedState.InnerBorderColor = System.Drawing.Color.White;
-            this.statusSwitch.UncheckedState.InnerBorderRadius = 8;
-            this.statusSwitch.UncheckedState.InnerColor = System.Drawing.Color.White;
-            this.statusSwitch.UncheckedState.Parent = this.statusSwitch;
+            this.title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // CustomerModal
             // 
@@ -479,7 +480,6 @@
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

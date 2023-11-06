@@ -87,14 +87,15 @@
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
             this.label1.Font = new System.Drawing.Font("#9Slide03 Cabin", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.label1.Location = new System.Drawing.Point(530, -1);
+            this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(162, 45);
+            this.label1.Size = new System.Drawing.Size(1222, 45);
             this.label1.TabIndex = 0;
             this.label1.Text = "Thêm Sách";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // cancelBtn
             // 
@@ -203,7 +204,7 @@
             this.errorPublishYearMsg.AutoSize = true;
             this.errorPublishYearMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.errorPublishYearMsg.ForeColor = System.Drawing.Color.Red;
-            this.errorPublishYearMsg.Location = new System.Drawing.Point(163, 49);
+            this.errorPublishYearMsg.Location = new System.Drawing.Point(159, 55);
             this.errorPublishYearMsg.Name = "errorPublishYearMsg";
             this.errorPublishYearMsg.Size = new System.Drawing.Size(0, 26);
             this.errorPublishYearMsg.TabIndex = 7;
@@ -280,11 +281,11 @@
             // errorImportPriceMsg
             // 
             this.errorImportPriceMsg.AutoSize = true;
-            this.errorImportPriceMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed SemiB", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.errorImportPriceMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.errorImportPriceMsg.ForeColor = System.Drawing.Color.Red;
-            this.errorImportPriceMsg.Location = new System.Drawing.Point(163, 49);
+            this.errorImportPriceMsg.Location = new System.Drawing.Point(160, 53);
             this.errorImportPriceMsg.Name = "errorImportPriceMsg";
-            this.errorImportPriceMsg.Size = new System.Drawing.Size(0, 30);
+            this.errorImportPriceMsg.Size = new System.Drawing.Size(0, 26);
             this.errorImportPriceMsg.TabIndex = 7;
             // 
             // importPriceLine
@@ -320,7 +321,7 @@
             this.errorPublisherMsg.AutoSize = true;
             this.errorPublisherMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.errorPublisherMsg.ForeColor = System.Drawing.Color.Red;
-            this.errorPublisherMsg.Location = new System.Drawing.Point(163, 52);
+            this.errorPublisherMsg.Location = new System.Drawing.Point(160, 54);
             this.errorPublisherMsg.Name = "errorPublisherMsg";
             this.errorPublisherMsg.Size = new System.Drawing.Size(0, 26);
             this.errorPublisherMsg.TabIndex = 33;
@@ -416,7 +417,7 @@
             this.errorSellPriceMsg.AutoSize = true;
             this.errorSellPriceMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.errorSellPriceMsg.ForeColor = System.Drawing.Color.Red;
-            this.errorSellPriceMsg.Location = new System.Drawing.Point(163, 49);
+            this.errorSellPriceMsg.Location = new System.Drawing.Point(160, 54);
             this.errorSellPriceMsg.Name = "errorSellPriceMsg";
             this.errorSellPriceMsg.Size = new System.Drawing.Size(0, 26);
             this.errorSellPriceMsg.TabIndex = 7;
@@ -454,7 +455,7 @@
             this.errorBookTypeMsg.AutoSize = true;
             this.errorBookTypeMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.errorBookTypeMsg.ForeColor = System.Drawing.Color.Red;
-            this.errorBookTypeMsg.Location = new System.Drawing.Point(163, 52);
+            this.errorBookTypeMsg.Location = new System.Drawing.Point(161, 54);
             this.errorBookTypeMsg.Name = "errorBookTypeMsg";
             this.errorBookTypeMsg.Size = new System.Drawing.Size(0, 26);
             this.errorBookTypeMsg.TabIndex = 30;
@@ -509,7 +510,7 @@
             this.errorAuthorMsg.AutoSize = true;
             this.errorAuthorMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.errorAuthorMsg.ForeColor = System.Drawing.Color.Red;
-            this.errorAuthorMsg.Location = new System.Drawing.Point(163, 52);
+            this.errorAuthorMsg.Location = new System.Drawing.Point(160, 54);
             this.errorAuthorMsg.Name = "errorAuthorMsg";
             this.errorAuthorMsg.Size = new System.Drawing.Size(0, 26);
             this.errorAuthorMsg.TabIndex = 27;
@@ -594,7 +595,7 @@
             this.errorBookNameMsg.AutoSize = true;
             this.errorBookNameMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.errorBookNameMsg.ForeColor = System.Drawing.Color.Red;
-            this.errorBookNameMsg.Location = new System.Drawing.Point(163, 50);
+            this.errorBookNameMsg.Location = new System.Drawing.Point(160, 52);
             this.errorBookNameMsg.Name = "errorBookNameMsg";
             this.errorBookNameMsg.Size = new System.Drawing.Size(0, 26);
             this.errorBookNameMsg.TabIndex = 7;
@@ -731,7 +732,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

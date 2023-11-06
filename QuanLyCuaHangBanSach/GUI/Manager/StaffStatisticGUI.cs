@@ -211,5 +211,10 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 		{
 			Hide();
 		}
-	}
+
+        private void dgvStaff_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+    }
 }

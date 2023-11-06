@@ -29,6 +29,11 @@ namespace QuanLyCuaHangBanSach.DAO
             return DataProvider.Instance.ExecuteQuery("select * from nhanvien WHERE hienThi = 1;");
         }
 
+        public DataTable getAllNoAccount()
+        {
+            return DataProvider.Instance.ExecuteQuery("select * from nhanvien LEFT JOIN taikhoan ON nhanvien.maNhanVien=taikhoan.maNhanVien WHERE taikhoan.maNhanVien IS NULL AND nhanvien.hienThi = 1;");
+        }
+
         public StaffDTO getById(string id)
         {
             DataTable dataTable = DataProvider.Instance.ExecuteQuery(

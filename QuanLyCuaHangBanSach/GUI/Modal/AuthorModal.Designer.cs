@@ -60,14 +60,15 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
             this.label1.Font = new System.Drawing.Font("#9Slide03 Cabin", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.label1.Location = new System.Drawing.Point(201, 2);
+            this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(186, 45);
+            this.label1.Size = new System.Drawing.Size(589, 45);
             this.label1.TabIndex = 0;
             this.label1.Text = "Thêm Tác gỉả";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // cancelBtn
             // 
@@ -85,7 +86,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             this.cancelBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.cancelBtn.Image = null;
             this.cancelBtn.ImageSize = new System.Drawing.Size(20, 20);
-            this.cancelBtn.Location = new System.Drawing.Point(88, 579);
+            this.cancelBtn.Location = new System.Drawing.Point(88, 625);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.cancelBtn.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
@@ -116,7 +117,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             this.submitBtn.ForeColor = System.Drawing.Color.White;
             this.submitBtn.Image = null;
             this.submitBtn.ImageSize = new System.Drawing.Size(20, 20);
-            this.submitBtn.Location = new System.Drawing.Point(302, 579);
+            this.submitBtn.Location = new System.Drawing.Point(302, 625);
             this.submitBtn.Name = "submitBtn";
             this.submitBtn.OnHoverBaseColor = System.Drawing.Color.White;
             this.submitBtn.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
@@ -139,7 +140,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             this.panel1.Controls.Add(this.label3);
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(445, 139);
+            this.panel1.Size = new System.Drawing.Size(445, 155);
             this.panel1.TabIndex = 0;
             // 
             // authorName
@@ -174,9 +175,9 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             // authorNameMsg
             // 
             this.authorNameMsg.AutoSize = true;
-            this.authorNameMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.authorNameMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 10.2F, System.Drawing.FontStyle.Italic);
             this.authorNameMsg.ForeColor = System.Drawing.Color.Red;
-            this.authorNameMsg.Location = new System.Drawing.Point(20, 103);
+            this.authorNameMsg.Location = new System.Drawing.Point(20, 108);
             this.authorNameMsg.Name = "authorNameMsg";
             this.authorNameMsg.Size = new System.Drawing.Size(0, 26);
             this.authorNameMsg.TabIndex = 7;
@@ -209,7 +210,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             this.flowLayoutPanel1.Controls.Add(this.panel3);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(68, 50);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(452, 503);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(452, 550);
             this.flowLayoutPanel1.TabIndex = 4;
             // 
             // panel2
@@ -217,9 +218,9 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             this.panel2.Controls.Add(this.genderCbx);
             this.panel2.Controls.Add(this.genderMsg);
             this.panel2.Controls.Add(this.label4);
-            this.panel2.Location = new System.Drawing.Point(3, 148);
+            this.panel2.Location = new System.Drawing.Point(3, 164);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(445, 139);
+            this.panel2.Size = new System.Drawing.Size(445, 155);
             this.panel2.TabIndex = 1;
             // 
             // genderCbx
@@ -254,9 +255,9 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             // genderMsg
             // 
             this.genderMsg.AutoSize = true;
-            this.genderMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.genderMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 10.2F, System.Drawing.FontStyle.Italic);
             this.genderMsg.ForeColor = System.Drawing.Color.Red;
-            this.genderMsg.Location = new System.Drawing.Point(20, 103);
+            this.genderMsg.Location = new System.Drawing.Point(20, 109);
             this.genderMsg.Name = "genderMsg";
             this.genderMsg.Size = new System.Drawing.Size(0, 26);
             this.genderMsg.TabIndex = 7;
@@ -277,9 +278,9 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             this.panel4.Controls.Add(this.birthYearMsg);
             this.panel4.Controls.Add(this.birthYearLine);
             this.panel4.Controls.Add(this.label6);
-            this.panel4.Location = new System.Drawing.Point(3, 293);
+            this.panel4.Location = new System.Drawing.Point(3, 325);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(445, 141);
+            this.panel4.Size = new System.Drawing.Size(445, 159);
             this.panel4.TabIndex = 33;
             // 
             // birthYear
@@ -314,9 +315,9 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             // birthYearMsg
             // 
             this.birthYearMsg.AutoSize = true;
-            this.birthYearMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.birthYearMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 10.2F, System.Drawing.FontStyle.Italic);
             this.birthYearMsg.ForeColor = System.Drawing.Color.Red;
-            this.birthYearMsg.Location = new System.Drawing.Point(20, 103);
+            this.birthYearMsg.Location = new System.Drawing.Point(20, 112);
             this.birthYearMsg.Name = "birthYearMsg";
             this.birthYearMsg.Size = new System.Drawing.Size(0, 26);
             this.birthYearMsg.TabIndex = 7;
@@ -343,7 +344,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             // 
             this.panel3.Controls.Add(this.statusSwitch);
             this.panel3.Controls.Add(this.label2);
-            this.panel3.Location = new System.Drawing.Point(3, 440);
+            this.panel3.Location = new System.Drawing.Point(3, 490);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(445, 49);
             this.panel3.TabIndex = 34;
@@ -377,10 +378,10 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             // 
             // label2
             // 
-            this.label2.Font = new System.Drawing.Font("#9Slide03 Cabin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label2.Location = new System.Drawing.Point(3, 3);
+            this.label2.Font = new System.Drawing.Font("#9Slide03 Cabin", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label2.Location = new System.Drawing.Point(12, 3);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(168, 31);
+            this.label2.Size = new System.Drawing.Size(119, 31);
             this.label2.TabIndex = 5;
             this.label2.Text = "Trạng thái:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -390,7 +391,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(589, 658);
+            this.ClientSize = new System.Drawing.Size(589, 687);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.submitBtn);
             this.Controls.Add(this.cancelBtn);
@@ -411,7 +412,6 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

@@ -47,14 +47,15 @@
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.label1.Location = new System.Drawing.Point(210, 9);
+            this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(213, 36);
+            this.label1.Size = new System.Drawing.Size(632, 53);
             this.label1.TabIndex = 0;
             this.label1.Text = "Thêm Thể Loại";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // cancelBtn
             // 
@@ -161,11 +162,11 @@
             // errorBookTypeNameMsg
             // 
             this.errorBookTypeNameMsg.AutoSize = true;
-            this.errorBookTypeNameMsg.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.errorBookTypeNameMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.errorBookTypeNameMsg.ForeColor = System.Drawing.Color.Red;
-            this.errorBookTypeNameMsg.Location = new System.Drawing.Point(163, 50);
+            this.errorBookTypeNameMsg.Location = new System.Drawing.Point(160, 53);
             this.errorBookTypeNameMsg.Name = "errorBookTypeNameMsg";
-            this.errorBookTypeNameMsg.Size = new System.Drawing.Size(0, 25);
+            this.errorBookTypeNameMsg.Size = new System.Drawing.Size(0, 26);
             this.errorBookTypeNameMsg.TabIndex = 7;
             // 
             // nameLine
@@ -264,7 +265,6 @@
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

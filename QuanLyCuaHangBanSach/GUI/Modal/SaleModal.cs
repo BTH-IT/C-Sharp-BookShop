@@ -180,5 +180,10 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 "Thời gian kết thúc phải lớn hơn hoặc bằng thời \n gian bắt đầu"
             );
         }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

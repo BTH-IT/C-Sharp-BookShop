@@ -50,8 +50,8 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             this.phoneNumberLine = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
             this.statusSwitch = new Guna.UI2.WinForms.Guna2ToggleSwitch();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -61,14 +61,15 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
             this.label1.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.label1.Location = new System.Drawing.Point(204, 2);
+            this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(247, 45);
+            this.label1.Size = new System.Drawing.Size(589, 50);
             this.label1.TabIndex = 0;
             this.label1.Text = "Thêm Nhà Cung Cấp";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // cancelBtn
             // 
@@ -175,11 +176,11 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             // supplierNameMsg
             // 
             this.supplierNameMsg.AutoSize = true;
-            this.supplierNameMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed SemiB", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.supplierNameMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 10.2F, System.Drawing.FontStyle.Italic);
             this.supplierNameMsg.ForeColor = System.Drawing.Color.Red;
             this.supplierNameMsg.Location = new System.Drawing.Point(20, 103);
             this.supplierNameMsg.Name = "supplierNameMsg";
-            this.supplierNameMsg.Size = new System.Drawing.Size(0, 30);
+            this.supplierNameMsg.Size = new System.Drawing.Size(0, 26);
             this.supplierNameMsg.TabIndex = 7;
             // 
             // nameLine
@@ -263,11 +264,11 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             // addressMsg
             // 
             this.addressMsg.AutoSize = true;
-            this.addressMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed SemiB", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.addressMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 10.2F, System.Drawing.FontStyle.Italic);
             this.addressMsg.ForeColor = System.Drawing.Color.Red;
             this.addressMsg.Location = new System.Drawing.Point(20, 109);
             this.addressMsg.Name = "addressMsg";
-            this.addressMsg.Size = new System.Drawing.Size(0, 30);
+            this.addressMsg.Size = new System.Drawing.Size(0, 26);
             this.addressMsg.TabIndex = 7;
             // 
             // label4
@@ -323,11 +324,11 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             // phoneNumberMsg
             // 
             this.phoneNumberMsg.AutoSize = true;
-            this.phoneNumberMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed SemiB", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.phoneNumberMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 10.2F, System.Drawing.FontStyle.Italic);
             this.phoneNumberMsg.ForeColor = System.Drawing.Color.Red;
             this.phoneNumberMsg.Location = new System.Drawing.Point(20, 106);
             this.phoneNumberMsg.Name = "phoneNumberMsg";
-            this.phoneNumberMsg.Size = new System.Drawing.Size(0, 30);
+            this.phoneNumberMsg.Size = new System.Drawing.Size(0, 26);
             this.phoneNumberMsg.TabIndex = 7;
             // 
             // phoneNumberLine
@@ -357,16 +358,6 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             this.panel3.Size = new System.Drawing.Size(445, 49);
             this.panel3.TabIndex = 35;
             // 
-            // label2
-            // 
-            this.label2.Font = new System.Drawing.Font("#9Slide03 Cabin", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label2.Location = new System.Drawing.Point(10, 3);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(168, 31);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Trạng thái:";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // statusSwitch
             // 
             this.statusSwitch.Animated = true;
@@ -392,6 +383,16 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             this.statusSwitch.UncheckedState.InnerBorderRadius = 8;
             this.statusSwitch.UncheckedState.InnerColor = System.Drawing.Color.White;
             this.statusSwitch.UncheckedState.Parent = this.statusSwitch;
+            // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("#9Slide03 Cabin", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label2.Location = new System.Drawing.Point(10, 3);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(168, 31);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Trạng thái:";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // SupplierModal
             // 
@@ -419,7 +420,6 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

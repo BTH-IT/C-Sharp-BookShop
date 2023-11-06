@@ -42,13 +42,13 @@
             this.nameLine = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.errorBookListMsg = new System.Windows.Forms.Label();
             this.gunaButton1 = new Guna.UI.WinForms.GunaButton();
             this.bookList = new System.Windows.Forms.FlowLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
             this.submitBtn = new Guna.UI.WinForms.GunaButton();
             this.cancelBtn = new Guna.UI.WinForms.GunaButton();
             this.label1 = new System.Windows.Forms.Label();
-            this.errorBookListMsg = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -71,7 +71,7 @@
             this.errorCustomerMsg.AutoSize = true;
             this.errorCustomerMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.errorCustomerMsg.ForeColor = System.Drawing.Color.Red;
-            this.errorCustomerMsg.Location = new System.Drawing.Point(163, 52);
+            this.errorCustomerMsg.Location = new System.Drawing.Point(162, 54);
             this.errorCustomerMsg.Name = "errorCustomerMsg";
             this.errorCustomerMsg.Size = new System.Drawing.Size(0, 26);
             this.errorCustomerMsg.TabIndex = 27;
@@ -137,7 +137,7 @@
             this.errorSaleMsg.AutoSize = true;
             this.errorSaleMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.errorSaleMsg.ForeColor = System.Drawing.Color.Red;
-            this.errorSaleMsg.Location = new System.Drawing.Point(163, 52);
+            this.errorSaleMsg.Location = new System.Drawing.Point(160, 54);
             this.errorSaleMsg.Name = "errorSaleMsg";
             this.errorSaleMsg.Size = new System.Drawing.Size(0, 26);
             this.errorSaleMsg.TabIndex = 33;
@@ -243,6 +243,16 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1194, 478);
             this.panel4.TabIndex = 9;
+            // 
+            // errorBookListMsg
+            // 
+            this.errorBookListMsg.AutoSize = true;
+            this.errorBookListMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.errorBookListMsg.ForeColor = System.Drawing.Color.Red;
+            this.errorBookListMsg.Location = new System.Drawing.Point(422, 435);
+            this.errorBookListMsg.Name = "errorBookListMsg";
+            this.errorBookListMsg.Size = new System.Drawing.Size(0, 26);
+            this.errorBookListMsg.TabIndex = 35;
             // 
             // gunaButton1
             // 
@@ -358,24 +368,15 @@
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
             this.label1.Font = new System.Drawing.Font("#9Slide03 Cabin", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.label1.Location = new System.Drawing.Point(467, 5);
+            this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(288, 45);
+            this.label1.Size = new System.Drawing.Size(1222, 61);
             this.label1.TabIndex = 5;
             this.label1.Text = "Tạo Đơn Khách Hàng";
-            // 
-            // errorBookListMsg
-            // 
-            this.errorBookListMsg.AutoSize = true;
-            this.errorBookListMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.errorBookListMsg.ForeColor = System.Drawing.Color.Red;
-            this.errorBookListMsg.Location = new System.Drawing.Point(422, 435);
-            this.errorBookListMsg.Name = "errorBookListMsg";
-            this.errorBookListMsg.Size = new System.Drawing.Size(0, 26);
-            this.errorBookListMsg.TabIndex = 35;
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // CustomerBillModal
             // 
@@ -404,7 +405,6 @@
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
