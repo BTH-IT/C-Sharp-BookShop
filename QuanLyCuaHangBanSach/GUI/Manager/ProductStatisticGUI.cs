@@ -82,13 +82,17 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 				});
 				DataTable numberBookSoldDT = CustomerBillBUS.Instance.getBookSoldInRange(now.Year.ToString(), (month - 5).ToString(), month.ToString());
 				int maxVal = 0;
-				foreach (DataRow row in numberBookSoldDT.Rows)
-				{
-					maxVal = Math.Max(maxVal, Convert.ToInt32(row["soLuong"]));
-				}
-				int maxValRounded = (int)Math.Ceiling((double)maxVal / 10) * 10;
+				int maxValRounded = 0;
+                if (numberBookSoldDT != null)
+                {
+                    foreach (DataRow row in numberBookSoldDT.Rows)
+                    {
+                        maxVal = Math.Max(maxVal, Convert.ToInt32(row["soLuong"]));
+                    }
+                    maxValRounded = (int)Math.Ceiling((double)maxVal / 10) * 10;
+                }
 
-				List<string> strValueLabel = new List<string>();
+                List<string> strValueLabel = new List<string>();
 
 				for (int i = 0; i <= maxValRounded; i += 10)
 				{
@@ -155,9 +159,12 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 				revenueLb.Text = string.Format("{0:N0} VNĐ", revenue);
 
 				int bookSold = 0;
-				foreach (DataRow row in numberBookSoldDT.Rows)
+				if (numberBookSoldDT != null)
 				{
-					bookSold += Convert.ToInt32(row["soLuong"]);
+					foreach (DataRow row in numberBookSoldDT.Rows)
+					{
+						bookSold += Convert.ToInt32(row["soLuong"]);
+					}
 				}
 				bookSoldLb.Text = $@"{bookSold} quyển sách";
 

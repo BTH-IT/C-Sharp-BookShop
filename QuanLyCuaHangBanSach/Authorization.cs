@@ -1,10 +1,6 @@
-﻿using System;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Newtonsoft.Json.Linq;
-using QuanLyCuaHangBanSach.BUS;
+﻿using QuanLyCuaHangBanSach.BUS;
 using QuanLyCuaHangBanSach.DTO;
+using System;
 using System.Collections.Generic;
 
 namespace QuanLyCuaHangBanSach

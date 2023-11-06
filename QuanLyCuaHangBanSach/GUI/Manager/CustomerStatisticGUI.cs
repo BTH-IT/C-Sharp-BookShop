@@ -86,10 +86,13 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
 			DataTable numberBookSoldDT = CustomerBillBUS.Instance.getBookSoldInRange(now.Year.ToString(), (month - 5).ToString(), month.ToString());
 			int bookSold = 0;
-			foreach (DataRow row in numberBookSoldDT.Rows)
-			{
-				bookSold += Convert.ToInt32(row["soLuong"]);
-			}
+            if (numberBookSoldDT != null)
+            {
+				foreach (DataRow row in numberBookSoldDT.Rows)
+				{
+					bookSold += Convert.ToInt32(row["soLuong"]);
+				}
+            }
 			bookSoldLb.Text = $@"{bookSold} quyển sách";
 
 			int customerNumber = CustomerBillBUS.Instance.getNumberCustomerInRange(now.Year.ToString(), (month - 5).ToString(), month.ToString());

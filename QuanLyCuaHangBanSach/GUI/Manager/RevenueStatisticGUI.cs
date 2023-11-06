@@ -89,7 +89,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 					Title = "Tháng",
 					Labels = strLabel
 				});
-				List<CustomerBillDTO> billList = CustomerBillBUS.Instance.getAllInRange(now.Year.ToString(), (month - 5).ToString(), month.ToString());
+				List<CustomerBillDTO> billList = CustomerBillBUS.Instance.getAllInRange(now.Year.ToString(), (month - 5).ToString(), month.ToString()) ?? new List<CustomerBillDTO>();
 				double tongTienBill = 0;
 				foreach (CustomerBillDTO bill in billList)
 				{
@@ -159,10 +159,14 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
 				DataTable numberBookSoldDT = CustomerBillBUS.Instance.getBookSoldInRange(now.Year.ToString(), (month - 5).ToString(), month.ToString());
 				int bookSold = 0;
-				foreach (DataRow row in numberBookSoldDT.Rows)
-				{
-					bookSold += Convert.ToInt32(row["soLuong"]);
-				}
+                if (numberBookSoldDT != null)
+                {
+                    foreach (DataRow row in numberBookSoldDT.Rows)
+                    {
+                        bookSold += Convert.ToInt32(row["soLuong"]);
+                    }
+                }
+
 				bookSoldLb.Text = $@"{bookSold} quyển sách";
 
 				int customerNumber = CustomerBillBUS.Instance.getNumberCustomerInRange(now.Year.ToString(), (month - 5).ToString(), month.ToString());

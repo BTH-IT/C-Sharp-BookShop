@@ -34,7 +34,7 @@ namespace QuanLyCuaHangBanSach.GUI
 
             currentStaff = StaffBUS.Instance.getById(staffId.ToString());
 
-            authorization = new Authorization(staffId);
+            authorization = new Authorization(currentStaff.MaChucVu);
 
             foreach (var item in authorization.getPermissionObject())
             {
@@ -59,31 +59,31 @@ namespace QuanLyCuaHangBanSach.GUI
                         case "5":
                             this.navBar.Controls.Remove(this.publisherBtn);
                             break;
-                        case "7":
+                        case "8":
                             this.navBar.Controls.Remove(this.customerBtn);
                             break;
-                        case "8":
+                        case "9":
                             this.navBar.Controls.Remove(this.authorBtn);
                             break;
-                        case "9":
+                        case "10":
                             this.navBar.Controls.Remove(this.seoBtn);
                             break;
-                        case "10":
+                        case "11":
                             this.navBar.Controls.Remove(this.permissionBtn);
                             break;
-                        case "11":
+                        case "12":
                             this.navBar.Controls.Remove(this.positionBtn);
                             break;
-                        case "12":
+                        case "13":
                             this.navBar.Controls.Remove(this.billBtn);
                             break;
-                        case "13":
+                        case "14":
                             this.navBar.Controls.Remove(this.importBilBtn);
                             break;
-                        case "14":
+                        case "15":
                             this.navBar.Controls.Remove(this.accountBtn);
                             break;
-                        case "15":
+                        case "16":
                             this.navBar.Controls.Remove(this.homeBtn);
                             break;
                     }
@@ -106,31 +106,31 @@ namespace QuanLyCuaHangBanSach.GUI
                         case "5":
                             this.manageContent.Controls.Add(this.publisherFrm);
                             break;
-                        case "7":
+                        case "8":
                             this.manageContent.Controls.Add(this.customerFrm);
                             break;
-                        case "8":
+                        case "9":
                             this.manageContent.Controls.Add(this.authorFrm);
                             break;
-                        case "9":
+                        case "10":
                             this.manageContent.Controls.Add(this.seoFrm);
                             break;
-                        case "10":
+                        case "11":
                             this.manageContent.Controls.Add(this.permissionFrm);
                             break;
-                        case "11":
+                        case "12":
                             this.manageContent.Controls.Add(this.positionFrm);
                             break;
-                        case "12":
+                        case "13":
                             this.manageContent.Controls.Add(this.customerBillFrm);
                             break;
-                        case "13":
+                        case "14":
                             this.manageContent.Controls.Add(this.importBillFrm);
                             break;
-                        case "14":
+                        case "15":
                             this.manageContent.Controls.Add(this.accountFrm);
                             break;
-                        case "15":
+                        case "16":
                             this.manageContent.Controls.Add(this.statisticFrm);
                             break;
                     }
