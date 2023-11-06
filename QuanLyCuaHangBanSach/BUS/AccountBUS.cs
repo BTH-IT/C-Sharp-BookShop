@@ -79,8 +79,11 @@ namespace QuanLyCuaHangBanSach.BUS
         {
             return AccountDAO.Instance.getById(id);
         }
-
-        public bool insert(AccountDTO account)
+		public AccountDTO getByStaffId(string id)
+		{
+			return AccountDAO.Instance.getByStaffId(id);
+		}
+		public bool insert(AccountDTO account)
         {
             return AccountDAO.Instance.insert(account);
         }
