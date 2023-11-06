@@ -60,7 +60,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 								staff.NamSinh,
 								staff.GioiTinh,
 								staff.SoDienThoai,
-								staff.Luong.ToString() ,
+                                string.Format("{0:N0} VNĐ", staff.Luong),
 								PositionBUS.Instance.getById(staff.MaChucVu.ToString()).TenChucVu
 							}
 						);
@@ -369,6 +369,70 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 			catch { 
 			}	
             
+        }
+
+        private void dgvStaff_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (this.dgvStaff.CurrentCell.RowIndex < 0)
+                {
+                    MessageBox.Show("Vui lòng chọn một nhân viên");
+                    return;
+                }
+                using (StaffModal modal = new StaffModal("Sửa nhân viên"))
+                {
+                    DataGridViewRow selectedRow = this.dgvStaff.Rows[this.dgvStaff.CurrentCell.RowIndex];
+
+                    StaffDTO staff = StaffBUS.Instance.getById(selectedRow.Cells[1].Value.ToString());
+
+                    modal.staff = staff;
+
+                    modal.ShowDialog();
+
+                    if (modal.isSubmitSuccess)
+                    {
+                        MessageBox.Show("Sửa nhân viên thành công");
+                        List<StaffDTO> staffs = handleFilter(this.searchInput.Text);
+                        loadDataToDataGridView(staffs);
+                    }
+                }
+            }
+            catch { }
+        }
+
+        private void dgvStaff_SortCompare(object sender, DataGridViewSortCompareEventArgs e)
+        {
+            if (e.Column.Index == dgvStaff.Columns.Count - 2) // Check if sorting the last column
+            {
+                // Extract the values for sorting from the cell values
+                double value1 = GetSortingValue(e.CellValue1);
+                double value2 = GetSortingValue(e.CellValue2);
+
+                // Compare the extracted values
+                e.SortResult = value1.CompareTo(value2);
+
+                // Mark the comparison as handled to prevent default sorting
+                e.Handled = true;
+            }
+        }
+
+        private double GetSortingValue(object cellValue)
+        {
+            if (cellValue == null)
+                return 0;
+
+            // Extract the numerical value from the string (remove " VNĐ" and parse)
+            string stringValue = cellValue.ToString();
+            stringValue = stringValue.Replace(".", "").Replace(" VNĐ", "");
+
+            if (double.TryParse(stringValue, out double numericValue))
+            {
+                // Convert the numeric value to a sortable string
+                return numericValue;
+            }
+
+            return 0;
         }
     }
 }

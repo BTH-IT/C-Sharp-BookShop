@@ -50,6 +50,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.exportBtn = new Guna.UI.WinForms.GunaAdvenceButton();
             this.refreshBtn = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.deleteBtn = new Guna.UI.WinForms.GunaAdvenceButton();
             this.editBtn = new Guna.UI.WinForms.GunaAdvenceButton();
             this.addBtn = new Guna.UI.WinForms.GunaAdvenceButton();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
@@ -62,7 +63,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.deleteBtn = new Guna.UI.WinForms.GunaAdvenceButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStaff)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -239,6 +239,8 @@
             this.dgvStaff.ThemeStyle.RowsStyle.Height = 75;
             this.dgvStaff.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvStaff.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgvStaff.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStaff_CellDoubleClick);
+            this.dgvStaff.SortCompare += new System.Windows.Forms.DataGridViewSortCompareEventHandler(this.dgvStaff_SortCompare);
             // 
             // Column11
             // 
@@ -385,6 +387,40 @@
             this.refreshBtn.TabIndex = 7;
             this.refreshBtn.Text = "Làm mới";
             this.refreshBtn.Click += new System.EventHandler(this.refreshBtn_Click);
+            // 
+            // deleteBtn
+            // 
+            this.deleteBtn.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.deleteBtn.AnimationHoverSpeed = 0.07F;
+            this.deleteBtn.AnimationSpeed = 0.03F;
+            this.deleteBtn.BackColor = System.Drawing.Color.Transparent;
+            this.deleteBtn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.deleteBtn.BorderColor = System.Drawing.Color.Black;
+            this.deleteBtn.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.deleteBtn.CheckedBorderColor = System.Drawing.Color.Black;
+            this.deleteBtn.CheckedForeColor = System.Drawing.Color.White;
+            this.deleteBtn.CheckedImage = ((System.Drawing.Image)(resources.GetObject("deleteBtn.CheckedImage")));
+            this.deleteBtn.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.deleteBtn.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.deleteBtn.FocusedColor = System.Drawing.Color.Empty;
+            this.deleteBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold);
+            this.deleteBtn.ForeColor = System.Drawing.Color.White;
+            this.deleteBtn.Image = ((System.Drawing.Image)(resources.GetObject("deleteBtn.Image")));
+            this.deleteBtn.ImageSize = new System.Drawing.Size(20, 20);
+            this.deleteBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.deleteBtn.Location = new System.Drawing.Point(954, 6);
+            this.deleteBtn.Name = "deleteBtn";
+            this.deleteBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.deleteBtn.OnHoverBorderColor = System.Drawing.Color.Transparent;
+            this.deleteBtn.OnHoverForeColor = System.Drawing.Color.White;
+            this.deleteBtn.OnHoverImage = null;
+            this.deleteBtn.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.deleteBtn.OnPressedColor = System.Drawing.Color.Black;
+            this.deleteBtn.Radius = 6;
+            this.deleteBtn.Size = new System.Drawing.Size(78, 42);
+            this.deleteBtn.TabIndex = 6;
+            this.deleteBtn.Text = "Xóa";
+            this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
             // 
             // editBtn
             // 
@@ -601,40 +637,6 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(1044, 63);
             this.panel5.TabIndex = 42;
-            // 
-            // deleteBtn
-            // 
-            this.deleteBtn.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.deleteBtn.AnimationHoverSpeed = 0.07F;
-            this.deleteBtn.AnimationSpeed = 0.03F;
-            this.deleteBtn.BackColor = System.Drawing.Color.Transparent;
-            this.deleteBtn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.deleteBtn.BorderColor = System.Drawing.Color.Black;
-            this.deleteBtn.CheckedBaseColor = System.Drawing.Color.Gray;
-            this.deleteBtn.CheckedBorderColor = System.Drawing.Color.Black;
-            this.deleteBtn.CheckedForeColor = System.Drawing.Color.White;
-            this.deleteBtn.CheckedImage = ((System.Drawing.Image)(resources.GetObject("deleteBtn.CheckedImage")));
-            this.deleteBtn.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.deleteBtn.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.deleteBtn.FocusedColor = System.Drawing.Color.Empty;
-            this.deleteBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold);
-            this.deleteBtn.ForeColor = System.Drawing.Color.White;
-            this.deleteBtn.Image = ((System.Drawing.Image)(resources.GetObject("deleteBtn.Image")));
-            this.deleteBtn.ImageSize = new System.Drawing.Size(20, 20);
-            this.deleteBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.deleteBtn.Location = new System.Drawing.Point(954, 6);
-            this.deleteBtn.Name = "deleteBtn";
-            this.deleteBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.deleteBtn.OnHoverBorderColor = System.Drawing.Color.Transparent;
-            this.deleteBtn.OnHoverForeColor = System.Drawing.Color.White;
-            this.deleteBtn.OnHoverImage = null;
-            this.deleteBtn.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.deleteBtn.OnPressedColor = System.Drawing.Color.Black;
-            this.deleteBtn.Radius = 6;
-            this.deleteBtn.Size = new System.Drawing.Size(78, 42);
-            this.deleteBtn.TabIndex = 6;
-            this.deleteBtn.Text = "Xóa";
-            this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
             // 
             // StaffManageGUI
             // 
