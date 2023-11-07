@@ -97,5 +97,9 @@ namespace QuanLyCuaHangBanSach.BUS
         {
             return BookDAO.Instance.createBookAmount(id, amount);
         }
+        public List<BookDTO> getBookList(string id)
+        {
+            return BookDAO.Instance.getBookList(id);
+        }
     }
 }
