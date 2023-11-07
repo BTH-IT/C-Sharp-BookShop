@@ -129,15 +129,16 @@
             this.passwordTxt.Size = new System.Drawing.Size(424, 36);
             this.passwordTxt.TabIndex = 3;
             this.passwordTxt.TextChanged += new System.EventHandler(this.passwordTxt_TextChanged);
+            this.passwordTxt.Leave += new System.EventHandler(this.passwordTxt_TextChanged);
             // 
             // errorPasswordMsg
             // 
             this.errorPasswordMsg.AutoSize = true;
-            this.errorPasswordMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Italic);
+            this.errorPasswordMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 10.2F, System.Drawing.FontStyle.Italic);
             this.errorPasswordMsg.ForeColor = System.Drawing.Color.Red;
             this.errorPasswordMsg.Location = new System.Drawing.Point(204, 70);
             this.errorPasswordMsg.Name = "errorPasswordMsg";
-            this.errorPasswordMsg.Size = new System.Drawing.Size(0, 30);
+            this.errorPasswordMsg.Size = new System.Drawing.Size(0, 26);
             this.errorPasswordMsg.TabIndex = 7;
             // 
             // passwordLine
@@ -186,15 +187,16 @@
             this.emailTxt.Size = new System.Drawing.Size(424, 36);
             this.emailTxt.TabIndex = 2;
             this.emailTxt.TextChanged += new System.EventHandler(this.emailTxt_TextChanged);
+            this.emailTxt.Leave += new System.EventHandler(this.emailTxt_TextChanged);
             // 
             // errorEmailMsg
             // 
             this.errorEmailMsg.AutoSize = true;
-            this.errorEmailMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Italic);
+            this.errorEmailMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 10.2F, System.Drawing.FontStyle.Italic);
             this.errorEmailMsg.ForeColor = System.Drawing.Color.Red;
             this.errorEmailMsg.Location = new System.Drawing.Point(203, 69);
             this.errorEmailMsg.Name = "errorEmailMsg";
-            this.errorEmailMsg.Size = new System.Drawing.Size(0, 30);
+            this.errorEmailMsg.Size = new System.Drawing.Size(0, 26);
             this.errorEmailMsg.TabIndex = 7;
             // 
             // errorEmailLine
@@ -320,15 +322,16 @@
             this.confirmPasswordTxt.Size = new System.Drawing.Size(424, 36);
             this.confirmPasswordTxt.TabIndex = 4;
             this.confirmPasswordTxt.TextChanged += new System.EventHandler(this.confirmPasswordTxt_TextChanged);
+            this.confirmPasswordTxt.Leave += new System.EventHandler(this.confirmPasswordTxt_TextChanged);
             // 
             // errorConfirmPasswordMsg
             // 
             this.errorConfirmPasswordMsg.AutoSize = true;
-            this.errorConfirmPasswordMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Italic);
+            this.errorConfirmPasswordMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 10.2F, System.Drawing.FontStyle.Italic);
             this.errorConfirmPasswordMsg.ForeColor = System.Drawing.Color.Red;
             this.errorConfirmPasswordMsg.Location = new System.Drawing.Point(202, 68);
             this.errorConfirmPasswordMsg.Name = "errorConfirmPasswordMsg";
-            this.errorConfirmPasswordMsg.Size = new System.Drawing.Size(0, 30);
+            this.errorConfirmPasswordMsg.Size = new System.Drawing.Size(0, 26);
             this.errorConfirmPasswordMsg.TabIndex = 7;
             // 
             // confirmPasswordLine
@@ -362,11 +365,11 @@
             // staffLine
             // 
             this.staffLine.AutoSize = true;
-            this.staffLine.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.staffLine.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.staffLine.ForeColor = System.Drawing.Color.Red;
             this.staffLine.Location = new System.Drawing.Point(208, 67);
             this.staffLine.Name = "staffLine";
-            this.staffLine.Size = new System.Drawing.Size(0, 30);
+            this.staffLine.Size = new System.Drawing.Size(0, 26);
             this.staffLine.TabIndex = 27;
             // 
             // staffComboBox

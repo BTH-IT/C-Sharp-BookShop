@@ -29,6 +29,11 @@ namespace QuanLyCuaHangBanSach.BUS
             return AuthorDAO.Instance.getAll();
         }
 
+        public bool checkDuplicateName(string value)
+        {
+            return AuthorDAO.Instance.checkDuplicateName(value);
+        }
+
         public List<AuthorDTO> search(string value)
         {
             List<AuthorDTO> authorList = new List<AuthorDTO>();

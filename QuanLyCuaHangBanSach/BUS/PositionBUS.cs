@@ -28,6 +28,11 @@ namespace QuanLyCuaHangBanSach.BUS
             return PositionDAO.Instance.getAll();
         }
 
+        public bool checkDuplicateName(string value)
+        {
+            return PositionDAO.Instance.checkDuplicateName(value);
+        }
+
         public List<PositionDTO> search(string value)
         {
             List<PositionDTO> positionList = new List<PositionDTO>();
@@ -63,7 +68,7 @@ namespace QuanLyCuaHangBanSach.BUS
 
         public bool insert(PositionDTO position)
         {
-            return PositionDAO.Instance.advanceInsert(position);
+            return PositionDAO.Instance.insert(position);
         }
 
         public bool update(PositionDTO position)

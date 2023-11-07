@@ -43,6 +43,24 @@ namespace QuanLyCuaHangBanSach
             return true;
         }
 
+        public bool checkDuplicateName(Label errMsgLbl, Panel line, bool isDuplicate, string errMsg = "Tên đã có trong hệ thống")
+        {
+
+            if (isDuplicate)
+            {
+                errMsgLbl.Text = errMsg;
+                line.BackColor = Color.FromArgb(239, 68, 68);
+                return false;
+            }
+            else
+            {
+                errMsgLbl.Text = "";
+                line.BackColor = Color.FromArgb(45, 212, 191);
+            }
+            return true;
+        }
+
+
         public bool checkTextboxMax(Guna2TextBox txt, string errMsg, Label errMsgLbl, Panel line, int max)
         {
 

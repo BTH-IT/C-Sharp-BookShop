@@ -29,6 +29,19 @@ namespace QuanLyCuaHangBanSach.DAO
             return DataProvider.Instance.ExecuteQuery("select * from khuyenmai WHERE hienThi = 1;");
         }
 
+        public bool checkDuplicateName(string value)
+        {
+            DataTable dataTable = DataProvider.Instance.ExecuteQuery("select * from khuyenmai WHERE  LOWER(tenKhuyenMai)= LOWER(@tenKhuyenMai) and hienThi=1;",
+                new MySqlParameter[] {
+                    new MySqlParameter("@tenKhuyenMai", value.Trim().ToLower())
+                }
+            );
+
+            if (dataTable.Rows.Count <= 0) return false;
+
+            return true;
+        }
+
         public SaleDTO getById(string id)
         {
             DataTable dataTable = DataProvider.Instance.ExecuteQuery(

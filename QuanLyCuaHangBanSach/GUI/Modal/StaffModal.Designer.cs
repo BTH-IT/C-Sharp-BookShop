@@ -107,6 +107,7 @@
             this.birthYearTxt.ShadowDecoration.Parent = this.birthYearTxt;
             this.birthYearTxt.Size = new System.Drawing.Size(425, 36);
             this.birthYearTxt.TabIndex = 33;
+            this.birthYearTxt.Leave += new System.EventHandler(this.birthYearTxt_Leave);
             // 
             // errorBirthYearMsg
             // 
@@ -227,6 +228,7 @@
             this.staffNameTxt.ShadowDecoration.Parent = this.staffNameTxt;
             this.staffNameTxt.Size = new System.Drawing.Size(425, 36);
             this.staffNameTxt.TabIndex = 1;
+            this.staffNameTxt.Leave += new System.EventHandler(this.staffNameTxt_Leave);
             // 
             // errorStaffNameMsg
             // 
@@ -362,6 +364,7 @@
             this.phoneNumberTxt.ShadowDecoration.Parent = this.phoneNumberTxt;
             this.phoneNumberTxt.Size = new System.Drawing.Size(425, 36);
             this.phoneNumberTxt.TabIndex = 33;
+            this.phoneNumberTxt.Leave += new System.EventHandler(this.phoneNumberTxt_Leave);
             // 
             // errorPhoneNumberMsg
             // 
@@ -429,6 +432,7 @@
             this.salaryTxt.ShadowDecoration.Parent = this.salaryTxt;
             this.salaryTxt.Size = new System.Drawing.Size(419, 36);
             this.salaryTxt.TabIndex = 33;
+            this.salaryTxt.Leave += new System.EventHandler(this.salaryTxt_Leave);
             // 
             // errorSalaryMsg
             // 

@@ -30,6 +30,19 @@ namespace QuanLyCuaHangBanSach.DAO
             return DataProvider.Instance.ExecuteQuery("select * from chucvu;");
         }
 
+        public bool checkDuplicateName(string value)
+        {
+            DataTable dataTable = DataProvider.Instance.ExecuteQuery("select * from chucvu WHERE  LOWER(tenChucVu)= LOWER(@tenChucVu);",
+                new MySqlParameter[] {
+                    new MySqlParameter("@tenChucVu", value.Trim().ToLower())
+                }
+            );
+
+            if (dataTable.Rows.Count <= 0) return false;
+
+            return true;
+        }
+
         public PositionDTO getById(string id)
         {
             DataTable dataTable = DataProvider.Instance.ExecuteQuery(

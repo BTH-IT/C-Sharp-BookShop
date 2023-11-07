@@ -48,14 +48,11 @@ namespace QuanLyCuaHangBanSach.BUS
 			List<CustomerBillDTO> customerBillList = new List<CustomerBillDTO>();
 			DataTable dt = CustomerBillDAO.Instance.getAllInRange(year, startMonth, endMonth);
 
-            if (dt != null)
-            {
-                foreach (DataRow row in dt.Rows)
-                {
-                    CustomerBillDTO customerBill = new CustomerBillDTO(row);
-                    customerBillList.Add(customerBill);
-                }
-            }
+			foreach (DataRow row in dt.Rows)
+			{
+				CustomerBillDTO customerBill = new CustomerBillDTO(row);
+				customerBillList.Add(customerBill);
+			}
 
 			return customerBillList;
 		}

@@ -158,6 +158,7 @@
             this.BookTypeNameTxt.Size = new System.Drawing.Size(425, 36);
             this.BookTypeNameTxt.TabIndex = 32;
             this.BookTypeNameTxt.TextChanged += new System.EventHandler(this.BookTypeNameTxt_TextChanged);
+            this.BookTypeNameTxt.Leave += new System.EventHandler(this.BookTypeNameTxt_TextChanged);
             // 
             // errorBookTypeNameMsg
             // 

@@ -198,6 +198,7 @@
             this.publishYearTxt.Size = new System.Drawing.Size(419, 36);
             this.publishYearTxt.TabIndex = 33;
             this.publishYearTxt.TextChanged += new System.EventHandler(this.publishYearTxt_TextChanged);
+            this.publishYearTxt.Leave += new System.EventHandler(this.publishYearTxt_TextChanged);
             // 
             // errorPublishYearMsg
             // 
@@ -277,6 +278,7 @@
             this.importPriceTxt.Size = new System.Drawing.Size(354, 36);
             this.importPriceTxt.TabIndex = 33;
             this.importPriceTxt.TextChanged += new System.EventHandler(this.importPriceTxt_TextChanged);
+            this.importPriceTxt.Leave += new System.EventHandler(this.importPriceTxt_TextChanged);
             // 
             // errorImportPriceMsg
             // 
@@ -411,6 +413,7 @@
             this.sellPriceTxt.Size = new System.Drawing.Size(354, 36);
             this.sellPriceTxt.TabIndex = 33;
             this.sellPriceTxt.TextChanged += new System.EventHandler(this.sellPriceTxt_TextChanged);
+            this.sellPriceTxt.Leave += new System.EventHandler(this.sellPriceTxt_TextChanged);
             // 
             // errorSellPriceMsg
             // 
@@ -589,6 +592,7 @@
             this.bookNameTxt.Size = new System.Drawing.Size(425, 36);
             this.bookNameTxt.TabIndex = 32;
             this.bookNameTxt.TextChanged += new System.EventHandler(this.bookNameTxt_TextChanged);
+            this.bookNameTxt.Leave += new System.EventHandler(this.bookNameTxt_TextChanged);
             // 
             // errorBookNameMsg
             // 

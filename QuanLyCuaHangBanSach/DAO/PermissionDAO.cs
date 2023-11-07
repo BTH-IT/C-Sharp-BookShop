@@ -24,7 +24,18 @@ namespace QuanLyCuaHangBanSach.DAO
             private set { PermissionDAO.instance = value; }
         }
 
-        
+        public bool checkDuplicateName(string value)
+        {
+            DataTable dataTable = DataProvider.Instance.ExecuteQuery("select * from quyenhan WHERE LOWER(tenQuyenHan)=LOWER(@tenQuyenHan);",
+                new MySqlParameter[] {
+                    new MySqlParameter("@tenQuyenHan", value.Trim().ToLower())
+                }
+            );
+
+            if (dataTable.Rows.Count <= 0) return false;
+
+            return true;
+        }
         public DataTable getAll() {
             return DataProvider.Instance.ExecuteQuery("select * from quyenhan;");
         }

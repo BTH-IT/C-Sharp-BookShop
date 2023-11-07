@@ -24,7 +24,19 @@ namespace QuanLyCuaHangBanSach.DAO
             private set { PublisherDAO.instance = value; }
         }
 
-        
+        public bool checkDuplicateName(string value)
+        {
+            DataTable dataTable = DataProvider.Instance.ExecuteQuery("select * from nhaxuatban WHERE  LOWER(tenNhaXuatBan)= LOWER(@tenNhaXuatBan);",
+                new MySqlParameter[] {
+                    new MySqlParameter("@tenNhaXuatBan", value.Trim().ToLower())
+                }
+            );
+
+            if (dataTable.Rows.Count <= 0) return false;
+
+            return true;
+        }
+
         public DataTable getAll() {
             return DataProvider.Instance.ExecuteQuery("select * from nhaxuatban;");
         }

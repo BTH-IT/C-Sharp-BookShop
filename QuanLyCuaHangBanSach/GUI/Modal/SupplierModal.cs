@@ -26,15 +26,19 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
         {
             try
             {
-                this.Suppliertxt.ForeColor = Color.Black;
+                bool isSupplier = CustomValidation.Instance.checkTextbox(
+                    this.Suppliertxt,
+                    this.supplierNameMsg,
+                    this.nameLine,
+                    new string[] { "required" }
+                );
 
-                if (this.Suppliertxt.Text.Length > 0)
+                if (isSupplier)
                 {
-                    CustomValidation.Instance.checkTextbox(
-                        this.Suppliertxt,
+                    CustomValidation.Instance.checkDuplicateName(
                         this.supplierNameMsg,
                         this.nameLine,
-                        new string[] { "required" }
+                        PublisherBUS.Instance.checkDuplicateName(this.Suppliertxt.Text)
                     );
                 }
             }
@@ -49,12 +53,21 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
         {
             try
             {
-                bool isCheckTxt1 = CustomValidation.Instance.checkTextbox(
-                        this.Suppliertxt,
+                bool isSupplier = CustomValidation.Instance.checkTextbox(
+                    this.Suppliertxt,
+                    this.supplierNameMsg,
+                    this.nameLine,
+                    new string[] { "required" }
+                );
+
+                if (isSupplier)
+                {
+                    CustomValidation.Instance.checkDuplicateName(
                         this.supplierNameMsg,
                         this.nameLine,
-                        new string[] { "required" }
+                        PublisherBUS.Instance.checkDuplicateName(this.Suppliertxt.Text)
                     );
+                }
 
                 bool isCheckTxt2 = CustomValidation.Instance.checkTextbox(
                         this.phoneNumbertxt,
@@ -72,7 +85,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
 
 
-                return isCheckTxt1 && isCheckTxt2 && isCheckTxt3;
+                return isSupplier && isCheckTxt2 && isCheckTxt3;
             }
             catch (Exception)
             {
@@ -174,12 +187,21 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
         private void Suppliertxt_TextChanged(object sender, EventArgs e)
         {
-            CustomValidation.Instance.checkTextbox(
-                this.Suppliertxt,
-                this.supplierNameMsg,
-                this.nameLine,
-                new string[] { "required" }
-            );
+            bool isSupplier = CustomValidation.Instance.checkTextbox(
+                    this.Suppliertxt,
+                    this.supplierNameMsg,
+                    this.nameLine,
+                    new string[] { "required" }
+                );
+
+            if (isSupplier)
+            {
+                CustomValidation.Instance.checkDuplicateName(
+                    this.supplierNameMsg,
+                    this.nameLine,
+                    PublisherBUS.Instance.checkDuplicateName(this.Suppliertxt.Text)
+                );
+            }
         }
 
         private void addressTxt_TextChanged(object sender, EventArgs e)
@@ -201,5 +223,5 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 new string[] { "required", "phone-number" }
             );
         }
-	}
+    }
 }

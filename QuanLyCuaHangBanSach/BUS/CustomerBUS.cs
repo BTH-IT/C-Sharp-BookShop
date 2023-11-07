@@ -1,6 +1,7 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Data;
 using System.IO.Packaging;
+using QuanLyCuaHangBanSach.BUS;
 using QuanLyCuaHangBanSach.DAO;
 using QuanLyCuaHangBanSach.DTO;
 
@@ -29,6 +30,11 @@ namespace QuanLyCuaHangBanSach.BUS
             return CustomerDAO.Instance.getAll();
         }
 
+        public bool checkDuplicateName(string value)
+        {
+            return CustomerDAO.Instance.checkDuplicateName(value);
+        }
+
         public List<CustomerDTO> getAllData()
         {
             List<CustomerDTO> customerList = new List<CustomerDTO>();
@@ -47,7 +53,7 @@ namespace QuanLyCuaHangBanSach.BUS
         {
             return CustomerDAO.Instance.getById(id);
         }
-        
+
         public List<CustomerDTO> Search(string id)
         {
             return CustomerDAO.Instance.Search(id);
@@ -56,12 +62,12 @@ namespace QuanLyCuaHangBanSach.BUS
         {
             return CustomerDAO.Instance.SearchByPhoneNum(num);
         }
-		public List<CustomerDTO> loadCustomerChartData()
+        public List<CustomerDTO> loadCustomerChartData()
         {
             return CustomerDAO.Instance.loadCustomerChartData();
-		}
+        }
 
-		public bool insert(CustomerDTO customer)
+        public bool insert(CustomerDTO customer)
         {
             return CustomerDAO.Instance.insert(customer);
         }

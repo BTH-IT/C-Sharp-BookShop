@@ -75,8 +75,17 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                     this.emailTxt,
                     this.errorEmailMsg,
                     this.errorEmailLine,
-                    new string[] { "required", "email"}
+                    new string[] { "required", "email" }
                 );
+
+                if (isEmailValid)
+                {
+                    CustomValidation.Instance.checkDuplicateName(
+                        this.errorEmailMsg,
+                        this.errorEmailLine,
+                        AccountBUS.Instance.checkDuplicateName(this.emailTxt.Text)
+                    );
+                }
 
                 bool isPasswordValid = CustomValidation.Instance.checkTextbox(
                     this.passwordTxt,
@@ -152,12 +161,21 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
         private void emailTxt_TextChanged(object sender, EventArgs e)
         {
-            CustomValidation.Instance.checkTextbox(
-                this.emailTxt,
-                this.errorEmailMsg,
-                this.errorEmailLine,
-                new string[] { "required", "email" }
-            );
+            bool isEmailValid = CustomValidation.Instance.checkTextbox(
+                    this.emailTxt,
+                    this.errorEmailMsg,
+                    this.errorEmailLine,
+                    new string[] { "required", "email" }
+                );
+
+            if (isEmailValid)
+            {
+                CustomValidation.Instance.checkDuplicateName(
+                    this.errorEmailMsg,
+                    this.errorEmailLine,
+                    AccountBUS.Instance.checkDuplicateName(this.emailTxt.Text)
+                );
+            }
         }
 
         private void passwordTxt_TextChanged(object sender, EventArgs e)

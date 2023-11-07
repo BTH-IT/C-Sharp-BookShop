@@ -128,13 +128,23 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 					   this.errorPositionMsg,
 					   new string[] { "required" }
 				   );
-				bool isPhoneNumber = CustomValidation.Instance.checkTextbox(
-						this.phoneNumberTxt,
-						this.errorPhoneNumberMsg,
-						this.phoneNumberLine,
-						new string[] { "required", "phone-number" }
-					);
-				return isStaffNameValid && isSalaryValid && isGenderValid && isPhoneNumber && isBirthYearValid && isPositionValid ;
+                bool isPhone = CustomValidation.Instance.checkTextbox(
+                    this.phoneNumberTxt,
+                    this.errorPhoneNumberMsg,
+                    this.phoneNumberLine,
+                    new string[] { "required", "phone-number" }
+                );
+
+                if (isPhone)
+                {
+                    CustomValidation.Instance.checkDuplicateName(
+                        this.errorPhoneNumberMsg,
+                        this.phoneNumberLine,
+                        StaffBUS.Instance.checkDuplicateName(this.phoneNumberTxt.Text),
+                        "Số điện thoại đã có trong hệ thống"
+                    );
+                }
+                return isStaffNameValid && isSalaryValid && isGenderValid && isPhone && isBirthYearValid && isPositionValid ;
 			}
             catch
             {
@@ -181,12 +191,22 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
         private void phoneNumberTxt_TextChanged(object sender, EventArgs e)
         {
-            CustomValidation.Instance.checkTextbox(
+            bool isPhone = CustomValidation.Instance.checkTextbox(
                 this.phoneNumberTxt,
                 this.errorPhoneNumberMsg,
                 this.phoneNumberLine,
                 new string[] { "required", "phone-number" }
             );
+
+            if (isPhone)
+            {
+                CustomValidation.Instance.checkDuplicateName(
+                    this.errorPhoneNumberMsg,
+                    this.phoneNumberLine,
+                    StaffBUS.Instance.checkDuplicateName(this.phoneNumberTxt.Text),
+                    "Số điện thoại đã có trong hệ thống"
+                );
+            }
         }
 		
 		private void salaryTxt_TextChanged(object sender, EventArgs e)
@@ -213,6 +233,56 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             CustomValidation.Instance.checkCombobox(
                 this.genderCbx,
                 this.errorGenderMsg,
+                new string[] { "required" }
+            );
+        }
+
+        private void salaryTxt_Leave(object sender, EventArgs e)
+        {
+            CustomValidation.Instance.checkTextbox(
+                this.salaryTxt,
+                this.errorSalaryMsg,
+                this.salaryLine,
+                new string[] { "required", "positive-number" }
+            );
+        }
+
+        private void phoneNumberTxt_Leave(object sender, EventArgs e)
+        {
+            bool isPhone = CustomValidation.Instance.checkTextbox(
+                this.phoneNumberTxt,
+                this.errorPhoneNumberMsg,
+                this.phoneNumberLine,
+                new string[] { "required", "phone-number" }
+            );
+
+            if (isPhone)
+            {
+                CustomValidation.Instance.checkDuplicateName(
+                    this.errorPhoneNumberMsg,
+                    this.phoneNumberLine,
+                    StaffBUS.Instance.checkDuplicateName(this.phoneNumberTxt.Text),
+                    "Số điện thoại đã có trong hệ thống"
+                );
+            }
+        }
+
+        private void birthYearTxt_Leave(object sender, EventArgs e)
+        {
+            CustomValidation.Instance.checkTextbox(
+                this.birthYearTxt,
+                this.errorBirthYearMsg,
+                this.birthYearLine,
+                new string[] { "required", "positive-number", "max-current-year" }
+            );
+        }
+
+        private void staffNameTxt_Leave(object sender, EventArgs e)
+        {
+            CustomValidation.Instance.checkTextbox(
+                this.staffNameTxt,
+                this.errorStaffNameMsg,
+                this.staffNameLine,
                 new string[] { "required" }
             );
         }

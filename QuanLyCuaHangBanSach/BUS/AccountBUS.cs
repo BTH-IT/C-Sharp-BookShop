@@ -28,6 +28,11 @@ namespace QuanLyCuaHangBanSach.BUS
             return AccountDAO.Instance.getAll();
         }
 
+        public AccountDTO getByStaffId(string id)
+        {
+            return AccountDAO.Instance.getByStaffId(id);
+        }
+
         public AccountDTO login(string email, string pwd)
         {
             AccountDTO account = this.getById(email);
@@ -37,6 +42,11 @@ namespace QuanLyCuaHangBanSach.BUS
             if (!account.MatKhau.Equals(pwd)) return null;
 
             return account;
+        }
+
+        public bool checkDuplicateName(string value)
+        {
+            return AccountDAO.Instance.checkDuplicateName(value);
         }
 
         public bool resetPassword(string email, string pwd)
@@ -79,11 +89,8 @@ namespace QuanLyCuaHangBanSach.BUS
         {
             return AccountDAO.Instance.getById(id);
         }
-		public AccountDTO getByStaffId(string id)
-		{
-			return AccountDAO.Instance.getByStaffId(id);
-		}
-		public bool insert(AccountDTO account)
+
+        public bool insert(AccountDTO account)
         {
             return AccountDAO.Instance.insert(account);
         }

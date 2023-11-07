@@ -42,7 +42,20 @@ namespace QuanLyCuaHangBanSach.DAO
 
             return account;
         }
-        
+
+        public bool checkDuplicateName(string value)
+        {
+            DataTable dataTable = DataProvider.Instance.ExecuteQuery("select * from theloai WHERE  LOWER(tenTheLoai)=LOWER(@tenTheLoai);",
+                new MySqlParameter[] {
+                    new MySqlParameter("@tenTheLoai", value.Trim().ToLower())
+                }
+            );
+
+            if (dataTable.Rows.Count <= 0) return false;
+
+            return true;
+        }
+
         public DataTable searchData(string value)
         {
             string sql = $@"SELECT * FROM theloai WHERE (maTheLoai LIKE @maTheLoai OR tenTheLoai LIKE @tenTheLoai);";

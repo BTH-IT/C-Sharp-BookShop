@@ -45,15 +45,19 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
         private void BookTypeNameTxt_TextChanged(object sender, EventArgs e)
         {
-            this.BookTypeNameTxt.ForeColor = Color.Black;
+            bool isBookType = CustomValidation.Instance.checkTextbox(
+                this.BookTypeNameTxt,
+                this.errorBookTypeNameMsg,
+                this.nameLine,
+                new string[] { "required" }
+            );
 
-            if (this.BookTypeNameTxt.Text.Length > 0)
+            if (isBookType)
             {
-                CustomValidation.Instance.checkTextbox(
-                    this.BookTypeNameTxt,
+                CustomValidation.Instance.checkDuplicateName(
                     this.errorBookTypeNameMsg,
                     this.nameLine,
-                    new string[] { "required" }
+                    BookTypeBUS.Instance.checkDuplicateName(this.BookTypeNameTxt.Text)
                 );
             }
         }
@@ -97,13 +101,5 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
             MessageBox.Show(updateBookType != null ? "Update Failure" : "Insert Failure");
         }
-
-		private void statusSwitch_CheckedChanged(object sender, EventArgs e)
-		{
-			if (this.statusSwitch.Checked)
-			{
-				this.statusSwitch.CheckedState.FillColor = Color.FromArgb(45, 210, 192);
-			}
-		}
 	}
 }

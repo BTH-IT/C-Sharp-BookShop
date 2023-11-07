@@ -26,35 +26,41 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
         private void positionNameTxt_TextChanged(object sender, EventArgs e)
         {
-            try
-            {
-                this.positionNameTxt.ForeColor = Color.Black;
+            bool isPosition = CustomValidation.Instance.checkTextbox(
+                     this.positionNameTxt,
+                     this.errorPositionNameMsg,
+                     this.nameLine,
+                     new string[] { "required" }
+                 );
 
-                if (this.positionNameTxt.Text.Length > 0)
-                {
-                    CustomValidation.Instance.checkTextbox(
-                        this.positionNameTxt,
-                        this.errorPositionNameMsg,
-                        this.nameLine,
-                        new string[] { "required" }
-                    );
-                }
-            }
-            catch (Exception ex)
+            if (isPosition)
             {
-                Console.WriteLine(ex);
+                CustomValidation.Instance.checkDuplicateName(
+                    this.errorPositionNameMsg,
+                    this.nameLine,
+                    PositionBUS.Instance.checkDuplicateName(this.positionNameTxt.Text)
+                );
             }
         }
         private bool validateForm()
         {
-            bool isCheckTxt1 = CustomValidation.Instance.checkTextbox(
-                this.positionNameTxt,
-                this.errorPositionNameMsg,
-                this.nameLine,
-                new string[] { "required" }
-            );
+            bool isPosition = CustomValidation.Instance.checkTextbox(
+                    this.positionNameTxt,
+                    this.errorPositionNameMsg,
+                    this.nameLine,
+                    new string[] { "required" }
+                );
 
-            return isCheckTxt1;
+            if (isPosition)
+            {
+                CustomValidation.Instance.checkDuplicateName(
+                    this.errorPositionNameMsg,
+                    this.nameLine,
+                    PositionBUS.Instance.checkDuplicateName(this.positionNameTxt.Text)
+                );
+            }
+
+            return isPosition;
         }
 
         private void submitBtn_Click(object sender, EventArgs e)

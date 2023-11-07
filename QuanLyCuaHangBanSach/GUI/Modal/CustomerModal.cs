@@ -102,20 +102,30 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 					new string[] { "required", "positive-number", "max-current-year" }
 				);
 
-				bool isPhoneNumberValid = CustomValidation.Instance.checkTextbox(
-					this.phoneNumberTxtBox,
-					this.errorPhoneNumberMsg,
-					this.phoneNumberLine,
-					new string[] { "required", "phone-number" }
-				);
+                bool isPhone = CustomValidation.Instance.checkTextbox(
+                    this.phoneNumberTxtBox,
+                    this.errorPhoneNumberMsg,
+                    this.phoneNumberLine,
+                    new string[] { "required", "phone-number" }
+                );
 
-				bool isGenderValid = CustomValidation.Instance.checkCombobox(
+                if (isPhone)
+                {
+                    CustomValidation.Instance.checkDuplicateName(
+                        this.errorPhoneNumberMsg,
+                        this.phoneNumberLine,
+                        CustomerBUS.Instance.checkDuplicateName(this.phoneNumberTxtBox.Text),
+                        "Số điện thoại đã có trong hệ thống"
+                    );
+                }
+
+                bool isGenderValid = CustomValidation.Instance.checkCombobox(
 					this.genderCbx,
 					this.errorGenderMsg,
 					new string[] { "required" }
 				);
 
-				return isBirthYearValid && isCustomerNameValid && isGenderValid && isPhoneNumberValid;
+				return isBirthYearValid && isCustomerNameValid && isGenderValid && isPhone;
 			}
             catch
             {
@@ -146,12 +156,22 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
         private void phoneNumberTxtBox_TextChanged(object sender, EventArgs e)
         {
-            CustomValidation.Instance.checkTextbox(
-                    this.phoneNumberTxtBox,
+            bool isPhone = CustomValidation.Instance.checkTextbox(
+                this.phoneNumberTxtBox,
+                this.errorPhoneNumberMsg,
+                this.phoneNumberLine,
+                new string[] { "required", "phone-number" }
+            );
+
+            if (isPhone)
+            {
+                CustomValidation.Instance.checkDuplicateName(
                     this.errorPhoneNumberMsg,
                     this.phoneNumberLine,
-                    new string[] { "required", "phone-number" }
+                    CustomerBUS.Instance.checkDuplicateName(this.phoneNumberTxtBox.Text),
+                    "Số điện thoại đã có trong hệ thống"
                 );
+            }
         }
 
         private void genderCbx_SelectedIndexChanged(object sender, EventArgs e)

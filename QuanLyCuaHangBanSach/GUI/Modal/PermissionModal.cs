@@ -26,28 +26,41 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
         private void permissionNameTxt_TextChanged(object sender, EventArgs e)
         {
-            this.permissionNameTxt.ForeColor = Color.Black;
-
-            if (this.permissionNameTxt.Text.Length > 0)
-            {
-                CustomValidation.Instance.checkTextbox(
-                    this.permissionNameTxt,
-                    this.errorPermissionNameMsg,
-                    this.nameLine,
-                    new string[] { "required" }
-                );
-            }
-        }
-        private bool validateForm()
-        {
-            bool isCheckTxt1 = CustomValidation.Instance.checkTextbox(
+            bool isPermission = CustomValidation.Instance.checkTextbox(
                 this.permissionNameTxt,
                 this.errorPermissionNameMsg,
                 this.nameLine,
                 new string[] { "required" }
             );
 
-            return isCheckTxt1;
+            if (isPermission)
+            {
+                CustomValidation.Instance.checkDuplicateName(
+                    this.errorPermissionNameMsg,
+                    this.nameLine,
+                    PermissionBUS.Instance.checkDuplicateName(this.permissionNameTxt.Text)
+                );
+            }
+        }
+        private bool validateForm()
+        {
+            bool isPermission = CustomValidation.Instance.checkTextbox(
+                this.permissionNameTxt,
+                this.errorPermissionNameMsg,
+                this.nameLine,
+                new string[] { "required" }
+            );
+
+            if (isPermission)
+            {
+                CustomValidation.Instance.checkDuplicateName(
+                    this.errorPermissionNameMsg,
+                    this.nameLine,
+                    PermissionBUS.Instance.checkDuplicateName(this.permissionNameTxt.Text)
+                );
+            }
+
+            return isPermission;
         }
 
         private void submitBtn_Click(object sender, EventArgs e)

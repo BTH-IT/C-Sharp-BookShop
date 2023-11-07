@@ -172,6 +172,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             this.Suppliertxt.Size = new System.Drawing.Size(425, 36);
             this.Suppliertxt.TabIndex = 32;
             this.Suppliertxt.TextChanged += new System.EventHandler(this.bookNameTxt_TextChanged);
+            this.Suppliertxt.Leave += new System.EventHandler(this.bookNameTxt_TextChanged);
             // 
             // supplierNameMsg
             // 
@@ -260,6 +261,8 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             this.addressTxt.ShadowDecoration.Parent = this.addressTxt;
             this.addressTxt.Size = new System.Drawing.Size(425, 36);
             this.addressTxt.TabIndex = 33;
+            this.addressTxt.TextChanged += new System.EventHandler(this.addressTxt_TextChanged);
+            this.addressTxt.Leave += new System.EventHandler(this.addressTxt_TextChanged);
             // 
             // addressMsg
             // 
@@ -320,6 +323,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             this.phoneNumbertxt.Size = new System.Drawing.Size(425, 36);
             this.phoneNumbertxt.TabIndex = 32;
             this.phoneNumbertxt.TextChanged += new System.EventHandler(this.birthYear_TextChanged);
+            this.phoneNumbertxt.Leave += new System.EventHandler(this.birthYear_TextChanged);
             // 
             // phoneNumberMsg
             // 

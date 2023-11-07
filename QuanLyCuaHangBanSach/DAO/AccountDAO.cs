@@ -27,6 +27,19 @@ namespace QuanLyCuaHangBanSach.DAO
             return DataProvider.Instance.ExecuteQuery("select * from taikhoan");
         }
 
+        public bool checkDuplicateName(string value)
+        {
+            DataTable dataTable = DataProvider.Instance.ExecuteQuery("select * from taikhoan WHERE LOWER(email)=LOWER(@email);",
+                new MySqlParameter[] {
+                    new MySqlParameter("@email", value.Trim().ToLower())
+                }
+            );
+
+            if (dataTable.Rows.Count <= 0) return false;
+
+            return true;
+        }
+
         public AccountDTO getById(string id)
         {
             DataTable dataTable = DataProvider.Instance.ExecuteQuery(

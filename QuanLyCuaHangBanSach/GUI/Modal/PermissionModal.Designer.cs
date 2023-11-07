@@ -84,6 +84,7 @@
             this.permissionNameTxt.Size = new System.Drawing.Size(425, 36);
             this.permissionNameTxt.TabIndex = 32;
             this.permissionNameTxt.TextChanged += new System.EventHandler(this.permissionNameTxt_TextChanged);
+            this.permissionNameTxt.Leave += new System.EventHandler(this.permissionNameTxt_TextChanged);
             // 
             // errorPermissionNameMsg
             // 

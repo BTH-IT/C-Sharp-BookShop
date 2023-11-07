@@ -29,13 +29,21 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
         {
             try
             {
-                this.authorName.ForeColor = Color.Black;
-                CustomValidation.Instance.checkTextbox(
+                bool isAuthor = CustomValidation.Instance.checkTextbox(
                     this.authorName,
                     this.authorNameMsg,
                     this.nameLine,
                     new string[] { "required" }
                 );
+
+                if (isAuthor)
+                {
+                    isAuthor = CustomValidation.Instance.checkDuplicateName(
+                        this.authorNameMsg,
+                        this.nameLine,
+                        AuthorBUS.Instance.checkDuplicateName(this.authorName.Text)
+                    );
+                }
             }
             catch (Exception er)
             {
@@ -46,12 +54,21 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
         private bool validateForm()
         {
-            bool isCheckTxt1 = CustomValidation.Instance.checkTextbox(
-                this.authorName,
-                this.authorNameMsg,
-                this.nameLine,
-                new string[] { "required" }
-            );
+            bool isAuthor = CustomValidation.Instance.checkTextbox(
+                    this.authorName,
+                    this.authorNameMsg,
+                    this.nameLine,
+                    new string[] { "required" }
+                );
+
+            if (isAuthor)
+            {
+                isAuthor = CustomValidation.Instance.checkDuplicateName(
+                    this.authorNameMsg,
+                    this.nameLine,
+                    AuthorBUS.Instance.checkDuplicateName(this.authorName.Text)
+                );
+            }
 
             bool isCheckTxt2 = CustomValidation.Instance.checkTextbox(
                 this.birthYear,
@@ -67,7 +84,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 new string[] { "required" }
             );
 
-            return isCheckTxt1 && isCheckTxt2 && isCheckCbx1;
+            return isAuthor && isCheckTxt2 && isCheckCbx1;
         }
 
         private void gunaButton1_Click(object sender, EventArgs e)

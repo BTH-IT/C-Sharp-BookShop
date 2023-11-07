@@ -127,13 +127,21 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
         {
             try
             {
-                this.bookNameTxt.ForeColor = Color.Black;
-                CustomValidation.Instance.checkTextbox(
+                bool isBookName = CustomValidation.Instance.checkTextbox(
                     this.bookNameTxt,
                     this.errorBookNameMsg,
                     this.nameLine,
                     new string[] { "required" }
                 );
+
+                if (isBookName)
+                {
+                    CustomValidation.Instance.checkDuplicateName(
+                        this.errorBookNameMsg,
+                        this.nameLine,
+                        BookBUS.Instance.checkDuplicateName(this.bookNameTxt.Text)
+                    );
+                }
             }
             catch (Exception ex)
             {
@@ -203,12 +211,21 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
         {
             try
             {
-                bool isCheckTxt1 = CustomValidation.Instance.checkTextbox(
-                        this.bookNameTxt,
+                bool isBookName = CustomValidation.Instance.checkTextbox(
+                    this.bookNameTxt,
+                    this.errorBookNameMsg,
+                    this.nameLine,
+                    new string[] { "required" }
+                );
+
+                if (isBookName)
+                {
+                    CustomValidation.Instance.checkDuplicateName(
                         this.errorBookNameMsg,
                         this.nameLine,
-                        new string[] { "required" }
+                        BookBUS.Instance.checkDuplicateName(this.bookNameTxt.Text)
                     );
+                }
 
                 bool isCheckTxt2 = CustomValidation.Instance.checkTextbox(
                     this.sellPriceTxt,
@@ -255,7 +272,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                     new string[] { "required" }
                 );
 
-                return isCheckTxt1 && isCheckTxt2 && isCheckTxt3 && isCheckTxt4
+                return isBookName && isCheckTxt2 && isCheckTxt3 && isCheckTxt4
                 && isCheckCbx1 && isCheckCbx2 && isCheckCbx3 && isCheckPictureBox;
             }
             catch (Exception ex)

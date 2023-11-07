@@ -165,12 +165,13 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             this.authorName.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.authorName.Name = "authorName";
             this.authorName.PasswordChar = '\0';
-            this.authorName.PlaceholderText = "Nhập tên sách";
+            this.authorName.PlaceholderText = "Nhập tên tác giả";
             this.authorName.SelectedText = "";
             this.authorName.ShadowDecoration.Parent = this.authorName;
             this.authorName.Size = new System.Drawing.Size(425, 36);
             this.authorName.TabIndex = 32;
             this.authorName.TextChanged += new System.EventHandler(this.bookNameTxt_TextChanged);
+            this.authorName.Leave += new System.EventHandler(this.bookNameTxt_TextChanged);
             // 
             // authorNameMsg
             // 
@@ -311,6 +312,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             this.birthYear.Size = new System.Drawing.Size(425, 36);
             this.birthYear.TabIndex = 32;
             this.birthYear.TextChanged += new System.EventHandler(this.birthYear_TextChanged);
+            this.birthYear.Leave += new System.EventHandler(this.birthYear_TextChanged);
             // 
             // birthYearMsg
             // 

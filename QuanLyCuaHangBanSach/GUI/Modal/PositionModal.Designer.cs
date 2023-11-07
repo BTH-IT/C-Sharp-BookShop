@@ -89,6 +89,7 @@
             this.positionNameTxt.Size = new System.Drawing.Size(425, 36);
             this.positionNameTxt.TabIndex = 32;
             this.positionNameTxt.TextChanged += new System.EventHandler(this.positionNameTxt_TextChanged);
+            this.positionNameTxt.Leave += new System.EventHandler(this.positionNameTxt_TextChanged);
             // 
             // errorPositionNameMsg
             // 

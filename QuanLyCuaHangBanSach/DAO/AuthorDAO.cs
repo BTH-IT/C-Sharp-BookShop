@@ -29,6 +29,19 @@ namespace QuanLyCuaHangBanSach.DAO
             return DataProvider.Instance.ExecuteQuery("select * from tacgia");
         }
 
+        public bool checkDuplicateName(string value)
+        {
+            DataTable dataTable = DataProvider.Instance.ExecuteQuery("select * from tacgia WHERE  LOWER(tenTacGia)=LOWER(@tenTacGia);",
+                new MySqlParameter[] {
+                    new MySqlParameter("@tenTacGia", value.Trim().ToLower())
+                }
+            );
+
+            if (dataTable.Rows.Count <= 0) return false;
+
+            return true;
+        }
+
         public AuthorDTO getById(string id)
         {
             DataTable dataTable = DataProvider.Instance.ExecuteQuery(

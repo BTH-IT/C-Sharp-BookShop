@@ -23,6 +23,11 @@ namespace QuanLyCuaHangBanSach.BUS
             private set { PublisherBUS.instance = value; }
         }
 
+        public bool checkDuplicateName(string value)
+        {
+            return PublisherDAO.Instance.checkDuplicateName(value);
+        }
+
         public DataTable getAll()
         {
             return PublisherDAO.Instance.getAll();

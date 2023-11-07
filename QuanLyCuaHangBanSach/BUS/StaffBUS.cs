@@ -43,6 +43,11 @@ namespace QuanLyCuaHangBanSach.BUS
             return customerList;
         }
 
+        public bool checkDuplicateName(string value)
+        {
+            return StaffDAO.Instance.checkDuplicateName(value);
+        }
+
         public List<StaffDTO> getAllNoAccount()
         {
             List<StaffDTO> customerList = new List<StaffDTO>();

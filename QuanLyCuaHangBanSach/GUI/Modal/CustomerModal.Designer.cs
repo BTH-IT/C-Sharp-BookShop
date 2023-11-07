@@ -135,6 +135,7 @@
             this.phoneNumberTxtBox.Size = new System.Drawing.Size(406, 29);
             this.phoneNumberTxtBox.TabIndex = 33;
             this.phoneNumberTxtBox.TextChanged += new System.EventHandler(this.phoneNumberTxtBox_TextChanged);
+            this.phoneNumberTxtBox.Leave += new System.EventHandler(this.phoneNumberTxtBox_TextChanged);
             // 
             // errorPhoneNumberMsg
             // 
@@ -203,6 +204,7 @@
             this.customerNameTxtBox.Size = new System.Drawing.Size(406, 28);
             this.customerNameTxtBox.TabIndex = 32;
             this.customerNameTxtBox.TextChanged += new System.EventHandler(this.customerNameTxtBox_TextChanged);
+            this.customerNameTxtBox.Leave += new System.EventHandler(this.customerNameTxtBox_TextChanged);
             // 
             // errorCustomerNameMsg
             // 
@@ -285,6 +287,7 @@
             this.birthYearTxtBox.Size = new System.Drawing.Size(406, 31);
             this.birthYearTxtBox.TabIndex = 33;
             this.birthYearTxtBox.TextChanged += new System.EventHandler(this.birthYearTxtBox_TextChanged);
+            this.birthYearTxtBox.Leave += new System.EventHandler(this.birthYearTxtBox_TextChanged);
             // 
             // errorBirthYearMsg
             // 

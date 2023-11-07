@@ -26,15 +26,19 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
         {
             try
             {
-                this.Publishertxt.ForeColor = Color.Black;
+                bool isPublisher = CustomValidation.Instance.checkTextbox(
+                    this.Publishertxt,
+                    this.PublisherNameMsg,
+                    this.nameLine,
+                    new string[] { "required" }
+                );
 
-                if (this.Publishertxt.Text.Length > 0)
+                if (isPublisher)
                 {
-                    CustomValidation.Instance.checkTextbox(
-                        this.Publishertxt,
+                    CustomValidation.Instance.checkDuplicateName(
                         this.PublisherNameMsg,
                         this.nameLine,
-                        new string[] { "required" }
+                        PublisherBUS.Instance.checkDuplicateName(this.Publishertxt.Text)
                     );
                 }
             }
@@ -49,12 +53,21 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
         {
             try
             {
-                bool isCheckTxt1 = CustomValidation.Instance.checkTextbox(
-                        this.Publishertxt,
+                bool isPublisher = CustomValidation.Instance.checkTextbox(
+                    this.Publishertxt,
+                    this.PublisherNameMsg,
+                    this.nameLine,
+                    new string[] { "required" }
+                );
+
+                if (isPublisher)
+                {
+                    CustomValidation.Instance.checkDuplicateName(
                         this.PublisherNameMsg,
                         this.nameLine,
-                        new string[] { "required" }
+                        PublisherBUS.Instance.checkDuplicateName(this.Publishertxt.Text)
                     );
+                }
 
                 bool isCheckTxt2 = CustomValidation.Instance.checkTextbox(
                         this.phoneNumbertxt,
@@ -72,7 +85,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
 
 
-                return isCheckTxt1 && isCheckTxt2 && isCheckTxt3;
+                return isPublisher && isCheckTxt2 && isCheckTxt3;
             }
             catch (Exception)
             {
@@ -209,5 +222,5 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 				this.statusSwitch.CheckedState.FillColor = Color.FromArgb(45, 210, 192);
 			}
 		}
-	}
+    }
 }

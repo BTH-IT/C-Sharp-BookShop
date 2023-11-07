@@ -28,6 +28,11 @@ namespace QuanLyCuaHangBanSach.BUS
             return BookDAO.Instance.getAll();
         }
 
+        public bool checkDuplicateName(string value)
+        {
+            return BookDAO.Instance.checkDuplicateName(value);
+        }
+
         public List<BookDTO> search(string value)
         {
             List<BookDTO> bookList = new List<BookDTO>();
@@ -96,6 +101,10 @@ namespace QuanLyCuaHangBanSach.BUS
         public bool createBookAmount(string id, int amount)
         {
             return BookDAO.Instance.createBookAmount(id, amount);
+        }
+        public List<BookDTO> getBookList(string id)
+        {
+            return BookDAO.Instance.getBookList(id);
         }
     }
 }

@@ -25,7 +25,19 @@ namespace QuanLyCuaHangBanSach.DAO
             private set { CustomerDAO.instance = value; }
         }
 
-        
+        public bool checkDuplicateName(string value)
+        {
+            DataTable dataTable = DataProvider.Instance.ExecuteQuery("select * from khachhang WHERE  LOWER(soDienThoai)=LOWER(@soDienThoai);",
+                new MySqlParameter[] {
+                    new MySqlParameter("@soDienThoai", value.Trim().ToLower())
+                }
+            );
+
+            if (dataTable.Rows.Count <= 0) return false;
+
+            return true;
+        }
+
         public DataTable getAll() {
             return DataProvider.Instance.ExecuteQuery("select * from khachhang;");
         }

@@ -1,7 +1,11 @@
-﻿using System.Collections.Generic;
-using System.Data;
 using QuanLyCuaHangBanSach.DAO;
 using QuanLyCuaHangBanSach.DTO;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace QuanLyCuaHangBanSach.BUS
 {
@@ -28,32 +32,37 @@ namespace QuanLyCuaHangBanSach.BUS
             return SupplierDAO.Instance.getAll();
         }
 
+        public bool checkDuplicateName(string value)
+        {
+            return SupplierDAO.Instance.checkDuplicateName(value);
+        }
+
         public List<SupplierDTO> search(string value)
         {
-            List<SupplierDTO> supplierList = new List<SupplierDTO>();
+            List<SupplierDTO> bookList = new List<SupplierDTO>();
             DataTable dt = SupplierDAO.Instance.searchData(value);
 
             foreach (DataRow row in dt.Rows)
             {
-                SupplierDTO supplier = new SupplierDTO(row);
-                supplierList.Add(supplier);
+                SupplierDTO book = new SupplierDTO(row);
+                bookList.Add(book);
             }
 
-            return supplierList;
+            return bookList;
         }
 
         public List<SupplierDTO> getAllData()
         {
-            List<SupplierDTO> supplierList = new List<SupplierDTO>();
+            List<SupplierDTO> bookList = new List<SupplierDTO>();
             DataTable dt = SupplierDAO.Instance.getAll();
 
             foreach (DataRow row in dt.Rows)
             {
-                SupplierDTO supplier = new SupplierDTO(row);
-                supplierList.Add(supplier);
+                SupplierDTO book = new SupplierDTO(row);
+                bookList.Add(book);
             }
 
-            return supplierList;
+            return bookList;
         }
 
         public SupplierDTO getById(string id)
@@ -61,14 +70,14 @@ namespace QuanLyCuaHangBanSach.BUS
             return SupplierDAO.Instance.getById(id);
         }
 
-        public bool insert(SupplierDTO supplier)
+        public bool insert(SupplierDTO book)
         {
-            return SupplierDAO.Instance.insert(supplier);
+            return SupplierDAO.Instance.insert(book);
         }
 
-        public bool update(SupplierDTO supplier)
+        public bool update(SupplierDTO book)
         {
-            return SupplierDAO.Instance.update(supplier);
+            return SupplierDAO.Instance.update(book);
         }
 
         public bool delete(string id)
