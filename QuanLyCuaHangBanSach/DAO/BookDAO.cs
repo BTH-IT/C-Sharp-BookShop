@@ -264,5 +264,34 @@ namespace QuanLyCuaHangBanSach.DAO
 
             return rowChanged > 0;
         }
+        public List<BookDTO> getBookList(string id)
+        {
+            DataTable dataTable = DataProvider.Instance.ExecuteQuery(
+               "SELECT * FROM sach WHERE maSach=@MaSach AND hienThi = 1;",
+               new MySqlParameter[] {
+                    new MySqlParameter("@MaSach", id)
+               }
+           );
+            if (dataTable.Rows.Count <= 0) return null;
+
+            DataTable dataTable1 = DataProvider.Instance.ExecuteQuery(
+                "SELECT COUNT(*) as soLuongConLai FROM chitietsach WHERE maSach=@MaSach;",
+                new MySqlParameter[] {
+                    new MySqlParameter("@MaSach", id)
+                }
+            );
+
+            dataTable.Columns.Add("soLuongConLai");
+            dataTable.Rows[0]["soLuongConLai"] = dataTable1.Rows[0]["soLuongConLai"];
+            List<BookDTO> booklList = new List<BookDTO>();
+
+            foreach (DataRow row in dataTable.Rows)
+            {
+                BookDTO book = new BookDTO(row);
+                booklList.Add(book);
+            }
+
+            return booklList;
+        }
     }
 }
