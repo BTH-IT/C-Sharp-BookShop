@@ -392,9 +392,8 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         {
             try
             {
-                if (this.dgvStaff.CurrentCell.RowIndex < 0)
+                if (e.RowIndex < 0 || e.ColumnIndex <= 0)
                 {
-                    MessageBox.Show("Vui lòng chọn một nhân viên");
                     return;
                 }
                 using (StaffModal modal = new StaffModal("Sửa nhân viên"))

@@ -539,9 +539,8 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         {
             try
             {
-                if (this.dgvImportBill.CurrentCell.RowIndex < 0)
+                if (e.RowIndex < 0 || e.ColumnIndex <= 0)
                 {
-                    MessageBox.Show("Hãy chọn dòng dữ liệu muốn thao tác");
                     return;
                 }
 

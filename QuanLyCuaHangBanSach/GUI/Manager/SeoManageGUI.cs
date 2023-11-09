@@ -158,7 +158,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         {
             try
             {
-				if (e.RowIndex < 0 || e.ColumnIndex < 0)
+				if (e.RowIndex < 0 || e.ColumnIndex <= 0)
 				{
 					return;
 				}
