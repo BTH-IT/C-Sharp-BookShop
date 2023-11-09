@@ -1,7 +1,7 @@
 using System.Data;
 using MySql.Data.MySqlClient;
 using QuanLyCuaHangBanSach.DTO;
-using QuanLyCuaHangBanSach.GUI.UserControls;
+using System.Collections.Generic;
 
 namespace QuanLyCuaHangBanSach.DAO
 {
