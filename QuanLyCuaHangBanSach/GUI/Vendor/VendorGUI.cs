@@ -2,16 +2,13 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
-using System.Windows.Controls;
 using System.Windows.Forms;
-using MySqlX.XDevAPI.Relational;
 using QuanLyCuaHangBanSach.BUS;
 using QuanLyCuaHangBanSach.DTO;
 using QuanLyCuaHangBanSach.GUI.Modal;
 using QuanLyCuaHangBanSach.GUI.Report;
 using QuanLyCuaHangBanSach.GUI.UserControls;
 using QuanLyCuaHangBanSach.GUI.Vendor;
-using static ZXing.QrCode.Internal.Mode;
 
 namespace QuanLyCuaHangBanSach.GUI
 {
@@ -252,11 +249,6 @@ namespace QuanLyCuaHangBanSach.GUI
                 using (CustomerModal modal = new CustomerModal())
                 {
                     modal.ShowDialog();
-
-                    if (modal.isSubmitSuccess)
-                    {
-                        CustomerBUS.Instance.insert(modal.currentCustomer);
-                    }
                 }
             }
             catch (Exception ex) { Console.WriteLine(ex); }
@@ -617,10 +609,11 @@ namespace QuanLyCuaHangBanSach.GUI
                             MessageBox.Show("Khách hàng " + customer_addPoint.Ten + " được cộng: " + point + " điểm");
                         }
                     }
+
                     using (CustomerBillPrintForm customerBillPrintForm = new CustomerBillPrintForm(newCustomerBill.MaDonKhachHang))
                     {
                         customerBillPrintForm.ShowDialog();
-                    }
+					}
 
                     CartContainer.Controls.Clear();
                     customerBillDetails.Clear();
@@ -646,8 +639,8 @@ namespace QuanLyCuaHangBanSach.GUI
         private void LogOutBtn_Click(object sender, EventArgs e)
         {
             Close();
-            /*Application.Run(new LoginGUI());*/
+            MenuGUI menu = new MenuGUI(staffID);
+            menu.Show();
         }
-
-    }
+	}
 }
