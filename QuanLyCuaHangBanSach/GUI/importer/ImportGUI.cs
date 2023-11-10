@@ -6,12 +6,8 @@ using QuanLyCuaHangBanSach.GUI.UserControls;
 using QuanLyCuaHangBanSach.GUI.Vendor;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QuanLyCuaHangBanSach.GUI.Importer
@@ -205,11 +201,6 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
                 using (SupplierModal modal = new SupplierModal())
                 {
                     modal.ShowDialog();
-
-                    if (modal.isSubmitSuccess)
-                    {
-                        SupplierBUS.Instance.insert(modal.updateSupplier);
-                    }
                 }
             }
             catch (Exception ex) { Console.WriteLine(ex); }
@@ -509,7 +500,8 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
         private void LogOutBtn_Click(object sender, EventArgs e)
         {
             Close();
-            /*Application.Run(new LoginGUI());*/
+            MenuGUI menu = new MenuGUI(staffID);
+            menu.Show();
         }
-    }
+	}
 }
