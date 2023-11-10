@@ -40,6 +40,20 @@ namespace QuanLyCuaHangBanSach.DAO
             return true;
         }
 
+        public bool checkDuplicateName(string value, int id)
+        {
+            DataTable dataTable = DataProvider.Instance.ExecuteQuery("select * from taikhoan WHERE LOWER(email)=LOWER(@email) and maNhanVien!=@id;",
+                new MySqlParameter[] {
+                    new MySqlParameter("@email", value.Trim().ToLower()),
+                    new MySqlParameter("@id", id)
+                }
+            );
+
+            if (dataTable.Rows.Count <= 0) return false;
+
+            return true;
+        }
+
         public AccountDTO getById(string id)
         {
             DataTable dataTable = DataProvider.Instance.ExecuteQuery(
@@ -53,18 +67,20 @@ namespace QuanLyCuaHangBanSach.DAO
 
             return account;
         }
+
         public AccountDTO getByStaffId(string id)
         {
             DataTable dataTable = DataProvider.Instance.ExecuteQuery(
                     "SELECT * FROM taikhoan WHERE maNhanVien = @maNhanVien",
-                    new MySqlParameter[] { new MySqlParameter("@maNhanVien",id)}
+                    new MySqlParameter[] { new MySqlParameter("@maNhanVien", id) }
                 );
-			if (dataTable.Rows.Count <= 0) return null;
+            if (dataTable.Rows.Count <= 0) return null;
 
-			AccountDTO account = new AccountDTO(dataTable.Rows[0]);
+            AccountDTO account = new AccountDTO(dataTable.Rows[0]);
 
-			return account;
-		}
+            return account;
+        }
+
         public bool insert(AccountDTO data)
         {
 

@@ -55,7 +55,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             {
                 List<SupplierDTO> supplierList = SupplierBUS.Instance.getAllData();
 
-                supplierList.Insert(0, new SupplierDTO(0, "Chọn nhà cung cấp", "", "", false));
+                supplierList.Insert(0, new SupplierDTO(0, "Chọn nhà cung cấp", "", ""));
 
                 this.supplierCbx.ValueMember = "MaNhaCungCap";
                 this.supplierCbx.DisplayMember = "TenNhaCungCap";

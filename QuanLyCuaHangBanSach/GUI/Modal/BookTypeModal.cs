@@ -1,19 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.IO;
 using System.Windows.Forms;
-using System.Windows.Markup;
-using Guna.UI2.WinForms.Suite;
 using QuanLyCuaHangBanSach.BUS;
 using QuanLyCuaHangBanSach.DTO;
-using static Guna.UI2.Native.WinApi;
 
 namespace QuanLyCuaHangBanSach.GUI.Modal
 {
     public partial class BookTypeModal : Form
     {
         public BookTypeDTO updateBookType = null;
+        private bool isTouchBookTypeCbx = false;
+        private bool isTouchBookTypeTypeCbx = false;
+        private bool isTouchPublisherCbx = false;
         public bool isSubmitSuccess = false;
         public BookTypeModal(string title = "Thêm thể loại")
         {
@@ -34,7 +32,6 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             if (updateBookType != null)
             {
                 this.BookTypeNameTxt.Text = updateBookType.TenTheLoai;
-                this.statusSwitch.Checked = updateBookType.TrangThai;
             }
         }
 
@@ -54,23 +51,54 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
             if (isBookType)
             {
-                CustomValidation.Instance.checkDuplicateName(
-                    this.errorBookTypeNameMsg,
-                    this.nameLine,
-                    BookTypeBUS.Instance.checkDuplicateName(this.BookTypeNameTxt.Text)
-                );
+                if (updateBookType == null)
+                {
+                    isBookType = CustomValidation.Instance.checkDuplicateName(
+                        this.errorBookTypeNameMsg,
+                        this.nameLine,
+                        BookTypeBUS.Instance.checkDuplicateName(this.BookTypeNameTxt.Text)
+                    );
+                }
+                else
+                {
+                    isBookType = CustomValidation.Instance.checkDuplicateName(
+                        this.errorBookTypeNameMsg,
+                        this.nameLine,
+                        BookTypeBUS.Instance.checkDuplicateName(this.BookTypeNameTxt.Text, updateBookType.MaTheLoai)
+                    );
+                }
             }
         }
 
         private bool validateForm()
         {
-            bool isCheckTxt1 = CustomValidation.Instance.checkTextbox(
+            bool isBookType = CustomValidation.Instance.checkTextbox(
                 this.BookTypeNameTxt,
                 this.errorBookTypeNameMsg,
                 this.nameLine,
                 new string[] { "required" }
             );
-            return isCheckTxt1;
+
+            if (isBookType)
+            {
+                if (updateBookType == null)
+                {
+                    isBookType = CustomValidation.Instance.checkDuplicateName(
+                        this.errorBookTypeNameMsg,
+                        this.nameLine,
+                        BookTypeBUS.Instance.checkDuplicateName(this.BookTypeNameTxt.Text)
+                    );
+                }
+                else
+                {
+                    isBookType = CustomValidation.Instance.checkDuplicateName(
+                        this.errorBookTypeNameMsg,
+                        this.nameLine,
+                        BookTypeBUS.Instance.checkDuplicateName(this.BookTypeNameTxt.Text, updateBookType.MaTheLoai)
+                    );
+                }
+            }
+            return isBookType;
         }
 
         private void gunaButton1_Click(object sender, EventArgs e)
@@ -82,9 +110,8 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             string BookTypeName = this.BookTypeNameTxt.Text;
 
             int id = updateBookType != null ? updateBookType.MaTheLoai : 0;
-            bool trangThai = this.statusSwitch.Checked ;
-        
-            BookTypeDTO BookType = new BookTypeDTO(id, BookTypeName, trangThai);
+
+            BookTypeDTO BookType = new BookTypeDTO(id, BookTypeName);
 
             bool isSuccess = updateBookType != null ? BookTypeBUS.Instance.update(BookType) : BookTypeBUS.Instance.insert(BookType);
 
@@ -101,5 +128,5 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
             MessageBox.Show(updateBookType != null ? "Update Failure" : "Insert Failure");
         }
-	}
+    }
 }

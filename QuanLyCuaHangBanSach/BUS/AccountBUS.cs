@@ -49,6 +49,11 @@ namespace QuanLyCuaHangBanSach.BUS
             return AccountDAO.Instance.checkDuplicateName(value);
         }
 
+        public bool checkDuplicateName(string value, int id)
+        {
+            return AccountDAO.Instance.checkDuplicateName(value, id);
+        }
+
         public bool resetPassword(string email, string pwd)
         {
             AccountDTO account = this.getById(email);

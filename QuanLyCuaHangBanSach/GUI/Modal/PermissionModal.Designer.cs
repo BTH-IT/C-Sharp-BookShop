@@ -35,7 +35,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel12 = new System.Windows.Forms.Panel();
-            this.statusSwitch = new Guna.UI2.WinForms.Guna2ToggleSwitch();
+            this.activeCkx = new Guna.UI.WinForms.GunaCheckBox();
             this.label10 = new System.Windows.Forms.Label();
             this.submitBtn = new Guna.UI.WinForms.GunaButton();
             this.cancelBtn = new Guna.UI.WinForms.GunaButton();
@@ -53,7 +53,7 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(594, 88);
+            this.panel1.Size = new System.Drawing.Size(594, 101);
             this.panel1.TabIndex = 0;
             // 
             // permissionNameTxt
@@ -78,7 +78,7 @@
             this.permissionNameTxt.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.permissionNameTxt.Name = "permissionNameTxt";
             this.permissionNameTxt.PasswordChar = '\0';
-            this.permissionNameTxt.PlaceholderText = "Nhập tên quyền hạng";
+            this.permissionNameTxt.PlaceholderText = "Nhập tên quyền hạn";
             this.permissionNameTxt.SelectedText = "";
             this.permissionNameTxt.ShadowDecoration.Parent = this.permissionNameTxt;
             this.permissionNameTxt.Size = new System.Drawing.Size(425, 36);
@@ -89,11 +89,11 @@
             // errorPermissionNameMsg
             // 
             this.errorPermissionNameMsg.AutoSize = true;
-            this.errorPermissionNameMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed SemiB", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.errorPermissionNameMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.errorPermissionNameMsg.ForeColor = System.Drawing.Color.Red;
-            this.errorPermissionNameMsg.Location = new System.Drawing.Point(163, 50);
+            this.errorPermissionNameMsg.Location = new System.Drawing.Point(159, 56);
             this.errorPermissionNameMsg.Name = "errorPermissionNameMsg";
-            this.errorPermissionNameMsg.Size = new System.Drawing.Size(0, 30);
+            this.errorPermissionNameMsg.Size = new System.Drawing.Size(0, 26);
             this.errorPermissionNameMsg.TabIndex = 7;
             // 
             // nameLine
@@ -111,7 +111,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(139, 49);
             this.label3.TabIndex = 5;
-            this.label3.Text = "Tên quyền hạng:";
+            this.label3.Text = "Tên quyền hạn:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // flowLayoutPanel1
@@ -122,52 +122,39 @@
             this.flowLayoutPanel1.Controls.Add(this.panel12);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(30, 81);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(600, 188);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(600, 205);
             this.flowLayoutPanel1.TabIndex = 12;
             // 
             // panel12
             // 
-            this.panel12.Controls.Add(this.statusSwitch);
+            this.panel12.Controls.Add(this.activeCkx);
             this.panel12.Controls.Add(this.label10);
-            this.panel12.Location = new System.Drawing.Point(3, 97);
+            this.panel12.Location = new System.Drawing.Point(3, 110);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(594, 74);
+            this.panel12.Size = new System.Drawing.Size(594, 78);
             this.panel12.TabIndex = 11;
             // 
-            // statusSwitch
+            // activeCkx
             // 
-            this.statusSwitch.Animated = true;
-            this.statusSwitch.AutoRoundedCorners = true;
-            this.statusSwitch.BackColor = System.Drawing.Color.White;
-            this.statusSwitch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.statusSwitch.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.statusSwitch.CheckedState.BorderRadius = 12;
-            this.statusSwitch.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.statusSwitch.CheckedState.InnerBorderColor = System.Drawing.Color.White;
-            this.statusSwitch.CheckedState.InnerBorderRadius = 8;
-            this.statusSwitch.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.statusSwitch.CheckedState.Parent = this.statusSwitch;
-            this.statusSwitch.Location = new System.Drawing.Point(498, 16);
-            this.statusSwitch.Name = "statusSwitch";
-            this.statusSwitch.ShadowDecoration.Parent = this.statusSwitch;
-            this.statusSwitch.Size = new System.Drawing.Size(76, 26);
-            this.statusSwitch.TabIndex = 9;
-            this.statusSwitch.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(228)))), ((int)(((byte)(231)))));
-            this.statusSwitch.UncheckedState.BorderRadius = 12;
-            this.statusSwitch.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(228)))), ((int)(((byte)(231)))));
-            this.statusSwitch.UncheckedState.InnerBorderColor = System.Drawing.Color.White;
-            this.statusSwitch.UncheckedState.InnerBorderRadius = 8;
-            this.statusSwitch.UncheckedState.InnerColor = System.Drawing.Color.White;
-            this.statusSwitch.UncheckedState.Parent = this.statusSwitch;
+            this.activeCkx.BaseColor = System.Drawing.Color.White;
+            this.activeCkx.CheckedOffColor = System.Drawing.Color.Gray;
+            this.activeCkx.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.activeCkx.FillColor = System.Drawing.Color.White;
+            this.activeCkx.Font = new System.Drawing.Font("#9Slide03 Cabin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.activeCkx.Location = new System.Drawing.Point(160, 9);
+            this.activeCkx.Name = "activeCkx";
+            this.activeCkx.Size = new System.Drawing.Size(150, 29);
+            this.activeCkx.TabIndex = 6;
+            this.activeCkx.Text = "Đang hoạt động";
             // 
             // label10
             // 
             this.label10.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label10.Location = new System.Drawing.Point(3, 15);
+            this.label10.Location = new System.Drawing.Point(3, 1);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(151, 27);
+            this.label10.Size = new System.Drawing.Size(151, 41);
             this.label10.TabIndex = 5;
-            this.label10.Text = "Trạng thái:";
+            this.label10.Text = "Trạng thái";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // submitBtn
@@ -186,7 +173,7 @@
             this.submitBtn.ForeColor = System.Drawing.Color.White;
             this.submitBtn.Image = null;
             this.submitBtn.ImageSize = new System.Drawing.Size(20, 20);
-            this.submitBtn.Location = new System.Drawing.Point(358, 292);
+            this.submitBtn.Location = new System.Drawing.Point(358, 297);
             this.submitBtn.Name = "submitBtn";
             this.submitBtn.OnHoverBaseColor = System.Drawing.Color.White;
             this.submitBtn.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
@@ -217,7 +204,7 @@
             this.cancelBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.cancelBtn.Image = null;
             this.cancelBtn.ImageSize = new System.Drawing.Size(20, 20);
-            this.cancelBtn.Location = new System.Drawing.Point(112, 292);
+            this.cancelBtn.Location = new System.Drawing.Point(112, 297);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.cancelBtn.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
@@ -239,9 +226,9 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(663, 61);
+            this.label1.Size = new System.Drawing.Size(663, 54);
             this.label1.TabIndex = 9;
-            this.label1.Text = "Thêm quyền hạng";
+            this.label1.Text = "Thêm quyền hạn";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // PermissionModal
@@ -249,7 +236,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(663, 355);
+            this.ClientSize = new System.Drawing.Size(663, 365);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.submitBtn);
             this.Controls.Add(this.cancelBtn);
@@ -259,11 +246,11 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "PermissionModal";
             this.Text = "PermissionModal";
-            this.Load += new System.EventHandler(this.PermissionModal_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panel12.ResumeLayout(false);
+            this.panel12.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -277,10 +264,10 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Panel panel12;
+        private Guna.UI.WinForms.GunaCheckBox activeCkx;
         private System.Windows.Forms.Label label10;
         private Guna.UI.WinForms.GunaButton submitBtn;
         private Guna.UI.WinForms.GunaButton cancelBtn;
         private System.Windows.Forms.Label label1;
-        private Guna.UI2.WinForms.Guna2ToggleSwitch statusSwitch;
     }
 }

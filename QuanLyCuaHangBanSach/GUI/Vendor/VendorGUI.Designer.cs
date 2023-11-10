@@ -92,7 +92,7 @@
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel1.ForeColor = System.Drawing.Color.White;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(-7, -10);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(107, 854);
             this.flowLayoutPanel1.TabIndex = 0;
@@ -112,7 +112,7 @@
             // panel2
             // 
             this.panel2.Location = new System.Drawing.Point(4, 105);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(103, 670);
             this.panel2.TabIndex = 1;
@@ -140,7 +140,7 @@
             this.flowLayoutPanel2.Controls.Add(this.label2);
             this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel2.Location = new System.Drawing.Point(137, 2);
-            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(4);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(1048, 87);
             this.flowLayoutPanel2.TabIndex = 1;
@@ -174,7 +174,7 @@
             this.flowLayoutPanel4.Controls.Add(this.flowLayoutPanel5);
             this.flowLayoutPanel4.Controls.Add(this.panel1);
             this.flowLayoutPanel4.Location = new System.Drawing.Point(137, 101);
-            this.flowLayoutPanel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.flowLayoutPanel4.Margin = new System.Windows.Forms.Padding(4);
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
             this.flowLayoutPanel4.Size = new System.Drawing.Size(1048, 59);
             this.flowLayoutPanel4.TabIndex = 3;
@@ -195,7 +195,7 @@
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(4, 4);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Padding = new System.Windows.Forms.Padding(0, 9, 0, 0);
             this.pictureBox2.Size = new System.Drawing.Size(35, 39);
@@ -258,7 +258,7 @@
             this.QRScanBtn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.QRScanBtn.ImageSize = new System.Drawing.Size(26, 26);
             this.QRScanBtn.Location = new System.Drawing.Point(595, 4);
-            this.QRScanBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.QRScanBtn.Margin = new System.Windows.Forms.Padding(4);
             this.QRScanBtn.Name = "QRScanBtn";
             this.QRScanBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.QRScanBtn.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
@@ -280,8 +280,8 @@
             // 
             this.BookContainer.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.BookContainer.AutoScroll = true;
-            this.BookContainer.Location = new System.Drawing.Point(136, 180);
-            this.BookContainer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BookContainer.Location = new System.Drawing.Point(-75, 97);
+            this.BookContainer.Margin = new System.Windows.Forms.Padding(4);
             this.BookContainer.Name = "BookContainer";
             this.BookContainer.Size = new System.Drawing.Size(1049, 640);
             this.BookContainer.TabIndex = 6;
@@ -289,8 +289,8 @@
             // FilterContainer
             // 
             this.FilterContainer.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.FilterContainer.Location = new System.Drawing.Point(275, 146);
-            this.FilterContainer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.FilterContainer.Location = new System.Drawing.Point(64, 63);
+            this.FilterContainer.Margin = new System.Windows.Forms.Padding(4);
             this.FilterContainer.Name = "FilterContainer";
             this.FilterContainer.Size = new System.Drawing.Size(445, 272);
             this.FilterContainer.TabIndex = 7;
@@ -322,7 +322,7 @@
             this.panel4.Controls.Add(this.label3);
             this.panel4.Controls.Add(this.RecipientNameLb);
             this.panel4.Location = new System.Drawing.Point(32, 10);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(400, 822);
             this.panel4.TabIndex = 3;
@@ -341,7 +341,7 @@
             this.PointToggleBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PointToggleBtn.Enabled = false;
             this.PointToggleBtn.Location = new System.Drawing.Point(320, 562);
-            this.PointToggleBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.PointToggleBtn.Margin = new System.Windows.Forms.Padding(4);
             this.PointToggleBtn.Name = "PointToggleBtn";
             this.PointToggleBtn.ShadowDecoration.Parent = this.PointToggleBtn;
             this.PointToggleBtn.Size = new System.Drawing.Size(64, 27);
@@ -380,7 +380,7 @@
             this.DiscountCb.ForeColor = System.Drawing.Color.Black;
             this.DiscountCb.FormattingEnabled = true;
             this.DiscountCb.Location = new System.Drawing.Point(19, 519);
-            this.DiscountCb.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DiscountCb.Margin = new System.Windows.Forms.Padding(4);
             this.DiscountCb.Name = "DiscountCb";
             this.DiscountCb.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.DiscountCb.OnHoverItemForeColor = System.Drawing.Color.White;
@@ -399,7 +399,7 @@
             this.CustomerToggleBtn.CheckedState.Parent = this.CustomerToggleBtn;
             this.CustomerToggleBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CustomerToggleBtn.Location = new System.Drawing.Point(5, 63);
-            this.CustomerToggleBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CustomerToggleBtn.Margin = new System.Windows.Forms.Padding(4);
             this.CustomerToggleBtn.Name = "CustomerToggleBtn";
             this.CustomerToggleBtn.ShadowDecoration.Parent = this.CustomerToggleBtn;
             this.CustomerToggleBtn.Size = new System.Drawing.Size(59, 23);
@@ -482,7 +482,7 @@
             this.CustomerCashTxb.Font = new System.Drawing.Font("#9Slide03 Cabin Medium", 10F);
             this.CustomerCashTxb.ForeColor = System.Drawing.Color.DarkGray;
             this.CustomerCashTxb.Location = new System.Drawing.Point(12, 674);
-            this.CustomerCashTxb.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CustomerCashTxb.Margin = new System.Windows.Forms.Padding(4);
             this.CustomerCashTxb.Name = "CustomerCashTxb";
             this.CustomerCashTxb.PasswordChar = '\0';
             this.CustomerCashTxb.SelectedText = "";
@@ -528,7 +528,7 @@
             this.PhoneInp.LineColor = System.Drawing.Color.Black;
             this.PhoneInp.LineSize = 1;
             this.PhoneInp.Location = new System.Drawing.Point(80, 50);
-            this.PhoneInp.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.PhoneInp.Margin = new System.Windows.Forms.Padding(4);
             this.PhoneInp.Name = "PhoneInp";
             this.PhoneInp.PasswordChar = '\0';
             this.PhoneInp.SelectedText = "";
@@ -565,7 +565,7 @@
             // 
             this.CartContainer.AutoScroll = true;
             this.CartContainer.Location = new System.Drawing.Point(0, 135);
-            this.CartContainer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CartContainer.Margin = new System.Windows.Forms.Padding(4);
             this.CartContainer.Name = "CartContainer";
             this.CartContainer.Size = new System.Drawing.Size(400, 337);
             this.CartContainer.TabIndex = 20;
@@ -589,7 +589,7 @@
             this.PrintBtn.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.PrintBtn.ForeColor = System.Drawing.Color.White;
             this.PrintBtn.Location = new System.Drawing.Point(5, 767);
-            this.PrintBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.PrintBtn.Margin = new System.Windows.Forms.Padding(4);
             this.PrintBtn.Name = "PrintBtn";
             this.PrintBtn.Size = new System.Drawing.Size(391, 52);
             this.PrintBtn.TabIndex = 17;
@@ -626,7 +626,7 @@
             this.AddCustomerBtn.Enabled = false;
             this.AddCustomerBtn.Image = ((System.Drawing.Image)(resources.GetObject("AddCustomerBtn.Image")));
             this.AddCustomerBtn.Location = new System.Drawing.Point(352, 55);
-            this.AddCustomerBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AddCustomerBtn.Margin = new System.Windows.Forms.Padding(4);
             this.AddCustomerBtn.Name = "AddCustomerBtn";
             this.AddCustomerBtn.Size = new System.Drawing.Size(40, 37);
             this.AddCustomerBtn.TabIndex = 12;
@@ -663,7 +663,7 @@
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.panel4);
             this.panel3.Location = new System.Drawing.Point(1217, -10);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(478, 864);
             this.panel3.TabIndex = 5;
@@ -673,14 +673,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1685, 838);
+            this.ClientSize = new System.Drawing.Size(1262, 673);
             this.Controls.Add(this.FilterContainer);
             this.Controls.Add(this.BookContainer);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.flowLayoutPanel4);
             this.Controls.Add(this.flowLayoutPanel2);
             this.Controls.Add(this.flowLayoutPanel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "VendorGUI";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main Page";

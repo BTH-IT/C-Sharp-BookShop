@@ -24,7 +24,7 @@ namespace QuanLyCuaHangBanSach.GUI
 
             foreach (AuthDetailDTO authDetail in authDetails)
             {
-                if (authDetail.MaQuyenHan == 7)
+                if (authDetail.maQuyenHan == 7)
                 {
                     this.sell.Visible = authDetail.TrangThai;
 
@@ -32,7 +32,7 @@ namespace QuanLyCuaHangBanSach.GUI
                     {
                         this.Size = new System.Drawing.Size(this.Size.Width, this.Size.Height + 175);
                     }
-                } else if (authDetail.MaQuyenHan == 8)
+                } else if (authDetail.maQuyenHan == 8)
                 {
                     this.import.Visible = authDetail.TrangThai;
 

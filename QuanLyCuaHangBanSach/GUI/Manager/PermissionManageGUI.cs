@@ -59,8 +59,8 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                 {
                     this.dgvPermission.Rows.Add(new object[] {
                     false,
-                    position.MaQuyenHan,
-                    position.TenQuyenHan,
+                    position.maQuyenHan,
+                    position.tenQuyenHan,
                     position.TrangThai ? "Đang hoạt động" : "Ngưng hoạt động",
                 });
                 }

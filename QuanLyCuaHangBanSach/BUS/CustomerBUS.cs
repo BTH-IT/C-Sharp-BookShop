@@ -35,6 +35,11 @@ namespace QuanLyCuaHangBanSach.BUS
             return CustomerDAO.Instance.checkDuplicateName(value);
         }
 
+        public bool checkDuplicateName(string value, int id)
+        {
+            return CustomerDAO.Instance.checkDuplicateName(value, id);
+        }
+
         public List<CustomerDTO> getAllData()
         {
             List<CustomerDTO> customerList = new List<CustomerDTO>();

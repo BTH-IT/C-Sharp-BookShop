@@ -26,17 +26,17 @@ namespace QuanLyCuaHangBanSach.GUI.UserControls
 
         private void FilterUserControl_Load(object sender, EventArgs e)
         {
-            types.Insert(0, new BookTypeDTO(0, "Tất cả", false));
+            types.Insert(0, new BookTypeDTO(0, "Tất cả"));
             TypeCb.DataSource = types;
             TypeCb.DisplayMember = "tenTheLoai";
             TypeCb.ValueMember = "maTheLoai";
 
-            authors.Insert(0, new AuthorDTO(0, "Tất cả", "", 0, false));
+            authors.Insert(0, new AuthorDTO(0, "Tất cả", "", 0));
             AuthorCb.DataSource = authors;
             AuthorCb.DisplayMember = "Ten";
             AuthorCb.ValueMember = "Ma";
 
-            publishers.Insert(0, new PublisherDTO(0, "Tất cả", "", "", false));
+            publishers.Insert(0, new PublisherDTO(0, "Tất cả", "", ""));
             PublisherCb.DataSource = publishers;
             PublisherCb.DisplayMember = "tenNhaXuatBan";
             PublisherCb.ValueMember = "maNhaXuatBan";

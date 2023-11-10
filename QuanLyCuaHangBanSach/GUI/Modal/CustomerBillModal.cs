@@ -27,8 +27,8 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             {
                 List<CustomerDTO> customerList = CustomerBUS.Instance.getAllData();
 
-                customerList.Insert(0, new CustomerDTO(-1, "", "Chọn khách hàng", "", 0, 0, false));
-                customerList.Insert(1, new CustomerDTO(0, "", "Không có khách hàng", "", 0, 0, false));
+                customerList.Insert(0, new CustomerDTO(-1, "", "Chọn khách hàng", 0, "", 0));
+                customerList.Insert(1, new CustomerDTO(0, "", "Không có khách hàng", 0, "", 0));
 
                 this.customerCbx.ValueMember = "Ma";
                 this.customerCbx.DisplayMember = "SoDienThoai";
@@ -352,6 +352,11 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
         private void cancelBtn_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

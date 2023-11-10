@@ -42,10 +42,25 @@ namespace QuanLyCuaHangBanSach.DAO
             return true;
         }
 
+        public bool checkDuplicateName(string value, int id)
+        {
+            DataTable dataTable = DataProvider.Instance.ExecuteQuery("select * from khuyenmai WHERE  LOWER(tenKhuyenMai)= LOWER(@tenKhuyenMai) and hienThi=1 and maKhuyenMai!=@id;",
+                new MySqlParameter[] {
+                    new MySqlParameter("@tenKhuyenMai", value.Trim().ToLower()),
+                    new MySqlParameter("@id", id)
+                }
+            );
+
+            if (dataTable.Rows.Count <= 0) return false;
+
+            return true;
+        }
+
+
         public SaleDTO getById(string id)
         {
             DataTable dataTable = DataProvider.Instance.ExecuteQuery(
-                "SELECT * FROM khuyenmai WHERE maKhuyenMai=@MaKhuyenMai AND hienThi = 1;",
+                "SELECT * FROM khuyenmai WHERE maKhuyenMai=@MaKhuyenMai;",
                 new MySqlParameter[] { new MySqlParameter("@MaKhuyenMai", id) }
             );
 

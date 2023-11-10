@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.Security.Principal;
 using System.Windows.Forms;
 using QuanLyCuaHangBanSach.BUS;
 using QuanLyCuaHangBanSach.DTO;
@@ -38,11 +39,22 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
                 if (isAuthor)
                 {
-                    isAuthor = CustomValidation.Instance.checkDuplicateName(
-                        this.authorNameMsg,
-                        this.nameLine,
-                        AuthorBUS.Instance.checkDuplicateName(this.authorName.Text)
-                    );
+                    if (updateAuthor == null)
+                    {
+                        isAuthor = CustomValidation.Instance.checkDuplicateName(
+                            this.authorNameMsg,
+                            this.nameLine,
+                            AuthorBUS.Instance.checkDuplicateName(this.authorName.Text)
+                        );
+                    }
+                    else
+                    {
+                        isAuthor = CustomValidation.Instance.checkDuplicateName(
+                            this.authorNameMsg,
+                            this.nameLine,
+                            AuthorBUS.Instance.checkDuplicateName(this.authorName.Text, updateAuthor.Ma)
+                        );
+                    }
                 }
             }
             catch (Exception er)
@@ -55,26 +67,37 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
         private bool validateForm()
         {
             bool isAuthor = CustomValidation.Instance.checkTextbox(
-                    this.authorName,
-                    this.authorNameMsg,
-                    this.nameLine,
-                    new string[] { "required" }
-                );
+                this.authorName,
+                this.authorNameMsg,
+                this.nameLine,
+                new string[] { "required" }
+            );
 
             if (isAuthor)
             {
-                isAuthor = CustomValidation.Instance.checkDuplicateName(
-                    this.authorNameMsg,
-                    this.nameLine,
-                    AuthorBUS.Instance.checkDuplicateName(this.authorName.Text)
-                );
+                if (updateAuthor == null)
+                {
+                    isAuthor = CustomValidation.Instance.checkDuplicateName(
+                        this.authorNameMsg,
+                        this.nameLine,
+                        AuthorBUS.Instance.checkDuplicateName(this.authorName.Text)
+                    );
+                }
+                else
+                {
+                    isAuthor = CustomValidation.Instance.checkDuplicateName(
+                        this.authorNameMsg,
+                        this.nameLine,
+                        AuthorBUS.Instance.checkDuplicateName(this.authorName.Text, updateAuthor.Ma)
+                    );
+                }
             }
 
             bool isCheckTxt2 = CustomValidation.Instance.checkTextbox(
                 this.birthYear,
                     this.birthYearMsg,
                     this.birthYearLine,
-                    new string[] { "required", "positive-number", "max-current-year" }
+                    new string[] { "required", "positive-number", "max-curent-year" }
             );
 
 
@@ -98,9 +121,8 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 int birthYear = Convert.ToInt32(this.birthYear.Text);
                 string genderCbx = this.genderCbx.SelectedItem.ToString();
                 int id = updateAuthor != null ? updateAuthor.Ma : 0;
-                bool trangThai = this.statusSwitch.Checked;
 
-                AuthorDTO book = new AuthorDTO(id, authorName, genderCbx, birthYear, trangThai);
+                AuthorDTO book = new AuthorDTO(id, authorName, genderCbx, birthYear);
 
                 bool isSuccess = updateAuthor != null ? AuthorBUS.Instance.update(book) : AuthorBUS.Instance.insert(book);
 
@@ -140,22 +162,6 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             }
         }
 
-        private void genderCbx_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (!isGenderCbx)
-                {
-                    isGenderCbx = true;
-                }
-            }
-            catch (Exception er)
-            {
-
-                Console.WriteLine(er);
-            }
-        }
-
         private void birthYear_TextChanged(object sender, EventArgs e)
         {
             try
@@ -184,14 +190,13 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                         (Screen.PrimaryScreen.Bounds.Size.Width / 2) - (this.Size.Width / 2),
                         (Screen.PrimaryScreen.Bounds.Size.Height / 2) - (this.Size.Height / 2)
                     );
-                
+                this.genderCbx.SelectedIndex = 0;
                 if (updateAuthor != null)
                 {
 
                     this.authorName.Text = updateAuthor.Ten;
                     this.genderCbx.SelectedItem = updateAuthor.GioiTinh;
                     this.birthYear.Text = updateAuthor.NamSinh.ToString();
-                    this.statusSwitch.Checked = updateAuthor.TrangThai;
 
                 }
             }
@@ -202,12 +207,43 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             }
         }
 
-		private void statusSwitch_CheckedChanged(object sender, EventArgs e)
-		{
-			if (this.statusSwitch.Checked)
-			{
-				this.statusSwitch.CheckedState.FillColor = Color.FromArgb(45, 210, 192);
-			}
-		}
-	}
+        private void authorName_Leave(object sender, EventArgs e)
+        {
+            bool isAuthor = CustomValidation.Instance.checkTextbox(
+                this.authorName,
+                this.authorNameMsg,
+                this.nameLine,
+                new string[] { "required" }
+            );
+
+            if (isAuthor)
+            {
+                CustomValidation.Instance.checkDuplicateName(
+                    this.authorNameMsg,
+                    this.nameLine,
+                    AuthorBUS.Instance.checkDuplicateName(this.authorName.Text)
+                );
+            }
+        }
+
+        private void birthYear_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                this.birthYear.ForeColor = Color.Black;
+
+                CustomValidation.Instance.checkTextbox(
+                    this.birthYear,
+                    this.birthYearMsg,
+                    this.birthYearLine,
+                    new string[] { "required", "positive-number", "max-current-year" }
+                );
+            }
+            catch (Exception er)
+            {
+
+                Console.WriteLine(er);
+            }
+        }
+    }
 }

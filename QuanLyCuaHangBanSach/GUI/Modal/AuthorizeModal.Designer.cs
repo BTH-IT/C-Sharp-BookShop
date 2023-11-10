@@ -56,11 +56,12 @@
             // 
             // title
             // 
+            this.title.Dock = System.Windows.Forms.DockStyle.Top;
             this.title.Font = new System.Drawing.Font("#9Slide03 Cabin", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.title.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.title.Location = new System.Drawing.Point(-1, 9);
+            this.title.Location = new System.Drawing.Point(0, 0);
             this.title.Name = "title";
-            this.title.Size = new System.Drawing.Size(1219, 55);
+            this.title.Size = new System.Drawing.Size(1222, 55);
             this.title.TabIndex = 1;
             this.title.Text = "Phân quyền cho chức vụ";
             this.title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

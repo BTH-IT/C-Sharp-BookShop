@@ -7,17 +7,18 @@ namespace QuanLyCuaHangBanSach
 {
     public class Authorization
     {
-        public int MaChucVu {  get; private set; }
+        public int MaChucVu { get; private set; }
         private Dictionary<string, string> permissionObj = new Dictionary<string, string>();
 
-        public Authorization(int maChucVu) {
+        public Authorization(int maChucVu)
+        {
             this.MaChucVu = maChucVu;
 
             List<PermissionDTO> permissions = PermissionBUS.Instance.getAllData();
 
             foreach (PermissionDTO permission in permissions)
             {
-                permissionObj.Add(permission.MaQuyenHan.ToString(), permission.TenQuyenHan);
+                permissionObj.Add(permission.maQuyenHan.ToString(), permission.tenQuyenHan);
             }
         }
 
@@ -31,7 +32,7 @@ namespace QuanLyCuaHangBanSach
             AuthDetailDTO authDetail = AuthDetailBUS.Instance.getById(this.MaChucVu.ToString(), maQuyenHan.ToString());
 
             if (authDetail == null || !authDetail.TrangThai) return false;
-            
+
             return true;
         }
     }

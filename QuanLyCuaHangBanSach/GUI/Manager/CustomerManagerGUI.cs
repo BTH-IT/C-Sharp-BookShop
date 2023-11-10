@@ -57,8 +57,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 							customer.GioiTinh,
 							customer.NamSinh,
 							customer.SoDienThoai,
-							customer.Diem,
-                            customer.TrangThai ? "Đang hoạt động" : "Ngưng hoạt động",
+							customer.Diem
                         });
 					}
 

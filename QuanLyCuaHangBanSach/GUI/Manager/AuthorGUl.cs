@@ -65,7 +65,6 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                     Author.Ten,
                     Author.GioiTinh,
                     Author.NamSinh,
-                    Author.TrangThai ? "Đang hoạt động" : "Ngưng hoạt động",
                 });
                 }
             }

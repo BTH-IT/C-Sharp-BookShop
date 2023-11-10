@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using MySql.Data.MySqlClient;
 using QuanLyCuaHangBanSach.BUS;
@@ -24,6 +25,11 @@ namespace QuanLyCuaHangBanSach.DAO
             private set { PermissionDAO.instance = value; }
         }
 
+        
+        public DataTable getAll() {
+            return DataProvider.Instance.ExecuteQuery("select * from quyenhan");
+        }
+
         public bool checkDuplicateName(string value)
         {
             DataTable dataTable = DataProvider.Instance.ExecuteQuery("select * from quyenhan WHERE LOWER(tenQuyenHan)=LOWER(@tenQuyenHan);",
@@ -36,9 +42,21 @@ namespace QuanLyCuaHangBanSach.DAO
 
             return true;
         }
-        public DataTable getAll() {
-            return DataProvider.Instance.ExecuteQuery("select * from quyenhan;");
+
+        public bool checkDuplicateName(string value, int id)
+        {
+            DataTable dataTable = DataProvider.Instance.ExecuteQuery("select * from quyenhan WHERE LOWER(tenQuyenHan)=LOWER(@tenQuyenHan) and maQuyenHan!=@id;",
+                new MySqlParameter[] {
+                    new MySqlParameter("@tenQuyenHan", value.Trim().ToLower()),
+                    new MySqlParameter("@id", id)
+                }
+            );
+
+            if (dataTable.Rows.Count <= 0) return false;
+
+            return true;
         }
+
 
         public PermissionDTO getById(string id)
         {
@@ -59,7 +77,8 @@ namespace QuanLyCuaHangBanSach.DAO
         public DataTable searchData(string value)
         {
             string sql = $@"SELECT * FROM quyenhan 
-                            WHERE (maQuyenHan LIKE @maQuyenHan OR tenQuyenHan LIKE @tenQuyenHan);";
+                            WHERE (maQuyenHan LIKE @maQuyenHan OR tenQuyenHan LIKE @tenQuyenHan)
+                            AND hienThi=1;";
 
             return DataProvider.Instance.ExecuteQuery(sql,
                 new MySqlParameter[] {
@@ -77,7 +96,7 @@ namespace QuanLyCuaHangBanSach.DAO
 
             int rowChanged = DataProvider.Instance.ExecuteNonQuery(sql,
                 new MySqlParameter[] {
-                    new MySqlParameter("@tenQuyenHan", data.TenQuyenHan),
+                    new MySqlParameter("@tenQuyenHan", data.tenQuyenHan),
                     new MySqlParameter("@trangThai", data.TrangThai),
                 });
 
@@ -93,7 +112,7 @@ namespace QuanLyCuaHangBanSach.DAO
                     DataProvider.Instance.ExecuteNonQuery(sql,
                     new MySqlParameter[] {
                         new MySqlParameter("@maChucVu", position.MaChucVu),
-                        new MySqlParameter("@maQuyenHan", data.MaQuyenHan),
+                        new MySqlParameter("@maQuyenHan", data.maQuyenHan),
                     });
                 }
             }
@@ -109,8 +128,8 @@ namespace QuanLyCuaHangBanSach.DAO
 
             int rowChanged = DataProvider.Instance.ExecuteNonQuery(sql,
                 new MySqlParameter[] {
-                    new MySqlParameter("@maQuyenHan", data.MaQuyenHan),
-                    new MySqlParameter("@tenQuyenHan", data.TenQuyenHan),
+                    new MySqlParameter("@maQuyenHan", data.maQuyenHan),
+                    new MySqlParameter("@tenQuyenHan", data.tenQuyenHan),
                     new MySqlParameter("@trangThai", data.TrangThai)
                 });
 
@@ -119,12 +138,28 @@ namespace QuanLyCuaHangBanSach.DAO
 
         public bool delete(string id)
         {
-            string sql = $@"DELETE FROM quyenhan WHERE maQuyenHan=@maQuyenHan;";
+            string sql = $@"UPDATE quyenhan SET hienThi = 0 WHERE maQuyenHan=@maQuyenHan;";
 
             int rowChanged = DataProvider.Instance.ExecuteNonQuery(sql,
                 new MySqlParameter[] {
                     new MySqlParameter("@maQuyenHan", id),
                 });
+
+            if (rowChanged > 0)
+            {
+                List<PositionDTO> positionList = PositionBUS.Instance.getAllData();
+
+                sql = $@"UPDATE chitietphanquyen SET hienThi = 0 WHERE maChucVu=@maChucVu AND maQuyenHan=@maQuyenHan;";
+
+                foreach (PositionDTO position in positionList)
+                {
+                    DataProvider.Instance.ExecuteNonQuery(sql,
+                    new MySqlParameter[] {
+                        new MySqlParameter("@maChucVu", position.MaChucVu),
+                        new MySqlParameter("@maQuyenHan", id),
+                    });
+                }
+            }
 
             return rowChanged > 0;
         }

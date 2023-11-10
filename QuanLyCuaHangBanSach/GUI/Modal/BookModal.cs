@@ -30,7 +30,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             {
                 List<AuthorDTO> authorList = AuthorBUS.Instance.getAllData();
 
-                authorList.Insert(0, new AuthorDTO(0, "Chọn tác giả", "", 0, false));
+                authorList.Insert(0, new AuthorDTO(0, "Chọn tác giả", "", 0));
 
                 this.authorCbx.ValueMember = "Ma";
                 this.authorCbx.DisplayMember = "Ten";
@@ -50,7 +50,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             {
                 List<BookTypeDTO> bookTypeList = BookTypeBUS.Instance.getAllData();
 
-                bookTypeList.Insert(0, new BookTypeDTO(0, "Chọn thể loại", false));
+                bookTypeList.Insert(0, new BookTypeDTO(0, "Chọn thể loại"));
 
                 this.bookTypeCbx.ValueMember = "MaTheLoai";
                 this.bookTypeCbx.DisplayMember = "TenTheLoai";
@@ -68,7 +68,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             {
                 List<PublisherDTO> publisherList = PublisherBUS.Instance.getAllData();
 
-                publisherList.Insert(0, new PublisherDTO(0, "Chọn nhà xuất bản", "", "", false));
+                publisherList.Insert(0, new PublisherDTO(0, "Chọn nhà xuất bản", "", ""));
 
                 this.publisherCbx.ValueMember = "MaNhaXuatBan";
                 this.publisherCbx.DisplayMember = "TenNhaXuatBan";
@@ -136,11 +136,22 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
                 if (isBookName)
                 {
-                    CustomValidation.Instance.checkDuplicateName(
-                        this.errorBookNameMsg,
-                        this.nameLine,
-                        BookBUS.Instance.checkDuplicateName(this.bookNameTxt.Text)
-                    );
+                    if (updateBook == null)
+                    {
+                        isBookName = CustomValidation.Instance.checkDuplicateName(
+                            this.errorBookNameMsg,
+                            this.nameLine,
+                            BookBUS.Instance.checkDuplicateName(this.bookNameTxt.Text)
+                        );
+                    }
+                    else
+                    {
+                        isBookName = CustomValidation.Instance.checkDuplicateName(
+                            this.errorBookNameMsg,
+                            this.nameLine,
+                            BookBUS.Instance.checkDuplicateName(this.bookNameTxt.Text, updateBook.MaSach)
+                        );
+                    }
                 }
             }
             catch (Exception ex)
@@ -153,8 +164,6 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
         {
             try
             {
-                this.sellPriceTxt.ForeColor = Color.Black;
-
                 CustomValidation.Instance.checkTextbox(
                     this.sellPriceTxt,
                     this.errorSellPriceMsg,
@@ -220,11 +229,22 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
                 if (isBookName)
                 {
-                    CustomValidation.Instance.checkDuplicateName(
-                        this.errorBookNameMsg,
-                        this.nameLine,
-                        BookBUS.Instance.checkDuplicateName(this.bookNameTxt.Text)
-                    );
+                    if (updateBook == null)
+                    {
+                        isBookName = CustomValidation.Instance.checkDuplicateName(
+                            this.errorBookNameMsg,
+                            this.nameLine,
+                            BookBUS.Instance.checkDuplicateName(this.bookNameTxt.Text)
+                        );
+                    }
+                    else
+                    {
+                        isBookName = CustomValidation.Instance.checkDuplicateName(
+                            this.errorBookNameMsg,
+                            this.nameLine,
+                            BookBUS.Instance.checkDuplicateName(this.bookNameTxt.Text, updateBook.MaSach)
+                        );
+                    }
                 }
 
                 bool isCheckTxt2 = CustomValidation.Instance.checkTextbox(
@@ -441,6 +461,42 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             if (!isTouchPublisherCbx)
             {
                 isTouchPublisherCbx = true;
+            }
+        }
+
+        private void bookNameTxt_Leave(object sender, EventArgs e)
+        {
+            bool isBookName = CustomValidation.Instance.checkTextbox(
+                    this.bookNameTxt,
+                    this.errorBookNameMsg,
+                    this.nameLine,
+                    new string[] { "required" }
+                );
+
+            if (isBookName)
+            {
+                CustomValidation.Instance.checkDuplicateName(
+                    this.errorBookNameMsg,
+                    this.nameLine,
+                    BookBUS.Instance.checkDuplicateName(this.bookNameTxt.Text)
+                );
+            }
+        }
+
+        private void sellPriceTxt_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                CustomValidation.Instance.checkTextbox(
+                    this.sellPriceTxt,
+                    this.errorSellPriceMsg,
+                    this.sellPriceLine,
+                    new string[] { "required", "positive-number" }
+                );
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
             }
         }
     }

@@ -26,7 +26,7 @@ namespace QuanLyCuaHangBanSach.DAO
 
         
         public DataTable getAll() {
-            return DataProvider.Instance.ExecuteQuery("select * from tacgia");
+            return DataProvider.Instance.ExecuteQuery("select * from tacgia;");
         }
 
         public bool checkDuplicateName(string value)
@@ -34,6 +34,20 @@ namespace QuanLyCuaHangBanSach.DAO
             DataTable dataTable = DataProvider.Instance.ExecuteQuery("select * from tacgia WHERE  LOWER(tenTacGia)=LOWER(@tenTacGia);",
                 new MySqlParameter[] {
                     new MySqlParameter("@tenTacGia", value.Trim().ToLower())
+                }
+            );
+
+            if (dataTable.Rows.Count <= 0) return false;
+
+            return true;
+        }
+
+        public bool checkDuplicateName(string value, int id)
+        {
+            DataTable dataTable = DataProvider.Instance.ExecuteQuery("select * from tacgia WHERE  LOWER(tenTacGia)=LOWER(@tenTacGia) and maTacGia!=@id;",
+                new MySqlParameter[] {
+                    new MySqlParameter("@tenTacGia", value.Trim().ToLower()),
+                    new MySqlParameter("@maTacGia", id)
                 }
             );
 
@@ -74,15 +88,14 @@ namespace QuanLyCuaHangBanSach.DAO
         public bool insert(AuthorDTO data)
         {
 
-            string sql = $@"INSERT INTO tacgia (tenTacGia, gioiTinh, namSinh, trangThai)
-                            VALUES (@tenTacGia, @gioiTinh, @namSinh, @trangThai);";
+            string sql = $@"INSERT INTO tacgia (tenTacGia, gioiTinh, namSinh)
+                            VALUES (@tenTacGia, @gioiTinh, @namSinh);";
 
             int rowChanged = DataProvider.Instance.ExecuteNonQuery(sql,
                 new MySqlParameter[] {
                     new MySqlParameter("@tenTacGia", data.Ten),
                     new MySqlParameter("@gioiTinh", data.GioiTinh),
                     new MySqlParameter("@namSinh", data.NamSinh),
-                    new MySqlParameter("@trangThai", data.TrangThai),
                 });
 
             return rowChanged > 0;
@@ -91,7 +104,7 @@ namespace QuanLyCuaHangBanSach.DAO
         public bool update(AuthorDTO data)
         {
             string sql = $@"UPDATE tacgia
-                            SET tenTacGia=@tenTacGia, gioiTinh=@gioiTinh, namSinh=@namSinh, trangThai=@trangThai
+                            SET tenTacGia=@tenTacGia, gioiTinh=@gioiTinh, namSinh=@namSinh
                             WHERE maTacGia=@maTacGia;";
 
             int rowChanged = DataProvider.Instance.ExecuteNonQuery(sql,
@@ -100,7 +113,6 @@ namespace QuanLyCuaHangBanSach.DAO
                     new MySqlParameter("@tenTacGia", data.Ten),
                     new MySqlParameter("@gioiTinh", data.GioiTinh),
                     new MySqlParameter("@namSinh", data.NamSinh),
-                    new MySqlParameter("@trangThai", data.TrangThai ? 1 : 0),
                 });
 
             return rowChanged > 0;

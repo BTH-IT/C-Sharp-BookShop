@@ -1,8 +1,6 @@
-﻿using System;
-using System.Data;
-using System.Windows.Documents;
-using MySql.Data.MySqlClient;
 using QuanLyCuaHangBanSach.DTO;
+using MySql.Data.MySqlClient;
+using System.Data;
 
 namespace QuanLyCuaHangBanSach.DAO
 {
@@ -24,6 +22,11 @@ namespace QuanLyCuaHangBanSach.DAO
             private set { SupplierDAO.instance = value; }
         }
 
+        public DataTable getAll()
+        {
+            return DataProvider.Instance.ExecuteQuery("select * from nhacungcap");
+        }
+
         public bool checkDuplicateName(string value)
         {
             DataTable dataTable = DataProvider.Instance.ExecuteQuery("select * from nhacungcap WHERE  LOWER(tenNhaCungCap)=LOWER(@tenNhaCungCap);",
@@ -37,14 +40,24 @@ namespace QuanLyCuaHangBanSach.DAO
             return true;
         }
 
-        public DataTable getAll() {
-            return DataProvider.Instance.ExecuteQuery("select * from nhacungcap;");
+        public bool checkDuplicateName(string value, int id)
+        {
+            DataTable dataTable = DataProvider.Instance.ExecuteQuery("select * from nhacungcap WHERE  LOWER(tenNhaCungCap)=LOWER(@tenNhaCungCap)and maNhaCupCap!=@id;",
+                new MySqlParameter[] {
+                    new MySqlParameter("@tenNhaCungCap", value.Trim().ToLower()),
+                    new MySqlParameter("@maNhaCungCap", id)
+                }
+            );
+
+            if (dataTable.Rows.Count <= 0) return false;
+
+            return true;
         }
 
         public SupplierDTO getById(string id)
         {
             DataTable dataTable = DataProvider.Instance.ExecuteQuery(
-                "SELECT * FROM nhacungcap WHERE maNhaCungCap=@maNhaCungCap;",
+                "SELECT * FROM nhacungcap WHERE maNhaCungCap=@maNhaCungCap",
                 new MySqlParameter[] {
                     new MySqlParameter("@maNhaCungCap", id)
                 }
@@ -56,7 +69,7 @@ namespace QuanLyCuaHangBanSach.DAO
 
             return account;
         }
-        
+
         public DataTable searchData(string value)
         {
             string sql = $@"SELECT * FROM nhacungcap WHERE (maNhaCungCap LIKE @maNhaCungCap OR tenNhaCungCap LIKE @tenNhaCungCap);";
@@ -88,15 +101,15 @@ namespace QuanLyCuaHangBanSach.DAO
         public bool update(SupplierDTO data)
         {
             string sql = $@"UPDATE nhacungcap
-                            SET tenNhaCungCap=@tenNhaCungCap, diaChi=@diaChi, soDienThoai=@soDienThoai, trangThai=@trangThai
+                            SET tenNhaCungCap=@tenNhaCungCap, diaChi=@diaChi, soDienThoai=@soDienThoai
                             WHERE maNhaCungCap=@maNhaCungCap;";
+
             int rowChanged = DataProvider.Instance.ExecuteNonQuery(sql,
                 new MySqlParameter[] {
                     new MySqlParameter("@maNhaCungCap", data.MaNhaCungCap),
                     new MySqlParameter("@tenNhaCungCap", data.TenNhaCungCap),
                     new MySqlParameter("@diaChi", data.DiaChi),
                     new MySqlParameter("@soDienThoai", data.SoDienThoai),
-                    new MySqlParameter("@trangThai", data.TrangThai),
                 });
 
             return rowChanged > 0;
@@ -104,7 +117,7 @@ namespace QuanLyCuaHangBanSach.DAO
 
         public bool delete(string id)
         {
-            string sql = $@"DELETE FROM nhacungcap WHERE maNhaCungCap=@maNhaCungCap;";
+            string sql = $@"UPDATE nhacungcap SET hienThi = 0 WHERE maNhaCungCap=@maNhaCungCap;";
 
             int rowChanged = DataProvider.Instance.ExecuteNonQuery(sql,
                 new MySqlParameter[] {

@@ -1,8 +1,14 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
+using System.Windows.Markup;
+using Guna.UI2.WinForms.Suite;
 using QuanLyCuaHangBanSach.BUS;
 using QuanLyCuaHangBanSach.DTO;
+using static Guna.UI2.Native.WinApi;
+using LiveCharts;
 
 namespace QuanLyCuaHangBanSach.GUI.Modal
 {
@@ -16,10 +22,6 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             InitializeComponent();
             this.label1.Text = title;
             this.Text = title;
-
-            this.Publishertxt.TextChanged += Publishertxt_TextChanged;
-            this.addressTxt.TextChanged += addressTxt_TextChanged;
-            this.phoneNumbertxt.TextChanged += phoneNumbertxt_TextChanged;
         }
 
         private void bookNameTxt_TextChanged(object sender, EventArgs e)
@@ -35,11 +37,22 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
                 if (isPublisher)
                 {
-                    CustomValidation.Instance.checkDuplicateName(
-                        this.PublisherNameMsg,
-                        this.nameLine,
-                        PublisherBUS.Instance.checkDuplicateName(this.Publishertxt.Text)
-                    );
+                    if (updatePublisher == null)
+                    {
+                        isPublisher = CustomValidation.Instance.checkDuplicateName(
+                            this.PublisherNameMsg,
+                            this.nameLine,
+                            PublisherBUS.Instance.checkDuplicateName(this.Publishertxt.Text)
+                        );
+                    }
+                    else
+                    {
+                        isPublisher = CustomValidation.Instance.checkDuplicateName(
+                            this.PublisherNameMsg,
+                            this.nameLine,
+                            PublisherBUS.Instance.checkDuplicateName(this.Publishertxt.Text, updatePublisher.MaNhaXuatBan)
+                        );
+                    }
                 }
             }
             catch (Exception er)
@@ -62,11 +75,22 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
                 if (isPublisher)
                 {
-                    CustomValidation.Instance.checkDuplicateName(
-                        this.PublisherNameMsg,
-                        this.nameLine,
-                        PublisherBUS.Instance.checkDuplicateName(this.Publishertxt.Text)
-                    );
+                    if (updatePublisher == null)
+                    {
+                        isPublisher = CustomValidation.Instance.checkDuplicateName(
+                            this.PublisherNameMsg,
+                            this.nameLine,
+                            PublisherBUS.Instance.checkDuplicateName(this.Publishertxt.Text)
+                        );
+                    }
+                    else
+                    {
+                        isPublisher = CustomValidation.Instance.checkDuplicateName(
+                            this.PublisherNameMsg,
+                            this.nameLine,
+                            PublisherBUS.Instance.checkDuplicateName(this.Publishertxt.Text, updatePublisher.MaNhaXuatBan)
+                        );
+                    }
                 }
 
                 bool isCheckTxt2 = CustomValidation.Instance.checkTextbox(
@@ -107,9 +131,8 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 string addressTxt = this.addressTxt.Text;
 
                 int id = updatePublisher != null ? updatePublisher.MaNhaXuatBan : 0;
-                bool trangThai = this.statusSwitch.Checked;
 
-                PublisherDTO book = new PublisherDTO(id, PublisherName, addressTxt, phoneNumbertxt, trangThai);
+                PublisherDTO book = new PublisherDTO(id, PublisherName, addressTxt, phoneNumbertxt);
 
                 bool isSuccess = updatePublisher != null ? PublisherBUS.Instance.update(book) : PublisherBUS.Instance.insert(book);
 
@@ -137,17 +160,12 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
         {
             try
             {
-                this.phoneNumbertxt.ForeColor = Color.Black;
-
-                if (this.phoneNumbertxt.Text.Length > 0)
-                {
-                    CustomValidation.Instance.checkTextbox(
-                        this.phoneNumbertxt,
-                        this.phoneNumberMsg,
-                        this.phoneNumberLine,
-                        new string[] { "required", "positive-number" }
-                    );
-                }
+                CustomValidation.Instance.checkTextbox(
+                    this.phoneNumbertxt,
+                    this.phoneNumberMsg,
+                    this.phoneNumberLine,
+                    new string[] { "required", "positive-number" }
+                );
             }
             catch (Exception er)
             {
@@ -170,7 +188,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                     this.Publishertxt.Text = updatePublisher.TenNhaXuatBan;
                     this.addressTxt.Text = updatePublisher.DiaChi;
                     this.phoneNumbertxt.Text = updatePublisher.SoDienThoai;
-                    this.statusSwitch.Checked = updatePublisher.TrangThai;
+
                 }
             }
             catch (Exception er)
@@ -184,43 +202,5 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
         {
             this.Close();
         }
-
-        private void Publishertxt_TextChanged(object sender, EventArgs e)
-        {
-            CustomValidation.Instance.checkTextbox(
-                this.Publishertxt,
-                this.PublisherNameMsg,
-                this.nameLine,
-                new string[] { "required" }
-            );
-        }
-
-        private void addressTxt_TextChanged(object sender, EventArgs e)
-        {
-            CustomValidation.Instance.checkTextbox(
-                this.addressTxt,
-                this.addressMsg,
-                this.addressLine,
-                new string[] { "required" }
-            );
-        }
-
-        private void phoneNumbertxt_TextChanged(object sender, EventArgs e)
-        {
-            CustomValidation.Instance.checkTextbox(
-                this.phoneNumbertxt,
-                this.phoneNumberMsg,
-                this.phoneNumberLine,
-                new string[] { "required", "phone-number" }
-            );
-        }
-
-		private void statusSwitch_CheckedChanged(object sender, EventArgs e)
-		{
-			if (this.statusSwitch.Checked)
-			{
-				this.statusSwitch.CheckedState.FillColor = Color.FromArgb(45, 210, 192);
-			}
-		}
     }
 }

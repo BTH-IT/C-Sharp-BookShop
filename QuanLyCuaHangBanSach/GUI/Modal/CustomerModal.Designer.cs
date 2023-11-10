@@ -48,9 +48,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.errorGenderMsg = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.statusSwitch = new Guna.UI2.WinForms.Guna2ToggleSwitch();
-            this.label2 = new System.Windows.Forms.Label();
             this.submitBtn = new Guna.UI.WinForms.GunaButton();
             this.cancelBtn = new Guna.UI.WinForms.GunaButton();
             this.title = new System.Windows.Forms.Label();
@@ -59,7 +56,6 @@
             this.flowLayoutPanel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label16
@@ -86,15 +82,14 @@
             this.genderCbx.ForeColor = System.Drawing.Color.Black;
             this.genderCbx.FormattingEnabled = true;
             this.genderCbx.ItemHeight = 30;
-            this.genderCbx.Location = new System.Drawing.Point(168, 6);
+            this.genderCbx.Location = new System.Drawing.Point(160, 6);
             this.genderCbx.Name = "genderCbx";
             this.genderCbx.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.genderCbx.OnHoverItemForeColor = System.Drawing.Color.White;
             this.genderCbx.Radius = 6;
-            this.genderCbx.Size = new System.Drawing.Size(400, 36);
+            this.genderCbx.Size = new System.Drawing.Size(408, 36);
             this.genderCbx.TabIndex = 29;
             this.genderCbx.TabStop = false;
-            this.genderCbx.SelectedIndexChanged += new System.EventHandler(this.genderCbx_SelectedIndexChanged);
             // 
             // panel10
             // 
@@ -102,7 +97,7 @@
             this.panel10.Controls.Add(this.errorPhoneNumberMsg);
             this.panel10.Controls.Add(this.phoneNumberLine);
             this.panel10.Controls.Add(this.label4);
-            this.panel10.Location = new System.Drawing.Point(3, 97);
+            this.panel10.Location = new System.Drawing.Point(603, 3);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(594, 88);
             this.panel10.TabIndex = 1;
@@ -125,14 +120,14 @@
             this.phoneNumberTxtBox.ForeColor = System.Drawing.Color.Black;
             this.phoneNumberTxtBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.phoneNumberTxtBox.HoverState.Parent = this.phoneNumberTxtBox;
-            this.phoneNumberTxtBox.Location = new System.Drawing.Point(168, 7);
+            this.phoneNumberTxtBox.Location = new System.Drawing.Point(149, 7);
             this.phoneNumberTxtBox.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.phoneNumberTxtBox.Name = "phoneNumberTxtBox";
             this.phoneNumberTxtBox.PasswordChar = '\0';
             this.phoneNumberTxtBox.PlaceholderText = "Nhập số điện thoại";
             this.phoneNumberTxtBox.SelectedText = "";
             this.phoneNumberTxtBox.ShadowDecoration.Parent = this.phoneNumberTxtBox;
-            this.phoneNumberTxtBox.Size = new System.Drawing.Size(406, 29);
+            this.phoneNumberTxtBox.Size = new System.Drawing.Size(425, 29);
             this.phoneNumberTxtBox.TabIndex = 33;
             this.phoneNumberTxtBox.TextChanged += new System.EventHandler(this.phoneNumberTxtBox_TextChanged);
             this.phoneNumberTxtBox.Leave += new System.EventHandler(this.phoneNumberTxtBox_TextChanged);
@@ -142,7 +137,7 @@
             this.errorPhoneNumberMsg.AutoSize = true;
             this.errorPhoneNumberMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.errorPhoneNumberMsg.ForeColor = System.Drawing.Color.Red;
-            this.errorPhoneNumberMsg.Location = new System.Drawing.Point(176, 51);
+            this.errorPhoneNumberMsg.Location = new System.Drawing.Point(163, 48);
             this.errorPhoneNumberMsg.Name = "errorPhoneNumberMsg";
             this.errorPhoneNumberMsg.Size = new System.Drawing.Size(0, 26);
             this.errorPhoneNumberMsg.TabIndex = 7;
@@ -150,9 +145,9 @@
             // phoneNumberLine
             // 
             this.phoneNumberLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(212)))), ((int)(((byte)(191)))));
-            this.phoneNumberLine.Location = new System.Drawing.Point(179, 38);
+            this.phoneNumberLine.Location = new System.Drawing.Point(160, 38);
             this.phoneNumberLine.Name = "phoneNumberLine";
-            this.phoneNumberLine.Size = new System.Drawing.Size(395, 1);
+            this.phoneNumberLine.Size = new System.Drawing.Size(414, 1);
             this.phoneNumberLine.TabIndex = 8;
             // 
             // label4
@@ -209,11 +204,11 @@
             // errorCustomerNameMsg
             // 
             this.errorCustomerNameMsg.AutoSize = true;
-            this.errorCustomerNameMsg.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.errorCustomerNameMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.errorCustomerNameMsg.ForeColor = System.Drawing.Color.Red;
             this.errorCustomerNameMsg.Location = new System.Drawing.Point(181, 52);
             this.errorCustomerNameMsg.Name = "errorCustomerNameMsg";
-            this.errorCustomerNameMsg.Size = new System.Drawing.Size(0, 25);
+            this.errorCustomerNameMsg.Size = new System.Drawing.Size(0, 26);
             this.errorCustomerNameMsg.TabIndex = 7;
             // 
             // customerNameLine
@@ -242,10 +237,9 @@
             this.flowLayoutPanel1.Controls.Add(this.panel10);
             this.flowLayoutPanel1.Controls.Add(this.panel4);
             this.flowLayoutPanel1.Controls.Add(this.panel3);
-            this.flowLayoutPanel1.Controls.Add(this.panel2);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(11, 64);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(11, 53);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(601, 439);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1200, 221);
             this.flowLayoutPanel1.TabIndex = 8;
             // 
             // panel4
@@ -254,7 +248,7 @@
             this.panel4.Controls.Add(this.errorBirthYearMsg);
             this.panel4.Controls.Add(this.birthYearLine);
             this.panel4.Controls.Add(this.label6);
-            this.panel4.Location = new System.Drawing.Point(3, 191);
+            this.panel4.Location = new System.Drawing.Point(3, 97);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(594, 88);
             this.panel4.TabIndex = 2;
@@ -294,7 +288,7 @@
             this.errorBirthYearMsg.AutoSize = true;
             this.errorBirthYearMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.errorBirthYearMsg.ForeColor = System.Drawing.Color.Red;
-            this.errorBirthYearMsg.Location = new System.Drawing.Point(177, 46);
+            this.errorBirthYearMsg.Location = new System.Drawing.Point(177, 45);
             this.errorBirthYearMsg.Name = "errorBirthYearMsg";
             this.errorBirthYearMsg.Size = new System.Drawing.Size(0, 26);
             this.errorBirthYearMsg.TabIndex = 7;
@@ -322,7 +316,7 @@
             this.panel3.Controls.Add(this.errorGenderMsg);
             this.panel3.Controls.Add(this.label16);
             this.panel3.Controls.Add(this.genderCbx);
-            this.panel3.Location = new System.Drawing.Point(3, 285);
+            this.panel3.Location = new System.Drawing.Point(603, 97);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(594, 88);
             this.panel3.TabIndex = 3;
@@ -332,55 +326,10 @@
             this.errorGenderMsg.AutoSize = true;
             this.errorGenderMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.errorGenderMsg.ForeColor = System.Drawing.Color.Red;
-            this.errorGenderMsg.Location = new System.Drawing.Point(174, 52);
+            this.errorGenderMsg.Location = new System.Drawing.Point(164, 52);
             this.errorGenderMsg.Name = "errorGenderMsg";
             this.errorGenderMsg.Size = new System.Drawing.Size(0, 26);
             this.errorGenderMsg.TabIndex = 30;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.statusSwitch);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(3, 379);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(594, 49);
-            this.panel2.TabIndex = 4;
-            // 
-            // statusSwitch
-            // 
-            this.statusSwitch.Animated = true;
-            this.statusSwitch.AutoRoundedCorners = true;
-            this.statusSwitch.BackColor = System.Drawing.Color.White;
-            this.statusSwitch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.statusSwitch.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.statusSwitch.CheckedState.BorderRadius = 12;
-            this.statusSwitch.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.statusSwitch.CheckedState.InnerBorderColor = System.Drawing.Color.White;
-            this.statusSwitch.CheckedState.InnerBorderRadius = 8;
-            this.statusSwitch.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.statusSwitch.CheckedState.Parent = this.statusSwitch;
-            this.statusSwitch.Location = new System.Drawing.Point(492, 8);
-            this.statusSwitch.Name = "statusSwitch";
-            this.statusSwitch.ShadowDecoration.Parent = this.statusSwitch;
-            this.statusSwitch.Size = new System.Drawing.Size(76, 26);
-            this.statusSwitch.TabIndex = 8;
-            this.statusSwitch.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(228)))), ((int)(((byte)(231)))));
-            this.statusSwitch.UncheckedState.BorderRadius = 12;
-            this.statusSwitch.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(228)))), ((int)(((byte)(231)))));
-            this.statusSwitch.UncheckedState.InnerBorderColor = System.Drawing.Color.White;
-            this.statusSwitch.UncheckedState.InnerBorderRadius = 8;
-            this.statusSwitch.UncheckedState.InnerColor = System.Drawing.Color.White;
-            this.statusSwitch.UncheckedState.Parent = this.statusSwitch;
-            // 
-            // label2
-            // 
-            this.label2.Font = new System.Drawing.Font("#9Slide03 Cabin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label2.Location = new System.Drawing.Point(3, 3);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(168, 31);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Trạng thái:";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // submitBtn
             // 
@@ -398,7 +347,7 @@
             this.submitBtn.ForeColor = System.Drawing.Color.White;
             this.submitBtn.Image = null;
             this.submitBtn.ImageSize = new System.Drawing.Size(20, 20);
-            this.submitBtn.Location = new System.Drawing.Point(307, 522);
+            this.submitBtn.Location = new System.Drawing.Point(620, 306);
             this.submitBtn.Name = "submitBtn";
             this.submitBtn.OnHoverBaseColor = System.Drawing.Color.White;
             this.submitBtn.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
@@ -429,7 +378,7 @@
             this.cancelBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.cancelBtn.Image = null;
             this.cancelBtn.ImageSize = new System.Drawing.Size(20, 20);
-            this.cancelBtn.Location = new System.Drawing.Point(101, 522);
+            this.cancelBtn.Location = new System.Drawing.Point(403, 306);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.cancelBtn.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
@@ -451,7 +400,7 @@
             this.title.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.title.Location = new System.Drawing.Point(0, 0);
             this.title.Name = "title";
-            this.title.Size = new System.Drawing.Size(624, 61);
+            this.title.Size = new System.Drawing.Size(1222, 50);
             this.title.TabIndex = 5;
             this.title.Text = "Thêm Khách hàng";
             this.title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -461,7 +410,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(624, 587);
+            this.ClientSize = new System.Drawing.Size(1222, 376);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.submitBtn);
             this.Controls.Add(this.cancelBtn);
@@ -481,7 +430,6 @@
             this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -510,8 +458,5 @@
         private Guna.UI.WinForms.GunaButton submitBtn;
         private Guna.UI.WinForms.GunaButton cancelBtn;
         private System.Windows.Forms.Label title;
-		private System.Windows.Forms.Panel panel2;
-		private System.Windows.Forms.Label label2;
-        private Guna.UI2.WinForms.Guna2ToggleSwitch statusSwitch;
     }
 }

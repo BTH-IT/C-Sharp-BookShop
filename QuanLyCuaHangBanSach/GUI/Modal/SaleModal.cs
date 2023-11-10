@@ -32,67 +32,86 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             this.dateTimeTo.Value = DateTime.Now;
             try
             {
-				if (sale != null)
-				{
-					this.saleNameTxt.Text = sale.TenKhuyenMai;
-					this.phanTramTxt.Text = sale.PhanTram.ToString();
-					this.dateTimeFrom.Value = sale.NgayBatDau;
-					this.dateTimeTo.Value = sale.NgayKetThuc;
-				}
-				else
-				{
-					Console.WriteLine("null");
-				}
-			}
+                if (sale != null)
+                {
+                    this.saleNameTxt.Text = sale.TenKhuyenMai;
+                    this.phanTramTxt.Text = sale.PhanTram.ToString();
+                    this.dateTimeFrom.Value = sale.NgayBatDau;
+                    this.dateTimeTo.Value = sale.NgayKetThuc;
+                }
+                else
+                {
+                    Console.WriteLine("null");
+                }
+            }
             catch
             {
 
             }
-              
+
         }
         private bool validateSubmitForm()
         {
             try
             {
-				bool isTenKhuyenMaiValid = CustomValidation.Instance.checkTextbox(
-					this.saleNameTxt,
-					this.errorSaleNameMsg,
-					this.saleNameLine,
-					new string[] { "required" }
-				);
+                bool isSale = CustomValidation.Instance.checkTextbox(
+                    this.saleNameTxt,
+                    this.errorSaleNameMsg,
+                    this.saleNameLine,
+                    new string[] { "required" }
+                );
 
-				bool isPhanTramValid = CustomValidation.Instance.checkTextbox(
-					this.phanTramTxt,
-					this.errorPhanTramMsg,
-					this.phanTramLine,
-					new string[] { "required", "positive-number" }
-				);
+                if (isSale)
+                {
+                    if (sale == null)
+                    {
+                        CustomValidation.Instance.checkDuplicateName(
+                            this.errorSaleNameMsg,
+                            this.saleNameLine,
+                            SaleBUS.Instance.checkDuplicateName(this.saleNameTxt.Text)
+                        );
+                    } else
+                    {
+                        CustomValidation.Instance.checkDuplicateName(
+                            this.errorSaleNameMsg,
+                            this.saleNameLine,
+                            SaleBUS.Instance.checkDuplicateName(this.saleNameTxt.Text, sale.MaKhuyenMai)
+                        );
+                    }
+                }
 
-				bool isDateTimeFrom = CustomValidation.Instance.checkDateTimePicker(
-				    this.dateTimeFrom,
-				    this.errorDateTimeFromMsg,
-				    new string[] { "after" },
-				    DateTime.Now
-				);
+                bool isPhanTramValid = CustomValidation.Instance.checkTextbox(
+                    this.phanTramTxt,
+                    this.errorPhanTramMsg,
+                    this.phanTramLine,
+                    new string[] { "required", "positive-number" }
+                );
 
-				bool DateFromGreaterOrEqual = CustomValidation.Instance.checkDateTimePicker(
-					this.dateTimeTo,
-					this.errorDateTimeToMsg,
-					new string[] { "after" },
-					this.dateTimeFrom.Value,
-					"Thời gian kết thúc phải lớn hơn hoặc bằng thời \n gian bắt đầu"
-				);
+                bool isDateTimeFrom = CustomValidation.Instance.checkDateTimePicker(
+                    this.dateTimeFrom,
+                    this.errorDateTimeFromMsg,
+                    new string[] { "after" },
+                    DateTime.Now
+                );
 
-				return isPhanTramValid && isTenKhuyenMaiValid && isDateTimeFrom && DateFromGreaterOrEqual;
-			}
+                bool DateFromGreaterOrEqual = CustomValidation.Instance.checkDateTimePicker(
+                    this.dateTimeTo,
+                    this.errorDateTimeToMsg,
+                    new string[] { "after" },
+                    this.dateTimeFrom.Value,
+                    "Thời gian kết thúc phải lớn hơn hoặc bằng thời \n gian bắt đầu"
+                );
+
+                return isPhanTramValid && isSale && isDateTimeFrom && DateFromGreaterOrEqual;
+            }
             catch
             {
                 return false;
             }
-            
+
         }
 
-        
+
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
@@ -103,32 +122,32 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
         {
             try
             {
-				if (this.validateSubmitForm())
-				{
-					string tenKhuyenMai = this.saleNameTxt.Text;
-					byte phanTram = Convert.ToByte(this.phanTramTxt.Text.ToString());
-					DateTime ngayBatDau = this.dateTimeFrom.Value;
-					DateTime ngayKetThuc = this.dateTimeTo.Value;
-					int maKhuyenMai = this.sale != null ? this.sale.MaKhuyenMai : 0;
+                if (this.validateSubmitForm())
+                {
+                    string tenKhuyenMai = this.saleNameTxt.Text;
+                    byte phanTram = Convert.ToByte(this.phanTramTxt.Text.ToString());
+                    DateTime ngayBatDau = this.dateTimeFrom.Value;
+                    DateTime ngayKetThuc = this.dateTimeTo.Value;
+                    int maKhuyenMai = this.sale != null ? this.sale.MaKhuyenMai : 0;
 
 
 
-					SaleDTO sale = new SaleDTO(maKhuyenMai: maKhuyenMai, tenKhuyenMai: tenKhuyenMai, phanTram: phanTram, ngayBatDau: ngayBatDau, ngayKetThuc: ngayKetThuc);
+                    SaleDTO sale = new SaleDTO(maKhuyenMai: maKhuyenMai, tenKhuyenMai: tenKhuyenMai, phanTram: phanTram, ngayBatDau: ngayBatDau, ngayKetThuc: ngayKetThuc);
 
-					bool isSuccess = maKhuyenMai != 0 ? SaleBUS.Instance.update(sale) : SaleBUS.Instance.insert(sale);
+                    bool isSuccess = maKhuyenMai != 0 ? SaleBUS.Instance.update(sale) : SaleBUS.Instance.insert(sale);
 
-					if (isSuccess)
-					{
-						MessageBox.Show(maKhuyenMai != 0 ? "Cập nhật hoàn thành" : "Thêm mới hoàn thành");
-						this.isSubmitSuccess = isSuccess;
-						this.Close();
-						return;
-					}
+                    if (isSuccess)
+                    {
+                        MessageBox.Show(maKhuyenMai != 0 ? "Cập nhật hoàn thành" : "Thêm mới hoàn thành");
+                        this.isSubmitSuccess = isSuccess;
+                        this.Close();
+                        return;
+                    }
 
-				}
-			}
+                }
+            }
             catch { }
-         
+
         }
 
 
@@ -152,12 +171,33 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
         private void saleNameTxt_TextChanged(object sender, EventArgs e)
         {
-            CustomValidation.Instance.checkTextbox(
+
+            bool isSale = CustomValidation.Instance.checkTextbox(
                 this.saleNameTxt,
                 this.errorSaleNameMsg,
                 this.saleNameLine,
                 new string[] { "required" }
             );
+
+            if (isSale)
+            {
+                if (sale == null)
+                {
+                    CustomValidation.Instance.checkDuplicateName(
+                        this.errorSaleNameMsg,
+                        this.saleNameLine,
+                        SaleBUS.Instance.checkDuplicateName(this.saleNameTxt.Text)
+                    );
+                }
+                else
+                {
+                    CustomValidation.Instance.checkDuplicateName(
+                        this.errorSaleNameMsg,
+                        this.saleNameLine,
+                        SaleBUS.Instance.checkDuplicateName(this.saleNameTxt.Text, sale.MaKhuyenMai)
+                    );
+                }
+            }
         }
 
         private void dateTimeFrom_TextChanged(object sender, EventArgs e)
@@ -179,11 +219,6 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 this.dateTimeFrom.Value,
                 "Thời gian kết thúc phải lớn hơn hoặc bằng thời \n gian bắt đầu"
             );
-        }
-
-        private void panel4_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }

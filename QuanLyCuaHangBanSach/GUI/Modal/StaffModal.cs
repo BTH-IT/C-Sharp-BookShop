@@ -17,7 +17,12 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             this.Text = title;
             this.label1.Text = title;
 
-            
+            this.staffNameTxt.TextChanged += staffNameTxt_TextChanged;
+            this.birthYearTxt.TextChanged += birthYearTxt_TextChanged;
+            this.phoneNumberTxt.TextChanged += phoneNumberTxt_TextChanged;
+            this.salaryTxt.TextChanged += salaryTxt_TextChanged;
+            this.genderCbx.TextChanged += genderCbx_TextChanged;
+            this.positionCbx.TextChanged += positionCbx_TextChanged;
         }
 
         private void submitBtn_Click(object sender, EventArgs e)
@@ -63,9 +68,9 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             try
             {
 				this.Location = new Point(
-				    (Screen.PrimaryScreen.Bounds.Size.Width / 2) - (this.Size.Width / 2),
-				    (Screen.PrimaryScreen.Bounds.Size.Height / 2) - (this.Size.Height / 2)
-			    );
+				(Screen.PrimaryScreen.Bounds.Size.Width / 2) - (this.Size.Width / 2),
+				(Screen.PrimaryScreen.Bounds.Size.Height / 2) - (this.Size.Height / 2)
+			);
 				string[] genders = new string[] { "Chọn giới tính", "Nam", "Nữ" };
 				this.genderCbx.Items.AddRange(genders);
 				this.genderCbx.SelectedItem = genders[0];
@@ -81,14 +86,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 					this.positionCbx.SelectedValue = staff.MaChucVu;
 
 				}
-
-                this.staffNameTxt.TextChanged += staffNameTxt_TextChanged;
-                this.birthYearTxt.TextChanged += birthYearTxt_TextChanged;
-                this.phoneNumberTxt.TextChanged += phoneNumberTxt_TextChanged;
-                this.salaryTxt.TextChanged += salaryTxt_TextChanged;
-                this.genderCbx.TextChanged += genderCbx_SelectedIndexChanged;
-                this.positionCbx.TextChanged += positionCbx_SelectedIndexChanged;
-            }
+			}
             catch
             {
 
@@ -110,7 +108,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 					 this.errorBirthYearMsg,
 					 this.birthYearLine,
 					 new string[] { "required", "positive-number", "max-current-year" }
-				 );
+                 );
 				bool isSalaryValid = CustomValidation.Instance.checkTextbox(
 						this.salaryTxt,
 						this.errorSalaryMsg,
@@ -137,14 +135,25 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
                 if (isPhone)
                 {
-                    CustomValidation.Instance.checkDuplicateName(
-                        this.errorPhoneNumberMsg,
-                        this.phoneNumberLine,
-                        StaffBUS.Instance.checkDuplicateName(this.phoneNumberTxt.Text),
-                        "Số điện thoại đã có trong hệ thống"
-                    );
+                    if (staff == null)
+                    {
+                        isPhone = CustomValidation.Instance.checkDuplicateName(
+                            this.errorPhoneNumberMsg,
+                            this.phoneNumberLine,
+                            StaffBUS.Instance.checkDuplicateName(this.phoneNumberTxt.Text),
+                            "Số điện thoại đã có trong hệ thống"
+                        );
+                    } else
+                    {
+                        isPhone = CustomValidation.Instance.checkDuplicateName(
+                            this.errorPhoneNumberMsg,
+                            this.phoneNumberLine,
+                            StaffBUS.Instance.checkDuplicateName(this.phoneNumberTxt.Text, staff.Ma),
+                            "Số điện thoại đã có trong hệ thống"
+                        );
+                    }
                 }
-                return isStaffNameValid && isSalaryValid && isGenderValid && isPhone && isBirthYearValid && isPositionValid ;
+                return isStaffNameValid && isSalaryValid && isGenderValid && isPhone && isBirthYearValid && isPositionValid;
 			}
             catch
             {
@@ -200,16 +209,28 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
             if (isPhone)
             {
-                CustomValidation.Instance.checkDuplicateName(
-                    this.errorPhoneNumberMsg,
-                    this.phoneNumberLine,
-                    StaffBUS.Instance.checkDuplicateName(this.phoneNumberTxt.Text),
-                    "Số điện thoại đã có trong hệ thống"
-                );
+                if (staff == null)
+                {
+                    CustomValidation.Instance.checkDuplicateName(
+                        this.errorPhoneNumberMsg,
+                        this.phoneNumberLine,
+                        StaffBUS.Instance.checkDuplicateName(this.phoneNumberTxt.Text),
+                        "Số điện thoại đã có trong hệ thống"
+                    );
+                }
+                else
+                {
+                    CustomValidation.Instance.checkDuplicateName(
+                        this.errorPhoneNumberMsg,
+                        this.phoneNumberLine,
+                        StaffBUS.Instance.checkDuplicateName(this.phoneNumberTxt.Text, staff.Ma),
+                        "Số điện thoại đã có trong hệ thống"
+                    );
+                }
             }
         }
-		
-		private void salaryTxt_TextChanged(object sender, EventArgs e)
+
+        private void salaryTxt_TextChanged(object sender, EventArgs e)
         {
             CustomValidation.Instance.checkTextbox(
                 this.salaryTxt,
@@ -219,7 +240,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             );
         }
 
-        private void positionCbx_SelectedIndexChanged(object sender, EventArgs e)
+        private void positionCbx_TextChanged(object sender, EventArgs e)
         {
             CustomValidation.Instance.checkCombobox(
                 this.positionCbx,
@@ -228,22 +249,12 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             );
         }
 
-        private void genderCbx_SelectedIndexChanged(object sender, EventArgs e)
+        private void genderCbx_TextChanged(object sender, EventArgs e)
         {
             CustomValidation.Instance.checkCombobox(
                 this.genderCbx,
                 this.errorGenderMsg,
                 new string[] { "required" }
-            );
-        }
-
-        private void salaryTxt_Leave(object sender, EventArgs e)
-        {
-            CustomValidation.Instance.checkTextbox(
-                this.salaryTxt,
-                this.errorSalaryMsg,
-                this.salaryLine,
-                new string[] { "required", "positive-number" }
             );
         }
 
@@ -258,22 +269,34 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
             if (isPhone)
             {
-                CustomValidation.Instance.checkDuplicateName(
-                    this.errorPhoneNumberMsg,
-                    this.phoneNumberLine,
-                    StaffBUS.Instance.checkDuplicateName(this.phoneNumberTxt.Text),
-                    "Số điện thoại đã có trong hệ thống"
-                );
+                if (staff == null)
+                {
+                    CustomValidation.Instance.checkDuplicateName(
+                        this.errorPhoneNumberMsg,
+                        this.phoneNumberLine,
+                        StaffBUS.Instance.checkDuplicateName(this.phoneNumberTxt.Text),
+                        "Số điện thoại đã có trong hệ thống"
+                    );
+                }
+                else
+                {
+                    CustomValidation.Instance.checkDuplicateName(
+                        this.errorPhoneNumberMsg,
+                        this.phoneNumberLine,
+                        StaffBUS.Instance.checkDuplicateName(this.phoneNumberTxt.Text, staff.Ma),
+                        "Số điện thoại đã có trong hệ thống"
+                    );
+                }
             }
         }
 
-        private void birthYearTxt_Leave(object sender, EventArgs e)
+        private void salaryTxt_Leave(object sender, EventArgs e)
         {
             CustomValidation.Instance.checkTextbox(
-                this.birthYearTxt,
-                this.errorBirthYearMsg,
-                this.birthYearLine,
-                new string[] { "required", "positive-number", "max-current-year" }
+                this.salaryTxt,
+                this.errorSalaryMsg,
+                this.salaryLine,
+                new string[] { "required", "positive-number" }
             );
         }
 
@@ -286,5 +309,17 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 new string[] { "required" }
             );
         }
+
+        private void birthYearTxt_Leave(object sender, EventArgs e)
+        {
+            CustomValidation.Instance.checkTextbox(
+                this.birthYearTxt,
+                this.errorBirthYearMsg,
+                this.birthYearLine,
+                new string[] { "required", "positive-number", "max-current-year" }
+            );
+        }
     }
+
+       
  }

@@ -49,14 +49,10 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             this.phoneNumberMsg = new System.Windows.Forms.Label();
             this.phoneNumberLine = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.statusSwitch = new Guna.UI2.WinForms.Guna2ToggleSwitch();
-            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -66,7 +62,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(589, 50);
+            this.label1.Size = new System.Drawing.Size(589, 45);
             this.label1.TabIndex = 0;
             this.label1.Text = "Thêm Nhà Cung Cấp";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -87,7 +83,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             this.cancelBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.cancelBtn.Image = null;
             this.cancelBtn.ImageSize = new System.Drawing.Size(20, 20);
-            this.cancelBtn.Location = new System.Drawing.Point(71, 591);
+            this.cancelBtn.Location = new System.Drawing.Point(66, 535);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.cancelBtn.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
@@ -118,7 +114,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             this.submitBtn.ForeColor = System.Drawing.Color.White;
             this.submitBtn.Image = null;
             this.submitBtn.ImageSize = new System.Drawing.Size(20, 20);
-            this.submitBtn.Location = new System.Drawing.Point(316, 591);
+            this.submitBtn.Location = new System.Drawing.Point(315, 535);
             this.submitBtn.Name = "submitBtn";
             this.submitBtn.OnHoverBaseColor = System.Drawing.Color.White;
             this.submitBtn.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
@@ -177,9 +173,9 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             // supplierNameMsg
             // 
             this.supplierNameMsg.AutoSize = true;
-            this.supplierNameMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 10.2F, System.Drawing.FontStyle.Italic);
+            this.supplierNameMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.supplierNameMsg.ForeColor = System.Drawing.Color.Red;
-            this.supplierNameMsg.Location = new System.Drawing.Point(20, 103);
+            this.supplierNameMsg.Location = new System.Drawing.Point(19, 104);
             this.supplierNameMsg.Name = "supplierNameMsg";
             this.supplierNameMsg.Size = new System.Drawing.Size(0, 26);
             this.supplierNameMsg.TabIndex = 7;
@@ -209,10 +205,9 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             this.flowLayoutPanel1.Controls.Add(this.panel1);
             this.flowLayoutPanel1.Controls.Add(this.panel2);
             this.flowLayoutPanel1.Controls.Add(this.panel4);
-            this.flowLayoutPanel1.Controls.Add(this.panel3);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(68, 50);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(452, 527);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(452, 464);
             this.flowLayoutPanel1.TabIndex = 4;
             // 
             // panel2
@@ -261,15 +256,13 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             this.addressTxt.ShadowDecoration.Parent = this.addressTxt;
             this.addressTxt.Size = new System.Drawing.Size(425, 36);
             this.addressTxt.TabIndex = 33;
-            this.addressTxt.TextChanged += new System.EventHandler(this.addressTxt_TextChanged);
-            this.addressTxt.Leave += new System.EventHandler(this.addressTxt_TextChanged);
             // 
             // addressMsg
             // 
             this.addressMsg.AutoSize = true;
-            this.addressMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 10.2F, System.Drawing.FontStyle.Italic);
+            this.addressMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.addressMsg.ForeColor = System.Drawing.Color.Red;
-            this.addressMsg.Location = new System.Drawing.Point(20, 109);
+            this.addressMsg.Location = new System.Drawing.Point(20, 110);
             this.addressMsg.Name = "addressMsg";
             this.addressMsg.Size = new System.Drawing.Size(0, 26);
             this.addressMsg.TabIndex = 7;
@@ -323,12 +316,11 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             this.phoneNumbertxt.Size = new System.Drawing.Size(425, 36);
             this.phoneNumbertxt.TabIndex = 32;
             this.phoneNumbertxt.TextChanged += new System.EventHandler(this.birthYear_TextChanged);
-            this.phoneNumbertxt.Leave += new System.EventHandler(this.birthYear_TextChanged);
             // 
             // phoneNumberMsg
             // 
             this.phoneNumberMsg.AutoSize = true;
-            this.phoneNumberMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 10.2F, System.Drawing.FontStyle.Italic);
+            this.phoneNumberMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.phoneNumberMsg.ForeColor = System.Drawing.Color.Red;
             this.phoneNumberMsg.Location = new System.Drawing.Point(20, 106);
             this.phoneNumberMsg.Name = "phoneNumberMsg";
@@ -353,57 +345,12 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             this.label6.Text = "Số điện thoại:";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.statusSwitch);
-            this.panel3.Controls.Add(this.label2);
-            this.panel3.Location = new System.Drawing.Point(3, 460);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(445, 49);
-            this.panel3.TabIndex = 35;
-            // 
-            // statusSwitch
-            // 
-            this.statusSwitch.Animated = true;
-            this.statusSwitch.AutoRoundedCorners = true;
-            this.statusSwitch.BackColor = System.Drawing.Color.White;
-            this.statusSwitch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.statusSwitch.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.statusSwitch.CheckedState.BorderRadius = 12;
-            this.statusSwitch.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.statusSwitch.CheckedState.InnerBorderColor = System.Drawing.Color.White;
-            this.statusSwitch.CheckedState.InnerBorderRadius = 8;
-            this.statusSwitch.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.statusSwitch.CheckedState.Parent = this.statusSwitch;
-            this.statusSwitch.Location = new System.Drawing.Point(353, 8);
-            this.statusSwitch.Name = "statusSwitch";
-            this.statusSwitch.ShadowDecoration.Parent = this.statusSwitch;
-            this.statusSwitch.Size = new System.Drawing.Size(76, 26);
-            this.statusSwitch.TabIndex = 9;
-            this.statusSwitch.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(228)))), ((int)(((byte)(231)))));
-            this.statusSwitch.UncheckedState.BorderRadius = 12;
-            this.statusSwitch.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(228)))), ((int)(((byte)(231)))));
-            this.statusSwitch.UncheckedState.InnerBorderColor = System.Drawing.Color.White;
-            this.statusSwitch.UncheckedState.InnerBorderRadius = 8;
-            this.statusSwitch.UncheckedState.InnerColor = System.Drawing.Color.White;
-            this.statusSwitch.UncheckedState.Parent = this.statusSwitch;
-            // 
-            // label2
-            // 
-            this.label2.Font = new System.Drawing.Font("#9Slide03 Cabin", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label2.Location = new System.Drawing.Point(10, 3);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(168, 31);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Trạng thái:";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // SupplierModal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(589, 658);
+            this.ClientSize = new System.Drawing.Size(589, 603);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.submitBtn);
             this.Controls.Add(this.cancelBtn);
@@ -422,7 +369,6 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             this.panel2.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -448,8 +394,5 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel addressLine;
         private Guna.UI2.WinForms.Guna2TextBox addressTxt;
-		private System.Windows.Forms.Panel panel3;
-		private System.Windows.Forms.Label label2;
-        private Guna.UI2.WinForms.Guna2ToggleSwitch statusSwitch;
     }
 }

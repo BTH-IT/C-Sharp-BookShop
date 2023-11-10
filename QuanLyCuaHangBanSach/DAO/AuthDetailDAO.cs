@@ -33,7 +33,7 @@ namespace QuanLyCuaHangBanSach.DAO
         {
             DataTable dataTable = DataProvider.Instance.ExecuteQuery(
                 "SELECT * FROM chitietphanquyen WHERE maChucVu=@maChucVu AND maQuyenHan=@maQuyenHan;",
-                new MySqlParameter[] { 
+                new MySqlParameter[] {
                     new MySqlParameter("@maChucVu", positionId),
                     new MySqlParameter("@maQuyenHan", permissionId),
                 }
@@ -77,7 +77,7 @@ namespace QuanLyCuaHangBanSach.DAO
             int rowChanged = DataProvider.Instance.ExecuteNonQuery(sql,
                 new MySqlParameter[] {
                     new MySqlParameter("@maChucVu", data.MaChucVu),
-                    new MySqlParameter("@maQuyenHan", data.MaQuyenHan),
+                    new MySqlParameter("@maQuyenHan", data.maQuyenHan),
                 });
 
             return rowChanged > 0;
@@ -92,7 +92,7 @@ namespace QuanLyCuaHangBanSach.DAO
                 new MySqlParameter[] {
                     new MySqlParameter("@trangThai", data.TrangThai),
                     new MySqlParameter("@maChucVu", data.MaChucVu),
-                    new MySqlParameter("@maQuyenHan", data.MaQuyenHan),
+                    new MySqlParameter("@maQuyenHan", data.maQuyenHan),
                 });
 
             return rowChanged > 0;

@@ -33,6 +33,11 @@ namespace QuanLyCuaHangBanSach.BUS
             return BookTypeDAO.Instance.checkDuplicateName(value);
         }
 
+        public bool checkDuplicateName(string value, int id)
+        {
+            return BookTypeDAO.Instance.checkDuplicateName(value, id);
+        }
+
         public List<BookTypeDTO> search(string value)
         {
             List<BookTypeDTO> bookTypeList = new List<BookTypeDTO>();

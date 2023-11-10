@@ -28,6 +28,11 @@ namespace QuanLyCuaHangBanSach.BUS
             return SaleDAO.Instance.checkDuplicateName(value);
         }
 
+        public bool checkDuplicateName(string value, int id)
+        {
+            return SaleDAO.Instance.checkDuplicateName(value, id);
+        }
+
         public DataTable getAll()
         {
             return SaleDAO.Instance.getAll();

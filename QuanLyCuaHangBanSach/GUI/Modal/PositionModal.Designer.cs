@@ -39,7 +39,7 @@
             this.sellPriceLine = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.panel12 = new System.Windows.Forms.Panel();
-            this.statusSwitch = new Guna.UI2.WinForms.Guna2ToggleSwitch();
+            this.activeCkx = new Guna.UI.WinForms.GunaCheckBox();
             this.label10 = new System.Windows.Forms.Label();
             this.submitBtn = new Guna.UI.WinForms.GunaButton();
             this.cancelBtn = new Guna.UI.WinForms.GunaButton();
@@ -189,38 +189,25 @@
             // 
             // panel12
             // 
-            this.panel12.Controls.Add(this.statusSwitch);
+            this.panel12.Controls.Add(this.activeCkx);
             this.panel12.Controls.Add(this.label10);
             this.panel12.Location = new System.Drawing.Point(3, 191);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(594, 76);
+            this.panel12.Size = new System.Drawing.Size(594, 88);
             this.panel12.TabIndex = 11;
             // 
-            // statusSwitch
+            // activeCkx
             // 
-            this.statusSwitch.Animated = true;
-            this.statusSwitch.AutoRoundedCorners = true;
-            this.statusSwitch.BackColor = System.Drawing.Color.White;
-            this.statusSwitch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.statusSwitch.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.statusSwitch.CheckedState.BorderRadius = 12;
-            this.statusSwitch.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.statusSwitch.CheckedState.InnerBorderColor = System.Drawing.Color.White;
-            this.statusSwitch.CheckedState.InnerBorderRadius = 8;
-            this.statusSwitch.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.statusSwitch.CheckedState.Parent = this.statusSwitch;
-            this.statusSwitch.Location = new System.Drawing.Point(498, 16);
-            this.statusSwitch.Name = "statusSwitch";
-            this.statusSwitch.ShadowDecoration.Parent = this.statusSwitch;
-            this.statusSwitch.Size = new System.Drawing.Size(76, 26);
-            this.statusSwitch.TabIndex = 9;
-            this.statusSwitch.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(228)))), ((int)(((byte)(231)))));
-            this.statusSwitch.UncheckedState.BorderRadius = 12;
-            this.statusSwitch.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(228)))), ((int)(((byte)(231)))));
-            this.statusSwitch.UncheckedState.InnerBorderColor = System.Drawing.Color.White;
-            this.statusSwitch.UncheckedState.InnerBorderRadius = 8;
-            this.statusSwitch.UncheckedState.InnerColor = System.Drawing.Color.White;
-            this.statusSwitch.UncheckedState.Parent = this.statusSwitch;
+            this.activeCkx.BaseColor = System.Drawing.Color.White;
+            this.activeCkx.CheckedOffColor = System.Drawing.Color.Gray;
+            this.activeCkx.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.activeCkx.FillColor = System.Drawing.Color.White;
+            this.activeCkx.Font = new System.Drawing.Font("#9Slide03 Cabin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.activeCkx.Location = new System.Drawing.Point(160, 9);
+            this.activeCkx.Name = "activeCkx";
+            this.activeCkx.Size = new System.Drawing.Size(150, 29);
+            this.activeCkx.TabIndex = 6;
+            this.activeCkx.Text = "Đang hoạt động";
             // 
             // label10
             // 
@@ -328,6 +315,7 @@
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel12.ResumeLayout(false);
+            this.panel12.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -348,6 +336,6 @@
         private Guna.UI.WinForms.GunaButton submitBtn;
         private Guna.UI.WinForms.GunaButton cancelBtn;
         private System.Windows.Forms.Label label1;
-        private Guna.UI2.WinForms.Guna2ToggleSwitch statusSwitch;
+        private Guna.UI.WinForms.GunaCheckBox activeCkx;
     }
 }

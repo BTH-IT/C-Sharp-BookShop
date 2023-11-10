@@ -60,7 +60,6 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                     Supplier.TenNhaCungCap,
                     Supplier.DiaChi,
                     Supplier.SoDienThoai,
-                    Supplier.TrangThai ? "Đang hoạt động" : "Ngưng hoạt động",
                 });
                 }
             }

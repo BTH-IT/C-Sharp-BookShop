@@ -1,29 +1,26 @@
-﻿using System;
+using System;
+using System.Collections.Generic;
 using System.Data;
+using System.Linq;
+using System.Security.RightsManagement;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace QuanLyCuaHangBanSach.DTO
 {
-    public class CustomerDTO : HumanDTO
+   public class CustomerDTO : HumanDTO
     {
-   
+        public string SoDienThoai {  get;private set; }
+        public int Diem { get; set; }
+
         public CustomerDTO() { }
-	
-		public CustomerDTO(
-            int maKhachHang,
-            string tenKhachHang,
-            string soDienThoai,
-            string gioiTinh,
-            int namSinh,
-            int diem,
-            bool trangThai)
-        : base(maKhachHang, tenKhachHang, gioiTinh, namSinh, trangThai)
-        {
-            this.SoDienThoai = soDienThoai;
-            this.Diem = diem;
+        
+        public CustomerDTO(int ma, string ten, string gioiTinh, int namSinh,string soDienThoai , int diem) : base(ma, ten , gioiTinh, namSinh) {
+            SoDienThoai = soDienThoai;
+            Diem = diem;
         }
-		public string SoDienThoai { get; private set; }
-		public int Diem { get; set; }
-		public CustomerDTO(DataRow row)
+
+        public CustomerDTO(DataRow row)
         {
             this.Ma = (int)row["maKhachHang"];
             this.Ten = row["tenKhachHang"].ToString();
@@ -31,7 +28,11 @@ namespace QuanLyCuaHangBanSach.DTO
             this.GioiTinh = row["gioiTinh"].ToString();
             this.NamSinh = (int)row["namSinh"];
             this.Diem = (int)row["diem"];
-            this.TrangThai = Convert.ToBoolean(Convert.ToInt32(row["trangThai"]));
+        }
+
+        public override string ToString()
+        {
+            return base.ToString();
         }
     }
 }

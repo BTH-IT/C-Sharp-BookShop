@@ -89,7 +89,7 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1222, 45);
+            this.label1.Size = new System.Drawing.Size(1222, 61);
             this.label1.TabIndex = 9;
             this.label1.Text = "Tạo Đơn Nhập Hàng";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -256,11 +256,11 @@
             // errorCustomerMsg
             // 
             this.errorCustomerMsg.AutoSize = true;
-            this.errorCustomerMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed SemiB", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.errorCustomerMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.errorCustomerMsg.ForeColor = System.Drawing.Color.Red;
-            this.errorCustomerMsg.Location = new System.Drawing.Point(163, 52);
+            this.errorCustomerMsg.Location = new System.Drawing.Point(162, 55);
             this.errorCustomerMsg.Name = "errorCustomerMsg";
-            this.errorCustomerMsg.Size = new System.Drawing.Size(0, 30);
+            this.errorCustomerMsg.Size = new System.Drawing.Size(0, 26);
             this.errorCustomerMsg.TabIndex = 27;
             // 
             // label13

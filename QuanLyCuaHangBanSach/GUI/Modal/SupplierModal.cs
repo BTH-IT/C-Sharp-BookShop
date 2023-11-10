@@ -35,11 +35,22 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
                 if (isSupplier)
                 {
-                    CustomValidation.Instance.checkDuplicateName(
-                        this.supplierNameMsg,
-                        this.nameLine,
-                        PublisherBUS.Instance.checkDuplicateName(this.Suppliertxt.Text)
-                    );
+                    if (updateSupplier == null)
+                    {
+                        CustomValidation.Instance.checkDuplicateName(
+                            this.supplierNameMsg,
+                            this.nameLine,
+                            SupplierBUS.Instance.checkDuplicateName(this.Suppliertxt.Text)
+                        );
+                    }
+                    else
+                    {
+                        CustomValidation.Instance.checkDuplicateName(
+                            this.supplierNameMsg,
+                            this.nameLine,
+                            SupplierBUS.Instance.checkDuplicateName(this.Suppliertxt.Text, updateSupplier.MaNhaCungCap)
+                        );
+                    }
                 }
             }
             catch (Exception er)
@@ -107,9 +118,8 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 string addressTxt = this.addressTxt.Text;
 
                 int id = updateSupplier != null ? updateSupplier.MaNhaCungCap : 0;
-                bool trangThai = this.statusSwitch.Checked;
 
-                SupplierDTO book = new SupplierDTO(id, SupplierName, addressTxt, phoneNumbertxt, trangThai);
+                SupplierDTO book = new SupplierDTO(id, SupplierName, addressTxt, phoneNumbertxt);
 
                 bool isSuccess = updateSupplier != null ? SupplierBUS.Instance.update(book) : SupplierBUS.Instance.insert(book);
 
@@ -170,7 +180,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                     this.Suppliertxt.Text = updateSupplier.TenNhaCungCap;
                     this.addressTxt.Text = updateSupplier.DiaChi;
                     this.phoneNumbertxt.Text = updateSupplier.SoDienThoai;
-                    this.statusSwitch.Checked = updateSupplier.TrangThai;
+
                 }
             }
             catch (Exception er)
@@ -187,21 +197,12 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
         private void Suppliertxt_TextChanged(object sender, EventArgs e)
         {
-            bool isSupplier = CustomValidation.Instance.checkTextbox(
-                    this.Suppliertxt,
-                    this.supplierNameMsg,
-                    this.nameLine,
-                    new string[] { "required" }
-                );
-
-            if (isSupplier)
-            {
-                CustomValidation.Instance.checkDuplicateName(
-                    this.supplierNameMsg,
-                    this.nameLine,
-                    PublisherBUS.Instance.checkDuplicateName(this.Suppliertxt.Text)
-                );
-            }
+            CustomValidation.Instance.checkTextbox(
+                this.Suppliertxt,
+                this.supplierNameMsg,
+                this.nameLine,
+                new string[] { "required" }
+            );
         }
 
         private void addressTxt_TextChanged(object sender, EventArgs e)
@@ -223,5 +224,6 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 new string[] { "required", "phone-number" }
             );
         }
+
     }
 }

@@ -60,7 +60,6 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                     Publisher.TenNhaXuatBan,
                     Publisher.DiaChi,
                     Publisher.SoDienThoai,
-                    Publisher.TrangThai ? "Đang hoạt động" : "Ngưng hoạt động",
                 });
                 }
             }

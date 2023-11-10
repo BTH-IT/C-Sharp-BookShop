@@ -13,9 +13,8 @@ namespace QuanLyCuaHangBanSach.DTO
             int maTacGia,
             string tenTacGia,
             string gioiTinh,
-            int namSinh,
-            bool trangThai
-        ): base(maTacGia, tenTacGia, gioiTinh, namSinh, trangThai) {
+            int namSinh
+        ): base(maTacGia, tenTacGia, gioiTinh, namSinh) {
         }
 
         public AuthorDTO(DataRow row)
@@ -24,7 +23,6 @@ namespace QuanLyCuaHangBanSach.DTO
             this.Ten = row["tenTacGia"].ToString();
             this.GioiTinh = row["gioiTinh"].ToString();
             this.NamSinh = (int)row["namSinh"];
-            this.TrangThai = Convert.ToBoolean(Convert.ToInt32(row["trangThai"]));
         }
 
         public override string ToString()

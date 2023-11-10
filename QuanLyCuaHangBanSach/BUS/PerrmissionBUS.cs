@@ -33,6 +33,11 @@ namespace QuanLyCuaHangBanSach.BUS
             return PermissionDAO.Instance.checkDuplicateName(value);
         }
 
+        public bool checkDuplicateName(string value, int id)
+        {
+            return PermissionDAO.Instance.checkDuplicateName(value, id);
+        }
+
         public List<PermissionDTO> search(string value)
         {
             List<PermissionDTO> permissionList = new List<PermissionDTO>();

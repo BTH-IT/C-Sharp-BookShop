@@ -27,6 +27,33 @@ namespace QuanLyCuaHangBanSach.DAO
             return DataProvider.Instance.ExecuteQuery("select * from theloai;");
         }
 
+        public bool checkDuplicateName(string value)
+        {
+            DataTable dataTable = DataProvider.Instance.ExecuteQuery("select * from theloai WHERE  LOWER(tenTheLoai)=LOWER(@tenTheLoai) ;",
+                new MySqlParameter[] {
+                    new MySqlParameter("@tenTheLoai", value.Trim().ToLower())
+                }
+            );
+
+            if (dataTable.Rows.Count <= 0) return false;
+
+            return true;
+        }
+
+        public bool checkDuplicateName(string value, int id)
+        {
+            DataTable dataTable = DataProvider.Instance.ExecuteQuery("select * from theloai WHERE  LOWER(tenTheLoai)=LOWER(@tenTheLoai) and maTheLoai!=@id;",
+                new MySqlParameter[] {
+                    new MySqlParameter("@tenTheLoai", value.Trim().ToLower()),
+                    new MySqlParameter("@id", id)
+                }
+            );
+
+            if (dataTable.Rows.Count <= 0) return false;
+
+            return true;
+        }
+
         public BookTypeDTO getById(string id)
         {
             DataTable dataTable = DataProvider.Instance.ExecuteQuery(
@@ -42,20 +69,7 @@ namespace QuanLyCuaHangBanSach.DAO
 
             return account;
         }
-
-        public bool checkDuplicateName(string value)
-        {
-            DataTable dataTable = DataProvider.Instance.ExecuteQuery("select * from theloai WHERE  LOWER(tenTheLoai)=LOWER(@tenTheLoai);",
-                new MySqlParameter[] {
-                    new MySqlParameter("@tenTheLoai", value.Trim().ToLower())
-                }
-            );
-
-            if (dataTable.Rows.Count <= 0) return false;
-
-            return true;
-        }
-
+        
         public DataTable searchData(string value)
         {
             string sql = $@"SELECT * FROM theloai WHERE (maTheLoai LIKE @maTheLoai OR tenTheLoai LIKE @tenTheLoai);";
@@ -71,13 +85,12 @@ namespace QuanLyCuaHangBanSach.DAO
         public bool insert(BookTypeDTO data)
         {
 
-            string sql = $@"INSERT INTO theloai (tenTheLoai, trangThai)
-                            VALUES (@tenTheLoai, @trangThai);";
+            string sql = $@"INSERT INTO theloai (tenTheLoai)
+                            VALUES (@tenTheLoai);";
 
             int rowChanged = DataProvider.Instance.ExecuteNonQuery(sql,
                 new MySqlParameter[] {
                     new MySqlParameter("@tenTheLoai", data.TenTheLoai),
-                    new MySqlParameter("@tenTheLoai", data.TrangThai),
                 });
 
             return rowChanged > 0;
@@ -85,14 +98,13 @@ namespace QuanLyCuaHangBanSach.DAO
 
         public bool update(BookTypeDTO data)
         {
-            string sql = $@"UPDATE theloai SET tenTheLoai=@tenTheLoai , trangThai = @trangThai WHERE maTheLoai=@maTheLoai;";
+            string sql = $@"UPDATE theloai SET tenTheLoai=@tenTheLoai WHERE maTheLoai=@maTheLoai;";
 
             int rowChanged = DataProvider.Instance.ExecuteNonQuery(sql,
                 new MySqlParameter[] {
                     new MySqlParameter("@maTheLoai", data.MaTheLoai),
                     new MySqlParameter("@tenTheLoai", data.TenTheLoai),
-					new MySqlParameter("@trangThai", data.TrangThai),
-				});
+                });
 
             return rowChanged > 0;
         }

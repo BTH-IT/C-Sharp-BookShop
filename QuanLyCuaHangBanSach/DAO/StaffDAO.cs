@@ -36,9 +36,23 @@ namespace QuanLyCuaHangBanSach.DAO
 
         public bool checkDuplicateName(string value)
         {
-            DataTable dataTable = DataProvider.Instance.ExecuteQuery("select * from nhanvien WHERE LOWER(soDienThoai)=LOWER(@soDienThoai);",
+            DataTable dataTable = DataProvider.Instance.ExecuteQuery("select * from nhanvien WHERE LOWER(soDienThoai)=LOWER(@soDienThoai) and hienThi=1;",
                 new MySqlParameter[] {
                     new MySqlParameter("@soDienThoai", value.Trim().ToLower())
+                }
+            );
+
+            if (dataTable.Rows.Count <= 0) return false;
+
+            return true;
+        }
+
+        public bool checkDuplicateName(string value, int id)
+        {
+            DataTable dataTable = DataProvider.Instance.ExecuteQuery("select * from nhanvien WHERE LOWER(soDienThoai)=LOWER(@soDienThoai) and hienThi=1 and maNhanVien!=@id;",
+                new MySqlParameter[] {
+                    new MySqlParameter("@soDienThoai", value.Trim().ToLower()),
+                    new MySqlParameter("@id", id)
                 }
             );
 
@@ -50,7 +64,7 @@ namespace QuanLyCuaHangBanSach.DAO
         public StaffDTO getById(string id)
         {
             DataTable dataTable = DataProvider.Instance.ExecuteQuery(
-                "SELECT * FROM nhanvien WHERE maNhanVien=@MaNhanVien AND hienThi = 1;",
+                "SELECT * FROM nhanvien WHERE maNhanVien=@MaNhanVien;",
                 new MySqlParameter[] { new MySqlParameter("@MaNhanVien", id) }
             );
        

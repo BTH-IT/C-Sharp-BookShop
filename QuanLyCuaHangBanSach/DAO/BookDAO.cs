@@ -1,7 +1,9 @@
+using System;
+using System.Collections.Generic;
 using System.Data;
 using MySql.Data.MySqlClient;
 using QuanLyCuaHangBanSach.DTO;
-using System.Collections.Generic;
+using QuanLyCuaHangBanSach.GUI.UserControls;
 
 namespace QuanLyCuaHangBanSach.DAO
 {
@@ -42,9 +44,17 @@ namespace QuanLyCuaHangBanSach.DAO
             return dataTable;
         }
 
+        public DataTable getAll() {
+            DataTable dataTable = DataProvider.Instance.ExecuteQuery(
+                "SELECT * FROM sach WHERE hienThi = 1;"
+            );
+
+            return getBookRemain(dataTable);
+        }
+
         public bool checkDuplicateName(string value)
         {
-            DataTable dataTable = DataProvider.Instance.ExecuteQuery("select * from sach WHERE  LOWER(tenSach)=LOWER(@tenSach) and hienThi=1;",
+            DataTable dataTable = DataProvider.Instance.ExecuteQuery("select * from sach WHERE LOWER(tenSach)=LOWER(@tenSach) and hienThi=1;",
                 new MySqlParameter[] {
                     new MySqlParameter("@tenSach", value.Trim().ToLower())
                 }
@@ -55,13 +65,18 @@ namespace QuanLyCuaHangBanSach.DAO
             return true;
         }
 
-        public DataTable getAll()
+        public bool checkDuplicateName(string value, int id)
         {
-            DataTable dataTable = DataProvider.Instance.ExecuteQuery(
-                "SELECT * FROM sach WHERE hienThi = 1;"
+            DataTable dataTable = DataProvider.Instance.ExecuteQuery("select * from sach WHERE LOWER(tenSach)=LOWER(@tenSach) and hienThi=1 and maSach!=@id;",
+                new MySqlParameter[] {
+                    new MySqlParameter("@tenSach", value.Trim().ToLower()),
+                    new MySqlParameter("@id", id)
+                }
             );
 
-            return getBookRemain(dataTable);
+            if (dataTable.Rows.Count <= 0) return false;
+
+            return true;
         }
 
         public DataTable getAllDataFiltered(int SortMode, string Type, string Author, string Publisher, bool Import)
@@ -127,7 +142,7 @@ namespace QuanLyCuaHangBanSach.DAO
         public BookDTO getById(string id)
         {
             DataTable dataTable = DataProvider.Instance.ExecuteQuery(
-                "SELECT * FROM sach WHERE maSach=@MaSach AND hienThi = 1;",
+                "SELECT * FROM sach WHERE maSach=@MaSach;",
                 new MySqlParameter[] {
                     new MySqlParameter("@MaSach", id)
                 }
@@ -160,7 +175,7 @@ namespace QuanLyCuaHangBanSach.DAO
                     new MySqlParameter("@tenSach", "%" + value + "%")
                 }
             );
-
+            
             return getBookRemain(dataTable);
         }
 

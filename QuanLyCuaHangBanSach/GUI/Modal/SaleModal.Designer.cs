@@ -45,6 +45,7 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.dateTimeFrom = new Guna.UI.WinForms.GunaDateTimePicker();
             this.errorDateTimeFromMsg = new System.Windows.Forms.Label();
+            this.dateTimeFromLine = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.dateTimeTo = new Guna.UI.WinForms.GunaDateTimePicker();
@@ -103,11 +104,11 @@
             // title
             // 
             this.title.Dock = System.Windows.Forms.DockStyle.Top;
-            this.title.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.title.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.title.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.title.Location = new System.Drawing.Point(0, 0);
             this.title.Name = "title";
-            this.title.Size = new System.Drawing.Size(1048, 65);
+            this.title.Size = new System.Drawing.Size(1048, 55);
             this.title.TabIndex = 9;
             this.title.Text = "Thêm Khuyến mãi";
             this.title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -196,13 +197,14 @@
             this.phanTramTxt.ShadowDecoration.Parent = this.phanTramTxt;
             this.phanTramTxt.Size = new System.Drawing.Size(308, 36);
             this.phanTramTxt.TabIndex = 32;
+            this.phanTramTxt.TextChanged += new System.EventHandler(this.phanTramTxt_TextChanged);
             // 
             // errorPhanTramMsg
             // 
             this.errorPhanTramMsg.AutoSize = true;
-            this.errorPhanTramMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 10.2F, System.Drawing.FontStyle.Italic);
+            this.errorPhanTramMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.errorPhanTramMsg.ForeColor = System.Drawing.Color.Red;
-            this.errorPhanTramMsg.Location = new System.Drawing.Point(168, 54);
+            this.errorPhanTramMsg.Location = new System.Drawing.Point(169, 52);
             this.errorPhanTramMsg.Name = "errorPhanTramMsg";
             this.errorPhanTramMsg.Size = new System.Drawing.Size(0, 26);
             this.errorPhanTramMsg.TabIndex = 7;
@@ -255,13 +257,15 @@
             this.saleNameTxt.ShadowDecoration.Parent = this.saleNameTxt;
             this.saleNameTxt.Size = new System.Drawing.Size(320, 36);
             this.saleNameTxt.TabIndex = 32;
+            this.saleNameTxt.TextChanged += new System.EventHandler(this.saleNameTxt_TextChanged);
+            this.saleNameTxt.Leave += new System.EventHandler(this.saleNameTxt_TextChanged);
             // 
             // errorSaleNameMsg
             // 
             this.errorSaleNameMsg.AutoSize = true;
-            this.errorSaleNameMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 10.2F, System.Drawing.FontStyle.Italic);
+            this.errorSaleNameMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.errorSaleNameMsg.ForeColor = System.Drawing.Color.Red;
-            this.errorSaleNameMsg.Location = new System.Drawing.Point(161, 54);
+            this.errorSaleNameMsg.Location = new System.Drawing.Point(162, 52);
             this.errorSaleNameMsg.Name = "errorSaleNameMsg";
             this.errorSaleNameMsg.Size = new System.Drawing.Size(0, 26);
             this.errorSaleNameMsg.TabIndex = 7;
@@ -289,13 +293,13 @@
             this.panel4.BackColor = System.Drawing.Color.White;
             this.panel4.Controls.Add(this.dateTimeFrom);
             this.panel4.Controls.Add(this.errorDateTimeFromMsg);
+            this.panel4.Controls.Add(this.dateTimeFromLine);
             this.panel4.Controls.Add(this.label5);
             this.panel4.Location = new System.Drawing.Point(5, 128);
             this.panel4.Margin = new System.Windows.Forms.Padding(5, 10, 5, 20);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(490, 104);
             this.panel4.TabIndex = 3;
-            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
             // dateTimeFrom
             // 
@@ -325,12 +329,20 @@
             // errorDateTimeFromMsg
             // 
             this.errorDateTimeFromMsg.AutoSize = true;
-            this.errorDateTimeFromMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 10.2F, System.Drawing.FontStyle.Italic);
+            this.errorDateTimeFromMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.errorDateTimeFromMsg.ForeColor = System.Drawing.Color.Red;
-            this.errorDateTimeFromMsg.Location = new System.Drawing.Point(13, 64);
+            this.errorDateTimeFromMsg.Location = new System.Drawing.Point(13, 60);
             this.errorDateTimeFromMsg.Name = "errorDateTimeFromMsg";
             this.errorDateTimeFromMsg.Size = new System.Drawing.Size(0, 26);
             this.errorDateTimeFromMsg.TabIndex = 7;
+            // 
+            // dateTimeFromLine
+            // 
+            this.dateTimeFromLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(212)))), ((int)(((byte)(191)))));
+            this.dateTimeFromLine.Location = new System.Drawing.Point(160, 45);
+            this.dateTimeFromLine.Name = "dateTimeFromLine";
+            this.dateTimeFromLine.Size = new System.Drawing.Size(150, 1);
+            this.dateTimeFromLine.TabIndex = 8;
             // 
             // label5
             // 
@@ -383,9 +395,9 @@
             // errorDateTimeToMsg
             // 
             this.errorDateTimeToMsg.AutoSize = true;
-            this.errorDateTimeToMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 10.2F, System.Drawing.FontStyle.Italic);
+            this.errorDateTimeToMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.errorDateTimeToMsg.ForeColor = System.Drawing.Color.Red;
-            this.errorDateTimeToMsg.Location = new System.Drawing.Point(12, 64);
+            this.errorDateTimeToMsg.Location = new System.Drawing.Point(12, 61);
             this.errorDateTimeToMsg.Name = "errorDateTimeToMsg";
             this.errorDateTimeToMsg.Size = new System.Drawing.Size(0, 26);
             this.errorDateTimeToMsg.TabIndex = 7;
@@ -452,13 +464,14 @@
         private System.Windows.Forms.Label errorPhanTramMsg;
         private System.Windows.Forms.Panel phanTramLine;
         private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label errorDateTimeFromMsg;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Label errorDateTimeToMsg;
         private System.Windows.Forms.Label label7;
         private Guna.UI.WinForms.GunaDateTimePicker dateTimeFrom;
         private Guna.UI.WinForms.GunaDateTimePicker dateTimeTo;
+        private System.Windows.Forms.Panel dateTimeFromLine;
         private System.Windows.Forms.Panel dateTimeToLine;
-        private System.Windows.Forms.Label errorDateTimeFromMsg;
-        private System.Windows.Forms.Label errorDateTimeToMsg;
     }
 }

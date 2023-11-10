@@ -164,6 +164,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                     this.timer1.Start();
 
                     this.scanBtn.Enabled = false;
+                    this.guna2Button1.Enabled = true;
                 }
             }
             catch (Exception ex)
@@ -183,6 +184,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                     this.timer1.Stop();
 
                     this.scanBtn.Enabled = true;
+                    this.guna2Button1.Enabled = false;
                 }
             }
             catch (Exception ex)

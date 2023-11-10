@@ -33,6 +33,11 @@ namespace QuanLyCuaHangBanSach.BUS
             return PositionDAO.Instance.checkDuplicateName(value);
         }
 
+        public bool checkDuplicateName(string value, int id)
+        {
+            return PositionDAO.Instance.checkDuplicateName(value, id);
+        }
+
         public List<PositionDTO> search(string value)
         {
             List<PositionDTO> positionList = new List<PositionDTO>();

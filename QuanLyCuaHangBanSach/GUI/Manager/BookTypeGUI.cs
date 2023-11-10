@@ -62,7 +62,6 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                     false,
                     BookType.MaTheLoai,
                     BookType.TenTheLoai,
-                    BookType.TrangThai ? "Đang hoạt động" : "Ngưng hoạt động",
                 });
                 }
             }

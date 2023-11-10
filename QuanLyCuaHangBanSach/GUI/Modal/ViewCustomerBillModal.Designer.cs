@@ -47,7 +47,6 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.staffCbx = new Guna.UI.WinForms.GunaComboBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -58,14 +57,15 @@
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
             this.label1.Font = new System.Drawing.Font("#9Slide03 Cabin", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.label1.Location = new System.Drawing.Point(490, 5);
+            this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(243, 45);
+            this.label1.Size = new System.Drawing.Size(1222, 45);
             this.label1.TabIndex = 9;
             this.label1.Text = "Xem Chi Tiết Đơn";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // bookList
             // 
@@ -111,7 +111,7 @@
             this.totalPriceTxt.PlaceholderText = "Tổng tiền";
             this.totalPriceTxt.SelectedText = "";
             this.totalPriceTxt.ShadowDecoration.Parent = this.totalPriceTxt;
-            this.totalPriceTxt.Size = new System.Drawing.Size(356, 36);
+            this.totalPriceTxt.Size = new System.Drawing.Size(408, 36);
             this.totalPriceTxt.TabIndex = 34;
             this.totalPriceTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -275,7 +275,6 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.totalPriceTxt);
             this.panel1.Controls.Add(this.nameLine);
             this.panel1.Controls.Add(this.label3);
@@ -327,16 +326,6 @@
             this.staffCbx.TabIndex = 32;
             this.staffCbx.TabStop = false;
             // 
-            // label5
-            // 
-            this.label5.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label5.Location = new System.Drawing.Point(523, 21);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(50, 36);
-            this.label5.TabIndex = 35;
-            this.label5.Text = "VNĐ";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // ViewCustomerBillModal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 23F);
@@ -359,7 +348,6 @@
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -383,6 +371,5 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label4;
         private Guna.UI.WinForms.GunaComboBox staffCbx;
-        private System.Windows.Forms.Label label5;
     }
 }

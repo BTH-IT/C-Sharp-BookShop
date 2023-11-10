@@ -26,20 +26,38 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
         private void positionNameTxt_TextChanged(object sender, EventArgs e)
         {
-            bool isPosition = CustomValidation.Instance.checkTextbox(
-                     this.positionNameTxt,
-                     this.errorPositionNameMsg,
-                     this.nameLine,
-                     new string[] { "required" }
-                 );
-
-            if (isPosition)
+            try
             {
-                CustomValidation.Instance.checkDuplicateName(
+                bool isPosition = CustomValidation.Instance.checkTextbox(
+                    this.positionNameTxt,
                     this.errorPositionNameMsg,
                     this.nameLine,
-                    PositionBUS.Instance.checkDuplicateName(this.positionNameTxt.Text)
+                    new string[] { "required" }
                 );
+
+                if (isPosition)
+                {
+                    if (updatePosition == null)
+                    {
+                        isPosition = CustomValidation.Instance.checkDuplicateName(
+                            this.errorPositionNameMsg,
+                            this.nameLine,
+                            PositionBUS.Instance.checkDuplicateName(this.positionNameTxt.Text)
+                        );
+                    }
+                    else
+                    {
+                        isPosition = CustomValidation.Instance.checkDuplicateName(
+                            this.errorPositionNameMsg,
+                            this.nameLine,
+                            PositionBUS.Instance.checkDuplicateName(this.positionNameTxt.Text, updatePosition.MaChucVu)
+                        );
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
             }
         }
         private bool validateForm()
@@ -53,11 +71,22 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
             if (isPosition)
             {
-                CustomValidation.Instance.checkDuplicateName(
-                    this.errorPositionNameMsg,
-                    this.nameLine,
-                    PositionBUS.Instance.checkDuplicateName(this.positionNameTxt.Text)
-                );
+                if (updatePosition == null)
+                {
+                    isPosition = CustomValidation.Instance.checkDuplicateName(
+                        this.errorPositionNameMsg,
+                        this.nameLine,
+                        PositionBUS.Instance.checkDuplicateName(this.positionNameTxt.Text)
+                    );
+                }
+                else
+                {
+                    isPosition = CustomValidation.Instance.checkDuplicateName(
+                        this.errorPositionNameMsg,
+                        this.nameLine,
+                        PositionBUS.Instance.checkDuplicateName(this.positionNameTxt.Text, updatePosition.MaChucVu)
+                    );
+                }
             }
 
             return isPosition;
@@ -73,7 +102,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
                 string positionName = this.positionNameTxt.Text;
                 string desc = this.descTxt.Text == "" ? "Không có" : this.descTxt.Text;
-                bool isActive = this.statusSwitch.Checked;
+                bool isActive = this.activeCkx.Checked;
 
                 int id = updatePosition != null ? updatePosition.MaChucVu : 0;
 
@@ -113,7 +142,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 {
                     this.positionNameTxt.Text = updatePosition.TenChucVu;
                     this.descTxt.Text = updatePosition.MoTa;
-                    this.statusSwitch.Checked = updatePosition.TrangThai;
+                    this.activeCkx.Checked = updatePosition.TrangThai;
                 }
             }
             catch (Exception ex)
@@ -121,13 +150,5 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 Console.WriteLine(ex);
             }
         }
-
-		private void statusSwitch_CheckedChanged(object sender, EventArgs e)
-		{
-            if(this.statusSwitch.Checked) 
-            {
-                this.statusSwitch.CheckedState.FillColor = Color.FromArgb(45, 210, 192);
-            }
-		}
-	}
+    }
 }

@@ -10,7 +10,6 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
     {
         public CustomerDTO currentCustomer = null;
         public bool isSubmitSuccess = false;
-        private bool isFirstTimeLoaded = true;
         public CustomerModal(string title = "Thêm khách hàng")
         {
             InitializeComponent();
@@ -36,9 +35,8 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 					string gender = this.genderCbx.SelectedItem.ToString();
 					int id = this.currentCustomer != null ? currentCustomer.Ma : 0;
 					int score = this.currentCustomer != null ? currentCustomer.Diem : 0;
-                    bool trangThai = this.statusSwitch.Checked;
 
-					CustomerDTO customer = new CustomerDTO(maKhachHang: id, tenKhachHang: customerName, soDienThoai: phoneNumber, gioiTinh: gender, namSinh: birthYear, diem: score, trangThai);
+					CustomerDTO customer = new CustomerDTO(ma: id, ten: customerName, soDienThoai: phoneNumber, gioiTinh: gender, namSinh: birthYear, diem: score);
 
 					bool isSuccess = currentCustomer != null ? CustomerBUS.Instance.update(customer) : CustomerBUS.Instance.insert(customer);
 
@@ -75,9 +73,10 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 					this.phoneNumberTxtBox.Text = currentCustomer.SoDienThoai;
 					this.birthYearTxtBox.Text = currentCustomer.NamSinh.ToString();
 					this.genderCbx.Text = currentCustomer.GioiTinh == "Nam" ? genders[1] : genders[2];
-                    this.statusSwitch.Checked = currentCustomer.TrangThai;
 				}
-			}
+
+                this.genderCbx.SelectedIndexChanged += genderCbx_SelectedIndexChanged;
+            }
             catch
             {
 
@@ -99,7 +98,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 					this.birthYearTxtBox,
 					this.errorBirthYearMsg,
 					this.birthYearLine,
-					new string[] { "required", "positive-number", "max-current-year" }
+					new string[] { "required", "positive-number" }
 				);
 
                 bool isPhone = CustomValidation.Instance.checkTextbox(
@@ -111,12 +110,24 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
                 if (isPhone)
                 {
-                    CustomValidation.Instance.checkDuplicateName(
-                        this.errorPhoneNumberMsg,
-                        this.phoneNumberLine,
-                        CustomerBUS.Instance.checkDuplicateName(this.phoneNumberTxtBox.Text),
-                        "Số điện thoại đã có trong hệ thống"
-                    );
+                    if (currentCustomer == null)
+                    {
+                        isPhone = CustomValidation.Instance.checkDuplicateName(
+                            this.errorPhoneNumberMsg,
+                            this.phoneNumberLine,
+                            CustomerBUS.Instance.checkDuplicateName(this.phoneNumberTxtBox.Text),
+                            "Số điện thoại đã có trong hệ thống"
+                        );
+                    }
+                    else
+                    {
+                        isPhone = CustomValidation.Instance.checkDuplicateName(
+                            this.errorPhoneNumberMsg,
+                            this.phoneNumberLine,
+                            CustomerBUS.Instance.checkDuplicateName(this.phoneNumberTxtBox.Text, currentCustomer.Ma),
+                            "Số điện thoại đã có trong hệ thống"
+                        );
+                    }
                 }
 
                 bool isGenderValid = CustomValidation.Instance.checkCombobox(
@@ -137,11 +148,11 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
         private void customerNameTxtBox_TextChanged(object sender, EventArgs e)
         {
             CustomValidation.Instance.checkTextbox(
-                this.customerNameTxtBox,
-                this.errorCustomerNameMsg,
-                this.customerNameLine,
-                new string[] { "required" }
-            );
+                    this.customerNameTxtBox,
+                    this.errorCustomerNameMsg,
+                    this.customerNameLine,
+                    new string[] { "required" }
+                );
         }
 
         private void birthYearTxtBox_TextChanged(object sender, EventArgs e)
@@ -150,7 +161,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                     this.birthYearTxtBox,
                     this.errorBirthYearMsg,
                     this.birthYearLine,
-                    new string[] { "required", "positive-number", "max-current-year" }
+                    new string[] { "required", "positive-number" }
                 );
         }
 
@@ -165,30 +176,33 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
             if (isPhone)
             {
-                CustomValidation.Instance.checkDuplicateName(
-                    this.errorPhoneNumberMsg,
-                    this.phoneNumberLine,
-                    CustomerBUS.Instance.checkDuplicateName(this.phoneNumberTxtBox.Text),
-                    "Số điện thoại đã có trong hệ thống"
-                );
+                if (currentCustomer == null)
+                {
+                    isPhone = CustomValidation.Instance.checkDuplicateName(
+                        this.errorPhoneNumberMsg,
+                        this.phoneNumberLine,
+                        CustomerBUS.Instance.checkDuplicateName(this.phoneNumberTxtBox.Text),
+                        "Số điện thoại đã có trong hệ thống"
+                    );
+                } else
+                {
+                    isPhone = CustomValidation.Instance.checkDuplicateName(
+                        this.errorPhoneNumberMsg,
+                        this.phoneNumberLine,
+                        CustomerBUS.Instance.checkDuplicateName(this.phoneNumberTxtBox.Text, currentCustomer.Ma),
+                        "Số điện thoại đã có trong hệ thống"
+                    );
+                }
             }
         }
 
         private void genderCbx_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(isFirstTimeLoaded)
-            {
-				isFirstTimeLoaded = false;
-            }
-            else
-            {
-				CustomValidation.Instance.checkCombobox(
-					this.genderCbx,
-					this.errorGenderMsg,
-					new string[] { "required" }
-				);
-			}  
-           
+            CustomValidation.Instance.checkCombobox(
+                this.genderCbx,
+                this.errorGenderMsg,
+                new string[] { "required" }
+            );
         }
-	}
+    }
 }

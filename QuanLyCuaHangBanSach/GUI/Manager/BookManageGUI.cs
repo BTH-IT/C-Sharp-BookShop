@@ -85,7 +85,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             {
                 List<AuthorDTO> authorList = AuthorBUS.Instance.getAllData();
 
-                authorList.Insert(0, new AuthorDTO(0, "Tất cả tác giả", "", 0, false));
+                authorList.Insert(0, new AuthorDTO(0, "Tất cả tác giả", "", 0));
 
                 this.authorCbx.ValueMember = "Ma";
                 this.authorCbx.DisplayMember = "Ten";
@@ -105,7 +105,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             {
                 List<BookTypeDTO> bookTypeList = BookTypeBUS.Instance.getAllData();
 
-                bookTypeList.Insert(0, new BookTypeDTO(0, "Tất cả thể loại", false));
+                bookTypeList.Insert(0, new BookTypeDTO(0, "Tất cả thể loại"));
 
                 this.bookTypeCbx.ValueMember = "MaTheLoai";
                 this.bookTypeCbx.DisplayMember = "TenTheLoai";
@@ -123,7 +123,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             {
                 List<PublisherDTO> publisherList = PublisherBUS.Instance.getAllData();
 
-                publisherList.Insert(0, new PublisherDTO(0, "Tất cả nhà xuất bản", "", "", false));
+                publisherList.Insert(0, new PublisherDTO(0, "Tất cả nhà xuất bản", "", ""));
 
                 this.publisherCbx.ValueMember = "MaNhaXuatBan";
                 this.publisherCbx.DisplayMember = "TenNhaXuatBan";

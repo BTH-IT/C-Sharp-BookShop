@@ -11,7 +11,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
         public PermissionDTO updatePermission = null;
         public bool isSubmitSuccess = false;
 
-        public PermissionModal(string title = "Thêm quyền hạng")
+        public PermissionModal(string title = "Thêm quyền hạn")
         {
             InitializeComponent();
 
@@ -35,11 +35,21 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
             if (isPermission)
             {
-                CustomValidation.Instance.checkDuplicateName(
-                    this.errorPermissionNameMsg,
-                    this.nameLine,
-                    PermissionBUS.Instance.checkDuplicateName(this.permissionNameTxt.Text)
-                );
+                if (updatePermission == null)
+                {
+                    isPermission = CustomValidation.Instance.checkDuplicateName(
+                        this.errorPermissionNameMsg,
+                        this.nameLine,
+                        PermissionBUS.Instance.checkDuplicateName(this.permissionNameTxt.Text)
+                    );
+                } else
+                {
+                    isPermission = CustomValidation.Instance.checkDuplicateName(
+                        this.errorPermissionNameMsg,
+                        this.nameLine,
+                        PermissionBUS.Instance.checkDuplicateName(this.permissionNameTxt.Text, updatePermission.maQuyenHan)
+                    );
+                }
             }
         }
         private bool validateForm()
@@ -53,11 +63,22 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
             if (isPermission)
             {
-                CustomValidation.Instance.checkDuplicateName(
-                    this.errorPermissionNameMsg,
-                    this.nameLine,
-                    PermissionBUS.Instance.checkDuplicateName(this.permissionNameTxt.Text)
-                );
+                if (updatePermission == null)
+                {
+                    isPermission = CustomValidation.Instance.checkDuplicateName(
+                        this.errorPermissionNameMsg,
+                        this.nameLine,
+                        PermissionBUS.Instance.checkDuplicateName(this.permissionNameTxt.Text)
+                    );
+                }
+                else
+                {
+                    isPermission = CustomValidation.Instance.checkDuplicateName(
+                        this.errorPermissionNameMsg,
+                        this.nameLine,
+                        PermissionBUS.Instance.checkDuplicateName(this.permissionNameTxt.Text, updatePermission.maQuyenHan)
+                    );
+                }
             }
 
             return isPermission;
@@ -72,9 +93,9 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 if (!isValid) return;
 
                 string permissionName = this.permissionNameTxt.Text;
-                bool isActive = this.statusSwitch.Checked;
+                bool isActive = this.activeCkx.Checked;
 
-                int id = updatePermission != null ? updatePermission.MaQuyenHan : 0;
+                int id = updatePermission != null ? updatePermission.maQuyenHan : 0;
 
                 PermissionDTO permission = new PermissionDTO(id, permissionName, isActive);
 
@@ -98,7 +119,8 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 Console.WriteLine(ex);
             }
         }
-		private void PermissionModal_Load(object sender, EventArgs e)
+
+        private void PermissionModal_Load(object sender, EventArgs e)
         {
             try
             {
@@ -109,8 +131,8 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
                 if (updatePermission != null)
                 {
-                    this.permissionNameTxt.Text = updatePermission.TenQuyenHan;
-                    this.statusSwitch.Checked = updatePermission.TrangThai;
+                    this.permissionNameTxt.Text = updatePermission.tenQuyenHan;
+                    this.activeCkx.Checked = updatePermission.TrangThai;
                 }
             }
             catch (Exception ex)
@@ -118,13 +140,5 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 Console.WriteLine(ex);
             }
         }
-
-		private void statusSwitch_CheckedChanged_1(object sender, EventArgs e)
-		{
-			if (this.statusSwitch.Checked)
-			{
-				this.statusSwitch.CheckedState.FillColor = Color.FromArgb(45, 210, 192);
-			}
-		}
-	}
+    }
 }

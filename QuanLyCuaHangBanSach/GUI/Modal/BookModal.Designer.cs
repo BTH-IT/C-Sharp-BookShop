@@ -38,7 +38,6 @@
             this.publishYearLine = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
             this.importPriceTxt = new Guna.UI2.WinForms.Guna2TextBox();
             this.errorImportPriceMsg = new System.Windows.Forms.Label();
             this.importPriceLine = new System.Windows.Forms.Panel();
@@ -48,7 +47,6 @@
             this.label18 = new System.Windows.Forms.Label();
             this.publisherCbx = new Guna.UI.WinForms.GunaComboBox();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
             this.sellPriceTxt = new Guna.UI2.WinForms.Guna2TextBox();
             this.errorSellPriceMsg = new System.Windows.Forms.Label();
             this.sellPriceLine = new System.Windows.Forms.Panel();
@@ -205,7 +203,7 @@
             this.errorPublishYearMsg.AutoSize = true;
             this.errorPublishYearMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.errorPublishYearMsg.ForeColor = System.Drawing.Color.Red;
-            this.errorPublishYearMsg.Location = new System.Drawing.Point(159, 55);
+            this.errorPublishYearMsg.Location = new System.Drawing.Point(162, 55);
             this.errorPublishYearMsg.Name = "errorPublishYearMsg";
             this.errorPublishYearMsg.Size = new System.Drawing.Size(0, 26);
             this.errorPublishYearMsg.TabIndex = 7;
@@ -230,7 +228,6 @@
             // 
             // panel7
             // 
-            this.panel7.Controls.Add(this.label5);
             this.panel7.Controls.Add(this.importPriceTxt);
             this.panel7.Controls.Add(this.errorImportPriceMsg);
             this.panel7.Controls.Add(this.importPriceLine);
@@ -239,16 +236,6 @@
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(594, 88);
             this.panel7.TabIndex = 10;
-            // 
-            // label5
-            // 
-            this.label5.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label5.Location = new System.Drawing.Point(524, 7);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(50, 36);
-            this.label5.TabIndex = 34;
-            this.label5.Text = "VNĐ";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // importPriceTxt
             // 
@@ -275,7 +262,7 @@
             this.importPriceTxt.PlaceholderText = "Nhập giá nhập";
             this.importPriceTxt.SelectedText = "";
             this.importPriceTxt.ShadowDecoration.Parent = this.importPriceTxt;
-            this.importPriceTxt.Size = new System.Drawing.Size(354, 36);
+            this.importPriceTxt.Size = new System.Drawing.Size(425, 36);
             this.importPriceTxt.TabIndex = 33;
             this.importPriceTxt.TextChanged += new System.EventHandler(this.importPriceTxt_TextChanged);
             this.importPriceTxt.Leave += new System.EventHandler(this.importPriceTxt_TextChanged);
@@ -285,7 +272,7 @@
             this.errorImportPriceMsg.AutoSize = true;
             this.errorImportPriceMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.errorImportPriceMsg.ForeColor = System.Drawing.Color.Red;
-            this.errorImportPriceMsg.Location = new System.Drawing.Point(160, 53);
+            this.errorImportPriceMsg.Location = new System.Drawing.Point(163, 49);
             this.errorImportPriceMsg.Name = "errorImportPriceMsg";
             this.errorImportPriceMsg.Size = new System.Drawing.Size(0, 26);
             this.errorImportPriceMsg.TabIndex = 7;
@@ -323,7 +310,7 @@
             this.errorPublisherMsg.AutoSize = true;
             this.errorPublisherMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.errorPublisherMsg.ForeColor = System.Drawing.Color.Red;
-            this.errorPublisherMsg.Location = new System.Drawing.Point(160, 54);
+            this.errorPublisherMsg.Location = new System.Drawing.Point(163, 52);
             this.errorPublisherMsg.Name = "errorPublisherMsg";
             this.errorPublisherMsg.Size = new System.Drawing.Size(0, 26);
             this.errorPublisherMsg.TabIndex = 33;
@@ -365,7 +352,6 @@
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.label4);
             this.panel4.Controls.Add(this.sellPriceTxt);
             this.panel4.Controls.Add(this.errorSellPriceMsg);
             this.panel4.Controls.Add(this.sellPriceLine);
@@ -374,16 +360,6 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(594, 88);
             this.panel4.TabIndex = 9;
-            // 
-            // label4
-            // 
-            this.label4.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label4.Location = new System.Drawing.Point(524, 7);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(50, 36);
-            this.label4.TabIndex = 28;
-            this.label4.Text = "VNĐ";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // sellPriceTxt
             // 
@@ -410,17 +386,17 @@
             this.sellPriceTxt.PlaceholderText = "Nhập giá bán";
             this.sellPriceTxt.SelectedText = "";
             this.sellPriceTxt.ShadowDecoration.Parent = this.sellPriceTxt;
-            this.sellPriceTxt.Size = new System.Drawing.Size(354, 36);
+            this.sellPriceTxt.Size = new System.Drawing.Size(425, 36);
             this.sellPriceTxt.TabIndex = 33;
             this.sellPriceTxt.TextChanged += new System.EventHandler(this.sellPriceTxt_TextChanged);
-            this.sellPriceTxt.Leave += new System.EventHandler(this.sellPriceTxt_TextChanged);
+            this.sellPriceTxt.Leave += new System.EventHandler(this.sellPriceTxt_Leave);
             // 
             // errorSellPriceMsg
             // 
             this.errorSellPriceMsg.AutoSize = true;
             this.errorSellPriceMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.errorSellPriceMsg.ForeColor = System.Drawing.Color.Red;
-            this.errorSellPriceMsg.Location = new System.Drawing.Point(160, 54);
+            this.errorSellPriceMsg.Location = new System.Drawing.Point(163, 49);
             this.errorSellPriceMsg.Name = "errorSellPriceMsg";
             this.errorSellPriceMsg.Size = new System.Drawing.Size(0, 26);
             this.errorSellPriceMsg.TabIndex = 7;
@@ -458,7 +434,7 @@
             this.errorBookTypeMsg.AutoSize = true;
             this.errorBookTypeMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.errorBookTypeMsg.ForeColor = System.Drawing.Color.Red;
-            this.errorBookTypeMsg.Location = new System.Drawing.Point(161, 54);
+            this.errorBookTypeMsg.Location = new System.Drawing.Point(163, 52);
             this.errorBookTypeMsg.Name = "errorBookTypeMsg";
             this.errorBookTypeMsg.Size = new System.Drawing.Size(0, 26);
             this.errorBookTypeMsg.TabIndex = 30;
@@ -513,7 +489,7 @@
             this.errorAuthorMsg.AutoSize = true;
             this.errorAuthorMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.errorAuthorMsg.ForeColor = System.Drawing.Color.Red;
-            this.errorAuthorMsg.Location = new System.Drawing.Point(160, 54);
+            this.errorAuthorMsg.Location = new System.Drawing.Point(163, 52);
             this.errorAuthorMsg.Name = "errorAuthorMsg";
             this.errorAuthorMsg.Size = new System.Drawing.Size(0, 26);
             this.errorAuthorMsg.TabIndex = 27;
@@ -592,14 +568,14 @@
             this.bookNameTxt.Size = new System.Drawing.Size(425, 36);
             this.bookNameTxt.TabIndex = 32;
             this.bookNameTxt.TextChanged += new System.EventHandler(this.bookNameTxt_TextChanged);
-            this.bookNameTxt.Leave += new System.EventHandler(this.bookNameTxt_TextChanged);
+            this.bookNameTxt.Leave += new System.EventHandler(this.bookNameTxt_Leave);
             // 
             // errorBookNameMsg
             // 
             this.errorBookNameMsg.AutoSize = true;
             this.errorBookNameMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.errorBookNameMsg.ForeColor = System.Drawing.Color.Red;
-            this.errorBookNameMsg.Location = new System.Drawing.Point(160, 52);
+            this.errorBookNameMsg.Location = new System.Drawing.Point(163, 50);
             this.errorBookNameMsg.Name = "errorBookNameMsg";
             this.errorBookNameMsg.Size = new System.Drawing.Size(0, 26);
             this.errorBookNameMsg.TabIndex = 7;
@@ -714,7 +690,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "BookModal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Thêm sách";
+            this.Text = "d";
             this.Load += new System.EventHandler(this.AddBookModal_Load);
             this.panel12.ResumeLayout(false);
             this.panel12.PerformLayout();
@@ -782,7 +758,5 @@
         private Guna.UI2.WinForms.Guna2TextBox publishYearTxt;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
     }
 }
