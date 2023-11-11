@@ -178,8 +178,19 @@ namespace QuanLyCuaHangBanSach
 							return false;
 						}
 						break;
-
-				}
+                    case "name":
+                        if (!checkTextboxWithRegex(txt, new Regex("^[^\\d!@#\\$%^&*()_+={}\\[\\]:;<>,.?/~\\\\-]*$"), "Không được chứa số/kí tự đặc biệt", errMsgLbl, line))
+                        {
+                            return false;
+                        }
+                        break;
+                    case "space":
+                        if (!checkDuplicateName(errMsgLbl, line, string.IsNullOrWhiteSpace(txt.Text) || txt.Text.Trim() == "" || txt.Text.Trim() != txt.Text, "Không được chứa số/kí tự đặc biệt\nKhông được có khoảng trắng đầu cuối"))
+                        {
+                            return false;
+                        }
+                        break;
+                }
             }
 
             return true;

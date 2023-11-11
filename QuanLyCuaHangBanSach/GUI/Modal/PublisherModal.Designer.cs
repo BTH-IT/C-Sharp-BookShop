@@ -256,6 +256,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             this.addressTxt.ShadowDecoration.Parent = this.addressTxt;
             this.addressTxt.Size = new System.Drawing.Size(425, 36);
             this.addressTxt.TabIndex = 33;
+            this.addressTxt.TextChanged += new System.EventHandler(this.addressTxt_TextChanged);
             // 
             // addressMsg
             // 

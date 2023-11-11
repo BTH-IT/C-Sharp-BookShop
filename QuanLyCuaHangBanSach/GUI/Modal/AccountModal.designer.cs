@@ -139,6 +139,7 @@
             this.confirmPasswordTxt.Size = new System.Drawing.Size(424, 36);
             this.confirmPasswordTxt.TabIndex = 4;
             this.confirmPasswordTxt.TextChanged += new System.EventHandler(this.confirmPasswordTxt_TextChanged);
+            this.confirmPasswordTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.confirmPasswordTxt_KeyPress);
             this.confirmPasswordTxt.Leave += new System.EventHandler(this.confirmPasswordTxt_Leave);
             // 
             // errorConfirmPasswordMsg
@@ -319,6 +320,7 @@
             this.passwordTxt.Size = new System.Drawing.Size(424, 36);
             this.passwordTxt.TabIndex = 3;
             this.passwordTxt.TextChanged += new System.EventHandler(this.passwordTxt_TextChanged);
+            this.passwordTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.passwordTxt_KeyPress);
             this.passwordTxt.Leave += new System.EventHandler(this.passwordTxt_Leave);
             // 
             // errorPasswordMsg

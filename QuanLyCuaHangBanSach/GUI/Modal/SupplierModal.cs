@@ -30,7 +30,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                     this.Suppliertxt,
                     this.supplierNameMsg,
                     this.nameLine,
-                    new string[] { "required" }
+                    new string[] { "required", "name", "space" }
                 );
 
                 if (isSupplier)
@@ -68,7 +68,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                     this.Suppliertxt,
                     this.supplierNameMsg,
                     this.nameLine,
-                    new string[] { "required" }
+                    new string[] { "required", "name", "space" }
                 );
 
                 if (isSupplier)
@@ -84,14 +84,14 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                         this.phoneNumbertxt,
                         this.phoneNumberMsg,
                         this.phoneNumberLine,
-                        new string[] { "required", "positive-number" }
+                        new string[] { "required", "phone-number", "space" }
                 );
 
                 bool isCheckTxt3 = CustomValidation.Instance.checkTextbox(
                         this.addressTxt,
                         this.addressMsg,
                         this.addressLine,
-                        new string[] { "required" }
+                        new string[] { "required", "space" }
                     );
 
 
@@ -143,29 +143,6 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             }
         }
 
-        private void birthYear_TextChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                this.phoneNumbertxt.ForeColor = Color.Black;
-
-                if (this.phoneNumbertxt.Text.Length > 0)
-                {
-                    CustomValidation.Instance.checkTextbox(
-                        this.phoneNumbertxt,
-                        this.phoneNumberMsg,
-                        this.phoneNumberLine,
-                        new string[] { "required", "positive-number" }
-                    );
-                }
-            }
-            catch (Exception er)
-            {
-
-                Console.WriteLine(er);
-            }
-        }
-
         private void SupplierModal_Load(object sender, EventArgs e)
         {
             try
@@ -201,7 +178,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 this.Suppliertxt,
                 this.supplierNameMsg,
                 this.nameLine,
-                new string[] { "required" }
+                new string[] { "required" , "name", "space" }
             );
         }
 
@@ -211,7 +188,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 this.addressTxt,
                 this.addressMsg,
                 this.addressLine,
-                new string[] { "required" }
+                new string[] { "required", "space" }
             );
         }
 
@@ -221,7 +198,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 this.phoneNumbertxt,
                 this.phoneNumberMsg,
                 this.phoneNumberLine,
-                new string[] { "required", "phone-number" }
+                new string[] { "required", "phone-number", "space" }
             );
         }
 

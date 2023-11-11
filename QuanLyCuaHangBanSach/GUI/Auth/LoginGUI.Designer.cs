@@ -153,15 +153,16 @@
             this.emailTxt.TabIndex = 34;
             this.emailTxt.TextChanged += new System.EventHandler(this.emailTxt_TextChanged);
             this.emailTxt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.emailTxt_KeyDown);
+            this.emailTxt.Leave += new System.EventHandler(this.emailTxt_TextChanged);
             // 
             // errorMsg1
             // 
             this.errorMsg1.AutoSize = true;
-            this.errorMsg1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.errorMsg1.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.errorMsg1.ForeColor = System.Drawing.Color.Red;
-            this.errorMsg1.Location = new System.Drawing.Point(173, 57);
+            this.errorMsg1.Location = new System.Drawing.Point(169, 60);
             this.errorMsg1.Name = "errorMsg1";
-            this.errorMsg1.Size = new System.Drawing.Size(0, 25);
+            this.errorMsg1.Size = new System.Drawing.Size(0, 26);
             this.errorMsg1.TabIndex = 2;
             // 
             // pictureBox3
@@ -204,7 +205,7 @@
             this.panel3.Controls.Add(this.label6);
             this.panel3.Location = new System.Drawing.Point(434, 214);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(445, 93);
+            this.panel3.Size = new System.Drawing.Size(445, 103);
             this.panel3.TabIndex = 3;
             // 
             // pwdTxt
@@ -236,6 +237,8 @@
             this.pwdTxt.TabIndex = 35;
             this.pwdTxt.TextChanged += new System.EventHandler(this.pwdTxt_TextChanged);
             this.pwdTxt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.pwdTxt_KeyDown);
+            this.pwdTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.pwdTxt_KeyPress);
+            this.pwdTxt.Leave += new System.EventHandler(this.pwdTxt_TextChanged);
             // 
             // pictureBox5
             // 
@@ -252,11 +255,11 @@
             // errorMsg2
             // 
             this.errorMsg2.AutoSize = true;
-            this.errorMsg2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.errorMsg2.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.errorMsg2.ForeColor = System.Drawing.Color.Red;
-            this.errorMsg2.Location = new System.Drawing.Point(171, 61);
+            this.errorMsg2.Location = new System.Drawing.Point(170, 70);
             this.errorMsg2.Name = "errorMsg2";
-            this.errorMsg2.Size = new System.Drawing.Size(0, 25);
+            this.errorMsg2.Size = new System.Drawing.Size(0, 26);
             this.errorMsg2.TabIndex = 2;
             // 
             // pictureBox4
@@ -273,7 +276,7 @@
             // 
             this.line2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.line2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(212)))), ((int)(((byte)(191)))));
-            this.line2.Location = new System.Drawing.Point(170, 56);
+            this.line2.Location = new System.Drawing.Point(170, 61);
             this.line2.Name = "line2";
             this.line2.Size = new System.Drawing.Size(253, 1);
             this.line2.TabIndex = 4;
@@ -324,7 +327,7 @@
             this.label9.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.label9.Location = new System.Drawing.Point(740, 312);
+            this.label9.Location = new System.Drawing.Point(740, 323);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(139, 24);
             this.label9.TabIndex = 5;
@@ -337,7 +340,7 @@
             this.checkBox1.AutoSize = true;
             this.checkBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.checkBox1.Location = new System.Drawing.Point(455, 312);
+            this.checkBox1.Location = new System.Drawing.Point(455, 323);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(133, 24);
             this.checkBox1.TabIndex = 6;

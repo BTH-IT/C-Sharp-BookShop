@@ -131,7 +131,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                     this.bookNameTxt,
                     this.errorBookNameMsg,
                     this.nameLine,
-                    new string[] { "required" }
+                    new string[] { "required" , "name", "space" }
                 );
 
                 if (isBookName)
@@ -168,7 +168,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                     this.sellPriceTxt,
                     this.errorSellPriceMsg,
                     this.sellPriceLine,
-                    new string[] { "required", "positive-number" }
+                    new string[] { "required", "positive-number" , "space" }
                 );
             }
             catch (Exception ex)
@@ -187,7 +187,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                     this.importPriceTxt,
                     this.errorImportPriceMsg,
                     this.importPriceLine,
-                    new string[] { "required", "positive-number" }
+                    new string[] { "required", "positive-number", "space" }
                 );
             }
             catch (Exception ex)
@@ -207,7 +207,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                     this.publishYearTxt,
                     this.errorPublishYearMsg,
                     this.publishYearLine,
-                    new string[] { "required", "positive-number", "max-current-year" }
+                    new string[] { "required", "positive-number", "max-current-year", "space" }
                 );
             }
             catch (Exception ex)
@@ -224,7 +224,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                     this.bookNameTxt,
                     this.errorBookNameMsg,
                     this.nameLine,
-                    new string[] { "required" }
+                    new string[] { "required" , "name", "space" }
                 );
 
                 if (isBookName)
@@ -251,21 +251,21 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                     this.sellPriceTxt,
                     this.errorSellPriceMsg,
                     this.sellPriceLine,
-                    new string[] { "required", "positive-number" }
+                    new string[] { "required", "positive-number", "space" }
                 );
 
                 bool isCheckTxt3 = CustomValidation.Instance.checkTextbox(
                     this.importPriceTxt,
                     this.errorImportPriceMsg,
                     this.importPriceLine,
-                    new string[] { "required", "positive-number" }
+                    new string[] { "required", "positive-number", "space" }
                 );
 
                 bool isCheckTxt4 = CustomValidation.Instance.checkTextbox(
                     this.publishYearTxt,
                     this.errorPublishYearMsg,
                     this.publishYearLine,
-                    new string[] { "required", "positive-number", "max-current-year" }
+                    new string[] { "required", "positive-number", "max-current-year", "space" }
                 );
 
                 bool isCheckCbx1 = CustomValidation.Instance.checkCombobox(
@@ -470,7 +470,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                     this.bookNameTxt,
                     this.errorBookNameMsg,
                     this.nameLine,
-                    new string[] { "required" }
+                    new string[] { "required", "name", "space" }
                 );
 
             if (isBookName)
@@ -491,7 +491,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                     this.sellPriceTxt,
                     this.errorSellPriceMsg,
                     this.sellPriceLine,
-                    new string[] { "required", "positive-number" }
+                    new string[] { "required", "positive-number", "space" }
                 );
             }
             catch (Exception ex)

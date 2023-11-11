@@ -101,21 +101,21 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 				   this.staffNameTxt,
 				   this.errorStaffNameMsg,
 				   this.staffNameLine,
-				   new string[] { "required" }
-			   );
+				   new string[] { "required", "name", "space" }
+               );
 				bool isBirthYearValid = CustomValidation.Instance.checkTextbox(
 					 this.birthYearTxt,
 					 this.errorBirthYearMsg,
 					 this.birthYearLine,
-					 new string[] { "required", "positive-number", "max-current-year" }
+					 new string[] { "required", "positive-number", "max-current-year", "space" }
                  );
 				bool isSalaryValid = CustomValidation.Instance.checkTextbox(
 						this.salaryTxt,
 						this.errorSalaryMsg,
 						this.salaryLine,
-						new string[] { "required", "positive-number" }
+						new string[] { "required", "positive-number", "space" }
 
-					);
+                    );
 				bool isGenderValid = CustomValidation.Instance.checkCombobox(
 						this.genderCbx,
 						this.errorGenderMsg,
@@ -130,7 +130,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                     this.phoneNumberTxt,
                     this.errorPhoneNumberMsg,
                     this.phoneNumberLine,
-                    new string[] { "required", "phone-number" }
+                    new string[] { "required", "phone-number", "space" }
                 );
 
                 if (isPhone)
@@ -184,7 +184,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 this.staffNameTxt,
                 this.errorStaffNameMsg,
                 this.staffNameLine,
-                new string[] { "required" }
+                new string[] { "required", "name", "space" }
             );
         }
 
@@ -194,7 +194,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 this.birthYearTxt,
                 this.errorBirthYearMsg,
                 this.birthYearLine,
-                new string[] { "required", "positive-number", "max-current-year" }
+                new string[] { "required", "positive-number", "max-current-year", "space" }
             );
         }
 
@@ -204,7 +204,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 this.phoneNumberTxt,
                 this.errorPhoneNumberMsg,
                 this.phoneNumberLine,
-                new string[] { "required", "phone-number" }
+                new string[] { "required", "phone-number", "space" }
             );
 
             if (isPhone)
@@ -236,7 +236,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 this.salaryTxt,
                 this.errorSalaryMsg,
                 this.salaryLine,
-                new string[] { "required", "positive-number" }
+                new string[] { "required", "positive-number", "space" }
             );
         }
 
@@ -264,7 +264,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 this.phoneNumberTxt,
                 this.errorPhoneNumberMsg,
                 this.phoneNumberLine,
-                new string[] { "required", "phone-number" }
+                new string[] { "required", "phone-number", "space" }
             );
 
             if (isPhone)
@@ -296,7 +296,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 this.salaryTxt,
                 this.errorSalaryMsg,
                 this.salaryLine,
-                new string[] { "required", "positive-number" }
+                new string[] { "required", "positive-number", "space" }
             );
         }
 
@@ -306,7 +306,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 this.staffNameTxt,
                 this.errorStaffNameMsg,
                 this.staffNameLine,
-                new string[] { "required" }
+                new string[] { "required", "space" }
             );
         }
 
@@ -316,7 +316,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 this.birthYearTxt,
                 this.errorBirthYearMsg,
                 this.birthYearLine,
-                new string[] { "required", "positive-number", "max-current-year" }
+                new string[] { "required", "positive-number", "max-current-year", "space" }
             );
         }
     }

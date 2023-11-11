@@ -32,7 +32,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                     this.Publishertxt,
                     this.PublisherNameMsg,
                     this.nameLine,
-                    new string[] { "required" }
+                    new string[] { "required" , "name" , "space" }
                 );
 
                 if (isPublisher)
@@ -70,7 +70,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                     this.Publishertxt,
                     this.PublisherNameMsg,
                     this.nameLine,
-                    new string[] { "required" }
+                    new string[] { "required" , "name" , "space" }
                 );
 
                 if (isPublisher)
@@ -97,14 +97,14 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                         this.phoneNumbertxt,
                         this.phoneNumberMsg,
                         this.phoneNumberLine,
-                        new string[] { "required", "positive-number" }
+                        new string[] { "required", "phone-number", "space" }
                 );
 
                 bool isCheckTxt3 = CustomValidation.Instance.checkTextbox(
                         this.addressTxt,
                         this.addressMsg,
                         this.addressLine,
-                        new string[] { "required" }
+                        new string[] { "required", "space" }
                     );
 
 
@@ -164,7 +164,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                     this.phoneNumbertxt,
                     this.phoneNumberMsg,
                     this.phoneNumberLine,
-                    new string[] { "required", "positive-number" }
+                    new string[] { "required", "phone-number", "space" }
                 );
             }
             catch (Exception er)
@@ -201,6 +201,17 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
         private void cancelBtn_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void addressTxt_TextChanged(object sender, EventArgs e)
+        {
+
+            CustomValidation.Instance.checkTextbox(
+                this.addressTxt,
+                this.addressMsg,
+                this.addressLine,
+                new string[] { "required", "space" }
+            );
         }
     }
 }

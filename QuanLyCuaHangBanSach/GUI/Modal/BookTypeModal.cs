@@ -46,7 +46,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 this.BookTypeNameTxt,
                 this.errorBookTypeNameMsg,
                 this.nameLine,
-                new string[] { "required" }
+                new string[] { "required" , "name", "space" }
             );
 
             if (isBookType)
@@ -76,7 +76,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 this.BookTypeNameTxt,
                 this.errorBookTypeNameMsg,
                 this.nameLine,
-                new string[] { "required" }
+                new string[] { "required", "name", "space" }
             );
 
             if (isBookType)

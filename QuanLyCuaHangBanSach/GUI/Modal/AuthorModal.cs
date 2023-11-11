@@ -34,7 +34,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                     this.authorName,
                     this.authorNameMsg,
                     this.nameLine,
-                    new string[] { "required" }
+                    new string[] { "required", "name", "space" }
                 );
 
                 if (isAuthor)
@@ -70,7 +70,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 this.authorName,
                 this.authorNameMsg,
                 this.nameLine,
-                new string[] { "required" }
+                new string[] { "required", "name" , "space" }
             );
 
             if (isAuthor)
@@ -97,7 +97,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 this.birthYear,
                     this.birthYearMsg,
                     this.birthYearLine,
-                    new string[] { "required", "positive-number", "max-curent-year" }
+                    new string[] { "required", "positive-number", "max-curent-year", "space" }
             );
 
 
@@ -172,7 +172,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                     this.birthYear,
                     this.birthYearMsg,
                     this.birthYearLine,
-                    new string[] { "required", "positive-number", "max-current-year" }
+                    new string[] { "required", "positive-number", "max-current-year" , "space" }
                 );
             }
             catch (Exception er)
@@ -213,7 +213,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 this.authorName,
                 this.authorNameMsg,
                 this.nameLine,
-                new string[] { "required" }
+                new string[] { "required", "space" }
             );
 
             if (isAuthor)
@@ -236,7 +236,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                     this.birthYear,
                     this.birthYearMsg,
                     this.birthYearLine,
-                    new string[] { "required", "positive-number", "max-current-year" }
+                    new string[] { "required", "positive-number", "max-current-year", "space" }
                 );
             }
             catch (Exception er)

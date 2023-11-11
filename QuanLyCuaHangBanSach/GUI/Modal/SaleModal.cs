@@ -58,7 +58,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                     this.saleNameTxt,
                     this.errorSaleNameMsg,
                     this.saleNameLine,
-                    new string[] { "required" }
+                    new string[] { "required", "name" }
                 );
 
                 if (isSale)
@@ -86,6 +86,17 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                     this.phanTramLine,
                     new string[] { "required", "positive-number" }
                 );
+
+                if (isPhanTramValid)
+                {
+                    CustomValidation.Instance.checkTextboxMax(
+                        this.phanTramTxt,
+                        "Trường này phải bé hơn 100",
+                        this.errorPhanTramMsg,
+                        this.phanTramLine,
+                        100
+                    );
+                }
 
                 bool isDateTimeFrom = CustomValidation.Instance.checkDateTimePicker(
                     this.dateTimeFrom,
@@ -153,30 +164,32 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
         private void phanTramTxt_TextChanged(object sender, EventArgs e)
         {
-            CustomValidation.Instance.checkTextbox(
+            bool isChecked = CustomValidation.Instance.checkTextbox(
                 this.phanTramTxt,
                 this.errorPhanTramMsg,
                 this.phanTramLine,
-                new string[] { "required", "positive-number" }
+                new string[] { "required", "positive-number", "space" }
             );
 
-            CustomValidation.Instance.checkTextboxMax(
-                this.phanTramTxt,
-                "Trường này phải bé hơn 100",
-                this.errorPhanTramMsg,
-                this.phanTramLine,
-                100
-            );
+            if (isChecked)
+            {
+                CustomValidation.Instance.checkTextboxMax(
+                    this.phanTramTxt,
+                    "Trường này phải bé hơn 100",
+                    this.errorPhanTramMsg,
+                    this.phanTramLine,
+                    100
+                );
+            }
         }
 
         private void saleNameTxt_TextChanged(object sender, EventArgs e)
         {
-
             bool isSale = CustomValidation.Instance.checkTextbox(
                 this.saleNameTxt,
                 this.errorSaleNameMsg,
                 this.saleNameLine,
-                new string[] { "required" }
+                new string[] { "required" , "name", "space" }
             );
 
             if (isSale)

@@ -32,7 +32,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                     this.positionNameTxt,
                     this.errorPositionNameMsg,
                     this.nameLine,
-                    new string[] { "required" }
+                    new string[] { "required" , "name", "space" }
                 );
 
                 if (isPosition)
@@ -66,7 +66,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                     this.positionNameTxt,
                     this.errorPositionNameMsg,
                     this.nameLine,
-                    new string[] { "required" }
+                    new string[] { "required", "name" , "space" }
                 );
 
             if (isPosition)

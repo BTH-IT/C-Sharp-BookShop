@@ -131,7 +131,7 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.newPwdTxt,
                 this.errorMsg1,
                 this.line1,
-                new string[] { "required" }
+                new string[] { "required", "space" }
             );
         }
 
@@ -141,7 +141,7 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.confirmPwdTxt,
                 this.errorMsg2,
                 this.line2,
-                new string[] { "required" }
+                new string[] { "required" , "space" }
             );
 
             if (isCheck)
@@ -168,6 +168,27 @@ namespace QuanLyCuaHangBanSach.GUI
             if (e.KeyCode == Keys.Enter)
             {
                 this.handleSubmit();
+            }
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void newPwdTxt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == ' ')
+            {
+                e.Handled = true; // Chặn ký tự nhập vào
+            }
+        }
+
+        private void confirmPwdTxt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == ' ')
+            {
+                e.Handled = true; // Chặn ký tự nhập vào
             }
         }
     }

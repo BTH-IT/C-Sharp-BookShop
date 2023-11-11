@@ -91,21 +91,21 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 					this.customerNameTxtBox,
 					this.errorCustomerNameMsg,
 					this.customerNameLine,
-					new string[] { "required" }
+					new string[] {"required", "name", "space" }
 				);
 
 				bool isBirthYearValid = CustomValidation.Instance.checkTextbox(
 					this.birthYearTxtBox,
 					this.errorBirthYearMsg,
 					this.birthYearLine,
-					new string[] { "required", "positive-number" }
-				);
+					new string[] { "required", "positive-number", "space" }
+                );
 
                 bool isPhone = CustomValidation.Instance.checkTextbox(
                     this.phoneNumberTxtBox,
                     this.errorPhoneNumberMsg,
                     this.phoneNumberLine,
-                    new string[] { "required", "phone-number" }
+                    new string[] { "required", "phone-number", "space" }
                 );
 
                 if (isPhone)
@@ -151,7 +151,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                     this.customerNameTxtBox,
                     this.errorCustomerNameMsg,
                     this.customerNameLine,
-                    new string[] { "required" }
+                    new string[] {"required", "name", "space" }
                 );
         }
 
@@ -161,7 +161,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                     this.birthYearTxtBox,
                     this.errorBirthYearMsg,
                     this.birthYearLine,
-                    new string[] { "required", "positive-number" }
+                    new string[] { "required", "positive-number", "space" }
                 );
         }
 
@@ -171,7 +171,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 this.phoneNumberTxtBox,
                 this.errorPhoneNumberMsg,
                 this.phoneNumberLine,
-                new string[] { "required", "phone-number" }
+                new string[] { "required", "phone-number", "space" }
             );
 
             if (isPhone)

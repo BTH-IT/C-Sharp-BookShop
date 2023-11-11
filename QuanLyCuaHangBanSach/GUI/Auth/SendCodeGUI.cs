@@ -25,7 +25,7 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.emailTxt,
                 this.errorMsg1,
                 this.line1,
-                new string[] { "required", "email" }
+                new string[] { "required", "email", "space" }
             );
         }
 
@@ -35,7 +35,7 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.codeTxt,
                 this.errorMsg2,
                 this.line2,
-                new string[] { "required" }
+                new string[] { "required", "space" }
             );
         }
 
@@ -46,7 +46,7 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.emailTxt,
                 this.errorMsg1,
                 this.line1,
-                new string[] { "required", "email" }
+                new string[] { "required", "email" , "space" }
             );
 
             if (isCheck)
@@ -56,7 +56,7 @@ namespace QuanLyCuaHangBanSach.GUI
                 if (account == null)
                 {
                     this.emailTxt.Focus();
-                    this.errorMsg1.Text = "This account isn't found in system!";
+                    this.errorMsg1.Text = "Email này không tồn tại trong hệ thống";
                     this.line1.BackColor = Color.FromArgb(239, 68, 68);
                     return false;
                 }
@@ -100,7 +100,6 @@ namespace QuanLyCuaHangBanSach.GUI
             try
             {
                 smtp.Send(msg);
-                MessageBox.Show("Code Successfully Send, Code will expire in 1 minute!");
                 this.customButton2.Enabled = false;
 
                 this.handleRemoveCode();
@@ -160,7 +159,7 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.codeTxt,
                 this.errorMsg2,
                 this.line2,
-                new string[] { "required" }
+                new string[] { "required", "space" }
             );
         }
 
@@ -178,7 +177,7 @@ namespace QuanLyCuaHangBanSach.GUI
                 resetPassword.Show();
             } else
             {
-                MessageBox.Show("Wrong code or expired code! Please try again!");
+                MessageBox.Show("Mã không hợp lệ hoặc đã hết hạn! Vui lòng thử lại!");
             }
         }
 

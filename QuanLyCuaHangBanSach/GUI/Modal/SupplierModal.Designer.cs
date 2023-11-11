@@ -315,7 +315,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             this.phoneNumbertxt.ShadowDecoration.Parent = this.phoneNumbertxt;
             this.phoneNumbertxt.Size = new System.Drawing.Size(425, 36);
             this.phoneNumbertxt.TabIndex = 32;
-            this.phoneNumbertxt.TextChanged += new System.EventHandler(this.birthYear_TextChanged);
+            this.phoneNumbertxt.TextChanged += new System.EventHandler(this.phoneNumbertxt_TextChanged);
             // 
             // phoneNumberMsg
             // 

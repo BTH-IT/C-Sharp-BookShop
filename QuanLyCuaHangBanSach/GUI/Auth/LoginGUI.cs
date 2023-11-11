@@ -204,7 +204,7 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.emailTxt,
                 this.errorMsg1,
                 this.line1,
-                new string[] { "required", "email" }
+                new string[] { "required", "email", "space" }
             );
         }
 
@@ -214,8 +214,16 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.pwdTxt,
                 this.errorMsg2,
                 this.line2,
-                new string[] { "required" }
+                new string[] { "required", "space" }
             );
+        }
+
+        private void pwdTxt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == ' ')
+            {
+                e.Handled = true; // Chặn ký tự nhập vào
+            }
         }
     }
 }

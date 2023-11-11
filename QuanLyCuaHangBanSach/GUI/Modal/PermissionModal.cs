@@ -30,7 +30,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 this.permissionNameTxt,
                 this.errorPermissionNameMsg,
                 this.nameLine,
-                new string[] { "required" }
+                new string[] { "required" , "name", "space" }
             );
 
             if (isPermission)
@@ -58,7 +58,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 this.permissionNameTxt,
                 this.errorPermissionNameMsg,
                 this.nameLine,
-                new string[] { "required" }
+                new string[] { "required" , "name", "space" }
             );
 
             if (isPermission)

@@ -191,7 +191,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                     this.emailTxt,
                     this.errorEmailMsg,
                     this.errorEmailLine,
-                    new string[] { "required", "email" }
+                    new string[] { "required", "email", "space" }
                 );
 
             if (isEmailValid)
@@ -220,7 +220,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 this.passwordTxt,
                 this.errorPasswordMsg,
                 this.passwordLine,
-                new string[] { "required" }
+                new string[] { "required", "space" }
             );
         }
 
@@ -230,7 +230,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                     this.confirmPasswordTxt,
                     this.errorConfirmPasswordMsg,
                     this.confirmPasswordLine,
-                    new string[] { "required" }
+                    new string[] { "required", "space" }
                 );
 
             if (!isConfirmPasswordValid)
@@ -251,7 +251,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 this.emailTxt,
                 this.errorEmailMsg,
                 this.errorEmailLine,
-                new string[] { "required", "email" }
+                new string[] { "required", "email", "space" }
             );
         }
 
@@ -283,6 +283,22 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                     this.errorConfirmPasswordMsg,
                     this.confirmPasswordLine
                 );
+            }
+        }
+
+        private void passwordTxt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == ' ')
+            {
+                e.Handled = true; // Chặn ký tự nhập vào
+            }
+        }
+
+        private void confirmPasswordTxt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == ' ')
+            {
+                e.Handled = true; // Chặn ký tự nhập vào
             }
         }
     }
