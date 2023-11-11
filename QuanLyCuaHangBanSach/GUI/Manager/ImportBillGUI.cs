@@ -367,18 +367,13 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                     {
                         if ((bool)row.Cells[0].Value == true)
                         {
-                            if (BookBUS.Instance.delete(row.Cells[1].Value.ToString()))
-                            {
-                                List<ImportBillDTO> importBillList = handleFilter(this.searchInput.Text.ToString());
-
-                                this.loadImportBillListToDataView(importBillList);
-
-                                row.Cells[0].Value = false;
-                            }
+                            ImportBillBUS.Instance.delete(row.Cells[1].Value.ToString());
                         }
 
                     }
+                    List<ImportBillDTO> importBillList = handleFilter(this.searchInput.Text.ToString());
 
+                    this.loadImportBillListToDataView(importBillList);
                     this.dgvImportBill.RefreshEdit();
                     MessageBox.Show("Delete successful");
                 }

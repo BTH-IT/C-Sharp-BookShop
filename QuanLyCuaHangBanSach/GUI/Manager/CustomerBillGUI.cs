@@ -553,7 +553,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                     {
                         if ((bool)row.Cells[0].Value == true)
                         {
-                            BookBUS.Instance.delete(row.Cells[1].Value.ToString());
+                            CustomerBillBUS.Instance.delete(row.Cells[1].Value.ToString());
                         }
 
                     }
