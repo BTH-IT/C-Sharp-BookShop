@@ -99,7 +99,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 			customerNumLb.Text = $@"{customerNumber} khách hàng";
 		}
 
-		private void loadBillListToDataView(List<CustomerDTO> customerList)
+		private void loadCustomerListToDataView(List<CustomerDTO> customerList)
 		{
 			try
 			{
@@ -169,7 +169,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 			try
 			{
 				List<CustomerDTO> customerList = CustomerBUS.Instance.getAllData();
-				loadBillListToDataView(customerList);
+				loadCustomerListToDataView(customerList);
 				loadChartView();
 			}
 			catch (Exception ex)
@@ -213,7 +213,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 			try
 			{
                 List<CustomerDTO> customerList = handleFilter(searchInput.Text);
-				loadBillListToDataView(customerList);
+				loadCustomerListToDataView(customerList);
 
             }
 			catch (Exception ex)
@@ -233,7 +233,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
 
 				List<CustomerDTO> customerList = CustomerBUS.Instance.getAllData();
-				loadBillListToDataView(customerList);
+				loadCustomerListToDataView(customerList);
 			}
 			catch (Exception ex)
 			{
