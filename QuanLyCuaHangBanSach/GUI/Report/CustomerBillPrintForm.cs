@@ -19,7 +19,7 @@ namespace QuanLyCuaHangBanSach.GUI.Report
         private void PrintCustomerBill_Load(object sender, EventArgs e)
         {
             List<CustomerBillDetailDTO> customerBillDetailList = CustomerBillBUS.Instance.getCustomerBillDetailList(maDonKhachHang.ToString());
-            
+
             CustomerBillDTO customerBill = CustomerBillBUS.Instance.getById(maDonKhachHang.ToString());
 
             StaffDTO staff = StaffBUS.Instance.getById(customerBill.MaNhanVien.ToString());
@@ -33,6 +33,7 @@ namespace QuanLyCuaHangBanSach.GUI.Report
 
             int count = 1;
             BookDTO book;
+            double giaGoc = 0;
             int amount = 0;
             foreach (CustomerBillDetailDTO customerBillDetail in customerBillDetailList)
             {
@@ -47,13 +48,14 @@ namespace QuanLyCuaHangBanSach.GUI.Report
                 );
 
                 amount += customerBillDetail.SoLuong;
+                giaGoc += customerBillDetail.ThanhTien;
 
                 count++;
             }
 
             this.bindingSource1.DataSource = dataTable;
 
-            double salePrice = sale == null ? 0 : customerBill.TongTien * sale.PhanTram / 100;
+            double salePrice = sale == null ? 0 : giaGoc * (sale.PhanTram / 100.0);
 
             Microsoft.Reporting.WinForms.ReportParameter[] p = new Microsoft.Reporting.WinForms.ReportParameter[]
             {
@@ -64,7 +66,7 @@ namespace QuanLyCuaHangBanSach.GUI.Report
                 new Microsoft.Reporting.WinForms.ReportParameter("pCustomerName", customer == null ? "Vãng lai" : customer.Ten.ToString()),
                 new Microsoft.Reporting.WinForms.ReportParameter("pSale", sale == null ? "Không có" : sale.TenKhuyenMai.ToString()),
                 new Microsoft.Reporting.WinForms.ReportParameter("pSalePrice", salePrice.ToString()),
-                new Microsoft.Reporting.WinForms.ReportParameter("pTotalPrice", (customerBill.TongTien - salePrice).ToString()),
+                new Microsoft.Reporting.WinForms.ReportParameter("pTotalPrice", customerBill.TongTien.ToString()),
                 new Microsoft.Reporting.WinForms.ReportParameter("pTotalAmount", amount.ToString())
             };
 
