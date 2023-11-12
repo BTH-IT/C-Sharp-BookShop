@@ -393,6 +393,7 @@
             this.dateTimeTo.TabIndex = 10;
             this.dateTimeTo.Text = "9/10/2023";
             this.dateTimeTo.Value = new System.DateTime(2023, 9, 10, 15, 52, 49, 679);
+            this.dateTimeTo.ValueChanged += new System.EventHandler(this.dateTimeTo_ValueChanged);
             // 
             // errorDateTimeToMsg
             // 

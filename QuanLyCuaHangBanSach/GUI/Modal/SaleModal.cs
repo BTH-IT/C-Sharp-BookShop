@@ -84,7 +84,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                     this.phanTramTxt,
                     this.errorPhanTramMsg,
                     this.phanTramLine,
-                    new string[] { "required", "positive-number" }
+                    new string[] { "required", "positive-number", "space" }
                 );
 
                 if (isPhanTramValid)
@@ -244,6 +244,17 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 new string[] { "before" },
                 DateTime.Now,
                 "Thời gian bắt đầu phải nhỏ hơn hoặc bằng thời gian hiện tại"
+            );
+        }
+
+        private void dateTimeTo_ValueChanged(object sender, EventArgs e)
+        {
+            CustomValidation.Instance.checkDateTimePicker(
+                this.dateTimeTo,
+                this.errorDateTimeToMsg,
+                new string[] { "after" },
+                this.dateTimeFrom.Value,
+                "Thời gian kết thúc phải lớn hơn hoặc bằng thời gian bắt đầu"
             );
         }
     }
