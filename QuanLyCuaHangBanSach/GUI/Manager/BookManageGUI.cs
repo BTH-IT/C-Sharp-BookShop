@@ -187,14 +187,21 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                     {
                         this.priceFrom.Clear();
                         this.priceTo.Clear();
-                        MessageBox.Show("Tổng tiền là một số");
+                        MessageBox.Show("Giá bán là một số");
                     }
                     else
                     {
-                        bookList = bookList.FindAll(
-                            item => item.GiaBan >= Convert.ToDouble(this.priceFrom.Text.ToString())
-                                    && item.GiaBan <= Convert.ToDouble(this.priceTo.Text.ToString()
-                        ));
+                        if (Convert.ToDouble(this.priceFrom.Text.ToString()) <= Convert.ToDouble(this.priceTo.Text.ToString()))
+                        {
+                            bookList = bookList.FindAll(
+                                item => item.GiaBan >= Convert.ToDouble(this.priceFrom.Text.ToString())
+                                        && item.GiaBan <= Convert.ToDouble(this.priceTo.Text.ToString()
+                            ));
+                        }
+                        else
+                        {
+                            MessageBox.Show("Giá bán đến phải bé hơn hoặc bằng giá bán từ");
+                        }
                     }
                 }
 
@@ -383,6 +390,12 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
         private void exportBtn_Click(object sender, EventArgs e)
         {
+            if (dgvBook.Rows.Count <= 0)
+            {
+                MessageBox.Show("Bảng dữ liệu hiện tại chưa có dòng dữ liệu nào để xuất excel!");
+                return;
+            }
+
             string[] headerList = new string[] { "Mã sách", "Tên sách", "Tác giả", "Thể loại", "Nhà xuất bản", "Giá bán", "Giá nhập", "Năm xuất bản", "Còn lại" };
             
             DataTable dt = CustomExcel.Instance.ConvertDataGridViewToDataTable(dgvBook);
@@ -553,6 +566,22 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             }
 
             return 0;
+        }
+
+        private void priceFrom_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // Ngăn chặn ký tự nhập vào TextBox
+            }
+        }
+
+        private void priceTo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // Ngăn chặn ký tự nhập vào TextBox
+            }
         }
     }
 }

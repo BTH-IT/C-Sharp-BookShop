@@ -198,6 +198,7 @@
             this.phanTramTxt.Size = new System.Drawing.Size(308, 36);
             this.phanTramTxt.TabIndex = 32;
             this.phanTramTxt.TextChanged += new System.EventHandler(this.phanTramTxt_TextChanged);
+            this.phanTramTxt.Leave += new System.EventHandler(this.phanTramTxt_TextChanged);
             // 
             // errorPhanTramMsg
             // 
@@ -325,6 +326,7 @@
             this.dateTimeFrom.TabIndex = 9;
             this.dateTimeFrom.Text = "9/10/2023";
             this.dateTimeFrom.Value = new System.DateTime(2023, 9, 10, 15, 52, 49, 679);
+            this.dateTimeFrom.ValueChanged += new System.EventHandler(this.dateTimeFrom_ValueChanged);
             // 
             // errorDateTimeFromMsg
             // 

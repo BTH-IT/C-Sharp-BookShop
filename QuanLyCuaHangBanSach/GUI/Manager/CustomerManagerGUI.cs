@@ -249,10 +249,13 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
         private void btnExport_Click(object sender, EventArgs e)
         {
+            if (dgvCustomer.Rows.Count <= 0)
+            {
+                MessageBox.Show("Bảng dữ liệu hiện tại chưa có dòng dữ liệu nào để xuất excel!");
+                return;
+            }
             try
             {
-				List<CustomerDTO> customers = handleFilter(this.searchInput.Text.ToString());
-				DataTable dataTable = CustomExcel.Instance.ConvertListToDataTable(customers);
 				string[] headerList = new string[] { "Mã khách hàng", "Tên khách hàng", "SĐT", "Giới tính", "Năm sinh" };
                 DataTable dt = CustomExcel.Instance.ConvertDataGridViewToDataTable(dgvCustomer);
 

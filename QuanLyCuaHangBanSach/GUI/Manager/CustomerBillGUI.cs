@@ -260,10 +260,17 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                     }
                     else
                     {
-                        customerBillList = customerBillList.FindAll(
-                            item => item.TongTien >= Convert.ToDouble(this.fromPriceTxt.Text.ToString())
-                                    && item.TongTien <= Convert.ToDouble(this.toPriceTxt.Text.ToString()
-                        ));
+                        if (Convert.ToDouble(this.fromPriceTxt.Text.ToString()) >= Convert.ToDouble(this.toPriceTxt.Text.ToString()))
+                        {
+                            MessageBox.Show("Tổng tiền đến phải bé hơn hoặc bằng tổng tiền từ");
+                        }
+                        else
+                        {
+                            customerBillList = customerBillList.FindAll(
+                                item => item.TongTien >= Convert.ToDouble(this.fromPriceTxt.Text.ToString())
+                                        && item.TongTien <= Convert.ToDouble(this.toPriceTxt.Text.ToString()
+                            ));
+                        }
                     }
                 }
 
@@ -472,6 +479,12 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
         private void exportBtn_Click(object sender, EventArgs e)
         {
+            if (dgvCustomerBill.Rows.Count <= 0)
+            {
+                MessageBox.Show("Bảng dữ liệu hiện tại chưa có dòng dữ liệu nào để xuất excel!");
+                return;
+            }
+
             try
             {
 
@@ -713,6 +726,22 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         {
             this.fromPriceTxt.Enabled = this.gunaMediumCheckBox1.Checked;
             this.toPriceTxt.Enabled = this.gunaMediumCheckBox1.Checked;
+        }
+
+        private void fromPriceTxt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // Ngăn chặn ký tự nhập vào TextBox
+            }
+        }
+
+        private void toPriceTxt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // Ngăn chặn ký tự nhập vào TextBox
+            }
         }
     }
 }

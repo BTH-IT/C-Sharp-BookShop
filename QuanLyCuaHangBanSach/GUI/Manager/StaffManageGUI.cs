@@ -134,6 +134,13 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
         private void exportBtn_Click(object sender, EventArgs e)
         {
+            if (dgvStaff.Rows.Count <= 0)
+            {
+                MessageBox.Show("Bảng dữ liệu hiện tại chưa có dòng dữ liệu nào để xuất excel!");
+                return;
+
+            }
+
             try
             {
                 string[] headerList = new string[] { "Mã nhân viên", "Tên nhân viên", "Năm sinh", "SĐT", "Giới tính", "Lương", "Mã chức vụ" };
@@ -166,7 +173,14 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 					}
 					else
 					{
-						staffs = staffs.Where(staff => staff.Luong >= Convert.ToDouble(this.salaryFrom.Text) && staff.Luong <= Convert.ToDouble(this.salaryTo.Text)).ToList();
+                        if (Convert.ToDouble(this.salaryFrom.Text.ToString()) >= Convert.ToDouble(this.salaryTo.Text.ToString()))
+                        {
+                            MessageBox.Show("Lương đến phải bé hơn hoặc bằng lương từ");
+                        }
+                        else
+                        {
+                            staffs = staffs.Where(staff => staff.Luong >= Convert.ToDouble(this.salaryFrom.Text) && staff.Luong <= Convert.ToDouble(this.salaryTo.Text)).ToList();
+                        }
 					}
 				}
 
@@ -323,57 +337,56 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         {
             try
             {
-				DialogResult result = MessageBox.Show(
-			 "Bạn có chắc muốn xóa các nhân viên đã chọn",
-			 "Xác nhận",
-				  MessageBoxButtons.YesNo,
-				  MessageBoxIcon.None
-			 );
-				bool hasCheckedRow = false;
-				foreach (DataGridViewRow row in this.dgvStaff.Rows)
-				{
-					if ((bool)row.Cells[0].Value)
-					{
-						hasCheckedRow = true;
-						break;
-					}
-				}
-				if (result == DialogResult.Yes)
-				{
-					if(hasCheckedRow) 
-					{
-						foreach (DataGridViewRow row in this.dgvStaff.Rows)
-						{
-							if ((bool)row.Cells[0].Value)
-							{
-								var isExistAccount = AccountBUS.Instance.getAllData().Where(account => account.MaNhanVien == (int)row.Cells[1].Value).Any();
-								if (isExistAccount)
-								{
-									MessageBox.Show("Vui lòng xóa tài khoản của " + row.Cells[2].Value.ToString() + " trước");
-								}
-								else
-								{
-									StaffBUS.Instance.delete(row.Cells[1].Value.ToString());
-									List<StaffDTO> staffs = handleFilter(this.searchInput.Text);
-									loadDataToDataGridView(staffs);
-									MessageBox.Show("Xóa thành công");
-								}
-							}
-						}
-					} 
-					else
-					{
-						MessageBox.Show("Vui lòng chọn nhân viên để xóa", "Thông báo");
-					}
-					
-
-				}
-			}
+                DialogResult result = MessageBox.Show(
+                "Bạn có chắc muốn xóa các nhân viên đã chọn?\n *Nếu xóa nhân viên tài khoản cũng sẽ bị xóa",
+                "Xác nhận",
+                  MessageBoxButtons.YesNo,
+                  MessageBoxIcon.None
+                );
+                bool hasCheckedRow = false;
+                foreach (DataGridViewRow row in this.dgvStaff.Rows)
+                {
+                    if ((bool)row.Cells[0].Value)
+                    {
+                        hasCheckedRow = true;
+                        break;
+                    }
+                }
+                if (result == DialogResult.Yes)
+                {
+                    if (hasCheckedRow)
+                    {
+                        foreach (DataGridViewRow row in this.dgvStaff.Rows)
+                        {
+                            if ((bool)row.Cells[0].Value)
+                            {
+                                AccountDTO acc = AccountBUS.Instance.getByStaffId(row.Cells[1].Value.ToString());
+                                if (acc != null)
+                                {
+                                    AccountBUS.Instance.delete(acc.Email);
+                                    StaffBUS.Instance.delete(row.Cells[1].Value.ToString());
+                                }
+                                else
+                                {
+                                    StaffBUS.Instance.delete(row.Cells[1].Value.ToString());
+                                }
+                            }
+                        }
+                        List<StaffDTO> staffs = handleFilter(this.searchInput.Text);
+                        loadDataToDataGridView(staffs);
+                        MessageBox.Show("Xóa thành công");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Vui lòng chọn nhân viên để xóa", "Thông báo");
+                    }
+                }
+            }
             catch
             {
 
             }
-           
+
         }
 
         private void searchInput_TextChanged(object sender, EventArgs e)
@@ -449,6 +462,22 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             }
 
             return 0;
+        }
+
+        private void salaryFrom_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // Ngăn chặn ký tự nhập vào TextBox
+            }
+        }
+
+        private void salaryTo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // Ngăn chặn ký tự nhập vào TextBox
+            }
         }
     }
 }

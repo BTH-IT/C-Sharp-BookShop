@@ -58,7 +58,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                     this.saleNameTxt,
                     this.errorSaleNameMsg,
                     this.saleNameLine,
-                    new string[] { "required", "name" }
+                    new string[] { "required", "name" , "space"}
                 );
 
                 if (isSale)
@@ -101,8 +101,9 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 bool isDateTimeFrom = CustomValidation.Instance.checkDateTimePicker(
                     this.dateTimeFrom,
                     this.errorDateTimeFromMsg,
-                    new string[] { "after" },
-                    DateTime.Now
+                    new string[] { "before" },
+                    DateTime.Now,
+                    "Thời gian bắt đầu phải nhỏ hơn hoặc bằng thời gian hiện tại"
                 );
 
                 bool DateFromGreaterOrEqual = CustomValidation.Instance.checkDateTimePicker(
@@ -218,8 +219,9 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             CustomValidation.Instance.checkDateTimePicker(
                 this.dateTimeFrom,
                 this.errorDateTimeFromMsg,
-                new string[] { "after" },
-                DateTime.Now
+                new string[] { "before" },
+                DateTime.Now,
+                "Thời gian bắt đầu phải nhỏ hơn hoặc bằng thời gian hiện tại"
             );
         }
 
@@ -230,7 +232,18 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 this.errorDateTimeToMsg,
                 new string[] { "after" },
                 this.dateTimeFrom.Value,
-                "Thời gian kết thúc phải lớn hơn hoặc bằng thời \n gian bắt đầu"
+                "Thời gian kết thúc phải lớn hơn hoặc bằng thời gian bắt đầu"
+            );
+        }
+
+        private void dateTimeFrom_ValueChanged(object sender, EventArgs e)
+        {
+            CustomValidation.Instance.checkDateTimePicker(
+                this.dateTimeFrom,
+                this.errorDateTimeFromMsg,
+                new string[] { "before" },
+                DateTime.Now,
+                "Thời gian bắt đầu phải nhỏ hơn hoặc bằng thời gian hiện tại"
             );
         }
     }

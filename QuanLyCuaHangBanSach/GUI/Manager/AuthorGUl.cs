@@ -129,6 +129,11 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
         private void exportBtn_Click(object sender, EventArgs e)
         {
+            if (dgvAuthor.Rows.Count <= 0)
+            {
+                MessageBox.Show("Bảng dữ liệu hiện tại chưa có dòng dữ liệu nào để xuất excel!");
+                return;
+            }
             try
             {
                 string[] headerList = new string[] { "Mã tác giả", "Tên tác giả", "Giới tính", "Năm sinh" };

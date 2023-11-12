@@ -274,7 +274,18 @@ namespace QuanLyCuaHangBanSach
                                 errorLabel.Text = errorMessage != null ? errorMessage : "Ngày giờ phải lớn hơn hoặc bằng thời gian hiện tại";
                                 return false;
                             }
+                        case "before":
+                            if (DateTime.Compare(guna.Value, dateTimeToCompare) <= 0)
+                            {
+                                errorLabel.Text = "";
+                                return true;
+                            }
+                            else
+                            {
 
+                                errorLabel.Text = errorMessage != null ? errorMessage : "Ngày giờ phải nhỏ hơn hoặc bằng thời gian hiện tại";
+                                return false;
+                            }
                         default:
                             return false;
                     }

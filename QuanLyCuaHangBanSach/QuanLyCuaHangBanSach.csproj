@@ -752,12 +752,6 @@
     <Compile Include="GUI\Report\ImportBillPrintForm.Designer.cs">
       <DependentUpon>ImportBillPrintForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\test.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\test.Designer.cs">
-      <DependentUpon>test.cs</DependentUpon>
-    </Compile>
     <Compile Include="GUI\UserControls\AuthorizeCkb.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -954,9 +948,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Report\ImportBillReport.rdlc" />
     <EmbeddedResource Include="GUI\Report\CustomerBillReport.rdlc" />
-    <EmbeddedResource Include="GUI\test.resx">
-      <DependentUpon>test.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="GUI\UserControls\AuthorizeCkb.resx">
       <DependentUpon>AuthorizeCkb.cs</DependentUpon>
     </EmbeddedResource>

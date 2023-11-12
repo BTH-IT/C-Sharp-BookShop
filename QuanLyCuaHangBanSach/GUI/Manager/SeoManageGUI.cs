@@ -199,6 +199,13 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
         private void btnExport_Click(object sender, EventArgs e)
         {
+            if (dgvSale.Rows.Count <= 0)
+            {
+                MessageBox.Show("Bảng dữ liệu hiện tại chưa có dòng dữ liệu nào để xuất excel!");
+                return;
+
+            }
+
             try
             {
 				string[] headerList = new string[] { "Mã Khuyến mãi", "Tên khuyến mãi", "Phẩn trăm", "Ngày bắt đầu", "Ngày kết thúc" };

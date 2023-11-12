@@ -101,6 +101,11 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         }
         private void btnExport_Click(object sender, EventArgs e)
         {
+			if (dgvAccount.Rows.Count <= 0)
+			{
+                MessageBox.Show("Bảng dữ liệu hiện tại chưa có dòng dữ liệu nào để xuất excel!");
+                return;
+			}
             try
             {
 				string[] headerList = new string[] { "Nhân viên", "Email", "Mật khẩu" };
