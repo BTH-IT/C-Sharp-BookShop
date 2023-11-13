@@ -19,7 +19,7 @@ namespace QuanLyCuaHangBanSach.GUI.Report
         private void PrintCustomerBill_Load(object sender, EventArgs e)
         {
             List<CustomerBillDetailDTO> customerBillDetailList = CustomerBillBUS.Instance.getCustomerBillDetailList(maDonKhachHang.ToString());
-
+            
             CustomerBillDTO customerBill = CustomerBillBUS.Instance.getById(maDonKhachHang.ToString());
 
             StaffDTO staff = StaffBUS.Instance.getById(customerBill.MaNhanVien.ToString());
@@ -34,7 +34,6 @@ namespace QuanLyCuaHangBanSach.GUI.Report
             int count = 1;
             BookDTO book;
             double giaGoc = 0;
-            int amount = 0;
             foreach (CustomerBillDetailDTO customerBillDetail in customerBillDetailList)
             {
                 book = BookBUS.Instance.getById(customerBillDetail.MaSach.ToString());
@@ -47,7 +46,6 @@ namespace QuanLyCuaHangBanSach.GUI.Report
                     customerBillDetail.ThanhTien
                 );
 
-                amount += customerBillDetail.SoLuong;
                 giaGoc += customerBillDetail.ThanhTien;
 
                 count++;
@@ -67,7 +65,8 @@ namespace QuanLyCuaHangBanSach.GUI.Report
                 new Microsoft.Reporting.WinForms.ReportParameter("pSale", sale == null ? "Không có" : sale.TenKhuyenMai.ToString()),
                 new Microsoft.Reporting.WinForms.ReportParameter("pSalePrice", salePrice.ToString()),
                 new Microsoft.Reporting.WinForms.ReportParameter("pTotalPrice", customerBill.TongTien.ToString()),
-                new Microsoft.Reporting.WinForms.ReportParameter("pTotalAmount", amount.ToString())
+                new Microsoft.Reporting.WinForms.ReportParameter("pMoneyPaid", customerBill.TienKhachDua.ToString()),
+                new Microsoft.Reporting.WinForms.ReportParameter("pMoneyChange", (customerBill.TongTien - customerBill.TienKhachDua).ToString()),
             };
 
             // Set the data source of the report
