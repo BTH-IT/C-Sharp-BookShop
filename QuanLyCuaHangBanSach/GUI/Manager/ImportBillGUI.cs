@@ -514,12 +514,19 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             {
                 DataTable dt = CustomExcel.Instance.ImportFile();
 
+                if (dt == null)
+                {
+                    MessageBox.Show("Lỗi chưa chọn file hoặc file excel không đúng dữ liệu!");
+                    return;
+                }
+
                 ImportBillDTO newImportBill = new ImportBillDTO(0, 1, ManagerGUI.currentStaff.Ma, DateTime.Now, 0);
 
                 ImportBillDTO importBill = ImportBillBUS.Instance.insertReturnBill(newImportBill);
 
                 if (importBill != null)
                 {
+                    double tongTien = 0;
                     foreach (DataRow row in dt.Rows)
                     {
                         BookDTO book = BookBUS.Instance.getById(row[0].ToString());
@@ -534,7 +541,40 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                             book.GiaNhap = Convert.ToDouble(row[3].ToString());
 
                             BookBUS.Instance.update(book);
+
+                            tongTien += book.GiaNhap * Convert.ToInt32(row[2].ToString());
                         };
+                    }
+
+                    importBill.TongTien = tongTien;
+
+                    ImportBillBUS.Instance.update(importBill);
+
+                    MessageBox.Show("Nhập từ file excel thành công!");
+
+                    try
+                    {
+                        this.searchInput.Clear();
+                        this.fromPriceTxt.Clear();
+                        this.toPriceTxt.Clear();
+
+                        this.supplierCbx.SelectedIndex = 0;
+                        this.staffCbx.SelectedIndex = 0;
+
+                        this.filterCkx.Checked = false;
+                        this.dateTimeFrom.Enabled = false;
+                        this.dateTimeTo.Enabled = false;
+
+                        this.dateTimeFrom.Refresh();
+                        this.dateTimeTo.Refresh();
+
+                        List<ImportBillDTO> importBillList = handleFilter("");
+
+                        this.loadImportBillListToDataView(importBillList);
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex);
                     }
                 }
             }
