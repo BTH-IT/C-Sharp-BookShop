@@ -34,6 +34,15 @@ namespace QuanLyCuaHangBanSach.DAO
             return DataProvider.Instance.ExecuteQuery("select * from nhanvien LEFT JOIN taikhoan ON nhanvien.maNhanVien=taikhoan.maNhanVien WHERE taikhoan.maNhanVien IS NULL AND nhanvien.hienThi = 1;");
         }
 
+        public DataTable getAllNoAccountNotId(int id)
+        {
+            return DataProvider.Instance.ExecuteQuery("select * from nhanvien LEFT JOIN taikhoan ON nhanvien.maNhanVien=taikhoan.maNhanVien WHERE (taikhoan.maNhanVien IS NULL OR taikhoan.maNhanVien=@id) AND nhanvien.hienThi = 1;",
+            new MySqlParameter[] {
+                    new MySqlParameter("@id", id.ToString())
+                }
+            );
+        }
+
         public bool checkDuplicateName(string value)
         {
             DataTable dataTable = DataProvider.Instance.ExecuteQuery("select * from nhanvien WHERE LOWER(soDienThoai)=LOWER(@soDienThoai) and hienThi=1;",

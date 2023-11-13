@@ -633,7 +633,7 @@
             this.priceTo.ShadowDecoration.Parent = this.priceTo;
             this.priceTo.Size = new System.Drawing.Size(110, 25);
             this.priceTo.TabIndex = 34;
-            this.priceTo.TextChanged += new System.EventHandler(this.priceTo_TextChanged);
+            this.priceTo.TextChanged += new System.EventHandler(this.DebounceTextBox_TextChanged);
             this.priceTo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.priceTo_KeyPress);
             // 
             // priceFrom
@@ -664,7 +664,7 @@
             this.priceFrom.ShadowDecoration.Parent = this.priceFrom;
             this.priceFrom.Size = new System.Drawing.Size(110, 25);
             this.priceFrom.TabIndex = 32;
-            this.priceFrom.TextChanged += new System.EventHandler(this.priceFrom_TextChanged);
+            this.priceFrom.TextChanged += new System.EventHandler(this.DebounceTextBox_TextChanged);
             this.priceFrom.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.priceFrom_KeyPress);
             // 
             // panel3
@@ -708,7 +708,7 @@
             // 
             // BookManageGUI
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
             this.ClientSize = new System.Drawing.Size(1044, 684);

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using MySql.Data.MySqlClient;
 using QuanLyCuaHangBanSach.DAO;
 using QuanLyCuaHangBanSach.DTO;
 
@@ -95,6 +96,20 @@ namespace QuanLyCuaHangBanSach.BUS
         public bool delete(string id)
         {
             return StaffDAO.Instance.delete(id);
+        }
+
+        public List<StaffDTO> getAllNoAccountNotId(int id)
+        {
+            List<StaffDTO> customerList = new List<StaffDTO>();
+            DataTable dt = StaffDAO.Instance.getAllNoAccountNotId(id);
+
+            foreach (DataRow row in dt.Rows)
+            {
+                StaffDTO customer = new StaffDTO(row);
+                customerList.Add(customer);
+            }
+
+            return customerList;
         }
     }
 }

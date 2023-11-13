@@ -46,7 +46,7 @@ namespace QuanLyCuaHangBanSach.DAO
 
         public bool checkDuplicateName(string value, int id)
         {
-            DataTable dataTable = DataProvider.Instance.ExecuteQuery("select * from chucvu WHERE  LOWER(tenChucVu)= LOWER(@tenChucVu) and maChucVu=@id;",
+            DataTable dataTable = DataProvider.Instance.ExecuteQuery("select * from chucvu WHERE  LOWER(tenChucVu)= LOWER(@tenChucVu) and maChucVu!=@id;",
                 new MySqlParameter[] {
                     new MySqlParameter("@tenChucVu", value.Trim().ToLower()),
                     new MySqlParameter("@id", id)

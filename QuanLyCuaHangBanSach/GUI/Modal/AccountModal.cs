@@ -24,7 +24,15 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
         {
             try
             {
-                List<StaffDTO> staffs = StaffBUS.Instance.getAllNoAccount();
+                List<StaffDTO> staffs = new List<StaffDTO>();
+                if (account != null)
+                {
+                    staffs = StaffBUS.Instance.getAllNoAccountNotId(account.MaNhanVien);
+                }
+                else
+                {
+                    staffs = StaffBUS.Instance.getAllNoAccount();
+                }
                 staffs.Insert(0, new StaffDTO(0, "Chọn nhân viên", "", "", 0, 0, 0));
 
                 this.staffComboBox.ValueMember = "Ma";

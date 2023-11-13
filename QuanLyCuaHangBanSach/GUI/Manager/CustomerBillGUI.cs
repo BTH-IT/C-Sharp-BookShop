@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using QuanLyCuaHangBanSach.BUS;
 using QuanLyCuaHangBanSach.DTO;
@@ -446,6 +447,31 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             catch (Exception ex)
             {
                 Console.WriteLine(ex);
+            }
+        }
+
+        private readonly int debounceInterval = 500; // Đặt khoảng thời gian debounce là 500 milliseconds
+        private DateTime lastTextChanged = DateTime.MinValue;
+        private readonly object debounceLock = new object();
+
+        private async void DebounceTextBox_TextChanged(object sender, EventArgs e)
+        {
+            lock (debounceLock)
+            {
+                lastTextChanged = DateTime.Now;
+            }
+
+            await Task.Delay(debounceInterval);
+
+            lock (debounceLock)
+            {
+                var now = DateTime.Now;
+                if ((now - lastTextChanged).TotalMilliseconds >= debounceInterval)
+                {
+                    List<CustomerBillDTO> customerBillList = handleFilter(this.searchInput.Text.ToString());
+
+                    this.loadCustomerBillListToDataView(customerBillList);
+                }
             }
         }
 
