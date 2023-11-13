@@ -193,7 +193,7 @@
             this.label1.Location = new System.Drawing.Point(20, 14);
             this.label1.Margin = new System.Windows.Forms.Padding(20, 14, 3, 2);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(99, 33);
+            this.label1.Size = new System.Drawing.Size(119, 40);
             this.label1.TabIndex = 2;
             this.label1.Text = "Bán sách";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -203,10 +203,10 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label2.ForeColor = System.Drawing.Color.Gray;
-            this.label2.Location = new System.Drawing.Point(20, 50);
+            this.label2.Location = new System.Drawing.Point(162, 1);
             this.label2.Margin = new System.Windows.Forms.Padding(20, 1, 3, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(196, 18);
+            this.label2.Size = new System.Drawing.Size(235, 23);
             this.label2.TabIndex = 3;
             this.label2.Text = "Khám phá tri thức - chia sẻ niềm vui";
             // 
@@ -250,7 +250,7 @@
             this.ProductSearchInp.Location = new System.Drawing.Point(35, 9);
             this.ProductSearchInp.Margin = new System.Windows.Forms.Padding(3, 9, 3, 10);
             this.ProductSearchInp.Name = "ProductSearchInp";
-            this.ProductSearchInp.Size = new System.Drawing.Size(212, 22);
+            this.ProductSearchInp.Size = new System.Drawing.Size(212, 27);
             this.ProductSearchInp.TabIndex = 1;
             this.ProductSearchInp.Text = "Search ...";
             this.ProductSearchInp.Click += new System.EventHandler(this.ProductSearchInp_Enter);
@@ -396,7 +396,7 @@
             this.PointLb.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.PointLb.Location = new System.Drawing.Point(11, 455);
             this.PointLb.Name = "PointLb";
-            this.PointLb.Size = new System.Drawing.Size(80, 25);
+            this.PointLb.Size = new System.Drawing.Size(97, 30);
             this.PointLb.TabIndex = 42;
             this.PointLb.Text = "Đổi điểm:";
             // 
@@ -417,7 +417,7 @@
             this.DiscountCb.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.DiscountCb.OnHoverItemForeColor = System.Drawing.Color.White;
             this.DiscountCb.Radius = 5;
-            this.DiscountCb.Size = new System.Drawing.Size(162, 28);
+            this.DiscountCb.Size = new System.Drawing.Size(162, 33);
             this.DiscountCb.TabIndex = 34;
             this.DiscountCb.SelectedIndexChanged += new System.EventHandler(this.DiscountCb_SelectedIndexChanged);
             // 
@@ -462,7 +462,7 @@
             this.FinalTotalLb.Location = new System.Drawing.Point(11, 515);
             this.FinalTotalLb.Margin = new System.Windows.Forms.Padding(20, 30, 3, 5);
             this.FinalTotalLb.Name = "FinalTotalLb";
-            this.FinalTotalLb.Size = new System.Drawing.Size(116, 25);
+            this.FinalTotalLb.Size = new System.Drawing.Size(142, 30);
             this.FinalTotalLb.TabIndex = 30;
             this.FinalTotalLb.Text = "Khách phải trả:";
             this.FinalTotalLb.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -485,7 +485,7 @@
             this.DiscountLb.Location = new System.Drawing.Point(10, 485);
             this.DiscountLb.Margin = new System.Windows.Forms.Padding(20, 30, 3, 5);
             this.DiscountLb.Name = "DiscountLb";
-            this.DiscountLb.Size = new System.Drawing.Size(81, 25);
+            this.DiscountLb.Size = new System.Drawing.Size(97, 30);
             this.DiscountLb.TabIndex = 28;
             this.DiscountLb.Text = "Giảm giá: ";
             this.DiscountLb.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -497,7 +497,7 @@
             this.VndLb.Location = new System.Drawing.Point(250, 551);
             this.VndLb.Margin = new System.Windows.Forms.Padding(20, 30, 3, 5);
             this.VndLb.Name = "VndLb";
-            this.VndLb.Size = new System.Drawing.Size(45, 25);
+            this.VndLb.Size = new System.Drawing.Size(53, 30);
             this.VndLb.TabIndex = 26;
             this.VndLb.Text = "VND";
             this.VndLb.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -542,7 +542,7 @@
             this.ChangeLb.Location = new System.Drawing.Point(11, 586);
             this.ChangeLb.Margin = new System.Windows.Forms.Padding(20, 30, 3, 5);
             this.ChangeLb.Name = "ChangeLb";
-            this.ChangeLb.Size = new System.Drawing.Size(82, 25);
+            this.ChangeLb.Size = new System.Drawing.Size(98, 30);
             this.ChangeLb.TabIndex = 23;
             this.ChangeLb.Text = "Tiền thừa:";
             this.ChangeLb.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -605,7 +605,7 @@
             this.RecipientLb.Location = new System.Drawing.Point(-1, 81);
             this.RecipientLb.Margin = new System.Windows.Forms.Padding(20, 30, 3, 5);
             this.RecipientLb.Name = "RecipientLb";
-            this.RecipientLb.Size = new System.Drawing.Size(100, 25);
+            this.RecipientLb.Size = new System.Drawing.Size(122, 30);
             this.RecipientLb.TabIndex = 18;
             this.RecipientLb.Text = "Khách Hàng:";
             this.RecipientLb.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -631,7 +631,7 @@
             this.TotalLb.Location = new System.Drawing.Point(9, 391);
             this.TotalLb.Margin = new System.Windows.Forms.Padding(20, 30, 3, 5);
             this.TotalLb.Name = "TotalLb";
-            this.TotalLb.Size = new System.Drawing.Size(120, 25);
+            this.TotalLb.Size = new System.Drawing.Size(145, 30);
             this.TotalLb.TabIndex = 16;
             this.TotalLb.Text = "Tổng tiền hàng:";
             this.TotalLb.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -643,7 +643,7 @@
             this.CustomerInfoLb.Location = new System.Drawing.Point(-2, 104);
             this.CustomerInfoLb.Margin = new System.Windows.Forms.Padding(20, 30, 3, 5);
             this.CustomerInfoLb.Name = "CustomerInfoLb";
-            this.CustomerInfoLb.Size = new System.Drawing.Size(0, 25);
+            this.CustomerInfoLb.Size = new System.Drawing.Size(0, 32);
             this.CustomerInfoLb.TabIndex = 13;
             this.CustomerInfoLb.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.CustomerInfoLb.Visible = false;
@@ -666,7 +666,7 @@
             this.label3.Location = new System.Drawing.Point(-3, 1);
             this.label3.Margin = new System.Windows.Forms.Padding(20, 30, 3, 5);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(127, 33);
+            this.label3.Size = new System.Drawing.Size(154, 40);
             this.label3.TabIndex = 8;
             this.label3.Text = "Thanh Toán";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -679,7 +679,7 @@
             this.RecipientNameLb.Location = new System.Drawing.Point(93, 81);
             this.RecipientNameLb.Margin = new System.Windows.Forms.Padding(20, 30, 3, 5);
             this.RecipientNameLb.Name = "RecipientNameLb";
-            this.RecipientNameLb.Size = new System.Drawing.Size(67, 25);
+            this.RecipientNameLb.Size = new System.Drawing.Size(81, 30);
             this.RecipientNameLb.TabIndex = 22;
             this.RecipientNameLb.Text = "Vãng lai";
             this.RecipientNameLb.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -775,5 +775,5 @@
 		private System.Windows.Forms.Panel panel6;
 		private Guna.UI.WinForms.GunaElipsePanel gunaElipsePanel1;
 		private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
-	}
+    }
 }

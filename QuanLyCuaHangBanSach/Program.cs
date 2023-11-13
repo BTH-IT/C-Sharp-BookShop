@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Windows.Forms;
 using QuanLyCuaHangBanSach.GUI;
+using QuanLyCuaHangBanSach.GUI.Vendor;
+
 namespace QuanLyCuaHangBanSach
 {
     internal static class Program
@@ -14,7 +16,6 @@ namespace QuanLyCuaHangBanSach
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(LoginGUI.Instance);
-            //Application.Run(new ManagerGUI(1));
         }
     }
 }

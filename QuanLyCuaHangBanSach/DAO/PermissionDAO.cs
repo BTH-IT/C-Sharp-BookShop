@@ -100,8 +100,17 @@ namespace QuanLyCuaHangBanSach.DAO
                     new MySqlParameter("@trangThai", data.TrangThai),
                 });
 
+
             if (rowChanged > 0)
             {
+                sql = "SELECT * FROM quyenhan ORDER BY maQuyenHan DESC LIMIT 1;";
+
+                DataTable dataTable = DataProvider.Instance.ExecuteQuery(sql);
+
+                if (dataTable.Rows.Count <= 0) return false;
+
+                PermissionDTO permission = new PermissionDTO(dataTable.Rows[0]);
+
                 List<PositionDTO> positionList = PositionBUS.Instance.getAllData();
 
                 sql = $@"INSERT INTO chitietphanquyen (maChucVu, maQuyenHan)
@@ -112,7 +121,7 @@ namespace QuanLyCuaHangBanSach.DAO
                     DataProvider.Instance.ExecuteNonQuery(sql,
                     new MySqlParameter[] {
                         new MySqlParameter("@maChucVu", position.MaChucVu),
-                        new MySqlParameter("@maQuyenHan", data.maQuyenHan),
+                        new MySqlParameter("@maQuyenHan", permission.maQuyenHan),
                     });
                 }
             }
