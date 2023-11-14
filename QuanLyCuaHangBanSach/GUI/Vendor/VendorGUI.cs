@@ -29,7 +29,7 @@ namespace QuanLyCuaHangBanSach.GUI
             InitializeComponent();
             FormBorderStyle = FormBorderStyle.None;
             this.staffID = staffID;
-        }
+		}
 
         private void Vendor_Load(object sender, EventArgs e)
         {
@@ -40,13 +40,16 @@ namespace QuanLyCuaHangBanSach.GUI
                 {
                     BookUserControl product = new BookUserControl(0);
                     product.details(book);
+					product.TabStop = false; 
                     BookContainer.Controls.Add(product);
 
                 }
                 FilterUserControl filter = new FilterUserControl();
+				filter.TabStop = false;
                 FilterContainer.Controls.Add(filter);
 
-                List<SaleDTO> discounts = SaleBUS.Instance.getAllNotExpired() ?? new List<SaleDTO>();
+
+				List<SaleDTO> discounts = SaleBUS.Instance.getAllNotExpired() ?? new List<SaleDTO>();
                 discounts.Insert(0, new SaleDTO(0, "Không có khuyến mãi", 0, new DateTime(), new DateTime()));
                 DiscountCb.DataSource = discounts;
                 DiscountCb.DisplayMember = "tenKhuyenMai";
@@ -58,7 +61,6 @@ namespace QuanLyCuaHangBanSach.GUI
 
         private void CustomerToggleBtn_CheckedChanged(object sender, EventArgs e)
         {
-            PhoneInp.Text = "Phone Number ...";
             CustomerEnabled = CustomerToggleBtn.Checked;
             PhoneInp.Enabled = CustomerEnabled;
             AddCustomerBtn.Enabled = CustomerEnabled;
@@ -71,7 +73,6 @@ namespace QuanLyCuaHangBanSach.GUI
             }
             else
             {
-                PhoneInp.ForeColor = Color.DarkGray;
                 RecipientNameLb.Text = "";
                 PointToggleBtn.Enabled = false;
             }
@@ -87,6 +88,7 @@ namespace QuanLyCuaHangBanSach.GUI
                 {
                     BookUserControl product = new BookUserControl(0);
                     product.details(book);
+                    product.TabStop = false;
                     BookContainer.Controls.Add(product);
                 }
             }
@@ -97,7 +99,6 @@ namespace QuanLyCuaHangBanSach.GUI
         {
             try
             {
-                ProductSearchInp.ForeColor = Color.Black;
                 if (ProductSearchInp.Focused && !string.IsNullOrEmpty(ProductSearchInp.Text))
                 {
                     search = true;
@@ -107,38 +108,14 @@ namespace QuanLyCuaHangBanSach.GUI
                     {
                         BookUserControl product = new BookUserControl(0);
                         product.details(book);
-                        BookContainer.Controls.Add(product);
+                        product.TabStop = false;
+						BookContainer.Controls.Add(product);
                     }
                 }
                 else if (search)
                 {
                     RenderBookContainer();
                     search = false;
-                }
-            }
-            catch (Exception ex) { Console.WriteLine(ex); }
-        }
-
-        private void ProductSearchInp_Enter(object sender, System.EventArgs e)
-        {
-            try
-            {
-                if (ProductSearchInp.Text.Equals("Search ..."))
-                {
-                    ProductSearchInp.Text = "";
-                }
-            }
-            catch (Exception ex) { Console.WriteLine(ex); }
-        }
-
-        private void ProductSearchInp_Leave(object sender, System.EventArgs e)
-        {
-            try
-            {
-                if (ProductSearchInp.Text.Length <= 0)
-                {
-                    ProductSearchInp.Text = "Search ...";
-                    ProductSearchInp.ForeColor = Color.DarkGray;
                 }
             }
             catch (Exception ex) { Console.WriteLine(ex); }
@@ -161,14 +138,6 @@ namespace QuanLyCuaHangBanSach.GUI
 
         }
 
-        private void PhoneInp_Enter(object sender, EventArgs e)
-        {
-            if (PhoneInp.Text.Equals("Phone Number ..."))
-            {
-                PhoneInp.Text = "";
-            }
-        }
-
         private void PhoneInp_KeyPress(object sender, KeyPressEventArgs e)
         {
             try
@@ -181,21 +150,6 @@ namespace QuanLyCuaHangBanSach.GUI
             catch (Exception ex) { Console.WriteLine(ex); }
         }
 
-        private void PhoneInp_Leave(object sender, EventArgs e)
-        {
-            try
-            {
-                if (!CustomerToggleBtn.Focused)
-                {
-                    if (PhoneInp.Text.Length <= 0)
-                    {
-                        PhoneInp.Text = "Phone Number ...";
-                        PhoneInp.ForeColor = Color.DarkGray;
-                    }
-                }
-            }
-            catch (Exception ex) { Console.WriteLine(ex); }
-        }
 
         private void PhoneInp_TextChanged(object sender, EventArgs e)
         {
@@ -203,7 +157,6 @@ namespace QuanLyCuaHangBanSach.GUI
             {
                 if (CustomerEnabled)
                 {
-                    PhoneInp.ForeColor = Color.Black;
                     if (PhoneInp.Focused && !string.IsNullOrEmpty(PhoneInp.Text)) {
                         PhoneResultContainer.Controls.Clear();
                         String query = PhoneInp.Text;
@@ -214,7 +167,8 @@ namespace QuanLyCuaHangBanSach.GUI
                             {
                                 SearchResultControl res = new SearchResultControl();
                                 res.details_Vendor(customer);
-                                PhoneResultContainer.Controls.Add(res);
+								res.TabStop = false;
+								PhoneResultContainer.Controls.Add(res);
                             }
                         }
                         if (PhoneResultContainer.Controls.Count <= 4)
@@ -240,8 +194,6 @@ namespace QuanLyCuaHangBanSach.GUI
         {
             try
             {
-                PhoneInp.Text = "Phone Number ...";
-                PhoneInp.ForeColor = Color.DarkGray;
                 PhoneResultContainer.Height = 0;
                 RecipientNameLb.Text = "";
                 PointToggleBtn.Checked = false;
@@ -376,8 +328,6 @@ namespace QuanLyCuaHangBanSach.GUI
                     CustomerDTO customer = CustomerBUS.Instance.getById(SearchResultControl.id.ToString());
                     RecipientNameLb.Text = customer.Ten;
                     PhoneResultContainer.Height = 0;
-                    PhoneInp.Text = "Phone Number ...";
-                    PhoneInp.ForeColor = Color.DarkGray;
                     CartHandler();
                     SearchResultControl.clicked = false;
                 }
@@ -391,7 +341,8 @@ namespace QuanLyCuaHangBanSach.GUI
                     {
                         BookUserControl product = new BookUserControl(0);
                         product.details(book);
-                        BookContainer.Controls.Add(product);
+						product.TabStop = false;
+						BookContainer.Controls.Add(product);
                     }
                     FilterUserControl.ApplyClicked = false;
                 }
@@ -422,7 +373,7 @@ namespace QuanLyCuaHangBanSach.GUI
 
                 double CustommerCash = 0;
                 double Change = 0;
-                if (CustomerCashTxb.Text.Length > 0 && !CustomerCashTxb.Text.Equals("Khách đưa ...") && total > 0)
+                if (CustomerCashTxb.Text.Length > 0 && total > 0)
                 {
                     CustommerCash = Convert.ToDouble(CustomerCashTxb.Text);
                     Change = CustommerCash - finalTotalMoney;
@@ -463,7 +414,7 @@ namespace QuanLyCuaHangBanSach.GUI
                 if (DiscountCb.SelectedIndex != 0)
                 {
                     string discountID = DiscountCb.SelectedValue.ToString();
-                    double percent = SaleBUS.Instance.getById(discountID).PhanTram / 100;
+                    double percent = SaleBUS.Instance.getById(discountID).PhanTram / 100.0;
                     double total = Convert.ToDouble(TotalMoneyLb.Text.Replace(".", "").Replace(" VND", ""));
                     discount = total * percent;
                     CartHandler();
@@ -495,17 +446,6 @@ namespace QuanLyCuaHangBanSach.GUI
             catch(Exception ex) { Console.WriteLine(ex); }
         }
 
-        private void CustomerCashTxb_Enter(object sender, System.EventArgs e)
-        {
-            try
-            {
-                if (CustomerCashTxb.Text.Equals("Khách đưa ..."))
-                {
-                    CustomerCashTxb.Text = "";
-                }
-            }
-            catch (Exception ex) { Console.WriteLine(ex); }
-        }
 
         private void CustomerCashTxb_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -528,25 +468,9 @@ namespace QuanLyCuaHangBanSach.GUI
         private void CustomerCashTxb_MouseLeave(object sender, EventArgs e)
         {
             VndLb.Focus();
+            CartHandler();
         }
 
-        private void CustomerCashTxb_Leave(object sender, System.EventArgs e)
-        {
-            try
-            {
-                if (CustomerCashTxb.Text.Length <= 0)
-                {
-                    CustomerCashTxb.Text = "Khách đưa ...";
-                    CustomerCashTxb.ForeColor = Color.DarkGray;
-                }
-                else
-                {
-                    CustomerCashTxb.ForeColor = Color.Black;
-                    CartHandler();
-                }
-            }
-            catch (Exception ex) { Console.WriteLine(ex); }
-        }
         private double RoundMoney(double money)
         {
             double baseMoney = 50000; // Số tiền cơ sở để làm tròn
@@ -622,9 +546,10 @@ namespace QuanLyCuaHangBanSach.GUI
                     PointToggleBtn.Checked = false;
                     PointToggleBtn.Enabled = false;
                     CustomerToggleBtn.Checked = false;
-                    CustomerCashTxb.Text = "Khách đưa ...";
-                    CustomerCashTxb.ForeColor = Color.DarkGray;
-                    discount = 0;
+                    CustomerCashTxb.Text = "";
+                    PhoneInp.Text = "";
+                    ProductSearchInp.Text = "";
+					discount = 0;
                     DiscountMoneyLb.Text = "0 VND";
                     DiscountCb.SelectedIndex = 0;
                     RecipientNameLb.Text = string.Empty;
