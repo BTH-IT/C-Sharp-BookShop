@@ -101,7 +101,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                     AuthorBUS.Instance.getById(book.MaTacGia.ToString()).Ten,
                     BookTypeBUS.Instance.getById(book.MaTheLoai.ToString()).TenTheLoai,
                     PublisherBUS.Instance.getById(book.MaNhaXuatBan.ToString()).TenNhaXuatBan,
-                    book.GiaBan,
+                    book.GiaNhap,
                     book.SoLuongConLai,
                 });
                 }
