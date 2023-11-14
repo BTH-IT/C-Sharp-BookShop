@@ -20,32 +20,32 @@ namespace QuanLyCuaHangBanSach.GUI
 
         private void Menu_Load(object sender, EventArgs e)
         {
-            List<AuthDetailDTO> authDetails = AuthDetailBUS.Instance.getByPositionId(this.staff.MaChucVu.ToString());
+            List<AuthDetailDTO> authDetails = AuthDetailBUS.Instance.getByPositionId(staff.MaChucVu.ToString());
 
             foreach (AuthDetailDTO authDetail in authDetails)
             {
-                if (authDetail.maQuyenHan == 7)
+                if (authDetail.maQuyenHan == 6 && !this.sell.Visible)
                 {
                     this.sell.Visible = authDetail.TrangThai;
 
                     if (this.sell.Visible)
                     {
-                        this.Size = new System.Drawing.Size(this.Size.Width, this.Size.Height + 175);
+                        this.Size = new System.Drawing.Size(this.Size.Width, this.Size.Height + this.sell.Height);
                     }
-                } else if (authDetail.maQuyenHan == 8)
+                } else if (authDetail.maQuyenHan == 7 && !this.import.Visible)
                 {
                     this.import.Visible = authDetail.TrangThai;
 
                     if (this.import.Visible)
                     {
-                        this.Size = new System.Drawing.Size(this.Size.Width, this.Size.Height + 175);
+                        this.Size = new System.Drawing.Size(this.Size.Width, this.Size.Height + this.import.Height);
                     }
                 } else if (authDetail.TrangThai && !this.manage.Visible)
                 {
                     this.manage.Visible = true;
                     if (this.manage.Visible)
                     {
-                        this.Size = new System.Drawing.Size(this.Size.Width, this.Size.Height + 175);
+                        this.Size = new System.Drawing.Size(this.Size.Width, this.Size.Height + this.manage.Height);
                     }
                 }
             }
@@ -57,13 +57,13 @@ namespace QuanLyCuaHangBanSach.GUI
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            this.Close();
-            LoginGUI.Instance.Close();
+            this.Hide();
+            LoginGUI.Instance.Show();
         }
 
         private void guna2PictureBox2_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
 
             ManagerGUI managerGUI = new ManagerGUI(staff.Ma);
 
@@ -72,7 +72,7 @@ namespace QuanLyCuaHangBanSach.GUI
 
         private void label4_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
 
             ImportGUI importGUI = new ImportGUI(staff.Ma);
 
@@ -81,11 +81,16 @@ namespace QuanLyCuaHangBanSach.GUI
 
         private void sell_Click_1(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
 
             VendorGUI vendorGUI = new VendorGUI(staff.Ma);
 
             vendorGUI.Show();
+        }
+
+        private void MenuGUI_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
