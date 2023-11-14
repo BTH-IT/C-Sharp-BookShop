@@ -37,10 +37,12 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
                 {
                     BookUserControl product = new BookUserControl(1);
                     product.details(book);
-                    BookContainer.Controls.Add(product);
+                    product.TabStop = false;
+					BookContainer.Controls.Add(product);
 
                 }
                 FilterUserControl filter = new FilterUserControl();
+                filter.TabStop = false;
                 FilterContainer.Controls.Add(filter);
             }
 
@@ -57,7 +59,8 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
                 {
                     BookUserControl product = new BookUserControl(1);
                     product.details(book);
-                    BookContainer.Controls.Add(product);
+                    product.TabStop = false;
+					BookContainer.Controls.Add(product);
                 }
             }
             catch (Exception ex) { Console.WriteLine(ex); }
@@ -67,7 +70,6 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
         {
             try
             {
-                ProductSearchInp.ForeColor = Color.Black;
                 if (ProductSearchInp.Focused && !string.IsNullOrEmpty(ProductSearchInp.Text))
                 {
                     search = true;
@@ -77,38 +79,14 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
                     {
                         BookUserControl product = new BookUserControl(1);
                         product.details(book);
-                        BookContainer.Controls.Add(product);
+                        product.TabStop = false;
+						BookContainer.Controls.Add(product);
                     }
                 }
                 else if (search)
                 {
                     RenderBookContainer();
                     search = false;
-                }
-            }
-            catch (Exception ex) { Console.WriteLine(ex); }
-        }
-
-        private void ProductSearchInp_Enter(object sender, System.EventArgs e)
-        {
-            try
-            {
-                if (ProductSearchInp.Text.Equals("Search ..."))
-                {
-                    ProductSearchInp.Text = "";
-                }
-            }
-            catch (Exception ex) { Console.WriteLine(ex); }
-        }
-
-        private void ProductSearchInp_Leave(object sender, System.EventArgs e)
-        {
-            try
-            {
-                if (ProductSearchInp.Text.Length <= 0)
-                {
-                    ProductSearchInp.Text = "Search ...";
-                    ProductSearchInp.ForeColor = Color.DarkGray;
                 }
             }
             catch (Exception ex) { Console.WriteLine(ex); }
@@ -131,32 +109,10 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
 
         }
 
-        private void NameInp_Enter(object sender, EventArgs e)
-        {
-            if (NameInp.Text.Equals("Supplier Name ..."))
-            {
-                NameInp.Text = "";
-            }
-        }
-
-        private void NameInp_Leave(object sender, EventArgs e)
-        {
-            try
-            {
-                if (NameInp.Text.Length <= 0)
-                {
-                    NameInp.Text = "Supplier Name ...";
-                    NameInp.ForeColor = Color.DarkGray;
-                }
-            }
-            catch (Exception ex) { Console.WriteLine(ex); }
-        }
-
         private void NameInp_TextChanged(object sender, EventArgs e)
         {
             try
             {
-                NameInp.ForeColor = Color.Black;
                 if (NameInp.Focused && !string.IsNullOrEmpty(NameInp.Text))
                 {
                     NameResultContainer.Controls.Clear();
@@ -168,7 +124,8 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
                         {
                             SearchResultControl res = new SearchResultControl();
                             res.details_Import(supplier);
-                            NameResultContainer.Controls.Add(res);
+                            res.TabStop = false;
+							NameResultContainer.Controls.Add(res);
                         }
                     }
                     if (NameResultContainer.Controls.Count <= 4)
@@ -193,8 +150,7 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
         {
             try
             {
-                NameInp.Text = "Supplier Name ...";
-                NameInp.ForeColor = Color.DarkGray;
+                NameInp.Text = "";
                 NameResultContainer.Height = 0;
                 SupplierNameLb.Text = "";
 
@@ -316,8 +272,7 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
                     SupplierDTO supplier = SupplierBUS.Instance.getById(SearchResultControl.id.ToString());
                     SupplierNameLb.Text = supplier.TenNhaCungCap;
                     NameResultContainer.Height = 0;
-                    NameInp.Text = "Supplier Name ...";
-                    NameInp.ForeColor = Color.DarkGray;
+                    NameInp.Text = "";
                     CartHandler();
                     SearchResultControl.clicked = false;
                 }
@@ -331,7 +286,8 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
                     {
                         BookUserControl product = new BookUserControl(1);
                         product.details(book);
-                        BookContainer.Controls.Add(product);
+                        product.TabStop = false;
+						BookContainer.Controls.Add(product);
                     }
                     FilterUserControl.ApplyClicked = false;
                 }
@@ -353,7 +309,7 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
 
                 double shopPaid = 0;
                 double arrear = 0;
-                if (ShopPaidTxb.Text.Length > 0 && !ShopPaidTxb.Text.Equals("Shop Paid ...") && total > 0)
+                if (ShopPaidTxb.Text.Length > 0 && total > 0)
                 {
                     shopPaid = Convert.ToDouble(ShopPaidTxb.Text);
                     if (shopPaid > total)
@@ -392,18 +348,6 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
             catch (Exception ex) { Console.WriteLine(ex); }
         }
 
-        private void ShopPaidTxb_Enter(object sender, System.EventArgs e)
-        {
-            try
-            {
-                if (ShopPaidTxb.Text.Equals("Shop Paid ..."))
-                {
-                    ShopPaidTxb.Text = "";
-                }
-            }
-            catch (Exception ex) { Console.WriteLine(ex); }
-        }
-
         private void ShopPaidTxb_KeyPress(object sender, KeyPressEventArgs e)
         {
             try
@@ -411,6 +355,7 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
                 if (e.KeyChar == '\r')
                 {
                     TotalLb.Focus();
+                    CartHandler();
                     return;
                 }
 
@@ -425,25 +370,9 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
         private void ShopPaidTxb_MouseLeave(object sender, EventArgs e)
         {
             VndLb.Focus();
+            CartHandler();
         }
 
-        private void ShopPaidTxb_Leave(object sender, System.EventArgs e)
-        {
-            try
-            {
-                if (ShopPaidTxb.Text.Length <= 0)
-                {
-                    ShopPaidTxb.Text = "Shop Paid ...";
-                    ShopPaidTxb.ForeColor = Color.DarkGray;
-                }
-                else
-                {
-                    ShopPaidTxb.ForeColor = Color.Black;
-                    CartHandler();
-                }
-            }
-            catch (Exception ex) { Console.WriteLine(ex); }
-        }
 
         private void PrintBtn_Click(object sender, EventArgs e)
         {
@@ -486,8 +415,7 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
 
                     CartContainer.Controls.Clear();
                     importBillDetails.Clear();
-                    ShopPaidTxb.Text = "Shop Paid ...";
-                    ShopPaidTxb.ForeColor = Color.DarkGray;
+                    ShopPaidTxb.Text = "";
                     SupplierNameLb.Text = "";
                     supplierID = 0;
                     CartHandler();

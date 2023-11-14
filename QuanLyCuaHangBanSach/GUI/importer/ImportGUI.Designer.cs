@@ -36,7 +36,7 @@
 			this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
 			this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
 			this.pictureBox2 = new System.Windows.Forms.PictureBox();
-			this.ProductSearchInp = new System.Windows.Forms.TextBox();
+			this.ProductSearchInp = new Guna.UI2.WinForms.Guna2TextBox();
 			this.FilterBtn = new System.Windows.Forms.Button();
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.QRScanBtn = new Guna.UI.WinForms.GunaButton();
@@ -44,11 +44,12 @@
 			this.BookContainer = new System.Windows.Forms.FlowLayoutPanel();
 			this.panel3 = new System.Windows.Forms.Panel();
 			this.panel4 = new System.Windows.Forms.Panel();
+			this.ShopPaidTxb = new Guna.UI2.WinForms.Guna2TextBox();
+			this.panel7 = new System.Windows.Forms.Panel();
 			this.VndLb = new System.Windows.Forms.Label();
-			this.ShopPaidTxb = new Guna.UI.WinForms.GunaTextBox();
+			this.NameInp = new Guna.UI2.WinForms.Guna2TextBox();
 			this.ArrearMoneyLb = new System.Windows.Forms.Label();
 			this.ArrearLb = new System.Windows.Forms.Label();
-			this.NameInp = new Guna.UI.WinForms.GunaLineTextBox();
 			this.TotalMoneyLb = new System.Windows.Forms.Label();
 			this.NameResultContainer = new System.Windows.Forms.FlowLayoutPanel();
 			this.CartContainer = new System.Windows.Forms.FlowLayoutPanel();
@@ -121,7 +122,7 @@
 			this.flowLayoutPanel4.Location = new System.Drawing.Point(103, 82);
 			this.flowLayoutPanel4.Name = "flowLayoutPanel4";
 			this.flowLayoutPanel4.Size = new System.Drawing.Size(786, 48);
-			this.flowLayoutPanel4.TabIndex = 4;
+			this.flowLayoutPanel4.TabIndex = 0;
 			// 
 			// flowLayoutPanel5
 			// 
@@ -147,30 +148,44 @@
 			// 
 			// ProductSearchInp
 			// 
-			this.ProductSearchInp.BackColor = System.Drawing.Color.WhiteSmoke;
-			this.ProductSearchInp.BorderStyle = System.Windows.Forms.BorderStyle.None;
-			this.ProductSearchInp.Font = new System.Drawing.Font("#9Slide03 Cabin", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-			this.ProductSearchInp.ForeColor = System.Drawing.Color.DarkGray;
-			this.ProductSearchInp.Location = new System.Drawing.Point(35, 9);
-			this.ProductSearchInp.Margin = new System.Windows.Forms.Padding(3, 9, 3, 10);
+			this.ProductSearchInp.BorderThickness = 0;
+			this.ProductSearchInp.Cursor = System.Windows.Forms.Cursors.IBeam;
+			this.ProductSearchInp.DefaultText = "";
+			this.ProductSearchInp.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+			this.ProductSearchInp.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+			this.ProductSearchInp.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+			this.ProductSearchInp.DisabledState.Parent = this.ProductSearchInp;
+			this.ProductSearchInp.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+			this.ProductSearchInp.FillColor = System.Drawing.Color.WhiteSmoke;
+			this.ProductSearchInp.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+			this.ProductSearchInp.FocusedState.Parent = this.ProductSearchInp;
+			this.ProductSearchInp.Font = new System.Drawing.Font("#9Slide03 Cabin", 11F);
+			this.ProductSearchInp.ForeColor = System.Drawing.Color.Black;
+			this.ProductSearchInp.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+			this.ProductSearchInp.HoverState.Parent = this.ProductSearchInp;
+			this.ProductSearchInp.Location = new System.Drawing.Point(36, 5);
+			this.ProductSearchInp.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this.ProductSearchInp.Name = "ProductSearchInp";
-			this.ProductSearchInp.Size = new System.Drawing.Size(212, 22);
-			this.ProductSearchInp.TabIndex = 1;
-			this.ProductSearchInp.Text = "Search ...";
+			this.ProductSearchInp.PasswordChar = '\0';
+			this.ProductSearchInp.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+			this.ProductSearchInp.PlaceholderText = "Tìm kiếm sản phẩm ...";
+			this.ProductSearchInp.SelectedText = "";
+			this.ProductSearchInp.ShadowDecoration.Parent = this.ProductSearchInp;
+			this.ProductSearchInp.Size = new System.Drawing.Size(215, 30);
+			this.ProductSearchInp.TabIndex = 0;
 			this.ProductSearchInp.TextChanged += new System.EventHandler(this.ProductSearchInp_TextChanged);
-			this.ProductSearchInp.Enter += new System.EventHandler(this.ProductSearchInp_Enter);
-			this.ProductSearchInp.Leave += new System.EventHandler(this.ProductSearchInp_Leave);
+			this.ProductSearchInp.MouseLeave += new System.EventHandler(this.ShopPaidTxb_MouseLeave);
 			// 
 			// FilterBtn
 			// 
 			this.FilterBtn.BackColor = System.Drawing.Color.White;
 			this.FilterBtn.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.FilterBtn.Image = ((System.Drawing.Image)(resources.GetObject("FilterBtn.Image")));
-			this.FilterBtn.Location = new System.Drawing.Point(256, 5);
-			this.FilterBtn.Margin = new System.Windows.Forms.Padding(6, 5, 0, 0);
+			this.FilterBtn.Location = new System.Drawing.Point(257, 5);
+			this.FilterBtn.Margin = new System.Windows.Forms.Padding(2, 5, 0, 0);
 			this.FilterBtn.Name = "FilterBtn";
 			this.FilterBtn.Size = new System.Drawing.Size(30, 30);
-			this.FilterBtn.TabIndex = 2;
+			this.FilterBtn.TabIndex = 1;
 			this.FilterBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
 			this.FilterBtn.UseVisualStyleBackColor = false;
 			this.FilterBtn.Click += new System.EventHandler(this.FilterBtn_Click);
@@ -186,6 +201,7 @@
 			// 
 			// QRScanBtn
 			// 
+			this.QRScanBtn.Animated = true;
 			this.QRScanBtn.AnimationHoverSpeed = 0.07F;
 			this.QRScanBtn.AnimationSpeed = 0.03F;
 			this.QRScanBtn.BackColor = System.Drawing.Color.Transparent;
@@ -194,13 +210,13 @@
 			this.QRScanBtn.BorderSize = 1;
 			this.QRScanBtn.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.QRScanBtn.DialogResult = System.Windows.Forms.DialogResult.None;
-			this.QRScanBtn.FocusedColor = System.Drawing.Color.Empty;
+			this.QRScanBtn.FocusedColor = System.Drawing.Color.PaleTurquoise;
 			this.QRScanBtn.Font = new System.Drawing.Font("Segoe UI", 9F);
 			this.QRScanBtn.ForeColor = System.Drawing.Color.White;
 			this.QRScanBtn.Image = ((System.Drawing.Image)(resources.GetObject("QRScanBtn.Image")));
 			this.QRScanBtn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			this.QRScanBtn.ImageSize = new System.Drawing.Size(26, 26);
-			this.QRScanBtn.Location = new System.Drawing.Point(446, 3);
+			this.QRScanBtn.Location = new System.Drawing.Point(447, 3);
 			this.QRScanBtn.Name = "QRScanBtn";
 			this.QRScanBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
 			this.QRScanBtn.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
@@ -209,8 +225,7 @@
 			this.QRScanBtn.OnPressedColor = System.Drawing.Color.Black;
 			this.QRScanBtn.Radius = 8;
 			this.QRScanBtn.Size = new System.Drawing.Size(42, 42);
-			this.QRScanBtn.TabIndex = 0;
-			this.QRScanBtn.Click += new System.EventHandler(this.QRScanBtn_Click);
+			this.QRScanBtn.TabIndex = 1;
 			// 
 			// FilterContainer
 			// 
@@ -238,15 +253,16 @@
 			this.panel3.Location = new System.Drawing.Point(913, -8);
 			this.panel3.Name = "panel3";
 			this.panel3.Size = new System.Drawing.Size(359, 702);
-			this.panel3.TabIndex = 10;
+			this.panel3.TabIndex = 1;
 			// 
 			// panel4
 			// 
-			this.panel4.Controls.Add(this.VndLb);
 			this.panel4.Controls.Add(this.ShopPaidTxb);
+			this.panel4.Controls.Add(this.panel7);
+			this.panel4.Controls.Add(this.VndLb);
+			this.panel4.Controls.Add(this.NameInp);
 			this.panel4.Controls.Add(this.ArrearMoneyLb);
 			this.panel4.Controls.Add(this.ArrearLb);
-			this.panel4.Controls.Add(this.NameInp);
 			this.panel4.Controls.Add(this.TotalMoneyLb);
 			this.panel4.Controls.Add(this.NameResultContainer);
 			this.panel4.Controls.Add(this.CartContainer);
@@ -259,7 +275,44 @@
 			this.panel4.Location = new System.Drawing.Point(24, 8);
 			this.panel4.Name = "panel4";
 			this.panel4.Size = new System.Drawing.Size(300, 668);
-			this.panel4.TabIndex = 3;
+			this.panel4.TabIndex = 0;
+			// 
+			// ShopPaidTxb
+			// 
+			this.ShopPaidTxb.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+			this.ShopPaidTxb.Cursor = System.Windows.Forms.Cursors.IBeam;
+			this.ShopPaidTxb.DefaultText = "";
+			this.ShopPaidTxb.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+			this.ShopPaidTxb.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+			this.ShopPaidTxb.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+			this.ShopPaidTxb.DisabledState.Parent = this.ShopPaidTxb;
+			this.ShopPaidTxb.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+			this.ShopPaidTxb.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+			this.ShopPaidTxb.FocusedState.Parent = this.ShopPaidTxb;
+			this.ShopPaidTxb.Font = new System.Drawing.Font("#9Slide03 Cabin Medium", 10F);
+			this.ShopPaidTxb.ForeColor = System.Drawing.Color.Black;
+			this.ShopPaidTxb.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+			this.ShopPaidTxb.HoverState.Parent = this.ShopPaidTxb;
+			this.ShopPaidTxb.Location = new System.Drawing.Point(16, 563);
+			this.ShopPaidTxb.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+			this.ShopPaidTxb.Name = "ShopPaidTxb";
+			this.ShopPaidTxb.PasswordChar = '\0';
+			this.ShopPaidTxb.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+			this.ShopPaidTxb.PlaceholderText = "Cửa hàng đưa ...";
+			this.ShopPaidTxb.SelectedText = "";
+			this.ShopPaidTxb.ShadowDecoration.Parent = this.ShopPaidTxb;
+			this.ShopPaidTxb.Size = new System.Drawing.Size(229, 30);
+			this.ShopPaidTxb.TabIndex = 2;
+			this.ShopPaidTxb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ShopPaidTxb_KeyPress);
+			this.ShopPaidTxb.MouseLeave += new System.EventHandler(this.ShopPaidTxb_MouseLeave);
+			// 
+			// panel7
+			// 
+			this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+			this.panel7.Location = new System.Drawing.Point(4, 89);
+			this.panel7.Name = "panel7";
+			this.panel7.Size = new System.Drawing.Size(244, 1);
+			this.panel7.TabIndex = 27;
 			// 
 			// VndLb
 			// 
@@ -273,27 +326,34 @@
 			this.VndLb.Text = "VND";
 			this.VndLb.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
-			// ShopPaidTxb
+			// NameInp
 			// 
-			this.ShopPaidTxb.BaseColor = System.Drawing.Color.White;
-			this.ShopPaidTxb.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-			this.ShopPaidTxb.Cursor = System.Windows.Forms.Cursors.IBeam;
-			this.ShopPaidTxb.FocusedBaseColor = System.Drawing.Color.White;
-			this.ShopPaidTxb.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-			this.ShopPaidTxb.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-			this.ShopPaidTxb.Font = new System.Drawing.Font("#9Slide03 Cabin Medium", 10F);
-			this.ShopPaidTxb.ForeColor = System.Drawing.Color.DarkGray;
-			this.ShopPaidTxb.Location = new System.Drawing.Point(15, 563);
-			this.ShopPaidTxb.Name = "ShopPaidTxb";
-			this.ShopPaidTxb.PasswordChar = '\0';
-			this.ShopPaidTxb.SelectedText = "";
-			this.ShopPaidTxb.Size = new System.Drawing.Size(229, 30);
-			this.ShopPaidTxb.TabIndex = 25;
-			this.ShopPaidTxb.Text = "Shop Paid ...";
-			this.ShopPaidTxb.Enter += new System.EventHandler(this.ShopPaidTxb_Enter);
-			this.ShopPaidTxb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ShopPaidTxb_KeyPress);
-			this.ShopPaidTxb.Leave += new System.EventHandler(this.ShopPaidTxb_Leave);
-			this.ShopPaidTxb.MouseLeave += new System.EventHandler(this.ShopPaidTxb_MouseLeave);
+			this.NameInp.BorderThickness = 0;
+			this.NameInp.Cursor = System.Windows.Forms.Cursors.IBeam;
+			this.NameInp.DefaultText = "";
+			this.NameInp.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+			this.NameInp.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+			this.NameInp.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+			this.NameInp.DisabledState.Parent = this.NameInp;
+			this.NameInp.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+			this.NameInp.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+			this.NameInp.FocusedState.Parent = this.NameInp;
+			this.NameInp.Font = new System.Drawing.Font("#9Slide03 Cabin", 12F);
+			this.NameInp.ForeColor = System.Drawing.Color.Black;
+			this.NameInp.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+			this.NameInp.HoverState.Parent = this.NameInp;
+			this.NameInp.Location = new System.Drawing.Point(4, 50);
+			this.NameInp.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+			this.NameInp.Name = "NameInp";
+			this.NameInp.PasswordChar = '\0';
+			this.NameInp.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+			this.NameInp.PlaceholderText = "Tìm kiếm tên nhà cung cấp  ...";
+			this.NameInp.SelectedText = "";
+			this.NameInp.ShadowDecoration.Parent = this.NameInp;
+			this.NameInp.Size = new System.Drawing.Size(244, 36);
+			this.NameInp.TabIndex = 0;
+			this.NameInp.TextChanged += new System.EventHandler(this.NameInp_TextChanged);
+			this.NameInp.MouseLeave += new System.EventHandler(this.ShopPaidTxb_MouseLeave);
 			// 
 			// ArrearMoneyLb
 			// 
@@ -317,26 +377,6 @@
 			this.ArrearLb.TabIndex = 23;
 			this.ArrearLb.Text = "Còn thiếu:";
 			this.ArrearLb.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			// 
-			// NameInp
-			// 
-			this.NameInp.BackColor = System.Drawing.SystemColors.Window;
-			this.NameInp.Cursor = System.Windows.Forms.Cursors.IBeam;
-			this.NameInp.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-			this.NameInp.Font = new System.Drawing.Font("#9Slide03 Cabin", 12F);
-			this.NameInp.ForeColor = System.Drawing.Color.DarkGray;
-			this.NameInp.LineColor = System.Drawing.Color.Black;
-			this.NameInp.LineSize = 1;
-			this.NameInp.Location = new System.Drawing.Point(4, 51);
-			this.NameInp.Name = "NameInp";
-			this.NameInp.PasswordChar = '\0';
-			this.NameInp.SelectedText = "";
-			this.NameInp.Size = new System.Drawing.Size(244, 36);
-			this.NameInp.TabIndex = 1;
-			this.NameInp.Text = "Supplier Name ...";
-			this.NameInp.TextChanged += new System.EventHandler(this.NameInp_TextChanged);
-			this.NameInp.Enter += new System.EventHandler(this.NameInp_Enter);
-			this.NameInp.Leave += new System.EventHandler(this.NameInp_Leave);
 			// 
 			// TotalMoneyLb
 			// 
@@ -389,7 +429,7 @@
 			this.PrintBtn.Location = new System.Drawing.Point(4, 623);
 			this.PrintBtn.Name = "PrintBtn";
 			this.PrintBtn.Size = new System.Drawing.Size(293, 42);
-			this.PrintBtn.TabIndex = 17;
+			this.PrintBtn.TabIndex = 3;
 			this.PrintBtn.Text = "Print Receipt";
 			this.PrintBtn.UseVisualStyleBackColor = false;
 			this.PrintBtn.Click += new System.EventHandler(this.PrintBtn_Click);
@@ -401,7 +441,7 @@
 			this.AddCustomerBtn.Location = new System.Drawing.Point(255, 55);
 			this.AddCustomerBtn.Name = "AddCustomerBtn";
 			this.AddCustomerBtn.Size = new System.Drawing.Size(30, 30);
-			this.AddCustomerBtn.TabIndex = 12;
+			this.AddCustomerBtn.TabIndex = 1;
 			this.AddCustomerBtn.UseVisualStyleBackColor = true;
 			this.AddCustomerBtn.Click += new System.EventHandler(this.AddSupplierBtn_Click);
 			// 
@@ -532,14 +572,16 @@
 			this.LogoutBtn.ShadowDecoration.Parent = this.LogoutBtn;
 			this.LogoutBtn.Size = new System.Drawing.Size(40, 40);
 			this.LogoutBtn.TabIndex = 47;
+			this.LogoutBtn.TabStop = false;
 			this.LogoutBtn.Click += new System.EventHandler(this.LogOutBtn_Click);
 			// 
 			// ImportGUI
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
 			this.BackColor = System.Drawing.Color.White;
 			this.ClientSize = new System.Drawing.Size(1264, 681);
+			this.ControlBox = false;
 			this.Controls.Add(this.flowLayoutPanel1);
 			this.Controls.Add(this.panel3);
 			this.Controls.Add(this.FilterContainer);
@@ -554,7 +596,6 @@
 			this.flowLayoutPanel2.PerformLayout();
 			this.flowLayoutPanel4.ResumeLayout(false);
 			this.flowLayoutPanel5.ResumeLayout(false);
-			this.flowLayoutPanel5.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
 			this.panel1.ResumeLayout(false);
 			this.panel3.ResumeLayout(false);
@@ -576,20 +617,16 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel4;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel5;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.TextBox ProductSearchInp;
         private System.Windows.Forms.Button FilterBtn;
         private System.Windows.Forms.Panel panel1;
-        private Guna.UI.WinForms.GunaButton QRScanBtn;
         private System.Windows.Forms.Panel FilterContainer;
         private System.Windows.Forms.FlowLayoutPanel BookContainer;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label VndLb;
-        private Guna.UI.WinForms.GunaTextBox ShopPaidTxb;
         private System.Windows.Forms.Label ArrearMoneyLb;
         private System.Windows.Forms.Label ArrearLb;
         private System.Windows.Forms.Label SupplierNameLb;
-        private Guna.UI.WinForms.GunaLineTextBox NameInp;
         private System.Windows.Forms.Label TotalMoneyLb;
         private System.Windows.Forms.FlowLayoutPanel NameResultContainer;
         private System.Windows.Forms.FlowLayoutPanel CartContainer;
@@ -606,5 +643,10 @@
 		private System.Windows.Forms.Panel panel2;
 		private System.Windows.Forms.Panel panel6;
 		private Guna.UI2.WinForms.Guna2Button LogoutBtn;
+		private Guna.UI2.WinForms.Guna2TextBox ProductSearchInp;
+		private Guna.UI.WinForms.GunaButton QRScanBtn;
+		private Guna.UI2.WinForms.Guna2TextBox NameInp;
+		private System.Windows.Forms.Panel panel7;
+		private Guna.UI2.WinForms.Guna2TextBox ShopPaidTxb;
 	}
 }
