@@ -47,7 +47,6 @@ namespace QuanLyCuaHangBanSach.BUS
 		{
 			List<CustomerBillDTO> customerBillList = new List<CustomerBillDTO>();
 			DataTable dt = CustomerBillDAO.Instance.getAllInRange(year, startMonth, endMonth);
-
 			foreach (DataRow row in dt.Rows)
 			{
 				CustomerBillDTO customerBill = new CustomerBillDTO(row);
