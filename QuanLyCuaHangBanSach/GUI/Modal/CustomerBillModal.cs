@@ -243,18 +243,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
                     if (addBookToBillModal.isSaved)
                     {
-                        foreach (CustomerBillDetailDTO customerBillDetail in addBookToBillModal.selectedCustomerBillDetailList)
-                        {
-                            int idx = this.customerBillDetailList.FindIndex(
-                                book => book.MaSach == customerBillDetail.MaSach
-                            );
-
-                            if (idx == -1)
-                            {
-                                this.customerBillDetailList.Add(customerBillDetail);
-                                continue;
-                            }
-                        }
+                        customerBillDetailList = new List<CustomerBillDetailDTO>(addBookToBillModal.selectedCustomerBillDetailList);
                     }
                     this.loadCustomerBillDetailList();
                 }

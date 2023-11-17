@@ -217,7 +217,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             {
                 foreach (DataGridViewRow row in this.dgvAddBookToBillList.Rows)
                 {
-                    row.Cells[0].Value = headerCheckbox.Checked;
+                    row.Cells[0].Value = headerCheckboxBillList.Checked;
                 }
 
                 this.dgvAddBookToBillList.RefreshEdit();
