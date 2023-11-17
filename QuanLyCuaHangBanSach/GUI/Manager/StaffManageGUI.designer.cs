@@ -664,26 +664,28 @@
 
 		}
 
-		#endregion
-		private Guna.UI2.WinForms.Guna2TextBox searchInput;
-		private Guna.UI.WinForms.GunaComboBox genderCbx;
-		private Guna.UI.WinForms.GunaComboBox positionCbx;
-		private System.Windows.Forms.PictureBox pictureBox1;
-		private Guna.UI.WinForms.GunaAdvenceButton exportBtn;
-		private Guna.UI.WinForms.GunaAdvenceButton refreshBtn;
-		private Guna.UI.WinForms.GunaDataGridView dgvStaff;
-		private System.Windows.Forms.Panel line1;
-		private System.Windows.Forms.Panel panel1;
-		private Guna.UI.WinForms.GunaAdvenceButton editBtn;
-		private Guna.UI.WinForms.GunaAdvenceButton addBtn;
-		private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
-		private GradientPanel gradientPanel1;
-		private Guna.UI2.WinForms.Guna2TextBox salaryTo;
-		private Guna.UI2.WinForms.Guna2TextBox salaryFrom;
-		private System.Windows.Forms.Panel panel3;
+        #endregion
+        private Guna.UI2.WinForms.Guna2TextBox searchInput;
+        private Guna.UI.WinForms.GunaComboBox genderCbx;
+        private Guna.UI.WinForms.GunaComboBox positionCbx;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private Guna.UI.WinForms.GunaAdvenceButton exportBtn;
+        private Guna.UI.WinForms.GunaAdvenceButton refreshBtn;
+        private Guna.UI.WinForms.GunaDataGridView dgvStaff;
+        private System.Windows.Forms.Panel line1;
+        private System.Windows.Forms.Panel panel1;
+        private Guna.UI.WinForms.GunaAdvenceButton deleteBtn;
+        private Guna.UI.WinForms.GunaAdvenceButton editBtn;
+        private Guna.UI.WinForms.GunaAdvenceButton addBtn;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
+        private GradientPanel gradientPanel1;
+        private Guna.UI2.WinForms.Guna2TextBox salaryTo;
+        private Guna.UI2.WinForms.Guna2TextBox salaryFrom;
+        private System.Windows.Forms.Panel panel3;
+		private System.Windows.Forms.Panel panel5;
 		private System.Windows.Forms.Panel panel4;
-		private System.Windows.Forms.Panel panel2;
-		private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Column11;
         private System.Windows.Forms.DataGridViewTextBoxColumn maNhanVien;
         private System.Windows.Forms.DataGridViewTextBoxColumn tenNhanVien;
@@ -692,7 +694,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn soDienThoai;
         private System.Windows.Forms.DataGridViewTextBoxColumn luong;
         private System.Windows.Forms.DataGridViewTextBoxColumn chucVu;
-        private System.Windows.Forms.Panel panel5;
-        private Guna.UI.WinForms.GunaAdvenceButton deleteBtn;
     }
 }

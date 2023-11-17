@@ -77,8 +77,7 @@ namespace QuanLyCuaHangBanSach.DAO
         public DataTable searchData(string value)
         {
             string sql = $@"SELECT * FROM quyenhan 
-                            WHERE (maQuyenHan LIKE @maQuyenHan OR tenQuyenHan LIKE @tenQuyenHan)
-                            AND hienThi=1;";
+                            WHERE (maQuyenHan LIKE @maQuyenHan OR tenQuyenHan LIKE @tenQuyenHan);";
 
             return DataProvider.Instance.ExecuteQuery(sql,
                 new MySqlParameter[] {

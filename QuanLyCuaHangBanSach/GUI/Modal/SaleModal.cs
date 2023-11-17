@@ -107,14 +107,13 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 );
 
                 bool DateFromGreaterOrEqual = CustomValidation.Instance.checkDateTimePicker(
-                    this.dateTimeTo,
-                    this.errorDateTimeToMsg,
-                    new string[] { "after" },
-                    this.dateTimeFrom.Value,
-                    "Thời gian kết thúc phải lớn hơn hoặc bằng thời \n gian bắt đầu"
-                );
-
-                return isPhanTramValid && isSale && isDateTimeFrom && DateFromGreaterOrEqual;
+				    this.dateTimeTo,
+				    this.errorDateTimeToMsg,
+				    new string[] { "after" },
+				    this.dateTimeFrom.Value,
+				    "Thời gian kết thúc phải lớn hơn thời gian bắt đầu"
+			    );
+				return isPhanTramValid && isSale && isDateTimeFrom && DateFromGreaterOrEqual;
             }
             catch
             {
@@ -254,7 +253,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 this.errorDateTimeToMsg,
                 new string[] { "after" },
                 this.dateTimeFrom.Value,
-                "Thời gian kết thúc phải lớn hơn hoặc bằng thời gian bắt đầu"
+                "Thời gian kết thúc phải lớn hơn thời gian bắt đầu"
             );
         }
     }
