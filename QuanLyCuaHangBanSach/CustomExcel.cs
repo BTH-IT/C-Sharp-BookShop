@@ -196,28 +196,37 @@ namespace QuanLyCuaHangBanSach
         {
             try
             {
+                using (System.Windows.Forms.OpenFileDialog fil = new System.Windows.Forms.OpenFileDialog())
+                {
+                    if (fil.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                    {
+                        string path = fil.FileName;
 
-                OpenFileDialog fil = new OpenFileDialog();
-                fil.ShowDialog();
+                        if (path == string.Empty)
+                        {
+                            return null;
+                        }
 
-                string path = fil.FileName.ToString();
+                        using (var stream = File.Open(path, FileMode.Open, FileAccess.Read))
+                        {
+                            var reader = ExcelReaderFactory.CreateReader(stream);
+                            var result = reader.AsDataSet();
+                            var tables = result.Tables.Cast<DataTable>();
+                            return tables.ElementAt(0);
+                        }
+                    }
+                    else
+                    {
+                        // User canceled the file selection
+                        return null;
+                    }
+                }
 
-                if (path == string.Empty) return null;
-
-                var stream = File.Open(path, FileMode.Open, FileAccess.Read);
-
-                var reader = ExcelReaderFactory.CreateReader(stream);
-
-                var result = reader.AsDataSet();
-
-                var tables = result.Tables.Cast<DataTable>();
-
-                return tables.ElementAt(0);
             }
             catch (Exception ex)
             {
                 DataTable dt = new DataTable();
-                return dt;
+                return null;
             }
         }
     }

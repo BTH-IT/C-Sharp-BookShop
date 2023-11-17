@@ -13,7 +13,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
         public bool isSubmitSuccess = false;
         private List<CustomerBillDetailDTO> customerBillDetailList = new List<CustomerBillDetailDTO>();
         private int staffId;
-
+        private double salePrice = 0;
         public CustomerBillModal(int staffId)
         {
             InitializeComponent();
@@ -64,6 +64,25 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             }
         }
 
+        private void calculateTotal(double total)
+        {
+            if (this.saleCbx.SelectedIndex != 1 && this.saleCbx.SelectedIndex != 0)
+            {
+                int phanTram = SaleBUS.Instance.getById(this.saleCbx.SelectedValue.ToString()).PhanTram;
+
+                this.percentTxt.Text = phanTram + "%";
+
+                salePrice = total * (phanTram / 100.0);
+
+                this.totalPriceTxt.Text = (total - salePrice) + "";
+            }
+            else
+            {
+                this.percentTxt.Text = "Không có";
+                this.totalPriceTxt.Text = total + "";
+            }
+        }
+
         private void loadCustomerBillDetailList()
         {
             try
@@ -110,7 +129,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
                             total += customerBillDetail.DonGia;
 
-                            this.totalPriceTxt.Text = total.ToString();
+                            calculateTotal(total);
 
                             if (amount == remain) bookBill.plus.Enabled = false;
                         }
@@ -145,7 +164,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
                         total -= customerBillDetail.DonGia;
 
-                        this.totalPriceTxt.Text = total.ToString();
+                        calculateTotal(total);
                     };
 
                     bookBill.amountInput.MouseLeave += (object sender, EventArgs e) =>
@@ -187,7 +206,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
                             total += this.customerBillDetailList[idx].SoLuong * customerBillDetail.DonGia;
 
-                            this.totalPriceTxt.Text = total.ToString();
+                            calculateTotal(total);
                         }
                         catch
                         {
@@ -206,7 +225,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                     this.bookList.Controls.Add(bookBill);
                 }
 
-                this.totalPriceTxt.Text = total.ToString();
+                calculateTotal(total);
             }
             catch (Exception ex)
             {
@@ -218,12 +237,12 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
         {
             try
             {
-                this.loadCustomerBillDetailList();
                 this.loadCustomerCbx();
                 this.loadSaleCbx();
+                this.loadCustomerBillDetailList();
 
-                this.customerCbx.SelectedValue = 0;
-                this.saleCbx.SelectedValue = 0;
+                this.saleCbx.SelectedIndexChanged += this.saleCbx_SelectedIndexChanged;
+                this.customerCbx.SelectedIndexChanged += this.customerCbx_SelectedIndexChanged;
             }
             catch (Exception ex)
             {
@@ -348,6 +367,40 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void saleCbx_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            bool isCheckCbx2 = CustomValidation.Instance.checkCombobox(
+                this.saleCbx,
+                this.errorSaleMsg,
+                new string[] { "required" }
+            );
+
+            if (isCheckCbx2 && this.saleCbx.SelectedIndex != 1)
+            {
+                int phanTram = SaleBUS.Instance.getById(this.saleCbx.SelectedValue.ToString()).PhanTram;
+
+                this.percentTxt.Text = phanTram + "%";
+
+                double totalPrice = Convert.ToDouble(this.totalPriceTxt.Text) + salePrice;
+
+                salePrice = totalPrice * (phanTram / 100.0);
+
+                this.totalPriceTxt.Text = (totalPrice - salePrice) + "";
+            } else
+            {
+                this.percentTxt.Text = "Không có";
+            }
+        }
+
+        private void customerCbx_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CustomValidation.Instance.checkCombobox(
+                this.customerCbx,
+                this.errorCustomerMsg,
+                new string[] { "required" }
+            );
         }
     }
 }

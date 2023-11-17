@@ -37,23 +37,26 @@
             this.errorSaleMsg = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.saleCbx = new Guna.UI.WinForms.GunaComboBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.totalPriceTxt = new Guna.UI2.WinForms.Guna2TextBox();
-            this.nameLine = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.errorBookListMsg = new System.Windows.Forms.Label();
             this.gunaButton1 = new Guna.UI.WinForms.GunaButton();
             this.bookList = new System.Windows.Forms.FlowLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
-            this.submitBtn = new Guna.UI.WinForms.GunaButton();
-            this.cancelBtn = new Guna.UI.WinForms.GunaButton();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.percentTxt = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.totalPriceTxt = new Guna.UI2.WinForms.Guna2TextBox();
+            this.nameLine = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.cancelBtn = new Guna.UI.WinForms.GunaButton();
+            this.submitBtn = new Guna.UI.WinForms.GunaButton();
             this.panel2.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel6.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -116,8 +119,8 @@
             this.flowLayoutPanel1.AutoScrollMargin = new System.Drawing.Size(10, 10);
             this.flowLayoutPanel1.Controls.Add(this.panel2);
             this.flowLayoutPanel1.Controls.Add(this.panel6);
-            this.flowLayoutPanel1.Controls.Add(this.panel1);
             this.flowLayoutPanel1.Controls.Add(this.panel4);
+            this.flowLayoutPanel1.Controls.Add(this.panel1);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(11, 64);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(1200, 681);
@@ -176,71 +179,13 @@
             this.saleCbx.TabIndex = 32;
             this.saleCbx.TabStop = false;
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.totalPriceTxt);
-            this.panel1.Controls.Add(this.nameLine);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Location = new System.Drawing.Point(3, 97);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1194, 88);
-            this.panel1.TabIndex = 0;
-            // 
-            // totalPriceTxt
-            // 
-            this.totalPriceTxt.BackColor = System.Drawing.Color.Transparent;
-            this.totalPriceTxt.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
-            this.totalPriceTxt.BorderThickness = 0;
-            this.totalPriceTxt.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.totalPriceTxt.DefaultText = "";
-            this.totalPriceTxt.DisabledState.BorderColor = System.Drawing.Color.Transparent;
-            this.totalPriceTxt.DisabledState.FillColor = System.Drawing.Color.White;
-            this.totalPriceTxt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.totalPriceTxt.DisabledState.Parent = this.totalPriceTxt;
-            this.totalPriceTxt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.totalPriceTxt.Enabled = false;
-            this.totalPriceTxt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.totalPriceTxt.FocusedState.Parent = this.totalPriceTxt;
-            this.totalPriceTxt.Font = new System.Drawing.Font("#9Slide03 Cabin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalPriceTxt.ForeColor = System.Drawing.Color.Black;
-            this.totalPriceTxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.totalPriceTxt.HoverState.Parent = this.totalPriceTxt;
-            this.totalPriceTxt.Location = new System.Drawing.Point(390, 43);
-            this.totalPriceTxt.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.totalPriceTxt.Name = "totalPriceTxt";
-            this.totalPriceTxt.PasswordChar = '\0';
-            this.totalPriceTxt.PlaceholderText = "Tổng tiền";
-            this.totalPriceTxt.SelectedText = "";
-            this.totalPriceTxt.ShadowDecoration.Parent = this.totalPriceTxt;
-            this.totalPriceTxt.Size = new System.Drawing.Size(414, 36);
-            this.totalPriceTxt.TabIndex = 0;
-            this.totalPriceTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // nameLine
-            // 
-            this.nameLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(212)))), ((int)(((byte)(191)))));
-            this.nameLine.Location = new System.Drawing.Point(395, 80);
-            this.nameLine.Name = "nameLine";
-            this.nameLine.Size = new System.Drawing.Size(414, 1);
-            this.nameLine.TabIndex = 8;
-            // 
-            // label3
-            // 
-            this.label3.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label3.Location = new System.Drawing.Point(523, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(151, 37);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Tổng tiền";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // panel4
             // 
             this.panel4.Controls.Add(this.errorBookListMsg);
             this.panel4.Controls.Add(this.gunaButton1);
             this.panel4.Controls.Add(this.bookList);
             this.panel4.Controls.Add(this.label2);
-            this.panel4.Location = new System.Drawing.Point(3, 191);
+            this.panel4.Location = new System.Drawing.Point(3, 97);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1194, 478);
             this.panel4.TabIndex = 1;
@@ -305,36 +250,108 @@
             this.label2.Text = "Danh sách các sản phẩm";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // submitBtn
+            // panel1
             // 
-            this.submitBtn.Animated = true;
-            this.submitBtn.AnimationHoverSpeed = 0.05F;
-            this.submitBtn.AnimationSpeed = 0.05F;
-            this.submitBtn.BackColor = System.Drawing.Color.Transparent;
-            this.submitBtn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.submitBtn.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.submitBtn.BorderSize = 2;
-            this.submitBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.submitBtn.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.submitBtn.FocusedColor = System.Drawing.Color.PaleTurquoise;
-            this.submitBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.submitBtn.ForeColor = System.Drawing.Color.White;
-            this.submitBtn.Image = null;
-            this.submitBtn.ImageSize = new System.Drawing.Size(20, 20);
-            this.submitBtn.Location = new System.Drawing.Point(634, 778);
-            this.submitBtn.Name = "submitBtn";
-            this.submitBtn.OnHoverBaseColor = System.Drawing.Color.White;
-            this.submitBtn.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.submitBtn.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.submitBtn.OnHoverImage = null;
-            this.submitBtn.OnPressedColor = System.Drawing.Color.Black;
-            this.submitBtn.Radius = 22;
-            this.submitBtn.Size = new System.Drawing.Size(200, 50);
-            this.submitBtn.TabIndex = 2;
-            this.submitBtn.TabStop = false;
-            this.submitBtn.Text = "Lưu";
-            this.submitBtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.submitBtn.Click += new System.EventHandler(this.submitBtn_Click);
+            this.panel1.Controls.Add(this.percentTxt);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.totalPriceTxt);
+            this.panel1.Controls.Add(this.nameLine);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Location = new System.Drawing.Point(3, 581);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1194, 88);
+            this.panel1.TabIndex = 0;
+            // 
+            // percentTxt
+            // 
+            this.percentTxt.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.percentTxt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.percentTxt.Location = new System.Drawing.Point(218, 16);
+            this.percentTxt.Name = "percentTxt";
+            this.percentTxt.Size = new System.Drawing.Size(133, 40);
+            this.percentTxt.TabIndex = 12;
+            this.percentTxt.Text = "Không có";
+            this.percentTxt.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label5
+            // 
+            this.label5.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label5.Location = new System.Drawing.Point(4, 16);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(208, 40);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "Phần trăm khuyến mãi:";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label4
+            // 
+            this.label4.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label4.Location = new System.Drawing.Point(1130, 16);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(51, 31);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "VNĐ";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // totalPriceTxt
+            // 
+            this.totalPriceTxt.BackColor = System.Drawing.Color.Transparent;
+            this.totalPriceTxt.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
+            this.totalPriceTxt.BorderThickness = 0;
+            this.totalPriceTxt.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.totalPriceTxt.DefaultText = "";
+            this.totalPriceTxt.DisabledState.BorderColor = System.Drawing.Color.Transparent;
+            this.totalPriceTxt.DisabledState.FillColor = System.Drawing.Color.White;
+            this.totalPriceTxt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.totalPriceTxt.DisabledState.Parent = this.totalPriceTxt;
+            this.totalPriceTxt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.totalPriceTxt.Enabled = false;
+            this.totalPriceTxt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.totalPriceTxt.FocusedState.Parent = this.totalPriceTxt;
+            this.totalPriceTxt.Font = new System.Drawing.Font("#9Slide03 Cabin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalPriceTxt.ForeColor = System.Drawing.Color.Black;
+            this.totalPriceTxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.totalPriceTxt.HoverState.Parent = this.totalPriceTxt;
+            this.totalPriceTxt.Location = new System.Drawing.Point(760, 14);
+            this.totalPriceTxt.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.totalPriceTxt.Name = "totalPriceTxt";
+            this.totalPriceTxt.PasswordChar = '\0';
+            this.totalPriceTxt.PlaceholderText = "Tổng tiền";
+            this.totalPriceTxt.SelectedText = "";
+            this.totalPriceTxt.ShadowDecoration.Parent = this.totalPriceTxt;
+            this.totalPriceTxt.Size = new System.Drawing.Size(363, 36);
+            this.totalPriceTxt.TabIndex = 0;
+            // 
+            // nameLine
+            // 
+            this.nameLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(212)))), ((int)(((byte)(191)))));
+            this.nameLine.Location = new System.Drawing.Point(767, 50);
+            this.nameLine.Name = "nameLine";
+            this.nameLine.Size = new System.Drawing.Size(414, 1);
+            this.nameLine.TabIndex = 8;
+            // 
+            // label3
+            // 
+            this.label3.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label3.Location = new System.Drawing.Point(653, 16);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(100, 37);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Tổng tiền:";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label1
+            // 
+            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label1.Font = new System.Drawing.Font("#9Slide03 Cabin", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(1222, 45);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Tạo Đơn Khách Hàng";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // cancelBtn
             // 
@@ -367,24 +384,43 @@
             this.cancelBtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
             // 
-            // label1
+            // submitBtn
             // 
-            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.Font = new System.Drawing.Font("#9Slide03 Cabin", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1222, 45);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Tạo Đơn Khách Hàng";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.submitBtn.Animated = true;
+            this.submitBtn.AnimationHoverSpeed = 0.05F;
+            this.submitBtn.AnimationSpeed = 0.05F;
+            this.submitBtn.BackColor = System.Drawing.Color.Transparent;
+            this.submitBtn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.submitBtn.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.submitBtn.BorderSize = 2;
+            this.submitBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.submitBtn.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.submitBtn.FocusedColor = System.Drawing.Color.PaleTurquoise;
+            this.submitBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.submitBtn.ForeColor = System.Drawing.Color.White;
+            this.submitBtn.Image = null;
+            this.submitBtn.ImageSize = new System.Drawing.Size(20, 20);
+            this.submitBtn.Location = new System.Drawing.Point(634, 778);
+            this.submitBtn.Name = "submitBtn";
+            this.submitBtn.OnHoverBaseColor = System.Drawing.Color.White;
+            this.submitBtn.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.submitBtn.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.submitBtn.OnHoverImage = null;
+            this.submitBtn.OnPressedColor = System.Drawing.Color.Black;
+            this.submitBtn.Radius = 22;
+            this.submitBtn.Size = new System.Drawing.Size(200, 50);
+            this.submitBtn.TabIndex = 2;
+            this.submitBtn.TabStop = false;
+            this.submitBtn.Text = "Lưu";
+            this.submitBtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.submitBtn.Click += new System.EventHandler(this.submitBtn_Click);
             // 
             // CustomerBillModal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1222, 749);
+            this.ClientSize = new System.Drawing.Size(1222, 845);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.submitBtn);
             this.Controls.Add(this.cancelBtn);
@@ -402,9 +438,9 @@
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
-            this.panel1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -419,8 +455,6 @@
         private System.Windows.Forms.Label errorSaleMsg;
         private System.Windows.Forms.Label label18;
         private Guna.UI.WinForms.GunaComboBox saleCbx;
-        private Guna.UI.WinForms.GunaButton submitBtn;
-        private Guna.UI.WinForms.GunaButton cancelBtn;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel nameLine;
@@ -431,5 +465,10 @@
         private Guna.UI2.WinForms.Guna2TextBox totalPriceTxt;
         private Guna.UI.WinForms.GunaButton gunaButton1;
         private System.Windows.Forms.Label errorBookListMsg;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label percentTxt;
+        private Guna.UI.WinForms.GunaButton cancelBtn;
+        private Guna.UI.WinForms.GunaButton submitBtn;
     }
 }
