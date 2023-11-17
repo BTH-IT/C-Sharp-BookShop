@@ -3,14 +3,9 @@ using QuanLyCuaHangBanSach.DTO;
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Drawing;
+using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Windows.Media;
-using ZXing.QrCode.Internal;
 using Color = System.Drawing.Color;
-using QuanLyCuaHangBanSach.DAO;
-using System.Windows.Ink;
-using System.Windows.Forms.DataVisualization.Charting;
 
 namespace QuanLyCuaHangBanSach.GUI.Manager
 {
@@ -22,13 +17,13 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 			//
 			// Event Assign
 			//
-			boughtFrom.MouseLeave += searchInput_MouseLeave;
-			boughtTo.MouseLeave += searchInput_MouseLeave;
+			revenueFrom.MouseLeave += searchInput_MouseLeave;
+			revenueTo.MouseLeave += searchInput_MouseLeave;
 
-			boughtFrom.TextChanged += searchInput_TextChanged;
-			boughtTo.TextChanged += searchInput_TextChanged;
+			revenueFrom.TextChanged += searchInput_TextChanged;
+			revenueTo.TextChanged += searchInput_TextChanged;
 
-			boughtTo.KeyPress += boughtFrom_KeyPress;
+			revenueTo.KeyPress += boughtFrom_KeyPress;
 		}
 
 		private void loadBillListToDataView(List<StaffDTO> staffList)
@@ -113,20 +108,29 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 			{
 				List<StaffDTO> staffList = StaffBUS.Instance.search(query);
 
-				if (!string.IsNullOrEmpty(boughtFrom.Text) && string.IsNullOrEmpty(boughtTo.Text))
+				if (!string.IsNullOrEmpty(revenueFrom.Text) && string.IsNullOrEmpty(revenueTo.Text))
 				{
-					staffList = staffList.FindAll(staff => StaffBUS.Instance.getSoldRevenue(staff.Ma.ToString()) >= Convert.ToDouble(boughtFrom.Text));
+					staffList = staffList.FindAll(staff => StaffBUS.Instance.getSoldRevenue(staff.Ma.ToString()) >= Convert.ToDouble(revenueFrom.Text));
 				}
 
-				if (string.IsNullOrEmpty(boughtFrom.Text) && !string.IsNullOrEmpty(boughtTo.Text))
+				if (string.IsNullOrEmpty(revenueFrom.Text) && !string.IsNullOrEmpty(revenueTo.Text))
 				{
-					staffList = staffList.FindAll(staff => StaffBUS.Instance.getSoldRevenue(staff.Ma.ToString()) <= Convert.ToDouble(boughtTo.Text));
+					staffList = staffList.FindAll(staff => StaffBUS.Instance.getSoldRevenue(staff.Ma.ToString()) <= Convert.ToDouble(revenueTo.Text));
 				}
 
-				if (!string.IsNullOrEmpty(boughtFrom.Text) && !string.IsNullOrEmpty(boughtTo.Text))
+				if (!string.IsNullOrEmpty(revenueFrom.Text) && !string.IsNullOrEmpty(revenueTo.Text))
 				{
-					staffList = staffList.FindAll(staff => StaffBUS.Instance.getSoldRevenue(staff.Ma.ToString()) >= Convert.ToDouble(boughtFrom.Text)
-													 && StaffBUS.Instance.getSoldRevenue(staff.Ma.ToString()) <= Convert.ToDouble(boughtTo.Text));
+					if (!string.IsNullOrEmpty(revenueFrom.Text) && !string.IsNullOrEmpty(revenueTo.Text))
+					{
+						staffList = staffList.FindAll(staff => StaffBUS.Instance.getSoldRevenue(staff.Ma.ToString()) >= Convert.ToDouble(revenueFrom.Text)
+													 && StaffBUS.Instance.getSoldRevenue(staff.Ma.ToString()) <= Convert.ToDouble(revenueTo.Text));
+					}
+					else
+					{
+						revenueFrom.Clear();
+						revenueTo.Clear();
+						MessageBox.Show("Doanh thu từ phải nhỏ hơn hoặc bằng Doanh thu đến");
+					}
 				}
 
 				return staffList;
@@ -137,13 +141,29 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 			}
 		}
 
-		private void searchInput_TextChanged(object sender, EventArgs e)
+		private readonly int debounceInterval = 500; // Đặt khoảng thời gian debounce là 500 milliseconds
+		private DateTime lastTextChanged = DateTime.MinValue;
+		private readonly object debounceLock = new object();
+		private async void searchInput_TextChanged(object sender, EventArgs e)
 		{
 			try
 			{
-                List<StaffDTO> staffList = handleFilter(searchInput.Text);
-				loadBillListToDataView(staffList);
+				lock (debounceLock)
+				{
+					lastTextChanged = DateTime.Now;
+				}
 
+				await Task.Delay(debounceInterval);
+
+				lock (debounceLock)
+				{
+					var now = DateTime.Now;
+					if ((now - lastTextChanged).TotalMilliseconds >= debounceInterval)
+					{
+						List<StaffDTO> staffList = handleFilter(searchInput.Text);
+						loadBillListToDataView(staffList);
+					}
+				}
             }
 			catch (Exception ex)
 			{
@@ -157,8 +177,8 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 			{
 				searchInput.Clear();
 
-				boughtFrom.Clear();
-				boughtTo.Clear();
+				revenueFrom.Clear();
+				revenueTo.Clear();
 
 
 				List<StaffDTO> staffList = StaffBUS.Instance.getAllData();
@@ -172,7 +192,13 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
 		private void exportBtn_Click(object sender, EventArgs e)
 		{
-			try
+            if (dgvStaff.Rows.Count <= 0)
+            {
+                MessageBox.Show("Bảng dữ liệu hiện tại chưa có dòng dữ liệu nào để xuất excel!");
+                return;
+
+            }
+            try
 			{
                 string[] headerList = new string[] { "Mã nhân viên", "Tên nhân viên", "Số điện thoại", "Doanh thu" };
 
@@ -211,10 +237,5 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 		{
 			Hide();
 		}
-
-        private void dgvStaff_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-    }
+	}
 }

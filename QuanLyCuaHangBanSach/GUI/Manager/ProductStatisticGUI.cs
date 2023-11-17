@@ -13,6 +13,7 @@ using Color = System.Drawing.Color;
 using QuanLyCuaHangBanSach.DAO;
 using System.Windows.Ink;
 using System.IO;
+using System.Threading.Tasks;
 
 namespace QuanLyCuaHangBanSach.GUI.Manager
 {
@@ -339,19 +340,28 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
 				if (!string.IsNullOrEmpty(revenueFrom.Text) && !string.IsNullOrEmpty(revenueTo.Text))
 				{
-					List<DataRow> rowsToRemove = new List<DataRow>();
-
-					foreach (DataRow row in bookListDT.Rows)
+					if (Convert.ToInt32(revenueFrom.Text) <= Convert.ToInt32(revenueTo.Text))
 					{
-						if (!(Convert.ToDouble(row["doanhThu"]) >= Convert.ToInt32(revenueFrom.Text) && Convert.ToDouble(row["doanhThu"]) <= Convert.ToInt32(revenueTo.Text)))
+						List<DataRow> rowsToRemove = new List<DataRow>();
+
+						foreach (DataRow row in bookListDT.Rows)
 						{
-							rowsToRemove.Add(row);
+							if (!(Convert.ToDouble(row["doanhThu"]) >= Convert.ToInt32(revenueFrom.Text) && Convert.ToDouble(row["doanhThu"]) <= Convert.ToInt32(revenueTo.Text)))
+							{
+								rowsToRemove.Add(row);
+							}
 						}
-					}
 
-					foreach (DataRow rowToRemove in rowsToRemove)
+						foreach (DataRow rowToRemove in rowsToRemove)
+						{
+							bookListDT.Rows.Remove(rowToRemove);
+						} 
+					}
+					else
 					{
-						bookListDT.Rows.Remove(rowToRemove);
+						revenueFrom.Clear();
+						revenueTo.Clear();
+						MessageBox.Show("Doanh thu từ phải nhỏ hơn hoặc bằng Doanh thu đến");
 					}
 				}
 
@@ -377,13 +387,29 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             return bookList;
 		}
 
-		private void searchInput_TextChanged(object sender, EventArgs e)
+		private readonly int debounceInterval = 500; // Đặt khoảng thời gian debounce là 500 milliseconds
+		private DateTime lastTextChanged = DateTime.MinValue;
+		private readonly object debounceLock = new object();
+		private async void searchInput_TextChanged(object sender, EventArgs e)
 		{
 			try
 			{
-                List<BookDTO> bookList = convertTableToList(handleFilter(searchInput.Text));
-				loadBookListToDataView(bookList);
+				lock (debounceLock)
+				{
+					lastTextChanged = DateTime.Now;
+				}
 
+				await Task.Delay(debounceInterval);
+
+				lock (debounceLock)
+				{
+					var now = DateTime.Now;
+					if ((now - lastTextChanged).TotalMilliseconds >= debounceInterval)
+					{
+						List<BookDTO> bookList = convertTableToList(handleFilter(searchInput.Text));
+						loadBookListToDataView(bookList);
+					}
+				}
             }
 			catch (Exception ex)
 			{
@@ -414,7 +440,12 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
 		private void exportBtn_Click(object sender, EventArgs e)
 		{
-			try
+            if (dgvBook.Rows.Count <= 0)
+            {
+                MessageBox.Show("Bảng dữ liệu hiện tại chưa có dòng dữ liệu nào để xuất excel!");
+                return;
+            }
+            try
 			{
 				string[] headerList = new string[] { "Mã sách", "Tên sách", "Giá bán", "Giá nhập", "Đã bán", "Doanh thu" };
 

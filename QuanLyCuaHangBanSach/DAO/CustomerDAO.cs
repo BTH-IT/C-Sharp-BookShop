@@ -96,7 +96,7 @@ namespace QuanLyCuaHangBanSach.DAO
         public List<CustomerDTO> SearchByPhoneNum(string num)
         {
             DataTable dataTable = DataProvider.Instance.ExecuteQuery(
-                "SELECT * FROM khachhang WHERE soDienThoai LIKE @SoDienThoai and hienThi=1;",
+                "SELECT * FROM khachhang WHERE soDienThoai LIKE @SoDienThoai;",
                 new MySqlParameter[] { new MySqlParameter("@SoDienThoai", $"%{num}%") }
             );
 
