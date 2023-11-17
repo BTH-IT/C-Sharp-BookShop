@@ -154,9 +154,16 @@ namespace QuanLyCuaHangBanSach.DAO
 
         public bool delete(string id)
         {
-            string sql = $@"DELETE FROM WHERE maDonNhapHang=@maDonNhapHang;";
+            string sql = $@"DELETE FROM chitietphieunhap WHERE maDonNhapHang=@maDonNhapHang;";
 
             int rowChanged = DataProvider.Instance.ExecuteNonQuery(sql,
+                new MySqlParameter[] {
+                    new MySqlParameter("@maDonNhapHang", id),
+                });
+
+            sql = $@"DELETE FROM phieunhap WHERE maDonNhapHang=@maDonNhapHang;";
+
+            rowChanged = DataProvider.Instance.ExecuteNonQuery(sql,
                 new MySqlParameter[] {
                     new MySqlParameter("@maDonNhapHang", id),
                 });
@@ -178,6 +185,20 @@ namespace QuanLyCuaHangBanSach.DAO
             ImportBillDTO importBill = new ImportBillDTO(dataTable.Rows[0]);
 
             return importBill;
+        }
+        public bool createBookAmount(string madon, string id, int amount)
+        {
+            string sql = $@"UPDATE chitietphieunhap SET soLuongDoiTra=soLuongDoiTra+@soLuongDoiTra
+                             WHERE maDonNhapHang=@maDonNhapHang and maSach=@maSach;";
+
+            int rowChanged = DataProvider.Instance.ExecuteNonQuery(sql,
+            new MySqlParameter[] {
+                new MySqlParameter("@soLuongDoiTra", amount),
+                    new MySqlParameter("@maSach", id),
+                    new MySqlParameter("@maDonNhapHang", madon),
+                });
+
+            return rowChanged > 0;
         }
     }
 }

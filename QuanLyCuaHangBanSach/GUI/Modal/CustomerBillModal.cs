@@ -19,6 +19,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             InitializeComponent();
 
             this.staffId = staffId;
+            customerBillDetailList = new List<CustomerBillDetailDTO>();
         }
 
         private void loadCustomerCbx()
@@ -27,8 +28,8 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             {
                 List<CustomerDTO> customerList = CustomerBUS.Instance.getAllData();
 
-                customerList.Insert(0, new CustomerDTO(-1, "", "Chọn khách hàng", 0, "", 0));
-                customerList.Insert(1, new CustomerDTO(0, "", "Không có khách hàng", 0, "", 0));
+                customerList.Insert(0, new CustomerDTO(-1, "", "", 0, "Chọn khách hàng", 0));
+                customerList.Insert(1, new CustomerDTO(0, "", "", 0, "Không có khách hàng", 0));
 
                 this.customerCbx.ValueMember = "Ma";
                 this.customerCbx.DisplayMember = "SoDienThoai";
@@ -234,26 +235,35 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
         {
             try
             {
-                using (AddBookToCustomerBillModal addBookToBillModal = new AddBookToCustomerBillModal(customerBillDetailList))
+                List<CustomerBillDetailDTO> copiedList = new List<CustomerBillDetailDTO>();
+                copiedList.AddRange(customerBillDetailList);
+                using (AddBookToCustomerBillModal addBookToBillModal = new AddBookToCustomerBillModal(copiedList))
                 {
                     addBookToBillModal.ShowDialog();
 
-
-                    foreach (CustomerBillDetailDTO customerBillDetail in addBookToBillModal.selectedCustomerBillDetailList)
+                    foreach (CustomerBillDetailDTO item in customerBillDetailList)
                     {
-                        int idx = this.customerBillDetailList.FindIndex(
-                            book => book.MaSach == customerBillDetail.MaSach
-                        );
-
-                        if (idx == -1)
-                        {
-                            this.customerBillDetailList.Add(customerBillDetail);
-                            continue;
-                        }
-
-                        this.customerBillDetailList[idx].SoLuong += customerBillDetail.SoLuong;
+                        Console.WriteLine(item.MaSach);
+                        Console.WriteLine(item.MaSach);
                     }
 
+                    if (addBookToBillModal.isSaved)
+                    {
+                        foreach (CustomerBillDetailDTO customerBillDetail in addBookToBillModal.selectedCustomerBillDetailList)
+                        {
+                            int idx = this.customerBillDetailList.FindIndex(
+                                book => book.MaSach == customerBillDetail.MaSach
+                            );
+
+                            if (idx == -1)
+                            {
+                                this.customerBillDetailList.Add(customerBillDetail);
+                                continue;
+                            }
+
+                            this.customerBillDetailList[idx].SoLuong += customerBillDetail.SoLuong;
+                        }
+                    }
                     this.loadCustomerBillDetailList();
                 }
             }

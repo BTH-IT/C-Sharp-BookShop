@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BookManageGUI));
             this.line1 = new System.Windows.Forms.Panel();
             this.dgvBook = new Guna.UI.WinForms.GunaDataGridView();
@@ -58,7 +58,6 @@
             this.publisherCbx = new Guna.UI.WinForms.GunaComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.searchInput = new Guna.UI2.WinForms.Guna2TextBox();
-            this.panel5 = new System.Windows.Forms.Panel();
             this.gradientPanel1 = new QuanLyCuaHangBanSach.GradientPanel();
             this.priceTo = new Guna.UI2.WinForms.Guna2TextBox();
             this.priceFrom = new Guna.UI2.WinForms.Guna2TextBox();
@@ -66,11 +65,12 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBook)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel5.SuspendLayout();
             this.gradientPanel1.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // line1
@@ -86,21 +86,21 @@
             this.dgvBook.AllowUserToAddRows = false;
             this.dgvBook.AllowUserToDeleteRows = false;
             this.dgvBook.AllowUserToResizeRows = false;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            this.dgvBook.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dgvBook.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvBook.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvBook.BackgroundColor = System.Drawing.Color.White;
             this.dgvBook.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvBook.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvBook.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvBook.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvBook.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvBook.ColumnHeadersHeight = 67;
             this.dgvBook.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvBook.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -115,33 +115,33 @@
             this.Column8,
             this.Column9,
             this.Column6});
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvBook.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvBook.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvBook.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvBook.EnableHeadersVisualStyles = false;
             this.dgvBook.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvBook.Location = new System.Drawing.Point(0, 61);
             this.dgvBook.Name = "dgvBook";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvBook.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvBook.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvBook.RowHeadersVisible = false;
             this.dgvBook.RowHeadersWidth = 51;
             this.dgvBook.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvBook.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvBook.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvBook.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dgvBook.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvBook.RowTemplate.Height = 115;
@@ -459,7 +459,7 @@
             // 
             // authorCbx
             // 
-            this.authorCbx.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.authorCbx.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.authorCbx.BackColor = System.Drawing.Color.Transparent;
             this.authorCbx.BaseColor = System.Drawing.Color.White;
             this.authorCbx.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
@@ -472,7 +472,7 @@
             this.authorCbx.ForeColor = System.Drawing.Color.Black;
             this.authorCbx.FormattingEnabled = true;
             this.authorCbx.ItemHeight = 30;
-            this.authorCbx.Location = new System.Drawing.Point(270, 7);
+            this.authorCbx.Location = new System.Drawing.Point(304, 7);
             this.authorCbx.Name = "authorCbx";
             this.authorCbx.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.authorCbx.OnHoverItemForeColor = System.Drawing.Color.White;
@@ -484,7 +484,7 @@
             // 
             // bookTypeCbx
             // 
-            this.bookTypeCbx.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.bookTypeCbx.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.bookTypeCbx.BackColor = System.Drawing.Color.Transparent;
             this.bookTypeCbx.BaseColor = System.Drawing.Color.White;
             this.bookTypeCbx.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
@@ -497,19 +497,19 @@
             this.bookTypeCbx.ForeColor = System.Drawing.Color.Black;
             this.bookTypeCbx.FormattingEnabled = true;
             this.bookTypeCbx.ItemHeight = 30;
-            this.bookTypeCbx.Location = new System.Drawing.Point(410, 7);
+            this.bookTypeCbx.Location = new System.Drawing.Point(444, 7);
             this.bookTypeCbx.Name = "bookTypeCbx";
             this.bookTypeCbx.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.bookTypeCbx.OnHoverItemForeColor = System.Drawing.Color.White;
             this.bookTypeCbx.Radius = 6;
-            this.bookTypeCbx.Size = new System.Drawing.Size(149, 36);
+            this.bookTypeCbx.Size = new System.Drawing.Size(139, 36);
             this.bookTypeCbx.TabIndex = 26;
             this.bookTypeCbx.TabStop = false;
             this.bookTypeCbx.SelectedIndexChanged += new System.EventHandler(this.bookTypeCbx_SelectedIndexChanged);
             // 
             // publisherCbx
             // 
-            this.publisherCbx.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.publisherCbx.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.publisherCbx.BackColor = System.Drawing.Color.Transparent;
             this.publisherCbx.BaseColor = System.Drawing.Color.White;
             this.publisherCbx.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
@@ -523,13 +523,13 @@
             this.publisherCbx.FormattingEnabled = true;
             this.publisherCbx.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.publisherCbx.ItemHeight = 30;
-            this.publisherCbx.Location = new System.Drawing.Point(565, 7);
+            this.publisherCbx.Location = new System.Drawing.Point(592, 7);
             this.publisherCbx.Margin = new System.Windows.Forms.Padding(3, 3, 100, 3);
             this.publisherCbx.Name = "publisherCbx";
             this.publisherCbx.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.publisherCbx.OnHoverItemForeColor = System.Drawing.Color.White;
             this.publisherCbx.Radius = 6;
-            this.publisherCbx.Size = new System.Drawing.Size(163, 36);
+            this.publisherCbx.Size = new System.Drawing.Size(136, 36);
             this.publisherCbx.TabIndex = 27;
             this.publisherCbx.TabStop = false;
             this.publisherCbx.SelectedIndexChanged += new System.EventHandler(this.publisherCbx_SelectedIndexChanged);
@@ -573,21 +573,6 @@
             this.searchInput.Size = new System.Drawing.Size(179, 30);
             this.searchInput.TabIndex = 31;
             this.searchInput.TextChanged += new System.EventHandler(this.searchInput_TextChanged);
-            // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.searchInput);
-            this.panel5.Controls.Add(this.bookTypeCbx);
-            this.panel5.Controls.Add(this.gradientPanel1);
-            this.panel5.Controls.Add(this.authorCbx);
-            this.panel5.Controls.Add(this.line1);
-            this.panel5.Controls.Add(this.pictureBox1);
-            this.panel5.Controls.Add(this.publisherCbx);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel5.Location = new System.Drawing.Point(0, 0);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1044, 61);
-            this.panel5.TabIndex = 32;
             // 
             // gradientPanel1
             // 
@@ -706,9 +691,24 @@
             this.label1.Text = "$";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.searchInput);
+            this.panel5.Controls.Add(this.bookTypeCbx);
+            this.panel5.Controls.Add(this.gradientPanel1);
+            this.panel5.Controls.Add(this.authorCbx);
+            this.panel5.Controls.Add(this.line1);
+            this.panel5.Controls.Add(this.pictureBox1);
+            this.panel5.Controls.Add(this.publisherCbx);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel5.Location = new System.Drawing.Point(0, 0);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(1044, 61);
+            this.panel5.TabIndex = 32;
+            // 
             // BookManageGUI
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
             this.ClientSize = new System.Drawing.Size(1044, 684);
@@ -725,8 +725,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvBook)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel5.ResumeLayout(false);
             this.gradientPanel1.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

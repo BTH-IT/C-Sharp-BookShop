@@ -37,6 +37,7 @@
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.exportBtn = new Guna.UI.WinForms.GunaAdvenceButton();
             this.refreshBtn = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.deleteBtn = new Guna.UI.WinForms.GunaAdvenceButton();
             this.searchInput = new Guna.UI2.WinForms.Guna2TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.addBtn = new Guna.UI.WinForms.GunaAdvenceButton();
@@ -52,7 +53,6 @@
             this.printPdfBtn = new Guna.UI.WinForms.GunaAdvenceButton();
             this.viewMoreBtn = new Guna.UI.WinForms.GunaAdvenceButton();
             this.importExcelBtn = new Guna.UI.WinForms.GunaAdvenceButton();
-            this.deleteBtn = new Guna.UI.WinForms.GunaAdvenceButton();
             this.dgvImportBill = new Guna.UI.WinForms.GunaDataGridView();
             this.Column9 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -155,6 +155,40 @@
             this.refreshBtn.TabIndex = 7;
             this.refreshBtn.Text = "Làm mới";
             this.refreshBtn.Click += new System.EventHandler(this.refreshBtn_Click);
+            // 
+            // deleteBtn
+            // 
+            this.deleteBtn.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.deleteBtn.AnimationHoverSpeed = 0.07F;
+            this.deleteBtn.AnimationSpeed = 0.03F;
+            this.deleteBtn.BackColor = System.Drawing.Color.Transparent;
+            this.deleteBtn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.deleteBtn.BorderColor = System.Drawing.Color.Black;
+            this.deleteBtn.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.deleteBtn.CheckedBorderColor = System.Drawing.Color.Black;
+            this.deleteBtn.CheckedForeColor = System.Drawing.Color.White;
+            this.deleteBtn.CheckedImage = ((System.Drawing.Image)(resources.GetObject("deleteBtn.CheckedImage")));
+            this.deleteBtn.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.deleteBtn.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.deleteBtn.FocusedColor = System.Drawing.Color.Empty;
+            this.deleteBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deleteBtn.ForeColor = System.Drawing.Color.White;
+            this.deleteBtn.Image = ((System.Drawing.Image)(resources.GetObject("deleteBtn.Image")));
+            this.deleteBtn.ImageSize = new System.Drawing.Size(20, 20);
+            this.deleteBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.deleteBtn.Location = new System.Drawing.Point(956, 6);
+            this.deleteBtn.Name = "deleteBtn";
+            this.deleteBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.deleteBtn.OnHoverBorderColor = System.Drawing.Color.Transparent;
+            this.deleteBtn.OnHoverForeColor = System.Drawing.Color.White;
+            this.deleteBtn.OnHoverImage = null;
+            this.deleteBtn.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.deleteBtn.OnPressedColor = System.Drawing.Color.Black;
+            this.deleteBtn.Radius = 6;
+            this.deleteBtn.Size = new System.Drawing.Size(78, 42);
+            this.deleteBtn.TabIndex = 6;
+            this.deleteBtn.Text = "Xóa";
+            this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
             // 
             // searchInput
             // 
@@ -495,40 +529,6 @@
             this.importExcelBtn.Text = "Nhập hàng từ excel";
             this.importExcelBtn.Click += new System.EventHandler(this.importExcelBtn_Click);
             // 
-            // deleteBtn
-            // 
-            this.deleteBtn.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.deleteBtn.AnimationHoverSpeed = 0.07F;
-            this.deleteBtn.AnimationSpeed = 0.03F;
-            this.deleteBtn.BackColor = System.Drawing.Color.Transparent;
-            this.deleteBtn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.deleteBtn.BorderColor = System.Drawing.Color.Black;
-            this.deleteBtn.CheckedBaseColor = System.Drawing.Color.Gray;
-            this.deleteBtn.CheckedBorderColor = System.Drawing.Color.Black;
-            this.deleteBtn.CheckedForeColor = System.Drawing.Color.White;
-            this.deleteBtn.CheckedImage = ((System.Drawing.Image)(resources.GetObject("deleteBtn.CheckedImage")));
-            this.deleteBtn.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.deleteBtn.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.deleteBtn.FocusedColor = System.Drawing.Color.Empty;
-            this.deleteBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.deleteBtn.ForeColor = System.Drawing.Color.White;
-            this.deleteBtn.Image = ((System.Drawing.Image)(resources.GetObject("deleteBtn.Image")));
-            this.deleteBtn.ImageSize = new System.Drawing.Size(20, 20);
-            this.deleteBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.deleteBtn.Location = new System.Drawing.Point(956, 6);
-            this.deleteBtn.Name = "deleteBtn";
-            this.deleteBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.deleteBtn.OnHoverBorderColor = System.Drawing.Color.Transparent;
-            this.deleteBtn.OnHoverForeColor = System.Drawing.Color.White;
-            this.deleteBtn.OnHoverImage = null;
-            this.deleteBtn.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.deleteBtn.OnPressedColor = System.Drawing.Color.Black;
-            this.deleteBtn.Radius = 6;
-            this.deleteBtn.Size = new System.Drawing.Size(78, 42);
-            this.deleteBtn.TabIndex = 6;
-            this.deleteBtn.Text = "Xóa";
-            this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
-            // 
             // dgvImportBill
             // 
             this.dgvImportBill.AllowUserToAddRows = false;
@@ -618,7 +618,6 @@
             this.dgvImportBill.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dgvImportBill.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvImportBill_CellContentClick);
             this.dgvImportBill.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvImportBill_CellDoubleClick);
-            this.dgvImportBill.SortCompare += new System.Windows.Forms.DataGridViewSortCompareEventHandler(this.dgvImportBill_SortCompare);
             // 
             // Column9
             // 
@@ -841,7 +840,7 @@
             // 
             // ImportBillGUI
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
             this.ClientSize = new System.Drawing.Size(1044, 684);
@@ -872,6 +871,7 @@
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private Guna.UI.WinForms.GunaAdvenceButton exportBtn;
         private Guna.UI.WinForms.GunaAdvenceButton refreshBtn;
+        private Guna.UI.WinForms.GunaAdvenceButton deleteBtn;
         private Guna.UI2.WinForms.Guna2TextBox searchInput;
         private System.Windows.Forms.PictureBox pictureBox1;
         private Guna.UI.WinForms.GunaAdvenceButton addBtn;
@@ -905,6 +905,5 @@
         private Guna.UI2.WinForms.Guna2TextBox toPriceTxt;
         private System.Windows.Forms.Panel panel9;
         private Guna.UI.WinForms.GunaMediumCheckBox gunaMediumCheckBox1;
-        private Guna.UI.WinForms.GunaAdvenceButton deleteBtn;
     }
 }

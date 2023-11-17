@@ -64,7 +64,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                     SupplierBUS.Instance.getById(importBill.MaNhaCungCap.ToString()).TenNhaCungCap,
                     StaffBUS.Instance.getById(importBill.MaNhanVien.ToString()).Ten,
                     importBill.NgayLap.GetDateTimeFormats()[0],
-                    string.Format("{0:N0} VNĐ", importBill.TongTien),
+                    importBill.TongTien,
                 });
                 }
             }
@@ -131,31 +131,6 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             }
         }
 
-        private readonly int debounceInterval = 500; // Đặt khoảng thời gian debounce là 500 milliseconds
-        private DateTime lastTextChanged = DateTime.MinValue;
-        private readonly object debounceLock = new object();
-
-        private async void DebounceTextBox_TextChanged(object sender, EventArgs e)
-        {
-            lock (debounceLock)
-            {
-                lastTextChanged = DateTime.Now;
-            }
-
-            await Task.Delay(debounceInterval);
-
-            lock (debounceLock)
-            {
-                var now = DateTime.Now;
-                if ((now - lastTextChanged).TotalMilliseconds >= debounceInterval)
-                {
-                    List<ImportBillDTO> importBillList = handleFilter(this.searchInput.Text.ToString());
-
-                    this.loadImportBillListToDataView(importBillList);
-                }
-            }
-        }
-
         private List<ImportBillDTO> handleFilter(string searchText)
         {
             try
@@ -175,7 +150,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                     }
                     else
                     {
-                        if (Convert.ToDouble(this.fromPriceTxt.Text.ToString()) >= Convert.ToDouble(this.toPriceTxt.Text.ToString()))
+                        if (Convert.ToDouble(this.fromPriceTxt.Text.ToString()) > Convert.ToDouble(this.toPriceTxt.Text.ToString()))
                         {
                             MessageBox.Show("Tổng tiền đến phải bé hơn hoặc bằng tổng tiền từ");
                         }
@@ -186,6 +161,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                                         && item.TongTien <= Convert.ToDouble(this.toPriceTxt.Text.ToString()
                             ));
                         }
+                        
                     }
                 }
 
@@ -322,6 +298,31 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             }
         }
 
+        private readonly int debounceInterval = 500; // Đặt khoảng thời gian debounce là 500 milliseconds
+        private DateTime lastTextChanged = DateTime.MinValue;
+        private readonly object debounceLock = new object();
+
+        private async void DebounceTextBox_TextChanged(object sender, EventArgs e)
+        {
+            lock (debounceLock)
+            {
+                lastTextChanged = DateTime.Now;
+            }
+
+            await Task.Delay(debounceInterval);
+
+            lock (debounceLock)
+            {
+                var now = DateTime.Now;
+                if ((now - lastTextChanged).TotalMilliseconds >= debounceInterval)
+                {
+                    List<ImportBillDTO> importBillList = handleFilter(this.searchInput.Text.ToString());
+
+                    this.loadImportBillListToDataView(importBillList);
+                }
+            }
+        }
+
         private void fromPriceTxt_TextChanged(object sender, EventArgs e)
         {
             try
@@ -388,12 +389,12 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
                 if (!isHaveSelect)
                 {
-                    MessageBox.Show("Bạn chưa chọn những đơn hàng cần xóa");
+                    MessageBox.Show("Bạn chưa chọn những đơn nhập hàng cần xóa");
                     return;
                 }
 
                 DialogResult dlgResult = MessageBox.Show(
-                    "Bạn chắc chắn muốn xóa các đơn hàng đã chọn chứ chứ?",
+                    "Bạn chắc chắn muốn xóa các đơn nhập hàng đã chọn chứ?",
                     "Xác nhận",
                     MessageBoxButtons.YesNo,
                     MessageBoxIcon.Question,
@@ -514,8 +515,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             {
                 DataTable dt = CustomExcel.Instance.ImportFile();
 
-                if (dt == null)
-                {
+                if (dt == null) {
                     MessageBox.Show("Lỗi chưa chọn file hoặc file excel không đúng dữ liệu!");
                     return;
                 }
@@ -633,40 +633,6 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             }
         }
 
-        private void dgvImportBill_SortCompare(object sender, DataGridViewSortCompareEventArgs e)
-        {
-            if (e.Column.Index == dgvImportBill.Columns.Count - 1) // Check if sorting the last column
-            {
-                // Extract the values for sorting from the cell values
-                double value1 = GetSortingValue(e.CellValue1);
-                double value2 = GetSortingValue(e.CellValue2);
-
-                // Compare the extracted values
-                e.SortResult = value1.CompareTo(value2);
-
-                // Mark the comparison as handled to prevent default sorting
-                e.Handled = true;
-            }
-        }
-
-        private double GetSortingValue(object cellValue)
-        {
-            if (cellValue == null)
-                return 0;
-
-            // Extract the numerical value from the string (remove " VNĐ" and parse)
-            string stringValue = cellValue.ToString();
-            stringValue = stringValue.Replace(".", "").Replace(" VNĐ", "");
-
-            if (double.TryParse(stringValue, out double numericValue))
-            {
-                // Convert the numeric value to a sortable string
-                return numericValue;
-            }
-
-            return 0;
-        }
-
         private void gunaMediumCheckBox1_CheckedChanged(object sender, EventArgs e)
         {
             this.fromPriceTxt.Enabled = this.gunaMediumCheckBox1.Checked;
@@ -677,7 +643,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         {
             try
             {
-                if (this.dgvImportBill.CurrentCell.RowIndex < 0)
+                if (this.dgvImportBill.CurrentCell.RowIndex < 0 || this.dgvImportBill.CurrentCell == null)
                 {
                     MessageBox.Show("Hãy chọn dòng dữ liệu muốn thao tác");
                     return;

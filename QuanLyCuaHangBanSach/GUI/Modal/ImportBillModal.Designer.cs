@@ -67,7 +67,7 @@
             this.submitBtn.ForeColor = System.Drawing.Color.White;
             this.submitBtn.Image = null;
             this.submitBtn.ImageSize = new System.Drawing.Size(20, 20);
-            this.submitBtn.Location = new System.Drawing.Point(634, 730);
+            this.submitBtn.Location = new System.Drawing.Point(634, 617);
             this.submitBtn.Name = "submitBtn";
             this.submitBtn.OnHoverBaseColor = System.Drawing.Color.White;
             this.submitBtn.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
@@ -76,7 +76,7 @@
             this.submitBtn.OnPressedColor = System.Drawing.Color.Black;
             this.submitBtn.Radius = 22;
             this.submitBtn.Size = new System.Drawing.Size(200, 50);
-            this.submitBtn.TabIndex = 11;
+            this.submitBtn.TabIndex = 2;
             this.submitBtn.TabStop = false;
             this.submitBtn.Text = "Lưu";
             this.submitBtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -120,7 +120,7 @@
             this.gunaButton1.OnPressedDepth = 0;
             this.gunaButton1.Radius = 12;
             this.gunaButton1.Size = new System.Drawing.Size(214, 50);
-            this.gunaButton1.TabIndex = 9;
+            this.gunaButton1.TabIndex = 0;
             this.gunaButton1.TabStop = false;
             this.gunaButton1.Text = "Thêm sách vào danh sách";
             this.gunaButton1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -131,7 +131,7 @@
             this.bookList.AutoScroll = true;
             this.bookList.Location = new System.Drawing.Point(3, 85);
             this.bookList.Name = "bookList";
-            this.bookList.Size = new System.Drawing.Size(1188, 413);
+            this.bookList.Size = new System.Drawing.Size(1188, 347);
             this.bookList.TabIndex = 29;
             // 
             // label2
@@ -171,7 +171,7 @@
             this.totalPriceTxt.SelectedText = "";
             this.totalPriceTxt.ShadowDecoration.Parent = this.totalPriceTxt;
             this.totalPriceTxt.Size = new System.Drawing.Size(414, 36);
-            this.totalPriceTxt.TabIndex = 34;
+            this.totalPriceTxt.TabIndex = 0;
             // 
             // nameLine
             // 
@@ -189,7 +189,7 @@
             this.panel1.Location = new System.Drawing.Point(603, 3);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(594, 88);
-            this.panel1.TabIndex = 3;
+            this.panel1.TabIndex = 0;
             // 
             // label3
             // 
@@ -217,7 +217,7 @@
             this.cancelBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.cancelBtn.Image = null;
             this.cancelBtn.ImageSize = new System.Drawing.Size(20, 20);
-            this.cancelBtn.Location = new System.Drawing.Point(388, 730);
+            this.cancelBtn.Location = new System.Drawing.Point(388, 617);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.cancelBtn.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
@@ -226,7 +226,7 @@
             this.cancelBtn.OnPressedColor = System.Drawing.Color.White;
             this.cancelBtn.Radius = 22;
             this.cancelBtn.Size = new System.Drawing.Size(200, 50);
-            this.cancelBtn.TabIndex = 10;
+            this.cancelBtn.TabIndex = 1;
             this.cancelBtn.TabStop = false;
             this.cancelBtn.Text = "Hủy";
             this.cancelBtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -240,8 +240,8 @@
             this.flowLayoutPanel1.Controls.Add(this.panel4);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(11, 64);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1200, 660);
-            this.flowLayoutPanel1.TabIndex = 12;
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1200, 545);
+            this.flowLayoutPanel1.TabIndex = 0;
             // 
             // panel2
             // 
@@ -304,8 +304,8 @@
             this.panel4.Controls.Add(this.label2);
             this.panel4.Location = new System.Drawing.Point(3, 97);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1194, 548);
-            this.panel4.TabIndex = 9;
+            this.panel4.Size = new System.Drawing.Size(1194, 440);
+            this.panel4.TabIndex = 2;
             // 
             // errorBookListMsg
             // 
@@ -322,7 +322,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1222, 792);
+            this.ClientSize = new System.Drawing.Size(1222, 671);
             this.Controls.Add(this.submitBtn);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cancelBtn);

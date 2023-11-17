@@ -28,8 +28,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 if (account != null)
                 {
                     staffs = StaffBUS.Instance.getAllNoAccountNotId(account.MaNhanVien);
-                }
-                else
+                } else
                 {
                     staffs = StaffBUS.Instance.getAllNoAccount();
                 }
@@ -160,7 +159,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                     int maNhanVien = Convert.ToInt32(this.staffComboBox.SelectedValue);
 
                     bool isStaffHasAccount = AccountBUS.Instance.getByStaffId(maNhanVien.ToString()) != null ? true : false;
-                    if (isStaffHasAccount)
+                    if (isStaffHasAccount && account == null)
                     {
                         MessageBox.Show("Nhân viên đã có tài khoản", "Thông báo");
                         return;

@@ -17,9 +17,10 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         public BookManageGUI()
         {
             InitializeComponent();
-        }
+			dgvBook.StandardTab = true;
+		}
 
-        private void renderCheckBoxDgv()
+		private void renderCheckBoxDgv()
         {
             try
             {
@@ -156,23 +157,6 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             }
         }
 
-        private void headerCheckbox_Clicked(object sender, EventArgs e)
-        {
-            try
-            {
-                foreach (DataGridViewRow row in this.dgvBook.Rows)
-                {
-                    row.Cells[0].Value = headerCheckbox.Checked;
-                }
-
-                this.dgvBook.RefreshEdit();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex);
-            }
-        }
-
         private readonly int debounceInterval = 500; // Đặt khoảng thời gian debounce là 500 milliseconds
         private DateTime lastTextChanged = DateTime.MinValue;
         private readonly object debounceLock = new object();
@@ -195,6 +179,23 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
                     this.loadBookListToDataView(bookList);
                 }
+            }
+        }
+
+        private void headerCheckbox_Clicked(object sender, EventArgs e)
+        {
+            try
+            {
+                foreach (DataGridViewRow row in this.dgvBook.Rows)
+                {
+                    row.Cells[0].Value = headerCheckbox.Checked;
+                }
+
+                this.dgvBook.RefreshEdit();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
             }
         }
 
@@ -223,8 +224,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                                 item => item.GiaBan >= Convert.ToDouble(this.priceFrom.Text.ToString())
                                         && item.GiaBan <= Convert.ToDouble(this.priceTo.Text.ToString()
                             ));
-                        }
-                        else
+                        } else
                         {
                             MessageBox.Show("Giá bán đến phải bé hơn hoặc bằng giá bán từ");
                         }

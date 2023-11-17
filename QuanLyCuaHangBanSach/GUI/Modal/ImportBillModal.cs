@@ -187,23 +187,28 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
         {
             try
             {
+                List<ImportBillDetailDTO> copiedList = new List<ImportBillDetailDTO>();
+                copiedList.AddRange(importBillDetailList);
                 using (AddBookToImportBillModal addBookToBillModal = new AddBookToImportBillModal(importBillDetailList))
                 {
                     addBookToBillModal.ShowDialog();
 
-                    foreach (ImportBillDetailDTO importBillDetail in addBookToBillModal.selectedImportBillDetailList)
+                    if (addBookToBillModal.isSaved)
                     {
-                        int idx = this.importBillDetailList.FindIndex(
-                            book => book.MaSach == importBillDetail.MaSach
-                        );
-
-                        if (idx == -1)
+                        foreach (ImportBillDetailDTO importBillDetail in addBookToBillModal.selectedImportBillDetailList)
                         {
-                            this.importBillDetailList.Add(importBillDetail);
-                            continue;
-                        }
+                            int idx = this.importBillDetailList.FindIndex(
+                                book => book.MaSach == importBillDetail.MaSach
+                            );
 
-                        this.importBillDetailList[idx].SoLuong += importBillDetail.SoLuong;
+                            if (idx == -1)
+                            {
+                                this.importBillDetailList.Add(importBillDetail);
+                                continue;
+                            }
+
+                            this.importBillDetailList[idx].SoLuong += importBillDetail.SoLuong;
+                        }
                     }
 
                     this.loadImportBillDetailList();

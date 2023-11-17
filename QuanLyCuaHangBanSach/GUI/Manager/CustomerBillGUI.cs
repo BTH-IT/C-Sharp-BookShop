@@ -73,7 +73,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                             this.dgvCustomerBill.Rows.Add(new object[] {
                             false,
                             customerBill.MaDonKhachHang,
-                            "Không có",
+                            "Vãng lai",
                             "Không có",
                             StaffBUS.Instance.getById(customerBill.MaNhanVien.ToString()).Ten,
                             "Không có",
@@ -104,7 +104,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                             this.dgvCustomerBill.Rows.Add(new object[] {
                             false,
                             customerBill.MaDonKhachHang,
-                            "Không có",
+							"Vãng lai",
                             "Không có",
                             StaffBUS.Instance.getById(customerBill.MaNhanVien.ToString()).Ten,
                             sale.TenKhuyenMai,
@@ -143,8 +143,8 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             {
                 List<CustomerDTO> customerList = CustomerBUS.Instance.getAllData();
 
-                customerList.Insert(0, new CustomerDTO(-1, "", "Tất cả khách hàng", 0, "", 0));
-                customerList.Insert(1, new CustomerDTO(0, "", "Không có", 0, "", 0));
+                customerList.Insert(0, new CustomerDTO(-1, "", "Tất cả khách hàng", 0, "Tất cả khách hàng", 0));
+                customerList.Insert(1, new CustomerDTO(0, "", "Vãng lai", 0, "Vãng lai", 0));
 
                 this.customerCbx.ValueMember = "Ma";
                 this.customerCbx.DisplayMember = "SoDienThoai";
@@ -261,9 +261,11 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                     }
                     else
                     {
-                        if (Convert.ToDouble(this.fromPriceTxt.Text.ToString()) >= Convert.ToDouble(this.toPriceTxt.Text.ToString()))
+                        if (Convert.ToDouble(this.fromPriceTxt.Text.ToString()) > Convert.ToDouble(this.toPriceTxt.Text.ToString()))
                         {
-                            MessageBox.Show("Tổng tiền đến phải bé hơn hoặc bằng tổng tiền từ");
+                            MessageBox.Show("Tổng tiền từ phải bé hơn hoặc bằng tổng tiền đến");
+                            this.fromPriceTxt.Clear();
+                            this.toPriceTxt.Clear();
                         }
                         else
                         {
@@ -666,7 +668,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         {
             try
             {
-                if (this.dgvCustomerBill.CurrentCell.RowIndex < 0)
+                if (this.dgvCustomerBill.CurrentCell.RowIndex < 0 || this.dgvCustomerBill.CurrentCell == null)
                 {
                     MessageBox.Show("Hãy chọn dòng dữ liệu muốn thao tác");
                     return;

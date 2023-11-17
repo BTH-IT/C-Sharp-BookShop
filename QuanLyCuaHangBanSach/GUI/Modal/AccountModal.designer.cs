@@ -42,7 +42,6 @@
             this.errorEmailLine = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.confirmPasswordPanel = new System.Windows.Forms.Panel();
-            this.submitBtn = new Guna.UI.WinForms.GunaButton();
             this.panel4 = new System.Windows.Forms.Panel();
             this.passwordTxt = new Guna.UI2.WinForms.Guna2TextBox();
             this.errorPasswordMsg = new System.Windows.Forms.Label();
@@ -50,6 +49,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.title = new System.Windows.Forms.Label();
+            this.submitBtn = new Guna.UI.WinForms.GunaButton();
             this.cancelBtn = new Guna.UI.WinForms.GunaButton();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -250,37 +250,6 @@
             this.confirmPasswordPanel.Size = new System.Drawing.Size(650, 109);
             this.confirmPasswordPanel.TabIndex = 10;
             // 
-            // submitBtn
-            // 
-            this.submitBtn.Animated = true;
-            this.submitBtn.AnimationHoverSpeed = 0.05F;
-            this.submitBtn.AnimationSpeed = 0.05F;
-            this.submitBtn.BackColor = System.Drawing.Color.Transparent;
-            this.submitBtn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.submitBtn.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.submitBtn.BorderSize = 2;
-            this.submitBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.submitBtn.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.submitBtn.FocusedColor = System.Drawing.Color.Empty;
-            this.submitBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.submitBtn.ForeColor = System.Drawing.Color.White;
-            this.submitBtn.Image = null;
-            this.submitBtn.ImageSize = new System.Drawing.Size(20, 20);
-            this.submitBtn.Location = new System.Drawing.Point(361, 616);
-            this.submitBtn.Name = "submitBtn";
-            this.submitBtn.OnHoverBaseColor = System.Drawing.Color.White;
-            this.submitBtn.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.submitBtn.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.submitBtn.OnHoverImage = null;
-            this.submitBtn.OnPressedColor = System.Drawing.Color.Black;
-            this.submitBtn.Radius = 22;
-            this.submitBtn.Size = new System.Drawing.Size(200, 50);
-            this.submitBtn.TabIndex = 16;
-            this.submitBtn.TabStop = false;
-            this.submitBtn.Text = "Lưu";
-            this.submitBtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.submitBtn.Click += new System.EventHandler(this.submitBtn_Click);
-            // 
             // panel4
             // 
             this.panel4.Controls.Add(this.passwordTxt);
@@ -376,6 +345,37 @@
             this.title.Text = "Thêm Tài khoản";
             this.title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // submitBtn
+            // 
+            this.submitBtn.Animated = true;
+            this.submitBtn.AnimationHoverSpeed = 0.05F;
+            this.submitBtn.AnimationSpeed = 0.05F;
+            this.submitBtn.BackColor = System.Drawing.Color.Transparent;
+            this.submitBtn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.submitBtn.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.submitBtn.BorderSize = 2;
+            this.submitBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.submitBtn.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.submitBtn.FocusedColor = System.Drawing.Color.Empty;
+            this.submitBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.submitBtn.ForeColor = System.Drawing.Color.White;
+            this.submitBtn.Image = null;
+            this.submitBtn.ImageSize = new System.Drawing.Size(20, 20);
+            this.submitBtn.Location = new System.Drawing.Point(373, 611);
+            this.submitBtn.Name = "submitBtn";
+            this.submitBtn.OnHoverBaseColor = System.Drawing.Color.White;
+            this.submitBtn.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.submitBtn.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.submitBtn.OnHoverImage = null;
+            this.submitBtn.OnPressedColor = System.Drawing.Color.Black;
+            this.submitBtn.Radius = 22;
+            this.submitBtn.Size = new System.Drawing.Size(200, 50);
+            this.submitBtn.TabIndex = 29;
+            this.submitBtn.TabStop = false;
+            this.submitBtn.Text = "Lưu";
+            this.submitBtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.submitBtn.Click += new System.EventHandler(this.submitBtn_Click);
+            // 
             // cancelBtn
             // 
             this.cancelBtn.Animated = true;
@@ -388,11 +388,11 @@
             this.cancelBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cancelBtn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.cancelBtn.FocusedColor = System.Drawing.Color.Empty;
-            this.cancelBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cancelBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cancelBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.cancelBtn.Image = null;
             this.cancelBtn.ImageSize = new System.Drawing.Size(20, 20);
-            this.cancelBtn.Location = new System.Drawing.Point(136, 616);
+            this.cancelBtn.Location = new System.Drawing.Point(124, 611);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.cancelBtn.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
@@ -401,7 +401,7 @@
             this.cancelBtn.OnPressedColor = System.Drawing.Color.White;
             this.cancelBtn.Radius = 22;
             this.cancelBtn.Size = new System.Drawing.Size(200, 50);
-            this.cancelBtn.TabIndex = 15;
+            this.cancelBtn.TabIndex = 28;
             this.cancelBtn.TabStop = false;
             this.cancelBtn.Text = "Hủy";
             this.cancelBtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -409,16 +409,18 @@
             // 
             // AccountModal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(695, 701);
-            this.Controls.Add(this.panel3);
             this.Controls.Add(this.submitBtn);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.cancelBtn);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.title);
-            this.Controls.Add(this.cancelBtn);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "AccountModal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AccountModal";
             this.Load += new System.EventHandler(this.AccountModal_Load);
             this.panel3.ResumeLayout(false);
@@ -450,7 +452,6 @@
         private System.Windows.Forms.Panel errorEmailLine;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel confirmPasswordPanel;
-        private Guna.UI.WinForms.GunaButton submitBtn;
         private System.Windows.Forms.Panel panel4;
         private Guna.UI2.WinForms.Guna2TextBox passwordTxt;
         private System.Windows.Forms.Label errorPasswordMsg;
@@ -458,6 +459,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Label title;
+        private Guna.UI.WinForms.GunaButton submitBtn;
         private Guna.UI.WinForms.GunaButton cancelBtn;
     }
 }

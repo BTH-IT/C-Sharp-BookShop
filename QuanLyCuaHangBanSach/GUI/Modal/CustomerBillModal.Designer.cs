@@ -121,7 +121,7 @@
             this.flowLayoutPanel1.Location = new System.Drawing.Point(11, 64);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(1200, 681);
-            this.flowLayoutPanel1.TabIndex = 8;
+            this.flowLayoutPanel1.TabIndex = 0;
             // 
             // panel6
             // 
@@ -184,7 +184,7 @@
             this.panel1.Location = new System.Drawing.Point(3, 97);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1194, 88);
-            this.panel1.TabIndex = 3;
+            this.panel1.TabIndex = 0;
             // 
             // totalPriceTxt
             // 
@@ -213,7 +213,7 @@
             this.totalPriceTxt.SelectedText = "";
             this.totalPriceTxt.ShadowDecoration.Parent = this.totalPriceTxt;
             this.totalPriceTxt.Size = new System.Drawing.Size(414, 36);
-            this.totalPriceTxt.TabIndex = 34;
+            this.totalPriceTxt.TabIndex = 0;
             this.totalPriceTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // nameLine
@@ -243,7 +243,7 @@
             this.panel4.Location = new System.Drawing.Point(3, 191);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1194, 478);
-            this.panel4.TabIndex = 9;
+            this.panel4.TabIndex = 1;
             // 
             // errorBookListMsg
             // 
@@ -266,7 +266,7 @@
             this.gunaButton1.BorderSize = 1;
             this.gunaButton1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.gunaButton1.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaButton1.FocusedColor = System.Drawing.Color.Empty;
+            this.gunaButton1.FocusedColor = System.Drawing.Color.PaleTurquoise;
             this.gunaButton1.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.gunaButton1.Image = null;
@@ -281,7 +281,7 @@
             this.gunaButton1.OnPressedDepth = 0;
             this.gunaButton1.Radius = 12;
             this.gunaButton1.Size = new System.Drawing.Size(214, 50);
-            this.gunaButton1.TabIndex = 9;
+            this.gunaButton1.TabIndex = 0;
             this.gunaButton1.TabStop = false;
             this.gunaButton1.Text = "Thêm sách vào danh sách";
             this.gunaButton1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -293,7 +293,7 @@
             this.bookList.Location = new System.Drawing.Point(3, 85);
             this.bookList.Name = "bookList";
             this.bookList.Size = new System.Drawing.Size(1188, 334);
-            this.bookList.TabIndex = 29;
+            this.bookList.TabIndex = 1;
             // 
             // label2
             // 
@@ -316,7 +316,7 @@
             this.submitBtn.BorderSize = 2;
             this.submitBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.submitBtn.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.submitBtn.FocusedColor = System.Drawing.Color.Empty;
+            this.submitBtn.FocusedColor = System.Drawing.Color.PaleTurquoise;
             this.submitBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.submitBtn.ForeColor = System.Drawing.Color.White;
             this.submitBtn.Image = null;
@@ -330,7 +330,7 @@
             this.submitBtn.OnPressedColor = System.Drawing.Color.Black;
             this.submitBtn.Radius = 22;
             this.submitBtn.Size = new System.Drawing.Size(200, 50);
-            this.submitBtn.TabIndex = 7;
+            this.submitBtn.TabIndex = 2;
             this.submitBtn.TabStop = false;
             this.submitBtn.Text = "Lưu";
             this.submitBtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -347,7 +347,7 @@
             this.cancelBtn.BorderSize = 2;
             this.cancelBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cancelBtn.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.cancelBtn.FocusedColor = System.Drawing.Color.Empty;
+            this.cancelBtn.FocusedColor = System.Drawing.Color.PaleTurquoise;
             this.cancelBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cancelBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.cancelBtn.Image = null;
@@ -361,7 +361,7 @@
             this.cancelBtn.OnPressedColor = System.Drawing.Color.White;
             this.cancelBtn.Radius = 22;
             this.cancelBtn.Size = new System.Drawing.Size(200, 50);
-            this.cancelBtn.TabIndex = 6;
+            this.cancelBtn.TabIndex = 1;
             this.cancelBtn.TabStop = false;
             this.cancelBtn.Text = "Hủy";
             this.cancelBtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -384,7 +384,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1222, 843);
+            this.ClientSize = new System.Drawing.Size(1222, 749);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.submitBtn);
             this.Controls.Add(this.cancelBtn);
