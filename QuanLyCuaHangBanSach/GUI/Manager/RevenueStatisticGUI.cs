@@ -13,6 +13,7 @@ using Color = System.Drawing.Color;
 using QuanLyCuaHangBanSach.DAO;
 using System.Windows.Ink;
 using System.ComponentModel;
+using System.Threading.Tasks;
 
 namespace QuanLyCuaHangBanSach.GUI.Manager
 {
@@ -335,8 +336,17 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
 				if (!string.IsNullOrEmpty(revenueFrom.Text) && !string.IsNullOrEmpty(revenueTo.Text))
 				{
-					billList = billList.FindAll(bill => bill.TongTien >= Convert.ToDouble(revenueFrom.Text)
-													 && bill.TongTien <= Convert.ToDouble(revenueTo.Text));
+                    if (Convert.ToDouble(revenueFrom.Text) <= Convert.ToDouble(revenueTo.Text))
+                    {
+						billList = billList.FindAll(bill => bill.TongTien >= Convert.ToDouble(revenueFrom.Text)
+														 && bill.TongTien <= Convert.ToDouble(revenueTo.Text));
+                    }
+					else
+					{
+						revenueFrom.Clear();
+						revenueTo.Clear();
+						MessageBox.Show("Doanh thu từ phải nhỏ hơn hoặc bằng Doanh thu đến");
+					}
 				}
 
 				return billList;
@@ -347,13 +357,29 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 			}
 		}
 
-		private void searchInput_TextChanged(object sender, EventArgs e)
+		private readonly int debounceInterval = 500; // Đặt khoảng thời gian debounce là 500 milliseconds
+		private DateTime lastTextChanged = DateTime.MinValue;
+		private readonly object debounceLock = new object();
+		private async void searchInput_TextChanged(object sender, EventArgs e)
 		{
 			try
 			{
-				List<CustomerBillDTO> billList = handleFilter(searchInput.Text);
-				loadBillListToDataView(billList);
+				lock (debounceLock)
+				{
+					lastTextChanged = DateTime.Now;
+				}
 
+				await Task.Delay(debounceInterval);
+
+				lock (debounceLock)
+				{
+					var now = DateTime.Now;
+					if ((now - lastTextChanged).TotalMilliseconds >= debounceInterval)
+					{
+						List<CustomerBillDTO> billList = handleFilter(searchInput.Text);
+						loadBillListToDataView(billList);
+					}
+				}
 			}
 			catch (Exception ex)
 			{
@@ -382,7 +408,13 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
 		private void exportBtn_Click(object sender, EventArgs e)
 		{
-			try
+            if (dgvBill.Rows.Count <= 0)
+            {
+                MessageBox.Show("Bảng dữ liệu hiện tại chưa có dòng dữ liệu nào để xuất excel!");
+                return;
+            }
+
+            try
 			{
 				string[] headerList = new string[] { "Ngày lập hóa đơn", "Mã hóa đơn", "Khuyến mãi", "Doanh thu" };
 

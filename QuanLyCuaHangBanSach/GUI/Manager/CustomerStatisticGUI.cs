@@ -13,6 +13,7 @@ using Color = System.Drawing.Color;
 using QuanLyCuaHangBanSach.DAO;
 using System.Windows.Ink;
 using System.Windows.Forms.DataVisualization.Charting;
+using System.Threading.Tasks;
 
 namespace QuanLyCuaHangBanSach.GUI.Manager
 {
@@ -99,7 +100,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 			customerNumLb.Text = $@"{customerNumber} khách hàng";
 		}
 
-		private void loadCustomerListToDataView(List<CustomerDTO> customerList)
+		private void loadBillListToDataView(List<CustomerDTO> customerList)
 		{
 			try
 			{
@@ -169,7 +170,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 			try
 			{
 				List<CustomerDTO> customerList = CustomerBUS.Instance.getAllData();
-				loadCustomerListToDataView(customerList);
+				loadBillListToDataView(customerList);
 				loadChartView();
 			}
 			catch (Exception ex)
@@ -196,8 +197,17 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
 				if (!string.IsNullOrEmpty(boughtFrom.Text) && !string.IsNullOrEmpty(boughtTo.Text))
 				{
-					customerList = customerList.FindAll(customer => CustomerBillBUS.Instance.getCustomerBoughtTotal(customer.Ma.ToString()) >= Convert.ToDouble(boughtFrom.Text)
-													 && CustomerBillBUS.Instance.getCustomerBoughtTotal(customer.Ma.ToString()) <= Convert.ToDouble(boughtTo.Text));
+                    if (Convert.ToDouble(boughtFrom.Text) <= Convert.ToDouble(boughtTo.Text))
+                    {
+						customerList = customerList.FindAll(customer => CustomerBillBUS.Instance.getCustomerBoughtTotal(customer.Ma.ToString()) >= Convert.ToDouble(boughtFrom.Text)
+														 && CustomerBillBUS.Instance.getCustomerBoughtTotal(customer.Ma.ToString()) <= Convert.ToDouble(boughtTo.Text));
+                    }
+					else
+					{
+						boughtFrom.Clear();
+						boughtTo.Clear();
+						MessageBox.Show("Đã mua từ phải nhỏ hơn hoặc bằng Đã mua đến");
+					}
 				}
 
 				return customerList;
@@ -208,13 +218,29 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 			}
 		}
 
-		private void searchInput_TextChanged(object sender, EventArgs e)
+		private readonly int debounceInterval = 500; // Đặt khoảng thời gian debounce là 500 milliseconds
+		private DateTime lastTextChanged = DateTime.MinValue;
+		private readonly object debounceLock = new object();
+		private async void searchInput_TextChanged(object sender, EventArgs e)
 		{
 			try
 			{
-                List<CustomerDTO> customerList = handleFilter(searchInput.Text);
-				loadCustomerListToDataView(customerList);
+				lock (debounceLock)
+				{
+					lastTextChanged = DateTime.Now;
+				}
 
+				await Task.Delay(debounceInterval);
+
+				lock (debounceLock)
+				{
+					var now = DateTime.Now;
+					if ((now - lastTextChanged).TotalMilliseconds >= debounceInterval)
+					{
+						List<CustomerDTO> customerList = handleFilter(searchInput.Text);
+						loadBillListToDataView(customerList);
+					}
+				}
             }
 			catch (Exception ex)
 			{
@@ -233,7 +259,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
 
 				List<CustomerDTO> customerList = CustomerBUS.Instance.getAllData();
-				loadCustomerListToDataView(customerList);
+				loadBillListToDataView(customerList);
 			}
 			catch (Exception ex)
 			{
@@ -243,7 +269,12 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
 		private void exportBtn_Click(object sender, EventArgs e)
 		{
-			try
+            if (dgvCustomer.Rows.Count <= 0)
+            {
+                MessageBox.Show("Bảng dữ liệu hiện tại chưa có dòng dữ liệu nào để xuất excel!");
+                return;
+            }
+            try
 			{
                 string[] headerList = new string[] { "Mã khách hàng", "Tên khách hàng", "Số điện thoại", "Số lượng hóa đơn", "Đã mua" };
 

@@ -52,8 +52,8 @@
 			this.tablePanel = new System.Windows.Forms.Panel();
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.gradientPanel1 = new QuanLyCuaHangBanSach.GradientPanel();
-			this.boughtTo = new Guna.UI2.WinForms.Guna2TextBox();
-			this.boughtFrom = new Guna.UI2.WinForms.Guna2TextBox();
+			this.revenueTo = new Guna.UI2.WinForms.Guna2TextBox();
+			this.revenueFrom = new Guna.UI2.WinForms.Guna2TextBox();
 			this.panel3 = new System.Windows.Forms.Panel();
 			this.panel4 = new System.Windows.Forms.Panel();
 			this.panel2 = new System.Windows.Forms.Panel();
@@ -137,7 +137,7 @@
 			this.dgvStaff.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
 			this.dgvStaff.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.dgvStaff.Size = new System.Drawing.Size(1280, 605);
-			this.dgvStaff.TabIndex = 0;
+			this.dgvStaff.TabIndex = 23;
 			this.dgvStaff.TabStop = false;
 			this.dgvStaff.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna;
 			this.dgvStaff.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -161,7 +161,6 @@
 			this.dgvStaff.ThemeStyle.RowsStyle.Height = 75;
 			this.dgvStaff.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
 			this.dgvStaff.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-			this.dgvStaff.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStaff_CellContentClick);
 			this.dgvStaff.SortCompare += new System.Windows.Forms.DataGridViewSortCompareEventHandler(this.dgvStaff_SortCompare);
 			// 
 			// Column2
@@ -224,7 +223,7 @@
 			this.optionPanel.Location = new System.Drawing.Point(0, 666);
 			this.optionPanel.Name = "optionPanel";
 			this.optionPanel.Size = new System.Drawing.Size(1280, 54);
-			this.optionPanel.TabIndex = 2;
+			this.optionPanel.TabIndex = 24;
 			// 
 			// exportBtn
 			// 
@@ -239,13 +238,13 @@
 			this.exportBtn.CheckedImage = ((System.Drawing.Image)(resources.GetObject("exportBtn.CheckedImage")));
 			this.exportBtn.CheckedLineColor = System.Drawing.Color.DimGray;
 			this.exportBtn.DialogResult = System.Windows.Forms.DialogResult.None;
-			this.exportBtn.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(159)))), ((int)(((byte)(147)))));
+			this.exportBtn.FocusedColor = System.Drawing.Color.Empty;
 			this.exportBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold);
 			this.exportBtn.ForeColor = System.Drawing.Color.White;
 			this.exportBtn.Image = ((System.Drawing.Image)(resources.GetObject("exportBtn.Image")));
 			this.exportBtn.ImageSize = new System.Drawing.Size(20, 20);
 			this.exportBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-			this.exportBtn.Location = new System.Drawing.Point(133, 6);
+			this.exportBtn.Location = new System.Drawing.Point(120, 6);
 			this.exportBtn.Name = "exportBtn";
 			this.exportBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
 			this.exportBtn.OnHoverBorderColor = System.Drawing.Color.Transparent;
@@ -255,7 +254,7 @@
 			this.exportBtn.OnPressedColor = System.Drawing.Color.Black;
 			this.exportBtn.Radius = 6;
 			this.exportBtn.Size = new System.Drawing.Size(121, 42);
-			this.exportBtn.TabIndex = 5;
+			this.exportBtn.TabIndex = 8;
 			this.exportBtn.Text = "Xuất excel";
 			this.exportBtn.Click += new System.EventHandler(this.exportBtn_Click);
 			// 
@@ -272,7 +271,7 @@
 			this.refreshBtn.CheckedImage = ((System.Drawing.Image)(resources.GetObject("refreshBtn.CheckedImage")));
 			this.refreshBtn.CheckedLineColor = System.Drawing.Color.DimGray;
 			this.refreshBtn.DialogResult = System.Windows.Forms.DialogResult.None;
-			this.refreshBtn.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(159)))), ((int)(((byte)(147)))));
+			this.refreshBtn.FocusedColor = System.Drawing.Color.Empty;
 			this.refreshBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold);
 			this.refreshBtn.ForeColor = System.Drawing.Color.White;
 			this.refreshBtn.Image = ((System.Drawing.Image)(resources.GetObject("refreshBtn.Image")));
@@ -288,7 +287,7 @@
 			this.refreshBtn.OnPressedColor = System.Drawing.Color.Black;
 			this.refreshBtn.Radius = 6;
 			this.refreshBtn.Size = new System.Drawing.Size(107, 42);
-			this.refreshBtn.TabIndex = 4;
+			this.refreshBtn.TabIndex = 7;
 			this.refreshBtn.Text = "Làm mới";
 			this.refreshBtn.Click += new System.EventHandler(this.refreshBtn_Click);
 			// 
@@ -329,7 +328,7 @@
 			this.searchInput.SelectedText = "";
 			this.searchInput.ShadowDecoration.Parent = this.searchInput;
 			this.searchInput.Size = new System.Drawing.Size(236, 36);
-			this.searchInput.TabIndex = 1;
+			this.searchInput.TabIndex = 31;
 			this.searchInput.TextChanged += new System.EventHandler(this.searchInput_TextChanged);
 			this.searchInput.MouseLeave += new System.EventHandler(this.searchInput_MouseLeave);
 			// 
@@ -341,7 +340,7 @@
 			this.tablePanel.Location = new System.Drawing.Point(0, 0);
 			this.tablePanel.Name = "tablePanel";
 			this.tablePanel.Size = new System.Drawing.Size(1280, 666);
-			this.tablePanel.TabIndex = 1;
+			this.tablePanel.TabIndex = 39;
 			// 
 			// panel1
 			// 
@@ -361,8 +360,8 @@
 			this.gradientPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.gradientPanel1.ColorLeft = System.Drawing.Color.Empty;
 			this.gradientPanel1.ColorRight = System.Drawing.Color.Empty;
-			this.gradientPanel1.Controls.Add(this.boughtTo);
-			this.gradientPanel1.Controls.Add(this.boughtFrom);
+			this.gradientPanel1.Controls.Add(this.revenueTo);
+			this.gradientPanel1.Controls.Add(this.revenueFrom);
 			this.gradientPanel1.Controls.Add(this.panel3);
 			this.gradientPanel1.Controls.Add(this.panel4);
 			this.gradientPanel1.Controls.Add(this.panel2);
@@ -372,66 +371,66 @@
 			this.gradientPanel1.Size = new System.Drawing.Size(337, 36);
 			this.gradientPanel1.TabIndex = 30;
 			// 
-			// boughtTo
+			// revenueTo
 			// 
-			this.boughtTo.Animated = true;
-			this.boughtTo.BackColor = System.Drawing.Color.Transparent;
-			this.boughtTo.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
-			this.boughtTo.BorderThickness = 0;
-			this.boughtTo.Cursor = System.Windows.Forms.Cursors.IBeam;
-			this.boughtTo.DefaultText = "";
-			this.boughtTo.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-			this.boughtTo.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-			this.boughtTo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-			this.boughtTo.DisabledState.Parent = this.boughtTo;
-			this.boughtTo.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-			this.boughtTo.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
-			this.boughtTo.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-			this.boughtTo.FocusedState.Parent = this.boughtTo;
-			this.boughtTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.boughtTo.ForeColor = System.Drawing.Color.Black;
-			this.boughtTo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-			this.boughtTo.HoverState.Parent = this.boughtTo;
-			this.boughtTo.Location = new System.Drawing.Point(195, 4);
-			this.boughtTo.Margin = new System.Windows.Forms.Padding(0);
-			this.boughtTo.Name = "boughtTo";
-			this.boughtTo.PasswordChar = '\0';
-			this.boughtTo.PlaceholderText = "Doanh thu đến  ...";
-			this.boughtTo.SelectedText = "";
-			this.boughtTo.ShadowDecoration.Parent = this.boughtTo;
-			this.boughtTo.Size = new System.Drawing.Size(129, 25);
-			this.boughtTo.TabIndex = 3;
+			this.revenueTo.Animated = true;
+			this.revenueTo.BackColor = System.Drawing.Color.Transparent;
+			this.revenueTo.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
+			this.revenueTo.BorderThickness = 0;
+			this.revenueTo.Cursor = System.Windows.Forms.Cursors.IBeam;
+			this.revenueTo.DefaultText = "";
+			this.revenueTo.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+			this.revenueTo.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+			this.revenueTo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+			this.revenueTo.DisabledState.Parent = this.revenueTo;
+			this.revenueTo.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+			this.revenueTo.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
+			this.revenueTo.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+			this.revenueTo.FocusedState.Parent = this.revenueTo;
+			this.revenueTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.revenueTo.ForeColor = System.Drawing.Color.Black;
+			this.revenueTo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+			this.revenueTo.HoverState.Parent = this.revenueTo;
+			this.revenueTo.Location = new System.Drawing.Point(195, 4);
+			this.revenueTo.Margin = new System.Windows.Forms.Padding(0);
+			this.revenueTo.Name = "revenueTo";
+			this.revenueTo.PasswordChar = '\0';
+			this.revenueTo.PlaceholderText = "Doanh thu đến  ...";
+			this.revenueTo.SelectedText = "";
+			this.revenueTo.ShadowDecoration.Parent = this.revenueTo;
+			this.revenueTo.Size = new System.Drawing.Size(129, 25);
+			this.revenueTo.TabIndex = 34;
 			// 
-			// boughtFrom
+			// revenueFrom
 			// 
-			this.boughtFrom.Animated = true;
-			this.boughtFrom.BackColor = System.Drawing.Color.Transparent;
-			this.boughtFrom.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
-			this.boughtFrom.BorderThickness = 0;
-			this.boughtFrom.Cursor = System.Windows.Forms.Cursors.IBeam;
-			this.boughtFrom.DefaultText = "";
-			this.boughtFrom.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-			this.boughtFrom.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-			this.boughtFrom.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-			this.boughtFrom.DisabledState.Parent = this.boughtFrom;
-			this.boughtFrom.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-			this.boughtFrom.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
-			this.boughtFrom.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-			this.boughtFrom.FocusedState.Parent = this.boughtFrom;
-			this.boughtFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.boughtFrom.ForeColor = System.Drawing.Color.Black;
-			this.boughtFrom.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-			this.boughtFrom.HoverState.Parent = this.boughtFrom;
-			this.boughtFrom.Location = new System.Drawing.Point(21, 4);
-			this.boughtFrom.Margin = new System.Windows.Forms.Padding(0);
-			this.boughtFrom.Name = "boughtFrom";
-			this.boughtFrom.PasswordChar = '\0';
-			this.boughtFrom.PlaceholderText = "Doanh thu từ  ...";
-			this.boughtFrom.SelectedText = "";
-			this.boughtFrom.ShadowDecoration.Parent = this.boughtFrom;
-			this.boughtFrom.Size = new System.Drawing.Size(125, 25);
-			this.boughtFrom.TabIndex = 2;
-			this.boughtFrom.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.boughtFrom_KeyPress);
+			this.revenueFrom.Animated = true;
+			this.revenueFrom.BackColor = System.Drawing.Color.Transparent;
+			this.revenueFrom.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
+			this.revenueFrom.BorderThickness = 0;
+			this.revenueFrom.Cursor = System.Windows.Forms.Cursors.IBeam;
+			this.revenueFrom.DefaultText = "";
+			this.revenueFrom.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+			this.revenueFrom.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+			this.revenueFrom.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+			this.revenueFrom.DisabledState.Parent = this.revenueFrom;
+			this.revenueFrom.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+			this.revenueFrom.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
+			this.revenueFrom.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+			this.revenueFrom.FocusedState.Parent = this.revenueFrom;
+			this.revenueFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.revenueFrom.ForeColor = System.Drawing.Color.Black;
+			this.revenueFrom.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+			this.revenueFrom.HoverState.Parent = this.revenueFrom;
+			this.revenueFrom.Location = new System.Drawing.Point(21, 4);
+			this.revenueFrom.Margin = new System.Windows.Forms.Padding(0);
+			this.revenueFrom.Name = "revenueFrom";
+			this.revenueFrom.PasswordChar = '\0';
+			this.revenueFrom.PlaceholderText = "Doanh thu từ  ...";
+			this.revenueFrom.SelectedText = "";
+			this.revenueFrom.ShadowDecoration.Parent = this.revenueFrom;
+			this.revenueFrom.Size = new System.Drawing.Size(125, 25);
+			this.revenueFrom.TabIndex = 32;
+			this.revenueFrom.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.boughtFrom_KeyPress);
 			// 
 			// panel3
 			// 
@@ -486,7 +485,7 @@
 			// 
 			// StaffStatisticGUI
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 26F);
+			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
 			this.ClientSize = new System.Drawing.Size(1280, 720);
@@ -523,8 +522,8 @@
 		private System.Windows.Forms.Label label1;
 		private Guna.UI.WinForms.GunaAdvenceButton exportBtn;
 		private Guna.UI2.WinForms.Guna2TextBox searchInput;
-		private Guna.UI2.WinForms.Guna2TextBox boughtTo;
-		private Guna.UI2.WinForms.Guna2TextBox boughtFrom;
+		private Guna.UI2.WinForms.Guna2TextBox revenueTo;
+		private Guna.UI2.WinForms.Guna2TextBox revenueFrom;
 		private System.Windows.Forms.Panel tablePanel;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column7;

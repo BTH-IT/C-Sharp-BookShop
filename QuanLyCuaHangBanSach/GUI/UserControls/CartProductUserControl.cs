@@ -10,7 +10,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Windows.Forms.DataVisualization.Charting;
 
 namespace QuanLyCuaHangBanSach.GUI.Vendor
 {
@@ -49,7 +48,8 @@ namespace QuanLyCuaHangBanSach.GUI.Vendor
             }
             else
             {
-                StockLb.Text = "SL: " + book.SoLuongConLai;
+                StockLb.Visible = false;
+                stock = -1;
                 PriceLb.Text = string.Format("{0:N0} đ", book.GiaNhap);
             }
 

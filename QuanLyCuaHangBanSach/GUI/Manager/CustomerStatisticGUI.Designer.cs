@@ -1,33 +1,33 @@
 ﻿namespace QuanLyCuaHangBanSach.GUI.Manager
 {
-	partial class CustomerStatisticGUI
-	{
-		/// <summary>
-		/// Required designer variable.
-		/// </summary>
-		private System.ComponentModel.IContainer components = null;
+    partial class CustomerStatisticGUI
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
 
-		/// <summary>
-		/// Clean up any resources being used.
-		/// </summary>
-		/// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-		protected override void Dispose(bool disposing)
-		{
-			if (disposing && (components != null))
-			{
-				components.Dispose();
-			}
-			base.Dispose(disposing);
-		}
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
 
-		#region Windows Form Designer generated code
+        #region Windows Form Designer generated code
 
-		/// <summary>
-		/// Required method for Designer support - do not modify
-		/// the contents of this method with the code editor.
-		/// </summary>
-		private void InitializeComponent()
-		{
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
 			this.components = new System.ComponentModel.Container();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -181,7 +181,8 @@
 			this.dgvCustomer.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
 			this.dgvCustomer.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.dgvCustomer.Size = new System.Drawing.Size(988, 443);
-			this.dgvCustomer.TabIndex = 0;
+			this.dgvCustomer.StandardTab = true;
+			this.dgvCustomer.TabIndex = 1;
 			this.dgvCustomer.TabStop = false;
 			this.dgvCustomer.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna;
 			this.dgvCustomer.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -298,7 +299,7 @@
 			this.chartBtn.CheckedImage = ((System.Drawing.Image)(resources.GetObject("chartBtn.CheckedImage")));
 			this.chartBtn.CheckedLineColor = System.Drawing.Color.DimGray;
 			this.chartBtn.DialogResult = System.Windows.Forms.DialogResult.None;
-			this.chartBtn.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(159)))), ((int)(((byte)(147)))));
+			this.chartBtn.FocusedColor = System.Drawing.Color.PaleTurquoise;
 			this.chartBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold);
 			this.chartBtn.ForeColor = System.Drawing.Color.White;
 			this.chartBtn.Image = ((System.Drawing.Image)(resources.GetObject("chartBtn.Image")));
@@ -314,7 +315,7 @@
 			this.chartBtn.OnPressedColor = System.Drawing.Color.Black;
 			this.chartBtn.Radius = 6;
 			this.chartBtn.Size = new System.Drawing.Size(112, 42);
-			this.chartBtn.TabIndex = 7;
+			this.chartBtn.TabIndex = 3;
 			this.chartBtn.Text = "Biểu đồ";
 			this.chartBtn.Click += new System.EventHandler(this.chartBtn_Click);
 			// 
@@ -333,7 +334,7 @@
 			this.tableBtn.CheckedImage = ((System.Drawing.Image)(resources.GetObject("tableBtn.CheckedImage")));
 			this.tableBtn.CheckedLineColor = System.Drawing.Color.DimGray;
 			this.tableBtn.DialogResult = System.Windows.Forms.DialogResult.None;
-			this.tableBtn.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(159)))), ((int)(((byte)(147)))));
+			this.tableBtn.FocusedColor = System.Drawing.Color.PaleTurquoise;
 			this.tableBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold);
 			this.tableBtn.ForeColor = System.Drawing.Color.White;
 			this.tableBtn.Image = ((System.Drawing.Image)(resources.GetObject("tableBtn.Image")));
@@ -349,7 +350,7 @@
 			this.tableBtn.OnPressedColor = System.Drawing.Color.Black;
 			this.tableBtn.Radius = 6;
 			this.tableBtn.Size = new System.Drawing.Size(112, 42);
-			this.tableBtn.TabIndex = 6;
+			this.tableBtn.TabIndex = 2;
 			this.tableBtn.Text = "Bảng";
 			this.tableBtn.Click += new System.EventHandler(this.tableBtn_Click);
 			// 
@@ -368,7 +369,7 @@
 			this.exportBtn.CheckedImage = ((System.Drawing.Image)(resources.GetObject("exportBtn.CheckedImage")));
 			this.exportBtn.CheckedLineColor = System.Drawing.Color.DimGray;
 			this.exportBtn.DialogResult = System.Windows.Forms.DialogResult.None;
-			this.exportBtn.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(159)))), ((int)(((byte)(147)))));
+			this.exportBtn.FocusedColor = System.Drawing.Color.PaleTurquoise;
 			this.exportBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold);
 			this.exportBtn.ForeColor = System.Drawing.Color.White;
 			this.exportBtn.Image = ((System.Drawing.Image)(resources.GetObject("exportBtn.Image")));
@@ -384,7 +385,7 @@
 			this.exportBtn.OnPressedColor = System.Drawing.Color.Black;
 			this.exportBtn.Radius = 6;
 			this.exportBtn.Size = new System.Drawing.Size(121, 42);
-			this.exportBtn.TabIndex = 5;
+			this.exportBtn.TabIndex = 1;
 			this.exportBtn.Text = "Xuất excel";
 			this.exportBtn.Click += new System.EventHandler(this.exportBtn_Click);
 			// 
@@ -403,7 +404,7 @@
 			this.refreshBtn.CheckedImage = ((System.Drawing.Image)(resources.GetObject("refreshBtn.CheckedImage")));
 			this.refreshBtn.CheckedLineColor = System.Drawing.Color.DimGray;
 			this.refreshBtn.DialogResult = System.Windows.Forms.DialogResult.None;
-			this.refreshBtn.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(159)))), ((int)(((byte)(147)))));
+			this.refreshBtn.FocusedColor = System.Drawing.Color.PaleTurquoise;
 			this.refreshBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold);
 			this.refreshBtn.ForeColor = System.Drawing.Color.White;
 			this.refreshBtn.Image = ((System.Drawing.Image)(resources.GetObject("refreshBtn.Image")));
@@ -419,7 +420,7 @@
 			this.refreshBtn.OnPressedColor = System.Drawing.Color.Black;
 			this.refreshBtn.Radius = 6;
 			this.refreshBtn.Size = new System.Drawing.Size(107, 42);
-			this.refreshBtn.TabIndex = 4;
+			this.refreshBtn.TabIndex = 0;
 			this.refreshBtn.Text = "Làm mới";
 			this.refreshBtn.Click += new System.EventHandler(this.refreshBtn_Click);
 			// 
@@ -460,7 +461,7 @@
 			this.searchInput.SelectedText = "";
 			this.searchInput.ShadowDecoration.Parent = this.searchInput;
 			this.searchInput.Size = new System.Drawing.Size(236, 36);
-			this.searchInput.TabIndex = 1;
+			this.searchInput.TabIndex = 0;
 			this.searchInput.TextChanged += new System.EventHandler(this.searchInput_TextChanged);
 			this.searchInput.MouseLeave += new System.EventHandler(this.searchInput_MouseLeave);
 			// 
@@ -476,7 +477,7 @@
 			this.tablePanel.Location = new System.Drawing.Point(0, 0);
 			this.tablePanel.Name = "tablePanel";
 			this.tablePanel.Size = new System.Drawing.Size(988, 505);
-			this.tablePanel.TabIndex = 1;
+			this.tablePanel.TabIndex = 0;
 			// 
 			// panel1
 			// 
@@ -485,7 +486,7 @@
 			this.panel1.Location = new System.Drawing.Point(0, 0);
 			this.panel1.Name = "panel1";
 			this.panel1.Size = new System.Drawing.Size(988, 62);
-			this.panel1.TabIndex = 52;
+			this.panel1.TabIndex = 0;
 			// 
 			// panel5
 			// 
@@ -525,7 +526,7 @@
 			this.gradientPanel1.Location = new System.Drawing.Point(574, 9);
 			this.gradientPanel1.Name = "gradientPanel1";
 			this.gradientPanel1.Size = new System.Drawing.Size(337, 40);
-			this.gradientPanel1.TabIndex = 30;
+			this.gradientPanel1.TabIndex = 1;
 			// 
 			// boughtTo
 			// 
@@ -555,7 +556,7 @@
 			this.boughtTo.SelectedText = "";
 			this.boughtTo.ShadowDecoration.Parent = this.boughtTo;
 			this.boughtTo.Size = new System.Drawing.Size(129, 25);
-			this.boughtTo.TabIndex = 3;
+			this.boughtTo.TabIndex = 1;
 			// 
 			// boughtFrom
 			// 
@@ -585,7 +586,7 @@
 			this.boughtFrom.SelectedText = "";
 			this.boughtFrom.ShadowDecoration.Parent = this.boughtFrom;
 			this.boughtFrom.Size = new System.Drawing.Size(125, 25);
-			this.boughtFrom.TabIndex = 2;
+			this.boughtFrom.TabIndex = 0;
 			this.boughtFrom.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.boughtFrom_KeyPress);
 			// 
 			// panel3
@@ -635,7 +636,7 @@
 			this.chartPanel.Location = new System.Drawing.Point(0, 0);
 			this.chartPanel.Name = "chartPanel";
 			this.chartPanel.Size = new System.Drawing.Size(988, 505);
-			this.chartPanel.TabIndex = 1;
+			this.chartPanel.TabIndex = 40;
 			// 
 			// panel6
 			// 
@@ -672,7 +673,7 @@
 			this.label7.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label7.Location = new System.Drawing.Point(3, 4);
 			this.label7.Name = "label7";
-			this.label7.Size = new System.Drawing.Size(191, 35);
+			this.label7.Size = new System.Drawing.Size(160, 28);
 			this.label7.TabIndex = 22;
 			this.label7.Text = "BIỂU ĐỒ THỐNG KÊ";
 			// 
@@ -741,7 +742,7 @@
 			this.revenueLb.ForeColor = System.Drawing.Color.Black;
 			this.revenueLb.Location = new System.Drawing.Point(16, 64);
 			this.revenueLb.Name = "revenueLb";
-			this.revenueLb.Size = new System.Drawing.Size(0, 30);
+			this.revenueLb.Size = new System.Drawing.Size(0, 25);
 			this.revenueLb.TabIndex = 2;
 			// 
 			// label8
@@ -751,7 +752,7 @@
 			this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(174)))), ((int)(((byte)(192)))));
 			this.label8.Location = new System.Drawing.Point(16, 30);
 			this.label8.Name = "label8";
-			this.label8.Size = new System.Drawing.Size(247, 26);
+			this.label8.Size = new System.Drawing.Size(207, 21);
 			this.label8.TabIndex = 0;
 			this.label8.Text = "Tổng doanh thu 6 tháng gần đây";
 			// 
@@ -803,7 +804,7 @@
 			this.bookSoldLb.ForeColor = System.Drawing.Color.Black;
 			this.bookSoldLb.Location = new System.Drawing.Point(15, 64);
 			this.bookSoldLb.Name = "bookSoldLb";
-			this.bookSoldLb.Size = new System.Drawing.Size(0, 30);
+			this.bookSoldLb.Size = new System.Drawing.Size(0, 25);
 			this.bookSoldLb.TabIndex = 5;
 			// 
 			// label4
@@ -813,7 +814,7 @@
 			this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(174)))), ((int)(((byte)(192)))));
 			this.label4.Location = new System.Drawing.Point(15, 30);
 			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(279, 26);
+			this.label4.Size = new System.Drawing.Size(232, 21);
 			this.label4.TabIndex = 3;
 			this.label4.Text = "Tổng số sách đã bán 6 tháng gần đây";
 			// 
@@ -865,7 +866,7 @@
 			this.customerNumLb.ForeColor = System.Drawing.Color.Black;
 			this.customerNumLb.Location = new System.Drawing.Point(13, 64);
 			this.customerNumLb.Name = "customerNumLb";
-			this.customerNumLb.Size = new System.Drawing.Size(0, 30);
+			this.customerNumLb.Size = new System.Drawing.Size(0, 25);
 			this.customerNumLb.TabIndex = 8;
 			// 
 			// label6
@@ -875,13 +876,13 @@
 			this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(174)))), ((int)(((byte)(192)))));
 			this.label6.Location = new System.Drawing.Point(13, 30);
 			this.label6.Name = "label6";
-			this.label6.Size = new System.Drawing.Size(275, 26);
+			this.label6.Size = new System.Drawing.Size(230, 21);
 			this.label6.TabIndex = 6;
 			this.label6.Text = "Tổng số khách hàng 6 tháng gần đây";
 			// 
 			// CustomerStatisticGUI
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 26F);
+			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
 			this.ClientSize = new System.Drawing.Size(988, 559);
@@ -922,56 +923,56 @@
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
 			this.ResumeLayout(false);
 
-		}
+        }
 
-		#endregion
-		private System.Windows.Forms.Panel line1;
-		private System.Windows.Forms.PictureBox pictureBox1;
-		private Guna.UI.WinForms.GunaDataGridView dgvCustomer;
-		private System.Windows.Forms.Panel optionPanel;
-		private Guna.UI.WinForms.GunaAdvenceButton refreshBtn;
-		private GradientPanel gradientPanel1;
-		private System.Windows.Forms.Panel panel3;
-		private System.Windows.Forms.Panel panel4;
-		private System.Windows.Forms.Panel panel2;
-		private System.Windows.Forms.Label label1;
-		private Guna.UI.WinForms.GunaAdvenceButton exportBtn;
-		private Guna.UI2.WinForms.Guna2TextBox searchInput;
-		private Guna.UI2.WinForms.Guna2TextBox boughtTo;
-		private Guna.UI2.WinForms.Guna2TextBox boughtFrom;
-		private Guna.UI.WinForms.GunaAdvenceButton chartBtn;
-		private Guna.UI.WinForms.GunaAdvenceButton tableBtn;
-		private System.Windows.Forms.Timer modeCheck;
-		private System.Windows.Forms.Panel tablePanel;
-		private System.Windows.Forms.Panel chartPanel;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-		private System.Windows.Forms.PictureBox closeBtn;
+        #endregion
+        private System.Windows.Forms.Panel line1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private Guna.UI.WinForms.GunaDataGridView dgvCustomer;
+        private System.Windows.Forms.Panel optionPanel;
+        private Guna.UI.WinForms.GunaAdvenceButton refreshBtn;
+        private GradientPanel gradientPanel1;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label1;
+        private Guna.UI.WinForms.GunaAdvenceButton exportBtn;
+        private Guna.UI2.WinForms.Guna2TextBox searchInput;
+        private Guna.UI2.WinForms.Guna2TextBox boughtTo;
+        private Guna.UI2.WinForms.Guna2TextBox boughtFrom;
+        private Guna.UI.WinForms.GunaAdvenceButton chartBtn;
+        private Guna.UI.WinForms.GunaAdvenceButton tableBtn;
+        private System.Windows.Forms.Timer modeCheck;
+        private System.Windows.Forms.Panel tablePanel;
+        private System.Windows.Forms.Panel chartPanel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.PictureBox closeBtn;
         private System.Windows.Forms.Panel panel1;
-		private System.Windows.Forms.Panel panel5;
-		private System.Windows.Forms.Panel panel6;
-		private System.Windows.Forms.Integration.ElementHost elementHost1;
-		private LiveCharts.Wpf.PieChart pieChart1;
-		private System.Windows.Forms.Panel panel7;
-		private System.Windows.Forms.Label label7;
-		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-		private Guna.UI.WinForms.GunaGradient2Panel gunaGradient2Panel1;
-		private Guna.UI.WinForms.GunaGradient2Panel gunaGradient2Panel4;
-		private System.Windows.Forms.PictureBox pictureBox4;
-		private System.Windows.Forms.Label revenueLb;
-		private System.Windows.Forms.Label label8;
-		private Guna.UI.WinForms.GunaGradient2Panel gunaGradient2Panel3;
-		private Guna.UI.WinForms.GunaGradient2Panel gunaGradient2Panel5;
-		private System.Windows.Forms.PictureBox pictureBox2;
-		private System.Windows.Forms.Label bookSoldLb;
-		private System.Windows.Forms.Label label4;
-		private Guna.UI.WinForms.GunaGradient2Panel gunaGradient2Panel2;
-		private Guna.UI.WinForms.GunaGradient2Panel gunaGradient2Panel6;
-		private System.Windows.Forms.PictureBox pictureBox3;
-		private System.Windows.Forms.Label customerNumLb;
-		private System.Windows.Forms.Label label6;
-	}
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Integration.ElementHost elementHost1;
+        private LiveCharts.Wpf.PieChart pieChart1;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private Guna.UI.WinForms.GunaGradient2Panel gunaGradient2Panel1;
+        private Guna.UI.WinForms.GunaGradient2Panel gunaGradient2Panel4;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Label revenueLb;
+        private System.Windows.Forms.Label label8;
+        private Guna.UI.WinForms.GunaGradient2Panel gunaGradient2Panel3;
+        private Guna.UI.WinForms.GunaGradient2Panel gunaGradient2Panel5;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label bookSoldLb;
+        private System.Windows.Forms.Label label4;
+        private Guna.UI.WinForms.GunaGradient2Panel gunaGradient2Panel2;
+        private Guna.UI.WinForms.GunaGradient2Panel gunaGradient2Panel6;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Label customerNumLb;
+        private System.Windows.Forms.Label label6;
+    }
 }
