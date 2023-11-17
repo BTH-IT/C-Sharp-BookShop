@@ -194,22 +194,31 @@ namespace QuanLyCuaHangBanSach
 
         public DataTable ImportFile()
         {
-            OpenFileDialog fil = new OpenFileDialog();
-            fil.ShowDialog();
+            try
+            {
 
-            string path = fil.FileName.ToString();
+                OpenFileDialog fil = new OpenFileDialog();
+                fil.ShowDialog();
 
-            if (path == string.Empty) return null;
+                string path = fil.FileName.ToString();
 
-            var stream = File.Open(path, FileMode.Open, FileAccess.Read);
+                if (path == string.Empty) return null;
 
-            var reader = ExcelReaderFactory.CreateReader(stream);
+                var stream = File.Open(path, FileMode.Open, FileAccess.Read);
 
-            var result = reader.AsDataSet();
+                var reader = ExcelReaderFactory.CreateReader(stream);
 
-            var tables = result.Tables.Cast<DataTable>();
+                var result = reader.AsDataSet();
 
-            return tables.ElementAt(0);
+                var tables = result.Tables.Cast<DataTable>();
+
+                return tables.ElementAt(0);
+            }
+            catch (Exception ex)
+            {
+                DataTable dt = new DataTable();
+                return dt;
+            }
         }
     }
 }
