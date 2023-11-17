@@ -590,7 +590,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
                     if (!string.IsNullOrEmpty(err))
                     {
-                        string result = err.TrimEnd(' -');
+                        string result = err.TrimEnd('-');
 
                         // Output the result
                         MessageBox.Show("Các sách có mã " + result + " có số lượng là 0 không thể thêm vào danh sách");
