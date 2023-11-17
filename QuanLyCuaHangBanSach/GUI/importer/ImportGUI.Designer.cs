@@ -44,12 +44,8 @@
 			this.BookContainer = new System.Windows.Forms.FlowLayoutPanel();
 			this.panel3 = new System.Windows.Forms.Panel();
 			this.panel4 = new System.Windows.Forms.Panel();
-			this.ShopPaidTxb = new Guna.UI2.WinForms.Guna2TextBox();
 			this.panel7 = new System.Windows.Forms.Panel();
-			this.VndLb = new System.Windows.Forms.Label();
 			this.NameInp = new Guna.UI2.WinForms.Guna2TextBox();
-			this.ArrearMoneyLb = new System.Windows.Forms.Label();
-			this.ArrearLb = new System.Windows.Forms.Label();
 			this.TotalMoneyLb = new System.Windows.Forms.Label();
 			this.NameResultContainer = new System.Windows.Forms.FlowLayoutPanel();
 			this.CartContainer = new System.Windows.Forms.FlowLayoutPanel();
@@ -65,6 +61,7 @@
 			this.gunaElipsePanel1 = new Guna.UI.WinForms.GunaElipsePanel();
 			this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
 			this.panel2 = new System.Windows.Forms.Panel();
+			this.ExcelImportBtn = new Guna.UI2.WinForms.Guna2Button();
 			this.panel6 = new System.Windows.Forms.Panel();
 			this.LogoutBtn = new Guna.UI2.WinForms.Guna2Button();
 			this.flowLayoutPanel2.SuspendLayout();
@@ -78,6 +75,7 @@
 			this.panel5.SuspendLayout();
 			this.gunaElipsePanel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
+			this.panel2.SuspendLayout();
 			this.panel6.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -174,7 +172,7 @@
 			this.ProductSearchInp.Size = new System.Drawing.Size(215, 30);
 			this.ProductSearchInp.TabIndex = 0;
 			this.ProductSearchInp.TextChanged += new System.EventHandler(this.ProductSearchInp_TextChanged);
-			this.ProductSearchInp.MouseLeave += new System.EventHandler(this.ShopPaidTxb_MouseLeave);
+			this.ProductSearchInp.MouseLeave += new System.EventHandler(this.ProductSearchInp_MouseLeave);
 			// 
 			// FilterBtn
 			// 
@@ -257,12 +255,8 @@
 			// 
 			// panel4
 			// 
-			this.panel4.Controls.Add(this.ShopPaidTxb);
 			this.panel4.Controls.Add(this.panel7);
-			this.panel4.Controls.Add(this.VndLb);
 			this.panel4.Controls.Add(this.NameInp);
-			this.panel4.Controls.Add(this.ArrearMoneyLb);
-			this.panel4.Controls.Add(this.ArrearLb);
 			this.panel4.Controls.Add(this.TotalMoneyLb);
 			this.panel4.Controls.Add(this.NameResultContainer);
 			this.panel4.Controls.Add(this.CartContainer);
@@ -277,35 +271,6 @@
 			this.panel4.Size = new System.Drawing.Size(300, 668);
 			this.panel4.TabIndex = 0;
 			// 
-			// ShopPaidTxb
-			// 
-			this.ShopPaidTxb.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-			this.ShopPaidTxb.Cursor = System.Windows.Forms.Cursors.IBeam;
-			this.ShopPaidTxb.DefaultText = "";
-			this.ShopPaidTxb.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-			this.ShopPaidTxb.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-			this.ShopPaidTxb.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-			this.ShopPaidTxb.DisabledState.Parent = this.ShopPaidTxb;
-			this.ShopPaidTxb.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-			this.ShopPaidTxb.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-			this.ShopPaidTxb.FocusedState.Parent = this.ShopPaidTxb;
-			this.ShopPaidTxb.Font = new System.Drawing.Font("#9Slide03 Cabin Medium", 10F);
-			this.ShopPaidTxb.ForeColor = System.Drawing.Color.Black;
-			this.ShopPaidTxb.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-			this.ShopPaidTxb.HoverState.Parent = this.ShopPaidTxb;
-			this.ShopPaidTxb.Location = new System.Drawing.Point(16, 563);
-			this.ShopPaidTxb.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-			this.ShopPaidTxb.Name = "ShopPaidTxb";
-			this.ShopPaidTxb.PasswordChar = '\0';
-			this.ShopPaidTxb.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-			this.ShopPaidTxb.PlaceholderText = "Cửa hàng đưa ...";
-			this.ShopPaidTxb.SelectedText = "";
-			this.ShopPaidTxb.ShadowDecoration.Parent = this.ShopPaidTxb;
-			this.ShopPaidTxb.Size = new System.Drawing.Size(229, 30);
-			this.ShopPaidTxb.TabIndex = 2;
-			this.ShopPaidTxb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ShopPaidTxb_KeyPress);
-			this.ShopPaidTxb.MouseLeave += new System.EventHandler(this.ShopPaidTxb_MouseLeave);
-			// 
 			// panel7
 			// 
 			this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
@@ -313,18 +278,6 @@
 			this.panel7.Name = "panel7";
 			this.panel7.Size = new System.Drawing.Size(244, 1);
 			this.panel7.TabIndex = 27;
-			// 
-			// VndLb
-			// 
-			this.VndLb.AutoSize = true;
-			this.VndLb.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-			this.VndLb.Location = new System.Drawing.Point(248, 565);
-			this.VndLb.Margin = new System.Windows.Forms.Padding(20, 30, 3, 5);
-			this.VndLb.Name = "VndLb";
-			this.VndLb.Size = new System.Drawing.Size(45, 25);
-			this.VndLb.TabIndex = 26;
-			this.VndLb.Text = "VND";
-			this.VndLb.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
 			// NameInp
 			// 
@@ -353,35 +306,12 @@
 			this.NameInp.Size = new System.Drawing.Size(244, 36);
 			this.NameInp.TabIndex = 0;
 			this.NameInp.TextChanged += new System.EventHandler(this.NameInp_TextChanged);
-			this.NameInp.MouseLeave += new System.EventHandler(this.ShopPaidTxb_MouseLeave);
-			// 
-			// ArrearMoneyLb
-			// 
-			this.ArrearMoneyLb.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-			this.ArrearMoneyLb.Location = new System.Drawing.Point(96, 596);
-			this.ArrearMoneyLb.Margin = new System.Windows.Forms.Padding(20, 30, 3, 5);
-			this.ArrearMoneyLb.Name = "ArrearMoneyLb";
-			this.ArrearMoneyLb.Size = new System.Drawing.Size(197, 21);
-			this.ArrearMoneyLb.TabIndex = 24;
-			this.ArrearMoneyLb.Text = "0 VND";
-			this.ArrearMoneyLb.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			// 
-			// ArrearLb
-			// 
-			this.ArrearLb.AutoSize = true;
-			this.ArrearLb.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-			this.ArrearLb.Location = new System.Drawing.Point(11, 594);
-			this.ArrearLb.Margin = new System.Windows.Forms.Padding(20, 30, 3, 5);
-			this.ArrearLb.Name = "ArrearLb";
-			this.ArrearLb.Size = new System.Drawing.Size(84, 25);
-			this.ArrearLb.TabIndex = 23;
-			this.ArrearLb.Text = "Còn thiếu:";
-			this.ArrearLb.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.NameInp.MouseLeave += new System.EventHandler(this.ProductSearchInp_MouseLeave);
 			// 
 			// TotalMoneyLb
 			// 
 			this.TotalMoneyLb.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-			this.TotalMoneyLb.Location = new System.Drawing.Point(139, 536);
+			this.TotalMoneyLb.Location = new System.Drawing.Point(139, 587);
 			this.TotalMoneyLb.Margin = new System.Windows.Forms.Padding(20, 30, 3, 5);
 			this.TotalMoneyLb.Name = "TotalMoneyLb";
 			this.TotalMoneyLb.Size = new System.Drawing.Size(154, 21);
@@ -461,7 +391,7 @@
 			// 
 			this.TotalLb.AutoSize = true;
 			this.TotalLb.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-			this.TotalLb.Location = new System.Drawing.Point(10, 534);
+			this.TotalLb.Location = new System.Drawing.Point(10, 585);
 			this.TotalLb.Margin = new System.Windows.Forms.Padding(20, 30, 3, 5);
 			this.TotalLb.Name = "TotalLb";
 			this.TotalLb.Size = new System.Drawing.Size(120, 25);
@@ -532,10 +462,41 @@
 			// 
 			// panel2
 			// 
+			this.panel2.Controls.Add(this.ExcelImportBtn);
 			this.panel2.Location = new System.Drawing.Point(3, 87);
 			this.panel2.Name = "panel2";
 			this.panel2.Size = new System.Drawing.Size(77, 516);
 			this.panel2.TabIndex = 1;
+			// 
+			// ExcelImportBtn
+			// 
+			this.ExcelImportBtn.Animated = true;
+			this.ExcelImportBtn.BackColor = System.Drawing.Color.Transparent;
+			this.ExcelImportBtn.BorderColor = System.Drawing.Color.White;
+			this.ExcelImportBtn.BorderRadius = 25;
+			this.ExcelImportBtn.BorderThickness = 1;
+			this.ExcelImportBtn.CheckedState.Parent = this.ExcelImportBtn;
+			this.ExcelImportBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.ExcelImportBtn.CustomImages.Parent = this.ExcelImportBtn;
+			this.ExcelImportBtn.FillColor = System.Drawing.Color.White;
+			this.ExcelImportBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 10F);
+			this.ExcelImportBtn.ForeColor = System.Drawing.Color.White;
+			this.ExcelImportBtn.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(107)))), ((int)(((byte)(250)))));
+			this.ExcelImportBtn.HoverState.FillColor = System.Drawing.Color.White;
+			this.ExcelImportBtn.HoverState.Parent = this.ExcelImportBtn;
+			this.ExcelImportBtn.Image = ((System.Drawing.Image)(resources.GetObject("ExcelImportBtn.Image")));
+			this.ExcelImportBtn.ImageSize = new System.Drawing.Size(35, 35);
+			this.ExcelImportBtn.Location = new System.Drawing.Point(13, 25);
+			this.ExcelImportBtn.Name = "ExcelImportBtn";
+			this.ExcelImportBtn.PressedColor = System.Drawing.Color.Transparent;
+			this.ExcelImportBtn.ShadowDecoration.BorderRadius = 25;
+			this.ExcelImportBtn.ShadowDecoration.Depth = 100;
+			this.ExcelImportBtn.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+			this.ExcelImportBtn.ShadowDecoration.Parent = this.ExcelImportBtn;
+			this.ExcelImportBtn.Size = new System.Drawing.Size(50, 50);
+			this.ExcelImportBtn.TabIndex = 47;
+			this.ExcelImportBtn.TabStop = false;
+			this.ExcelImportBtn.Click += new System.EventHandler(this.ExcelImportBtn_Click);
 			// 
 			// panel6
 			// 
@@ -605,6 +566,7 @@
 			this.panel5.ResumeLayout(false);
 			this.gunaElipsePanel1.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
+			this.panel2.ResumeLayout(false);
 			this.panel6.ResumeLayout(false);
 			this.ResumeLayout(false);
 
@@ -623,9 +585,6 @@
         private System.Windows.Forms.FlowLayoutPanel BookContainer;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label VndLb;
-        private System.Windows.Forms.Label ArrearMoneyLb;
-        private System.Windows.Forms.Label ArrearLb;
         private System.Windows.Forms.Label SupplierNameLb;
         private System.Windows.Forms.Label TotalMoneyLb;
         private System.Windows.Forms.FlowLayoutPanel NameResultContainer;
@@ -647,6 +606,6 @@
 		private Guna.UI.WinForms.GunaButton QRScanBtn;
 		private Guna.UI2.WinForms.Guna2TextBox NameInp;
 		private System.Windows.Forms.Panel panel7;
-		private Guna.UI2.WinForms.Guna2TextBox ShopPaidTxb;
+		private Guna.UI2.WinForms.Guna2Button ExcelImportBtn;
 	}
 }

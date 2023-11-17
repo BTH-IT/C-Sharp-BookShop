@@ -153,11 +153,13 @@ namespace QuanLyCuaHangBanSach
                         {
                             errMsgLbl.Text = "Trường này không được lớn hơn " + currentYear;
                             line.BackColor = Color.FromArgb(239, 68, 68);
+                            return false; 
                         }
                         else
                         {
                             errMsgLbl.Text = "";
                             line.BackColor = Color.FromArgb(45, 212, 191);
+                            return true;
                         }
                         break;
                     case "email":
