@@ -91,7 +91,7 @@
 			this.searchInput.SelectedText = "";
 			this.searchInput.ShadowDecoration.Parent = this.searchInput;
 			this.searchInput.Size = new System.Drawing.Size(223, 32);
-			this.searchInput.TabIndex = 1;
+			this.searchInput.TabIndex = 0;
 			this.searchInput.TextChanged += new System.EventHandler(this.searchInput_TextChanged);
 			// 
 			// dgvSale
@@ -157,7 +157,8 @@
 			this.dgvSale.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
 			this.dgvSale.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.dgvSale.Size = new System.Drawing.Size(1044, 558);
-			this.dgvSale.TabIndex = 34;
+			this.dgvSale.StandardTab = true;
+			this.dgvSale.TabIndex = 1;
 			this.dgvSale.TabStop = false;
 			this.dgvSale.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna;
 			this.dgvSale.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -248,7 +249,7 @@
 			this.panel1.Location = new System.Drawing.Point(0, 630);
 			this.panel1.Name = "panel1";
 			this.panel1.Size = new System.Drawing.Size(1044, 54);
-			this.panel1.TabIndex = 1;
+			this.panel1.TabIndex = 2;
 			// 
 			// btnExport
 			// 
@@ -263,7 +264,7 @@
 			this.btnExport.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnExport.CheckedImage")));
 			this.btnExport.CheckedLineColor = System.Drawing.Color.DimGray;
 			this.btnExport.DialogResult = System.Windows.Forms.DialogResult.None;
-			this.btnExport.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(159)))), ((int)(((byte)(147)))));
+			this.btnExport.FocusedColor = System.Drawing.Color.PaleTurquoise;
 			this.btnExport.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold);
 			this.btnExport.ForeColor = System.Drawing.Color.White;
 			this.btnExport.Image = ((System.Drawing.Image)(resources.GetObject("btnExport.Image")));
@@ -279,7 +280,7 @@
 			this.btnExport.OnPressedColor = System.Drawing.Color.Black;
 			this.btnExport.Radius = 6;
 			this.btnExport.Size = new System.Drawing.Size(121, 42);
-			this.btnExport.TabIndex = 7;
+			this.btnExport.TabIndex = 1;
 			this.btnExport.Text = "Xuất excel";
 			this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
 			// 
@@ -296,7 +297,7 @@
 			this.btnRefresh.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnRefresh.CheckedImage")));
 			this.btnRefresh.CheckedLineColor = System.Drawing.Color.DimGray;
 			this.btnRefresh.DialogResult = System.Windows.Forms.DialogResult.None;
-			this.btnRefresh.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(159)))), ((int)(((byte)(147)))));
+			this.btnRefresh.FocusedColor = System.Drawing.Color.PaleTurquoise;
 			this.btnRefresh.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold);
 			this.btnRefresh.ForeColor = System.Drawing.Color.White;
 			this.btnRefresh.Image = ((System.Drawing.Image)(resources.GetObject("btnRefresh.Image")));
@@ -312,7 +313,7 @@
 			this.btnRefresh.OnPressedColor = System.Drawing.Color.Black;
 			this.btnRefresh.Radius = 6;
 			this.btnRefresh.Size = new System.Drawing.Size(107, 42);
-			this.btnRefresh.TabIndex = 5;
+			this.btnRefresh.TabIndex = 0;
 			this.btnRefresh.Text = "Làm mới";
 			this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
 			// 
@@ -330,7 +331,7 @@
 			this.deleteBtn.CheckedImage = ((System.Drawing.Image)(resources.GetObject("deleteBtn.CheckedImage")));
 			this.deleteBtn.CheckedLineColor = System.Drawing.Color.DimGray;
 			this.deleteBtn.DialogResult = System.Windows.Forms.DialogResult.None;
-			this.deleteBtn.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(159)))), ((int)(((byte)(147)))));
+			this.deleteBtn.FocusedColor = System.Drawing.Color.PaleTurquoise;
 			this.deleteBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold);
 			this.deleteBtn.ForeColor = System.Drawing.Color.White;
 			this.deleteBtn.Image = ((System.Drawing.Image)(resources.GetObject("deleteBtn.Image")));
@@ -346,7 +347,7 @@
 			this.deleteBtn.OnPressedColor = System.Drawing.Color.Black;
 			this.deleteBtn.Radius = 6;
 			this.deleteBtn.Size = new System.Drawing.Size(78, 42);
-			this.deleteBtn.TabIndex = 10;
+			this.deleteBtn.TabIndex = 4;
 			this.deleteBtn.Text = "Xóa";
 			this.deleteBtn.Click += new System.EventHandler(this.btnDelete_Click);
 			// 
@@ -364,7 +365,7 @@
 			this.btnEdit.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnEdit.CheckedImage")));
 			this.btnEdit.CheckedLineColor = System.Drawing.Color.DimGray;
 			this.btnEdit.DialogResult = System.Windows.Forms.DialogResult.None;
-			this.btnEdit.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(159)))), ((int)(((byte)(147)))));
+			this.btnEdit.FocusedColor = System.Drawing.Color.PaleTurquoise;
 			this.btnEdit.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold);
 			this.btnEdit.ForeColor = System.Drawing.Color.White;
 			this.btnEdit.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit.Image")));
@@ -380,7 +381,7 @@
 			this.btnEdit.OnPressedColor = System.Drawing.Color.Black;
 			this.btnEdit.Radius = 6;
 			this.btnEdit.Size = new System.Drawing.Size(113, 42);
-			this.btnEdit.TabIndex = 9;
+			this.btnEdit.TabIndex = 3;
 			this.btnEdit.Text = "Chỉnh sửa";
 			this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
 			// 
@@ -398,7 +399,7 @@
 			this.btnAdd.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnAdd.CheckedImage")));
 			this.btnAdd.CheckedLineColor = System.Drawing.Color.DimGray;
 			this.btnAdd.DialogResult = System.Windows.Forms.DialogResult.None;
-			this.btnAdd.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(159)))), ((int)(((byte)(147)))));
+			this.btnAdd.FocusedColor = System.Drawing.Color.PaleTurquoise;
 			this.btnAdd.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold);
 			this.btnAdd.ForeColor = System.Drawing.Color.White;
 			this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
@@ -414,7 +415,7 @@
 			this.btnAdd.OnPressedColor = System.Drawing.Color.Black;
 			this.btnAdd.Radius = 6;
 			this.btnAdd.Size = new System.Drawing.Size(117, 42);
-			this.btnAdd.TabIndex = 8;
+			this.btnAdd.TabIndex = 2;
 			this.btnAdd.Text = "Thêm mới";
 			this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
 			// 
@@ -426,10 +427,10 @@
 			this.panel5.Controls.Add(this.label3);
 			this.panel5.Controls.Add(this.label2);
 			this.panel5.Controls.Add(this.dateTimeFrom);
-			this.panel5.Location = new System.Drawing.Point(628, 17);
+			this.panel5.Location = new System.Drawing.Point(632, 17);
 			this.panel5.Name = "panel5";
-			this.panel5.Size = new System.Drawing.Size(404, 36);
-			this.panel5.TabIndex = 42;
+			this.panel5.Size = new System.Drawing.Size(400, 36);
+			this.panel5.TabIndex = 1;
 			// 
 			// filterCkx
 			// 
@@ -437,10 +438,10 @@
 			this.filterCkx.CheckedOffColor = System.Drawing.Color.LightGray;
 			this.filterCkx.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
 			this.filterCkx.FillColor = System.Drawing.Color.White;
-			this.filterCkx.Location = new System.Drawing.Point(9, 9);
+			this.filterCkx.Location = new System.Drawing.Point(17, 9);
 			this.filterCkx.Name = "filterCkx";
 			this.filterCkx.Size = new System.Drawing.Size(20, 20);
-			this.filterCkx.TabIndex = 2;
+			this.filterCkx.TabIndex = 0;
 			this.filterCkx.CheckedChanged += new System.EventHandler(this.filterCkx_CheckChanged);
 			// 
 			// dateTimeTo
@@ -451,7 +452,7 @@
 			this.dateTimeTo.BorderSize = 1;
 			this.dateTimeTo.CustomFormat = null;
 			this.dateTimeTo.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
-			this.dateTimeTo.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(159)))), ((int)(((byte)(147)))));
+			this.dateTimeTo.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
 			this.dateTimeTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.dateTimeTo.ForeColor = System.Drawing.Color.Black;
 			this.dateTimeTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
@@ -465,8 +466,8 @@
 			this.dateTimeTo.OnPressedColor = System.Drawing.Color.Black;
 			this.dateTimeTo.Radius = 6;
 			this.dateTimeTo.Size = new System.Drawing.Size(130, 36);
-			this.dateTimeTo.TabIndex = 4;
-			this.dateTimeTo.Text = "8/30/2023";
+			this.dateTimeTo.TabIndex = 42;
+			this.dateTimeTo.Text = "30/08/2023";
 			this.dateTimeTo.Value = new System.DateTime(2023, 8, 30, 19, 55, 8, 854);
 			this.dateTimeTo.ValueChanged += new System.EventHandler(this.dateTimeTo_ValueChanged);
 			// 
@@ -483,7 +484,7 @@
 			// label2
 			// 
 			this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label2.Location = new System.Drawing.Point(35, 0);
+			this.label2.Location = new System.Drawing.Point(43, 0);
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(40, 37);
 			this.label2.TabIndex = 0;
@@ -498,7 +499,7 @@
 			this.dateTimeFrom.BorderSize = 1;
 			this.dateTimeFrom.CustomFormat = null;
 			this.dateTimeFrom.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
-			this.dateTimeFrom.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(159)))), ((int)(((byte)(147)))));
+			this.dateTimeFrom.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
 			this.dateTimeFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.dateTimeFrom.ForeColor = System.Drawing.Color.Black;
 			this.dateTimeFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
@@ -512,8 +513,8 @@
 			this.dateTimeFrom.OnPressedColor = System.Drawing.Color.Black;
 			this.dateTimeFrom.Radius = 6;
 			this.dateTimeFrom.Size = new System.Drawing.Size(130, 36);
-			this.dateTimeFrom.TabIndex = 3;
-			this.dateTimeFrom.Text = "8/30/2023";
+			this.dateTimeFrom.TabIndex = 40;
+			this.dateTimeFrom.Text = "30/08/2023";
 			this.dateTimeFrom.Value = new System.DateTime(2023, 8, 30, 19, 55, 8, 854);
 			this.dateTimeFrom.ValueChanged += new System.EventHandler(this.dateTimeFrom_Changed);
 			// 
@@ -541,7 +542,7 @@
 			// 
 			// SeoManageGUI
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
 			this.ClientSize = new System.Drawing.Size(1044, 684);

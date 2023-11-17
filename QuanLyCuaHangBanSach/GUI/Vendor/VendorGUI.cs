@@ -64,14 +64,16 @@ namespace QuanLyCuaHangBanSach.GUI
             CustomerEnabled = CustomerToggleBtn.Checked;
             PhoneInp.Enabled = CustomerEnabled;
             AddCustomerBtn.Enabled = CustomerEnabled;
+			PointAmountLb.Text = "";
             if (!CustomerEnabled)
-            {
+			{
                 RecipientNameLb.Text = "Vãng lai";
                 PhoneInp.Text = "";
-                PhoneResultContainer.Height = 0;
+				PhoneResultContainer.Height = 0;
                 PointToggleBtn.Checked = false;
-            }
-            else
+                PointToggleBtn.Enabled = false;
+			}
+			else
             {
                 RecipientNameLb.Text = "";
                 PointToggleBtn.Enabled = false;
@@ -324,12 +326,15 @@ namespace QuanLyCuaHangBanSach.GUI
                 if (SearchResultControl.clicked)
                 {
                     customerID = SearchResultControl.id;
-                    PointToggleBtn.Enabled = true;
                     CustomerDTO customer = CustomerBUS.Instance.getById(SearchResultControl.id.ToString());
                     RecipientNameLb.Text = customer.Ten;
                     PhoneResultContainer.Height = 0;
+                    PhoneInp.Text = "";
                     CartHandler();
-                    SearchResultControl.clicked = false;
+                    int pointDiscount = CustomerBUS.Instance.getById(customerID.ToString()).Diem;
+                    PointAmountLb.Text = $@"{pointDiscount} điểm";
+                    if (pointDiscount > 0) PointToggleBtn.Enabled = true;
+					SearchResultControl.clicked = false;
                 }
 
                 if (FilterUserControl.ApplyClicked)
@@ -553,7 +558,8 @@ namespace QuanLyCuaHangBanSach.GUI
                     DiscountMoneyLb.Text = "0 VND";
                     DiscountCb.SelectedIndex = 0;
                     RecipientNameLb.Text = string.Empty;
-                    customerID = 0;
+					PointAmountLb.Text = string.Empty;
+					customerID = 0;
                     CartHandler();
                     RenderBookContainer();
                 }

@@ -186,8 +186,7 @@ namespace QuanLyCuaHangBanSach.GUI
             this.randomCode = "";
             to = "";
             this.Hide();
-            LoginGUI login = new LoginGUI();
-            login.Show();
+            LoginGUI.Instance.Show();
         }
     }
 }

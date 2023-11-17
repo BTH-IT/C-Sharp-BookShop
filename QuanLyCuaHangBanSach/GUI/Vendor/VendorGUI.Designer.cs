@@ -51,6 +51,7 @@
 			this.BookContainer = new System.Windows.Forms.FlowLayoutPanel();
 			this.FilterContainer = new System.Windows.Forms.Panel();
 			this.panel4 = new System.Windows.Forms.Panel();
+			this.PointAmountLb = new System.Windows.Forms.Label();
 			this.CustomerCashTxb = new Guna.UI2.WinForms.Guna2TextBox();
 			this.PointToggleBtn = new Guna.UI2.WinForms.Guna2ToggleSwitch();
 			this.PointLb = new System.Windows.Forms.Label();
@@ -351,6 +352,7 @@
 			// 
 			// panel4
 			// 
+			this.panel4.Controls.Add(this.PointAmountLb);
 			this.panel4.Controls.Add(this.CustomerCashTxb);
 			this.panel4.Controls.Add(this.PointToggleBtn);
 			this.panel4.Controls.Add(this.PointLb);
@@ -379,6 +381,16 @@
 			this.panel4.Name = "panel4";
 			this.panel4.Size = new System.Drawing.Size(300, 668);
 			this.panel4.TabIndex = 0;
+			// 
+			// PointAmountLb
+			// 
+			this.PointAmountLb.AutoSize = true;
+			this.PointAmountLb.Font = new System.Drawing.Font("#9Slide03 Cabin", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+			this.PointAmountLb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+			this.PointAmountLb.Location = new System.Drawing.Point(86, 455);
+			this.PointAmountLb.Name = "PointAmountLb";
+			this.PointAmountLb.Size = new System.Drawing.Size(0, 25);
+			this.PointAmountLb.TabIndex = 100;
 			// 
 			// CustomerCashTxb
 			// 
@@ -466,6 +478,7 @@
 			this.PhoneInp.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
 			this.PhoneInp.DisabledState.Parent = this.PhoneInp;
 			this.PhoneInp.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+			this.PhoneInp.Enabled = false;
 			this.PhoneInp.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
 			this.PhoneInp.FocusedState.Parent = this.PhoneInp;
 			this.PhoneInp.Font = new System.Drawing.Font("#9Slide03 Cabin", 12F);
@@ -821,5 +834,6 @@
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.Label RecipientNameLb;
 		private System.Windows.Forms.Panel panel3;
+		private System.Windows.Forms.Label PointAmountLb;
 	}
 }

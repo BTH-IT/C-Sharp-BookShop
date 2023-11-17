@@ -159,7 +159,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         {
             try
             {
-				if (e.RowIndex < 0 || e.ColumnIndex <= 0)
+				if (e.RowIndex < 0 || e.ColumnIndex < 0)
 				{
 					return;
 				}
@@ -204,9 +204,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             {
                 MessageBox.Show("Bảng dữ liệu hiện tại chưa có dòng dữ liệu nào để xuất excel!");
                 return;
-
             }
-
             try
             {
 				string[] headerList = new string[] { "Mã Khuyến mãi", "Tên khuyến mãi", "Phẩn trăm", "Ngày bắt đầu", "Ngày kết thúc" };
@@ -279,41 +277,41 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         {
             try
 			{
-				DialogResult dialogResult = MessageBox.Show(
+                bool isHaveSelect = false;
+
+                foreach (DataGridViewRow row in this.dgvSale.Rows)
+                {
+                    if ((bool)row.Cells[0].Value)
+                    {
+                        isHaveSelect = true;
+                    }
+                }
+
+                if (!isHaveSelect)
+                {
+                    MessageBox.Show("Bạn chưa chọn các khuyến mãi cần xóa");
+                    return;
+                }
+
+                DialogResult dialogResult = MessageBox.Show(
 					"Bạn có chắc xóa những khuyến mãi đã chọn",
 					"Xác nhận",
 					MessageBoxButtons.YesNo,
 					MessageBoxIcon.None
 				);
-				bool hasCheckedRow = false;
-				foreach (DataGridViewRow row in this.dgvSale.Rows)
-				{
-					if ((bool)row.Cells[0].Value)
-					{
-						hasCheckedRow = true;
-					}
-				}
 				if (dialogResult == DialogResult.Yes)
 				{
-					if(hasCheckedRow)
-                    {
-						foreach (DataGridViewRow row in this.dgvSale.Rows)
+					foreach (DataGridViewRow row in this.dgvSale.Rows)
+					{
+						if ((bool)row.Cells[0].Value)
 						{
-							if ((bool)row.Cells[0].Value)
-							{
-								SaleBUS.Instance.delete(row.Cells[1].Value.ToString());
-							}
+							SaleBUS.Instance.delete(row.Cells[1].Value.ToString());
 						}
-						MessageBox.Show("Bạn đã xóa thành công");
+					}
+					MessageBox.Show("Bạn đã xóa thành công");
 
-						List<SaleDTO> sales = handleFilter(this.searchInput.Text);
-						this.loadDataToDataGridView(sales);
-                    }
-                    else
-                    {
-                        MessageBox.Show("Vui lòng chọn khuyến mãi để xóa", "Thông báo");
-                    }  
-					
+					List<SaleDTO> sales = handleFilter(this.searchInput.Text);
+					this.loadDataToDataGridView(sales);
 				}
 
 			}

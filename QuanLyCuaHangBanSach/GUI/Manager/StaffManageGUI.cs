@@ -6,7 +6,9 @@ using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Principal;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QuanLyCuaHangBanSach.GUI.Manager
@@ -21,7 +23,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         }
         private void renderCheckBoxDgv()
         {
-            int size = 25;
+            int size = 25;  
 
             Rectangle rect = this.dgvStaff.GetCellDisplayRectangle(0, -1, false);
 
@@ -101,8 +103,8 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             {
 				List<StaffDTO> staffs = StaffBUS.Instance.getAllData();
 				this.renderCheckBoxDgv();
-
-				this.genderCbx.Items.AddRange(genders);
+                headerCheckbox.MouseClick += new MouseEventHandler(headerCheckbox_Clicked);
+                this.genderCbx.Items.AddRange(genders);
 				this.genderCbx.SelectedIndex = 0;
 				this.loadPositionCbx();
 
@@ -110,6 +112,23 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 			}
             catch
             {
+            }
+        }
+
+        private void headerCheckbox_Clicked(object sender, EventArgs e)
+        {
+            try
+            {
+                foreach (DataGridViewRow row in this.dgvStaff.Rows)
+                {
+                    row.Cells[0].Value = headerCheckbox.Checked;
+                }
+
+                this.dgvStaff.RefreshEdit();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
             }
         }
 
@@ -139,9 +158,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             {
                 MessageBox.Show("Bảng dữ liệu hiện tại chưa có dòng dữ liệu nào để xuất excel!");
                 return;
-
             }
-
             try
             {
                 string[] headerList = new string[] { "Mã nhân viên", "Tên nhân viên", "Năm sinh", "SĐT", "Giới tính", "Lương", "Mã chức vụ" };
@@ -170,7 +187,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 					{
 						this.salaryFrom.Clear();
 						this.salaryTo.Clear();
-						MessageBox.Show("Tổng tiền là một số");
+						MessageBox.Show("Lương là một số");
 					}
 					else
 					{
@@ -276,6 +293,30 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             }
         }
 
+        private readonly int debounceInterval = 500; // Đặt khoảng thời gian debounce là 500 milliseconds
+        private DateTime lastTextChanged = DateTime.MinValue;
+        private readonly object debounceLock = new object();
+
+        private async void DebounceTextBox_TextChanged(object sender, EventArgs e)
+        {
+            lock (debounceLock)
+            {
+                lastTextChanged = DateTime.Now;
+            }
+
+            await Task.Delay(debounceInterval);
+
+            lock (debounceLock)
+            {
+                var now = DateTime.Now;
+                if ((now - lastTextChanged).TotalMilliseconds >= debounceInterval)
+                {
+                    List<StaffDTO> staffs = handleFilter(this.searchInput.Text);
+                    loadDataToDataGridView(staffs);
+                }
+            }
+        }
+
         private void salaryFrom_TextChanged(object sender, EventArgs e)
         {
             try
@@ -338,56 +379,55 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         {
             try
             {
-                DialogResult result = MessageBox.Show(
-                "Bạn có chắc muốn xóa các nhân viên đã chọn?\n *Nếu xóa nhân viên tài khoản cũng sẽ bị xóa",
-                "Xác nhận",
-                  MessageBoxButtons.YesNo,
-                  MessageBoxIcon.None
-                );
-                bool hasCheckedRow = false;
+                bool isHaveSelect = false;
+
                 foreach (DataGridViewRow row in this.dgvStaff.Rows)
                 {
                     if ((bool)row.Cells[0].Value)
                     {
-                        hasCheckedRow = true;
-                        break;
+                        isHaveSelect = true;
                     }
                 }
-                if (result == DialogResult.Yes)
+
+                if (!isHaveSelect)
                 {
-                    if (hasCheckedRow)
-                    {
-                        foreach (DataGridViewRow row in this.dgvStaff.Rows)
-                        {
-                            if ((bool)row.Cells[0].Value)
-                            {
+                    MessageBox.Show("Bạn chưa chọn các tài khoản cần xóa");
+                    return;
+                }
+                DialogResult result = MessageBox.Show(
+			    "Bạn có chắc muốn xóa các nhân viên đã chọn?\n *Nếu xóa nhân viên tài khoản cũng sẽ bị xóa",
+			    "Xác nhận",
+				  MessageBoxButtons.YesNo,
+				  MessageBoxIcon.None
+			    );
+				if (result == DialogResult.Yes)
+				{
+						foreach (DataGridViewRow row in this.dgvStaff.Rows)
+						{
+							if ((bool)row.Cells[0].Value)
+							{
                                 AccountDTO acc = AccountBUS.Instance.getByStaffId(row.Cells[1].Value.ToString());
                                 if (acc != null)
-                                {
+								{
                                     AccountBUS.Instance.delete(acc.Email);
                                     StaffBUS.Instance.delete(row.Cells[1].Value.ToString());
                                 }
-                                else
-                                {
-                                    StaffBUS.Instance.delete(row.Cells[1].Value.ToString());
-                                }
-                            }
-                        }
+								else
+								{
+									StaffBUS.Instance.delete(row.Cells[1].Value.ToString());
+								}
+							}
+						}
                         List<StaffDTO> staffs = handleFilter(this.searchInput.Text);
                         loadDataToDataGridView(staffs);
                         MessageBox.Show("Xóa thành công");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Vui lòng chọn nhân viên để xóa", "Thông báo");
-                    }
-                }
-            }
+				}
+			}
             catch
             {
 
             }
-
+           
         }
 
         private void searchInput_TextChanged(object sender, EventArgs e)
@@ -406,8 +446,9 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         {
             try
             {
-                if (e.RowIndex < 0 || e.ColumnIndex <= 0)
+                if (this.dgvStaff.CurrentCell.RowIndex < 0)
                 {
+                    MessageBox.Show("Vui lòng chọn một nhân viên");
                     return;
                 }
                 using (StaffModal modal = new StaffModal("Sửa nhân viên"))

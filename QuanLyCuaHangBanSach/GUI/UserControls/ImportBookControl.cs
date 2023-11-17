@@ -14,12 +14,13 @@ namespace QuanLyCuaHangBanSach.GUI.UserControls
 	public partial class ImportBookControl : UserControl
 	{
 		public bool check = false;
-		public ImportBookControl()
+		int soLuong1 = 0;
+        public ImportBookControl()
 		{
 			InitializeComponent();
 		}
 		
-		public void details(BookDTO book,int soLuongMua,int mode=0)
+		public void details(BookDTO book,int soLuong,int soLuongDoiTra, int mode=0)
 		{
 			try
 			{
@@ -36,14 +37,26 @@ namespace QuanLyCuaHangBanSach.GUI.UserControls
 
 			IdLb.Text = book.MaSach.ToString();
 			NameLb.Text = book.TenSach;
-			StockLb.Text = "SL: " + soLuongMua;
-			PriceLb.Text = string.Format("{0:N0} VND", mode == 0 ? book.GiaNhap : book.GiaBan);
-			toolTip1.SetToolTip(NameLb, NameLb.Text);
+			soLuong1 = soLuong - soLuongDoiTra;
+            if (soLuong1 == soLuong)
+			{
+                StockLb.Text = "SL: " + soLuong;
+                PriceLb.Text = string.Format("{0:N0} VND", mode == 0 ? book.GiaBan : book.GiaNhap);
+                toolTip1.SetToolTip(NameLb, NameLb.Text);
+                
+			}
+			else
+			{
+                StockLb.Text = "SL: " +(soLuong - soLuongDoiTra);
+                PriceLb.Text = string.Format("{0:N0} VND", mode == 0 ? book.GiaBan : book.GiaNhap);
+                toolTip1.SetToolTip(NameLb, NameLb.Text);
+                label1.Text = soLuong.ToString();
+                label1.Visible = true;
+            }
 		}
 		private void ImportBookControl_Click(object sender, EventArgs e)
 		{
 			CheckStatus();
-	
 		}
 
 		private void CheckStatus()
@@ -63,6 +76,9 @@ namespace QuanLyCuaHangBanSach.GUI.UserControls
 		{
 			return Convert.ToInt32(IdLb.Text);	
 		}
-		
-	}
+        public int getSoLuong()
+        {
+            return soLuong1;
+        }
+    }
 }

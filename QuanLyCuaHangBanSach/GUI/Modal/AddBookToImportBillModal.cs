@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using QuanLyCuaHangBanSach.BUS;
 using QuanLyCuaHangBanSach.DTO;
@@ -10,20 +11,21 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 {
     public partial class AddBookToImportBillModal : Form
     {
-        private bool isSaved = false;
+        public bool isSaved = false;
         private CheckBox headerCheckbox;
         private CheckBox headerCheckboxBillList;
         private List<BookDTO> bookList = BookBUS.Instance.getAllData();
 
         public List<ImportBillDetailDTO> selectedImportBillDetailList = new List<ImportBillDetailDTO>();
+        public List<ImportBillDetailDTO> prevSelectedImportBillDetailList = new List<ImportBillDetailDTO>();
 
         public AddBookToImportBillModal(List<ImportBillDetailDTO> importBillDetailList)
         {
             InitializeComponent();
 
             this.selectedImportBillDetailList.Clear();
-
-            this.selectedImportBillDetailList = importBillDetailList;
+            this.selectedImportBillDetailList = importBillDetailList.GetRange(0, importBillDetailList.Count);
+            this.prevSelectedImportBillDetailList = importBillDetailList.GetRange(0, importBillDetailList.Count);
         }
 
         private void renderCheckBoxDgvBook()
@@ -98,9 +100,6 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                     book.MaSach,
                     book.TenSach,
                     book.HinhAnh,
-                    AuthorBUS.Instance.getById(book.MaTacGia.ToString()).Ten,
-                    BookTypeBUS.Instance.getById(book.MaTheLoai.ToString()).TenTheLoai,
-                    PublisherBUS.Instance.getById(book.MaNhaXuatBan.ToString()).TenNhaXuatBan,
                     book.GiaNhap,
                     book.SoLuongConLai,
                 });
@@ -217,7 +216,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             {
                 foreach (DataGridViewRow row in this.dgvAddBookToBillList.Rows)
                 {
-                    row.Cells[0].Value = headerCheckbox.Checked;
+                    row.Cells[0].Value = headerCheckboxBillList.Checked;
                 }
 
                 this.dgvAddBookToBillList.RefreshEdit();
@@ -249,10 +248,21 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                     }
                     else
                     {
-                        newBookList = newBookList.FindAll(
-                            item => item.GiaBan >= Convert.ToDouble(this.priceFrom.Text.ToString())
-                                    && item.GiaBan <= Convert.ToDouble(this.priceTo.Text.ToString()
-                        ));
+
+                        if (Convert.ToDouble(this.priceFrom.Text.ToString()) > Convert.ToDouble(this.priceTo.Text.ToString()))
+                        {
+                            MessageBox.Show("Giá nhập từ phải bé hơn hoặc bằng giá nhập đến");
+                            this.priceFrom.Clear();
+                            this.priceTo.Clear();
+                        }
+                        else
+                        {
+                            newBookList = newBookList.FindAll(
+                                item => item.GiaNhap >= Convert.ToDouble(this.priceFrom.Text.ToString())
+                                        && item.GiaNhap <= Convert.ToDouble(this.priceTo.Text.ToString()
+                            ));
+                        }
+                        
                     }
                 }
 
@@ -532,7 +542,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                         if ((bool)row.Cells[0].Value == true)
                         {
                             int maSach = Convert.ToInt32(row.Cells[1].Value.ToString());
-                            double giaBan = Convert.ToDouble(row.Cells[7].Value.ToString());
+                            double giaBan = Convert.ToDouble(row.Cells[4].Value.ToString());
 
                             int idx = this.selectedImportBillDetailList.FindIndex(
                                 book => book.MaSach == maSach
@@ -609,6 +619,8 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
                     this.selectedImportBillDetailList[e.RowIndex].SoLuong = soLuong;
 
+                    this.dgvAddBookToBillList[4, e.RowIndex].Value = soLuong * Convert.ToDouble(this.dgvAddBookToBillList[3, e.RowIndex].Value);
+
                     foreach (DataGridViewRow row in this.dgvBook.Rows)
                     {
                         if (Convert.ToInt32(row.Cells[1].Value) == book.MaSach)
@@ -618,6 +630,8 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                             break;
                         }
                     }
+
+                    this.loadBookListToDataView(this.searchInput.Text.ToString());
                 }
             }
             catch (Exception ex)
@@ -665,22 +679,23 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
                 if (dlgResult == DialogResult.Yes)
                 {
-                    foreach (DataGridViewRow row in this.dgvAddBookToBillList.Rows)
+                    for (int i = dgvAddBookToBillList.Rows.Count - 1; i >= 0; i--)
                     {
+                        DataGridViewRow row = dgvAddBookToBillList.Rows[i];
+
                         if ((bool)row.Cells[0].Value == true)
                         {
-                            this.dgvAddBookToBillList.Rows.Remove(row);
-
-                            int idx = this.selectedImportBillDetailList.FindIndex(
+                            int idx = selectedImportBillDetailList.FindIndex(
                                 book => book.MaSach == Convert.ToInt32(row.Cells[1].Value)
                             );
 
                             if (idx >= 0)
                             {
-                                this.selectedImportBillDetailList.RemoveAt(idx);
-
-                                this.handleAddRemain(row, Convert.ToInt32(row.Cells[2].Value));
+                                selectedImportBillDetailList.RemoveAt(idx);
+                                handleAddRemain(row, Convert.ToInt32(row.Cells[2].Value));
                             }
+
+                            dgvAddBookToBillList.Rows.RemoveAt(i);
                         }
                     }
 
@@ -721,6 +736,53 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
         {
             this.isSaved = true;
             this.Close();
+        }
+
+        private void AddBookToImportBillModal_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (!isSaved)
+            {
+                this.selectedImportBillDetailList = prevSelectedImportBillDetailList;
+            }
+        }
+
+        private readonly int debounceInterval = 500; // Đặt khoảng thời gian debounce là 500 milliseconds
+        private DateTime lastTextChanged = DateTime.MinValue;
+        private readonly object debounceLock = new object();
+
+        private async void DebounceTextBox_TextChanged(object sender, EventArgs e)
+        {
+            lock (debounceLock)
+            {
+                lastTextChanged = DateTime.Now;
+            }
+
+            await Task.Delay(debounceInterval);
+
+            lock (debounceLock)
+            {
+                var now = DateTime.Now;
+                if ((now - lastTextChanged).TotalMilliseconds >= debounceInterval)
+                {
+                    this.loadBookListToDataView(this.searchInput.Text.ToString());
+                }
+            }
+        }
+
+        private void priceFrom_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // Ngăn chặn ký tự nhập vào TextBox
+            }
+        }
+
+        private void priceTo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // Ngăn chặn ký tự nhập vào TextBox
+            }
         }
     }
 }

@@ -83,6 +83,8 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                         this.importBillDetailList[idx].SoLuong = amount + 1;
 
                         total += importBillDetail.DonGia;
+
+                        this.totalPriceTxt.Text = total.ToString();
                     };
 
                     bookBill.minus.MouseClick += (object sender, MouseEventArgs e) =>
@@ -187,23 +189,15 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
         {
             try
             {
-                using (AddBookToImportBillModal addBookToBillModal = new AddBookToImportBillModal(importBillDetailList))
+                List<ImportBillDetailDTO> copiedList = new List<ImportBillDetailDTO>();
+                copiedList.AddRange(importBillDetailList);
+                using (AddBookToImportBillModal addBookToBillModal = new AddBookToImportBillModal(copiedList))
                 {
                     addBookToBillModal.ShowDialog();
 
-                    foreach (ImportBillDetailDTO importBillDetail in addBookToBillModal.selectedImportBillDetailList)
+                    if (addBookToBillModal.isSaved)
                     {
-                        int idx = this.importBillDetailList.FindIndex(
-                            book => book.MaSach == importBillDetail.MaSach
-                        );
-
-                        if (idx == -1)
-                        {
-                            this.importBillDetailList.Add(importBillDetail);
-                            continue;
-                        }
-
-                        this.importBillDetailList[idx].SoLuong += importBillDetail.SoLuong;
+                        importBillDetailList = new List<ImportBillDetailDTO>(addBookToBillModal.selectedImportBillDetailList);
                     }
 
                     this.loadImportBillDetailList();

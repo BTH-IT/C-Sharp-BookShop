@@ -83,7 +83,7 @@
 			this.btnExport.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnExport.CheckedImage")));
 			this.btnExport.CheckedLineColor = System.Drawing.Color.DimGray;
 			this.btnExport.DialogResult = System.Windows.Forms.DialogResult.None;
-			this.btnExport.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(159)))), ((int)(((byte)(147)))));
+			this.btnExport.FocusedColor = System.Drawing.Color.PaleTurquoise;
 			this.btnExport.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold);
 			this.btnExport.ForeColor = System.Drawing.Color.White;
 			this.btnExport.Image = ((System.Drawing.Image)(resources.GetObject("btnExport.Image")));
@@ -99,7 +99,7 @@
 			this.btnExport.OnPressedColor = System.Drawing.Color.Black;
 			this.btnExport.Radius = 6;
 			this.btnExport.Size = new System.Drawing.Size(121, 42);
-			this.btnExport.TabIndex = 3;
+			this.btnExport.TabIndex = 1;
 			this.btnExport.Text = "Xuất excel";
 			this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
 			// 
@@ -117,7 +117,7 @@
 			this.btnRefresh.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnRefresh.CheckedImage")));
 			this.btnRefresh.CheckedLineColor = System.Drawing.Color.DimGray;
 			this.btnRefresh.DialogResult = System.Windows.Forms.DialogResult.None;
-			this.btnRefresh.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(159)))), ((int)(((byte)(147)))));
+			this.btnRefresh.FocusedColor = System.Drawing.Color.PaleTurquoise;
 			this.btnRefresh.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold);
 			this.btnRefresh.ForeColor = System.Drawing.Color.White;
 			this.btnRefresh.Image = ((System.Drawing.Image)(resources.GetObject("btnRefresh.Image")));
@@ -133,7 +133,7 @@
 			this.btnRefresh.OnPressedColor = System.Drawing.Color.Black;
 			this.btnRefresh.Radius = 6;
 			this.btnRefresh.Size = new System.Drawing.Size(107, 42);
-			this.btnRefresh.TabIndex = 2;
+			this.btnRefresh.TabIndex = 0;
 			this.btnRefresh.Text = "Làm mới";
 			this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
 			// 
@@ -151,7 +151,7 @@
 			this.deleteBtn.CheckedImage = ((System.Drawing.Image)(resources.GetObject("deleteBtn.CheckedImage")));
 			this.deleteBtn.CheckedLineColor = System.Drawing.Color.DimGray;
 			this.deleteBtn.DialogResult = System.Windows.Forms.DialogResult.None;
-			this.deleteBtn.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(159)))), ((int)(((byte)(147)))));
+			this.deleteBtn.FocusedColor = System.Drawing.Color.PaleTurquoise;
 			this.deleteBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold);
 			this.deleteBtn.ForeColor = System.Drawing.Color.White;
 			this.deleteBtn.Image = ((System.Drawing.Image)(resources.GetObject("deleteBtn.Image")));
@@ -167,7 +167,7 @@
 			this.deleteBtn.OnPressedColor = System.Drawing.Color.Black;
 			this.deleteBtn.Radius = 6;
 			this.deleteBtn.Size = new System.Drawing.Size(78, 42);
-			this.deleteBtn.TabIndex = 6;
+			this.deleteBtn.TabIndex = 4;
 			this.deleteBtn.Text = "Xóa";
 			this.deleteBtn.Click += new System.EventHandler(this.btnDelete_Click);
 			// 
@@ -185,7 +185,7 @@
 			this.btnEdit.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnEdit.CheckedImage")));
 			this.btnEdit.CheckedLineColor = System.Drawing.Color.DimGray;
 			this.btnEdit.DialogResult = System.Windows.Forms.DialogResult.None;
-			this.btnEdit.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(159)))), ((int)(((byte)(147)))));
+			this.btnEdit.FocusedColor = System.Drawing.Color.PaleTurquoise;
 			this.btnEdit.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold);
 			this.btnEdit.ForeColor = System.Drawing.Color.White;
 			this.btnEdit.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit.Image")));
@@ -201,7 +201,7 @@
 			this.btnEdit.OnPressedColor = System.Drawing.Color.Black;
 			this.btnEdit.Radius = 6;
 			this.btnEdit.Size = new System.Drawing.Size(113, 42);
-			this.btnEdit.TabIndex = 5;
+			this.btnEdit.TabIndex = 3;
 			this.btnEdit.Text = "Chỉnh sửa";
 			this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
 			// 
@@ -219,7 +219,7 @@
 			this.btnAdd.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnAdd.CheckedImage")));
 			this.btnAdd.CheckedLineColor = System.Drawing.Color.DimGray;
 			this.btnAdd.DialogResult = System.Windows.Forms.DialogResult.None;
-			this.btnAdd.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(159)))), ((int)(((byte)(147)))));
+			this.btnAdd.FocusedColor = System.Drawing.Color.PaleTurquoise;
 			this.btnAdd.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold);
 			this.btnAdd.ForeColor = System.Drawing.Color.White;
 			this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
@@ -235,7 +235,7 @@
 			this.btnAdd.OnPressedColor = System.Drawing.Color.Black;
 			this.btnAdd.Radius = 6;
 			this.btnAdd.Size = new System.Drawing.Size(117, 42);
-			this.btnAdd.TabIndex = 4;
+			this.btnAdd.TabIndex = 2;
 			this.btnAdd.Text = "Thêm mới";
 			this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
 			// 
@@ -266,7 +266,7 @@
 			this.searchInput.SelectedText = "";
 			this.searchInput.ShadowDecoration.Parent = this.searchInput;
 			this.searchInput.Size = new System.Drawing.Size(266, 34);
-			this.searchInput.TabIndex = 1;
+			this.searchInput.TabIndex = 0;
 			this.searchInput.TextChanged += new System.EventHandler(this.searchInput_TextChanged);
 			// 
 			// dgvAccount
@@ -330,7 +330,7 @@
 			this.dgvAccount.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
 			this.dgvAccount.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.dgvAccount.Size = new System.Drawing.Size(1044, 621);
-			this.dgvAccount.TabIndex = 0;
+			this.dgvAccount.TabIndex = 1;
 			this.dgvAccount.TabStop = false;
 			this.dgvAccount.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna;
 			this.dgvAccount.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -414,11 +414,11 @@
 			this.panel2.Location = new System.Drawing.Point(0, 0);
 			this.panel2.Name = "panel2";
 			this.panel2.Size = new System.Drawing.Size(1044, 63);
-			this.panel2.TabIndex = 1;
+			this.panel2.TabIndex = 0;
 			// 
 			// AccountManageGUI
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
 			this.ClientSize = new System.Drawing.Size(1044, 684);
@@ -427,7 +427,6 @@
 			this.Controls.Add(this.panel2);
 			this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-			this.KeyPreview = true;
 			this.Name = "AccountManageGUI";
 			this.ShowInTaskbar = false;
 			this.Text = "AccountMangeGUI";

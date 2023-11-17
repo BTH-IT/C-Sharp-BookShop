@@ -3,8 +3,12 @@ using QuanLyCuaHangBanSach.DTO;
 using QuanLyCuaHangBanSach.GUI.Modal;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QuanLyCuaHangBanSach.GUI.Manager
@@ -15,7 +19,9 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         public AccountManageGUI()
         {
             InitializeComponent();
-        }
+			dgvAccount.StandardTab = true;
+
+		}
         private void renderCheckBoxDgv()
         {
             int size = 25;
@@ -104,8 +110,8 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         {
 			if (dgvAccount.Rows.Count <= 0)
 			{
-                MessageBox.Show("Bảng dữ liệu hiện tại chưa có dòng dữ liệu nào để xuất excel!");
-                return;
+				MessageBox.Show("Bảng dữ liệu hiện tại chưa có dòng dữ liệu nào để xuất excel!");
+				return;
 			}
             try
             {
@@ -223,43 +229,41 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         {
             try
             {
-				DialogResult result = MessageBox.Show(
+                bool isHaveSelect = false;
+
+                foreach (DataGridViewRow row in this.dgvAccount.Rows)
+                {
+                    if ((bool)row.Cells[0].Value)
+                    {
+                        isHaveSelect = true;
+                    }
+                }
+
+                if (!isHaveSelect)
+                {
+                    MessageBox.Show("Bạn chưa chọn các tài khoản cần xóa");
+                    return;
+                }
+
+                DialogResult result = MessageBox.Show(
 					"Bạn có chắc rằng muốn xóa các tài khoản đã chọn",
 					"Xác nhận",
 					MessageBoxButtons.YesNo,
 					MessageBoxIcon.None
 				);
-				bool hasCheckedRow = false;
-				foreach (DataGridViewRow row in this.dgvAccount.Rows)
-				{
-					if ((bool)row.Cells[0].Value)
-					{
-						hasCheckedRow = true;
-						break;
-					}
-				}
 				if (result == DialogResult.Yes)
 				{
-					if (hasCheckedRow)
+					foreach (DataGridViewRow row in this.dgvAccount.Rows)
 					{
-						foreach (DataGridViewRow row in this.dgvAccount.Rows)
+						if ((bool)row.Cells[0].Value)
 						{
-							if ((bool)row.Cells[0].Value)
-							{
-								bool check = AccountBUS.Instance.delete(row.Cells[2].Value.ToString());
-								Console.WriteLine(check);
-							}
+							bool check = AccountBUS.Instance.delete(row.Cells[2].Value.ToString());
 						}
-						//
-						List<AccountDTO> accounts = handleFilter(this.searchInput.Text);
-						this.loadDataToDataGridView(accounts);
-						MessageBox.Show("Xóa thành công các tài khoản đã chọn");
 					}
-					else
-					{
-						MessageBox.Show("Vui lòng chọn tài khoản để xóa", "Thông báo");
-					}
-				
+					//
+					List<AccountDTO> accounts = handleFilter(this.searchInput.Text);
+					this.loadDataToDataGridView(accounts);
+					MessageBox.Show("Xóa thành công các tài khoản đã chọn");
 				}
 			}
             catch
