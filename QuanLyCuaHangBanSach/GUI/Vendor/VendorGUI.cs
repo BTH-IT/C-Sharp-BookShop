@@ -323,6 +323,7 @@ namespace QuanLyCuaHangBanSach.GUI
 
                 if (SearchResultControl.clicked)
                 {
+                    PhoneInp.Text = "";
                     customerID = SearchResultControl.id;
                     PointToggleBtn.Enabled = true;
                     CustomerDTO customer = CustomerBUS.Instance.getById(SearchResultControl.id.ToString());

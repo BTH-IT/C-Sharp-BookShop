@@ -466,6 +466,7 @@
 			this.PhoneInp.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
 			this.PhoneInp.DisabledState.Parent = this.PhoneInp;
 			this.PhoneInp.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+			this.PhoneInp.Enabled = false;
 			this.PhoneInp.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
 			this.PhoneInp.FocusedState.Parent = this.PhoneInp;
 			this.PhoneInp.Font = new System.Drawing.Font("#9Slide03 Cabin", 12F);

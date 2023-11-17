@@ -15,11 +15,18 @@ namespace QuanLyCuaHangBanSach.GUI.Vendor
     public partial class SearchResultControl : UserControl
     {
         int temp_id;
-        public static int id;
+        private bool nameHover = false;
+        private bool numberHover = false;
+        private bool imageHover = false;
+        private bool panelHover = false;
+		public static int id;
         public SearchResultControl()
         {
             InitializeComponent();
-        }
+			NameLb.Click += PhoneSearchResultControl_Click;
+			PhoneLb.Click += PhoneSearchResultControl_Click;
+			gunaCirclePictureBox1.Click += PhoneSearchResultControl_Click;
+		}
 
         public void details_Vendor(CustomerDTO customer)
         {
@@ -34,15 +41,6 @@ namespace QuanLyCuaHangBanSach.GUI.Vendor
             temp_id = supplier.MaNhaCungCap;
         }
 
-        private void PhoneSearchResultControl_MouseHover(object sender, EventArgs e)
-        {
-            this.BackColor = Color.Gainsboro;
-        }
-        private void PhoneSearchResultControl_MouseLeave(object sender, EventArgs e)
-        {
-            this.BackColor = Color.WhiteSmoke;
-        }
-
         public static bool clicked = false;
 
         private void PhoneSearchResultControl_Click(object sender, EventArgs e)
@@ -51,5 +49,54 @@ namespace QuanLyCuaHangBanSach.GUI.Vendor
             id = temp_id;
         }
 
-    }
+		private void PhoneSearchResultControl_MouseHover(object sender, EventArgs e)
+		{
+			panelHover = true;
+		}
+		private void PhoneSearchResultControl_MouseLeave(object sender, EventArgs e)
+		{
+			panelHover = false;
+		}
+
+		private void gunaCirclePictureBox1_MouseHover(object sender, EventArgs e)
+		{
+            imageHover = true;
+		}
+
+		private void gunaCirclePictureBox1_MouseLeave(object sender, EventArgs e)
+		{
+			imageHover = false;
+		}
+
+		private void NameLb_MouseHover(object sender, EventArgs e)
+		{
+			nameHover = true;
+		}
+		private void NameLb_MouseLeave(object sender, EventArgs e)
+		{
+			nameHover = false;
+		}
+
+		private void PhoneLb_MouseHover(object sender, EventArgs e)
+		{
+			numberHover = true;
+		}
+
+		private void PhoneLb_MouseLeave(object sender, EventArgs e)
+		{
+			numberHover = false;
+		}
+
+		private void checkHover_Tick(object sender, EventArgs e)
+		{
+			if (nameHover || numberHover || imageHover || panelHover)
+			{
+				BackColor = Color.Gainsboro;
+			}
+			else
+			{
+				BackColor = Color.WhiteSmoke;
+			}
+		}
+	}
 }
