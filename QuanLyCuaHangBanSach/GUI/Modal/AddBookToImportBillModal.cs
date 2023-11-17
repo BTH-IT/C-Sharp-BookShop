@@ -216,7 +216,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             {
                 foreach (DataGridViewRow row in this.dgvAddBookToBillList.Rows)
                 {
-                    row.Cells[0].Value = headerCheckbox.Checked;
+                    row.Cells[0].Value = headerCheckboxBillList.Checked;
                 }
 
                 this.dgvAddBookToBillList.RefreshEdit();
@@ -679,22 +679,23 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
                 if (dlgResult == DialogResult.Yes)
                 {
-                    foreach (DataGridViewRow row in this.dgvAddBookToBillList.Rows)
+                    for (int i = dgvAddBookToBillList.Rows.Count - 1; i >= 0; i--)
                     {
+                        DataGridViewRow row = dgvAddBookToBillList.Rows[i];
+
                         if ((bool)row.Cells[0].Value == true)
                         {
-                            this.dgvAddBookToBillList.Rows.Remove(row);
-
-                            int idx = this.selectedImportBillDetailList.FindIndex(
+                            int idx = selectedImportBillDetailList.FindIndex(
                                 book => book.MaSach == Convert.ToInt32(row.Cells[1].Value)
                             );
 
                             if (idx >= 0)
                             {
-                                this.selectedImportBillDetailList.RemoveAt(idx);
-
-                                this.handleAddRemain(row, Convert.ToInt32(row.Cells[2].Value));
+                                selectedImportBillDetailList.RemoveAt(idx);
+                                handleAddRemain(row, Convert.ToInt32(row.Cells[2].Value));
                             }
+
+                            dgvAddBookToBillList.Rows.RemoveAt(i);
                         }
                     }
 

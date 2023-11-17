@@ -83,6 +83,8 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                         this.importBillDetailList[idx].SoLuong = amount + 1;
 
                         total += importBillDetail.DonGia;
+
+                        this.totalPriceTxt.Text = total.ToString();
                     };
 
                     bookBill.minus.MouseClick += (object sender, MouseEventArgs e) =>
@@ -206,8 +208,6 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                                 this.importBillDetailList.Add(importBillDetail);
                                 continue;
                             }
-
-                            this.importBillDetailList[idx].SoLuong += importBillDetail.SoLuong;
                         }
                     }
 

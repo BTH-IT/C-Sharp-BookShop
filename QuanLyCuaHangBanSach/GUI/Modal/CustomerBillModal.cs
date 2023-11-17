@@ -241,12 +241,6 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 {
                     addBookToBillModal.ShowDialog();
 
-                    foreach (CustomerBillDetailDTO item in customerBillDetailList)
-                    {
-                        Console.WriteLine(item.MaSach);
-                        Console.WriteLine(item.MaSach);
-                    }
-
                     if (addBookToBillModal.isSaved)
                     {
                         foreach (CustomerBillDetailDTO customerBillDetail in addBookToBillModal.selectedCustomerBillDetailList)
@@ -260,8 +254,6 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                                 this.customerBillDetailList.Add(customerBillDetail);
                                 continue;
                             }
-
-                            this.customerBillDetailList[idx].SoLuong += customerBillDetail.SoLuong;
                         }
                     }
                     this.loadCustomerBillDetailList();
