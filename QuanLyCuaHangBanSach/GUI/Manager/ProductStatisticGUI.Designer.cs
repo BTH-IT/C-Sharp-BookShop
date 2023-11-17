@@ -29,18 +29,23 @@
         private void InitializeComponent()
         {
 			this.components = new System.ComponentModel.Container();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductStatisticGUI));
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.line1 = new System.Windows.Forms.Panel();
 			this.dgvBook = new Guna.UI.WinForms.GunaDataGridView();
+			this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Column10 = new System.Windows.Forms.DataGridViewImageColumn();
+			this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.optionPanel = new System.Windows.Forms.Panel();
 			this.chartBtn = new Guna.UI.WinForms.GunaAdvenceButton();
 			this.tableBtn = new Guna.UI.WinForms.GunaAdvenceButton();
@@ -58,6 +63,13 @@
 			this.tablePanel = new System.Windows.Forms.Panel();
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.panel7 = new System.Windows.Forms.Panel();
+			this.gradientPanel1 = new QuanLyCuaHangBanSach.GradientPanel();
+			this.revenueTo = new Guna.UI2.WinForms.Guna2TextBox();
+			this.revenueFrom = new Guna.UI2.WinForms.Guna2TextBox();
+			this.panel3 = new System.Windows.Forms.Panel();
+			this.panel4 = new System.Windows.Forms.Panel();
+			this.panel2 = new System.Windows.Forms.Panel();
+			this.label1 = new System.Windows.Forms.Label();
 			this.closeBtn = new System.Windows.Forms.PictureBox();
 			this.chartPanel = new System.Windows.Forms.Panel();
 			this.panel8 = new System.Windows.Forms.Panel();
@@ -81,24 +93,13 @@
 			this.pictureBox3 = new System.Windows.Forms.PictureBox();
 			this.customerNumLb = new System.Windows.Forms.Label();
 			this.label6 = new System.Windows.Forms.Label();
-			this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column10 = new System.Windows.Forms.DataGridViewImageColumn();
-			this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.gradientPanel1 = new QuanLyCuaHangBanSach.GradientPanel();
-			this.revenueTo = new Guna.UI2.WinForms.Guna2TextBox();
-			this.revenueFrom = new Guna.UI2.WinForms.Guna2TextBox();
-			this.panel3 = new System.Windows.Forms.Panel();
-			this.panel4 = new System.Windows.Forms.Panel();
-			this.panel2 = new System.Windows.Forms.Panel();
-			this.label1 = new System.Windows.Forms.Label();
 			((System.ComponentModel.ISupportInitialize)(this.dgvBook)).BeginInit();
 			this.optionPanel.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.tablePanel.SuspendLayout();
 			this.panel1.SuspendLayout();
 			this.panel7.SuspendLayout();
+			this.gradientPanel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.closeBtn)).BeginInit();
 			this.chartPanel.SuspendLayout();
 			this.panel8.SuspendLayout();
@@ -113,7 +114,6 @@
 			this.gunaGradient2Panel2.SuspendLayout();
 			this.gunaGradient2Panel6.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-			this.gradientPanel1.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// line1
@@ -129,21 +129,21 @@
 			this.dgvBook.AllowUserToAddRows = false;
 			this.dgvBook.AllowUserToDeleteRows = false;
 			this.dgvBook.AllowUserToResizeRows = false;
-			dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-			this.dgvBook.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+			dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
+			this.dgvBook.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
 			this.dgvBook.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
 			this.dgvBook.BackgroundColor = System.Drawing.Color.White;
 			this.dgvBook.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.dgvBook.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
 			this.dgvBook.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-			dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-			dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-			dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-			dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-			dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-			dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-			this.dgvBook.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+			dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+			dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+			dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
+			dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+			dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.White;
+			dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.dgvBook.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
 			this.dgvBook.ColumnHeadersHeight = 54;
 			this.dgvBook.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
 			this.dgvBook.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -152,33 +152,33 @@
             this.Column10,
             this.Column9,
             this.Column6});
-			dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-			dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-			dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-			dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-			dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-			dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-			this.dgvBook.DefaultCellStyle = dataGridViewCellStyle7;
+			dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+			dataGridViewCellStyle16.BackColor = System.Drawing.Color.White;
+			dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+			dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+			dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+			dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.dgvBook.DefaultCellStyle = dataGridViewCellStyle16;
 			this.dgvBook.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.dgvBook.EnableHeadersVisualStyles = false;
 			this.dgvBook.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
 			this.dgvBook.Location = new System.Drawing.Point(0, 62);
 			this.dgvBook.Name = "dgvBook";
-			dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-			dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-			dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-			dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-			dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
-			dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-			this.dgvBook.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+			dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+			dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+			dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle17.ForeColor = System.Drawing.Color.White;
+			dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+			dataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.White;
+			dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.dgvBook.RowHeadersDefaultCellStyle = dataGridViewCellStyle17;
 			this.dgvBook.RowHeadersVisible = false;
 			this.dgvBook.RowHeadersWidth = 51;
 			this.dgvBook.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-			dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-			dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-			this.dgvBook.RowsDefaultCellStyle = dataGridViewCellStyle9;
+			dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+			dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.dgvBook.RowsDefaultCellStyle = dataGridViewCellStyle18;
 			this.dgvBook.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
 			this.dgvBook.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
 			this.dgvBook.RowTemplate.Height = 110;
@@ -212,6 +212,68 @@
 			this.dgvBook.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
 			this.dgvBook.SortCompare += new System.Windows.Forms.DataGridViewSortCompareEventHandler(this.dgvBook_SortCompare);
 			// 
+			// Column1
+			// 
+			dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+			dataGridViewCellStyle12.Font = new System.Drawing.Font("#9Slide03 Cabin", 10F);
+			this.Column1.DefaultCellStyle = dataGridViewCellStyle12;
+			this.Column1.FillWeight = 50F;
+			this.Column1.HeaderText = "Mã Sách";
+			this.Column1.MinimumWidth = 6;
+			this.Column1.Name = "Column1";
+			this.Column1.ReadOnly = true;
+			this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+			this.Column1.ToolTipText = "Mã Sách";
+			// 
+			// Column2
+			// 
+			dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+			dataGridViewCellStyle13.Font = new System.Drawing.Font("#9Slide03 Cabin", 10F);
+			this.Column2.DefaultCellStyle = dataGridViewCellStyle13;
+			this.Column2.FillWeight = 150F;
+			this.Column2.HeaderText = "Tên Sách";
+			this.Column2.MinimumWidth = 6;
+			this.Column2.Name = "Column2";
+			this.Column2.ReadOnly = true;
+			this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+			this.Column2.ToolTipText = "Tên Sách";
+			// 
+			// Column10
+			// 
+			this.Column10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+			this.Column10.HeaderText = "Hình Ảnh";
+			this.Column10.Image = ((System.Drawing.Image)(resources.GetObject("Column10.Image")));
+			this.Column10.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+			this.Column10.MinimumWidth = 90;
+			this.Column10.Name = "Column10";
+			this.Column10.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+			this.Column10.Width = 90;
+			// 
+			// Column9
+			// 
+			dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+			dataGridViewCellStyle14.Font = new System.Drawing.Font("#9Slide03 Cabin", 10F);
+			this.Column9.DefaultCellStyle = dataGridViewCellStyle14;
+			this.Column9.FillWeight = 70F;
+			this.Column9.HeaderText = "Đã bán";
+			this.Column9.MinimumWidth = 6;
+			this.Column9.Name = "Column9";
+			this.Column9.ReadOnly = true;
+			this.Column9.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+			this.Column9.ToolTipText = "Đã bán";
+			// 
+			// Column6
+			// 
+			dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+			dataGridViewCellStyle15.Font = new System.Drawing.Font("#9Slide03 Cabin", 10F);
+			this.Column6.DefaultCellStyle = dataGridViewCellStyle15;
+			this.Column6.HeaderText = "Doanh thu";
+			this.Column6.MinimumWidth = 6;
+			this.Column6.Name = "Column6";
+			this.Column6.ReadOnly = true;
+			this.Column6.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+			this.Column6.ToolTipText = "Doanh thu";
+			// 
 			// optionPanel
 			// 
 			this.optionPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
@@ -223,7 +285,7 @@
 			this.optionPanel.Location = new System.Drawing.Point(0, 485);
 			this.optionPanel.Name = "optionPanel";
 			this.optionPanel.Size = new System.Drawing.Size(1163, 54);
-			this.optionPanel.TabIndex = 24;
+			this.optionPanel.TabIndex = 2;
 			// 
 			// chartBtn
 			// 
@@ -239,7 +301,7 @@
 			this.chartBtn.CheckedImage = ((System.Drawing.Image)(resources.GetObject("chartBtn.CheckedImage")));
 			this.chartBtn.CheckedLineColor = System.Drawing.Color.DimGray;
 			this.chartBtn.DialogResult = System.Windows.Forms.DialogResult.None;
-			this.chartBtn.FocusedColor = System.Drawing.Color.Empty;
+			this.chartBtn.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(159)))), ((int)(((byte)(147)))));
 			this.chartBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold);
 			this.chartBtn.ForeColor = System.Drawing.Color.White;
 			this.chartBtn.Image = ((System.Drawing.Image)(resources.GetObject("chartBtn.Image")));
@@ -255,7 +317,7 @@
 			this.chartBtn.OnPressedColor = System.Drawing.Color.Black;
 			this.chartBtn.Radius = 6;
 			this.chartBtn.Size = new System.Drawing.Size(112, 42);
-			this.chartBtn.TabIndex = 10;
+			this.chartBtn.TabIndex = 11;
 			this.chartBtn.Text = "Biểu đồ";
 			this.chartBtn.Click += new System.EventHandler(this.chartBtn_Click);
 			// 
@@ -273,7 +335,7 @@
 			this.tableBtn.CheckedImage = ((System.Drawing.Image)(resources.GetObject("tableBtn.CheckedImage")));
 			this.tableBtn.CheckedLineColor = System.Drawing.Color.DimGray;
 			this.tableBtn.DialogResult = System.Windows.Forms.DialogResult.None;
-			this.tableBtn.FocusedColor = System.Drawing.Color.Empty;
+			this.tableBtn.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(159)))), ((int)(((byte)(147)))));
 			this.tableBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold);
 			this.tableBtn.ForeColor = System.Drawing.Color.White;
 			this.tableBtn.Image = ((System.Drawing.Image)(resources.GetObject("tableBtn.Image")));
@@ -289,7 +351,7 @@
 			this.tableBtn.OnPressedColor = System.Drawing.Color.Black;
 			this.tableBtn.Radius = 6;
 			this.tableBtn.Size = new System.Drawing.Size(112, 42);
-			this.tableBtn.TabIndex = 9;
+			this.tableBtn.TabIndex = 10;
 			this.tableBtn.Text = "Bảng";
 			this.tableBtn.Click += new System.EventHandler(this.tableBtn_Click);
 			// 
@@ -306,7 +368,7 @@
 			this.exportBtn.CheckedImage = ((System.Drawing.Image)(resources.GetObject("exportBtn.CheckedImage")));
 			this.exportBtn.CheckedLineColor = System.Drawing.Color.DimGray;
 			this.exportBtn.DialogResult = System.Windows.Forms.DialogResult.None;
-			this.exportBtn.FocusedColor = System.Drawing.Color.Empty;
+			this.exportBtn.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(159)))), ((int)(((byte)(147)))));
 			this.exportBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold);
 			this.exportBtn.ForeColor = System.Drawing.Color.White;
 			this.exportBtn.Image = ((System.Drawing.Image)(resources.GetObject("exportBtn.Image")));
@@ -322,7 +384,7 @@
 			this.exportBtn.OnPressedColor = System.Drawing.Color.Black;
 			this.exportBtn.Radius = 6;
 			this.exportBtn.Size = new System.Drawing.Size(121, 42);
-			this.exportBtn.TabIndex = 8;
+			this.exportBtn.TabIndex = 9;
 			this.exportBtn.Text = "Xuất excel";
 			this.exportBtn.Click += new System.EventHandler(this.exportBtn_Click);
 			// 
@@ -339,7 +401,7 @@
 			this.refreshBtn.CheckedImage = ((System.Drawing.Image)(resources.GetObject("refreshBtn.CheckedImage")));
 			this.refreshBtn.CheckedLineColor = System.Drawing.Color.DimGray;
 			this.refreshBtn.DialogResult = System.Windows.Forms.DialogResult.None;
-			this.refreshBtn.FocusedColor = System.Drawing.Color.Empty;
+			this.refreshBtn.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(159)))), ((int)(((byte)(147)))));
 			this.refreshBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold);
 			this.refreshBtn.ForeColor = System.Drawing.Color.White;
 			this.refreshBtn.Image = ((System.Drawing.Image)(resources.GetObject("refreshBtn.Image")));
@@ -355,7 +417,7 @@
 			this.refreshBtn.OnPressedColor = System.Drawing.Color.Black;
 			this.refreshBtn.Radius = 6;
 			this.refreshBtn.Size = new System.Drawing.Size(121, 42);
-			this.refreshBtn.TabIndex = 7;
+			this.refreshBtn.TabIndex = 8;
 			this.refreshBtn.Text = "Làm mới";
 			this.refreshBtn.Click += new System.EventHandler(this.refreshBtn_Click);
 			// 
@@ -396,7 +458,7 @@
 			this.searchInput.SelectedText = "";
 			this.searchInput.ShadowDecoration.Parent = this.searchInput;
 			this.searchInput.Size = new System.Drawing.Size(236, 36);
-			this.searchInput.TabIndex = 31;
+			this.searchInput.TabIndex = 1;
 			this.searchInput.TextChanged += new System.EventHandler(this.searchInput_TextChanged);
 			this.searchInput.MouseLeave += new System.EventHandler(this.searchInput_MouseLeave);
 			// 
@@ -409,8 +471,8 @@
 			this.highSortCkb.FillColor = System.Drawing.Color.White;
 			this.highSortCkb.Location = new System.Drawing.Point(354, 21);
 			this.highSortCkb.Name = "highSortCkb";
-			this.highSortCkb.Size = new System.Drawing.Size(53, 20);
-			this.highSortCkb.TabIndex = 32;
+			this.highSortCkb.Size = new System.Drawing.Size(58, 20);
+			this.highSortCkb.TabIndex = 2;
 			this.highSortCkb.Text = "Trên";
 			this.highSortCkb.CheckedChanged += new System.EventHandler(this.highSortCkb_CheckedChanged);
 			// 
@@ -444,7 +506,7 @@
 			this.highSortInp.SelectedText = "";
 			this.highSortInp.ShadowDecoration.Parent = this.highSortInp;
 			this.highSortInp.Size = new System.Drawing.Size(110, 25);
-			this.highSortInp.TabIndex = 34;
+			this.highSortInp.TabIndex = 3;
 			this.highSortInp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.highSortInp_KeyPress);
 			// 
 			// panel5
@@ -486,7 +548,7 @@
 			this.lowSortInp.SelectedText = "";
 			this.lowSortInp.ShadowDecoration.Parent = this.lowSortInp;
 			this.lowSortInp.Size = new System.Drawing.Size(110, 25);
-			this.lowSortInp.TabIndex = 37;
+			this.lowSortInp.TabIndex = 5;
 			// 
 			// panel6
 			// 
@@ -506,8 +568,8 @@
 			this.lowSortCkb.FillColor = System.Drawing.Color.White;
 			this.lowSortCkb.Location = new System.Drawing.Point(556, 22);
 			this.lowSortCkb.Name = "lowSortCkb";
-			this.lowSortCkb.Size = new System.Drawing.Size(53, 20);
-			this.lowSortCkb.TabIndex = 38;
+			this.lowSortCkb.Size = new System.Drawing.Size(58, 20);
+			this.lowSortCkb.TabIndex = 4;
 			this.lowSortCkb.Text = "Dưới";
 			this.lowSortCkb.CheckedChanged += new System.EventHandler(this.lowSortCkb_CheckedChanged);
 			// 
@@ -523,7 +585,7 @@
 			this.tablePanel.Location = new System.Drawing.Point(0, 0);
 			this.tablePanel.Name = "tablePanel";
 			this.tablePanel.Size = new System.Drawing.Size(1163, 485);
-			this.tablePanel.TabIndex = 39;
+			this.tablePanel.TabIndex = 1;
 			// 
 			// panel1
 			// 
@@ -551,7 +613,122 @@
 			this.panel7.Location = new System.Drawing.Point(0, 0);
 			this.panel7.Name = "panel7";
 			this.panel7.Size = new System.Drawing.Size(1163, 62);
-			this.panel7.TabIndex = 52;
+			this.panel7.TabIndex = 1;
+			// 
+			// gradientPanel1
+			// 
+			this.gradientPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.gradientPanel1.ColorLeft = System.Drawing.Color.Empty;
+			this.gradientPanel1.ColorRight = System.Drawing.Color.Empty;
+			this.gradientPanel1.Controls.Add(this.revenueTo);
+			this.gradientPanel1.Controls.Add(this.revenueFrom);
+			this.gradientPanel1.Controls.Add(this.panel3);
+			this.gradientPanel1.Controls.Add(this.panel4);
+			this.gradientPanel1.Controls.Add(this.panel2);
+			this.gradientPanel1.Controls.Add(this.label1);
+			this.gradientPanel1.Location = new System.Drawing.Point(744, 13);
+			this.gradientPanel1.Name = "gradientPanel1";
+			this.gradientPanel1.Size = new System.Drawing.Size(337, 36);
+			this.gradientPanel1.TabIndex = 30;
+			// 
+			// revenueTo
+			// 
+			this.revenueTo.Animated = true;
+			this.revenueTo.BackColor = System.Drawing.Color.Transparent;
+			this.revenueTo.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
+			this.revenueTo.BorderThickness = 0;
+			this.revenueTo.Cursor = System.Windows.Forms.Cursors.IBeam;
+			this.revenueTo.DefaultText = "";
+			this.revenueTo.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+			this.revenueTo.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+			this.revenueTo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+			this.revenueTo.DisabledState.Parent = this.revenueTo;
+			this.revenueTo.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+			this.revenueTo.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
+			this.revenueTo.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+			this.revenueTo.FocusedState.Parent = this.revenueTo;
+			this.revenueTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.revenueTo.ForeColor = System.Drawing.Color.Black;
+			this.revenueTo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+			this.revenueTo.HoverState.Parent = this.revenueTo;
+			this.revenueTo.Location = new System.Drawing.Point(195, 4);
+			this.revenueTo.Margin = new System.Windows.Forms.Padding(0);
+			this.revenueTo.Name = "revenueTo";
+			this.revenueTo.PasswordChar = '\0';
+			this.revenueTo.PlaceholderText = "Doanh thu đến ...";
+			this.revenueTo.SelectedText = "";
+			this.revenueTo.ShadowDecoration.Parent = this.revenueTo;
+			this.revenueTo.Size = new System.Drawing.Size(129, 25);
+			this.revenueTo.TabIndex = 7;
+			// 
+			// revenueFrom
+			// 
+			this.revenueFrom.Animated = true;
+			this.revenueFrom.BackColor = System.Drawing.Color.Transparent;
+			this.revenueFrom.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
+			this.revenueFrom.BorderThickness = 0;
+			this.revenueFrom.Cursor = System.Windows.Forms.Cursors.IBeam;
+			this.revenueFrom.DefaultText = "";
+			this.revenueFrom.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+			this.revenueFrom.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+			this.revenueFrom.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+			this.revenueFrom.DisabledState.Parent = this.revenueFrom;
+			this.revenueFrom.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+			this.revenueFrom.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
+			this.revenueFrom.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+			this.revenueFrom.FocusedState.Parent = this.revenueFrom;
+			this.revenueFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.revenueFrom.ForeColor = System.Drawing.Color.Black;
+			this.revenueFrom.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+			this.revenueFrom.HoverState.Parent = this.revenueFrom;
+			this.revenueFrom.Location = new System.Drawing.Point(21, 4);
+			this.revenueFrom.Margin = new System.Windows.Forms.Padding(0);
+			this.revenueFrom.Name = "revenueFrom";
+			this.revenueFrom.PasswordChar = '\0';
+			this.revenueFrom.PlaceholderText = "Doanh thu từ  ...";
+			this.revenueFrom.SelectedText = "";
+			this.revenueFrom.ShadowDecoration.Parent = this.revenueFrom;
+			this.revenueFrom.Size = new System.Drawing.Size(125, 25);
+			this.revenueFrom.TabIndex = 6;
+			// 
+			// panel3
+			// 
+			this.panel3.Anchor = System.Windows.Forms.AnchorStyles.None;
+			this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(212)))), ((int)(((byte)(191)))));
+			this.panel3.Location = new System.Drawing.Point(26, 31);
+			this.panel3.Name = "panel3";
+			this.panel3.Size = new System.Drawing.Size(120, 1);
+			this.panel3.TabIndex = 31;
+			// 
+			// panel4
+			// 
+			this.panel4.Anchor = System.Windows.Forms.AnchorStyles.None;
+			this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(212)))), ((int)(((byte)(191)))));
+			this.panel4.Location = new System.Drawing.Point(201, 31);
+			this.panel4.Name = "panel4";
+			this.panel4.Size = new System.Drawing.Size(120, 1);
+			this.panel4.TabIndex = 33;
+			// 
+			// panel2
+			// 
+			this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
+			this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(212)))), ((int)(((byte)(191)))));
+			this.panel2.Location = new System.Drawing.Point(158, 18);
+			this.panel2.Name = "panel2";
+			this.panel2.Size = new System.Drawing.Size(28, 1);
+			this.panel2.TabIndex = 22;
+			// 
+			// label1
+			// 
+			this.label1.Dock = System.Windows.Forms.DockStyle.Left;
+			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(212)))), ((int)(((byte)(191)))));
+			this.label1.Location = new System.Drawing.Point(0, 0);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(18, 36);
+			this.label1.TabIndex = 0;
+			this.label1.Text = "$";
+			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// closeBtn
 			// 
@@ -573,7 +750,7 @@
 			this.chartPanel.Location = new System.Drawing.Point(0, 0);
 			this.chartPanel.Name = "chartPanel";
 			this.chartPanel.Size = new System.Drawing.Size(1163, 485);
-			this.chartPanel.TabIndex = 40;
+			this.chartPanel.TabIndex = 1;
 			// 
 			// panel8
 			// 
@@ -610,7 +787,7 @@
 			this.label7.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label7.Location = new System.Drawing.Point(18, 3);
 			this.label7.Name = "label7";
-			this.label7.Size = new System.Drawing.Size(160, 28);
+			this.label7.Size = new System.Drawing.Size(191, 35);
 			this.label7.TabIndex = 22;
 			this.label7.Text = "BIỂU ĐỒ THỐNG KÊ";
 			// 
@@ -679,7 +856,7 @@
 			this.revenueLb.ForeColor = System.Drawing.Color.Black;
 			this.revenueLb.Location = new System.Drawing.Point(16, 64);
 			this.revenueLb.Name = "revenueLb";
-			this.revenueLb.Size = new System.Drawing.Size(0, 25);
+			this.revenueLb.Size = new System.Drawing.Size(0, 30);
 			this.revenueLb.TabIndex = 2;
 			// 
 			// label8
@@ -689,7 +866,7 @@
 			this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(174)))), ((int)(((byte)(192)))));
 			this.label8.Location = new System.Drawing.Point(16, 30);
 			this.label8.Name = "label8";
-			this.label8.Size = new System.Drawing.Size(207, 21);
+			this.label8.Size = new System.Drawing.Size(247, 26);
 			this.label8.TabIndex = 0;
 			this.label8.Text = "Tổng doanh thu 6 tháng gần đây";
 			// 
@@ -741,7 +918,7 @@
 			this.bookSoldLb.ForeColor = System.Drawing.Color.Black;
 			this.bookSoldLb.Location = new System.Drawing.Point(15, 64);
 			this.bookSoldLb.Name = "bookSoldLb";
-			this.bookSoldLb.Size = new System.Drawing.Size(0, 25);
+			this.bookSoldLb.Size = new System.Drawing.Size(0, 30);
 			this.bookSoldLb.TabIndex = 5;
 			// 
 			// label4
@@ -751,7 +928,7 @@
 			this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(174)))), ((int)(((byte)(192)))));
 			this.label4.Location = new System.Drawing.Point(15, 30);
 			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(232, 21);
+			this.label4.Size = new System.Drawing.Size(279, 26);
 			this.label4.TabIndex = 3;
 			this.label4.Text = "Tổng số sách đã bán 6 tháng gần đây";
 			// 
@@ -803,7 +980,7 @@
 			this.customerNumLb.ForeColor = System.Drawing.Color.Black;
 			this.customerNumLb.Location = new System.Drawing.Point(13, 64);
 			this.customerNumLb.Name = "customerNumLb";
-			this.customerNumLb.Size = new System.Drawing.Size(0, 25);
+			this.customerNumLb.Size = new System.Drawing.Size(0, 30);
 			this.customerNumLb.TabIndex = 8;
 			// 
 			// label6
@@ -813,190 +990,13 @@
 			this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(174)))), ((int)(((byte)(192)))));
 			this.label6.Location = new System.Drawing.Point(13, 30);
 			this.label6.Name = "label6";
-			this.label6.Size = new System.Drawing.Size(230, 21);
+			this.label6.Size = new System.Drawing.Size(275, 26);
 			this.label6.TabIndex = 6;
 			this.label6.Text = "Tổng số khách hàng 6 tháng gần đây";
 			// 
-			// Column1
-			// 
-			dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-			dataGridViewCellStyle3.Font = new System.Drawing.Font("#9Slide03 Cabin", 10F);
-			this.Column1.DefaultCellStyle = dataGridViewCellStyle3;
-			this.Column1.FillWeight = 50F;
-			this.Column1.HeaderText = "Mã Sách";
-			this.Column1.MinimumWidth = 6;
-			this.Column1.Name = "Column1";
-			this.Column1.ReadOnly = true;
-			this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-			this.Column1.ToolTipText = "Mã Sách";
-			// 
-			// Column2
-			// 
-			dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-			dataGridViewCellStyle4.Font = new System.Drawing.Font("#9Slide03 Cabin", 10F);
-			this.Column2.DefaultCellStyle = dataGridViewCellStyle4;
-			this.Column2.FillWeight = 150F;
-			this.Column2.HeaderText = "Tên Sách";
-			this.Column2.MinimumWidth = 6;
-			this.Column2.Name = "Column2";
-			this.Column2.ReadOnly = true;
-			this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-			this.Column2.ToolTipText = "Tên Sách";
-			// 
-			// Column10
-			// 
-			this.Column10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-			this.Column10.HeaderText = "Hình Ảnh";
-			this.Column10.Image = ((System.Drawing.Image)(resources.GetObject("Column10.Image")));
-			this.Column10.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
-			this.Column10.MinimumWidth = 90;
-			this.Column10.Name = "Column10";
-			this.Column10.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-			this.Column10.Width = 90;
-			// 
-			// Column9
-			// 
-			dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-			dataGridViewCellStyle5.Font = new System.Drawing.Font("#9Slide03 Cabin", 10F);
-			this.Column9.DefaultCellStyle = dataGridViewCellStyle5;
-			this.Column9.FillWeight = 70F;
-			this.Column9.HeaderText = "Đã bán";
-			this.Column9.MinimumWidth = 6;
-			this.Column9.Name = "Column9";
-			this.Column9.ReadOnly = true;
-			this.Column9.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-			this.Column9.ToolTipText = "Đã bán";
-			// 
-			// Column6
-			// 
-			dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-			dataGridViewCellStyle6.Font = new System.Drawing.Font("#9Slide03 Cabin", 10F);
-			this.Column6.DefaultCellStyle = dataGridViewCellStyle6;
-			this.Column6.HeaderText = "Doanh thu";
-			this.Column6.MinimumWidth = 6;
-			this.Column6.Name = "Column6";
-			this.Column6.ReadOnly = true;
-			this.Column6.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-			this.Column6.ToolTipText = "Doanh thu";
-			// 
-			// gradientPanel1
-			// 
-			this.gradientPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.gradientPanel1.ColorLeft = System.Drawing.Color.Empty;
-			this.gradientPanel1.ColorRight = System.Drawing.Color.Empty;
-			this.gradientPanel1.Controls.Add(this.revenueTo);
-			this.gradientPanel1.Controls.Add(this.revenueFrom);
-			this.gradientPanel1.Controls.Add(this.panel3);
-			this.gradientPanel1.Controls.Add(this.panel4);
-			this.gradientPanel1.Controls.Add(this.panel2);
-			this.gradientPanel1.Controls.Add(this.label1);
-			this.gradientPanel1.Location = new System.Drawing.Point(744, 13);
-			this.gradientPanel1.Name = "gradientPanel1";
-			this.gradientPanel1.Size = new System.Drawing.Size(337, 36);
-			this.gradientPanel1.TabIndex = 30;
-			// 
-			// revenueTo
-			// 
-			this.revenueTo.Animated = true;
-			this.revenueTo.BackColor = System.Drawing.Color.Transparent;
-			this.revenueTo.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
-			this.revenueTo.BorderThickness = 0;
-			this.revenueTo.Cursor = System.Windows.Forms.Cursors.IBeam;
-			this.revenueTo.DefaultText = "";
-			this.revenueTo.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-			this.revenueTo.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-			this.revenueTo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-			this.revenueTo.DisabledState.Parent = this.revenueTo;
-			this.revenueTo.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-			this.revenueTo.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
-			this.revenueTo.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-			this.revenueTo.FocusedState.Parent = this.revenueTo;
-			this.revenueTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.revenueTo.ForeColor = System.Drawing.Color.Black;
-			this.revenueTo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-			this.revenueTo.HoverState.Parent = this.revenueTo;
-			this.revenueTo.Location = new System.Drawing.Point(195, 4);
-			this.revenueTo.Margin = new System.Windows.Forms.Padding(0);
-			this.revenueTo.Name = "revenueTo";
-			this.revenueTo.PasswordChar = '\0';
-			this.revenueTo.PlaceholderText = "Doanh thu đến ...";
-			this.revenueTo.SelectedText = "";
-			this.revenueTo.ShadowDecoration.Parent = this.revenueTo;
-			this.revenueTo.Size = new System.Drawing.Size(129, 25);
-			this.revenueTo.TabIndex = 34;
-			// 
-			// revenueFrom
-			// 
-			this.revenueFrom.Animated = true;
-			this.revenueFrom.BackColor = System.Drawing.Color.Transparent;
-			this.revenueFrom.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
-			this.revenueFrom.BorderThickness = 0;
-			this.revenueFrom.Cursor = System.Windows.Forms.Cursors.IBeam;
-			this.revenueFrom.DefaultText = "";
-			this.revenueFrom.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-			this.revenueFrom.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-			this.revenueFrom.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-			this.revenueFrom.DisabledState.Parent = this.revenueFrom;
-			this.revenueFrom.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-			this.revenueFrom.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
-			this.revenueFrom.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-			this.revenueFrom.FocusedState.Parent = this.revenueFrom;
-			this.revenueFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.revenueFrom.ForeColor = System.Drawing.Color.Black;
-			this.revenueFrom.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-			this.revenueFrom.HoverState.Parent = this.revenueFrom;
-			this.revenueFrom.Location = new System.Drawing.Point(21, 4);
-			this.revenueFrom.Margin = new System.Windows.Forms.Padding(0);
-			this.revenueFrom.Name = "revenueFrom";
-			this.revenueFrom.PasswordChar = '\0';
-			this.revenueFrom.PlaceholderText = "Doanh thu từ  ...";
-			this.revenueFrom.SelectedText = "";
-			this.revenueFrom.ShadowDecoration.Parent = this.revenueFrom;
-			this.revenueFrom.Size = new System.Drawing.Size(125, 25);
-			this.revenueFrom.TabIndex = 32;
-			// 
-			// panel3
-			// 
-			this.panel3.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(212)))), ((int)(((byte)(191)))));
-			this.panel3.Location = new System.Drawing.Point(26, 31);
-			this.panel3.Name = "panel3";
-			this.panel3.Size = new System.Drawing.Size(120, 1);
-			this.panel3.TabIndex = 31;
-			// 
-			// panel4
-			// 
-			this.panel4.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(212)))), ((int)(((byte)(191)))));
-			this.panel4.Location = new System.Drawing.Point(201, 31);
-			this.panel4.Name = "panel4";
-			this.panel4.Size = new System.Drawing.Size(120, 1);
-			this.panel4.TabIndex = 33;
-			// 
-			// panel2
-			// 
-			this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(212)))), ((int)(((byte)(191)))));
-			this.panel2.Location = new System.Drawing.Point(158, 18);
-			this.panel2.Name = "panel2";
-			this.panel2.Size = new System.Drawing.Size(28, 1);
-			this.panel2.TabIndex = 22;
-			// 
-			// label1
-			// 
-			this.label1.Dock = System.Windows.Forms.DockStyle.Left;
-			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(212)))), ((int)(((byte)(191)))));
-			this.label1.Location = new System.Drawing.Point(0, 0);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(18, 36);
-			this.label1.TabIndex = 0;
-			this.label1.Text = "$";
-			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
 			// ProductStatisticGUI
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
 			this.ClientSize = new System.Drawing.Size(1163, 539);
@@ -1017,6 +1017,7 @@
 			this.panel1.ResumeLayout(false);
 			this.panel7.ResumeLayout(false);
 			this.panel7.PerformLayout();
+			this.gradientPanel1.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.closeBtn)).EndInit();
 			this.chartPanel.ResumeLayout(false);
 			this.panel8.ResumeLayout(false);
@@ -1035,7 +1036,6 @@
 			this.gunaGradient2Panel2.PerformLayout();
 			this.gunaGradient2Panel6.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-			this.gradientPanel1.ResumeLayout(false);
 			this.ResumeLayout(false);
 
         }

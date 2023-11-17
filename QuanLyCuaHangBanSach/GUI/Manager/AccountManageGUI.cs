@@ -33,8 +33,9 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             headerCheckbox.BackColor = Color.FromArgb(45, 210, 192);
             headerCheckbox.Name = "chkHeader";
             headerCheckbox.Size = new Size(size, size);
+			headerCheckbox.TabStop = false;
 
-            rect.X = (rect.Width / 2) - (size / 4);
+			rect.X = (rect.Width / 2) - (size / 4);
             rect.Y = (rect.Height / 2) - (size / 2);
 
             headerCheckbox.Location = rect.Location;
