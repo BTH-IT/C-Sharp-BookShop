@@ -85,7 +85,7 @@
             this.searchInput.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
             this.searchInput.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.searchInput.FocusedState.Parent = this.searchInput;
-            this.searchInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchInput.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 11.25F);
             this.searchInput.ForeColor = System.Drawing.Color.Black;
             this.searchInput.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.searchInput.HoverState.Parent = this.searchInput;
@@ -111,7 +111,7 @@
             this.genderCbx.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.genderCbx.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.genderCbx.FocusedColor = System.Drawing.Color.Empty;
-            this.genderCbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.genderCbx.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 11.25F);
             this.genderCbx.ForeColor = System.Drawing.Color.Black;
             this.genderCbx.FormattingEnabled = true;
             this.genderCbx.ItemHeight = 30;
@@ -136,7 +136,7 @@
             this.positionCbx.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.positionCbx.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.positionCbx.FocusedColor = System.Drawing.Color.Empty;
-            this.positionCbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.positionCbx.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 11.25F);
             this.positionCbx.ForeColor = System.Drawing.Color.Black;
             this.positionCbx.FormattingEnabled = true;
             this.positionCbx.ItemHeight = 30;
@@ -164,7 +164,7 @@
             this.dgvStaff.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 11.25F);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
@@ -183,7 +183,7 @@
             this.chucVu});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 11.25F);
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
@@ -540,7 +540,7 @@
             this.salaryTo.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
             this.salaryTo.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.salaryTo.FocusedState.Parent = this.salaryTo;
-            this.salaryTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.salaryTo.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 11.25F);
             this.salaryTo.ForeColor = System.Drawing.Color.Black;
             this.salaryTo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.salaryTo.HoverState.Parent = this.salaryTo;
@@ -571,7 +571,7 @@
             this.salaryFrom.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
             this.salaryFrom.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.salaryFrom.FocusedState.Parent = this.salaryFrom;
-            this.salaryFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.salaryFrom.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 11.25F);
             this.salaryFrom.ForeColor = System.Drawing.Color.Black;
             this.salaryFrom.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.salaryFrom.HoverState.Parent = this.salaryFrom;
@@ -642,7 +642,7 @@
             // 
             // StaffManageGUI
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
             this.ClientSize = new System.Drawing.Size(1044, 684);
