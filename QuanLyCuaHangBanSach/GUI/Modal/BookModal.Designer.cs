@@ -203,7 +203,7 @@
 			this.errorPublishYearMsg.ForeColor = System.Drawing.Color.Red;
 			this.errorPublishYearMsg.Location = new System.Drawing.Point(162, 55);
 			this.errorPublishYearMsg.Name = "errorPublishYearMsg";
-			this.errorPublishYearMsg.Size = new System.Drawing.Size(0, 26);
+			this.errorPublishYearMsg.Size = new System.Drawing.Size(0, 21);
 			this.errorPublishYearMsg.TabIndex = 7;
 			// 
 			// publishYearLine
@@ -272,7 +272,7 @@
 			this.errorImportPriceMsg.ForeColor = System.Drawing.Color.Red;
 			this.errorImportPriceMsg.Location = new System.Drawing.Point(163, 49);
 			this.errorImportPriceMsg.Name = "errorImportPriceMsg";
-			this.errorImportPriceMsg.Size = new System.Drawing.Size(0, 26);
+			this.errorImportPriceMsg.Size = new System.Drawing.Size(0, 21);
 			this.errorImportPriceMsg.TabIndex = 7;
 			// 
 			// importPriceLine
@@ -310,7 +310,7 @@
 			this.errorPublisherMsg.ForeColor = System.Drawing.Color.Red;
 			this.errorPublisherMsg.Location = new System.Drawing.Point(163, 52);
 			this.errorPublisherMsg.Name = "errorPublisherMsg";
-			this.errorPublisherMsg.Size = new System.Drawing.Size(0, 26);
+			this.errorPublisherMsg.Size = new System.Drawing.Size(0, 21);
 			this.errorPublisherMsg.TabIndex = 33;
 			// 
 			// label18
@@ -336,8 +336,10 @@
 			this.publisherCbx.Font = new System.Drawing.Font("#9Slide03 Cabin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.publisherCbx.ForeColor = System.Drawing.Color.Black;
 			this.publisherCbx.FormattingEnabled = true;
+			this.publisherCbx.IntegralHeight = false;
 			this.publisherCbx.ItemHeight = 30;
 			this.publisherCbx.Location = new System.Drawing.Point(160, 12);
+			this.publisherCbx.MaxDropDownItems = 10;
 			this.publisherCbx.Name = "publisherCbx";
 			this.publisherCbx.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
 			this.publisherCbx.OnHoverItemForeColor = System.Drawing.Color.White;
@@ -395,7 +397,7 @@
 			this.errorSellPriceMsg.ForeColor = System.Drawing.Color.Red;
 			this.errorSellPriceMsg.Location = new System.Drawing.Point(163, 49);
 			this.errorSellPriceMsg.Name = "errorSellPriceMsg";
-			this.errorSellPriceMsg.Size = new System.Drawing.Size(0, 26);
+			this.errorSellPriceMsg.Size = new System.Drawing.Size(0, 21);
 			this.errorSellPriceMsg.TabIndex = 7;
 			// 
 			// sellPriceLine
@@ -433,7 +435,7 @@
 			this.errorBookTypeMsg.ForeColor = System.Drawing.Color.Red;
 			this.errorBookTypeMsg.Location = new System.Drawing.Point(163, 52);
 			this.errorBookTypeMsg.Name = "errorBookTypeMsg";
-			this.errorBookTypeMsg.Size = new System.Drawing.Size(0, 26);
+			this.errorBookTypeMsg.Size = new System.Drawing.Size(0, 21);
 			this.errorBookTypeMsg.TabIndex = 30;
 			// 
 			// label16
@@ -459,8 +461,10 @@
 			this.bookTypeCbx.Font = new System.Drawing.Font("#9Slide03 Cabin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.bookTypeCbx.ForeColor = System.Drawing.Color.Black;
 			this.bookTypeCbx.FormattingEnabled = true;
+			this.bookTypeCbx.IntegralHeight = false;
 			this.bookTypeCbx.ItemHeight = 30;
 			this.bookTypeCbx.Location = new System.Drawing.Point(160, 12);
+			this.bookTypeCbx.MaxDropDownItems = 10;
 			this.bookTypeCbx.Name = "bookTypeCbx";
 			this.bookTypeCbx.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
 			this.bookTypeCbx.OnHoverItemForeColor = System.Drawing.Color.White;
@@ -487,7 +491,7 @@
 			this.errorAuthorMsg.ForeColor = System.Drawing.Color.Red;
 			this.errorAuthorMsg.Location = new System.Drawing.Point(163, 52);
 			this.errorAuthorMsg.Name = "errorAuthorMsg";
-			this.errorAuthorMsg.Size = new System.Drawing.Size(0, 26);
+			this.errorAuthorMsg.Size = new System.Drawing.Size(0, 21);
 			this.errorAuthorMsg.TabIndex = 27;
 			// 
 			// label13
@@ -513,8 +517,10 @@
 			this.authorCbx.Font = new System.Drawing.Font("#9Slide03 Cabin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.authorCbx.ForeColor = System.Drawing.Color.Black;
 			this.authorCbx.FormattingEnabled = true;
+			this.authorCbx.IntegralHeight = false;
 			this.authorCbx.ItemHeight = 30;
 			this.authorCbx.Location = new System.Drawing.Point(160, 12);
+			this.authorCbx.MaxDropDownItems = 10;
 			this.authorCbx.Name = "authorCbx";
 			this.authorCbx.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
 			this.authorCbx.OnHoverItemForeColor = System.Drawing.Color.White;
@@ -572,7 +578,7 @@
 			this.errorBookNameMsg.ForeColor = System.Drawing.Color.Red;
 			this.errorBookNameMsg.Location = new System.Drawing.Point(163, 50);
 			this.errorBookNameMsg.Name = "errorBookNameMsg";
-			this.errorBookNameMsg.Size = new System.Drawing.Size(0, 26);
+			this.errorBookNameMsg.Size = new System.Drawing.Size(0, 21);
 			this.errorBookNameMsg.TabIndex = 7;
 			// 
 			// nameLine
@@ -628,7 +634,7 @@
 			this.errorImageMsg.ForeColor = System.Drawing.Color.Red;
 			this.errorImageMsg.Location = new System.Drawing.Point(165, 157);
 			this.errorImageMsg.Name = "errorImageMsg";
-			this.errorImageMsg.Size = new System.Drawing.Size(0, 26);
+			this.errorImageMsg.Size = new System.Drawing.Size(0, 21);
 			this.errorImageMsg.TabIndex = 11;
 			this.errorImageMsg.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
@@ -672,7 +678,7 @@
 			// 
 			// BookModal
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 23F);
+			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 18F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.White;
 			this.ClientSize = new System.Drawing.Size(1222, 637);

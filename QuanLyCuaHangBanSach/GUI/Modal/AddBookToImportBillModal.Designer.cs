@@ -808,7 +808,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvBook)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
-
         }
 
         #endregion
