@@ -280,11 +280,14 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
                 if (DateTime.Compare(this.dateTimeFrom.Value, this.dateTimeTo.Value) <= 0 && this.filterCkx.Checked)
                 {
-                    try
+          
+					try
                     {
-                        customerBillList = customerBillList.FindAll(
-                            item => (DateTime.Compare(item.NgayLap, this.dateTimeFrom.Value) >= 0)
-                                    && (DateTime.Compare(item.NgayLap, this.dateTimeTo.Value) <= 0)
+						DateTime dateTimeFromV = new DateTime(dateTimeFrom.Value.Year, dateTimeFrom.Value.Month, dateTimeFrom.Value.Day, 0, 0, 0);
+						DateTime dateTimeToV = new DateTime(dateTimeTo.Value.Year, dateTimeTo.Value.Month, dateTimeTo.Value.Day, 0, 0, 0);
+						customerBillList = customerBillList.FindAll(
+                            item => (DateTime.Compare(item.NgayLap, dateTimeFromV) >= 0)
+                                    && (DateTime.Compare(item.NgayLap,dateTimeToV) <= 0)
                         );
                     }
                     catch

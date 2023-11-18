@@ -204,5 +204,5 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 new string[] { "required" }
             );
         }
-    }
+	}
 }

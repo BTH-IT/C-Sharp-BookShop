@@ -332,9 +332,15 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 					try
 					{
 						sales = sales.Where(item =>
+                        {
+                            DateTime dateTimeFromV = new DateTime(dateTimeFrom.Value.Year,dateTimeFrom.Value.Month,dateTimeFrom.Value.Day);
+							DateTime dateTimeToV = new DateTime(dateTimeTo.Value.Year, dateTimeTo.Value.Month, dateTimeTo.Value.Day);
 
-							 DateTime.Compare(item.NgayBatDau, dateTimeFrom.Value) >= 0 &&
-							 DateTime.Compare(item.NgayKetThuc, dateTimeTo.Value) <= 0
+							return DateTime.Compare(item.NgayBatDau, dateTimeFromV) >= 0 &&
+                            DateTime.Compare(item.NgayKetThuc, dateTimeToV) <= 0;
+
+						}
+							 
 						).ToList();
 					}
 					catch

@@ -92,7 +92,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 			this.cancelBtn.OnPressedColor = System.Drawing.Color.White;
 			this.cancelBtn.Radius = 22;
 			this.cancelBtn.Size = new System.Drawing.Size(200, 50);
-			this.cancelBtn.TabIndex = 4;
+			this.cancelBtn.TabIndex = 1;
 			this.cancelBtn.Text = "Hủy";
 			this.cancelBtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
@@ -122,7 +122,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 			this.submitBtn.OnPressedColor = System.Drawing.Color.Black;
 			this.submitBtn.Radius = 22;
 			this.submitBtn.Size = new System.Drawing.Size(200, 50);
-			this.submitBtn.TabIndex = 5;
+			this.submitBtn.TabIndex = 2;
 			this.submitBtn.Text = "Lưu";
 			this.submitBtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			this.submitBtn.Click += new System.EventHandler(this.gunaButton1_Click);

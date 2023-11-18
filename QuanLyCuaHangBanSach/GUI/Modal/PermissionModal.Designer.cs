@@ -244,6 +244,7 @@
 			this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.Name = "PermissionModal";
 			this.Text = "PermissionModal";
+			this.Load += new System.EventHandler(this.PermissionModal_Load);
 			this.panel1.ResumeLayout(false);
 			this.panel1.PerformLayout();
 			this.flowLayoutPanel1.ResumeLayout(false);
