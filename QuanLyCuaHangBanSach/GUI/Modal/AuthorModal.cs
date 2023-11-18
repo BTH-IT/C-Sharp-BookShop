@@ -209,41 +209,12 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
         private void authorName_Leave(object sender, EventArgs e)
         {
-            bool isAuthor = CustomValidation.Instance.checkTextbox(
-                this.authorName,
-                this.authorNameMsg,
-                this.nameLine,
-                new string[] { "required", "space" }
-            );
 
-            if (isAuthor)
-            {
-                CustomValidation.Instance.checkDuplicateName(
-                    this.authorNameMsg,
-                    this.nameLine,
-                    AuthorBUS.Instance.checkDuplicateName(this.authorName.Text)
-                );
-            }
         }
 
         private void birthYear_Leave(object sender, EventArgs e)
         {
-            try
-            {
-                this.birthYear.ForeColor = Color.Black;
 
-                CustomValidation.Instance.checkTextbox(
-                    this.birthYear,
-                    this.birthYearMsg,
-                    this.birthYearLine,
-                    new string[] { "required", "positive-number", "max-current-year", "space" }
-                );
-            }
-            catch (Exception er)
-            {
-
-                Console.WriteLine(er);
-            }
         }
     }
 }

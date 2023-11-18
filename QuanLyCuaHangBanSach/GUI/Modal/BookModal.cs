@@ -466,38 +466,12 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
         private void bookNameTxt_Leave(object sender, EventArgs e)
         {
-            bool isBookName = CustomValidation.Instance.checkTextbox(
-                    this.bookNameTxt,
-                    this.errorBookNameMsg,
-                    this.nameLine,
-                    new string[] { "required", "name", "space" }
-                );
 
-            if (isBookName)
-            {
-                CustomValidation.Instance.checkDuplicateName(
-                    this.errorBookNameMsg,
-                    this.nameLine,
-                    BookBUS.Instance.checkDuplicateName(this.bookNameTxt.Text)
-                );
-            }
         }
 
         private void sellPriceTxt_Leave(object sender, EventArgs e)
         {
-            try
-            {
-                CustomValidation.Instance.checkTextbox(
-                    this.sellPriceTxt,
-                    this.errorSellPriceMsg,
-                    this.sellPriceLine,
-                    new string[] { "required", "positive-number", "space" }
-                );
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex);
-            }
+
         }
     }
 }
