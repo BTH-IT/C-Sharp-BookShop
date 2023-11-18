@@ -306,6 +306,7 @@
 			this.NameInp.Size = new System.Drawing.Size(244, 36);
 			this.NameInp.TabIndex = 0;
 			this.NameInp.TextChanged += new System.EventHandler(this.NameInp_TextChanged);
+			this.NameInp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NameInp_KeyPress);
 			this.NameInp.MouseLeave += new System.EventHandler(this.ProductSearchInp_MouseLeave);
 			// 
 			// TotalMoneyLb
@@ -486,7 +487,7 @@
 			this.ExcelImportBtn.HoverState.Parent = this.ExcelImportBtn;
 			this.ExcelImportBtn.Image = ((System.Drawing.Image)(resources.GetObject("ExcelImportBtn.Image")));
 			this.ExcelImportBtn.ImageSize = new System.Drawing.Size(35, 35);
-			this.ExcelImportBtn.Location = new System.Drawing.Point(13, 25);
+			this.ExcelImportBtn.Location = new System.Drawing.Point(14, 32);
 			this.ExcelImportBtn.Name = "ExcelImportBtn";
 			this.ExcelImportBtn.PressedColor = System.Drawing.Color.Transparent;
 			this.ExcelImportBtn.ShadowDecoration.BorderRadius = 25;
