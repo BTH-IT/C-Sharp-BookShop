@@ -19,7 +19,7 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
         private bool PrintBtnAllowed = false;
         private int supplierID = 0;
         private int staffID;
-        private double total = 0;
+        private decimal total = 0;
         private List<ImportBillDetailDTO> importBillDetails = new List<ImportBillDetailDTO>();
 
         public ImportGUI(int staffID)
@@ -395,25 +395,34 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
 					return;
 				}
 
-				ImportBillDTO newImportBill = new ImportBillDTO(0, 1, staffID, DateTime.Now, 0);
+                foreach (DataRow row in dt.Rows)
+                {
+                    if (!int.TryParse(row[0].ToString(), out int maSach) || !int.TryParse(row[2].ToString(), out int soLuong) || !decimal.TryParse(row[3].ToString(), out decimal giaNhap))
+                    {
+                        MessageBox.Show("Lỗi chưa chọn file hoặc file excel không đúng format dữ liệu nhập!");
+                        return;
+                    }
+                }
+
+                ImportBillDTO newImportBill = new ImportBillDTO(0, 1, staffID, DateTime.Now, 0);
 
 				ImportBillDTO importBill = ImportBillBUS.Instance.insertReturnBill(newImportBill);
 
 				if (importBill != null)
 				{
-					double tongTien = 0;
+					decimal tongTien = 0;
 					foreach (DataRow row in dt.Rows)
 					{
 						BookDTO book = BookBUS.Instance.getById(row[0].ToString());
 
 						if (book == null) continue;
 
-						ImportBillDetailDTO importBillDetail = new ImportBillDetailDTO(importBill.MaDonNhapHang, book.MaSach, Convert.ToInt32(row[2].ToString()), Convert.ToDouble(row[3].ToString()));
+						ImportBillDetailDTO importBillDetail = new ImportBillDetailDTO(importBill.MaDonNhapHang, book.MaSach, Convert.ToInt32(row[2].ToString()), Convert.ToDecimal(row[3].ToString()));
 
 						if (ImportBillBUS.Instance.createImportBillDetail(importBillDetail))
 						{
 							book.SoLuongConLai += Convert.ToInt32(row[2].ToString());
-							book.GiaNhap = Convert.ToDouble(row[3].ToString());
+							book.GiaNhap = Convert.ToDecimal(row[3].ToString());
 
 							BookBUS.Instance.update(book);
 

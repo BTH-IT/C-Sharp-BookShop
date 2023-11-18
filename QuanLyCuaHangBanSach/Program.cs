@@ -16,7 +16,8 @@ namespace QuanLyCuaHangBanSach
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(LoginGUI.Instance);
+            //Application.Run(LoginGUI.Instance);
+            Application.Run(new ManagerGUI(1));
         }
     }
 }

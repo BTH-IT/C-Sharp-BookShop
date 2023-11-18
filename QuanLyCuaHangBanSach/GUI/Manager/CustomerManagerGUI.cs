@@ -13,7 +13,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 	public partial class CustomerManagerGUI : Form
     {
         private CheckBox headerCheckbox;
-        string[] genders = new string[] { "Chọn giới tính", "Nam", "Nữ" };
+        string[] genders = new string[] { "Tất cả giới tính", "Nam", "Nữ" };
         public CustomerManagerGUI()
         {
             InitializeComponent();

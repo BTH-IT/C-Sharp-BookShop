@@ -20,8 +20,8 @@ namespace QuanLyCuaHangBanSach.GUI
         private bool PrintBtnAllowed = false;
         private int customerID = 0;
         private int staffID;
-        private double finalTotalMoney = 0;
-        private double discount = 0;
+        private decimal finalTotalMoney = 0;
+        private decimal discount = 0;
         private List<CustomerBillDetailDTO> customerBillDetails = new List<CustomerBillDetailDTO>();
 
         public VendorGUI(int staffID)
@@ -372,14 +372,14 @@ namespace QuanLyCuaHangBanSach.GUI
         {
             try
             {
-                double total = 0;
+                decimal total = 0;
                 foreach (var customerBillDetail in customerBillDetails)
                 {
                     total += customerBillDetail.SoLuong * customerBillDetail.DonGia;
                 }
 
                 TotalMoneyLb.Text = string.Format("{0:N0} VND", total);
-                double pointDiscount = 0;
+                decimal pointDiscount = 0;
                 if (PointEnabled)
                 {
                     pointDiscount = CustomerBUS.Instance.getById(customerID.ToString()).Diem * 1000;
@@ -389,11 +389,11 @@ namespace QuanLyCuaHangBanSach.GUI
                 DiscountMoneyLb.Text = string.Format("{0:N0} VND", discount);
                 FinalTotalMoneyLb.Text = string.Format("{0:N0} VND", finalTotalMoney);
 
-                double CustommerCash = 0;
-                double Change = 0;
+                decimal CustommerCash = 0;
+                decimal Change = 0;
                 if (CustomerCashTxb.Text.Length > 0 && total > 0)
                 {
-                    CustommerCash = Convert.ToDouble(CustomerCashTxb.Text);
+                    CustommerCash = Convert.ToDecimal(CustomerCashTxb.Text);
                     Change = CustommerCash - finalTotalMoney;
                 }
                 else
@@ -433,8 +433,8 @@ namespace QuanLyCuaHangBanSach.GUI
                 {
                     string discountID = DiscountCb.SelectedValue.ToString();
                     int percent = SaleBUS.Instance.getById(discountID).PhanTram;
-                    double total = Convert.ToDouble(TotalMoneyLb.Text.Replace(".", "").Replace(" VND", ""));
-                    discount = total * (percent / 100.0);
+                    decimal total = Convert.ToDecimal(TotalMoneyLb.Text.Replace(".", "").Replace(" VND", ""));
+                    discount = total * (percent / Convert.ToDecimal(100.0));
                     DiscountPercentLb.Text = $@"{percent}%";
                     CartHandler();
                 }
@@ -491,10 +491,10 @@ namespace QuanLyCuaHangBanSach.GUI
             CartHandler();
         }
 
-        private double RoundMoney(double money)
+        private decimal RoundMoney(decimal money)
         {
-            double baseMoney = 50000; // Số tiền cơ sở để làm tròn
-            return Convert.ToDouble(Math.Floor(money / baseMoney) * baseMoney);
+            decimal baseMoney = 50000; // Số tiền cơ sở để làm tròn
+            return Convert.ToDecimal(Math.Floor(money / baseMoney) * baseMoney);
         }
 
         private void PrintBtn_Click(object sender, EventArgs e)
@@ -505,7 +505,7 @@ namespace QuanLyCuaHangBanSach.GUI
                 {
                     CustomerBillDTO customerBill = new CustomerBillDTO();
                     customerBill.TongTien = finalTotalMoney;
-                    customerBill.TienKhachDua = Convert.ToDouble(CustomerCashTxb.Text);
+                    customerBill.TienKhachDua = Convert.ToDecimal(CustomerCashTxb.Text);
                     customerBill.MaNhanVien = staffID;
                     customerBill.MaKhachHang = CustomerEnabled ? customerID : 0;
                     customerBill.MaKhuyenMai = Convert.ToInt32(DiscountCb.SelectedValue);
@@ -543,7 +543,7 @@ namespace QuanLyCuaHangBanSach.GUI
                             CustomerBUS.Instance.update(customer_resetPoint);
                         }
 
-                        double baseMoney = 50000;
+                        decimal baseMoney = 50000;
                         int point = Convert.ToInt32(RoundMoney(finalTotalMoney) / baseMoney);
                         CustomerDTO customer_addPoint = CustomerBUS.Instance.getById(customerID.ToString());
                         customer_addPoint.Diem += point;

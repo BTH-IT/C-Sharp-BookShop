@@ -11,7 +11,7 @@ namespace QuanLyCuaHangBanSach.DTO
         public int NamSinh { get; set; }
         public bool TrangThai { get; set; }
         public string SoDienThoai { get; set; }
-        public double Luong { get; set; }
+        public decimal Luong { get; set; }
         public int MaChucVu { get; set; }
         public StaffDTO() { }
         public StaffDTO(
@@ -21,7 +21,7 @@ namespace QuanLyCuaHangBanSach.DTO
             string gioiTinh,
             int namSinh,
             int maChucVu,
-            double luong
+            decimal luong
             )
         {
             this.Ma = maNhanVien;
@@ -41,7 +41,7 @@ namespace QuanLyCuaHangBanSach.DTO
             this.SoDienThoai = row["soDienThoai"].ToString();
             this.GioiTinh = row["gioiTinh"].ToString();
             this.NamSinh = (int)row["namSinh"];
-            this.Luong = Convert.ToDouble(row["Luong"]);
+            this.Luong = Convert.ToDecimal(row["luong"]);
         }
     }
 }

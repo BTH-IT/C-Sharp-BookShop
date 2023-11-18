@@ -95,7 +95,7 @@
             this.dgvBook.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 11.25F);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
@@ -130,7 +130,7 @@
             this.dgvBook.Name = "dgvBook";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
@@ -140,6 +140,7 @@
             this.dgvBook.RowHeadersWidth = 51;
             this.dgvBook.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 11.25F);
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvBook.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvBook.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -459,7 +460,7 @@
             // 
             // authorCbx
             // 
-            this.authorCbx.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.authorCbx.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.authorCbx.BackColor = System.Drawing.Color.Transparent;
             this.authorCbx.BaseColor = System.Drawing.Color.White;
             this.authorCbx.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
@@ -468,11 +469,13 @@
             this.authorCbx.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.authorCbx.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.authorCbx.FocusedColor = System.Drawing.Color.Empty;
-            this.authorCbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.authorCbx.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F);
             this.authorCbx.ForeColor = System.Drawing.Color.Black;
             this.authorCbx.FormattingEnabled = true;
+            this.authorCbx.IntegralHeight = false;
             this.authorCbx.ItemHeight = 30;
-            this.authorCbx.Location = new System.Drawing.Point(304, 7);
+            this.authorCbx.Location = new System.Drawing.Point(307, 7);
+            this.authorCbx.MaxDropDownItems = 10;
             this.authorCbx.Name = "authorCbx";
             this.authorCbx.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.authorCbx.OnHoverItemForeColor = System.Drawing.Color.White;
@@ -484,7 +487,7 @@
             // 
             // bookTypeCbx
             // 
-            this.bookTypeCbx.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.bookTypeCbx.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.bookTypeCbx.BackColor = System.Drawing.Color.Transparent;
             this.bookTypeCbx.BaseColor = System.Drawing.Color.White;
             this.bookTypeCbx.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
@@ -492,12 +495,15 @@
             this.bookTypeCbx.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bookTypeCbx.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.bookTypeCbx.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.bookTypeCbx.DropDownWidth = 140;
             this.bookTypeCbx.FocusedColor = System.Drawing.Color.Empty;
-            this.bookTypeCbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bookTypeCbx.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F);
             this.bookTypeCbx.ForeColor = System.Drawing.Color.Black;
             this.bookTypeCbx.FormattingEnabled = true;
+            this.bookTypeCbx.IntegralHeight = false;
             this.bookTypeCbx.ItemHeight = 30;
-            this.bookTypeCbx.Location = new System.Drawing.Point(444, 7);
+            this.bookTypeCbx.Location = new System.Drawing.Point(447, 7);
+            this.bookTypeCbx.MaxDropDownItems = 10;
             this.bookTypeCbx.Name = "bookTypeCbx";
             this.bookTypeCbx.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.bookTypeCbx.OnHoverItemForeColor = System.Drawing.Color.White;
@@ -509,7 +515,7 @@
             // 
             // publisherCbx
             // 
-            this.publisherCbx.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.publisherCbx.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.publisherCbx.BackColor = System.Drawing.Color.Transparent;
             this.publisherCbx.BaseColor = System.Drawing.Color.White;
             this.publisherCbx.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
@@ -518,13 +524,15 @@
             this.publisherCbx.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.publisherCbx.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.publisherCbx.FocusedColor = System.Drawing.Color.Empty;
-            this.publisherCbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.publisherCbx.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F);
             this.publisherCbx.ForeColor = System.Drawing.Color.Black;
             this.publisherCbx.FormattingEnabled = true;
             this.publisherCbx.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.publisherCbx.IntegralHeight = false;
             this.publisherCbx.ItemHeight = 30;
             this.publisherCbx.Location = new System.Drawing.Point(592, 7);
             this.publisherCbx.Margin = new System.Windows.Forms.Padding(3, 3, 100, 3);
+            this.publisherCbx.MaxDropDownItems = 10;
             this.publisherCbx.Name = "publisherCbx";
             this.publisherCbx.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.publisherCbx.OnHoverItemForeColor = System.Drawing.Color.White;
@@ -559,7 +567,7 @@
             this.searchInput.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
             this.searchInput.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.searchInput.FocusedState.Parent = this.searchInput;
-            this.searchInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchInput.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.searchInput.ForeColor = System.Drawing.Color.Black;
             this.searchInput.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.searchInput.HoverState.Parent = this.searchInput;
@@ -708,7 +716,7 @@
             // 
             // BookManageGUI
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
             this.ClientSize = new System.Drawing.Size(1044, 684);

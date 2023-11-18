@@ -100,8 +100,8 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                     book.MaSach,
                     book.TenSach,
                     book.HinhAnh,
-                    book.GiaNhap,
-                    book.SoLuongConLai,
+                    string.Format("{0:N0} VNĐ", book.GiaNhap),
+                    string.Format("{0:N0}", book.SoLuongConLai),
                 });
                 }
             }
@@ -125,9 +125,9 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                     this.dgvAddBookToBillList.Rows.Add(new object[] {
                     false,
                     importBillDetail.MaSach,
-                    importBillDetail.SoLuong,
-                    importBillDetail.DonGia,
-                    importBillDetail.SoLuong * importBillDetail.DonGia,
+                    string.Format("{0:N0}", importBillDetail.SoLuong),
+                    string.Format("{0:N0} VNĐ", importBillDetail.DonGia),
+                    string.Format("{0:N0} VND", importBillDetail.SoLuong * importBillDetail.DonGia),
                 });
                 }
             }
@@ -249,7 +249,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                     else
                     {
 
-                        if (Convert.ToDouble(this.priceFrom.Text.ToString()) > Convert.ToDouble(this.priceTo.Text.ToString()))
+                        if (Convert.ToDecimal(this.priceFrom.Text.ToString()) > Convert.ToDecimal(this.priceTo.Text.ToString()))
                         {
                             MessageBox.Show("Giá nhập từ phải bé hơn hoặc bằng giá nhập đến");
                             this.priceFrom.Clear();
@@ -258,8 +258,8 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                         else
                         {
                             newBookList = newBookList.FindAll(
-                                item => item.GiaNhap >= Convert.ToDouble(this.priceFrom.Text.ToString())
-                                        && item.GiaNhap <= Convert.ToDouble(this.priceTo.Text.ToString()
+                                item => item.GiaNhap >= Convert.ToDecimal(this.priceFrom.Text.ToString())
+                                        && item.GiaNhap <= Convert.ToDecimal(this.priceTo.Text.ToString()
                             ));
                         }
                         
@@ -542,7 +542,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                         if ((bool)row.Cells[0].Value == true)
                         {
                             int maSach = Convert.ToInt32(row.Cells[1].Value.ToString());
-                            double giaBan = Convert.ToDouble(row.Cells[4].Value.ToString());
+                            decimal giaBan = Convert.ToDecimal(row.Cells[4].Value.ToString());
 
                             int idx = this.selectedImportBillDetailList.FindIndex(
                                 book => book.MaSach == maSach

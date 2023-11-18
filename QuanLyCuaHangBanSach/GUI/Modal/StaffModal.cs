@@ -32,7 +32,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 				if (this.validateSubmitForm())
 				{
 					string tenNhanVien = this.staffNameTxt.Text;
-					double luong = Convert.ToDouble(this.salaryTxt.Text);
+					decimal luong = Convert.ToDecimal(this.salaryTxt.Text);
 					string soDienThoai = this.phoneNumberTxt.Text;
 					int namSinh = int.Parse(this.birthYearTxt.Text);
 					int maChucVu = (int)this.positionCbx.SelectedValue;
