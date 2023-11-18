@@ -431,11 +431,17 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
                 if (scannerModal.scannedBook != null)
                 {
+                    if (scannerModal.scannedBook.SoLuongConLai <= 0)
+                    {
+                        MessageBox.Show("Mã sách " + scannerModal.scannedBook.MaSach + " đã hết hàng!");
+                        return;
+                    }
+
                     try
                     {
                         int idx = this.selectedCustomerBillDetailList.FindIndex(
-                                        book => book.MaSach == scannerModal.scannedBook.MaSach
-                                    );
+                            book => book.MaSach == scannerModal.scannedBook.MaSach
+                        );
 
                         if (idx == -1)
                         {
