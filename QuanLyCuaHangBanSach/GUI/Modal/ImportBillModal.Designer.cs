@@ -297,6 +297,7 @@
             this.supplierCbx.Size = new System.Drawing.Size(408, 36);
             this.supplierCbx.TabIndex = 26;
             this.supplierCbx.TabStop = false;
+            this.supplierCbx.Leave += new System.EventHandler(this.supplierCbx_SelectedIndexChanged);
             // 
             // panel4
             // 

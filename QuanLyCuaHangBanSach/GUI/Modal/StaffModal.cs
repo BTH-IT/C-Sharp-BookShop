@@ -21,8 +21,8 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             this.birthYearTxt.TextChanged += birthYearTxt_TextChanged;
             this.phoneNumberTxt.TextChanged += phoneNumberTxt_TextChanged;
             this.salaryTxt.TextChanged += salaryTxt_TextChanged;
-            this.genderCbx.TextChanged += genderCbx_TextChanged;
-            this.positionCbx.TextChanged += positionCbx_TextChanged;
+            this.genderCbx.TextChanged += genderCbx_SelectedIndexChanged;
+            this.positionCbx.TextChanged += positionCbx_SelectedIndexChanged;
         }
 
         private void submitBtn_Click(object sender, EventArgs e)
@@ -298,7 +298,34 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 		}
 		private void phoneNumberTxt_TextChanged(object sender, EventArgs e)
         {
+            bool isPhone = CustomValidation.Instance.checkTextbox(
+                this.phoneNumberTxt,
+                this.errorPhoneNumberMsg,
+                this.phoneNumberLine,
+                new string[] { "required", "phone-number", "space" }
+            );
 
+            if (isPhone)
+            {
+                if (staff == null)
+                {
+                    CustomValidation.Instance.checkDuplicateName(
+                        this.errorPhoneNumberMsg,
+                        this.phoneNumberLine,
+                        StaffBUS.Instance.checkDuplicateName(this.phoneNumberTxt.Text),
+                        "Số điện thoại đã có trong hệ thống"
+                    );
+                }
+                else
+                {
+                    CustomValidation.Instance.checkDuplicateName(
+                        this.errorPhoneNumberMsg,
+                        this.phoneNumberLine,
+                        StaffBUS.Instance.checkDuplicateName(this.phoneNumberTxt.Text, staff.Ma),
+                        "Số điện thoại đã có trong hệ thống"
+                    );
+                }
+            }
         }
 
         private void positionCbx_SelectedIndexChanged(object sender, EventArgs e)

@@ -271,6 +271,7 @@
             this.staffComboBox.TabIndex = 26;
             this.staffComboBox.TabStop = false;
             this.staffComboBox.SelectedIndexChanged += new System.EventHandler(this.staffComboBox_SelectedIndexChanged);
+            this.staffComboBox.Leave += new System.EventHandler(this.staffComboBox_SelectedIndexChanged);
             // 
             // label1
             // 

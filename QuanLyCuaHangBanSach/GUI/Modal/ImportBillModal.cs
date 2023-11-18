@@ -182,7 +182,11 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             this.loadImportBillDetailList();
             this.loadSupplierCbx();
 
+            
+
             this.supplierCbx.SelectedValue = 0;
+
+            this.supplierCbx.SelectedIndexChanged += Supplier
         }
 
         private void gunaButton1_Click(object sender, EventArgs e)
@@ -281,6 +285,15 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
         private void cancelBtn_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void supplierCbx_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CustomValidation.Instance.checkCombobox(
+                this.supplierCbx,
+                this.errorCustomerMsg,
+                new string[] { "required" }
+            );
         }
     }
 }

@@ -346,8 +346,7 @@
             this.publisherCbx.Radius = 6;
             this.publisherCbx.Size = new System.Drawing.Size(414, 36);
             this.publisherCbx.TabIndex = 5;
-            this.publisherCbx.SelectedIndexChanged += new System.EventHandler(this.publisherCbx_SelectedIndexChanged);
-            this.publisherCbx.Click += new System.EventHandler(this.publisherCbx_Click);
+            this.publisherCbx.Leave += new System.EventHandler(this.publisherCbx_SelectedIndexChanged);
             // 
             // panel4
             // 
@@ -471,8 +470,7 @@
             this.bookTypeCbx.Radius = 6;
             this.bookTypeCbx.Size = new System.Drawing.Size(414, 36);
             this.bookTypeCbx.TabIndex = 3;
-            this.bookTypeCbx.SelectedIndexChanged += new System.EventHandler(this.bookTypeCbx_SelectedIndexChanged);
-            this.bookTypeCbx.Click += new System.EventHandler(this.bookTypeCbx_Click);
+            this.bookTypeCbx.Leave += new System.EventHandler(this.bookTypeCbx_SelectedIndexChanged);
             // 
             // panel2
             // 
@@ -527,8 +525,7 @@
             this.authorCbx.Radius = 6;
             this.authorCbx.Size = new System.Drawing.Size(414, 36);
             this.authorCbx.TabIndex = 2;
-            this.authorCbx.SelectedIndexChanged += new System.EventHandler(this.authorCbx_SelectedIndexChanged);
-            this.authorCbx.Click += new System.EventHandler(this.authorCbx_Click);
+            this.authorCbx.Leave += new System.EventHandler(this.authorCbx_SelectedIndexChanged);
             // 
             // panel1
             // 

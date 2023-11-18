@@ -245,6 +245,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             this.genderCbx.Size = new System.Drawing.Size(414, 36);
             this.genderCbx.TabIndex = 2;
             this.genderCbx.SelectedIndexChanged += new System.EventHandler(this.genderCbx_SelectedIndexChanged);
+            this.genderCbx.Leave += new System.EventHandler(this.genderCbx_SelectedIndexChanged);
             // 
             // genderMsg
             // 

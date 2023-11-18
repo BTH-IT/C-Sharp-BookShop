@@ -114,6 +114,7 @@
             this.customerCbx.Size = new System.Drawing.Size(408, 36);
             this.customerCbx.TabIndex = 26;
             this.customerCbx.TabStop = false;
+            this.customerCbx.Leave += new System.EventHandler(this.customerCbx_SelectedIndexChanged);
             // 
             // flowLayoutPanel1
             // 
@@ -182,6 +183,7 @@
             this.saleCbx.Size = new System.Drawing.Size(408, 36);
             this.saleCbx.TabIndex = 32;
             this.saleCbx.TabStop = false;
+            this.saleCbx.Leave += new System.EventHandler(this.saleCbx_SelectedIndexChanged);
             // 
             // panel4
             // 
