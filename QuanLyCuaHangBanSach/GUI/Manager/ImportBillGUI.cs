@@ -516,10 +516,21 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             {
                 DataTable dt = CustomExcel.Instance.ImportFile();
 
-                if (dt == null) {
-                    MessageBox.Show("Lỗi chưa chọn file hoặc file excel không đúng dữ liệu!");
+                if (dt == null)
+                {
+                    MessageBox.Show("Lỗi chưa chọn file hoặc file excel không đúng format dữ liệu nhập!");
                     return;
                 }
+
+                foreach (DataRow row in dt.Rows)
+                {
+                    if (!int.TryParse(row[0].ToString(), out int maSach) || !int.TryParse(row[2].ToString(), out int soLuong) || !double.TryParse(row[3].ToString(), out double giaNhap))
+                    {
+                        MessageBox.Show("Lỗi chưa chọn file hoặc file excel không đúng format dữ liệu nhập!");
+                        return;
+                    }
+                }
+
 
                 ImportBillDTO newImportBill = new ImportBillDTO(0, 1, ManagerGUI.currentStaff.Ma, DateTime.Now, 0);
 

@@ -391,11 +391,20 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
 
 				if (dt == null)
 				{
-					MessageBox.Show("Lỗi chưa chọn file hoặc file excel không đúng dữ liệu!");
+					MessageBox.Show("Lỗi chưa chọn file hoặc file excel không đúng format dữ liệu nhập!");
 					return;
 				}
 
-				ImportBillDTO newImportBill = new ImportBillDTO(0, 1, staffID, DateTime.Now, 0);
+                foreach (DataRow row in dt.Rows)
+                {
+                    if (!int.TryParse(row[0].ToString(), out int maSach) || !int.TryParse(row[2].ToString(), out int soLuong) || !double.TryParse(row[3].ToString(), out double giaNhap))
+                    {
+                        MessageBox.Show("Lỗi chưa chọn file hoặc file excel không đúng format dữ liệu nhập!");
+                        return;
+                    }
+                }
+
+                ImportBillDTO newImportBill = new ImportBillDTO(0, 1, staffID, DateTime.Now, 0);
 
 				ImportBillDTO importBill = ImportBillBUS.Instance.insertReturnBill(newImportBill);
 
@@ -404,7 +413,8 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
 					double tongTien = 0;
 					foreach (DataRow row in dt.Rows)
 					{
-						BookDTO book = BookBUS.Instance.getById(row[0].ToString());
+                        if (!int.TryParse(row[0].ToString(), out int result)) continue;
+                        BookDTO book = BookBUS.Instance.getById(row[0].ToString());
 
 						if (book == null) continue;
 
