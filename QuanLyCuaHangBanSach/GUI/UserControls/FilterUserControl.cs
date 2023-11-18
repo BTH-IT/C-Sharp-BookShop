@@ -18,9 +18,16 @@ namespace QuanLyCuaHangBanSach.GUI.UserControls
         public FilterUserControl()
         {
             InitializeComponent();
-        }
 
-        List<BookTypeDTO> types = BookTypeBUS.Instance.getAllData();
+			TypeCb.MaxDropDownItems = 10;
+            TypeCb.IntegralHeight = false;
+            AuthorCb.MaxDropDownItems = 10;
+			AuthorCb.IntegralHeight = false;
+            PublisherCb.MaxDropDownItems = 10;
+			PublisherCb.IntegralHeight = false;
+		}
+
+		List<BookTypeDTO> types = BookTypeBUS.Instance.getAllData();
         List<AuthorDTO> authors = AuthorBUS.Instance.getAllData();
         List<PublisherDTO> publishers = PublisherBUS.Instance.getAllData();
 
@@ -100,5 +107,5 @@ namespace QuanLyCuaHangBanSach.GUI.UserControls
             PublisherID = PublisherCb.SelectedValue.ToString();
             ApplyClicked = true;
         }
-    }
+	}
 }

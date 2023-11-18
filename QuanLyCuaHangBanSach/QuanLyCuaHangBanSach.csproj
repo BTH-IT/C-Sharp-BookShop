@@ -910,6 +910,9 @@
     <EmbeddedResource Include="GUI\Modal\CustomerModal.resx">
       <DependentUpon>CustomerModal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Modal\CustomerModal.resx">
+      <DependentUpon>CustomerModal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Modal\ImportBillModal.resx">
       <DependentUpon>ImportBillModal.cs</DependentUpon>
     </EmbeddedResource>

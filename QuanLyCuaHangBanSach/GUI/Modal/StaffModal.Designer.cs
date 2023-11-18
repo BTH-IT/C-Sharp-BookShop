@@ -116,7 +116,7 @@
 			this.errorBirthYearMsg.ForeColor = System.Drawing.Color.Red;
 			this.errorBirthYearMsg.Location = new System.Drawing.Point(163, 49);
 			this.errorBirthYearMsg.Name = "errorBirthYearMsg";
-			this.errorBirthYearMsg.Size = new System.Drawing.Size(0, 30);
+			this.errorBirthYearMsg.Size = new System.Drawing.Size(0, 25);
 			this.errorBirthYearMsg.TabIndex = 7;
 			// 
 			// birthYearLine
@@ -154,7 +154,7 @@
 			this.errorPositionMsg.ForeColor = System.Drawing.Color.Red;
 			this.errorPositionMsg.Location = new System.Drawing.Point(163, 52);
 			this.errorPositionMsg.Name = "errorPositionMsg";
-			this.errorPositionMsg.Size = new System.Drawing.Size(0, 30);
+			this.errorPositionMsg.Size = new System.Drawing.Size(0, 25);
 			this.errorPositionMsg.TabIndex = 27;
 			// 
 			// label13
@@ -180,8 +180,10 @@
 			this.positionCbx.Font = new System.Drawing.Font("#9Slide03 Cabin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.positionCbx.ForeColor = System.Drawing.Color.Black;
 			this.positionCbx.FormattingEnabled = true;
+			this.positionCbx.IntegralHeight = false;
 			this.positionCbx.ItemHeight = 30;
 			this.positionCbx.Location = new System.Drawing.Point(160, 12);
+			this.positionCbx.MaxDropDownItems = 10;
 			this.positionCbx.Name = "positionCbx";
 			this.positionCbx.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
 			this.positionCbx.OnHoverItemForeColor = System.Drawing.Color.White;
@@ -237,7 +239,7 @@
 			this.errorStaffNameMsg.ForeColor = System.Drawing.Color.Red;
 			this.errorStaffNameMsg.Location = new System.Drawing.Point(163, 50);
 			this.errorStaffNameMsg.Name = "errorStaffNameMsg";
-			this.errorStaffNameMsg.Size = new System.Drawing.Size(0, 30);
+			this.errorStaffNameMsg.Size = new System.Drawing.Size(0, 25);
 			this.errorStaffNameMsg.TabIndex = 7;
 			// 
 			// staffNameLine
@@ -290,7 +292,7 @@
 			this.errorGenderMsg.ForeColor = System.Drawing.Color.Red;
 			this.errorGenderMsg.Location = new System.Drawing.Point(163, 52);
 			this.errorGenderMsg.Name = "errorGenderMsg";
-			this.errorGenderMsg.Size = new System.Drawing.Size(0, 25);
+			this.errorGenderMsg.Size = new System.Drawing.Size(0, 20);
 			this.errorGenderMsg.TabIndex = 30;
 			// 
 			// label16
@@ -316,8 +318,10 @@
 			this.genderCbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.genderCbx.ForeColor = System.Drawing.Color.Black;
 			this.genderCbx.FormattingEnabled = true;
+			this.genderCbx.IntegralHeight = false;
 			this.genderCbx.ItemHeight = 30;
 			this.genderCbx.Location = new System.Drawing.Point(160, 12);
+			this.genderCbx.MaxDropDownItems = 10;
 			this.genderCbx.Name = "genderCbx";
 			this.genderCbx.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
 			this.genderCbx.OnHoverItemForeColor = System.Drawing.Color.White;
@@ -373,7 +377,7 @@
 			this.errorPhoneNumberMsg.ForeColor = System.Drawing.Color.Red;
 			this.errorPhoneNumberMsg.Location = new System.Drawing.Point(163, 49);
 			this.errorPhoneNumberMsg.Name = "errorPhoneNumberMsg";
-			this.errorPhoneNumberMsg.Size = new System.Drawing.Size(0, 30);
+			this.errorPhoneNumberMsg.Size = new System.Drawing.Size(0, 25);
 			this.errorPhoneNumberMsg.TabIndex = 7;
 			// 
 			// phoneNumberLine
@@ -441,7 +445,7 @@
 			this.errorSalaryMsg.ForeColor = System.Drawing.Color.Red;
 			this.errorSalaryMsg.Location = new System.Drawing.Point(163, 49);
 			this.errorSalaryMsg.Name = "errorSalaryMsg";
-			this.errorSalaryMsg.Size = new System.Drawing.Size(0, 30);
+			this.errorSalaryMsg.Size = new System.Drawing.Size(0, 25);
 			this.errorSalaryMsg.TabIndex = 7;
 			// 
 			// salaryLine
@@ -536,7 +540,7 @@
 			// 
 			// StaffModal
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.White;
 			this.ClientSize = new System.Drawing.Size(1222, 489);

@@ -174,7 +174,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 			this.authorNameMsg.ForeColor = System.Drawing.Color.Red;
 			this.authorNameMsg.Location = new System.Drawing.Point(20, 109);
 			this.authorNameMsg.Name = "authorNameMsg";
-			this.authorNameMsg.Size = new System.Drawing.Size(0, 26);
+			this.authorNameMsg.Size = new System.Drawing.Size(0, 21);
 			this.authorNameMsg.TabIndex = 7;
 			// 
 			// nameLine
@@ -230,12 +230,14 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 			this.genderCbx.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.genderCbx.ForeColor = System.Drawing.Color.Black;
 			this.genderCbx.FormattingEnabled = true;
+			this.genderCbx.IntegralHeight = false;
 			this.genderCbx.ItemHeight = 30;
 			this.genderCbx.Items.AddRange(new object[] {
             "Chọn giới tính",
             "Nam",
             "Nữ"});
 			this.genderCbx.Location = new System.Drawing.Point(17, 64);
+			this.genderCbx.MaxDropDownItems = 10;
 			this.genderCbx.Name = "genderCbx";
 			this.genderCbx.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
 			this.genderCbx.OnHoverItemForeColor = System.Drawing.Color.White;
@@ -251,7 +253,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 			this.genderMsg.ForeColor = System.Drawing.Color.Red;
 			this.genderMsg.Location = new System.Drawing.Point(20, 109);
 			this.genderMsg.Name = "genderMsg";
-			this.genderMsg.Size = new System.Drawing.Size(0, 26);
+			this.genderMsg.Size = new System.Drawing.Size(0, 21);
 			this.genderMsg.TabIndex = 7;
 			// 
 			// label4
@@ -312,7 +314,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 			this.birthYearMsg.ForeColor = System.Drawing.Color.Red;
 			this.birthYearMsg.Location = new System.Drawing.Point(20, 109);
 			this.birthYearMsg.Name = "birthYearMsg";
-			this.birthYearMsg.Size = new System.Drawing.Size(0, 26);
+			this.birthYearMsg.Size = new System.Drawing.Size(0, 21);
 			this.birthYearMsg.TabIndex = 7;
 			// 
 			// birthYearLine
@@ -335,7 +337,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 			// 
 			// AuthorModal
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.White;
 			this.ClientSize = new System.Drawing.Size(589, 653);
