@@ -21,8 +21,6 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             this.birthYearTxt.TextChanged += birthYearTxt_TextChanged;
             this.phoneNumberTxt.TextChanged += phoneNumberTxt_TextChanged;
             this.salaryTxt.TextChanged += salaryTxt_TextChanged;
-            this.genderCbx.TextChanged += genderCbx_SelectedIndexChanged;
-            this.positionCbx.TextChanged += positionCbx_SelectedIndexChanged;
         }
 
         private void submitBtn_Click(object sender, EventArgs e)
@@ -86,7 +84,11 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 					this.positionCbx.SelectedValue = staff.MaChucVu;
 
 				}
-			}
+
+
+                this.genderCbx.TextChanged += genderCbx_SelectedIndexChanged;
+                this.positionCbx.TextChanged += positionCbx_SelectedIndexChanged;
+            }
             catch
             {
 

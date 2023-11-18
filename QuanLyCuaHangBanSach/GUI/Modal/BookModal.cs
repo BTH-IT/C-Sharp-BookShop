@@ -432,37 +432,5 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             }
         }
 
-        private void bookTypeCbx_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (!isTouchBookTypeCbx)
-                {
-                    isTouchBookTypeCbx = true;
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex);
-            }
-        }
-
-        private void publisherCbx_Click(object sender, EventArgs e)
-        {
-            if (!isTouchPublisherCbx)
-            {
-                isTouchPublisherCbx = true;
-            }
-        }
-
-        private void bookNameTxt_Leave(object sender, EventArgs e)
-        {
-
-        }
-
-        private void sellPriceTxt_Leave(object sender, EventArgs e)
-        {
-
-        }
     }
 }

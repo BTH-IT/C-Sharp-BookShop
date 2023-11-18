@@ -186,7 +186,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
             this.supplierCbx.SelectedValue = 0;
 
-            this.supplierCbx.SelectedIndexChanged += Supplier
+            this.supplierCbx.SelectedIndexChanged += supplierCbx_SelectedIndexChanged;
         }
 
         private void gunaButton1_Click(object sender, EventArgs e)
