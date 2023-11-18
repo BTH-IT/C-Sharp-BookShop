@@ -11,14 +11,14 @@ namespace QuanLyCuaHangBanSach.DTO
     {
         public DateTime NgayLap { get; set; }
         public int MaNhanVien { get; set; }
-        public double TongTien { get; set; }
+        public decimal TongTien { get; set; }
 
         public BillDTO() { }
 
         public BillDTO(
             DateTime ngayLap,
             int maNhanVien,
-            double tongTien
+            decimal tongTien
         )   
         {
             this.MaNhanVien = maNhanVien;

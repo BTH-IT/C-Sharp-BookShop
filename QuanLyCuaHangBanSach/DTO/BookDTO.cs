@@ -12,8 +12,8 @@ namespace QuanLyCuaHangBanSach.DTO
         public int MaTacGia { get; set; }
         public int MaNhaXuatBan { get; set; }
         public int SoLuongConLai { get; set; }
-        public double GiaBan { get; set; }
-        public double GiaNhap { get; set; }
+        public decimal GiaBan { get; set; }
+        public decimal GiaNhap { get; set; }
         public int NamXuatBan { get; set; }
 
         public BookDTO() { }
@@ -24,8 +24,8 @@ namespace QuanLyCuaHangBanSach.DTO
             int maTheLoai,
             int maTacGia,
             int maNhaXuatBan,
-            double giaBan,
-            double giaNhap,
+            decimal giaBan,
+            decimal giaNhap,
             int namXuatBan
         ) {
             this.MaSach = maSach;
@@ -47,8 +47,8 @@ namespace QuanLyCuaHangBanSach.DTO
             this.MaTheLoai = Convert.ToInt32(row["maTheLoai"]);
             this.MaTacGia = Convert.ToInt32(row["maTacGia"]);
             this.MaNhaXuatBan = Convert.ToInt32(row["maNhaXuatBan"]);
-            this.GiaBan = Convert.ToDouble(row["giaBan"]);
-            this.GiaNhap = Convert.ToDouble(row["giaNhap"]);
+            this.GiaBan = Convert.ToDecimal(row["giaBan"]);
+            this.GiaNhap = Convert.ToDecimal(row["giaNhap"]);
             this.SoLuongConLai = Convert.ToInt32(row["soLuongConLai"]);
             this.NamXuatBan = Convert.ToInt32(row["namXuatBan"]);
         }

@@ -262,7 +262,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                     }
                     else
                     {
-                        if (Convert.ToDouble(this.fromPriceTxt.Text.ToString()) > Convert.ToDouble(this.toPriceTxt.Text.ToString()))
+                        if (Convert.ToDecimal(this.fromPriceTxt.Text.ToString()) > Convert.ToDecimal(this.toPriceTxt.Text.ToString()))
                         {
                             MessageBox.Show("Tổng tiền từ phải bé hơn hoặc bằng tổng tiền đến");
                             this.fromPriceTxt.Clear();
@@ -271,8 +271,8 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                         else
                         {
                             customerBillList = customerBillList.FindAll(
-                                item => item.TongTien >= Convert.ToDouble(this.fromPriceTxt.Text.ToString())
-                                        && item.TongTien <= Convert.ToDouble(this.toPriceTxt.Text.ToString()
+                                item => item.TongTien >= Convert.ToDecimal(this.fromPriceTxt.Text.ToString())
+                                        && item.TongTien <= Convert.ToDecimal(this.toPriceTxt.Text.ToString()
                             ));
                         }
                     }

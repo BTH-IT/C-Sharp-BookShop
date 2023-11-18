@@ -47,7 +47,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             {
                 this.bookList.Controls.Clear();
 
-                double total = 0;
+                decimal total = 0;
 
                 foreach (ImportBillDetailDTO importBillDetail in importBillDetailList)
                 {
@@ -238,7 +238,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
                 ImportBillDTO importBill = new ImportBillDTO();
 
-                importBill.TongTien = Convert.ToDouble(this.totalPriceTxt.Text);
+                importBill.TongTien = Convert.ToDecimal(this.totalPriceTxt.Text);
                 importBill.MaNhanVien = this.staffId;
                 importBill.MaNhaCungCap = Convert.ToInt32(this.supplierCbx.SelectedValue);
                 importBill.NgayLap = DateTime.Now;

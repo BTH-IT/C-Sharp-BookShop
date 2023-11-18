@@ -219,11 +219,11 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                     }
                     else
                     {
-                        if (Convert.ToDouble(this.priceFrom.Text.ToString()) <= Convert.ToDouble(this.priceTo.Text.ToString()))
+                        if (Convert.ToDecimal(this.priceFrom.Text.ToString()) <= Convert.ToDecimal(this.priceTo.Text.ToString()))
                         {
                             bookList = bookList.FindAll(
-                                item => item.GiaBan >= Convert.ToDouble(this.priceFrom.Text.ToString())
-                                        && item.GiaBan <= Convert.ToDouble(this.priceTo.Text.ToString()
+                                item => item.GiaBan >= Convert.ToDecimal(this.priceFrom.Text.ToString())
+                                        && item.GiaBan <= Convert.ToDecimal(this.priceTo.Text.ToString()
                             ));
                         } else
                         {
