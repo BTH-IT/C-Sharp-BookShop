@@ -432,7 +432,6 @@ namespace QuanLyCuaHangBanSach.GUI
             {
                 if (DiscountCb.SelectedIndex != 0)
                 {
-                    DiscountCb.Text = "1";
                     string discountID = DiscountCb.SelectedValue.ToString();
                     int percent = SaleBUS.Instance.getById(discountID).PhanTram;
                     decimal total = Convert.ToDecimal(TotalMoneyLb.Text.Replace(".", "").Replace(" VND", ""));
