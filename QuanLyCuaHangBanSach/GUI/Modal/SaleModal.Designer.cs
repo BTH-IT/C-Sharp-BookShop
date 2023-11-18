@@ -81,12 +81,12 @@
 			this.btnSubmit.BorderSize = 2;
 			this.btnSubmit.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.btnSubmit.DialogResult = System.Windows.Forms.DialogResult.None;
-			this.btnSubmit.FocusedColor = System.Drawing.Color.Empty;
+			this.btnSubmit.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(159)))), ((int)(((byte)(147)))));
 			this.btnSubmit.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnSubmit.ForeColor = System.Drawing.Color.White;
 			this.btnSubmit.Image = null;
 			this.btnSubmit.ImageSize = new System.Drawing.Size(20, 20);
-			this.btnSubmit.Location = new System.Drawing.Point(529, 364);
+			this.btnSubmit.Location = new System.Drawing.Point(529, 380);
 			this.btnSubmit.Name = "btnSubmit";
 			this.btnSubmit.OnHoverBaseColor = System.Drawing.Color.White;
 			this.btnSubmit.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
@@ -123,12 +123,12 @@
 			this.btnCancel.BorderSize = 2;
 			this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.None;
-			this.btnCancel.FocusedColor = System.Drawing.Color.Empty;
+			this.btnCancel.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(159)))), ((int)(((byte)(147)))));
 			this.btnCancel.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnCancel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
 			this.btnCancel.Image = null;
 			this.btnCancel.ImageSize = new System.Drawing.Size(20, 20);
-			this.btnCancel.Location = new System.Drawing.Point(264, 364);
+			this.btnCancel.Location = new System.Drawing.Point(264, 380);
 			this.btnCancel.Name = "btnCancel";
 			this.btnCancel.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
 			this.btnCancel.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
@@ -152,7 +152,7 @@
 			this.flowLayoutPanel1.Controls.Add(this.panel6);
 			this.flowLayoutPanel1.Location = new System.Drawing.Point(24, 82);
 			this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-			this.flowLayoutPanel1.Size = new System.Drawing.Size(1003, 255);
+			this.flowLayoutPanel1.Size = new System.Drawing.Size(1003, 276);
 			this.flowLayoutPanel1.TabIndex = 0;
 			// 
 			// panel2
@@ -165,7 +165,7 @@
 			this.panel2.Location = new System.Drawing.Point(5, 10);
 			this.panel2.Margin = new System.Windows.Forms.Padding(5, 10, 5, 20);
 			this.panel2.Name = "panel2";
-			this.panel2.Size = new System.Drawing.Size(490, 88);
+			this.panel2.Size = new System.Drawing.Size(490, 105);
 			this.panel2.TabIndex = 0;
 			// 
 			// phanTramTxt
@@ -226,7 +226,7 @@
 			this.panel1.Location = new System.Drawing.Point(505, 10);
 			this.panel1.Margin = new System.Windows.Forms.Padding(5, 10, 5, 20);
 			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(490, 88);
+			this.panel1.Size = new System.Drawing.Size(490, 105);
 			this.panel1.TabIndex = 1;
 			// 
 			// saleNameTxt
@@ -294,7 +294,7 @@
 			this.panel4.Controls.Add(this.errorDateTimeFromMsg);
 			this.panel4.Controls.Add(this.dateTimeFromLine);
 			this.panel4.Controls.Add(this.label5);
-			this.panel4.Location = new System.Drawing.Point(5, 128);
+			this.panel4.Location = new System.Drawing.Point(5, 145);
 			this.panel4.Margin = new System.Windows.Forms.Padding(5, 10, 5, 20);
 			this.panel4.Name = "panel4";
 			this.panel4.Size = new System.Drawing.Size(490, 104);
@@ -361,7 +361,7 @@
 			this.panel6.Controls.Add(this.errorDateTimeToMsg);
 			this.panel6.Controls.Add(this.dateTimeToLine);
 			this.panel6.Controls.Add(this.label7);
-			this.panel6.Location = new System.Drawing.Point(505, 128);
+			this.panel6.Location = new System.Drawing.Point(505, 145);
 			this.panel6.Margin = new System.Windows.Forms.Padding(5, 10, 5, 20);
 			this.panel6.Name = "panel6";
 			this.panel6.Size = new System.Drawing.Size(490, 104);
@@ -426,7 +426,7 @@
 			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.White;
-			this.ClientSize = new System.Drawing.Size(1048, 437);
+			this.ClientSize = new System.Drawing.Size(1048, 455);
 			this.Controls.Add(this.flowLayoutPanel1);
 			this.Controls.Add(this.btnSubmit);
 			this.Controls.Add(this.title);

@@ -112,11 +112,11 @@
 			// errorBirthYearMsg
 			// 
 			this.errorBirthYearMsg.AutoSize = true;
-			this.errorBirthYearMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed SemiB", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+			this.errorBirthYearMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
 			this.errorBirthYearMsg.ForeColor = System.Drawing.Color.Red;
 			this.errorBirthYearMsg.Location = new System.Drawing.Point(163, 49);
 			this.errorBirthYearMsg.Name = "errorBirthYearMsg";
-			this.errorBirthYearMsg.Size = new System.Drawing.Size(0, 30);
+			this.errorBirthYearMsg.Size = new System.Drawing.Size(0, 26);
 			this.errorBirthYearMsg.TabIndex = 7;
 			// 
 			// birthYearLine
@@ -150,11 +150,11 @@
 			// errorPositionMsg
 			// 
 			this.errorPositionMsg.AutoSize = true;
-			this.errorPositionMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed SemiB", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+			this.errorPositionMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
 			this.errorPositionMsg.ForeColor = System.Drawing.Color.Red;
 			this.errorPositionMsg.Location = new System.Drawing.Point(163, 52);
 			this.errorPositionMsg.Name = "errorPositionMsg";
-			this.errorPositionMsg.Size = new System.Drawing.Size(0, 30);
+			this.errorPositionMsg.Size = new System.Drawing.Size(0, 26);
 			this.errorPositionMsg.TabIndex = 27;
 			// 
 			// label13
@@ -233,11 +233,11 @@
 			// errorStaffNameMsg
 			// 
 			this.errorStaffNameMsg.AutoSize = true;
-			this.errorStaffNameMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed SemiB", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+			this.errorStaffNameMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
 			this.errorStaffNameMsg.ForeColor = System.Drawing.Color.Red;
 			this.errorStaffNameMsg.Location = new System.Drawing.Point(163, 50);
 			this.errorStaffNameMsg.Name = "errorStaffNameMsg";
-			this.errorStaffNameMsg.Size = new System.Drawing.Size(0, 30);
+			this.errorStaffNameMsg.Size = new System.Drawing.Size(0, 26);
 			this.errorStaffNameMsg.TabIndex = 7;
 			// 
 			// staffNameLine
@@ -286,11 +286,11 @@
 			// errorGenderMsg
 			// 
 			this.errorGenderMsg.AutoSize = true;
-			this.errorGenderMsg.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+			this.errorGenderMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
 			this.errorGenderMsg.ForeColor = System.Drawing.Color.Red;
 			this.errorGenderMsg.Location = new System.Drawing.Point(163, 52);
 			this.errorGenderMsg.Name = "errorGenderMsg";
-			this.errorGenderMsg.Size = new System.Drawing.Size(0, 25);
+			this.errorGenderMsg.Size = new System.Drawing.Size(0, 26);
 			this.errorGenderMsg.TabIndex = 30;
 			// 
 			// label16
@@ -369,11 +369,11 @@
 			// errorPhoneNumberMsg
 			// 
 			this.errorPhoneNumberMsg.AutoSize = true;
-			this.errorPhoneNumberMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed SemiB", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+			this.errorPhoneNumberMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
 			this.errorPhoneNumberMsg.ForeColor = System.Drawing.Color.Red;
 			this.errorPhoneNumberMsg.Location = new System.Drawing.Point(163, 49);
 			this.errorPhoneNumberMsg.Name = "errorPhoneNumberMsg";
-			this.errorPhoneNumberMsg.Size = new System.Drawing.Size(0, 30);
+			this.errorPhoneNumberMsg.Size = new System.Drawing.Size(0, 26);
 			this.errorPhoneNumberMsg.TabIndex = 7;
 			// 
 			// phoneNumberLine
@@ -437,11 +437,11 @@
 			// errorSalaryMsg
 			// 
 			this.errorSalaryMsg.AutoSize = true;
-			this.errorSalaryMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed SemiB", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+			this.errorSalaryMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
 			this.errorSalaryMsg.ForeColor = System.Drawing.Color.Red;
 			this.errorSalaryMsg.Location = new System.Drawing.Point(163, 49);
 			this.errorSalaryMsg.Name = "errorSalaryMsg";
-			this.errorSalaryMsg.Size = new System.Drawing.Size(0, 30);
+			this.errorSalaryMsg.Size = new System.Drawing.Size(0, 26);
 			this.errorSalaryMsg.TabIndex = 7;
 			// 
 			// salaryLine

@@ -113,7 +113,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                     this.passwordTxt,
                     this.errorPasswordMsg,
                     this.passwordLine,
-                    new string[] { "required" }
+                    new string[] { "password" }
                 );
 
                 bool isConfirmPasswordValid = CustomValidation.Instance.checkTextbox(
@@ -227,7 +227,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 this.passwordTxt,
                 this.errorPasswordMsg,
                 this.passwordLine,
-                new string[] { "required", "space" }
+                new string[] { "password", "space" }
             );
         }
 
@@ -240,7 +240,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                     new string[] { "required", "space" }
                 );
 
-            if (!isConfirmPasswordValid)
+            if (isConfirmPasswordValid)
             {
                 CustomValidation.Instance.checkTextboxMatchWithOtherTextBox(
                     this.confirmPasswordTxt,
@@ -268,7 +268,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 this.passwordTxt,
                 this.errorPasswordMsg,
                 this.passwordLine,
-                new string[] { "required" }
+                new string[] { "password" }
             );
         }
 

@@ -97,11 +97,13 @@
 			this.passwordTxt.Size = new System.Drawing.Size(379, 35);
 			this.passwordTxt.TabIndex = 3;
 			this.passwordTxt.TextChanged += new System.EventHandler(this.passwordTxt_TextChanged);
+			this.passwordTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.passwordTxt_KeyPress);
+			this.passwordTxt.Leave += new System.EventHandler(this.passwordTxt_Leave);
 			// 
 			// errorPasswordMsg
 			// 
 			this.errorPasswordMsg.AutoSize = true;
-			this.errorPasswordMsg.Font = new System.Drawing.Font("#9Slide03 Cabin", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+			this.errorPasswordMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
 			this.errorPasswordMsg.ForeColor = System.Drawing.Color.Red;
 			this.errorPasswordMsg.Location = new System.Drawing.Point(179, 47);
 			this.errorPasswordMsg.Name = "errorPasswordMsg";
@@ -155,6 +157,7 @@
 			this.emailTxt.Size = new System.Drawing.Size(379, 26);
 			this.emailTxt.TabIndex = 2;
 			this.emailTxt.TextChanged += new System.EventHandler(this.emailTxt_TextChanged);
+			this.emailTxt.Leave += new System.EventHandler(this.emailTxt_TextChanged);
 			// 
 			// errorEmailMsg
 			// 
@@ -181,10 +184,10 @@
 			this.panel4.Controls.Add(this.errorPasswordMsg);
 			this.panel4.Controls.Add(this.passwordLine);
 			this.panel4.Controls.Add(this.label6);
-			this.panel4.Location = new System.Drawing.Point(3, 195);
+			this.panel4.Location = new System.Drawing.Point(3, 219);
 			this.panel4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.panel4.Name = "panel4";
-			this.panel4.Size = new System.Drawing.Size(570, 83);
+			this.panel4.Size = new System.Drawing.Size(570, 120);
 			this.panel4.TabIndex = 9;
 			// 
 			// label3
@@ -206,7 +209,7 @@
 			this.panel1.Location = new System.Drawing.Point(3, 104);
 			this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(570, 83);
+			this.panel1.Size = new System.Drawing.Size(570, 107);
 			this.panel1.TabIndex = 0;
 			// 
 			// flowLayoutPanel1
@@ -221,7 +224,7 @@
 			this.flowLayoutPanel1.Location = new System.Drawing.Point(29, 51);
 			this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-			this.flowLayoutPanel1.Size = new System.Drawing.Size(578, 378);
+			this.flowLayoutPanel1.Size = new System.Drawing.Size(578, 441);
 			this.flowLayoutPanel1.TabIndex = 12;
 			// 
 			// panel3
@@ -286,10 +289,10 @@
 			this.confirmPasswordPanel.Controls.Add(this.errorConfirmPasswordMsg);
 			this.confirmPasswordPanel.Controls.Add(this.confirmPasswordLine);
 			this.confirmPasswordPanel.Controls.Add(this.label2);
-			this.confirmPasswordPanel.Location = new System.Drawing.Point(3, 286);
+			this.confirmPasswordPanel.Location = new System.Drawing.Point(3, 347);
 			this.confirmPasswordPanel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.confirmPasswordPanel.Name = "confirmPasswordPanel";
-			this.confirmPasswordPanel.Size = new System.Drawing.Size(570, 82);
+			this.confirmPasswordPanel.Size = new System.Drawing.Size(570, 79);
 			this.confirmPasswordPanel.TabIndex = 10;
 			// 
 			// confirmPasswordTxt
@@ -320,11 +323,13 @@
 			this.confirmPasswordTxt.Size = new System.Drawing.Size(380, 36);
 			this.confirmPasswordTxt.TabIndex = 4;
 			this.confirmPasswordTxt.TextChanged += new System.EventHandler(this.confirmPasswordTxt_TextChanged);
+			this.confirmPasswordTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.confirmPasswordTxt_KeyPress);
+			this.confirmPasswordTxt.Leave += new System.EventHandler(this.confirmPasswordTxt_Leave);
 			// 
 			// errorConfirmPasswordMsg
 			// 
 			this.errorConfirmPasswordMsg.AutoSize = true;
-			this.errorConfirmPasswordMsg.Font = new System.Drawing.Font("#9Slide03 Cabin", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+			this.errorConfirmPasswordMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
 			this.errorConfirmPasswordMsg.ForeColor = System.Drawing.Color.Red;
 			this.errorConfirmPasswordMsg.Location = new System.Drawing.Point(182, 47);
 			this.errorConfirmPasswordMsg.Name = "errorConfirmPasswordMsg";
@@ -361,12 +366,12 @@
 			this.submitBtn.BorderSize = 2;
 			this.submitBtn.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.submitBtn.DialogResult = System.Windows.Forms.DialogResult.None;
-			this.submitBtn.FocusedColor = System.Drawing.Color.Empty;
+			this.submitBtn.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(159)))), ((int)(((byte)(147)))));
 			this.submitBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.submitBtn.ForeColor = System.Drawing.Color.White;
 			this.submitBtn.Image = null;
 			this.submitBtn.ImageSize = new System.Drawing.Size(20, 20);
-			this.submitBtn.Location = new System.Drawing.Point(343, 456);
+			this.submitBtn.Location = new System.Drawing.Point(342, 500);
 			this.submitBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.submitBtn.Name = "submitBtn";
 			this.submitBtn.OnHoverBaseColor = System.Drawing.Color.White;
@@ -377,7 +382,6 @@
 			this.submitBtn.Radius = 22;
 			this.submitBtn.Size = new System.Drawing.Size(175, 47);
 			this.submitBtn.TabIndex = 29;
-			this.submitBtn.TabStop = false;
 			this.submitBtn.Text = "Lưu";
 			this.submitBtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			this.submitBtn.Click += new System.EventHandler(this.submitBtn_Click);
@@ -393,12 +397,12 @@
 			this.cancelBtn.BorderSize = 2;
 			this.cancelBtn.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.cancelBtn.DialogResult = System.Windows.Forms.DialogResult.None;
-			this.cancelBtn.FocusedColor = System.Drawing.Color.Empty;
+			this.cancelBtn.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(159)))), ((int)(((byte)(147)))));
 			this.cancelBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.cancelBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
 			this.cancelBtn.Image = null;
 			this.cancelBtn.ImageSize = new System.Drawing.Size(20, 20);
-			this.cancelBtn.Location = new System.Drawing.Point(128, 456);
+			this.cancelBtn.Location = new System.Drawing.Point(124, 500);
 			this.cancelBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.cancelBtn.Name = "cancelBtn";
 			this.cancelBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
@@ -409,7 +413,6 @@
 			this.cancelBtn.Radius = 22;
 			this.cancelBtn.Size = new System.Drawing.Size(175, 47);
 			this.cancelBtn.TabIndex = 28;
-			this.cancelBtn.TabStop = false;
 			this.cancelBtn.Text = "Hủy";
 			this.cancelBtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
@@ -419,7 +422,7 @@
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.White;
-			this.ClientSize = new System.Drawing.Size(646, 519);
+			this.ClientSize = new System.Drawing.Size(646, 578);
 			this.Controls.Add(this.submitBtn);
 			this.Controls.Add(this.cancelBtn);
 			this.Controls.Add(this.title);

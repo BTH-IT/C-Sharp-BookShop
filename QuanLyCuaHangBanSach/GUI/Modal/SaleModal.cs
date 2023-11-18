@@ -29,7 +29,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                (Screen.PrimaryScreen.Bounds.Size.Height / 2) - (this.Size.Height / 2)
            );
             this.dateTimeFrom.Value = DateTime.Now;
-            this.dateTimeTo.Value = DateTime.Now;
+            this.dateTimeTo.Value = DateTime.Now.AddDays(1);
             try
             {
                 if (sale != null)
@@ -58,7 +58,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                     this.saleNameTxt,
                     this.errorSaleNameMsg,
                     this.saleNameLine,
-                    new string[] { "required", "name" , "space"}
+                    new string[] { "required" , "space"}
                 );
 
                 if (isSale)
@@ -189,7 +189,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 this.saleNameTxt,
                 this.errorSaleNameMsg,
                 this.saleNameLine,
-                new string[] { "required" , "name", "space" }
+                new string[] { "required" , "space" }
             );
 
             if (isSale)

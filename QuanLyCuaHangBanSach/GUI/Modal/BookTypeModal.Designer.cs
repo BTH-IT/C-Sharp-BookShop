@@ -178,7 +178,7 @@
 			this.label3.Location = new System.Drawing.Point(3, 3);
 			this.label3.Name = "label3";
 			this.label3.Size = new System.Drawing.Size(151, 49);
-			this.label3.TabIndex = 5;
+			this.label3.TabIndex = 3;
 			this.label3.Text = "Tên thể loại:";
 			this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
@@ -190,7 +190,7 @@
 			this.flowLayoutPanel1.Location = new System.Drawing.Point(15, 66);
 			this.flowLayoutPanel1.Name = "flowLayoutPanel1";
 			this.flowLayoutPanel1.Size = new System.Drawing.Size(602, 98);
-			this.flowLayoutPanel1.TabIndex = 4;
+			this.flowLayoutPanel1.TabIndex = 1;
 			// 
 			// BookTypeModal
 			// 

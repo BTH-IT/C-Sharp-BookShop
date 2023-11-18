@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.Linq;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using Guna.UI.WinForms;
@@ -97,7 +98,6 @@ namespace QuanLyCuaHangBanSach
 
         public bool checkTextboxMatchWithOtherTextBox(Guna2TextBox txt1, Guna2TextBox txt2, string errMsg, Label errMsgLbl, Panel line)
         {
-
             if (!txt1.Text.Equals(txt2.Text))
             {
                 errMsgLbl.Text = errMsg;
@@ -191,6 +191,22 @@ namespace QuanLyCuaHangBanSach
                         {
                             return false;
                         }
+                        break;
+                    case "password":
+                        string password = txt.Text;
+                        bool checkSpecificChar = password.Any(char.IsPunctuation) || password.Any(char.IsSymbol);
+						if (password.Length < 6 || !password.Any(char.IsUpper) || !password.Any(char.IsLower) || !password.Any(char.IsDigit) || !checkSpecificChar)
+                        {
+								errMsgLbl.Text = "Mật khẩu phải dài hơn 6.Chứa các kí tự đặc biệt,số,\nin hoa,in thường";
+								line.BackColor = Color.FromArgb(239, 68, 68);
+								return false;
+                        }
+                        else
+                        {
+							errMsgLbl.Text = "";
+							line.BackColor = Color.FromArgb(45, 212, 191);
+							return true;
+                        } 
                         break;
                 }
             }

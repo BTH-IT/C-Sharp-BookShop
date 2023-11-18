@@ -83,7 +83,7 @@
 			this.btnExport.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnExport.CheckedImage")));
 			this.btnExport.CheckedLineColor = System.Drawing.Color.DimGray;
 			this.btnExport.DialogResult = System.Windows.Forms.DialogResult.None;
-			this.btnExport.FocusedColor = System.Drawing.Color.PaleTurquoise;
+			this.btnExport.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(159)))), ((int)(((byte)(147)))));
 			this.btnExport.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold);
 			this.btnExport.ForeColor = System.Drawing.Color.White;
 			this.btnExport.Image = ((System.Drawing.Image)(resources.GetObject("btnExport.Image")));
@@ -117,7 +117,7 @@
 			this.btnRefresh.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnRefresh.CheckedImage")));
 			this.btnRefresh.CheckedLineColor = System.Drawing.Color.DimGray;
 			this.btnRefresh.DialogResult = System.Windows.Forms.DialogResult.None;
-			this.btnRefresh.FocusedColor = System.Drawing.Color.PaleTurquoise;
+			this.btnRefresh.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(159)))), ((int)(((byte)(147)))));
 			this.btnRefresh.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold);
 			this.btnRefresh.ForeColor = System.Drawing.Color.White;
 			this.btnRefresh.Image = ((System.Drawing.Image)(resources.GetObject("btnRefresh.Image")));
@@ -151,7 +151,7 @@
 			this.deleteBtn.CheckedImage = ((System.Drawing.Image)(resources.GetObject("deleteBtn.CheckedImage")));
 			this.deleteBtn.CheckedLineColor = System.Drawing.Color.DimGray;
 			this.deleteBtn.DialogResult = System.Windows.Forms.DialogResult.None;
-			this.deleteBtn.FocusedColor = System.Drawing.Color.PaleTurquoise;
+			this.deleteBtn.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(159)))), ((int)(((byte)(147)))));
 			this.deleteBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold);
 			this.deleteBtn.ForeColor = System.Drawing.Color.White;
 			this.deleteBtn.Image = ((System.Drawing.Image)(resources.GetObject("deleteBtn.Image")));
@@ -185,7 +185,7 @@
 			this.btnEdit.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnEdit.CheckedImage")));
 			this.btnEdit.CheckedLineColor = System.Drawing.Color.DimGray;
 			this.btnEdit.DialogResult = System.Windows.Forms.DialogResult.None;
-			this.btnEdit.FocusedColor = System.Drawing.Color.PaleTurquoise;
+			this.btnEdit.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(159)))), ((int)(((byte)(147)))));
 			this.btnEdit.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold);
 			this.btnEdit.ForeColor = System.Drawing.Color.White;
 			this.btnEdit.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit.Image")));
@@ -219,7 +219,7 @@
 			this.btnAdd.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnAdd.CheckedImage")));
 			this.btnAdd.CheckedLineColor = System.Drawing.Color.DimGray;
 			this.btnAdd.DialogResult = System.Windows.Forms.DialogResult.None;
-			this.btnAdd.FocusedColor = System.Drawing.Color.PaleTurquoise;
+			this.btnAdd.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(159)))), ((int)(((byte)(147)))));
 			this.btnAdd.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold);
 			this.btnAdd.ForeColor = System.Drawing.Color.White;
 			this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
@@ -418,7 +418,7 @@
 			// 
 			// AccountManageGUI
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
 			this.ClientSize = new System.Drawing.Size(1044, 684);

@@ -94,11 +94,11 @@
 			// errorPositionNameMsg
 			// 
 			this.errorPositionNameMsg.AutoSize = true;
-			this.errorPositionNameMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed SemiB", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+			this.errorPositionNameMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
 			this.errorPositionNameMsg.ForeColor = System.Drawing.Color.Red;
 			this.errorPositionNameMsg.Location = new System.Drawing.Point(163, 50);
 			this.errorPositionNameMsg.Name = "errorPositionNameMsg";
-			this.errorPositionNameMsg.Size = new System.Drawing.Size(0, 30);
+			this.errorPositionNameMsg.Size = new System.Drawing.Size(0, 26);
 			this.errorPositionNameMsg.TabIndex = 7;
 			// 
 			// nameLine
