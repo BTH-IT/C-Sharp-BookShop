@@ -75,9 +75,9 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             {
 				List<CustomerDTO> customerList = CustomerBUS.Instance.getAllData();
 
-				this.loadCustomerListToDataGridView(customerList);
                 this.genderCbx.Items.AddRange(genders);
                 this.genderCbx.SelectedIndex = 0;
+				this.loadCustomerListToDataGridView(customerList);
                 this.renderCheckBoxDgv();
 				headerCheckbox.MouseClick += new MouseEventHandler(headerCheckbox_Clicked);
 			}

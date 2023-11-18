@@ -82,9 +82,9 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             try
             {
                 List<AuthorDTO> AuthorList = AuthorBUS.Instance.getAllData();
-                this.loadAuthorListToDataView(AuthorList);
                 this.genderCbx.Items.AddRange(genders);
                 this.genderCbx.SelectedIndex = 0;
+                this.loadAuthorListToDataView(AuthorList);
                 this.renderCheckBoxDgv();
                 headerCheckbox.MouseClick += new MouseEventHandler(headerCheckbox_Clicked);
             }
