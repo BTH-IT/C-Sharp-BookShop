@@ -29,7 +29,7 @@ namespace QuanLyCuaHangBanSach.GUI
             InitializeComponent();
             FormBorderStyle = FormBorderStyle.None;
             this.staffID = staffID;
-		}
+        }
 
         private void Vendor_Load(object sender, EventArgs e)
         {
@@ -40,16 +40,16 @@ namespace QuanLyCuaHangBanSach.GUI
                 {
                     BookUserControl product = new BookUserControl(0);
                     product.details(book);
-					product.TabStop = false; 
+                    product.TabStop = false;
                     BookContainer.Controls.Add(product);
 
                 }
                 FilterUserControl filter = new FilterUserControl();
-				filter.TabStop = false;
+                filter.TabStop = false;
                 FilterContainer.Controls.Add(filter);
 
 
-				List<SaleDTO> discounts = SaleBUS.Instance.getAllNotExpired() ?? new List<SaleDTO>();
+                List<SaleDTO> discounts = SaleBUS.Instance.getAllNotExpired() ?? new List<SaleDTO>();
                 discounts.Insert(0, new SaleDTO(0, "Không có khuyến mãi", 0, new DateTime(), new DateTime()));
                 DiscountCb.DataSource = discounts;
                 DiscountCb.DisplayMember = "tenKhuyenMai";
@@ -64,16 +64,16 @@ namespace QuanLyCuaHangBanSach.GUI
             CustomerEnabled = CustomerToggleBtn.Checked;
             PhoneInp.Enabled = CustomerEnabled;
             AddCustomerBtn.Enabled = CustomerEnabled;
-			PointAmountLb.Text = "";
+            PointAmountLb.Text = "";
             if (!CustomerEnabled)
-			{
+            {
                 RecipientNameLb.Text = "Vãng lai";
                 PhoneInp.Text = "";
-				PhoneResultContainer.Height = 0;
+                PhoneResultContainer.Height = 0;
                 PointToggleBtn.Checked = false;
                 PointToggleBtn.Enabled = false;
-			}
-			else
+            }
+            else
             {
                 RecipientNameLb.Text = "";
                 PointToggleBtn.Enabled = false;
@@ -105,13 +105,13 @@ namespace QuanLyCuaHangBanSach.GUI
                 {
                     search = true;
                     BookContainer.Controls.Clear();
-                    List <BookDTO> books = BookBUS.Instance.search(ProductSearchInp.Text);
+                    List<BookDTO> books = BookBUS.Instance.search(ProductSearchInp.Text);
                     foreach (var book in books)
                     {
                         BookUserControl product = new BookUserControl(0);
                         product.details(book);
                         product.TabStop = false;
-						BookContainer.Controls.Add(product);
+                        BookContainer.Controls.Add(product);
                     }
                 }
                 else if (search)
@@ -159,7 +159,8 @@ namespace QuanLyCuaHangBanSach.GUI
             {
                 if (CustomerEnabled)
                 {
-                    if (PhoneInp.Focused && !string.IsNullOrEmpty(PhoneInp.Text)) {
+                    if (PhoneInp.Focused && !string.IsNullOrEmpty(PhoneInp.Text))
+                    {
                         PhoneResultContainer.Controls.Clear();
                         String query = PhoneInp.Text;
                         List<CustomerDTO> customers = CustomerBUS.Instance.SearchByPhoneNum(query);
@@ -169,8 +170,8 @@ namespace QuanLyCuaHangBanSach.GUI
                             {
                                 SearchResultControl res = new SearchResultControl();
                                 res.details_Vendor(customer);
-								res.TabStop = false;
-								PhoneResultContainer.Controls.Add(res);
+                                res.TabStop = false;
+                                PhoneResultContainer.Controls.Add(res);
                             }
                         }
                         if (PhoneResultContainer.Controls.Count <= 4)
@@ -219,6 +220,10 @@ namespace QuanLyCuaHangBanSach.GUI
                 {
                     AddProductToCart(book);
                 }
+                else
+                {
+                    MessageBox.Show("Không tìm được sách đã quét");
+                }
             }
             catch (Exception ex) { Console.WriteLine(ex); }
         }
@@ -229,11 +234,19 @@ namespace QuanLyCuaHangBanSach.GUI
             {
                 if (customerBillDetails.Count == 0 || !customerBillDetails.Any(item => item.MaSach == book.MaSach))
                 {
-                    CustomerBillDetailDTO customerBillDetail = new CustomerBillDetailDTO(0, book.MaSach, 1, book.GiaBan);
-                    customerBillDetails.Add(customerBillDetail);
-                    CartProductUserControl product = new CartProductUserControl(0);
-                    product.details(book);
-                    CartContainer.Controls.Add(product);
+                    int stock = BookBUS.Instance.getById(book.MaSach.ToString()).SoLuongConLai;
+                    if (stock != 0)
+                    {
+                        CustomerBillDetailDTO customerBillDetail = new CustomerBillDetailDTO(0, book.MaSach, 1, book.GiaBan);
+                        customerBillDetails.Add(customerBillDetail);
+                        CartProductUserControl product = new CartProductUserControl(0);
+                        product.details(book);
+                        CartContainer.Controls.Add(product);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Hết hàng");
+                    }
                 }
                 else
                 {
@@ -248,7 +261,7 @@ namespace QuanLyCuaHangBanSach.GUI
                             {
                                 BookUserControl.ChoseId = "";
                                 BookUserControl.clicked = false;
-                                MessageBox.Show("Out of stock");
+                                MessageBox.Show("Hết hàng");
                                 return;
                             }
                             else
@@ -334,7 +347,7 @@ namespace QuanLyCuaHangBanSach.GUI
                     int pointDiscount = CustomerBUS.Instance.getById(customerID.ToString()).Diem;
                     PointAmountLb.Text = $@"{pointDiscount} điểm";
                     if (pointDiscount > 0) PointToggleBtn.Enabled = true;
-					SearchResultControl.clicked = false;
+                    SearchResultControl.clicked = false;
                 }
 
                 if (FilterUserControl.ApplyClicked)
@@ -346,8 +359,8 @@ namespace QuanLyCuaHangBanSach.GUI
                     {
                         BookUserControl product = new BookUserControl(0);
                         product.details(book);
-						product.TabStop = false;
-						BookContainer.Controls.Add(product);
+                        product.TabStop = false;
+                        BookContainer.Controls.Add(product);
                     }
                     FilterUserControl.ApplyClicked = false;
                 }
@@ -419,13 +432,15 @@ namespace QuanLyCuaHangBanSach.GUI
                 if (DiscountCb.SelectedIndex != 0)
                 {
                     string discountID = DiscountCb.SelectedValue.ToString();
-                    double percent = SaleBUS.Instance.getById(discountID).PhanTram / 100.0;
+                    int percent = SaleBUS.Instance.getById(discountID).PhanTram;
                     double total = Convert.ToDouble(TotalMoneyLb.Text.Replace(".", "").Replace(" VND", ""));
-                    discount = total * percent;
+                    discount = total * (percent / 100.0);
+                    DiscountPercentLb.Text = $@"{percent}%";
                     CartHandler();
                 }
                 else
                 {
+                    DiscountPercentLb.Text = "";
                     discount = 0;
                     CartHandler();
                 }
@@ -448,7 +463,7 @@ namespace QuanLyCuaHangBanSach.GUI
 
                 CartHandler();
             }
-            catch(Exception ex) { Console.WriteLine(ex); }
+            catch (Exception ex) { Console.WriteLine(ex); }
         }
 
 
@@ -542,7 +557,7 @@ namespace QuanLyCuaHangBanSach.GUI
                     using (CustomerBillPrintForm customerBillPrintForm = new CustomerBillPrintForm(newCustomerBill.MaDonKhachHang))
                     {
                         customerBillPrintForm.ShowDialog();
-					}
+                    }
 
                     CartContainer.Controls.Clear();
                     customerBillDetails.Clear();
@@ -554,12 +569,13 @@ namespace QuanLyCuaHangBanSach.GUI
                     CustomerCashTxb.Text = "";
                     PhoneInp.Text = "";
                     ProductSearchInp.Text = "";
-					discount = 0;
+                    discount = 0;
                     DiscountMoneyLb.Text = "0 VND";
                     DiscountCb.SelectedIndex = 0;
                     RecipientNameLb.Text = string.Empty;
-					PointAmountLb.Text = string.Empty;
-					customerID = 0;
+                    PointAmountLb.Text = string.Empty;
+                    DiscountPercentLb.Text = string.Empty;
+                    customerID = 0;
                     CartHandler();
                     RenderBookContainer();
                 }
@@ -573,5 +589,5 @@ namespace QuanLyCuaHangBanSach.GUI
             MenuGUI menu = new MenuGUI(staffID);
             menu.Show();
         }
-	}
+    }
 }

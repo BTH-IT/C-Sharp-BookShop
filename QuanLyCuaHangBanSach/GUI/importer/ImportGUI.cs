@@ -391,20 +391,11 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
 
 				if (dt == null)
 				{
-					MessageBox.Show("Lỗi chưa chọn file hoặc file excel không đúng format dữ liệu nhập!");
+					MessageBox.Show("Lỗi chưa chọn file hoặc file excel không đúng dữ liệu!");
 					return;
 				}
 
-                foreach (DataRow row in dt.Rows)
-                {
-                    if (!int.TryParse(row[0].ToString(), out int maSach) || !int.TryParse(row[2].ToString(), out int soLuong) || !double.TryParse(row[3].ToString(), out double giaNhap))
-                    {
-                        MessageBox.Show("Lỗi chưa chọn file hoặc file excel không đúng format dữ liệu nhập!");
-                        return;
-                    }
-                }
-
-                ImportBillDTO newImportBill = new ImportBillDTO(0, 1, staffID, DateTime.Now, 0);
+				ImportBillDTO newImportBill = new ImportBillDTO(0, 1, staffID, DateTime.Now, 0);
 
 				ImportBillDTO importBill = ImportBillBUS.Instance.insertReturnBill(newImportBill);
 
@@ -413,8 +404,7 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
 					double tongTien = 0;
 					foreach (DataRow row in dt.Rows)
 					{
-                        if (!int.TryParse(row[0].ToString(), out int result)) continue;
-                        BookDTO book = BookBUS.Instance.getById(row[0].ToString());
+						BookDTO book = BookBUS.Instance.getById(row[0].ToString());
 
 						if (book == null) continue;
 
@@ -435,7 +425,12 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
 
 					ImportBillBUS.Instance.update(importBill);
 
-					MessageBox.Show("Nhập từ file excel thành công!");
+					MessageBox.Show("Nhập hàng từ file excel thành công!");
+
+					using (ImportBillPrintForm importBillPrintForm = new ImportBillPrintForm(importBill.MaDonNhapHang))
+					{
+						importBillPrintForm.ShowDialog();
+					}
 
 					try
 					{
@@ -456,6 +451,18 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
 			{
 				Console.WriteLine(ex);
 			}
+		}
+
+		private void NameInp_KeyPress(object sender, KeyPressEventArgs e)
+		{
+			try
+			{
+				if (!char.IsControl(e.KeyChar) && char.IsDigit(e.KeyChar))
+				{
+					e.Handled = true; // Cancel the key press event
+				}
+			}
+			catch (Exception ex) { Console.WriteLine(ex); }
 		}
 	}
 }
