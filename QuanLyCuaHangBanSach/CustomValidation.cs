@@ -260,12 +260,15 @@ namespace QuanLyCuaHangBanSach
         {
             try
             {
+               
                 foreach (string rule in requirements)
                 {
-                    switch (rule)
+					DateTime dateTime1 = new DateTime(guna.Value.Year, guna.Value.Month, guna.Value.Day, guna.Value.Hour, guna.Value.Minute, guna.Value.Second);
+					DateTime dateTime2 = new DateTime(dateTimeToCompare.Year, dateTimeToCompare.Month, dateTimeToCompare.Day, dateTimeToCompare.Hour, dateTimeToCompare.Minute, dateTimeToCompare.Second);
+					switch (rule)
                     {
                         case "after":
-                            if (DateTime.Compare(guna.Value, dateTimeToCompare) >= 0)
+							if (DateTime.Compare(dateTime1, dateTime2) > 0)
                             {
                                 errorLabel.Text = "";
                                 return true;
@@ -273,7 +276,7 @@ namespace QuanLyCuaHangBanSach
                             else
                             {
 
-                                errorLabel.Text = errorMessage != null ? errorMessage : "Ngày giờ phải lớn hơn hoặc bằng thời gian hiện tại";
+                                errorLabel.Text = errorMessage != null ? errorMessage : "Ngày giờ phải lớn hơn thời gian hiện tại";
                                 return false;
                             }
                         case "before":

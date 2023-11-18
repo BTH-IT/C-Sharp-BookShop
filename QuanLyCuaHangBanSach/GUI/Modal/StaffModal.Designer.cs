@@ -188,6 +188,7 @@
 			this.positionCbx.Radius = 6;
 			this.positionCbx.Size = new System.Drawing.Size(408, 36);
 			this.positionCbx.TabIndex = 2;
+			this.positionCbx.SelectedIndexChanged += new System.EventHandler(this.positionCbx_SelectedIndexChanged);
 			// 
 			// panel1
 			// 
@@ -323,6 +324,7 @@
 			this.genderCbx.Radius = 6;
 			this.genderCbx.Size = new System.Drawing.Size(408, 36);
 			this.genderCbx.TabIndex = 4;
+			this.genderCbx.SelectedIndexChanged += new System.EventHandler(this.genderCbx_SelectedIndexChanged);
 			// 
 			// panel7
 			// 
