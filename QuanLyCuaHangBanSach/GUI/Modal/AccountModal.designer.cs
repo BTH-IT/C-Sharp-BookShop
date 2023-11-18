@@ -65,7 +65,7 @@
 			this.title.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
 			this.title.Location = new System.Drawing.Point(211, 2);
 			this.title.Name = "title";
-			this.title.Size = new System.Drawing.Size(224, 45);
+			this.title.Size = new System.Drawing.Size(178, 36);
 			this.title.TabIndex = 9;
 			this.title.Text = "Thêm Tài khoản";
 			// 
@@ -105,7 +105,7 @@
 			this.errorPasswordMsg.ForeColor = System.Drawing.Color.Red;
 			this.errorPasswordMsg.Location = new System.Drawing.Point(179, 47);
 			this.errorPasswordMsg.Name = "errorPasswordMsg";
-			this.errorPasswordMsg.Size = new System.Drawing.Size(0, 26);
+			this.errorPasswordMsg.Size = new System.Drawing.Size(0, 21);
 			this.errorPasswordMsg.TabIndex = 7;
 			// 
 			// passwordLine
@@ -163,7 +163,7 @@
 			this.errorEmailMsg.ForeColor = System.Drawing.Color.Red;
 			this.errorEmailMsg.Location = new System.Drawing.Point(182, 49);
 			this.errorEmailMsg.Name = "errorEmailMsg";
-			this.errorEmailMsg.Size = new System.Drawing.Size(0, 26);
+			this.errorEmailMsg.Size = new System.Drawing.Size(0, 21);
 			this.errorEmailMsg.TabIndex = 7;
 			// 
 			// errorEmailLine
@@ -242,7 +242,7 @@
 			this.staffLine.ForeColor = System.Drawing.Color.Red;
 			this.staffLine.Location = new System.Drawing.Point(187, 56);
 			this.staffLine.Name = "staffLine";
-			this.staffLine.Size = new System.Drawing.Size(0, 26);
+			this.staffLine.Size = new System.Drawing.Size(0, 21);
 			this.staffLine.TabIndex = 27;
 			// 
 			// staffComboBox
@@ -258,9 +258,11 @@
 			this.staffComboBox.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.staffComboBox.ForeColor = System.Drawing.Color.Black;
 			this.staffComboBox.FormattingEnabled = true;
+			this.staffComboBox.IntegralHeight = false;
 			this.staffComboBox.ItemHeight = 30;
 			this.staffComboBox.Location = new System.Drawing.Point(178, 11);
 			this.staffComboBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+			this.staffComboBox.MaxDropDownItems = 10;
 			this.staffComboBox.Name = "staffComboBox";
 			this.staffComboBox.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
 			this.staffComboBox.OnHoverItemForeColor = System.Drawing.Color.White;
@@ -328,7 +330,7 @@
 			this.errorConfirmPasswordMsg.ForeColor = System.Drawing.Color.Red;
 			this.errorConfirmPasswordMsg.Location = new System.Drawing.Point(182, 47);
 			this.errorConfirmPasswordMsg.Name = "errorConfirmPasswordMsg";
-			this.errorConfirmPasswordMsg.Size = new System.Drawing.Size(0, 26);
+			this.errorConfirmPasswordMsg.Size = new System.Drawing.Size(0, 21);
 			this.errorConfirmPasswordMsg.TabIndex = 7;
 			// 
 			// confirmPasswordLine
@@ -416,7 +418,7 @@
 			// 
 			// AccountModal
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 20F);
+			this.AutoScaleDimensions = new System.Drawing.SizeF(5F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.White;
 			this.ClientSize = new System.Drawing.Size(646, 519);

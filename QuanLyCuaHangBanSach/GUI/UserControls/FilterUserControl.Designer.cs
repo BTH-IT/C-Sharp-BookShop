@@ -278,11 +278,11 @@
         private Guna.UI2.WinForms.Guna2CheckBox NameAZCkb;
         private Guna.UI2.WinForms.Guna2CheckBox NameZACkb;
         private Guna.UI2.WinForms.Guna2Button ApplyBtn;
-        private Guna.UI.WinForms.GunaComboBox TypeCb;
-        private Guna.UI.WinForms.GunaComboBox AuthorCb;
-        private Guna.UI.WinForms.GunaComboBox PublisherCb;
         private System.Windows.Forms.Label Typelb;
         private System.Windows.Forms.Label AuthorLb;
         private System.Windows.Forms.Label PublisherLb;
-    }
+		public Guna.UI.WinForms.GunaComboBox TypeCb;
+		public Guna.UI.WinForms.GunaComboBox AuthorCb;
+		public Guna.UI.WinForms.GunaComboBox PublisherCb;
+	}
 }

@@ -523,11 +523,14 @@
 			this.DiscountCb.Font = new System.Drawing.Font("#9Slide03 Cabin", 10F);
 			this.DiscountCb.ForeColor = System.Drawing.Color.Black;
 			this.DiscountCb.FormattingEnabled = true;
+			this.DiscountCb.IntegralHeight = false;
 			this.DiscountCb.Location = new System.Drawing.Point(14, 422);
+			this.DiscountCb.MaxLength = 10;
 			this.DiscountCb.Name = "DiscountCb";
 			this.DiscountCb.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
 			this.DiscountCb.OnHoverItemForeColor = System.Drawing.Color.White;
 			this.DiscountCb.Radius = 5;
+			this.DiscountCb.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
 			this.DiscountCb.Size = new System.Drawing.Size(162, 28);
 			this.DiscountCb.TabIndex = 4;
 			this.DiscountCb.TabStop = false;

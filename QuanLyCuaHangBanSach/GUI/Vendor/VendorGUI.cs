@@ -29,9 +29,11 @@ namespace QuanLyCuaHangBanSach.GUI
             InitializeComponent();
             FormBorderStyle = FormBorderStyle.None;
             this.staffID = staffID;
+
+            DiscountCb.MaxDropDownItems = 10;
         }
 
-        private void Vendor_Load(object sender, EventArgs e)
+		private void Vendor_Load(object sender, EventArgs e)
         {
             try
             {
@@ -46,10 +48,9 @@ namespace QuanLyCuaHangBanSach.GUI
                 }
                 FilterUserControl filter = new FilterUserControl();
                 filter.TabStop = false;
-                FilterContainer.Controls.Add(filter);
+				FilterContainer.Controls.Add(filter);
 
-
-                List<SaleDTO> discounts = SaleBUS.Instance.getAllNotExpired() ?? new List<SaleDTO>();
+				List<SaleDTO> discounts = SaleBUS.Instance.getAllNotExpired() ?? new List<SaleDTO>();
                 discounts.Insert(0, new SaleDTO(0, "Không có khuyến mãi", 0, new DateTime(), new DateTime()));
                 DiscountCb.DataSource = discounts;
                 DiscountCb.DisplayMember = "tenKhuyenMai";
@@ -431,6 +432,7 @@ namespace QuanLyCuaHangBanSach.GUI
             {
                 if (DiscountCb.SelectedIndex != 0)
                 {
+                    DiscountCb.Text = "1";
                     string discountID = DiscountCb.SelectedValue.ToString();
                     int percent = SaleBUS.Instance.getById(discountID).PhanTram;
                     double total = Convert.ToDouble(TotalMoneyLb.Text.Replace(".", "").Replace(" VND", ""));
@@ -589,5 +591,5 @@ namespace QuanLyCuaHangBanSach.GUI
             MenuGUI menu = new MenuGUI(staffID);
             menu.Show();
         }
-    }
+	}
 }
