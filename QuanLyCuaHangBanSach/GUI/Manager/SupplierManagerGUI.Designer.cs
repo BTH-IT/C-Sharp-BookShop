@@ -127,7 +127,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 			this.dgvSupplier.RowsDefaultCellStyle = dataGridViewCellStyle5;
 			this.dgvSupplier.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
 			this.dgvSupplier.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-			this.dgvSupplier.RowTemplate.Height = 75;
+			this.dgvSupplier.RowTemplate.Height = 80;
 			this.dgvSupplier.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
 			this.dgvSupplier.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
 			this.dgvSupplier.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -153,7 +153,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 			this.dgvSupplier.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
 			this.dgvSupplier.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.dgvSupplier.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-			this.dgvSupplier.ThemeStyle.RowsStyle.Height = 75;
+			this.dgvSupplier.ThemeStyle.RowsStyle.Height = 80;
 			this.dgvSupplier.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
 			this.dgvSupplier.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
 			this.dgvSupplier.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSupplier_CellDoubleClick);
@@ -405,7 +405,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 			this.searchInput.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
 			this.searchInput.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
 			this.searchInput.FocusedState.Parent = this.searchInput;
-			this.searchInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.searchInput.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 11.25F);
 			this.searchInput.ForeColor = System.Drawing.Color.Black;
 			this.searchInput.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
 			this.searchInput.HoverState.Parent = this.searchInput;

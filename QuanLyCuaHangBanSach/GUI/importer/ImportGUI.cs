@@ -19,7 +19,7 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
         private bool PrintBtnAllowed = false;
         private int supplierID = 0;
         private int staffID;
-        private double total = 0;
+        private decimal total = 0;
         private List<ImportBillDetailDTO> importBillDetails = new List<ImportBillDetailDTO>();
 
         public ImportGUI(int staffID)
@@ -391,13 +391,13 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
 
 				if (dt == null)
 				{
-					MessageBox.Show("Lỗi chưa chọn file hoặc file excel không đúng format dữ liệu nhập!");
+					MessageBox.Show("Lỗi chưa chọn file hoặc file excel không đúng dữ liệu!");
 					return;
 				}
 
                 foreach (DataRow row in dt.Rows)
                 {
-                    if (!int.TryParse(row[0].ToString(), out int maSach) || !int.TryParse(row[2].ToString(), out int soLuong) || !double.TryParse(row[3].ToString(), out double giaNhap))
+                    if (!int.TryParse(row[0].ToString(), out int maSach) || !int.TryParse(row[2].ToString(), out int soLuong) || !decimal.TryParse(row[3].ToString(), out decimal giaNhap))
                     {
                         MessageBox.Show("Lỗi chưa chọn file hoặc file excel không đúng format dữ liệu nhập!");
                         return;
@@ -410,20 +410,19 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
 
 				if (importBill != null)
 				{
-					double tongTien = 0;
+					decimal tongTien = 0;
 					foreach (DataRow row in dt.Rows)
 					{
-                        if (!int.TryParse(row[0].ToString(), out int result)) continue;
-                        BookDTO book = BookBUS.Instance.getById(row[0].ToString());
+						BookDTO book = BookBUS.Instance.getById(row[0].ToString());
 
 						if (book == null) continue;
 
-						ImportBillDetailDTO importBillDetail = new ImportBillDetailDTO(importBill.MaDonNhapHang, book.MaSach, Convert.ToInt32(row[2].ToString()), Convert.ToDouble(row[3].ToString()));
+						ImportBillDetailDTO importBillDetail = new ImportBillDetailDTO(importBill.MaDonNhapHang, book.MaSach, Convert.ToInt32(row[2].ToString()), Convert.ToDecimal(row[3].ToString()));
 
 						if (ImportBillBUS.Instance.createImportBillDetail(importBillDetail))
 						{
 							book.SoLuongConLai += Convert.ToInt32(row[2].ToString());
-							book.GiaNhap = Convert.ToDouble(row[3].ToString());
+							book.GiaNhap = Convert.ToDecimal(row[3].ToString());
 
 							BookBUS.Instance.update(book);
 
@@ -435,7 +434,12 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
 
 					ImportBillBUS.Instance.update(importBill);
 
-					MessageBox.Show("Nhập từ file excel thành công!");
+					MessageBox.Show("Nhập hàng từ file excel thành công!");
+
+					using (ImportBillPrintForm importBillPrintForm = new ImportBillPrintForm(importBill.MaDonNhapHang))
+					{
+						importBillPrintForm.ShowDialog();
+					}
 
 					try
 					{
@@ -456,6 +460,18 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
 			{
 				Console.WriteLine(ex);
 			}
+		}
+
+		private void NameInp_KeyPress(object sender, KeyPressEventArgs e)
+		{
+			try
+			{
+				if (!char.IsControl(e.KeyChar) && char.IsDigit(e.KeyChar))
+				{
+					e.Handled = true; // Cancel the key press event
+				}
+			}
+			catch (Exception ex) { Console.WriteLine(ex); }
 		}
 	}
 }

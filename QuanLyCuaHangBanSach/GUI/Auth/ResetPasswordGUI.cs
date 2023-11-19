@@ -63,7 +63,7 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.newPwdTxt,
                 this.errorMsg1,
                 this.line1,
-                new string[] { "required" }
+                new string[] { "required", "space", "password" }
             );
 
             bool isCheck2 = CustomValidation.Instance.checkTextbox(
@@ -130,7 +130,7 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.newPwdTxt,
                 this.errorMsg1,
                 this.line1,
-                new string[] { "required", "space" }
+                new string[] { "required", "space","password" }
             );
         }
 

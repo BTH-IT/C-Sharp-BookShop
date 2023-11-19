@@ -79,7 +79,7 @@
 			this.searchInput.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
 			this.searchInput.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
 			this.searchInput.FocusedState.Parent = this.searchInput;
-			this.searchInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.searchInput.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 11.25F);
 			this.searchInput.ForeColor = System.Drawing.Color.Black;
 			this.searchInput.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
 			this.searchInput.HoverState.Parent = this.searchInput;
@@ -136,6 +136,7 @@
 			this.dgvSale.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
 			this.dgvSale.Location = new System.Drawing.Point(0, 72);
 			this.dgvSale.Name = "dgvSale";
+			this.dgvSale.ReadOnly = true;
 			dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
 			dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
 			dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
@@ -174,7 +175,7 @@
 			this.dgvSale.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
 			this.dgvSale.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
 			this.dgvSale.ThemeStyle.HeaderStyle.Height = 50;
-			this.dgvSale.ThemeStyle.ReadOnly = false;
+			this.dgvSale.ThemeStyle.ReadOnly = true;
 			this.dgvSale.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
 			this.dgvSale.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
 			this.dgvSale.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
@@ -192,6 +193,7 @@
 			this.Column11.HeaderText = "";
 			this.Column11.MinimumWidth = 50;
 			this.Column11.Name = "Column11";
+			this.Column11.ReadOnly = true;
 			this.Column11.Width = 50;
 			// 
 			// maKhuyenMai
@@ -264,7 +266,7 @@
 			this.btnExport.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnExport.CheckedImage")));
 			this.btnExport.CheckedLineColor = System.Drawing.Color.DimGray;
 			this.btnExport.DialogResult = System.Windows.Forms.DialogResult.None;
-			this.btnExport.FocusedColor = System.Drawing.Color.PaleTurquoise;
+			this.btnExport.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(159)))), ((int)(((byte)(147)))));
 			this.btnExport.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold);
 			this.btnExport.ForeColor = System.Drawing.Color.White;
 			this.btnExport.Image = ((System.Drawing.Image)(resources.GetObject("btnExport.Image")));
@@ -297,7 +299,7 @@
 			this.btnRefresh.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnRefresh.CheckedImage")));
 			this.btnRefresh.CheckedLineColor = System.Drawing.Color.DimGray;
 			this.btnRefresh.DialogResult = System.Windows.Forms.DialogResult.None;
-			this.btnRefresh.FocusedColor = System.Drawing.Color.PaleTurquoise;
+			this.btnRefresh.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(159)))), ((int)(((byte)(147)))));
 			this.btnRefresh.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold);
 			this.btnRefresh.ForeColor = System.Drawing.Color.White;
 			this.btnRefresh.Image = ((System.Drawing.Image)(resources.GetObject("btnRefresh.Image")));
@@ -331,7 +333,7 @@
 			this.deleteBtn.CheckedImage = ((System.Drawing.Image)(resources.GetObject("deleteBtn.CheckedImage")));
 			this.deleteBtn.CheckedLineColor = System.Drawing.Color.DimGray;
 			this.deleteBtn.DialogResult = System.Windows.Forms.DialogResult.None;
-			this.deleteBtn.FocusedColor = System.Drawing.Color.PaleTurquoise;
+			this.deleteBtn.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(159)))), ((int)(((byte)(147)))));
 			this.deleteBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold);
 			this.deleteBtn.ForeColor = System.Drawing.Color.White;
 			this.deleteBtn.Image = ((System.Drawing.Image)(resources.GetObject("deleteBtn.Image")));
@@ -365,7 +367,7 @@
 			this.btnEdit.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnEdit.CheckedImage")));
 			this.btnEdit.CheckedLineColor = System.Drawing.Color.DimGray;
 			this.btnEdit.DialogResult = System.Windows.Forms.DialogResult.None;
-			this.btnEdit.FocusedColor = System.Drawing.Color.PaleTurquoise;
+			this.btnEdit.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(159)))), ((int)(((byte)(147)))));
 			this.btnEdit.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold);
 			this.btnEdit.ForeColor = System.Drawing.Color.White;
 			this.btnEdit.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit.Image")));
@@ -399,7 +401,7 @@
 			this.btnAdd.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnAdd.CheckedImage")));
 			this.btnAdd.CheckedLineColor = System.Drawing.Color.DimGray;
 			this.btnAdd.DialogResult = System.Windows.Forms.DialogResult.None;
-			this.btnAdd.FocusedColor = System.Drawing.Color.PaleTurquoise;
+			this.btnAdd.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(159)))), ((int)(((byte)(147)))));
 			this.btnAdd.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold);
 			this.btnAdd.ForeColor = System.Drawing.Color.White;
 			this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
@@ -438,7 +440,7 @@
 			this.filterCkx.CheckedOffColor = System.Drawing.Color.LightGray;
 			this.filterCkx.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
 			this.filterCkx.FillColor = System.Drawing.Color.White;
-			this.filterCkx.Location = new System.Drawing.Point(17, 9);
+			this.filterCkx.Location = new System.Drawing.Point(9, 9);
 			this.filterCkx.Name = "filterCkx";
 			this.filterCkx.Size = new System.Drawing.Size(20, 20);
 			this.filterCkx.TabIndex = 0;
@@ -452,8 +454,8 @@
 			this.dateTimeTo.BorderSize = 1;
 			this.dateTimeTo.CustomFormat = null;
 			this.dateTimeTo.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
-			this.dateTimeTo.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-			this.dateTimeTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.dateTimeTo.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(159)))), ((int)(((byte)(147)))));
+			this.dateTimeTo.Font = new System.Drawing.Font("#9Slide03 Cabin", 9F);
 			this.dateTimeTo.ForeColor = System.Drawing.Color.Black;
 			this.dateTimeTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
 			this.dateTimeTo.Location = new System.Drawing.Point(270, 0);
@@ -467,7 +469,7 @@
 			this.dateTimeTo.Radius = 6;
 			this.dateTimeTo.Size = new System.Drawing.Size(130, 36);
 			this.dateTimeTo.TabIndex = 42;
-			this.dateTimeTo.Text = "30/08/2023";
+			this.dateTimeTo.Text = "8/30/2023";
 			this.dateTimeTo.Value = new System.DateTime(2023, 8, 30, 19, 55, 8, 854);
 			this.dateTimeTo.ValueChanged += new System.EventHandler(this.dateTimeTo_ValueChanged);
 			// 
@@ -484,9 +486,9 @@
 			// label2
 			// 
 			this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label2.Location = new System.Drawing.Point(43, 0);
+			this.label2.Location = new System.Drawing.Point(35, 0);
 			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(40, 37);
+			this.label2.Size = new System.Drawing.Size(46, 37);
 			this.label2.TabIndex = 0;
 			this.label2.Text = "Từ :";
 			this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -499,8 +501,8 @@
 			this.dateTimeFrom.BorderSize = 1;
 			this.dateTimeFrom.CustomFormat = null;
 			this.dateTimeFrom.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
-			this.dateTimeFrom.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-			this.dateTimeFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.dateTimeFrom.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(159)))), ((int)(((byte)(147)))));
+			this.dateTimeFrom.Font = new System.Drawing.Font("#9Slide03 Cabin", 9F);
 			this.dateTimeFrom.ForeColor = System.Drawing.Color.Black;
 			this.dateTimeFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
 			this.dateTimeFrom.Location = new System.Drawing.Point(81, 0);
@@ -514,7 +516,7 @@
 			this.dateTimeFrom.Radius = 6;
 			this.dateTimeFrom.Size = new System.Drawing.Size(130, 36);
 			this.dateTimeFrom.TabIndex = 40;
-			this.dateTimeFrom.Text = "30/08/2023";
+			this.dateTimeFrom.Text = "8/30/2023";
 			this.dateTimeFrom.Value = new System.DateTime(2023, 8, 30, 19, 55, 8, 854);
 			this.dateTimeFrom.ValueChanged += new System.EventHandler(this.dateTimeFrom_Changed);
 			// 
@@ -542,7 +544,7 @@
 			// 
 			// SeoManageGUI
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
 			this.ClientSize = new System.Drawing.Size(1044, 684);

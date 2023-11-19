@@ -128,6 +128,7 @@
 			this.dgvBook.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
 			this.dgvBook.Location = new System.Drawing.Point(0, 61);
 			this.dgvBook.Name = "dgvBook";
+			this.dgvBook.ReadOnly = true;
 			dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
 			dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
 			dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -165,7 +166,7 @@
 			this.dgvBook.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
 			this.dgvBook.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
 			this.dgvBook.ThemeStyle.HeaderStyle.Height = 67;
-			this.dgvBook.ThemeStyle.ReadOnly = false;
+			this.dgvBook.ThemeStyle.ReadOnly = true;
 			this.dgvBook.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
 			this.dgvBook.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
 			this.dgvBook.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -184,6 +185,7 @@
 			this.Column11.HeaderText = "";
 			this.Column11.MinimumWidth = 50;
 			this.Column11.Name = "Column11";
+			this.Column11.ReadOnly = true;
 			this.Column11.Width = 50;
 			// 
 			// Column1
@@ -211,6 +213,7 @@
 			this.Column10.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
 			this.Column10.MinimumWidth = 80;
 			this.Column10.Name = "Column10";
+			this.Column10.ReadOnly = true;
 			// 
 			// Column3
 			// 

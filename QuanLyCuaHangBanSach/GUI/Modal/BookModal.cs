@@ -318,8 +318,8 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 byte[] img = ms.ToArray();
 
                 string bookName = this.bookNameTxt.Text;
-                double sellPrice = Convert.ToInt32(this.sellPriceTxt.Text);
-                double importPrice = Convert.ToInt32(this.importPriceTxt.Text);
+                decimal sellPrice = Convert.ToDecimal(this.sellPriceTxt.Text);
+                decimal importPrice = Convert.ToDecimal(this.importPriceTxt.Text);
                 int publishYear = Convert.ToInt32(this.publishYearTxt.Text);
                 int authorId = Convert.ToInt32(this.authorCbx.SelectedValue);
                 int bookTypeId = Convert.ToInt32(this.bookTypeCbx.SelectedValue);

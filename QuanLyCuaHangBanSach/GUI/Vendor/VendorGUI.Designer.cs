@@ -51,6 +51,7 @@
 			this.BookContainer = new System.Windows.Forms.FlowLayoutPanel();
 			this.FilterContainer = new System.Windows.Forms.Panel();
 			this.panel4 = new System.Windows.Forms.Panel();
+			this.DiscountPercentLb = new System.Windows.Forms.Label();
 			this.PointAmountLb = new System.Windows.Forms.Label();
 			this.CustomerCashTxb = new Guna.UI2.WinForms.Guna2TextBox();
 			this.PointToggleBtn = new Guna.UI2.WinForms.Guna2ToggleSwitch();
@@ -352,6 +353,7 @@
 			// 
 			// panel4
 			// 
+			this.panel4.Controls.Add(this.DiscountPercentLb);
 			this.panel4.Controls.Add(this.PointAmountLb);
 			this.panel4.Controls.Add(this.CustomerCashTxb);
 			this.panel4.Controls.Add(this.PointToggleBtn);
@@ -381,6 +383,16 @@
 			this.panel4.Name = "panel4";
 			this.panel4.Size = new System.Drawing.Size(300, 668);
 			this.panel4.TabIndex = 0;
+			// 
+			// DiscountPercentLb
+			// 
+			this.DiscountPercentLb.AutoSize = true;
+			this.DiscountPercentLb.Font = new System.Drawing.Font("#9Slide03 Cabin", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+			this.DiscountPercentLb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+			this.DiscountPercentLb.Location = new System.Drawing.Point(86, 484);
+			this.DiscountPercentLb.Name = "DiscountPercentLb";
+			this.DiscountPercentLb.Size = new System.Drawing.Size(0, 25);
+			this.DiscountPercentLb.TabIndex = 101;
 			// 
 			// PointAmountLb
 			// 
@@ -511,11 +523,14 @@
 			this.DiscountCb.Font = new System.Drawing.Font("#9Slide03 Cabin", 10F);
 			this.DiscountCb.ForeColor = System.Drawing.Color.Black;
 			this.DiscountCb.FormattingEnabled = true;
+			this.DiscountCb.IntegralHeight = false;
 			this.DiscountCb.Location = new System.Drawing.Point(14, 422);
+			this.DiscountCb.MaxLength = 10;
 			this.DiscountCb.Name = "DiscountCb";
 			this.DiscountCb.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
 			this.DiscountCb.OnHoverItemForeColor = System.Drawing.Color.White;
 			this.DiscountCb.Radius = 5;
+			this.DiscountCb.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
 			this.DiscountCb.Size = new System.Drawing.Size(162, 28);
 			this.DiscountCb.TabIndex = 4;
 			this.DiscountCb.TabStop = false;
@@ -835,5 +850,6 @@
 		private System.Windows.Forms.Label RecipientNameLb;
 		private System.Windows.Forms.Panel panel3;
 		private System.Windows.Forms.Label PointAmountLb;
+		private System.Windows.Forms.Label DiscountPercentLb;
 	}
 }

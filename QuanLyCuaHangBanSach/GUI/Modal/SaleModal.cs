@@ -65,14 +65,14 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 {
                     if (sale == null)
                     {
-                        CustomValidation.Instance.checkDuplicateName(
+                        isSale = CustomValidation.Instance.checkDuplicateName(
                             this.errorSaleNameMsg,
                             this.saleNameLine,
                             SaleBUS.Instance.checkDuplicateName(this.saleNameTxt.Text)
                         );
                     } else
                     {
-                        CustomValidation.Instance.checkDuplicateName(
+                        isSale = CustomValidation.Instance.checkDuplicateName(
                             this.errorSaleNameMsg,
                             this.saleNameLine,
                             SaleBUS.Instance.checkDuplicateName(this.saleNameTxt.Text, sale.MaKhuyenMai)
@@ -89,7 +89,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
                 if (isPhanTramValid)
                 {
-                    CustomValidation.Instance.checkTextboxMax(
+					isPhanTramValid = CustomValidation.Instance.checkTextboxMax(
                         this.phanTramTxt,
                         "Trường này phải bé hơn 100",
                         this.errorPhanTramMsg,

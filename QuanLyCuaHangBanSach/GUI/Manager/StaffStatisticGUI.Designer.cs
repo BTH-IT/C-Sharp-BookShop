@@ -223,7 +223,7 @@
 			this.optionPanel.Location = new System.Drawing.Point(0, 666);
 			this.optionPanel.Name = "optionPanel";
 			this.optionPanel.Size = new System.Drawing.Size(1280, 54);
-			this.optionPanel.TabIndex = 24;
+			this.optionPanel.TabIndex = 2;
 			// 
 			// exportBtn
 			// 
@@ -238,7 +238,7 @@
 			this.exportBtn.CheckedImage = ((System.Drawing.Image)(resources.GetObject("exportBtn.CheckedImage")));
 			this.exportBtn.CheckedLineColor = System.Drawing.Color.DimGray;
 			this.exportBtn.DialogResult = System.Windows.Forms.DialogResult.None;
-			this.exportBtn.FocusedColor = System.Drawing.Color.Empty;
+			this.exportBtn.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(159)))), ((int)(((byte)(147)))));
 			this.exportBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold);
 			this.exportBtn.ForeColor = System.Drawing.Color.White;
 			this.exportBtn.Image = ((System.Drawing.Image)(resources.GetObject("exportBtn.Image")));
@@ -271,7 +271,7 @@
 			this.refreshBtn.CheckedImage = ((System.Drawing.Image)(resources.GetObject("refreshBtn.CheckedImage")));
 			this.refreshBtn.CheckedLineColor = System.Drawing.Color.DimGray;
 			this.refreshBtn.DialogResult = System.Windows.Forms.DialogResult.None;
-			this.refreshBtn.FocusedColor = System.Drawing.Color.Empty;
+			this.refreshBtn.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(159)))), ((int)(((byte)(147)))));
 			this.refreshBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold);
 			this.refreshBtn.ForeColor = System.Drawing.Color.White;
 			this.refreshBtn.Image = ((System.Drawing.Image)(resources.GetObject("refreshBtn.Image")));
@@ -328,7 +328,7 @@
 			this.searchInput.SelectedText = "";
 			this.searchInput.ShadowDecoration.Parent = this.searchInput;
 			this.searchInput.Size = new System.Drawing.Size(236, 36);
-			this.searchInput.TabIndex = 31;
+			this.searchInput.TabIndex = 1;
 			this.searchInput.TextChanged += new System.EventHandler(this.searchInput_TextChanged);
 			this.searchInput.MouseLeave += new System.EventHandler(this.searchInput_MouseLeave);
 			// 
@@ -340,7 +340,7 @@
 			this.tablePanel.Location = new System.Drawing.Point(0, 0);
 			this.tablePanel.Name = "tablePanel";
 			this.tablePanel.Size = new System.Drawing.Size(1280, 666);
-			this.tablePanel.TabIndex = 39;
+			this.tablePanel.TabIndex = 1;
 			// 
 			// panel1
 			// 
@@ -353,7 +353,7 @@
 			this.panel1.Location = new System.Drawing.Point(0, 0);
 			this.panel1.Name = "panel1";
 			this.panel1.Size = new System.Drawing.Size(1280, 61);
-			this.panel1.TabIndex = 52;
+			this.panel1.TabIndex = 1;
 			// 
 			// gradientPanel1
 			// 
@@ -369,7 +369,7 @@
 			this.gradientPanel1.Location = new System.Drawing.Point(859, 11);
 			this.gradientPanel1.Name = "gradientPanel1";
 			this.gradientPanel1.Size = new System.Drawing.Size(337, 36);
-			this.gradientPanel1.TabIndex = 30;
+			this.gradientPanel1.TabIndex = 2;
 			// 
 			// revenueTo
 			// 
@@ -399,7 +399,7 @@
 			this.revenueTo.SelectedText = "";
 			this.revenueTo.ShadowDecoration.Parent = this.revenueTo;
 			this.revenueTo.Size = new System.Drawing.Size(129, 25);
-			this.revenueTo.TabIndex = 34;
+			this.revenueTo.TabIndex = 2;
 			// 
 			// revenueFrom
 			// 
@@ -429,7 +429,7 @@
 			this.revenueFrom.SelectedText = "";
 			this.revenueFrom.ShadowDecoration.Parent = this.revenueFrom;
 			this.revenueFrom.Size = new System.Drawing.Size(125, 25);
-			this.revenueFrom.TabIndex = 32;
+			this.revenueFrom.TabIndex = 1;
 			this.revenueFrom.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.boughtFrom_KeyPress);
 			// 
 			// panel3
@@ -485,7 +485,7 @@
 			// 
 			// StaffStatisticGUI
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 20F);
+			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 26F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
 			this.ClientSize = new System.Drawing.Size(1280, 720);

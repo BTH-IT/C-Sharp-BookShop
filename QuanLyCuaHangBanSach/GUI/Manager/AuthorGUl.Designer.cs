@@ -111,6 +111,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 			this.dgvAuthor.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
 			this.dgvAuthor.Location = new System.Drawing.Point(0, 63);
 			this.dgvAuthor.Name = "dgvAuthor";
+			this.dgvAuthor.ReadOnly = true;
 			dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
 			dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
 			dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -123,12 +124,12 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 			this.dgvAuthor.RowHeadersWidth = 51;
 			this.dgvAuthor.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
 			dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+			dataGridViewCellStyle5.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F);
 			dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
 			this.dgvAuthor.RowsDefaultCellStyle = dataGridViewCellStyle5;
 			this.dgvAuthor.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
 			this.dgvAuthor.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-			this.dgvAuthor.RowTemplate.Height = 75;
-			this.dgvAuthor.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+			this.dgvAuthor.RowTemplate.Height = 80;
 			this.dgvAuthor.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
 			this.dgvAuthor.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.dgvAuthor.Size = new System.Drawing.Size(1044, 621);
@@ -148,12 +149,12 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 			this.dgvAuthor.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
 			this.dgvAuthor.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
 			this.dgvAuthor.ThemeStyle.HeaderStyle.Height = 50;
-			this.dgvAuthor.ThemeStyle.ReadOnly = false;
+			this.dgvAuthor.ThemeStyle.ReadOnly = true;
 			this.dgvAuthor.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
 			this.dgvAuthor.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
 			this.dgvAuthor.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.dgvAuthor.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-			this.dgvAuthor.ThemeStyle.RowsStyle.Height = 75;
+			this.dgvAuthor.ThemeStyle.RowsStyle.Height = 80;
 			this.dgvAuthor.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
 			this.dgvAuthor.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
 			this.dgvAuthor.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAuthor_CellDoubleClick);
@@ -166,6 +167,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 			this.Column11.HeaderText = "";
 			this.Column11.MinimumWidth = 50;
 			this.Column11.Name = "Column11";
+			this.Column11.ReadOnly = true;
 			this.Column11.Width = 50;
 			// 
 			// Column1
@@ -441,7 +443,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 			this.genderCbx.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
 			this.genderCbx.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.genderCbx.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(159)))), ((int)(((byte)(147)))));
-			this.genderCbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.genderCbx.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.genderCbx.ForeColor = System.Drawing.Color.Black;
 			this.genderCbx.FormattingEnabled = true;
 			this.genderCbx.ItemHeight = 30;

@@ -20,7 +20,7 @@ namespace QuanLyCuaHangBanSach.GUI.UserControls
             InitializeComponent();
         }
 
-        public void addData(int maSach, int soLuong, double donGia)
+        public void addData(int maSach, int soLuong, decimal donGia)
         {
             BookDTO book = BookBUS.Instance.getById(maSach.ToString());
 
@@ -30,7 +30,7 @@ namespace QuanLyCuaHangBanSach.GUI.UserControls
             this.id.Text = "Mã : " + maSach;
             this.name.Text = book.TenSach;
             this.amountInput.Text = soLuong.ToString();
-            this.price.Text = donGia.ToString();
+            this.price.Text = string.Format("{0:N0} VND", donGia);
             this.pictureBook.Image = img;
 
             if (soLuong == 1)

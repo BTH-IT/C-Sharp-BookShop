@@ -111,6 +111,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 			this.dgvPublisher.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
 			this.dgvPublisher.Location = new System.Drawing.Point(0, 63);
 			this.dgvPublisher.Name = "dgvPublisher";
+			this.dgvPublisher.ReadOnly = true;
 			dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
 			dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
 			dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -127,7 +128,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 			this.dgvPublisher.RowsDefaultCellStyle = dataGridViewCellStyle5;
 			this.dgvPublisher.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
 			this.dgvPublisher.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-			this.dgvPublisher.RowTemplate.Height = 75;
+			this.dgvPublisher.RowTemplate.Height = 80;
 			this.dgvPublisher.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
 			this.dgvPublisher.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
 			this.dgvPublisher.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -148,12 +149,12 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 			this.dgvPublisher.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
 			this.dgvPublisher.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
 			this.dgvPublisher.ThemeStyle.HeaderStyle.Height = 50;
-			this.dgvPublisher.ThemeStyle.ReadOnly = false;
+			this.dgvPublisher.ThemeStyle.ReadOnly = true;
 			this.dgvPublisher.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
 			this.dgvPublisher.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
 			this.dgvPublisher.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.dgvPublisher.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-			this.dgvPublisher.ThemeStyle.RowsStyle.Height = 75;
+			this.dgvPublisher.ThemeStyle.RowsStyle.Height = 80;
 			this.dgvPublisher.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
 			this.dgvPublisher.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
 			this.dgvPublisher.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPublisher_CellDoubleClick);
@@ -166,6 +167,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 			this.Column11.HeaderText = "";
 			this.Column11.MinimumWidth = 50;
 			this.Column11.Name = "Column11";
+			this.Column11.ReadOnly = true;
 			this.Column11.Width = 50;
 			// 
 			// Column1

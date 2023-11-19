@@ -107,6 +107,7 @@
 			this.birthYearTxt.ShadowDecoration.Parent = this.birthYearTxt;
 			this.birthYearTxt.Size = new System.Drawing.Size(425, 36);
 			this.birthYearTxt.TabIndex = 0;
+			this.birthYearTxt.TextChanged += new System.EventHandler(this.birthYearTxt_TextChanged);
 			this.birthYearTxt.Leave += new System.EventHandler(this.birthYearTxt_Leave);
 			// 
 			// errorBirthYearMsg
@@ -180,8 +181,10 @@
 			this.positionCbx.Font = new System.Drawing.Font("#9Slide03 Cabin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.positionCbx.ForeColor = System.Drawing.Color.Black;
 			this.positionCbx.FormattingEnabled = true;
+			this.positionCbx.IntegralHeight = false;
 			this.positionCbx.ItemHeight = 30;
 			this.positionCbx.Location = new System.Drawing.Point(160, 12);
+			this.positionCbx.MaxDropDownItems = 10;
 			this.positionCbx.Name = "positionCbx";
 			this.positionCbx.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
 			this.positionCbx.OnHoverItemForeColor = System.Drawing.Color.White;
@@ -316,8 +319,10 @@
 			this.genderCbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.genderCbx.ForeColor = System.Drawing.Color.Black;
 			this.genderCbx.FormattingEnabled = true;
+			this.genderCbx.IntegralHeight = false;
 			this.genderCbx.ItemHeight = 30;
 			this.genderCbx.Location = new System.Drawing.Point(160, 12);
+			this.genderCbx.MaxDropDownItems = 10;
 			this.genderCbx.Name = "genderCbx";
 			this.genderCbx.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
 			this.genderCbx.OnHoverItemForeColor = System.Drawing.Color.White;

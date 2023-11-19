@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerBillGUI));
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.viewMoreBtn = new Guna.UI.WinForms.GunaAdvenceButton();
 			this.printPdfBtn = new Guna.UI.WinForms.GunaAdvenceButton();
@@ -305,21 +305,21 @@
 			this.dgvCustomerBill.AllowUserToAddRows = false;
 			this.dgvCustomerBill.AllowUserToDeleteRows = false;
 			this.dgvCustomerBill.AllowUserToResizeRows = false;
-			dataGridViewCellStyle11.BackColor = System.Drawing.Color.White;
-			this.dgvCustomerBill.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
+			dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+			this.dgvCustomerBill.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
 			this.dgvCustomerBill.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
 			this.dgvCustomerBill.BackgroundColor = System.Drawing.Color.White;
 			this.dgvCustomerBill.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.dgvCustomerBill.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
 			this.dgvCustomerBill.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-			dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-			dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-			dataGridViewCellStyle12.Font = new System.Drawing.Font("#9Slide03 Cabin", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle12.ForeColor = System.Drawing.Color.White;
-			dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-			dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.White;
-			dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-			this.dgvCustomerBill.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
+			dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+			dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+			dataGridViewCellStyle2.Font = new System.Drawing.Font("#9Slide03 Cabin", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+			dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+			dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+			dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.dgvCustomerBill.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
 			this.dgvCustomerBill.ColumnHeadersHeight = 50;
 			this.dgvCustomerBill.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
 			this.dgvCustomerBill.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -332,33 +332,34 @@
             this.Column8,
             this.Column4,
             this.Column7});
-			dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-			dataGridViewCellStyle13.BackColor = System.Drawing.Color.White;
-			dataGridViewCellStyle13.Font = new System.Drawing.Font("#9Slide03 Cabin", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-			dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-			dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-			dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-			this.dgvCustomerBill.DefaultCellStyle = dataGridViewCellStyle13;
+			dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+			dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+			dataGridViewCellStyle3.Font = new System.Drawing.Font("#9Slide03 Cabin", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+			dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+			dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+			dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.dgvCustomerBill.DefaultCellStyle = dataGridViewCellStyle3;
 			this.dgvCustomerBill.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.dgvCustomerBill.EnableHeadersVisualStyles = false;
 			this.dgvCustomerBill.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
 			this.dgvCustomerBill.Location = new System.Drawing.Point(0, 120);
 			this.dgvCustomerBill.Name = "dgvCustomerBill";
-			dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-			dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-			dataGridViewCellStyle14.Font = new System.Drawing.Font("#9Slide03 Cabin", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle14.ForeColor = System.Drawing.Color.White;
-			dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-			dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.White;
-			dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-			this.dgvCustomerBill.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
+			this.dgvCustomerBill.ReadOnly = true;
+			dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+			dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+			dataGridViewCellStyle4.Font = new System.Drawing.Font("#9Slide03 Cabin", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+			dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+			dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+			dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.dgvCustomerBill.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
 			this.dgvCustomerBill.RowHeadersVisible = false;
 			this.dgvCustomerBill.RowHeadersWidth = 51;
 			this.dgvCustomerBill.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-			dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-			dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-			this.dgvCustomerBill.RowsDefaultCellStyle = dataGridViewCellStyle15;
+			dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+			dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.dgvCustomerBill.RowsDefaultCellStyle = dataGridViewCellStyle5;
 			this.dgvCustomerBill.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
 			this.dgvCustomerBill.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
 			this.dgvCustomerBill.RowTemplate.Height = 75;
@@ -382,7 +383,7 @@
 			this.dgvCustomerBill.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
 			this.dgvCustomerBill.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
 			this.dgvCustomerBill.ThemeStyle.HeaderStyle.Height = 50;
-			this.dgvCustomerBill.ThemeStyle.ReadOnly = false;
+			this.dgvCustomerBill.ThemeStyle.ReadOnly = true;
 			this.dgvCustomerBill.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
 			this.dgvCustomerBill.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
 			this.dgvCustomerBill.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("#9Slide03 Cabin", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -401,6 +402,7 @@
 			this.Column9.HeaderText = "";
 			this.Column9.MinimumWidth = 50;
 			this.Column9.Name = "Column9";
+			this.Column9.ReadOnly = true;
 			this.Column9.Width = 50;
 			// 
 			// Column1
@@ -419,6 +421,7 @@
 			this.Column6.HeaderText = "Tên Khách Hàng";
 			this.Column6.MinimumWidth = 6;
 			this.Column6.Name = "Column6";
+			this.Column6.ReadOnly = true;
 			this.Column6.ToolTipText = "Tên Khách Hàng";
 			// 
 			// Column2
@@ -457,6 +460,7 @@
 			this.Column8.HeaderText = "Phần Trăm";
 			this.Column8.MinimumWidth = 6;
 			this.Column8.Name = "Column8";
+			this.Column8.ReadOnly = true;
 			this.Column8.ToolTipText = "Phần Trăm";
 			// 
 			// Column4
@@ -796,9 +800,11 @@
 			this.saleCbx.ForeColor = System.Drawing.Color.Black;
 			this.saleCbx.FormattingEnabled = true;
 			this.saleCbx.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+			this.saleCbx.IntegralHeight = false;
 			this.saleCbx.ItemHeight = 30;
 			this.saleCbx.Location = new System.Drawing.Point(913, 8);
 			this.saleCbx.Margin = new System.Windows.Forms.Padding(3, 4, 88, 4);
+			this.saleCbx.MaxDropDownItems = 10;
 			this.saleCbx.Name = "saleCbx";
 			this.saleCbx.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
 			this.saleCbx.OnHoverItemForeColor = System.Drawing.Color.White;
@@ -821,9 +827,11 @@
 			this.staffCbx.Font = new System.Drawing.Font("#9Slide03 Cabin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.staffCbx.ForeColor = System.Drawing.Color.Black;
 			this.staffCbx.FormattingEnabled = true;
+			this.staffCbx.IntegralHeight = false;
 			this.staffCbx.ItemHeight = 30;
 			this.staffCbx.Location = new System.Drawing.Point(784, 8);
 			this.staffCbx.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+			this.staffCbx.MaxDropDownItems = 10;
 			this.staffCbx.Name = "staffCbx";
 			this.staffCbx.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
 			this.staffCbx.OnHoverItemForeColor = System.Drawing.Color.White;
@@ -846,9 +854,11 @@
 			this.customerCbx.Font = new System.Drawing.Font("#9Slide03 Cabin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.customerCbx.ForeColor = System.Drawing.Color.Black;
 			this.customerCbx.FormattingEnabled = true;
+			this.customerCbx.IntegralHeight = false;
 			this.customerCbx.ItemHeight = 30;
 			this.customerCbx.Location = new System.Drawing.Point(657, 8);
 			this.customerCbx.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+			this.customerCbx.MaxDropDownItems = 10;
 			this.customerCbx.Name = "customerCbx";
 			this.customerCbx.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
 			this.customerCbx.OnHoverItemForeColor = System.Drawing.Color.White;

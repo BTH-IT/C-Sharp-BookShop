@@ -133,6 +133,7 @@ namespace QuanLyCuaHangBanSach
         {
             foreach (string rule in rules)
             {
+                Console.WriteLine(rule);
                 switch (rule)
                 {
                     case "required":
@@ -159,7 +160,6 @@ namespace QuanLyCuaHangBanSach
                         {
                             errMsgLbl.Text = "";
                             line.BackColor = Color.FromArgb(45, 212, 191);
-                            return true;
                         }
                         break;
                     case "email":
@@ -205,10 +205,60 @@ namespace QuanLyCuaHangBanSach
                         {
 							errMsgLbl.Text = "";
 							line.BackColor = Color.FromArgb(45, 212, 191);
-							return true;
                         } 
                         break;
-                }
+                    case "age-restrict-staff":
+                        if(int.TryParse(txt.Text.ToString(),out  result))
+                        {
+                            int currentYearN = DateTime.Now.Year;
+							int age = currentYearN - result;
+							if (age >= 18 && age <= 60)
+                            {
+								errMsgLbl.Text = "";
+								line.BackColor = Color.FromArgb(45, 212, 191);
+                            }
+                            else
+                            {
+								errMsgLbl.Text = "Tuổi nhân viên từ 18 đến 60 tuổi";
+								line.BackColor = Color.FromArgb(239, 68, 68);
+								return false;
+							}    
+
+                        }
+                        else
+                        {
+							errMsgLbl.Text = "Tuổi không hợp lệ";
+							line.BackColor = Color.FromArgb(239, 68, 68);
+							return false;
+						}  
+                        break;
+					case "age-restrict-customer":
+						if (int.TryParse(txt.Text.ToString(), out result))
+						{
+							int currentYearN = DateTime.Now.Year;
+                            int age = currentYearN - result;
+							if (age >= 14 && age <= 100)
+							{
+								errMsgLbl.Text = "";
+								line.BackColor = Color.FromArgb(45, 212, 191);
+							}
+							else
+							{
+								errMsgLbl.Text = "Tuổi khách phải từ 14 tuổi đến 100 tuổi ";
+								line.BackColor = Color.FromArgb(239, 68, 68);
+								return false;
+							}
+
+						}
+						else
+						{
+							errMsgLbl.Text = "Tuổi không hợp lệ";
+							line.BackColor = Color.FromArgb(239, 68, 68);
+							return false;
+						}
+						break;
+
+				}
             }
 
             return true;

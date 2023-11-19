@@ -12,8 +12,8 @@ namespace QuanLyCuaHangBanSach.DTO
         public int MaDon { get; protected set; }
         public int MaSach { get; set; }
         public int SoLuong { get; set; }
-        public double DonGia { get; set; }
-        public double ThanhTien { get; protected set; }
+        public decimal DonGia { get; set; }
+        public decimal ThanhTien { get; protected set; }
 
         public BillDetailDTO() { }
 
@@ -21,7 +21,7 @@ namespace QuanLyCuaHangBanSach.DTO
             int maDon,
             int maSach,
             int soLuong,
-            double donGia
+            decimal donGia
         )
         {
             this.MaDon = maDon;

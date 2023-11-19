@@ -14,7 +14,7 @@ namespace QuanLyCuaHangBanSach.DTO
         }
 
         public ImportBillDetailDTO(
-            int maDonHang, int maSach, int soLuong, double donGia
+            int maDonHang, int maSach, int soLuong, decimal donGia
         ) : base(maDonHang, maSach, soLuong, donGia)
         {
         }
@@ -24,7 +24,7 @@ namespace QuanLyCuaHangBanSach.DTO
             this.MaDon = Convert.ToInt32(row["maDonNhapHang"].ToString());
             this.MaSach = Convert.ToInt32(row["maSach"].ToString());
             this.SoLuong = Convert.ToInt32(row["soLuong"].ToString());
-            this.DonGia = Convert.ToDouble(row["donGia"].ToString());
+            this.DonGia = Convert.ToDecimal(row["donGia"].ToString());
             this.ThanhTien = this.SoLuong * this.DonGia;
         }
     }

@@ -5,14 +5,9 @@ using QuanLyCuaHangBanSach.DTO;
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Drawing;
 using System.Windows.Forms;
 using System.Windows.Media;
-using ZXing.QrCode.Internal;
 using Color = System.Drawing.Color;
-using QuanLyCuaHangBanSach.DAO;
-using System.Windows.Ink;
-using System.ComponentModel;
 using System.Threading.Tasks;
 
 namespace QuanLyCuaHangBanSach.GUI.Manager
@@ -56,9 +51,9 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 			revenueTo.KeyPress += revenueFrom_KeyPress;
 		}
 
-		private double RoundToNearestTenThousand(double money)
+		private decimal RoundToNearestTenThousand(decimal money)
 		{
-			double remainder = money * 1.0 % 10000;
+			decimal remainder = Convert.ToDecimal(1.0) * money % 10000;
 
 			if (remainder < 5000)
 			{
@@ -66,7 +61,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 			}
 			else
 			{
-				return money + (10000.0 - remainder);
+				return money + (Convert.ToDecimal(10000.0) - remainder);
 			}
 		}
 
@@ -91,16 +86,16 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 					Labels = strLabel
 				});
 				List<CustomerBillDTO> billList = CustomerBillBUS.Instance.getAllInRange(now.Year.ToString(), (month - 5).ToString(), month.ToString()) ?? new List<CustomerBillDTO>();
-				double tongTienBill = 0;
+				decimal tongTienBill = 0;
 				foreach (CustomerBillDTO bill in billList)
 				{
 					tongTienBill += bill.TongTien;
 				}
-				double maxValRounded = RoundToNearestTenThousand(tongTienBill);
+				decimal maxValRounded = RoundToNearestTenThousand(tongTienBill);
 
 				List<string> strValueLabel = new List<string>();
 
-				for (double i = 0; i <= maxValRounded; i += 50000)
+				for (decimal i = 0; i <= maxValRounded; i += 50000)
 				{
 					strValueLabel.Add(i.ToString());
 				}
@@ -122,13 +117,13 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 				gradientBrush.GradientStops.Add(new GradientStop(System.Windows.Media.Color.FromRgb(153, 246, 228), 0));
 				gradientBrush.GradientStops.Add(new GradientStop(Colors.Transparent, 1));
 
-				ChartValues<double> chartVals = new ChartValues<double>();
+				ChartValues<decimal> chartVals = new ChartValues<decimal>();
 
 				foreach (int m in months)
 				{
 					if (billList != null)
 					{
-						double doanhThu = 0;
+                        decimal doanhThu = 0;
 						foreach (CustomerBillDTO bill in billList)
 						{
 							if (bill.NgayLap.Month == m)
@@ -136,7 +131,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 								doanhThu += bill.TongTien;
 							}
 						}
-						chartVals.Add(doanhThu / 50000.0);
+						chartVals.Add(Convert.ToDecimal(doanhThu / Convert.ToDecimal(50000.0)));
 					}
 					else
 					{
@@ -179,9 +174,9 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 			}
 		}
 
-		private double DiscountMoneyCal(int phanTramKM, double tongTien)
+		private decimal DiscountMoneyCal(int phanTramKM, decimal tongTien)
 		{
-			double km = (100 - phanTramKM * 1.0) / 100.0;
+            decimal km = Convert.ToDecimal(100 - phanTramKM * 1.0) / Convert.ToDecimal(100.0);
 			return tongTien / km;
 		}
 
@@ -326,20 +321,20 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
 				if (!string.IsNullOrEmpty(revenueFrom.Text) && string.IsNullOrEmpty(revenueTo.Text))
 				{
-					billList = billList.FindAll(bill => bill.TongTien >= Convert.ToDouble(revenueFrom.Text));
+					billList = billList.FindAll(bill => bill.TongTien >= Convert.ToDecimal(revenueFrom.Text));
 				}
 
 				if (string.IsNullOrEmpty(revenueFrom.Text) && !string.IsNullOrEmpty(revenueTo.Text))
 				{
-					billList = billList.FindAll(bill => bill.TongTien <= Convert.ToDouble(revenueTo.Text));
+					billList = billList.FindAll(bill => bill.TongTien <= Convert.ToDecimal(revenueTo.Text));
 				}
 
 				if (!string.IsNullOrEmpty(revenueFrom.Text) && !string.IsNullOrEmpty(revenueTo.Text))
 				{
-                    if (Convert.ToDouble(revenueFrom.Text) <= Convert.ToDouble(revenueTo.Text))
+                    if (Convert.ToDecimal(revenueFrom.Text) <= Convert.ToDecimal(revenueTo.Text))
                     {
-						billList = billList.FindAll(bill => bill.TongTien >= Convert.ToDouble(revenueFrom.Text)
-														 && bill.TongTien <= Convert.ToDouble(revenueTo.Text));
+						billList = billList.FindAll(bill => bill.TongTien >= Convert.ToDecimal(revenueFrom.Text)
+														 && bill.TongTien <= Convert.ToDecimal(revenueTo.Text));
                     }
 					else
 					{

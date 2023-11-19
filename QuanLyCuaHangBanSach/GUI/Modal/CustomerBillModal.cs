@@ -13,7 +13,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
         public bool isSubmitSuccess = false;
         private List<CustomerBillDetailDTO> customerBillDetailList = new List<CustomerBillDetailDTO>();
         private int staffId;
-        private double salePrice = 0;
+        private decimal salePrice = 0;
         public CustomerBillModal(int staffId)
         {
             InitializeComponent();
@@ -64,7 +64,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             }
         }
 
-        private void calculateTotal(double total)
+        private void calculateTotal(decimal total)
         {
             if (this.saleCbx.SelectedIndex != 1 && this.saleCbx.SelectedIndex != 0)
             {
@@ -72,7 +72,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
                 this.percentTxt.Text = phanTram + "%";
 
-                salePrice = total * (phanTram / 100.0);
+                salePrice = total * (phanTram / Convert.ToDecimal(100.0));
 
                 this.totalPriceTxt.Text = (total - salePrice) + "";
             }
@@ -89,7 +89,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             {
                 this.bookList.Controls.Clear();
 
-                double total = 0;
+                decimal total = 0;
 
                 foreach (CustomerBillDetailDTO customerBillDetail in customerBillDetailList)
                 {
@@ -99,7 +99,10 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
                     bookBill.addData(customerBillDetail.MaSach, customerBillDetail.SoLuong, customerBillDetail.DonGia);
 
-                    int remain = BookBUS.Instance.getById(customerBillDetail.MaSach.ToString()).SoLuongConLai + customerBillDetail.SoLuong;
+                    int remain = BookBUS.Instance.getById(customerBillDetail.MaSach.ToString()).SoLuongConLai;
+
+                    bookBill.plus.Enabled = remain != customerBillDetail.SoLuong;
+                    bookBill.minus.Enabled = 1 != customerBillDetail.SoLuong;
 
                     bookBill.close.MouseClick += (object sender, MouseEventArgs e) =>
                     {
@@ -318,7 +321,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
                 CustomerBillDTO customerBill = new CustomerBillDTO();
 
-                customerBill.TongTien = Convert.ToDouble(this.totalPriceTxt.Text);
+                customerBill.TongTien = Convert.ToDecimal(this.totalPriceTxt.Text);
                 customerBill.MaNhanVien = this.staffId;
                 customerBill.MaKhachHang = Convert.ToInt32(this.customerCbx.SelectedValue);
                 customerBill.MaKhuyenMai = Convert.ToInt32(this.saleCbx.SelectedValue);
@@ -383,9 +386,9 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
                 this.percentTxt.Text = phanTram + "%";
 
-                double totalPrice = Convert.ToDouble(this.totalPriceTxt.Text) + salePrice;
+                decimal totalPrice = Convert.ToDecimal(this.totalPriceTxt.Text) + salePrice;
 
-                salePrice = totalPrice * (phanTram / 100.0);
+                salePrice = totalPrice * (phanTram / Convert.ToDecimal(100.0));
 
                 this.totalPriceTxt.Text = (totalPrice - salePrice) + "";
             } else

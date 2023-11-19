@@ -125,6 +125,7 @@
 			this.dgvPermission.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
 			this.dgvPermission.Location = new System.Drawing.Point(0, 59);
 			this.dgvPermission.Name = "dgvPermission";
+			this.dgvPermission.ReadOnly = true;
 			dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
 			dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
 			dataGridViewCellStyle4.Font = new System.Drawing.Font("#9Slide03 Cabin", 9F);
@@ -162,7 +163,7 @@
 			this.dgvPermission.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
 			this.dgvPermission.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
 			this.dgvPermission.ThemeStyle.HeaderStyle.Height = 50;
-			this.dgvPermission.ThemeStyle.ReadOnly = false;
+			this.dgvPermission.ThemeStyle.ReadOnly = true;
 			this.dgvPermission.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
 			this.dgvPermission.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
 			this.dgvPermission.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("#9Slide03 Cabin", 9F);
@@ -180,6 +181,7 @@
 			this.Column11.HeaderText = "";
 			this.Column11.MinimumWidth = 50;
 			this.Column11.Name = "Column11";
+			this.Column11.ReadOnly = true;
 			this.Column11.Width = 50;
 			// 
 			// Column1

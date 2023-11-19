@@ -33,7 +33,7 @@ namespace QuanLyCuaHangBanSach.GUI.Report
 
             int count = 1;
             BookDTO book;
-            double giaGoc = 0;
+            decimal giaGoc = 0;
             foreach (CustomerBillDetailDTO customerBillDetail in customerBillDetailList)
             {
                 book = BookBUS.Instance.getById(customerBillDetail.MaSach.ToString());
@@ -53,7 +53,7 @@ namespace QuanLyCuaHangBanSach.GUI.Report
 
             this.bindingSource1.DataSource = dataTable;
 
-            double salePrice = sale == null ? 0 : giaGoc * (sale.PhanTram / 100.0);
+            decimal salePrice = sale == null ? 0 : giaGoc * (sale.PhanTram / Convert.ToDecimal(100.0));
 
             Microsoft.Reporting.WinForms.ReportParameter[] p = new Microsoft.Reporting.WinForms.ReportParameter[]
             {

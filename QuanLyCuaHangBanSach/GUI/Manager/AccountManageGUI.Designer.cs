@@ -309,6 +309,7 @@
 			this.dgvAccount.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
 			this.dgvAccount.Location = new System.Drawing.Point(0, 63);
 			this.dgvAccount.Name = "dgvAccount";
+			this.dgvAccount.ReadOnly = true;
 			dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
 			dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
 			dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
@@ -346,7 +347,7 @@
 			this.dgvAccount.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
 			this.dgvAccount.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
 			this.dgvAccount.ThemeStyle.HeaderStyle.Height = 50;
-			this.dgvAccount.ThemeStyle.ReadOnly = false;
+			this.dgvAccount.ThemeStyle.ReadOnly = true;
 			this.dgvAccount.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
 			this.dgvAccount.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
 			this.dgvAccount.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
@@ -364,6 +365,7 @@
 			this.Column11.HeaderText = "";
 			this.Column11.MinimumWidth = 50;
 			this.Column11.Name = "Column11";
+			this.Column11.ReadOnly = true;
 			this.Column11.Width = 50;
 			// 
 			// nhanVien

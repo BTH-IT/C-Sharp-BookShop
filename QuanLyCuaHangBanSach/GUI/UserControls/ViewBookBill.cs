@@ -15,7 +15,7 @@ namespace QuanLyCuaHangBanSach.GUI.UserControls
 {
     public partial class ViewBookBill : UserControl
     {
-        public ViewBookBill(string name, int amount, double price, byte[] image)
+        public ViewBookBill(string name, int amount, decimal price, byte[] image)
         {
             InitializeComponent();
             NameLb.Text = name;

@@ -16,7 +16,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
     public partial class StaffManageGUI : Form
     {
         private CheckBox headerCheckbox;
-        string[] genders = new string[] { "Chọn giới tính", "Nam", "Nữ" };
+        string[] genders = new string[] { "Tất cả giới tính", "Nam", "Nữ" };
         public StaffManageGUI()
         {
             InitializeComponent();
@@ -191,13 +191,13 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 					}
 					else
 					{
-                        if (Convert.ToDouble(this.salaryFrom.Text.ToString()) >= Convert.ToDouble(this.salaryTo.Text.ToString()))
+                        if (Convert.ToDecimal(this.salaryFrom.Text.ToString()) >= Convert.ToDecimal(this.salaryTo.Text.ToString()))
                         {
                             MessageBox.Show("Lương đến phải bé hơn hoặc bằng lương từ");
                         }
                         else
                         {
-                            staffs = staffs.Where(staff => staff.Luong >= Convert.ToDouble(this.salaryFrom.Text) && staff.Luong <= Convert.ToDouble(this.salaryTo.Text)).ToList();
+                            staffs = staffs.Where(staff => staff.Luong >= Convert.ToDecimal(this.salaryFrom.Text) && staff.Luong <= Convert.ToDecimal(this.salaryTo.Text)).ToList();
                         }
 					}
 				}

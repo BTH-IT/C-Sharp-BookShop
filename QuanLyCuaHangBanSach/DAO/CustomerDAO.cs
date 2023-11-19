@@ -156,10 +156,11 @@ namespace QuanLyCuaHangBanSach.DAO
 
         public bool update(CustomerDTO data)
         {
-            string sql = $@"UPDATE khachhang SET maKhachHang=@MaKhachHang, tenKhachHang=@TenKhachHang, gioiTinh=@GioiTinh, namSinh=@NamSinh, diem=@Diem
-                            WHERE soDienThoai=@SoDienThoai;";
+            string sql = $@"UPDATE khachhang SET soDienThoai=@SoDienThoai, tenKhachHang=@TenKhachHang, gioiTinh=@GioiTinh, namSinh=@NamSinh, diem=@Diem
+                            WHERE maKhachHang = @MaKhachHang";
 
-            int rowChanged = DataProvider.Instance.ExecuteNonQuery(sql,
+            Console.WriteLine(data.Ma);
+			int rowChanged = DataProvider.Instance.ExecuteNonQuery(sql,
                 new MySqlParameter[] {
                     new MySqlParameter("@MaKhachHang", data.Ma),
                     new MySqlParameter("@TenKhachHang", data.Ten),

@@ -35,11 +35,8 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 					string gender = this.genderCbx.SelectedItem.ToString();
 					int id = this.currentCustomer != null ? currentCustomer.Ma : 0;
 					int score = this.currentCustomer != null ? currentCustomer.Diem : 0;
-
 					CustomerDTO customer = new CustomerDTO(ma: id, ten: customerName, soDienThoai: phoneNumber, gioiTinh: gender, namSinh: birthYear, diem: score);
-
 					bool isSuccess = currentCustomer != null ? CustomerBUS.Instance.update(customer) : CustomerBUS.Instance.insert(customer);
-
 					if (isSuccess)
 					{
 						this.isSubmitSuccess = isSuccess;
@@ -98,7 +95,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 					this.birthYearTxtBox,
 					this.errorBirthYearMsg,
 					this.birthYearLine,
-					new string[] { "required", "positive-number", "space" }
+					new string[] { "required", "positive-number", "max-current-year", "space" , "age-restrict-customer" }
                 );
 
                 bool isPhone = CustomValidation.Instance.checkTextbox(
@@ -161,7 +158,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                     this.birthYearTxtBox,
                     this.errorBirthYearMsg,
                     this.birthYearLine,
-                    new string[] { "required", "positive-number", "space" }
+                    new string[] { "required", "positive-number", "space" , "max-current-year", "age-restrict-customer" }
                 );
         }
 

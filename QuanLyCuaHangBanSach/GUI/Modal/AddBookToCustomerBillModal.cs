@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using QuanLyCuaHangBanSach.BUS;
 using QuanLyCuaHangBanSach.DTO;
+using static Guna.UI2.Native.WinApi;
 
 namespace QuanLyCuaHangBanSach.GUI.Modal
 {
@@ -101,8 +102,8 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                     book.MaSach,
                     book.TenSach,
                     book.HinhAnh,
-                    book.GiaBan,
-                    book.SoLuongConLai,
+                    string.Format("{0:N0} VND", book.GiaBan),
+                    string.Format("{0:N0}", book.SoLuongConLai),
                 });
                 }
             }
@@ -126,9 +127,9 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                     this.dgvAddBookToBillList.Rows.Add(new object[] {
                     false,
                     customerBillDetail.MaSach,
-                    customerBillDetail.SoLuong,
-                    customerBillDetail.DonGia,
-                    customerBillDetail.SoLuong * customerBillDetail.DonGia,
+                    string.Format("{0:N0}", customerBillDetail.SoLuong),
+                    string.Format("{0:N0} VNĐ", customerBillDetail.DonGia),
+                    string.Format("{0:N0} VND", customerBillDetail.SoLuong * customerBillDetail.DonGia),
                 });
                 }
             }
@@ -249,7 +250,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                     }
                     else
                     {
-                        if (Convert.ToDouble(this.priceFrom.Text.ToString()) > Convert.ToDouble(this.priceTo.Text.ToString()))
+                        if (Convert.ToDecimal(this.priceFrom.Text.ToString()) > Convert.ToDecimal(this.priceTo.Text.ToString()))
                         {
                             MessageBox.Show("Giá bán từ phải bé hơn hoặc bằng giá bán đến");
                             this.priceFrom.Clear();
@@ -257,8 +258,8 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                         } else
                         {
                             newBookList = newBookList.FindAll(
-                                item => item.GiaBan >= Convert.ToDouble(this.priceFrom.Text.ToString())
-                                        && item.GiaBan <= Convert.ToDouble(this.priceTo.Text.ToString()
+                                item => item.GiaBan >= Convert.ToDecimal(this.priceFrom.Text.ToString())
+                                        && item.GiaBan <= Convert.ToDecimal(this.priceTo.Text.ToString()
                             ));
                         }
                         
@@ -431,11 +432,17 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
                 if (scannerModal.scannedBook != null)
                 {
+                    if (scannerModal.scannedBook.SoLuongConLai <= 0)
+                    {
+                        MessageBox.Show("Mã sách " + scannerModal.scannedBook.MaSach + " đã hết hàng!");
+                        return;
+                    }
+
                     try
                     {
                         int idx = this.selectedCustomerBillDetailList.FindIndex(
-                                        book => book.MaSach == scannerModal.scannedBook.MaSach
-                                    );
+                            book => book.MaSach == scannerModal.scannedBook.MaSach
+                        );
 
                         if (idx == -1)
                         {
@@ -549,7 +556,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                         if ((bool)row.Cells[0].Value == true)
                         {
                             int maSach = Convert.ToInt32(row.Cells[1].Value.ToString());
-                            double giaBan = Convert.ToDouble(row.Cells[4].Value.ToString());
+                            decimal giaBan = Convert.ToDecimal(row.Cells[4].Value.ToString());
 
                             int idx = this.selectedCustomerBillDetailList.FindIndex(
                                 book => book.MaSach == maSach
@@ -590,7 +597,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
                     if (!string.IsNullOrEmpty(err))
                     {
-                        string result = err.TrimEnd('-');
+                        string result = err.TrimEnd(' ', '-');
 
                         // Output the result
                         MessageBox.Show("Các sách có mã " + result + " có số lượng là 0 không thể thêm vào danh sách");
@@ -631,14 +638,14 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
                     int soLuong = Convert.ToInt32(this.dgvAddBookToBillList[e.ColumnIndex, e.RowIndex].Value);
 
-                    if (soLuong <= 0 || book.SoLuongConLai < soLuong)
+                    int tmp = this.selectedCustomerBillDetailList[e.RowIndex].SoLuong;
+
+                    if (soLuong <= 0 || book.SoLuongConLai + tmp < soLuong)
                     {
                         this.dgvAddBookToBillList[e.ColumnIndex, e.RowIndex].Value = this.selectedCustomerBillDetailList[e.RowIndex].SoLuong;
                         this.dgvAddBookToBillList.RefreshEdit();
                         return;
                     }
-
-                    int tmp = this.selectedCustomerBillDetailList[e.RowIndex].SoLuong;
 
                     this.selectedCustomerBillDetailList[e.RowIndex].SoLuong = soLuong;
 

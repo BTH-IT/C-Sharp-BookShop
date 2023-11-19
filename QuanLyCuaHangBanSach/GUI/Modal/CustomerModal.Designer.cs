@@ -81,8 +81,10 @@
 			this.genderCbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.genderCbx.ForeColor = System.Drawing.Color.Black;
 			this.genderCbx.FormattingEnabled = true;
+			this.genderCbx.IntegralHeight = false;
 			this.genderCbx.ItemHeight = 30;
 			this.genderCbx.Location = new System.Drawing.Point(160, 6);
+			this.genderCbx.MaxDropDownItems = 10;
 			this.genderCbx.Name = "genderCbx";
 			this.genderCbx.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
 			this.genderCbx.OnHoverItemForeColor = System.Drawing.Color.White;
@@ -99,7 +101,7 @@
 			this.panel10.Controls.Add(this.label4);
 			this.panel10.Location = new System.Drawing.Point(603, 3);
 			this.panel10.Name = "panel10";
-			this.panel10.Size = new System.Drawing.Size(594, 88);
+			this.panel10.Size = new System.Drawing.Size(594, 108);
 			this.panel10.TabIndex = 1;
 			// 
 			// phoneNumberTxtBox
@@ -168,7 +170,7 @@
 			this.panel1.Controls.Add(this.label3);
 			this.panel1.Location = new System.Drawing.Point(3, 3);
 			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(594, 88);
+			this.panel1.Size = new System.Drawing.Size(594, 108);
 			this.panel1.TabIndex = 0;
 			// 
 			// customerNameTxtBox
@@ -239,7 +241,7 @@
 			this.flowLayoutPanel1.Controls.Add(this.panel3);
 			this.flowLayoutPanel1.Location = new System.Drawing.Point(11, 53);
 			this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-			this.flowLayoutPanel1.Size = new System.Drawing.Size(1200, 221);
+			this.flowLayoutPanel1.Size = new System.Drawing.Size(1200, 247);
 			this.flowLayoutPanel1.TabIndex = 0;
 			// 
 			// panel4
@@ -248,7 +250,7 @@
 			this.panel4.Controls.Add(this.errorBirthYearMsg);
 			this.panel4.Controls.Add(this.birthYearLine);
 			this.panel4.Controls.Add(this.label6);
-			this.panel4.Location = new System.Drawing.Point(3, 97);
+			this.panel4.Location = new System.Drawing.Point(3, 117);
 			this.panel4.Name = "panel4";
 			this.panel4.Size = new System.Drawing.Size(594, 88);
 			this.panel4.TabIndex = 2;
@@ -316,7 +318,7 @@
 			this.panel3.Controls.Add(this.errorGenderMsg);
 			this.panel3.Controls.Add(this.label16);
 			this.panel3.Controls.Add(this.genderCbx);
-			this.panel3.Location = new System.Drawing.Point(603, 97);
+			this.panel3.Location = new System.Drawing.Point(603, 117);
 			this.panel3.Name = "panel3";
 			this.panel3.Size = new System.Drawing.Size(594, 88);
 			this.panel3.TabIndex = 3;

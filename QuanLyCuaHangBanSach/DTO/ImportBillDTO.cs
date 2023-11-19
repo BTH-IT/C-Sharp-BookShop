@@ -13,7 +13,7 @@ namespace QuanLyCuaHangBanSach.DTO
         }
 
         public ImportBillDTO(
-            int maDonNhapHang, int maNhaCungCap, int maNhanVien, DateTime ngayLap, double tongTien
+            int maDonNhapHang, int maNhaCungCap, int maNhanVien, DateTime ngayLap, decimal tongTien
         ) : base(ngayLap, maNhanVien, tongTien)
         {
             this.MaDonNhapHang = maDonNhapHang;
@@ -26,7 +26,7 @@ namespace QuanLyCuaHangBanSach.DTO
             this.MaNhaCungCap = (int)row["maNhaCungCap"];
             this.NgayLap = (DateTime)row["ngayLap"];
             this.MaNhanVien = (int)row["maNhanVien"];
-            this.TongTien = (double)row["tongTien"];
+            this.TongTien = Convert.ToDecimal(row["tongTien"]);
         }
     }
 }

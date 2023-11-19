@@ -151,15 +151,15 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                     }
                     else
                     {
-                        if (Convert.ToDouble(this.fromPriceTxt.Text.ToString()) > Convert.ToDouble(this.toPriceTxt.Text.ToString()))
+                        if (Convert.ToDecimal(this.fromPriceTxt.Text.ToString()) > Convert.ToDecimal(this.toPriceTxt.Text.ToString()))
                         {
                             MessageBox.Show("Tổng tiền đến phải bé hơn hoặc bằng tổng tiền từ");
                         }
                         else
                         {
                             importBillList = importBillList.FindAll(
-                                item => item.TongTien >= Convert.ToDouble(this.fromPriceTxt.Text.ToString())
-                                        && item.TongTien <= Convert.ToDouble(this.toPriceTxt.Text.ToString()
+                                item => item.TongTien >= Convert.ToDecimal(this.fromPriceTxt.Text.ToString())
+                                        && item.TongTien <= Convert.ToDecimal(this.toPriceTxt.Text.ToString()
                             ));
                         }
                         
@@ -524,7 +524,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
                 foreach (DataRow row in dt.Rows)
                 {
-                    if (!int.TryParse(row[0].ToString(), out int maSach) || !int.TryParse(row[2].ToString(), out int soLuong) || !double.TryParse(row[3].ToString(), out double giaNhap))
+                    if (!int.TryParse(row[0].ToString(), out int maSach) || !int.TryParse(row[2].ToString(), out int soLuong) || !decimal.TryParse(row[3].ToString(), out decimal giaNhap))
                     {
                         MessageBox.Show("Lỗi chưa chọn file hoặc file excel không đúng format dữ liệu nhập!");
                         return;
@@ -538,19 +538,19 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
                 if (importBill != null)
                 {
-                    double tongTien = 0;
+                    decimal tongTien = 0;
                     foreach (DataRow row in dt.Rows)
                     {
                         BookDTO book = BookBUS.Instance.getById(row[0].ToString());
 
                         if (book == null) continue;
 
-                        ImportBillDetailDTO importBillDetail = new ImportBillDetailDTO(importBill.MaDonNhapHang, book.MaSach, Convert.ToInt32(row[2].ToString()), Convert.ToDouble(row[3].ToString()));
+                        ImportBillDetailDTO importBillDetail = new ImportBillDetailDTO(importBill.MaDonNhapHang, book.MaSach, Convert.ToInt32(row[2].ToString()), Convert.ToDecimal(row[3].ToString()));
 
                         if (ImportBillBUS.Instance.createImportBillDetail(importBillDetail))
                         {
                             book.SoLuongConLai += Convert.ToInt32(row[2].ToString());
-                            book.GiaNhap = Convert.ToDouble(row[3].ToString());
+                            book.GiaNhap = Convert.ToDecimal(row[3].ToString());
 
                             BookBUS.Instance.update(book);
 
