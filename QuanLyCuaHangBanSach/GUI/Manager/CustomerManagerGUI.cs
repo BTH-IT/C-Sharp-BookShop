@@ -67,14 +67,14 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             catch
             {
 
-            }
+			}
         }
         private void CustomerManagerGUI_Load(object sender, EventArgs e)
         {
             try
             {
 				List<CustomerDTO> customerList = CustomerBUS.Instance.getAllData();
-
+				this.loadCustomerListToDataGridView(customerList);
                 this.genderCbx.Items.AddRange(genders);
                 this.genderCbx.SelectedIndex = 0;
 				this.loadCustomerListToDataGridView(customerList);
@@ -96,11 +96,6 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
             this.dgvCustomer.RefreshEdit();
         }
-        private void publisherCbx_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnEdit_Click(object sender, EventArgs e)
         {
             try
@@ -152,6 +147,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 					if (modal.isSubmitSuccess)
 					{
 						List<CustomerDTO> customers = this.handleFilter(this.searchInput.Text.ToString());
+						Console.WriteLine("SSS");
 						this.loadCustomerListToDataGridView(customers);
 					}
 				}
@@ -183,7 +179,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 						}
 					}
 
-					List<CustomerDTO> customers = this.handleFilter(this.searchInput.Text.ToString()); ;
+					List<CustomerDTO> customers = this.handleFilter(this.searchInput.Text.ToString());
 					this.loadCustomerListToDataGridView(customers);
 					MessageBox.Show("Xóa khách hàng thành công");
 				}
@@ -216,10 +212,9 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
                 string selectedGender = this.genderCbx.SelectedItem.ToString();
 
-
                 List<CustomerDTO> newCustomers = customers.FindAll(authorList =>
                 {
-                    if (selectedGender != "Chọn giới tính")
+                    if (selectedGender != "Tất cả giới tính")
                     {
                         return authorList.GioiTinh == selectedGender;
                     }

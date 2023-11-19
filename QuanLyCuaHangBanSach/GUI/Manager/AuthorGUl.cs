@@ -56,9 +56,8 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                 this.dgvAuthor.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(45, 210, 192);
                 this.dgvAuthor.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
                 this.dgvAuthor.Rows.Clear();
-
-
-                foreach (AuthorDTO Author in AuthorList)
+                dgvAuthor.Hide();
+				foreach (AuthorDTO Author in AuthorList)
                 {
                     this.dgvAuthor.Rows.Add(new object[] {
                     false,
@@ -68,6 +67,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                     Author.NamSinh,
                 });
                 }
+                dgvAuthor.Show();
             }
             catch (Exception ex)
             {
@@ -301,7 +301,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
                 List<AuthorDTO> newAuthorList = authorDTOList.FindAll(authorList =>
                 {
-                    if (selectedGender != "Chọn giới tính")
+                    if (selectedGender != "Tất cả giới tính")
                     {
                         return authorList.GioiTinh == selectedGender;
                     }
@@ -316,5 +316,5 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                 return new List<AuthorDTO>();
             }
         }
-    }
+	}
 }

@@ -147,8 +147,6 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
         {
             try
             {
-                if (!isGenderCbx) return;
-
                 CustomValidation.Instance.checkCombobox(
                     this.genderCbx,
                     this.genderMsg,
@@ -191,6 +189,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                         (Screen.PrimaryScreen.Bounds.Size.Height / 2) - (this.Size.Height / 2)
                     );
                 this.genderCbx.SelectedIndex = 0;
+                genderCbx.SelectedIndexChanged += this.genderCbx_SelectedIndexChanged;  
                 if (updateAuthor != null)
                 {
 
@@ -205,16 +204,6 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
                 Console.WriteLine(er);
             }
-        }
-
-        private void authorName_Leave(object sender, EventArgs e)
-        {
-
-        }
-
-        private void birthYear_Leave(object sender, EventArgs e)
-        {
-
         }
     }
 }
