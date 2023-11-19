@@ -5,6 +5,7 @@ using Guna.UI.WinForms;
 using QuanLyCuaHangBanSach.BUS;
 using QuanLyCuaHangBanSach.DTO;
 using QuanLyCuaHangBanSach.GUI.Manager;
+using QuanLyCuaHangBanSach.GUI.UserControls;
 
 namespace QuanLyCuaHangBanSach.GUI
 {
@@ -32,7 +33,8 @@ namespace QuanLyCuaHangBanSach.GUI
         {
             InitializeComponent();
             ManagerGUI.staffId = staffId;
-            permissionFrm.onPermissionStatusChange+=generateLayout;
+            permissionFrm.onPermissionStatusChange += generateLayout;
+            AuthorizeCkb.onPermissionAuthorizeChange += generateLayout;
 			currentStaff = StaffBUS.Instance.getById(staffId.ToString());
 
             authorization = new Authorization(currentStaff.MaChucVu);
