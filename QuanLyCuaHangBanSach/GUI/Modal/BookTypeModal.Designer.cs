@@ -69,7 +69,7 @@
 			this.cancelBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
 			this.cancelBtn.Image = null;
 			this.cancelBtn.ImageSize = new System.Drawing.Size(20, 20);
-			this.cancelBtn.Location = new System.Drawing.Point(91, 191);
+			this.cancelBtn.Location = new System.Drawing.Point(85, 209);
 			this.cancelBtn.Name = "cancelBtn";
 			this.cancelBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
 			this.cancelBtn.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
@@ -99,7 +99,7 @@
 			this.submitBtn.ForeColor = System.Drawing.Color.White;
 			this.submitBtn.Image = null;
 			this.submitBtn.ImageSize = new System.Drawing.Size(20, 20);
-			this.submitBtn.Location = new System.Drawing.Point(337, 191);
+			this.submitBtn.Location = new System.Drawing.Point(328, 209);
 			this.submitBtn.Name = "submitBtn";
 			this.submitBtn.OnHoverBaseColor = System.Drawing.Color.White;
 			this.submitBtn.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
@@ -121,7 +121,7 @@
 			this.panel1.Controls.Add(this.label3);
 			this.panel1.Location = new System.Drawing.Point(3, 3);
 			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(594, 88);
+			this.panel1.Size = new System.Drawing.Size(594, 111);
 			this.panel1.TabIndex = 0;
 			// 
 			// BookTypeNameTxt
@@ -178,7 +178,7 @@
 			this.label3.Location = new System.Drawing.Point(3, 3);
 			this.label3.Name = "label3";
 			this.label3.Size = new System.Drawing.Size(151, 49);
-			this.label3.TabIndex = 5;
+			this.label3.TabIndex = 3;
 			this.label3.Text = "Tên thể loại:";
 			this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
@@ -189,15 +189,15 @@
 			this.flowLayoutPanel1.Controls.Add(this.panel1);
 			this.flowLayoutPanel1.Location = new System.Drawing.Point(15, 66);
 			this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-			this.flowLayoutPanel1.Size = new System.Drawing.Size(602, 98);
-			this.flowLayoutPanel1.TabIndex = 4;
+			this.flowLayoutPanel1.Size = new System.Drawing.Size(602, 126);
+			this.flowLayoutPanel1.TabIndex = 1;
 			// 
 			// BookTypeModal
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.White;
-			this.ClientSize = new System.Drawing.Size(632, 269);
+			this.ClientSize = new System.Drawing.Size(632, 272);
 			this.Controls.Add(this.flowLayoutPanel1);
 			this.Controls.Add(this.submitBtn);
 			this.Controls.Add(this.cancelBtn);

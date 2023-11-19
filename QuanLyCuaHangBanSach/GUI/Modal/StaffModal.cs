@@ -73,6 +73,8 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 				this.genderCbx.Items.AddRange(genders);
 				this.genderCbx.SelectedItem = genders[0];
 				loadPositionCbx();
+                positionCbx.SelectedIndexChanged += positionCbx_SelectedIndexChanged;
+                genderCbx.SelectedIndexChanged += genderCbx_SelectedIndexChanged;
 				if (staff != null)
 				{
 					this.staffNameTxt.Text = staff.Ten;
@@ -109,7 +111,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 					 this.birthYearTxt,
 					 this.errorBirthYearMsg,
 					 this.birthYearLine,
-					 new string[] { "required", "positive-number", "max-current-year", "space" }
+					 new string[] { "required", "positive-number", "max-current-year", "space" , "age-restrict-staff" }
                  );
 				bool isSalaryValid = CustomValidation.Instance.checkTextbox(
 						this.salaryTxt,
@@ -196,7 +198,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 this.birthYearTxt,
                 this.errorBirthYearMsg,
                 this.birthYearLine,
-                new string[] { "required", "positive-number", "max-current-year", "space" }
+                new string[] { "required", "positive-number", "max-current-year", "space" , "age-restrict-staff" }
             );
         }
 
@@ -207,24 +209,6 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 this.errorSalaryMsg,
                 this.salaryLine,
                 new string[] { "required", "positive-number", "space" }
-            );
-        }
-
-        private void positionCbx_TextChanged(object sender, EventArgs e)
-        {
-            CustomValidation.Instance.checkCombobox(
-                this.positionCbx,
-                this.errorPositionMsg,
-                new string[] { "required" }
-            );
-        }
-
-        private void genderCbx_TextChanged(object sender, EventArgs e)
-        {
-            CustomValidation.Instance.checkCombobox(
-                this.genderCbx,
-                this.errorGenderMsg,
-                new string[] { "required" }
             );
         }
 
@@ -241,7 +225,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             {
                 if (staff == null)
                 {
-                    CustomValidation.Instance.checkDuplicateName(
+                   CustomValidation.Instance.checkDuplicateName(
                         this.errorPhoneNumberMsg,
                         this.phoneNumberLine,
                         StaffBUS.Instance.checkDuplicateName(this.phoneNumberTxt.Text),
@@ -286,7 +270,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 this.birthYearTxt,
                 this.errorBirthYearMsg,
                 this.birthYearLine,
-                new string[] { "required", "positive-number", "max-current-year", "space" }
+                new string[] { "required", "positive-number", "max-current-year", "space", "age-restrict-staff" }
             );
         }
 
@@ -339,6 +323,4 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 			);
 		}
 	}
-
-       
  }

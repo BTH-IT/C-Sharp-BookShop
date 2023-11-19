@@ -312,7 +312,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 			this.exportBtn.CheckedImage = ((System.Drawing.Image)(resources.GetObject("exportBtn.CheckedImage")));
 			this.exportBtn.CheckedLineColor = System.Drawing.Color.DimGray;
 			this.exportBtn.DialogResult = System.Windows.Forms.DialogResult.None;
-			this.exportBtn.FocusedColor = System.Drawing.Color.Empty;
+			this.exportBtn.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(159)))), ((int)(((byte)(147)))));
 			this.exportBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold);
 			this.exportBtn.ForeColor = System.Drawing.Color.White;
 			this.exportBtn.Image = ((System.Drawing.Image)(resources.GetObject("exportBtn.Image")));
@@ -346,7 +346,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 			this.refreshBtn.CheckedImage = ((System.Drawing.Image)(resources.GetObject("refreshBtn.CheckedImage")));
 			this.refreshBtn.CheckedLineColor = System.Drawing.Color.DimGray;
 			this.refreshBtn.DialogResult = System.Windows.Forms.DialogResult.None;
-			this.refreshBtn.FocusedColor = System.Drawing.Color.Empty;
+			this.refreshBtn.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(159)))), ((int)(((byte)(147)))));
 			this.refreshBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold);
 			this.refreshBtn.ForeColor = System.Drawing.Color.White;
 			this.refreshBtn.Image = ((System.Drawing.Image)(resources.GetObject("refreshBtn.Image")));
@@ -395,7 +395,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 			this.tableBtn.CheckedImage = ((System.Drawing.Image)(resources.GetObject("tableBtn.CheckedImage")));
 			this.tableBtn.CheckedLineColor = System.Drawing.Color.DimGray;
 			this.tableBtn.DialogResult = System.Windows.Forms.DialogResult.None;
-			this.tableBtn.FocusedColor = System.Drawing.Color.Empty;
+			this.tableBtn.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(159)))), ((int)(((byte)(147)))));
 			this.tableBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold);
 			this.tableBtn.ForeColor = System.Drawing.Color.White;
 			this.tableBtn.Image = ((System.Drawing.Image)(resources.GetObject("tableBtn.Image")));
@@ -429,7 +429,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 			this.chartBtn.CheckedImage = ((System.Drawing.Image)(resources.GetObject("chartBtn.CheckedImage")));
 			this.chartBtn.CheckedLineColor = System.Drawing.Color.DimGray;
 			this.chartBtn.DialogResult = System.Windows.Forms.DialogResult.None;
-			this.chartBtn.FocusedColor = System.Drawing.Color.Empty;
+			this.chartBtn.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(159)))), ((int)(((byte)(147)))));
 			this.chartBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold);
 			this.chartBtn.ForeColor = System.Drawing.Color.White;
 			this.chartBtn.Image = ((System.Drawing.Image)(resources.GetObject("chartBtn.Image")));
@@ -715,7 +715,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 			this.toDateCkb.FillColor = System.Drawing.Color.White;
 			this.toDateCkb.Location = new System.Drawing.Point(3, 70);
 			this.toDateCkb.Name = "toDateCkb";
-			this.toDateCkb.Size = new System.Drawing.Size(50, 20);
+			this.toDateCkb.Size = new System.Drawing.Size(55, 20);
 			this.toDateCkb.TabIndex = 1;
 			this.toDateCkb.Text = "Đến";
 			this.toDateCkb.CheckedChanged += new System.EventHandler(this.toDateCkb_CheckedChanged);
@@ -737,6 +737,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 			this.fromDate.CustomFormat = "dd / MM / yyyy";
 			this.fromDate.Enabled = false;
 			this.fromDate.FillColor = System.Drawing.Color.White;
+			this.fromDate.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(159)))), ((int)(((byte)(147)))));
 			this.fromDate.Format = System.Windows.Forms.DateTimePickerFormat.Long;
 			this.fromDate.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
 			this.fromDate.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(251)))), ((int)(((byte)(249)))));
@@ -763,7 +764,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 			this.fromDateCkb.FillColor = System.Drawing.Color.White;
 			this.fromDateCkb.Location = new System.Drawing.Point(3, 16);
 			this.fromDateCkb.Name = "fromDateCkb";
-			this.fromDateCkb.Size = new System.Drawing.Size(43, 20);
+			this.fromDateCkb.Size = new System.Drawing.Size(46, 20);
 			this.fromDateCkb.TabIndex = 0;
 			this.fromDateCkb.Text = "Từ";
 			this.fromDateCkb.CheckedChanged += new System.EventHandler(this.fromDateCkb_CheckedChanged);
@@ -785,6 +786,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 			this.toDate.CustomFormat = "dd / MM / yyyy";
 			this.toDate.Enabled = false;
 			this.toDate.FillColor = System.Drawing.Color.White;
+			this.toDate.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(159)))), ((int)(((byte)(147)))));
 			this.toDate.Format = System.Windows.Forms.DateTimePickerFormat.Long;
 			this.toDate.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
 			this.toDate.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(251)))), ((int)(((byte)(249)))));
@@ -870,7 +872,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 			this.label7.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label7.Location = new System.Drawing.Point(5, 7);
 			this.label7.Name = "label7";
-			this.label7.Size = new System.Drawing.Size(160, 28);
+			this.label7.Size = new System.Drawing.Size(191, 35);
 			this.label7.TabIndex = 20;
 			this.label7.Text = "BIỂU ĐỒ THỐNG KÊ";
 			// 
@@ -948,7 +950,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 			this.customerNumLb.ForeColor = System.Drawing.Color.Black;
 			this.customerNumLb.Location = new System.Drawing.Point(13, 64);
 			this.customerNumLb.Name = "customerNumLb";
-			this.customerNumLb.Size = new System.Drawing.Size(0, 25);
+			this.customerNumLb.Size = new System.Drawing.Size(0, 30);
 			this.customerNumLb.TabIndex = 8;
 			// 
 			// label6
@@ -958,7 +960,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 			this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(174)))), ((int)(((byte)(192)))));
 			this.label6.Location = new System.Drawing.Point(13, 30);
 			this.label6.Name = "label6";
-			this.label6.Size = new System.Drawing.Size(230, 21);
+			this.label6.Size = new System.Drawing.Size(275, 26);
 			this.label6.TabIndex = 6;
 			this.label6.Text = "Tổng số khách hàng 6 tháng gần đây";
 			// 
@@ -1010,7 +1012,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 			this.bookSoldLb.ForeColor = System.Drawing.Color.Black;
 			this.bookSoldLb.Location = new System.Drawing.Point(15, 64);
 			this.bookSoldLb.Name = "bookSoldLb";
-			this.bookSoldLb.Size = new System.Drawing.Size(0, 25);
+			this.bookSoldLb.Size = new System.Drawing.Size(0, 30);
 			this.bookSoldLb.TabIndex = 5;
 			// 
 			// label4
@@ -1020,7 +1022,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 			this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(174)))), ((int)(((byte)(192)))));
 			this.label4.Location = new System.Drawing.Point(15, 30);
 			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(232, 21);
+			this.label4.Size = new System.Drawing.Size(279, 26);
 			this.label4.TabIndex = 3;
 			this.label4.Text = "Tổng số sách đã bán 6 tháng gần đây";
 			// 
@@ -1072,7 +1074,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 			this.revenueLb.ForeColor = System.Drawing.Color.Black;
 			this.revenueLb.Location = new System.Drawing.Point(16, 64);
 			this.revenueLb.Name = "revenueLb";
-			this.revenueLb.Size = new System.Drawing.Size(0, 25);
+			this.revenueLb.Size = new System.Drawing.Size(0, 30);
 			this.revenueLb.TabIndex = 2;
 			// 
 			// label8
@@ -1082,13 +1084,13 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 			this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(174)))), ((int)(((byte)(192)))));
 			this.label8.Location = new System.Drawing.Point(16, 30);
 			this.label8.Name = "label8";
-			this.label8.Size = new System.Drawing.Size(207, 21);
+			this.label8.Size = new System.Drawing.Size(247, 26);
 			this.label8.TabIndex = 0;
 			this.label8.Text = "Tổng doanh thu 6 tháng gần đây";
 			// 
 			// RevenueStatisticGUI
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 20F);
+			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 26F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
 			this.ClientSize = new System.Drawing.Size(1000, 547);

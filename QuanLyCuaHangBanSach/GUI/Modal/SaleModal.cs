@@ -29,7 +29,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                (Screen.PrimaryScreen.Bounds.Size.Height / 2) - (this.Size.Height / 2)
            );
             this.dateTimeFrom.Value = DateTime.Now;
-            this.dateTimeTo.Value = DateTime.Now;
+            this.dateTimeTo.Value = DateTime.Now.AddDays(1);
             try
             {
                 if (sale != null)
@@ -58,21 +58,21 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                     this.saleNameTxt,
                     this.errorSaleNameMsg,
                     this.saleNameLine,
-                    new string[] { "required", "name" , "space"}
+                    new string[] { "required" , "space"}
                 );
 
                 if (isSale)
                 {
                     if (sale == null)
                     {
-                        CustomValidation.Instance.checkDuplicateName(
+                        isSale = CustomValidation.Instance.checkDuplicateName(
                             this.errorSaleNameMsg,
                             this.saleNameLine,
                             SaleBUS.Instance.checkDuplicateName(this.saleNameTxt.Text)
                         );
                     } else
                     {
-                        CustomValidation.Instance.checkDuplicateName(
+                        isSale = CustomValidation.Instance.checkDuplicateName(
                             this.errorSaleNameMsg,
                             this.saleNameLine,
                             SaleBUS.Instance.checkDuplicateName(this.saleNameTxt.Text, sale.MaKhuyenMai)
@@ -89,7 +89,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
                 if (isPhanTramValid)
                 {
-                    CustomValidation.Instance.checkTextboxMax(
+					isPhanTramValid = CustomValidation.Instance.checkTextboxMax(
                         this.phanTramTxt,
                         "Trường này phải bé hơn 100",
                         this.errorPhanTramMsg,
@@ -189,7 +189,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 this.saleNameTxt,
                 this.errorSaleNameMsg,
                 this.saleNameLine,
-                new string[] { "required" , "name", "space" }
+                new string[] { "required" , "space" }
             );
 
             if (isSale)

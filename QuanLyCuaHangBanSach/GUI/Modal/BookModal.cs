@@ -431,6 +431,5 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 Console.WriteLine(ex);
             }
         }
-
-    }
+	}
 }
