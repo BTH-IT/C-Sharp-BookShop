@@ -76,6 +76,8 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
                 salePrice = total * (phanTram / Convert.ToDecimal(100.0));
 
+                salePrice = Convert.ToDecimal(salePrice.ToString().Split('.')[0]);
+
                 this.totalPriceTxt.Text = (total - salePrice) + "";
             }
             else
@@ -88,12 +90,14 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             {
                 int diem = CustomerBUS.Instance.getById(this.customerCbx.SelectedValue.ToString()).Diem;
                 scoreTxt.Text = diem + " điểm";
+                decimal newTotal = Convert.ToDecimal(Convert.ToDecimal(totalPriceTxt.Text.Split('.')[0]) + scorePrice);
                 scorePrice = diem * 1000;
-                this.totalPriceTxt.Text = (total - scorePrice) + "";
+                this.totalPriceTxt.Text = (newTotal - scorePrice) + "";
             }
             else
             {
-                this.totalPriceTxt.Text = total + "";
+                decimal newTotal = Convert.ToDecimal(Convert.ToDecimal(totalPriceTxt.Text.Split('.')[0]) + scorePrice);
+                this.totalPriceTxt.Text = newTotal + "";
                 scorePrice = 0;
             }
         }
@@ -401,14 +405,19 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
                 this.percentTxt.Text = phanTram + "%";
 
-                decimal totalPrice = Convert.ToDecimal(this.totalPriceTxt.Text) + salePrice;
+                decimal totalPrice = Convert.ToDecimal(this.totalPriceTxt.Text.Split('.')[0]) + salePrice;
 
-                salePrice = totalPrice * (phanTram / Convert.ToDecimal(100.0));
+                salePrice = Convert.ToDecimal(totalPrice * Convert.ToDecimal(phanTram / 100.0));
 
-                this.totalPriceTxt.Text = (totalPrice - salePrice) + "";
+                salePrice = Convert.ToDecimal(salePrice.ToString().Split('.')[0]);
+
+                this.totalPriceTxt.Text = Convert.ToDecimal(totalPrice - salePrice) + "";
             } else
             {
+                decimal totalPrice = Convert.ToDecimal(this.totalPriceTxt.Text.Split('.')[0]) + salePrice;
+                this.totalPriceTxt.Text = totalPrice + "";
                 this.percentTxt.Text = "Không có";
+                salePrice = 0;
             }
         }
 
@@ -426,15 +435,14 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             {
                 int diem = CustomerBUS.Instance.getById(this.customerCbx.SelectedValue.ToString()).Diem;
                 scoreTxt.Text = diem + " điểm";
-                Console.WriteLine(diem);
                 if (this.PointToggleBtn.Checked)
                 {
-					decimal total = Convert.ToDecimal(Convert.ToDecimal(totalPriceTxt.Text) + scorePrice);
+					decimal total = Convert.ToDecimal(Convert.ToDecimal(totalPriceTxt.Text.Split('.')[0]) + scorePrice);
 					scorePrice = diem * 1000;
                     this.totalPriceTxt.Text = (total - scorePrice) + "";
                 } else
                 {
-                    decimal total = Convert.ToDecimal(Convert.ToDecimal(totalPriceTxt.Text) + scorePrice);
+                    decimal total = Convert.ToDecimal(Convert.ToDecimal(totalPriceTxt.Text.Split('.')[0]) + scorePrice);
                     this.totalPriceTxt.Text = total + "";
                     scorePrice = 0;
                 }
@@ -443,7 +451,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             {
                 PointToggleBtn.Checked = false;
                 scoreTxt.Text = "";
-                decimal total = Convert.ToDecimal(Convert.ToDecimal(totalPriceTxt.Text) + scorePrice);
+                decimal total = Convert.ToDecimal(Convert.ToDecimal(totalPriceTxt.Text.Split('.')[0]) + scorePrice);
                 this.totalPriceTxt.Text = total + "";
                 scorePrice = 0;
             }
@@ -457,13 +465,13 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 {
                     int diem = CustomerBUS.Instance.getById(this.customerCbx.SelectedValue.ToString()).Diem;
                     scoreTxt.Text = diem + " điểm";
-                    decimal total = Convert.ToDecimal(Convert.ToDecimal(totalPriceTxt.Text) + scorePrice);
+                    decimal total = Convert.ToDecimal(Convert.ToDecimal(totalPriceTxt.Text.Split('.')[0]) + scorePrice);
                     scorePrice = diem * 1000;
                     this.totalPriceTxt.Text = (total - scorePrice) + "";
                 }
                 else
                 {
-                    decimal total = Convert.ToDecimal(Convert.ToDecimal(totalPriceTxt.Text) + scorePrice);
+                    decimal total = Convert.ToDecimal(Convert.ToDecimal(totalPriceTxt.Text.Split('.')[0]) + scorePrice);
                     this.totalPriceTxt.Text = total + "";
                     scorePrice = 0;
                 }
