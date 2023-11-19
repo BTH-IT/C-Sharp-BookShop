@@ -14,18 +14,21 @@ namespace QuanLyCuaHangBanSach.DTO
         public int MaKhuyenMai { get; set; }
 
         public decimal TienKhachDua { get; set; }
+        public int DoiDiem { get; set; }
 
         public CustomerBillDTO() : base()
         {
         }
 
         public CustomerBillDTO(
-            int maDonKhachHang, int maKhachHang, int maNhanVien, DateTime ngayLap, decimal tongTien, int maKhuyenMai, decimal tienKhachDua
+            int maDonKhachHang, int maKhachHang, int maNhanVien, DateTime ngayLap, decimal tongTien, int maKhuyenMai, decimal tienKhachDua, int doiDiem
         ) : base(ngayLap, maNhanVien, tongTien)
         {
             this.MaDonKhachHang = maDonKhachHang;
             this.MaKhachHang = maKhachHang;
             this.MaKhuyenMai = maKhuyenMai;
+            this.TienKhachDua = tienKhachDua;
+            this.DoiDiem = doiDiem;
         }
 
         public CustomerBillDTO(DataRow row)
@@ -37,6 +40,7 @@ namespace QuanLyCuaHangBanSach.DTO
             this.MaNhanVien = (int)row["maNhanVien"];
             this.TongTien = Convert.ToDecimal(row["tongTien"]);
             this.TienKhachDua = Convert.ToDecimal(row["tienKhachDua"]);
+            this.DoiDiem = Convert.ToInt32(row["doiDiem"]);
         }
     }
 }
