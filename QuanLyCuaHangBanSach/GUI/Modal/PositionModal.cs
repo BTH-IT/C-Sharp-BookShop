@@ -114,14 +114,14 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 if (isSuccess)
                 {
                     this.isSubmitSuccess = isSuccess;
-                    MessageBox.Show(updatePosition != null ? "Update Success" : "Insert Success");
+                    MessageBox.Show(updatePosition != null ? "Sửa thành công" : "Tạo thất bại");
                     this.Close();
                     return;
                 }
 
                 this.isSubmitSuccess = isSuccess;
 
-                MessageBox.Show(updatePosition != null ? "Update Failure" : "Insert Failure");
+                MessageBox.Show(updatePosition != null ? "Sửa thất bại" : "Tạo thất bại");
             }
             catch (Exception ex)
             {
