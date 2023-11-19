@@ -15,7 +15,6 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
         private int staffId;
         private decimal salePrice = 0;
         private decimal scorePrice = 0;
-        private bool CustomerEnabled = false;
         public CustomerBillModal(int staffId)
         {
             InitializeComponent();
@@ -340,18 +339,23 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
                 CustomerBillDTO customerBill = new CustomerBillDTO();
 
+                int diem = CustomerBUS.Instance.getById(this.customerCbx.SelectedValue.ToString()).Diem;
+
                 customerBill.TongTien = Convert.ToDecimal(this.totalPriceTxt.Text);
                 customerBill.MaNhanVien = this.staffId;
                 customerBill.MaKhachHang = Convert.ToInt32(this.customerCbx.SelectedValue);
                 customerBill.MaKhuyenMai = Convert.ToInt32(this.saleCbx.SelectedValue);
                 customerBill.NgayLap = DateTime.Now;
+                customerBill.DoiDiem = 
+                    this.customerCbx.SelectedIndex != 1 && this.customerCbx.SelectedIndex != 0 && this.PointToggleBtn.Checked
+                    ? diem : 0;
 
                 CustomerBillDTO newCustomerBill = CustomerBillBUS.Instance.insertReturnBill(customerBill);
 
                 if (newCustomerBill == null)
                 {
 
-                    MessageBox.Show("Failure");
+                    MessageBox.Show("Tạo đơn thất bại!");
                     this.isSubmitSuccess = false;
                 }
                 else
@@ -368,7 +372,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                         CustomerBillBUS.Instance.createCustomerBillDetail(newCustomerBillDetail);
                     }
 
-                    MessageBox.Show("Success");
+                    MessageBox.Show("Tạo đơn thành công!");
 
                     this.isSubmitSuccess = true;
                     this.Close();
