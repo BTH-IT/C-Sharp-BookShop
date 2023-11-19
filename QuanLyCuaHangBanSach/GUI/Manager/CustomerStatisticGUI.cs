@@ -260,6 +260,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
 				List<CustomerDTO> customerList = CustomerBUS.Instance.getAllData();
 				loadBillListToDataView(customerList);
+				label1.Focus();
 			}
 			catch (Exception ex)
 			{
@@ -272,7 +273,8 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             if (dgvCustomer.Rows.Count <= 0)
             {
                 MessageBox.Show("Bảng dữ liệu hiện tại chưa có dòng dữ liệu nào để xuất excel!");
-                return;
+				label1.Focus();
+				return;
             }
             try
 			{
@@ -281,6 +283,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 				DataTable dt = CustomExcel.Instance.ConvertDataGridViewToDataTable(dgvCustomer);
 
 				CustomExcel.Instance.ExportFileDatagridView(dt, "Book Manage", 0, "Cửa hàng bán sách", headerList);
+				label1.Focus();
 			}
 			catch (Exception ex)
 			{
@@ -341,13 +344,15 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         {
 			if (!this.modeCheck.Enabled) this.modeCheck.Start();
 			mode = 1;
-        }
+			label1.Focus();
+		}
 
-        private void chartBtn_Click(object sender, EventArgs e)
+		private void chartBtn_Click(object sender, EventArgs e)
         {
 			if (!this.modeCheck.Enabled) this.modeCheck.Start();
 			mode = 2;
-        }
+			label1.Focus();
+		}
 
 		private void closeBtn_Click(object sender, EventArgs e)
 		{

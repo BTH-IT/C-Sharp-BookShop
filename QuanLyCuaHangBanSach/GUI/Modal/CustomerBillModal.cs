@@ -429,12 +429,12 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 Console.WriteLine(diem);
                 if (this.PointToggleBtn.Checked)
                 {
-                    decimal total = Convert.ToDecimal(totalPriceTxt.Text + scorePrice);
-                    scorePrice = diem * 1000;
+					decimal total = Convert.ToDecimal(Convert.ToDecimal(totalPriceTxt.Text) + scorePrice);
+					scorePrice = diem * 1000;
                     this.totalPriceTxt.Text = (total - scorePrice) + "";
                 } else
                 {
-                    decimal total = Convert.ToDecimal(totalPriceTxt.Text + scorePrice);
+                    decimal total = Convert.ToDecimal(Convert.ToDecimal(totalPriceTxt.Text) + scorePrice);
                     this.totalPriceTxt.Text = total + "";
                     scorePrice = 0;
                 }
@@ -443,7 +443,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             {
                 PointToggleBtn.Checked = false;
                 scoreTxt.Text = "";
-                decimal total = Convert.ToDecimal(totalPriceTxt.Text + scorePrice);
+                decimal total = Convert.ToDecimal(Convert.ToDecimal(totalPriceTxt.Text) + scorePrice);
                 this.totalPriceTxt.Text = total + "";
                 scorePrice = 0;
             }
@@ -457,13 +457,13 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 {
                     int diem = CustomerBUS.Instance.getById(this.customerCbx.SelectedValue.ToString()).Diem;
                     scoreTxt.Text = diem + " điểm";
-                    decimal total = Convert.ToDecimal(totalPriceTxt.Text + scorePrice);
+                    decimal total = Convert.ToDecimal(Convert.ToDecimal(totalPriceTxt.Text) + scorePrice);
                     scorePrice = diem * 1000;
                     this.totalPriceTxt.Text = (total - scorePrice) + "";
                 }
                 else
                 {
-                    decimal total = Convert.ToDecimal(totalPriceTxt.Text + scorePrice);
+                    decimal total = Convert.ToDecimal(Convert.ToDecimal(totalPriceTxt.Text) + scorePrice);
                     this.totalPriceTxt.Text = total + "";
                     scorePrice = 0;
                 }

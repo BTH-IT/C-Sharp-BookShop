@@ -120,7 +120,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
 				if (!string.IsNullOrEmpty(revenueFrom.Text) && !string.IsNullOrEmpty(revenueTo.Text))
 				{
-					if (!string.IsNullOrEmpty(revenueFrom.Text) && !string.IsNullOrEmpty(revenueTo.Text))
+					if (Convert.ToInt32(revenueFrom.Text) <= Convert.ToInt32(revenueTo.Text))
 					{
 						staffList = staffList.FindAll(staff => StaffBUS.Instance.getSoldRevenue(staff.Ma.ToString()) >= Convert.ToDouble(revenueFrom.Text)
 													 && StaffBUS.Instance.getSoldRevenue(staff.Ma.ToString()) <= Convert.ToDouble(revenueTo.Text));
@@ -183,6 +183,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
 				List<StaffDTO> staffList = StaffBUS.Instance.getAllData();
 				loadBillListToDataView(staffList);
+				label1.Focus();
 			}
 			catch (Exception ex)
 			{
@@ -196,15 +197,16 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             {
                 MessageBox.Show("Bảng dữ liệu hiện tại chưa có dòng dữ liệu nào để xuất excel!");
                 return;
-
-            }
-            try
+				label1.Focus();
+			}
+			try
 			{
                 string[] headerList = new string[] { "Mã nhân viên", "Tên nhân viên", "Số điện thoại", "Doanh thu" };
 
 				DataTable dt = CustomExcel.Instance.ConvertDataGridViewToDataTable(dgvStaff);
 
 				CustomExcel.Instance.ExportFileDatagridView(dt, "Book Manage", 0, "Cửa hàng bán sách", headerList);
+				label1.Focus();
 			}
 			catch (Exception ex)
 			{

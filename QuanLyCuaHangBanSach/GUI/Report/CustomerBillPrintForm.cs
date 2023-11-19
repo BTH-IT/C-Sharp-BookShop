@@ -66,7 +66,7 @@ namespace QuanLyCuaHangBanSach.GUI.Report
                 new Microsoft.Reporting.WinForms.ReportParameter("pSalePrice", salePrice.ToString()),
                 new Microsoft.Reporting.WinForms.ReportParameter("pTotalPrice", customerBill.TongTien.ToString()),
                 new Microsoft.Reporting.WinForms.ReportParameter("pMoneyPaid", customerBill.TienKhachDua.ToString()),
-                new Microsoft.Reporting.WinForms.ReportParameter("pMoneyChange", (customerBill.TongTien - customerBill.TienKhachDua).ToString()),
+                new Microsoft.Reporting.WinForms.ReportParameter("pMoneyChange", (customerBill.TienKhachDua - customerBill.TongTien).ToString()),
             };
 
             // Set the data source of the report

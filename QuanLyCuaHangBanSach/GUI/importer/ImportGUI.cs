@@ -105,8 +105,9 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
                 {
                     FilterContainer.Visible = false;
                 }
-            }
-            catch (Exception ex) { Console.WriteLine(ex); }
+				label1.Focus();
+			}
+			catch (Exception ex) { Console.WriteLine(ex); }
 
         }
 
@@ -159,8 +160,9 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
                 {
                     modal.ShowDialog();
                 }
-            }
-            catch (Exception ex) { Console.WriteLine(ex); }
+				label1.Focus();
+			}
+			catch (Exception ex) { Console.WriteLine(ex); }
         }
 
         private void QRScanBtn_Click(object sender, EventArgs e)
@@ -174,8 +176,9 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
                 {
                     AddProductToCart(book);
                 }
-            }
-            catch (Exception ex) { Console.WriteLine(ex); }
+				label1.Focus();
+			}
+			catch (Exception ex) { Console.WriteLine(ex); }
         }
 
         private void AddProductToCart(BookDTO book)
@@ -371,8 +374,9 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
                     supplierID = 0;
                     CartHandler();
                     RenderBookContainer();
-                }
-            }
+				    label1.Focus();
+				}
+			}
             catch (Exception ex) { Console.WriteLine(ex); }
         }
 
@@ -449,6 +453,7 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
 						supplierID = 0;
 						CartHandler();
 						RenderBookContainer();
+				        label1.Focus();
 					}
 					catch (Exception ex)
 					{
