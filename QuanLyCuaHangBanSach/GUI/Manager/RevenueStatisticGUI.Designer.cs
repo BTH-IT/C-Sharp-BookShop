@@ -508,7 +508,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 			this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(5, 0, 0, 0);
 			this.flowLayoutPanel2.Name = "flowLayoutPanel2";
 			this.flowLayoutPanel2.Padding = new System.Windows.Forms.Padding(22, 0, 0, 0);
-			this.flowLayoutPanel2.Size = new System.Drawing.Size(447, 43);
+			this.flowLayoutPanel2.Size = new System.Drawing.Size(548, 43);
 			this.flowLayoutPanel2.TabIndex = 0;
 			// 
 			// searchInput
@@ -537,14 +537,16 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 			this.searchInput.PlaceholderText = "Tìm kiếm theo mã hóa đơn ...";
 			this.searchInput.SelectedText = "";
 			this.searchInput.ShadowDecoration.Parent = this.searchInput;
-			this.searchInput.Size = new System.Drawing.Size(224, 33);
+			this.searchInput.Size = new System.Drawing.Size(485, 33);
 			this.searchInput.TabIndex = 0;
+			this.searchInput.TextChanged += new System.EventHandler(this.searchInput_TextChanged);
+			this.searchInput.MouseLeave += new System.EventHandler(this.searchInput_MouseLeave);
 			// 
 			// pictureBox1
 			// 
 			this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Right;
 			this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-			this.pictureBox1.Location = new System.Drawing.Point(246, 3);
+			this.pictureBox1.Location = new System.Drawing.Point(507, 3);
 			this.pictureBox1.Margin = new System.Windows.Forms.Padding(0, 3, 0, 0);
 			this.pictureBox1.Name = "pictureBox1";
 			this.pictureBox1.Size = new System.Drawing.Size(36, 30);
@@ -557,7 +559,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 			this.line1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(212)))), ((int)(((byte)(191)))));
 			this.line1.Location = new System.Drawing.Point(25, 36);
 			this.line1.Name = "line1";
-			this.line1.Size = new System.Drawing.Size(259, 1);
+			this.line1.Size = new System.Drawing.Size(485, 1);
 			this.line1.TabIndex = 21;
 			// 
 			// flowLayoutPanel3
@@ -715,7 +717,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 			this.toDateCkb.FillColor = System.Drawing.Color.White;
 			this.toDateCkb.Location = new System.Drawing.Point(3, 70);
 			this.toDateCkb.Name = "toDateCkb";
-			this.toDateCkb.Size = new System.Drawing.Size(55, 20);
+			this.toDateCkb.Size = new System.Drawing.Size(50, 20);
 			this.toDateCkb.TabIndex = 1;
 			this.toDateCkb.Text = "Đến";
 			this.toDateCkb.CheckedChanged += new System.EventHandler(this.toDateCkb_CheckedChanged);
@@ -764,7 +766,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 			this.fromDateCkb.FillColor = System.Drawing.Color.White;
 			this.fromDateCkb.Location = new System.Drawing.Point(3, 16);
 			this.fromDateCkb.Name = "fromDateCkb";
-			this.fromDateCkb.Size = new System.Drawing.Size(46, 20);
+			this.fromDateCkb.Size = new System.Drawing.Size(43, 20);
 			this.fromDateCkb.TabIndex = 0;
 			this.fromDateCkb.Text = "Từ";
 			this.fromDateCkb.CheckedChanged += new System.EventHandler(this.fromDateCkb_CheckedChanged);
@@ -872,7 +874,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 			this.label7.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label7.Location = new System.Drawing.Point(5, 7);
 			this.label7.Name = "label7";
-			this.label7.Size = new System.Drawing.Size(191, 35);
+			this.label7.Size = new System.Drawing.Size(160, 28);
 			this.label7.TabIndex = 20;
 			this.label7.Text = "BIỂU ĐỒ THỐNG KÊ";
 			// 
@@ -950,7 +952,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 			this.customerNumLb.ForeColor = System.Drawing.Color.Black;
 			this.customerNumLb.Location = new System.Drawing.Point(13, 64);
 			this.customerNumLb.Name = "customerNumLb";
-			this.customerNumLb.Size = new System.Drawing.Size(0, 30);
+			this.customerNumLb.Size = new System.Drawing.Size(0, 25);
 			this.customerNumLb.TabIndex = 8;
 			// 
 			// label6
@@ -960,7 +962,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 			this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(174)))), ((int)(((byte)(192)))));
 			this.label6.Location = new System.Drawing.Point(13, 30);
 			this.label6.Name = "label6";
-			this.label6.Size = new System.Drawing.Size(275, 26);
+			this.label6.Size = new System.Drawing.Size(230, 21);
 			this.label6.TabIndex = 6;
 			this.label6.Text = "Tổng số khách hàng 6 tháng gần đây";
 			// 
@@ -1012,7 +1014,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 			this.bookSoldLb.ForeColor = System.Drawing.Color.Black;
 			this.bookSoldLb.Location = new System.Drawing.Point(15, 64);
 			this.bookSoldLb.Name = "bookSoldLb";
-			this.bookSoldLb.Size = new System.Drawing.Size(0, 30);
+			this.bookSoldLb.Size = new System.Drawing.Size(0, 25);
 			this.bookSoldLb.TabIndex = 5;
 			// 
 			// label4
@@ -1022,7 +1024,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 			this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(174)))), ((int)(((byte)(192)))));
 			this.label4.Location = new System.Drawing.Point(15, 30);
 			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(279, 26);
+			this.label4.Size = new System.Drawing.Size(232, 21);
 			this.label4.TabIndex = 3;
 			this.label4.Text = "Tổng số sách đã bán 6 tháng gần đây";
 			// 
@@ -1074,7 +1076,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 			this.revenueLb.ForeColor = System.Drawing.Color.Black;
 			this.revenueLb.Location = new System.Drawing.Point(16, 64);
 			this.revenueLb.Name = "revenueLb";
-			this.revenueLb.Size = new System.Drawing.Size(0, 30);
+			this.revenueLb.Size = new System.Drawing.Size(0, 25);
 			this.revenueLb.TabIndex = 2;
 			// 
 			// label8
@@ -1084,13 +1086,13 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 			this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(174)))), ((int)(((byte)(192)))));
 			this.label8.Location = new System.Drawing.Point(16, 30);
 			this.label8.Name = "label8";
-			this.label8.Size = new System.Drawing.Size(247, 26);
+			this.label8.Size = new System.Drawing.Size(207, 21);
 			this.label8.TabIndex = 0;
 			this.label8.Text = "Tổng doanh thu 6 tháng gần đây";
 			// 
 			// RevenueStatisticGUI
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 26F);
+			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
 			this.ClientSize = new System.Drawing.Size(1000, 547);
