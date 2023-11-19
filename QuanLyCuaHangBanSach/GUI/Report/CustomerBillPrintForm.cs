@@ -53,7 +53,7 @@ namespace QuanLyCuaHangBanSach.GUI.Report
 
             this.bindingSource1.DataSource = dataTable;
 
-            decimal salePrice = sale == null ? 0 : giaGoc * (sale.PhanTram / Convert.ToDecimal(100.0));
+            decimal salePrice = sale == null ? 0 : giaGoc * (sale.PhanTram / 100);
 
             Microsoft.Reporting.WinForms.ReportParameter[] p = new Microsoft.Reporting.WinForms.ReportParameter[]
             {
@@ -66,7 +66,8 @@ namespace QuanLyCuaHangBanSach.GUI.Report
                 new Microsoft.Reporting.WinForms.ReportParameter("pSalePrice", salePrice.ToString()),
                 new Microsoft.Reporting.WinForms.ReportParameter("pTotalPrice", customerBill.TongTien.ToString()),
                 new Microsoft.Reporting.WinForms.ReportParameter("pMoneyPaid", customerBill.TienKhachDua.ToString()),
-                new Microsoft.Reporting.WinForms.ReportParameter("pMoneyChange", (customerBill.TongTien - customerBill.TienKhachDua).ToString()),
+                new Microsoft.Reporting.WinForms.ReportParameter("pMoneyChange", (customerBill.TienKhachDua - customerBill.TongTien).ToString()),
+                new Microsoft.Reporting.WinForms.ReportParameter("pChangedScore", customerBill.DoiDiem <= 0 ? "Không đổi" : customerBill.DoiDiem.ToString()),
             };
 
             // Set the data source of the report
