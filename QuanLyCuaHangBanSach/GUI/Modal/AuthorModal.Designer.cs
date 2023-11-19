@@ -165,7 +165,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 			this.authorName.Size = new System.Drawing.Size(425, 36);
 			this.authorName.TabIndex = 1;
 			this.authorName.TextChanged += new System.EventHandler(this.bookNameTxt_TextChanged);
-			this.authorName.Leave += new System.EventHandler(this.authorName_Leave);
+			this.authorName.Leave += new System.EventHandler(this.bookNameTxt_TextChanged);
 			// 
 			// authorNameMsg
 			// 
@@ -174,7 +174,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 			this.authorNameMsg.ForeColor = System.Drawing.Color.Red;
 			this.authorNameMsg.Location = new System.Drawing.Point(20, 109);
 			this.authorNameMsg.Name = "authorNameMsg";
-			this.authorNameMsg.Size = new System.Drawing.Size(0, 21);
+			this.authorNameMsg.Size = new System.Drawing.Size(0, 26);
 			this.authorNameMsg.TabIndex = 7;
 			// 
 			// nameLine
@@ -244,7 +244,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 			this.genderCbx.Radius = 6;
 			this.genderCbx.Size = new System.Drawing.Size(414, 36);
 			this.genderCbx.TabIndex = 2;
-			this.genderCbx.SelectedIndexChanged += new System.EventHandler(this.genderCbx_SelectedIndexChanged);
+			this.genderCbx.Leave += new System.EventHandler(this.genderCbx_SelectedIndexChanged);
 			// 
 			// genderMsg
 			// 
@@ -253,7 +253,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 			this.genderMsg.ForeColor = System.Drawing.Color.Red;
 			this.genderMsg.Location = new System.Drawing.Point(20, 109);
 			this.genderMsg.Name = "genderMsg";
-			this.genderMsg.Size = new System.Drawing.Size(0, 21);
+			this.genderMsg.Size = new System.Drawing.Size(0, 26);
 			this.genderMsg.TabIndex = 7;
 			// 
 			// label4
@@ -305,7 +305,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 			this.birthYear.Size = new System.Drawing.Size(425, 36);
 			this.birthYear.TabIndex = 3;
 			this.birthYear.TextChanged += new System.EventHandler(this.birthYear_TextChanged);
-			this.birthYear.Leave += new System.EventHandler(this.birthYear_Leave);
+			this.birthYear.Leave += new System.EventHandler(this.birthYear_TextChanged);
 			// 
 			// birthYearMsg
 			// 
@@ -314,7 +314,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 			this.birthYearMsg.ForeColor = System.Drawing.Color.Red;
 			this.birthYearMsg.Location = new System.Drawing.Point(20, 109);
 			this.birthYearMsg.Name = "birthYearMsg";
-			this.birthYearMsg.Size = new System.Drawing.Size(0, 21);
+			this.birthYearMsg.Size = new System.Drawing.Size(0, 26);
 			this.birthYearMsg.TabIndex = 7;
 			// 
 			// birthYearLine
@@ -337,7 +337,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 			// 
 			// AuthorModal
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.White;
 			this.ClientSize = new System.Drawing.Size(589, 653);

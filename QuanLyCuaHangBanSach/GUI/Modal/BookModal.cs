@@ -11,9 +11,6 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
     public partial class BookModal : Form
     {
         public BookDTO updateBook = null;
-        private bool isTouchAuthorCbx = false;
-        private bool isTouchBookTypeCbx = false;
-        private bool isTouchPublisherCbx = false;
         public bool isSubmitSuccess = false;
         public BookModal(string title = "Thêm sách")
         {
@@ -92,6 +89,10 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 this.loadAuthorCbx();
                 this.loadBookTypeCbx();
                 this.loadPublisherCbx();
+
+                authorCbx.SelectedIndexChanged += authorCbx_SelectedIndexChanged;
+                bookTypeCbx.SelectedIndexChanged += bookTypeCbx_SelectedIndexChanged;
+                publisherCbx.SelectedIndexChanged += publisherCbx_SelectedIndexChanged;
 
                 if (updateBook != null)
                 {
@@ -354,8 +355,6 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
         {
             try
             {
-                if (!isTouchAuthorCbx) return;
-
                 CustomValidation.Instance.checkCombobox(
                     this.authorCbx,
                     this.errorAuthorMsg,
@@ -372,8 +371,6 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
         {
             try
             {
-                if (!isTouchBookTypeCbx) return;
-
                 CustomValidation.Instance.checkCombobox(
                     this.bookTypeCbx,
                     this.errorBookTypeMsg,
@@ -390,8 +387,6 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
         {
             try
             {
-                if (!isTouchPublisherCbx) return;
-
                 CustomValidation.Instance.checkCombobox(
                     this.publisherCbx,
                     this.errorPublisherMsg,
@@ -430,74 +425,11 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
         {
             try
             {
-                if (!isTouchAuthorCbx)
-                {
-                    isTouchAuthorCbx = true;
-                }
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex);
             }
         }
-
-        private void bookTypeCbx_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (!isTouchBookTypeCbx)
-                {
-                    isTouchBookTypeCbx = true;
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex);
-            }
-        }
-
-        private void publisherCbx_Click(object sender, EventArgs e)
-        {
-            if (!isTouchPublisherCbx)
-            {
-                isTouchPublisherCbx = true;
-            }
-        }
-
-        private void bookNameTxt_Leave(object sender, EventArgs e)
-        {
-            bool isBookName = CustomValidation.Instance.checkTextbox(
-                    this.bookNameTxt,
-                    this.errorBookNameMsg,
-                    this.nameLine,
-                    new string[] { "required", "name", "space" }
-                );
-
-            if (isBookName)
-            {
-                CustomValidation.Instance.checkDuplicateName(
-                    this.errorBookNameMsg,
-                    this.nameLine,
-                    BookBUS.Instance.checkDuplicateName(this.bookNameTxt.Text)
-                );
-            }
-        }
-
-        private void sellPriceTxt_Leave(object sender, EventArgs e)
-        {
-            try
-            {
-                CustomValidation.Instance.checkTextbox(
-                    this.sellPriceTxt,
-                    this.errorSellPriceMsg,
-                    this.sellPriceLine,
-                    new string[] { "required", "positive-number", "space" }
-                );
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex);
-            }
-        }
-    }
+	}
 }

@@ -100,8 +100,8 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                     book.MaSach,
                     book.TenSach,
                     book.HinhAnh,
-                    string.Format("{0:N0} VNĐ", book.GiaNhap),
-                    string.Format("{0:N0}", book.SoLuongConLai),
+                    book.GiaNhap,
+                    book.SoLuongConLai,
                 });
                 }
             }
@@ -125,9 +125,9 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                     this.dgvAddBookToBillList.Rows.Add(new object[] {
                     false,
                     importBillDetail.MaSach,
-                    string.Format("{0:N0}", importBillDetail.SoLuong),
-                    string.Format("{0:N0} VNĐ", importBillDetail.DonGia),
-                    string.Format("{0:N0} VND", importBillDetail.SoLuong * importBillDetail.DonGia),
+                    importBillDetail.SoLuong,
+                    importBillDetail.DonGia,
+                    importBillDetail.SoLuong * importBillDetail.DonGia,
                 });
                 }
             }

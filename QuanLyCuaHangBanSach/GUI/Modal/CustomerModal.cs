@@ -62,7 +62,9 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             string[] genders = { "Chọn giới tính", "Nam", "Nữ" };
             this.genderCbx.Items.AddRange(genders);
             this.genderCbx.SelectedItem = genders[0];
-            try
+            genderCbx.SelectedIndexChanged += genderCbx_SelectedIndexChanged;
+
+			try
             {
 				if (currentCustomer != null)
 				{

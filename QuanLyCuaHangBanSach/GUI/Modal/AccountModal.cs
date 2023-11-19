@@ -53,6 +53,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
               (Screen.PrimaryScreen.Bounds.Size.Height / 2) - (this.Size.Height / 2)
             );
             this.loadStaffCbx();
+            staffComboBox.SelectedIndexChanged += staffComboBox_SelectedIndexChanged;   
             try
             {
                 if (account != null)

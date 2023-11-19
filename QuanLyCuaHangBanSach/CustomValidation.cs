@@ -133,7 +133,6 @@ namespace QuanLyCuaHangBanSach
         {
             foreach (string rule in rules)
             {
-                Console.WriteLine(rule);
                 switch (rule)
                 {
                     case "required":

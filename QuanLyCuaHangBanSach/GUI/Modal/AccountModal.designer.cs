@@ -269,9 +269,8 @@
 			this.staffComboBox.OnHoverItemForeColor = System.Drawing.Color.White;
 			this.staffComboBox.Radius = 6;
 			this.staffComboBox.Size = new System.Drawing.Size(375, 36);
-			this.staffComboBox.TabIndex = 26;
-			this.staffComboBox.TabStop = false;
-			this.staffComboBox.SelectedIndexChanged += new System.EventHandler(this.staffComboBox_SelectedIndexChanged);
+			this.staffComboBox.TabIndex = 1;
+			this.staffComboBox.Leave += new System.EventHandler(this.staffComboBox_SelectedIndexChanged);
 			// 
 			// label1
 			// 

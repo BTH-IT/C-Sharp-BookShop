@@ -91,7 +91,7 @@
 			this.genderCbx.Radius = 6;
 			this.genderCbx.Size = new System.Drawing.Size(408, 36);
 			this.genderCbx.TabIndex = 4;
-			this.genderCbx.SelectedIndexChanged += new System.EventHandler(this.genderCbx_SelectedIndexChanged);
+			this.genderCbx.Leave += new System.EventHandler(this.genderCbx_SelectedIndexChanged);
 			// 
 			// panel10
 			// 

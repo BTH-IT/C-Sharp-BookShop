@@ -203,7 +203,7 @@
 			this.errorPublishYearMsg.ForeColor = System.Drawing.Color.Red;
 			this.errorPublishYearMsg.Location = new System.Drawing.Point(162, 55);
 			this.errorPublishYearMsg.Name = "errorPublishYearMsg";
-			this.errorPublishYearMsg.Size = new System.Drawing.Size(0, 21);
+			this.errorPublishYearMsg.Size = new System.Drawing.Size(0, 26);
 			this.errorPublishYearMsg.TabIndex = 7;
 			// 
 			// publishYearLine
@@ -272,7 +272,7 @@
 			this.errorImportPriceMsg.ForeColor = System.Drawing.Color.Red;
 			this.errorImportPriceMsg.Location = new System.Drawing.Point(163, 49);
 			this.errorImportPriceMsg.Name = "errorImportPriceMsg";
-			this.errorImportPriceMsg.Size = new System.Drawing.Size(0, 21);
+			this.errorImportPriceMsg.Size = new System.Drawing.Size(0, 26);
 			this.errorImportPriceMsg.TabIndex = 7;
 			// 
 			// importPriceLine
@@ -310,7 +310,7 @@
 			this.errorPublisherMsg.ForeColor = System.Drawing.Color.Red;
 			this.errorPublisherMsg.Location = new System.Drawing.Point(163, 52);
 			this.errorPublisherMsg.Name = "errorPublisherMsg";
-			this.errorPublisherMsg.Size = new System.Drawing.Size(0, 21);
+			this.errorPublisherMsg.Size = new System.Drawing.Size(0, 26);
 			this.errorPublisherMsg.TabIndex = 33;
 			// 
 			// label18
@@ -346,8 +346,7 @@
 			this.publisherCbx.Radius = 6;
 			this.publisherCbx.Size = new System.Drawing.Size(414, 36);
 			this.publisherCbx.TabIndex = 5;
-			this.publisherCbx.SelectedIndexChanged += new System.EventHandler(this.publisherCbx_SelectedIndexChanged);
-			this.publisherCbx.Click += new System.EventHandler(this.publisherCbx_Click);
+			this.publisherCbx.Leave += new System.EventHandler(this.publisherCbx_SelectedIndexChanged);
 			// 
 			// panel4
 			// 
@@ -388,7 +387,7 @@
 			this.sellPriceTxt.Size = new System.Drawing.Size(425, 36);
 			this.sellPriceTxt.TabIndex = 4;
 			this.sellPriceTxt.TextChanged += new System.EventHandler(this.sellPriceTxt_TextChanged);
-			this.sellPriceTxt.Leave += new System.EventHandler(this.sellPriceTxt_Leave);
+			this.sellPriceTxt.Leave += new System.EventHandler(this.sellPriceTxt_TextChanged);
 			// 
 			// errorSellPriceMsg
 			// 
@@ -397,7 +396,7 @@
 			this.errorSellPriceMsg.ForeColor = System.Drawing.Color.Red;
 			this.errorSellPriceMsg.Location = new System.Drawing.Point(163, 49);
 			this.errorSellPriceMsg.Name = "errorSellPriceMsg";
-			this.errorSellPriceMsg.Size = new System.Drawing.Size(0, 21);
+			this.errorSellPriceMsg.Size = new System.Drawing.Size(0, 26);
 			this.errorSellPriceMsg.TabIndex = 7;
 			// 
 			// sellPriceLine
@@ -435,7 +434,7 @@
 			this.errorBookTypeMsg.ForeColor = System.Drawing.Color.Red;
 			this.errorBookTypeMsg.Location = new System.Drawing.Point(163, 52);
 			this.errorBookTypeMsg.Name = "errorBookTypeMsg";
-			this.errorBookTypeMsg.Size = new System.Drawing.Size(0, 21);
+			this.errorBookTypeMsg.Size = new System.Drawing.Size(0, 26);
 			this.errorBookTypeMsg.TabIndex = 30;
 			// 
 			// label16
@@ -471,8 +470,7 @@
 			this.bookTypeCbx.Radius = 6;
 			this.bookTypeCbx.Size = new System.Drawing.Size(414, 36);
 			this.bookTypeCbx.TabIndex = 3;
-			this.bookTypeCbx.SelectedIndexChanged += new System.EventHandler(this.bookTypeCbx_SelectedIndexChanged);
-			this.bookTypeCbx.Click += new System.EventHandler(this.bookTypeCbx_Click);
+			this.bookTypeCbx.Leave += new System.EventHandler(this.bookTypeCbx_SelectedIndexChanged);
 			// 
 			// panel2
 			// 
@@ -491,7 +489,7 @@
 			this.errorAuthorMsg.ForeColor = System.Drawing.Color.Red;
 			this.errorAuthorMsg.Location = new System.Drawing.Point(163, 52);
 			this.errorAuthorMsg.Name = "errorAuthorMsg";
-			this.errorAuthorMsg.Size = new System.Drawing.Size(0, 21);
+			this.errorAuthorMsg.Size = new System.Drawing.Size(0, 26);
 			this.errorAuthorMsg.TabIndex = 27;
 			// 
 			// label13
@@ -527,8 +525,7 @@
 			this.authorCbx.Radius = 6;
 			this.authorCbx.Size = new System.Drawing.Size(414, 36);
 			this.authorCbx.TabIndex = 2;
-			this.authorCbx.SelectedIndexChanged += new System.EventHandler(this.authorCbx_SelectedIndexChanged);
-			this.authorCbx.Click += new System.EventHandler(this.authorCbx_Click);
+			this.authorCbx.Leave += new System.EventHandler(this.authorCbx_SelectedIndexChanged);
 			// 
 			// panel1
 			// 
@@ -569,7 +566,7 @@
 			this.bookNameTxt.Size = new System.Drawing.Size(425, 36);
 			this.bookNameTxt.TabIndex = 1;
 			this.bookNameTxt.TextChanged += new System.EventHandler(this.bookNameTxt_TextChanged);
-			this.bookNameTxt.Leave += new System.EventHandler(this.bookNameTxt_Leave);
+			this.bookNameTxt.Leave += new System.EventHandler(this.bookNameTxt_TextChanged);
 			// 
 			// errorBookNameMsg
 			// 
@@ -578,7 +575,7 @@
 			this.errorBookNameMsg.ForeColor = System.Drawing.Color.Red;
 			this.errorBookNameMsg.Location = new System.Drawing.Point(163, 50);
 			this.errorBookNameMsg.Name = "errorBookNameMsg";
-			this.errorBookNameMsg.Size = new System.Drawing.Size(0, 21);
+			this.errorBookNameMsg.Size = new System.Drawing.Size(0, 26);
 			this.errorBookNameMsg.TabIndex = 7;
 			// 
 			// nameLine
@@ -634,7 +631,7 @@
 			this.errorImageMsg.ForeColor = System.Drawing.Color.Red;
 			this.errorImageMsg.Location = new System.Drawing.Point(165, 157);
 			this.errorImageMsg.Name = "errorImageMsg";
-			this.errorImageMsg.Size = new System.Drawing.Size(0, 21);
+			this.errorImageMsg.Size = new System.Drawing.Size(0, 26);
 			this.errorImageMsg.TabIndex = 11;
 			this.errorImageMsg.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
@@ -678,7 +675,7 @@
 			// 
 			// BookModal
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 18F);
+			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 23F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.White;
 			this.ClientSize = new System.Drawing.Size(1222, 637);

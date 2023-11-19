@@ -147,8 +147,6 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
         {
             try
             {
-                if (!isGenderCbx) return;
-
                 CustomValidation.Instance.checkCombobox(
                     this.genderCbx,
                     this.genderMsg,
@@ -191,6 +189,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                         (Screen.PrimaryScreen.Bounds.Size.Height / 2) - (this.Size.Height / 2)
                     );
                 this.genderCbx.SelectedIndex = 0;
+                genderCbx.SelectedIndexChanged += this.genderCbx_SelectedIndexChanged;  
                 if (updateAuthor != null)
                 {
 
@@ -199,45 +198,6 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                     this.birthYear.Text = updateAuthor.NamSinh.ToString();
 
                 }
-            }
-            catch (Exception er)
-            {
-
-                Console.WriteLine(er);
-            }
-        }
-
-        private void authorName_Leave(object sender, EventArgs e)
-        {
-            bool isAuthor = CustomValidation.Instance.checkTextbox(
-                this.authorName,
-                this.authorNameMsg,
-                this.nameLine,
-                new string[] { "required", "space" }
-            );
-
-            if (isAuthor)
-            {
-                CustomValidation.Instance.checkDuplicateName(
-                    this.authorNameMsg,
-                    this.nameLine,
-                    AuthorBUS.Instance.checkDuplicateName(this.authorName.Text)
-                );
-            }
-        }
-
-        private void birthYear_Leave(object sender, EventArgs e)
-        {
-            try
-            {
-                this.birthYear.ForeColor = Color.Black;
-
-                CustomValidation.Instance.checkTextbox(
-                    this.birthYear,
-                    this.birthYearMsg,
-                    this.birthYearLine,
-                    new string[] { "required", "positive-number", "max-current-year", "space" }
-                );
             }
             catch (Exception er)
             {

@@ -77,6 +77,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 				this.loadCustomerListToDataGridView(customerList);
                 this.genderCbx.Items.AddRange(genders);
                 this.genderCbx.SelectedIndex = 0;
+				this.loadCustomerListToDataGridView(customerList);
                 this.renderCheckBoxDgv();
 				headerCheckbox.MouseClick += new MouseEventHandler(headerCheckbox_Clicked);
 			}
@@ -220,7 +221,6 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                     return true;
                 }
                 );
-                Console.WriteLine(newCustomers.Count);
                 return newCustomers;
             }
             catch
