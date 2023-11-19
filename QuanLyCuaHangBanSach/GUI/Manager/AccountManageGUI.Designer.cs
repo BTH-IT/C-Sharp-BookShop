@@ -42,13 +42,13 @@
 			this.btnAdd = new Guna.UI.WinForms.GunaAdvenceButton();
 			this.searchInput = new Guna.UI2.WinForms.Guna2TextBox();
 			this.dgvAccount = new Guna.UI.WinForms.GunaDataGridView();
+			this.line1 = new System.Windows.Forms.Panel();
+			this.pictureBox1 = new System.Windows.Forms.PictureBox();
+			this.panel2 = new System.Windows.Forms.Panel();
 			this.Column11 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
 			this.nhanVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.eMail = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.matKhau = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.line1 = new System.Windows.Forms.Panel();
-			this.pictureBox1 = new System.Windows.Forms.PictureBox();
-			this.panel2 = new System.Windows.Forms.Panel();
 			this.panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dgvAccount)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -309,7 +309,6 @@
 			this.dgvAccount.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
 			this.dgvAccount.Location = new System.Drawing.Point(0, 63);
 			this.dgvAccount.Name = "dgvAccount";
-			this.dgvAccount.ReadOnly = true;
 			dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
 			dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
 			dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
@@ -347,7 +346,7 @@
 			this.dgvAccount.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
 			this.dgvAccount.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
 			this.dgvAccount.ThemeStyle.HeaderStyle.Height = 50;
-			this.dgvAccount.ThemeStyle.ReadOnly = true;
+			this.dgvAccount.ThemeStyle.ReadOnly = false;
 			this.dgvAccount.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
 			this.dgvAccount.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
 			this.dgvAccount.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
@@ -356,38 +355,6 @@
 			this.dgvAccount.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
 			this.dgvAccount.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
 			this.dgvAccount.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAccountCell_DoubleClick);
-			// 
-			// Column11
-			// 
-			this.Column11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-			this.Column11.FillWeight = 50F;
-			this.Column11.Frozen = true;
-			this.Column11.HeaderText = "";
-			this.Column11.MinimumWidth = 50;
-			this.Column11.Name = "Column11";
-			this.Column11.ReadOnly = true;
-			this.Column11.Width = 50;
-			// 
-			// nhanVien
-			// 
-			this.nhanVien.HeaderText = "Nhân viên";
-			this.nhanVien.MinimumWidth = 6;
-			this.nhanVien.Name = "nhanVien";
-			this.nhanVien.ReadOnly = true;
-			// 
-			// eMail
-			// 
-			this.eMail.HeaderText = "Email";
-			this.eMail.MinimumWidth = 6;
-			this.eMail.Name = "eMail";
-			this.eMail.ReadOnly = true;
-			// 
-			// matKhau
-			// 
-			this.matKhau.HeaderText = "Mật khẩu ";
-			this.matKhau.MinimumWidth = 6;
-			this.matKhau.Name = "matKhau";
-			this.matKhau.ReadOnly = true;
 			// 
 			// line1
 			// 
@@ -417,6 +384,37 @@
 			this.panel2.Name = "panel2";
 			this.panel2.Size = new System.Drawing.Size(1044, 63);
 			this.panel2.TabIndex = 0;
+			// 
+			// Column11
+			// 
+			this.Column11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+			this.Column11.FillWeight = 50F;
+			this.Column11.Frozen = true;
+			this.Column11.HeaderText = "";
+			this.Column11.MinimumWidth = 50;
+			this.Column11.Name = "Column11";
+			this.Column11.Width = 50;
+			// 
+			// nhanVien
+			// 
+			this.nhanVien.HeaderText = "Nhân viên";
+			this.nhanVien.MinimumWidth = 6;
+			this.nhanVien.Name = "nhanVien";
+			this.nhanVien.ReadOnly = true;
+			// 
+			// eMail
+			// 
+			this.eMail.HeaderText = "Email";
+			this.eMail.MinimumWidth = 6;
+			this.eMail.Name = "eMail";
+			this.eMail.ReadOnly = true;
+			// 
+			// matKhau
+			// 
+			this.matKhau.HeaderText = "Mật khẩu ";
+			this.matKhau.MinimumWidth = 6;
+			this.matKhau.Name = "matKhau";
+			this.matKhau.ReadOnly = true;
 			// 
 			// AccountManageGUI
 			// 
@@ -453,10 +451,10 @@
         private Guna.UI2.WinForms.Guna2TextBox searchInput;
         private Guna.UI.WinForms.GunaDataGridView dgvAccount;
         private System.Windows.Forms.Panel line1;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Column11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nhanVien;
-        private System.Windows.Forms.DataGridViewTextBoxColumn eMail;
-        private System.Windows.Forms.DataGridViewTextBoxColumn matKhau;
         private System.Windows.Forms.Panel panel2;
-    }
+		private System.Windows.Forms.DataGridViewCheckBoxColumn Column11;
+		private System.Windows.Forms.DataGridViewTextBoxColumn nhanVien;
+		private System.Windows.Forms.DataGridViewTextBoxColumn eMail;
+		private System.Windows.Forms.DataGridViewTextBoxColumn matKhau;
+	}
 }

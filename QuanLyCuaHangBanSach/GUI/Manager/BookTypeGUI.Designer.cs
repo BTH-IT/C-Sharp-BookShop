@@ -42,12 +42,12 @@
 			this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
 			this.searchInput = new Guna.UI2.WinForms.Guna2TextBox();
 			this.dgvBookType = new Guna.UI.WinForms.GunaDataGridView();
-			this.Column9 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-			this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.panel2 = new System.Windows.Forms.Panel();
 			this.line1 = new System.Windows.Forms.Panel();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
+			this.Column9 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+			this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dgvBookType)).BeginInit();
 			this.panel2.SuspendLayout();
@@ -278,7 +278,6 @@
 			this.dgvBookType.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
 			this.dgvBookType.Location = new System.Drawing.Point(0, 69);
 			this.dgvBookType.Name = "dgvBookType";
-			this.dgvBookType.ReadOnly = true;
 			dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
 			dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
 			dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -317,7 +316,7 @@
 			this.dgvBookType.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
 			this.dgvBookType.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
 			this.dgvBookType.ThemeStyle.HeaderStyle.Height = 50;
-			this.dgvBookType.ThemeStyle.ReadOnly = true;
+			this.dgvBookType.ThemeStyle.ReadOnly = false;
 			this.dgvBookType.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
 			this.dgvBookType.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
 			this.dgvBookType.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -326,36 +325,6 @@
 			this.dgvBookType.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
 			this.dgvBookType.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
 			this.dgvBookType.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBookType_CellDoubleClick);
-			// 
-			// Column9
-			// 
-			this.Column9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-			this.Column9.FillWeight = 50F;
-			this.Column9.Frozen = true;
-			this.Column9.HeaderText = "";
-			this.Column9.MinimumWidth = 50;
-			this.Column9.Name = "Column9";
-			this.Column9.ReadOnly = true;
-			this.Column9.Width = 50;
-			// 
-			// Column1
-			// 
-			this.Column1.FillWeight = 61.60671F;
-			this.Column1.HeaderText = "Mã Thể Loại";
-			this.Column1.MinimumWidth = 6;
-			this.Column1.Name = "Column1";
-			this.Column1.ReadOnly = true;
-			this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-			this.Column1.ToolTipText = "Mã Thể Loại";
-			// 
-			// Column6
-			// 
-			this.Column6.FillWeight = 61.60671F;
-			this.Column6.HeaderText = "Tên Thể Loại";
-			this.Column6.MinimumWidth = 6;
-			this.Column6.Name = "Column6";
-			this.Column6.ReadOnly = true;
-			this.Column6.ToolTipText = "Tên Thể Loại";
 			// 
 			// panel2
 			// 
@@ -385,6 +354,35 @@
 			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
 			this.pictureBox1.TabIndex = 33;
 			this.pictureBox1.TabStop = false;
+			// 
+			// Column9
+			// 
+			this.Column9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+			this.Column9.FillWeight = 50F;
+			this.Column9.Frozen = true;
+			this.Column9.HeaderText = "";
+			this.Column9.MinimumWidth = 50;
+			this.Column9.Name = "Column9";
+			this.Column9.Width = 50;
+			// 
+			// Column1
+			// 
+			this.Column1.FillWeight = 61.60671F;
+			this.Column1.HeaderText = "Mã Thể Loại";
+			this.Column1.MinimumWidth = 6;
+			this.Column1.Name = "Column1";
+			this.Column1.ReadOnly = true;
+			this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+			this.Column1.ToolTipText = "Mã Thể Loại";
+			// 
+			// Column6
+			// 
+			this.Column6.FillWeight = 61.60671F;
+			this.Column6.HeaderText = "Tên Thể Loại";
+			this.Column6.MinimumWidth = 6;
+			this.Column6.Name = "Column6";
+			this.Column6.ReadOnly = true;
+			this.Column6.ToolTipText = "Tên Thể Loại";
 			// 
 			// BookTypeGUI
 			// 
@@ -422,9 +420,9 @@
         private Guna.UI2.WinForms.Guna2TextBox searchInput;
         private Guna.UI.WinForms.GunaDataGridView dgvBookType;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Column9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
 		private System.Windows.Forms.Panel line1;
+		private System.Windows.Forms.DataGridViewCheckBoxColumn Column9;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
 	}
 }

@@ -12,8 +12,9 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
     public partial class PermissionManageGUI : Form
     {
         private CheckBox headerCheckbox;
-
-        public PermissionManageGUI()
+        public delegate void OnPermissionStatusChange(int staffId, string screenName);
+		public event OnPermissionStatusChange onPermissionStatusChange;
+		public PermissionManageGUI()
         {
             InitializeComponent();
         }
@@ -172,12 +173,15 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                     }
 
                     positionModal.ShowDialog();
-
                     if (positionModal.isSubmitSuccess)
                     {
                         List<PermissionDTO> positionList = PermissionBUS.Instance.search(this.searchInput.Text);
 
                         this.loadPermissionListToDataView(positionList);
+                        if(positionModal.isPermissionStatusChange)
+                        {
+                            onPermissionStatusChange(ManagerGUI.currentStaff.Ma,"");
+                        }    
                     }
                 }
             }
@@ -268,7 +272,11 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                         List<PermissionDTO> positionList = PermissionBUS.Instance.search(this.searchInput.Text);
 
                         this.loadPermissionListToDataView(positionList);
-                    }
+						if (positionModal.isPermissionStatusChange)
+						{
+							onPermissionStatusChange(ManagerGUI.currentStaff.Ma, "");
+						}
+					}
                 }
             }
             catch (Exception ex)

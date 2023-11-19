@@ -36,12 +36,6 @@
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SeoManageGUI));
 			this.searchInput = new Guna.UI2.WinForms.Guna2TextBox();
 			this.dgvSale = new Guna.UI.WinForms.GunaDataGridView();
-			this.Column11 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-			this.maKhuyenMai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.tenKhuyenMai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.phanTram = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.ngayBatDau = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.ngayKetThuc = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.line1 = new System.Windows.Forms.Panel();
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.btnExport = new Guna.UI.WinForms.GunaAdvenceButton();
@@ -57,6 +51,12 @@
 			this.dateTimeFrom = new Guna.UI.WinForms.GunaDateTimePicker();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.panel2 = new System.Windows.Forms.Panel();
+			this.Column11 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+			this.maKhuyenMai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.tenKhuyenMai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.phanTram = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.ngayBatDau = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.ngayKetThuc = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			((System.ComponentModel.ISupportInitialize)(this.dgvSale)).BeginInit();
 			this.panel1.SuspendLayout();
 			this.panel5.SuspendLayout();
@@ -136,7 +136,6 @@
 			this.dgvSale.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
 			this.dgvSale.Location = new System.Drawing.Point(0, 72);
 			this.dgvSale.Name = "dgvSale";
-			this.dgvSale.ReadOnly = true;
 			dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
 			dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
 			dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
@@ -175,7 +174,7 @@
 			this.dgvSale.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
 			this.dgvSale.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
 			this.dgvSale.ThemeStyle.HeaderStyle.Height = 50;
-			this.dgvSale.ThemeStyle.ReadOnly = true;
+			this.dgvSale.ThemeStyle.ReadOnly = false;
 			this.dgvSale.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
 			this.dgvSale.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
 			this.dgvSale.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
@@ -184,52 +183,6 @@
 			this.dgvSale.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
 			this.dgvSale.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
 			this.dgvSale.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCell_CellDoubleClick);
-			// 
-			// Column11
-			// 
-			this.Column11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-			this.Column11.FillWeight = 50F;
-			this.Column11.Frozen = true;
-			this.Column11.HeaderText = "";
-			this.Column11.MinimumWidth = 50;
-			this.Column11.Name = "Column11";
-			this.Column11.ReadOnly = true;
-			this.Column11.Width = 50;
-			// 
-			// maKhuyenMai
-			// 
-			this.maKhuyenMai.HeaderText = "Mã khuyến mãi";
-			this.maKhuyenMai.MinimumWidth = 6;
-			this.maKhuyenMai.Name = "maKhuyenMai";
-			this.maKhuyenMai.ReadOnly = true;
-			// 
-			// tenKhuyenMai
-			// 
-			this.tenKhuyenMai.HeaderText = "Tên Khuyến mãi";
-			this.tenKhuyenMai.MinimumWidth = 6;
-			this.tenKhuyenMai.Name = "tenKhuyenMai";
-			this.tenKhuyenMai.ReadOnly = true;
-			// 
-			// phanTram
-			// 
-			this.phanTram.HeaderText = "Phần Trăm";
-			this.phanTram.MinimumWidth = 6;
-			this.phanTram.Name = "phanTram";
-			this.phanTram.ReadOnly = true;
-			// 
-			// ngayBatDau
-			// 
-			this.ngayBatDau.HeaderText = "Ngày Bắt đầu";
-			this.ngayBatDau.MinimumWidth = 6;
-			this.ngayBatDau.Name = "ngayBatDau";
-			this.ngayBatDau.ReadOnly = true;
-			// 
-			// ngayKetThuc
-			// 
-			this.ngayKetThuc.HeaderText = "Ngày kết thúc";
-			this.ngayKetThuc.MinimumWidth = 6;
-			this.ngayKetThuc.Name = "ngayKetThuc";
-			this.ngayKetThuc.ReadOnly = true;
 			// 
 			// line1
 			// 
@@ -542,6 +495,56 @@
 			this.panel2.Size = new System.Drawing.Size(1044, 72);
 			this.panel2.TabIndex = 0;
 			// 
+			// Column11
+			// 
+			this.Column11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+			this.Column11.FillWeight = 50F;
+			this.Column11.Frozen = true;
+			this.Column11.HeaderText = "";
+			this.Column11.MinimumWidth = 50;
+			this.Column11.Name = "Column11";
+			this.Column11.Width = 50;
+			// 
+			// maKhuyenMai
+			// 
+			this.maKhuyenMai.HeaderText = "Mã khuyến mãi";
+			this.maKhuyenMai.MinimumWidth = 6;
+			this.maKhuyenMai.Name = "maKhuyenMai";
+			this.maKhuyenMai.ReadOnly = true;
+			this.maKhuyenMai.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+			// 
+			// tenKhuyenMai
+			// 
+			this.tenKhuyenMai.HeaderText = "Tên Khuyến mãi";
+			this.tenKhuyenMai.MinimumWidth = 6;
+			this.tenKhuyenMai.Name = "tenKhuyenMai";
+			this.tenKhuyenMai.ReadOnly = true;
+			this.tenKhuyenMai.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+			// 
+			// phanTram
+			// 
+			this.phanTram.HeaderText = "Phần Trăm";
+			this.phanTram.MinimumWidth = 6;
+			this.phanTram.Name = "phanTram";
+			this.phanTram.ReadOnly = true;
+			this.phanTram.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+			// 
+			// ngayBatDau
+			// 
+			this.ngayBatDau.HeaderText = "Ngày Bắt đầu";
+			this.ngayBatDau.MinimumWidth = 6;
+			this.ngayBatDau.Name = "ngayBatDau";
+			this.ngayBatDau.ReadOnly = true;
+			this.ngayBatDau.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+			// 
+			// ngayKetThuc
+			// 
+			this.ngayKetThuc.HeaderText = "Ngày kết thúc";
+			this.ngayKetThuc.MinimumWidth = 6;
+			this.ngayKetThuc.Name = "ngayKetThuc";
+			this.ngayKetThuc.ReadOnly = true;
+			this.ngayKetThuc.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+			// 
 			// SeoManageGUI
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -577,12 +580,6 @@
         private Guna.UI.WinForms.GunaAdvenceButton deleteBtn;
         private Guna.UI.WinForms.GunaAdvenceButton btnEdit;
         private Guna.UI.WinForms.GunaAdvenceButton btnAdd;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Column11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn maKhuyenMai;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tenKhuyenMai;
-        private System.Windows.Forms.DataGridViewTextBoxColumn phanTram;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ngayBatDau;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ngayKetThuc;
         private System.Windows.Forms.Panel panel5;
         private Guna.UI.WinForms.GunaMediumCheckBox filterCkx;
         private Guna.UI.WinForms.GunaDateTimePicker dateTimeTo;
@@ -590,5 +587,11 @@
         private System.Windows.Forms.Label label2;
         private Guna.UI.WinForms.GunaDateTimePicker dateTimeFrom;
         private System.Windows.Forms.Panel panel2;
-    }
+		private System.Windows.Forms.DataGridViewCheckBoxColumn Column11;
+		private System.Windows.Forms.DataGridViewTextBoxColumn maKhuyenMai;
+		private System.Windows.Forms.DataGridViewTextBoxColumn tenKhuyenMai;
+		private System.Windows.Forms.DataGridViewTextBoxColumn phanTram;
+		private System.Windows.Forms.DataGridViewTextBoxColumn ngayBatDau;
+		private System.Windows.Forms.DataGridViewTextBoxColumn ngayKetThuc;
+	}
 }

@@ -24,6 +24,10 @@ namespace QuanLyCuaHangBanSach.GUI.UserControls
             this.positionId = positionId;
             this.ckx.Text = text;
             this.ckx.Checked = isCheck;
+            if(text == "Quyền hạn" || permissionId == 7 )
+            {
+                this.ckx.Enabled = false;   
+            }    
         }
 
         private void ckx_CheckedChanged(object sender, EventArgs e)

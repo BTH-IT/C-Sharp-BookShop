@@ -38,14 +38,6 @@
 			this.genderCbx = new Guna.UI.WinForms.GunaComboBox();
 			this.positionCbx = new Guna.UI.WinForms.GunaComboBox();
 			this.dgvStaff = new Guna.UI.WinForms.GunaDataGridView();
-			this.Column11 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-			this.maNhanVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.tenNhanVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.namSinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.gioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.soDienThoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.luong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.chucVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.line1 = new System.Windows.Forms.Panel();
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.exportBtn = new Guna.UI.WinForms.GunaAdvenceButton();
@@ -63,6 +55,14 @@
 			this.panel2 = new System.Windows.Forms.Panel();
 			this.label1 = new System.Windows.Forms.Label();
 			this.panel5 = new System.Windows.Forms.Panel();
+			this.Column11 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+			this.maNhanVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.tenNhanVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.namSinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.gioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.soDienThoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.luong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.chucVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			((System.ComponentModel.ISupportInitialize)(this.dgvStaff)).BeginInit();
 			this.panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -192,7 +192,6 @@
 			this.dgvStaff.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
 			this.dgvStaff.Location = new System.Drawing.Point(0, 63);
 			this.dgvStaff.Name = "dgvStaff";
-			this.dgvStaff.ReadOnly = true;
 			dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
 			dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
 			dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
@@ -230,7 +229,7 @@
 			this.dgvStaff.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
 			this.dgvStaff.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
 			this.dgvStaff.ThemeStyle.HeaderStyle.Height = 50;
-			this.dgvStaff.ThemeStyle.ReadOnly = true;
+			this.dgvStaff.ThemeStyle.ReadOnly = false;
 			this.dgvStaff.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
 			this.dgvStaff.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
 			this.dgvStaff.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
@@ -240,66 +239,6 @@
 			this.dgvStaff.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
 			this.dgvStaff.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStaff_CellDoubleClick);
 			this.dgvStaff.SortCompare += new System.Windows.Forms.DataGridViewSortCompareEventHandler(this.dgvStaff_SortCompare);
-			// 
-			// Column11
-			// 
-			this.Column11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-			this.Column11.FillWeight = 50F;
-			this.Column11.Frozen = true;
-			this.Column11.HeaderText = "";
-			this.Column11.MinimumWidth = 50;
-			this.Column11.Name = "Column11";
-			this.Column11.ReadOnly = true;
-			this.Column11.Width = 50;
-			// 
-			// maNhanVien
-			// 
-			this.maNhanVien.HeaderText = "Mã Nhân viên";
-			this.maNhanVien.MinimumWidth = 6;
-			this.maNhanVien.Name = "maNhanVien";
-			this.maNhanVien.ReadOnly = true;
-			// 
-			// tenNhanVien
-			// 
-			this.tenNhanVien.HeaderText = "Tên nhân viên";
-			this.tenNhanVien.MinimumWidth = 6;
-			this.tenNhanVien.Name = "tenNhanVien";
-			this.tenNhanVien.ReadOnly = true;
-			// 
-			// namSinh
-			// 
-			this.namSinh.HeaderText = "Năm sinh";
-			this.namSinh.MinimumWidth = 6;
-			this.namSinh.Name = "namSinh";
-			this.namSinh.ReadOnly = true;
-			// 
-			// gioiTinh
-			// 
-			this.gioiTinh.HeaderText = " Giới Tính";
-			this.gioiTinh.MinimumWidth = 6;
-			this.gioiTinh.Name = "gioiTinh";
-			this.gioiTinh.ReadOnly = true;
-			// 
-			// soDienThoai
-			// 
-			this.soDienThoai.HeaderText = "Số điện thoại";
-			this.soDienThoai.MinimumWidth = 6;
-			this.soDienThoai.Name = "soDienThoai";
-			this.soDienThoai.ReadOnly = true;
-			// 
-			// luong
-			// 
-			this.luong.HeaderText = "Lương";
-			this.luong.MinimumWidth = 6;
-			this.luong.Name = "luong";
-			this.luong.ReadOnly = true;
-			// 
-			// chucVu
-			// 
-			this.chucVu.HeaderText = "Chức vụ";
-			this.chucVu.MinimumWidth = 6;
-			this.chucVu.Name = "chucVu";
-			this.chucVu.ReadOnly = true;
 			// 
 			// line1
 			// 
@@ -641,6 +580,70 @@
 			this.panel5.Size = new System.Drawing.Size(1044, 63);
 			this.panel5.TabIndex = 1;
 			// 
+			// Column11
+			// 
+			this.Column11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+			this.Column11.FillWeight = 50F;
+			this.Column11.Frozen = true;
+			this.Column11.HeaderText = "";
+			this.Column11.MinimumWidth = 50;
+			this.Column11.Name = "Column11";
+			this.Column11.Width = 50;
+			// 
+			// maNhanVien
+			// 
+			this.maNhanVien.HeaderText = "Mã Nhân viên";
+			this.maNhanVien.MinimumWidth = 6;
+			this.maNhanVien.Name = "maNhanVien";
+			// 
+			// tenNhanVien
+			// 
+			this.tenNhanVien.HeaderText = "Tên nhân viên";
+			this.tenNhanVien.MinimumWidth = 6;
+			this.tenNhanVien.Name = "tenNhanVien";
+			this.tenNhanVien.ReadOnly = true;
+			this.tenNhanVien.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+			// 
+			// namSinh
+			// 
+			this.namSinh.HeaderText = "Năm sinh";
+			this.namSinh.MinimumWidth = 6;
+			this.namSinh.Name = "namSinh";
+			this.namSinh.ReadOnly = true;
+			this.namSinh.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+			// 
+			// gioiTinh
+			// 
+			this.gioiTinh.HeaderText = " Giới Tính";
+			this.gioiTinh.MinimumWidth = 6;
+			this.gioiTinh.Name = "gioiTinh";
+			this.gioiTinh.ReadOnly = true;
+			this.gioiTinh.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+			// 
+			// soDienThoai
+			// 
+			this.soDienThoai.HeaderText = "Số điện thoại";
+			this.soDienThoai.MinimumWidth = 6;
+			this.soDienThoai.Name = "soDienThoai";
+			this.soDienThoai.ReadOnly = true;
+			this.soDienThoai.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+			// 
+			// luong
+			// 
+			this.luong.HeaderText = "Lương";
+			this.luong.MinimumWidth = 6;
+			this.luong.Name = "luong";
+			this.luong.ReadOnly = true;
+			this.luong.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+			// 
+			// chucVu
+			// 
+			this.chucVu.HeaderText = "Chức vụ";
+			this.chucVu.MinimumWidth = 6;
+			this.chucVu.Name = "chucVu";
+			this.chucVu.ReadOnly = true;
+			this.chucVu.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+			// 
 			// StaffManageGUI
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -687,13 +690,13 @@
 		private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Column11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn maNhanVien;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tenNhanVien;
-        private System.Windows.Forms.DataGridViewTextBoxColumn namSinh;
-        private System.Windows.Forms.DataGridViewTextBoxColumn gioiTinh;
-        private System.Windows.Forms.DataGridViewTextBoxColumn soDienThoai;
-        private System.Windows.Forms.DataGridViewTextBoxColumn luong;
-        private System.Windows.Forms.DataGridViewTextBoxColumn chucVu;
-    }
+		private System.Windows.Forms.DataGridViewCheckBoxColumn Column11;
+		private System.Windows.Forms.DataGridViewTextBoxColumn maNhanVien;
+		private System.Windows.Forms.DataGridViewTextBoxColumn tenNhanVien;
+		private System.Windows.Forms.DataGridViewTextBoxColumn namSinh;
+		private System.Windows.Forms.DataGridViewTextBoxColumn gioiTinh;
+		private System.Windows.Forms.DataGridViewTextBoxColumn soDienThoai;
+		private System.Windows.Forms.DataGridViewTextBoxColumn luong;
+		private System.Windows.Forms.DataGridViewTextBoxColumn chucVu;
+	}
 }
