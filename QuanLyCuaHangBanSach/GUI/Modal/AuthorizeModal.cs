@@ -33,7 +33,6 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                         authDetail.maQuyenHan,
                         authDetail.TrangThai
                     );
-
                     this.authorizeList.Controls.Add(checkBox);
                 }
             }

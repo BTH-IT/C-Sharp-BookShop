@@ -10,7 +10,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
     {
         public PermissionDTO updatePermission = null;
         public bool isSubmitSuccess = false;
-
+        public bool isPermissionStatusChange = false;
         public PermissionModal(string title = "Thêm quyền hạn")
         {
             InitializeComponent();
@@ -106,6 +106,13 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 {
                     this.isSubmitSuccess = isSuccess;
                     MessageBox.Show(updatePermission != null ? "Update Success" : "Insert Success");
+                    if (updatePermission != null )
+                    {
+                        if (updatePermission.TrangThai != permission.TrangThai )
+                        {
+                            isPermissionStatusChange = true;    
+                        }    
+                    }    
                     this.Close();
                     return;
                 }
@@ -131,7 +138,13 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
                 if (updatePermission != null)
                 {
+
                     this.permissionNameTxt.Text = updatePermission.tenQuyenHan;
+                    if (updatePermission.tenQuyenHan == "Quyền hạn")
+                    {
+                        this.permissionNameTxt.Enabled = false;
+                        this.activeCkx.Enabled = false;
+                    }    
                     this.activeCkx.Checked = updatePermission.TrangThai;
                 }
             }

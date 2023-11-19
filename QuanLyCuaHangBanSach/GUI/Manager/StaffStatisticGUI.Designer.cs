@@ -33,17 +33,13 @@
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StaffStatisticGUI));
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StaffStatisticGUI));
 			this.line1 = new System.Windows.Forms.Panel();
 			this.dgvStaff = new Guna.UI.WinForms.GunaDataGridView();
-			this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.optionPanel = new System.Windows.Forms.Panel();
 			this.exportBtn = new Guna.UI.WinForms.GunaAdvenceButton();
 			this.refreshBtn = new Guna.UI.WinForms.GunaAdvenceButton();
@@ -59,6 +55,10 @@
 			this.panel2 = new System.Windows.Forms.Panel();
 			this.label1 = new System.Windows.Forms.Label();
 			this.closeBtn = new System.Windows.Forms.PictureBox();
+			this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			((System.ComponentModel.ISupportInitialize)(this.dgvStaff)).BeginInit();
 			this.optionPanel.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -162,57 +162,6 @@
 			this.dgvStaff.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
 			this.dgvStaff.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
 			this.dgvStaff.SortCompare += new System.Windows.Forms.DataGridViewSortCompareEventHandler(this.dgvStaff_SortCompare);
-			// 
-			// Column2
-			// 
-			dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-			dataGridViewCellStyle3.Font = new System.Drawing.Font("#9Slide03 Cabin", 10F);
-			this.Column2.DefaultCellStyle = dataGridViewCellStyle3;
-			this.Column2.FillWeight = 50F;
-			this.Column2.HeaderText = "Mã nhân viên";
-			this.Column2.MinimumWidth = 6;
-			this.Column2.Name = "Column2";
-			this.Column2.ReadOnly = true;
-			this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-			this.Column2.ToolTipText = "Mã nhân viên";
-			// 
-			// Column7
-			// 
-			dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-			dataGridViewCellStyle4.Font = new System.Drawing.Font("#9Slide03 Cabin", 10F);
-			this.Column7.DefaultCellStyle = dataGridViewCellStyle4;
-			this.Column7.FillWeight = 120F;
-			this.Column7.HeaderText = "Tên nhân viên";
-			this.Column7.MinimumWidth = 6;
-			this.Column7.Name = "Column7";
-			this.Column7.ReadOnly = true;
-			this.Column7.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-			this.Column7.ToolTipText = "Tên nhân viên";
-			// 
-			// Column8
-			// 
-			dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-			dataGridViewCellStyle5.Font = new System.Drawing.Font("#9Slide03 Cabin", 10F);
-			this.Column8.DefaultCellStyle = dataGridViewCellStyle5;
-			this.Column8.FillWeight = 120F;
-			this.Column8.HeaderText = "Số điện thoại";
-			this.Column8.MinimumWidth = 6;
-			this.Column8.Name = "Column8";
-			this.Column8.ReadOnly = true;
-			this.Column8.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-			this.Column8.ToolTipText = "Số điện thoại";
-			// 
-			// Column1
-			// 
-			dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-			dataGridViewCellStyle6.Font = new System.Drawing.Font("#9Slide03 Cabin", 10F);
-			this.Column1.DefaultCellStyle = dataGridViewCellStyle6;
-			this.Column1.FillWeight = 120F;
-			this.Column1.HeaderText = "Doanh thu";
-			this.Column1.MinimumWidth = 6;
-			this.Column1.Name = "Column1";
-			this.Column1.ReadOnly = true;
-			this.Column1.ToolTipText = "Doanh thu";
 			// 
 			// optionPanel
 			// 
@@ -483,6 +432,58 @@
 			this.closeBtn.TabStop = false;
 			this.closeBtn.Click += new System.EventHandler(this.closeBtn_Click);
 			// 
+			// Column2
+			// 
+			dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+			dataGridViewCellStyle3.Font = new System.Drawing.Font("#9Slide03 Cabin", 10F);
+			this.Column2.DefaultCellStyle = dataGridViewCellStyle3;
+			this.Column2.FillWeight = 50F;
+			this.Column2.HeaderText = "Mã nhân viên";
+			this.Column2.MinimumWidth = 6;
+			this.Column2.Name = "Column2";
+			this.Column2.ReadOnly = true;
+			this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+			this.Column2.ToolTipText = "Mã nhân viên";
+			// 
+			// Column7
+			// 
+			dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+			dataGridViewCellStyle4.Font = new System.Drawing.Font("#9Slide03 Cabin", 10F);
+			this.Column7.DefaultCellStyle = dataGridViewCellStyle4;
+			this.Column7.FillWeight = 120F;
+			this.Column7.HeaderText = "Tên nhân viên";
+			this.Column7.MinimumWidth = 6;
+			this.Column7.Name = "Column7";
+			this.Column7.ReadOnly = true;
+			this.Column7.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+			this.Column7.ToolTipText = "Tên nhân viên";
+			// 
+			// Column8
+			// 
+			dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+			dataGridViewCellStyle5.Font = new System.Drawing.Font("#9Slide03 Cabin", 10F);
+			this.Column8.DefaultCellStyle = dataGridViewCellStyle5;
+			this.Column8.FillWeight = 120F;
+			this.Column8.HeaderText = "Số điện thoại";
+			this.Column8.MinimumWidth = 6;
+			this.Column8.Name = "Column8";
+			this.Column8.ReadOnly = true;
+			this.Column8.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+			this.Column8.ToolTipText = "Số điện thoại";
+			// 
+			// Column1
+			// 
+			dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+			dataGridViewCellStyle6.Font = new System.Drawing.Font("#9Slide03 Cabin", 10F);
+			this.Column1.DefaultCellStyle = dataGridViewCellStyle6;
+			this.Column1.FillWeight = 120F;
+			this.Column1.HeaderText = "Doanh thu";
+			this.Column1.MinimumWidth = 6;
+			this.Column1.Name = "Column1";
+			this.Column1.ReadOnly = true;
+			this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+			this.Column1.ToolTipText = "Doanh thu";
+			// 
 			// StaffStatisticGUI
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 26F);
@@ -525,11 +526,11 @@
 		private Guna.UI2.WinForms.Guna2TextBox revenueTo;
 		private Guna.UI2.WinForms.Guna2TextBox revenueFrom;
 		private System.Windows.Forms.Panel tablePanel;
+		private System.Windows.Forms.PictureBox closeBtn;
+        private System.Windows.Forms.Panel panel1;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-		private System.Windows.Forms.PictureBox closeBtn;
-        private System.Windows.Forms.Panel panel1;
-    }
+	}
 }

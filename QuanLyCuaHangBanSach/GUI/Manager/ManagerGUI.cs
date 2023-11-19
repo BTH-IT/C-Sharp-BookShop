@@ -27,12 +27,13 @@ namespace QuanLyCuaHangBanSach.GUI
         private PermissionManageGUI permissionFrm = new PermissionManageGUI() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle=FormBorderStyle.None, };
         private BookTypeGUI bookTypeFrm = new BookTypeGUI() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle=FormBorderStyle.None, };
         private PublisherGUI publisherFrm = new PublisherGUI() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle=FormBorderStyle.None, };
-        
+        private static int staffId = 0;
         public ManagerGUI(int staffId)
         {
             InitializeComponent();
-
-            currentStaff = StaffBUS.Instance.getById(staffId.ToString());
+            ManagerGUI.staffId = staffId;
+            permissionFrm.onPermissionStatusChange+=generateLayout;
+			currentStaff = StaffBUS.Instance.getById(staffId.ToString());
 
             authorization = new Authorization(currentStaff.MaChucVu);
 
@@ -44,49 +45,49 @@ namespace QuanLyCuaHangBanSach.GUI
                 {
                     switch (item.Key)
                     {
-                        case "1":
-                            this.navBar.Controls.Remove(this.bookBtn);
-                            break;
-                        case "2":
-                            this.navBar.Controls.Remove(this.staffBtn);
-                            break;
-                        case "3":
-                            this.navBar.Controls.Remove(this.supplierBtn);
-                            break;
-                        case "4":
-                            this.navBar.Controls.Remove(this.bookTypeBtn);
-                            break;
-                        case "5":
-                            this.navBar.Controls.Remove(this.publisherBtn);
-                            break;
-                        case "8":
-                            this.navBar.Controls.Remove(this.customerBtn);
-                            break;
-                        case "9":
-                            this.navBar.Controls.Remove(this.authorBtn);
-                            break;
-                        case "10":
-                            this.navBar.Controls.Remove(this.seoBtn);
-                            break;
-                        case "11":
-                            this.navBar.Controls.Remove(this.permissionBtn);
-                            break;
-                        case "12":
-                            this.navBar.Controls.Remove(this.positionBtn);
-                            break;
-                        case "13":
-                            this.navBar.Controls.Remove(this.billBtn);
-                            break;
-                        case "14":
-                            this.navBar.Controls.Remove(this.importBilBtn);
-                            break;
-                        case "15":
-                            this.navBar.Controls.Remove(this.accountBtn);
-                            break;
-                        case "16":
-                            this.navBar.Controls.Remove(this.homeBtn);
-                            break;
-                    }
+						case "1":
+							bookBtn.Hide();
+							break;
+						case "2":
+							staffBtn.Hide();
+							break;
+						case "3":
+							supplierBtn.Hide();
+							break;
+						case "4":
+							bookTypeBtn.Hide();
+							break;
+						case "5":
+							publisherBtn.Hide();
+							break;
+						case "8":
+                            customerBtn.Hide();
+							break;
+						case "9":
+							authorBtn.Hide();
+							break;
+						case "10":
+							seoBtn.Hide();
+							break;
+						case "11":
+							permissionBtn.Hide();
+							break;
+						case "12":
+							positionBtn.Hide();
+							break;
+						case "13":
+							billBtn.Hide();
+							break;
+						case "14":
+							importBilBtn.Hide();
+							break;
+						case "15":
+							accountBtn.Hide();
+							break;
+						case "16":
+							homeBtn.Hide();
+							break;
+					}
                 } else
                 {
                     switch (item.Key)
@@ -158,8 +159,178 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.staffImg.Image = QuanLyCuaHangBanSach.Properties.Resources.female;
             }
         }
+        private void generateLayout(int staffId,string screenName = "")
+        {
+			currentStaff = StaffBUS.Instance.getById(staffId.ToString());
 
-        private void homeBtn_Click(object sender, EventArgs e)
+			authorization = new Authorization(currentStaff.MaChucVu);
+			foreach (var item in authorization.getPermissionObject())
+			{
+				bool isCheckPermission = authorization.checkAuthorize(Convert.ToInt32(item.Key));
+
+				if (!isCheckPermission)
+				{
+					switch (item.Key)
+					{
+						case "1":
+                            bookBtn.Hide();
+							break;
+						case "2":
+							staffBtn.Hide();
+							break;
+						case "3":
+							supplierBtn.Hide();
+							break;
+						case "4":
+                            bookTypeBtn.Hide();
+							break;
+						case "5":
+                            publisherBtn.Hide();    
+							break;
+						case "8":
+                            customerBtn.Hide();
+							break;
+						case "9":
+                            authorBtn.Hide();
+							break;
+						case "10":
+                            seoBtn.Hide();  
+							break;
+						case "11":
+                            permissionBtn.Hide();
+							break;
+						case "12":
+                            positionBtn.Hide();
+							break;
+						case "13":
+                            billBtn.Hide();
+							break;
+						case "14":
+                            importBilBtn.Hide();
+							break;
+						case "15":
+                            accountBtn.Hide();
+							break;
+						case "16":
+                            homeBtn.Hide();
+							break;
+					}
+				}
+				else
+				{
+					switch (item.Key)
+					{
+						case "1":
+                            bookBtn.Show();
+                            if (!this.manageContent.Contains(bookFrm))
+                            {
+								this.manageContent.Controls.Add(this.bookFrm);
+
+							}
+							break;
+						case "2":
+                            staffBtn.Show();
+							if (!this.manageContent.Contains(staffFrm))
+							{
+								this.manageContent.Controls.Add(this.staffFrm);
+
+							}
+							break;
+						case "3":
+							supplierBtn.Show();
+							if (!this.manageContent.Contains(supplierFrm))
+							{
+								this.manageContent.Controls.Add(this.supplierFrm);
+
+							}
+							break;
+						case "4":
+							bookTypeBtn.Show();
+							if (!this.manageContent.Contains(supplierFrm))
+							{
+								this.manageContent.Controls.Add(this.supplierFrm);
+
+							}
+							break;
+						case "5":
+							publisherBtn.Show();
+							if (!this.manageContent.Contains(publisherFrm))
+							{
+								this.manageContent.Controls.Add(this.publisherFrm);
+
+							}
+							break;
+						case "8":
+							customerBtn.Show();
+							if (!this.manageContent.Contains(customerFrm))
+							{
+								this.manageContent.Controls.Add(this.customerFrm);
+
+							}
+							break;
+						case "9":
+							authorBtn.Show();
+							if (!this.manageContent.Contains(authorFrm))
+							{
+								this.manageContent.Controls.Add(this.authorFrm);
+
+							}
+							break;
+						case "10":
+							seoBtn.Show();
+							if (!this.manageContent.Contains(seoFrm))
+							{
+								this.manageContent.Controls.Add(this.seoFrm);
+							}
+							break;
+						case "11":
+							permissionBtn.Show();
+							if (!this.manageContent.Contains(permissionFrm))
+							{
+								this.manageContent.Controls.Add(this.permissionFrm);
+							}
+							break;
+						case "12":
+							positionBtn.Show();
+							if (!this.manageContent.Contains(positionFrm))
+							{
+								this.manageContent.Controls.Add(this.positionFrm);
+							}
+							break;
+						case "13":
+							billBtn.Show();
+                            if (!this.manageContent.Contains(customerBillFrm))
+							{
+								this.manageContent.Controls.Add(this.customerBillFrm);
+							}
+							break;
+						case "14":
+							importBilBtn.Show();
+							if (!this.manageContent.Contains(importBillFrm))
+							{
+								this.manageContent.Controls.Add(this.importBillFrm);
+							}
+							break;
+						case "15":
+							accountBtn.Show();
+							if (!this.manageContent.Contains(accountFrm))
+							{
+								this.manageContent.Controls.Add(this.accountFrm);
+							}
+							break;
+						case "16":
+							homeBtn.Show();
+							if (!this.manageContent.Contains(statisticFrm))
+							{
+								this.manageContent.Controls.Add(this.statisticFrm);
+							}
+							break;
+					}
+				}  
+			}
+
+		}
+		private void homeBtn_Click(object sender, EventArgs e)
         {
             if (!contentActive.Equals("homeBtn")) {
                 this.contentActive = "homeBtn";

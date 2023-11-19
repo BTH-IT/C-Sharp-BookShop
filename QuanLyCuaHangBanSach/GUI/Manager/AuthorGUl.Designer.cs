@@ -38,11 +38,6 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AuthorGUI));
 			this.line1 = new System.Windows.Forms.Panel();
 			this.dgvAuthor = new Guna.UI.WinForms.GunaDataGridView();
-			this.Column11 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-			this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.exportBtn = new Guna.UI.WinForms.GunaAdvenceButton();
 			this.refreshBtn = new Guna.UI.WinForms.GunaAdvenceButton();
@@ -56,6 +51,11 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 			this.searchInput = new Guna.UI2.WinForms.Guna2TextBox();
 			this.genderCbx = new Guna.UI.WinForms.GunaComboBox();
 			this.panel5 = new System.Windows.Forms.Panel();
+			this.Column11 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+			this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			((System.ComponentModel.ISupportInitialize)(this.dgvAuthor)).BeginInit();
 			this.panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -111,7 +111,6 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 			this.dgvAuthor.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
 			this.dgvAuthor.Location = new System.Drawing.Point(0, 63);
 			this.dgvAuthor.Name = "dgvAuthor";
-			this.dgvAuthor.ReadOnly = true;
 			dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
 			dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
 			dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -149,7 +148,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 			this.dgvAuthor.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
 			this.dgvAuthor.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
 			this.dgvAuthor.ThemeStyle.HeaderStyle.Height = 50;
-			this.dgvAuthor.ThemeStyle.ReadOnly = true;
+			this.dgvAuthor.ThemeStyle.ReadOnly = false;
 			this.dgvAuthor.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
 			this.dgvAuthor.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
 			this.dgvAuthor.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -158,53 +157,6 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 			this.dgvAuthor.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
 			this.dgvAuthor.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
 			this.dgvAuthor.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAuthor_CellDoubleClick);
-			// 
-			// Column11
-			// 
-			this.Column11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-			this.Column11.FillWeight = 50F;
-			this.Column11.Frozen = true;
-			this.Column11.HeaderText = "";
-			this.Column11.MinimumWidth = 50;
-			this.Column11.Name = "Column11";
-			this.Column11.ReadOnly = true;
-			this.Column11.Width = 50;
-			// 
-			// Column1
-			// 
-			this.Column1.HeaderText = "Mã Tác Giả";
-			this.Column1.MinimumWidth = 6;
-			this.Column1.Name = "Column1";
-			this.Column1.ReadOnly = true;
-			this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-			this.Column1.ToolTipText = "Mã Tác Giả";
-			// 
-			// Column2
-			// 
-			this.Column2.HeaderText = "Tên Tác Giả";
-			this.Column2.MinimumWidth = 6;
-			this.Column2.Name = "Column2";
-			this.Column2.ReadOnly = true;
-			this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-			this.Column2.ToolTipText = "Tên Tác Giả";
-			// 
-			// Column3
-			// 
-			this.Column3.HeaderText = "Giới Tính";
-			this.Column3.MinimumWidth = 6;
-			this.Column3.Name = "Column3";
-			this.Column3.ReadOnly = true;
-			this.Column3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-			this.Column3.ToolTipText = "Giới Tính";
-			// 
-			// Column9
-			// 
-			this.Column9.HeaderText = "Năm Sinh";
-			this.Column9.MinimumWidth = 6;
-			this.Column9.Name = "Column9";
-			this.Column9.ReadOnly = true;
-			this.Column9.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-			this.Column9.ToolTipText = "Năm Sinh";
 			// 
 			// panel1
 			// 
@@ -468,6 +420,52 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 			this.panel5.Size = new System.Drawing.Size(1044, 63);
 			this.panel5.TabIndex = 1;
 			// 
+			// Column11
+			// 
+			this.Column11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+			this.Column11.FillWeight = 50F;
+			this.Column11.Frozen = true;
+			this.Column11.HeaderText = "";
+			this.Column11.MinimumWidth = 50;
+			this.Column11.Name = "Column11";
+			this.Column11.Width = 50;
+			// 
+			// Column1
+			// 
+			this.Column1.HeaderText = "Mã Tác Giả";
+			this.Column1.MinimumWidth = 6;
+			this.Column1.Name = "Column1";
+			this.Column1.ReadOnly = true;
+			this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+			this.Column1.ToolTipText = "Mã Tác Giả";
+			// 
+			// Column2
+			// 
+			this.Column2.HeaderText = "Tên Tác Giả";
+			this.Column2.MinimumWidth = 6;
+			this.Column2.Name = "Column2";
+			this.Column2.ReadOnly = true;
+			this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+			this.Column2.ToolTipText = "Tên Tác Giả";
+			// 
+			// Column3
+			// 
+			this.Column3.HeaderText = "Giới Tính";
+			this.Column3.MinimumWidth = 6;
+			this.Column3.Name = "Column3";
+			this.Column3.ReadOnly = true;
+			this.Column3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+			this.Column3.ToolTipText = "Giới Tính";
+			// 
+			// Column9
+			// 
+			this.Column9.HeaderText = "Năm Sinh";
+			this.Column9.MinimumWidth = 6;
+			this.Column9.Name = "Column9";
+			this.Column9.ReadOnly = true;
+			this.Column9.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+			this.Column9.ToolTipText = "Năm Sinh";
+			// 
 			// AuthorGUI
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -509,10 +507,10 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         private Guna.UI2.WinForms.Guna2TextBox searchInput;
         private Guna.UI.WinForms.GunaComboBox genderCbx;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Column11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
-    }
+		private System.Windows.Forms.DataGridViewCheckBoxColumn Column11;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
+	}
 }
