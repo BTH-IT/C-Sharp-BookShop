@@ -148,8 +148,6 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             {
 
             }
-            
-            
         }
 
         private void exportBtn_Click(object sender, EventArgs e)
@@ -237,9 +235,6 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             {
                 return staffs;
             }
-           
-  
-            
         }
 
         private void addBtn_Click(object sender, EventArgs e)

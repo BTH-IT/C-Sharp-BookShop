@@ -511,6 +511,11 @@ namespace QuanLyCuaHangBanSach.GUI
                     customerBill.MaKhachHang = CustomerEnabled ? customerID : 0;
                     customerBill.MaKhuyenMai = Convert.ToInt32(DiscountCb.SelectedValue);
                     customerBill.NgayLap = DateTime.Now;
+					if (customerBill.MaKhachHang != 0 && PointEnabled)
+                    {
+                        customerBill.DoiDiem = CustomerBUS.Instance.getById(customerID.ToString()).Diem;
+                        Console.WriteLine(customerBill.DoiDiem);
+                    }
 
                     CustomerBillDTO newCustomerBill = CustomerBillBUS.Instance.insertReturnBill(customerBill);
 
