@@ -238,7 +238,7 @@ namespace QuanLyCuaHangBanSach.DAO
                     new MySqlParameter("@maKhuyenMai", data.MaKhuyenMai),
                     new MySqlParameter("@tienKhachDua", data.TienKhachDua),
                     new MySqlParameter("@doiDiem", data.DoiDiem),
-				});
+                });
 
             return rowChanged > 0;
         }
