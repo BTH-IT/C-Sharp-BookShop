@@ -316,7 +316,17 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 				{
 					DateTime fromDateVal = new DateTime(fromDate.Value.Year, fromDate.Value.Month, fromDate.Value.Day);
 					DateTime toDateVal = new DateTime(toDate.Value.Year, toDate.Value.Month, toDate.Value.Day);
-					billList = billList.FindAll(bill => bill.NgayLap >= fromDateVal && bill.NgayLap <= toDateVal);
+                    if (fromDateVal <= toDateVal)
+                    {
+						billList = billList.FindAll(bill => bill.NgayLap >= fromDateVal && bill.NgayLap <= toDateVal);
+                    }
+					else
+					{
+						revenueFrom.Clear();
+						revenueTo.Clear();
+						MessageBox.Show("Ngày từ phải nhỏ hơn hoặc bằng ngày đến");
+						toDate.Value = DateTime.Now;
+					}
 				}
 
 				if (!string.IsNullOrEmpty(revenueFrom.Text) && string.IsNullOrEmpty(revenueTo.Text))
@@ -355,6 +365,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 		private readonly int debounceInterval = 500; // Đặt khoảng thời gian debounce là 500 milliseconds
 		private DateTime lastTextChanged = DateTime.MinValue;
 		private readonly object debounceLock = new object();
+
 		private async void searchInput_TextChanged(object sender, EventArgs e)
 		{
 			try
@@ -371,7 +382,8 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 					var now = DateTime.Now;
 					if ((now - lastTextChanged).TotalMilliseconds >= debounceInterval)
 					{
-						List<CustomerBillDTO> billList = handleFilter(searchInput.Text);
+                        Console.WriteLine("aaaaa");
+                        List<CustomerBillDTO> billList = handleFilter(searchInput.Text);
 						loadBillListToDataView(billList);
 					}
 				}
@@ -394,6 +406,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
 				List<CustomerBillDTO> billList = CustomerBillBUS.Instance.getAllData();
 				loadBillListToDataView(billList);
+				label1.Focus();
 			}
 			catch (Exception ex)
 			{
@@ -406,7 +419,8 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             if (dgvBill.Rows.Count <= 0)
             {
                 MessageBox.Show("Bảng dữ liệu hiện tại chưa có dòng dữ liệu nào để xuất excel!");
-                return;
+				label1.Focus();
+				return;
             }
 
             try
@@ -416,6 +430,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 				DataTable dt = CustomExcel.Instance.ConvertDataGridViewToDataTable(dgvBill);
 
 				CustomExcel.Instance.ExportFileDatagridView(dt, "Book Manage", 0, "Cửa hàng bán sách", headerList);
+				label1.Focus();
 			}
 			catch (Exception ex)
 			{
@@ -476,12 +491,14 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 		{
 			if (!this.modeCheck.Enabled) this.modeCheck.Start();
 			mode = 1;
+			label1.Focus();
 		}
 
 		private void chartBtn_Click(object sender, EventArgs e)
 		{
 			if (!this.modeCheck.Enabled) this.modeCheck.Start();
 			mode = 2;
+			label1.Focus();
 		}
 
 		private void fromDateCkb_CheckedChanged(object sender, EventArgs e)

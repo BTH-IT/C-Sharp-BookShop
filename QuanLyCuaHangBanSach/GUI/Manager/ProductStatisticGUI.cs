@@ -376,6 +376,10 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 		private List<BookDTO> convertTableToList(DataTable dt)
 		{
 			List<BookDTO> bookList = new List<BookDTO>();
+            if (dt == null)
+            {
+				return new List<BookDTO>();
+			}
             foreach (DataRow row in dt.Rows)
             {
 				BookDTO book = BookBUS.Instance.getById(row["maSach"].ToString());
@@ -431,6 +435,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
 				List<BookDTO> bookList = BookBUS.Instance.getAllData();
 				loadBookListToDataView(bookList);
+				label1.Focus();
 			}
 			catch (Exception ex)
 			{
@@ -443,16 +448,18 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             if (dgvBook.Rows.Count <= 0)
             {
                 MessageBox.Show("Bảng dữ liệu hiện tại chưa có dòng dữ liệu nào để xuất excel!");
+				label1.Focus();
                 return;
-            }
-            try
+			}
+			try
 			{
-				string[] headerList = new string[] { "Mã sách", "Tên sách", "Giá bán", "Giá nhập", "Đã bán", "Doanh thu" };
+				string[] headerList = new string[] { "Mã sách", "Tên sách", "Đã bán", "Doanh thu" };
 
                 DataTable dt = CustomExcel.Instance.ConvertDataGridViewToDataTable(dgvBook);
 
                 CustomExcel.Instance.ExportFileDatagridView(dt, "Book Manage", 0, "Cửa hàng bán sách", headerList, 2);
-            }
+				label1.Focus();
+			}
 			catch (Exception ex)
 			{
 				Console.WriteLine(ex);
@@ -554,13 +561,15 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         {
 			if (!this.modeCheck.Enabled) this.modeCheck.Start();
 			mode = 1;
-        }
+			label1.Focus();
+		}
 
-        private void chartBtn_Click(object sender, EventArgs e)
+		private void chartBtn_Click(object sender, EventArgs e)
         {
 			if (!this.modeCheck.Enabled) this.modeCheck.Start();
 			mode = 2;
-        }
+			label1.Focus();
+		}
 
 		private void closeBtn_Click(object sender, EventArgs e)
 		{
