@@ -226,8 +226,8 @@ namespace QuanLyCuaHangBanSach.DAO
         public bool insert(CustomerBillDTO data)
         {
 
-            string sql = $@"INSERT INTO phieuban (maKhachHang, maNhanVien, ngayLap, tongTien, maKhuyenMai, tienKhachDua)
-                            VALUES (@maKhachHang, @maNhanVien, @ngayLap, @tongTien, @maKhuyenMai, @tienKhachDua);";
+            string sql = $@"INSERT INTO phieuban (maKhachHang, maNhanVien, ngayLap, tongTien, maKhuyenMai, tienKhachDua, doiDiem)
+                            VALUES (@maKhachHang, @maNhanVien, @ngayLap, @tongTien, @maKhuyenMai, @tienKhachDua, @doiDiem);";
 
             int rowChanged = DataProvider.Instance.ExecuteNonQuery(sql,
                 new MySqlParameter[] {
@@ -237,6 +237,7 @@ namespace QuanLyCuaHangBanSach.DAO
                     new MySqlParameter("@tongTien", data.TongTien),
                     new MySqlParameter("@maKhuyenMai", data.MaKhuyenMai),
                     new MySqlParameter("@tienKhachDua", data.TienKhachDua),
+                    new MySqlParameter("@doiDiem", data.DoiDiem),
                 });
 
             return rowChanged > 0;
