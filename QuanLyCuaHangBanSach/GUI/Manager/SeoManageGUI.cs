@@ -243,37 +243,10 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            try
-            {
-				if (this.dgvSale.CurrentCell.RowIndex < 0)
-				{
-					MessageBox.Show("Hãy chọn khuyến mãi để chỉnh sửa");
-					return;
-				}
-				using (SaleModal modal = new SaleModal("Sửa thông tin khuyến mãi"))
-				{
-					DataGridViewRow selectedRow = this.dgvSale.Rows[this.dgvSale.CurrentCell.RowIndex];
-					SaleDTO sale = SaleBUS.Instance.getById(selectedRow.Cells[1].Value.ToString());
-					modal.sale = sale;
 
-					modal.ShowDialog();
+		}
 
-					if (modal.isSubmitSuccess)
-					{
-
-						List<SaleDTO> sales = handleFilter(this.searchInput.Text);
-						this.loadDataToDataGridView(sales);
-					}
-				}
-			}
-            catch
-            {
-
-            }
-           
-        }
-
-        private void btnDelete_Click(object sender, EventArgs e)
+		private void btnDelete_Click(object sender, EventArgs e)
         {
             try
 			{

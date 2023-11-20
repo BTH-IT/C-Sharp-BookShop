@@ -207,15 +207,15 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 				{
 					List<StaffDTO> newStaffs = staffs.FindAll(staff =>
 					{
-						if (selectedGender != "Chọn giới tính" && selectedPositionId != 0)
+						if (selectedGender != "Tất cả giới tính" && selectedPositionId != 0)
 						{
 							return staff.GioiTinh == selectedGender && staff.MaChucVu == selectedPositionId;
 						}
-						if (selectedGender == "Chọn giới tính" && selectedPositionId != 0)
+						if (selectedGender == "Tất cả giới tính" && selectedPositionId != 0)
 						{
 							return staff.MaChucVu == selectedPositionId;
 						}
-						if (selectedGender != "Chọn giới tính" && selectedPositionId == 0)
+						if (selectedGender != "Tất cả giới tính" && selectedPositionId == 0)
 						{
 							return staff.GioiTinh == selectedGender;
 						}
