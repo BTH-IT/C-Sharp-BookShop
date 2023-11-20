@@ -15,7 +15,6 @@ namespace QuanLyCuaHangBanSach.GUI.Vendor
 {
     public partial class ImportCartProductUserControl : UserControl
     {
-        private int stock = 0;
         public static bool AmountChanged = false;
         public static bool deletePress = false;
         public static string AmountChangedId = "";
@@ -24,11 +23,9 @@ namespace QuanLyCuaHangBanSach.GUI.Vendor
         public ImportCartProductUserControl()
         {
             InitializeComponent();
-
-            ProfitPercentTxb.KeyPress += ImportPriceTxb_KeyPress;
         }
 
-        public void details(BookDTO book)
+        public void details(BookDTO book, int amount = 1)
         {
             try
             {
@@ -38,22 +35,21 @@ namespace QuanLyCuaHangBanSach.GUI.Vendor
                     BookImage.Image = image;
                 }
             }
+
             catch (Exception ex) { Console.WriteLine(ex); }
             
             StockLb.Text = "ST: " + book.SoLuongConLai;
-            stock = book.SoLuongConLai;
             IdLb.Text = book.MaSach.ToString();
+            ImportPriceTxb.Text = book.GiaNhap.ToString();
             NameLb.Text = book.TenSach;
+            AmountTxt.Text = amount.ToString();
             toolTip1.SetToolTip(NameLb, NameLb.Text);
         }
 
         private void PlusBtn_Click(object sender, EventArgs e)
         {
-            if (Convert.ToInt32(AmountTxt.Text) < stock)
-            {
-                AmountTxt.Text = (int.Parse(AmountTxt.Text) + 1).ToString();
-                ChangeAmount();
-            } 
+            AmountTxt.Text = (int.Parse(AmountTxt.Text) + 1).ToString();
+            ChangeAmount();
         }
 
         private void MinusBtn_Click(object sender, EventArgs e)
@@ -70,11 +66,6 @@ namespace QuanLyCuaHangBanSach.GUI.Vendor
             if (String.IsNullOrEmpty(AmountTxt.Text))
             {
                 AmountTxt.Text = "1";
-            }
-
-            if (int.Parse(AmountTxt.Text) > stock)
-            {
-                AmountTxt.Text = stock.ToString();
             }
         }
 

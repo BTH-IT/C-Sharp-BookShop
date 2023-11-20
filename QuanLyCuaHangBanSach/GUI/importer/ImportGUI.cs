@@ -181,29 +181,36 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
 			catch (Exception ex) { Console.WriteLine(ex); }
         }
 
-        private void AddProductToCart(BookDTO book)
+        private void AddProductToCart(BookDTO book, decimal importPrice = -1, int amount = 1)
         {
             try
             {
                 if (importBillDetails.Count == 0 || !importBillDetails.Any(item => item.MaSach == book.MaSach))
                 {
-                    ImportBillDetailDTO importBillDetail = new ImportBillDetailDTO(0, book.MaSach, 1, book.GiaNhap);
-                    importBillDetails.Add(importBillDetail);
 					ImportCartProductUserControl product = new ImportCartProductUserControl();
-                    product.details(book);
+                    product.details(book, amount);
 
                     product.ImportPriceTxb.MouseLeave += (object sender, EventArgs e) =>
                     {
                         panel1.Focus();
-                    };
-
-					product.ProfitPercentTxb.MouseLeave += (object sender, EventArgs e) =>
-					{
-						panel1.Focus();
+                        ImportBillDetailDTO match = importBillDetails.Find(item => item.MaSach == Convert.ToInt32(product.IdLb.Text));
+                        if (match != null)
+                        {
+                            match.DonGia = Convert.ToDecimal(product.ImportPriceTxb.Text);
+                        }
+                        CartHandler();
 					};
 
-					CartContainer.Controls.Add(product);
-                }
+                    if (importPrice != -1)
+                    {
+                        product.ImportPriceTxb.Text = importPrice.ToString();
+					}
+
+                    CartContainer.Controls.Add(product);
+
+					ImportBillDetailDTO importBillDetail = new ImportBillDetailDTO(0, book.MaSach, amount, Convert.ToDecimal(product.ImportPriceTxb.Text));
+					importBillDetails.Add(importBillDetail);
+				}
                 else
                 {
                     int idx = 0;
@@ -213,7 +220,6 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
                         if (importBillDetail.MaSach == book.MaSach)
                         {
                             importBillDetail.SoLuong += 1;
-
                             ImportCartProductUserControl cartProduct = CartContainer.Controls[idx] as ImportCartProductUserControl;
                             cartProduct.AmountTxt.Text = (Convert.ToInt32(cartProduct.AmountTxt.Text) + 1).ToString();
                             break;
@@ -351,6 +357,7 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
                     importBill.MaNhanVien = staffID;
                     importBill.MaNhaCungCap = supplierID;
                     importBill.NgayLap = DateTime.Now;
+                    importBill.PhanTramLoiNhuan = Convert.ToInt32(ProfitPercentTxb.Text);
 
 					ImportBillDTO newImportBill = ImportBillBUS.Instance.insertReturnBill(importBill);
 
@@ -368,7 +375,7 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
                                 importBillDetail.SoLuong,
                                 importBillDetail.DonGia
                             );
-                            ImportBillBUS.Instance.createImportBillDetail(newImportBillDetail, 0);
+                            ImportBillBUS.Instance.createImportBillDetail(newImportBillDetail, importBill.PhanTramLoiNhuan);
                         }
 
                         MessageBox.Show("Success");
@@ -382,6 +389,7 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
                     CartContainer.Controls.Clear();
                     importBillDetails.Clear();
                     SupplierNameLb.Text = "";
+                    ProfitPercentTxb.Text = "";
                     supplierID = 0;
                     CartHandler();
                     RenderBookContainer();
@@ -419,56 +427,14 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
                     }
                 }
 
-                ImportBillDTO newImportBill = new ImportBillDTO(0, 1, staffID, DateTime.Now, 0, 0);
-
-				ImportBillDTO importBill = ImportBillBUS.Instance.insertReturnBill(newImportBill);
-
-				if (importBill != null)
+				CartContainer.Controls.Clear();
+				importBillDetails.Clear();
+				foreach (DataRow row in dt.Rows)
 				{
-					decimal tongTien = 0;
-					foreach (DataRow row in dt.Rows)
+					BookDTO book = BookBUS.Instance.getById(row[0].ToString());
+					if (book != null)
 					{
-						BookDTO book = BookBUS.Instance.getById(row[0].ToString());
-
-						if (book == null) continue;
-
-						ImportBillDetailDTO importBillDetail = new ImportBillDetailDTO(importBill.MaDonNhapHang, book.MaSach, Convert.ToInt32(row[2].ToString()), Convert.ToDecimal(row[3].ToString()));
-
-						if (ImportBillBUS.Instance.createImportBillDetail(importBillDetail, 0))
-						{
-							book.SoLuongConLai += Convert.ToInt32(row[2].ToString());
-							book.GiaNhap = Convert.ToDecimal(row[3].ToString());
-
-							BookBUS.Instance.update(book);
-
-							tongTien += book.GiaNhap * Convert.ToInt32(row[2].ToString());
-						};
-					}
-
-					importBill.TongTien = tongTien;
-
-					ImportBillBUS.Instance.update(importBill);
-
-					MessageBox.Show("Nhập hàng từ file excel thành công!");
-
-					using (ImportBillPrintForm importBillPrintForm = new ImportBillPrintForm(importBill.MaDonNhapHang))
-					{
-						importBillPrintForm.ShowDialog();
-					}
-
-					try
-					{
-						CartContainer.Controls.Clear();
-						importBillDetails.Clear();
-						SupplierNameLb.Text = "";
-						supplierID = 0;
-						CartHandler();
-						RenderBookContainer();
-				        label1.Focus();
-					}
-					catch (Exception ex)
-					{
-						Console.WriteLine(ex);
+						AddProductToCart(book, Convert.ToDecimal(row[3].ToString()), Convert.ToInt32(row[2].ToString()));
 					}
 				}
 			}
@@ -483,6 +449,29 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
 			try
 			{
 				if (!char.IsControl(e.KeyChar) && char.IsDigit(e.KeyChar))
+				{
+					e.Handled = true; // Cancel the key press event
+				}
+			}
+			catch (Exception ex) { Console.WriteLine(ex); }
+		}
+
+		private void ProfitPercentTxb_MouseLeave(object sender, EventArgs e)
+		{
+            panel1.Focus();
+		}
+
+		private void ProfitPercentTxb_KeyPress(object sender, KeyPressEventArgs e)
+		{
+			try
+			{
+				if (e.KeyChar == '\r')
+				{
+					panel1.Focus();
+					return;
+				}
+
+				if (!char.IsDigit(e.KeyChar))
 				{
 					e.Handled = true; // Cancel the key press event
 				}
