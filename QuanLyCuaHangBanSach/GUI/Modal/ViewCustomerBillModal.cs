@@ -10,105 +10,85 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 {
     public partial class ViewCustomerBillModal : Form
     {
-        private CustomerBillDTO customerBill = null;
-
         public ViewCustomerBillModal(CustomerBillDTO customerBill)
         {
             InitializeComponent();
-            try
+
+            this.noteTxt.Visible = false;
+
+            List<CustomerBillDetailDTO> customerBillDetailList = CustomerBillBUS.Instance.getCustomerBillDetailList(customerBill.MaDonKhachHang.ToString());
+
+            StaffDTO staff = StaffBUS.Instance.getById(customerBill.MaNhanVien.ToString());
+
+            this.staffTxt.Text = staff.Ten;
+
+            CustomerDTO customer = CustomerBUS.Instance.getById(customerBill.MaKhachHang.ToString());
+
+            this.customerTxt.Text = customer == null ? "Vãng lai" : customer.Ten;
+
+            SaleDTO sale = SaleBUS.Instance.getById(customerBill.MaKhuyenMai.ToString());
+
+            this.saleTxt.Text = sale == null ? "Không có" : sale.TenKhuyenMai;
+            this.percentTxt.Text = sale == null ? "0%" : sale.PhanTram + "%";
+
+            this.paymentPriceTxt.Text = string.Format("{0:N0} VNĐ", customerBill.TienKhachDua);
+
+            this.dateTxt.Text = customerBill.NgayLap.GetDateTimeFormats()[0];
+
+            BookDTO book;
+            decimal giaGoc = 0;
+            foreach (CustomerBillDetailDTO customerBillDetail in customerBillDetailList)
             {
-                this.customerBill = customerBill;
+                book = BookBUS.Instance.getById(customerBillDetail.MaSach.ToString());
 
-                this.loadCustomerCbx();
-                this.loadSaleCbx();
-                this.loadStaffCbx();
+                ViewBookBill viewBook = new ViewBookBill(book.TenSach, customerBillDetail.SoLuong, customerBillDetail.DonGia, book.HinhAnh);
 
-                this.customerCbx.SelectedValue = customerBill.MaKhachHang;
-                this.saleCbx.SelectedValue = customerBill.MaKhuyenMai;
-                this.staffCbx.SelectedValue = customerBill.MaNhanVien;
+                this.bookList.Controls.Add(viewBook);
 
-                this.bookList.Controls.Clear();
-
-                foreach (CustomerBillDetailDTO customerBillDetail in CustomerBillBUS.Instance.getCustomerBillDetailList(customerBill.MaDonKhachHang.ToString()))
-                {
-                    BookDTO book = BookBUS.Instance.getById(customerBillDetail.MaSach.ToString());
-
-                    ViewBookBill viewBook = new ViewBookBill(book.TenSach, customerBillDetail.SoLuong, customerBillDetail.DonGia, book.HinhAnh);
-
-                    this.bookList.Controls.Add(viewBook);
-                }
-
-                this.totalPriceTxt.Text = this.customerBill.TongTien.ToString();
+                giaGoc += customerBillDetail.ThanhTien;
             }
-            catch (Exception ex)
+
+            decimal salePrice = sale == null ? 0 : Convert.ToDecimal((giaGoc * Convert.ToDecimal(sale.PhanTram / 100.0)).ToString().Split('.')[0]);
+
+            decimal giaDaGiam = giaGoc - salePrice;
+
+            if (customerBill.DoiDiem > 0)
             {
-                Console.WriteLine(ex);
+                decimal diem = customerBill.DoiDiem * 1000;
+                giaDaGiam -= diem;
+
+                this.noteTxt.Visible = true;
+                this.noteTxt.Text = $"*Khách hàng đã đổi {customerBill.DoiDiem} điểm tương ứng với {string.Format("{0:N0} VNĐ", diem)} được giảm vào tổng đơn";
             }
-        }
 
-        private void loadCustomerCbx()
-        {
-            try
-            {
-                List<CustomerDTO> customerList = CustomerBUS.Instance.getAllData();
-
-                customerList.Insert(0, new CustomerDTO(-1, "", "Chọn khách hàng", 0, "", 0));
-                customerList.Insert(1, new CustomerDTO(0, "", "Không có khách hàng", 0, "", 0));
-
-                this.customerCbx.ValueMember = "Ma";
-                this.customerCbx.DisplayMember = "SoDienThoai";
-                this.customerCbx.DataSource = customerList;
-
-                this.customerCbx.SelectedIndex = 0;
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex);
-            }
-        }
-
-        private void loadSaleCbx()
-        {
-            try
-            {
-                List<SaleDTO> saleList = SaleBUS.Instance.getAllData();
-
-                saleList.Insert(0, new SaleDTO(-1, "Chọn khuyến mãi", 0, new DateTime(), new DateTime()));
-                saleList.Insert(1, new SaleDTO(0, "Không có khuyến mãi", 0, new DateTime(), new DateTime()));
-
-                this.saleCbx.ValueMember = "MaKhuyenMai";
-                this.saleCbx.DisplayMember = "TenKhuyenMai";
-                this.saleCbx.DataSource = saleList;
-
-                this.saleCbx.SelectedIndex = 0;
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex);
-            }
-        }
-
-        private void loadStaffCbx()
-        {
-            try
-            {
-                List<StaffDTO> staffList = StaffBUS.Instance.getAllData();
-
-                this.staffCbx.ValueMember = "Ma";
-                this.staffCbx.DisplayMember = "Ten";
-                this.staffCbx.DataSource = staffList;
-
-                this.staffCbx.SelectedIndex = 0;
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex);
-            }
+            this.discountPriceTxt.Text = string.Format("{0:N0} VNĐ", (giaGoc - giaDaGiam));
+            this.totalPriceTxt.Text = string.Format("{0:N0} VNĐ", giaDaGiam);
+            this.changedPriceTxt.Text = string.Format("{0:N0} VNĐ", customerBill.TienKhachDua - giaDaGiam);
         }
 
         private void cancelBtn_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void totalPriceTxt_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

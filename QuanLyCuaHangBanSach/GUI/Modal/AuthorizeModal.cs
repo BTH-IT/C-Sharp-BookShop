@@ -46,5 +46,36 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
         {
             this.Close();
         }
+
+        private void submitBtn_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show(
+                "Bạn có chắc chắn với những sự thay đổi này chứ?",
+                "Xác nhận",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.None
+            );
+
+            if (result == DialogResult.Yes)
+            {
+                try
+                {
+                    foreach (Control control in this.Controls)
+                    {
+                        if (control is AuthorizeCkb)
+                        {
+                            AuthorizeCkb authCkb = (AuthorizeCkb)control;
+
+                            authCkb.ckx_CheckedChanged();
+                        }
+                    }
+                    MessageBox.Show("Phân quyền cho chức vụ thành công");
+                    this.Close();
+                } catch
+                {
+                    MessageBox.Show("Phân quyền cho chức vụ không thành công");
+                }
+            }
+        }
     }
 }

@@ -32,7 +32,7 @@ namespace QuanLyCuaHangBanSach.GUI.UserControls
             }
         }
 
-        private void ckx_CheckedChanged(object sender, EventArgs e)
+        public void ckx_CheckedChanged()
         {
             AuthDetailDTO authDetail = new AuthDetailDTO(positionId, permissionId, ckx.Checked);
             AuthDetailBUS.Instance.update(authDetail);

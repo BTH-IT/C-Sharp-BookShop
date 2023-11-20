@@ -53,7 +53,13 @@ namespace QuanLyCuaHangBanSach.GUI.Report
 
             this.bindingSource1.DataSource = dataTable;
 
-            decimal salePrice = sale == null ? 0 : giaGoc * (sale.PhanTram / 100);
+            decimal salePrice = sale == null ? 0 : Convert.ToDecimal((giaGoc * Convert.ToDecimal(sale.PhanTram / 100.0)).ToString().Split('.')[0]);
+
+            if (customerBill.DoiDiem > 0)
+            {
+                decimal diem = customerBill.DoiDiem * 1000;
+                salePrice -= diem;
+            }
 
             Microsoft.Reporting.WinForms.ReportParameter[] p = new Microsoft.Reporting.WinForms.ReportParameter[]
             {

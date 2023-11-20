@@ -45,7 +45,7 @@ namespace QuanLyCuaHangBanSach.DAO
             DataTable dataTable = DataProvider.Instance.ExecuteQuery("select * from nhacungcap WHERE  LOWER(tenNhaCungCap)=LOWER(@tenNhaCungCap)and maNhaCupCap!=@id;",
                 new MySqlParameter[] {
                     new MySqlParameter("@tenNhaCungCap", value.Trim().ToLower()),
-                    new MySqlParameter("@maNhaCungCap", id)
+                    new MySqlParameter("@id", id)
                 }
             );
 

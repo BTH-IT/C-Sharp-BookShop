@@ -34,6 +34,7 @@
             this.title = new System.Windows.Forms.Label();
             this.authorizeList = new System.Windows.Forms.FlowLayoutPanel();
             this.cancelBtn = new Guna.UI.WinForms.GunaButton();
+            this.submitBtn = new Guna.UI.WinForms.GunaButton();
             this.SuspendLayout();
             // 
             // dataGridViewImageColumn1
@@ -90,7 +91,7 @@
             this.cancelBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.cancelBtn.Image = null;
             this.cancelBtn.ImageSize = new System.Drawing.Size(20, 20);
-            this.cancelBtn.Location = new System.Drawing.Point(511, 690);
+            this.cancelBtn.Location = new System.Drawing.Point(294, 691);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.cancelBtn.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
@@ -105,12 +106,43 @@
             this.cancelBtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
             // 
+            // submitBtn
+            // 
+            this.submitBtn.Animated = true;
+            this.submitBtn.AnimationHoverSpeed = 0.05F;
+            this.submitBtn.AnimationSpeed = 0.05F;
+            this.submitBtn.BackColor = System.Drawing.Color.Transparent;
+            this.submitBtn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.submitBtn.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.submitBtn.BorderSize = 2;
+            this.submitBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.submitBtn.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.submitBtn.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(159)))), ((int)(((byte)(147)))));
+            this.submitBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.submitBtn.ForeColor = System.Drawing.Color.White;
+            this.submitBtn.Image = null;
+            this.submitBtn.ImageSize = new System.Drawing.Size(20, 20);
+            this.submitBtn.Location = new System.Drawing.Point(696, 691);
+            this.submitBtn.Name = "submitBtn";
+            this.submitBtn.OnHoverBaseColor = System.Drawing.Color.White;
+            this.submitBtn.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.submitBtn.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.submitBtn.OnHoverImage = null;
+            this.submitBtn.OnPressedColor = System.Drawing.Color.Black;
+            this.submitBtn.Radius = 22;
+            this.submitBtn.Size = new System.Drawing.Size(200, 50);
+            this.submitBtn.TabIndex = 10;
+            this.submitBtn.Text = "Lưu";
+            this.submitBtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.submitBtn.Click += new System.EventHandler(this.submitBtn_Click);
+            // 
             // AuthorizeModal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
             this.ClientSize = new System.Drawing.Size(1222, 753);
+            this.Controls.Add(this.submitBtn);
             this.Controls.Add(this.cancelBtn);
             this.Controls.Add(this.authorizeList);
             this.Controls.Add(this.title);
@@ -131,5 +163,6 @@
         private System.Windows.Forms.Label title;
         private System.Windows.Forms.FlowLayoutPanel authorizeList;
         private Guna.UI.WinForms.GunaButton cancelBtn;
+        private Guna.UI.WinForms.GunaButton submitBtn;
     }
 }
