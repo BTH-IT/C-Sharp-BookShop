@@ -136,8 +136,9 @@ namespace QuanLyCuaHangBanSach.GUI
                 {
                     FilterContainer.Visible = false;
                 }
-            }
-            catch (Exception ex) { Console.WriteLine(ex); }
+				label1.Focus();
+			}
+			catch (Exception ex) { Console.WriteLine(ex); }
 
         }
 
@@ -206,8 +207,9 @@ namespace QuanLyCuaHangBanSach.GUI
                 {
                     modal.ShowDialog();
                 }
-            }
-            catch (Exception ex) { Console.WriteLine(ex); }
+				label1.Focus();
+			}
+			catch (Exception ex) { Console.WriteLine(ex); }
         }
 
         private void QRScanBtn_Click(object sender, EventArgs e)
@@ -225,8 +227,9 @@ namespace QuanLyCuaHangBanSach.GUI
                 {
                     MessageBox.Show("Không tìm được sách đã quét");
                 }
-            }
-            catch (Exception ex) { Console.WriteLine(ex); }
+				label1.Focus();
+			}
+			catch (Exception ex) { Console.WriteLine(ex); }
         }
 
         private void AddProductToCart(BookDTO book)
@@ -240,7 +243,7 @@ namespace QuanLyCuaHangBanSach.GUI
                     {
                         CustomerBillDetailDTO customerBillDetail = new CustomerBillDetailDTO(0, book.MaSach, 1, book.GiaBan);
                         customerBillDetails.Add(customerBillDetail);
-                        CartProductUserControl product = new CartProductUserControl(0);
+                        VendorCartProductUserControl product = new VendorCartProductUserControl();
                         product.details(book);
                         CartContainer.Controls.Add(product);
                     }
@@ -269,7 +272,7 @@ namespace QuanLyCuaHangBanSach.GUI
                             {
                                 customerBillDetail.SoLuong += 1;
 
-                                CartProductUserControl cartProduct = CartContainer.Controls[idx] as CartProductUserControl;
+                                VendorCartProductUserControl cartProduct = CartContainer.Controls[idx] as VendorCartProductUserControl;
                                 cartProduct.AmountTxt.Text = (Convert.ToInt32(cartProduct.AmountTxt.Text) + 1).ToString();
                                 break;
                             }
@@ -296,17 +299,17 @@ namespace QuanLyCuaHangBanSach.GUI
                     AddProductToCart(book);
                 }
 
-                if (CartProductUserControl.deletePress)
+                if (VendorCartProductUserControl.deletePress)
                 {
                     int idx = 0;
 
                     foreach (var customerBillDetail in customerBillDetails)
                     {
-                        if (customerBillDetail.MaSach == Convert.ToInt32(CartProductUserControl.deleteId))
+                        if (customerBillDetail.MaSach == Convert.ToInt32(VendorCartProductUserControl.deleteId))
                         {
                             customerBillDetails.RemoveAt(idx);
 
-                            CartProductUserControl cartProduct = CartContainer.Controls[idx] as CartProductUserControl;
+                            VendorCartProductUserControl cartProduct = CartContainer.Controls[idx] as VendorCartProductUserControl;
                             CartContainer.Controls.RemoveAt(idx);
                             cartProduct.Dispose();
                             break;
@@ -315,26 +318,26 @@ namespace QuanLyCuaHangBanSach.GUI
                     }
 
                     CartHandler();
-                    CartProductUserControl.deleteId = "";
-                    CartProductUserControl.deletePress = false;
+                    VendorCartProductUserControl.deleteId = "";
+                    VendorCartProductUserControl.deletePress = false;
                 }
 
-                if (CartProductUserControl.AmountChanged)
+                if (VendorCartProductUserControl.AmountChanged)
                 {
                     int idx = 0;
 
                     foreach (var customerBillDetail in customerBillDetails)
                     {
-                        if (customerBillDetail.MaSach == Convert.ToInt32(CartProductUserControl.AmountChangedId))
+                        if (customerBillDetail.MaSach == Convert.ToInt32(VendorCartProductUserControl.AmountChangedId))
                         {
-                            CartProductUserControl cartProduct = CartContainer.Controls[idx] as CartProductUserControl;
+                            VendorCartProductUserControl cartProduct = CartContainer.Controls[idx] as VendorCartProductUserControl;
                             customerBillDetail.SoLuong = Convert.ToInt32(cartProduct.AmountTxt.Text);
                             break;
                         }
                         idx++;
                     }
                     CartHandler();
-                    CartProductUserControl.AmountChanged = false;
+                    VendorCartProductUserControl.AmountChanged = false;
                 }
 
                 if (SearchResultControl.clicked)
@@ -511,6 +514,12 @@ namespace QuanLyCuaHangBanSach.GUI
                     customerBill.MaKhachHang = CustomerEnabled ? customerID : 0;
                     customerBill.MaKhuyenMai = Convert.ToInt32(DiscountCb.SelectedValue);
                     customerBill.NgayLap = DateTime.Now;
+                    if (DiscountCb.SelectedIndex != 0)
+                    {
+					    string discountID = DiscountCb.SelectedValue.ToString();
+                        int percent = SaleBUS.Instance.getById(discountID).PhanTram;
+                        customerBill.PhanTramKhuyenMai = percent;
+                    }
 					if (customerBill.MaKhachHang != 0 && PointEnabled)
                     {
                         customerBill.DoiDiem = CustomerBUS.Instance.getById(customerID.ToString()).Diem;
@@ -584,8 +593,9 @@ namespace QuanLyCuaHangBanSach.GUI
                     customerID = 0;
                     CartHandler();
                     RenderBookContainer();
-                }
-            }
+				    label1.Focus();
+				}
+			}
             catch (Exception ex) { Console.WriteLine(ex); }
         }
 

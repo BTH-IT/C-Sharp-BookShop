@@ -64,6 +64,8 @@
 			this.ExcelImportBtn = new Guna.UI2.WinForms.Guna2Button();
 			this.panel6 = new System.Windows.Forms.Panel();
 			this.LogoutBtn = new Guna.UI2.WinForms.Guna2Button();
+			this.ProfitPercentTxb = new Guna.UI2.WinForms.Guna2TextBox();
+			this.VndLb = new System.Windows.Forms.Label();
 			this.flowLayoutPanel2.SuspendLayout();
 			this.flowLayoutPanel4.SuspendLayout();
 			this.flowLayoutPanel5.SuspendLayout();
@@ -224,6 +226,7 @@
 			this.QRScanBtn.Radius = 8;
 			this.QRScanBtn.Size = new System.Drawing.Size(42, 42);
 			this.QRScanBtn.TabIndex = 1;
+			this.QRScanBtn.Click += new System.EventHandler(this.QRScanBtn_Click);
 			// 
 			// FilterContainer
 			// 
@@ -255,6 +258,8 @@
 			// 
 			// panel4
 			// 
+			this.panel4.Controls.Add(this.ProfitPercentTxb);
+			this.panel4.Controls.Add(this.VndLb);
 			this.panel4.Controls.Add(this.panel7);
 			this.panel4.Controls.Add(this.NameInp);
 			this.panel4.Controls.Add(this.TotalMoneyLb);
@@ -312,7 +317,7 @@
 			// TotalMoneyLb
 			// 
 			this.TotalMoneyLb.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-			this.TotalMoneyLb.Location = new System.Drawing.Point(139, 587);
+			this.TotalMoneyLb.Location = new System.Drawing.Point(139, 537);
 			this.TotalMoneyLb.Margin = new System.Windows.Forms.Padding(20, 30, 3, 5);
 			this.TotalMoneyLb.Name = "TotalMoneyLb";
 			this.TotalMoneyLb.Size = new System.Drawing.Size(154, 21);
@@ -336,8 +341,8 @@
 			this.CartContainer.AutoScroll = true;
 			this.CartContainer.Location = new System.Drawing.Point(0, 122);
 			this.CartContainer.Name = "CartContainer";
-			this.CartContainer.Size = new System.Drawing.Size(300, 411);
-			this.CartContainer.TabIndex = 20;
+			this.CartContainer.Size = new System.Drawing.Size(300, 400);
+			this.CartContainer.TabIndex = 2;
 			// 
 			// SupplierLb
 			// 
@@ -360,7 +365,7 @@
 			this.PrintBtn.Location = new System.Drawing.Point(4, 623);
 			this.PrintBtn.Name = "PrintBtn";
 			this.PrintBtn.Size = new System.Drawing.Size(293, 42);
-			this.PrintBtn.TabIndex = 3;
+			this.PrintBtn.TabIndex = 4;
 			this.PrintBtn.Text = "Print Receipt";
 			this.PrintBtn.UseVisualStyleBackColor = false;
 			this.PrintBtn.Click += new System.EventHandler(this.PrintBtn_Click);
@@ -392,7 +397,7 @@
 			// 
 			this.TotalLb.AutoSize = true;
 			this.TotalLb.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-			this.TotalLb.Location = new System.Drawing.Point(10, 585);
+			this.TotalLb.Location = new System.Drawing.Point(8, 535);
 			this.TotalLb.Margin = new System.Windows.Forms.Padding(20, 30, 3, 5);
 			this.TotalLb.Name = "TotalLb";
 			this.TotalLb.Size = new System.Drawing.Size(120, 25);
@@ -537,6 +542,47 @@
 			this.LogoutBtn.TabStop = false;
 			this.LogoutBtn.Click += new System.EventHandler(this.LogOutBtn_Click);
 			// 
+			// ProfitPercentTxb
+			// 
+			this.ProfitPercentTxb.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+			this.ProfitPercentTxb.Cursor = System.Windows.Forms.Cursors.IBeam;
+			this.ProfitPercentTxb.DefaultText = "";
+			this.ProfitPercentTxb.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+			this.ProfitPercentTxb.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+			this.ProfitPercentTxb.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+			this.ProfitPercentTxb.DisabledState.Parent = this.ProfitPercentTxb;
+			this.ProfitPercentTxb.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+			this.ProfitPercentTxb.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+			this.ProfitPercentTxb.FocusedState.Parent = this.ProfitPercentTxb;
+			this.ProfitPercentTxb.Font = new System.Drawing.Font("#9Slide03 Cabin Medium", 10F);
+			this.ProfitPercentTxb.ForeColor = System.Drawing.Color.Black;
+			this.ProfitPercentTxb.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+			this.ProfitPercentTxb.HoverState.Parent = this.ProfitPercentTxb;
+			this.ProfitPercentTxb.Location = new System.Drawing.Point(11, 574);
+			this.ProfitPercentTxb.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+			this.ProfitPercentTxb.Name = "ProfitPercentTxb";
+			this.ProfitPercentTxb.PasswordChar = '\0';
+			this.ProfitPercentTxb.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+			this.ProfitPercentTxb.PlaceholderText = "Lợi nhuận bán ra ...";
+			this.ProfitPercentTxb.SelectedText = "";
+			this.ProfitPercentTxb.ShadowDecoration.Parent = this.ProfitPercentTxb;
+			this.ProfitPercentTxb.Size = new System.Drawing.Size(247, 35);
+			this.ProfitPercentTxb.TabIndex = 3;
+			this.ProfitPercentTxb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ProfitPercentTxb_KeyPress);
+			this.ProfitPercentTxb.MouseLeave += new System.EventHandler(this.ProfitPercentTxb_MouseLeave);
+			// 
+			// VndLb
+			// 
+			this.VndLb.AutoSize = true;
+			this.VndLb.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+			this.VndLb.Location = new System.Drawing.Point(263, 579);
+			this.VndLb.Margin = new System.Windows.Forms.Padding(20, 30, 3, 5);
+			this.VndLb.Name = "VndLb";
+			this.VndLb.Size = new System.Drawing.Size(27, 25);
+			this.VndLb.TabIndex = 29;
+			this.VndLb.Text = "%";
+			this.VndLb.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			// 
 			// ImportGUI
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -608,5 +654,7 @@
 		private Guna.UI2.WinForms.Guna2TextBox NameInp;
 		private System.Windows.Forms.Panel panel7;
 		private Guna.UI2.WinForms.Guna2Button ExcelImportBtn;
+		private Guna.UI2.WinForms.Guna2TextBox ProfitPercentTxb;
+		private System.Windows.Forms.Label VndLb;
 	}
 }

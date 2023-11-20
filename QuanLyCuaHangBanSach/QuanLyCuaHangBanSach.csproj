@@ -776,12 +776,6 @@
     <Compile Include="GUI\UserControls\BookUserControl.Designer.cs">
       <DependentUpon>BookUserControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\UserControls\CartProductUserControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="GUI\UserControls\CartProductUserControl.Designer.cs">
-      <DependentUpon>CartProductUserControl.cs</DependentUpon>
-    </Compile>
     <Compile Include="GUI\UserControls\FilterUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -794,11 +788,23 @@
     <Compile Include="GUI\UserControls\ImportBookControl.Designer.cs">
       <DependentUpon>ImportBookControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\UserControls\ImportCartProductUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UserControls\ImportCartProductUserControl.Designer.cs">
+      <DependentUpon>ImportCartProductUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\UserControls\SearchResultControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="GUI\UserControls\SearchResultControl.designer.cs">
       <DependentUpon>SearchResultControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UserControls\VendorCartProductUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UserControls\VendorCartProductUserControl.Designer.cs">
+      <DependentUpon>VendorCartProductUserControl.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\UserControls\ViewBookBill.cs">
       <SubType>UserControl</SubType>
@@ -966,17 +972,20 @@
     <EmbeddedResource Include="GUI\UserControls\BookUserControl.resx">
       <DependentUpon>BookUserControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\UserControls\CartProductUserControl.resx">
-      <DependentUpon>CartProductUserControl.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="GUI\UserControls\FilterUserControl.resx">
       <DependentUpon>FilterUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\UserControls\ImportBookControl.resx">
       <DependentUpon>ImportBookControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UserControls\ImportCartProductUserControl.resx">
+      <DependentUpon>ImportCartProductUserControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\UserControls\SearchResultControl.resx">
       <DependentUpon>SearchResultControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UserControls\VendorCartProductUserControl.resx">
+      <DependentUpon>VendorCartProductUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\UserControls\ViewBookBill.resx">
       <DependentUpon>ViewBookBill.cs</DependentUpon>
