@@ -764,6 +764,12 @@
     <Compile Include="GUI\UserControls\BookBill.Designer.cs">
       <DependentUpon>BookBill.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\UserControls\BookBillV2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UserControls\BookBillV2.Designer.cs">
+      <DependentUpon>BookBillV2.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\UserControls\BookUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -953,6 +959,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\UserControls\BookBill.resx">
       <DependentUpon>BookBill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UserControls\BookBillV2.resx">
+      <DependentUpon>BookBillV2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\UserControls\BookUserControl.resx">
       <DependentUpon>BookUserControl.cs</DependentUpon>

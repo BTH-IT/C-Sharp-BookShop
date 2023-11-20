@@ -62,9 +62,9 @@ namespace QuanLyCuaHangBanSach.BUS
             return ImportBillDAO.Instance.getImportBillDetailList(id);
         }
 
-        public bool createImportBillDetail(ImportBillDetailDTO importBillDetail)
+        public bool createImportBillDetail(ImportBillDetailDTO importBillDetail, int phanTramLoiNhuan)
         {
-            return ImportBillDAO.Instance.createImportBillDetail(importBillDetail);
+            return ImportBillDAO.Instance.createImportBillDetail(importBillDetail, phanTramLoiNhuan);
         }
 
         public bool insert(ImportBillDTO importBill)

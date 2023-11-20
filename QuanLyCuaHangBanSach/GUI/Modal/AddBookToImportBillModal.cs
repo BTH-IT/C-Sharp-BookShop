@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using QuanLyCuaHangBanSach.BUS;
 using QuanLyCuaHangBanSach.DTO;
-using QuanLyCuaHangBanSach.GUI.Report;
 
 namespace QuanLyCuaHangBanSach.GUI.Modal
 {
@@ -544,7 +543,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                         if ((bool)row.Cells[0].Value == true)
                         {
                             int maSach = Convert.ToInt32(row.Cells[1].Value.ToString());
-                            decimal giaBan = Convert.ToDecimal(row.Cells[4].Value.ToString());
+                            decimal giaNhap = Convert.ToDecimal(row.Cells[4].Value.ToString());
 
                             int idx = this.selectedImportBillDetailList.FindIndex(
                                 book => book.MaSach == maSach
@@ -556,7 +555,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                                     0,
                                     maSach,
                                     1,
-                                    giaBan
+                                    giaNhap
                                 );
 
                                 this.selectedImportBillDetailList.Add(importBillDetail);

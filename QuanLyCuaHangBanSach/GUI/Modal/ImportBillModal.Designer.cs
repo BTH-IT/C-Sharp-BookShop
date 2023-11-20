@@ -38,16 +38,23 @@
             this.cancelBtn = new Guna.UI.WinForms.GunaButton();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.errorCustomerMsg = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.supplierCbx = new Guna.UI.WinForms.GunaComboBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.errorBookListMsg = new System.Windows.Forms.Label();
             this.totalPriceTxt = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.errorCustomerMsg = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.supplierCbx = new Guna.UI.WinForms.GunaComboBox();
+            this.benefitTxt = new Guna.UI2.WinForms.Guna2TextBox();
+            this.benefitLine = new System.Windows.Forms.Panel();
+            this.errorBenefitMsg = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // submitBtn
@@ -66,7 +73,7 @@
             this.submitBtn.ForeColor = System.Drawing.Color.White;
             this.submitBtn.Image = null;
             this.submitBtn.ImageSize = new System.Drawing.Size(20, 20);
-            this.submitBtn.Location = new System.Drawing.Point(343, 683);
+            this.submitBtn.Location = new System.Drawing.Point(559, 641);
             this.submitBtn.Name = "submitBtn";
             this.submitBtn.OnHoverBaseColor = System.Drawing.Color.White;
             this.submitBtn.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
@@ -88,7 +95,7 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(623, 61);
+            this.label1.Size = new System.Drawing.Size(1023, 61);
             this.label1.TabIndex = 9;
             this.label1.Text = "Tạo Đơn Nhập Hàng";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -109,7 +116,7 @@
             this.gunaButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.gunaButton1.Image = null;
             this.gunaButton1.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaButton1.Location = new System.Drawing.Point(354, 14);
+            this.gunaButton1.Location = new System.Drawing.Point(776, 15);
             this.gunaButton1.Name = "gunaButton1";
             this.gunaButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.gunaButton1.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
@@ -130,7 +137,7 @@
             this.bookList.AutoScroll = true;
             this.bookList.Location = new System.Drawing.Point(3, 85);
             this.bookList.Name = "bookList";
-            this.bookList.Size = new System.Drawing.Size(588, 248);
+            this.bookList.Size = new System.Drawing.Size(987, 248);
             this.bookList.TabIndex = 29;
             // 
             // label2
@@ -149,15 +156,15 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Location = new System.Drawing.Point(3, 486);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(594, 88);
+            this.panel1.Size = new System.Drawing.Size(996, 73);
             this.panel1.TabIndex = 0;
             // 
             // label3
             // 
             this.label3.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label3.Location = new System.Drawing.Point(3, 3);
+            this.label3.Location = new System.Drawing.Point(603, 1);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(145, 49);
+            this.label3.Size = new System.Drawing.Size(88, 49);
             this.label3.TabIndex = 28;
             this.label3.Text = "Tổng tiền:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -178,7 +185,7 @@
             this.cancelBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.cancelBtn.Image = null;
             this.cancelBtn.ImageSize = new System.Drawing.Size(20, 20);
-            this.cancelBtn.Location = new System.Drawing.Point(81, 683);
+            this.cancelBtn.Location = new System.Drawing.Point(260, 641);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.cancelBtn.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
@@ -196,23 +203,77 @@
             // 
             this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.AutoScrollMargin = new System.Drawing.Size(10, 10);
+            this.flowLayoutPanel1.Controls.Add(this.panel3);
             this.flowLayoutPanel1.Controls.Add(this.panel2);
             this.flowLayoutPanel1.Controls.Add(this.panel4);
             this.flowLayoutPanel1.Controls.Add(this.panel1);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(11, 64);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(604, 594);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1003, 571);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.errorCustomerMsg);
+            this.panel2.Controls.Add(this.label6);
+            this.panel2.Controls.Add(this.benefitTxt);
+            this.panel2.Controls.Add(this.benefitLine);
+            this.panel2.Controls.Add(this.errorBenefitMsg);
             this.panel2.Controls.Add(this.label13);
-            this.panel2.Controls.Add(this.supplierCbx);
-            this.panel2.Location = new System.Drawing.Point(3, 3);
+            this.panel2.Location = new System.Drawing.Point(603, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(594, 88);
+            this.panel2.Size = new System.Drawing.Size(396, 88);
             this.panel2.TabIndex = 1;
+            // 
+            // label13
+            // 
+            this.label13.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label13.Location = new System.Drawing.Point(3, 3);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(126, 49);
+            this.label13.TabIndex = 9;
+            this.label13.Text = "Tỉ lệ lợi nhuận:";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.errorBookListMsg);
+            this.panel4.Controls.Add(this.gunaButton1);
+            this.panel4.Controls.Add(this.bookList);
+            this.panel4.Controls.Add(this.label2);
+            this.panel4.Location = new System.Drawing.Point(3, 97);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(996, 383);
+            this.panel4.TabIndex = 2;
+            // 
+            // errorBookListMsg
+            // 
+            this.errorBookListMsg.AutoSize = true;
+            this.errorBookListMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.errorBookListMsg.ForeColor = System.Drawing.Color.Red;
+            this.errorBookListMsg.Location = new System.Drawing.Point(63, 344);
+            this.errorBookListMsg.Name = "errorBookListMsg";
+            this.errorBookListMsg.Size = new System.Drawing.Size(0, 21);
+            this.errorBookListMsg.TabIndex = 36;
+            // 
+            // totalPriceTxt
+            // 
+            this.totalPriceTxt.Font = new System.Drawing.Font("#9Slide03 Cabin SemiBold", 14.25F, System.Drawing.FontStyle.Bold);
+            this.totalPriceTxt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.totalPriceTxt.Location = new System.Drawing.Point(736, 0);
+            this.totalPriceTxt.Name = "totalPriceTxt";
+            this.totalPriceTxt.Size = new System.Drawing.Size(256, 49);
+            this.totalPriceTxt.TabIndex = 33;
+            this.totalPriceTxt.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.errorCustomerMsg);
+            this.panel3.Controls.Add(this.label5);
+            this.panel3.Controls.Add(this.supplierCbx);
+            this.panel3.Location = new System.Drawing.Point(3, 3);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(594, 88);
+            this.panel3.TabIndex = 28;
             // 
             // errorCustomerMsg
             // 
@@ -224,15 +285,15 @@
             this.errorCustomerMsg.Size = new System.Drawing.Size(0, 21);
             this.errorCustomerMsg.TabIndex = 27;
             // 
-            // label13
+            // label5
             // 
-            this.label13.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label13.Location = new System.Drawing.Point(3, 3);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(145, 49);
-            this.label13.TabIndex = 9;
-            this.label13.Text = "Nhà cung cấp:";
-            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label5.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label5.Location = new System.Drawing.Point(3, 3);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(145, 49);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "Nhà cung cấp:";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // supplierCbx
             // 
@@ -260,43 +321,71 @@
             this.supplierCbx.TabStop = false;
             this.supplierCbx.Leave += new System.EventHandler(this.supplierCbx_SelectedIndexChanged);
             // 
-            // panel4
+            // benefitTxt
             // 
-            this.panel4.Controls.Add(this.errorBookListMsg);
-            this.panel4.Controls.Add(this.gunaButton1);
-            this.panel4.Controls.Add(this.bookList);
-            this.panel4.Controls.Add(this.label2);
-            this.panel4.Location = new System.Drawing.Point(3, 97);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(594, 383);
-            this.panel4.TabIndex = 2;
+            this.benefitTxt.BackColor = System.Drawing.Color.Transparent;
+            this.benefitTxt.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
+            this.benefitTxt.BorderThickness = 0;
+            this.benefitTxt.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.benefitTxt.DefaultText = "";
+            this.benefitTxt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.benefitTxt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.benefitTxt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.benefitTxt.DisabledState.Parent = this.benefitTxt;
+            this.benefitTxt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.benefitTxt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.benefitTxt.FocusedState.Parent = this.benefitTxt;
+            this.benefitTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.benefitTxt.ForeColor = System.Drawing.Color.Black;
+            this.benefitTxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.benefitTxt.HoverState.Parent = this.benefitTxt;
+            this.benefitTxt.Location = new System.Drawing.Point(136, 12);
+            this.benefitTxt.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.benefitTxt.Name = "benefitTxt";
+            this.benefitTxt.PasswordChar = '\0';
+            this.benefitTxt.PlaceholderText = "Nhập tỉ lệ lợi nhuận";
+            this.benefitTxt.SelectedText = "";
+            this.benefitTxt.ShadowDecoration.Parent = this.benefitTxt;
+            this.benefitTxt.Size = new System.Drawing.Size(223, 29);
+            this.benefitTxt.TabIndex = 28;
+            this.benefitTxt.TextChanged += new System.EventHandler(this.benefitTxt_TextChanged);
+            this.benefitTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.benefitTxt_KeyPress);
+            this.benefitTxt.Leave += new System.EventHandler(this.benefitTxt_TextChanged);
             // 
-            // errorBookListMsg
+            // benefitLine
             // 
-            this.errorBookListMsg.AutoSize = true;
-            this.errorBookListMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.errorBookListMsg.ForeColor = System.Drawing.Color.Red;
-            this.errorBookListMsg.Location = new System.Drawing.Point(63, 344);
-            this.errorBookListMsg.Name = "errorBookListMsg";
-            this.errorBookListMsg.Size = new System.Drawing.Size(0, 21);
-            this.errorBookListMsg.TabIndex = 36;
+            this.benefitLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(212)))), ((int)(((byte)(191)))));
+            this.benefitLine.Location = new System.Drawing.Point(144, 43);
+            this.benefitLine.Name = "benefitLine";
+            this.benefitLine.Size = new System.Drawing.Size(246, 1);
+            this.benefitLine.TabIndex = 30;
             // 
-            // totalPriceTxt
+            // errorBenefitMsg
             // 
-            this.totalPriceTxt.Font = new System.Drawing.Font("#9Slide03 Cabin SemiBold", 14.25F, System.Drawing.FontStyle.Bold);
-            this.totalPriceTxt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.totalPriceTxt.Location = new System.Drawing.Point(161, 3);
-            this.totalPriceTxt.Name = "totalPriceTxt";
-            this.totalPriceTxt.Size = new System.Drawing.Size(430, 49);
-            this.totalPriceTxt.TabIndex = 33;
-            this.totalPriceTxt.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.errorBenefitMsg.AutoSize = true;
+            this.errorBenefitMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.errorBenefitMsg.ForeColor = System.Drawing.Color.Red;
+            this.errorBenefitMsg.Location = new System.Drawing.Point(145, 55);
+            this.errorBenefitMsg.Name = "errorBenefitMsg";
+            this.errorBenefitMsg.Size = new System.Drawing.Size(0, 21);
+            this.errorBenefitMsg.TabIndex = 27;
+            // 
+            // label6
+            // 
+            this.label6.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label6.Location = new System.Drawing.Point(366, 12);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(23, 29);
+            this.label6.TabIndex = 31;
+            this.label6.Text = "%";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // ImportBillModal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(623, 760);
+            this.ClientSize = new System.Drawing.Size(1023, 700);
             this.Controls.Add(this.submitBtn);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cancelBtn);
@@ -314,6 +403,8 @@
             this.panel2.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -329,12 +420,18 @@
         private Guna.UI.WinForms.GunaButton cancelBtn;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label errorCustomerMsg;
         private System.Windows.Forms.Label label13;
-        private Guna.UI.WinForms.GunaComboBox supplierCbx;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label errorBookListMsg;
         private System.Windows.Forms.Label totalPriceTxt;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label errorCustomerMsg;
+        private System.Windows.Forms.Label label5;
+        private Guna.UI.WinForms.GunaComboBox supplierCbx;
+        private Guna.UI2.WinForms.Guna2TextBox benefitTxt;
+        private System.Windows.Forms.Panel benefitLine;
+        private System.Windows.Forms.Label errorBenefitMsg;
+        private System.Windows.Forms.Label label6;
     }
 }

@@ -35,6 +35,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddBookToImportBillModal));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -43,7 +44,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddBookToImportBillModal));
             this.dgvAddBookToBillList = new Guna.UI.WinForms.GunaDataGridView();
             this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,22 +62,22 @@
             this.bookTypeCbx = new Guna.UI.WinForms.GunaComboBox();
             this.authorCbx = new Guna.UI.WinForms.GunaComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.gunaAdvenceButton1 = new Guna.UI.WinForms.GunaAdvenceButton();
             this.saveBtn = new Guna.UI.WinForms.GunaButton();
             this.addToProductList = new Guna.UI.WinForms.GunaAdvenceButton();
             this.refreshBtn = new Guna.UI.WinForms.GunaAdvenceButton();
             this.barcodeBtn = new Guna.UI.WinForms.GunaAdvenceButton();
             this.searchInput = new Guna.UI2.WinForms.Guna2TextBox();
             this.dgvBook = new Guna.UI.WinForms.GunaDataGridView();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.deleteBtn = new Guna.UI.WinForms.GunaAdvenceButton();
             this.Column11 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.maSach = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tenSach = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hinhAnh = new System.Windows.Forms.DataGridViewImageColumn();
             this.giaBan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.soLuongConLai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.deleteBtn = new Guna.UI.WinForms.GunaAdvenceButton();
-            this.gunaAdvenceButton1 = new Guna.UI.WinForms.GunaAdvenceButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAddBookToBillList)).BeginInit();
             this.gradientPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -257,7 +257,7 @@
             this.priceTo.Margin = new System.Windows.Forms.Padding(0);
             this.priceTo.Name = "priceTo";
             this.priceTo.PasswordChar = '\0';
-            this.priceTo.PlaceholderText = "Giá bán đến";
+            this.priceTo.PlaceholderText = "Giá nhập đến";
             this.priceTo.SelectedText = "";
             this.priceTo.ShadowDecoration.Parent = this.priceTo;
             this.priceTo.Size = new System.Drawing.Size(110, 25);
@@ -288,7 +288,7 @@
             this.priceFrom.Margin = new System.Windows.Forms.Padding(0);
             this.priceFrom.Name = "priceFrom";
             this.priceFrom.PasswordChar = '\0';
-            this.priceFrom.PlaceholderText = "Giá bán từ";
+            this.priceFrom.PlaceholderText = "Giá nhập từ";
             this.priceFrom.SelectedText = "";
             this.priceFrom.ShadowDecoration.Parent = this.priceFrom;
             this.priceFrom.Size = new System.Drawing.Size(110, 25);
@@ -430,6 +430,39 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1262, 62);
             this.panel1.TabIndex = 46;
+            // 
+            // gunaAdvenceButton1
+            // 
+            this.gunaAdvenceButton1.AnimationHoverSpeed = 0.07F;
+            this.gunaAdvenceButton1.AnimationSpeed = 0.03F;
+            this.gunaAdvenceButton1.BackColor = System.Drawing.Color.Transparent;
+            this.gunaAdvenceButton1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.gunaAdvenceButton1.BorderColor = System.Drawing.Color.Black;
+            this.gunaAdvenceButton1.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.gunaAdvenceButton1.CheckedBorderColor = System.Drawing.Color.Black;
+            this.gunaAdvenceButton1.CheckedForeColor = System.Drawing.Color.White;
+            this.gunaAdvenceButton1.CheckedImage = ((System.Drawing.Image)(resources.GetObject("gunaAdvenceButton1.CheckedImage")));
+            this.gunaAdvenceButton1.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.gunaAdvenceButton1.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.gunaAdvenceButton1.FocusedColor = System.Drawing.Color.Empty;
+            this.gunaAdvenceButton1.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaAdvenceButton1.ForeColor = System.Drawing.Color.White;
+            this.gunaAdvenceButton1.Image = ((System.Drawing.Image)(resources.GetObject("gunaAdvenceButton1.Image")));
+            this.gunaAdvenceButton1.ImageSize = new System.Drawing.Size(20, 20);
+            this.gunaAdvenceButton1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.gunaAdvenceButton1.Location = new System.Drawing.Point(482, 10);
+            this.gunaAdvenceButton1.Name = "gunaAdvenceButton1";
+            this.gunaAdvenceButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.gunaAdvenceButton1.OnHoverBorderColor = System.Drawing.Color.Transparent;
+            this.gunaAdvenceButton1.OnHoverForeColor = System.Drawing.Color.White;
+            this.gunaAdvenceButton1.OnHoverImage = null;
+            this.gunaAdvenceButton1.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.gunaAdvenceButton1.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaAdvenceButton1.Radius = 6;
+            this.gunaAdvenceButton1.Size = new System.Drawing.Size(126, 42);
+            this.gunaAdvenceButton1.TabIndex = 42;
+            this.gunaAdvenceButton1.Text = "Thêm từ Excel";
+            this.gunaAdvenceButton1.Click += new System.EventHandler(this.gunaAdvenceButton1_Click);
             // 
             // saveBtn
             // 
@@ -678,70 +711,6 @@
             this.dgvBook.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvBook.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
-            // Column11
-            // 
-            this.Column11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Column11.FillWeight = 50F;
-            this.Column11.Frozen = true;
-            this.Column11.HeaderText = "";
-            this.Column11.MinimumWidth = 50;
-            this.Column11.Name = "Column11";
-            this.Column11.Width = 50;
-            // 
-            // maSach
-            // 
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.maSach.DefaultCellStyle = dataGridViewCellStyle10;
-            this.maSach.HeaderText = "Mã Sách";
-            this.maSach.MinimumWidth = 6;
-            this.maSach.Name = "maSach";
-            this.maSach.ReadOnly = true;
-            this.maSach.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.maSach.ToolTipText = "Mã Sách";
-            // 
-            // tenSach
-            // 
-            this.tenSach.HeaderText = "Tên Sách";
-            this.tenSach.MinimumWidth = 6;
-            this.tenSach.Name = "tenSach";
-            this.tenSach.ReadOnly = true;
-            this.tenSach.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.tenSach.ToolTipText = "Tên Sách";
-            // 
-            // hinhAnh
-            // 
-            this.hinhAnh.HeaderText = "Hình Ảnh";
-            this.hinhAnh.Image = ((System.Drawing.Image)(resources.GetObject("hinhAnh.Image")));
-            this.hinhAnh.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
-            this.hinhAnh.MinimumWidth = 100;
-            this.hinhAnh.Name = "hinhAnh";
-            // 
-            // giaBan
-            // 
-            dataGridViewCellStyle11.Format = "N0";
-            dataGridViewCellStyle11.NullValue = null;
-            this.giaBan.DefaultCellStyle = dataGridViewCellStyle11;
-            this.giaBan.HeaderText = "Giá Nhập";
-            this.giaBan.MinimumWidth = 6;
-            this.giaBan.Name = "giaBan";
-            this.giaBan.ReadOnly = true;
-            this.giaBan.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.giaBan.ToolTipText = "Giá Nhập";
-            // 
-            // soLuongConLai
-            // 
-            this.soLuongConLai.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle12.Format = "N0";
-            dataGridViewCellStyle12.NullValue = null;
-            this.soLuongConLai.DefaultCellStyle = dataGridViewCellStyle12;
-            this.soLuongConLai.HeaderText = "Còn Lại";
-            this.soLuongConLai.MinimumWidth = 6;
-            this.soLuongConLai.Name = "soLuongConLai";
-            this.soLuongConLai.ReadOnly = true;
-            this.soLuongConLai.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.soLuongConLai.ToolTipText = "Còn Lại";
-            this.soLuongConLai.Width = 125;
-            // 
             // dataGridViewImageColumn1
             // 
             this.dataGridViewImageColumn1.HeaderText = "Hình Ảnh";
@@ -794,38 +763,69 @@
             this.deleteBtn.Text = "Xóa sách khỏi danh sách thêm";
             this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
             // 
-            // gunaAdvenceButton1
+            // Column11
             // 
-            this.gunaAdvenceButton1.AnimationHoverSpeed = 0.07F;
-            this.gunaAdvenceButton1.AnimationSpeed = 0.03F;
-            this.gunaAdvenceButton1.BackColor = System.Drawing.Color.Transparent;
-            this.gunaAdvenceButton1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.gunaAdvenceButton1.BorderColor = System.Drawing.Color.Black;
-            this.gunaAdvenceButton1.CheckedBaseColor = System.Drawing.Color.Gray;
-            this.gunaAdvenceButton1.CheckedBorderColor = System.Drawing.Color.Black;
-            this.gunaAdvenceButton1.CheckedForeColor = System.Drawing.Color.White;
-            this.gunaAdvenceButton1.CheckedImage = ((System.Drawing.Image)(resources.GetObject("gunaAdvenceButton1.CheckedImage")));
-            this.gunaAdvenceButton1.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.gunaAdvenceButton1.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaAdvenceButton1.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaAdvenceButton1.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaAdvenceButton1.ForeColor = System.Drawing.Color.White;
-            this.gunaAdvenceButton1.Image = ((System.Drawing.Image)(resources.GetObject("gunaAdvenceButton1.Image")));
-            this.gunaAdvenceButton1.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaAdvenceButton1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.gunaAdvenceButton1.Location = new System.Drawing.Point(482, 10);
-            this.gunaAdvenceButton1.Name = "gunaAdvenceButton1";
-            this.gunaAdvenceButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.gunaAdvenceButton1.OnHoverBorderColor = System.Drawing.Color.Transparent;
-            this.gunaAdvenceButton1.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaAdvenceButton1.OnHoverImage = null;
-            this.gunaAdvenceButton1.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.gunaAdvenceButton1.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaAdvenceButton1.Radius = 6;
-            this.gunaAdvenceButton1.Size = new System.Drawing.Size(126, 42);
-            this.gunaAdvenceButton1.TabIndex = 42;
-            this.gunaAdvenceButton1.Text = "Thêm từ Excel";
-            this.gunaAdvenceButton1.Click += new System.EventHandler(this.gunaAdvenceButton1_Click);
+            this.Column11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Column11.FillWeight = 50F;
+            this.Column11.Frozen = true;
+            this.Column11.HeaderText = "";
+            this.Column11.MinimumWidth = 50;
+            this.Column11.Name = "Column11";
+            this.Column11.Width = 50;
+            // 
+            // maSach
+            // 
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.maSach.DefaultCellStyle = dataGridViewCellStyle10;
+            this.maSach.HeaderText = "Mã Sách";
+            this.maSach.MinimumWidth = 6;
+            this.maSach.Name = "maSach";
+            this.maSach.ReadOnly = true;
+            this.maSach.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.maSach.ToolTipText = "Mã Sách";
+            // 
+            // tenSach
+            // 
+            this.tenSach.HeaderText = "Tên Sách";
+            this.tenSach.MinimumWidth = 6;
+            this.tenSach.Name = "tenSach";
+            this.tenSach.ReadOnly = true;
+            this.tenSach.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.tenSach.ToolTipText = "Tên Sách";
+            // 
+            // hinhAnh
+            // 
+            this.hinhAnh.HeaderText = "Hình Ảnh";
+            this.hinhAnh.Image = ((System.Drawing.Image)(resources.GetObject("hinhAnh.Image")));
+            this.hinhAnh.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.hinhAnh.MinimumWidth = 100;
+            this.hinhAnh.Name = "hinhAnh";
+            // 
+            // giaBan
+            // 
+            dataGridViewCellStyle11.Format = "N0";
+            dataGridViewCellStyle11.NullValue = null;
+            this.giaBan.DefaultCellStyle = dataGridViewCellStyle11;
+            this.giaBan.HeaderText = "Giá Nhập Lần Trước";
+            this.giaBan.MinimumWidth = 6;
+            this.giaBan.Name = "giaBan";
+            this.giaBan.ReadOnly = true;
+            this.giaBan.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.giaBan.ToolTipText = "Giá Nhập";
+            // 
+            // soLuongConLai
+            // 
+            this.soLuongConLai.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle12.Format = "N0";
+            dataGridViewCellStyle12.NullValue = null;
+            this.soLuongConLai.DefaultCellStyle = dataGridViewCellStyle12;
+            this.soLuongConLai.HeaderText = "Còn Lại";
+            this.soLuongConLai.MinimumWidth = 6;
+            this.soLuongConLai.Name = "soLuongConLai";
+            this.soLuongConLai.ReadOnly = true;
+            this.soLuongConLai.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.soLuongConLai.ToolTipText = "Còn Lại";
+            this.soLuongConLai.Width = 125;
             // 
             // AddBookToImportBillModal
             // 
@@ -890,12 +890,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn soLuong;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private Guna.UI.WinForms.GunaAdvenceButton gunaAdvenceButton1;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Column11;
         private System.Windows.Forms.DataGridViewTextBoxColumn maSach;
         private System.Windows.Forms.DataGridViewTextBoxColumn tenSach;
         private System.Windows.Forms.DataGridViewImageColumn hinhAnh;
         private System.Windows.Forms.DataGridViewTextBoxColumn giaBan;
         private System.Windows.Forms.DataGridViewTextBoxColumn soLuongConLai;
-        private Guna.UI.WinForms.GunaAdvenceButton gunaAdvenceButton1;
     }
 }
