@@ -65,6 +65,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                     SupplierBUS.Instance.getById(importBill.MaNhaCungCap.ToString()).TenNhaCungCap,
                     StaffBUS.Instance.getById(importBill.MaNhanVien.ToString()).Ten,
                     importBill.NgayLap.GetDateTimeFormats()[0],
+                    importBill.PhanTramLoiNhuan + "%",
                     importBill.TongTien,
                 });
                 }
