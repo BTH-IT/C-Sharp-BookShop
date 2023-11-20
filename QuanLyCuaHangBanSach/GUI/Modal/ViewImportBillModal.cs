@@ -15,78 +15,35 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 {
     public partial class ViewImportBillModal : Form
     {
-        private ImportBillDTO importBill = null;
 
         public ViewImportBillModal(ImportBillDTO importBill)
         {
             InitializeComponent();
-            try
+
+            List<ImportBillDetailDTO> customerBillDetailList = ImportBillBUS.Instance.getImportBillDetailList(importBill.MaDonNhapHang.ToString());
+
+            StaffDTO staff = StaffBUS.Instance.getById(importBill.MaNhanVien.ToString());
+
+            this.staffTxt.Text = staff.Ten;
+
+            SupplierDTO supplier = SupplierBUS.Instance.getById(importBill.MaNhaCungCap.ToString());
+
+            this.supplierTxt.Text = supplier.TenNhaCungCap;
+
+            this.dateTxt.Text = importBill.NgayLap.GetDateTimeFormats()[0];
+
+            BookDTO book;
+            foreach (ImportBillDetailDTO customerBillDetail in customerBillDetailList)
             {
-                this.importBill = importBill;
+                book = BookBUS.Instance.getById(customerBillDetail.MaSach.ToString());
 
-                this.loadSupplierCbx();
-                this.loadStaffCbx();
+                ViewBookBill viewBook = new ViewBookBill(book.TenSach, customerBillDetail.SoLuong, customerBillDetail.DonGia, book.HinhAnh);
 
-                this.supplierCbx.SelectedValue = importBill.MaNhaCungCap;
-                this.staffCbx.SelectedValue = importBill.MaNhanVien;
-
-                this.bookList.Controls.Clear();
-
-                foreach (ImportBillDetailDTO importBillDetail in ImportBillBUS.Instance.getImportBillDetailList(importBill.MaDonNhapHang.ToString()))
-                {
-                    BookDTO book = BookBUS.Instance.getById(importBillDetail.MaSach.ToString());
-
-                    ViewBookBill viewBook = new ViewBookBill(book.TenSach, importBillDetail.SoLuong, importBillDetail.DonGia, book.HinhAnh);
-
-                    this.bookList.Controls.Add(viewBook);
-                }
-
-                this.totalPriceTxt.Text = this.importBill.TongTien.ToString();
+                this.bookList.Controls.Add(viewBook);
             }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex);
-            }
+
+            this.totalPriceTxt.Text = string.Format("{0:N0} VNĐ", importBill.TongTien);
         }
-
-        private void loadSupplierCbx()
-        {
-            try
-            {
-                List<SupplierDTO> supplierList = SupplierBUS.Instance.getAllData();
-
-                supplierList.Insert(0, new SupplierDTO(0, "Chọn nhà cung cấp", "", ""));
-
-                this.supplierCbx.ValueMember = "MaNhaCungCap";
-                this.supplierCbx.DisplayMember = "TenNhaCungCap";
-                this.supplierCbx.DataSource = supplierList;
-
-                this.supplierCbx.SelectedIndex = 0;
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex);
-            }
-        }
-
-        private void loadStaffCbx()
-        {
-            try
-            {
-                List<StaffDTO> staffList = StaffBUS.Instance.getAllData();
-
-                this.staffCbx.ValueMember = "Ma";
-                this.staffCbx.DisplayMember = "Ten";
-                this.staffCbx.DataSource = staffList;
-
-                this.staffCbx.SelectedIndex = 0;
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex);
-            }
-        }
-
 
         private void cancelBtn_Click(object sender, EventArgs e)
         {

@@ -41,11 +41,10 @@
             this.PriceLb.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.PriceLb.AutoSize = true;
             this.PriceLb.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.PriceLb.ForeColor = System.Drawing.Color.Blue;
-            this.PriceLb.Location = new System.Drawing.Point(155, 103);
-            this.PriceLb.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.PriceLb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.PriceLb.Location = new System.Drawing.Point(116, 84);
             this.PriceLb.Name = "PriceLb";
-            this.PriceLb.Size = new System.Drawing.Size(56, 30);
+            this.PriceLb.Size = new System.Drawing.Size(46, 25);
             this.PriceLb.TabIndex = 10;
             this.PriceLb.Text = "Price";
             // 
@@ -55,10 +54,9 @@
             this.StockLb.AutoSize = true;
             this.StockLb.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.StockLb.ForeColor = System.Drawing.Color.Gray;
-            this.StockLb.Location = new System.Drawing.Point(157, 78);
-            this.StockLb.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.StockLb.Location = new System.Drawing.Point(118, 63);
             this.StockLb.Name = "StockLb";
-            this.StockLb.Size = new System.Drawing.Size(30, 23);
+            this.StockLb.Size = new System.Drawing.Size(24, 18);
             this.StockLb.TabIndex = 9;
             this.StockLb.Text = "SL:";
             // 
@@ -68,11 +66,10 @@
             this.NameLb.AutoSize = true;
             this.NameLb.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.NameLb.ForeColor = System.Drawing.Color.Black;
-            this.NameLb.Location = new System.Drawing.Point(157, 13);
-            this.NameLb.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.NameLb.MaximumSize = new System.Drawing.Size(197, 49);
+            this.NameLb.Location = new System.Drawing.Point(118, 11);
+            this.NameLb.MaximumSize = new System.Drawing.Size(148, 40);
             this.NameLb.Name = "NameLb";
-            this.NameLb.Size = new System.Drawing.Size(99, 26);
+            this.NameLb.Size = new System.Drawing.Size(81, 21);
             this.NameLb.TabIndex = 8;
             this.NameLb.Text = "Book Name";
             // 
@@ -80,24 +77,24 @@
             // 
             this.BookImage.ErrorImage = ((System.Drawing.Image)(resources.GetObject("BookImage.ErrorImage")));
             this.BookImage.InitialImage = ((System.Drawing.Image)(resources.GetObject("BookImage.InitialImage")));
-            this.BookImage.Location = new System.Drawing.Point(4, 8);
-            this.BookImage.Margin = new System.Windows.Forms.Padding(4);
+            this.BookImage.Location = new System.Drawing.Point(3, 6);
             this.BookImage.Name = "BookImage";
-            this.BookImage.Size = new System.Drawing.Size(143, 133);
+            this.BookImage.Size = new System.Drawing.Size(107, 108);
             this.BookImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.BookImage.TabIndex = 7;
             this.BookImage.TabStop = false;
             // 
             // ViewBookBill
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.PriceLb);
             this.Controls.Add(this.StockLb);
             this.Controls.Add(this.BookImage);
             this.Controls.Add(this.NameLb);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "ViewBookBill";
-            this.Size = new System.Drawing.Size(336, 145);
+            this.Size = new System.Drawing.Size(252, 118);
             ((System.ComponentModel.ISupportInitialize)(this.BookImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
