@@ -36,12 +36,17 @@
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SeoManageGUI));
 			this.searchInput = new Guna.UI2.WinForms.Guna2TextBox();
 			this.dgvSale = new Guna.UI.WinForms.GunaDataGridView();
+			this.Column11 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+			this.maKhuyenMai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.tenKhuyenMai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.phanTram = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.ngayBatDau = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.ngayKetThuc = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.line1 = new System.Windows.Forms.Panel();
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.btnExport = new Guna.UI.WinForms.GunaAdvenceButton();
 			this.btnRefresh = new Guna.UI.WinForms.GunaAdvenceButton();
 			this.deleteBtn = new Guna.UI.WinForms.GunaAdvenceButton();
-			this.btnEdit = new Guna.UI.WinForms.GunaAdvenceButton();
 			this.btnAdd = new Guna.UI.WinForms.GunaAdvenceButton();
 			this.panel5 = new System.Windows.Forms.Panel();
 			this.filterCkx = new Guna.UI.WinForms.GunaMediumCheckBox();
@@ -51,12 +56,7 @@
 			this.dateTimeFrom = new Guna.UI.WinForms.GunaDateTimePicker();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.panel2 = new System.Windows.Forms.Panel();
-			this.Column11 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-			this.maKhuyenMai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.tenKhuyenMai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.phanTram = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.ngayBatDau = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.ngayKetThuc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.btnEdit = new Guna.UI.WinForms.GunaAdvenceButton();
 			((System.ComponentModel.ISupportInitialize)(this.dgvSale)).BeginInit();
 			this.panel1.SuspendLayout();
 			this.panel5.SuspendLayout();
@@ -184,6 +184,56 @@
 			this.dgvSale.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
 			this.dgvSale.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCell_CellDoubleClick);
 			// 
+			// Column11
+			// 
+			this.Column11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+			this.Column11.FillWeight = 50F;
+			this.Column11.Frozen = true;
+			this.Column11.HeaderText = "";
+			this.Column11.MinimumWidth = 50;
+			this.Column11.Name = "Column11";
+			this.Column11.Width = 50;
+			// 
+			// maKhuyenMai
+			// 
+			this.maKhuyenMai.HeaderText = "Mã khuyến mãi";
+			this.maKhuyenMai.MinimumWidth = 6;
+			this.maKhuyenMai.Name = "maKhuyenMai";
+			this.maKhuyenMai.ReadOnly = true;
+			this.maKhuyenMai.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+			// 
+			// tenKhuyenMai
+			// 
+			this.tenKhuyenMai.HeaderText = "Tên Khuyến mãi";
+			this.tenKhuyenMai.MinimumWidth = 6;
+			this.tenKhuyenMai.Name = "tenKhuyenMai";
+			this.tenKhuyenMai.ReadOnly = true;
+			this.tenKhuyenMai.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+			// 
+			// phanTram
+			// 
+			this.phanTram.HeaderText = "Phần Trăm";
+			this.phanTram.MinimumWidth = 6;
+			this.phanTram.Name = "phanTram";
+			this.phanTram.ReadOnly = true;
+			this.phanTram.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+			// 
+			// ngayBatDau
+			// 
+			this.ngayBatDau.HeaderText = "Ngày Bắt đầu";
+			this.ngayBatDau.MinimumWidth = 6;
+			this.ngayBatDau.Name = "ngayBatDau";
+			this.ngayBatDau.ReadOnly = true;
+			this.ngayBatDau.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+			// 
+			// ngayKetThuc
+			// 
+			this.ngayKetThuc.HeaderText = "Ngày kết thúc";
+			this.ngayKetThuc.MinimumWidth = 6;
+			this.ngayKetThuc.Name = "ngayKetThuc";
+			this.ngayKetThuc.ReadOnly = true;
+			this.ngayKetThuc.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+			// 
 			// line1
 			// 
 			this.line1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(212)))), ((int)(((byte)(191)))));
@@ -195,10 +245,10 @@
 			// panel1
 			// 
 			this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
+			this.panel1.Controls.Add(this.btnEdit);
 			this.panel1.Controls.Add(this.btnExport);
 			this.panel1.Controls.Add(this.btnRefresh);
 			this.panel1.Controls.Add(this.deleteBtn);
-			this.panel1.Controls.Add(this.btnEdit);
 			this.panel1.Controls.Add(this.btnAdd);
 			this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
 			this.panel1.Location = new System.Drawing.Point(0, 630);
@@ -306,40 +356,6 @@
 			this.deleteBtn.Text = "Xóa";
 			this.deleteBtn.Click += new System.EventHandler(this.btnDelete_Click);
 			// 
-			// btnEdit
-			// 
-			this.btnEdit.Anchor = System.Windows.Forms.AnchorStyles.Right;
-			this.btnEdit.AnimationHoverSpeed = 0.07F;
-			this.btnEdit.AnimationSpeed = 0.03F;
-			this.btnEdit.BackColor = System.Drawing.Color.Transparent;
-			this.btnEdit.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-			this.btnEdit.BorderColor = System.Drawing.Color.Black;
-			this.btnEdit.CheckedBaseColor = System.Drawing.Color.Gray;
-			this.btnEdit.CheckedBorderColor = System.Drawing.Color.Black;
-			this.btnEdit.CheckedForeColor = System.Drawing.Color.White;
-			this.btnEdit.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnEdit.CheckedImage")));
-			this.btnEdit.CheckedLineColor = System.Drawing.Color.DimGray;
-			this.btnEdit.DialogResult = System.Windows.Forms.DialogResult.None;
-			this.btnEdit.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(159)))), ((int)(((byte)(147)))));
-			this.btnEdit.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold);
-			this.btnEdit.ForeColor = System.Drawing.Color.White;
-			this.btnEdit.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit.Image")));
-			this.btnEdit.ImageSize = new System.Drawing.Size(20, 20);
-			this.btnEdit.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-			this.btnEdit.Location = new System.Drawing.Point(838, 6);
-			this.btnEdit.Name = "btnEdit";
-			this.btnEdit.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-			this.btnEdit.OnHoverBorderColor = System.Drawing.Color.Transparent;
-			this.btnEdit.OnHoverForeColor = System.Drawing.Color.White;
-			this.btnEdit.OnHoverImage = null;
-			this.btnEdit.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-			this.btnEdit.OnPressedColor = System.Drawing.Color.Black;
-			this.btnEdit.Radius = 6;
-			this.btnEdit.Size = new System.Drawing.Size(113, 42);
-			this.btnEdit.TabIndex = 3;
-			this.btnEdit.Text = "Chỉnh sửa";
-			this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
-			// 
 			// btnAdd
 			// 
 			this.btnAdd.Anchor = System.Windows.Forms.AnchorStyles.Right;
@@ -360,7 +376,7 @@
 			this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
 			this.btnAdd.ImageSize = new System.Drawing.Size(20, 20);
 			this.btnAdd.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-			this.btnAdd.Location = new System.Drawing.Point(715, 6);
+			this.btnAdd.Location = new System.Drawing.Point(713, 6);
 			this.btnAdd.Name = "btnAdd";
 			this.btnAdd.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
 			this.btnAdd.OnHoverBorderColor = System.Drawing.Color.Transparent;
@@ -495,55 +511,39 @@
 			this.panel2.Size = new System.Drawing.Size(1044, 72);
 			this.panel2.TabIndex = 0;
 			// 
-			// Column11
+			// btnEdit
 			// 
-			this.Column11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-			this.Column11.FillWeight = 50F;
-			this.Column11.Frozen = true;
-			this.Column11.HeaderText = "";
-			this.Column11.MinimumWidth = 50;
-			this.Column11.Name = "Column11";
-			this.Column11.Width = 50;
-			// 
-			// maKhuyenMai
-			// 
-			this.maKhuyenMai.HeaderText = "Mã khuyến mãi";
-			this.maKhuyenMai.MinimumWidth = 6;
-			this.maKhuyenMai.Name = "maKhuyenMai";
-			this.maKhuyenMai.ReadOnly = true;
-			this.maKhuyenMai.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-			// 
-			// tenKhuyenMai
-			// 
-			this.tenKhuyenMai.HeaderText = "Tên Khuyến mãi";
-			this.tenKhuyenMai.MinimumWidth = 6;
-			this.tenKhuyenMai.Name = "tenKhuyenMai";
-			this.tenKhuyenMai.ReadOnly = true;
-			this.tenKhuyenMai.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-			// 
-			// phanTram
-			// 
-			this.phanTram.HeaderText = "Phần Trăm";
-			this.phanTram.MinimumWidth = 6;
-			this.phanTram.Name = "phanTram";
-			this.phanTram.ReadOnly = true;
-			this.phanTram.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-			// 
-			// ngayBatDau
-			// 
-			this.ngayBatDau.HeaderText = "Ngày Bắt đầu";
-			this.ngayBatDau.MinimumWidth = 6;
-			this.ngayBatDau.Name = "ngayBatDau";
-			this.ngayBatDau.ReadOnly = true;
-			this.ngayBatDau.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-			// 
-			// ngayKetThuc
-			// 
-			this.ngayKetThuc.HeaderText = "Ngày kết thúc";
-			this.ngayKetThuc.MinimumWidth = 6;
-			this.ngayKetThuc.Name = "ngayKetThuc";
-			this.ngayKetThuc.ReadOnly = true;
-			this.ngayKetThuc.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+			this.btnEdit.Anchor = System.Windows.Forms.AnchorStyles.Right;
+			this.btnEdit.AnimationHoverSpeed = 0.07F;
+			this.btnEdit.AnimationSpeed = 0.03F;
+			this.btnEdit.BackColor = System.Drawing.Color.Transparent;
+			this.btnEdit.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+			this.btnEdit.BorderColor = System.Drawing.Color.Black;
+			this.btnEdit.CheckedBaseColor = System.Drawing.Color.Gray;
+			this.btnEdit.CheckedBorderColor = System.Drawing.Color.Black;
+			this.btnEdit.CheckedForeColor = System.Drawing.Color.White;
+			this.btnEdit.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnEdit.CheckedImage")));
+			this.btnEdit.CheckedLineColor = System.Drawing.Color.DimGray;
+			this.btnEdit.DialogResult = System.Windows.Forms.DialogResult.None;
+			this.btnEdit.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(159)))), ((int)(((byte)(147)))));
+			this.btnEdit.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold);
+			this.btnEdit.ForeColor = System.Drawing.Color.White;
+			this.btnEdit.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit.Image")));
+			this.btnEdit.ImageSize = new System.Drawing.Size(20, 20);
+			this.btnEdit.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+			this.btnEdit.Location = new System.Drawing.Point(836, 6);
+			this.btnEdit.Name = "btnEdit";
+			this.btnEdit.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+			this.btnEdit.OnHoverBorderColor = System.Drawing.Color.Transparent;
+			this.btnEdit.OnHoverForeColor = System.Drawing.Color.White;
+			this.btnEdit.OnHoverImage = null;
+			this.btnEdit.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+			this.btnEdit.OnPressedColor = System.Drawing.Color.Black;
+			this.btnEdit.Radius = 6;
+			this.btnEdit.Size = new System.Drawing.Size(113, 42);
+			this.btnEdit.TabIndex = 3;
+			this.btnEdit.Text = "Chỉnh sửa";
+			this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
 			// 
 			// SeoManageGUI
 			// 
@@ -578,7 +578,6 @@
         private System.Windows.Forms.Panel line1;
         private System.Windows.Forms.Panel panel1;
         private Guna.UI.WinForms.GunaAdvenceButton deleteBtn;
-        private Guna.UI.WinForms.GunaAdvenceButton btnEdit;
         private Guna.UI.WinForms.GunaAdvenceButton btnAdd;
         private System.Windows.Forms.Panel panel5;
         private Guna.UI.WinForms.GunaMediumCheckBox filterCkx;
@@ -593,5 +592,6 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn phanTram;
 		private System.Windows.Forms.DataGridViewTextBoxColumn ngayBatDau;
 		private System.Windows.Forms.DataGridViewTextBoxColumn ngayKetThuc;
+		private Guna.UI.WinForms.GunaAdvenceButton btnEdit;
 	}
 }
