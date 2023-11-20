@@ -587,7 +587,7 @@ namespace QuanLyCuaHangBanSach.GUI
                     discount = 0;
                     DiscountMoneyLb.Text = "0 VND";
                     DiscountCb.SelectedIndex = 0;
-                    RecipientNameLb.Text = string.Empty;
+                    RecipientNameLb.Text = "Vãng lai";
                     PointAmountLb.Text = string.Empty;
                     DiscountPercentLb.Text = string.Empty;
                     customerID = 0;
