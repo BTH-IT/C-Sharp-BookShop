@@ -194,11 +194,10 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 				{
 					foreach (CustomerBillDTO bill in billList)
 					{
-						int phanTramKM = bill.MaKhuyenMai != 0 ? SaleBUS.Instance.getById(bill.MaKhuyenMai.ToString()).PhanTram : 0;
 						dgvBill.Rows.Add(new object[] {
 							bill.NgayLap,
 							bill.MaDonKhachHang,
-							bill.MaKhuyenMai != 0 ? string.Format("{0:N0} VNĐ", DiscountMoneyCal(phanTramKM, bill.TongTien)) : "Không khuyến mãi",
+							bill.PhanTramKhuyenMai != 0 ? string.Format("{0:N0} VNĐ", DiscountMoneyCal(bill.PhanTramKhuyenMai, bill.TongTien)) : "Không khuyến mãi",
 							string.Format("{0:N0} VNĐ", bill.TongTien)
 						});
 					}
