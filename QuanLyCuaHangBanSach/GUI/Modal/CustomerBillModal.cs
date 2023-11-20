@@ -338,6 +338,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 if (!isValid) return;
 
                 CustomerBillDTO customerBill = new CustomerBillDTO();
+                CustomerDTO customer = CustomerBUS.Instance.getById(this.customerCbx.SelectedValue.ToString());
 
                 customerBill.TongTien = Convert.ToDecimal(this.totalPriceTxt.Text);
                 customerBill.TienKhachDua = Convert.ToDecimal(this.totalPriceTxt.Text);
@@ -348,7 +349,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 customerBill.NgayLap = DateTime.Now;
                 customerBill.DoiDiem = 
                     this.customerCbx.SelectedIndex != 1 && this.customerCbx.SelectedIndex != 0 && this.PointToggleBtn.Checked
-                    ? CustomerBUS.Instance.getById(this.customerCbx.SelectedValue.ToString()).Diem : 0;
+                    ? customer.Diem : 0;
 
                 CustomerBillDTO newCustomerBill = CustomerBillBUS.Instance.insertReturnBill(customerBill);
 
@@ -360,6 +361,21 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 }
                 else
                 {
+                    if (customerBill.DoiDiem > 0)
+                    {
+                        customer.Diem = 0;
+                        customer.Diem = (int)(customerBill.TongTien / 50000);
+                        CustomerBUS.Instance.update(customer);
+                    }
+                    else
+                    {
+                        if (customer != null)
+                        {
+                            customer.Diem += (int)(customerBill.TongTien / 50000);
+                            CustomerBUS.Instance.update(customer);
+                        }
+                    }
+
                     foreach (CustomerBillDetailDTO customerBillDetail in this.customerBillDetailList)
                     {
                         CustomerBillDetailDTO newCustomerBillDetail = new CustomerBillDetailDTO(
@@ -439,6 +455,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             {
                 int diem = CustomerBUS.Instance.getById(this.customerCbx.SelectedValue.ToString()).Diem;
                 scoreTxt.Text = diem + " điểm";
+                
                 if (this.PointToggleBtn.Checked)
                 {
 					decimal total = Convert.ToDecimal(Convert.ToDecimal(totalPriceTxt.Text.Split('.')[0]) + scorePrice);
@@ -450,9 +467,11 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                     this.totalPriceTxt.Text = total + "";
                     scorePrice = 0;
                 }
+                PointToggleBtn.Enabled = diem != 0;
             }
             else
             {
+                PointToggleBtn.Enabled = false;
                 PointToggleBtn.Checked = false;
                 scoreTxt.Text = "";
                 decimal total = Convert.ToDecimal(Convert.ToDecimal(totalPriceTxt.Text.Split('.')[0]) + scorePrice);
@@ -467,11 +486,14 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             {
                 if (this.customerCbx.SelectedIndex != 1 && this.customerCbx.SelectedIndex != 0 && this.PointToggleBtn.Checked)
                 {
-                    int diem = CustomerBUS.Instance.getById(this.customerCbx.SelectedValue.ToString()).Diem;
-                    scoreTxt.Text = diem + " điểm";
-                    decimal total = Convert.ToDecimal(Convert.ToDecimal(totalPriceTxt.Text.Split('.')[0]) + scorePrice);
-                    scorePrice = diem * 1000;
-                    this.totalPriceTxt.Text = (total - scorePrice) + "";
+                    if (Convert.ToDecimal(totalPriceTxt.Text.Split('.')[0]) > 0)
+                    {
+                        int diem = CustomerBUS.Instance.getById(this.customerCbx.SelectedValue.ToString()).Diem;
+                        scoreTxt.Text = diem + " điểm";
+                        decimal total = Convert.ToDecimal(Convert.ToDecimal(totalPriceTxt.Text.Split('.')[0]) + scorePrice);
+                        scorePrice = diem * 1000;
+                        this.totalPriceTxt.Text = (total - scorePrice) + "";
+                    }
                 }
                 else
                 {

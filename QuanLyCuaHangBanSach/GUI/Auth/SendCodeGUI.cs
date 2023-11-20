@@ -82,7 +82,7 @@ namespace QuanLyCuaHangBanSach.GUI
             to = (this.emailTxt.Text).ToString();
 
             from = "bookstorecsharp2023@gmail.com";
-            pass = "eenbnmjukrklptce";
+            pass = "uwbwyrynbqmkiyec";
             msgBody = $"Your Reset Code is: {randomCode}";
 
             msg.To.Add(to);
