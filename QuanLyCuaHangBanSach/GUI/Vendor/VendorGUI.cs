@@ -514,6 +514,12 @@ namespace QuanLyCuaHangBanSach.GUI
                     customerBill.MaKhachHang = CustomerEnabled ? customerID : 0;
                     customerBill.MaKhuyenMai = Convert.ToInt32(DiscountCb.SelectedValue);
                     customerBill.NgayLap = DateTime.Now;
+                    if (DiscountCb.SelectedIndex != 0)
+                    {
+					    string discountID = DiscountCb.SelectedValue.ToString();
+                        int percent = SaleBUS.Instance.getById(discountID).PhanTram;
+                        customerBill.PhanTramKhuyenMai = percent;
+                    }
 					if (customerBill.MaKhachHang != 0 && PointEnabled)
                     {
                         customerBill.DoiDiem = CustomerBUS.Instance.getById(customerID.ToString()).Diem;
