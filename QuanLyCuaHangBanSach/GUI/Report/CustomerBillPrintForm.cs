@@ -53,12 +53,12 @@ namespace QuanLyCuaHangBanSach.GUI.Report
 
             this.bindingSource1.DataSource = dataTable;
 
-            decimal salePrice = sale == null ? 0 : Convert.ToDecimal((giaGoc * Convert.ToDecimal(sale.PhanTram / 100.0)).ToString().Split('.')[0]);
+            decimal salePrice = sale == null ? 0 : Convert.ToDecimal((giaGoc * Convert.ToDecimal(customerBill.PhanTramKhuyenMai / 100.0)).ToString().Split('.')[0]);
 
             if (customerBill.DoiDiem > 0)
             {
                 decimal diem = customerBill.DoiDiem * 1000;
-                salePrice -= diem;
+                salePrice += diem;
             }
 
             Microsoft.Reporting.WinForms.ReportParameter[] p = new Microsoft.Reporting.WinForms.ReportParameter[]
@@ -69,6 +69,7 @@ namespace QuanLyCuaHangBanSach.GUI.Report
                 new Microsoft.Reporting.WinForms.ReportParameter("pScore", customer == null ? "Không có" : customer.Diem.ToString()),
                 new Microsoft.Reporting.WinForms.ReportParameter("pCustomerName", customer == null ? "Vãng lai" : customer.Ten.ToString()),
                 new Microsoft.Reporting.WinForms.ReportParameter("pSale", sale == null ? "Không có" : sale.TenKhuyenMai.ToString()),
+                new Microsoft.Reporting.WinForms.ReportParameter("pSalePercent", customerBill.PhanTramKhuyenMai + "%"),
                 new Microsoft.Reporting.WinForms.ReportParameter("pSalePrice", salePrice.ToString()),
                 new Microsoft.Reporting.WinForms.ReportParameter("pTotalPrice", customerBill.TongTien.ToString()),
                 new Microsoft.Reporting.WinForms.ReportParameter("pMoneyPaid", customerBill.TienKhachDua.ToString()),

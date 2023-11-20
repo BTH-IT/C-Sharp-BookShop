@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.Reporting.WinForms;
 using QuanLyCuaHangBanSach.BUS;
@@ -63,6 +57,7 @@ namespace QuanLyCuaHangBanSach.GUI.Report
                 new Microsoft.Reporting.WinForms.ReportParameter("pDate", importBill.NgayLap.GetDateTimeFormats()[0].ToString()),
                 new Microsoft.Reporting.WinForms.ReportParameter("pSupplier", supplier.TenNhaCungCap),
                 new Microsoft.Reporting.WinForms.ReportParameter("pTotalPrice", importBill.TongTien.ToString()),
+                new Microsoft.Reporting.WinForms.ReportParameter("pBenefitPercent", importBill.PhanTramLoiNhuan + "%"),
                 new Microsoft.Reporting.WinForms.ReportParameter("pTotalAmount", amount.ToString())
             };
 
