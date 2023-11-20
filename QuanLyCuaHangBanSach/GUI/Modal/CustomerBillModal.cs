@@ -341,6 +341,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
                 customerBill.TongTien = Convert.ToDecimal(this.totalPriceTxt.Text);
                 customerBill.TienKhachDua = Convert.ToDecimal(this.totalPriceTxt.Text);
+                customerBill.PhanTramKhuyenMai = this.saleCbx.SelectedIndex != 1 ? SaleBUS.Instance.getById(this.saleCbx.SelectedValue.ToString()).PhanTram : 0;
                 customerBill.MaNhanVien = this.staffId;
                 customerBill.MaKhachHang = Convert.ToInt32(this.customerCbx.SelectedValue);
                 customerBill.MaKhuyenMai = Convert.ToInt32(this.saleCbx.SelectedValue);

@@ -79,7 +79,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                                 "Không có",
                                 StaffBUS.Instance.getById(customerBill.MaNhanVien.ToString()).Ten,
                                 "Không có",
-                                "0%",
+                                customerBill.PhanTramKhuyenMai + "%",
                                 customerBill.NgayLap.GetDateTimeFormats()[0],
                                 string.Format("{0:N0} VNĐ", customerBill.TongTien),
                             });
@@ -93,7 +93,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                                 customer.SoDienThoai,
                                 StaffBUS.Instance.getById(customerBill.MaNhanVien.ToString()).Ten,
                                 "Không có",
-                                "0%",
+                                customerBill.PhanTramKhuyenMai + "%",
                                 customerBill.NgayLap.GetDateTimeFormats()[0],
                                 string.Format("{0:N0} VNĐ", customerBill.TongTien),
                             });
@@ -110,7 +110,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                                 "Không có",
                                 StaffBUS.Instance.getById(customerBill.MaNhanVien.ToString()).Ten,
                                 sale.TenKhuyenMai,
-                                sale.PhanTram + "%",
+                                customerBill.PhanTramKhuyenMai + "%",
                                 customerBill.NgayLap.GetDateTimeFormats()[0],
                                 string.Format("{0:N0} VNĐ", customerBill.TongTien),
                             });
@@ -124,7 +124,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                                 customer.SoDienThoai,
                                 StaffBUS.Instance.getById(customerBill.MaNhanVien.ToString()).Ten,
                                 sale.TenKhuyenMai,
-                                sale.PhanTram + "%",
+                                customerBill.PhanTramKhuyenMai + "%",
                                 customerBill.NgayLap.GetDateTimeFormats()[0],
                                 string.Format("{0:N0} VNĐ", customerBill.TongTien),
                             });
