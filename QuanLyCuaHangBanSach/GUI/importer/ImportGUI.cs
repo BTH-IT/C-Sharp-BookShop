@@ -189,9 +189,20 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
                 {
                     ImportBillDetailDTO importBillDetail = new ImportBillDetailDTO(0, book.MaSach, 1, book.GiaNhap);
                     importBillDetails.Add(importBillDetail);
-                    CartProductUserControl product = new CartProductUserControl(1);
+					ImportCartProductUserControl product = new ImportCartProductUserControl();
                     product.details(book);
-                    CartContainer.Controls.Add(product);
+
+                    product.ImportPriceTxb.MouseLeave += (object sender, EventArgs e) =>
+                    {
+                        panel1.Focus();
+                    };
+
+					product.ProfitPercentTxb.MouseLeave += (object sender, EventArgs e) =>
+					{
+						panel1.Focus();
+					};
+
+					CartContainer.Controls.Add(product);
                 }
                 else
                 {
@@ -203,7 +214,7 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
                         {
                             importBillDetail.SoLuong += 1;
 
-                            CartProductUserControl cartProduct = CartContainer.Controls[idx] as CartProductUserControl;
+                            ImportCartProductUserControl cartProduct = CartContainer.Controls[idx] as ImportCartProductUserControl;
                             cartProduct.AmountTxt.Text = (Convert.ToInt32(cartProduct.AmountTxt.Text) + 1).ToString();
                             break;
                         }
@@ -229,17 +240,17 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
                     AddProductToCart(book);
                 }
 
-                if (CartProductUserControl.deletePress)
+                if (ImportCartProductUserControl.deletePress)
                 {
                     int idx = 0;
 
                     foreach (var importBillDetail in importBillDetails)
                     {
-                        if (importBillDetail.MaSach == Convert.ToInt32(CartProductUserControl.deleteId))
+                        if (importBillDetail.MaSach == Convert.ToInt32(ImportCartProductUserControl.deleteId))
                         {
                             importBillDetails.RemoveAt(idx);
 
-                            CartProductUserControl cartProduct = CartContainer.Controls[idx] as CartProductUserControl;
+                            ImportCartProductUserControl cartProduct = CartContainer.Controls[idx] as ImportCartProductUserControl;
                             CartContainer.Controls.RemoveAt(idx);
                             cartProduct.Dispose();
                             break;
@@ -248,26 +259,26 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
                     }
 
                     CartHandler();
-                    CartProductUserControl.deleteId = "";
-                    CartProductUserControl.deletePress = false;
+                    ImportCartProductUserControl.deleteId = "";
+                    ImportCartProductUserControl.deletePress = false;
                 }
 
-                if (CartProductUserControl.AmountChanged)
+                if (ImportCartProductUserControl.AmountChanged)
                 {
                     int idx = 0;
 
                     foreach (var importBillDetail in importBillDetails)
                     {
-                        if (importBillDetail.MaSach == Convert.ToInt32(CartProductUserControl.AmountChangedId))
+                        if (importBillDetail.MaSach == Convert.ToInt32(ImportCartProductUserControl.AmountChangedId))
                         {
-                            CartProductUserControl cartProduct = CartContainer.Controls[idx] as CartProductUserControl;
+                            ImportCartProductUserControl cartProduct = CartContainer.Controls[idx] as ImportCartProductUserControl;
                             importBillDetail.SoLuong = Convert.ToInt32(cartProduct.AmountTxt.Text);
                             break;
                         }
                         idx++;
                     }
                     CartHandler();
-                    CartProductUserControl.AmountChanged = false;
+                    ImportCartProductUserControl.AmountChanged = false;
                 }
 
                 if (SearchResultControl.clicked)

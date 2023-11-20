@@ -224,6 +224,7 @@
 			this.QRScanBtn.Radius = 8;
 			this.QRScanBtn.Size = new System.Drawing.Size(42, 42);
 			this.QRScanBtn.TabIndex = 1;
+			this.QRScanBtn.Click += new System.EventHandler(this.QRScanBtn_Click);
 			// 
 			// FilterContainer
 			// 
@@ -336,7 +337,7 @@
 			this.CartContainer.AutoScroll = true;
 			this.CartContainer.Location = new System.Drawing.Point(0, 122);
 			this.CartContainer.Name = "CartContainer";
-			this.CartContainer.Size = new System.Drawing.Size(300, 411);
+			this.CartContainer.Size = new System.Drawing.Size(300, 430);
 			this.CartContainer.TabIndex = 20;
 			// 
 			// SupplierLb

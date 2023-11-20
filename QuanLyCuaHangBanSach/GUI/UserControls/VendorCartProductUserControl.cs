@@ -13,19 +13,17 @@ using System.Windows.Forms;
 
 namespace QuanLyCuaHangBanSach.GUI.Vendor
 {
-    public partial class CartProductUserControl : UserControl
+    public partial class VendorCartProductUserControl : UserControl
     {
         private int stock = 0;
-        private int mode = 0; // 0: Vendor; 1: Import
         public static bool AmountChanged = false;
         public static bool deletePress = false;
         public static string AmountChangedId = "";
         public static string deleteId = "";
 
-        public CartProductUserControl(int mode)
+        public VendorCartProductUserControl()
         {
             InitializeComponent();
-            this.mode = mode;
         }
 
         public void details(BookDTO book)
@@ -39,19 +37,10 @@ namespace QuanLyCuaHangBanSach.GUI.Vendor
                 }
             }
             catch (Exception ex) { Console.WriteLine(ex); }
-
-            if (mode == 0)
-            {
-                StockLb.Text = "ST: " + book.SoLuongConLai;
-                stock = book.SoLuongConLai;
-                PriceLb.Text = string.Format("{0:N0} đ", book.GiaBan);
-            }
-            else
-            {
-                StockLb.Visible = false;
-                stock = -1;
-                PriceLb.Text = string.Format("{0:N0} đ", book.GiaNhap);
-            }
+            
+            StockLb.Text = "ST: " + book.SoLuongConLai;
+            stock = book.SoLuongConLai;
+            PriceLb.Text = string.Format("{0:N0} đ", book.GiaBan);
 
             IdLb.Text = book.MaSach.ToString();
             NameLb.Text = book.TenSach;
@@ -60,19 +49,11 @@ namespace QuanLyCuaHangBanSach.GUI.Vendor
 
         private void PlusBtn_Click(object sender, EventArgs e)
         {
-            if (mode == 0)
-            {
-                if (Convert.ToInt32(AmountTxt.Text) < stock)
-                {
-                    AmountTxt.Text = (int.Parse(AmountTxt.Text) + 1).ToString();
-                    ChangeAmount();
-                } 
-            }
-            else
+            if (Convert.ToInt32(AmountTxt.Text) < stock)
             {
                 AmountTxt.Text = (int.Parse(AmountTxt.Text) + 1).ToString();
                 ChangeAmount();
-            }
+            } 
         }
 
         private void MinusBtn_Click(object sender, EventArgs e)
@@ -90,12 +71,10 @@ namespace QuanLyCuaHangBanSach.GUI.Vendor
             {
                 AmountTxt.Text = "1";
             }
-            if (mode == 0)
+
+            if (int.Parse(AmountTxt.Text) > stock)
             {
-                if (int.Parse(AmountTxt.Text) > stock)
-                {
-                    AmountTxt.Text = stock.ToString();
-                }
+                AmountTxt.Text = stock.ToString();
             }
         }
 
