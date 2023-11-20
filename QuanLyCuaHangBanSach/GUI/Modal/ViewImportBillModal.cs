@@ -31,6 +31,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             this.supplierTxt.Text = supplier.TenNhaCungCap;
 
             this.dateTxt.Text = importBill.NgayLap.GetDateTimeFormats()[0];
+            this.benifitTxt.Text = importBill.PhanTramLoiNhuan + "%";
 
             BookDTO book;
             foreach (ImportBillDetailDTO customerBillDetail in customerBillDetailList)

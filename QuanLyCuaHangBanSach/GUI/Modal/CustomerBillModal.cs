@@ -339,8 +339,6 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
                 CustomerBillDTO customerBill = new CustomerBillDTO();
 
-                int diem = CustomerBUS.Instance.getById(this.customerCbx.SelectedValue.ToString()).Diem;
-
                 customerBill.TongTien = Convert.ToDecimal(this.totalPriceTxt.Text);
                 customerBill.TienKhachDua = Convert.ToDecimal(this.totalPriceTxt.Text);
                 customerBill.MaNhanVien = this.staffId;
@@ -349,7 +347,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 customerBill.NgayLap = DateTime.Now;
                 customerBill.DoiDiem = 
                     this.customerCbx.SelectedIndex != 1 && this.customerCbx.SelectedIndex != 0 && this.PointToggleBtn.Checked
-                    ? diem : 0;
+                    ? CustomerBUS.Instance.getById(this.customerCbx.SelectedValue.ToString()).Diem : 0;
 
                 CustomerBillDTO newCustomerBill = CustomerBillBUS.Instance.insertReturnBill(customerBill);
 

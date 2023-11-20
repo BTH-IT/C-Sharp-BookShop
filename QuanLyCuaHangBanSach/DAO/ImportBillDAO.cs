@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using MySql.Data.MySqlClient;
 using QuanLyCuaHangBanSach.BUS;
@@ -79,7 +80,7 @@ namespace QuanLyCuaHangBanSach.DAO
             );
         }
 
-        public bool createImportBillDetail(ImportBillDetailDTO data)
+        public bool createImportBillDetail(ImportBillDetailDTO data, int phanTramLoiNhuan)
         {
             string sql = $@"INSERT INTO chitietphieunhap (maDonNhapHang, maSach, soLuong, donGia) 
                             VALUES (@maDonNhapHang, @maSach, @soLuong, @donGia);";
@@ -90,6 +91,19 @@ namespace QuanLyCuaHangBanSach.DAO
                     new MySqlParameter("@maSach", data.MaSach),
                     new MySqlParameter("@soLuong", data.SoLuong),
                     new MySqlParameter("@donGia", data.DonGia),
+                });
+
+            sql = $@"UPDATE sach
+                    SET giaBan=@giaBan, giaNhap=@giaNhap
+                    WHERE maSach=@maSach;";
+
+            decimal giaBan = data.DonGia + Convert.ToDecimal(Convert.ToDecimal(data.DonGia * Convert.ToDecimal(phanTramLoiNhuan / 100.0)).ToString().Split('.')[0]);
+
+            rowChanged = DataProvider.Instance.ExecuteNonQuery(sql,
+                new MySqlParameter[] {
+                    new MySqlParameter("@giaBan", giaBan),
+                    new MySqlParameter("@giaNhap", data.DonGia),
+                    new MySqlParameter("@maSach", data.MaSach),
                 });
 
             // thêm sách
@@ -104,8 +118,8 @@ namespace QuanLyCuaHangBanSach.DAO
         public bool insert(ImportBillDTO data)
         {
 
-            string sql = $@"INSERT INTO phieunhap (maNhanVien, maNhaCungCap, ngayLap, tongTien)
-                            VALUES (@maNhanVien, @maNhaCungCap, @ngayLap, @tongTien);";
+            string sql = $@"INSERT INTO phieunhap (maNhanVien, maNhaCungCap, ngayLap, tongTien, phanTramLoiNhuan)
+                            VALUES (@maNhanVien, @maNhaCungCap, @ngayLap, @tongTien, @phanTramLoiNhuan);";
 
             int rowChanged = DataProvider.Instance.ExecuteNonQuery(sql,
                 new MySqlParameter[] {
@@ -113,6 +127,7 @@ namespace QuanLyCuaHangBanSach.DAO
                     new MySqlParameter("@maNhanVien", data.MaNhanVien),
                     new MySqlParameter("@ngayLap", data.NgayLap),
                     new MySqlParameter("@tongTien", data.TongTien),
+                    new MySqlParameter("@phanTramLoiNhuan", data.PhanTramLoiNhuan),
                 });
 
             return rowChanged > 0;

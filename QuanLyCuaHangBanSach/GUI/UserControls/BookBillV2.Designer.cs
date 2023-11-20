@@ -1,6 +1,6 @@
 ﻿namespace QuanLyCuaHangBanSach.GUI.UserControls
 {
-    partial class BookBill
+    partial class BookBillV2
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,13 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BookBill));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BookBillV2));
             this.panel7 = new System.Windows.Forms.Panel();
             this.id = new System.Windows.Forms.Label();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.amountInput = new Guna.UI2.WinForms.Guna2TextBox();
-            this.price = new System.Windows.Forms.Label();
             this.name = new System.Windows.Forms.Label();
+            this.priceTxt = new Guna.UI2.WinForms.Guna2TextBox();
+            this.price = new System.Windows.Forms.Label();
             this.minus = new Guna.UI.WinForms.GunaAdvenceButton();
             this.plus = new Guna.UI.WinForms.GunaAdvenceButton();
             this.close = new System.Windows.Forms.PictureBox();
@@ -49,17 +50,19 @@
             // 
             this.panel7.AutoSize = true;
             this.panel7.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel7.Controls.Add(this.priceTxt);
             this.panel7.Controls.Add(this.id);
             this.panel7.Controls.Add(this.guna2Panel2);
             this.panel7.Controls.Add(this.close);
             this.panel7.Controls.Add(this.price);
             this.panel7.Controls.Add(this.pictureBook);
             this.panel7.Controls.Add(this.name);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel7.Location = new System.Drawing.Point(0, 0);
-            this.panel7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel7.Margin = new System.Windows.Forms.Padding(2);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(431, 162);
-            this.panel7.TabIndex = 8;
+            this.panel7.Size = new System.Drawing.Size(477, 162);
+            this.panel7.TabIndex = 9;
             // 
             // id
             // 
@@ -80,7 +83,7 @@
             this.guna2Panel2.Controls.Add(this.minus);
             this.guna2Panel2.Controls.Add(this.plus);
             this.guna2Panel2.Location = new System.Drawing.Point(205, 74);
-            this.guna2Panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2Panel2.Margin = new System.Windows.Forms.Padding(2);
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.ShadowDecoration.Parent = this.guna2Panel2;
             this.guna2Panel2.Size = new System.Drawing.Size(181, 34);
@@ -113,18 +116,6 @@
             this.amountInput.TabIndex = 4;
             this.amountInput.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // price
-            // 
-            this.price.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.price.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.price.Location = new System.Drawing.Point(200, 119);
-            this.price.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.price.Name = "price";
-            this.price.Size = new System.Drawing.Size(189, 32);
-            this.price.TabIndex = 3;
-            this.price.Text = "9.000.000 VNĐ";
-            this.price.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // name
             // 
             this.name.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -134,6 +125,43 @@
             this.name.Size = new System.Drawing.Size(185, 31);
             this.name.TabIndex = 1;
             this.name.Text = "Conan";
+            // 
+            // priceTxt
+            // 
+            this.priceTxt.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.priceTxt.DefaultText = "";
+            this.priceTxt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.priceTxt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.priceTxt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.priceTxt.DisabledState.Parent = this.priceTxt;
+            this.priceTxt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.priceTxt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.priceTxt.FocusedState.Parent = this.priceTxt;
+            this.priceTxt.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.priceTxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.priceTxt.HoverState.Parent = this.priceTxt;
+            this.priceTxt.Location = new System.Drawing.Point(203, 122);
+            this.priceTxt.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.priceTxt.Name = "priceTxt";
+            this.priceTxt.PasswordChar = '\0';
+            this.priceTxt.PlaceholderText = "";
+            this.priceTxt.SelectedText = "";
+            this.priceTxt.ShadowDecoration.Parent = this.priceTxt;
+            this.priceTxt.Size = new System.Drawing.Size(196, 30);
+            this.priceTxt.TabIndex = 9;
+            this.priceTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.priceTxt_KeyPress);
+            // 
+            // price
+            // 
+            this.price.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.price.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.price.Location = new System.Drawing.Point(405, 122);
+            this.price.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.price.Name = "price";
+            this.price.Size = new System.Drawing.Size(57, 30);
+            this.price.TabIndex = 3;
+            this.price.Text = "VNĐ";
+            this.price.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // minus
             // 
@@ -205,8 +233,9 @@
             // 
             // close
             // 
+            this.close.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.close.Image = ((System.Drawing.Image)(resources.GetObject("close.Image")));
-            this.close.Location = new System.Drawing.Point(392, 11);
+            this.close.Location = new System.Drawing.Point(435, 11);
             this.close.Margin = new System.Windows.Forms.Padding(2);
             this.close.Name = "close";
             this.close.Size = new System.Drawing.Size(27, 24);
@@ -227,14 +256,13 @@
             this.pictureBook.TabIndex = 2;
             this.pictureBook.TabStop = false;
             // 
-            // BookBill
+            // BookBillV2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.Controls.Add(this.panel7);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.Name = "BookBill";
-            this.Size = new System.Drawing.Size(431, 162);
+            this.Name = "BookBillV2";
+            this.Size = new System.Drawing.Size(477, 162);
             this.panel7.ResumeLayout(false);
             this.guna2Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.close)).EndInit();
@@ -247,14 +275,15 @@
         #endregion
 
         private System.Windows.Forms.Panel panel7;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
-        private System.Windows.Forms.Label price;
-        private Guna.UI2.WinForms.Guna2PictureBox pictureBook;
-        private System.Windows.Forms.Label name;
         private System.Windows.Forms.Label id;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
         public Guna.UI2.WinForms.Guna2TextBox amountInput;
         public Guna.UI.WinForms.GunaAdvenceButton minus;
         public Guna.UI.WinForms.GunaAdvenceButton plus;
         public System.Windows.Forms.PictureBox close;
+        private Guna.UI2.WinForms.Guna2PictureBox pictureBook;
+        private System.Windows.Forms.Label name;
+        private System.Windows.Forms.Label price;
+        public Guna.UI2.WinForms.Guna2TextBox priceTxt;
     }
 }
