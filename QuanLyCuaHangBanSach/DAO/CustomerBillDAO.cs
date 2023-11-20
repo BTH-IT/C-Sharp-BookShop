@@ -226,8 +226,8 @@ namespace QuanLyCuaHangBanSach.DAO
         public bool insert(CustomerBillDTO data)
         {
 
-            string sql = $@"INSERT INTO phieuban (maKhachHang, maNhanVien, ngayLap, tongTien, maKhuyenMai, tienKhachDua, doiDiem)
-                            VALUES (@maKhachHang, @maNhanVien, @ngayLap, @tongTien, @maKhuyenMai, @tienKhachDua, @doiDiem);";
+            string sql = $@"INSERT INTO phieuban (maKhachHang, maNhanVien, ngayLap, tongTien, maKhuyenMai, tienKhachDua, doiDiem, phanTramKhuyenMai)
+                            VALUES (@maKhachHang, @maNhanVien, @ngayLap, @tongTien, @maKhuyenMai, @tienKhachDua, @doiDiem, @phanTramKhuyenMai);";
 
             int rowChanged = DataProvider.Instance.ExecuteNonQuery(sql,
                 new MySqlParameter[] {
@@ -238,6 +238,7 @@ namespace QuanLyCuaHangBanSach.DAO
                     new MySqlParameter("@maKhuyenMai", data.MaKhuyenMai),
                     new MySqlParameter("@tienKhachDua", data.TienKhachDua),
                     new MySqlParameter("@doiDiem", data.DoiDiem),
+                    new MySqlParameter("@phanTramKhuyenMai", data.PhanTramKhuyenMai),
                 });
 
             return rowChanged > 0;
@@ -336,20 +337,6 @@ namespace QuanLyCuaHangBanSach.DAO
             CustomerBillDTO customerBill = new CustomerBillDTO(dataTable.Rows[0]);
 
             return customerBill;
-        }
-        public bool createBookAmount(string madon, string id, int amount)
-        {
-            string sql = $@"UPDATE chitietphieuban SET soLuongDoiTra=soLuongDoiTra+@soLuongDoiTra
-                             WHERE maDonKhachHang=@maDonKhachHang and maSach=@maSach;";
-
-            int rowChanged = DataProvider.Instance.ExecuteNonQuery(sql,
-            new MySqlParameter[] {
-                new MySqlParameter("@soLuongDoiTra", amount),
-                    new MySqlParameter("@maSach", id),
-                    new MySqlParameter("@maDonKhachHang", madon),
-                });
-
-            return rowChanged > 0;
         }
     }
 }
