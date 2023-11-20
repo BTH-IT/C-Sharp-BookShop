@@ -84,7 +84,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
                         total += importBillDetail.DonGia;
 
-                        this.totalPriceTxt.Text = total.ToString();
+                        this.totalPriceTxt.Text = string.Format("{0:N0} VNĐ", total);
                     };
 
                     bookBill.minus.MouseClick += (object sender, MouseEventArgs e) =>
@@ -110,7 +110,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
                         total -= importBillDetail.DonGia;
 
-                        this.totalPriceTxt.Text = total.ToString();
+                        this.totalPriceTxt.Text = string.Format("{0:N0} VNĐ", total);
                     };
 
                     bookBill.amountInput.MouseLeave += (object sender, EventArgs e) =>
@@ -149,7 +149,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
                             total += this.importBillDetailList[idx].SoLuong * importBillDetail.DonGia;
 
-                            this.totalPriceTxt.Text = total.ToString();
+                            this.totalPriceTxt.Text = string.Format("{0:N0} VNĐ", total);
 
                         }
                         catch
@@ -169,7 +169,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                     this.bookList.Controls.Add(bookBill);
                 }
 
-                this.totalPriceTxt.Text = total.ToString();
+                this.totalPriceTxt.Text = string.Format("{0:N0} VNĐ", total);
             }
             catch (Exception ex)
             {
@@ -242,7 +242,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
                 ImportBillDTO importBill = new ImportBillDTO();
 
-                importBill.TongTien = Convert.ToDecimal(this.totalPriceTxt.Text);
+                importBill.TongTien = Convert.ToDecimal(this.totalPriceTxt.Text.ToString().Trim().Replace(".", "").Replace(" VNĐ", ""));
                 importBill.MaNhanVien = this.staffId;
                 importBill.MaNhaCungCap = Convert.ToInt32(this.supplierCbx.SelectedValue);
                 importBill.NgayLap = DateTime.Now;

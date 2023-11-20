@@ -43,6 +43,9 @@
             this.bookList = new System.Windows.Forms.FlowLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.scoreTxt = new System.Windows.Forms.Label();
+            this.PointToggleBtn = new Guna.UI2.WinForms.Guna2ToggleSwitch();
+            this.PointLb = new System.Windows.Forms.Label();
             this.percentTxt = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -52,9 +55,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.cancelBtn = new Guna.UI.WinForms.GunaButton();
             this.submitBtn = new Guna.UI.WinForms.GunaButton();
-            this.PointToggleBtn = new Guna.UI2.WinForms.Guna2ToggleSwitch();
-            this.PointLb = new System.Windows.Forms.Label();
-            this.scoreTxt = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -275,6 +275,55 @@
             this.panel1.Size = new System.Drawing.Size(1194, 150);
             this.panel1.TabIndex = 0;
             // 
+            // scoreTxt
+            // 
+            this.scoreTxt.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.scoreTxt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.scoreTxt.Location = new System.Drawing.Point(755, 16);
+            this.scoreTxt.Name = "scoreTxt";
+            this.scoreTxt.Size = new System.Drawing.Size(290, 35);
+            this.scoreTxt.TabIndex = 45;
+            this.scoreTxt.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // PointToggleBtn
+            // 
+            this.PointToggleBtn.Animated = true;
+            this.PointToggleBtn.AutoRoundedCorners = true;
+            this.PointToggleBtn.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.PointToggleBtn.CheckedState.BorderRadius = 16;
+            this.PointToggleBtn.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.PointToggleBtn.CheckedState.InnerBorderColor = System.Drawing.Color.White;
+            this.PointToggleBtn.CheckedState.InnerBorderRadius = 12;
+            this.PointToggleBtn.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.PointToggleBtn.CheckedState.Parent = this.PointToggleBtn;
+            this.PointToggleBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PointToggleBtn.Enabled = false;
+            this.PointToggleBtn.Location = new System.Drawing.Point(1068, 16);
+            this.PointToggleBtn.Name = "PointToggleBtn";
+            this.PointToggleBtn.ShadowDecoration.Parent = this.PointToggleBtn;
+            this.PointToggleBtn.Size = new System.Drawing.Size(106, 35);
+            this.PointToggleBtn.TabIndex = 43;
+            this.PointToggleBtn.TabStop = false;
+            this.PointToggleBtn.UncheckedState.BorderColor = System.Drawing.Color.Gray;
+            this.PointToggleBtn.UncheckedState.BorderRadius = 16;
+            this.PointToggleBtn.UncheckedState.BorderThickness = 1;
+            this.PointToggleBtn.UncheckedState.FillColor = System.Drawing.Color.White;
+            this.PointToggleBtn.UncheckedState.InnerBorderColor = System.Drawing.Color.Gray;
+            this.PointToggleBtn.UncheckedState.InnerBorderRadius = 12;
+            this.PointToggleBtn.UncheckedState.InnerColor = System.Drawing.Color.Gray;
+            this.PointToggleBtn.UncheckedState.Parent = this.PointToggleBtn;
+            this.PointToggleBtn.CheckedChanged += new System.EventHandler(this.PointToggleBtn_CheckedChanged);
+            // 
+            // PointLb
+            // 
+            this.PointLb.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.PointLb.Location = new System.Drawing.Point(641, 16);
+            this.PointLb.Name = "PointLb";
+            this.PointLb.Size = new System.Drawing.Size(100, 35);
+            this.PointLb.TabIndex = 44;
+            this.PointLb.Text = "Đổi điểm:";
+            this.PointLb.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // percentTxt
             // 
             this.percentTxt.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
@@ -362,7 +411,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(1222, 45);
             this.label1.TabIndex = 5;
-            this.label1.Text = "Tạo Đơn Khách Hàng";
+            this.label1.Text = "Tạo hóa đơn";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // cancelBtn
@@ -426,55 +475,6 @@
             this.submitBtn.Text = "Lưu";
             this.submitBtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.submitBtn.Click += new System.EventHandler(this.submitBtn_Click);
-            // 
-            // PointToggleBtn
-            // 
-            this.PointToggleBtn.Animated = true;
-            this.PointToggleBtn.AutoRoundedCorners = true;
-            this.PointToggleBtn.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.PointToggleBtn.CheckedState.BorderRadius = 16;
-            this.PointToggleBtn.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.PointToggleBtn.CheckedState.InnerBorderColor = System.Drawing.Color.White;
-            this.PointToggleBtn.CheckedState.InnerBorderRadius = 12;
-            this.PointToggleBtn.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.PointToggleBtn.CheckedState.Parent = this.PointToggleBtn;
-            this.PointToggleBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PointToggleBtn.Enabled = false;
-            this.PointToggleBtn.Location = new System.Drawing.Point(1068, 16);
-            this.PointToggleBtn.Name = "PointToggleBtn";
-            this.PointToggleBtn.ShadowDecoration.Parent = this.PointToggleBtn;
-            this.PointToggleBtn.Size = new System.Drawing.Size(106, 35);
-            this.PointToggleBtn.TabIndex = 43;
-            this.PointToggleBtn.TabStop = false;
-            this.PointToggleBtn.UncheckedState.BorderColor = System.Drawing.Color.Gray;
-            this.PointToggleBtn.UncheckedState.BorderRadius = 16;
-            this.PointToggleBtn.UncheckedState.BorderThickness = 1;
-            this.PointToggleBtn.UncheckedState.FillColor = System.Drawing.Color.White;
-            this.PointToggleBtn.UncheckedState.InnerBorderColor = System.Drawing.Color.Gray;
-            this.PointToggleBtn.UncheckedState.InnerBorderRadius = 12;
-            this.PointToggleBtn.UncheckedState.InnerColor = System.Drawing.Color.Gray;
-            this.PointToggleBtn.UncheckedState.Parent = this.PointToggleBtn;
-            this.PointToggleBtn.CheckedChanged += new System.EventHandler(this.PointToggleBtn_CheckedChanged);
-            // 
-            // PointLb
-            // 
-            this.PointLb.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.PointLb.Location = new System.Drawing.Point(641, 16);
-            this.PointLb.Name = "PointLb";
-            this.PointLb.Size = new System.Drawing.Size(100, 35);
-            this.PointLb.TabIndex = 44;
-            this.PointLb.Text = "Đổi điểm:";
-            this.PointLb.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // scoreTxt
-            // 
-            this.scoreTxt.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.scoreTxt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.scoreTxt.Location = new System.Drawing.Point(755, 16);
-            this.scoreTxt.Name = "scoreTxt";
-            this.scoreTxt.Size = new System.Drawing.Size(290, 35);
-            this.scoreTxt.TabIndex = 45;
-            this.scoreTxt.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // CustomerBillModal
             // 

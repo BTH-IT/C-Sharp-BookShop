@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Drawing;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using QuanLyCuaHangBanSach.BUS;
 using QuanLyCuaHangBanSach.DTO;
+using QuanLyCuaHangBanSach.GUI.Report;
 
 namespace QuanLyCuaHangBanSach.GUI.Modal
 {
@@ -782,6 +784,70 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true; // Ngăn chặn ký tự nhập vào TextBox
+            }
+        }
+
+        private void gunaAdvenceButton1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DataTable dt = CustomExcel.Instance.ImportFile();
+
+                if (dt == null)
+                {
+                    MessageBox.Show("Lỗi chưa chọn file hoặc file excel không đúng dữ liệu!");
+                    return;
+                }
+
+                foreach (DataRow row in dt.Rows)
+                {
+                    if (!int.TryParse(row[0].ToString(), out int maSach) || !int.TryParse(row[2].ToString(), out int soLuong) || !decimal.TryParse(row[3].ToString(), out decimal giaNhap))
+                    {
+                        MessageBox.Show("Lỗi chưa chọn file hoặc file excel không đúng format dữ liệu nhập!");
+                        return;
+                    }
+                }
+
+                foreach (DataRow row in dt.Rows)
+                {
+                    BookDTO newBook = BookBUS.Instance.getById(row[0].ToString());
+                    int soLuong = Convert.ToInt32(row[2].ToString());
+
+                    if (newBook == null) continue;
+
+                    try
+                    {
+                        int idx = this.selectedImportBillDetailList.FindIndex(
+                            book => book.MaSach == newBook.MaSach
+                        );
+
+                        if (idx == -1)
+                        {
+                            ImportBillDetailDTO importBillDetail = new ImportBillDetailDTO(
+                                0,
+                                newBook.MaSach,
+                                soLuong,
+                                newBook.GiaNhap
+                            );
+
+                            this.selectedImportBillDetailList.Add(importBillDetail);
+                        }
+                        else
+                        {
+                            this.selectedImportBillDetailList[idx].SoLuong += soLuong;
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex);
+                    }
+                }
+
+                this.loadAddBookBillListToDataView();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
             }
         }
     }
