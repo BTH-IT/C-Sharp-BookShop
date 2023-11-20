@@ -28,19 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ImportBillGUI));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.exportBtn = new Guna.UI.WinForms.GunaAdvenceButton();
-            this.refreshBtn = new Guna.UI.WinForms.GunaAdvenceButton();
-            this.deleteBtn = new Guna.UI.WinForms.GunaAdvenceButton();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ImportBillGUI));
             this.searchInput = new Guna.UI2.WinForms.Guna2TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.addBtn = new Guna.UI.WinForms.GunaAdvenceButton();
             this.panel5 = new System.Windows.Forms.Panel();
             this.filterCkx = new Guna.UI.WinForms.GunaMediumCheckBox();
             this.dateTimeTo = new Guna.UI.WinForms.GunaDateTimePicker();
@@ -50,15 +44,7 @@
             this.staffCbx = new Guna.UI.WinForms.GunaComboBox();
             this.supplierCbx = new Guna.UI.WinForms.GunaComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.printPdfBtn = new Guna.UI.WinForms.GunaAdvenceButton();
-            this.viewMoreBtn = new Guna.UI.WinForms.GunaAdvenceButton();
             this.dgvImportBill = new Guna.UI.WinForms.GunaDataGridView();
-            this.Column9 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.line1 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
@@ -70,7 +56,21 @@
             this.toPriceTxt = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel9 = new System.Windows.Forms.Panel();
             this.gunaMediumCheckBox1 = new Guna.UI.WinForms.GunaMediumCheckBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.printPdfBtn = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.viewMoreBtn = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.exportBtn = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.refreshBtn = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.deleteBtn = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.addBtn = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel5.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvImportBill)).BeginInit();
@@ -78,116 +78,8 @@
             this.panel7.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.HeaderText = "Hình Ảnh";
-            this.dataGridViewImageColumn1.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn1.Image")));
-            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
-            this.dataGridViewImageColumn1.MinimumWidth = 100;
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.Width = 106;
-            // 
-            // exportBtn
-            // 
-            this.exportBtn.AnimationHoverSpeed = 0.07F;
-            this.exportBtn.AnimationSpeed = 0.03F;
-            this.exportBtn.BackColor = System.Drawing.Color.Transparent;
-            this.exportBtn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.exportBtn.BorderColor = System.Drawing.Color.Black;
-            this.exportBtn.CheckedBaseColor = System.Drawing.Color.Gray;
-            this.exportBtn.CheckedBorderColor = System.Drawing.Color.Black;
-            this.exportBtn.CheckedForeColor = System.Drawing.Color.White;
-            this.exportBtn.CheckedImage = ((System.Drawing.Image)(resources.GetObject("exportBtn.CheckedImage")));
-            this.exportBtn.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.exportBtn.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.exportBtn.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(159)))), ((int)(((byte)(147)))));
-            this.exportBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.exportBtn.ForeColor = System.Drawing.Color.White;
-            this.exportBtn.Image = ((System.Drawing.Image)(resources.GetObject("exportBtn.Image")));
-            this.exportBtn.ImageSize = new System.Drawing.Size(20, 20);
-            this.exportBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.exportBtn.Location = new System.Drawing.Point(124, 6);
-            this.exportBtn.Name = "exportBtn";
-            this.exportBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.exportBtn.OnHoverBorderColor = System.Drawing.Color.Transparent;
-            this.exportBtn.OnHoverForeColor = System.Drawing.Color.White;
-            this.exportBtn.OnHoverImage = null;
-            this.exportBtn.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.exportBtn.OnPressedColor = System.Drawing.Color.Black;
-            this.exportBtn.Radius = 6;
-            this.exportBtn.Size = new System.Drawing.Size(121, 42);
-            this.exportBtn.TabIndex = 11;
-            this.exportBtn.Text = "Xuất excel";
-            this.exportBtn.Click += new System.EventHandler(this.exportBtn_Click);
-            // 
-            // refreshBtn
-            // 
-            this.refreshBtn.AnimationHoverSpeed = 0.07F;
-            this.refreshBtn.AnimationSpeed = 0.03F;
-            this.refreshBtn.BackColor = System.Drawing.Color.Transparent;
-            this.refreshBtn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.refreshBtn.BorderColor = System.Drawing.Color.Black;
-            this.refreshBtn.CheckedBaseColor = System.Drawing.Color.Gray;
-            this.refreshBtn.CheckedBorderColor = System.Drawing.Color.Black;
-            this.refreshBtn.CheckedForeColor = System.Drawing.Color.White;
-            this.refreshBtn.CheckedImage = ((System.Drawing.Image)(resources.GetObject("refreshBtn.CheckedImage")));
-            this.refreshBtn.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.refreshBtn.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.refreshBtn.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(159)))), ((int)(((byte)(147)))));
-            this.refreshBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.refreshBtn.ForeColor = System.Drawing.Color.White;
-            this.refreshBtn.Image = ((System.Drawing.Image)(resources.GetObject("refreshBtn.Image")));
-            this.refreshBtn.ImageSize = new System.Drawing.Size(20, 20);
-            this.refreshBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.refreshBtn.Location = new System.Drawing.Point(11, 6);
-            this.refreshBtn.Name = "refreshBtn";
-            this.refreshBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.refreshBtn.OnHoverBorderColor = System.Drawing.Color.Transparent;
-            this.refreshBtn.OnHoverForeColor = System.Drawing.Color.White;
-            this.refreshBtn.OnHoverImage = null;
-            this.refreshBtn.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.refreshBtn.OnPressedColor = System.Drawing.Color.Black;
-            this.refreshBtn.Radius = 6;
-            this.refreshBtn.Size = new System.Drawing.Size(107, 42);
-            this.refreshBtn.TabIndex = 10;
-            this.refreshBtn.Text = "Làm mới";
-            this.refreshBtn.Click += new System.EventHandler(this.refreshBtn_Click);
-            // 
-            // deleteBtn
-            // 
-            this.deleteBtn.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.deleteBtn.AnimationHoverSpeed = 0.07F;
-            this.deleteBtn.AnimationSpeed = 0.03F;
-            this.deleteBtn.BackColor = System.Drawing.Color.Transparent;
-            this.deleteBtn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.deleteBtn.BorderColor = System.Drawing.Color.Black;
-            this.deleteBtn.CheckedBaseColor = System.Drawing.Color.Gray;
-            this.deleteBtn.CheckedBorderColor = System.Drawing.Color.Black;
-            this.deleteBtn.CheckedForeColor = System.Drawing.Color.White;
-            this.deleteBtn.CheckedImage = ((System.Drawing.Image)(resources.GetObject("deleteBtn.CheckedImage")));
-            this.deleteBtn.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.deleteBtn.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.deleteBtn.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(159)))), ((int)(((byte)(147)))));
-            this.deleteBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.deleteBtn.ForeColor = System.Drawing.Color.White;
-            this.deleteBtn.Image = ((System.Drawing.Image)(resources.GetObject("deleteBtn.Image")));
-            this.deleteBtn.ImageSize = new System.Drawing.Size(20, 20);
-            this.deleteBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.deleteBtn.Location = new System.Drawing.Point(956, 6);
-            this.deleteBtn.Name = "deleteBtn";
-            this.deleteBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.deleteBtn.OnHoverBorderColor = System.Drawing.Color.Transparent;
-            this.deleteBtn.OnHoverForeColor = System.Drawing.Color.White;
-            this.deleteBtn.OnHoverImage = null;
-            this.deleteBtn.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.deleteBtn.OnPressedColor = System.Drawing.Color.Black;
-            this.deleteBtn.Radius = 6;
-            this.deleteBtn.Size = new System.Drawing.Size(78, 42);
-            this.deleteBtn.TabIndex = 16;
-            this.deleteBtn.Text = "Xóa";
-            this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
             // 
             // searchInput
             // 
@@ -218,50 +110,6 @@
             this.searchInput.Size = new System.Drawing.Size(350, 32);
             this.searchInput.TabIndex = 1;
             this.searchInput.TextChanged += new System.EventHandler(this.searchInput_TextChanged);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(363, 17);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(36, 30);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 44;
-            this.pictureBox1.TabStop = false;
-            // 
-            // addBtn
-            // 
-            this.addBtn.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.addBtn.AnimationHoverSpeed = 0.07F;
-            this.addBtn.AnimationSpeed = 0.03F;
-            this.addBtn.BackColor = System.Drawing.Color.Transparent;
-            this.addBtn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.addBtn.BorderColor = System.Drawing.Color.Black;
-            this.addBtn.CheckedBaseColor = System.Drawing.Color.Gray;
-            this.addBtn.CheckedBorderColor = System.Drawing.Color.Black;
-            this.addBtn.CheckedForeColor = System.Drawing.Color.White;
-            this.addBtn.CheckedImage = ((System.Drawing.Image)(resources.GetObject("addBtn.CheckedImage")));
-            this.addBtn.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.addBtn.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.addBtn.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(159)))), ((int)(((byte)(147)))));
-            this.addBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addBtn.ForeColor = System.Drawing.Color.White;
-            this.addBtn.Image = ((System.Drawing.Image)(resources.GetObject("addBtn.Image")));
-            this.addBtn.ImageSize = new System.Drawing.Size(20, 20);
-            this.addBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.addBtn.Location = new System.Drawing.Point(701, 6);
-            this.addBtn.Name = "addBtn";
-            this.addBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.addBtn.OnHoverBorderColor = System.Drawing.Color.Transparent;
-            this.addBtn.OnHoverForeColor = System.Drawing.Color.White;
-            this.addBtn.OnHoverImage = null;
-            this.addBtn.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.addBtn.OnPressedColor = System.Drawing.Color.Black;
-            this.addBtn.Radius = 6;
-            this.addBtn.Size = new System.Drawing.Size(117, 42);
-            this.addBtn.TabIndex = 14;
-            this.addBtn.Text = "Thêm mới";
-            this.addBtn.Click += new System.EventHandler(this.addBtn_Click);
             // 
             // panel5
             // 
@@ -430,73 +278,6 @@
             this.panel1.Size = new System.Drawing.Size(1044, 54);
             this.panel1.TabIndex = 3;
             // 
-            // printPdfBtn
-            // 
-            this.printPdfBtn.AnimationHoverSpeed = 0.07F;
-            this.printPdfBtn.AnimationSpeed = 0.03F;
-            this.printPdfBtn.BackColor = System.Drawing.Color.Transparent;
-            this.printPdfBtn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.printPdfBtn.BorderColor = System.Drawing.Color.Black;
-            this.printPdfBtn.CheckedBaseColor = System.Drawing.Color.Gray;
-            this.printPdfBtn.CheckedBorderColor = System.Drawing.Color.Black;
-            this.printPdfBtn.CheckedForeColor = System.Drawing.Color.White;
-            this.printPdfBtn.CheckedImage = ((System.Drawing.Image)(resources.GetObject("printPdfBtn.CheckedImage")));
-            this.printPdfBtn.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.printPdfBtn.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.printPdfBtn.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(159)))), ((int)(((byte)(147)))));
-            this.printPdfBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.printPdfBtn.ForeColor = System.Drawing.Color.White;
-            this.printPdfBtn.Image = ((System.Drawing.Image)(resources.GetObject("printPdfBtn.Image")));
-            this.printPdfBtn.ImageSize = new System.Drawing.Size(20, 20);
-            this.printPdfBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.printPdfBtn.Location = new System.Drawing.Point(251, 6);
-            this.printPdfBtn.Name = "printPdfBtn";
-            this.printPdfBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.printPdfBtn.OnHoverBorderColor = System.Drawing.Color.Transparent;
-            this.printPdfBtn.OnHoverForeColor = System.Drawing.Color.White;
-            this.printPdfBtn.OnHoverImage = null;
-            this.printPdfBtn.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.printPdfBtn.OnPressedColor = System.Drawing.Color.Black;
-            this.printPdfBtn.Radius = 6;
-            this.printPdfBtn.Size = new System.Drawing.Size(92, 42);
-            this.printPdfBtn.TabIndex = 13;
-            this.printPdfBtn.Text = "In PDF";
-            this.printPdfBtn.Click += new System.EventHandler(this.printPdfBtn_Click);
-            // 
-            // viewMoreBtn
-            // 
-            this.viewMoreBtn.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.viewMoreBtn.AnimationHoverSpeed = 0.07F;
-            this.viewMoreBtn.AnimationSpeed = 0.03F;
-            this.viewMoreBtn.BackColor = System.Drawing.Color.Transparent;
-            this.viewMoreBtn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.viewMoreBtn.BorderColor = System.Drawing.Color.Black;
-            this.viewMoreBtn.CheckedBaseColor = System.Drawing.Color.Gray;
-            this.viewMoreBtn.CheckedBorderColor = System.Drawing.Color.Black;
-            this.viewMoreBtn.CheckedForeColor = System.Drawing.Color.White;
-            this.viewMoreBtn.CheckedImage = ((System.Drawing.Image)(resources.GetObject("viewMoreBtn.CheckedImage")));
-            this.viewMoreBtn.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.viewMoreBtn.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.viewMoreBtn.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(159)))), ((int)(((byte)(147)))));
-            this.viewMoreBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.viewMoreBtn.ForeColor = System.Drawing.Color.White;
-            this.viewMoreBtn.Image = ((System.Drawing.Image)(resources.GetObject("viewMoreBtn.Image")));
-            this.viewMoreBtn.ImageSize = new System.Drawing.Size(20, 20);
-            this.viewMoreBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.viewMoreBtn.Location = new System.Drawing.Point(824, 6);
-            this.viewMoreBtn.Name = "viewMoreBtn";
-            this.viewMoreBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.viewMoreBtn.OnHoverBorderColor = System.Drawing.Color.Transparent;
-            this.viewMoreBtn.OnHoverForeColor = System.Drawing.Color.White;
-            this.viewMoreBtn.OnHoverImage = null;
-            this.viewMoreBtn.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.viewMoreBtn.OnPressedColor = System.Drawing.Color.Black;
-            this.viewMoreBtn.Radius = 6;
-            this.viewMoreBtn.Size = new System.Drawing.Size(126, 42);
-            this.viewMoreBtn.TabIndex = 15;
-            this.viewMoreBtn.Text = "Xem chi tiết";
-            this.viewMoreBtn.Click += new System.EventHandler(this.viewMoreBtn_Click);
-            // 
             // dgvImportBill
             // 
             this.dgvImportBill.AllowUserToAddRows = false;
@@ -525,6 +306,7 @@
             this.Column6,
             this.Column3,
             this.Column4,
+            this.Column2,
             this.Column7});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
@@ -584,67 +366,7 @@
             this.dgvImportBill.ThemeStyle.RowsStyle.Height = 75;
             this.dgvImportBill.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvImportBill.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.dgvImportBill.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvImportBill_CellContentClick);
             this.dgvImportBill.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvImportBill_CellDoubleClick);
-            // 
-            // Column9
-            // 
-            this.Column9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Column9.FillWeight = 50F;
-            this.Column9.Frozen = true;
-            this.Column9.HeaderText = "";
-            this.Column9.MinimumWidth = 50;
-            this.Column9.Name = "Column9";
-            this.Column9.Width = 50;
-            // 
-            // Column1
-            // 
-            this.Column1.FillWeight = 61.60671F;
-            this.Column1.HeaderText = "Mã Đơn";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column1.ToolTipText = "Mã Đơn";
-            // 
-            // Column6
-            // 
-            this.Column6.FillWeight = 61.60671F;
-            this.Column6.HeaderText = "Nhà cung cấp";
-            this.Column6.MinimumWidth = 6;
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            this.Column6.ToolTipText = "Nhà cung cấp";
-            // 
-            // Column3
-            // 
-            this.Column3.FillWeight = 61.60671F;
-            this.Column3.HeaderText = "Nhân Viên";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column3.ToolTipText = "Nhân Viên";
-            // 
-            // Column4
-            // 
-            this.Column4.FillWeight = 61.60671F;
-            this.Column4.HeaderText = "Ngày Lập";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            this.Column4.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column4.ToolTipText = "Ngày Lập";
-            // 
-            // Column7
-            // 
-            this.Column7.FillWeight = 61.60671F;
-            this.Column7.HeaderText = "Tổng tiền";
-            this.Column7.MinimumWidth = 6;
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
-            this.Column7.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column7.ToolTipText = "Tổng tiền";
             // 
             // line1
             // 
@@ -809,6 +531,294 @@
             this.gunaMediumCheckBox1.TabStop = false;
             this.gunaMediumCheckBox1.CheckedChanged += new System.EventHandler(this.gunaMediumCheckBox1_CheckedChanged);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(363, 17);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(36, 30);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 44;
+            this.pictureBox1.TabStop = false;
+            // 
+            // printPdfBtn
+            // 
+            this.printPdfBtn.AnimationHoverSpeed = 0.07F;
+            this.printPdfBtn.AnimationSpeed = 0.03F;
+            this.printPdfBtn.BackColor = System.Drawing.Color.Transparent;
+            this.printPdfBtn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.printPdfBtn.BorderColor = System.Drawing.Color.Black;
+            this.printPdfBtn.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.printPdfBtn.CheckedBorderColor = System.Drawing.Color.Black;
+            this.printPdfBtn.CheckedForeColor = System.Drawing.Color.White;
+            this.printPdfBtn.CheckedImage = ((System.Drawing.Image)(resources.GetObject("printPdfBtn.CheckedImage")));
+            this.printPdfBtn.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.printPdfBtn.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.printPdfBtn.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(159)))), ((int)(((byte)(147)))));
+            this.printPdfBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.printPdfBtn.ForeColor = System.Drawing.Color.White;
+            this.printPdfBtn.Image = ((System.Drawing.Image)(resources.GetObject("printPdfBtn.Image")));
+            this.printPdfBtn.ImageSize = new System.Drawing.Size(20, 20);
+            this.printPdfBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.printPdfBtn.Location = new System.Drawing.Point(251, 6);
+            this.printPdfBtn.Name = "printPdfBtn";
+            this.printPdfBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.printPdfBtn.OnHoverBorderColor = System.Drawing.Color.Transparent;
+            this.printPdfBtn.OnHoverForeColor = System.Drawing.Color.White;
+            this.printPdfBtn.OnHoverImage = null;
+            this.printPdfBtn.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.printPdfBtn.OnPressedColor = System.Drawing.Color.Black;
+            this.printPdfBtn.Radius = 6;
+            this.printPdfBtn.Size = new System.Drawing.Size(92, 42);
+            this.printPdfBtn.TabIndex = 13;
+            this.printPdfBtn.Text = "In PDF";
+            this.printPdfBtn.Click += new System.EventHandler(this.printPdfBtn_Click);
+            // 
+            // viewMoreBtn
+            // 
+            this.viewMoreBtn.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.viewMoreBtn.AnimationHoverSpeed = 0.07F;
+            this.viewMoreBtn.AnimationSpeed = 0.03F;
+            this.viewMoreBtn.BackColor = System.Drawing.Color.Transparent;
+            this.viewMoreBtn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.viewMoreBtn.BorderColor = System.Drawing.Color.Black;
+            this.viewMoreBtn.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.viewMoreBtn.CheckedBorderColor = System.Drawing.Color.Black;
+            this.viewMoreBtn.CheckedForeColor = System.Drawing.Color.White;
+            this.viewMoreBtn.CheckedImage = ((System.Drawing.Image)(resources.GetObject("viewMoreBtn.CheckedImage")));
+            this.viewMoreBtn.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.viewMoreBtn.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.viewMoreBtn.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(159)))), ((int)(((byte)(147)))));
+            this.viewMoreBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.viewMoreBtn.ForeColor = System.Drawing.Color.White;
+            this.viewMoreBtn.Image = ((System.Drawing.Image)(resources.GetObject("viewMoreBtn.Image")));
+            this.viewMoreBtn.ImageSize = new System.Drawing.Size(20, 20);
+            this.viewMoreBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.viewMoreBtn.Location = new System.Drawing.Point(824, 6);
+            this.viewMoreBtn.Name = "viewMoreBtn";
+            this.viewMoreBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.viewMoreBtn.OnHoverBorderColor = System.Drawing.Color.Transparent;
+            this.viewMoreBtn.OnHoverForeColor = System.Drawing.Color.White;
+            this.viewMoreBtn.OnHoverImage = null;
+            this.viewMoreBtn.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.viewMoreBtn.OnPressedColor = System.Drawing.Color.Black;
+            this.viewMoreBtn.Radius = 6;
+            this.viewMoreBtn.Size = new System.Drawing.Size(126, 42);
+            this.viewMoreBtn.TabIndex = 15;
+            this.viewMoreBtn.Text = "Xem chi tiết";
+            this.viewMoreBtn.Click += new System.EventHandler(this.viewMoreBtn_Click);
+            // 
+            // exportBtn
+            // 
+            this.exportBtn.AnimationHoverSpeed = 0.07F;
+            this.exportBtn.AnimationSpeed = 0.03F;
+            this.exportBtn.BackColor = System.Drawing.Color.Transparent;
+            this.exportBtn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.exportBtn.BorderColor = System.Drawing.Color.Black;
+            this.exportBtn.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.exportBtn.CheckedBorderColor = System.Drawing.Color.Black;
+            this.exportBtn.CheckedForeColor = System.Drawing.Color.White;
+            this.exportBtn.CheckedImage = ((System.Drawing.Image)(resources.GetObject("exportBtn.CheckedImage")));
+            this.exportBtn.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.exportBtn.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.exportBtn.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(159)))), ((int)(((byte)(147)))));
+            this.exportBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.exportBtn.ForeColor = System.Drawing.Color.White;
+            this.exportBtn.Image = ((System.Drawing.Image)(resources.GetObject("exportBtn.Image")));
+            this.exportBtn.ImageSize = new System.Drawing.Size(20, 20);
+            this.exportBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.exportBtn.Location = new System.Drawing.Point(124, 6);
+            this.exportBtn.Name = "exportBtn";
+            this.exportBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.exportBtn.OnHoverBorderColor = System.Drawing.Color.Transparent;
+            this.exportBtn.OnHoverForeColor = System.Drawing.Color.White;
+            this.exportBtn.OnHoverImage = null;
+            this.exportBtn.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.exportBtn.OnPressedColor = System.Drawing.Color.Black;
+            this.exportBtn.Radius = 6;
+            this.exportBtn.Size = new System.Drawing.Size(121, 42);
+            this.exportBtn.TabIndex = 11;
+            this.exportBtn.Text = "Xuất excel";
+            this.exportBtn.Click += new System.EventHandler(this.exportBtn_Click);
+            // 
+            // refreshBtn
+            // 
+            this.refreshBtn.AnimationHoverSpeed = 0.07F;
+            this.refreshBtn.AnimationSpeed = 0.03F;
+            this.refreshBtn.BackColor = System.Drawing.Color.Transparent;
+            this.refreshBtn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.refreshBtn.BorderColor = System.Drawing.Color.Black;
+            this.refreshBtn.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.refreshBtn.CheckedBorderColor = System.Drawing.Color.Black;
+            this.refreshBtn.CheckedForeColor = System.Drawing.Color.White;
+            this.refreshBtn.CheckedImage = ((System.Drawing.Image)(resources.GetObject("refreshBtn.CheckedImage")));
+            this.refreshBtn.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.refreshBtn.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.refreshBtn.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(159)))), ((int)(((byte)(147)))));
+            this.refreshBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.refreshBtn.ForeColor = System.Drawing.Color.White;
+            this.refreshBtn.Image = ((System.Drawing.Image)(resources.GetObject("refreshBtn.Image")));
+            this.refreshBtn.ImageSize = new System.Drawing.Size(20, 20);
+            this.refreshBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.refreshBtn.Location = new System.Drawing.Point(11, 6);
+            this.refreshBtn.Name = "refreshBtn";
+            this.refreshBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.refreshBtn.OnHoverBorderColor = System.Drawing.Color.Transparent;
+            this.refreshBtn.OnHoverForeColor = System.Drawing.Color.White;
+            this.refreshBtn.OnHoverImage = null;
+            this.refreshBtn.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.refreshBtn.OnPressedColor = System.Drawing.Color.Black;
+            this.refreshBtn.Radius = 6;
+            this.refreshBtn.Size = new System.Drawing.Size(107, 42);
+            this.refreshBtn.TabIndex = 10;
+            this.refreshBtn.Text = "Làm mới";
+            this.refreshBtn.Click += new System.EventHandler(this.refreshBtn_Click);
+            // 
+            // deleteBtn
+            // 
+            this.deleteBtn.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.deleteBtn.AnimationHoverSpeed = 0.07F;
+            this.deleteBtn.AnimationSpeed = 0.03F;
+            this.deleteBtn.BackColor = System.Drawing.Color.Transparent;
+            this.deleteBtn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.deleteBtn.BorderColor = System.Drawing.Color.Black;
+            this.deleteBtn.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.deleteBtn.CheckedBorderColor = System.Drawing.Color.Black;
+            this.deleteBtn.CheckedForeColor = System.Drawing.Color.White;
+            this.deleteBtn.CheckedImage = ((System.Drawing.Image)(resources.GetObject("deleteBtn.CheckedImage")));
+            this.deleteBtn.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.deleteBtn.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.deleteBtn.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(159)))), ((int)(((byte)(147)))));
+            this.deleteBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deleteBtn.ForeColor = System.Drawing.Color.White;
+            this.deleteBtn.Image = ((System.Drawing.Image)(resources.GetObject("deleteBtn.Image")));
+            this.deleteBtn.ImageSize = new System.Drawing.Size(20, 20);
+            this.deleteBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.deleteBtn.Location = new System.Drawing.Point(956, 6);
+            this.deleteBtn.Name = "deleteBtn";
+            this.deleteBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.deleteBtn.OnHoverBorderColor = System.Drawing.Color.Transparent;
+            this.deleteBtn.OnHoverForeColor = System.Drawing.Color.White;
+            this.deleteBtn.OnHoverImage = null;
+            this.deleteBtn.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.deleteBtn.OnPressedColor = System.Drawing.Color.Black;
+            this.deleteBtn.Radius = 6;
+            this.deleteBtn.Size = new System.Drawing.Size(78, 42);
+            this.deleteBtn.TabIndex = 16;
+            this.deleteBtn.Text = "Xóa";
+            this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
+            // 
+            // addBtn
+            // 
+            this.addBtn.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.addBtn.AnimationHoverSpeed = 0.07F;
+            this.addBtn.AnimationSpeed = 0.03F;
+            this.addBtn.BackColor = System.Drawing.Color.Transparent;
+            this.addBtn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.addBtn.BorderColor = System.Drawing.Color.Black;
+            this.addBtn.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.addBtn.CheckedBorderColor = System.Drawing.Color.Black;
+            this.addBtn.CheckedForeColor = System.Drawing.Color.White;
+            this.addBtn.CheckedImage = ((System.Drawing.Image)(resources.GetObject("addBtn.CheckedImage")));
+            this.addBtn.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.addBtn.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.addBtn.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(159)))), ((int)(((byte)(147)))));
+            this.addBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addBtn.ForeColor = System.Drawing.Color.White;
+            this.addBtn.Image = ((System.Drawing.Image)(resources.GetObject("addBtn.Image")));
+            this.addBtn.ImageSize = new System.Drawing.Size(20, 20);
+            this.addBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.addBtn.Location = new System.Drawing.Point(701, 6);
+            this.addBtn.Name = "addBtn";
+            this.addBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.addBtn.OnHoverBorderColor = System.Drawing.Color.Transparent;
+            this.addBtn.OnHoverForeColor = System.Drawing.Color.White;
+            this.addBtn.OnHoverImage = null;
+            this.addBtn.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.addBtn.OnPressedColor = System.Drawing.Color.Black;
+            this.addBtn.Radius = 6;
+            this.addBtn.Size = new System.Drawing.Size(117, 42);
+            this.addBtn.TabIndex = 14;
+            this.addBtn.Text = "Thêm mới";
+            this.addBtn.Click += new System.EventHandler(this.addBtn_Click);
+            // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.HeaderText = "Hình Ảnh";
+            this.dataGridViewImageColumn1.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn1.Image")));
+            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.dataGridViewImageColumn1.MinimumWidth = 100;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.Width = 106;
+            // 
+            // Column9
+            // 
+            this.Column9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Column9.FillWeight = 50F;
+            this.Column9.Frozen = true;
+            this.Column9.HeaderText = "";
+            this.Column9.MinimumWidth = 50;
+            this.Column9.Name = "Column9";
+            this.Column9.Width = 50;
+            // 
+            // Column1
+            // 
+            this.Column1.FillWeight = 61.60671F;
+            this.Column1.HeaderText = "Mã Đơn";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column1.ToolTipText = "Mã Đơn";
+            // 
+            // Column6
+            // 
+            this.Column6.FillWeight = 61.60671F;
+            this.Column6.HeaderText = "Nhà cung cấp";
+            this.Column6.MinimumWidth = 6;
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            this.Column6.ToolTipText = "Nhà cung cấp";
+            // 
+            // Column3
+            // 
+            this.Column3.FillWeight = 61.60671F;
+            this.Column3.HeaderText = "Nhân Viên";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column3.ToolTipText = "Nhân Viên";
+            // 
+            // Column4
+            // 
+            this.Column4.FillWeight = 61.60671F;
+            this.Column4.HeaderText = "Ngày Lập";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column4.ToolTipText = "Ngày Lập";
+            // 
+            // Column2
+            // 
+            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Column2.FillWeight = 10F;
+            this.Column2.HeaderText = "Phần trăm lợi nhuận";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.ToolTipText = "Phần trăm lợi nhuận";
+            // 
+            // Column7
+            // 
+            this.Column7.FillWeight = 61.60671F;
+            this.Column7.HeaderText = "Tổng tiền";
+            this.Column7.MinimumWidth = 6;
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            this.Column7.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column7.ToolTipText = "Tổng tiền";
+            // 
             // ImportBillGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 18F);
@@ -825,7 +835,6 @@
             this.ShowInTaskbar = false;
             this.Text = "ImportBillGUI";
             this.Load += new System.EventHandler(this.ImportBillGUI_Load_1);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvImportBill)).EndInit();
@@ -833,6 +842,7 @@
             this.panel7.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -869,11 +879,12 @@
         private Guna.UI2.WinForms.Guna2TextBox toPriceTxt;
         private System.Windows.Forms.Panel panel9;
         private Guna.UI.WinForms.GunaMediumCheckBox gunaMediumCheckBox1;
-		private System.Windows.Forms.DataGridViewCheckBoxColumn Column9;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-	}
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Column9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+    }
 }

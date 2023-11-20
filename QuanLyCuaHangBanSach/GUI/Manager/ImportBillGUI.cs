@@ -483,6 +483,15 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             {
                 return;
             }
+
+            DataGridViewRow row = this.dgvImportBill.Rows[this.dgvImportBill.CurrentCell.RowIndex];
+
+            ImportBillDTO importBill = ImportBillBUS.Instance.getById(row.Cells[1].Value.ToString());
+
+            using (ViewImportBillModal viewImportBillModal = new ViewImportBillModal(importBill))
+            {
+                viewImportBillModal.ShowDialog();
+            }
         }
 
         private void ImportBillGUI_Load_1(object sender, EventArgs e)
@@ -517,30 +526,6 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                 if (this.dgvImportBill.CurrentCell.RowIndex < 0)
                 {
                     MessageBox.Show("Hãy chọn dòng dữ liệu muốn thao tác");
-                    return;
-                }
-
-                DataGridViewRow row = this.dgvImportBill.Rows[this.dgvImportBill.CurrentCell.RowIndex];
-
-                ImportBillDTO importBill = ImportBillBUS.Instance.getById(row.Cells[1].Value.ToString());
-
-                using (ViewImportBillModal viewImportBillModal = new ViewImportBillModal(importBill))
-                {
-                    viewImportBillModal.ShowDialog();
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex);
-            }
-        }
-
-        private void dgvImportBill_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            try
-            {
-                if (e.RowIndex < 0 || e.ColumnIndex <= 0)
-                {
                     return;
                 }
 

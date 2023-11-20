@@ -51,7 +51,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
                 foreach (ImportBillDetailDTO importBillDetail in importBillDetailList)
                 {
-                    BookBill bookBill = new BookBill();
+                    BookBillV2 bookBill = new BookBillV2();
 
                     int remain = BookBUS.Instance.getById(importBillDetail.MaSach.ToString()).SoLuongConLai;
 
@@ -66,6 +66,15 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                         this.importBillDetailList.Remove(importBillDetail);
 
                         this.loadImportBillDetailList();
+                    };
+
+                    bookBill.priceTxt.TextChanged += (object sender, EventArgs e) =>
+                    {
+                        total -= importBillDetail.SoLuong * importBillDetail.DonGia;
+                        importBillDetail.DonGia = Convert.ToDecimal(bookBill.priceTxt.Text);
+                        total += importBillDetail.SoLuong * importBillDetail.DonGia;
+
+                        this.totalPriceTxt.Text = string.Format("{0:N0} VNĐ", total);
                     };
 
                     bookBill.plus.MouseClick += (object sender, MouseEventArgs e) =>
@@ -225,11 +234,29 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 this.errorBookListMsg.Text = "";
             }
 
-            return CustomValidation.Instance.checkCombobox(
+            bool isChecked = CustomValidation.Instance.checkTextbox(
+                this.benefitTxt,
+                this.errorBenefitMsg,
+                this.benefitLine,
+                new string[] { "required", "positive-number", "space" }
+            );
+
+            if (isChecked)
+            {
+                isChecked = CustomValidation.Instance.checkTextboxMax(
+                    this.benefitTxt,
+                    "Phần trăm lợi nhuận phải bé hơn hoặc bằng 100",
+                    this.errorBenefitMsg,
+                    this.benefitLine,
+                    100
+                );
+            }
+
+            return isChecked && CustomValidation.Instance.checkCombobox(
                 this.supplierCbx,
-                this.errorCustomerMsg,
+                this.errorBenefitMsg,
                 new string[] { "required" }
-            ); ;
+            );
         }
 
         private void submitBtn_Click(object sender, EventArgs e)
@@ -245,13 +272,14 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 importBill.TongTien = Convert.ToDecimal(this.totalPriceTxt.Text.ToString().Trim().Replace(".", "").Replace(" VNĐ", ""));
                 importBill.MaNhanVien = this.staffId;
                 importBill.MaNhaCungCap = Convert.ToInt32(this.supplierCbx.SelectedValue);
+                importBill.PhanTramLoiNhuan = Convert.ToInt32(this.benefitTxt.Text);
                 importBill.NgayLap = DateTime.Now;
 
                 ImportBillDTO newImportBill = ImportBillBUS.Instance.insertReturnBill(importBill);
 
                 if (newImportBill == null)
                 {
-                    MessageBox.Show("Failure");
+                    MessageBox.Show("Tạo đơn thất bại");
                     this.isSubmitSuccess = false;
                     return;
                 }
@@ -267,10 +295,10 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                             importBillDetail.DonGia
                         );
 
-                        ImportBillBUS.Instance.createImportBillDetail(newImportBillDetail);
+                        ImportBillBUS.Instance.createImportBillDetail(newImportBillDetail, Convert.ToInt32(this.benefitTxt.Text));
                     }
 
-                    MessageBox.Show("Success");
+                    MessageBox.Show("Tạo đơn thành công");
 
                     this.isSubmitSuccess = true;
                     this.Close();
@@ -291,9 +319,38 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
         {
             CustomValidation.Instance.checkCombobox(
                 this.supplierCbx,
-                this.errorCustomerMsg,
+                this.errorBenefitMsg,
                 new string[] { "required" }
             );
+        }
+
+        private void benefitTxt_TextChanged(object sender, EventArgs e)
+        {
+            bool isChecked = CustomValidation.Instance.checkTextbox(
+                this.benefitTxt,
+                this.errorBenefitMsg,
+                this.benefitLine,
+                new string[] { "required", "positive-number", "space" }
+            );
+
+            if (isChecked)
+            {
+                isChecked = CustomValidation.Instance.checkTextboxMax(
+                    this.benefitTxt,
+                    "Phần trăm lợi nhuận phải bé hơn hoặc bằng 100",
+                    this.errorBenefitMsg,
+                    this.benefitLine,
+                    100
+                );
+            }
+        }
+
+        private void benefitTxt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // Ngăn chặn ký tự nhập vào TextBox
+            }
         }
     }
 }

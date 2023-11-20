@@ -368,7 +368,7 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
                                 importBillDetail.SoLuong,
                                 importBillDetail.DonGia
                             );
-                            ImportBillBUS.Instance.createImportBillDetail(newImportBillDetail);
+                            ImportBillBUS.Instance.createImportBillDetail(newImportBillDetail, 0);
                         }
 
                         MessageBox.Show("Success");
@@ -419,7 +419,7 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
                     }
                 }
 
-                ImportBillDTO newImportBill = new ImportBillDTO(0, 1, staffID, DateTime.Now, 0);
+                ImportBillDTO newImportBill = new ImportBillDTO(0, 1, staffID, DateTime.Now, 0, 0);
 
 				ImportBillDTO importBill = ImportBillBUS.Instance.insertReturnBill(newImportBill);
 
@@ -434,7 +434,7 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
 
 						ImportBillDetailDTO importBillDetail = new ImportBillDetailDTO(importBill.MaDonNhapHang, book.MaSach, Convert.ToInt32(row[2].ToString()), Convert.ToDecimal(row[3].ToString()));
 
-						if (ImportBillBUS.Instance.createImportBillDetail(importBillDetail))
+						if (ImportBillBUS.Instance.createImportBillDetail(importBillDetail, 0))
 						{
 							book.SoLuongConLai += Convert.ToInt32(row[2].ToString());
 							book.GiaNhap = Convert.ToDecimal(row[3].ToString());
