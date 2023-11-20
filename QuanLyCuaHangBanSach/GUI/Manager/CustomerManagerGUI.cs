@@ -211,17 +211,24 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 				var customers = CustomerBUS.Instance.Search(searchInput);
 
                 string selectedGender = this.genderCbx.SelectedItem.ToString();
-
-                List<CustomerDTO> newCustomers = customers.FindAll(authorList =>
+                if (customers != null )
                 {
-                    if (selectedGender != "Tất cả giới tính")
-                    {
-                        return authorList.GioiTinh == selectedGender;
-                    }
-                    return true;
+					List<CustomerDTO> newCustomers = customers.FindAll(authorList =>
+					{
+						if (selectedGender != "Tất cả giới tính")
+						{
+							return authorList.GioiTinh == selectedGender;
+						}
+						return true;
+					}
+									);
+					return newCustomers;
                 }
-                );
-                return newCustomers;
+                else
+                {
+					return new List<CustomerDTO>();
+				}  
+                
             }
             catch
             {
