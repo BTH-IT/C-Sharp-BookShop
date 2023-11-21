@@ -397,25 +397,40 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 			    );
 				if (result == DialogResult.Yes)
 				{
+                        bool isDeleted = false;
 						foreach (DataGridViewRow row in this.dgvStaff.Rows)
 						{
 							if ((bool)row.Cells[0].Value)
 							{
+                                StaffDTO staff = StaffBUS.Instance.getById(row.Cells[1].Value.ToString()); 
                                 AccountDTO acc = AccountBUS.Instance.getByStaffId(row.Cells[1].Value.ToString());
-                                if (acc != null)
-								{
-                                    AccountBUS.Instance.delete(acc.Email);
-                                    StaffBUS.Instance.delete(row.Cells[1].Value.ToString());
+                                if(staff.MaChucVu != 1)
+                                {
+								    if (acc != null)
+								    {
+									    AccountBUS.Instance.delete(acc.Email);
+									    StaffBUS.Instance.delete(row.Cells[1].Value.ToString());
+									    isDeleted = true;
+								    }
+								    else
+								    {
+									    StaffBUS.Instance.delete(row.Cells[1].Value.ToString());
+                                        isDeleted = true;
+								    }
                                 }
-								else
-								{
-									StaffBUS.Instance.delete(row.Cells[1].Value.ToString());
-								}
+                                else 
+                                {
+                                    MessageBox.Show("Không được xóa quản lí","Thông báo");
+                                }    
 							}
 						}
-                        List<StaffDTO> staffs = handleFilter(this.searchInput.Text);
-                        loadDataToDataGridView(staffs);
-                        MessageBox.Show("Xóa thành công");
+                        if(isDeleted)
+                        {
+						    List<StaffDTO> staffs = handleFilter(this.searchInput.Text);
+						    loadDataToDataGridView(staffs);
+						    MessageBox.Show("Xóa thành công");
+					    }    
+                       
 				}
 			}
             catch
