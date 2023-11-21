@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ImportBillPrintForm));
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.bookDataSet1 = new QuanLyCuaHangBanSach.GUI.Report.BookDataSet();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
@@ -57,6 +58,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(889, 770);
             this.Controls.Add(this.reportViewer1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ImportBillPrintForm";
             this.Text = "ImportBillPrintForm";
             this.Load += new System.EventHandler(this.ImportBillPrintForm_Load);
