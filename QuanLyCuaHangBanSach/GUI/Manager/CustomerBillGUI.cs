@@ -521,7 +521,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             try
             {
 
-                string[] headerList = new string[] { "Mã đơn", "Tên khách hàng", "Số điện thoại khách hàng", "Nhân Viên", "Khuyến mãi", "Giá bán", "Phần trăm", "Ngày lập", "Tổng tiền" };
+                string[] headerList = new string[] { "Mã đơn", "Tên khách hàng", "Số điện thoại khách hàng", "Nhân Viên", "Khuyến mãi", "Phần trăm", "Ngày lập", "Tổng tiền" };
 
                 DataTable dt = CustomExcel.Instance.ConvertDataGridViewToDataTable(dgvCustomerBill);
 

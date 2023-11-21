@@ -165,12 +165,16 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
         {
             try
             {
-                CustomValidation.Instance.checkTextbox(
+                bool isSellPriceValid = CustomValidation.Instance.checkTextbox(
                     this.sellPriceTxt,
                     this.errorSellPriceMsg,
                     this.sellPriceLine,
                     new string[] { "required", "positive-number" , "space" }
                 );
+                if(isSellPriceValid)
+                {
+                    isSellPriceValid = CustomValidation.Instance.checkTextboxMatchWithOtherTextBox(sellPriceTxt, importPriceTxt, "Giá bán phải lớn hơn giá nhập", errorSellPriceMsg, sellPriceLine, "after");
+                }    
             }
             catch (Exception ex)
             {
@@ -184,12 +188,16 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             {
                 this.importPriceTxt.ForeColor = Color.Black;
 
-                CustomValidation.Instance.checkTextbox(
+                bool isImportPriceValid =CustomValidation.Instance.checkTextbox(
                     this.importPriceTxt,
                     this.errorImportPriceMsg,
                     this.importPriceLine,
                     new string[] { "required", "positive-number", "space" }
                 );
+                if(isImportPriceValid)
+                {
+                    isImportPriceValid = CustomValidation.Instance.checkTextboxMatchWithOtherTextBox(importPriceTxt,sellPriceTxt,  "Giá nhập phải nhỏ hơn giá bán", this.errorImportPriceMsg , importPriceLine, "before");
+				}    
             }
             catch (Exception ex)
             {
