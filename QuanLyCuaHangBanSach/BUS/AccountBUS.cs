@@ -100,6 +100,11 @@ namespace QuanLyCuaHangBanSach.BUS
             return AccountDAO.Instance.insert(account);
         }
 
+        public bool update(AccountDTO account, string email)
+        {
+            return AccountDAO.Instance.update(account, email);
+        }
+
         public bool update(AccountDTO account)
         {
             return AccountDAO.Instance.update(account);

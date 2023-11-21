@@ -1,4 +1,5 @@
-﻿using System.Data;
+﻿using System;
+using System.Data;
 using MySql.Data.MySqlClient;
 using QuanLyCuaHangBanSach.DTO;
 
@@ -106,6 +107,21 @@ namespace QuanLyCuaHangBanSach.DAO
                     new MySqlParameter("@MaNhanVien", data.MaNhanVien),
                     new MySqlParameter("@MatKhau", data.MatKhau),
                     new MySqlParameter("@Email", data.Email),
+                });
+
+            return rowChanged > 0;
+        }
+
+        public bool update(AccountDTO data, string email)
+        {
+            string sql = $@"UPDATE taikhoan SET maNhanVien=@MaNhanVien, matKhau=@MatKhau, email=@EmailMoi WHERE email=@EmailCu;";
+
+            int rowChanged = DataProvider.Instance.ExecuteNonQuery(sql,
+                new MySqlParameter[] {
+                    new MySqlParameter("@MaNhanVien", data.MaNhanVien),
+                    new MySqlParameter("@MatKhau", data.MatKhau),
+                    new MySqlParameter("@EmailCu", data.Email),
+                    new MySqlParameter("@EmailMoi", email),
                 });
 
             return rowChanged > 0;
