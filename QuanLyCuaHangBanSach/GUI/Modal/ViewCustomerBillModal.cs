@@ -13,7 +13,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
         public ViewCustomerBillModal(CustomerBillDTO customerBill)
         {
             InitializeComponent();
-
+            
             this.noteTxt.Visible = false;
 
             List<CustomerBillDetailDTO> customerBillDetailList = CustomerBillBUS.Instance.getCustomerBillDetailList(customerBill.MaDonKhachHang.ToString());

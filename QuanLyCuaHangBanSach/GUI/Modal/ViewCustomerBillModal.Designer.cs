@@ -39,6 +39,8 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.saleTxt = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.dateTxt = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.staffTxt = new System.Windows.Forms.Label();
@@ -47,17 +49,15 @@
             this.percentTxt = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.noteTxt = new System.Windows.Forms.Label();
+            this.changedPriceTxt = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.paymentPriceTxt = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.discountPriceTxt = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.totalPriceTxt = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.paymentPriceTxt = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.changedPriceTxt = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.dateTxt = new System.Windows.Forms.Label();
+            this.noteTxt = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -198,6 +198,26 @@
             this.panel4.Size = new System.Drawing.Size(934, 368);
             this.panel4.TabIndex = 9;
             // 
+            // dateTxt
+            // 
+            this.dateTxt.Font = new System.Drawing.Font("#9Slide03 Cabin SemiBold", 14.25F, System.Drawing.FontStyle.Bold);
+            this.dateTxt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.dateTxt.Location = new System.Drawing.Point(656, 15);
+            this.dateTxt.Name = "dateTxt";
+            this.dateTxt.Size = new System.Drawing.Size(275, 49);
+            this.dateTxt.TabIndex = 32;
+            this.dateTxt.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label3
+            // 
+            this.label3.Font = new System.Drawing.Font("#9Slide03 Cabin SemiBold", 14.25F, System.Drawing.FontStyle.Bold);
+            this.label3.Location = new System.Drawing.Point(433, 15);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(212, 49);
+            this.label3.TabIndex = 32;
+            this.label3.Text = "Ngày lập                            :";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.AutoScroll = true;
@@ -286,16 +306,45 @@
             this.panel7.Size = new System.Drawing.Size(934, 128);
             this.panel7.TabIndex = 34;
             // 
-            // noteTxt
+            // changedPriceTxt
             // 
-            this.noteTxt.Font = new System.Drawing.Font("#9Slide03 Cabin Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.noteTxt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.noteTxt.Location = new System.Drawing.Point(611, 777);
-            this.noteTxt.Name = "noteTxt";
-            this.noteTxt.Size = new System.Drawing.Size(342, 61);
-            this.noteTxt.TabIndex = 36;
-            this.noteTxt.Text = "*Khách hàng đã đổi 11 điểm tương ứng với 11,000,000 VNĐ được giảm vào tổng đơn";
-            this.noteTxt.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.changedPriceTxt.Font = new System.Drawing.Font("#9Slide03 Cabin SemiBold", 14.25F, System.Drawing.FontStyle.Bold);
+            this.changedPriceTxt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.changedPriceTxt.Location = new System.Drawing.Point(174, 54);
+            this.changedPriceTxt.Name = "changedPriceTxt";
+            this.changedPriceTxt.Size = new System.Drawing.Size(263, 49);
+            this.changedPriceTxt.TabIndex = 39;
+            this.changedPriceTxt.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label8
+            // 
+            this.label8.Font = new System.Drawing.Font("#9Slide03 Cabin SemiBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label8.Location = new System.Drawing.Point(6, 54);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(162, 49);
+            this.label8.TabIndex = 40;
+            this.label8.Text = "Tiền thừa             :";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // paymentPriceTxt
+            // 
+            this.paymentPriceTxt.Font = new System.Drawing.Font("#9Slide03 Cabin SemiBold", 14.25F, System.Drawing.FontStyle.Bold);
+            this.paymentPriceTxt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.paymentPriceTxt.Location = new System.Drawing.Point(174, 0);
+            this.paymentPriceTxt.Name = "paymentPriceTxt";
+            this.paymentPriceTxt.Size = new System.Drawing.Size(263, 49);
+            this.paymentPriceTxt.TabIndex = 37;
+            this.paymentPriceTxt.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label5
+            // 
+            this.label5.Font = new System.Drawing.Font("#9Slide03 Cabin SemiBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label5.Location = new System.Drawing.Point(6, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(162, 49);
+            this.label5.TabIndex = 38;
+            this.label5.Text = "Tiền khách đưa :";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // discountPriceTxt
             // 
@@ -339,72 +388,23 @@
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label7.Click += new System.EventHandler(this.label7_Click_1);
             // 
-            // paymentPriceTxt
+            // noteTxt
             // 
-            this.paymentPriceTxt.Font = new System.Drawing.Font("#9Slide03 Cabin SemiBold", 14.25F, System.Drawing.FontStyle.Bold);
-            this.paymentPriceTxt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.paymentPriceTxt.Location = new System.Drawing.Point(174, 0);
-            this.paymentPriceTxt.Name = "paymentPriceTxt";
-            this.paymentPriceTxt.Size = new System.Drawing.Size(263, 49);
-            this.paymentPriceTxt.TabIndex = 37;
-            this.paymentPriceTxt.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label5
-            // 
-            this.label5.Font = new System.Drawing.Font("#9Slide03 Cabin SemiBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label5.Location = new System.Drawing.Point(6, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(162, 49);
-            this.label5.TabIndex = 38;
-            this.label5.Text = "Tiền khách đưa :";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // changedPriceTxt
-            // 
-            this.changedPriceTxt.Font = new System.Drawing.Font("#9Slide03 Cabin SemiBold", 14.25F, System.Drawing.FontStyle.Bold);
-            this.changedPriceTxt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.changedPriceTxt.Location = new System.Drawing.Point(174, 54);
-            this.changedPriceTxt.Name = "changedPriceTxt";
-            this.changedPriceTxt.Size = new System.Drawing.Size(263, 49);
-            this.changedPriceTxt.TabIndex = 39;
-            this.changedPriceTxt.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label8
-            // 
-            this.label8.Font = new System.Drawing.Font("#9Slide03 Cabin SemiBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label8.Location = new System.Drawing.Point(6, 54);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(162, 49);
-            this.label8.TabIndex = 40;
-            this.label8.Text = "Tiền thừa             :";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label3
-            // 
-            this.label3.Font = new System.Drawing.Font("#9Slide03 Cabin SemiBold", 14.25F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(433, 15);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(212, 49);
-            this.label3.TabIndex = 32;
-            this.label3.Text = "Ngày lập                            :";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // dateTxt
-            // 
-            this.dateTxt.Font = new System.Drawing.Font("#9Slide03 Cabin SemiBold", 14.25F, System.Drawing.FontStyle.Bold);
-            this.dateTxt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.dateTxt.Location = new System.Drawing.Point(656, 15);
-            this.dateTxt.Name = "dateTxt";
-            this.dateTxt.Size = new System.Drawing.Size(275, 49);
-            this.dateTxt.TabIndex = 32;
-            this.dateTxt.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.noteTxt.Font = new System.Drawing.Font("#9Slide03 Cabin Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.noteTxt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.noteTxt.Location = new System.Drawing.Point(611, 777);
+            this.noteTxt.Name = "noteTxt";
+            this.noteTxt.Size = new System.Drawing.Size(342, 61);
+            this.noteTxt.TabIndex = 36;
+            this.noteTxt.Text = "*Khách hàng đã đổi 11 điểm tương ứng với 11,000,000 VNĐ được giảm vào tổng đơn";
+            this.noteTxt.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // ViewCustomerBillModal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(964, 847);
+            this.ClientSize = new System.Drawing.Size(964, 845);
             this.Controls.Add(this.noteTxt);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cancelBtn);
@@ -414,7 +414,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "ViewCustomerBillModal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ViewCustomerBillModal";
+            this.Text = "Xem chi tiết đơn bán hàng";
             this.panel2.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel4.ResumeLayout(false);

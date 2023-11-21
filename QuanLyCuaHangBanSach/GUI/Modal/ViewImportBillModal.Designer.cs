@@ -38,22 +38,22 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.supplierTxt = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.totalPriceTxt = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.dateTxt = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.cancelBtn = new Guna.UI.WinForms.GunaButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.benifitTxt = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.dateTxt = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.totalPriceTxt = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.cancelBtn = new Guna.UI.WinForms.GunaButton();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -158,34 +158,34 @@
             this.label13.Text = "Nhà cung cấp              :";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // panel3
+            // panel1
             // 
-            this.panel3.Controls.Add(this.totalPriceTxt);
-            this.panel3.Controls.Add(this.label4);
-            this.panel3.Location = new System.Drawing.Point(3, 604);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(594, 63);
-            this.panel3.TabIndex = 35;
+            this.panel1.Controls.Add(this.benifitTxt);
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Location = new System.Drawing.Point(3, 155);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(594, 73);
+            this.panel1.TabIndex = 37;
             // 
-            // totalPriceTxt
+            // benifitTxt
             // 
-            this.totalPriceTxt.Font = new System.Drawing.Font("#9Slide03 Cabin SemiBold", 14.25F, System.Drawing.FontStyle.Bold);
-            this.totalPriceTxt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.totalPriceTxt.Location = new System.Drawing.Point(166, 3);
-            this.totalPriceTxt.Name = "totalPriceTxt";
-            this.totalPriceTxt.Size = new System.Drawing.Size(425, 49);
-            this.totalPriceTxt.TabIndex = 35;
-            this.totalPriceTxt.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.benifitTxt.Font = new System.Drawing.Font("#9Slide03 Cabin SemiBold", 14.25F, System.Drawing.FontStyle.Bold);
+            this.benifitTxt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.benifitTxt.Location = new System.Drawing.Point(209, 3);
+            this.benifitTxt.Name = "benifitTxt";
+            this.benifitTxt.Size = new System.Drawing.Size(382, 49);
+            this.benifitTxt.TabIndex = 36;
+            this.benifitTxt.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label4
+            // label7
             // 
-            this.label4.Font = new System.Drawing.Font("#9Slide03 Cabin SemiBold", 14.25F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(3, 3);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(145, 49);
-            this.label4.TabIndex = 28;
-            this.label4.Text = "Tổng tiền:";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label7.Font = new System.Drawing.Font("#9Slide03 Cabin SemiBold", 14.25F, System.Drawing.FontStyle.Bold);
+            this.label7.Location = new System.Drawing.Point(3, 3);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(200, 49);
+            this.label7.TabIndex = 9;
+            this.label7.Text = "Phần trăm lợi nhuận:";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panel4
             // 
@@ -218,6 +218,35 @@
             this.label3.Text = "Ngày lập:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.totalPriceTxt);
+            this.panel3.Controls.Add(this.label4);
+            this.panel3.Location = new System.Drawing.Point(3, 604);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(594, 63);
+            this.panel3.TabIndex = 35;
+            // 
+            // totalPriceTxt
+            // 
+            this.totalPriceTxt.Font = new System.Drawing.Font("#9Slide03 Cabin SemiBold", 14.25F, System.Drawing.FontStyle.Bold);
+            this.totalPriceTxt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.totalPriceTxt.Location = new System.Drawing.Point(166, 3);
+            this.totalPriceTxt.Name = "totalPriceTxt";
+            this.totalPriceTxt.Size = new System.Drawing.Size(425, 49);
+            this.totalPriceTxt.TabIndex = 35;
+            this.totalPriceTxt.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label4
+            // 
+            this.label4.Font = new System.Drawing.Font("#9Slide03 Cabin SemiBold", 14.25F, System.Drawing.FontStyle.Bold);
+            this.label4.Location = new System.Drawing.Point(3, 3);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(145, 49);
+            this.label4.TabIndex = 28;
+            this.label4.Text = "Tổng tiền:";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // cancelBtn
             // 
             this.cancelBtn.Animated = true;
@@ -249,35 +278,6 @@
             this.cancelBtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.benifitTxt);
-            this.panel1.Controls.Add(this.label7);
-            this.panel1.Location = new System.Drawing.Point(3, 155);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(594, 73);
-            this.panel1.TabIndex = 37;
-            // 
-            // benifitTxt
-            // 
-            this.benifitTxt.Font = new System.Drawing.Font("#9Slide03 Cabin SemiBold", 14.25F, System.Drawing.FontStyle.Bold);
-            this.benifitTxt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.benifitTxt.Location = new System.Drawing.Point(209, 3);
-            this.benifitTxt.Name = "benifitTxt";
-            this.benifitTxt.Size = new System.Drawing.Size(382, 49);
-            this.benifitTxt.TabIndex = 36;
-            this.benifitTxt.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label7
-            // 
-            this.label7.Font = new System.Drawing.Font("#9Slide03 Cabin SemiBold", 14.25F, System.Drawing.FontStyle.Bold);
-            this.label7.Location = new System.Drawing.Point(3, 3);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(200, 49);
-            this.label7.TabIndex = 9;
-            this.label7.Text = "Phần trăm lợi nhuận:";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // ViewImportBillModal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 18F);
@@ -288,16 +288,17 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Font = new System.Drawing.Font("#9Slide03 Cabin", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "ViewImportBillModal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ViewImportBillModal";
+            this.Text = "Xem chi tiết đơn nhập hàng";
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
