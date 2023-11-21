@@ -107,10 +107,16 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                     return;
                 }
 
+                DataGridViewRow row = this.dgvPosition.Rows[this.dgvPosition.CurrentCell.RowIndex];
+
+                if (row.Cells[0].Value.ToString() == "1")
+                {
+                    MessageBox.Show("Chức vụ này không thể thay đổi!!");
+                    return;
+                }
+
                 using (PositionModal positionModal = new PositionModal("Sửa chức vụ"))
                 {
-                    DataGridViewRow row = this.dgvPosition.Rows[this.dgvPosition.CurrentCell.RowIndex];
-
                     PositionDTO position = PositionBUS.Instance.getById(row.Cells[0].Value.ToString());
 
                     positionModal.updatePosition = position;
@@ -146,10 +152,16 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                     return;
                 }
 
+                DataGridViewRow row = this.dgvPosition.Rows[e.RowIndex];
+
+                if (row.Cells[0].Value.ToString() == "1")
+                {
+                    MessageBox.Show("Chức vụ này không thể thay đổi!!");
+                    return;
+                }
+
                 using (PositionModal positionModal = new PositionModal("Sửa chức vụ"))
                 {
-                    DataGridViewRow row = this.dgvPosition.Rows[e.RowIndex];
-
                     PositionDTO position = PositionBUS.Instance.getById(row.Cells[0].Value.ToString());
 
                     positionModal.updatePosition = position;
@@ -219,7 +231,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
                 DataGridViewRow row = this.dgvPosition.Rows[this.dgvPosition.CurrentCell.RowIndex];
 
-                using (AuthorizeModal authorizeModal = new AuthorizeModal(Convert.ToInt32(row.Cells[1].Value)))
+                using (AuthorizeModal authorizeModal = new AuthorizeModal(Convert.ToInt32(row.Cells[0].Value)))
                 {
                     authorizeModal.ShowDialog();
                 }
