@@ -11,42 +11,11 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 {
     public partial class AuthorGUI : Form
     {
-        private CheckBox headerCheckbox;
         string[] genders = new string[] { "Tất cả giới tính", "Nam", "Nữ" };
             
         public AuthorGUI()
         {
             InitializeComponent();
-        }
-
-        private void renderCheckBoxDgv()
-        {
-            try
-            {
-                int size = 25;
-
-                Rectangle rect = this.dgvAuthor.GetCellDisplayRectangle(0, -1, false);
-
-                headerCheckbox = new CheckBox();
-
-                headerCheckbox.BackColor = Color.FromArgb(45, 210, 192);
-                headerCheckbox.Name = "chkHeader";
-                headerCheckbox.Size = new Size(size, size);
-                headerCheckbox.TabStop = false; 
-                
-                rect.X = (rect.Width / 2) - (size / 4);
-                rect.Y = (rect.Height / 2) - (size / 2);
-
-                headerCheckbox.Location = rect.Location;
-
-
-                this.dgvAuthor.Controls.Add(headerCheckbox);
-            }
-            catch (Exception ex)
-            {
-
-                Console.WriteLine(ex);
-            }
         }
 
         private void loadAuthorListToDataView(List<AuthorDTO> AuthorList)
@@ -60,7 +29,6 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 				foreach (AuthorDTO Author in AuthorList)
                 {
                     this.dgvAuthor.Rows.Add(new object[] {
-                    false,
                     Author.Ma,
                     Author.Ten,
                     Author.GioiTinh,
@@ -85,29 +53,9 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                 this.genderCbx.Items.AddRange(genders);
                 this.genderCbx.SelectedIndex = 0;
                 this.loadAuthorListToDataView(AuthorList);
-                this.renderCheckBoxDgv();
-                headerCheckbox.MouseClick += new MouseEventHandler(headerCheckbox_Clicked);
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex);
-            }
-        }
-
-        private void headerCheckbox_Clicked(object sender, EventArgs e)
-        {
-            try
-            {
-                foreach (DataGridViewRow row in this.dgvAuthor.Rows)
-                {
-                    row.Cells[0].Value = headerCheckbox.Checked;
-                }
-
-                this.dgvAuthor.RefreshEdit();
-            }
-            catch (Exception ex)
-            {
-
                 Console.WriteLine(ex);
             }
         }
@@ -166,7 +114,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                 {
                     DataGridViewRow row = this.dgvAuthor.Rows[this.dgvAuthor.CurrentCell.RowIndex];
 
-                    AuthorDTO Author = AuthorBUS.Instance.getById(row.Cells[1].Value.ToString());
+                    AuthorDTO Author = AuthorBUS.Instance.getById(row.Cells[0].Value.ToString());
 
 
                     AuthorModal.updateAuthor = Author;
@@ -199,7 +147,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         {
             try
             {
-                if (e.RowIndex < 0 || e.ColumnIndex <= 0)
+                if (e.RowIndex < 0 || e.ColumnIndex < 0)
                 {
                     return;
                 }
@@ -208,7 +156,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                 {
                     DataGridViewRow row = this.dgvAuthor.Rows[e.RowIndex];
 
-                    AuthorDTO Author = AuthorBUS.Instance.getById(row.Cells[1].Value.ToString());
+                    AuthorDTO Author = AuthorBUS.Instance.getById(row.Cells[0].Value.ToString());
 
                     AuthorModal.updateAuthor = Author;
 

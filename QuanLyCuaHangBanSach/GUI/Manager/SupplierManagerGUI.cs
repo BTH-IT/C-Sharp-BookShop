@@ -11,37 +11,9 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 {
     public partial class SupplierManagerGUI : Form
     {
-        private CheckBox headerCheckbox;
         public SupplierManagerGUI()
         {
             InitializeComponent();
-        }
-        private void renderCheckBoxDgv()
-        {
-            try
-            {
-                int size = 25;
-
-                Rectangle rect = this.dgvSupplier.GetCellDisplayRectangle(0, -1, false);
-                headerCheckbox = new CheckBox();
-
-                headerCheckbox.BackColor = Color.FromArgb(45, 210, 192);
-                headerCheckbox.Name = "chkHeader";
-                headerCheckbox.Size = new Size(size, size);
-                headerCheckbox.TabStop = false;
-
-                rect.X = (rect.Width / 2) - (size / 4);
-                rect.Y = (rect.Height / 2) - (size / 2);
-
-                headerCheckbox.Location = rect.Location;
-
-                this.dgvSupplier.Controls.Add(headerCheckbox);
-            }
-            catch (Exception er)
-            {
-
-                Console.WriteLine(er);
-            }
         }
 
         private void loadSupplierListToDataView(List<SupplierDTO> SupplierList)
@@ -56,12 +28,11 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                 foreach (SupplierDTO Supplier in SupplierList)
                 {
                     this.dgvSupplier.Rows.Add(new object[] {
-                    false,
-                    Supplier.MaNhaCungCap,
-                    Supplier.TenNhaCungCap,
-                    Supplier.DiaChi,
-                    Supplier.SoDienThoai,
-                });
+                        Supplier.MaNhaCungCap,
+                        Supplier.TenNhaCungCap,
+                        Supplier.DiaChi,
+                        Supplier.SoDienThoai,
+                    });
                 }
             }
             catch (Exception er)
@@ -70,24 +41,6 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                 Console.WriteLine(er);
             }
 
-        }
-
-        private void headerCheckbox_Clicked(object sender, EventArgs e)
-        {
-            try
-            {
-                foreach (DataGridViewRow row in this.dgvSupplier.Rows)
-                {
-                    row.Cells[0].Value = headerCheckbox.Checked;
-                }
-
-                this.dgvSupplier.RefreshEdit();
-            }
-            catch (Exception er)
-            {
-
-                Console.WriteLine(er);
-            }
         }
 
         private void searchInput_TextChanged(object sender, EventArgs e)
@@ -142,7 +95,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                 {
                     DataGridViewRow row = this.dgvSupplier.Rows[this.dgvSupplier.CurrentCell.RowIndex];
 
-                    SupplierDTO Supplier = SupplierBUS.Instance.getById(row.Cells[1].Value.ToString());
+                    SupplierDTO Supplier = SupplierBUS.Instance.getById(row.Cells[0].Value.ToString());
 
                     SupplierModal.updateSupplier = Supplier;
 
@@ -173,7 +126,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         {
             try
             {
-                if (e.RowIndex < 0 || e.ColumnIndex <= 0)
+                if (e.RowIndex < 0 || e.ColumnIndex < 0)
                 {
                     return;
                 }
@@ -182,7 +135,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                 {
                     DataGridViewRow row = this.dgvSupplier.Rows[e.RowIndex];
 
-                    SupplierDTO Supplier = SupplierBUS.Instance.getById(row.Cells[1].Value.ToString());
+                    SupplierDTO Supplier = SupplierBUS.Instance.getById(row.Cells[0].Value.ToString());
 
                     SupplierModal.updateSupplier = Supplier;
                     if (SupplierModal.updateSupplier == null)
@@ -254,9 +207,6 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             {
                 List<SupplierDTO> SupplierList = SupplierBUS.Instance.getAllData();
                 this.loadSupplierListToDataView(SupplierList);
-
-                this.renderCheckBoxDgv();
-                headerCheckbox.MouseClick += new MouseEventHandler(headerCheckbox_Clicked);
             }
             catch (Exception er)
             {

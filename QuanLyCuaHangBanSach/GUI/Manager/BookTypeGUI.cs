@@ -12,41 +12,9 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 {
     public partial class BookTypeGUI : Form
     {
-        private CheckBox headerCheckbox;
-
         public BookTypeGUI()
         {
             InitializeComponent();
-        }
-
-        private void renderCheckBoxDgv()
-        {
-            try
-            {
-                int size = 25;
-
-                Rectangle rect = this.dgvBookType.GetCellDisplayRectangle(0, -1, false);
-
-                headerCheckbox = new CheckBox();
-
-                headerCheckbox.BackColor = Color.FromArgb(45, 210, 192);
-                headerCheckbox.Name = "chkHeader";
-                headerCheckbox.Size = new Size(size, size);
-                headerCheckbox.TabStop = false;
-
-                rect.X = (rect.Width / 2) - (size / 4);
-                rect.Y = (rect.Height / 2) - (size / 2);
-
-                headerCheckbox.Location = rect.Location;
-
-
-                this.dgvBookType.Controls.Add(headerCheckbox);
-            }
-            catch (Exception ex)
-            {
-
-                Console.WriteLine(ex);
-            }
         }
 
         private void loadBookTypeListToDataView(List<BookTypeDTO> BookTypeList)
@@ -60,7 +28,6 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                 foreach (BookTypeDTO BookType in BookTypeList)
                 {
                     this.dgvBookType.Rows.Add(new object[] {
-                    false,
                     BookType.MaTheLoai,
                     BookType.TenTheLoai,
                 });
@@ -80,29 +47,9 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             {
                 List<BookTypeDTO> BookTypeList = BookTypeBUS.Instance.getAllData();
                 this.loadBookTypeListToDataView(BookTypeList);
-                this.renderCheckBoxDgv();
-                headerCheckbox.MouseClick += new MouseEventHandler(headerCheckbox_Clicked);
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex);
-            }
-        }
-
-        private void headerCheckbox_Clicked(object sender, EventArgs e)
-        {
-            try
-            {
-                foreach (DataGridViewRow row in this.dgvBookType.Rows)
-                {
-                    row.Cells[0].Value = headerCheckbox.Checked;
-                }
-
-                this.dgvBookType.RefreshEdit();
-            }
-            catch (Exception ex)
-            {
-
                 Console.WriteLine(ex);
             }
         }
@@ -132,7 +79,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             }
             try
             {
-                string[] headerList = new string[] { "Mã Thể Loại" , "Tên Thể Loại" };
+                string[] headerList = new string[] { "Mã Thể Loại", "Tên Thể Loại" };
 
                 DataTable dt = CustomExcel.Instance.ConvertDataGridViewToDataTable(dgvBookType);
 
@@ -161,7 +108,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                 {
                     DataGridViewRow row = this.dgvBookType.Rows[this.dgvBookType.CurrentCell.RowIndex];
 
-                    BookTypeDTO BookType = BookTypeBUS.Instance.getById(row.Cells[1].Value.ToString());
+                    BookTypeDTO BookType = BookTypeBUS.Instance.getById(row.Cells[0].Value.ToString());
 
 
                     BookTypeModal.updateBookType = BookType;
@@ -194,7 +141,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         {
             try
             {
-                if (e.RowIndex < 0 || e.ColumnIndex <= 0)
+                if (e.RowIndex < 0 || e.ColumnIndex < 0)
                 {
                     return;
                 }
@@ -203,7 +150,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                 {
                     DataGridViewRow row = this.dgvBookType.Rows[e.RowIndex];
 
-                    BookTypeDTO BookType = BookTypeBUS.Instance.getById(row.Cells[1].Value.ToString());
+                    BookTypeDTO BookType = BookTypeBUS.Instance.getById(row.Cells[0].Value.ToString());
 
                     BookTypeModal.updateBookType = BookType;
 

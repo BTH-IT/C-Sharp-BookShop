@@ -11,41 +11,11 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 {
     public partial class PermissionManageGUI : Form
     {
-        private CheckBox headerCheckbox;
         public delegate void OnPermissionStatusChange(int staffId, string screenName);
 		public event OnPermissionStatusChange onPermissionStatusChange;
 		public PermissionManageGUI()
         {
             InitializeComponent();
-        }
-
-        private void renderCheckBoxDgv()
-        {
-            try
-            {
-                int size = 25;
-
-                Rectangle rect = this.dgvPermission.GetCellDisplayRectangle(0, -1, false);
-
-                headerCheckbox = new CheckBox();
-
-                headerCheckbox.BackColor = Color.FromArgb(45, 210, 192);
-                headerCheckbox.Name = "chkHeader";
-                headerCheckbox.Size = new Size(size, size);
-                headerCheckbox.TabStop = false;
-
-                rect.X = (rect.Width / 2) - (size / 4);
-                rect.Y = (rect.Height / 2) - (size / 2);
-
-                headerCheckbox.Location = rect.Location;
-
-
-                this.dgvPermission.Controls.Add(headerCheckbox);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex);
-            }
         }
 
         private void loadPermissionListToDataView(List<PermissionDTO> positionList)
@@ -60,11 +30,10 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                 foreach (PermissionDTO position in positionList)
                 {
                     this.dgvPermission.Rows.Add(new object[] {
-                    false,
-                    position.maQuyenHan,
-                    position.tenQuyenHan,
-                    position.TrangThai ? "Đang hoạt động" : "Ngưng hoạt động",
-                });
+                        position.maQuyenHan,
+                        position.tenQuyenHan,
+                        position.TrangThai ? "Đang hoạt động" : "Ngưng hoạt động",
+                    });
                 }
             }
             catch (Exception ex)
@@ -83,25 +52,6 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                 List<PermissionDTO> positionList = PermissionBUS.Instance.getAllData();
                 this.loadPermissionListToDataView(positionList);
 
-                this.renderCheckBoxDgv();
-                headerCheckbox.MouseClick += new MouseEventHandler(headerCheckbox_Clicked);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex);
-            }
-        }
-
-        private void headerCheckbox_Clicked(object sender, EventArgs e)
-        {
-            try
-            {
-                foreach (DataGridViewRow row in this.dgvPermission.Rows)
-                {
-                    row.Cells[0].Value = headerCheckbox.Checked;
-                }
-
-                this.dgvPermission.RefreshEdit();
             }
             catch (Exception ex)
             {
@@ -162,7 +112,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                 {
                     DataGridViewRow row = this.dgvPermission.Rows[this.dgvPermission.CurrentCell.RowIndex];
 
-                    PermissionDTO position = PermissionBUS.Instance.getById(row.Cells[1].Value.ToString());
+                    PermissionDTO position = PermissionBUS.Instance.getById(row.Cells[0].Value.ToString());
 
                     positionModal.updatePermission = position;
 
@@ -246,7 +196,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         {
             try
             {
-                if (e.RowIndex < 0 || e.ColumnIndex <= 0)
+                if (e.RowIndex < 0 || e.ColumnIndex < 0)
                 {
                     return;
                 }
@@ -255,7 +205,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                 {
                     DataGridViewRow row = this.dgvPermission.Rows[e.RowIndex];
 
-                    PermissionDTO position = PermissionBUS.Instance.getById(row.Cells[1].Value.ToString());
+                    PermissionDTO position = PermissionBUS.Instance.getById(row.Cells[0].Value.ToString());
 
                     positionModal.updatePermission = position;
 

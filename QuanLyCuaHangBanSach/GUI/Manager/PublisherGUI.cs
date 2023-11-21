@@ -11,39 +11,10 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 {
     public partial class PublisherGUI : Form
     {
-        private CheckBox headerCheckbox;
         public PublisherGUI()
         {
             InitializeComponent();
         }
-        private void renderCheckBoxDgv()
-        {
-            try
-            {
-                int size = 25;
-
-                Rectangle rect = this.dgvPublisher.GetCellDisplayRectangle(0, -1, false);
-                headerCheckbox = new CheckBox();
-
-                headerCheckbox.BackColor = Color.FromArgb(45, 210, 192);
-                headerCheckbox.Name = "chkHeader";
-                headerCheckbox.Size = new Size(size, size);
-                headerCheckbox.TabStop = false;
-
-                rect.X = (rect.Width / 2) - (size / 4);
-                rect.Y = (rect.Height / 2) - (size / 2);
-
-                headerCheckbox.Location = rect.Location;
-
-                this.dgvPublisher.Controls.Add(headerCheckbox);
-            }
-            catch (Exception er)
-            {
-
-                Console.WriteLine(er);
-            }
-        }
-
         private void loadPublisherListToDataView(List<PublisherDTO> PublisherList)
         {
             try
@@ -56,12 +27,11 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                 foreach (PublisherDTO Publisher in PublisherList)
                 {
                     this.dgvPublisher.Rows.Add(new object[] {
-                    false,
-                    Publisher.MaNhaXuatBan,
-                    Publisher.TenNhaXuatBan,
-                    Publisher.DiaChi,
-                    Publisher.SoDienThoai,
-                });
+                        Publisher.MaNhaXuatBan,
+                        Publisher.TenNhaXuatBan,
+                        Publisher.DiaChi,
+                        Publisher.SoDienThoai,
+                    });
                 }
             }
             catch (Exception er)
@@ -72,23 +42,6 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
         }
 
-        private void headerCheckbox_Clicked(object sender, EventArgs e)
-        {
-            try
-            {
-                foreach (DataGridViewRow row in this.dgvPublisher.Rows)
-                {
-                    row.Cells[0].Value = headerCheckbox.Checked;
-                }
-
-                this.dgvPublisher.RefreshEdit();
-            }
-            catch (Exception er)
-            {
-
-                Console.WriteLine(er);
-            }
-        }
 
         private void searchInput_TextChanged(object sender, EventArgs e)
         {
@@ -142,7 +95,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                 {
                     DataGridViewRow row = this.dgvPublisher.Rows[this.dgvPublisher.CurrentCell.RowIndex];
 
-                    PublisherDTO Publisher = PublisherBUS.Instance.getById(row.Cells[1].Value.ToString());
+                    PublisherDTO Publisher = PublisherBUS.Instance.getById(row.Cells[0].Value.ToString());
 
                     PublisherModal.updatePublisher = Publisher;
 
@@ -225,7 +178,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         {
             try
             {
-                if (e.RowIndex < 0 || e.ColumnIndex <= 0)
+                if (e.RowIndex < 0 || e.ColumnIndex < 0)
                 {
                     return;
                 }
@@ -234,7 +187,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                 {
                     DataGridViewRow row = this.dgvPublisher.Rows[e.RowIndex];
 
-                    PublisherDTO Publisher = PublisherBUS.Instance.getById(row.Cells[1].Value.ToString());
+                    PublisherDTO Publisher = PublisherBUS.Instance.getById(row.Cells[0].Value.ToString());
 
                     PublisherModal.updatePublisher = Publisher;
                     if (PublisherModal.updatePublisher == null)
@@ -307,8 +260,6 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                 List<PublisherDTO> PublisherList = PublisherBUS.Instance.getAllData();
                 this.loadPublisherListToDataView(PublisherList);
 
-                this.renderCheckBoxDgv();
-                headerCheckbox.MouseClick += new MouseEventHandler(headerCheckbox_Clicked);
             }
             catch (Exception er)
             {

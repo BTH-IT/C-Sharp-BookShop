@@ -39,23 +39,22 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SupplierManagerGUI));
             this.line1 = new System.Windows.Forms.Panel();
             this.dgvSupplier = new Guna.UI.WinForms.GunaDataGridView();
-            this.Column11 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.exportBtn = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.refreshBtn = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.editBtn = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.addBtn = new Guna.UI.WinForms.GunaAdvenceButton();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.searchInput = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.exportBtn = new Guna.UI.WinForms.GunaAdvenceButton();
-            this.refreshBtn = new Guna.UI.WinForms.GunaAdvenceButton();
-            this.editBtn = new Guna.UI.WinForms.GunaAdvenceButton();
-            this.addBtn = new Guna.UI.WinForms.GunaAdvenceButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSupplier)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -93,7 +92,6 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             this.dgvSupplier.ColumnHeadersHeight = 50;
             this.dgvSupplier.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvSupplier.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column11,
             this.Column1,
             this.Column2,
             this.Column3,
@@ -131,7 +129,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             this.dgvSupplier.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvSupplier.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvSupplier.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSupplier.Size = new System.Drawing.Size(1400, 777);
+            this.dgvSupplier.Size = new System.Drawing.Size(1400, 764);
             this.dgvSupplier.TabIndex = 23;
             this.dgvSupplier.TabStop = false;
             this.dgvSupplier.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna;
@@ -158,52 +156,6 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             this.dgvSupplier.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dgvSupplier.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSupplier_CellDoubleClick);
             // 
-            // Column11
-            // 
-            this.Column11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Column11.FillWeight = 50F;
-            this.Column11.Frozen = true;
-            this.Column11.HeaderText = "";
-            this.Column11.MinimumWidth = 50;
-            this.Column11.Name = "Column11";
-            this.Column11.Width = 50;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Mã Nhà Cung Cấp";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column1.ToolTipText = "Mã Nhà Cung Cấp";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Tên Nhà Cung Cấp";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column2.ToolTipText = "Tên Nhà Cung Cấp";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Địa Chỉ";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column3.ToolTipText = "Địa Chỉ";
-            // 
-            // Column9
-            // 
-            this.Column9.HeaderText = "Số Điện Thoại";
-            this.Column9.MinimumWidth = 6;
-            this.Column9.Name = "Column9";
-            this.Column9.ReadOnly = true;
-            this.Column9.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column9.ToolTipText = "Số Điện Thoại";
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
@@ -212,90 +164,10 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             this.panel1.Controls.Add(this.editBtn);
             this.panel1.Controls.Add(this.addBtn);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 840);
+            this.panel1.Location = new System.Drawing.Point(0, 827);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1400, 54);
             this.panel1.TabIndex = 1;
-            // 
-            // panel3
-            // 
-            this.panel3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(212)))), ((int)(((byte)(191)))));
-            this.panel3.Location = new System.Drawing.Point(31, 31);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(100, 1);
-            this.panel3.TabIndex = 31;
-            // 
-            // panel4
-            // 
-            this.panel4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(212)))), ((int)(((byte)(191)))));
-            this.panel4.Location = new System.Drawing.Point(188, 31);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(100, 1);
-            this.panel4.TabIndex = 33;
-            // 
-            // panel2
-            // 
-            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(212)))), ((int)(((byte)(191)))));
-            this.panel2.Location = new System.Drawing.Point(147, 18);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(28, 1);
-            this.panel2.TabIndex = 22;
-            // 
-            // label1
-            // 
-            this.label1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(212)))), ((int)(((byte)(191)))));
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(18, 36);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "$";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // searchInput
-            // 
-            this.searchInput.BackColor = System.Drawing.Color.Transparent;
-            this.searchInput.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
-            this.searchInput.BorderThickness = 0;
-            this.searchInput.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.searchInput.DefaultText = "";
-            this.searchInput.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.searchInput.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.searchInput.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.searchInput.DisabledState.Parent = this.searchInput;
-            this.searchInput.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.searchInput.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
-            this.searchInput.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.searchInput.FocusedState.Parent = this.searchInput;
-            this.searchInput.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 11.25F);
-            this.searchInput.ForeColor = System.Drawing.Color.Black;
-            this.searchInput.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.searchInput.HoverState.Parent = this.searchInput;
-            this.searchInput.Location = new System.Drawing.Point(15, 7);
-            this.searchInput.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.searchInput.Name = "searchInput";
-            this.searchInput.PasswordChar = '\0';
-            this.searchInput.PlaceholderText = "Tìm kiếm theo mã, tên";
-            this.searchInput.SelectedText = "";
-            this.searchInput.ShadowDecoration.Parent = this.searchInput;
-            this.searchInput.Size = new System.Drawing.Size(236, 36);
-            this.searchInput.TabIndex = 1;
-            this.searchInput.TextChanged += new System.EventHandler(this.searchInput_TextChanged);
-            // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.pictureBox1);
-            this.panel5.Controls.Add(this.line1);
-            this.panel5.Controls.Add(this.searchInput);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel5.Location = new System.Drawing.Point(0, 0);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1400, 63);
-            this.panel5.TabIndex = 0;
             // 
             // exportBtn
             // 
@@ -431,6 +303,86 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             this.addBtn.Text = "Thêm mới";
             this.addBtn.Click += new System.EventHandler(this.addBtn_Click);
             // 
+            // panel3
+            // 
+            this.panel3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(212)))), ((int)(((byte)(191)))));
+            this.panel3.Location = new System.Drawing.Point(31, 31);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(100, 1);
+            this.panel3.TabIndex = 31;
+            // 
+            // panel4
+            // 
+            this.panel4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(212)))), ((int)(((byte)(191)))));
+            this.panel4.Location = new System.Drawing.Point(188, 31);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(100, 1);
+            this.panel4.TabIndex = 33;
+            // 
+            // panel2
+            // 
+            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(212)))), ((int)(((byte)(191)))));
+            this.panel2.Location = new System.Drawing.Point(147, 18);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(28, 1);
+            this.panel2.TabIndex = 22;
+            // 
+            // label1
+            // 
+            this.label1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(212)))), ((int)(((byte)(191)))));
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(18, 36);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "$";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // searchInput
+            // 
+            this.searchInput.BackColor = System.Drawing.Color.Transparent;
+            this.searchInput.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
+            this.searchInput.BorderThickness = 0;
+            this.searchInput.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.searchInput.DefaultText = "";
+            this.searchInput.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.searchInput.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.searchInput.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.searchInput.DisabledState.Parent = this.searchInput;
+            this.searchInput.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.searchInput.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
+            this.searchInput.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.searchInput.FocusedState.Parent = this.searchInput;
+            this.searchInput.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 11.25F);
+            this.searchInput.ForeColor = System.Drawing.Color.Black;
+            this.searchInput.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.searchInput.HoverState.Parent = this.searchInput;
+            this.searchInput.Location = new System.Drawing.Point(15, 7);
+            this.searchInput.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.searchInput.Name = "searchInput";
+            this.searchInput.PasswordChar = '\0';
+            this.searchInput.PlaceholderText = "Tìm kiếm theo mã, tên";
+            this.searchInput.SelectedText = "";
+            this.searchInput.ShadowDecoration.Parent = this.searchInput;
+            this.searchInput.Size = new System.Drawing.Size(236, 36);
+            this.searchInput.TabIndex = 1;
+            this.searchInput.TextChanged += new System.EventHandler(this.searchInput_TextChanged);
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.pictureBox1);
+            this.panel5.Controls.Add(this.line1);
+            this.panel5.Controls.Add(this.searchInput);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel5.Location = new System.Drawing.Point(0, 0);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(1400, 63);
+            this.panel5.TabIndex = 0;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
@@ -441,12 +393,48 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             this.pictureBox1.TabIndex = 22;
             this.pictureBox1.TabStop = false;
             // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Mã Nhà Cung Cấp";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column1.ToolTipText = "Mã Nhà Cung Cấp";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Tên Nhà Cung Cấp";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column2.ToolTipText = "Tên Nhà Cung Cấp";
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Địa Chỉ";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column3.ToolTipText = "Địa Chỉ";
+            // 
+            // Column9
+            // 
+            this.Column9.HeaderText = "Số Điện Thoại";
+            this.Column9.MinimumWidth = 6;
+            this.Column9.Name = "Column9";
+            this.Column9.ReadOnly = true;
+            this.Column9.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column9.ToolTipText = "Số Điện Thoại";
+            // 
             // SupplierManagerGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
-            this.ClientSize = new System.Drawing.Size(1400, 894);
+            this.ClientSize = new System.Drawing.Size(1400, 881);
             this.Controls.Add(this.dgvSupplier);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel1);
@@ -481,7 +469,6 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         private Guna.UI.WinForms.GunaAdvenceButton exportBtn;
         private Guna.UI2.WinForms.Guna2TextBox searchInput;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Column11;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
