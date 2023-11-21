@@ -70,8 +70,21 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
                     bookBill.priceTxt.TextChanged += (object sender, EventArgs e) =>
                     {
+                        bookBill.priceTxt.Text = bookBill.priceTxt.Text.Replace(",", "");
+                        if (bookBill.priceTxt.Text.Length == 1)
+                        {
+                            bookBill.priceTxt.SelectionStart = bookBill.priceTxt.Text.Length;
+                        }
+
+                        if (bookBill.priceTxt.Text == string.Empty || !decimal.TryParse(bookBill.priceTxt.Text, out decimal result) || result < 0)
+                        {
+                            bookBill.priceTxt.Text = "0";
+                            return;
+                        }
+
                         total -= importBillDetail.SoLuong * importBillDetail.DonGia;
                         importBillDetail.DonGia = Convert.ToDecimal(bookBill.priceTxt.Text);
+                        bookBill.priceTxt.Text = decimal.Parse(bookBill.priceTxt.Text).ToString();
                         total += importBillDetail.SoLuong * importBillDetail.DonGia;
 
                         this.totalPriceTxt.Text = string.Format("{0:N0} VNĐ", total);

@@ -10,19 +10,33 @@ namespace QuanLyCuaHangBanSach.GUI
     public partial class MenuGUI : Form
     {
         private StaffDTO staff;
+        public bool isChecked = false;
+        private List<AuthDetailDTO> authDetails;
         public MenuGUI(int maNhanVien)
         {
             InitializeComponent();
-
             this.staff = StaffBUS.Instance.getById(maNhanVien.ToString());
+
+            authDetails = AuthDetailBUS.Instance.getByPositionId(staff.MaChucVu.ToString());
+
+            foreach (AuthDetailDTO authDetail in authDetails)
+            {
+                if (authDetail.TrangThai)
+                {
+                    isChecked = true;
+                }
+            }
+
+            if (!isChecked)
+            {
+                MessageBox.Show("Nhân viên đang không có quyền gì trong hệ thống!");
+                LoginGUI.Instance.Show();
+                return;
+            }
         }
 
         private void Menu_Load(object sender, EventArgs e)
         {
-            List<AuthDetailDTO> authDetails = AuthDetailBUS.Instance.getByPositionId(staff.MaChucVu.ToString());
-
-            bool isChecked = false;
-
             foreach (AuthDetailDTO authDetail in authDetails)
             {
                 if (authDetail.maQuyenHan == 6 && !this.sell.Visible)
@@ -33,7 +47,8 @@ namespace QuanLyCuaHangBanSach.GUI
                     {
                         this.Size = new System.Drawing.Size(this.Size.Width, this.Size.Height + this.sell.Height);
                     }
-                } else if (authDetail.maQuyenHan == 7 && !this.import.Visible)
+                }
+                else if (authDetail.maQuyenHan == 7 && !this.import.Visible)
                 {
                     this.import.Visible = authDetail.TrangThai;
 
@@ -41,7 +56,8 @@ namespace QuanLyCuaHangBanSach.GUI
                     {
                         this.Size = new System.Drawing.Size(this.Size.Width, this.Size.Height + this.import.Height);
                     }
-                } else if (authDetail.TrangThai && !this.manage.Visible)
+                }
+                else if (authDetail.TrangThai && !this.manage.Visible)
                 {
                     this.manage.Visible = true;
                     if (this.manage.Visible)
@@ -49,22 +65,9 @@ namespace QuanLyCuaHangBanSach.GUI
                         this.Size = new System.Drawing.Size(this.Size.Width, this.Size.Height + this.manage.Height);
                     }
                 }
-
-                if (authDetail.TrangThai)
-                {
-                    isChecked = true;
-                }
             }
 
-            if (!isChecked)
-            {
-                MessageBox.Show("Nhân viên đang không có quyền gì trong hệ thống!");
-                this.Hide();
-                LoginGUI.Instance.Show();
-                return;
-            }
-
-			this.Left += SystemInformation.VirtualScreen.Width / 2 - this.Width / 2;
+            this.Left += SystemInformation.VirtualScreen.Width / 2 - this.Width / 2;
             this.Top += SystemInformation.VirtualScreen.Height / 2 - this.Height / 2;
         }
 

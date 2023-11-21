@@ -112,16 +112,32 @@ namespace QuanLyCuaHangBanSach.DAO
 
                 List<PositionDTO> positionList = PositionBUS.Instance.getAllData();
 
-                sql = $@"INSERT INTO chitietphanquyen (maChucVu, maQuyenHan)
-                            VALUES (@maChucVu, @maQuyenHan);";
+                
 
                 foreach (PositionDTO position in positionList)
                 {
-                    DataProvider.Instance.ExecuteNonQuery(sql,
-                    new MySqlParameter[] {
-                        new MySqlParameter("@maChucVu", position.MaChucVu),
-                        new MySqlParameter("@maQuyenHan", permission.maQuyenHan),
-                    });
+                    if (position.MaChucVu == 1)
+                    {
+                        sql = $@"INSERT INTO chitietphanquyen (maChucVu, maQuyenHan, trangThai)
+                            VALUES (@maChucVu, @maQuyenHan, @trangThai);";
+
+                        DataProvider.Instance.ExecuteNonQuery(sql,
+                        new MySqlParameter[] {
+                            new MySqlParameter("@maChucVu", position.MaChucVu),
+                            new MySqlParameter("@maQuyenHan", permission.maQuyenHan),
+                            new MySqlParameter("@trangThai", true),
+                        });
+                    } else
+                    {
+                        sql = $@"INSERT INTO chitietphanquyen (maChucVu, maQuyenHan)
+                            VALUES (@maChucVu, @maQuyenHan);";
+
+                        DataProvider.Instance.ExecuteNonQuery(sql,
+                        new MySqlParameter[] {
+                            new MySqlParameter("@maChucVu", position.MaChucVu),
+                            new MySqlParameter("@maQuyenHan", permission.maQuyenHan)
+                        });
+                    }
                 }
             }
 
