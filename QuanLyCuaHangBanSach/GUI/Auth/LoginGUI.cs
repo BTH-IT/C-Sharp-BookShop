@@ -10,6 +10,7 @@ namespace QuanLyCuaHangBanSach.GUI
 {
     public partial class LoginGUI : Form
     {
+        public bool isMenuValid = false;
         private bool isHiddenPwd = true;
 
         private static LoginGUI instance;
@@ -137,7 +138,7 @@ namespace QuanLyCuaHangBanSach.GUI
         private void handleLogin()
         {
             bool isValid = this.validateForm();
-
+            isMenuValid = false;
             if (!isValid) return;
 
             AccountDTO account = AccountBUS.Instance.login(this.emailTxt.Text, this.pwdTxt.Text);
@@ -165,10 +166,17 @@ namespace QuanLyCuaHangBanSach.GUI
             MessageBox.Show("Đăng nhập thành công vào hệ thống!");
 
             MenuGUI menu = new MenuGUI(account.MaNhanVien);
+			menu.Show();
+			if (isMenuValid)
+            {
+				Instance.Hide();
+            }
+            else
+            {
+                menu.Hide();
+            }
 
-            menu.Show();
-            Instance.Hide();
-        }
+		}
 
         private void customButton1_Click(object sender, EventArgs e)
         {

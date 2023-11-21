@@ -10,7 +10,6 @@ namespace QuanLyCuaHangBanSach.GUI
     public partial class MenuGUI : Form
     {
         private StaffDTO staff;
-
         public MenuGUI(int maNhanVien)
         {
             InitializeComponent();
@@ -60,11 +59,15 @@ namespace QuanLyCuaHangBanSach.GUI
             if (!isChecked)
             {
                 MessageBox.Show("Nhân viên đang không có quyền gì trong hệ thống!");
-                this.Hide();
-                LoginGUI.Instance.Show();
+                LoginGUI.Instance.isMenuValid = false;
+                return;
             }
+            else
+            {
+                LoginGUI.Instance.isMenuValid = true;
+			}
 
-            this.Left += SystemInformation.VirtualScreen.Width / 2 - this.Width / 2;
+			this.Left += SystemInformation.VirtualScreen.Width / 2 - this.Width / 2;
             this.Top += SystemInformation.VirtualScreen.Height / 2 - this.Height / 2;
         }
 

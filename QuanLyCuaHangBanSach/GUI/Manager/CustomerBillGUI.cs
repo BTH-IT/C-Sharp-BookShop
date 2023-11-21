@@ -145,9 +145,9 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             {
                 List<CustomerDTO> customerList = CustomerBUS.Instance.getAllData();
 
-                customerList.Insert(0, new CustomerDTO(-1, "", "Tất cả khách hàng", 0, "Tất cả khách hàng", 0));
-                customerList.Insert(1, new CustomerDTO(0, "", "Vãng lai", 0, "Vãng lai", 0));
-
+                customerList.Insert(0, new CustomerDTO(-1, "Tất cả khách hàng", "", 0, "Tất cả khách hàng", 0));
+                customerList.Insert(1, new CustomerDTO(0, "Vãng lai", "", 0, "Vãng lai", 0));
+                 
                 this.customerCbx.ValueMember = "Ma";
                 this.customerCbx.DisplayMember = "Ten";
                 this.customerCbx.DataSource = customerList;
