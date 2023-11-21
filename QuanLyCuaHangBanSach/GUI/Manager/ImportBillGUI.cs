@@ -66,7 +66,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                     StaffBUS.Instance.getById(importBill.MaNhanVien.ToString()).Ten,
                     importBill.NgayLap.GetDateTimeFormats()[0],
                     importBill.PhanTramLoiNhuan + "%",
-                    importBill.TongTien,
+                    string.Format("{0:N0} VNĐ", importBill.TongTien),
                 });
                 }
             }
@@ -574,6 +574,24 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             }
         }
 
+        private double GetSortingValue(object cellValue)
+        {
+            if (cellValue == null)
+                return 0;
+
+            // Extract the numerical value from the string (remove " VNĐ" and parse)
+            string stringValue = cellValue.ToString();
+            stringValue = stringValue.Replace(".", "").Replace(" VNĐ", "");
+
+            if (double.TryParse(stringValue, out double numericValue))
+            {
+                // Convert the numeric value to a sortable string
+                return numericValue;
+            }
+
+            return 0;
+        }
+
         private void fromPriceTxt_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
@@ -587,6 +605,22 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true; // Ngăn chặn ký tự nhập vào TextBox
+            }
+        }
+
+        private void dgvImportBill_SortCompare(object sender, DataGridViewSortCompareEventArgs e)
+        {
+            if (e.Column.Index == dgvImportBill.Columns.Count - 1) // Check if sorting the last column
+            {
+                // Extract the values for sorting from the cell values
+                double value1 = GetSortingValue(e.CellValue1);
+                double value2 = GetSortingValue(e.CellValue2);
+
+                // Compare the extracted values
+                e.SortResult = value1.CompareTo(value2);
+
+                // Mark the comparison as handled to prevent default sorting
+                e.Handled = true;
             }
         }
     }
