@@ -13,6 +13,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
         public bool isSubmitSuccess = false;
         private bool isStaffCbx = false;
         public AccountDTO account = null;
+        private bool isManager = false;
 
         public AccountModal(string title = "Thêm tài khoản")
         {
@@ -59,6 +60,11 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 if (account != null)
                 {
                     StaffDTO staff = StaffBUS.Instance.getById(account.MaNhanVien.ToString());
+                    if (staff.MaChucVu == 1) isManager = true;
+                    if (isManager)
+                    {
+                        this.staffComboBox.Enabled = false;
+                    }
                     this.staffComboBox.SelectedValue = staff.Ma;
                     this.staffComboBox.SelectedItem = staff;
                     this.emailTxt.Text = account.Email;

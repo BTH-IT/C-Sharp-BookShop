@@ -11,6 +11,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
     {
         public StaffDTO staff = null;
         public bool isSubmitSuccess = false;
+        private bool isManager = false;
         public StaffModal(string title = "Thêm thông tin nhân viên")
         {
             InitializeComponent();
@@ -73,10 +74,9 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 				this.genderCbx.Items.AddRange(genders);
 				this.genderCbx.SelectedItem = genders[0];
 				loadPositionCbx();
-                positionCbx.SelectedIndexChanged += positionCbx_SelectedIndexChanged;
-                genderCbx.SelectedIndexChanged += genderCbx_SelectedIndexChanged;
 				if (staff != null)
 				{
+                    if (staff.MaChucVu == 1) isManager = true; 
 					this.staffNameTxt.Text = staff.Ten;
 					this.birthYearTxt.Text = staff.NamSinh.ToString();
 					this.salaryTxt.Text = staff.Luong.ToString();
@@ -316,11 +316,36 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
         private void positionCbx_SelectedIndexChanged(object sender, EventArgs e)
 		{
-			CustomValidation.Instance.checkCombobox(
-				this.positionCbx,
-				this.errorPositionMsg,
-				new string[] { "required" }
-			);
+		     bool isStaffValid = CustomValidation.Instance.checkCombobox(
+				                    this.positionCbx,
+				                    this.errorPositionMsg,
+				                    new string[] { "required" }
+			                    );
+             if (isStaffValid && isManager) 
+             {
+                bool isSystemHasAdmin = false;
+                List<StaffDTO> list = StaffBUS.Instance.getAllData();
+                foreach (StaffDTO s in list) 
+                {
+                    if (s.Ma != staff.Ma)
+                    {
+                        if (s.MaChucVu == 1)
+                        {
+                            AccountDTO account = AccountBUS.Instance.getByStaffId(s.Ma.ToString());
+                            if(account != null)
+                            {
+                                isSystemHasAdmin = true;
+                                break;
+                            }    
+                        }    
+                    }    
+                }
+                if (!isSystemHasAdmin && (int)this.positionCbx.SelectedValue !=1)
+                {
+                    MessageBox.Show("Hệ thống phải có ít nhất một quản lí và tài khoản thuộc quản lí");
+					this.positionCbx.SelectedValue = staff.MaChucVu;
+				}    
+             }
 		}
 	}
  }

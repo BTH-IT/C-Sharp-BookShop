@@ -253,17 +253,30 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 				);
 				if (result == DialogResult.Yes)
 				{
+					bool isDeleted = false;
 					foreach (DataGridViewRow row in this.dgvAccount.Rows)
 					{
 						if ((bool)row.Cells[0].Value)
 						{
-							bool check = AccountBUS.Instance.delete(row.Cells[2].Value.ToString());
+							AccountDTO account = AccountBUS.Instance.getById(row.Cells[2].Value.ToString());
+							StaffDTO staff = StaffBUS.Instance.getById(account.MaNhanVien.ToString());
+							if (staff.MaChucVu != 1) 
+							{
+								bool check = AccountBUS.Instance.delete(account.Email);
+								isDeleted = true;
+							}
+							else
+							{
+								MessageBox.Show("Không thể xóa tài khoản của quản lí","Thông báo");
+							}
 						}
 					}
-					//
-					List<AccountDTO> accounts = handleFilter(this.searchInput.Text);
-					this.loadDataToDataGridView(accounts);
-					MessageBox.Show("Xóa thành công các tài khoản đã chọn");
+					if (isDeleted) 
+					{
+						List<AccountDTO> accounts = handleFilter(this.searchInput.Text);
+						this.loadDataToDataGridView(accounts);
+						MessageBox.Show("Xóa thành công các tài khoản đã chọn");
+					}
 				}
 			}
             catch
