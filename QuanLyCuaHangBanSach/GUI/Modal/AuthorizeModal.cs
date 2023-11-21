@@ -60,7 +60,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             {
                 try
                 {
-                    foreach (Control control in this.Controls)
+                    foreach (Control control in this.authorizeList.Controls)
                     {
                         if (control is AuthorizeCkb)
                         {

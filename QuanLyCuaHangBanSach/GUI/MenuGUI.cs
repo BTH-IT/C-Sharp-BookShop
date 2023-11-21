@@ -22,6 +22,8 @@ namespace QuanLyCuaHangBanSach.GUI
         {
             List<AuthDetailDTO> authDetails = AuthDetailBUS.Instance.getByPositionId(staff.MaChucVu.ToString());
 
+            bool isChecked = false;
+
             foreach (AuthDetailDTO authDetail in authDetails)
             {
                 if (authDetail.maQuyenHan == 6 && !this.sell.Visible)
@@ -48,6 +50,18 @@ namespace QuanLyCuaHangBanSach.GUI
                         this.Size = new System.Drawing.Size(this.Size.Width, this.Size.Height + this.manage.Height);
                     }
                 }
+
+                if (authDetail.TrangThai)
+                {
+                    isChecked = true;
+                }
+            }
+
+            if (!isChecked)
+            {
+                MessageBox.Show("Nhân viên đang không có quyền gì trong hệ thống!");
+                this.Hide();
+                LoginGUI.Instance.Show();
             }
 
             this.Left += SystemInformation.VirtualScreen.Width / 2 - this.Width / 2;
