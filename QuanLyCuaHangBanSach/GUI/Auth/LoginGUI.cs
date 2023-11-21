@@ -3,13 +3,14 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 using QuanLyCuaHangBanSach.BUS;
-using QuanLyCuaHangBanSach.DAO;
 using QuanLyCuaHangBanSach.DTO;
 
 namespace QuanLyCuaHangBanSach.GUI
 {
     public partial class LoginGUI : Form
     {
+
+        public static bool isResetPassword = false;
         private bool isHiddenPwd = true;
 
         private static LoginGUI instance;
@@ -33,17 +34,7 @@ namespace QuanLyCuaHangBanSach.GUI
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
             this.Padding = new Padding(2);
-            this.pwdTxt.UseSystemPasswordChar = isHiddenPwd;
-
-
-            if (Properties.Settings.Default.Email != string.Empty) {
-                this.emailTxt.Text = Properties.Settings.Default.Email;
-                this.pwdTxt.Text = Properties.Settings.Default.Password;
-                checkBox1.Checked = true;
-            } else
-            {
-                checkBox1.Checked = false;
-            }
+            
         }
 
         #region xử lý border form
@@ -137,7 +128,6 @@ namespace QuanLyCuaHangBanSach.GUI
         private void handleLogin()
         {
             bool isValid = this.validateForm();
-
             if (!isValid) return;
 
             AccountDTO account = AccountBUS.Instance.login(this.emailTxt.Text, this.pwdTxt.Text);
@@ -154,6 +144,7 @@ namespace QuanLyCuaHangBanSach.GUI
                 Properties.Settings.Default.Email = this.emailTxt.Text;
                 Properties.Settings.Default.Password = this.pwdTxt.Text;
                 Properties.Settings.Default.Save();
+                Console.WriteLine("123");
             }
             else
             {
@@ -165,10 +156,9 @@ namespace QuanLyCuaHangBanSach.GUI
             MessageBox.Show("Đăng nhập thành công vào hệ thống!");
 
             MenuGUI menu = new MenuGUI(account.MaNhanVien);
-
-            menu.Show();
-            Instance.Hide();
-        }
+            this.Hide();
+			menu.Show();
+		}
 
         private void customButton1_Click(object sender, EventArgs e)
         {
@@ -225,5 +215,37 @@ namespace QuanLyCuaHangBanSach.GUI
                 e.Handled = true; // Chặn ký tự nhập vào
             }
         }
-	}
+
+        private void LoginGUI_Load(object sender, EventArgs e)
+        {
+            this.pwdTxt.UseSystemPasswordChar = isHiddenPwd;
+            this.emailTxt.Text = Properties.Settings.Default.Email;
+            this.pwdTxt.Text = Properties.Settings.Default.Password;
+
+            if (Properties.Settings.Default.Email != string.Empty)
+            {
+                checkBox1.Checked = true;
+            }
+            else
+            {
+                checkBox1.Checked = false;
+            }
+        }
+
+        private void LoginGUI_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.pwdTxt.UseSystemPasswordChar = isHiddenPwd;
+            this.emailTxt.Text = Properties.Settings.Default.Email;
+            this.pwdTxt.Text = Properties.Settings.Default.Password;
+
+            if (Properties.Settings.Default.Email != string.Empty)
+            {
+                checkBox1.Checked = true;
+            }
+            else
+            {
+                checkBox1.Checked = false;
+            }
+        }
+    }
 }

@@ -165,8 +165,8 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 			this.Suppliertxt.ShadowDecoration.Parent = this.Suppliertxt;
 			this.Suppliertxt.Size = new System.Drawing.Size(425, 36);
 			this.Suppliertxt.TabIndex = 1;
-			this.Suppliertxt.TextChanged += new System.EventHandler(this.bookNameTxt_TextChanged);
-			this.Suppliertxt.Leave += new System.EventHandler(this.bookNameTxt_TextChanged);
+			this.Suppliertxt.TextChanged += new System.EventHandler(this.supplierNameTxt_TextChanged);
+			this.Suppliertxt.Leave += new System.EventHandler(this.supplierNameTxt_TextChanged);
 			// 
 			// supplierNameMsg
 			// 

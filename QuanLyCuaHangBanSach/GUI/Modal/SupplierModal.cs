@@ -17,12 +17,12 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             this.label1.Text = title;
             this.Text = title;
 
-            this.Suppliertxt.TextChanged += Suppliertxt_TextChanged;
+            this.Suppliertxt.TextChanged += supplierNameTxt_TextChanged;
             this.addressTxt.TextChanged += addressTxt_TextChanged;
             this.phoneNumbertxt.TextChanged += phoneNumbertxt_TextChanged;
         }
 
-        private void bookNameTxt_TextChanged(object sender, EventArgs e)
+        private void supplierNameTxt_TextChanged(object sender, EventArgs e)
         {
             try
             {
@@ -37,15 +37,16 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 {
                     if (updateSupplier == null)
                     {
-                        CustomValidation.Instance.checkDuplicateName(
+					    CustomValidation.Instance.checkDuplicateName(
                             this.supplierNameMsg,
                             this.nameLine,
                             SupplierBUS.Instance.checkDuplicateName(this.Suppliertxt.Text)
                         );
+                        Console.WriteLine("ssss");   
                     }
                     else
                     {
-                        CustomValidation.Instance.checkDuplicateName(
+						isSupplier = CustomValidation.Instance.checkDuplicateName(
                             this.supplierNameMsg,
                             this.nameLine,
                             SupplierBUS.Instance.checkDuplicateName(this.Suppliertxt.Text, updateSupplier.MaNhaCungCap)
@@ -73,10 +74,10 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
                 if (isSupplier)
                 {
-                    CustomValidation.Instance.checkDuplicateName(
+                    isSupplier = CustomValidation.Instance.checkDuplicateName(
                         this.supplierNameMsg,
                         this.nameLine,
-                        PublisherBUS.Instance.checkDuplicateName(this.Suppliertxt.Text)
+						SupplierBUS.Instance.checkDuplicateName(this.Suppliertxt.Text)
                     );
                 }
 
@@ -170,16 +171,6 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
         private void cancelBtn_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void Suppliertxt_TextChanged(object sender, EventArgs e)
-        {
-            CustomValidation.Instance.checkTextbox(
-                this.Suppliertxt,
-                this.supplierNameMsg,
-                this.nameLine,
-                new string[] { "required" , "name", "space" }
-            );
         }
 
         private void addressTxt_TextChanged(object sender, EventArgs e)
