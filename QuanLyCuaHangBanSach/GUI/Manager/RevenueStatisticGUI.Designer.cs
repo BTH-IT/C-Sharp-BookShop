@@ -64,20 +64,11 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.line1 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
-            this.gradientPanel1 = new QuanLyCuaHangBanSach.GradientPanel();
-            this.revenueFrom = new Guna.UI2.WinForms.Guna2TextBox();
-            this.revenueTo = new Guna.UI2.WinForms.Guna2TextBox();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.toDateCkb = new Guna.UI.WinForms.GunaCheckBox();
             this.fromDate = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.fromDateCkb = new Guna.UI.WinForms.GunaCheckBox();
             this.toDate = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.closeBtn = new System.Windows.Forms.PictureBox();
             this.chartPanel = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.elementHost1 = new System.Windows.Forms.Integration.ElementHost();
@@ -101,6 +92,15 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.revenueLb = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.closeBtn = new System.Windows.Forms.PictureBox();
+            this.gradientPanel1 = new QuanLyCuaHangBanSach.GradientPanel();
+            this.revenueFrom = new Guna.UI2.WinForms.Guna2TextBox();
+            this.revenueTo = new Guna.UI2.WinForms.Guna2TextBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBill)).BeginInit();
             this.optionPanel.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -112,10 +112,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             this.flowLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.flowLayoutPanel3.SuspendLayout();
-            this.gradientPanel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
-            this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.closeBtn)).BeginInit();
             this.chartPanel.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -130,6 +127,9 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             this.gunaGradient2Panel1.SuspendLayout();
             this.gunaGradient2Panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.closeBtn)).BeginInit();
+            this.gradientPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvBill
@@ -192,7 +192,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             this.dgvBill.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvBill.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvBill.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvBill.Size = new System.Drawing.Size(1000, 382);
+            this.dgvBill.Size = new System.Drawing.Size(1021, 437);
             this.dgvBill.StandardTab = true;
             this.dgvBill.TabIndex = 1;
             this.dgvBill.TabStop = false;
@@ -278,9 +278,9 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             this.optionPanel.Controls.Add(this.tableLayoutPanel2);
             this.optionPanel.Controls.Add(this.tableLayoutPanel1);
             this.optionPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.optionPanel.Location = new System.Drawing.Point(0, 489);
+            this.optionPanel.Location = new System.Drawing.Point(0, 544);
             this.optionPanel.Name = "optionPanel";
-            this.optionPanel.Size = new System.Drawing.Size(1000, 58);
+            this.optionPanel.Size = new System.Drawing.Size(1021, 58);
             this.optionPanel.TabIndex = 2;
             // 
             // tableLayoutPanel2
@@ -368,13 +368,13 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             // 
             // tableLayoutPanel1
             // 
+            this.tableLayoutPanel1.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.tableBtn, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.chartBtn, 1, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(725, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(746, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -460,27 +460,27 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             this.tablePanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tablePanel.Location = new System.Drawing.Point(0, 0);
             this.tablePanel.Name = "tablePanel";
-            this.tablePanel.Size = new System.Drawing.Size(1000, 489);
+            this.tablePanel.Size = new System.Drawing.Size(1021, 544);
             this.tablePanel.TabIndex = 0;
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.panel5);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1000, 107);
+            this.panel1.Size = new System.Drawing.Size(1021, 107);
             this.panel1.TabIndex = 0;
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.panel5);
             this.panel2.Controls.Add(this.tableLayoutPanel5);
             this.panel2.Controls.Add(this.tableLayoutPanel3);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(929, 107);
+            this.panel2.Size = new System.Drawing.Size(1021, 107);
             this.panel2.TabIndex = 0;
             // 
             // tableLayoutPanel5
@@ -491,11 +491,12 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             this.tableLayoutPanel5.Controls.Add(this.flowLayoutPanel3, 0, 1);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Left;
             this.tableLayoutPanel5.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 2;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(593, 107);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(564, 107);
             this.tableLayoutPanel5.TabIndex = 0;
             // 
             // flowLayoutPanel2
@@ -569,8 +570,409 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             this.flowLayoutPanel3.Location = new System.Drawing.Point(0, 56);
             this.flowLayoutPanel3.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(593, 47);
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(564, 47);
             this.flowLayoutPanel3.TabIndex = 57;
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.tableLayoutPanel3.ColumnCount = 2;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.62025F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80.37975F));
+            this.tableLayoutPanel3.Controls.Add(this.toDateCkb, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.fromDate, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.fromDateCkb, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.toDate, 1, 1);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(567, 0);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(0, 8, 0, 0);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 2;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(316, 107);
+            this.tableLayoutPanel3.TabIndex = 1;
+            // 
+            // toDateCkb
+            // 
+            this.toDateCkb.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.toDateCkb.BaseColor = System.Drawing.Color.White;
+            this.toDateCkb.CheckedOffColor = System.Drawing.Color.Gray;
+            this.toDateCkb.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.toDateCkb.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.toDateCkb.FillColor = System.Drawing.Color.White;
+            this.toDateCkb.Location = new System.Drawing.Point(3, 70);
+            this.toDateCkb.Name = "toDateCkb";
+            this.toDateCkb.Size = new System.Drawing.Size(55, 20);
+            this.toDateCkb.TabIndex = 1;
+            this.toDateCkb.Text = "Đến";
+            this.toDateCkb.CheckedChanged += new System.EventHandler(this.toDateCkb_CheckedChanged);
+            // 
+            // fromDate
+            // 
+            this.fromDate.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.fromDate.Animated = true;
+            this.fromDate.AutoRoundedCorners = true;
+            this.fromDate.BackColor = System.Drawing.Color.Transparent;
+            this.fromDate.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.fromDate.BorderRadius = 15;
+            this.fromDate.BorderThickness = 1;
+            this.fromDate.CheckedState.BorderColor = System.Drawing.Color.White;
+            this.fromDate.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.fromDate.CheckedState.ForeColor = System.Drawing.Color.Black;
+            this.fromDate.CheckedState.Parent = this.fromDate;
+            this.fromDate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.fromDate.CustomFormat = "dd / MM / yyyy";
+            this.fromDate.Enabled = false;
+            this.fromDate.FillColor = System.Drawing.Color.White;
+            this.fromDate.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(159)))), ((int)(((byte)(147)))));
+            this.fromDate.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.fromDate.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.fromDate.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(251)))), ((int)(((byte)(249)))));
+            this.fromDate.HoverState.ForeColor = System.Drawing.Color.Black;
+            this.fromDate.HoverState.Parent = this.fromDate;
+            this.fromDate.Location = new System.Drawing.Point(64, 10);
+            this.fromDate.MaxDate = new System.DateTime(2050, 12, 31, 0, 0, 0, 0);
+            this.fromDate.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
+            this.fromDate.Name = "fromDate";
+            this.fromDate.ShadowDecoration.Parent = this.fromDate;
+            this.fromDate.Size = new System.Drawing.Size(248, 32);
+            this.fromDate.TabIndex = 52;
+            this.fromDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.fromDate.Value = new System.DateTime(2000, 11, 1, 0, 0, 0, 0);
+            this.fromDate.ValueChanged += new System.EventHandler(this.fromDate_ValueChanged);
+            // 
+            // fromDateCkb
+            // 
+            this.fromDateCkb.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.fromDateCkb.BaseColor = System.Drawing.Color.White;
+            this.fromDateCkb.CheckedOffColor = System.Drawing.Color.Gray;
+            this.fromDateCkb.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.fromDateCkb.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.fromDateCkb.FillColor = System.Drawing.Color.White;
+            this.fromDateCkb.Location = new System.Drawing.Point(3, 16);
+            this.fromDateCkb.Name = "fromDateCkb";
+            this.fromDateCkb.Size = new System.Drawing.Size(46, 20);
+            this.fromDateCkb.TabIndex = 0;
+            this.fromDateCkb.Text = "Từ";
+            this.fromDateCkb.CheckedChanged += new System.EventHandler(this.fromDateCkb_CheckedChanged);
+            // 
+            // toDate
+            // 
+            this.toDate.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.toDate.Animated = true;
+            this.toDate.AutoRoundedCorners = true;
+            this.toDate.BackColor = System.Drawing.Color.White;
+            this.toDate.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.toDate.BorderRadius = 15;
+            this.toDate.BorderThickness = 1;
+            this.toDate.CheckedState.BorderColor = System.Drawing.Color.White;
+            this.toDate.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.toDate.CheckedState.ForeColor = System.Drawing.Color.Black;
+            this.toDate.CheckedState.Parent = this.toDate;
+            this.toDate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.toDate.CustomFormat = "dd / MM / yyyy";
+            this.toDate.Enabled = false;
+            this.toDate.FillColor = System.Drawing.Color.White;
+            this.toDate.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(159)))), ((int)(((byte)(147)))));
+            this.toDate.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.toDate.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.toDate.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(251)))), ((int)(((byte)(249)))));
+            this.toDate.HoverState.ForeColor = System.Drawing.Color.Black;
+            this.toDate.HoverState.Parent = this.toDate;
+            this.toDate.Location = new System.Drawing.Point(64, 64);
+            this.toDate.MaxDate = new System.DateTime(2050, 12, 31, 0, 0, 0, 0);
+            this.toDate.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
+            this.toDate.Name = "toDate";
+            this.toDate.ShadowDecoration.Parent = this.toDate;
+            this.toDate.Size = new System.Drawing.Size(248, 32);
+            this.toDate.TabIndex = 55;
+            this.toDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.toDate.Value = new System.DateTime(2023, 10, 29, 0, 0, 0, 0);
+            this.toDate.ValueChanged += new System.EventHandler(this.toDate_ValueChanged);
+            // 
+            // chartPanel
+            // 
+            this.chartPanel.Controls.Add(this.panel7);
+            this.chartPanel.Controls.Add(this.panel6);
+            this.chartPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.chartPanel.Location = new System.Drawing.Point(0, 0);
+            this.chartPanel.Name = "chartPanel";
+            this.chartPanel.Size = new System.Drawing.Size(1021, 544);
+            this.chartPanel.TabIndex = 40;
+            // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.elementHost1);
+            this.panel7.Controls.Add(this.panel8);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel7.Location = new System.Drawing.Point(0, 135);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(1021, 409);
+            this.panel7.TabIndex = 23;
+            // 
+            // elementHost1
+            // 
+            this.elementHost1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.elementHost1.Location = new System.Drawing.Point(0, 41);
+            this.elementHost1.Name = "elementHost1";
+            this.elementHost1.Size = new System.Drawing.Size(1021, 368);
+            this.elementHost1.TabIndex = 22;
+            this.elementHost1.Text = "elementHost1";
+            this.elementHost1.Child = this.cartesianChart1;
+            // 
+            // panel8
+            // 
+            this.panel8.Controls.Add(this.label7);
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel8.Location = new System.Drawing.Point(0, 0);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(1021, 41);
+            this.panel8.TabIndex = 0;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(5, 7);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(160, 28);
+            this.label7.TabIndex = 20;
+            this.label7.Text = "BIỂU ĐỒ THỐNG KÊ";
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.tableLayoutPanel4);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel6.Location = new System.Drawing.Point(0, 0);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(1021, 135);
+            this.panel6.TabIndex = 22;
+            // 
+            // tableLayoutPanel4
+            // 
+            this.tableLayoutPanel4.ColumnCount = 3;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel4.Controls.Add(this.gunaGradient2Panel2, 2, 0);
+            this.tableLayoutPanel4.Controls.Add(this.gunaGradient2Panel3, 1, 0);
+            this.tableLayoutPanel4.Controls.Add(this.gunaGradient2Panel1, 0, 0);
+            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 1;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(1021, 135);
+            this.tableLayoutPanel4.TabIndex = 0;
+            // 
+            // gunaGradient2Panel2
+            // 
+            this.gunaGradient2Panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gunaGradient2Panel2.BackColor = System.Drawing.Color.Transparent;
+            this.gunaGradient2Panel2.Controls.Add(this.gunaGradient2Panel6);
+            this.gunaGradient2Panel2.Controls.Add(this.customerNumLb);
+            this.gunaGradient2Panel2.Controls.Add(this.label6);
+            this.gunaGradient2Panel2.GradientColor1 = System.Drawing.Color.White;
+            this.gunaGradient2Panel2.GradientColor2 = System.Drawing.Color.White;
+            this.gunaGradient2Panel2.Location = new System.Drawing.Point(683, 4);
+            this.gunaGradient2Panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.gunaGradient2Panel2.Name = "gunaGradient2Panel2";
+            this.gunaGradient2Panel2.Radius = 16;
+            this.gunaGradient2Panel2.Size = new System.Drawing.Size(335, 127);
+            this.gunaGradient2Panel2.TabIndex = 24;
+            // 
+            // gunaGradient2Panel6
+            // 
+            this.gunaGradient2Panel6.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.gunaGradient2Panel6.BackColor = System.Drawing.Color.Transparent;
+            this.gunaGradient2Panel6.Controls.Add(this.pictureBox3);
+            this.gunaGradient2Panel6.GradientColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.gunaGradient2Panel6.GradientColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.gunaGradient2Panel6.Location = new System.Drawing.Point(261, 30);
+            this.gunaGradient2Panel6.Name = "gunaGradient2Panel6";
+            this.gunaGradient2Panel6.Radius = 12;
+            this.gunaGradient2Panel6.Size = new System.Drawing.Size(64, 64);
+            this.gunaGradient2Panel6.TabIndex = 9;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(16, 16);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 0;
+            this.pictureBox3.TabStop = false;
+            // 
+            // customerNumLb
+            // 
+            this.customerNumLb.AutoSize = true;
+            this.customerNumLb.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customerNumLb.ForeColor = System.Drawing.Color.Black;
+            this.customerNumLb.Location = new System.Drawing.Point(13, 64);
+            this.customerNumLb.Name = "customerNumLb";
+            this.customerNumLb.Size = new System.Drawing.Size(0, 25);
+            this.customerNumLb.TabIndex = 8;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(174)))), ((int)(((byte)(192)))));
+            this.label6.Location = new System.Drawing.Point(13, 30);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(230, 21);
+            this.label6.TabIndex = 6;
+            this.label6.Text = "Tổng số khách hàng 6 tháng gần đây";
+            // 
+            // gunaGradient2Panel3
+            // 
+            this.gunaGradient2Panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gunaGradient2Panel3.BackColor = System.Drawing.Color.Transparent;
+            this.gunaGradient2Panel3.Controls.Add(this.gunaGradient2Panel5);
+            this.gunaGradient2Panel3.Controls.Add(this.bookSoldLb);
+            this.gunaGradient2Panel3.Controls.Add(this.label4);
+            this.gunaGradient2Panel3.GradientColor1 = System.Drawing.Color.White;
+            this.gunaGradient2Panel3.GradientColor2 = System.Drawing.Color.White;
+            this.gunaGradient2Panel3.Location = new System.Drawing.Point(343, 4);
+            this.gunaGradient2Panel3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.gunaGradient2Panel3.Name = "gunaGradient2Panel3";
+            this.gunaGradient2Panel3.Radius = 16;
+            this.gunaGradient2Panel3.Size = new System.Drawing.Size(334, 127);
+            this.gunaGradient2Panel3.TabIndex = 25;
+            // 
+            // gunaGradient2Panel5
+            // 
+            this.gunaGradient2Panel5.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.gunaGradient2Panel5.BackColor = System.Drawing.Color.Transparent;
+            this.gunaGradient2Panel5.Controls.Add(this.pictureBox2);
+            this.gunaGradient2Panel5.GradientColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.gunaGradient2Panel5.GradientColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.gunaGradient2Panel5.Location = new System.Drawing.Point(255, 30);
+            this.gunaGradient2Panel5.Name = "gunaGradient2Panel5";
+            this.gunaGradient2Panel5.Radius = 12;
+            this.gunaGradient2Panel5.Size = new System.Drawing.Size(64, 64);
+            this.gunaGradient2Panel5.TabIndex = 6;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(16, 16);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
+            // 
+            // bookSoldLb
+            // 
+            this.bookSoldLb.AutoSize = true;
+            this.bookSoldLb.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bookSoldLb.ForeColor = System.Drawing.Color.Black;
+            this.bookSoldLb.Location = new System.Drawing.Point(15, 64);
+            this.bookSoldLb.Name = "bookSoldLb";
+            this.bookSoldLb.Size = new System.Drawing.Size(0, 25);
+            this.bookSoldLb.TabIndex = 5;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(174)))), ((int)(((byte)(192)))));
+            this.label4.Location = new System.Drawing.Point(15, 30);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(232, 21);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Tổng số sách đã bán 6 tháng gần đây";
+            // 
+            // gunaGradient2Panel1
+            // 
+            this.gunaGradient2Panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gunaGradient2Panel1.BackColor = System.Drawing.Color.Transparent;
+            this.gunaGradient2Panel1.Controls.Add(this.gunaGradient2Panel4);
+            this.gunaGradient2Panel1.Controls.Add(this.revenueLb);
+            this.gunaGradient2Panel1.Controls.Add(this.label8);
+            this.gunaGradient2Panel1.GradientColor1 = System.Drawing.Color.White;
+            this.gunaGradient2Panel1.GradientColor2 = System.Drawing.Color.White;
+            this.gunaGradient2Panel1.Location = new System.Drawing.Point(3, 4);
+            this.gunaGradient2Panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.gunaGradient2Panel1.Name = "gunaGradient2Panel1";
+            this.gunaGradient2Panel1.Radius = 16;
+            this.gunaGradient2Panel1.Size = new System.Drawing.Size(334, 127);
+            this.gunaGradient2Panel1.TabIndex = 23;
+            // 
+            // gunaGradient2Panel4
+            // 
+            this.gunaGradient2Panel4.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.gunaGradient2Panel4.BackColor = System.Drawing.Color.Transparent;
+            this.gunaGradient2Panel4.Controls.Add(this.pictureBox4);
+            this.gunaGradient2Panel4.GradientColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.gunaGradient2Panel4.GradientColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.gunaGradient2Panel4.Location = new System.Drawing.Point(255, 26);
+            this.gunaGradient2Panel4.Name = "gunaGradient2Panel4";
+            this.gunaGradient2Panel4.Radius = 12;
+            this.gunaGradient2Panel4.Size = new System.Drawing.Size(64, 64);
+            this.gunaGradient2Panel4.TabIndex = 3;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(16, 16);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 0;
+            this.pictureBox4.TabStop = false;
+            // 
+            // revenueLb
+            // 
+            this.revenueLb.AutoSize = true;
+            this.revenueLb.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.revenueLb.ForeColor = System.Drawing.Color.Black;
+            this.revenueLb.Location = new System.Drawing.Point(16, 64);
+            this.revenueLb.Name = "revenueLb";
+            this.revenueLb.Size = new System.Drawing.Size(0, 25);
+            this.revenueLb.TabIndex = 2;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(174)))), ((int)(((byte)(192)))));
+            this.label8.Location = new System.Drawing.Point(16, 30);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(207, 21);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "Tổng doanh thu 6 tháng gần đây";
+            // 
+            // panel5
+            // 
+            this.panel5.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.panel5.Controls.Add(this.closeBtn);
+            this.panel5.Location = new System.Drawing.Point(950, 0);
+            this.panel5.Margin = new System.Windows.Forms.Padding(0);
+            this.panel5.Name = "panel5";
+            this.panel5.Padding = new System.Windows.Forms.Padding(10, 30, 10, 30);
+            this.panel5.Size = new System.Drawing.Size(68, 107);
+            this.panel5.TabIndex = 58;
+            // 
+            // closeBtn
+            // 
+            this.closeBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.closeBtn.Image = ((System.Drawing.Image)(resources.GetObject("closeBtn.Image")));
+            this.closeBtn.Location = new System.Drawing.Point(10, 30);
+            this.closeBtn.Margin = new System.Windows.Forms.Padding(20, 8, 0, 0);
+            this.closeBtn.Name = "closeBtn";
+            this.closeBtn.Size = new System.Drawing.Size(48, 47);
+            this.closeBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.closeBtn.TabIndex = 56;
+            this.closeBtn.TabStop = false;
             // 
             // gradientPanel1
             // 
@@ -688,420 +1090,18 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             this.label1.Text = "$";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // tableLayoutPanel3
-            // 
-            this.tableLayoutPanel3.ColumnCount = 2;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.62025F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80.37975F));
-            this.tableLayoutPanel3.Controls.Add(this.toDateCkb, 0, 1);
-            this.tableLayoutPanel3.Controls.Add(this.fromDate, 1, 0);
-            this.tableLayoutPanel3.Controls.Add(this.fromDateCkb, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.toDate, 1, 1);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(613, 0);
-            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(0, 8, 5, 0);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 2;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(316, 107);
-            this.tableLayoutPanel3.TabIndex = 1;
-            // 
-            // toDateCkb
-            // 
-            this.toDateCkb.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.toDateCkb.BaseColor = System.Drawing.Color.White;
-            this.toDateCkb.CheckedOffColor = System.Drawing.Color.Gray;
-            this.toDateCkb.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.toDateCkb.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.toDateCkb.FillColor = System.Drawing.Color.White;
-            this.toDateCkb.Location = new System.Drawing.Point(3, 70);
-            this.toDateCkb.Name = "toDateCkb";
-            this.toDateCkb.Size = new System.Drawing.Size(50, 20);
-            this.toDateCkb.TabIndex = 1;
-            this.toDateCkb.Text = "Đến";
-            this.toDateCkb.CheckedChanged += new System.EventHandler(this.toDateCkb_CheckedChanged);
-            // 
-            // fromDate
-            // 
-            this.fromDate.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.fromDate.Animated = true;
-            this.fromDate.AutoRoundedCorners = true;
-            this.fromDate.BackColor = System.Drawing.Color.Transparent;
-            this.fromDate.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.fromDate.BorderRadius = 15;
-            this.fromDate.BorderThickness = 1;
-            this.fromDate.CheckedState.BorderColor = System.Drawing.Color.White;
-            this.fromDate.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.fromDate.CheckedState.ForeColor = System.Drawing.Color.Black;
-            this.fromDate.CheckedState.Parent = this.fromDate;
-            this.fromDate.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.fromDate.CustomFormat = "dd / MM / yyyy";
-            this.fromDate.Enabled = false;
-            this.fromDate.FillColor = System.Drawing.Color.White;
-            this.fromDate.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(159)))), ((int)(((byte)(147)))));
-            this.fromDate.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.fromDate.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.fromDate.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(251)))), ((int)(((byte)(249)))));
-            this.fromDate.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.fromDate.HoverState.Parent = this.fromDate;
-            this.fromDate.Location = new System.Drawing.Point(64, 10);
-            this.fromDate.MaxDate = new System.DateTime(2050, 12, 31, 0, 0, 0, 0);
-            this.fromDate.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
-            this.fromDate.Name = "fromDate";
-            this.fromDate.ShadowDecoration.Parent = this.fromDate;
-            this.fromDate.Size = new System.Drawing.Size(248, 32);
-            this.fromDate.TabIndex = 52;
-            this.fromDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.fromDate.Value = new System.DateTime(2000, 11, 1, 0, 0, 0, 0);
-            this.fromDate.ValueChanged += new System.EventHandler(this.fromDate_ValueChanged);
-            // 
-            // fromDateCkb
-            // 
-            this.fromDateCkb.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.fromDateCkb.BaseColor = System.Drawing.Color.White;
-            this.fromDateCkb.CheckedOffColor = System.Drawing.Color.Gray;
-            this.fromDateCkb.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.fromDateCkb.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.fromDateCkb.FillColor = System.Drawing.Color.White;
-            this.fromDateCkb.Location = new System.Drawing.Point(3, 16);
-            this.fromDateCkb.Name = "fromDateCkb";
-            this.fromDateCkb.Size = new System.Drawing.Size(43, 20);
-            this.fromDateCkb.TabIndex = 0;
-            this.fromDateCkb.Text = "Từ";
-            this.fromDateCkb.CheckedChanged += new System.EventHandler(this.fromDateCkb_CheckedChanged);
-            // 
-            // toDate
-            // 
-            this.toDate.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.toDate.Animated = true;
-            this.toDate.AutoRoundedCorners = true;
-            this.toDate.BackColor = System.Drawing.Color.White;
-            this.toDate.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.toDate.BorderRadius = 15;
-            this.toDate.BorderThickness = 1;
-            this.toDate.CheckedState.BorderColor = System.Drawing.Color.White;
-            this.toDate.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.toDate.CheckedState.ForeColor = System.Drawing.Color.Black;
-            this.toDate.CheckedState.Parent = this.toDate;
-            this.toDate.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.toDate.CustomFormat = "dd / MM / yyyy";
-            this.toDate.Enabled = false;
-            this.toDate.FillColor = System.Drawing.Color.White;
-            this.toDate.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(159)))), ((int)(((byte)(147)))));
-            this.toDate.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.toDate.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.toDate.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(251)))), ((int)(((byte)(249)))));
-            this.toDate.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.toDate.HoverState.Parent = this.toDate;
-            this.toDate.Location = new System.Drawing.Point(64, 64);
-            this.toDate.MaxDate = new System.DateTime(2050, 12, 31, 0, 0, 0, 0);
-            this.toDate.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
-            this.toDate.Name = "toDate";
-            this.toDate.ShadowDecoration.Parent = this.toDate;
-            this.toDate.Size = new System.Drawing.Size(248, 32);
-            this.toDate.TabIndex = 55;
-            this.toDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.toDate.Value = new System.DateTime(2023, 10, 29, 0, 0, 0, 0);
-            this.toDate.ValueChanged += new System.EventHandler(this.toDate_ValueChanged);
-            // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.closeBtn);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel5.Location = new System.Drawing.Point(932, 0);
-            this.panel5.Margin = new System.Windows.Forms.Padding(0);
-            this.panel5.Name = "panel5";
-            this.panel5.Padding = new System.Windows.Forms.Padding(10, 30, 10, 30);
-            this.panel5.Size = new System.Drawing.Size(68, 107);
-            this.panel5.TabIndex = 57;
-            // 
-            // closeBtn
-            // 
-            this.closeBtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.closeBtn.Image = ((System.Drawing.Image)(resources.GetObject("closeBtn.Image")));
-            this.closeBtn.Location = new System.Drawing.Point(10, 30);
-            this.closeBtn.Margin = new System.Windows.Forms.Padding(20, 8, 0, 0);
-            this.closeBtn.Name = "closeBtn";
-            this.closeBtn.Size = new System.Drawing.Size(48, 47);
-            this.closeBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.closeBtn.TabIndex = 56;
-            this.closeBtn.TabStop = false;
-            this.closeBtn.Click += new System.EventHandler(this.closeBtn_Click);
-            // 
-            // chartPanel
-            // 
-            this.chartPanel.Controls.Add(this.panel7);
-            this.chartPanel.Controls.Add(this.panel6);
-            this.chartPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.chartPanel.Location = new System.Drawing.Point(0, 0);
-            this.chartPanel.Name = "chartPanel";
-            this.chartPanel.Size = new System.Drawing.Size(1000, 489);
-            this.chartPanel.TabIndex = 40;
-            // 
-            // panel7
-            // 
-            this.panel7.Controls.Add(this.elementHost1);
-            this.panel7.Controls.Add(this.panel8);
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel7.Location = new System.Drawing.Point(0, 135);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(1000, 354);
-            this.panel7.TabIndex = 23;
-            // 
-            // elementHost1
-            // 
-            this.elementHost1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.elementHost1.Location = new System.Drawing.Point(0, 41);
-            this.elementHost1.Name = "elementHost1";
-            this.elementHost1.Size = new System.Drawing.Size(1000, 313);
-            this.elementHost1.TabIndex = 22;
-            this.elementHost1.Text = "elementHost1";
-            this.elementHost1.Child = this.cartesianChart1;
-            // 
-            // panel8
-            // 
-            this.panel8.Controls.Add(this.label7);
-            this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel8.Location = new System.Drawing.Point(0, 0);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(1000, 41);
-            this.panel8.TabIndex = 0;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(5, 7);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(160, 28);
-            this.label7.TabIndex = 20;
-            this.label7.Text = "BIỂU ĐỒ THỐNG KÊ";
-            // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.tableLayoutPanel4);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel6.Location = new System.Drawing.Point(0, 0);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1000, 135);
-            this.panel6.TabIndex = 22;
-            // 
-            // tableLayoutPanel4
-            // 
-            this.tableLayoutPanel4.ColumnCount = 3;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel4.Controls.Add(this.gunaGradient2Panel2, 2, 0);
-            this.tableLayoutPanel4.Controls.Add(this.gunaGradient2Panel3, 1, 0);
-            this.tableLayoutPanel4.Controls.Add(this.gunaGradient2Panel1, 0, 0);
-            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
-            this.tableLayoutPanel4.RowCount = 1;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(1000, 135);
-            this.tableLayoutPanel4.TabIndex = 0;
-            // 
-            // gunaGradient2Panel2
-            // 
-            this.gunaGradient2Panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.gunaGradient2Panel2.BackColor = System.Drawing.Color.Transparent;
-            this.gunaGradient2Panel2.Controls.Add(this.gunaGradient2Panel6);
-            this.gunaGradient2Panel2.Controls.Add(this.customerNumLb);
-            this.gunaGradient2Panel2.Controls.Add(this.label6);
-            this.gunaGradient2Panel2.GradientColor1 = System.Drawing.Color.White;
-            this.gunaGradient2Panel2.GradientColor2 = System.Drawing.Color.White;
-            this.gunaGradient2Panel2.Location = new System.Drawing.Point(669, 4);
-            this.gunaGradient2Panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.gunaGradient2Panel2.Name = "gunaGradient2Panel2";
-            this.gunaGradient2Panel2.Radius = 16;
-            this.gunaGradient2Panel2.Size = new System.Drawing.Size(328, 127);
-            this.gunaGradient2Panel2.TabIndex = 24;
-            // 
-            // gunaGradient2Panel6
-            // 
-            this.gunaGradient2Panel6.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.gunaGradient2Panel6.BackColor = System.Drawing.Color.Transparent;
-            this.gunaGradient2Panel6.Controls.Add(this.pictureBox3);
-            this.gunaGradient2Panel6.GradientColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.gunaGradient2Panel6.GradientColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.gunaGradient2Panel6.Location = new System.Drawing.Point(254, 30);
-            this.gunaGradient2Panel6.Name = "gunaGradient2Panel6";
-            this.gunaGradient2Panel6.Radius = 12;
-            this.gunaGradient2Panel6.Size = new System.Drawing.Size(64, 64);
-            this.gunaGradient2Panel6.TabIndex = 9;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(16, 16);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(32, 32);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 0;
-            this.pictureBox3.TabStop = false;
-            // 
-            // customerNumLb
-            // 
-            this.customerNumLb.AutoSize = true;
-            this.customerNumLb.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customerNumLb.ForeColor = System.Drawing.Color.Black;
-            this.customerNumLb.Location = new System.Drawing.Point(13, 64);
-            this.customerNumLb.Name = "customerNumLb";
-            this.customerNumLb.Size = new System.Drawing.Size(0, 25);
-            this.customerNumLb.TabIndex = 8;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(174)))), ((int)(((byte)(192)))));
-            this.label6.Location = new System.Drawing.Point(13, 30);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(230, 21);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "Tổng số khách hàng 6 tháng gần đây";
-            // 
-            // gunaGradient2Panel3
-            // 
-            this.gunaGradient2Panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.gunaGradient2Panel3.BackColor = System.Drawing.Color.Transparent;
-            this.gunaGradient2Panel3.Controls.Add(this.gunaGradient2Panel5);
-            this.gunaGradient2Panel3.Controls.Add(this.bookSoldLb);
-            this.gunaGradient2Panel3.Controls.Add(this.label4);
-            this.gunaGradient2Panel3.GradientColor1 = System.Drawing.Color.White;
-            this.gunaGradient2Panel3.GradientColor2 = System.Drawing.Color.White;
-            this.gunaGradient2Panel3.Location = new System.Drawing.Point(336, 4);
-            this.gunaGradient2Panel3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.gunaGradient2Panel3.Name = "gunaGradient2Panel3";
-            this.gunaGradient2Panel3.Radius = 16;
-            this.gunaGradient2Panel3.Size = new System.Drawing.Size(327, 127);
-            this.gunaGradient2Panel3.TabIndex = 25;
-            // 
-            // gunaGradient2Panel5
-            // 
-            this.gunaGradient2Panel5.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.gunaGradient2Panel5.BackColor = System.Drawing.Color.Transparent;
-            this.gunaGradient2Panel5.Controls.Add(this.pictureBox2);
-            this.gunaGradient2Panel5.GradientColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.gunaGradient2Panel5.GradientColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.gunaGradient2Panel5.Location = new System.Drawing.Point(248, 30);
-            this.gunaGradient2Panel5.Name = "gunaGradient2Panel5";
-            this.gunaGradient2Panel5.Radius = 12;
-            this.gunaGradient2Panel5.Size = new System.Drawing.Size(64, 64);
-            this.gunaGradient2Panel5.TabIndex = 6;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(16, 16);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(32, 32);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
-            // 
-            // bookSoldLb
-            // 
-            this.bookSoldLb.AutoSize = true;
-            this.bookSoldLb.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bookSoldLb.ForeColor = System.Drawing.Color.Black;
-            this.bookSoldLb.Location = new System.Drawing.Point(15, 64);
-            this.bookSoldLb.Name = "bookSoldLb";
-            this.bookSoldLb.Size = new System.Drawing.Size(0, 25);
-            this.bookSoldLb.TabIndex = 5;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(174)))), ((int)(((byte)(192)))));
-            this.label4.Location = new System.Drawing.Point(15, 30);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(232, 21);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Tổng số sách đã bán 6 tháng gần đây";
-            // 
-            // gunaGradient2Panel1
-            // 
-            this.gunaGradient2Panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.gunaGradient2Panel1.BackColor = System.Drawing.Color.Transparent;
-            this.gunaGradient2Panel1.Controls.Add(this.gunaGradient2Panel4);
-            this.gunaGradient2Panel1.Controls.Add(this.revenueLb);
-            this.gunaGradient2Panel1.Controls.Add(this.label8);
-            this.gunaGradient2Panel1.GradientColor1 = System.Drawing.Color.White;
-            this.gunaGradient2Panel1.GradientColor2 = System.Drawing.Color.White;
-            this.gunaGradient2Panel1.Location = new System.Drawing.Point(3, 4);
-            this.gunaGradient2Panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.gunaGradient2Panel1.Name = "gunaGradient2Panel1";
-            this.gunaGradient2Panel1.Radius = 16;
-            this.gunaGradient2Panel1.Size = new System.Drawing.Size(327, 127);
-            this.gunaGradient2Panel1.TabIndex = 23;
-            // 
-            // gunaGradient2Panel4
-            // 
-            this.gunaGradient2Panel4.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.gunaGradient2Panel4.BackColor = System.Drawing.Color.Transparent;
-            this.gunaGradient2Panel4.Controls.Add(this.pictureBox4);
-            this.gunaGradient2Panel4.GradientColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.gunaGradient2Panel4.GradientColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.gunaGradient2Panel4.Location = new System.Drawing.Point(248, 26);
-            this.gunaGradient2Panel4.Name = "gunaGradient2Panel4";
-            this.gunaGradient2Panel4.Radius = 12;
-            this.gunaGradient2Panel4.Size = new System.Drawing.Size(64, 64);
-            this.gunaGradient2Panel4.TabIndex = 3;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(16, 16);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(32, 32);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 0;
-            this.pictureBox4.TabStop = false;
-            // 
-            // revenueLb
-            // 
-            this.revenueLb.AutoSize = true;
-            this.revenueLb.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.revenueLb.ForeColor = System.Drawing.Color.Black;
-            this.revenueLb.Location = new System.Drawing.Point(16, 64);
-            this.revenueLb.Name = "revenueLb";
-            this.revenueLb.Size = new System.Drawing.Size(0, 25);
-            this.revenueLb.TabIndex = 2;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(174)))), ((int)(((byte)(192)))));
-            this.label8.Location = new System.Drawing.Point(16, 30);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(207, 21);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "Tổng doanh thu 6 tháng gần đây";
-            // 
             // RevenueStatisticGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
-            this.ClientSize = new System.Drawing.Size(1000, 547);
+            this.ClientSize = new System.Drawing.Size(1021, 602);
             this.Controls.Add(this.tablePanel);
             this.Controls.Add(this.chartPanel);
             this.Controls.Add(this.optionPanel);
             this.Font = new System.Drawing.Font("#9Slide03 Cabin", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.MinimumSize = new System.Drawing.Size(1000, 0);
             this.Name = "RevenueStatisticGUI";
             this.ShowInTaskbar = false;
             this.Text = "RevenueStatisticGUI";
@@ -1118,11 +1118,8 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.flowLayoutPanel3.ResumeLayout(false);
             this.flowLayoutPanel3.PerformLayout();
-            this.gradientPanel1.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.closeBtn)).EndInit();
             this.chartPanel.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
@@ -1141,6 +1138,9 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             this.gunaGradient2Panel1.PerformLayout();
             this.gunaGradient2Panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            this.panel5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.closeBtn)).EndInit();
+            this.gradientPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
 		}
@@ -1184,8 +1184,6 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 		private System.Windows.Forms.PictureBox pictureBox4;
 		private Label revenueLb;
 		private Label label8;
-		private System.Windows.Forms.Panel panel5;
-		private System.Windows.Forms.PictureBox closeBtn;
 		private System.Windows.Forms.Panel panel2;
 		private TableLayoutPanel tableLayoutPanel5;
 		private FlowLayoutPanel flowLayoutPanel2;
@@ -1205,5 +1203,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 		private Guna.UI2.WinForms.Guna2DateTimePicker fromDate;
 		private Guna.UI.WinForms.GunaCheckBox fromDateCkb;
 		private Guna.UI2.WinForms.Guna2DateTimePicker toDate;
-	}
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.PictureBox closeBtn;
+    }
 }
