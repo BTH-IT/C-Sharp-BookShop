@@ -132,7 +132,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             }
             try
             {
-                string[] headerList = new string[] { "Mã Thể Loại, Tên Thể Loại" };
+                string[] headerList = new string[] { "Mã Thể Loại" , "Tên Thể Loại" };
 
                 DataTable dt = CustomExcel.Instance.ConvertDataGridViewToDataTable(dgvBookType);
 

@@ -111,8 +111,57 @@ namespace QuanLyCuaHangBanSach
             }
             return true;
         }
+		public bool checkTextboxMatchWithOtherTextBox(Guna2TextBox txt1, Guna2TextBox txt2, string errMsg, Label errMsgLbl, Panel line,string option)
+		{
+            try
+            {
+				if (txt1.Text.Trim().Length != 0 && txt2.Text.Trim().Length != 0)
+				{
+					
+					switch (option)
+					{
 
-        public bool checkTextboxWithRegex(Guna2TextBox txt, Regex regex, string errMsg, Label errMsgLbl, Panel line)
+						case "before":
+							decimal priceA = decimal.Parse(txt1.Text);
+							decimal priceB = decimal.Parse(txt2.Text);
+							if (priceA >= priceB) 
+                            {
+								errMsgLbl.Text = errMsg;
+								line.BackColor = Color.FromArgb(239, 68, 68);
+								return false;
+                            }
+                            else
+                            {
+                                return true;
+                            }
+							break;
+                        case "after":
+							decimal price1 = decimal.Parse(txt1.Text);
+							decimal price2 = decimal.Parse(txt2.Text);
+							if (price1 <=   price2)
+							{
+								errMsgLbl.Text = errMsg;
+								line.BackColor = Color.FromArgb(239, 68, 68);
+								return false;
+							}
+							else
+							{
+								return true;
+							}
+							break;
+
+					}
+				}
+                return true;
+			}
+            catch
+            {
+
+            }
+			
+			return true;
+		}
+		public bool checkTextboxWithRegex(Guna2TextBox txt, Regex regex, string errMsg, Label errMsgLbl, Panel line)
         {
             if (!regex.IsMatch(txt.Text.ToString().Trim()))
             {

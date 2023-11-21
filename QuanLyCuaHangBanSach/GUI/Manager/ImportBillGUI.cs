@@ -363,7 +363,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
             try
             {
-                string[] headerList = new string[] { "Mã điwn", "Nhà cung cấp", "Nhân viên", "Ngày lập", "Tổng tiền" };
+                string[] headerList = new string[] { "Mã đơn", "Nhà cung cấp", "Nhân viên", "Ngày lập","Phần trăm lợi nhuận", "Tổng tiền" };
 
                 DataTable dt = CustomExcel.Instance.ConvertDataGridViewToDataTable(dgvImportBill);
 
