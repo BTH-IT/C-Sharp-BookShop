@@ -97,7 +97,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 this.birthYear,
                     this.birthYearMsg,
                     this.birthYearLine,
-                    new string[] { "required", "positive-number", "max-curent-year", "space" }
+                    new string[] { "required", "positive-number", "max-current-year", "space" }
             );
 
 

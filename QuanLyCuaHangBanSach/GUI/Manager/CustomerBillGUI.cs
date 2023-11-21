@@ -149,7 +149,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                 customerList.Insert(1, new CustomerDTO(0, "", "Vãng lai", 0, "Vãng lai", 0));
 
                 this.customerCbx.ValueMember = "Ma";
-                this.customerCbx.DisplayMember = "SoDienThoai";
+                this.customerCbx.DisplayMember = "Ten";
                 this.customerCbx.DataSource = customerList;
 
                 this.customerCbx.SelectedIndex = 0;

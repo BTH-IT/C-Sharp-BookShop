@@ -12,40 +12,9 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 {
     public partial class PositionManageGUI : Form
     {
-        private CheckBox headerCheckbox;
-
         public PositionManageGUI()
         {
             InitializeComponent();
-        }
-
-        private void renderCheckBoxDgv()
-        {
-            try
-            {
-                int size = 25;
-
-                Rectangle rect = this.dgvPosition.GetCellDisplayRectangle(0, -1, false);
-
-                headerCheckbox = new CheckBox();
-
-                headerCheckbox.BackColor = Color.FromArgb(45, 210, 192);
-                headerCheckbox.Name = "chkHeader";
-                headerCheckbox.Size = new Size(size, size);
-                headerCheckbox.TabStop = false;
-
-                rect.X = (rect.Width / 2) - (size / 4);
-                rect.Y = (rect.Height / 2) - (size / 2);
-
-                headerCheckbox.Location = rect.Location;
-
-
-                this.dgvPosition.Controls.Add(headerCheckbox);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex);
-            }
         }
 
         private void loadPositionListToDataView(List<PositionDTO> positionList)
@@ -60,12 +29,11 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                 foreach (PositionDTO position in positionList)
                 {
                     this.dgvPosition.Rows.Add(new object[] {
-                    false,
-                    position.MaChucVu,
-                    position.TenChucVu,
-                    position.MoTa,
-                    position.TrangThai ? "Đang hoạt động" : "Ngưng hoạt động",
-                });
+                        position.MaChucVu,
+                        position.TenChucVu,
+                        position.MoTa,
+                        position.TrangThai ? "Đang hoạt động" : "Ngưng hoạt động",
+                    });
                 }
             }
             catch (Exception ex)
@@ -84,25 +52,6 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                 List<PositionDTO> positionList = PositionBUS.Instance.getAllData();
                 this.loadPositionListToDataView(positionList);
 
-                this.renderCheckBoxDgv();
-                headerCheckbox.MouseClick += new MouseEventHandler(headerCheckbox_Clicked);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex);
-            }
-        }
-
-        private void headerCheckbox_Clicked(object sender, EventArgs e)
-        {
-            try
-            {
-                foreach (DataGridViewRow row in this.dgvPosition.Rows)
-                {
-                    row.Cells[0].Value = headerCheckbox.Checked;
-                }
-
-                this.dgvPosition.RefreshEdit();
             }
             catch (Exception ex)
             {
@@ -162,7 +111,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                 {
                     DataGridViewRow row = this.dgvPosition.Rows[this.dgvPosition.CurrentCell.RowIndex];
 
-                    PositionDTO position = PositionBUS.Instance.getById(row.Cells[1].Value.ToString());
+                    PositionDTO position = PositionBUS.Instance.getById(row.Cells[0].Value.ToString());
 
                     positionModal.updatePosition = position;
 
@@ -192,7 +141,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         {
             try
             {
-                if (e.RowIndex < 0 || e.ColumnIndex <= 0)
+                if (e.RowIndex < 0 || e.ColumnIndex < 0)
                 {
                     return;
                 }
@@ -201,7 +150,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                 {
                     DataGridViewRow row = this.dgvPosition.Rows[e.RowIndex];
 
-                    PositionDTO position = PositionBUS.Instance.getById(row.Cells[1].Value.ToString());
+                    PositionDTO position = PositionBUS.Instance.getById(row.Cells[0].Value.ToString());
 
                     positionModal.updatePosition = position;
 

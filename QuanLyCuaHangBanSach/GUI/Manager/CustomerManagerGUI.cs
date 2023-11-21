@@ -12,33 +12,12 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 {
 	public partial class CustomerManagerGUI : Form
     {
-        private CheckBox headerCheckbox;
         string[] genders = new string[] { "Tất cả giới tính", "Nam", "Nữ" };
         public CustomerManagerGUI()
         {
             InitializeComponent();
         }
-        private void renderCheckBoxDgv()
-        {
-            int size = 25;
-
-            Rectangle rect = this.dgvCustomer.GetCellDisplayRectangle(0, -1, false);
-
-            headerCheckbox = new CheckBox();
-
-            headerCheckbox.BackColor = Color.FromArgb(45, 210, 192);
-            headerCheckbox.Name = "chkHeader";
-            headerCheckbox.Size = new Size(size, size);
-            headerCheckbox.TabStop = false;
-
-            rect.X = (rect.Width / 2) - (size / 4);
-            rect.Y = (rect.Height / 2) - (size / 2);
-
-            headerCheckbox.Location = rect.Location;
-
-
-            this.dgvCustomer.Controls.Add(headerCheckbox);
-        }
+       
         private void loadCustomerListToDataGridView(List<CustomerDTO> customers)
         {
             this.dgvCustomer.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(45, 210, 192);
@@ -52,7 +31,6 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 					{
 						this.dgvCustomer.Rows.Add(new object[]
 						{
-							false,
 							customer.Ma,
 							customer.Ten,
 							customer.GioiTinh,
@@ -78,8 +56,6 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                 this.genderCbx.Items.AddRange(genders);
                 this.genderCbx.SelectedIndex = 0;
 				this.loadCustomerListToDataGridView(customerList);
-                this.renderCheckBoxDgv();
-				headerCheckbox.MouseClick += new MouseEventHandler(headerCheckbox_Clicked);
 			}
             catch
             {
@@ -87,15 +63,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             }
            
         }
-        private void headerCheckbox_Clicked(object sender, EventArgs e)
-        {
-            foreach (DataGridViewRow row in this.dgvCustomer.Rows)
-            {
-                row.Cells[0].Value = headerCheckbox.Checked;
-            }
-
-            this.dgvCustomer.RefreshEdit();
-        }
+       
         private void btnEdit_Click(object sender, EventArgs e)
         {
             try
@@ -109,7 +77,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 				{
 					DataGridViewRow selectedRow = this.dgvCustomer.Rows[this.dgvCustomer.CurrentCell.RowIndex];
 
-					CustomerDTO customer = CustomerBUS.Instance.getById(selectedRow.Cells[1].Value.ToString());
+					CustomerDTO customer = CustomerBUS.Instance.getById(selectedRow.Cells[0].Value.ToString());
 
 					if (customer == null)
 					{
@@ -275,7 +243,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         {
             try
             {
-				if (e.RowIndex < 0 || e.ColumnIndex <= 0)
+				if (e.RowIndex < 0 || e.ColumnIndex < 0)
 				{
 					return;
 				}
@@ -283,7 +251,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 				{
 					DataGridViewRow selectedRow = this.dgvCustomer.Rows[this.dgvCustomer.CurrentCell.RowIndex];
 
-					CustomerDTO customer = CustomerBUS.Instance.getById(selectedRow.Cells[1].Value.ToString());
+					CustomerDTO customer = CustomerBUS.Instance.getById(selectedRow.Cells[0].Value.ToString());
 
 					if (customer == null)
 					{
