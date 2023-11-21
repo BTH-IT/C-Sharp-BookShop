@@ -109,6 +109,14 @@ namespace QuanLyCuaHangBanSach.DAO
                         new MySqlParameter("@giaNhap", data.DonGia),
                         new MySqlParameter("@maSach", data.MaSach),
                     });
+            } else
+            {
+                rowChanged = DataProvider.Instance.ExecuteNonQuery(sql,
+                    new MySqlParameter[] {
+                        new MySqlParameter("@giaBan", book.GiaBan),
+                        new MySqlParameter("@giaNhap", data.DonGia),
+                        new MySqlParameter("@maSach", data.MaSach),
+                    });
             }
 
             // thêm sách
