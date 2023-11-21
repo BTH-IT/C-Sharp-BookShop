@@ -107,8 +107,7 @@ namespace QuanLyCuaHangBanSach.GUI
 
             this.email = "";
             this.Hide();
-            LoginGUI login = new LoginGUI();
-            login.Show();
+            LoginGUI.Instance.Show();
         }
 
         private void customButton1_Click(object sender, EventArgs e)

@@ -170,11 +170,11 @@ namespace QuanLyCuaHangBanSach.GUI
 			if (isMenuValid)
             {
 				Instance.Hide();
-            }
+			}
             else
             {
                 menu.Hide();
-            }
+			}
 
 		}
 
