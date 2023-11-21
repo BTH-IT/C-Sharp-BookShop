@@ -174,6 +174,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                     else
                     {
                         AccountDTO account = new AccountDTO(maNhanVien, email, password);
+                        this.account.MatKhau = password;
                         bool isSuccess = this.account != null ? AccountBUS.Instance.update(this.account, email) : AccountBUS.Instance.insert(account);
 
                         if (isSuccess)
