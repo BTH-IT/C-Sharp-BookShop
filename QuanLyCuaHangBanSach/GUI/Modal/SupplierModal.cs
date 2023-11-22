@@ -42,7 +42,6 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                             this.nameLine,
                             SupplierBUS.Instance.checkDuplicateName(this.Suppliertxt.Text)
                         );
-                        Console.WriteLine("ssss");   
                     }
                     else
                     {
@@ -74,11 +73,22 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
                 if (isSupplier)
                 {
-                    isSupplier = CustomValidation.Instance.checkDuplicateName(
-                        this.supplierNameMsg,
-                        this.nameLine,
-						SupplierBUS.Instance.checkDuplicateName(this.Suppliertxt.Text)
-                    );
+                    if (updateSupplier == null)
+                    {
+                        isSupplier = CustomValidation.Instance.checkDuplicateName(
+                            this.supplierNameMsg,
+                            this.nameLine,
+                            SupplierBUS.Instance.checkDuplicateName(this.Suppliertxt.Text)
+                        );
+                    }
+                    else
+                    {
+                        isSupplier = CustomValidation.Instance.checkDuplicateName(
+                            this.supplierNameMsg,
+                            this.nameLine,
+                            SupplierBUS.Instance.checkDuplicateName(this.Suppliertxt.Text, updateSupplier.MaNhaCungCap)
+                        );
+                    }
                 }
 
                 bool isCheckTxt2 = CustomValidation.Instance.checkTextbox(
@@ -128,14 +138,14 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 if (isSuccess)
                 {
                     this.isSubmitSuccess = isSuccess;
-                    MessageBox.Show(updateSupplier != null ? "Update Success" : "Insert Success");
+                    MessageBox.Show(updateSupplier != null ? "Sửa thành công" : "Thêm thành công");
                     this.Close();
                     return;
                 }
 
                 this.isSubmitSuccess = isSuccess;
 
-                MessageBox.Show(updateSupplier != null ? "Update Failure" : "Insert Failure");
+                MessageBox.Show(updateSupplier != null ? "Sửa thất bại" : "Thêm thất bại");
             }
             catch (Exception er)
             {

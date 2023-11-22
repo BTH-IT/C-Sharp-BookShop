@@ -20,17 +20,17 @@ namespace QuanLyCuaHangBanSach.GUI.Report {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("BookDataSet")]
+    [global::System.Xml.Serialization.XmlRootAttribute("BarcodeDataSet")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class BookDataSet : global::System.Data.DataSet {
+    public partial class BarcodeDataSet : global::System.Data.DataSet {
         
-        private BooksDataTable tableBooks;
+        private BarcodeDataTable tableBarcode;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public BookDataSet() {
+        public BarcodeDataSet() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace QuanLyCuaHangBanSach.GUI.Report {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        protected BookDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected BarcodeDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +54,8 @@ namespace QuanLyCuaHangBanSach.GUI.Report {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["Books"] != null)) {
-                    base.Tables.Add(new BooksDataTable(ds.Tables["Books"]));
+                if ((ds.Tables["Barcode"] != null)) {
+                    base.Tables.Add(new BarcodeDataTable(ds.Tables["Barcode"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace QuanLyCuaHangBanSach.GUI.Report {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public BooksDataTable Books {
+        public BarcodeDataTable Barcode {
             get {
-                return this.tableBooks;
+                return this.tableBarcode;
             }
         }
         
@@ -127,7 +127,7 @@ namespace QuanLyCuaHangBanSach.GUI.Report {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            BookDataSet cln = ((BookDataSet)(base.Clone()));
+            BarcodeDataSet cln = ((BarcodeDataSet)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +152,8 @@ namespace QuanLyCuaHangBanSach.GUI.Report {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["Books"] != null)) {
-                    base.Tables.Add(new BooksDataTable(ds.Tables["Books"]));
+                if ((ds.Tables["Barcode"] != null)) {
+                    base.Tables.Add(new BarcodeDataTable(ds.Tables["Barcode"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace QuanLyCuaHangBanSach.GUI.Report {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableBooks = ((BooksDataTable)(base.Tables["Books"]));
+            this.tableBarcode = ((BarcodeDataTable)(base.Tables["Barcode"]));
             if ((initTable == true)) {
-                if ((this.tableBooks != null)) {
-                    this.tableBooks.InitVars();
+                if ((this.tableBarcode != null)) {
+                    this.tableBarcode.InitVars();
                 }
             }
         }
@@ -199,18 +199,18 @@ namespace QuanLyCuaHangBanSach.GUI.Report {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "BookDataSet";
+            this.DataSetName = "BarcodeDataSet";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/DataSet1.xsd";
+            this.Namespace = "http://tempuri.org/BarcodeDataSet.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableBooks = new BooksDataTable();
-            base.Tables.Add(this.tableBooks);
+            this.tableBarcode = new BarcodeDataTable();
+            base.Tables.Add(this.tableBarcode);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private bool ShouldSerializeBooks() {
+        private bool ShouldSerializeBarcode() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace QuanLyCuaHangBanSach.GUI.Report {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            BookDataSet ds = new BookDataSet();
+            BarcodeDataSet ds = new BarcodeDataSet();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,29 +270,21 @@ namespace QuanLyCuaHangBanSach.GUI.Report {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public delegate void BooksRowChangeEventHandler(object sender, BooksRowChangeEvent e);
+        public delegate void BarcodeRowChangeEventHandler(object sender, BarcodeRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class BooksDataTable : global::System.Data.TypedTableBase<BooksRow> {
+        public partial class BarcodeDataTable : global::System.Data.TypedTableBase<BarcodeRow> {
             
-            private global::System.Data.DataColumn columnSTT;
-            
-            private global::System.Data.DataColumn columnName;
-            
-            private global::System.Data.DataColumn columnQuantity;
-            
-            private global::System.Data.DataColumn columnCash;
-            
-            private global::System.Data.DataColumn columnPrice;
+            private global::System.Data.DataColumn columnImage;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public BooksDataTable() {
-                this.TableName = "Books";
+            public BarcodeDataTable() {
+                this.TableName = "Barcode";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -300,7 +292,7 @@ namespace QuanLyCuaHangBanSach.GUI.Report {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal BooksDataTable(global::System.Data.DataTable table) {
+            internal BarcodeDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -317,48 +309,16 @@ namespace QuanLyCuaHangBanSach.GUI.Report {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected BooksDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected BarcodeDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn STTColumn {
+            public global::System.Data.DataColumn ImageColumn {
                 get {
-                    return this.columnSTT;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn NameColumn {
-                get {
-                    return this.columnName;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn QuantityColumn {
-                get {
-                    return this.columnQuantity;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn CashColumn {
-                get {
-                    return this.columnCash;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn PriceColumn {
-                get {
-                    return this.columnPrice;
+                    return this.columnImage;
                 }
             }
             
@@ -373,49 +333,45 @@ namespace QuanLyCuaHangBanSach.GUI.Report {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public BooksRow this[int index] {
+            public BarcodeRow this[int index] {
                 get {
-                    return ((BooksRow)(this.Rows[index]));
+                    return ((BarcodeRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event BooksRowChangeEventHandler BooksRowChanging;
+            public event BarcodeRowChangeEventHandler BarcodeRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event BooksRowChangeEventHandler BooksRowChanged;
+            public event BarcodeRowChangeEventHandler BarcodeRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event BooksRowChangeEventHandler BooksRowDeleting;
+            public event BarcodeRowChangeEventHandler BarcodeRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event BooksRowChangeEventHandler BooksRowDeleted;
+            public event BarcodeRowChangeEventHandler BarcodeRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void AddBooksRow(BooksRow row) {
+            public void AddBarcodeRow(BarcodeRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public BooksRow AddBooksRow(int STT, string Name, int Quantity, decimal Cash, decimal Price) {
-                BooksRow rowBooksRow = ((BooksRow)(this.NewRow()));
+            public BarcodeRow AddBarcodeRow(byte[] Image) {
+                BarcodeRow rowBarcodeRow = ((BarcodeRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        STT,
-                        Name,
-                        Quantity,
-                        Cash,
-                        Price};
-                rowBooksRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowBooksRow);
-                return rowBooksRow;
+                        Image};
+                rowBarcodeRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowBarcodeRow);
+                return rowBarcodeRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                BooksDataTable cln = ((BooksDataTable)(base.Clone()));
+                BarcodeDataTable cln = ((BarcodeDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -423,58 +379,46 @@ namespace QuanLyCuaHangBanSach.GUI.Report {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new BooksDataTable();
+                return new BarcodeDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
-                this.columnSTT = base.Columns["STT"];
-                this.columnName = base.Columns["Name"];
-                this.columnQuantity = base.Columns["Quantity"];
-                this.columnCash = base.Columns["Cash"];
-                this.columnPrice = base.Columns["Price"];
+                this.columnImage = base.Columns["Image"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             private void InitClass() {
-                this.columnSTT = new global::System.Data.DataColumn("STT", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSTT);
-                this.columnName = new global::System.Data.DataColumn("Name", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnName);
-                this.columnQuantity = new global::System.Data.DataColumn("Quantity", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnQuantity);
-                this.columnCash = new global::System.Data.DataColumn("Cash", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCash);
-                this.columnPrice = new global::System.Data.DataColumn("Price", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPrice);
+                this.columnImage = new global::System.Data.DataColumn("Image", typeof(byte[]), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnImage);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public BooksRow NewBooksRow() {
-                return ((BooksRow)(this.NewRow()));
+            public BarcodeRow NewBarcodeRow() {
+                return ((BarcodeRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new BooksRow(builder);
+                return new BarcodeRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(BooksRow);
+                return typeof(BarcodeRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.BooksRowChanged != null)) {
-                    this.BooksRowChanged(this, new BooksRowChangeEvent(((BooksRow)(e.Row)), e.Action));
+                if ((this.BarcodeRowChanged != null)) {
+                    this.BarcodeRowChanged(this, new BarcodeRowChangeEvent(((BarcodeRow)(e.Row)), e.Action));
                 }
             }
             
@@ -482,8 +426,8 @@ namespace QuanLyCuaHangBanSach.GUI.Report {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.BooksRowChanging != null)) {
-                    this.BooksRowChanging(this, new BooksRowChangeEvent(((BooksRow)(e.Row)), e.Action));
+                if ((this.BarcodeRowChanging != null)) {
+                    this.BarcodeRowChanging(this, new BarcodeRowChangeEvent(((BarcodeRow)(e.Row)), e.Action));
                 }
             }
             
@@ -491,8 +435,8 @@ namespace QuanLyCuaHangBanSach.GUI.Report {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.BooksRowDeleted != null)) {
-                    this.BooksRowDeleted(this, new BooksRowChangeEvent(((BooksRow)(e.Row)), e.Action));
+                if ((this.BarcodeRowDeleted != null)) {
+                    this.BarcodeRowDeleted(this, new BarcodeRowChangeEvent(((BarcodeRow)(e.Row)), e.Action));
                 }
             }
             
@@ -500,14 +444,14 @@ namespace QuanLyCuaHangBanSach.GUI.Report {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.BooksRowDeleting != null)) {
-                    this.BooksRowDeleting(this, new BooksRowChangeEvent(((BooksRow)(e.Row)), e.Action));
+                if ((this.BarcodeRowDeleting != null)) {
+                    this.BarcodeRowDeleting(this, new BarcodeRowChangeEvent(((BarcodeRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void RemoveBooksRow(BooksRow row) {
+            public void RemoveBarcodeRow(BarcodeRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -516,7 +460,7 @@ namespace QuanLyCuaHangBanSach.GUI.Report {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                BookDataSet ds = new BookDataSet();
+                BarcodeDataSet ds = new BarcodeDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -534,7 +478,7 @@ namespace QuanLyCuaHangBanSach.GUI.Report {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "BooksDataTable";
+                attribute2.FixedValue = "BarcodeDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -578,155 +522,43 @@ namespace QuanLyCuaHangBanSach.GUI.Report {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class BooksRow : global::System.Data.DataRow {
+        public partial class BarcodeRow : global::System.Data.DataRow {
             
-            private BooksDataTable tableBooks;
+            private BarcodeDataTable tableBarcode;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal BooksRow(global::System.Data.DataRowBuilder rb) : 
+            internal BarcodeRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableBooks = ((BooksDataTable)(this.Table));
+                this.tableBarcode = ((BarcodeDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int STT {
+            public byte[] Image {
                 get {
                     try {
-                        return ((int)(this[this.tableBooks.STTColumn]));
+                        return ((byte[])(this[this.tableBarcode.ImageColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'STT\' in table \'Books\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Image\' in table \'Barcode\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableBooks.STTColumn] = value;
+                    this[this.tableBarcode.ImageColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Name {
-                get {
-                    try {
-                        return ((string)(this[this.tableBooks.NameColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Name\' in table \'Books\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableBooks.NameColumn] = value;
-                }
+            public bool IsImageNull() {
+                return this.IsNull(this.tableBarcode.ImageColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int Quantity {
-                get {
-                    try {
-                        return ((int)(this[this.tableBooks.QuantityColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Quantity\' in table \'Books\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableBooks.QuantityColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public decimal Cash {
-                get {
-                    try {
-                        return ((decimal)(this[this.tableBooks.CashColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Cash\' in table \'Books\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableBooks.CashColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public decimal Price {
-                get {
-                    try {
-                        return ((decimal)(this[this.tableBooks.PriceColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Price\' in table \'Books\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableBooks.PriceColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsSTTNull() {
-                return this.IsNull(this.tableBooks.STTColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetSTTNull() {
-                this[this.tableBooks.STTColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsNameNull() {
-                return this.IsNull(this.tableBooks.NameColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetNameNull() {
-                this[this.tableBooks.NameColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsQuantityNull() {
-                return this.IsNull(this.tableBooks.QuantityColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetQuantityNull() {
-                this[this.tableBooks.QuantityColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsCashNull() {
-                return this.IsNull(this.tableBooks.CashColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetCashNull() {
-                this[this.tableBooks.CashColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsPriceNull() {
-                return this.IsNull(this.tableBooks.PriceColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetPriceNull() {
-                this[this.tableBooks.PriceColumn] = global::System.Convert.DBNull;
+            public void SetImageNull() {
+                this[this.tableBarcode.ImageColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -734,22 +566,22 @@ namespace QuanLyCuaHangBanSach.GUI.Report {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public class BooksRowChangeEvent : global::System.EventArgs {
+        public class BarcodeRowChangeEvent : global::System.EventArgs {
             
-            private BooksRow eventRow;
+            private BarcodeRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public BooksRowChangeEvent(BooksRow row, global::System.Data.DataRowAction action) {
+            public BarcodeRowChangeEvent(BarcodeRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public BooksRow Row {
+            public BarcodeRow Row {
                 get {
                     return this.eventRow;
                 }

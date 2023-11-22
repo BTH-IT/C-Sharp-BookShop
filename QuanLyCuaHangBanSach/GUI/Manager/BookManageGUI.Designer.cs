@@ -39,6 +39,7 @@
             this.Column11 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewImageColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,19 +48,17 @@
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.authorCbx = new Guna.UI.WinForms.GunaComboBox();
-            this.bookTypeCbx = new Guna.UI.WinForms.GunaComboBox();
-            this.publisherCbx = new Guna.UI.WinForms.GunaComboBox();
-            this.searchInput = new Guna.UI2.WinForms.Guna2TextBox();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.gunaAdvenceButton1 = new Guna.UI.WinForms.GunaAdvenceButton();
             this.exportBtn = new Guna.UI.WinForms.GunaAdvenceButton();
             this.refreshBtn = new Guna.UI.WinForms.GunaAdvenceButton();
             this.deleteBtn = new Guna.UI.WinForms.GunaAdvenceButton();
             this.editBtn = new Guna.UI.WinForms.GunaAdvenceButton();
             this.addBtn = new Guna.UI.WinForms.GunaAdvenceButton();
-            this.Column10 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.authorCbx = new Guna.UI.WinForms.GunaComboBox();
+            this.bookTypeCbx = new Guna.UI.WinForms.GunaComboBox();
+            this.publisherCbx = new Guna.UI.WinForms.GunaComboBox();
+            this.searchInput = new Guna.UI2.WinForms.Guna2TextBox();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.gradientPanel1 = new QuanLyCuaHangBanSach.GradientPanel();
             this.priceTo = new Guna.UI2.WinForms.Guna2TextBox();
             this.priceFrom = new Guna.UI2.WinForms.Guna2TextBox();
@@ -67,11 +66,13 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBook)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gradientPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // line1
@@ -205,6 +206,15 @@
             this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Column2.ToolTipText = "Tên Sách";
             // 
+            // Column10
+            // 
+            this.Column10.HeaderText = "Hình Ảnh";
+            this.Column10.Image = ((System.Drawing.Image)(resources.GetObject("Column10.Image")));
+            this.Column10.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.Column10.MinimumWidth = 80;
+            this.Column10.Name = "Column10";
+            this.Column10.ReadOnly = true;
+            // 
             // Column3
             // 
             this.Column3.HeaderText = "Tác Giả";
@@ -271,6 +281,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
+            this.panel1.Controls.Add(this.gunaAdvenceButton1);
             this.panel1.Controls.Add(this.exportBtn);
             this.panel1.Controls.Add(this.refreshBtn);
             this.panel1.Controls.Add(this.deleteBtn);
@@ -282,134 +293,38 @@
             this.panel1.Size = new System.Drawing.Size(1044, 54);
             this.panel1.TabIndex = 2;
             // 
-            // authorCbx
+            // gunaAdvenceButton1
             // 
-            this.authorCbx.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.authorCbx.BackColor = System.Drawing.Color.Transparent;
-            this.authorCbx.BaseColor = System.Drawing.Color.White;
-            this.authorCbx.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.authorCbx.BorderSize = 1;
-            this.authorCbx.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.authorCbx.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.authorCbx.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.authorCbx.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(159)))), ((int)(((byte)(147)))));
-            this.authorCbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.authorCbx.ForeColor = System.Drawing.Color.Black;
-            this.authorCbx.FormattingEnabled = true;
-            this.authorCbx.ItemHeight = 30;
-            this.authorCbx.Location = new System.Drawing.Point(304, 7);
-            this.authorCbx.Name = "authorCbx";
-            this.authorCbx.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.authorCbx.OnHoverItemForeColor = System.Drawing.Color.White;
-            this.authorCbx.Radius = 6;
-            this.authorCbx.Size = new System.Drawing.Size(134, 36);
-            this.authorCbx.TabIndex = 2;
-            this.authorCbx.SelectedIndexChanged += new System.EventHandler(this.authorCbx_SelectedIndexChanged);
-            // 
-            // bookTypeCbx
-            // 
-            this.bookTypeCbx.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.bookTypeCbx.BackColor = System.Drawing.Color.Transparent;
-            this.bookTypeCbx.BaseColor = System.Drawing.Color.White;
-            this.bookTypeCbx.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.bookTypeCbx.BorderSize = 1;
-            this.bookTypeCbx.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bookTypeCbx.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.bookTypeCbx.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.bookTypeCbx.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(159)))), ((int)(((byte)(147)))));
-            this.bookTypeCbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bookTypeCbx.ForeColor = System.Drawing.Color.Black;
-            this.bookTypeCbx.FormattingEnabled = true;
-            this.bookTypeCbx.ItemHeight = 30;
-            this.bookTypeCbx.Location = new System.Drawing.Point(444, 7);
-            this.bookTypeCbx.Name = "bookTypeCbx";
-            this.bookTypeCbx.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.bookTypeCbx.OnHoverItemForeColor = System.Drawing.Color.White;
-            this.bookTypeCbx.Radius = 6;
-            this.bookTypeCbx.Size = new System.Drawing.Size(139, 36);
-            this.bookTypeCbx.TabIndex = 3;
-            this.bookTypeCbx.SelectedIndexChanged += new System.EventHandler(this.bookTypeCbx_SelectedIndexChanged);
-            // 
-            // publisherCbx
-            // 
-            this.publisherCbx.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.publisherCbx.BackColor = System.Drawing.Color.Transparent;
-            this.publisherCbx.BaseColor = System.Drawing.Color.White;
-            this.publisherCbx.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.publisherCbx.BorderSize = 1;
-            this.publisherCbx.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.publisherCbx.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.publisherCbx.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.publisherCbx.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(159)))), ((int)(((byte)(147)))));
-            this.publisherCbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.publisherCbx.ForeColor = System.Drawing.Color.Black;
-            this.publisherCbx.FormattingEnabled = true;
-            this.publisherCbx.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.publisherCbx.ItemHeight = 30;
-            this.publisherCbx.Location = new System.Drawing.Point(592, 7);
-            this.publisherCbx.Margin = new System.Windows.Forms.Padding(3, 3, 100, 3);
-            this.publisherCbx.Name = "publisherCbx";
-            this.publisherCbx.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.publisherCbx.OnHoverItemForeColor = System.Drawing.Color.White;
-            this.publisherCbx.Radius = 6;
-            this.publisherCbx.Size = new System.Drawing.Size(136, 36);
-            this.publisherCbx.TabIndex = 4;
-            this.publisherCbx.SelectedIndexChanged += new System.EventHandler(this.publisherCbx_SelectedIndexChanged);
-            // 
-            // searchInput
-            // 
-            this.searchInput.BackColor = System.Drawing.Color.Transparent;
-            this.searchInput.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
-            this.searchInput.BorderThickness = 0;
-            this.searchInput.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.searchInput.DefaultText = "";
-            this.searchInput.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.searchInput.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.searchInput.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.searchInput.DisabledState.Parent = this.searchInput;
-            this.searchInput.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.searchInput.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
-            this.searchInput.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.searchInput.FocusedState.Parent = this.searchInput;
-            this.searchInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchInput.ForeColor = System.Drawing.Color.Black;
-            this.searchInput.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.searchInput.HoverState.Parent = this.searchInput;
-            this.searchInput.Location = new System.Drawing.Point(15, 7);
-            this.searchInput.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.searchInput.Name = "searchInput";
-            this.searchInput.PasswordChar = '\0';
-            this.searchInput.PlaceholderText = "Tìm kiếm theo mã, tên";
-            this.searchInput.SelectedText = "";
-            this.searchInput.ShadowDecoration.Parent = this.searchInput;
-            this.searchInput.Size = new System.Drawing.Size(179, 30);
-            this.searchInput.TabIndex = 1;
-            this.searchInput.TextChanged += new System.EventHandler(this.searchInput_TextChanged);
-            // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.searchInput);
-            this.panel5.Controls.Add(this.bookTypeCbx);
-            this.panel5.Controls.Add(this.gradientPanel1);
-            this.panel5.Controls.Add(this.authorCbx);
-            this.panel5.Controls.Add(this.line1);
-            this.panel5.Controls.Add(this.pictureBox1);
-            this.panel5.Controls.Add(this.publisherCbx);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel5.Location = new System.Drawing.Point(0, 0);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1044, 61);
-            this.panel5.TabIndex = 1;
-            // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.HeaderText = "Hình Ảnh";
-            this.dataGridViewImageColumn1.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn1.Image")));
-            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
-            this.dataGridViewImageColumn1.MinimumWidth = 80;
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.ReadOnly = true;
-            this.dataGridViewImageColumn1.Width = 99;
+            this.gunaAdvenceButton1.AnimationHoverSpeed = 0.07F;
+            this.gunaAdvenceButton1.AnimationSpeed = 0.03F;
+            this.gunaAdvenceButton1.BackColor = System.Drawing.Color.Transparent;
+            this.gunaAdvenceButton1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.gunaAdvenceButton1.BorderColor = System.Drawing.Color.Black;
+            this.gunaAdvenceButton1.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.gunaAdvenceButton1.CheckedBorderColor = System.Drawing.Color.Black;
+            this.gunaAdvenceButton1.CheckedForeColor = System.Drawing.Color.White;
+            this.gunaAdvenceButton1.CheckedImage = ((System.Drawing.Image)(resources.GetObject("gunaAdvenceButton1.CheckedImage")));
+            this.gunaAdvenceButton1.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.gunaAdvenceButton1.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.gunaAdvenceButton1.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(159)))), ((int)(((byte)(147)))));
+            this.gunaAdvenceButton1.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold);
+            this.gunaAdvenceButton1.ForeColor = System.Drawing.Color.White;
+            this.gunaAdvenceButton1.Image = ((System.Drawing.Image)(resources.GetObject("gunaAdvenceButton1.Image")));
+            this.gunaAdvenceButton1.ImageSize = new System.Drawing.Size(20, 20);
+            this.gunaAdvenceButton1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.gunaAdvenceButton1.Location = new System.Drawing.Point(233, 6);
+            this.gunaAdvenceButton1.Name = "gunaAdvenceButton1";
+            this.gunaAdvenceButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.gunaAdvenceButton1.OnHoverBorderColor = System.Drawing.Color.Transparent;
+            this.gunaAdvenceButton1.OnHoverForeColor = System.Drawing.Color.White;
+            this.gunaAdvenceButton1.OnHoverImage = null;
+            this.gunaAdvenceButton1.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.gunaAdvenceButton1.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaAdvenceButton1.Radius = 6;
+            this.gunaAdvenceButton1.Size = new System.Drawing.Size(110, 42);
+            this.gunaAdvenceButton1.TabIndex = 12;
+            this.gunaAdvenceButton1.Text = "In mã vạch";
+            this.gunaAdvenceButton1.Click += new System.EventHandler(this.gunaAdvenceButton1_Click_1);
             // 
             // exportBtn
             // 
@@ -439,7 +354,7 @@
             this.exportBtn.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.exportBtn.OnPressedColor = System.Drawing.Color.Black;
             this.exportBtn.Radius = 6;
-            this.exportBtn.Size = new System.Drawing.Size(121, 42);
+            this.exportBtn.Size = new System.Drawing.Size(111, 42);
             this.exportBtn.TabIndex = 8;
             this.exportBtn.Text = "Xuất excel";
             this.exportBtn.Click += new System.EventHandler(this.exportBtn_Click);
@@ -531,7 +446,7 @@
             this.editBtn.Image = ((System.Drawing.Image)(resources.GetObject("editBtn.Image")));
             this.editBtn.ImageSize = new System.Drawing.Size(20, 20);
             this.editBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.editBtn.Location = new System.Drawing.Point(837, 6);
+            this.editBtn.Location = new System.Drawing.Point(847, 6);
             this.editBtn.Name = "editBtn";
             this.editBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.editBtn.OnHoverBorderColor = System.Drawing.Color.Transparent;
@@ -540,7 +455,7 @@
             this.editBtn.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.editBtn.OnPressedColor = System.Drawing.Color.Black;
             this.editBtn.Radius = 6;
-            this.editBtn.Size = new System.Drawing.Size(113, 42);
+            this.editBtn.Size = new System.Drawing.Size(103, 42);
             this.editBtn.TabIndex = 10;
             this.editBtn.Text = "Chỉnh sửa";
             this.editBtn.Click += new System.EventHandler(this.editBtn_Click);
@@ -565,7 +480,7 @@
             this.addBtn.Image = ((System.Drawing.Image)(resources.GetObject("addBtn.Image")));
             this.addBtn.ImageSize = new System.Drawing.Size(20, 20);
             this.addBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.addBtn.Location = new System.Drawing.Point(714, 6);
+            this.addBtn.Location = new System.Drawing.Point(733, 6);
             this.addBtn.Name = "addBtn";
             this.addBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.addBtn.OnHoverBorderColor = System.Drawing.Color.Transparent;
@@ -574,29 +489,129 @@
             this.addBtn.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.addBtn.OnPressedColor = System.Drawing.Color.Black;
             this.addBtn.Radius = 6;
-            this.addBtn.Size = new System.Drawing.Size(117, 42);
+            this.addBtn.Size = new System.Drawing.Size(108, 42);
             this.addBtn.TabIndex = 9;
             this.addBtn.Text = "Thêm mới";
             this.addBtn.Click += new System.EventHandler(this.gunaAdvenceButton1_Click);
             // 
-            // Column10
+            // authorCbx
             // 
-            this.Column10.HeaderText = "Hình Ảnh";
-            this.Column10.Image = ((System.Drawing.Image)(resources.GetObject("Column10.Image")));
-            this.Column10.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
-            this.Column10.MinimumWidth = 80;
-            this.Column10.Name = "Column10";
-            this.Column10.ReadOnly = true;
+            this.authorCbx.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.authorCbx.BackColor = System.Drawing.Color.Transparent;
+            this.authorCbx.BaseColor = System.Drawing.Color.White;
+            this.authorCbx.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.authorCbx.BorderSize = 1;
+            this.authorCbx.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.authorCbx.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.authorCbx.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.authorCbx.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(159)))), ((int)(((byte)(147)))));
+            this.authorCbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.authorCbx.ForeColor = System.Drawing.Color.Black;
+            this.authorCbx.FormattingEnabled = true;
+            this.authorCbx.ItemHeight = 30;
+            this.authorCbx.Location = new System.Drawing.Point(243, 7);
+            this.authorCbx.Name = "authorCbx";
+            this.authorCbx.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.authorCbx.OnHoverItemForeColor = System.Drawing.Color.White;
+            this.authorCbx.Radius = 6;
+            this.authorCbx.Size = new System.Drawing.Size(134, 36);
+            this.authorCbx.TabIndex = 2;
+            this.authorCbx.SelectedIndexChanged += new System.EventHandler(this.authorCbx_SelectedIndexChanged);
             // 
-            // pictureBox1
+            // bookTypeCbx
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(201, 9);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(36, 30);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 22;
-            this.pictureBox1.TabStop = false;
+            this.bookTypeCbx.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.bookTypeCbx.BackColor = System.Drawing.Color.Transparent;
+            this.bookTypeCbx.BaseColor = System.Drawing.Color.White;
+            this.bookTypeCbx.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.bookTypeCbx.BorderSize = 1;
+            this.bookTypeCbx.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bookTypeCbx.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.bookTypeCbx.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.bookTypeCbx.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(159)))), ((int)(((byte)(147)))));
+            this.bookTypeCbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bookTypeCbx.ForeColor = System.Drawing.Color.Black;
+            this.bookTypeCbx.FormattingEnabled = true;
+            this.bookTypeCbx.ItemHeight = 30;
+            this.bookTypeCbx.Location = new System.Drawing.Point(383, 7);
+            this.bookTypeCbx.Name = "bookTypeCbx";
+            this.bookTypeCbx.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.bookTypeCbx.OnHoverItemForeColor = System.Drawing.Color.White;
+            this.bookTypeCbx.Radius = 6;
+            this.bookTypeCbx.Size = new System.Drawing.Size(139, 36);
+            this.bookTypeCbx.TabIndex = 3;
+            this.bookTypeCbx.SelectedIndexChanged += new System.EventHandler(this.bookTypeCbx_SelectedIndexChanged);
+            // 
+            // publisherCbx
+            // 
+            this.publisherCbx.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.publisherCbx.BackColor = System.Drawing.Color.Transparent;
+            this.publisherCbx.BaseColor = System.Drawing.Color.White;
+            this.publisherCbx.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.publisherCbx.BorderSize = 1;
+            this.publisherCbx.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.publisherCbx.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.publisherCbx.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.publisherCbx.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(159)))), ((int)(((byte)(147)))));
+            this.publisherCbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.publisherCbx.ForeColor = System.Drawing.Color.Black;
+            this.publisherCbx.FormattingEnabled = true;
+            this.publisherCbx.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.publisherCbx.ItemHeight = 30;
+            this.publisherCbx.Location = new System.Drawing.Point(528, 7);
+            this.publisherCbx.Margin = new System.Windows.Forms.Padding(3, 3, 100, 3);
+            this.publisherCbx.Name = "publisherCbx";
+            this.publisherCbx.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.publisherCbx.OnHoverItemForeColor = System.Drawing.Color.White;
+            this.publisherCbx.Radius = 6;
+            this.publisherCbx.Size = new System.Drawing.Size(136, 36);
+            this.publisherCbx.TabIndex = 4;
+            this.publisherCbx.SelectedIndexChanged += new System.EventHandler(this.publisherCbx_SelectedIndexChanged);
+            // 
+            // searchInput
+            // 
+            this.searchInput.BackColor = System.Drawing.Color.Transparent;
+            this.searchInput.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
+            this.searchInput.BorderThickness = 0;
+            this.searchInput.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.searchInput.DefaultText = "";
+            this.searchInput.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.searchInput.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.searchInput.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.searchInput.DisabledState.Parent = this.searchInput;
+            this.searchInput.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.searchInput.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
+            this.searchInput.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.searchInput.FocusedState.Parent = this.searchInput;
+            this.searchInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchInput.ForeColor = System.Drawing.Color.Black;
+            this.searchInput.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.searchInput.HoverState.Parent = this.searchInput;
+            this.searchInput.Location = new System.Drawing.Point(15, 7);
+            this.searchInput.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.searchInput.Name = "searchInput";
+            this.searchInput.PasswordChar = '\0';
+            this.searchInput.PlaceholderText = "Tìm kiếm theo mã, tên";
+            this.searchInput.SelectedText = "";
+            this.searchInput.ShadowDecoration.Parent = this.searchInput;
+            this.searchInput.Size = new System.Drawing.Size(179, 30);
+            this.searchInput.TabIndex = 1;
+            this.searchInput.TextChanged += new System.EventHandler(this.searchInput_TextChanged);
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.searchInput);
+            this.panel5.Controls.Add(this.bookTypeCbx);
+            this.panel5.Controls.Add(this.gradientPanel1);
+            this.panel5.Controls.Add(this.authorCbx);
+            this.panel5.Controls.Add(this.line1);
+            this.panel5.Controls.Add(this.pictureBox1);
+            this.panel5.Controls.Add(this.publisherCbx);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel5.Location = new System.Drawing.Point(0, 0);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(1044, 61);
+            this.panel5.TabIndex = 1;
             // 
             // gradientPanel1
             // 
@@ -715,6 +730,26 @@
             this.label1.Text = "$";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(201, 9);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(36, 30);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 22;
+            this.pictureBox1.TabStop = false;
+            // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.HeaderText = "Hình Ảnh";
+            this.dataGridViewImageColumn1.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn1.Image")));
+            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.dataGridViewImageColumn1.MinimumWidth = 80;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.ReadOnly = true;
+            this.dataGridViewImageColumn1.Width = 99;
+            // 
             // BookManageGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -734,8 +769,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvBook)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.gradientPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -774,5 +809,6 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
+        private Guna.UI.WinForms.GunaAdvenceButton gunaAdvenceButton1;
     }
 }
