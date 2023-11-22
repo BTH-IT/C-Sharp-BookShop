@@ -103,38 +103,46 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
             try
             {
-                if (this.dgvAuthor.CurrentCell.RowIndex < 0)
+                if (this.dgvAuthor.CurrentCell != null)
                 {
+					if (this.dgvAuthor.CurrentCell.RowIndex < 0)
+					{
 
-                    MessageBox.Show("Hãy chọn dòng dữ liệu muốn thao tác");
-                    return;
-                }
+						MessageBox.Show("Hãy chọn dòng dữ liệu muốn thao tác");
+						return;
+					}
 
-                using (AuthorModal AuthorModal = new AuthorModal("Sửa tác giả"))
+					using (AuthorModal AuthorModal = new AuthorModal("Sửa tác giả"))
+					{
+						DataGridViewRow row = this.dgvAuthor.Rows[this.dgvAuthor.CurrentCell.RowIndex];
+
+						AuthorDTO Author = AuthorBUS.Instance.getById(row.Cells[0].Value.ToString());
+
+
+						AuthorModal.updateAuthor = Author;
+
+						if (AuthorModal.updateAuthor == null)
+						{
+							MessageBox.Show("Đã xảy ra lỗi vui lòng thử lại sau!!");
+							return;
+						}
+
+						AuthorModal.ShowDialog();
+
+						if (AuthorModal.isSubmitSuccess)
+						{
+
+							List<AuthorDTO> AuthorList = AuthorBUS.Instance.search(this.searchInput.Text.Trim());
+
+							this.loadAuthorListToDataView(AuthorList);
+						}
+					}
+				}
+                else
                 {
-                    DataGridViewRow row = this.dgvAuthor.Rows[this.dgvAuthor.CurrentCell.RowIndex];
-
-                    AuthorDTO Author = AuthorBUS.Instance.getById(row.Cells[0].Value.ToString());
-
-
-                    AuthorModal.updateAuthor = Author;
-
-                    if (AuthorModal.updateAuthor == null)
-                    {
-                        MessageBox.Show("Đã xảy ra lỗi vui lòng thử lại sau!!");
-                        return;
-                    }
-
-                    AuthorModal.ShowDialog();
-
-                    if (AuthorModal.isSubmitSuccess)
-                    {
-
-                        List<AuthorDTO> AuthorList = AuthorBUS.Instance.search(this.searchInput.Text.Trim());
-
-                        this.loadAuthorListToDataView(AuthorList);
-                    }
-                }
+                    MessageBox.Show("Bảng dữ liệu có thể chưa có dòng dữ liệu nào để chỉnh sửa");
+                }   
+                
             }
             catch (Exception ex)
             {

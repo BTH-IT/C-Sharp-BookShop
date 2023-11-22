@@ -341,30 +341,42 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
        
         private void editBtn_Click(object sender, EventArgs e)
         {
-            try {
-				if (this.dgvStaff.CurrentCell.RowIndex < 0)
-				{
-					MessageBox.Show("Vui lòng chọn một nhân viên");
-					return;
-				}
-				using (StaffModal modal = new StaffModal("Sửa nhân viên"))
-				{
-					DataGridViewRow selectedRow = this.dgvStaff.Rows[this.dgvStaff.CurrentCell.RowIndex];
-
-					StaffDTO staff = StaffBUS.Instance.getById(selectedRow.Cells[1].Value.ToString());
-
-					modal.staff = staff;
-
-					modal.ShowDialog();
-
-					if (modal.isSubmitSuccess)
+            try 
+            {
+                if(this.dgvStaff.CurrentCell != null)
+                {
+					if (this.dgvStaff.CurrentCell.RowIndex < 0)
 					{
-						List<StaffDTO> staffs = handleFilter(this.searchInput.Text.Trim());
-						loadDataToDataGridView(staffs);
+						MessageBox.Show("Vui lòng chọn một nhân viên");
+						return;
 					}
-				}
+					using (StaffModal modal = new StaffModal("Sửa nhân viên"))
+					{
+						DataGridViewRow selectedRow = this.dgvStaff.Rows[this.dgvStaff.CurrentCell.RowIndex];
+
+						StaffDTO staff = StaffBUS.Instance.getById(selectedRow.Cells[1].Value.ToString());
+
+						modal.staff = staff;
+
+						modal.ShowDialog();
+
+						if (modal.isSubmitSuccess)
+						{
+							List<StaffDTO> staffs = handleFilter(this.searchInput.Text.Trim());
+							loadDataToDataGridView(staffs);
+						}
+					}
+                }
+                else
+                {
+                    MessageBox.Show("Bảng dữ liệu có thể chưa có dòng dữ liệu nào để chỉnh sửa");
+                }    
+				
 			}
-            catch { }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
            
         }
 
@@ -384,7 +396,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
                 if (!isHaveSelect)
                 {
-                    MessageBox.Show("Bạn chưa chọn các tài khoản cần xóa");
+                    MessageBox.Show("Bạn chưa chọn các nhân viên cần xóa");
                     return;
                 }
                 DialogResult result = MessageBox.Show(
