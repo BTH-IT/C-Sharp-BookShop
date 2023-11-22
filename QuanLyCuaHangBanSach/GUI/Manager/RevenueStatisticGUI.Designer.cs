@@ -58,12 +58,21 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             this.tablePanel = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.closeBtn = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.searchInput = new Guna.UI2.WinForms.Guna2TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.line1 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
+            this.gradientPanel1 = new QuanLyCuaHangBanSach.GradientPanel();
+            this.revenueFrom = new Guna.UI2.WinForms.Guna2TextBox();
+            this.revenueTo = new Guna.UI2.WinForms.Guna2TextBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.toDateCkb = new Guna.UI.WinForms.GunaCheckBox();
             this.fromDate = new Guna.UI2.WinForms.Guna2DateTimePicker();
@@ -92,15 +101,6 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.revenueLb = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.closeBtn = new System.Windows.Forms.PictureBox();
-            this.gradientPanel1 = new QuanLyCuaHangBanSach.GradientPanel();
-            this.revenueFrom = new Guna.UI2.WinForms.Guna2TextBox();
-            this.revenueTo = new Guna.UI2.WinForms.Guna2TextBox();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBill)).BeginInit();
             this.optionPanel.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -108,10 +108,13 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             this.tablePanel.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.closeBtn)).BeginInit();
             this.tableLayoutPanel5.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.flowLayoutPanel3.SuspendLayout();
+            this.gradientPanel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.chartPanel.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -127,9 +130,6 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             this.gunaGradient2Panel1.SuspendLayout();
             this.gunaGradient2Panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.closeBtn)).BeginInit();
-            this.gradientPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvBill
@@ -483,6 +483,30 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             this.panel2.Size = new System.Drawing.Size(1021, 107);
             this.panel2.TabIndex = 0;
             // 
+            // panel5
+            // 
+            this.panel5.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.panel5.Controls.Add(this.closeBtn);
+            this.panel5.Location = new System.Drawing.Point(950, 0);
+            this.panel5.Margin = new System.Windows.Forms.Padding(0);
+            this.panel5.Name = "panel5";
+            this.panel5.Padding = new System.Windows.Forms.Padding(10, 30, 10, 30);
+            this.panel5.Size = new System.Drawing.Size(68, 107);
+            this.panel5.TabIndex = 58;
+            // 
+            // closeBtn
+            // 
+            this.closeBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.closeBtn.Image = ((System.Drawing.Image)(resources.GetObject("closeBtn.Image")));
+            this.closeBtn.Location = new System.Drawing.Point(10, 30);
+            this.closeBtn.Margin = new System.Windows.Forms.Padding(20, 8, 0, 0);
+            this.closeBtn.Name = "closeBtn";
+            this.closeBtn.Size = new System.Drawing.Size(48, 47);
+            this.closeBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.closeBtn.TabIndex = 56;
+            this.closeBtn.TabStop = false;
+            this.closeBtn.Click += new System.EventHandler(this.closeBtn_Click);
+            // 
             // tableLayoutPanel5
             // 
             this.tableLayoutPanel5.ColumnCount = 1;
@@ -572,6 +596,122 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
             this.flowLayoutPanel3.Size = new System.Drawing.Size(564, 47);
             this.flowLayoutPanel3.TabIndex = 57;
+            // 
+            // gradientPanel1
+            // 
+            this.gradientPanel1.AutoSize = true;
+            this.gradientPanel1.ColorLeft = System.Drawing.Color.Empty;
+            this.gradientPanel1.ColorRight = System.Drawing.Color.Empty;
+            this.gradientPanel1.Controls.Add(this.revenueFrom);
+            this.gradientPanel1.Controls.Add(this.revenueTo);
+            this.gradientPanel1.Controls.Add(this.panel3);
+            this.gradientPanel1.Controls.Add(this.panel4);
+            this.gradientPanel1.Controls.Add(this.panel9);
+            this.gradientPanel1.Controls.Add(this.label1);
+            this.gradientPanel1.Location = new System.Drawing.Point(3, 3);
+            this.gradientPanel1.Name = "gradientPanel1";
+            this.gradientPanel1.Size = new System.Drawing.Size(550, 41);
+            this.gradientPanel1.TabIndex = 1;
+            // 
+            // revenueFrom
+            // 
+            this.revenueFrom.Animated = true;
+            this.revenueFrom.BackColor = System.Drawing.Color.Transparent;
+            this.revenueFrom.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
+            this.revenueFrom.BorderThickness = 0;
+            this.revenueFrom.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.revenueFrom.DefaultText = "";
+            this.revenueFrom.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.revenueFrom.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.revenueFrom.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.revenueFrom.DisabledState.Parent = this.revenueFrom;
+            this.revenueFrom.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.revenueFrom.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
+            this.revenueFrom.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.revenueFrom.FocusedState.Parent = this.revenueFrom;
+            this.revenueFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.revenueFrom.ForeColor = System.Drawing.Color.Black;
+            this.revenueFrom.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.revenueFrom.HoverState.Parent = this.revenueFrom;
+            this.revenueFrom.Location = new System.Drawing.Point(30, 4);
+            this.revenueFrom.Margin = new System.Windows.Forms.Padding(0);
+            this.revenueFrom.Name = "revenueFrom";
+            this.revenueFrom.PasswordChar = '\0';
+            this.revenueFrom.PlaceholderText = "Doanh thu từ  ...";
+            this.revenueFrom.SelectedText = "";
+            this.revenueFrom.ShadowDecoration.Parent = this.revenueFrom;
+            this.revenueFrom.Size = new System.Drawing.Size(200, 25);
+            this.revenueFrom.TabIndex = 0;
+            this.revenueFrom.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.revenueFrom_KeyPress);
+            // 
+            // revenueTo
+            // 
+            this.revenueTo.Animated = true;
+            this.revenueTo.BackColor = System.Drawing.Color.Transparent;
+            this.revenueTo.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
+            this.revenueTo.BorderThickness = 0;
+            this.revenueTo.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.revenueTo.DefaultText = "";
+            this.revenueTo.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.revenueTo.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.revenueTo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.revenueTo.DisabledState.Parent = this.revenueTo;
+            this.revenueTo.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.revenueTo.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
+            this.revenueTo.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.revenueTo.FocusedState.Parent = this.revenueTo;
+            this.revenueTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.revenueTo.ForeColor = System.Drawing.Color.Black;
+            this.revenueTo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.revenueTo.HoverState.Parent = this.revenueTo;
+            this.revenueTo.Location = new System.Drawing.Point(350, 6);
+            this.revenueTo.Margin = new System.Windows.Forms.Padding(0);
+            this.revenueTo.Name = "revenueTo";
+            this.revenueTo.PasswordChar = '\0';
+            this.revenueTo.PlaceholderText = "Doanh thu đến ...";
+            this.revenueTo.SelectedText = "";
+            this.revenueTo.ShadowDecoration.Parent = this.revenueTo;
+            this.revenueTo.Size = new System.Drawing.Size(200, 25);
+            this.revenueTo.TabIndex = 1;
+            // 
+            // panel3
+            // 
+            this.panel3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(212)))), ((int)(((byte)(191)))));
+            this.panel3.Location = new System.Drawing.Point(33, 37);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(200, 1);
+            this.panel3.TabIndex = 31;
+            // 
+            // panel4
+            // 
+            this.panel4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(212)))), ((int)(((byte)(191)))));
+            this.panel4.Location = new System.Drawing.Point(347, 34);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(200, 1);
+            this.panel4.TabIndex = 33;
+            // 
+            // panel9
+            // 
+            this.panel9.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(212)))), ((int)(((byte)(191)))));
+            this.panel9.Location = new System.Drawing.Point(258, 22);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(60, 1);
+            this.panel9.TabIndex = 22;
+            // 
+            // label1
+            // 
+            this.label1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(212)))), ((int)(((byte)(191)))));
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(26, 41);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "$";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel3
             // 
@@ -735,7 +875,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             this.label7.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(5, 7);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(160, 28);
+            this.label7.Size = new System.Drawing.Size(191, 35);
             this.label7.TabIndex = 20;
             this.label7.Text = "BIỂU ĐỒ THỐNG KÊ";
             // 
@@ -813,7 +953,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             this.customerNumLb.ForeColor = System.Drawing.Color.Black;
             this.customerNumLb.Location = new System.Drawing.Point(13, 64);
             this.customerNumLb.Name = "customerNumLb";
-            this.customerNumLb.Size = new System.Drawing.Size(0, 25);
+            this.customerNumLb.Size = new System.Drawing.Size(0, 30);
             this.customerNumLb.TabIndex = 8;
             // 
             // label6
@@ -823,7 +963,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(174)))), ((int)(((byte)(192)))));
             this.label6.Location = new System.Drawing.Point(13, 30);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(230, 21);
+            this.label6.Size = new System.Drawing.Size(275, 26);
             this.label6.TabIndex = 6;
             this.label6.Text = "Tổng số khách hàng 6 tháng gần đây";
             // 
@@ -875,7 +1015,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             this.bookSoldLb.ForeColor = System.Drawing.Color.Black;
             this.bookSoldLb.Location = new System.Drawing.Point(15, 64);
             this.bookSoldLb.Name = "bookSoldLb";
-            this.bookSoldLb.Size = new System.Drawing.Size(0, 25);
+            this.bookSoldLb.Size = new System.Drawing.Size(0, 30);
             this.bookSoldLb.TabIndex = 5;
             // 
             // label4
@@ -885,7 +1025,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(174)))), ((int)(((byte)(192)))));
             this.label4.Location = new System.Drawing.Point(15, 30);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(232, 21);
+            this.label4.Size = new System.Drawing.Size(279, 26);
             this.label4.TabIndex = 3;
             this.label4.Text = "Tổng số sách đã bán 6 tháng gần đây";
             // 
@@ -937,7 +1077,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             this.revenueLb.ForeColor = System.Drawing.Color.Black;
             this.revenueLb.Location = new System.Drawing.Point(16, 64);
             this.revenueLb.Name = "revenueLb";
-            this.revenueLb.Size = new System.Drawing.Size(0, 25);
+            this.revenueLb.Size = new System.Drawing.Size(0, 30);
             this.revenueLb.TabIndex = 2;
             // 
             // label8
@@ -947,152 +1087,13 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(174)))), ((int)(((byte)(192)))));
             this.label8.Location = new System.Drawing.Point(16, 30);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(207, 21);
+            this.label8.Size = new System.Drawing.Size(247, 26);
             this.label8.TabIndex = 0;
             this.label8.Text = "Tổng doanh thu 6 tháng gần đây";
             // 
-            // panel5
-            // 
-            this.panel5.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.panel5.Controls.Add(this.closeBtn);
-            this.panel5.Location = new System.Drawing.Point(950, 0);
-            this.panel5.Margin = new System.Windows.Forms.Padding(0);
-            this.panel5.Name = "panel5";
-            this.panel5.Padding = new System.Windows.Forms.Padding(10, 30, 10, 30);
-            this.panel5.Size = new System.Drawing.Size(68, 107);
-            this.panel5.TabIndex = 58;
-            // 
-            // closeBtn
-            // 
-            this.closeBtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.closeBtn.Image = ((System.Drawing.Image)(resources.GetObject("closeBtn.Image")));
-            this.closeBtn.Location = new System.Drawing.Point(10, 30);
-            this.closeBtn.Margin = new System.Windows.Forms.Padding(20, 8, 0, 0);
-            this.closeBtn.Name = "closeBtn";
-            this.closeBtn.Size = new System.Drawing.Size(48, 47);
-            this.closeBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.closeBtn.TabIndex = 56;
-            this.closeBtn.TabStop = false;
-            // 
-            // gradientPanel1
-            // 
-            this.gradientPanel1.AutoSize = true;
-            this.gradientPanel1.ColorLeft = System.Drawing.Color.Empty;
-            this.gradientPanel1.ColorRight = System.Drawing.Color.Empty;
-            this.gradientPanel1.Controls.Add(this.revenueFrom);
-            this.gradientPanel1.Controls.Add(this.revenueTo);
-            this.gradientPanel1.Controls.Add(this.panel3);
-            this.gradientPanel1.Controls.Add(this.panel4);
-            this.gradientPanel1.Controls.Add(this.panel9);
-            this.gradientPanel1.Controls.Add(this.label1);
-            this.gradientPanel1.Location = new System.Drawing.Point(3, 3);
-            this.gradientPanel1.Name = "gradientPanel1";
-            this.gradientPanel1.Size = new System.Drawing.Size(550, 41);
-            this.gradientPanel1.TabIndex = 1;
-            // 
-            // revenueFrom
-            // 
-            this.revenueFrom.Animated = true;
-            this.revenueFrom.BackColor = System.Drawing.Color.Transparent;
-            this.revenueFrom.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
-            this.revenueFrom.BorderThickness = 0;
-            this.revenueFrom.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.revenueFrom.DefaultText = "";
-            this.revenueFrom.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.revenueFrom.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.revenueFrom.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.revenueFrom.DisabledState.Parent = this.revenueFrom;
-            this.revenueFrom.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.revenueFrom.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
-            this.revenueFrom.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.revenueFrom.FocusedState.Parent = this.revenueFrom;
-            this.revenueFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.revenueFrom.ForeColor = System.Drawing.Color.Black;
-            this.revenueFrom.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.revenueFrom.HoverState.Parent = this.revenueFrom;
-            this.revenueFrom.Location = new System.Drawing.Point(30, 4);
-            this.revenueFrom.Margin = new System.Windows.Forms.Padding(0);
-            this.revenueFrom.Name = "revenueFrom";
-            this.revenueFrom.PasswordChar = '\0';
-            this.revenueFrom.PlaceholderText = "Doanh thu từ  ...";
-            this.revenueFrom.SelectedText = "";
-            this.revenueFrom.ShadowDecoration.Parent = this.revenueFrom;
-            this.revenueFrom.Size = new System.Drawing.Size(200, 25);
-            this.revenueFrom.TabIndex = 0;
-            this.revenueFrom.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.revenueFrom_KeyPress);
-            // 
-            // revenueTo
-            // 
-            this.revenueTo.Animated = true;
-            this.revenueTo.BackColor = System.Drawing.Color.Transparent;
-            this.revenueTo.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
-            this.revenueTo.BorderThickness = 0;
-            this.revenueTo.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.revenueTo.DefaultText = "";
-            this.revenueTo.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.revenueTo.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.revenueTo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.revenueTo.DisabledState.Parent = this.revenueTo;
-            this.revenueTo.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.revenueTo.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
-            this.revenueTo.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.revenueTo.FocusedState.Parent = this.revenueTo;
-            this.revenueTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.revenueTo.ForeColor = System.Drawing.Color.Black;
-            this.revenueTo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.revenueTo.HoverState.Parent = this.revenueTo;
-            this.revenueTo.Location = new System.Drawing.Point(350, 6);
-            this.revenueTo.Margin = new System.Windows.Forms.Padding(0);
-            this.revenueTo.Name = "revenueTo";
-            this.revenueTo.PasswordChar = '\0';
-            this.revenueTo.PlaceholderText = "Doanh thu đến ...";
-            this.revenueTo.SelectedText = "";
-            this.revenueTo.ShadowDecoration.Parent = this.revenueTo;
-            this.revenueTo.Size = new System.Drawing.Size(200, 25);
-            this.revenueTo.TabIndex = 1;
-            // 
-            // panel3
-            // 
-            this.panel3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(212)))), ((int)(((byte)(191)))));
-            this.panel3.Location = new System.Drawing.Point(33, 37);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(200, 1);
-            this.panel3.TabIndex = 31;
-            // 
-            // panel4
-            // 
-            this.panel4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(212)))), ((int)(((byte)(191)))));
-            this.panel4.Location = new System.Drawing.Point(347, 34);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(200, 1);
-            this.panel4.TabIndex = 33;
-            // 
-            // panel9
-            // 
-            this.panel9.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(212)))), ((int)(((byte)(191)))));
-            this.panel9.Location = new System.Drawing.Point(258, 22);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(60, 1);
-            this.panel9.TabIndex = 22;
-            // 
-            // label1
-            // 
-            this.label1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(212)))), ((int)(((byte)(191)))));
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(26, 41);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "$";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // RevenueStatisticGUI
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 26F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
             this.ClientSize = new System.Drawing.Size(1021, 602);
@@ -1113,11 +1114,14 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             this.tablePanel.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.closeBtn)).EndInit();
             this.tableLayoutPanel5.ResumeLayout(false);
             this.flowLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.flowLayoutPanel3.ResumeLayout(false);
             this.flowLayoutPanel3.PerformLayout();
+            this.gradientPanel1.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
             this.chartPanel.ResumeLayout(false);
@@ -1138,9 +1142,6 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             this.gunaGradient2Panel1.PerformLayout();
             this.gunaGradient2Panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            this.panel5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.closeBtn)).EndInit();
-            this.gradientPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
 		}

@@ -352,14 +352,14 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 if (isSuccess)
                 {
                     this.isSubmitSuccess = isSuccess;
-                    MessageBox.Show(updateBook != null ? "Update Success" : "Insert Success");
+                    MessageBox.Show(updateBook != null ? "Cập nhật thành công" : "Thêm mới thành công");
                     this.Close();
                     return;
                 }
 
                 this.isSubmitSuccess = isSuccess;
 
-                MessageBox.Show(updateBook != null ? "Update Failure" : "Insert Failure");
+                MessageBox.Show(updateBook != null ? "Cập nhập thất bại" : "Thêm mới thất bại");
             }
             catch (Exception ex)
             {
