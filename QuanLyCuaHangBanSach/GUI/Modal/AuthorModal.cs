@@ -129,12 +129,12 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 if (isSuccess)
                 {
                     this.isSubmitSuccess = isSuccess;
-                    MessageBox.Show(updateAuthor != null ? "Update Success" : "Insert Success");
+                    MessageBox.Show(updateAuthor != null ? "Sửa thành công" : "Thêm thành công");
                     this.Close();
                     return;
                 }
                 this.isSubmitSuccess = isSuccess;
-                MessageBox.Show(updateAuthor != null ? "Update Failure" : "Insert Failure");
+                MessageBox.Show(updateAuthor != null ? "Sửa thất bại" : "Thêm thất bại");
             }
             catch (Exception er)
             {
@@ -203,6 +203,14 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             {
 
                 Console.WriteLine(er);
+            }
+        }
+
+        private void AuthorModal_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                gunaButton1_Click(sender, e);
             }
         }
     }
