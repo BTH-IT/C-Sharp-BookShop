@@ -479,7 +479,9 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         {
             this.dateTimeFrom.Enabled = this.filterCkx.Checked;
             this.dateTimeTo.Enabled = this.filterCkx.Checked;
-        }
+			List<ImportBillDTO> importBillList = handleFilter(this.searchInput.Text.Trim());
+			this.loadImportBillListToDataView(importBillList);
+		}
 
         private void dgvImportBill_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {

@@ -36,7 +36,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 					int namSinh = int.Parse(this.birthYearTxt.Text);
 					int maChucVu = (int)this.positionCbx.SelectedValue;
 					string gioiTinh = this.genderCbx.SelectedItem.ToString();
-
+                    
 					int maNhanVien = this.staff != null ? this.staff.Ma : 0;
 
 					StaffDTO staff = new StaffDTO(maNhanVien, tenNhanVien, soDienThoai, gioiTinh, namSinh, maChucVu, luong);
@@ -77,6 +77,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 				if (staff != null)
 				{
                     if (staff.MaChucVu == 1) isManager = true;
+                    if (staff.Ma == 1) this.positionCbx.Enabled = false;
 					this.staffNameTxt.Text = staff.Ten;
 					this.birthYearTxt.Text = staff.NamSinh.ToString();
 					this.salaryTxt.Text = staff.Luong.ToString();
@@ -315,36 +316,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
         private void positionCbx_SelectedIndexChanged(object sender, EventArgs e)
 		{
-		     bool isStaffValid = CustomValidation.Instance.checkCombobox(
-				                    this.positionCbx,
-				                    this.errorPositionMsg,
-				                    new string[] { "required" }
-			                    );
-             if (isStaffValid && isManager) 
-             {
-                bool isSystemHasAdmin = false;
-                List<StaffDTO> list = StaffBUS.Instance.getAllData();
-                foreach (StaffDTO s in list) 
-                {
-                    if (s.Ma != staff.Ma)
-                    {
-                        if (s.MaChucVu == 1)
-                        {
-                            AccountDTO account = AccountBUS.Instance.getByStaffId(s.Ma.ToString());
-                            if(account != null)
-                            {
-                                isSystemHasAdmin = true;
-                                break;
-                            }    
-                        }    
-                    }    
-                }
-                if (!isSystemHasAdmin && (int)this.positionCbx.SelectedValue !=1)
-                {
-                    MessageBox.Show("Hệ thống phải có ít nhất một quản lí và tài khoản thuộc quản lí");
-					this.positionCbx.SelectedValue = staff.MaChucVu;
-				}    
-             }
+
 		}
 	}
  }
