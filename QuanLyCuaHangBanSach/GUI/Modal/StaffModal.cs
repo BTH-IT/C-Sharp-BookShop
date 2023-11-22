@@ -87,9 +87,10 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 					this.positionCbx.SelectedValue = staff.MaChucVu;
 				}
 
-
+                this.genderCbx.SelectedIndexChanged += genderCbx_SelectedIndexChanged;
                 this.genderCbx.TextChanged += genderCbx_SelectedIndexChanged;
                 this.positionCbx.TextChanged += positionCbx_SelectedIndexChanged;
+                this.positionCbx.SelectedIndexChanged += positionCbx_SelectedIndexChanged;
             }
             catch
             {
@@ -97,7 +98,9 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             }
              
         }
-        private bool validateSubmitForm()
+
+
+		private bool validateSubmitForm()
         {
             try
             {
@@ -316,7 +319,11 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
         private void positionCbx_SelectedIndexChanged(object sender, EventArgs e)
 		{
-
+			bool isPositionValid = CustomValidation.Instance.checkCombobox(
+					   this.positionCbx,
+					   this.errorPositionMsg,
+					   new string[] { "required" }
+				   );
 		}
 	}
  }

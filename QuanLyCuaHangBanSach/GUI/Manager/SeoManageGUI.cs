@@ -54,8 +54,8 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                         sale.MaKhuyenMai,
                         sale.TenKhuyenMai,
                         sale.PhanTram,
-                        sale.NgayBatDau,
-                        sale.NgayKetThuc,
+                        sale.NgayBatDau.GetDateTimeFormats()[0],
+                        sale.NgayKetThuc.GetDateTimeFormats()[0],
                     });
                 }
             }
@@ -320,29 +320,33 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             try
             {
 				List<SaleDTO> sales = SaleBUS.Instance.search(searchString);
-
-				if (DateTime.Compare(dateTimeTo.Value, dateTimeFrom.Value) >= 0 && filterCkx.Checked)
-				{
-					try
+                if(sales != null)
+                {
+					if (DateTime.Compare(dateTimeTo.Value, dateTimeFrom.Value) >= 0 && filterCkx.Checked)
 					{
-						sales = sales.Where(item =>
-                        {
-                            DateTime dateTimeFromV = new DateTime(dateTimeFrom.Value.Year,dateTimeFrom.Value.Month,dateTimeFrom.Value.Day);
+						try
+						{
+							DateTime dateTimeFromV = new DateTime(dateTimeFrom.Value.Year, dateTimeFrom.Value.Month, dateTimeFrom.Value.Day);
 							DateTime dateTimeToV = new DateTime(dateTimeTo.Value.Year, dateTimeTo.Value.Month, dateTimeTo.Value.Day);
-
-							return DateTime.Compare(item.NgayBatDau, dateTimeFromV) >= 0 &&
-                            DateTime.Compare(item.NgayKetThuc, dateTimeToV) <= 0;
+							sales = sales.FindAll(
+									item =>
+										DateTime.Compare(item.NgayBatDau, dateTimeFromV) >= 0 &&
+										DateTime.Compare(item.NgayKetThuc, dateTimeToV) <= 0
+								);
+						}
+						catch
+						{
+							MessageBox.Show("Lọc theo khoảng thời gian không hợp lệ");
 
 						}
-							 
-						).ToList();
 					}
-					catch
-					{
-						MessageBox.Show("Lọc theo khoảng thời gian không hợp lệ");
-					}
-				}
-				return sales;
+					return sales;
+                }
+                else
+                {
+                    return null;
+                } 
+				
 			}
             catch
             {

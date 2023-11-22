@@ -159,7 +159,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             }
             try
             {
-                string[] headerList = new string[] { "Mã nhân viên", "Tên nhân viên", "Năm sinh", "SĐT", "Giới tính", "Lương", "Chức vụ" };
+                string[] headerList = new string[] { "Mã nhân viên", "Tên nhân viên", "Năm sinh", "Giới tính", "SĐT",  "Lương", "Chức vụ" };
 
                 DataTable dt = CustomExcel.Instance.ConvertDataGridViewToDataTable(dgvStaff);
 
@@ -189,7 +189,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 					}
 					else
 					{
-                        if (Convert.ToDecimal(this.salaryFrom.Text.ToString()) >= Convert.ToDecimal(this.salaryTo.Text.ToString()))
+                        if (Convert.ToDecimal(this.salaryFrom.Text.ToString()) > Convert.ToDecimal(this.salaryTo.Text.ToString()))
                         {
                             MessageBox.Show("Lương đến phải bé hơn hoặc bằng lương từ");
                         }
@@ -247,7 +247,6 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
 					if (modal.isSubmitSuccess)
 					{
-						MessageBox.Show("Thêm nhân viên thành công");
 						List<StaffDTO> staffs = handleFilter(this.searchInput.Text.Trim());
 						this.loadDataToDataGridView(staffs);
 
@@ -360,7 +359,6 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
 					if (modal.isSubmitSuccess)
 					{
-						MessageBox.Show("Sửa nhân viên thành công");
 						List<StaffDTO> staffs = handleFilter(this.searchInput.Text.Trim());
 						loadDataToDataGridView(staffs);
 					}
@@ -473,7 +471,6 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
                     if (modal.isSubmitSuccess)
                     {
-                        MessageBox.Show("Sửa nhân viên thành công");
                         List<StaffDTO> staffs = handleFilter(this.searchInput.Text.Trim());
                         loadDataToDataGridView(staffs);
                     }
