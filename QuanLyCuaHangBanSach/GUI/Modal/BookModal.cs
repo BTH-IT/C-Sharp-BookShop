@@ -264,14 +264,20 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                     this.sellPriceLine,
                     new string[] { "required", "positive-number", "space" }
                 );
-
+                if(isCheckTxt2)
+                {
+                    isCheckTxt2 = CustomValidation.Instance.checkTextboxMatchWithOtherTextBox(sellPriceTxt, importPriceTxt, "Giá bán phải lớn hơn giá nhập", errorSellPriceMsg, sellPriceLine, "after");
+				}
                 bool isCheckTxt3 = CustomValidation.Instance.checkTextbox(
                     this.importPriceTxt,
                     this.errorImportPriceMsg,
                     this.importPriceLine,
                     new string[] { "required", "positive-number", "space" }
                 );
-
+                if(isCheckTxt3)
+                {
+                    isCheckTxt3 = CustomValidation.Instance.checkTextboxMatchWithOtherTextBox(importPriceTxt, sellPriceTxt, "Giá nhập phải nhỏ hơn giá bán", this.errorImportPriceMsg, importPriceLine, "before");
+				}
                 bool isCheckTxt4 = CustomValidation.Instance.checkTextbox(
                     this.publishYearTxt,
                     this.errorPublishYearMsg,

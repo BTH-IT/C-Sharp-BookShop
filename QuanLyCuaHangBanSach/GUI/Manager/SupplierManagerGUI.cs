@@ -71,8 +71,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             {
                 string[] headerList = new string[] { "Mã nhà cung cấp", "Tên nhà cung cấp", "Địa chỉ", "Số điện thoại" };
                 DataTable dt = CustomExcel.Instance.ConvertDataGridViewToDataTable(dgvSupplier);
-
-                CustomExcel.Instance.ExportFileDatagridView(dt, "Book Manage", 1, "Cửa hàng bán sách", headerList);
+                CustomExcel.Instance.ExportFileDatagridView(dt, "Book Manage", 0, "Cửa hàng bán sách", headerList);
             }
             catch (Exception er)
             {

@@ -248,9 +248,12 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         {
             try
             {
+                this.gunaMediumCheckBox1.Checked = false;
                 this.searchInput.Clear();
                 this.fromPriceTxt.Clear();
                 this.toPriceTxt.Clear();
+                this.fromPriceTxt.Enabled = false;
+                this.toPriceTxt.Enabled = false;
 
                 this.supplierCbx.SelectedIndex = 0;
                 this.staffCbx.SelectedIndex = 0;
@@ -549,6 +552,8 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         {
             this.fromPriceTxt.Enabled = this.gunaMediumCheckBox1.Checked;
             this.toPriceTxt.Enabled = this.gunaMediumCheckBox1.Checked;
+            List<ImportBillDTO> list = this.handleFilter(this.searchInput.Text);
+            loadImportBillListToDataView(list);
         }
 
         private void printPdfBtn_Click(object sender, EventArgs e)

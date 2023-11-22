@@ -144,7 +144,6 @@ namespace QuanLyCuaHangBanSach.GUI
                 Properties.Settings.Default.Email = this.emailTxt.Text;
                 Properties.Settings.Default.Password = this.pwdTxt.Text;
                 Properties.Settings.Default.Save();
-                Console.WriteLine("123");
             }
             else
             {

@@ -227,10 +227,10 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             }
             try
             {
-				string[] headerList = new string[] { "Mã khách hàng", "Tên khách hàng", "SĐT", "Giới tính", "Năm sinh" };
+				string[] headerList = new string[] { "Mã khách hàng", "Tên khách hàng", "SĐT", "Giới tính", "Năm sinh","Điểm" };
                 DataTable dt = CustomExcel.Instance.ConvertDataGridViewToDataTable(dgvCustomer);
 
-                CustomExcel.Instance.ExportFileDatagridView(dt, "Book Manage", 1, "Cửa hàng bán sách", headerList);
+                CustomExcel.Instance.ExportFileDatagridView(dt, "Book Manage", 0, "Cửa hàng bán sách", headerList);
             }
             catch
             {
