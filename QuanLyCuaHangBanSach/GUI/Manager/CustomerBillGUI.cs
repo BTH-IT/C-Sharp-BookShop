@@ -670,7 +670,10 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         {
             this.dateTimeFrom.Enabled = this.filterCkx.Checked;
             this.dateTimeTo.Enabled = this.filterCkx.Checked;
-        }
+			List<CustomerBillDTO> customerBillList = handleFilter(this.searchInput.Text.Trim());
+
+			this.loadCustomerBillListToDataView(customerBillList);
+		}
 
         private void printPdfBtn_Click(object sender, EventArgs e)
         {

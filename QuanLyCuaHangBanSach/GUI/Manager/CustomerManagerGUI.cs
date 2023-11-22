@@ -282,5 +282,5 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             List<CustomerDTO> customers = handleFilter(this.searchInput.Text.Trim());
             this.loadCustomerListToDataGridView(customers);
         }
-    }
+	}
 }
