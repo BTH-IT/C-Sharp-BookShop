@@ -327,8 +327,7 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
                 }
 
                 TotalMoneyLb.Text = string.Format("{0:N0} VND", total);
-
-                if (CartContainer.Controls.Count > 0 && supplierID != 0)
+                if (CartContainer.Controls.Count > 0 && supplierID != 0 && !string.IsNullOrEmpty(ProfitPercentTxb.Text) && Convert.ToInt32(ProfitPercentTxb.Text) <= 100)
                 {
                     PrintBtn.Cursor = Cursors.Hand;
                     PrintBtnAllowed = true;
@@ -363,8 +362,8 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
 
                     if (newImportBill == null)
                     {
-                        MessageBox.Show("Failure");
-                    }
+						MessageBox.Show("Thất bại");
+					}
                     else
                     {
                         foreach (var importBillDetail in importBillDetails)
@@ -378,8 +377,8 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
                             ImportBillBUS.Instance.createImportBillDetail(newImportBillDetail, importBill.PhanTramLoiNhuan);
                         }
 
-                        MessageBox.Show("Success");
-                    }
+						MessageBox.Show("Thành công");
+					}
 
                     using (ImportBillPrintForm importBillPrintForm = new ImportBillPrintForm(newImportBill.MaDonNhapHang))
                     {
@@ -459,7 +458,12 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
 		private void ProfitPercentTxb_MouseLeave(object sender, EventArgs e)
 		{
             panel1.Focus();
-		}
+            if (!string.IsNullOrEmpty(ProfitPercentTxb.Text))
+            {
+                ErrorLb.Visible = Convert.ToInt32(ProfitPercentTxb.Text) > 100;
+            }
+            CartHandler();
+        }
 
 		private void ProfitPercentTxb_KeyPress(object sender, KeyPressEventArgs e)
 		{
@@ -471,7 +475,7 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
 					return;
 				}
 
-				if (!char.IsDigit(e.KeyChar))
+				if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
 				{
 					e.Handled = true; // Cancel the key press event
 				}

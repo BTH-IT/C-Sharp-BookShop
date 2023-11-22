@@ -21,7 +21,8 @@ namespace QuanLyCuaHangBanSach.GUI
         private int customerID = 0;
         private int staffID;
         private decimal finalTotalMoney = 0;
-        private decimal discount = 0;
+		private decimal totalMoneyNoPointDiscount = 0;
+		private int percent = 0;
         private List<CustomerBillDetailDTO> customerBillDetails = new List<CustomerBillDetailDTO>();
 
         public VendorGUI(int staffID)
@@ -376,6 +377,7 @@ namespace QuanLyCuaHangBanSach.GUI
         {
             try
             {
+                Console.WriteLine(percent);
                 decimal total = 0;
                 foreach (var customerBillDetail in customerBillDetails)
                 {
@@ -388,7 +390,9 @@ namespace QuanLyCuaHangBanSach.GUI
                 {
                     pointDiscount = CustomerBUS.Instance.getById(customerID.ToString()).Diem * 1000;
                 }
-                finalTotalMoney = Math.Max(total - discount - pointDiscount, 0);
+                decimal discount = total * (percent / Convert.ToDecimal(100.0));
+                totalMoneyNoPointDiscount = total - discount;
+				finalTotalMoney = Math.Max(total - discount - pointDiscount, 0);
 
                 DiscountMoneyLb.Text = string.Format("{0:N0} VND", discount);
                 FinalTotalMoneyLb.Text = string.Format("{0:N0} VND", finalTotalMoney);
@@ -436,16 +440,15 @@ namespace QuanLyCuaHangBanSach.GUI
                 if (DiscountCb.SelectedIndex != 0)
                 {
                     string discountID = DiscountCb.SelectedValue.ToString();
-                    int percent = SaleBUS.Instance.getById(discountID).PhanTram;
+                    percent = SaleBUS.Instance.getById(discountID).PhanTram;
                     decimal total = Convert.ToDecimal(TotalMoneyLb.Text.Replace(".", "").Replace(" VND", ""));
-                    discount = total * (percent / Convert.ToDecimal(100.0));
                     DiscountPercentLb.Text = $@"{percent}%";
                     CartHandler();
                 }
                 else
                 {
                     DiscountPercentLb.Text = "";
-                    discount = 0;
+                    percent = 0;
                     CartHandler();
                 }
             }
@@ -553,9 +556,10 @@ namespace QuanLyCuaHangBanSach.GUI
                     {
                         if (PointEnabled)
                         {
-                            CustomerDTO customer_resetPoint = CustomerBUS.Instance.getById(customerID.ToString());
-                            customer_resetPoint.Diem = 0;
-                            CustomerBUS.Instance.update(customer_resetPoint);
+                            CustomerDTO customer_Point = CustomerBUS.Instance.getById(customerID.ToString());
+                            customer_Point.Diem -= Convert.ToInt32(totalMoneyNoPointDiscount) / 1000;
+                            if (customer_Point.Diem < 0) customer_Point.Diem = 0;
+							CustomerBUS.Instance.update(customer_Point);
                         }
 
                         decimal baseMoney = 50000;
@@ -574,8 +578,6 @@ namespace QuanLyCuaHangBanSach.GUI
                         customerBillPrintForm.ShowDialog();
                     }
 
-                    CartContainer.Controls.Clear();
-                    customerBillDetails.Clear();
                     CustomerEnabled = false;
                     PointEnabled = false;
                     PointToggleBtn.Checked = false;
@@ -584,13 +586,15 @@ namespace QuanLyCuaHangBanSach.GUI
                     CustomerCashTxb.Text = "";
                     PhoneInp.Text = "";
                     ProductSearchInp.Text = "";
-                    discount = 0;
+                    percent = 0;
                     DiscountMoneyLb.Text = "0 VND";
                     DiscountCb.SelectedIndex = 0;
                     RecipientNameLb.Text = "Vãng lai";
                     PointAmountLb.Text = string.Empty;
                     DiscountPercentLb.Text = string.Empty;
                     customerID = 0;
+					CartContainer.Controls.Clear();
+					customerBillDetails.Clear();
                     CartHandler();
                     RenderBookContainer();
 				    label1.Focus();
