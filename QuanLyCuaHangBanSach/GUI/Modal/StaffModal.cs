@@ -76,7 +76,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 				loadPositionCbx();
 				if (staff != null)
 				{
-                    if (staff.MaChucVu == 1) isManager = true; 
+                    if (staff.MaChucVu == 1) isManager = true;
 					this.staffNameTxt.Text = staff.Ten;
 					this.birthYearTxt.Text = staff.NamSinh.ToString();
 					this.salaryTxt.Text = staff.Luong.ToString();
@@ -84,7 +84,6 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 					this.phoneNumberTxt.Text = staff.SoDienThoai;
 
 					this.positionCbx.SelectedValue = staff.MaChucVu;
-
 				}
 
 
