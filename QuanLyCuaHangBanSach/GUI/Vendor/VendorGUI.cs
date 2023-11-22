@@ -377,7 +377,6 @@ namespace QuanLyCuaHangBanSach.GUI
         {
             try
             {
-                Console.WriteLine(percent);
                 decimal total = 0;
                 foreach (var customerBillDetail in customerBillDetails)
                 {
