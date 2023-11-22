@@ -177,6 +177,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                         if(this.account != null)
                         {
 							this.account.MatKhau = password;
+                            this.account.MaNhanVien = maNhanVien;
 						}
 						bool isSuccess = this.account != null ? AccountBUS.Instance.update(this.account, email) : AccountBUS.Instance.insert(account);
 

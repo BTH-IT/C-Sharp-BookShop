@@ -100,42 +100,49 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         {
             try
             {
-                if (this.dgvPosition.CurrentCell.RowIndex < 0)
+                if(this.dgvPosition.CurrentCell != null)
                 {
-                    MessageBox.Show("Hãy chọn dòng dữ liệu muốn thao tác");
-                    return;
+					if (this.dgvPosition.CurrentCell.RowIndex < 0)
+					{
+						MessageBox.Show("Hãy chọn dòng dữ liệu muốn thao tác");
+						return;
+					}
+
+					DataGridViewRow row = this.dgvPosition.Rows[this.dgvPosition.CurrentCell.RowIndex];
+
+					if (row.Cells[0].Value.ToString() == "1")
+					{
+						MessageBox.Show("Chức vụ này không thể thay đổi!!");
+						return;
+					}
+
+					using (PositionModal positionModal = new PositionModal("Sửa chức vụ"))
+					{
+						PositionDTO position = PositionBUS.Instance.getById(row.Cells[0].Value.ToString());
+
+						positionModal.updatePosition = position;
+
+						if (positionModal.updatePosition == null)
+						{
+							MessageBox.Show("Đã xảy ra lỗi vui lòng thử lại sau!!");
+							return;
+						}
+
+						positionModal.ShowDialog();
+
+						if (positionModal.isSubmitSuccess)
+						{
+							List<PositionDTO> positionList = PositionBUS.Instance.search(this.searchInput.Text.Trim());
+
+							this.loadPositionListToDataView(positionList);
+						}
+					}
                 }
-
-                DataGridViewRow row = this.dgvPosition.Rows[this.dgvPosition.CurrentCell.RowIndex];
-
-                if (row.Cells[0].Value.ToString() == "1")
+                else
                 {
-                    MessageBox.Show("Chức vụ này không thể thay đổi!!");
-                    return;
-                }
-
-                using (PositionModal positionModal = new PositionModal("Sửa chức vụ"))
-                {
-                    PositionDTO position = PositionBUS.Instance.getById(row.Cells[0].Value.ToString());
-
-                    positionModal.updatePosition = position;
-
-                    if (positionModal.updatePosition == null)
-                    {
-                        MessageBox.Show("Đã xảy ra lỗi vui lòng thử lại sau!!");
-                        return;
-                    }
-
-                    positionModal.ShowDialog();
-
-                    if (positionModal.isSubmitSuccess)
-                    {
-                        List<PositionDTO> positionList = PositionBUS.Instance.search(this.searchInput.Text.Trim());
-
-                        this.loadPositionListToDataView(positionList);
-                    }
-                }
-            }
+                    MessageBox.Show("Bảng có thể chưa có dòng dữ liệu nào để chỉnh sửa");
+				}
+			}
             catch (Exception ex)
             {
                 Console.WriteLine(ex);
@@ -222,24 +229,33 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         {
             try
             {
-                if (this.dgvPosition.CurrentCell.RowIndex < 0)
+                if(this.dgvPosition.CurrentCell != null)
                 {
-                    MessageBox.Show("Hãy chọn dòng dữ liệu muốn thao tác");
-                    return;
+					if (this.dgvPosition.CurrentCell.RowIndex < 0)
+					{
+						MessageBox.Show("Hãy chọn dòng dữ liệu muốn thao tác");
+						return;
+					}
+
+					DataGridViewRow row = this.dgvPosition.Rows[this.dgvPosition.CurrentCell.RowIndex];
+
+					if (row.Cells[0].Value.ToString() == "1")
+					{
+						MessageBox.Show("Chức vụ này đã có quyền tuyệt đối không thể thay đổi quyền!!");
+						return;
+					}
+
+					using (AuthorizeModal authorizeModal = new AuthorizeModal(Convert.ToInt32(row.Cells[0].Value)))
+					{
+						authorizeModal.ShowDialog();
+					}
                 }
-
-                DataGridViewRow row = this.dgvPosition.Rows[this.dgvPosition.CurrentCell.RowIndex];
-
-                if (row.Cells[0].Value.ToString() == "1")
+                else
                 {
-                    MessageBox.Show("Chức vụ này đã có quyền tuyệt đối không thể thay đổi quyền!!");
-                    return;
-                }
-
-                using (AuthorizeModal authorizeModal = new AuthorizeModal(Convert.ToInt32(row.Cells[0].Value)))
-                {
-                    authorizeModal.ShowDialog();
-                }
+                    MessageBox.Show("Bảng có thể chưa có dòng dữ liệu nào để chỉnh sửa");
+                }  
+                    
+               
             }
             catch (Exception ex)
             {

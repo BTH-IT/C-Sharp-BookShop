@@ -54,8 +54,8 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                         sale.MaKhuyenMai,
                         sale.TenKhuyenMai,
                         sale.PhanTram,
-                        sale.NgayBatDau,
-                        sale.NgayKetThuc,
+                        sale.NgayBatDau.GetDateTimeFormats()[0],
+                        sale.NgayKetThuc.GetDateTimeFormats()[0],
                     });
                 }
             }
@@ -243,27 +243,42 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            if (this.dgvSale.CurrentCell.RowIndex < 0)
+            try
             {
-                MessageBox.Show("Hãy chọn dòng dữ liệu muốn thao tác");
-                return;
-            }
-
-            using (SaleModal modal = new SaleModal("Sửa thông tin khuyến mãi"))
-            {
-                DataGridViewRow selectedRow = this.dgvSale.Rows[this.dgvSale.CurrentCell.RowIndex];
-                SaleDTO sale = SaleBUS.Instance.getById(selectedRow.Cells[1].Value.ToString());
-
-                modal.sale = sale;
-
-                modal.ShowDialog();
-
-                if (modal.isSubmitSuccess)
+                if(this.dgvSale.CurrentCell != null)
                 {
+					if (this.dgvSale.CurrentCell.RowIndex < 0)
+					{
+						MessageBox.Show("Hãy chọn dòng dữ liệu muốn thao tác");
+						return;
+					}
 
-                    List<SaleDTO> sales = handleFilter(this.searchInput.Text.Trim());
-                    this.loadDataToDataGridView(sales);
+					using (SaleModal modal = new SaleModal("Sửa thông tin khuyến mãi"))
+					{
+						DataGridViewRow selectedRow = this.dgvSale.Rows[this.dgvSale.CurrentCell.RowIndex];
+						SaleDTO sale = SaleBUS.Instance.getById(selectedRow.Cells[1].Value.ToString());
+
+						modal.sale = sale;
+
+						modal.ShowDialog();
+
+						if (modal.isSubmitSuccess)
+						{
+
+							List<SaleDTO> sales = handleFilter(this.searchInput.Text.Trim());
+							this.loadDataToDataGridView(sales);
+						}
+					}
                 }
+                else
+                {
+                    MessageBox.Show("Bảng dữ liệu có thể chưa có dòng dữ liệu nào để chỉnh sửa");
+                }  
+			
+			}
+            catch
+            {
+
             }
         }
 
@@ -320,29 +335,33 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             try
             {
 				List<SaleDTO> sales = SaleBUS.Instance.search(searchString);
-
-				if (DateTime.Compare(dateTimeTo.Value, dateTimeFrom.Value) >= 0 && filterCkx.Checked)
-				{
-					try
+                if(sales != null)
+                {
+					if (DateTime.Compare(dateTimeTo.Value, dateTimeFrom.Value) >= 0 && filterCkx.Checked)
 					{
-						sales = sales.Where(item =>
-                        {
-                            DateTime dateTimeFromV = new DateTime(dateTimeFrom.Value.Year,dateTimeFrom.Value.Month,dateTimeFrom.Value.Day);
+						try
+						{
+							DateTime dateTimeFromV = new DateTime(dateTimeFrom.Value.Year, dateTimeFrom.Value.Month, dateTimeFrom.Value.Day);
 							DateTime dateTimeToV = new DateTime(dateTimeTo.Value.Year, dateTimeTo.Value.Month, dateTimeTo.Value.Day);
-
-							return DateTime.Compare(item.NgayBatDau, dateTimeFromV) >= 0 &&
-                            DateTime.Compare(item.NgayKetThuc, dateTimeToV) <= 0;
+							sales = sales.FindAll(
+									item =>
+										DateTime.Compare(item.NgayBatDau, dateTimeFromV) >= 0 &&
+										DateTime.Compare(item.NgayKetThuc, dateTimeToV) <= 0
+								);
+						}
+						catch
+						{
+							MessageBox.Show("Lọc theo khoảng thời gian không hợp lệ");
 
 						}
-							 
-						).ToList();
 					}
-					catch
-					{
-						MessageBox.Show("Lọc theo khoảng thời gian không hợp lệ");
-					}
-				}
-				return sales;
+					return sales;
+                }
+                else
+                {
+                    return null;
+                } 
+				
 			}
             catch
             {

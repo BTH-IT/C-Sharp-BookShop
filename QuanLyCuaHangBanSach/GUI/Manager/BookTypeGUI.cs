@@ -97,38 +97,46 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
             try
             {
-                if (this.dgvBookType.CurrentCell.RowIndex < 0)
+                if (this.dgvBookType.CurrentCell != null)
                 {
+					if (this.dgvBookType.CurrentCell.RowIndex < 0)
+					{
 
-                    MessageBox.Show("Hãy chọn dòng dữ liệu muốn thao tác");
-                    return;
+						MessageBox.Show("Hãy chọn dòng dữ liệu muốn thao tác");
+						return;
+					}
+
+					using (BookTypeModal BookTypeModal = new BookTypeModal("Sửa thể loại"))
+					{
+						DataGridViewRow row = this.dgvBookType.Rows[this.dgvBookType.CurrentCell.RowIndex];
+
+						BookTypeDTO BookType = BookTypeBUS.Instance.getById(row.Cells[0].Value.ToString());
+
+
+						BookTypeModal.updateBookType = BookType;
+
+						if (BookTypeModal.updateBookType == null)
+						{
+							MessageBox.Show("Đã xảy ra lỗi vui lòng thử lại sau!!");
+							return;
+						}
+
+						BookTypeModal.ShowDialog();
+
+						if (BookTypeModal.isSubmitSuccess)
+						{
+
+							List<BookTypeDTO> BookTypeList = BookTypeBUS.Instance.search(this.searchInput.Text.Trim());
+
+							this.loadBookTypeListToDataView(BookTypeList);
+						}
+					}
                 }
-
-                using (BookTypeModal BookTypeModal = new BookTypeModal("Sửa thể loại"))
+                else
                 {
-                    DataGridViewRow row = this.dgvBookType.Rows[this.dgvBookType.CurrentCell.RowIndex];
-
-                    BookTypeDTO BookType = BookTypeBUS.Instance.getById(row.Cells[0].Value.ToString());
-
-
-                    BookTypeModal.updateBookType = BookType;
-
-                    if (BookTypeModal.updateBookType == null)
-                    {
-                        MessageBox.Show("Đã xảy ra lỗi vui lòng thử lại sau!!");
-                        return;
-                    }
-
-                    BookTypeModal.ShowDialog();
-
-                    if (BookTypeModal.isSubmitSuccess)
-                    {
-
-                        List<BookTypeDTO> BookTypeList = BookTypeBUS.Instance.search(this.searchInput.Text.Trim());
-
-                        this.loadBookTypeListToDataView(BookTypeList);
-                    }
-                }
+                    MessageBox.Show("Bảng dữ liệu có thể chưa có dòng dữ liệu nào để chỉnh sửa");
+                }    
+                
             }
             catch (Exception ex)
             {
