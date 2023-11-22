@@ -174,8 +174,8 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 if(isSellPriceValid)
                 {
                     isSellPriceValid = CustomValidation.Instance.checkTextboxMatchWithOtherTextBox(sellPriceTxt, importPriceTxt, "Giá bán phải lớn hơn giá nhập", errorSellPriceMsg, sellPriceLine, "after");
-                    CustomValidation.Instance.checkTextboxMatchWithOtherTextBox(importPriceTxt, sellPriceTxt, "Giá nhập phải nhỏ hơn giá bán", this.errorImportPriceMsg, importPriceLine, "before");
                 }    
+                CustomValidation.Instance.checkTextboxMatchWithOtherTextBox(importPriceTxt, sellPriceTxt, "Giá nhập phải nhỏ hơn giá bán", this.errorImportPriceMsg, importPriceLine, "before");
             }
             catch (Exception ex)
             {
@@ -198,8 +198,8 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 if(isImportPriceValid)
                 {
                     isImportPriceValid = CustomValidation.Instance.checkTextboxMatchWithOtherTextBox(importPriceTxt,sellPriceTxt,  "Giá nhập phải nhỏ hơn giá bán", this.errorImportPriceMsg , importPriceLine, "before");
-                    CustomValidation.Instance.checkTextboxMatchWithOtherTextBox(sellPriceTxt, importPriceTxt, "Giá bán phải lớn hơn giá nhập", errorSellPriceMsg, sellPriceLine, "after");
                 }
+                CustomValidation.Instance.checkTextboxMatchWithOtherTextBox(sellPriceTxt, importPriceTxt, "Giá bán phải lớn hơn giá nhập", errorSellPriceMsg, sellPriceLine, "after");
             }
             catch (Exception ex)
             {
@@ -352,14 +352,14 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 if (isSuccess)
                 {
                     this.isSubmitSuccess = isSuccess;
-                    MessageBox.Show(updateBook != null ? "Update Success" : "Insert Success");
+                    MessageBox.Show(updateBook != null ? "Sửa sách thành công" : "Tạo sách thành công");
                     this.Close();
                     return;
                 }
 
                 this.isSubmitSuccess = isSuccess;
 
-                MessageBox.Show(updateBook != null ? "Update Failure" : "Insert Failure");
+                MessageBox.Show(updateBook != null ? "Sửa sách thất bại" : "Tạo sách thất bại");
             }
             catch (Exception ex)
             {

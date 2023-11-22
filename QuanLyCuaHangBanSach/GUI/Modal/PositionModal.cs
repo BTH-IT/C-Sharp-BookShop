@@ -18,6 +18,8 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             this.label1.Text = title;
 
             this.Text = title;
+
+            
         }
         private void cancelBtn_Click(object sender, EventArgs e)
         {
@@ -143,6 +145,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                     this.positionNameTxt.Text = updatePosition.TenChucVu;
                     this.descTxt.Text = updatePosition.MoTa;
                     this.activeCkx.Checked = updatePosition.TrangThai;
+                    this.activeCkx.Enabled = updatePosition.MaChucVu != 1;
                 }
             }
             catch (Exception ex)

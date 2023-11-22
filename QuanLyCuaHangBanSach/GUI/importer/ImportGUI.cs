@@ -471,11 +471,11 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
 					return;
 				}
 
-				if (!char.IsDigit(e.KeyChar))
-				{
-					e.Handled = true; // Cancel the key press event
-				}
-			}
+                if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+                {
+                    e.Handled = true; // Ngăn chặn ký tự nhập vào TextBox
+                }
+            }
 			catch (Exception ex) { Console.WriteLine(ex); }
 		}
 	}

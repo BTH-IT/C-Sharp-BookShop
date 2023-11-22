@@ -163,7 +163,7 @@ namespace QuanLyCuaHangBanSach
 		}
 		public bool checkTextboxWithRegex(Guna2TextBox txt, Regex regex, string errMsg, Label errMsgLbl, Panel line)
         {
-            if (!regex.IsMatch(txt.Text.ToString().Trim()))
+            if (!regex.IsMatch(txt.Text.ToString().Trim()) || (int.TryParse(txt.Text, out int r) && r <= 0))
             {
                 errMsgLbl.Text = errMsg;
                 line.BackColor = Color.FromArgb(239, 68, 68);
@@ -200,7 +200,13 @@ namespace QuanLyCuaHangBanSach
                         int currentYear = DateTime.Now.Year;
                         if (int.TryParse(txt.Text, out int result) && result > currentYear)
                         {
-                            errMsgLbl.Text = "Trường này không được lớn hơn " + currentYear;
+                            if (result <= 0)
+                            {
+                                errMsgLbl.Text = "Trường này là năm không được âm hoặc bằng 0";
+                            } else
+                            {
+                                errMsgLbl.Text = "Trường này không được lớn hơn " + currentYear;
+                            }
                             line.BackColor = Color.FromArgb(239, 68, 68);
                             return false; 
                         }
