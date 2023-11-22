@@ -141,8 +141,8 @@ namespace QuanLyCuaHangBanSach.DAO
         public DataTable search(string searchInput)
         {
             DataTable dataTable = DataProvider.Instance.ExecuteQuery(
-					"select * from taikhoan where (email=@Email or  maNhanVien in  (select maNhanVien  from nhanvien  where tenNhanVien LIKE @tenNhanVien))",
-                    new MySqlParameter[] {new MySqlParameter("@Email",searchInput),new MySqlParameter("@tenNhanVien",$"%{searchInput}%") }
+					"select * from taikhoan where (email LIKE @Email or  maNhanVien in  (select maNhanVien  from nhanvien  where tenNhanVien LIKE @tenNhanVien))",
+                    new MySqlParameter[] {new MySqlParameter("@Email", $"%{searchInput}%"),new MySqlParameter("@tenNhanVien",$"%{searchInput}%") }
                 );  
             if (dataTable.Rows.Count <= 0) return null;
             return dataTable;
