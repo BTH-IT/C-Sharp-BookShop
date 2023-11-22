@@ -184,35 +184,42 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         {
             try
             {
-				if (this.dgvAccount.CurrentCell.RowIndex < 0)
+				if(this.dgvAccount.CurrentCell != null)
 				{
-					MessageBox.Show("Hãy chọn dòng dữ liệu muốn thao tác");
-					return;
-				}
-
-				using (AccountModal accountModal = new AccountModal("Sửa thông tin tài khoản"))
-				{
-					DataGridViewRow row = this.dgvAccount.Rows[this.dgvAccount.CurrentCell.RowIndex];
-
-					AccountDTO account = AccountBUS.Instance.getById(row.Cells[2].Value.ToString());
-
-					accountModal.account = account;
-
-					if (accountModal.account == null)
+					if (this.dgvAccount.CurrentCell.RowIndex < 0)
 					{
-						MessageBox.Show("Đã xảy ra lỗi vui lòng thử lại sau!!");
+						MessageBox.Show("Hãy chọn dòng dữ liệu muốn thao tác");
 						return;
 					}
 
-					accountModal.ShowDialog();
-
-					if (accountModal.isSubmitSuccess)
+					using (AccountModal accountModal = new AccountModal("Sửa thông tin tài khoản"))
 					{
-						// 
-						List<AccountDTO> accounts = AccountBUS.Instance.getAllData();
-						this.loadDataToDataGridView(accounts);
+						DataGridViewRow row = this.dgvAccount.Rows[this.dgvAccount.CurrentCell.RowIndex];
+
+						AccountDTO account = AccountBUS.Instance.getById(row.Cells[2].Value.ToString());
+
+						accountModal.account = account;
+
+						if (accountModal.account == null)
+						{
+							MessageBox.Show("Đã xảy ra lỗi vui lòng thử lại sau!!");
+							return;
+						}
+
+						accountModal.ShowDialog();
+
+						if (accountModal.isSubmitSuccess)
+						{
+							// 
+							List<AccountDTO> accounts = AccountBUS.Instance.getAllData();
+							this.loadDataToDataGridView(accounts);
+						}
 					}
 				}
+				else
+				{
+					MessageBox.Show("Bảng dữ liệu có thể chưa có dòng dữ liệu nào để chỉnh sửa");
+				}	
 			}
             catch
             {

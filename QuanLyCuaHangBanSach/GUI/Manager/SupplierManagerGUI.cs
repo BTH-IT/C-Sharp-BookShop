@@ -83,36 +83,44 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         private void editBtn_Click(object sender, EventArgs e)
         {
             try
-            {
-                if (this.dgvSupplier.CurrentCell.RowIndex < 0)
+            {   
+                if(this.dgvSupplier.CurrentCell != null )
                 {
-                    MessageBox.Show("Hãy chọn dòng dữ liệu muốn thao tác");
-                    return;
-                }
+					if (this.dgvSupplier.CurrentCell.RowIndex < 0)
+					{
+						MessageBox.Show("Hãy chọn dòng dữ liệu muốn thao tác");
+						return;
+					}
 
-                using (SupplierModal SupplierModal = new SupplierModal("Sửa nhà cung cấp"))
+					using (SupplierModal SupplierModal = new SupplierModal("Sửa nhà cung cấp"))
+					{
+						DataGridViewRow row = this.dgvSupplier.Rows[this.dgvSupplier.CurrentCell.RowIndex];
+
+						SupplierDTO Supplier = SupplierBUS.Instance.getById(row.Cells[0].Value.ToString());
+
+						SupplierModal.updateSupplier = Supplier;
+
+						if (SupplierModal.updateSupplier == null)
+						{
+							MessageBox.Show("Đã xảy ra lỗi vui lòng thử lại sau!!");
+							return;
+						}
+
+						SupplierModal.ShowDialog();
+
+						if (SupplierModal.isSubmitSuccess)
+						{
+							List<SupplierDTO> SupplierList = SupplierBUS.Instance.search(this.searchInput.Text.Trim());
+
+							this.loadSupplierListToDataView(SupplierList);
+						}
+					}
+				}
+                else
                 {
-                    DataGridViewRow row = this.dgvSupplier.Rows[this.dgvSupplier.CurrentCell.RowIndex];
-
-                    SupplierDTO Supplier = SupplierBUS.Instance.getById(row.Cells[0].Value.ToString());
-
-                    SupplierModal.updateSupplier = Supplier;
-
-                    if (SupplierModal.updateSupplier == null)
-                    {
-                        MessageBox.Show("Đã xảy ra lỗi vui lòng thử lại sau!!");
-                        return;
-                    }
-
-                    SupplierModal.ShowDialog();
-
-                    if (SupplierModal.isSubmitSuccess)
-                    {
-                        List<SupplierDTO> SupplierList = SupplierBUS.Instance.search(this.searchInput.Text.Trim());
-
-                        this.loadSupplierListToDataView(SupplierList);
-                    }
-                }
+					MessageBox.Show("Bảng dữ liệu có thể chưa có dòng dữ liệu nào để chỉnh sửa");
+				}
+				
             }
             catch (Exception er)
             {

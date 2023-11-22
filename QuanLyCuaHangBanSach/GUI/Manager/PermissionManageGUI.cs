@@ -102,39 +102,47 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         {
             try
             {
-                if (this.dgvPermission.CurrentCell.RowIndex < 0)
+                if(this.dgvPermission.CurrentCell != null)
                 {
-                    MessageBox.Show("Hãy chọn dòng dữ liệu muốn thao tác");
-                    return;
-                }
+					if (this.dgvPermission.CurrentCell.RowIndex < 0)
+					{
+						MessageBox.Show("Hãy chọn dòng dữ liệu muốn thao tác");
+						return;
+					}
 
-                using (PermissionModal positionModal = new PermissionModal("Sửa quyền hạn"))
+					using (PermissionModal positionModal = new PermissionModal("Sửa quyền hạn"))
+					{
+						DataGridViewRow row = this.dgvPermission.Rows[this.dgvPermission.CurrentCell.RowIndex];
+
+						PermissionDTO position = PermissionBUS.Instance.getById(row.Cells[0].Value.ToString());
+
+						positionModal.updatePermission = position;
+
+						if (positionModal.updatePermission == null)
+						{
+							MessageBox.Show("Đã xảy ra lỗi vui lòng thử lại sau!!");
+							return;
+						}
+
+						positionModal.ShowDialog();
+						if (positionModal.isSubmitSuccess)
+						{
+							List<PermissionDTO> positionList = PermissionBUS.Instance.search(this.searchInput.Text.Trim());
+
+							this.loadPermissionListToDataView(positionList);
+							if (positionModal.isPermissionStatusChange)
+							{
+								onPermissionStatusChange(ManagerGUI.currentStaff.Ma, "");
+							}
+						}
+					}
+                }
+                else
                 {
-                    DataGridViewRow row = this.dgvPermission.Rows[this.dgvPermission.CurrentCell.RowIndex];
+					MessageBox.Show("Bảng dữ liệu có thể chưa có dòng dữ liệu nào để chỉnh sửa");
+				}
 
-                    PermissionDTO position = PermissionBUS.Instance.getById(row.Cells[0].Value.ToString());
-
-                    positionModal.updatePermission = position;
-
-                    if (positionModal.updatePermission == null)
-                    {
-                        MessageBox.Show("Đã xảy ra lỗi vui lòng thử lại sau!!");
-                        return;
-                    }
-
-                    positionModal.ShowDialog();
-                    if (positionModal.isSubmitSuccess)
-                    {
-                        List<PermissionDTO> positionList = PermissionBUS.Instance.search(this.searchInput.Text.Trim());
-
-                        this.loadPermissionListToDataView(positionList);
-                        if(positionModal.isPermissionStatusChange)
-                        {
-                            onPermissionStatusChange(ManagerGUI.currentStaff.Ma,"");
-                        }    
-                    }
-                }
-            }
+			}
             catch (Exception ex)
             {
                 Console.WriteLine(ex);

@@ -433,35 +433,43 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         {
             try
             {
-                if (this.dgvBook.CurrentCell.RowIndex < 0)
+                if (this.dgvBook.CurrentCell != null)
                 {
-                    MessageBox.Show("Hãy chọn dòng dữ liệu muốn thao tác");
-                    return;
-                }
+					if (this.dgvBook.CurrentCell.RowIndex < 0)
+					{
+						MessageBox.Show("Hãy chọn dòng dữ liệu muốn thao tác");
+						return;
+					}
 
-                using (BookModal bookModal = new BookModal("Sửa sách"))
+					using (BookModal bookModal = new BookModal("Sửa sách"))
+					{
+						DataGridViewRow row = this.dgvBook.Rows[this.dgvBook.CurrentCell.RowIndex];
+
+						BookDTO book = BookBUS.Instance.getById(row.Cells[1].Value.ToString());
+
+						bookModal.updateBook = book;
+
+						if (bookModal.updateBook == null)
+						{
+							MessageBox.Show("Đã xảy ra lỗi vui lòng thử lại sau!!");
+							return;
+						}
+
+						bookModal.ShowDialog();
+
+						if (bookModal.isSubmitSuccess)
+						{
+							List<BookDTO> bookList = handleFilter(this.searchInput.Text.Trim());
+
+							this.loadBookListToDataView(bookList);
+						}
+					}
+				}
+                else
                 {
-                    DataGridViewRow row = this.dgvBook.Rows[this.dgvBook.CurrentCell.RowIndex];
-
-                    BookDTO book = BookBUS.Instance.getById(row.Cells[1].Value.ToString());
-
-                    bookModal.updateBook = book;
-
-                    if (bookModal.updateBook == null)
-                    {
-                        MessageBox.Show("Đã xảy ra lỗi vui lòng thử lại sau!!");
-                        return;
-                    }
-
-                    bookModal.ShowDialog();
-
-                    if (bookModal.isSubmitSuccess)
-                    {
-                        List<BookDTO> bookList = handleFilter(this.searchInput.Text.Trim());
-
-                        this.loadBookListToDataView(bookList);
-                    }
-                }
+					MessageBox.Show("Bảng dữ liệu có thể chưa có dòng dữ liệu nào để chỉnh sửa");
+				}
+				
             }
             catch (Exception ex)
             {
@@ -614,19 +622,28 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         {
             try
             {
-                if (this.dgvBook.CurrentCell.RowIndex < 0)
+                if (this.dgvBook.CurrentCell != null)
                 {
-                    MessageBox.Show("Hãy chọn dòng dữ liệu muốn thao tác");
-                    return;
+					if (this.dgvBook.CurrentCell.RowIndex < 0)
+					{
+						MessageBox.Show("Hãy chọn dòng dữ liệu muốn thao tác");
+						return;
+					}
+
+					DataGridViewRow row = this.dgvBook.Rows[this.dgvBook.CurrentCell.RowIndex];
+
+					using (PrintBarcodeModal printBarcodeModal = new PrintBarcodeModal(row.Cells[1].Value.ToString()))
+					{
+						printBarcodeModal.ShowDialog();
+					}
                 }
-
-                DataGridViewRow row = this.dgvBook.Rows[this.dgvBook.CurrentCell.RowIndex];
-
-                using (PrintBarcodeModal printBarcodeModal = new PrintBarcodeModal(row.Cells[1].Value.ToString()))
+                else
                 {
-                    printBarcodeModal.ShowDialog();
-                }
-            }
+					MessageBox.Show("Bảng dữ liệu có thể chưa có dòng dữ liệu nào để in");
+
+				}
+
+			}
             catch (Exception ex)
             {
                 Console.WriteLine(ex);

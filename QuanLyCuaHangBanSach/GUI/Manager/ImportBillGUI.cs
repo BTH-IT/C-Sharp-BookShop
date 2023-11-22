@@ -529,20 +529,27 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         {
             try
             {
-                if (this.dgvImportBill.CurrentCell.RowIndex < 0)
+                if(this.dgvImportBill.CurrentCell != null)
                 {
-                    MessageBox.Show("Hãy chọn dòng dữ liệu muốn thao tác");
-                    return;
-                }
+					if (this.dgvImportBill.CurrentCell.RowIndex < 0)
+					{
+						MessageBox.Show("Hãy chọn dòng dữ liệu muốn thao tác");
+						return;
+					}
 
-                DataGridViewRow row = this.dgvImportBill.Rows[this.dgvImportBill.CurrentCell.RowIndex];
+					DataGridViewRow row = this.dgvImportBill.Rows[this.dgvImportBill.CurrentCell.RowIndex];
 
-                ImportBillDTO importBill = ImportBillBUS.Instance.getById(row.Cells[1].Value.ToString());
+					ImportBillDTO importBill = ImportBillBUS.Instance.getById(row.Cells[1].Value.ToString());
 
-                using (ViewImportBillModal viewImportBillModal = new ViewImportBillModal(importBill))
+					using (ViewImportBillModal viewImportBillModal = new ViewImportBillModal(importBill))
+					{
+						viewImportBillModal.ShowDialog();
+					}
+				}
+                else
                 {
-                    viewImportBillModal.ShowDialog();
-                }
+					MessageBox.Show("Bảng dữ liệu có thể chưa có dòng dữ liệu nào để xem chi tiết");
+				}
             }
             catch (Exception ex)
             {
@@ -562,19 +569,27 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         {
             try
             {
-                if (this.dgvImportBill.CurrentCell.RowIndex < 0 || this.dgvImportBill.CurrentCell == null)
+                if (this.dgvImportBill.CurrentCell != null)
                 {
-                    MessageBox.Show("Hãy chọn dòng dữ liệu muốn thao tác");
-                    return;
+					if (this.dgvImportBill.CurrentCell.RowIndex < 0 || this.dgvImportBill.CurrentCell == null)
+					{
+						MessageBox.Show("Hãy chọn dòng dữ liệu muốn thao tác");
+						return;
+					}
+
+					DataGridViewRow row = this.dgvImportBill.Rows[this.dgvImportBill.CurrentCell.RowIndex];
+
+					using (ImportBillPrintForm importBillPrintForm = new ImportBillPrintForm(Convert.ToInt32(row.Cells[1].Value)))
+					{
+						importBillPrintForm.ShowDialog();
+					}
                 }
-
-                DataGridViewRow row = this.dgvImportBill.Rows[this.dgvImportBill.CurrentCell.RowIndex];
-
-                using (ImportBillPrintForm importBillPrintForm = new ImportBillPrintForm(Convert.ToInt32(row.Cells[1].Value)))
+                else
                 {
-                    importBillPrintForm.ShowDialog();
-                }
-            }
+					MessageBox.Show("Bảng dữ liệu có thể chưa có dòng dữ liệu nào để in");
+				}
+
+			}
             catch (Exception ex)
             {
                 Console.WriteLine(ex);
