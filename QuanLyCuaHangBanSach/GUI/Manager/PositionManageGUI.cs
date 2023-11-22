@@ -89,7 +89,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
                 DataTable dt = CustomExcel.Instance.ConvertDataGridViewToDataTable(dgvPosition);
 
-                CustomExcel.Instance.ExportFileDatagridView(dt, "Book Manage", 1, "Cửa hàng bán sách", headerList);
+                CustomExcel.Instance.ExportFileDatagridView(dt, "Book Manage", 0, "Cửa hàng bán sách", headerList);
             }
             catch (Exception ex)
             {

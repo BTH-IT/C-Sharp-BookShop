@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            QuanLyCuaHangBanSach.CustomButton customButton1;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginGUI));
+            QuanLyCuaHangBanSach.CustomButton customButton1;
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblLogin = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -65,27 +65,6 @@
             this.gradientPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.SuspendLayout();
-            // 
-            // customButton1
-            // 
-            customButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            customButton1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            customButton1.BorderColor = System.Drawing.Color.Transparent;
-            customButton1.BorderRadius = 30;
-            customButton1.BorderSize = 0;
-            customButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            customButton1.FlatAppearance.BorderSize = 0;
-            customButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            customButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            customButton1.ForeColor = System.Drawing.Color.White;
-            customButton1.Location = new System.Drawing.Point(535, 360);
-            customButton1.Name = "customButton1";
-            customButton1.Size = new System.Drawing.Size(238, 64);
-            customButton1.TabIndex = 5;
-            customButton1.Text = "Đăng nhập";
-            customButton1.TextColor = System.Drawing.Color.White;
-            customButton1.UseVisualStyleBackColor = false;
-            customButton1.Click += new System.EventHandler(this.customButton1_Click);
             // 
             // pictureBox1
             // 
@@ -162,7 +141,7 @@
             this.errorMsg1.ForeColor = System.Drawing.Color.Red;
             this.errorMsg1.Location = new System.Drawing.Point(169, 60);
             this.errorMsg1.Name = "errorMsg1";
-            this.errorMsg1.Size = new System.Drawing.Size(0, 26);
+            this.errorMsg1.Size = new System.Drawing.Size(0, 21);
             this.errorMsg1.TabIndex = 2;
             // 
             // pictureBox3
@@ -259,7 +238,7 @@
             this.errorMsg2.ForeColor = System.Drawing.Color.Red;
             this.errorMsg2.Location = new System.Drawing.Point(170, 70);
             this.errorMsg2.Name = "errorMsg2";
-            this.errorMsg2.Size = new System.Drawing.Size(0, 26);
+            this.errorMsg2.Size = new System.Drawing.Size(0, 21);
             this.errorMsg2.TabIndex = 2;
             // 
             // pictureBox4
@@ -342,11 +321,32 @@
             this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.checkBox1.Location = new System.Drawing.Point(455, 323);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(133, 24);
+            this.checkBox1.Size = new System.Drawing.Size(115, 21);
             this.checkBox1.TabIndex = 3;
             this.checkBox1.Text = "Nhớ tài khoản";
             this.checkBox1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // customButton1
+            // 
+            customButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            customButton1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            customButton1.BorderColor = System.Drawing.Color.Transparent;
+            customButton1.BorderRadius = 30;
+            customButton1.BorderSize = 0;
+            customButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            customButton1.FlatAppearance.BorderSize = 0;
+            customButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            customButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            customButton1.ForeColor = System.Drawing.Color.White;
+            customButton1.Location = new System.Drawing.Point(535, 360);
+            customButton1.Name = "customButton1";
+            customButton1.Size = new System.Drawing.Size(238, 64);
+            customButton1.TabIndex = 5;
+            customButton1.Text = "Đăng nhập";
+            customButton1.TextColor = System.Drawing.Color.White;
+            customButton1.UseVisualStyleBackColor = false;
+            customButton1.Click += new System.EventHandler(this.customButton1_Click);
             // 
             // gradientPanel2
             // 
@@ -366,7 +366,7 @@
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label8.Location = new System.Drawing.Point(56, 204);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(310, 100);
+            this.label8.Size = new System.Drawing.Size(255, 80);
             this.label8.TabIndex = 100;
             this.label8.Text = " Sống như đọc một cuốn sách\r\nCần phải biết...\r\nlật sang một trang mới khi cần thi" +
     "ết\r\n\r\n";
@@ -378,7 +378,7 @@
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label7.Location = new System.Drawing.Point(36, 132);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(360, 51);
+            this.label7.Size = new System.Drawing.Size(293, 39);
             this.label7.TabIndex = 100;
             this.label7.Text = "Wellcome Back!!";
             // 
@@ -414,6 +414,8 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "LoginGUI";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.LoginGUI_FormClosed);
+            this.Load += new System.EventHandler(this.LoginGUI_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.DangNhapGUI_Paint);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);

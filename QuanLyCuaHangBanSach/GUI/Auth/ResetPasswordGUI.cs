@@ -7,6 +7,7 @@ namespace QuanLyCuaHangBanSach.GUI
 {
     public partial class ResetPasswordGUI : Form
     {
+        
         private string email = SendCodeGUI.to;
         private bool isHiddenNewPwd = true;
         private bool isHiddenConfirmPwd = true;
@@ -46,7 +47,7 @@ namespace QuanLyCuaHangBanSach.GUI
                 this.isHiddenConfirmPwd = true;
             }
 
-            this.confirmPwdTxt.UseSystemPasswordChar = this.isHiddenNewPwd;
+            this.confirmPwdTxt.UseSystemPasswordChar = this.isHiddenConfirmPwd;
             this.pictureBox6.Refresh();
         }
 

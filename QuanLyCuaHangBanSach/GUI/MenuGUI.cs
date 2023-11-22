@@ -59,13 +59,10 @@ namespace QuanLyCuaHangBanSach.GUI
             if (!isChecked)
             {
                 MessageBox.Show("Nhân viên đang không có quyền gì trong hệ thống!");
-                LoginGUI.Instance.isMenuValid = false;
+                this.Hide();
+                LoginGUI.Instance.Show();
                 return;
             }
-            else
-            {
-                LoginGUI.Instance.isMenuValid = true;
-			}
 
 			this.Left += SystemInformation.VirtualScreen.Width / 2 - this.Width / 2;
             this.Top += SystemInformation.VirtualScreen.Height / 2 - this.Height / 2;
