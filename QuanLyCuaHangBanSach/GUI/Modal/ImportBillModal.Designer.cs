@@ -34,27 +34,27 @@
             this.bookList = new System.Windows.Forms.FlowLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.totalPriceTxt = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.cancelBtn = new Guna.UI.WinForms.GunaButton();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label13 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.errorBookListMsg = new System.Windows.Forms.Label();
-            this.totalPriceTxt = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.errorCustomerMsg = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.supplierCbx = new Guna.UI.WinForms.GunaComboBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
             this.benefitTxt = new Guna.UI2.WinForms.Guna2TextBox();
             this.benefitLine = new System.Windows.Forms.Panel();
             this.errorBenefitMsg = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.errorBookListMsg = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // submitBtn
@@ -159,6 +159,16 @@
             this.panel1.Size = new System.Drawing.Size(996, 73);
             this.panel1.TabIndex = 0;
             // 
+            // totalPriceTxt
+            // 
+            this.totalPriceTxt.Font = new System.Drawing.Font("#9Slide03 Cabin SemiBold", 14.25F, System.Drawing.FontStyle.Bold);
+            this.totalPriceTxt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.totalPriceTxt.Location = new System.Drawing.Point(697, 0);
+            this.totalPriceTxt.Name = "totalPriceTxt";
+            this.totalPriceTxt.Size = new System.Drawing.Size(295, 49);
+            this.totalPriceTxt.TabIndex = 33;
+            this.totalPriceTxt.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // label3
             // 
             this.label3.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
@@ -211,59 +221,6 @@
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(1003, 571);
             this.flowLayoutPanel1.TabIndex = 0;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.label6);
-            this.panel2.Controls.Add(this.benefitTxt);
-            this.panel2.Controls.Add(this.benefitLine);
-            this.panel2.Controls.Add(this.errorBenefitMsg);
-            this.panel2.Controls.Add(this.label13);
-            this.panel2.Location = new System.Drawing.Point(603, 3);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(396, 88);
-            this.panel2.TabIndex = 1;
-            // 
-            // label13
-            // 
-            this.label13.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label13.Location = new System.Drawing.Point(3, 3);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(126, 49);
-            this.label13.TabIndex = 9;
-            this.label13.Text = "Tỉ lệ lợi nhuận:";
-            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.errorBookListMsg);
-            this.panel4.Controls.Add(this.gunaButton1);
-            this.panel4.Controls.Add(this.bookList);
-            this.panel4.Controls.Add(this.label2);
-            this.panel4.Location = new System.Drawing.Point(3, 97);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(996, 383);
-            this.panel4.TabIndex = 2;
-            // 
-            // errorBookListMsg
-            // 
-            this.errorBookListMsg.AutoSize = true;
-            this.errorBookListMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.errorBookListMsg.ForeColor = System.Drawing.Color.Red;
-            this.errorBookListMsg.Location = new System.Drawing.Point(63, 344);
-            this.errorBookListMsg.Name = "errorBookListMsg";
-            this.errorBookListMsg.Size = new System.Drawing.Size(0, 21);
-            this.errorBookListMsg.TabIndex = 36;
-            // 
-            // totalPriceTxt
-            // 
-            this.totalPriceTxt.Font = new System.Drawing.Font("#9Slide03 Cabin SemiBold", 14.25F, System.Drawing.FontStyle.Bold);
-            this.totalPriceTxt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.totalPriceTxt.Location = new System.Drawing.Point(736, 0);
-            this.totalPriceTxt.Name = "totalPriceTxt";
-            this.totalPriceTxt.Size = new System.Drawing.Size(256, 49);
-            this.totalPriceTxt.TabIndex = 33;
-            this.totalPriceTxt.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panel3
             // 
@@ -321,6 +278,28 @@
             this.supplierCbx.TabStop = false;
             this.supplierCbx.Leave += new System.EventHandler(this.supplierCbx_SelectedIndexChanged);
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.label6);
+            this.panel2.Controls.Add(this.benefitTxt);
+            this.panel2.Controls.Add(this.benefitLine);
+            this.panel2.Controls.Add(this.errorBenefitMsg);
+            this.panel2.Controls.Add(this.label13);
+            this.panel2.Location = new System.Drawing.Point(603, 3);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(396, 88);
+            this.panel2.TabIndex = 1;
+            // 
+            // label6
+            // 
+            this.label6.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label6.Location = new System.Drawing.Point(366, 12);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(23, 29);
+            this.label6.TabIndex = 31;
+            this.label6.Text = "%";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // benefitTxt
             // 
             this.benefitTxt.BackColor = System.Drawing.Color.Transparent;
@@ -370,15 +349,36 @@
             this.errorBenefitMsg.Size = new System.Drawing.Size(0, 21);
             this.errorBenefitMsg.TabIndex = 27;
             // 
-            // label6
+            // label13
             // 
-            this.label6.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label6.Location = new System.Drawing.Point(366, 12);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(23, 29);
-            this.label6.TabIndex = 31;
-            this.label6.Text = "%";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label13.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label13.Location = new System.Drawing.Point(3, 3);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(126, 49);
+            this.label13.TabIndex = 9;
+            this.label13.Text = "Tỉ lệ lợi nhuận:";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.errorBookListMsg);
+            this.panel4.Controls.Add(this.gunaButton1);
+            this.panel4.Controls.Add(this.bookList);
+            this.panel4.Controls.Add(this.label2);
+            this.panel4.Location = new System.Drawing.Point(3, 97);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(996, 383);
+            this.panel4.TabIndex = 2;
+            // 
+            // errorBookListMsg
+            // 
+            this.errorBookListMsg.AutoSize = true;
+            this.errorBookListMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.errorBookListMsg.ForeColor = System.Drawing.Color.Red;
+            this.errorBookListMsg.Location = new System.Drawing.Point(63, 344);
+            this.errorBookListMsg.Name = "errorBookListMsg";
+            this.errorBookListMsg.Size = new System.Drawing.Size(0, 21);
+            this.errorBookListMsg.TabIndex = 36;
             // 
             // ImportBillModal
             // 
@@ -399,12 +399,12 @@
             this.Load += new System.EventHandler(this.ImportBillModal_Load);
             this.panel1.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             this.ResumeLayout(false);
 
         }

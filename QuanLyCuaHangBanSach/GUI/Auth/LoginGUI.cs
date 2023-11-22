@@ -155,8 +155,11 @@ namespace QuanLyCuaHangBanSach.GUI
             MessageBox.Show("Đăng nhập thành công vào hệ thống!");
 
             MenuGUI menu = new MenuGUI(account.MaNhanVien);
-            this.Hide();
-			menu.Show();
+            if (menu.isChecked == true)
+            {
+                this.Hide();
+                menu.Show();
+            }
 		}
 
         private void customButton1_Click(object sender, EventArgs e)

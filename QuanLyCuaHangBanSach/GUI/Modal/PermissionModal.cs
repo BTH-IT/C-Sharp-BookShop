@@ -105,7 +105,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 if (isSuccess)
                 {
                     this.isSubmitSuccess = isSuccess;
-                    MessageBox.Show(updatePermission != null ? "Update Success" : "Insert Success");
+                    MessageBox.Show(updatePermission != null ? "Sửa thành công" : "Thêm thành công");
                     if (updatePermission != null )
                     {
                         if (updatePermission.TrangThai != permission.TrangThai )
@@ -119,7 +119,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
                 this.isSubmitSuccess = isSuccess;
 
-                MessageBox.Show(updatePermission != null ? "Update Failure" : "Insert Failure");
+                MessageBox.Show(updatePermission != null ? "Sửa thất bại" : "Thêm thất bại");
             }
             catch (Exception ex)
             {

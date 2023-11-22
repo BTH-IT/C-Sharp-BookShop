@@ -807,34 +807,26 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                     }
                 }
 
+                this.selectedImportBillDetailList.Clear();
+
                 foreach (DataRow row in dt.Rows)
                 {
                     BookDTO newBook = BookBUS.Instance.getById(row[0].ToString());
                     int soLuong = Convert.ToInt32(row[2].ToString());
+                    decimal giaNhap = Convert.ToDecimal(row[3].ToString());
 
                     if (newBook == null) continue;
 
                     try
                     {
-                        int idx = this.selectedImportBillDetailList.FindIndex(
-                            book => book.MaSach == newBook.MaSach
+                        ImportBillDetailDTO importBillDetail = new ImportBillDetailDTO(
+                            0,
+                            newBook.MaSach,
+                            soLuong,
+                            giaNhap
                         );
 
-                        if (idx == -1)
-                        {
-                            ImportBillDetailDTO importBillDetail = new ImportBillDetailDTO(
-                                0,
-                                newBook.MaSach,
-                                soLuong,
-                                newBook.GiaNhap
-                            );
-
-                            this.selectedImportBillDetailList.Add(importBillDetail);
-                        }
-                        else
-                        {
-                            this.selectedImportBillDetailList[idx].SoLuong += soLuong;
-                        }
+                        this.selectedImportBillDetailList.Add(importBillDetail);
                     }
                     catch (Exception ex)
                     {

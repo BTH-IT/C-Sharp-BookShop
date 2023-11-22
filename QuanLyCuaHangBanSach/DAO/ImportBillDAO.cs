@@ -99,12 +99,25 @@ namespace QuanLyCuaHangBanSach.DAO
 
             decimal giaBan = data.DonGia + Convert.ToDecimal(Convert.ToDecimal(data.DonGia * Convert.ToDecimal(phanTramLoiNhuan / 100.0)).ToString().Split('.')[0]);
 
-            rowChanged = DataProvider.Instance.ExecuteNonQuery(sql,
-                new MySqlParameter[] {
-                    new MySqlParameter("@giaBan", giaBan),
-                    new MySqlParameter("@giaNhap", data.DonGia),
-                    new MySqlParameter("@maSach", data.MaSach),
-                });
+            BookDTO book = BookBUS.Instance.getById(data.MaSach.ToString());
+
+            if (book.GiaBan <= giaBan)
+            {
+                rowChanged = DataProvider.Instance.ExecuteNonQuery(sql,
+                    new MySqlParameter[] {
+                        new MySqlParameter("@giaBan", giaBan),
+                        new MySqlParameter("@giaNhap", data.DonGia),
+                        new MySqlParameter("@maSach", data.MaSach),
+                    });
+            } else
+            {
+                rowChanged = DataProvider.Instance.ExecuteNonQuery(sql,
+                    new MySqlParameter[] {
+                        new MySqlParameter("@giaBan", book.GiaBan),
+                        new MySqlParameter("@giaNhap", data.DonGia),
+                        new MySqlParameter("@maSach", data.MaSach),
+                    });
+            }
 
             // thêm sách
             if (rowChanged > 0)

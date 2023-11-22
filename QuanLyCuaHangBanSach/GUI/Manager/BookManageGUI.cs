@@ -609,5 +609,28 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                 e.Handled = true; // Ngăn chặn ký tự nhập vào TextBox
             }
         }
+
+        private void gunaAdvenceButton1_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                if (this.dgvBook.CurrentCell.RowIndex < 0)
+                {
+                    MessageBox.Show("Hãy chọn dòng dữ liệu muốn thao tác");
+                    return;
+                }
+
+                DataGridViewRow row = this.dgvBook.Rows[this.dgvBook.CurrentCell.RowIndex];
+
+                using (PrintBarcodeModal printBarcodeModal = new PrintBarcodeModal(row.Cells[1].Value.ToString()))
+                {
+                    printBarcodeModal.ShowDialog();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+        }
     }
 }

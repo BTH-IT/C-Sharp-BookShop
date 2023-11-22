@@ -231,6 +231,12 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
                 DataGridViewRow row = this.dgvPosition.Rows[this.dgvPosition.CurrentCell.RowIndex];
 
+                if (row.Cells[0].Value.ToString() == "1")
+                {
+                    MessageBox.Show("Chức vụ này đã có quyền tuyệt đối không thể thay đổi quyền!!");
+                    return;
+                }
+
                 using (AuthorizeModal authorizeModal = new AuthorizeModal(Convert.ToInt32(row.Cells[0].Value)))
                 {
                     authorizeModal.ShowDialog();
