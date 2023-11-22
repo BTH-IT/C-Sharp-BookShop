@@ -195,7 +195,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 					foreach (CustomerBillDTO bill in billList)
 					{
 						dgvBill.Rows.Add(new object[] {
-							bill.NgayLap,
+							bill.NgayLap.ToString("dd/MM/yyyy"),
 							bill.MaDonKhachHang,
 							bill.PhanTramKhuyenMai != 0 ? string.Format("{0:N0} VNĐ", DiscountMoneyCal(bill.PhanTramKhuyenMai, bill.TongTien)) : "Không khuyến mãi",
 							string.Format("{0:N0} VNĐ", bill.TongTien)
@@ -324,6 +324,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 						revenueFrom.Clear();
 						revenueTo.Clear();
 						MessageBox.Show("Ngày từ phải nhỏ hơn hoặc bằng ngày đến");
+						fromDate.Value = DateTime.Now.AddYears(-1);
 						toDate.Value = DateTime.Now;
 					}
 				}
