@@ -119,14 +119,22 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             if (isSuccess)
             {
                 this.isSubmitSuccess = isSuccess;
-                MessageBox.Show(updateBookType != null ? "Update Success" : "Insert Success");
+                MessageBox.Show(updateBookType != null ? "Sửa thành công" : "Thêm thành công");
                 this.Close();
                 return;
             }
 
             this.isSubmitSuccess = isSuccess;
 
-            MessageBox.Show(updateBookType != null ? "Update Failure" : "Insert Failure");
+            MessageBox.Show(updateBookType != null ? "Sửa thất bại" : "Thêm thất bại");
+        }
+
+        private void BookTypeModal_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                gunaButton1_Click(sender, e);
+            }
         }
     }
 }
