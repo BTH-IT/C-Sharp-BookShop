@@ -48,7 +48,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             try
             {
                 this.searchInput.ForeColor = Color.Black;
-                List<PublisherDTO> PublisherList = PublisherBUS.Instance.search(this.searchInput.Text.ToString());
+                List<PublisherDTO> PublisherList = PublisherBUS.Instance.search(this.searchInput.Text.Trim());
                 this.loadPublisherListToDataView(PublisherList);
             }
             catch (Exception er)
@@ -109,7 +109,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
                     if (PublisherModal.isSubmitSuccess)
                     {
-                        List<PublisherDTO> PublisherList = PublisherBUS.Instance.search(this.searchInput.Text.ToString());
+                        List<PublisherDTO> PublisherList = PublisherBUS.Instance.search(this.searchInput.Text.Trim());
 
                         this.loadPublisherListToDataView(PublisherList);
                     }
@@ -161,7 +161,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                         }
 
                     }
-                    List<PublisherDTO> PublisherList = PublisherBUS.Instance.search(this.searchInput.Text.ToString());
+                    List<PublisherDTO> PublisherList = PublisherBUS.Instance.search(this.searchInput.Text.Trim());
                     this.loadPublisherListToDataView(PublisherList);
 
                     MessageBox.Show("Delete successful");
@@ -200,7 +200,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
                     if (PublisherModal.isSubmitSuccess)
                     {
-                        List<PublisherDTO> PublisherList = PublisherBUS.Instance.search(this.searchInput.Text.ToString());
+                        List<PublisherDTO> PublisherList = PublisherBUS.Instance.search(this.searchInput.Text.Trim());
 
                         this.loadPublisherListToDataView(PublisherList);
                     }
@@ -240,7 +240,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
                     if (PublisherModal.isSubmitSuccess)
                     {
-                        List<PublisherDTO> PublisherList = PublisherBUS.Instance.search(this.searchInput.Text.ToString());
+                        List<PublisherDTO> PublisherList = PublisherBUS.Instance.search(this.searchInput.Text.Trim());
 
                         this.loadPublisherListToDataView(PublisherList);
                     }

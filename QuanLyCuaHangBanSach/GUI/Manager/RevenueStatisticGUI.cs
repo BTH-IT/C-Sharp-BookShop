@@ -382,7 +382,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 					if ((now - lastTextChanged).TotalMilliseconds >= debounceInterval)
 					{
                         Console.WriteLine("aaaaa");
-                        List<CustomerBillDTO> billList = handleFilter(searchInput.Text);
+                        List<CustomerBillDTO> billList = handleFilter(searchInput.Text.Trim());
 						loadBillListToDataView(billList);
 					}
 				}
@@ -505,7 +505,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 			try
 			{
 				fromDate.Enabled = fromDate.Enabled ? false : true;
-				List<CustomerBillDTO> billList = handleFilter(searchInput.Text);
+				List<CustomerBillDTO> billList = handleFilter(searchInput.Text.Trim());
 				loadBillListToDataView(billList);
 			}
 			catch (Exception ex)
@@ -519,7 +519,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 			try
 			{
 				toDate.Enabled = toDate.Enabled ? false : true;
-				List<CustomerBillDTO> billList = handleFilter(searchInput.Text);
+				List<CustomerBillDTO> billList = handleFilter(searchInput.Text.Trim());
 				loadBillListToDataView(billList);
 			}
 			catch (Exception ex)
@@ -532,7 +532,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 		{
 			try
 			{
-				List<CustomerBillDTO> billList = handleFilter(searchInput.Text);
+				List<CustomerBillDTO> billList = handleFilter(searchInput.Text.Trim());
 				loadBillListToDataView(billList);
 
 			}
@@ -546,7 +546,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 		{
 			try
 			{
-				List<CustomerBillDTO> billList = handleFilter(searchInput.Text);
+				List<CustomerBillDTO> billList = handleFilter(searchInput.Text.Trim());
 				loadBillListToDataView(billList);
 			}
 			catch (Exception ex)

@@ -103,7 +103,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                 this.dateTimeFrom.Enabled = this.filterCkx.Checked;
                 this.dateTimeTo.Enabled = this.filterCkx.Checked;
            
-				var sales = handleFilter(this.searchInput.Text);
+				var sales = handleFilter(this.searchInput.Text.Trim());
                 loadDataToDataGridView(sales);
             }
             catch
@@ -175,7 +175,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 					if (modal.isSubmitSuccess)
 					{
 
-						List<SaleDTO> sales = handleFilter(this.searchInput.Text);
+						List<SaleDTO> sales = handleFilter(this.searchInput.Text.Trim());
 						this.loadDataToDataGridView(sales);
 					}
 				}
@@ -230,7 +230,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 					if (modal.isSubmitSuccess)
 					{
 
-						List<SaleDTO> sales = handleFilter(this.searchInput.Text);
+						List<SaleDTO> sales = handleFilter(this.searchInput.Text.Trim());
 						this.loadDataToDataGridView(sales);
 					}
 				}
@@ -261,7 +261,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                 if (modal.isSubmitSuccess)
                 {
 
-                    List<SaleDTO> sales = handleFilter(this.searchInput.Text);
+                    List<SaleDTO> sales = handleFilter(this.searchInput.Text.Trim());
                     this.loadDataToDataGridView(sales);
                 }
             }
@@ -304,7 +304,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 					}
 					MessageBox.Show("Bạn đã xóa thành công");
 
-					List<SaleDTO> sales = handleFilter(this.searchInput.Text);
+					List<SaleDTO> sales = handleFilter(this.searchInput.Text.Trim());
 					this.loadDataToDataGridView(sales);
 				}
 
@@ -355,7 +355,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             try
             {
 				this.searchInput.ForeColor = Color.Black;
-				List<SaleDTO> sales = handleFilter(this.searchInput.Text);
+				List<SaleDTO> sales = handleFilter(this.searchInput.Text.Trim());
 				loadDataToDataGridView(sales);
 			}
             catch

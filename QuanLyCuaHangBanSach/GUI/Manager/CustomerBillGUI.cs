@@ -360,7 +360,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         {
             try
             {
-                List<CustomerBillDTO> customerBillList = handleFilter(this.searchInput.Text.ToString());
+                List<CustomerBillDTO> customerBillList = handleFilter(this.searchInput.Text.Trim());
 
                 this.loadCustomerBillListToDataView(customerBillList);
             }
@@ -379,7 +379,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
                 if (customerBillModal.isSubmitSuccess)
                 {
-                    List<CustomerBillDTO> customerBillList = handleFilter(this.searchInput.Text.ToString());
+                    List<CustomerBillDTO> customerBillList = handleFilter(this.searchInput.Text.Trim());
 
                     this.loadCustomerBillListToDataView(customerBillList);
                 }
@@ -419,7 +419,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         {
             try
             {
-                List<CustomerBillDTO> customerBillList = handleFilter(this.searchInput.Text.ToString());
+                List<CustomerBillDTO> customerBillList = handleFilter(this.searchInput.Text.Trim());
 
                 this.loadCustomerBillListToDataView(customerBillList);
             }
@@ -433,7 +433,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         {
             try
             {
-                List<CustomerBillDTO> customerBillList = handleFilter(this.searchInput.Text.ToString());
+                List<CustomerBillDTO> customerBillList = handleFilter(this.searchInput.Text.Trim());
 
                 this.loadCustomerBillListToDataView(customerBillList);
             }
@@ -447,7 +447,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         {
             try
             {
-                List<CustomerBillDTO> customerBillList = handleFilter(this.searchInput.Text.ToString());
+                List<CustomerBillDTO> customerBillList = handleFilter(this.searchInput.Text.Trim());
 
                 this.loadCustomerBillListToDataView(customerBillList);
             }
@@ -475,7 +475,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                 var now = DateTime.Now;
                 if ((now - lastTextChanged).TotalMilliseconds >= debounceInterval)
                 {
-                    List<CustomerBillDTO> customerBillList = handleFilter(this.searchInput.Text.ToString());
+                    List<CustomerBillDTO> customerBillList = handleFilter(this.searchInput.Text.Trim());
 
                     this.loadCustomerBillListToDataView(customerBillList);
                 }
@@ -486,7 +486,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         {
             try
             {
-                List<CustomerBillDTO> customerBillList = handleFilter(this.searchInput.Text.ToString());
+                List<CustomerBillDTO> customerBillList = handleFilter(this.searchInput.Text.Trim());
 
                 this.loadCustomerBillListToDataView(customerBillList);
             }
@@ -500,7 +500,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         {
             try
             {
-                List<CustomerBillDTO> customerBillList = handleFilter(this.searchInput.Text.ToString());
+                List<CustomerBillDTO> customerBillList = handleFilter(this.searchInput.Text.Trim());
 
                 this.loadCustomerBillListToDataView(customerBillList);
             }
@@ -604,7 +604,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
                     }
 
-                    List<CustomerBillDTO> customerBillList = handleFilter(this.searchInput.Text.ToString());
+                    List<CustomerBillDTO> customerBillList = handleFilter(this.searchInput.Text.Trim());
 
                     this.loadCustomerBillListToDataView(customerBillList);
 
@@ -630,7 +630,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                     return;
                 }
 
-                List<CustomerBillDTO> customerBillList = handleFilter(this.searchInput.Text.ToString());
+                List<CustomerBillDTO> customerBillList = handleFilter(this.searchInput.Text.Trim());
 
                 this.loadCustomerBillListToDataView(customerBillList);
             }
@@ -653,7 +653,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                     return;
                 }
 
-                List<CustomerBillDTO> customerBillList = handleFilter(this.searchInput.Text.ToString());
+                List<CustomerBillDTO> customerBillList = handleFilter(this.searchInput.Text.Trim());
 
                 this.loadCustomerBillListToDataView(customerBillList);
             }

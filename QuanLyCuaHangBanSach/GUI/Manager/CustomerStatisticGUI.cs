@@ -237,7 +237,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 					var now = DateTime.Now;
 					if ((now - lastTextChanged).TotalMilliseconds >= debounceInterval)
 					{
-						List<CustomerDTO> customerList = handleFilter(searchInput.Text);
+						List<CustomerDTO> customerList = handleFilter(searchInput.Text.Trim());
 						loadBillListToDataView(customerList);
 					}
 				}

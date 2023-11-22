@@ -219,7 +219,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         {
             try
             {
-                List<ImportBillDTO> importBillList = handleFilter(this.searchInput.Text.ToString());
+                List<ImportBillDTO> importBillList = handleFilter(this.searchInput.Text.Trim());
 
                 this.loadImportBillListToDataView(importBillList);
             }
@@ -237,7 +237,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
                 if (importBillModal.isSubmitSuccess)
                 {
-                    List<ImportBillDTO> importBillList = handleFilter(this.searchInput.Text.ToString());
+                    List<ImportBillDTO> importBillList = handleFilter(this.searchInput.Text.Trim());
 
                     this.loadImportBillListToDataView(importBillList);
                 }
@@ -276,7 +276,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         {
             try
             {
-                List<ImportBillDTO> importBillList = handleFilter(this.searchInput.Text.ToString());
+                List<ImportBillDTO> importBillList = handleFilter(this.searchInput.Text.Trim());
 
                 this.loadImportBillListToDataView(importBillList);
             }
@@ -290,7 +290,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         {
             try
             {
-                List<ImportBillDTO> importBillList = handleFilter(this.searchInput.Text.ToString());
+                List<ImportBillDTO> importBillList = handleFilter(this.searchInput.Text.Trim());
 
                 this.loadImportBillListToDataView(importBillList);
             }
@@ -318,7 +318,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                 var now = DateTime.Now;
                 if ((now - lastTextChanged).TotalMilliseconds >= debounceInterval)
                 {
-                    List<ImportBillDTO> importBillList = handleFilter(this.searchInput.Text.ToString());
+                    List<ImportBillDTO> importBillList = handleFilter(this.searchInput.Text.Trim());
 
                     this.loadImportBillListToDataView(importBillList);
                 }
@@ -329,7 +329,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         {
             try
             {
-                List<ImportBillDTO> importBillList = handleFilter(this.searchInput.Text.ToString());
+                List<ImportBillDTO> importBillList = handleFilter(this.searchInput.Text.Trim());
 
                 this.loadImportBillListToDataView(importBillList);
             }
@@ -343,7 +343,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         {
             try
             {
-                List<ImportBillDTO> importBillList = handleFilter(this.searchInput.Text.ToString());
+                List<ImportBillDTO> importBillList = handleFilter(this.searchInput.Text.Trim());
 
                 this.loadImportBillListToDataView(importBillList);
             }
@@ -413,7 +413,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                         }
 
                     }
-                    List<ImportBillDTO> importBillList = handleFilter(this.searchInput.Text.ToString());
+                    List<ImportBillDTO> importBillList = handleFilter(this.searchInput.Text.Trim());
 
                     this.loadImportBillListToDataView(importBillList);
                     this.dgvImportBill.RefreshEdit();
@@ -439,7 +439,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                     return;
                 }
 
-                List<ImportBillDTO> importBillList = handleFilter(this.searchInput.Text.ToString());
+                List<ImportBillDTO> importBillList = handleFilter(this.searchInput.Text.Trim());
 
                 this.loadImportBillListToDataView(importBillList);
             }
@@ -462,7 +462,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                     return;
                 }
 
-                List<ImportBillDTO> importBillList = handleFilter(this.searchInput.Text.ToString());
+                List<ImportBillDTO> importBillList = handleFilter(this.searchInput.Text.Trim());
 
                 this.loadImportBillListToDataView(importBillList);
             }

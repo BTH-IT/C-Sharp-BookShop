@@ -91,7 +91,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 					if (modal.isSubmitSuccess)
 					{
 
-						List<CustomerDTO> customers = this.handleFilter(this.searchInput.Text.ToString());
+						List<CustomerDTO> customers = this.handleFilter(this.searchInput.Text.Trim());
 						this.loadCustomerListToDataGridView(customers);
 					}
 
@@ -114,7 +114,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
 					if (modal.isSubmitSuccess)
 					{
-						List<CustomerDTO> customers = this.handleFilter(this.searchInput.Text.ToString());
+						List<CustomerDTO> customers = this.handleFilter(this.searchInput.Text.Trim());
 						Console.WriteLine("SSS");
 						this.loadCustomerListToDataGridView(customers);
 					}
@@ -147,7 +147,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 						}
 					}
 
-					List<CustomerDTO> customers = this.handleFilter(this.searchInput.Text.ToString());
+					List<CustomerDTO> customers = this.handleFilter(this.searchInput.Text.Trim());
 					this.loadCustomerListToDataGridView(customers);
 					MessageBox.Show("Xóa khách hàng thành công");
 				}
@@ -209,7 +209,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             try
             {
 				this.searchInput.ForeColor = Color.Black;
-				List<CustomerDTO> customers = handleFilter(this.searchInput.Text.ToString());
+				List<CustomerDTO> customers = handleFilter(this.searchInput.Text.Trim());
 				this.loadCustomerListToDataGridView(customers);
             }
             catch
@@ -264,8 +264,8 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
 					if (modal.isSubmitSuccess)
 					{
-						List<CustomerDTO> customers = CustomerBUS.Instance.getAllData();
-						this.loadCustomerListToDataGridView(customers);
+                        List<CustomerDTO> customers = this.handleFilter(this.searchInput.Text.Trim());
+                        this.loadCustomerListToDataGridView(customers);
 					}
 
 				}
@@ -279,7 +279,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
 		private void genderCbx_SelectedIndexChanged(object sender, EventArgs e)
 		{
-            List<CustomerDTO> customers = handleFilter(this.searchInput.Text.ToString());
+            List<CustomerDTO> customers = handleFilter(this.searchInput.Text.Trim());
             this.loadCustomerListToDataGridView(customers);
         }
     }

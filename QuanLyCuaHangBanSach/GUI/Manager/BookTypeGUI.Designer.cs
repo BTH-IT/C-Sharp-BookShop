@@ -42,11 +42,11 @@
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.searchInput = new Guna.UI2.WinForms.Guna2TextBox();
             this.dgvBookType = new Guna.UI.WinForms.GunaDataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.line1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBookType)).BeginInit();
             this.panel2.SuspendLayout();
@@ -227,14 +227,14 @@
             this.searchInput.ForeColor = System.Drawing.Color.Black;
             this.searchInput.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.searchInput.HoverState.Parent = this.searchInput;
-            this.searchInput.Location = new System.Drawing.Point(12, 20);
+            this.searchInput.Location = new System.Drawing.Point(12, 14);
             this.searchInput.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.searchInput.Name = "searchInput";
             this.searchInput.PasswordChar = '\0';
             this.searchInput.PlaceholderText = "Tìm kiếm theo mã tên";
             this.searchInput.SelectedText = "";
             this.searchInput.ShadowDecoration.Parent = this.searchInput;
-            this.searchInput.Size = new System.Drawing.Size(198, 32);
+            this.searchInput.Size = new System.Drawing.Size(198, 26);
             this.searchInput.TabIndex = 1;
             this.searchInput.TextChanged += new System.EventHandler(this.searchInput_TextChanged);
             // 
@@ -274,7 +274,7 @@
             this.dgvBookType.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvBookType.EnableHeadersVisualStyles = false;
             this.dgvBookType.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvBookType.Location = new System.Drawing.Point(0, 69);
+            this.dgvBookType.Location = new System.Drawing.Point(0, 63);
             this.dgvBookType.Name = "dgvBookType";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
@@ -297,7 +297,7 @@
             this.dgvBookType.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvBookType.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvBookType.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvBookType.Size = new System.Drawing.Size(1044, 561);
+            this.dgvBookType.Size = new System.Drawing.Size(1044, 567);
             this.dgvBookType.TabIndex = 34;
             this.dgvBookType.TabStop = false;
             this.dgvBookType.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna;
@@ -324,35 +324,6 @@
             this.dgvBookType.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dgvBookType.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBookType_CellDoubleClick);
             // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.line1);
-            this.panel2.Controls.Add(this.pictureBox1);
-            this.panel2.Controls.Add(this.searchInput);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1044, 69);
-            this.panel2.TabIndex = 0;
-            // 
-            // line1
-            // 
-            this.line1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(212)))), ((int)(((byte)(191)))));
-            this.line1.Location = new System.Drawing.Point(11, 58);
-            this.line1.Name = "line1";
-            this.line1.Size = new System.Drawing.Size(246, 1);
-            this.line1.TabIndex = 44;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(226, 22);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(36, 30);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 33;
-            this.pictureBox1.TabStop = false;
-            // 
             // Column1
             // 
             this.Column1.FillWeight = 61.60671F;
@@ -371,6 +342,35 @@
             this.Column6.Name = "Column6";
             this.Column6.ReadOnly = true;
             this.Column6.ToolTipText = "Tên Thể Loại";
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.line1);
+            this.panel2.Controls.Add(this.pictureBox1);
+            this.panel2.Controls.Add(this.searchInput);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1044, 63);
+            this.panel2.TabIndex = 0;
+            // 
+            // line1
+            // 
+            this.line1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(212)))), ((int)(((byte)(191)))));
+            this.line1.Location = new System.Drawing.Point(11, 46);
+            this.line1.Name = "line1";
+            this.line1.Size = new System.Drawing.Size(246, 1);
+            this.line1.TabIndex = 44;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(222, 14);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(36, 30);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 33;
+            this.pictureBox1.TabStop = false;
             // 
             // BookTypeGUI
             // 

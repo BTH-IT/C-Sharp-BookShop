@@ -83,7 +83,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             }
         }
 
-        private void loadBookListToDataView(string searchText)
+        private void loadNewBookListToDataView(string searchText)
         {
             try
             {
@@ -96,14 +96,32 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
                 foreach (BookDTO book in filterBookList)
                 {
-                    this.dgvBook.Rows.Add(new object[] {
-                    false,
-                    book.MaSach,
-                    book.TenSach,
-                    book.HinhAnh,
-                    book.GiaNhap,
-                    book.SoLuongConLai,
-                });
+                    ImportBillDetailDTO importBillDetail = selectedImportBillDetailList.Find(b => b.MaSach == book.MaSach);
+
+                    if (importBillDetail == null)
+                    {
+                        this.dgvBook.Rows.Add(new object[] {
+                            false,
+                            book.MaSach,
+                            book.TenSach,
+                            book.HinhAnh,
+                            book.GiaNhap,
+                            book.SoLuongConLai,
+                        });
+                    }
+                    else
+                    {
+                        Console.WriteLine(book.SoLuongConLai + importBillDetail.SoLuong);
+                        this.dgvBook.Rows.Add(new object[] {
+                            false,
+                            book.MaSach,
+                            book.TenSach,
+                            book.HinhAnh,
+                            book.GiaNhap,
+                            book.SoLuongConLai + importBillDetail.SoLuong,
+                        });
+                    }
+
                 }
             }
             catch (Exception ex)
@@ -124,12 +142,12 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 foreach (ImportBillDetailDTO importBillDetail in this.selectedImportBillDetailList)
                 {
                     this.dgvAddBookToBillList.Rows.Add(new object[] {
-                    false,
-                    importBillDetail.MaSach,
-                    importBillDetail.SoLuong,
-                    importBillDetail.DonGia,
-                    importBillDetail.SoLuong * importBillDetail.DonGia,
-                });
+                        false,
+                        importBillDetail.MaSach,
+                        importBillDetail.SoLuong,
+                        importBillDetail.DonGia,
+                        importBillDetail.SoLuong * importBillDetail.DonGia,
+                    });
                 }
             }
             catch (Exception ex)
@@ -329,7 +347,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
         {
             try
             {
-                this.loadBookListToDataView(this.searchInput.Text.ToString());
+                this.loadNewBookListToDataView(this.searchInput.Text.Trim());
             }
             catch (Exception ex)
             {
@@ -341,7 +359,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
         {
             try
             {
-                this.loadBookListToDataView(this.searchInput.Text.ToString());
+                this.loadNewBookListToDataView(this.searchInput.Text.Trim());
             }
             catch (Exception ex)
             {
@@ -353,7 +371,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
         {
             try
             {
-                this.loadBookListToDataView(this.searchInput.Text.ToString());
+                this.loadNewBookListToDataView(this.searchInput.Text.Trim());
             }
             catch (Exception ex)
             {
@@ -365,7 +383,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
         {
             try
             {
-                this.loadBookListToDataView(this.searchInput.Text.ToString());
+                this.loadNewBookListToDataView(this.searchInput.Text.Trim());
             }
             catch (Exception ex)
             {
@@ -377,7 +395,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
         {
             try
             {
-                this.loadBookListToDataView(this.searchInput.Text.ToString());
+                this.loadNewBookListToDataView(this.searchInput.Text.Trim());
             }
             catch (Exception ex)
             {
@@ -389,7 +407,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
         {
             try
             {
-                this.loadBookListToDataView(this.searchInput.Text.ToString());
+                this.loadNewBookListToDataView(this.searchInput.Text.Trim());
             }
             catch (Exception ex)
             {
@@ -410,7 +428,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 this.bookTypeCbx.SelectedIndex = 0;
                 this.publisherCbx.SelectedIndex = 0;
 
-                this.loadBookListToDataView("");
+                this.loadNewBookListToDataView("");
             }
             catch (Exception ex)
             {
@@ -445,17 +463,14 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                         }
                         else
                         {
+                            ImportBillDetailDTO importBillDetail = new ImportBillDetailDTO(
+                                0,
+                                scannerModal.scannedBook.MaSach,
+                                this.selectedImportBillDetailList[idx].SoLuong + 1,
+                                scannerModal.scannedBook.GiaNhap
+                            );
 
-                            this.selectedImportBillDetailList[idx].SoLuong += 1;
-                        }
-
-                        foreach (DataGridViewRow row in this.dgvBook.Rows)
-                        {
-                            if (Convert.ToInt32(row.Cells[1].Value) == scannerModal.scannedBook.MaSach)
-                            {
-                                this.handleAddRemain(row, 1);
-                                break;
-                            }
+                            this.selectedImportBillDetailList[idx] = importBillDetail;
                         }
 
                         MessageBox.Show("Đã thêm sách có mã " + scannerModal.scannedBook.MaSach + " vào danh sách thêm");
@@ -466,44 +481,6 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                         Console.WriteLine(ex);
                     }
                 }
-            }
-        }
-
-        private void handleSubtractRemain(DataGridViewRow row, int amount)
-        {
-            try
-            {
-                int idx = this.bookList.FindIndex(
-                    book => book.MaSach == Convert.ToInt32(row.Cells[1].Value)
-                );
-
-                if (idx >= 0)
-                {
-                    this.bookList[idx].SoLuongConLai -= amount;
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex);
-            }
-        }
-
-        private void handleAddRemain(DataGridViewRow row, int amount)
-        {
-            try
-            {
-                int idx = this.bookList.FindIndex(
-                    book => book.MaSach == Convert.ToInt32(row.Cells[1].Value)
-                );
-
-                if (idx >= 0)
-                {
-                    this.bookList[idx].SoLuongConLai += amount;
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex);
             }
         }
 
@@ -562,14 +539,19 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                             }
                             else
                             {
-                                this.selectedImportBillDetailList[idx].SoLuong += 1;
-                            }
+                                ImportBillDetailDTO importBillDetail = new ImportBillDetailDTO(
+                                    0,
+                                    maSach,
+                                    this.selectedImportBillDetailList[idx].SoLuong + 1,
+                                    giaNhap
+                                );
 
-                            this.handleAddRemain(row, 1);
+                                this.selectedImportBillDetailList[idx] = importBillDetail;
+                            }
                         }
                     }
 
-                    this.loadBookListToDataView((this.searchInput.Text.ToString()));
+                    this.loadNewBookListToDataView((this.searchInput.Text.Trim()));
                     this.loadAddBookBillListToDataView();
 
                     headerCheckbox.Checked = false;
@@ -622,17 +604,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
                     this.dgvAddBookToBillList[4, e.RowIndex].Value = soLuong * Convert.ToDouble(this.dgvAddBookToBillList[3, e.RowIndex].Value);
 
-                    foreach (DataGridViewRow row in this.dgvBook.Rows)
-                    {
-                        if (Convert.ToInt32(row.Cells[1].Value) == book.MaSach)
-                        {
-                            this.handleSubtractRemain(row, tmp);
-                            this.handleAddRemain(row, soLuong);
-                            break;
-                        }
-                    }
-
-                    this.loadBookListToDataView(this.searchInput.Text.ToString());
+                    this.loadNewBookListToDataView(this.searchInput.Text.Trim());
                 }
             }
             catch (Exception ex)
@@ -641,13 +613,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             }
         }
 
-        private void AddBookToBillModal_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (!this.isSaved)
-            {
-                this.selectedImportBillDetailList.Clear();
-            }
-        }
+
 
         private void deleteBtn_Click(object sender, EventArgs e)
         {
@@ -693,14 +659,13 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                             if (idx >= 0)
                             {
                                 selectedImportBillDetailList.RemoveAt(idx);
-                                handleAddRemain(row, Convert.ToInt32(row.Cells[2].Value));
                             }
 
                             dgvAddBookToBillList.Rows.RemoveAt(i);
                         }
                     }
 
-                    this.loadBookListToDataView((this.searchInput.Text.ToString()));
+                    this.loadNewBookListToDataView(this.searchInput.Text.Trim());
 
                     headerCheckbox.Checked = false;
                 }
@@ -715,7 +680,8 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
         {
             try
             {
-                this.loadBookListToDataView("");
+                Console.WriteLine("123");
+                this.loadNewBookListToDataView("");
                 this.loadAddBookBillListToDataView();
 
                 this.loadAuthorCbx();
@@ -765,7 +731,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 var now = DateTime.Now;
                 if ((now - lastTextChanged).TotalMilliseconds >= debounceInterval)
                 {
-                    this.loadBookListToDataView(this.searchInput.Text.ToString());
+                    this.loadNewBookListToDataView(this.searchInput.Text.Trim());
                 }
             }
         }

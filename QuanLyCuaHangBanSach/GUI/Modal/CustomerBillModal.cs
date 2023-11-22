@@ -30,7 +30,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 List<CustomerDTO> customerList = CustomerBUS.Instance.getAllData();
 
                 customerList.Insert(0, new CustomerDTO(-1, "Chọn khách hàng", "", 0, "Chọn khách hàng", 0));
-                customerList.Insert(1, new CustomerDTO(0, "Không có khách hàng", "", 0, "Không có khách hàng", 0));
+                customerList.Insert(1, new CustomerDTO(0, "Vãng lai", "", 0, "Vãng lai", 0));
 
                 this.customerCbx.ValueMember = "Ma";
                 this.customerCbx.DisplayMember = "Ten";
@@ -48,7 +48,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
         {
             try
             {
-                List<SaleDTO> saleList = SaleBUS.Instance.getAllData();
+                List<SaleDTO> saleList = SaleBUS.Instance.getAllNotExpired() == null ? new List<SaleDTO>() : SaleBUS.Instance.getAllNotExpired();
 
                 saleList.Insert(0, new SaleDTO(-1, "Chọn khuyến mãi", 0, new DateTime(), new DateTime()));
                 saleList.Insert(1, new SaleDTO(0, "Không có khuyến mãi", 0, new DateTime(), new DateTime()));
@@ -284,6 +284,10 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                     if (addBookToBillModal.isSaved)
                     {
                         customerBillDetailList = new List<CustomerBillDetailDTO>(addBookToBillModal.selectedCustomerBillDetailList);
+
+                    } else
+                    {
+                        customerBillDetailList = new List<CustomerBillDetailDTO>(addBookToBillModal.prevSelectedCustomerBillDetailList);
                     }
                     this.loadCustomerBillDetailList();
                 }

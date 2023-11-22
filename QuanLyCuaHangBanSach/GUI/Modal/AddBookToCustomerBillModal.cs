@@ -97,14 +97,30 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
                 foreach (BookDTO book in filterBookList)
                 {
-                    this.dgvBook.Rows.Add(new object[] {
-                    false,
-                    book.MaSach,
-                    book.TenSach,
-                    book.HinhAnh,
-                    book.GiaBan,
-                    book.SoLuongConLai,
-                });
+                    CustomerBillDetailDTO customerBillDetail = selectedCustomerBillDetailList.Find(b => b.MaSach == book.MaSach);
+
+                    if (customerBillDetail == null)
+                    {
+                        this.dgvBook.Rows.Add(new object[] {
+                            false,
+                            book.MaSach,
+                            book.TenSach,
+                            book.HinhAnh,
+                            book.GiaBan,
+                            book.SoLuongConLai,
+                        });
+                    }
+                    else
+                    {
+                        this.dgvBook.Rows.Add(new object[] {
+                            false,
+                            book.MaSach,
+                            book.TenSach,
+                            book.HinhAnh,
+                            book.GiaBan,
+                            book.SoLuongConLai - customerBillDetail.SoLuong,
+                        });
+                    }
                 }
             }
             catch (Exception ex)
@@ -125,12 +141,12 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 foreach (CustomerBillDetailDTO customerBillDetail in this.selectedCustomerBillDetailList)
                 {
                     this.dgvAddBookToBillList.Rows.Add(new object[] {
-                    false,
-                    customerBillDetail.MaSach,
-                    customerBillDetail.SoLuong,
-                    customerBillDetail.DonGia,
-                    customerBillDetail.SoLuong * customerBillDetail.DonGia,
-                });
+                        false,
+                        customerBillDetail.MaSach,
+                        customerBillDetail.SoLuong,
+                        customerBillDetail.DonGia,
+                        customerBillDetail.SoLuong * customerBillDetail.DonGia,
+                    });
                 }
             }
             catch (Exception ex)
@@ -331,7 +347,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             {
                 this.searchInput.ForeColor = Color.Black;
 
-                this.loadBookListToDataView(this.searchInput.Text.ToString());
+                this.loadBookListToDataView(this.searchInput.Text.Trim());
             }
             catch (Exception ex)
             {
@@ -345,7 +361,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             {
                 this.searchInput.ForeColor = Color.Black;
 
-                this.loadBookListToDataView(this.searchInput.Text.ToString());
+                this.loadBookListToDataView(this.searchInput.Text.Trim());
             }
             catch (Exception ex)
             {
@@ -359,7 +375,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             {
                 this.searchInput.ForeColor = Color.Black;
 
-                this.loadBookListToDataView(this.searchInput.Text.ToString());
+                this.loadBookListToDataView(this.searchInput.Text.Trim());
             }
             catch (Exception ex)
             {
@@ -373,7 +389,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             {
                 this.searchInput.ForeColor = Color.Black;
 
-                this.loadBookListToDataView(this.searchInput.Text.ToString());
+                this.loadBookListToDataView(this.searchInput.Text.Trim());
             }
             catch (Exception ex)
             {
@@ -457,17 +473,14 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                         }
                         else
                         {
+                            CustomerBillDetailDTO customerBillDetail = new CustomerBillDetailDTO(
+                                0,
+                                scannerModal.scannedBook.MaSach,
+                                this.selectedCustomerBillDetailList[idx].SoLuong + 1,
+                                scannerModal.scannedBook.GiaBan
+                            );
 
-                            this.selectedCustomerBillDetailList[idx].SoLuong += 1;
-                        }
-
-                        foreach (DataGridViewRow row in this.dgvBook.Rows)
-                        {
-                            if (Convert.ToInt32(row.Cells[1].Value) == scannerModal.scannedBook.MaSach)
-                            {
-                                this.handleSubtractRemain(row, 1);
-                                break;
-                            }
+                            this.selectedCustomerBillDetailList[idx] = customerBillDetail;
                         }
 
                         MessageBox.Show("Đã thêm sách có mã " + scannerModal.scannedBook.MaSach + " vào danh sách thêm");
@@ -478,44 +491,6 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                         Console.WriteLine(ex);
                     }
                 }
-            }
-        }
-
-        private void handleSubtractRemain(DataGridViewRow row, int amount)
-        {
-            try
-            {
-                int idx = this.bookList.FindIndex(
-                    book => book.MaSach == Convert.ToInt32(row.Cells[1].Value)
-                );
-
-                if (idx >= 0)
-                {
-                    this.bookList[idx].SoLuongConLai -= amount;
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex);
-            }
-        }
-
-        private void handleAddRemain(DataGridViewRow row, int amount)
-        {
-            try
-            {
-                int idx = this.bookList.FindIndex(
-                    book => book.MaSach == Convert.ToInt32(row.Cells[1].Value)
-                );
-
-                if (idx >= 0)
-                {
-                    this.bookList[idx].SoLuongConLai += amount;
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex);
             }
         }
 
@@ -582,15 +557,19 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                             }
                             else
                             {
-                                this.selectedCustomerBillDetailList[idx].SoLuong += 1;
+                                CustomerBillDetailDTO customerBillDetail = new CustomerBillDetailDTO(
+                                    0,
+                                    maSach,
+                                    this.selectedCustomerBillDetailList[idx].SoLuong + 1,
+                                    giaBan
+                                );
+
+                                this.selectedCustomerBillDetailList[idx] = customerBillDetail;
                             }
-
-                            this.handleSubtractRemain(row, 1);
-
                         }
                     }
 
-                    this.loadBookListToDataView((this.searchInput.Text.ToString()));
+                    this.loadBookListToDataView((this.searchInput.Text.Trim()));
                     this.loadAddBookBillListToDataView();
 
                     headerCheckbox.Checked = false;
@@ -651,17 +630,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
                     this.dgvAddBookToBillList[4, e.RowIndex].Value = soLuong * Convert.ToDouble(this.dgvAddBookToBillList[3, e.RowIndex].Value);
 
-                    foreach (DataGridViewRow row in this.dgvBook.Rows)
-                    {
-                        if (Convert.ToInt32(row.Cells[1].Value) == book.MaSach)
-                        {
-                            this.handleAddRemain(row, tmp);
-                            this.handleSubtractRemain(row, soLuong);
-                            break;
-                        }
-                    }
-
-                    this.loadBookListToDataView(this.searchInput.Text.ToString());
+                    this.loadBookListToDataView(this.searchInput.Text.Trim());
                 }
             }
             catch (Exception ex)
@@ -674,7 +643,12 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
         {
             if (!isSaved)
             {
-                this.selectedCustomerBillDetailList = prevSelectedCustomerBillDetailList;
+                this.selectedCustomerBillDetailList.Clear();
+
+                foreach (CustomerBillDetailDTO item in this.prevSelectedCustomerBillDetailList)
+                {
+                    this.selectedCustomerBillDetailList.Add(item);
+                }
             }
         }
 
@@ -722,7 +696,6 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                             if (idx >= 0)
                             {
                                 selectedCustomerBillDetailList.RemoveAt(idx);
-                                handleAddRemain(row, Convert.ToInt32(row.Cells[2].Value));
                             }
 
                             dgvAddBookToBillList.Rows.RemoveAt(i);
@@ -730,7 +703,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                     }
 
 
-                    this.loadBookListToDataView((this.searchInput.Text.ToString()));
+                    this.loadBookListToDataView((this.searchInput.Text.Trim()));
 
                     headerCheckbox.Checked = false;
                 }
@@ -767,7 +740,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 var now = DateTime.Now;
                 if ((now - lastTextChanged).TotalMilliseconds >= debounceInterval)
                 {
-                    this.loadBookListToDataView(this.searchInput.Text.ToString());
+                    this.loadBookListToDataView(this.searchInput.Text.Trim());
                 }
             }
         }

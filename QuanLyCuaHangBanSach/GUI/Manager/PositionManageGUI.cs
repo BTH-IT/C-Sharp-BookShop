@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
-using MySqlX.XDevAPI.Relational;
 using QuanLyCuaHangBanSach.BUS;
 using QuanLyCuaHangBanSach.DTO;
 using QuanLyCuaHangBanSach.GUI.Modal;
@@ -65,7 +64,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             {
                 this.searchInput.ForeColor = Color.Black;
 
-                List<PositionDTO> positionList = PositionBUS.Instance.search(this.searchInput.Text);
+                List<PositionDTO> positionList = PositionBUS.Instance.search(this.searchInput.Text.Trim());
 
                 this.loadPositionListToDataView(positionList);
             }
@@ -131,7 +130,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
                     if (positionModal.isSubmitSuccess)
                     {
-                        List<PositionDTO> positionList = PositionBUS.Instance.search(this.searchInput.Text);
+                        List<PositionDTO> positionList = PositionBUS.Instance.search(this.searchInput.Text.Trim());
 
                         this.loadPositionListToDataView(positionList);
                     }
@@ -176,7 +175,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
                     if (positionModal.isSubmitSuccess)
                     {
-                        List<PositionDTO> positionList = PositionBUS.Instance.search(this.searchInput.Text);
+                        List<PositionDTO> positionList = PositionBUS.Instance.search(this.searchInput.Text.Trim());
 
                         this.loadPositionListToDataView(positionList);
                     }
@@ -197,7 +196,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
                 if (positionModal.isSubmitSuccess)
                 {
-                    List<PositionDTO> positionList = PositionBUS.Instance.search(this.searchInput.Text);
+                    List<PositionDTO> positionList = PositionBUS.Instance.search(this.searchInput.Text.Trim());
 
                     this.loadPositionListToDataView(positionList);
                 }

@@ -48,7 +48,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             try
             {
                 this.searchInput.ForeColor = Color.Black;
-                List<SupplierDTO> SupplierList = SupplierBUS.Instance.search(this.searchInput.Text.ToString());
+                List<SupplierDTO> SupplierList = SupplierBUS.Instance.search(this.searchInput.Text.Trim());
                 this.loadSupplierListToDataView(SupplierList);
             }
             catch (Exception er)
@@ -109,7 +109,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
                     if (SupplierModal.isSubmitSuccess)
                     {
-                        List<SupplierDTO> SupplierList = SupplierBUS.Instance.search(this.searchInput.Text.ToString());
+                        List<SupplierDTO> SupplierList = SupplierBUS.Instance.search(this.searchInput.Text.Trim());
 
                         this.loadSupplierListToDataView(SupplierList);
                     }
@@ -148,7 +148,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
                     if (SupplierModal.isSubmitSuccess)
                     {
-                        List<SupplierDTO> SupplierList = SupplierBUS.Instance.search(this.searchInput.Text.ToString());
+                        List<SupplierDTO> SupplierList = SupplierBUS.Instance.search(this.searchInput.Text.Trim());
 
                         this.loadSupplierListToDataView(SupplierList);
                     }
@@ -188,7 +188,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
                     if (SupplierModal.isSubmitSuccess)
                     {
-                        List<SupplierDTO> SupplierList = SupplierBUS.Instance.search(this.searchInput.Text.ToString());
+                        List<SupplierDTO> SupplierList = SupplierBUS.Instance.search(this.searchInput.Text.Trim());
 
                         this.loadSupplierListToDataView(SupplierList);
                     }

@@ -61,12 +61,22 @@
             this.number.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.number.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.number.Location = new System.Drawing.Point(209, 136);
+            this.number.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.number.Name = "number";
             this.number.ShadowDecoration.Parent = this.number;
             this.number.Size = new System.Drawing.Size(197, 36);
             this.number.TabIndex = 0;
             this.number.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.number.UpDownButtonForeColor = System.Drawing.Color.White;
+            this.number.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // label1
             // 

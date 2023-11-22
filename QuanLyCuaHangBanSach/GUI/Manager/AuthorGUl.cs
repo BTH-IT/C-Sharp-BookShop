@@ -65,7 +65,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             try
             {
                 this.searchInput.ForeColor = Color.Black;
-                List<AuthorDTO> AuthorList = AuthorBUS.Instance.search(this.searchInput.Text.ToString());
+                List<AuthorDTO> AuthorList = AuthorBUS.Instance.search(this.searchInput.Text.Trim());
 
                 this.loadAuthorListToDataView(AuthorList);
             }
@@ -130,7 +130,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                     if (AuthorModal.isSubmitSuccess)
                     {
 
-                        List<AuthorDTO> AuthorList = AuthorBUS.Instance.search(this.searchInput.Text.ToString());
+                        List<AuthorDTO> AuthorList = AuthorBUS.Instance.search(this.searchInput.Text.Trim());
 
                         this.loadAuthorListToDataView(AuthorList);
                     }
@@ -170,7 +170,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
                     if (AuthorModal.isSubmitSuccess)
                     {
-                        List<AuthorDTO> AuthorList = AuthorBUS.Instance.search(this.searchInput.Text.ToString());
+                        List<AuthorDTO> AuthorList = AuthorBUS.Instance.search(this.searchInput.Text.Trim());
 
                         this.loadAuthorListToDataView(AuthorList);
                     }
@@ -210,7 +210,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
                     if (AuthorModal.isSubmitSuccess)
                     {
-                        List<AuthorDTO> AuthorList = AuthorBUS.Instance.search(this.searchInput.Text.ToString());
+                        List<AuthorDTO> AuthorList = AuthorBUS.Instance.search(this.searchInput.Text.Trim());
 
                         this.loadAuthorListToDataView(AuthorList);
                     }
@@ -227,7 +227,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         {
             try
             {
-                List<AuthorDTO> AuthorList = handleFilter(this.searchInput.Text.ToString());
+                List<AuthorDTO> AuthorList = handleFilter(this.searchInput.Text.Trim());
                 this.loadAuthorListToDataView(AuthorList);
             }
             catch (Exception er)

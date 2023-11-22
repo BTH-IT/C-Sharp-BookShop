@@ -160,7 +160,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 					var now = DateTime.Now;
 					if ((now - lastTextChanged).TotalMilliseconds >= debounceInterval)
 					{
-						List<StaffDTO> staffList = handleFilter(searchInput.Text);
+						List<StaffDTO> staffList = handleFilter(searchInput.Text.Trim());
 						loadBillListToDataView(staffList);
 					}
 				}

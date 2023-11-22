@@ -248,7 +248,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 					if (modal.isSubmitSuccess)
 					{
 						MessageBox.Show("Thêm nhân viên thành công");
-						List<StaffDTO> staffs = handleFilter(this.searchInput.Text);
+						List<StaffDTO> staffs = handleFilter(this.searchInput.Text.Trim());
 						this.loadDataToDataGridView(staffs);
 
 					}
@@ -265,7 +265,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         {
             try
             {
-				List<StaffDTO> staffs = handleFilter(this.searchInput.Text);
+				List<StaffDTO> staffs = handleFilter(this.searchInput.Text.Trim());
 				loadDataToDataGridView(staffs);
 			}
             catch
@@ -279,7 +279,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         {
             try
             {
-				List<StaffDTO> staffs = handleFilter(this.searchInput.Text);
+				List<StaffDTO> staffs = handleFilter(this.searchInput.Text.Trim());
 				loadDataToDataGridView(staffs);
 			}
             catch
@@ -306,7 +306,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                 var now = DateTime.Now;
                 if ((now - lastTextChanged).TotalMilliseconds >= debounceInterval)
                 {
-                    List<StaffDTO> staffs = handleFilter(this.searchInput.Text);
+                    List<StaffDTO> staffs = handleFilter(this.searchInput.Text.Trim());
                     loadDataToDataGridView(staffs);
                 }
             }
@@ -316,7 +316,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         {
             try
             {
-				List<StaffDTO> staffs = handleFilter(this.searchInput.Text);
+				List<StaffDTO> staffs = handleFilter(this.searchInput.Text.Trim());
 				loadDataToDataGridView(staffs);
 			}
             catch
@@ -330,7 +330,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         {
             try
             {
-				List<StaffDTO> staffs = handleFilter(this.searchInput.Text);
+				List<StaffDTO> staffs = handleFilter(this.searchInput.Text.Trim());
 				loadDataToDataGridView(staffs);
 			}
             catch
@@ -361,7 +361,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 					if (modal.isSubmitSuccess)
 					{
 						MessageBox.Show("Sửa nhân viên thành công");
-						List<StaffDTO> staffs = handleFilter(this.searchInput.Text);
+						List<StaffDTO> staffs = handleFilter(this.searchInput.Text.Trim());
 						loadDataToDataGridView(staffs);
 					}
 				}
@@ -426,7 +426,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 						}
                         if(isDeleted)
                         {
-						    List<StaffDTO> staffs = handleFilter(this.searchInput.Text);
+						    List<StaffDTO> staffs = handleFilter(this.searchInput.Text.Trim());
 						    loadDataToDataGridView(staffs);
 						    MessageBox.Show("Xóa thành công");
 					    }    
@@ -444,7 +444,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         {
 			try
 			{
-				List<StaffDTO> staffs = handleFilter(this.searchInput.Text);
+				List<StaffDTO> staffs = handleFilter(this.searchInput.Text.Trim());
 				this.loadDataToDataGridView(staffs);
 			}
 			catch { 
@@ -474,7 +474,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                     if (modal.isSubmitSuccess)
                     {
                         MessageBox.Show("Sửa nhân viên thành công");
-                        List<StaffDTO> staffs = handleFilter(this.searchInput.Text);
+                        List<StaffDTO> staffs = handleFilter(this.searchInput.Text.Trim());
                         loadDataToDataGridView(staffs);
                     }
                 }

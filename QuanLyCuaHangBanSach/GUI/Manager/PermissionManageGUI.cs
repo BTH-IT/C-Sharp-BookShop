@@ -65,7 +65,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             {
                 this.searchInput.ForeColor = Color.Black;
 
-                List<PermissionDTO> positionList = PermissionBUS.Instance.search(this.searchInput.Text);
+                List<PermissionDTO> positionList = PermissionBUS.Instance.search(this.searchInput.Text.Trim());
 
                 this.loadPermissionListToDataView(positionList);
             }
@@ -125,7 +125,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                     positionModal.ShowDialog();
                     if (positionModal.isSubmitSuccess)
                     {
-                        List<PermissionDTO> positionList = PermissionBUS.Instance.search(this.searchInput.Text);
+                        List<PermissionDTO> positionList = PermissionBUS.Instance.search(this.searchInput.Text.Trim());
 
                         this.loadPermissionListToDataView(positionList);
                         if(positionModal.isPermissionStatusChange)
@@ -180,7 +180,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                         }
 
                     }
-                    List<PermissionDTO> positionList = PermissionBUS.Instance.search(this.searchInput.Text);
+                    List<PermissionDTO> positionList = PermissionBUS.Instance.search(this.searchInput.Text.Trim());
                     this.loadPermissionListToDataView(positionList);
 
                     MessageBox.Show("Delete successful");
@@ -219,7 +219,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
                     if (positionModal.isSubmitSuccess)
                     {
-                        List<PermissionDTO> positionList = PermissionBUS.Instance.search(this.searchInput.Text);
+                        List<PermissionDTO> positionList = PermissionBUS.Instance.search(this.searchInput.Text.Trim());
 
                         this.loadPermissionListToDataView(positionList);
 						if (positionModal.isPermissionStatusChange)
@@ -244,7 +244,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
                 if (positionModal.isSubmitSuccess)
                 {
-                    List<PermissionDTO> positionList = PermissionBUS.Instance.search(this.searchInput.Text);
+                    List<PermissionDTO> positionList = PermissionBUS.Instance.search(this.searchInput.Text.Trim());
 
                     this.loadPermissionListToDataView(positionList);
                 }

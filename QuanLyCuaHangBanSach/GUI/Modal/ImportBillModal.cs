@@ -224,8 +224,12 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                     if (addBookToBillModal.isSaved)
                     {
                         importBillDetailList = new List<ImportBillDetailDTO>(addBookToBillModal.selectedImportBillDetailList);
-                    }
 
+                    }
+                    else
+                    {
+                        importBillDetailList = new List<ImportBillDetailDTO>(addBookToBillModal.prevSelectedImportBillDetailList);
+                    }
                     this.loadImportBillDetailList();
                 }
             }

@@ -175,7 +175,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                 var now = DateTime.Now;
                 if ((now - lastTextChanged).TotalMilliseconds >= debounceInterval)
                 {
-                    List<BookDTO> bookList = handleFilter(this.searchInput.Text.ToString());
+                    List<BookDTO> bookList = handleFilter(this.searchInput.Text.Trim());
 
                     this.loadBookListToDataView(bookList);
                 }
@@ -295,7 +295,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             {
                 this.searchInput.ForeColor = Color.Black;
 
-                List<BookDTO> bookList = handleFilter(this.searchInput.Text.ToString());
+                List<BookDTO> bookList = handleFilter(this.searchInput.Text.Trim());
 
                 this.loadBookListToDataView(bookList);
             }
@@ -315,7 +315,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
                 if (bookModal.isSubmitSuccess)
                 {
-                    List<BookDTO> bookList = handleFilter(this.searchInput.Text.ToString());
+                    List<BookDTO> bookList = handleFilter(this.searchInput.Text.Trim());
 
                     this.loadBookListToDataView(bookList);
                 }
@@ -348,7 +348,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         {
             try
             {
-                List<BookDTO> bookList = handleFilter(this.searchInput.Text.ToString());
+                List<BookDTO> bookList = handleFilter(this.searchInput.Text.Trim());
 
                 this.loadBookListToDataView(bookList);
             }
@@ -362,7 +362,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         {
             try
             {
-                List<BookDTO> bookList = handleFilter(this.searchInput.Text.ToString());
+                List<BookDTO> bookList = handleFilter(this.searchInput.Text.Trim());
 
                 this.loadBookListToDataView(bookList);
             }
@@ -376,7 +376,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         {
             try
             {
-                List<BookDTO> bookList = handleFilter(this.searchInput.Text.ToString());
+                List<BookDTO> bookList = handleFilter(this.searchInput.Text.Trim());
 
                 this.loadBookListToDataView(bookList);
             }
@@ -390,7 +390,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         {
             try
             {
-                List<BookDTO> bookList = handleFilter(this.searchInput.Text.ToString());
+                List<BookDTO> bookList = handleFilter(this.searchInput.Text.Trim());
 
                 this.loadBookListToDataView(bookList);
             }
@@ -404,7 +404,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         {
             try
             {
-                List<BookDTO> bookList = handleFilter(this.searchInput.Text.ToString());
+                List<BookDTO> bookList = handleFilter(this.searchInput.Text.Trim());
 
                 this.loadBookListToDataView(bookList);
             }
@@ -457,7 +457,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
                     if (bookModal.isSubmitSuccess)
                     {
-                        List<BookDTO> bookList = handleFilter(this.searchInput.Text.ToString());
+                        List<BookDTO> bookList = handleFilter(this.searchInput.Text.Trim());
 
                         this.loadBookListToDataView(bookList);
                     }
@@ -508,7 +508,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                         }
 
                     }
-                    List<BookDTO> bookList = handleFilter(this.searchInput.Text.ToString());
+                    List<BookDTO> bookList = handleFilter(this.searchInput.Text.Trim());
                     this.loadBookListToDataView(bookList);
 
                     MessageBox.Show("Delete successful");
@@ -547,7 +547,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
                     if (bookModal.isSubmitSuccess)
                     {
-                        List<BookDTO> bookList = handleFilter(this.searchInput.Text.ToString());
+                        List<BookDTO> bookList = handleFilter(this.searchInput.Text.Trim());
 
                         this.loadBookListToDataView(bookList);
                     }

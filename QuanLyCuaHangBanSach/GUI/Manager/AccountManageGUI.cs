@@ -3,12 +3,8 @@ using QuanLyCuaHangBanSach.DTO;
 using QuanLyCuaHangBanSach.GUI.Modal;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QuanLyCuaHangBanSach.GUI.Manager
@@ -172,7 +168,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
 					if (modal.isSubmitSuccess)
 					{
-						List<AccountDTO> accounts = handleFilter(this.searchInput.Text);
+						List<AccountDTO> accounts = handleFilter(this.searchInput.Text.Trim());
 						this.loadDataToDataGridView(accounts);
 					}
 				}
@@ -273,7 +269,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 					}
 					if (isDeleted) 
 					{
-						List<AccountDTO> accounts = handleFilter(this.searchInput.Text);
+						List<AccountDTO> accounts = handleFilter(this.searchInput.Text.Trim());
 						this.loadDataToDataGridView(accounts);
 						MessageBox.Show("Xóa thành công các tài khoản đã chọn");
 					}
@@ -330,7 +326,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 		{
 			try
 			{
-				List<AccountDTO> account = handleFilter(this.searchInput.Text);
+				List<AccountDTO> account = handleFilter(this.searchInput.Text.Trim());
 				loadDataToDataGridView(account);
 			}
 			catch

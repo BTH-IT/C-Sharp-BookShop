@@ -59,7 +59,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             try
             {
                 this.searchInput.ForeColor = Color.Black;
-                List<BookTypeDTO> BookTypeList = BookTypeBUS.Instance.search(this.searchInput.Text.ToString());
+                List<BookTypeDTO> BookTypeList = BookTypeBUS.Instance.search(this.searchInput.Text.Trim());
 
                 this.loadBookTypeListToDataView(BookTypeList);
             }
@@ -124,7 +124,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                     if (BookTypeModal.isSubmitSuccess)
                     {
 
-                        List<BookTypeDTO> BookTypeList = BookTypeBUS.Instance.search(this.searchInput.Text.ToString());
+                        List<BookTypeDTO> BookTypeList = BookTypeBUS.Instance.search(this.searchInput.Text.Trim());
 
                         this.loadBookTypeListToDataView(BookTypeList);
                     }
@@ -164,7 +164,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
                     if (BookTypeModal.isSubmitSuccess)
                     {
-                        List<BookTypeDTO> BookTypeList = BookTypeBUS.Instance.search(this.searchInput.Text.ToString());
+                        List<BookTypeDTO> BookTypeList = BookTypeBUS.Instance.search(this.searchInput.Text.Trim());
 
                         this.loadBookTypeListToDataView(BookTypeList);
                     }
@@ -203,7 +203,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
                     if (BookTypeModal.isSubmitSuccess)
                     {
-                        List<BookTypeDTO> BookTypeList = BookTypeBUS.Instance.search(this.searchInput.Text.ToString());
+                        List<BookTypeDTO> BookTypeList = BookTypeBUS.Instance.search(this.searchInput.Text.Trim());
 
                         this.loadBookTypeListToDataView(BookTypeList);
                     }

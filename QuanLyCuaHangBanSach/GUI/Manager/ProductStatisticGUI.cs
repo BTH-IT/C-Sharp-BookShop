@@ -410,7 +410,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 					var now = DateTime.Now;
 					if ((now - lastTextChanged).TotalMilliseconds >= debounceInterval)
 					{
-						List<BookDTO> bookList = convertTableToList(handleFilter(searchInput.Text));
+						List<BookDTO> bookList = convertTableToList(handleFilter(searchInput.Text.Trim()));
 						loadBookListToDataView(bookList);
 					}
 				}
