@@ -85,36 +85,44 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         {
             try
             {
-                if (this.dgvPublisher.CurrentCell.RowIndex < 0)
+                if(this.dgvPublisher.CurrentCell != null)
                 {
-                    MessageBox.Show("Hãy chọn dòng dữ liệu muốn thao tác");
-                    return;
-                }
+					if (this.dgvPublisher.CurrentCell.RowIndex < 0)
+					{
+						MessageBox.Show("Hãy chọn dòng dữ liệu muốn thao tác");
+						return;
+					}
 
-                using (PublisherModal PublisherModal = new PublisherModal("Sửa nhà xuất bản"))
+					using (PublisherModal PublisherModal = new PublisherModal("Sửa nhà xuất bản"))
+					{
+						DataGridViewRow row = this.dgvPublisher.Rows[this.dgvPublisher.CurrentCell.RowIndex];
+
+						PublisherDTO Publisher = PublisherBUS.Instance.getById(row.Cells[0].Value.ToString());
+
+						PublisherModal.updatePublisher = Publisher;
+
+						if (PublisherModal.updatePublisher == null)
+						{
+							MessageBox.Show("Đã xảy ra lỗi vui lòng thử lại sau!!");
+							return;
+						}
+
+						PublisherModal.ShowDialog();
+
+						if (PublisherModal.isSubmitSuccess)
+						{
+							List<PublisherDTO> PublisherList = PublisherBUS.Instance.search(this.searchInput.Text.Trim());
+
+							this.loadPublisherListToDataView(PublisherList);
+						}
+					}
+                }
+                else
                 {
-                    DataGridViewRow row = this.dgvPublisher.Rows[this.dgvPublisher.CurrentCell.RowIndex];
+					MessageBox.Show("Bảng dữ liệu có thể chưa có dòng dữ liệu nào để chỉnh sửa");
+				}
 
-                    PublisherDTO Publisher = PublisherBUS.Instance.getById(row.Cells[0].Value.ToString());
-
-                    PublisherModal.updatePublisher = Publisher;
-
-                    if (PublisherModal.updatePublisher == null)
-                    {
-                        MessageBox.Show("Đã xảy ra lỗi vui lòng thử lại sau!!");
-                        return;
-                    }
-
-                    PublisherModal.ShowDialog();
-
-                    if (PublisherModal.isSubmitSuccess)
-                    {
-                        List<PublisherDTO> PublisherList = PublisherBUS.Instance.search(this.searchInput.Text.Trim());
-
-                        this.loadPublisherListToDataView(PublisherList);
-                    }
-                }
-            }
+			}
             catch (Exception er)
             {
 

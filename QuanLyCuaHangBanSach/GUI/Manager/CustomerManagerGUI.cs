@@ -68,34 +68,42 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         {
             try
             {
-				if (this.dgvCustomer.CurrentCell.RowIndex < 0)
-				{
-					MessageBox.Show("Hãy chọn khách hàng muốn chỉnh sửa");
-					return;
-				}
-				using (CustomerModal modal = new CustomerModal("Sửa thông tin khách hàng"))
-				{
-					DataGridViewRow selectedRow = this.dgvCustomer.Rows[this.dgvCustomer.CurrentCell.RowIndex];
-
-					CustomerDTO customer = CustomerBUS.Instance.getById(selectedRow.Cells[0].Value.ToString());
-
-					if (customer == null)
+                if(this.dgvCustomer.CurrentCell != null)
+                {
+					if (this.dgvCustomer.CurrentCell.RowIndex < 0)
 					{
-						MessageBox.Show("Đã có lỗi xảy ra vui lòng thử lại");
+						MessageBox.Show("Hãy chọn khách hàng muốn chỉnh sửa");
 						return;
 					}
-
-					modal.currentCustomer = customer;
-					modal.ShowDialog();
-
-					if (modal.isSubmitSuccess)
+					using (CustomerModal modal = new CustomerModal("Sửa thông tin khách hàng"))
 					{
+						DataGridViewRow selectedRow = this.dgvCustomer.Rows[this.dgvCustomer.CurrentCell.RowIndex];
 
-						List<CustomerDTO> customers = this.handleFilter(this.searchInput.Text.Trim());
-						this.loadCustomerListToDataGridView(customers);
+						CustomerDTO customer = CustomerBUS.Instance.getById(selectedRow.Cells[0].Value.ToString());
+
+						if (customer == null)
+						{
+							MessageBox.Show("Đã có lỗi xảy ra vui lòng thử lại");
+							return;
+						}
+
+						modal.currentCustomer = customer;
+						modal.ShowDialog();
+
+						if (modal.isSubmitSuccess)
+						{
+
+							List<CustomerDTO> customers = this.handleFilter(this.searchInput.Text.Trim());
+							this.loadCustomerListToDataGridView(customers);
+						}
+
 					}
-
 				}
+                else
+                {
+					MessageBox.Show("Bảng dữ liệu có thể chưa có dòng dữ liệu nào để chỉnh sửa");
+				}   
+			
 			}
             catch
             {
