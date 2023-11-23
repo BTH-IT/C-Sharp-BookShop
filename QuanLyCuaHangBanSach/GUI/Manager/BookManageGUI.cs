@@ -227,6 +227,8 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                         } else
                         {
                             MessageBox.Show("Giá bán đến phải bé hơn hoặc bằng giá bán từ");
+                            this.priceFrom.Clear();
+                            this.priceTo.Clear();
                         }
                     }
                 }

@@ -163,16 +163,25 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
         {
             try
             {
-				using (var modal = new AccountModal())
+				List<StaffDTO> staffs = StaffBUS.Instance.getAllNoAccount();
+				if(staffs.Count > 0) 
 				{
-					modal.ShowDialog();
-
-					if (modal.isSubmitSuccess)
+					using (var modal = new AccountModal())
 					{
-						List<AccountDTO> accounts = handleFilter(this.searchInput.Text.Trim());
-						this.loadDataToDataGridView(accounts);
+						modal.ShowDialog();
+
+						if (modal.isSubmitSuccess)
+						{
+							List<AccountDTO> accounts = handleFilter(this.searchInput.Text.Trim());
+							this.loadDataToDataGridView(accounts);
+						}
 					}
 				}
+				else
+				{
+					MessageBox.Show("Các nhân viên đều đã có tài khoản","Thông báo");
+				}
+				
 			}
             catch
             {
