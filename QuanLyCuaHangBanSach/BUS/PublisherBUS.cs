@@ -32,7 +32,14 @@ namespace QuanLyCuaHangBanSach.BUS
         {
             return PublisherDAO.Instance.checkDuplicateName(value, id);
         }
-
+        public bool checkDuplicatePhoneNumber(string value)
+        {
+            return PublisherDAO.Instance.checkDuplicatePhoneNumber(value);
+        }
+        public bool checkDuplicatePhoneNumber(string value ,int id)
+        {
+            return PublisherDAO.Instance.checkDuplicatePhoneNumber(value, id);
+        }
         public DataTable getAll()
         {
             return PublisherDAO.Instance.getAll();

@@ -99,8 +99,29 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                         this.phoneNumberLine,
                         new string[] { "required", "phone-number", "space" }
                 );
+				if (isCheckTxt2)
+				{
+					if (updateSupplier == null)
+					{
+						isCheckTxt2 = CustomValidation.Instance.checkDuplicateName(
+								this.phoneNumberMsg,
+								this.phoneNumberLine,
+								SupplierBUS.Instance.checkDupicatePhoneNumber(this.phoneNumbertxt.Text),
+								"Số điện thoại đã có trong hệ thống"
+							);
+					}
+					else
+					{
+						isCheckTxt2 = CustomValidation.Instance.checkDuplicateName(
+								this.phoneNumberMsg,
+								this.phoneNumberLine,
+								SupplierBUS.Instance.checkDupicatePhoneNumber(this.phoneNumbertxt.Text, updateSupplier.MaNhaCungCap),
+								"Số điện thoại đã có trong hệ thống"
 
-                bool isCheckTxt3 = CustomValidation.Instance.checkTextbox(
+							);
+					}
+				}
+				bool isCheckTxt3 = CustomValidation.Instance.checkTextbox(
                         this.addressTxt,
                         this.addressMsg,
                         this.addressLine,
@@ -197,12 +218,34 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
         private void phoneNumbertxt_TextChanged(object sender, EventArgs e)
         {
-            CustomValidation.Instance.checkTextbox(
+            bool isPhoneNumberValid =CustomValidation.Instance.checkTextbox(
                 this.phoneNumbertxt,
                 this.phoneNumberMsg,
                 this.phoneNumberLine,
                 new string[] { "required", "phone-number", "space" }
             );
+            if(isPhoneNumberValid)
+            {
+                if(updateSupplier == null)
+                {
+                    isPhoneNumberValid = CustomValidation.Instance.checkDuplicateName(
+                            this.phoneNumberMsg,
+                            this.phoneNumberLine,
+                            SupplierBUS.Instance.checkDupicatePhoneNumber(this.phoneNumbertxt.Text),
+							"Số điện thoại đã có trong hệ thống"
+						) ;
+                }
+                else
+                {
+                    isPhoneNumberValid = CustomValidation.Instance.checkDuplicateName(
+                            this.phoneNumberMsg,
+                            this.phoneNumberLine,
+                            SupplierBUS.Instance.checkDupicatePhoneNumber(this.phoneNumbertxt.Text,updateSupplier.MaNhaCungCap),
+                            "Số điện thoại đã có trong hệ thống"
+
+                        );
+                }
+            }
         }
 
         private void SupplierModal_KeyDown(object sender, System.Windows.Forms.KeyEventArgs e)
@@ -212,5 +255,5 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 gunaButton1_Click(sender, e);
             }
         }
-    }
+	}
 }

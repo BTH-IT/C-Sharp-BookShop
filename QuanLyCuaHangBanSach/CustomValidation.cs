@@ -220,23 +220,33 @@ namespace QuanLyCuaHangBanSach
                         break;
                     case "max-current-year":
                         int currentYear = DateTime.Now.Year;
-                        if (int.TryParse(txt.Text, out int result) && result > currentYear)
+                        if(int.TryParse(txt.Text, out int result))
                         {
-                            if (result <= 0)
-                            {
-                                errMsgLbl.Text = "Trường này là năm không được âm hoặc bằng 0";
-                            } else
-                            {
-                                errMsgLbl.Text = "Trường này không được lớn hơn " + currentYear;
-                            }
-                            line.BackColor = Color.FromArgb(239, 68, 68);
-                            return false; 
+							if (result > currentYear)
+							{
+								if (result <= 0)
+								{
+									errMsgLbl.Text = "Trường này là năm không được âm hoặc bằng 0";
+								}
+								else
+								{
+									errMsgLbl.Text = "Trường này không được lớn hơn " + currentYear;
+								}
+								line.BackColor = Color.FromArgb(239, 68, 68);
+								return false;
+							}
+							else
+							{
+								errMsgLbl.Text = "";
+								line.BackColor = Color.FromArgb(45, 212, 191);
+							}
                         }
                         else
                         {
-                            errMsgLbl.Text = "";
-                            line.BackColor = Color.FromArgb(45, 212, 191);
-                        }
+							errMsgLbl.Text = "Năm không hợp lệ";
+							line.BackColor = Color.FromArgb(239, 68, 68);
+							return false;
+						}   
                         break;
                     case "email":
                         if (!checkTextboxWithRegex(txt, new Regex(@"^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$"), "Trường này phải là một email", errMsgLbl, line))
@@ -263,9 +273,19 @@ namespace QuanLyCuaHangBanSach
                         }
                         break;
                     case "space":
-                        if (!checkDuplicateName(errMsgLbl, line, string.IsNullOrWhiteSpace(txt.Text) || txt.Text.Trim() == "" || txt.Text.Trim() != txt.Text, "Không được chứa số/kí tự đặc biệt\nKhông được có khoảng trắng đầu cuối"))
+						string cleanedInput = Regex.Replace(txt.Text, @"\s+", " ");
+						if(cleanedInput.Trim() == txt.Text.Trim())
                         {
-                            return false;
+							if (!checkDuplicateName(errMsgLbl, line, string.IsNullOrWhiteSpace(txt.Text) || txt.Text.Trim() == "" || txt.Text.Trim() != txt.Text, "Không được chứa số/kí tự đặc biệt\nKhông được có khoảng trắng đầu cuối"))
+							{
+								return false;
+							}
+                        }
+                        else
+                        {
+                            errMsgLbl.Text = "Chỉ có một khoảng trắng giữa các từ";
+                            line.BackColor = Color.FromArgb(239, 68, 68);
+							return false;
                         }
                         break;
                     case "password":

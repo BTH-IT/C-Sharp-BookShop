@@ -192,7 +192,9 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                         if (Convert.ToDecimal(this.salaryFrom.Text.ToString()) > Convert.ToDecimal(this.salaryTo.Text.ToString()))
                         {
                             MessageBox.Show("Lương đến phải bé hơn hoặc bằng lương từ");
-                        }
+							this.salaryFrom.Clear();
+							this.salaryTo.Clear();
+						}
                         else
                         {
                             staffs = staffs.Where(staff => staff.Luong >= Convert.ToDecimal(this.salaryFrom.Text) && staff.Luong <= Convert.ToDecimal(this.salaryTo.Text)).ToList();

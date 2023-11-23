@@ -39,11 +39,11 @@
 			// 
 			// NameLb
 			// 
-			this.NameLb.AutoSize = true;
+			this.NameLb.AutoEllipsis = true;
 			this.NameLb.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 12F, System.Drawing.FontStyle.Bold);
 			this.NameLb.Location = new System.Drawing.Point(44, 0);
 			this.NameLb.Name = "NameLb";
-			this.NameLb.Size = new System.Drawing.Size(139, 25);
+			this.NameLb.Size = new System.Drawing.Size(197, 25);
 			this.NameLb.TabIndex = 0;
 			this.NameLb.Text = "Nguyen Phuc Huy";
 			this.NameLb.MouseLeave += new System.EventHandler(this.NameLb_MouseLeave);
