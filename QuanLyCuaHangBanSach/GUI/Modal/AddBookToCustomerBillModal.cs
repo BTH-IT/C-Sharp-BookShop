@@ -450,18 +450,13 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 {
                     try
                     {
+
                         int idx = this.selectedCustomerBillDetailList.FindIndex(
                             book => book.MaSach == scannerModal.scannedBook.MaSach
                         );
 
                         if (idx == -1)
                         {
-                            if (scannerModal.scannedBook.SoLuongConLai - this.selectedCustomerBillDetailList[idx].SoLuong <= 0)
-                            {
-                                MessageBox.Show("Mã sách " + scannerModal.scannedBook.MaSach + " đã hết hàng!");
-                                return;
-                            }
-
                             CustomerBillDetailDTO customerBillDetail = new CustomerBillDetailDTO(
                                 0,
                                 scannerModal.scannedBook.MaSach,
@@ -473,6 +468,12 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                         }
                         else
                         {
+                            if (scannerModal.scannedBook.SoLuongConLai - this.selectedCustomerBillDetailList[idx].SoLuong <= 0)
+                            {
+                                MessageBox.Show("Mã sách " + scannerModal.scannedBook.MaSach + " đã hết hàng!");
+                                return;
+                            }
+
                             CustomerBillDetailDTO customerBillDetail = new CustomerBillDetailDTO(
                                 0,
                                 scannerModal.scannedBook.MaSach,
