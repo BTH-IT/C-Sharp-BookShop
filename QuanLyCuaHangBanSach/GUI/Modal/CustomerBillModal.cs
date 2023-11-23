@@ -76,9 +76,6 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 salePrice = total * (phanTram / Convert.ToDecimal(100.0));
 
                 salePrice = Convert.ToDecimal(salePrice.ToString().Split('.')[0]);
-
-                this.totalPriceTxt.Text = (total - salePrice) + "";
-                total -= salePrice;
             }
             else
             {
@@ -122,6 +119,15 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 this.totalPriceTxt.Text = total + "";
                 diemConLai = 0;
             }
+
+            if (Convert.ToDecimal(this.totalPriceTxt.Text) - salePrice <= 0)
+            {
+                this.totalPriceTxt.Text = "0";
+            } else
+            {
+                this.totalPriceTxt.Text = (Convert.ToDecimal(this.totalPriceTxt.Text) - salePrice) + "";
+            }
+
         }
 
         private void getTotalPriceWhenChangeSaleAndCustomer()
