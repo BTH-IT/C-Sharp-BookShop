@@ -81,6 +81,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             {
                 this.percentTxt.Text = "Không có";
                 this.totalPriceTxt.Text = total + "";
+                salePrice = 0;
             }
 
             int diem = 0;
