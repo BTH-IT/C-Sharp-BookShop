@@ -94,7 +94,6 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                     scoreTxt.Text = diem + " điểm";
                     if (diem <= 0)
                     {
-                        this.PointToggleBtn.Checked = false;
                         this.PointToggleBtn.Enabled = false;
                     } else
                     {
@@ -124,8 +123,15 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
                     if (total - scorePrice <= 0)
                     {
-                        decimal roundedUp = Math.Sign(total - scorePrice) * (decimal)(Math.Ceiling(Math.Abs(total - scorePrice) / 1000) * 1000) + 1000;
-                        diemConLai = Convert.ToInt32(-1 * roundedUp / 1000);
+                        if ((total - scorePrice) % 1000 > 0)
+                        {
+                            decimal roundedUp = Math.Sign(total - scorePrice) * (decimal)(Math.Ceiling(Math.Abs(total - scorePrice) / 1000) * 1000) + 1000;
+                            diemConLai = Convert.ToInt32(-1 * roundedUp / 1000);
+                        } else
+                        {
+                            diemConLai = Convert.ToInt32(-1 * (total - scorePrice) / 1000);
+                        }
+                        
                         scoreTxt.Text = diemConLai + " điểm";
                         this.totalPriceTxt.Text = "0";
                     }
@@ -149,7 +155,6 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
         private void getTotalPriceWhenChangeSaleAndCustomer()
         {
-            Console.WriteLine("123");
             decimal total = 0;
             foreach (CustomerBillDetailDTO customerBillDetail in customerBillDetailList)
             {
@@ -493,7 +498,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
         {
             try
             {
-                if (Convert.ToDecimal(totalPriceTxt.Text.Split('.')[0]) > 0)
+                if (Convert.ToDecimal(totalPriceTxt.Text.Split('.')[0]) > 0 || !PointToggleBtn.Checked)
                 {
                     getTotalPriceWhenChangeSaleAndCustomer();
                 }
