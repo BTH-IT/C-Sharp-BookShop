@@ -193,7 +193,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                     this.importPriceTxt,
                     this.errorImportPriceMsg,
                     this.importPriceLine,
-                    new string[] { "required", "positive-number", "space" }
+                    new string[] { "required", "number", "space" }
                 );
                 if(isImportPriceValid)
                 {
@@ -272,7 +272,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                     this.importPriceTxt,
                     this.errorImportPriceMsg,
                     this.importPriceLine,
-                    new string[] { "required", "positive-number", "space" }
+                    new string[] { "required", "number", "space" }
                 );
                 if(isCheckTxt3)
                 {

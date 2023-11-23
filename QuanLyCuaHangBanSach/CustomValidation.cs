@@ -177,6 +177,22 @@ namespace QuanLyCuaHangBanSach
 
             return true;
         }
+        public bool checkTextboxWithRegexV2(Guna2TextBox txt, Regex regex, string errMsg, Label errMsgLbl, Panel line)
+        {
+            if (!regex.IsMatch(txt.Text.ToString().Trim()) || (int.TryParse(txt.Text, out int r) && r < 0))
+            {
+                errMsgLbl.Text = errMsg;
+                line.BackColor = Color.FromArgb(239, 68, 68);
+                return false;
+            }
+            else
+            {
+                errMsgLbl.Text = "";
+                line.BackColor = Color.FromArgb(45, 212, 191);
+            }
+
+            return true;
+        }
 
         public bool checkTextbox(Guna2TextBox txt, Label errMsgLbl, Panel line, string[] rules)
         {
@@ -192,6 +208,12 @@ namespace QuanLyCuaHangBanSach
                         break;
                     case "positive-number":
                         if (!checkTextboxWithRegex(txt, new Regex("^\\d+$"), "Trường này phải là một số dương", errMsgLbl, line))
+                        {
+                            return false;
+                        }
+                        break;
+                    case "number":
+                        if (!checkTextboxWithRegexV2(txt, new Regex("^\\d+$"), "Trường này phải là một số không âm", errMsgLbl, line))
                         {
                             return false;
                         }

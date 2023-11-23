@@ -399,7 +399,7 @@ namespace QuanLyCuaHangBanSach.GUI.Report {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public BooksRow AddBooksRow(int STT, string Name, int Quantity, decimal Cash, decimal Price) {
+            public BooksRow AddBooksRow(int STT, string Name, int Quantity, string Cash, string Price) {
                 BooksRow rowBooksRow = ((BooksRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         STT,
@@ -445,9 +445,9 @@ namespace QuanLyCuaHangBanSach.GUI.Report {
                 base.Columns.Add(this.columnName);
                 this.columnQuantity = new global::System.Data.DataColumn("Quantity", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnQuantity);
-                this.columnCash = new global::System.Data.DataColumn("Cash", typeof(decimal), null, global::System.Data.MappingType.Element);
+                this.columnCash = new global::System.Data.DataColumn("Cash", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCash);
-                this.columnPrice = new global::System.Data.DataColumn("Price", typeof(decimal), null, global::System.Data.MappingType.Element);
+                this.columnPrice = new global::System.Data.DataColumn("Price", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPrice);
             }
             
@@ -639,10 +639,10 @@ namespace QuanLyCuaHangBanSach.GUI.Report {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public decimal Cash {
+            public string Cash {
                 get {
                     try {
-                        return ((decimal)(this[this.tableBooks.CashColumn]));
+                        return ((string)(this[this.tableBooks.CashColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'Cash\' in table \'Books\' is DBNull.", e);
@@ -655,10 +655,10 @@ namespace QuanLyCuaHangBanSach.GUI.Report {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public decimal Price {
+            public string Price {
                 get {
                     try {
-                        return ((decimal)(this[this.tableBooks.PriceColumn]));
+                        return ((string)(this[this.tableBooks.PriceColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'Price\' in table \'Books\' is DBNull.", e);

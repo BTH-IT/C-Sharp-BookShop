@@ -62,8 +62,8 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             }
 
             this.discountPriceTxt.Text = string.Format("{0:N0} VNĐ", (giaGoc - giaDaGiam));
-            this.totalPriceTxt.Text = string.Format("{0:N0} VNĐ", giaDaGiam);
-            this.changedPriceTxt.Text = string.Format("{0:N0} VNĐ", customerBill.TienKhachDua - giaDaGiam);
+            this.totalPriceTxt.Text = string.Format("{0:N0} VNĐ", customerBill.TongTien);
+            this.changedPriceTxt.Text = string.Format("{0:N0} VNĐ", customerBill.TienKhachDua - customerBill.TongTien);
         }
 
         private void cancelBtn_Click(object sender, EventArgs e)

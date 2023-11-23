@@ -70,10 +70,11 @@ namespace QuanLyCuaHangBanSach.GUI.Report
                 new Microsoft.Reporting.WinForms.ReportParameter("pCustomerName", customer == null ? "Vãng lai" : customer.Ten.ToString()),
                 new Microsoft.Reporting.WinForms.ReportParameter("pSale", sale == null ? "Không có" : sale.TenKhuyenMai.ToString()),
                 new Microsoft.Reporting.WinForms.ReportParameter("pSalePercent", customerBill.PhanTramKhuyenMai + "%"),
-                new Microsoft.Reporting.WinForms.ReportParameter("pSalePrice", salePrice.ToString()),
-                new Microsoft.Reporting.WinForms.ReportParameter("pTotalPrice", customerBill.TongTien.ToString()),
-                new Microsoft.Reporting.WinForms.ReportParameter("pMoneyPaid", customerBill.TienKhachDua.ToString()),
-                new Microsoft.Reporting.WinForms.ReportParameter("pMoneyChange", (customerBill.TienKhachDua - customerBill.TongTien).ToString()),
+                new Microsoft.Reporting.WinForms.ReportParameter("pSalePrice", string.Format("{0:N0} VNĐ", salePrice)),
+                new Microsoft.Reporting.WinForms.ReportParameter("pTotalPrice", string.Format("{0:N0} VNĐ", giaGoc)),
+                new Microsoft.Reporting.WinForms.ReportParameter("pFinalTotalPrice", string.Format("{0:N0} VNĐ", customerBill.TongTien)),
+                new Microsoft.Reporting.WinForms.ReportParameter("pMoneyPaid", string.Format("{0:N0} VNĐ", customerBill.TienKhachDua)),
+                new Microsoft.Reporting.WinForms.ReportParameter("pMoneyChange", string.Format("{0:N0} VNĐ",(customerBill.TienKhachDua - customerBill.TongTien))),
                 new Microsoft.Reporting.WinForms.ReportParameter("pChangedScore", customerBill.DoiDiem <= 0 ? "Không đổi" : customerBill.DoiDiem.ToString()),
             };
 
