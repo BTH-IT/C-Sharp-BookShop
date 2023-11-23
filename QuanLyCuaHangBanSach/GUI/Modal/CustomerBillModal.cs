@@ -114,8 +114,8 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
                 if (total - scorePrice <= 0)
                 {
-                    decimal roundedUp = -Math.Sign(total - scorePrice) * (decimal)(Math.Ceiling(Math.Abs(total - scorePrice) / 1000) * 1000);
-                    diemConLai = Convert.ToInt32(roundedUp / 1000);
+                    decimal roundedUp = Math.Sign(total - scorePrice) * (decimal)(Math.Ceiling(Math.Abs(total - scorePrice) / 1000) * 1000) + 1000;
+                    diemConLai = Convert.ToInt32(-1 * roundedUp / 1000);
                     scoreTxt.Text = diemConLai + " điểm";
                     this.totalPriceTxt.Text = "0";
                 }
