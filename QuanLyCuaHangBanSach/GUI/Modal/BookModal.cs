@@ -171,11 +171,11 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                     this.sellPriceLine,
                     new string[] { "required", "positive-number" , "space" }
                 );
-                if(isSellPriceValid)
-                {
+                if (isSellPriceValid)
+                { 
                     isSellPriceValid = CustomValidation.Instance.checkTextboxMatchWithOtherTextBox(sellPriceTxt, importPriceTxt, "Giá bán phải lớn hơn giá nhập", errorSellPriceMsg, sellPriceLine, "after");
-                }    
-                CustomValidation.Instance.checkTextboxMatchWithOtherTextBox(importPriceTxt, sellPriceTxt, "Giá nhập phải nhỏ hơn giá bán", this.errorImportPriceMsg, importPriceLine, "before");
+				}
+				CustomValidation.Instance.checkTextboxMatchWithOtherTextBox(importPriceTxt, sellPriceTxt, "Giá nhập phải nhỏ hơn giá bán", this.errorImportPriceMsg, importPriceLine, "before");
             }
             catch (Exception ex)
             {
@@ -199,7 +199,8 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 {
                     isImportPriceValid = CustomValidation.Instance.checkTextboxMatchWithOtherTextBox(importPriceTxt,sellPriceTxt,  "Giá nhập phải nhỏ hơn giá bán", this.errorImportPriceMsg , importPriceLine, "before");
                 }
-                CustomValidation.Instance.checkTextboxMatchWithOtherTextBox(sellPriceTxt, importPriceTxt, "Giá bán phải lớn hơn giá nhập", errorSellPriceMsg, sellPriceLine, "after");
+				bool isc = CustomValidation.Instance.checkTextboxMatchWithOtherTextBox(sellPriceTxt, importPriceTxt, "Giá bán phải lớn hơn giá nhập", errorSellPriceMsg, sellPriceLine, "after");
+                Console.WriteLine(isc);
             }
             catch (Exception ex)
             {

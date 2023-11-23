@@ -132,7 +132,9 @@ namespace QuanLyCuaHangBanSach
                             }
                             else
                             {
-                                return true;
+								errMsgLbl.Text = "";
+								line.BackColor = Color.FromArgb(45, 212, 191);
+								return true;
                             }
 							break;
                         case "after":
@@ -146,6 +148,8 @@ namespace QuanLyCuaHangBanSach
 							}
 							else
 							{
+								errMsgLbl.Text = "";
+								line.BackColor = Color.FromArgb(45, 212, 191);
 								return true;
 							}
 							break;
