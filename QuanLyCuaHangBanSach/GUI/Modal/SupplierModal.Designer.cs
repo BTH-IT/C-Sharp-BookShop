@@ -83,7 +83,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 			this.cancelBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
 			this.cancelBtn.Image = null;
 			this.cancelBtn.ImageSize = new System.Drawing.Size(20, 20);
-			this.cancelBtn.Location = new System.Drawing.Point(66, 535);
+			this.cancelBtn.Location = new System.Drawing.Point(71, 550);
 			this.cancelBtn.Name = "cancelBtn";
 			this.cancelBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
 			this.cancelBtn.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
@@ -113,7 +113,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 			this.submitBtn.ForeColor = System.Drawing.Color.White;
 			this.submitBtn.Image = null;
 			this.submitBtn.ImageSize = new System.Drawing.Size(20, 20);
-			this.submitBtn.Location = new System.Drawing.Point(315, 535);
+			this.submitBtn.Location = new System.Drawing.Point(316, 550);
 			this.submitBtn.Name = "submitBtn";
 			this.submitBtn.OnHoverBaseColor = System.Drawing.Color.White;
 			this.submitBtn.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
@@ -135,7 +135,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 			this.panel1.Controls.Add(this.label3);
 			this.panel1.Location = new System.Drawing.Point(3, 3);
 			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(445, 139);
+			this.panel1.Size = new System.Drawing.Size(445, 149);
 			this.panel1.TabIndex = 0;
 			// 
 			// Suppliertxt
@@ -176,7 +176,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 			this.supplierNameMsg.ForeColor = System.Drawing.Color.Red;
 			this.supplierNameMsg.Location = new System.Drawing.Point(19, 104);
 			this.supplierNameMsg.Name = "supplierNameMsg";
-			this.supplierNameMsg.Size = new System.Drawing.Size(0, 26);
+			this.supplierNameMsg.Size = new System.Drawing.Size(0, 21);
 			this.supplierNameMsg.TabIndex = 7;
 			// 
 			// nameLine
@@ -206,7 +206,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 			this.flowLayoutPanel1.Controls.Add(this.panel4);
 			this.flowLayoutPanel1.Location = new System.Drawing.Point(68, 50);
 			this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-			this.flowLayoutPanel1.Size = new System.Drawing.Size(452, 464);
+			this.flowLayoutPanel1.Size = new System.Drawing.Size(452, 476);
 			this.flowLayoutPanel1.TabIndex = 0;
 			// 
 			// panel2
@@ -215,9 +215,9 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 			this.panel2.Controls.Add(this.addressTxt);
 			this.panel2.Controls.Add(this.addressMsg);
 			this.panel2.Controls.Add(this.label4);
-			this.panel2.Location = new System.Drawing.Point(3, 148);
+			this.panel2.Location = new System.Drawing.Point(3, 158);
 			this.panel2.Name = "panel2";
-			this.panel2.Size = new System.Drawing.Size(445, 155);
+			this.panel2.Size = new System.Drawing.Size(445, 153);
 			this.panel2.TabIndex = 1;
 			// 
 			// addressLine
@@ -265,7 +265,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 			this.addressMsg.ForeColor = System.Drawing.Color.Red;
 			this.addressMsg.Location = new System.Drawing.Point(20, 110);
 			this.addressMsg.Name = "addressMsg";
-			this.addressMsg.Size = new System.Drawing.Size(0, 26);
+			this.addressMsg.Size = new System.Drawing.Size(0, 21);
 			this.addressMsg.TabIndex = 7;
 			// 
 			// label4
@@ -284,7 +284,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 			this.panel4.Controls.Add(this.phoneNumberMsg);
 			this.panel4.Controls.Add(this.phoneNumberLine);
 			this.panel4.Controls.Add(this.label6);
-			this.panel4.Location = new System.Drawing.Point(3, 309);
+			this.panel4.Location = new System.Drawing.Point(3, 317);
 			this.panel4.Name = "panel4";
 			this.panel4.Size = new System.Drawing.Size(445, 145);
 			this.panel4.TabIndex = 33;
@@ -326,7 +326,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 			this.phoneNumberMsg.ForeColor = System.Drawing.Color.Red;
 			this.phoneNumberMsg.Location = new System.Drawing.Point(20, 106);
 			this.phoneNumberMsg.Name = "phoneNumberMsg";
-			this.phoneNumberMsg.Size = new System.Drawing.Size(0, 26);
+			this.phoneNumberMsg.Size = new System.Drawing.Size(0, 21);
 			this.phoneNumberMsg.TabIndex = 7;
 			// 
 			// phoneNumberLine
@@ -349,10 +349,10 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 			// 
 			// SupplierModal
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.White;
-			this.ClientSize = new System.Drawing.Size(589, 603);
+			this.ClientSize = new System.Drawing.Size(589, 636);
 			this.Controls.Add(this.flowLayoutPanel1);
 			this.Controls.Add(this.submitBtn);
 			this.Controls.Add(this.cancelBtn);
