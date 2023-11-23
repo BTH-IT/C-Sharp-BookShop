@@ -64,8 +64,14 @@ namespace QuanLyCuaHangBanSach
 
         public bool checkTextboxMax(Guna2TextBox txt, string errMsg, Label errMsgLbl, Panel line, int max)
         {
+            if (!int.TryParse(txt.Text, out int result))
+            {
+                errMsgLbl.Text = errMsg;
+                line.BackColor = Color.FromArgb(239, 68, 68);
+                return false;
+            }
 
-            if (int.TryParse(txt.Text, out int result) && result > max)
+            if (result > max)
             {
                 errMsgLbl.Text = errMsg;
                 line.BackColor = Color.FromArgb(239, 68, 68);
@@ -183,6 +189,8 @@ namespace QuanLyCuaHangBanSach
         }
         public bool checkTextboxWithRegexV2(Guna2TextBox txt, Regex regex, string errMsg, Label errMsgLbl, Panel line)
         {
+            
+
             if (!regex.IsMatch(txt.Text.ToString().Trim()) || (int.TryParse(txt.Text, out int r) && r < 0))
             {
                 errMsgLbl.Text = errMsg;

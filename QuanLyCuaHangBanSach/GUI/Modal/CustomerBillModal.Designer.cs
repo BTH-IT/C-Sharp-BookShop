@@ -85,7 +85,7 @@
             // 
             // label13
             // 
-            this.label13.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label13.Font = new System.Drawing.Font("#9Slide03 Cabin SemiBold", 14.25F, System.Drawing.FontStyle.Bold);
             this.label13.Location = new System.Drawing.Point(3, 3);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(145, 49);
@@ -154,7 +154,7 @@
             // 
             // label18
             // 
-            this.label18.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label18.Font = new System.Drawing.Font("#9Slide03 Cabin SemiBold", 14.25F, System.Drawing.FontStyle.Bold);
             this.label18.Location = new System.Drawing.Point(3, 3);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(145, 49);
@@ -251,7 +251,7 @@
             // 
             // label2
             // 
-            this.label2.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label2.Font = new System.Drawing.Font("#9Slide03 Cabin SemiBold", 14.25F, System.Drawing.FontStyle.Bold);
             this.label2.Location = new System.Drawing.Point(3, 15);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(389, 49);
@@ -277,11 +277,11 @@
             // 
             // scoreTxt
             // 
-            this.scoreTxt.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.scoreTxt.Font = new System.Drawing.Font("#9Slide03 Cabin SemiBold", 14.25F, System.Drawing.FontStyle.Bold);
             this.scoreTxt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.scoreTxt.Location = new System.Drawing.Point(755, 16);
             this.scoreTxt.Name = "scoreTxt";
-            this.scoreTxt.Size = new System.Drawing.Size(290, 35);
+            this.scoreTxt.Size = new System.Drawing.Size(307, 35);
             this.scoreTxt.TabIndex = 45;
             this.scoreTxt.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -316,7 +316,7 @@
             // 
             // PointLb
             // 
-            this.PointLb.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.PointLb.Font = new System.Drawing.Font("#9Slide03 Cabin SemiBold", 14.25F, System.Drawing.FontStyle.Bold);
             this.PointLb.Location = new System.Drawing.Point(641, 16);
             this.PointLb.Name = "PointLb";
             this.PointLb.Size = new System.Drawing.Size(100, 35);
@@ -326,9 +326,9 @@
             // 
             // percentTxt
             // 
-            this.percentTxt.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.percentTxt.Font = new System.Drawing.Font("#9Slide03 Cabin SemiBold", 14.25F, System.Drawing.FontStyle.Bold);
             this.percentTxt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.percentTxt.Location = new System.Drawing.Point(169, 16);
+            this.percentTxt.Location = new System.Drawing.Point(226, 15);
             this.percentTxt.Name = "percentTxt";
             this.percentTxt.Size = new System.Drawing.Size(99, 35);
             this.percentTxt.TabIndex = 12;
@@ -337,17 +337,17 @@
             // 
             // label5
             // 
-            this.label5.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label5.Font = new System.Drawing.Font("#9Slide03 Cabin SemiBold", 14.25F, System.Drawing.FontStyle.Bold);
             this.label5.Location = new System.Drawing.Point(4, 16);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(159, 34);
+            this.label5.Size = new System.Drawing.Size(216, 34);
             this.label5.TabIndex = 11;
             this.label5.Text = "Phần trăm khuyến mãi:";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label4
             // 
-            this.label4.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label4.Font = new System.Drawing.Font("#9Slide03 Cabin SemiBold", 14.25F, System.Drawing.FontStyle.Bold);
             this.label4.Location = new System.Drawing.Point(1118, 77);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(51, 31);
@@ -370,7 +370,7 @@
             this.totalPriceTxt.Enabled = false;
             this.totalPriceTxt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.totalPriceTxt.FocusedState.Parent = this.totalPriceTxt;
-            this.totalPriceTxt.Font = new System.Drawing.Font("#9Slide03 Cabin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalPriceTxt.Font = new System.Drawing.Font("#9Slide03 Cabin SemiBold", 14.25F, System.Drawing.FontStyle.Bold);
             this.totalPriceTxt.ForeColor = System.Drawing.Color.Black;
             this.totalPriceTxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.totalPriceTxt.HoverState.Parent = this.totalPriceTxt;
@@ -394,7 +394,7 @@
             // 
             // label3
             // 
-            this.label3.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label3.Font = new System.Drawing.Font("#9Slide03 Cabin SemiBold", 14.25F, System.Drawing.FontStyle.Bold);
             this.label3.Location = new System.Drawing.Point(641, 77);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(100, 37);
