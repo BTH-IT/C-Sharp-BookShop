@@ -38,9 +38,9 @@ namespace QuanLyCuaHangBanSach.DAO
 
             if (connect != null)
             {
-                connect.Open();
                 try
                 {
+                    connect.Open();
                     MySqlCommand cmd = new MySqlCommand(query, connect);
 
 
