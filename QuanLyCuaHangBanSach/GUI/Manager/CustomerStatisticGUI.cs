@@ -75,7 +75,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 						PushOut = pushed ? 0 : 5,
 						DataLabels = true,
 						FontSize = 12,
-						LabelPoint = chartPoint => string.Format("{0}: {1:P}", customer.Ten, chartPoint.Participation),
+						LabelPoint = chartPoint => "",
 					});
 					pushed = true;
                 }
