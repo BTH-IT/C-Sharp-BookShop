@@ -6,6 +6,7 @@ using QuanLyCuaHangBanSach.BUS;
 using QuanLyCuaHangBanSach.DTO;
 using QuanLyCuaHangBanSach.GUI.Manager;
 using QuanLyCuaHangBanSach.GUI.UserControls;
+using static Guna.UI2.Native.WinApi;
 
 namespace QuanLyCuaHangBanSach.GUI
 {
@@ -146,11 +147,25 @@ namespace QuanLyCuaHangBanSach.GUI
             this.contentActive = btn.Name;
 
             btn.Checked = true;
-
             frm.Show();
 
-            this.staffName.Text = currentStaff.Ten;
+            if (currentStaff.Ten.Length > 16)
+            {
+                string truncatedString = currentStaff.Ten.Substring(0, 16 - 3) + " ...";
+                this.staffName.Text = truncatedString;
+            }
+            else
+            {
+                this.staffName.Text = currentStaff.Ten;
+            }
+
             this.staffPosition.Text = PositionBUS.Instance.getById(currentStaff.MaChucVu.ToString()).TenChucVu;
+
+            if (this.staffPosition.Text.Length > 26)
+            {
+                string truncatedString = this.staffPosition.Text.Substring(0, 26 - 3) + " ...";
+                this.staffPosition.Text = truncatedString;
+            }
 
             if (currentStaff.GioiTinh == "Nam")
             {

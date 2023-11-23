@@ -33,12 +33,12 @@
             this.id = new System.Windows.Forms.Label();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.amountInput = new Guna.UI2.WinForms.Guna2TextBox();
-            this.price = new System.Windows.Forms.Label();
-            this.name = new System.Windows.Forms.Label();
             this.minus = new Guna.UI.WinForms.GunaAdvenceButton();
             this.plus = new Guna.UI.WinForms.GunaAdvenceButton();
             this.close = new System.Windows.Forms.PictureBox();
+            this.price = new System.Windows.Forms.Label();
             this.pictureBook = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.name = new System.Windows.Forms.Label();
             this.panel7.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.close)).BeginInit();
@@ -55,8 +55,9 @@
             this.panel7.Controls.Add(this.price);
             this.panel7.Controls.Add(this.pictureBook);
             this.panel7.Controls.Add(this.name);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel7.Location = new System.Drawing.Point(0, 0);
-            this.panel7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel7.Margin = new System.Windows.Forms.Padding(2);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(431, 162);
             this.panel7.TabIndex = 8;
@@ -65,7 +66,7 @@
             // 
             this.id.Font = new System.Drawing.Font("#9Slide03 Cabin", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.id.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-            this.id.Location = new System.Drawing.Point(202, 11);
+            this.id.Location = new System.Drawing.Point(159, 11);
             this.id.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.id.Name = "id";
             this.id.Size = new System.Drawing.Size(117, 24);
@@ -79,11 +80,11 @@
             this.guna2Panel2.Controls.Add(this.amountInput);
             this.guna2Panel2.Controls.Add(this.minus);
             this.guna2Panel2.Controls.Add(this.plus);
-            this.guna2Panel2.Location = new System.Drawing.Point(205, 74);
-            this.guna2Panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2Panel2.Location = new System.Drawing.Point(162, 74);
+            this.guna2Panel2.Margin = new System.Windows.Forms.Padding(2);
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.ShadowDecoration.Parent = this.guna2Panel2;
-            this.guna2Panel2.Size = new System.Drawing.Size(181, 34);
+            this.guna2Panel2.Size = new System.Drawing.Size(197, 34);
             this.guna2Panel2.TabIndex = 6;
             // 
             // amountInput
@@ -109,31 +110,9 @@
             this.amountInput.PlaceholderText = "";
             this.amountInput.SelectedText = "";
             this.amountInput.ShadowDecoration.Parent = this.amountInput;
-            this.amountInput.Size = new System.Drawing.Size(109, 34);
+            this.amountInput.Size = new System.Drawing.Size(125, 34);
             this.amountInput.TabIndex = 4;
             this.amountInput.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // price
-            // 
-            this.price.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.price.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.price.Location = new System.Drawing.Point(200, 119);
-            this.price.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.price.Name = "price";
-            this.price.Size = new System.Drawing.Size(189, 32);
-            this.price.TabIndex = 3;
-            this.price.Text = "9.000.000 VNĐ";
-            this.price.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // name
-            // 
-            this.name.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.name.Location = new System.Drawing.Point(200, 34);
-            this.name.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.name.Name = "name";
-            this.name.Size = new System.Drawing.Size(185, 31);
-            this.name.TabIndex = 1;
-            this.name.Text = "Conan";
             // 
             // minus
             // 
@@ -190,7 +169,7 @@
             this.plus.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.plus.ImageSize = new System.Drawing.Size(20, 20);
             this.plus.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.plus.Location = new System.Drawing.Point(143, 0);
+            this.plus.Location = new System.Drawing.Point(159, 0);
             this.plus.Margin = new System.Windows.Forms.Padding(2);
             this.plus.Name = "plus";
             this.plus.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(225)))));
@@ -205,6 +184,7 @@
             // 
             // close
             // 
+            this.close.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.close.Image = ((System.Drawing.Image)(resources.GetObject("close.Image")));
             this.close.Location = new System.Drawing.Point(392, 11);
             this.close.Margin = new System.Windows.Forms.Padding(2);
@@ -214,6 +194,18 @@
             this.close.TabIndex = 5;
             this.close.TabStop = false;
             // 
+            // price
+            // 
+            this.price.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.price.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.price.Location = new System.Drawing.Point(157, 119);
+            this.price.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.price.Name = "price";
+            this.price.Size = new System.Drawing.Size(231, 32);
+            this.price.TabIndex = 3;
+            this.price.Text = "9.000.000 VNĐ";
+            this.price.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // pictureBook
             // 
             this.pictureBook.BorderRadius = 12;
@@ -222,17 +214,28 @@
             this.pictureBook.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBook.Name = "pictureBook";
             this.pictureBook.ShadowDecoration.Parent = this.pictureBook;
-            this.pictureBook.Size = new System.Drawing.Size(188, 141);
+            this.pictureBook.Size = new System.Drawing.Size(135, 141);
             this.pictureBook.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBook.TabIndex = 2;
             this.pictureBook.TabStop = false;
+            // 
+            // name
+            // 
+            this.name.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.name.Location = new System.Drawing.Point(157, 34);
+            this.name.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.name.Name = "name";
+            this.name.Size = new System.Drawing.Size(231, 31);
+            this.name.TabIndex = 1;
+            this.name.Text = "Conan Hung dep trai zui zẽ";
             // 
             // BookBill
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.AutoSize = true;
             this.Controls.Add(this.panel7);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "BookBill";
             this.Size = new System.Drawing.Size(431, 162);
             this.panel7.ResumeLayout(false);

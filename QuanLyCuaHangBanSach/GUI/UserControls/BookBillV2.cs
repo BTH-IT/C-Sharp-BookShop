@@ -21,7 +21,15 @@ namespace QuanLyCuaHangBanSach.GUI.UserControls
             Image img = Image.FromStream(ms);
 
             this.id.Text = "Mã : " + maSach;
-            this.name.Text = book.TenSach;
+            if (book.TenSach.Length > 28)
+            {
+                string truncatedString = book.TenSach.Substring(0, 28 - 3) + " ...";
+                this.name.Text = truncatedString;
+            }
+            else
+            {
+                this.name.Text = book.TenSach;
+            }
             this.amountInput.Text = soLuong.ToString();
             this.priceTxt.Text = donGia.ToString();
             this.pictureBook.Image = img;
