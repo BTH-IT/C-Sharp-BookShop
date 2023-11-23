@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using System.Windows.Media;
 using Color = System.Drawing.Color;
 using System.Threading.Tasks;
+using System.Drawing;
 
 namespace QuanLyCuaHangBanSach.GUI.Manager
 {
@@ -187,7 +188,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 				this.modeCheck.Start();
 				dgvBill.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(45, 210, 192);
 				dgvBill.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-
+				dgvBill.ColumnHeadersDefaultCellStyle.Font = new Font("#9Slide03 Cabin", 10, FontStyle.Regular);
 				dgvBill.Rows.Clear();
 
 				if (billList != null)
