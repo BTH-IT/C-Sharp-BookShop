@@ -457,6 +457,12 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
                         if (idx == -1)
                         {
+                            if (scannerModal.scannedBook.SoLuongConLai <= 0)
+                            {
+                                MessageBox.Show("Mã sách " + scannerModal.scannedBook.MaSach + " đã hết hàng!");
+                                return;
+                            }
+
                             CustomerBillDetailDTO customerBillDetail = new CustomerBillDetailDTO(
                                 0,
                                 scannerModal.scannedBook.MaSach,
