@@ -448,7 +448,11 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
                 if (scannerModal.scannedBook != null)
                 {
-                    if (scannerModal.scannedBook.SoLuongConLai <= 0)
+                    int idx = this.selectedCustomerBillDetailList.FindIndex(
+                        book => book.MaSach == scannerModal.scannedBook.MaSach
+                    );
+
+                    if (scannerModal.scannedBook.SoLuongConLai - this.selectedCustomerBillDetailList[idx].SoLuong <= 0)
                     {
                         MessageBox.Show("Mã sách " + scannerModal.scannedBook.MaSach + " đã hết hàng!");
                         return;
@@ -456,10 +460,6 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
                     try
                     {
-                        int idx = this.selectedCustomerBillDetailList.FindIndex(
-                            book => book.MaSach == scannerModal.scannedBook.MaSach
-                        );
-
                         if (idx == -1)
                         {
                             CustomerBillDetailDTO customerBillDetail = new CustomerBillDetailDTO(
@@ -485,6 +485,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
                         MessageBox.Show("Đã thêm sách có mã " + scannerModal.scannedBook.MaSach + " vào danh sách thêm");
                         this.loadAddBookBillListToDataView();
+                        this.loadBookListToDataView(this.searchInput.Text);
                     }
                     catch (Exception ex)
                     {

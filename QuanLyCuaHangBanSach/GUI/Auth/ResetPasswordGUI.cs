@@ -99,11 +99,11 @@ namespace QuanLyCuaHangBanSach.GUI
 
             if (isSuccess)
             {
-                MessageBox.Show("Reset password successfully");
+                MessageBox.Show("Lấy lại mật khẩu thành công");
             }
             else
             {
-                MessageBox.Show("Reset password failure");
+                MessageBox.Show("Lấy lại mật khẩu thất bại");
             }
 
             this.email = "";
@@ -126,12 +126,23 @@ namespace QuanLyCuaHangBanSach.GUI
 
         private void newPwdTxt_TextChanged(object sender, EventArgs e)
         {
-            CustomValidation.Instance.checkTextbox(
+            bool isCheck = CustomValidation.Instance.checkTextbox(
                 this.newPwdTxt,
                 this.errorMsg1,
                 this.line1,
                 new string[] { "required", "space","password" }
             );
+
+            if (isCheck && this.confirmPwdTxt.Text != string.Empty)
+            {
+                CustomValidation.Instance.checkTextboxMatchWithOtherTextBox(
+                    this.confirmPwdTxt,
+                    this.newPwdTxt,
+                    "Trường này phải khớp với trường 'mật khẩu mới'",
+                    this.errorMsg2,
+                    this.line2
+                );
+            }
         }
 
         private void comfirmPwdTxt_TextChanged(object sender, EventArgs e)
