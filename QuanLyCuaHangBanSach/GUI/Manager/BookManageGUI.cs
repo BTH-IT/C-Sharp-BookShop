@@ -55,8 +55,8 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             {
                 this.dgvBook.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(45, 210, 192);
                 this.dgvBook.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-
-                this.dgvBook.Rows.Clear();
+				this.dgvBook.ColumnHeadersDefaultCellStyle.Font = new Font("#9Slide03 Cabin", 10, FontStyle.Regular);
+				this.dgvBook.Rows.Clear();
                 foreach (BookDTO book in bookList)
                 {
                     this.dgvBook.Rows.Add(new object[] {

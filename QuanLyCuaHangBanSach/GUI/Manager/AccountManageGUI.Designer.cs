@@ -275,6 +275,7 @@
 			this.dgvAccount.AllowUserToDeleteRows = false;
 			this.dgvAccount.AllowUserToResizeRows = false;
 			dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+			dataGridViewCellStyle1.Font = new System.Drawing.Font("#9Slide03 Cabin", 10F);
 			this.dgvAccount.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
 			this.dgvAccount.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
 			this.dgvAccount.BackgroundColor = System.Drawing.Color.White;
@@ -298,7 +299,7 @@
             this.matKhau});
 			dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
 			dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-			dataGridViewCellStyle3.Font = new System.Drawing.Font("#9Slide03 Cabin", 18F);
+			dataGridViewCellStyle3.Font = new System.Drawing.Font("#9Slide03 Cabin", 10F);
 			dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
 			dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
 			dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
