@@ -172,6 +172,7 @@
 			this.dgvCustomer.RowHeadersWidth = 51;
 			this.dgvCustomer.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
 			dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+			dataGridViewCellStyle10.Font = new System.Drawing.Font("#9Slide03 Cabin", 10F);
 			dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
 			this.dgvCustomer.RowsDefaultCellStyle = dataGridViewCellStyle10;
 			this.dgvCustomer.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
