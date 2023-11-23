@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using Google.Protobuf.WellKnownTypes;
 using QuanLyCuaHangBanSach.BUS;
 using QuanLyCuaHangBanSach.DTO;
 using QuanLyCuaHangBanSach.GUI.Modal;
@@ -526,6 +527,10 @@ namespace QuanLyCuaHangBanSach.GUI
                     {
                         if (finalTotalMoney == 0)
                         {
+                            if (totalMoneyNoPointDiscount % 1000 != 0)
+							{
+								totalMoneyNoPointDiscount = Convert.ToDecimal(Convert.ToInt64(totalMoneyNoPointDiscount - (totalMoneyNoPointDiscount % 1000)) + 1000);
+							}
                             customerBill.DoiDiem = Convert.ToInt32(totalMoneyNoPointDiscount / 1000);
                         }
                         else
