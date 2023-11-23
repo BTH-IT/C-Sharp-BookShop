@@ -127,5 +127,32 @@ namespace QuanLyCuaHangBanSach.DAO
 
             return rowChanged > 0;
         }
-    }
+
+		public bool checkDuplicatePhoneNumber(string value)
+		{
+			DataTable dataTable = DataProvider.Instance.ExecuteQuery("select * from nhaxuatban WHERE  soDienThoai = @SoDienThoai;",
+			 new MySqlParameter[] {
+					new MySqlParameter("@SoDienThoai", value)
+			 }
+		 );
+
+			if (dataTable.Rows.Count <= 0) return false;
+
+			return true;
+		}
+
+		public bool checkDuplicatePhoneNumber(string value, int id)
+		{
+			DataTable dataTable = DataProvider.Instance.ExecuteQuery("select * from nhaxuatban WHERE soDienThoai = @SoDienThoai and maNhaXuatBan!=@id;",
+				new MySqlParameter[] {
+					new MySqlParameter("@SoDienThoai", value.Trim().ToLower()),
+					new MySqlParameter("@id", id)
+				}
+			);
+
+			if (dataTable.Rows.Count <= 0) return false;
+
+			return true;
+		}
+	}
 }
