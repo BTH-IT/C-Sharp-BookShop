@@ -32,15 +32,15 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RevenueStatisticGUI));
 			this.dgvBill = new Guna.UI.WinForms.GunaDataGridView();
 			this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -137,21 +137,21 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 			this.dgvBill.AllowUserToAddRows = false;
 			this.dgvBill.AllowUserToDeleteRows = false;
 			this.dgvBill.AllowUserToResizeRows = false;
-			dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
-			this.dgvBill.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+			dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+			this.dgvBill.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
 			this.dgvBill.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
 			this.dgvBill.BackgroundColor = System.Drawing.Color.White;
 			this.dgvBill.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.dgvBill.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
 			this.dgvBill.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-			dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-			dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-			dataGridViewCellStyle11.Font = new System.Drawing.Font("#9Slide03 Cabin", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
-			dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-			dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.White;
-			dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-			this.dgvBill.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+			dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+			dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+			dataGridViewCellStyle2.Font = new System.Drawing.Font("#9Slide03 Cabin", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+			dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+			dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+			dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.dgvBill.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
 			this.dgvBill.ColumnHeadersHeight = 64;
 			this.dgvBill.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
 			this.dgvBill.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -159,33 +159,33 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             this.Column7,
             this.Column8,
             this.Column6});
-			dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-			dataGridViewCellStyle16.BackColor = System.Drawing.Color.White;
-			dataGridViewCellStyle16.Font = new System.Drawing.Font("#9Slide03 Cabin", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-			dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-			dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-			dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-			this.dgvBill.DefaultCellStyle = dataGridViewCellStyle16;
+			dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+			dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+			dataGridViewCellStyle7.Font = new System.Drawing.Font("#9Slide03 Cabin", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+			dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+			dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+			dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.dgvBill.DefaultCellStyle = dataGridViewCellStyle7;
 			this.dgvBill.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.dgvBill.EnableHeadersVisualStyles = false;
 			this.dgvBill.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
 			this.dgvBill.Location = new System.Drawing.Point(0, 107);
 			this.dgvBill.Name = "dgvBill";
-			dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-			dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-			dataGridViewCellStyle17.Font = new System.Drawing.Font("#9Slide03 Cabin", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle17.ForeColor = System.Drawing.Color.White;
-			dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-			dataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.White;
-			dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-			this.dgvBill.RowHeadersDefaultCellStyle = dataGridViewCellStyle17;
+			dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+			dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+			dataGridViewCellStyle8.Font = new System.Drawing.Font("#9Slide03 Cabin", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+			dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+			dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
+			dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.dgvBill.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
 			this.dgvBill.RowHeadersVisible = false;
 			this.dgvBill.RowHeadersWidth = 51;
 			this.dgvBill.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-			dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-			dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-			this.dgvBill.RowsDefaultCellStyle = dataGridViewCellStyle18;
+			dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+			dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.dgvBill.RowsDefaultCellStyle = dataGridViewCellStyle9;
 			this.dgvBill.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
 			this.dgvBill.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
 			this.dgvBill.RowTemplate.Height = 80;
@@ -222,9 +222,9 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 			// 
 			// Column2
 			// 
-			dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-			dataGridViewCellStyle12.Font = new System.Drawing.Font("#9Slide03 Cabin", 10F);
-			this.Column2.DefaultCellStyle = dataGridViewCellStyle12;
+			dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+			dataGridViewCellStyle3.Font = new System.Drawing.Font("#9Slide03 Cabin", 10F);
+			this.Column2.DefaultCellStyle = dataGridViewCellStyle3;
 			this.Column2.FillWeight = 70F;
 			this.Column2.HeaderText = "Ngày lập hóa đơn";
 			this.Column2.MinimumWidth = 6;
@@ -235,9 +235,9 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 			// 
 			// Column7
 			// 
-			dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-			dataGridViewCellStyle13.Font = new System.Drawing.Font("#9Slide03 Cabin", 10F);
-			this.Column7.DefaultCellStyle = dataGridViewCellStyle13;
+			dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+			dataGridViewCellStyle4.Font = new System.Drawing.Font("#9Slide03 Cabin", 10F);
+			this.Column7.DefaultCellStyle = dataGridViewCellStyle4;
 			this.Column7.FillWeight = 70F;
 			this.Column7.HeaderText = "Mã hóa đơn";
 			this.Column7.MinimumWidth = 6;
@@ -248,9 +248,9 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 			// 
 			// Column8
 			// 
-			dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-			dataGridViewCellStyle14.Font = new System.Drawing.Font("#9Slide03 Cabin", 10F);
-			this.Column8.DefaultCellStyle = dataGridViewCellStyle14;
+			dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+			dataGridViewCellStyle5.Font = new System.Drawing.Font("#9Slide03 Cabin", 10F);
+			this.Column8.DefaultCellStyle = dataGridViewCellStyle5;
 			this.Column8.FillWeight = 120F;
 			this.Column8.HeaderText = "Khuyến mãi";
 			this.Column8.MinimumWidth = 6;
@@ -261,9 +261,9 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 			// 
 			// Column6
 			// 
-			dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-			dataGridViewCellStyle15.Font = new System.Drawing.Font("#9Slide03 Cabin", 10F);
-			this.Column6.DefaultCellStyle = dataGridViewCellStyle15;
+			dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+			dataGridViewCellStyle6.Font = new System.Drawing.Font("#9Slide03 Cabin", 10F);
+			this.Column6.DefaultCellStyle = dataGridViewCellStyle6;
 			this.Column6.FillWeight = 120F;
 			this.Column6.HeaderText = "Doanh thu";
 			this.Column6.MinimumWidth = 6;
@@ -742,7 +742,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 			this.toDateCkb.FillColor = System.Drawing.Color.White;
 			this.toDateCkb.Location = new System.Drawing.Point(3, 70);
 			this.toDateCkb.Name = "toDateCkb";
-			this.toDateCkb.Size = new System.Drawing.Size(50, 20);
+			this.toDateCkb.Size = new System.Drawing.Size(55, 20);
 			this.toDateCkb.TabIndex = 1;
 			this.toDateCkb.Text = "Đến";
 			this.toDateCkb.CheckedChanged += new System.EventHandler(this.toDateCkb_CheckedChanged);
@@ -791,7 +791,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 			this.fromDateCkb.FillColor = System.Drawing.Color.White;
 			this.fromDateCkb.Location = new System.Drawing.Point(3, 16);
 			this.fromDateCkb.Name = "fromDateCkb";
-			this.fromDateCkb.Size = new System.Drawing.Size(43, 20);
+			this.fromDateCkb.Size = new System.Drawing.Size(46, 20);
 			this.fromDateCkb.TabIndex = 0;
 			this.fromDateCkb.Text = "Từ";
 			this.fromDateCkb.CheckedChanged += new System.EventHandler(this.fromDateCkb_CheckedChanged);
@@ -875,7 +875,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 			this.label7.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label7.Location = new System.Drawing.Point(5, 7);
 			this.label7.Name = "label7";
-			this.label7.Size = new System.Drawing.Size(160, 28);
+			this.label7.Size = new System.Drawing.Size(191, 35);
 			this.label7.TabIndex = 20;
 			this.label7.Text = "BIỂU ĐỒ THỐNG KÊ";
 			// 
@@ -953,7 +953,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 			this.customerNumLb.ForeColor = System.Drawing.Color.Black;
 			this.customerNumLb.Location = new System.Drawing.Point(13, 64);
 			this.customerNumLb.Name = "customerNumLb";
-			this.customerNumLb.Size = new System.Drawing.Size(0, 25);
+			this.customerNumLb.Size = new System.Drawing.Size(0, 30);
 			this.customerNumLb.TabIndex = 8;
 			// 
 			// label6
@@ -963,7 +963,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 			this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(174)))), ((int)(((byte)(192)))));
 			this.label6.Location = new System.Drawing.Point(13, 30);
 			this.label6.Name = "label6";
-			this.label6.Size = new System.Drawing.Size(230, 21);
+			this.label6.Size = new System.Drawing.Size(275, 26);
 			this.label6.TabIndex = 6;
 			this.label6.Text = "Tổng số khách hàng 6 tháng gần đây";
 			// 
@@ -1015,7 +1015,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 			this.bookSoldLb.ForeColor = System.Drawing.Color.Black;
 			this.bookSoldLb.Location = new System.Drawing.Point(15, 64);
 			this.bookSoldLb.Name = "bookSoldLb";
-			this.bookSoldLb.Size = new System.Drawing.Size(0, 25);
+			this.bookSoldLb.Size = new System.Drawing.Size(0, 30);
 			this.bookSoldLb.TabIndex = 5;
 			// 
 			// label4
@@ -1025,7 +1025,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 			this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(174)))), ((int)(((byte)(192)))));
 			this.label4.Location = new System.Drawing.Point(15, 30);
 			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(232, 21);
+			this.label4.Size = new System.Drawing.Size(279, 26);
 			this.label4.TabIndex = 3;
 			this.label4.Text = "Tổng số sách đã bán 6 tháng gần đây";
 			// 
@@ -1077,7 +1077,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 			this.revenueLb.ForeColor = System.Drawing.Color.Black;
 			this.revenueLb.Location = new System.Drawing.Point(16, 64);
 			this.revenueLb.Name = "revenueLb";
-			this.revenueLb.Size = new System.Drawing.Size(0, 25);
+			this.revenueLb.Size = new System.Drawing.Size(0, 30);
 			this.revenueLb.TabIndex = 2;
 			// 
 			// label8
@@ -1087,13 +1087,13 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 			this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(174)))), ((int)(((byte)(192)))));
 			this.label8.Location = new System.Drawing.Point(16, 30);
 			this.label8.Name = "label8";
-			this.label8.Size = new System.Drawing.Size(207, 21);
+			this.label8.Size = new System.Drawing.Size(247, 26);
 			this.label8.TabIndex = 0;
 			this.label8.Text = "Tổng doanh thu 6 tháng gần đây";
 			// 
 			// RevenueStatisticGUI
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 20F);
+			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 26F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
 			this.ClientSize = new System.Drawing.Size(1021, 602);
