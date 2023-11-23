@@ -41,8 +41,15 @@ namespace QuanLyCuaHangBanSach.BUS
         {
             return SupplierDAO.Instance.checkDuplicateName(value, id);
         }
-
-        public List<SupplierDTO> search(string value)
+        public bool checkDupicatePhoneNumber(string value)
+        {
+            return SupplierDAO.Instance.checkDuplicatePhoneNumber(value);
+        }
+		public bool checkDupicatePhoneNumber(string value,int id)
+		{
+			return SupplierDAO.Instance.checkDuplicatePhoneNumber(value,id);
+		}
+		public List<SupplierDTO> search(string value)
         {
             List<SupplierDTO> bookList = new List<SupplierDTO>();
             DataTable dt = SupplierDAO.Instance.searchData(value);

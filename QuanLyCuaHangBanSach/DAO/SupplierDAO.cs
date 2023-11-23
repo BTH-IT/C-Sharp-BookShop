@@ -1,6 +1,7 @@
 using QuanLyCuaHangBanSach.DTO;
 using MySql.Data.MySqlClient;
 using System.Data;
+using System;
 
 namespace QuanLyCuaHangBanSach.DAO
 {
@@ -126,5 +127,33 @@ namespace QuanLyCuaHangBanSach.DAO
 
             return rowChanged > 0;
         }
-    }
+
+		public bool checkDuplicatePhoneNumber(string value)
+		{
+			DataTable dataTable = DataProvider.Instance.ExecuteQuery("select * from nhacungcap WHERE  soDienThoai = @SoDienThoai;",
+				new MySqlParameter[] {
+					new MySqlParameter("@SoDienThoai", value)
+				}
+			);
+
+			if (dataTable.Rows.Count <= 0) return false;
+
+			return true;
+		}
+
+		public bool checkDuplicatePhoneNumber(string value,int id)
+		{
+			DataTable dataTable = DataProvider.Instance.ExecuteQuery("select * from nhacungcap WHERE  soDienThoai = @SoDienThoai and maNhaCungCap != @MaNhaCungCap;",
+				new MySqlParameter[] {
+					new MySqlParameter("@SoDienThoai", value),
+                    new MySqlParameter("@MaNhaCungCap",id)
+				}
+			);
+
+			if (dataTable.Rows.Count <= 0) return false;
+
+			return true;
+		}
+	}
+
 }
