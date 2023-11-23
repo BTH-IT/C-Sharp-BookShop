@@ -96,6 +96,17 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 }
             }
 
+            if (total - salePrice <= 0)
+            {
+                this.totalPriceTxt.Text = "0";
+                total = 0;
+            }
+            else
+            {
+                this.totalPriceTxt.Text = (total - salePrice) + "";
+                total = Convert.ToDecimal(this.totalPriceTxt.Text);
+            }
+
             if (this.customerCbx.SelectedIndex != 1 && this.customerCbx.SelectedIndex != 0 && this.PointToggleBtn.Checked)
             {
                 scoreTxt.Text = 0 + " điểm";
@@ -121,13 +132,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 diemConLai = 0;
             }
 
-            if (Convert.ToDecimal(this.totalPriceTxt.Text) - salePrice <= 0)
-            {
-                this.totalPriceTxt.Text = "0";
-            } else
-            {
-                this.totalPriceTxt.Text = (Convert.ToDecimal(this.totalPriceTxt.Text) - salePrice) + "";
-            }
+            
 
         }
 
