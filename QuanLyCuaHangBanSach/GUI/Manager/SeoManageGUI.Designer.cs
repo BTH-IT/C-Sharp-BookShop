@@ -44,6 +44,7 @@
 			this.ngayKetThuc = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.line1 = new System.Windows.Forms.Panel();
 			this.panel1 = new System.Windows.Forms.Panel();
+			this.btnEdit = new Guna.UI.WinForms.GunaAdvenceButton();
 			this.btnExport = new Guna.UI.WinForms.GunaAdvenceButton();
 			this.btnRefresh = new Guna.UI.WinForms.GunaAdvenceButton();
 			this.deleteBtn = new Guna.UI.WinForms.GunaAdvenceButton();
@@ -56,7 +57,6 @@
 			this.dateTimeFrom = new Guna.UI.WinForms.GunaDateTimePicker();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.panel2 = new System.Windows.Forms.Panel();
-			this.btnEdit = new Guna.UI.WinForms.GunaAdvenceButton();
 			((System.ComponentModel.ISupportInitialize)(this.dgvSale)).BeginInit();
 			this.panel1.SuspendLayout();
 			this.panel5.SuspendLayout();
@@ -148,6 +148,7 @@
 			this.dgvSale.RowHeadersWidth = 51;
 			this.dgvSale.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
 			dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+			dataGridViewCellStyle5.Font = new System.Drawing.Font("#9Slide03 Cabin", 10F);
 			dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
 			this.dgvSale.RowsDefaultCellStyle = dataGridViewCellStyle5;
 			this.dgvSale.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -255,6 +256,40 @@
 			this.panel1.Name = "panel1";
 			this.panel1.Size = new System.Drawing.Size(1044, 54);
 			this.panel1.TabIndex = 2;
+			// 
+			// btnEdit
+			// 
+			this.btnEdit.Anchor = System.Windows.Forms.AnchorStyles.Right;
+			this.btnEdit.AnimationHoverSpeed = 0.07F;
+			this.btnEdit.AnimationSpeed = 0.03F;
+			this.btnEdit.BackColor = System.Drawing.Color.Transparent;
+			this.btnEdit.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+			this.btnEdit.BorderColor = System.Drawing.Color.Black;
+			this.btnEdit.CheckedBaseColor = System.Drawing.Color.Gray;
+			this.btnEdit.CheckedBorderColor = System.Drawing.Color.Black;
+			this.btnEdit.CheckedForeColor = System.Drawing.Color.White;
+			this.btnEdit.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnEdit.CheckedImage")));
+			this.btnEdit.CheckedLineColor = System.Drawing.Color.DimGray;
+			this.btnEdit.DialogResult = System.Windows.Forms.DialogResult.None;
+			this.btnEdit.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(159)))), ((int)(((byte)(147)))));
+			this.btnEdit.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold);
+			this.btnEdit.ForeColor = System.Drawing.Color.White;
+			this.btnEdit.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit.Image")));
+			this.btnEdit.ImageSize = new System.Drawing.Size(20, 20);
+			this.btnEdit.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+			this.btnEdit.Location = new System.Drawing.Point(836, 6);
+			this.btnEdit.Name = "btnEdit";
+			this.btnEdit.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+			this.btnEdit.OnHoverBorderColor = System.Drawing.Color.Transparent;
+			this.btnEdit.OnHoverForeColor = System.Drawing.Color.White;
+			this.btnEdit.OnHoverImage = null;
+			this.btnEdit.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+			this.btnEdit.OnPressedColor = System.Drawing.Color.Black;
+			this.btnEdit.Radius = 6;
+			this.btnEdit.Size = new System.Drawing.Size(113, 42);
+			this.btnEdit.TabIndex = 3;
+			this.btnEdit.Text = "Chỉnh sửa";
+			this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
 			// 
 			// btnExport
 			// 
@@ -510,40 +545,6 @@
 			this.panel2.Name = "panel2";
 			this.panel2.Size = new System.Drawing.Size(1044, 72);
 			this.panel2.TabIndex = 0;
-			// 
-			// btnEdit
-			// 
-			this.btnEdit.Anchor = System.Windows.Forms.AnchorStyles.Right;
-			this.btnEdit.AnimationHoverSpeed = 0.07F;
-			this.btnEdit.AnimationSpeed = 0.03F;
-			this.btnEdit.BackColor = System.Drawing.Color.Transparent;
-			this.btnEdit.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-			this.btnEdit.BorderColor = System.Drawing.Color.Black;
-			this.btnEdit.CheckedBaseColor = System.Drawing.Color.Gray;
-			this.btnEdit.CheckedBorderColor = System.Drawing.Color.Black;
-			this.btnEdit.CheckedForeColor = System.Drawing.Color.White;
-			this.btnEdit.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnEdit.CheckedImage")));
-			this.btnEdit.CheckedLineColor = System.Drawing.Color.DimGray;
-			this.btnEdit.DialogResult = System.Windows.Forms.DialogResult.None;
-			this.btnEdit.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(159)))), ((int)(((byte)(147)))));
-			this.btnEdit.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold);
-			this.btnEdit.ForeColor = System.Drawing.Color.White;
-			this.btnEdit.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit.Image")));
-			this.btnEdit.ImageSize = new System.Drawing.Size(20, 20);
-			this.btnEdit.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-			this.btnEdit.Location = new System.Drawing.Point(836, 6);
-			this.btnEdit.Name = "btnEdit";
-			this.btnEdit.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-			this.btnEdit.OnHoverBorderColor = System.Drawing.Color.Transparent;
-			this.btnEdit.OnHoverForeColor = System.Drawing.Color.White;
-			this.btnEdit.OnHoverImage = null;
-			this.btnEdit.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-			this.btnEdit.OnPressedColor = System.Drawing.Color.Black;
-			this.btnEdit.Radius = 6;
-			this.btnEdit.Size = new System.Drawing.Size(113, 42);
-			this.btnEdit.TabIndex = 3;
-			this.btnEdit.Text = "Chỉnh sửa";
-			this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
 			// 
 			// SeoManageGUI
 			// 
