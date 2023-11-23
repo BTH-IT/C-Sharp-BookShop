@@ -22,8 +22,8 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             {
                 this.dgvPosition.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(45, 210, 192);
                 this.dgvPosition.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-
-                this.dgvPosition.Rows.Clear();
+                this.dgvPosition.ColumnHeadersDefaultCellStyle.Font = new Font("#9Slide03 Cabin", 10, FontStyle.Regular);
+				this.dgvPosition.Rows.Clear();
 
                 foreach (PositionDTO position in positionList)
                 {

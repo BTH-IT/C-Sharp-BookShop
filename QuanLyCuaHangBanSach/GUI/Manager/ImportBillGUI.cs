@@ -54,8 +54,8 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             {
                 this.dgvImportBill.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(45, 210, 192);
                 this.dgvImportBill.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-
-                this.dgvImportBill.Rows.Clear();
+				this.dgvImportBill.ColumnHeadersDefaultCellStyle.Font = new Font("#9Slide03 Cabin", 10, FontStyle.Regular);
+				this.dgvImportBill.Rows.Clear();
 
                 foreach (ImportBillDTO importBill in importBillList)
                 {
