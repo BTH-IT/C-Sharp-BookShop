@@ -39,8 +39,8 @@ namespace QuanLyCuaHangBanSach.GUI.Report
                     count,
                     book.TenSach,
                     importBillDetail.SoLuong,
-                    importBillDetail.DonGia,
-                    importBillDetail.ThanhTien
+                    string.Format("{0:N0} VNĐ", importBillDetail.DonGia),
+                    string.Format("{0:N0} VNĐ", importBillDetail.ThanhTien)
                 );
 
                 amount += importBillDetail.SoLuong;
@@ -56,7 +56,7 @@ namespace QuanLyCuaHangBanSach.GUI.Report
                 new Microsoft.Reporting.WinForms.ReportParameter("pEmployee", staff.Ten.ToString()),
                 new Microsoft.Reporting.WinForms.ReportParameter("pDate", importBill.NgayLap.GetDateTimeFormats()[0].ToString()),
                 new Microsoft.Reporting.WinForms.ReportParameter("pSupplier", supplier.TenNhaCungCap),
-                new Microsoft.Reporting.WinForms.ReportParameter("pTotalPrice", importBill.TongTien.ToString()),
+                new Microsoft.Reporting.WinForms.ReportParameter("pTotalPrice", string.Format("{0:N0} VNĐ", importBill.TongTien)),
                 new Microsoft.Reporting.WinForms.ReportParameter("pBenefitPercent", importBill.PhanTramLoiNhuan + "%"),
                 new Microsoft.Reporting.WinForms.ReportParameter("pTotalAmount", amount.ToString())
             };
