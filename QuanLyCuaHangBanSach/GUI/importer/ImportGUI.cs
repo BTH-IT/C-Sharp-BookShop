@@ -458,6 +458,10 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
 		private void ProfitPercentTxb_MouseLeave(object sender, EventArgs e)
 		{
             panel1.Focus();
+            if (ProfitPercentTxb.Text.Length > 6)
+            {
+                ProfitPercentTxb.Text = "100";
+			}
             if (!string.IsNullOrEmpty(ProfitPercentTxb.Text))
             {
                 ErrorLb.Visible = Convert.ToInt32(ProfitPercentTxb.Text) > 100;

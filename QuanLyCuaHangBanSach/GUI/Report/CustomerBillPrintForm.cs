@@ -53,6 +53,9 @@ namespace QuanLyCuaHangBanSach.GUI.Report
 
             this.bindingSource1.DataSource = dataTable;
 
+            Console.WriteLine(giaGoc);
+            Console.WriteLine(giaGoc * Convert.ToDecimal(customerBill.PhanTramKhuyenMai / 100.0));
+
             decimal salePrice = sale == null ? 0 : Convert.ToDecimal((giaGoc * Convert.ToDecimal(customerBill.PhanTramKhuyenMai / 100.0)).ToString().Split('.')[0]);
 
             if (customerBill.DoiDiem > 0)
