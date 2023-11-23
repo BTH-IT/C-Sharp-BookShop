@@ -524,8 +524,15 @@ namespace QuanLyCuaHangBanSach.GUI
                     }
 					if (customerBill.MaKhachHang != 0 && PointEnabled)
                     {
-                        customerBill.DoiDiem = Convert.ToInt32(totalMoneyNoPointDiscount) / 1000;
-                    }
+                        if (finalTotalMoney == 0)
+                        {
+                            customerBill.DoiDiem = Convert.ToInt32(totalMoneyNoPointDiscount / 1000);
+                        }
+                        else
+                        {
+							customerBill.DoiDiem = CustomerBUS.Instance.getById(customerID.ToString()).Diem;
+						}
+					}
 
                     CustomerBillDTO newCustomerBill = CustomerBillBUS.Instance.insertReturnBill(customerBill);
 

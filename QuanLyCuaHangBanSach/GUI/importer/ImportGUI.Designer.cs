@@ -87,20 +87,19 @@
 			this.flowLayoutPanel2.Controls.Add(this.label1);
 			this.flowLayoutPanel2.Controls.Add(this.label2);
 			this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-			this.flowLayoutPanel2.Location = new System.Drawing.Point(129, 1);
-			this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.flowLayoutPanel2.Location = new System.Drawing.Point(103, 1);
 			this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-			this.flowLayoutPanel2.Size = new System.Drawing.Size(982, 94);
+			this.flowLayoutPanel2.Size = new System.Drawing.Size(786, 75);
 			this.flowLayoutPanel2.TabIndex = 2;
 			// 
 			// label1
 			// 
 			this.label1.AutoSize = true;
 			this.label1.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-			this.label1.Location = new System.Drawing.Point(25, 18);
-			this.label1.Margin = new System.Windows.Forms.Padding(25, 18, 4, 2);
+			this.label1.Location = new System.Drawing.Point(20, 14);
+			this.label1.Margin = new System.Windows.Forms.Padding(20, 14, 3, 2);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(136, 40);
+			this.label1.Size = new System.Drawing.Size(114, 33);
 			this.label1.TabIndex = 2;
 			this.label1.Text = "Nhập sách";
 			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -110,10 +109,10 @@
 			this.label2.AutoSize = true;
 			this.label2.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
 			this.label2.ForeColor = System.Drawing.Color.Gray;
-			this.label2.Location = new System.Drawing.Point(25, 61);
-			this.label2.Margin = new System.Windows.Forms.Padding(25, 1, 4, 0);
+			this.label2.Location = new System.Drawing.Point(20, 50);
+			this.label2.Margin = new System.Windows.Forms.Padding(20, 1, 3, 0);
 			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(235, 23);
+			this.label2.Size = new System.Drawing.Size(196, 18);
 			this.label2.TabIndex = 3;
 			this.label2.Text = "Khám phá tri thức - chia sẻ niềm vui";
 			// 
@@ -121,10 +120,9 @@
 			// 
 			this.flowLayoutPanel4.Controls.Add(this.flowLayoutPanel5);
 			this.flowLayoutPanel4.Controls.Add(this.panel1);
-			this.flowLayoutPanel4.Location = new System.Drawing.Point(129, 102);
-			this.flowLayoutPanel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.flowLayoutPanel4.Location = new System.Drawing.Point(103, 82);
 			this.flowLayoutPanel4.Name = "flowLayoutPanel4";
-			this.flowLayoutPanel4.Size = new System.Drawing.Size(982, 60);
+			this.flowLayoutPanel4.Size = new System.Drawing.Size(786, 48);
 			this.flowLayoutPanel4.TabIndex = 0;
 			// 
 			// flowLayoutPanel5
@@ -133,20 +131,19 @@
 			this.flowLayoutPanel5.Controls.Add(this.pictureBox2);
 			this.flowLayoutPanel5.Controls.Add(this.ProductSearchInp);
 			this.flowLayoutPanel5.Controls.Add(this.FilterBtn);
-			this.flowLayoutPanel5.Location = new System.Drawing.Point(0, 4);
-			this.flowLayoutPanel5.Margin = new System.Windows.Forms.Padding(0, 4, 4, 4);
+			this.flowLayoutPanel5.Location = new System.Drawing.Point(0, 3);
+			this.flowLayoutPanel5.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
 			this.flowLayoutPanel5.Name = "flowLayoutPanel5";
-			this.flowLayoutPanel5.Size = new System.Drawing.Size(364, 50);
+			this.flowLayoutPanel5.Size = new System.Drawing.Size(291, 40);
 			this.flowLayoutPanel5.TabIndex = 0;
 			// 
 			// pictureBox2
 			// 
 			this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-			this.pictureBox2.Location = new System.Drawing.Point(4, 4);
-			this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.pictureBox2.Location = new System.Drawing.Point(3, 3);
 			this.pictureBox2.Name = "pictureBox2";
-			this.pictureBox2.Padding = new System.Windows.Forms.Padding(0, 9, 0, 0);
-			this.pictureBox2.Size = new System.Drawing.Size(32, 40);
+			this.pictureBox2.Padding = new System.Windows.Forms.Padding(0, 7, 0, 0);
+			this.pictureBox2.Size = new System.Drawing.Size(26, 32);
 			this.pictureBox2.TabIndex = 0;
 			this.pictureBox2.TabStop = false;
 			// 
@@ -167,15 +164,15 @@
 			this.ProductSearchInp.ForeColor = System.Drawing.Color.Black;
 			this.ProductSearchInp.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
 			this.ProductSearchInp.HoverState.Parent = this.ProductSearchInp;
-			this.ProductSearchInp.Location = new System.Drawing.Point(45, 6);
-			this.ProductSearchInp.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+			this.ProductSearchInp.Location = new System.Drawing.Point(36, 5);
+			this.ProductSearchInp.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this.ProductSearchInp.Name = "ProductSearchInp";
 			this.ProductSearchInp.PasswordChar = '\0';
 			this.ProductSearchInp.PlaceholderForeColor = System.Drawing.Color.DarkGray;
 			this.ProductSearchInp.PlaceholderText = "Tìm kiếm sản phẩm ...";
 			this.ProductSearchInp.SelectedText = "";
 			this.ProductSearchInp.ShadowDecoration.Parent = this.ProductSearchInp;
-			this.ProductSearchInp.Size = new System.Drawing.Size(269, 38);
+			this.ProductSearchInp.Size = new System.Drawing.Size(215, 30);
 			this.ProductSearchInp.TabIndex = 0;
 			this.ProductSearchInp.TextChanged += new System.EventHandler(this.ProductSearchInp_TextChanged);
 			this.ProductSearchInp.MouseLeave += new System.EventHandler(this.ProductSearchInp_MouseLeave);
@@ -185,10 +182,10 @@
 			this.FilterBtn.BackColor = System.Drawing.Color.White;
 			this.FilterBtn.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.FilterBtn.Image = ((System.Drawing.Image)(resources.GetObject("FilterBtn.Image")));
-			this.FilterBtn.Location = new System.Drawing.Point(321, 6);
-			this.FilterBtn.Margin = new System.Windows.Forms.Padding(2, 6, 0, 0);
+			this.FilterBtn.Location = new System.Drawing.Point(257, 5);
+			this.FilterBtn.Margin = new System.Windows.Forms.Padding(2, 5, 0, 0);
 			this.FilterBtn.Name = "FilterBtn";
-			this.FilterBtn.Size = new System.Drawing.Size(38, 38);
+			this.FilterBtn.Size = new System.Drawing.Size(30, 30);
 			this.FilterBtn.TabIndex = 1;
 			this.FilterBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
 			this.FilterBtn.UseVisualStyleBackColor = false;
@@ -197,10 +194,10 @@
 			// panel1
 			// 
 			this.panel1.Controls.Add(this.QRScanBtn);
-			this.panel1.Location = new System.Drawing.Point(0, 58);
+			this.panel1.Location = new System.Drawing.Point(294, 0);
 			this.panel1.Margin = new System.Windows.Forms.Padding(0);
 			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(615, 60);
+			this.panel1.Size = new System.Drawing.Size(492, 48);
 			this.panel1.TabIndex = 1;
 			// 
 			// QRScanBtn
@@ -220,8 +217,7 @@
 			this.QRScanBtn.Image = ((System.Drawing.Image)(resources.GetObject("QRScanBtn.Image")));
 			this.QRScanBtn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			this.QRScanBtn.ImageSize = new System.Drawing.Size(26, 26);
-			this.QRScanBtn.Location = new System.Drawing.Point(559, 4);
-			this.QRScanBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.QRScanBtn.Location = new System.Drawing.Point(447, 3);
 			this.QRScanBtn.Name = "QRScanBtn";
 			this.QRScanBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
 			this.QRScanBtn.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
@@ -229,17 +225,16 @@
 			this.QRScanBtn.OnHoverImage = null;
 			this.QRScanBtn.OnPressedColor = System.Drawing.Color.Black;
 			this.QRScanBtn.Radius = 8;
-			this.QRScanBtn.Size = new System.Drawing.Size(52, 52);
+			this.QRScanBtn.Size = new System.Drawing.Size(42, 42);
 			this.QRScanBtn.TabIndex = 1;
 			this.QRScanBtn.Click += new System.EventHandler(this.QRScanBtn_Click);
 			// 
 			// FilterContainer
 			// 
 			this.FilterContainer.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.FilterContainer.Location = new System.Drawing.Point(259, 151);
-			this.FilterContainer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.FilterContainer.Location = new System.Drawing.Point(207, 121);
 			this.FilterContainer.Name = "FilterContainer";
-			this.FilterContainer.Size = new System.Drawing.Size(418, 276);
+			this.FilterContainer.Size = new System.Drawing.Size(334, 221);
 			this.FilterContainer.TabIndex = 8;
 			this.FilterContainer.Visible = false;
 			// 
@@ -248,20 +243,18 @@
 			this.BookContainer.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.BookContainer.AutoScroll = true;
 			this.BookContainer.BackColor = System.Drawing.Color.White;
-			this.BookContainer.Location = new System.Drawing.Point(128, 182);
-			this.BookContainer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.BookContainer.Location = new System.Drawing.Point(103, 149);
 			this.BookContainer.Name = "BookContainer";
-			this.BookContainer.Size = new System.Drawing.Size(984, 650);
+			this.BookContainer.Size = new System.Drawing.Size(787, 520);
 			this.BookContainer.TabIndex = 9;
 			// 
 			// panel3
 			// 
 			this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.panel3.Controls.Add(this.panel4);
-			this.panel3.Location = new System.Drawing.Point(1141, -10);
-			this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.panel3.Location = new System.Drawing.Point(913, -8);
 			this.panel3.Name = "panel3";
-			this.panel3.Size = new System.Drawing.Size(448, 877);
+			this.panel3.Size = new System.Drawing.Size(359, 702);
 			this.panel3.TabIndex = 1;
 			// 
 			// panel4
@@ -280,10 +273,9 @@
 			this.panel4.Controls.Add(this.label3);
 			this.panel4.Controls.Add(this.TotalLb);
 			this.panel4.Controls.Add(this.SupplierNameLb);
-			this.panel4.Location = new System.Drawing.Point(30, 10);
-			this.panel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.panel4.Location = new System.Drawing.Point(24, 8);
 			this.panel4.Name = "panel4";
-			this.panel4.Size = new System.Drawing.Size(375, 835);
+			this.panel4.Size = new System.Drawing.Size(300, 668);
 			this.panel4.TabIndex = 0;
 			// 
 			// ErrorLb
@@ -291,10 +283,10 @@
 			this.ErrorLb.AutoSize = true;
 			this.ErrorLb.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
 			this.ErrorLb.ForeColor = System.Drawing.Color.Red;
-			this.ErrorLb.Location = new System.Drawing.Point(12, 754);
-			this.ErrorLb.Margin = new System.Windows.Forms.Padding(25, 38, 4, 6);
+			this.ErrorLb.Location = new System.Drawing.Point(10, 603);
+			this.ErrorLb.Margin = new System.Windows.Forms.Padding(20, 30, 3, 5);
 			this.ErrorLb.Name = "ErrorLb";
-			this.ErrorLb.Size = new System.Drawing.Size(256, 23);
+			this.ErrorLb.Size = new System.Drawing.Size(210, 18);
 			this.ErrorLb.TabIndex = 30;
 			this.ErrorLb.Text = "Lợi nhuận không được vượt quá 100%";
 			this.ErrorLb.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -316,15 +308,15 @@
 			this.ProfitPercentTxb.ForeColor = System.Drawing.Color.Black;
 			this.ProfitPercentTxb.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
 			this.ProfitPercentTxb.HoverState.Parent = this.ProfitPercentTxb;
-			this.ProfitPercentTxb.Location = new System.Drawing.Point(14, 704);
-			this.ProfitPercentTxb.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+			this.ProfitPercentTxb.Location = new System.Drawing.Point(11, 563);
+			this.ProfitPercentTxb.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.ProfitPercentTxb.Name = "ProfitPercentTxb";
 			this.ProfitPercentTxb.PasswordChar = '\0';
 			this.ProfitPercentTxb.PlaceholderForeColor = System.Drawing.Color.DarkGray;
 			this.ProfitPercentTxb.PlaceholderText = "Lợi nhuận bán ra ...";
 			this.ProfitPercentTxb.SelectedText = "";
 			this.ProfitPercentTxb.ShadowDecoration.Parent = this.ProfitPercentTxb;
-			this.ProfitPercentTxb.Size = new System.Drawing.Size(309, 44);
+			this.ProfitPercentTxb.Size = new System.Drawing.Size(247, 35);
 			this.ProfitPercentTxb.TabIndex = 3;
 			this.ProfitPercentTxb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ProfitPercentTxb_KeyPress);
 			this.ProfitPercentTxb.MouseLeave += new System.EventHandler(this.ProfitPercentTxb_MouseLeave);
@@ -333,10 +325,10 @@
 			// 
 			this.VndLb.AutoSize = true;
 			this.VndLb.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-			this.VndLb.Location = new System.Drawing.Point(329, 702);
-			this.VndLb.Margin = new System.Windows.Forms.Padding(25, 38, 4, 6);
+			this.VndLb.Location = new System.Drawing.Point(263, 562);
+			this.VndLb.Margin = new System.Windows.Forms.Padding(20, 30, 3, 5);
 			this.VndLb.Name = "VndLb";
-			this.VndLb.Size = new System.Drawing.Size(31, 30);
+			this.VndLb.Size = new System.Drawing.Size(27, 25);
 			this.VndLb.TabIndex = 29;
 			this.VndLb.Text = "%";
 			this.VndLb.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -344,10 +336,9 @@
 			// panel7
 			// 
 			this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-			this.panel7.Location = new System.Drawing.Point(5, 111);
-			this.panel7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.panel7.Location = new System.Drawing.Point(4, 89);
 			this.panel7.Name = "panel7";
-			this.panel7.Size = new System.Drawing.Size(305, 1);
+			this.panel7.Size = new System.Drawing.Size(244, 1);
 			this.panel7.TabIndex = 27;
 			// 
 			// NameInp
@@ -366,15 +357,15 @@
 			this.NameInp.ForeColor = System.Drawing.Color.Black;
 			this.NameInp.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
 			this.NameInp.HoverState.Parent = this.NameInp;
-			this.NameInp.Location = new System.Drawing.Point(5, 62);
-			this.NameInp.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+			this.NameInp.Location = new System.Drawing.Point(4, 50);
+			this.NameInp.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this.NameInp.Name = "NameInp";
 			this.NameInp.PasswordChar = '\0';
 			this.NameInp.PlaceholderForeColor = System.Drawing.Color.DarkGray;
 			this.NameInp.PlaceholderText = "Tìm kiếm tên nhà cung cấp  ...";
 			this.NameInp.SelectedText = "";
 			this.NameInp.ShadowDecoration.Parent = this.NameInp;
-			this.NameInp.Size = new System.Drawing.Size(305, 45);
+			this.NameInp.Size = new System.Drawing.Size(244, 36);
 			this.NameInp.TabIndex = 0;
 			this.NameInp.TextChanged += new System.EventHandler(this.NameInp_TextChanged);
 			this.NameInp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NameInp_KeyPress);
@@ -383,10 +374,10 @@
 			// TotalMoneyLb
 			// 
 			this.TotalMoneyLb.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-			this.TotalMoneyLb.Location = new System.Drawing.Point(174, 662);
-			this.TotalMoneyLb.Margin = new System.Windows.Forms.Padding(25, 38, 4, 6);
+			this.TotalMoneyLb.Location = new System.Drawing.Point(139, 530);
+			this.TotalMoneyLb.Margin = new System.Windows.Forms.Padding(20, 30, 3, 5);
 			this.TotalMoneyLb.Name = "TotalMoneyLb";
-			this.TotalMoneyLb.Size = new System.Drawing.Size(192, 26);
+			this.TotalMoneyLb.Size = new System.Drawing.Size(154, 21);
 			this.TotalMoneyLb.TabIndex = 21;
 			this.TotalMoneyLb.Text = "0 VND";
 			this.TotalMoneyLb.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -395,30 +386,29 @@
 			// 
 			this.NameResultContainer.AutoScroll = true;
 			this.NameResultContainer.AutoScrollMinSize = new System.Drawing.Size(1, 1);
-			this.NameResultContainer.Location = new System.Drawing.Point(0, 119);
+			this.NameResultContainer.Location = new System.Drawing.Point(0, 95);
 			this.NameResultContainer.Margin = new System.Windows.Forms.Padding(0);
-			this.NameResultContainer.MaximumSize = new System.Drawing.Size(328, 225);
+			this.NameResultContainer.MaximumSize = new System.Drawing.Size(262, 180);
 			this.NameResultContainer.Name = "NameResultContainer";
-			this.NameResultContainer.Size = new System.Drawing.Size(305, 0);
+			this.NameResultContainer.Size = new System.Drawing.Size(244, 0);
 			this.NameResultContainer.TabIndex = 19;
 			// 
 			// CartContainer
 			// 
 			this.CartContainer.AutoScroll = true;
-			this.CartContainer.Location = new System.Drawing.Point(0, 152);
-			this.CartContainer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.CartContainer.Location = new System.Drawing.Point(0, 122);
 			this.CartContainer.Name = "CartContainer";
-			this.CartContainer.Size = new System.Drawing.Size(375, 500);
+			this.CartContainer.Size = new System.Drawing.Size(300, 400);
 			this.CartContainer.TabIndex = 2;
 			// 
 			// SupplierLb
 			// 
 			this.SupplierLb.AutoSize = true;
 			this.SupplierLb.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-			this.SupplierLb.Location = new System.Drawing.Point(-1, 115);
-			this.SupplierLb.Margin = new System.Windows.Forms.Padding(25, 38, 4, 6);
+			this.SupplierLb.Location = new System.Drawing.Point(-1, 92);
+			this.SupplierLb.Margin = new System.Windows.Forms.Padding(20, 30, 3, 5);
 			this.SupplierLb.Name = "SupplierLb";
-			this.SupplierLb.Size = new System.Drawing.Size(133, 30);
+			this.SupplierLb.Size = new System.Drawing.Size(109, 25);
 			this.SupplierLb.TabIndex = 18;
 			this.SupplierLb.Text = "Nhà cung cấp:";
 			this.SupplierLb.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -429,10 +419,9 @@
 			this.PrintBtn.Cursor = System.Windows.Forms.Cursors.No;
 			this.PrintBtn.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
 			this.PrintBtn.ForeColor = System.Drawing.Color.White;
-			this.PrintBtn.Location = new System.Drawing.Point(5, 779);
-			this.PrintBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.PrintBtn.Location = new System.Drawing.Point(4, 623);
 			this.PrintBtn.Name = "PrintBtn";
-			this.PrintBtn.Size = new System.Drawing.Size(366, 52);
+			this.PrintBtn.Size = new System.Drawing.Size(293, 42);
 			this.PrintBtn.TabIndex = 4;
 			this.PrintBtn.Text = "Print Receipt";
 			this.PrintBtn.UseVisualStyleBackColor = false;
@@ -442,10 +431,9 @@
 			// 
 			this.AddCustomerBtn.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.AddCustomerBtn.Image = ((System.Drawing.Image)(resources.GetObject("AddCustomerBtn.Image")));
-			this.AddCustomerBtn.Location = new System.Drawing.Point(319, 69);
-			this.AddCustomerBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.AddCustomerBtn.Location = new System.Drawing.Point(255, 55);
 			this.AddCustomerBtn.Name = "AddCustomerBtn";
-			this.AddCustomerBtn.Size = new System.Drawing.Size(38, 38);
+			this.AddCustomerBtn.Size = new System.Drawing.Size(30, 30);
 			this.AddCustomerBtn.TabIndex = 1;
 			this.AddCustomerBtn.UseVisualStyleBackColor = true;
 			this.AddCustomerBtn.Click += new System.EventHandler(this.AddSupplierBtn_Click);
@@ -454,10 +442,10 @@
 			// 
 			this.label3.AutoSize = true;
 			this.label3.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-			this.label3.Location = new System.Drawing.Point(-4, 15);
-			this.label3.Margin = new System.Windows.Forms.Padding(25, 38, 4, 6);
+			this.label3.Location = new System.Drawing.Point(-3, 12);
+			this.label3.Margin = new System.Windows.Forms.Padding(20, 30, 3, 5);
 			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(117, 40);
+			this.label3.Size = new System.Drawing.Size(98, 33);
 			this.label3.TabIndex = 8;
 			this.label3.Text = "Hoá đơn";
 			this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -466,10 +454,10 @@
 			// 
 			this.TotalLb.AutoSize = true;
 			this.TotalLb.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-			this.TotalLb.Location = new System.Drawing.Point(10, 660);
-			this.TotalLb.Margin = new System.Windows.Forms.Padding(25, 38, 4, 6);
+			this.TotalLb.Location = new System.Drawing.Point(8, 528);
+			this.TotalLb.Margin = new System.Windows.Forms.Padding(20, 30, 3, 5);
 			this.TotalLb.Name = "TotalLb";
-			this.TotalLb.Size = new System.Drawing.Size(145, 30);
+			this.TotalLb.Size = new System.Drawing.Size(120, 25);
 			this.TotalLb.TabIndex = 16;
 			this.TotalLb.Text = "Tổng tiền hàng:";
 			this.TotalLb.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -478,10 +466,10 @@
 			// 
 			this.SupplierNameLb.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
 			this.SupplierNameLb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-			this.SupplierNameLb.Location = new System.Drawing.Point(129, 111);
-			this.SupplierNameLb.Margin = new System.Windows.Forms.Padding(25, 38, 4, 6);
+			this.SupplierNameLb.Location = new System.Drawing.Point(103, 89);
+			this.SupplierNameLb.Margin = new System.Windows.Forms.Padding(20, 30, 3, 5);
 			this.SupplierNameLb.Name = "SupplierNameLb";
-			this.SupplierNameLb.Size = new System.Drawing.Size(217, 38);
+			this.SupplierNameLb.Size = new System.Drawing.Size(174, 30);
 			this.SupplierNameLb.TabIndex = 22;
 			this.SupplierNameLb.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
@@ -499,19 +487,17 @@
 			this.flowLayoutPanel1.Controls.Add(this.panel6);
 			this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
 			this.flowLayoutPanel1.ForeColor = System.Drawing.Color.White;
-			this.flowLayoutPanel1.Location = new System.Drawing.Point(-6, -10);
-			this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.flowLayoutPanel1.Location = new System.Drawing.Point(-5, -8);
 			this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-			this.flowLayoutPanel1.Size = new System.Drawing.Size(100, 868);
+			this.flowLayoutPanel1.Size = new System.Drawing.Size(80, 694);
 			this.flowLayoutPanel1.TabIndex = 11;
 			// 
 			// panel5
 			// 
 			this.panel5.Controls.Add(this.gunaElipsePanel1);
-			this.panel5.Location = new System.Drawing.Point(4, 4);
-			this.panel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.panel5.Location = new System.Drawing.Point(3, 3);
 			this.panel5.Name = "panel5";
-			this.panel5.Size = new System.Drawing.Size(96, 98);
+			this.panel5.Size = new System.Drawing.Size(77, 78);
 			this.panel5.TabIndex = 46;
 			// 
 			// gunaElipsePanel1
@@ -519,21 +505,19 @@
 			this.gunaElipsePanel1.BackColor = System.Drawing.Color.Transparent;
 			this.gunaElipsePanel1.BaseColor = System.Drawing.Color.White;
 			this.gunaElipsePanel1.Controls.Add(this.guna2PictureBox1);
-			this.gunaElipsePanel1.Location = new System.Drawing.Point(15, 26);
-			this.gunaElipsePanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.gunaElipsePanel1.Location = new System.Drawing.Point(12, 21);
 			this.gunaElipsePanel1.Name = "gunaElipsePanel1";
 			this.gunaElipsePanel1.Radius = 17;
-			this.gunaElipsePanel1.Size = new System.Drawing.Size(66, 66);
+			this.gunaElipsePanel1.Size = new System.Drawing.Size(53, 53);
 			this.gunaElipsePanel1.TabIndex = 47;
 			// 
 			// guna2PictureBox1
 			// 
 			this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
-			this.guna2PictureBox1.Location = new System.Drawing.Point(12, 12);
-			this.guna2PictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.guna2PictureBox1.Location = new System.Drawing.Point(10, 10);
 			this.guna2PictureBox1.Name = "guna2PictureBox1";
 			this.guna2PictureBox1.ShadowDecoration.Parent = this.guna2PictureBox1;
-			this.guna2PictureBox1.Size = new System.Drawing.Size(41, 41);
+			this.guna2PictureBox1.Size = new System.Drawing.Size(33, 33);
 			this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 			this.guna2PictureBox1.TabIndex = 47;
 			this.guna2PictureBox1.TabStop = false;
@@ -541,10 +525,9 @@
 			// panel2
 			// 
 			this.panel2.Controls.Add(this.ExcelImportBtn);
-			this.panel2.Location = new System.Drawing.Point(4, 110);
-			this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.panel2.Location = new System.Drawing.Point(3, 87);
 			this.panel2.Name = "panel2";
-			this.panel2.Size = new System.Drawing.Size(96, 645);
+			this.panel2.Size = new System.Drawing.Size(77, 516);
 			this.panel2.TabIndex = 1;
 			// 
 			// ExcelImportBtn
@@ -565,15 +548,14 @@
 			this.ExcelImportBtn.HoverState.Parent = this.ExcelImportBtn;
 			this.ExcelImportBtn.Image = ((System.Drawing.Image)(resources.GetObject("ExcelImportBtn.Image")));
 			this.ExcelImportBtn.ImageSize = new System.Drawing.Size(35, 35);
-			this.ExcelImportBtn.Location = new System.Drawing.Point(18, 40);
-			this.ExcelImportBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.ExcelImportBtn.Location = new System.Drawing.Point(14, 32);
 			this.ExcelImportBtn.Name = "ExcelImportBtn";
 			this.ExcelImportBtn.PressedColor = System.Drawing.Color.Transparent;
 			this.ExcelImportBtn.ShadowDecoration.BorderRadius = 25;
 			this.ExcelImportBtn.ShadowDecoration.Depth = 100;
 			this.ExcelImportBtn.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
 			this.ExcelImportBtn.ShadowDecoration.Parent = this.ExcelImportBtn;
-			this.ExcelImportBtn.Size = new System.Drawing.Size(62, 62);
+			this.ExcelImportBtn.Size = new System.Drawing.Size(50, 50);
 			this.ExcelImportBtn.TabIndex = 47;
 			this.ExcelImportBtn.TabStop = false;
 			this.ExcelImportBtn.Click += new System.EventHandler(this.ExcelImportBtn_Click);
@@ -581,10 +563,9 @@
 			// panel6
 			// 
 			this.panel6.Controls.Add(this.LogoutBtn);
-			this.panel6.Location = new System.Drawing.Point(4, 763);
-			this.panel6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.panel6.Location = new System.Drawing.Point(3, 609);
 			this.panel6.Name = "panel6";
-			this.panel6.Size = new System.Drawing.Size(96, 98);
+			this.panel6.Size = new System.Drawing.Size(77, 78);
 			this.panel6.TabIndex = 47;
 			// 
 			// LogoutBtn
@@ -605,25 +586,24 @@
 			this.LogoutBtn.HoverState.Parent = this.LogoutBtn;
 			this.LogoutBtn.Image = ((System.Drawing.Image)(resources.GetObject("LogoutBtn.Image")));
 			this.LogoutBtn.ImageSize = new System.Drawing.Size(25, 25);
-			this.LogoutBtn.Location = new System.Drawing.Point(22, 21);
-			this.LogoutBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.LogoutBtn.Location = new System.Drawing.Point(18, 17);
 			this.LogoutBtn.Name = "LogoutBtn";
 			this.LogoutBtn.PressedColor = System.Drawing.Color.Transparent;
 			this.LogoutBtn.ShadowDecoration.BorderRadius = 25;
 			this.LogoutBtn.ShadowDecoration.Depth = 100;
 			this.LogoutBtn.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
 			this.LogoutBtn.ShadowDecoration.Parent = this.LogoutBtn;
-			this.LogoutBtn.Size = new System.Drawing.Size(50, 50);
+			this.LogoutBtn.Size = new System.Drawing.Size(40, 40);
 			this.LogoutBtn.TabIndex = 47;
 			this.LogoutBtn.TabStop = false;
 			this.LogoutBtn.Click += new System.EventHandler(this.LogOutBtn_Click);
 			// 
 			// ImportGUI
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+			this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
 			this.BackColor = System.Drawing.Color.White;
-			this.ClientSize = new System.Drawing.Size(1580, 851);
+			this.ClientSize = new System.Drawing.Size(1264, 681);
 			this.ControlBox = false;
 			this.Controls.Add(this.flowLayoutPanel1);
 			this.Controls.Add(this.panel3);
@@ -632,7 +612,6 @@
 			this.Controls.Add(this.flowLayoutPanel2);
 			this.Controls.Add(this.BookContainer);
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-			this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.Name = "ImportGUI";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Import Products";
