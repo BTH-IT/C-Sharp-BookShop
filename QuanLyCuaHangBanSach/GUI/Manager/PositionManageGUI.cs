@@ -160,12 +160,6 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
                 DataGridViewRow row = this.dgvPosition.Rows[e.RowIndex];
 
-                if (row.Cells[0].Value.ToString() == "1")
-                {
-                    MessageBox.Show("Chức vụ này không thể thay đổi!!");
-                    return;
-                }
-
                 using (PositionModal positionModal = new PositionModal("Sửa chức vụ"))
                 {
                     PositionDTO position = PositionBUS.Instance.getById(row.Cells[0].Value.ToString());

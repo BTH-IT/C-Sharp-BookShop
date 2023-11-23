@@ -318,14 +318,14 @@
             this.benefitTxt.ForeColor = System.Drawing.Color.Black;
             this.benefitTxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.benefitTxt.HoverState.Parent = this.benefitTxt;
-            this.benefitTxt.Location = new System.Drawing.Point(136, 12);
+            this.benefitTxt.Location = new System.Drawing.Point(123, 12);
             this.benefitTxt.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.benefitTxt.Name = "benefitTxt";
             this.benefitTxt.PasswordChar = '\0';
             this.benefitTxt.PlaceholderText = "Nhập tỉ lệ lợi nhuận";
             this.benefitTxt.SelectedText = "";
             this.benefitTxt.ShadowDecoration.Parent = this.benefitTxt;
-            this.benefitTxt.Size = new System.Drawing.Size(223, 29);
+            this.benefitTxt.Size = new System.Drawing.Size(236, 29);
             this.benefitTxt.TabIndex = 28;
             this.benefitTxt.TextChanged += new System.EventHandler(this.benefitTxt_TextChanged);
             this.benefitTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.benefitTxt_KeyPress);
@@ -334,9 +334,9 @@
             // benefitLine
             // 
             this.benefitLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(212)))), ((int)(((byte)(191)))));
-            this.benefitLine.Location = new System.Drawing.Point(144, 43);
+            this.benefitLine.Location = new System.Drawing.Point(131, 43);
             this.benefitLine.Name = "benefitLine";
-            this.benefitLine.Size = new System.Drawing.Size(246, 1);
+            this.benefitLine.Size = new System.Drawing.Size(254, 1);
             this.benefitLine.TabIndex = 30;
             // 
             // errorBenefitMsg
@@ -344,7 +344,7 @@
             this.errorBenefitMsg.AutoSize = true;
             this.errorBenefitMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.errorBenefitMsg.ForeColor = System.Drawing.Color.Red;
-            this.errorBenefitMsg.Location = new System.Drawing.Point(145, 55);
+            this.errorBenefitMsg.Location = new System.Drawing.Point(104, 57);
             this.errorBenefitMsg.Name = "errorBenefitMsg";
             this.errorBenefitMsg.Size = new System.Drawing.Size(0, 21);
             this.errorBenefitMsg.TabIndex = 27;
@@ -354,7 +354,7 @@
             this.label13.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label13.Location = new System.Drawing.Point(3, 3);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(126, 49);
+            this.label13.Size = new System.Drawing.Size(113, 49);
             this.label13.TabIndex = 9;
             this.label13.Text = "Tỉ lệ lợi nhuận:";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -375,7 +375,7 @@
             this.errorBookListMsg.AutoSize = true;
             this.errorBookListMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.errorBookListMsg.ForeColor = System.Drawing.Color.Red;
-            this.errorBookListMsg.Location = new System.Drawing.Point(63, 344);
+            this.errorBookListMsg.Location = new System.Drawing.Point(314, 344);
             this.errorBookListMsg.Name = "errorBookListMsg";
             this.errorBookListMsg.Size = new System.Drawing.Size(0, 21);
             this.errorBookListMsg.TabIndex = 36;
@@ -385,7 +385,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1023, 700);
+            this.ClientSize = new System.Drawing.Size(1023, 709);
             this.Controls.Add(this.submitBtn);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cancelBtn);

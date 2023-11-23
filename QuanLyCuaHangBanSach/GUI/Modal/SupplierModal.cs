@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Drawing;
+using System.Windows.Controls;
 using System.Windows.Forms;
+using System.Windows.Input;
 using QuanLyCuaHangBanSach.BUS;
 using QuanLyCuaHangBanSach.DTO;
 
@@ -203,5 +205,12 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             );
         }
 
+        private void SupplierModal_KeyDown(object sender, System.Windows.Forms.KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                gunaButton1_Click(sender, e);
+            }
+        }
     }
 }

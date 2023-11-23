@@ -140,14 +140,14 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 if (isSuccess)
                 {
                     this.isSubmitSuccess = isSuccess;
-                    MessageBox.Show(updatePublisher != null ? "Update Success" : "Insert Success");
+                    MessageBox.Show(updatePublisher != null ? "Sửa thành công" : "Thêm thành công");
                     this.Close();
                     return;
                 }
 
                 this.isSubmitSuccess = isSuccess;
 
-                MessageBox.Show(updatePublisher != null ? "Update Failure" : "Insert Failure");
+                MessageBox.Show(updatePublisher != null ? "Sửa thất bại" : "Thêm thất bại");
             }
             catch (Exception er)
             {
@@ -212,6 +212,14 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 this.addressLine,
                 new string[] { "required", "space" }
             );
+        }
+
+        private void PublisherModal_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                gunaButton1_Click(sender, e);
+            }
         }
     }
 }

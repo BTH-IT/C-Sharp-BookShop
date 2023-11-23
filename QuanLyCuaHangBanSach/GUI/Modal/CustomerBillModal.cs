@@ -14,7 +14,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
         private List<CustomerBillDetailDTO> customerBillDetailList = new List<CustomerBillDetailDTO>();
         private int staffId;
         private decimal salePrice = 0;
-        private decimal scorePrice = 0;
+        private int diemConLai = 0;
         public CustomerBillModal(int staffId)
         {
             InitializeComponent();
@@ -78,6 +78,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 salePrice = Convert.ToDecimal(salePrice.ToString().Split('.')[0]);
 
                 this.totalPriceTxt.Text = (total - salePrice) + "";
+                total -= salePrice;
             }
             else
             {
@@ -85,20 +86,53 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 this.totalPriceTxt.Text = total + "";
             }
 
+            int diem = 0;
+
+            if (this.customerCbx.SelectedIndex != 1 && this.customerCbx.SelectedIndex != 0)
+            {
+                diem = CustomerBUS.Instance.getById(this.customerCbx.SelectedValue.ToString()).Diem;
+                scoreTxt.Text = diem + " điểm";
+                if (diem <= 0)
+                {
+                    this.PointToggleBtn.Checked = false;
+                }
+            }
+
             if (this.customerCbx.SelectedIndex != 1 && this.customerCbx.SelectedIndex != 0 && this.PointToggleBtn.Checked)
             {
-                int diem = CustomerBUS.Instance.getById(this.customerCbx.SelectedValue.ToString()).Diem;
-                scoreTxt.Text = diem + " điểm";
-                decimal newTotal = Convert.ToDecimal(Convert.ToDecimal(totalPriceTxt.Text.Split('.')[0]) + scorePrice);
-                scorePrice = diem * 1000;
-                this.totalPriceTxt.Text = (newTotal - scorePrice) + "";
+                scoreTxt.Text = 0 + " điểm";
+                decimal scorePrice = diem * 1000;
+
+                if (total - scorePrice <= 0)
+                {
+                    decimal roundedUp = -Math.Sign(total - scorePrice) * (decimal)(Math.Ceiling(Math.Abs(total - scorePrice) / 1000) * 1000);
+                    diemConLai = Convert.ToInt32(roundedUp / 1000);
+                    scoreTxt.Text = diemConLai + " điểm";
+                    this.totalPriceTxt.Text = "0";
+                }
+                else
+                {
+                    this.totalPriceTxt.Text = (total - scorePrice) + "";
+                    diemConLai = 0;
+                    scoreTxt.Text = diemConLai + " điểm";
+                }
             }
             else
             {
-                decimal newTotal = Convert.ToDecimal(Convert.ToDecimal(totalPriceTxt.Text.Split('.')[0]) + scorePrice);
-                this.totalPriceTxt.Text = newTotal + "";
-                scorePrice = 0;
+                this.totalPriceTxt.Text = total + "";
+                diemConLai = 0;
             }
+        }
+
+        private void getTotalPriceWhenChangeSaleAndCustomer()
+        {
+            decimal total = 0;
+            foreach (CustomerBillDetailDTO customerBillDetail in customerBillDetailList)
+            {
+                total += customerBillDetail.SoLuong * customerBillDetail.DonGia;
+            }
+
+            calculateTotal(total);
         }
 
         private void loadCustomerBillDetailList()
@@ -353,7 +387,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 customerBill.NgayLap = DateTime.Now;
                 customerBill.DoiDiem = 
                     this.customerCbx.SelectedIndex != 1 && this.customerCbx.SelectedIndex != 0 && this.PointToggleBtn.Checked
-                    ? customer.Diem : 0;
+                    ? diemConLai > 0 ? customer.Diem - diemConLai : customer.Diem : 0;
 
                 CustomerBillDTO newCustomerBill = CustomerBillBUS.Instance.insertReturnBill(customerBill);
 
@@ -367,17 +401,9 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 {
                     if (customerBill.DoiDiem > 0)
                     {
-                        customer.Diem = 0;
-                        customer.Diem = (int)(customerBill.TongTien / 50000);
+                        customer.Diem = diemConLai;
+                        customer.Diem += (int)(customerBill.TongTien / 50000);
                         CustomerBUS.Instance.update(customer);
-                    }
-                    else
-                    {
-                        if (customer != null)
-                        {
-                            customer.Diem += (int)(customerBill.TongTien / 50000);
-                            CustomerBUS.Instance.update(customer);
-                        }
                     }
 
                     foreach (CustomerBillDetailDTO customerBillDetail in this.customerBillDetailList)
@@ -423,26 +449,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 new string[] { "required" }
             );
 
-            if (isCheckCbx2 && this.saleCbx.SelectedIndex != 1)
-            {
-                int phanTram = SaleBUS.Instance.getById(this.saleCbx.SelectedValue.ToString()).PhanTram;
-
-                this.percentTxt.Text = phanTram + "%";
-
-                decimal totalPrice = Convert.ToDecimal(this.totalPriceTxt.Text.Split('.')[0]) + salePrice;
-
-                salePrice = Convert.ToDecimal(totalPrice * Convert.ToDecimal(phanTram / 100.0));
-
-                salePrice = Convert.ToDecimal(salePrice.ToString().Split('.')[0]);
-
-                this.totalPriceTxt.Text = Convert.ToDecimal(totalPrice - salePrice) + "";
-            } else
-            {
-                decimal totalPrice = Convert.ToDecimal(this.totalPriceTxt.Text.Split('.')[0]) + salePrice;
-                this.totalPriceTxt.Text = totalPrice + "";
-                this.percentTxt.Text = "Không có";
-                salePrice = 0;
-            }
+            getTotalPriceWhenChangeSaleAndCustomer();
         }
 
         private void customerCbx_SelectedIndexChanged(object sender, EventArgs e)
@@ -455,33 +462,9 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
             PointToggleBtn.Enabled = this.customerCbx.SelectedIndex != 1 && this.customerCbx.SelectedIndex != 0;
 
-            if (this.customerCbx.SelectedIndex != 1 && this.customerCbx.SelectedIndex != 0 && this.PointToggleBtn.Enabled)
-            {
-                int diem = CustomerBUS.Instance.getById(this.customerCbx.SelectedValue.ToString()).Diem;
-                scoreTxt.Text = diem + " điểm";
-                
-                if (this.PointToggleBtn.Checked)
-                {
-					decimal total = Convert.ToDecimal(Convert.ToDecimal(totalPriceTxt.Text.Split('.')[0]) + scorePrice);
-					scorePrice = diem * 1000;
-                    this.totalPriceTxt.Text = (total - scorePrice) + "";
-                } else
-                {
-                    decimal total = Convert.ToDecimal(Convert.ToDecimal(totalPriceTxt.Text.Split('.')[0]) + scorePrice);
-                    this.totalPriceTxt.Text = total + "";
-                    scorePrice = 0;
-                }
-                PointToggleBtn.Enabled = diem != 0;
-            }
-            else
-            {
-                PointToggleBtn.Enabled = false;
-                PointToggleBtn.Checked = false;
-                scoreTxt.Text = "";
-                decimal total = Convert.ToDecimal(Convert.ToDecimal(totalPriceTxt.Text.Split('.')[0]) + scorePrice);
-                this.totalPriceTxt.Text = total + "";
-                scorePrice = 0;
-            }
+            PointToggleBtn.Checked = this.customerCbx.SelectedIndex != 1 && this.customerCbx.SelectedIndex != 0 ? PointToggleBtn.Checked : false;
+
+            getTotalPriceWhenChangeSaleAndCustomer();
         }
 
         private void PointToggleBtn_CheckedChanged(object sender, EventArgs e)
@@ -492,18 +475,13 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 {
                     if (Convert.ToDecimal(totalPriceTxt.Text.Split('.')[0]) > 0)
                     {
-                        int diem = CustomerBUS.Instance.getById(this.customerCbx.SelectedValue.ToString()).Diem;
-                        scoreTxt.Text = diem + " điểm";
-                        decimal total = Convert.ToDecimal(Convert.ToDecimal(totalPriceTxt.Text.Split('.')[0]) + scorePrice);
-                        scorePrice = diem * 1000;
-                        this.totalPriceTxt.Text = (total - scorePrice) + "";
+                        getTotalPriceWhenChangeSaleAndCustomer();
                     }
                 }
                 else
                 {
-                    decimal total = Convert.ToDecimal(Convert.ToDecimal(totalPriceTxt.Text.Split('.')[0]) + scorePrice);
-                    this.totalPriceTxt.Text = total + "";
-                    scorePrice = 0;
+                    getTotalPriceWhenChangeSaleAndCustomer();
+
                 }
 
             }

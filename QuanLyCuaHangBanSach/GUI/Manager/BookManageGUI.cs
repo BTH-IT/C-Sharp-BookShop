@@ -499,7 +499,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                 }
 
                 DialogResult dlgResult = MessageBox.Show(
-                    "Bạn chắc chắn muốn xóa các sách đã chọn chứ chứ?",
+                    "Bạn chắc chắn muốn xóa các sách đã chọn chứ?",
                     "Xác nhận",
                     MessageBoxButtons.YesNo,
                     MessageBoxIcon.Question,
@@ -519,7 +519,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                     List<BookDTO> bookList = handleFilter(this.searchInput.Text.Trim());
                     this.loadBookListToDataView(bookList);
 
-                    MessageBox.Show("Delete successful");
+                    MessageBox.Show("Xóa thành công");
                 }
             }
             catch (Exception ex)
