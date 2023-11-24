@@ -242,7 +242,6 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                             this.phoneNumberLine,
                             SupplierBUS.Instance.checkDupicatePhoneNumber(this.phoneNumbertxt.Text,updateSupplier.MaNhaCungCap),
                             "Số điện thoại đã có trong hệ thống"
-
                         );
                 }
             }

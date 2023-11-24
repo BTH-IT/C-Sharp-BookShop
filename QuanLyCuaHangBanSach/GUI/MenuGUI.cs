@@ -37,32 +37,37 @@ namespace QuanLyCuaHangBanSach.GUI
 
         private void Menu_Load(object sender, EventArgs e)
         {
+            Console.WriteLine(this.sell.Height);
+            this.Size = new System.Drawing.Size(this.Size.Width, this.Size.Height + this.sell.Height+ (this.sell.Height)/2);
             foreach (AuthDetailDTO authDetail in authDetails)
             {
                 if (authDetail.maQuyenHan == 6 && !this.sell.Visible)
                 {
                     this.sell.Visible = authDetail.TrangThai;
 
-                    if (this.sell.Visible)
+                    if (!this.sell.Visible)
                     {
-                        this.Size = new System.Drawing.Size(this.Size.Width, this.Size.Height + this.sell.Height);
+                        this.menuFlow.Size = new System.Drawing.Size(this.menuFlow.Size.Width - this.sell.Width, this.menuFlow.Size.Height);
+                        this.menuFlow.Left = (this.panel1.Width - this.menuFlow.Width) / 2;
                     }
                 }
                 else if (authDetail.maQuyenHan == 7 && !this.import.Visible)
                 {
                     this.import.Visible = authDetail.TrangThai;
 
-                    if (this.import.Visible)
+                    if (!this.import.Visible)
                     {
-                        this.Size = new System.Drawing.Size(this.Size.Width, this.Size.Height + this.import.Height);
+                        this.menuFlow.Size = new System.Drawing.Size(this.menuFlow.Size.Width - this.import.Width, this.menuFlow.Size.Height);
+                        this.menuFlow.Left = (this.panel1.Width - this.menuFlow.Width) / 2;
                     }
                 }
                 else if (authDetail.TrangThai && !this.manage.Visible)
                 {
                     this.manage.Visible = true;
-                    if (this.manage.Visible)
+                    if (!this.manage.Visible)
                     {
-                        this.Size = new System.Drawing.Size(this.Size.Width, this.Size.Height + this.manage.Height);
+                        this.menuFlow.Size = new System.Drawing.Size(this.menuFlow.Size.Width - this.manage.Width, this.menuFlow.Size.Height);
+                        this.menuFlow.Left = (this.panel1.Width - this.menuFlow.Width) / 2;
                     }
                 }
             }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerBillModal));
             this.panel2 = new System.Windows.Forms.Panel();
             this.errorCustomerMsg = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -55,6 +56,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.cancelBtn = new Guna.UI.WinForms.GunaButton();
             this.submitBtn = new Guna.UI.WinForms.GunaButton();
+            this.AddCustomerBtn = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -64,6 +66,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.AddCustomerBtn);
             this.panel2.Controls.Add(this.errorCustomerMsg);
             this.panel2.Controls.Add(this.label13);
             this.panel2.Controls.Add(this.customerCbx);
@@ -80,7 +83,7 @@
             this.errorCustomerMsg.ForeColor = System.Drawing.Color.Red;
             this.errorCustomerMsg.Location = new System.Drawing.Point(163, 55);
             this.errorCustomerMsg.Name = "errorCustomerMsg";
-            this.errorCustomerMsg.Size = new System.Drawing.Size(0, 21);
+            this.errorCustomerMsg.Size = new System.Drawing.Size(0, 26);
             this.errorCustomerMsg.TabIndex = 27;
             // 
             // label13
@@ -88,7 +91,7 @@
             this.label13.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label13.Location = new System.Drawing.Point(3, 3);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(145, 49);
+            this.label13.Size = new System.Drawing.Size(105, 49);
             this.label13.TabIndex = 9;
             this.label13.Text = "Khách hàng:";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -108,7 +111,7 @@
             this.customerCbx.FormattingEnabled = true;
             this.customerCbx.IntegralHeight = false;
             this.customerCbx.ItemHeight = 30;
-            this.customerCbx.Location = new System.Drawing.Point(160, 12);
+            this.customerCbx.Location = new System.Drawing.Point(115, 12);
             this.customerCbx.MaxDropDownItems = 10;
             this.customerCbx.Name = "customerCbx";
             this.customerCbx.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
@@ -149,7 +152,7 @@
             this.errorSaleMsg.ForeColor = System.Drawing.Color.Red;
             this.errorSaleMsg.Location = new System.Drawing.Point(163, 54);
             this.errorSaleMsg.Name = "errorSaleMsg";
-            this.errorSaleMsg.Size = new System.Drawing.Size(0, 21);
+            this.errorSaleMsg.Size = new System.Drawing.Size(0, 26);
             this.errorSaleMsg.TabIndex = 33;
             // 
             // label18
@@ -206,7 +209,7 @@
             this.errorBookListMsg.ForeColor = System.Drawing.Color.Red;
             this.errorBookListMsg.Location = new System.Drawing.Point(422, 366);
             this.errorBookListMsg.Name = "errorBookListMsg";
-            this.errorBookListMsg.Size = new System.Drawing.Size(0, 21);
+            this.errorBookListMsg.Size = new System.Drawing.Size(0, 26);
             this.errorBookListMsg.TabIndex = 35;
             // 
             // gunaButton1
@@ -476,9 +479,21 @@
             this.submitBtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.submitBtn.Click += new System.EventHandler(this.submitBtn_Click);
             // 
+            // AddCustomerBtn
+            // 
+            this.AddCustomerBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.AddCustomerBtn.Image = ((System.Drawing.Image)(resources.GetObject("AddCustomerBtn.Image")));
+            this.AddCustomerBtn.Location = new System.Drawing.Point(540, 9);
+            this.AddCustomerBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.AddCustomerBtn.Name = "AddCustomerBtn";
+            this.AddCustomerBtn.Size = new System.Drawing.Size(38, 38);
+            this.AddCustomerBtn.TabIndex = 28;
+            this.AddCustomerBtn.UseVisualStyleBackColor = true;
+            this.AddCustomerBtn.Click += new System.EventHandler(this.AddCustomerBtn_Click);
+            // 
             // CustomerBillModal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1222, 808);
@@ -534,5 +549,6 @@
         private System.Windows.Forms.Label scoreTxt;
         private Guna.UI2.WinForms.Guna2ToggleSwitch PointToggleBtn;
         private System.Windows.Forms.Label PointLb;
+        private System.Windows.Forms.Button AddCustomerBtn;
     }
 }
