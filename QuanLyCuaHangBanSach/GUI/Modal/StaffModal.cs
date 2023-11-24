@@ -88,7 +88,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 					this.positionCbx.SelectedValue = staff.MaChucVu;
 				}
 				List<AuthDetailDTO> authDetails;
-				authDetails = AuthDetailBUS.Instance.getByPositionId(ManagerGUI.currentStaff.Ma.ToString());
+				authDetails = AuthDetailBUS.Instance.getByPositionId(MenuGUI.staff.MaChucVu.ToString());
                 if (authDetails != null )
                 {
                     if(!authDetails.Any(c=>c.maQuyenHan == 12))
