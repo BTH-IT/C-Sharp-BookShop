@@ -28,10 +28,14 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
                 foreach (BookTypeDTO BookType in BookTypeList)
                 {
-                    this.dgvBookType.Rows.Add(new object[] {
-                    BookType.MaTheLoai,
-                    BookType.TenTheLoai,
-                });
+                    if(BookType.MaTheLoai != 0)
+                    {
+					    this.dgvBookType.Rows.Add(new object[] {
+					        BookType.MaTheLoai,
+					        BookType.TenTheLoai,
+				        });
+					}    
+                    
                 }
             }
             catch (Exception ex)

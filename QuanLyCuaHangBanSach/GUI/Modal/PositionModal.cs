@@ -145,7 +145,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                     this.positionNameTxt.Text = updatePosition.TenChucVu;
                     this.descTxt.Text = updatePosition.MoTa;
                     this.activeCkx.Checked = updatePosition.TrangThai;
-                    this.activeCkx.Enabled = updatePosition.MaChucVu != 1;
+                    this.activeCkx.Enabled = (updatePosition.MaChucVu != 1 && updatePosition.MaChucVu != 7 && updatePosition.MaChucVu !=8);
                 }
             }
             catch (Exception ex)
