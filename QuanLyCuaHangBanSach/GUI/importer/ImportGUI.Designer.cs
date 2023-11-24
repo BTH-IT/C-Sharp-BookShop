@@ -67,6 +67,8 @@
 			this.ExcelImportBtn = new Guna.UI2.WinForms.Guna2Button();
 			this.panel6 = new System.Windows.Forms.Panel();
 			this.LogoutBtn = new Guna.UI2.WinForms.Guna2Button();
+			this.CreateBookBtn = new Guna.UI2.WinForms.Guna2Button();
+			this.refreshBtn = new Guna.UI.WinForms.GunaAdvenceButton();
 			this.flowLayoutPanel2.SuspendLayout();
 			this.flowLayoutPanel4.SuspendLayout();
 			this.flowLayoutPanel5.SuspendLayout();
@@ -251,6 +253,7 @@
 			// panel3
 			// 
 			this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.panel3.Controls.Add(this.refreshBtn);
 			this.panel3.Controls.Add(this.panel4);
 			this.panel3.Location = new System.Drawing.Point(913, -8);
 			this.panel3.Name = "panel3";
@@ -524,6 +527,7 @@
 			// 
 			// panel2
 			// 
+			this.panel2.Controls.Add(this.CreateBookBtn);
 			this.panel2.Controls.Add(this.ExcelImportBtn);
 			this.panel2.Location = new System.Drawing.Point(3, 87);
 			this.panel2.Name = "panel2";
@@ -597,6 +601,69 @@
 			this.LogoutBtn.TabIndex = 47;
 			this.LogoutBtn.TabStop = false;
 			this.LogoutBtn.Click += new System.EventHandler(this.LogOutBtn_Click);
+			// 
+			// CreateBookBtn
+			// 
+			this.CreateBookBtn.Animated = true;
+			this.CreateBookBtn.BackColor = System.Drawing.Color.Transparent;
+			this.CreateBookBtn.BorderColor = System.Drawing.Color.White;
+			this.CreateBookBtn.BorderRadius = 25;
+			this.CreateBookBtn.BorderThickness = 1;
+			this.CreateBookBtn.CheckedState.Parent = this.CreateBookBtn;
+			this.CreateBookBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.CreateBookBtn.CustomImages.Parent = this.CreateBookBtn;
+			this.CreateBookBtn.FillColor = System.Drawing.Color.White;
+			this.CreateBookBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 10F);
+			this.CreateBookBtn.ForeColor = System.Drawing.Color.White;
+			this.CreateBookBtn.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(107)))), ((int)(((byte)(250)))));
+			this.CreateBookBtn.HoverState.FillColor = System.Drawing.Color.White;
+			this.CreateBookBtn.HoverState.Parent = this.CreateBookBtn;
+			this.CreateBookBtn.Image = ((System.Drawing.Image)(resources.GetObject("CreateBookBtn.Image")));
+			this.CreateBookBtn.ImageSize = new System.Drawing.Size(35, 35);
+			this.CreateBookBtn.Location = new System.Drawing.Point(14, 124);
+			this.CreateBookBtn.Name = "CreateBookBtn";
+			this.CreateBookBtn.PressedColor = System.Drawing.Color.Transparent;
+			this.CreateBookBtn.ShadowDecoration.BorderRadius = 25;
+			this.CreateBookBtn.ShadowDecoration.Depth = 100;
+			this.CreateBookBtn.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+			this.CreateBookBtn.ShadowDecoration.Parent = this.CreateBookBtn;
+			this.CreateBookBtn.Size = new System.Drawing.Size(50, 50);
+			this.CreateBookBtn.TabIndex = 48;
+			this.CreateBookBtn.TabStop = false;
+			this.CreateBookBtn.Click += new System.EventHandler(this.CreateBookBtn_Click);
+			// 
+			// refreshBtn
+			// 
+			this.refreshBtn.AnimationHoverSpeed = 0.07F;
+			this.refreshBtn.AnimationSpeed = 0.03F;
+			this.refreshBtn.BackColor = System.Drawing.Color.Transparent;
+			this.refreshBtn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+			this.refreshBtn.BorderColor = System.Drawing.Color.Black;
+			this.refreshBtn.CheckedBaseColor = System.Drawing.Color.PaleTurquoise;
+			this.refreshBtn.CheckedBorderColor = System.Drawing.Color.Black;
+			this.refreshBtn.CheckedForeColor = System.Drawing.Color.White;
+			this.refreshBtn.CheckedImage = ((System.Drawing.Image)(resources.GetObject("refreshBtn.CheckedImage")));
+			this.refreshBtn.CheckedLineColor = System.Drawing.Color.DimGray;
+			this.refreshBtn.DialogResult = System.Windows.Forms.DialogResult.None;
+			this.refreshBtn.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(159)))), ((int)(((byte)(147)))));
+			this.refreshBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold);
+			this.refreshBtn.ForeColor = System.Drawing.Color.White;
+			this.refreshBtn.Image = ((System.Drawing.Image)(resources.GetObject("refreshBtn.Image")));
+			this.refreshBtn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			this.refreshBtn.ImageSize = new System.Drawing.Size(30, 30);
+			this.refreshBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+			this.refreshBtn.Location = new System.Drawing.Point(307, 13);
+			this.refreshBtn.Name = "refreshBtn";
+			this.refreshBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+			this.refreshBtn.OnHoverBorderColor = System.Drawing.Color.Transparent;
+			this.refreshBtn.OnHoverForeColor = System.Drawing.Color.White;
+			this.refreshBtn.OnHoverImage = null;
+			this.refreshBtn.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+			this.refreshBtn.OnPressedColor = System.Drawing.Color.Black;
+			this.refreshBtn.Radius = 6;
+			this.refreshBtn.Size = new System.Drawing.Size(36, 36);
+			this.refreshBtn.TabIndex = 32;
+			this.refreshBtn.Click += new System.EventHandler(this.refreshBtn_Click);
 			// 
 			// ImportGUI
 			// 
@@ -673,5 +740,7 @@
 		private Guna.UI2.WinForms.Guna2TextBox ProfitPercentTxb;
 		private System.Windows.Forms.Label VndLb;
 		private System.Windows.Forms.Label ErrorLb;
+		private Guna.UI2.WinForms.Guna2Button CreateBookBtn;
+		private Guna.UI.WinForms.GunaAdvenceButton refreshBtn;
 	}
 }
