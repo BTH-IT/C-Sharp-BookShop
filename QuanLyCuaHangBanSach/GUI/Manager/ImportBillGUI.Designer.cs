@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ImportBillGUI));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ImportBillGUI));
             this.searchInput = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.filterCkx = new Guna.UI.WinForms.GunaMediumCheckBox();
@@ -48,7 +48,6 @@
             this.viewMoreBtn = new Guna.UI.WinForms.GunaAdvenceButton();
             this.exportBtn = new Guna.UI.WinForms.GunaAdvenceButton();
             this.refreshBtn = new Guna.UI.WinForms.GunaAdvenceButton();
-            this.addBtn = new Guna.UI.WinForms.GunaAdvenceButton();
             this.dgvImportBill = new Guna.UI.WinForms.GunaDataGridView();
             this.Column9 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -70,7 +69,6 @@
             this.gunaMediumCheckBox1 = new Guna.UI.WinForms.GunaMediumCheckBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.gunaAdvenceButton1 = new Guna.UI.WinForms.GunaAdvenceButton();
             this.panel5.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvImportBill)).BeginInit();
@@ -266,12 +264,10 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
-            this.panel1.Controls.Add(this.gunaAdvenceButton1);
             this.panel1.Controls.Add(this.printPdfBtn);
             this.panel1.Controls.Add(this.viewMoreBtn);
             this.panel1.Controls.Add(this.exportBtn);
             this.panel1.Controls.Add(this.refreshBtn);
-            this.panel1.Controls.Add(this.addBtn);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 630);
             this.panel1.Name = "panel1";
@@ -410,40 +406,6 @@
             this.refreshBtn.TabIndex = 10;
             this.refreshBtn.Text = "Làm mới";
             this.refreshBtn.Click += new System.EventHandler(this.refreshBtn_Click);
-            // 
-            // addBtn
-            // 
-            this.addBtn.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.addBtn.AnimationHoverSpeed = 0.07F;
-            this.addBtn.AnimationSpeed = 0.03F;
-            this.addBtn.BackColor = System.Drawing.Color.Transparent;
-            this.addBtn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.addBtn.BorderColor = System.Drawing.Color.Black;
-            this.addBtn.CheckedBaseColor = System.Drawing.Color.Gray;
-            this.addBtn.CheckedBorderColor = System.Drawing.Color.Black;
-            this.addBtn.CheckedForeColor = System.Drawing.Color.White;
-            this.addBtn.CheckedImage = ((System.Drawing.Image)(resources.GetObject("addBtn.CheckedImage")));
-            this.addBtn.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.addBtn.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.addBtn.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(159)))), ((int)(((byte)(147)))));
-            this.addBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addBtn.ForeColor = System.Drawing.Color.White;
-            this.addBtn.Image = ((System.Drawing.Image)(resources.GetObject("addBtn.Image")));
-            this.addBtn.ImageSize = new System.Drawing.Size(20, 20);
-            this.addBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.addBtn.Location = new System.Drawing.Point(784, 6);
-            this.addBtn.Name = "addBtn";
-            this.addBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.addBtn.OnHoverBorderColor = System.Drawing.Color.Transparent;
-            this.addBtn.OnHoverForeColor = System.Drawing.Color.White;
-            this.addBtn.OnHoverImage = null;
-            this.addBtn.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.addBtn.OnPressedColor = System.Drawing.Color.Black;
-            this.addBtn.Radius = 6;
-            this.addBtn.Size = new System.Drawing.Size(117, 42);
-            this.addBtn.TabIndex = 14;
-            this.addBtn.Text = "Thêm mới";
-            this.addBtn.Click += new System.EventHandler(this.addBtn_Click);
             // 
             // dgvImportBill
             // 
@@ -789,39 +751,6 @@
             this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
             this.dataGridViewImageColumn1.Width = 106;
             // 
-            // gunaAdvenceButton1
-            // 
-            this.gunaAdvenceButton1.AnimationHoverSpeed = 0.07F;
-            this.gunaAdvenceButton1.AnimationSpeed = 0.03F;
-            this.gunaAdvenceButton1.BackColor = System.Drawing.Color.Transparent;
-            this.gunaAdvenceButton1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.gunaAdvenceButton1.BorderColor = System.Drawing.Color.Black;
-            this.gunaAdvenceButton1.CheckedBaseColor = System.Drawing.Color.Gray;
-            this.gunaAdvenceButton1.CheckedBorderColor = System.Drawing.Color.Black;
-            this.gunaAdvenceButton1.CheckedForeColor = System.Drawing.Color.White;
-            this.gunaAdvenceButton1.CheckedImage = ((System.Drawing.Image)(resources.GetObject("gunaAdvenceButton1.CheckedImage")));
-            this.gunaAdvenceButton1.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.gunaAdvenceButton1.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaAdvenceButton1.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaAdvenceButton1.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaAdvenceButton1.ForeColor = System.Drawing.Color.White;
-            this.gunaAdvenceButton1.Image = ((System.Drawing.Image)(resources.GetObject("gunaAdvenceButton1.Image")));
-            this.gunaAdvenceButton1.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaAdvenceButton1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.gunaAdvenceButton1.Location = new System.Drawing.Point(349, 6);
-            this.gunaAdvenceButton1.Name = "gunaAdvenceButton1";
-            this.gunaAdvenceButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.gunaAdvenceButton1.OnHoverBorderColor = System.Drawing.Color.Transparent;
-            this.gunaAdvenceButton1.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaAdvenceButton1.OnHoverImage = null;
-            this.gunaAdvenceButton1.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.gunaAdvenceButton1.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaAdvenceButton1.Radius = 6;
-            this.gunaAdvenceButton1.Size = new System.Drawing.Size(126, 42);
-            this.gunaAdvenceButton1.TabIndex = 43;
-            this.gunaAdvenceButton1.Text = "Thêm từ Excel";
-            this.gunaAdvenceButton1.Click += new System.EventHandler(this.gunaAdvenceButton1_Click);
-            // 
             // ImportBillGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 18F);
@@ -857,7 +786,6 @@
         private Guna.UI.WinForms.GunaAdvenceButton refreshBtn;
         private Guna.UI2.WinForms.Guna2TextBox searchInput;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private Guna.UI.WinForms.GunaAdvenceButton addBtn;
         private System.Windows.Forms.Panel panel5;
         private Guna.UI.WinForms.GunaMediumCheckBox filterCkx;
         private Guna.UI.WinForms.GunaDateTimePicker dateTimeTo;
@@ -888,6 +816,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private Guna.UI.WinForms.GunaAdvenceButton gunaAdvenceButton1;
     }
 }

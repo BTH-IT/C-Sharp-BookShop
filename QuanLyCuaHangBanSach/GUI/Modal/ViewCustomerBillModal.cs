@@ -29,7 +29,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             SaleDTO sale = SaleBUS.Instance.getById(customerBill.MaKhuyenMai.ToString());
 
             this.saleTxt.Text = sale == null ? "Không có" : sale.TenKhuyenMai;
-            this.percentTxt.Text = sale == null ? "0%" : sale.PhanTram + "%";
+            this.percentTxt.Text = sale == null ? "0%" : customerBill.PhanTramKhuyenMai + "%";
 
             this.paymentPriceTxt.Text = string.Format("{0:N0} VNĐ", customerBill.TienKhachDua);
 
@@ -48,7 +48,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 giaGoc += customerBillDetail.ThanhTien;
             }
 
-            decimal salePrice = sale == null ? 0 : Convert.ToDecimal((giaGoc * Convert.ToDecimal(sale.PhanTram / 100.0)).ToString().Split('.')[0]);
+            decimal salePrice = sale == null ? 0 : Convert.ToDecimal((giaGoc * Convert.ToDecimal(customerBill.PhanTramKhuyenMai / 100.0)).ToString().Split('.')[0]);
 
             decimal giaDaGiam = giaGoc - salePrice;
 

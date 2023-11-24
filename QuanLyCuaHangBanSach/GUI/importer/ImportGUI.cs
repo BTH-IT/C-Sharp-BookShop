@@ -20,7 +20,7 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
         private int supplierID = 0;
         private int staffID;
 		private bool useExcel = false;
-		private int importBillId = Convert.ToInt32(ImportBillBUS.Instance.getLatestId());
+		private int importBillId = Convert.ToInt32(ImportBillBUS.Instance.getLatestId()) + 1;
 		private decimal total = 0;
         private List<ImportBillDetailDTO> importBillDetails = new List<ImportBillDetailDTO>();
 
@@ -191,7 +191,6 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
                 {
 					ImportCartProductUserControl product = new ImportCartProductUserControl();
                     product.details(book, amount);
-                    importBillId++;
 					product.ImportIdDetailLb.Text = importBillId.ToString();
 
                     product.ImportPriceTxb.MouseLeave += (object sender, EventArgs e) =>
@@ -258,6 +257,10 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
                         BookDTO book = BookBUS.Instance.getById(BookUserControl.ChoseId);
                         AddProductToCart(book);
                     }
+                    else
+                    {
+                        BookUserControl.clicked = false;
+                    }
                 }
 
                 if (ImportCartProductUserControl.deletePress)
@@ -278,15 +281,6 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
                         idx++;
                     }
 
-                    idx = 0;
-                    importBillId = Convert.ToInt32(ImportBillBUS.Instance.getLatestId());
-					foreach (var importBillDetail in importBillDetails)
-                    {
-						ImportCartProductUserControl cartProduct = CartContainer.Controls[idx] as ImportCartProductUserControl;
-                        importBillId++;
-						cartProduct.ImportIdDetailLb.Text = importBillId.ToString();
-						idx++;
-                    }
 					CartHandler();
                     ImportCartProductUserControl.deleteId = "";
                     ImportCartProductUserControl.deletePress = false;

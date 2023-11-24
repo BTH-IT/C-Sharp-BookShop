@@ -175,10 +175,12 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 			}
 		}
 
-		private decimal DiscountMoneyCal(int phanTramKM, decimal tongTien)
+		private decimal DiscountMoneyCal(int phanTramKM, decimal tongTien, int doiDiem = 0)
 		{
             decimal km = Convert.ToDecimal(100 - phanTramKM * 1.0) / Convert.ToDecimal(100.0);
-			return tongTien / km;
+            decimal tongTienThat = (tongTien + doiDiem * 1000) / km;
+            Console.WriteLine(tongTien + ": " + tongTienThat);
+            return tongTienThat - tongTienThat * km;
 		}
 
 		private void loadBillListToDataView(List<CustomerBillDTO> billList)
@@ -198,7 +200,8 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 						dgvBill.Rows.Add(new object[] {
 							bill.NgayLap.ToString("dd/MM/yyyy"),
 							bill.MaDonKhachHang,
-							bill.PhanTramKhuyenMai != 0 ? string.Format("{0:N0} VNĐ", DiscountMoneyCal(bill.PhanTramKhuyenMai, bill.TongTien)) : "Không khuyến mãi",
+							bill.PhanTramKhuyenMai != 0 ? string.Format("{0:N0} VNĐ", DiscountMoneyCal(bill.PhanTramKhuyenMai, bill.TongTien, bill.DoiDiem)) : "Không khuyến mãi",
+							bill.DoiDiem > 0 ? string.Format("{0:N0} VNĐ", bill.DoiDiem * 1000) : "Không có",
 							string.Format("{0:N0} VNĐ", bill.TongTien)
 						});
 					}
