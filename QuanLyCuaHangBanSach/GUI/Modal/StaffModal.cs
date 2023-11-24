@@ -3,6 +3,7 @@ using QuanLyCuaHangBanSach.DTO;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace QuanLyCuaHangBanSach.GUI.Modal
@@ -86,8 +87,24 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
 					this.positionCbx.SelectedValue = staff.MaChucVu;
 				}
-
-                this.genderCbx.SelectedIndexChanged += genderCbx_SelectedIndexChanged;
+				List<AuthDetailDTO> authDetails;
+				authDetails = AuthDetailBUS.Instance.getByPositionId(ManagerGUI.currentStaff.Ma.ToString());
+                if (authDetails != null )
+                {
+                    if(!authDetails.Any(c=>c.maQuyenHan == 12))
+                    {
+						this.btnAddPosition.Enabled = false;
+                    }
+                    else
+                    {
+                        this.btnAddPosition.Enabled = true;
+                    }
+				}
+                else
+                {
+                    this.btnAddPosition.Enabled = false;
+                }
+				this.genderCbx.SelectedIndexChanged += genderCbx_SelectedIndexChanged;
                 this.genderCbx.TextChanged += genderCbx_SelectedIndexChanged;
                 this.positionCbx.TextChanged += positionCbx_SelectedIndexChanged;
                 this.positionCbx.SelectedIndexChanged += positionCbx_SelectedIndexChanged;
@@ -324,6 +341,18 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 					   this.errorPositionMsg,
 					   new string[] { "required" }
 				   );
+		}
+
+		private void btnAddPosition_Click(object sender, EventArgs e)
+		{
+			using (PositionModal positionModal = new PositionModal())
+			{
+				positionModal.ShowDialog();
+                if(positionModal.isSubmitSuccess)
+                {
+                    loadPositionCbx();
+                }    
+			}
 		}
 	}
  }

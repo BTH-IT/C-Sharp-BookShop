@@ -67,73 +67,90 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
         private void calculateTotal(decimal total)
         {
-            if (this.saleCbx.SelectedIndex != 1 && this.saleCbx.SelectedIndex != 0)
+            try
             {
-                int phanTram = SaleBUS.Instance.getById(this.saleCbx.SelectedValue.ToString()).PhanTram;
-
-                this.percentTxt.Text = phanTram + "%";
-
-                salePrice = total * (phanTram / Convert.ToDecimal(100.0));
-
-                salePrice = Convert.ToDecimal(salePrice.ToString().Split('.')[0]);
-            }
-            else
-            {
-                this.percentTxt.Text = "Không có";
-                this.totalPriceTxt.Text = total + "";
-                salePrice = 0;
-            }
-
-            int diem = 0;
-
-            if (this.customerCbx.SelectedIndex != 1 && this.customerCbx.SelectedIndex != 0)
-            {
-                diem = CustomerBUS.Instance.getById(this.customerCbx.SelectedValue.ToString()).Diem;
-                scoreTxt.Text = diem + " điểm";
-                if (diem <= 0)
+                if (this.saleCbx.SelectedIndex != 1 && this.saleCbx.SelectedIndex != 0)
                 {
-                    this.PointToggleBtn.Checked = false;
-                }
-            }
+                    int phanTram = SaleBUS.Instance.getById(this.saleCbx.SelectedValue.ToString()).PhanTram;
 
-            if (total - salePrice <= 0)
-            {
-                this.totalPriceTxt.Text = "0";
-                total = 0;
-            }
-            else
-            {
-                this.totalPriceTxt.Text = (total - salePrice) + "";
-                total = Convert.ToDecimal(this.totalPriceTxt.Text);
-            }
+                    this.percentTxt.Text = phanTram + "%";
 
-            if (this.customerCbx.SelectedIndex != 1 && this.customerCbx.SelectedIndex != 0 && this.PointToggleBtn.Checked)
-            {
-                scoreTxt.Text = 0 + " điểm";
-                decimal scorePrice = diem * 1000;
+                    salePrice = total * (phanTram / Convert.ToDecimal(100.0));
 
-                if (total - scorePrice <= 0)
-                {
-                    decimal roundedUp = Math.Sign(total - scorePrice) * (decimal)(Math.Ceiling(Math.Abs(total - scorePrice) / 1000) * 1000) + 1000;
-                    diemConLai = Convert.ToInt32(-1 * roundedUp / 1000);
-                    scoreTxt.Text = diemConLai + " điểm";
-                    this.totalPriceTxt.Text = "0";
+                    salePrice = Convert.ToDecimal(salePrice.ToString().Split('.')[0]);
                 }
                 else
                 {
-                    this.totalPriceTxt.Text = (total - scorePrice) + "";
-                    diemConLai = 0;
-                    scoreTxt.Text = diemConLai + " điểm";
+                    this.percentTxt.Text = "Không có";
+                    this.totalPriceTxt.Text = total + "";
+                    salePrice = 0;
                 }
-            }
-            else
+
+                int diem = 0;
+
+                if (this.customerCbx.SelectedIndex != 1 && this.customerCbx.SelectedIndex != 0)
+                {
+                    diem = CustomerBUS.Instance.getById(this.customerCbx.SelectedValue.ToString()).Diem;
+                    scoreTxt.Text = diem + " điểm";
+                    if (diem <= 0)
+                    {
+                        this.PointToggleBtn.Enabled = false;
+                    } else
+                    {
+                        this.PointToggleBtn.Enabled = true;
+                    }
+                }
+                else
+                {
+                    scoreTxt.Text = diem + " điểm";
+                }
+
+                if (total - salePrice <= 0)
+                {
+                    this.totalPriceTxt.Text = "0";
+                    total = 0;
+                }
+                else
+                {
+                    this.totalPriceTxt.Text = (total - salePrice) + "";
+                    total = Convert.ToDecimal(this.totalPriceTxt.Text);
+                }
+
+                if (this.customerCbx.SelectedIndex != 1 && this.customerCbx.SelectedIndex != 0 && this.PointToggleBtn.Checked)
+                {
+                    scoreTxt.Text = 0 + " điểm";
+                    decimal scorePrice = diem * 1000;
+
+                    if (total - scorePrice <= 0)
+                    {
+                        if ((total - scorePrice) % 1000 > 0)
+                        {
+                            decimal roundedUp = Math.Sign(total - scorePrice) * (decimal)(Math.Ceiling(Math.Abs(total - scorePrice) / 1000) * 1000) + 1000;
+                            diemConLai = Convert.ToInt32(-1 * roundedUp / 1000);
+                        } else
+                        {
+                            diemConLai = Convert.ToInt32(-1 * (total - scorePrice) / 1000);
+                        }
+                        
+                        scoreTxt.Text = diemConLai + " điểm";
+                        this.totalPriceTxt.Text = "0";
+                    }
+                    else
+                    {
+                        this.totalPriceTxt.Text = (total - scorePrice) + "";
+                        diemConLai = 0;
+                        scoreTxt.Text = diemConLai + " điểm";
+                    }
+                }
+                else
+                {
+                    this.totalPriceTxt.Text = total + "";
+                    diemConLai = 0;
+                }
+            } catch (Exception ex)
             {
-                this.totalPriceTxt.Text = total + "";
-                diemConLai = 0;
+                Console.WriteLine(ex.Message);
             }
-
-            
-
         }
 
         private void getTotalPriceWhenChangeSaleAndCustomer()
@@ -473,29 +490,24 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             );
 
             PointToggleBtn.Enabled = this.customerCbx.SelectedIndex != 1 && this.customerCbx.SelectedIndex != 0;
-
-            PointToggleBtn.Checked = this.customerCbx.SelectedIndex != 1 && this.customerCbx.SelectedIndex != 0 ? PointToggleBtn.Checked : false;
-
-            getTotalPriceWhenChangeSaleAndCustomer();
+            if (this.customerCbx.SelectedIndex != 1 && this.customerCbx.SelectedIndex != 0 && this.PointToggleBtn.Checked)
+            {
+                int diem = CustomerBUS.Instance.getById(this.customerCbx.SelectedValue.ToString()).Diem;
+                this.PointToggleBtn.Checked = diem > 0;
+            } else
+            {
+                this.PointToggleBtn.Checked = false;
+            }
         }
 
         private void PointToggleBtn_CheckedChanged(object sender, EventArgs e)
         {
             try
             {
-                if (this.customerCbx.SelectedIndex != 1 && this.customerCbx.SelectedIndex != 0 && this.PointToggleBtn.Checked)
-                {
-                    if (Convert.ToDecimal(totalPriceTxt.Text.Split('.')[0]) > 0)
-                    {
-                        getTotalPriceWhenChangeSaleAndCustomer();
-                    }
-                }
-                else
+                if (Convert.ToDecimal(totalPriceTxt.Text.Split('.')[0]) > 0 || !PointToggleBtn.Checked)
                 {
                     getTotalPriceWhenChangeSaleAndCustomer();
-
                 }
-
             }
             catch (Exception ex) { Console.WriteLine(ex); }
         }

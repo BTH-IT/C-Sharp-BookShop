@@ -271,7 +271,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
             return isChecked && CustomValidation.Instance.checkCombobox(
                 this.supplierCbx,
-                this.errorBenefitMsg,
+                this.errorCustomerMsg,
                 new string[] { "required" }
             );
         }

@@ -98,7 +98,6 @@ namespace QuanLyCuaHangBanSach.DAO
                     WHERE maSach=@maSach;";
 
             decimal giaBan = data.DonGia + Convert.ToDecimal(Convert.ToDecimal(data.DonGia * Convert.ToDecimal(phanTramLoiNhuan / 100.0)).ToString().Split('.')[0]);
-
             BookDTO book = BookBUS.Instance.getById(data.MaSach.ToString());
 
             if (book.GiaBan <= giaBan)

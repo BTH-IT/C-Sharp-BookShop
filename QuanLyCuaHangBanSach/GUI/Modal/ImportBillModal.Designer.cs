@@ -95,7 +95,7 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1023, 61);
+            this.label1.Size = new System.Drawing.Size(1057, 61);
             this.label1.TabIndex = 9;
             this.label1.Text = "Tạo Đơn Nhập Hàng";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -137,7 +137,7 @@
             this.bookList.AutoScroll = true;
             this.bookList.Location = new System.Drawing.Point(3, 85);
             this.bookList.Name = "bookList";
-            this.bookList.Size = new System.Drawing.Size(987, 248);
+            this.bookList.Size = new System.Drawing.Size(1021, 248);
             this.bookList.TabIndex = 29;
             // 
             // label2
@@ -156,7 +156,7 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Location = new System.Drawing.Point(3, 486);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(996, 73);
+            this.panel1.Size = new System.Drawing.Size(1027, 73);
             this.panel1.TabIndex = 0;
             // 
             // totalPriceTxt
@@ -165,16 +165,16 @@
             this.totalPriceTxt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.totalPriceTxt.Location = new System.Drawing.Point(697, 0);
             this.totalPriceTxt.Name = "totalPriceTxt";
-            this.totalPriceTxt.Size = new System.Drawing.Size(295, 49);
+            this.totalPriceTxt.Size = new System.Drawing.Size(323, 49);
             this.totalPriceTxt.TabIndex = 33;
             this.totalPriceTxt.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label3
             // 
-            this.label3.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label3.Location = new System.Drawing.Point(603, 1);
+            this.label3.Font = new System.Drawing.Font("#9Slide03 Cabin SemiBold", 14.25F, System.Drawing.FontStyle.Bold);
+            this.label3.Location = new System.Drawing.Point(571, 1);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(88, 49);
+            this.label3.Size = new System.Drawing.Size(120, 49);
             this.label3.TabIndex = 28;
             this.label3.Text = "Tổng tiền:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -219,7 +219,7 @@
             this.flowLayoutPanel1.Controls.Add(this.panel1);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(11, 64);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1003, 571);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1034, 571);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // panel3
@@ -244,7 +244,7 @@
             // 
             // label5
             // 
-            this.label5.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label5.Font = new System.Drawing.Font("#9Slide03 Cabin SemiBold", 14.25F, System.Drawing.FontStyle.Bold);
             this.label5.Location = new System.Drawing.Point(3, 3);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(145, 49);
@@ -287,13 +287,13 @@
             this.panel2.Controls.Add(this.label13);
             this.panel2.Location = new System.Drawing.Point(603, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(396, 88);
+            this.panel2.Size = new System.Drawing.Size(427, 88);
             this.panel2.TabIndex = 1;
             // 
             // label6
             // 
             this.label6.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label6.Location = new System.Drawing.Point(366, 12);
+            this.label6.Location = new System.Drawing.Point(397, 13);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(23, 29);
             this.label6.TabIndex = 31;
@@ -318,7 +318,7 @@
             this.benefitTxt.ForeColor = System.Drawing.Color.Black;
             this.benefitTxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.benefitTxt.HoverState.Parent = this.benefitTxt;
-            this.benefitTxt.Location = new System.Drawing.Point(123, 12);
+            this.benefitTxt.Location = new System.Drawing.Point(154, 13);
             this.benefitTxt.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.benefitTxt.Name = "benefitTxt";
             this.benefitTxt.PasswordChar = '\0';
@@ -334,7 +334,7 @@
             // benefitLine
             // 
             this.benefitLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(212)))), ((int)(((byte)(191)))));
-            this.benefitLine.Location = new System.Drawing.Point(131, 43);
+            this.benefitLine.Location = new System.Drawing.Point(162, 44);
             this.benefitLine.Name = "benefitLine";
             this.benefitLine.Size = new System.Drawing.Size(254, 1);
             this.benefitLine.TabIndex = 30;
@@ -344,17 +344,17 @@
             this.errorBenefitMsg.AutoSize = true;
             this.errorBenefitMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.errorBenefitMsg.ForeColor = System.Drawing.Color.Red;
-            this.errorBenefitMsg.Location = new System.Drawing.Point(104, 57);
+            this.errorBenefitMsg.Location = new System.Drawing.Point(124, 57);
             this.errorBenefitMsg.Name = "errorBenefitMsg";
             this.errorBenefitMsg.Size = new System.Drawing.Size(0, 21);
             this.errorBenefitMsg.TabIndex = 27;
             // 
             // label13
             // 
-            this.label13.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label13.Font = new System.Drawing.Font("#9Slide03 Cabin SemiBold", 14.25F, System.Drawing.FontStyle.Bold);
             this.label13.Location = new System.Drawing.Point(3, 3);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(113, 49);
+            this.label13.Size = new System.Drawing.Size(150, 49);
             this.label13.TabIndex = 9;
             this.label13.Text = "Tỉ lệ lợi nhuận:";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -367,7 +367,7 @@
             this.panel4.Controls.Add(this.label2);
             this.panel4.Location = new System.Drawing.Point(3, 97);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(996, 383);
+            this.panel4.Size = new System.Drawing.Size(1027, 383);
             this.panel4.TabIndex = 2;
             // 
             // errorBookListMsg
@@ -385,7 +385,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1023, 709);
+            this.ClientSize = new System.Drawing.Size(1057, 709);
             this.Controls.Add(this.submitBtn);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cancelBtn);

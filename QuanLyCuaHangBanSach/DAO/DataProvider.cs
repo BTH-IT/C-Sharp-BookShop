@@ -9,7 +9,7 @@ namespace QuanLyCuaHangBanSach.DAO
         private string serverName = "localhost";
         private string databaseName = "qlchs";
         private string username = "root";
-        private string password = "7008";
+        private string password = "M19001098m&";
         private string port = "3306";
         private MySqlConnection connect = null;
         private static DataProvider instance;
@@ -38,9 +38,9 @@ namespace QuanLyCuaHangBanSach.DAO
 
             if (connect != null)
             {
-                connect.Open();
                 try
                 {
+                    connect.Open();
                     MySqlCommand cmd = new MySqlCommand(query, connect);
 
 

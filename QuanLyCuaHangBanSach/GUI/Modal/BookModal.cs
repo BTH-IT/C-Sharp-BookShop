@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 using QuanLyCuaHangBanSach.BUS;
 using QuanLyCuaHangBanSach.DTO;
@@ -112,7 +113,44 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
                     guna2PictureBox2.Image = img;
                 }
-            }
+				List<AuthDetailDTO> authDetails;
+				authDetails = AuthDetailBUS.Instance.getByPositionId(ManagerGUI.currentStaff.Ma.ToString());
+				if (authDetails != null)
+				{
+                    // check quyen tac gia
+					if (!authDetails.Any(c => c.maQuyenHan == 9))
+					{
+						this.btnAddTacGia.Enabled = false;
+					}
+					else
+					{
+						this.btnAddTacGia.Enabled = true;
+					}
+                    // check quyen the loai
+					if (!authDetails.Any(c => c.maQuyenHan == 4))
+					{
+						this.addBookTypeBtn.Enabled = false;
+					}
+					else
+					{
+						this.addBookTypeBtn.Enabled = true;
+					}
+					// check quyen nha xuat ban
+					if (!authDetails.Any(c => c.maQuyenHan == 5))
+					{
+						this.addPublisherBtn.Enabled = false;
+					}
+					else
+					{
+						this.addPublisherBtn.Enabled = true;
+					}
+
+				}
+				else
+				{
+					this.btnAddTacGia.Enabled = false;
+				}
+			}
             catch (Exception ex)
             {
                 Console.WriteLine(ex);
@@ -171,11 +209,11 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                     this.sellPriceLine,
                     new string[] { "required", "positive-number" , "space" }
                 );
-                if(isSellPriceValid)
-                {
+                if (isSellPriceValid)
+                { 
                     isSellPriceValid = CustomValidation.Instance.checkTextboxMatchWithOtherTextBox(sellPriceTxt, importPriceTxt, "Giá bán phải lớn hơn giá nhập", errorSellPriceMsg, sellPriceLine, "after");
-                }    
-                CustomValidation.Instance.checkTextboxMatchWithOtherTextBox(importPriceTxt, sellPriceTxt, "Giá nhập phải nhỏ hơn giá bán", this.errorImportPriceMsg, importPriceLine, "before");
+				}
+				CustomValidation.Instance.checkTextboxMatchWithOtherTextBox(importPriceTxt, sellPriceTxt, "Giá nhập phải nhỏ hơn giá bán", this.errorImportPriceMsg, importPriceLine, "before");
             }
             catch (Exception ex)
             {
@@ -199,7 +237,8 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 {
                     isImportPriceValid = CustomValidation.Instance.checkTextboxMatchWithOtherTextBox(importPriceTxt,sellPriceTxt,  "Giá nhập phải nhỏ hơn giá bán", this.errorImportPriceMsg , importPriceLine, "before");
                 }
-                CustomValidation.Instance.checkTextboxMatchWithOtherTextBox(sellPriceTxt, importPriceTxt, "Giá bán phải lớn hơn giá nhập", errorSellPriceMsg, sellPriceLine, "after");
+				bool isc = CustomValidation.Instance.checkTextboxMatchWithOtherTextBox(sellPriceTxt, importPriceTxt, "Giá bán phải lớn hơn giá nhập", errorSellPriceMsg, sellPriceLine, "after");
+                Console.WriteLine(isc);
             }
             catch (Exception ex)
             {
@@ -258,26 +297,6 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                     }
                 }
 
-                bool isCheckTxt2 = CustomValidation.Instance.checkTextbox(
-                    this.sellPriceTxt,
-                    this.errorSellPriceMsg,
-                    this.sellPriceLine,
-                    new string[] { "required", "positive-number", "space" }
-                );
-                if(isCheckTxt2)
-                {
-                    isCheckTxt2 = CustomValidation.Instance.checkTextboxMatchWithOtherTextBox(sellPriceTxt, importPriceTxt, "Giá bán phải lớn hơn giá nhập", errorSellPriceMsg, sellPriceLine, "after");
-				}
-                bool isCheckTxt3 = CustomValidation.Instance.checkTextbox(
-                    this.importPriceTxt,
-                    this.errorImportPriceMsg,
-                    this.importPriceLine,
-                    new string[] { "required", "number", "space" }
-                );
-                if(isCheckTxt3)
-                {
-                    isCheckTxt3 = CustomValidation.Instance.checkTextboxMatchWithOtherTextBox(importPriceTxt, sellPriceTxt, "Giá nhập phải nhỏ hơn giá bán", this.errorImportPriceMsg, importPriceLine, "before");
-				}
                 bool isCheckTxt4 = CustomValidation.Instance.checkTextbox(
                     this.publishYearTxt,
                     this.errorPublishYearMsg,
@@ -309,8 +328,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                     new string[] { "required" }
                 );
 
-                return isBookName && isCheckTxt2 && isCheckTxt3 && isCheckTxt4
-                && isCheckCbx1 && isCheckCbx2 && isCheckCbx3 && isCheckPictureBox;
+                return isBookName  && isCheckTxt4 && isCheckCbx1 && isCheckCbx2 && isCheckCbx3 && isCheckPictureBox;
             }
             catch (Exception ex)
             {
@@ -447,5 +465,70 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 Console.WriteLine(ex);
             }
         }
+
+		private void addBookTypeBtn_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				using (BookTypeModal BookTypeModal = new BookTypeModal())
+				{
+					BookTypeModal.ShowDialog();
+
+
+					if (BookTypeModal.isSubmitSuccess)
+					{
+						loadBookTypeCbx();  
+					}
+				}
+			}
+			catch (Exception ex)
+			{
+
+				Console.WriteLine(ex);
+			}
+		}
+
+		private void addPublisherBtn_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				using (PublisherModal PublisherModal = new PublisherModal())
+				{
+					PublisherModal.ShowDialog();
+
+
+					if (PublisherModal.isSubmitSuccess)
+					{
+                        loadPublisherCbx();
+					}
+				}
+			}
+			catch (Exception er)
+			{
+
+				Console.WriteLine(er);
+			}
+		}
+
+		private void btnAddTacGia_Click(object sender, EventArgs e)
+		{
+            try
+            {
+				using (AuthorModal authorModal = new AuthorModal())
+				{
+					authorModal.ShowDialog();
+					if (authorModal.isSubmitSuccess)
+					{
+						loadAuthorCbx();
+					}
+				}
+			}
+			catch (Exception er)
+			{
+
+				Console.WriteLine(er);
+			}
+
+		}
 	}
 }

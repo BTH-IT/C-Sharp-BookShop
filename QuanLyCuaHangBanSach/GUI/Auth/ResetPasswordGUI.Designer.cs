@@ -135,6 +135,7 @@
             this.confirmPwdTxt.TextChanged += new System.EventHandler(this.comfirmPwdTxt_TextChanged);
             this.confirmPwdTxt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.confirmPwdTxt_KeyDown);
             this.confirmPwdTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.confirmPwdTxt_KeyPress);
+            this.confirmPwdTxt.Leave += new System.EventHandler(this.comfirmPwdTxt_TextChanged);
             // 
             // pictureBox6
             // 
@@ -154,7 +155,7 @@
             this.errorMsg2.ForeColor = System.Drawing.Color.Red;
             this.errorMsg2.Location = new System.Drawing.Point(278, 69);
             this.errorMsg2.Name = "errorMsg2";
-            this.errorMsg2.Size = new System.Drawing.Size(0, 26);
+            this.errorMsg2.Size = new System.Drawing.Size(0, 21);
             this.errorMsg2.TabIndex = 2;
             // 
             // pictureBox4
@@ -240,6 +241,7 @@
             this.newPwdTxt.TextChanged += new System.EventHandler(this.newPwdTxt_TextChanged);
             this.newPwdTxt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.newPwdTxt_KeyDown);
             this.newPwdTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.newPwdTxt_KeyPress);
+            this.newPwdTxt.Leave += new System.EventHandler(this.newPwdTxt_TextChanged);
             // 
             // pictureBox5
             // 
@@ -259,7 +261,7 @@
             this.errorMsg1.ForeColor = System.Drawing.Color.Red;
             this.errorMsg1.Location = new System.Drawing.Point(278, 67);
             this.errorMsg1.Name = "errorMsg1";
-            this.errorMsg1.Size = new System.Drawing.Size(0, 26);
+            this.errorMsg1.Size = new System.Drawing.Size(0, 21);
             this.errorMsg1.TabIndex = 2;
             // 
             // pictureBox3
