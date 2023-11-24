@@ -9,13 +9,14 @@ namespace QuanLyCuaHangBanSach.GUI
 {
     public partial class MenuGUI : Form
     {
-        private StaffDTO staff;
+        public static StaffDTO staff;
+        
         public bool isChecked = false;
         private List<AuthDetailDTO> authDetails;
         public MenuGUI(int maNhanVien)
         {
             InitializeComponent();
-            this.staff = StaffBUS.Instance.getById(maNhanVien.ToString());
+            staff = StaffBUS.Instance.getById(maNhanVien.ToString());
 
             authDetails = AuthDetailBUS.Instance.getByPositionId(staff.MaChucVu.ToString());
 

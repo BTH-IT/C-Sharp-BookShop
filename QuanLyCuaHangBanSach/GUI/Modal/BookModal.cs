@@ -114,7 +114,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                     guna2PictureBox2.Image = img;
                 }
 				List<AuthDetailDTO> authDetails;
-				authDetails = AuthDetailBUS.Instance.getByPositionId(ManagerGUI.currentStaff.Ma.ToString());
+				authDetails = AuthDetailBUS.Instance.getByPositionId(MenuGUI.staff.MaChucVu.ToString());
 				if (authDetails != null)
 				{
                     // check quyen tac gia
