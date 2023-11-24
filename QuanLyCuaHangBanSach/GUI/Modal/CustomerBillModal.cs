@@ -511,5 +511,20 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             }
             catch (Exception ex) { Console.WriteLine(ex); }
         }
+
+        private void AddCustomerBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (CustomerModal modal = new CustomerModal())
+                {
+                    modal.ShowDialog();
+                }
+                this.loadCustomerCbx();
+            }
+            catch
+            {
+            }
+        }
     }
 }
