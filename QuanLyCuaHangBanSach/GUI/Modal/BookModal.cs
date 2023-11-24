@@ -118,7 +118,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 				if (authDetails != null)
 				{
                     // check quyen tac gia
-					if (!authDetails.Any(c => c.maQuyenHan == 9))
+					if (!authDetails.Any(c => c.maQuyenHan == 9 && c.TrangThai))
 					{
 						this.btnAddTacGia.Enabled = false;
 					}
@@ -127,7 +127,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 						this.btnAddTacGia.Enabled = true;
 					}
                     // check quyen the loai
-					if (!authDetails.Any(c => c.maQuyenHan == 4))
+					if (!authDetails.Any(c => c.maQuyenHan == 4 && c.TrangThai))
 					{
 						this.addBookTypeBtn.Enabled = false;
 					}
@@ -136,7 +136,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 						this.addBookTypeBtn.Enabled = true;
 					}
 					// check quyen nha xuat ban
-					if (!authDetails.Any(c => c.maQuyenHan == 5))
+					if (!authDetails.Any(c => c.maQuyenHan == 5 && c.TrangThai))
 					{
 						this.addPublisherBtn.Enabled = false;
 					}
@@ -149,6 +149,8 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 				else
 				{
 					this.btnAddTacGia.Enabled = false;
+                    this.addBookTypeBtn.Enabled = false;
+                    this.addPublisherBtn.Enabled = false;
 				}
 			}
             catch (Exception ex)

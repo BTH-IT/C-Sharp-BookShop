@@ -91,7 +91,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 				authDetails = AuthDetailBUS.Instance.getByPositionId(MenuGUI.staff.MaChucVu.ToString());
                 if (authDetails != null )
                 {
-                    if(!authDetails.Any(c=>c.maQuyenHan == 12))
+                    if(!authDetails.Any(c=>c.maQuyenHan == 12 && c.TrangThai))
                     {
 						this.btnAddPosition.Enabled = false;
                     }
