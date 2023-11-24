@@ -43,6 +43,7 @@
 			this.importPriceLine = new System.Windows.Forms.Panel();
 			this.label8 = new System.Windows.Forms.Label();
 			this.panel6 = new System.Windows.Forms.Panel();
+			this.addPublisherBtn = new System.Windows.Forms.Button();
 			this.errorPublisherMsg = new System.Windows.Forms.Label();
 			this.label18 = new System.Windows.Forms.Label();
 			this.publisherCbx = new Guna.UI.WinForms.GunaComboBox();
@@ -52,10 +53,12 @@
 			this.sellPriceLine = new System.Windows.Forms.Panel();
 			this.label6 = new System.Windows.Forms.Label();
 			this.panel3 = new System.Windows.Forms.Panel();
+			this.addBookTypeBtn = new System.Windows.Forms.Button();
 			this.errorBookTypeMsg = new System.Windows.Forms.Label();
 			this.label16 = new System.Windows.Forms.Label();
 			this.bookTypeCbx = new Guna.UI.WinForms.GunaComboBox();
 			this.panel2 = new System.Windows.Forms.Panel();
+			this.btnAddTacGia = new System.Windows.Forms.Button();
 			this.errorAuthorMsg = new System.Windows.Forms.Label();
 			this.label13 = new System.Windows.Forms.Label();
 			this.authorCbx = new Guna.UI.WinForms.GunaComboBox();
@@ -241,12 +244,13 @@
 			this.importPriceTxt.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
 			this.importPriceTxt.BorderThickness = 0;
 			this.importPriceTxt.Cursor = System.Windows.Forms.Cursors.IBeam;
-			this.importPriceTxt.DefaultText = "";
+			this.importPriceTxt.DefaultText = "0";
 			this.importPriceTxt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
 			this.importPriceTxt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
 			this.importPriceTxt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
 			this.importPriceTxt.DisabledState.Parent = this.importPriceTxt;
 			this.importPriceTxt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+			this.importPriceTxt.Enabled = false;
 			this.importPriceTxt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
 			this.importPriceTxt.FocusedState.Parent = this.importPriceTxt;
 			this.importPriceTxt.Font = new System.Drawing.Font("#9Slide03 Cabin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -259,6 +263,7 @@
 			this.importPriceTxt.PasswordChar = '\0';
 			this.importPriceTxt.PlaceholderText = "Nhập giá nhập";
 			this.importPriceTxt.SelectedText = "";
+			this.importPriceTxt.SelectionStart = 1;
 			this.importPriceTxt.ShadowDecoration.Parent = this.importPriceTxt;
 			this.importPriceTxt.Size = new System.Drawing.Size(425, 36);
 			this.importPriceTxt.TabIndex = 6;
@@ -295,6 +300,7 @@
 			// 
 			// panel6
 			// 
+			this.panel6.Controls.Add(this.addPublisherBtn);
 			this.panel6.Controls.Add(this.errorPublisherMsg);
 			this.panel6.Controls.Add(this.label18);
 			this.panel6.Controls.Add(this.publisherCbx);
@@ -302,6 +308,18 @@
 			this.panel6.Name = "panel6";
 			this.panel6.Size = new System.Drawing.Size(594, 88);
 			this.panel6.TabIndex = 2;
+			// 
+			// addPublisherBtn
+			// 
+			this.addPublisherBtn.Enabled = false;
+			this.addPublisherBtn.Image = ((System.Drawing.Image)(resources.GetObject("addPublisherBtn.Image")));
+			this.addPublisherBtn.Location = new System.Drawing.Point(536, 14);
+			this.addPublisherBtn.Margin = new System.Windows.Forms.Padding(4);
+			this.addPublisherBtn.Name = "addPublisherBtn";
+			this.addPublisherBtn.Size = new System.Drawing.Size(38, 38);
+			this.addPublisherBtn.TabIndex = 34;
+			this.addPublisherBtn.UseVisualStyleBackColor = true;
+			this.addPublisherBtn.Click += new System.EventHandler(this.addPublisherBtn_Click);
 			// 
 			// errorPublisherMsg
 			// 
@@ -344,7 +362,7 @@
 			this.publisherCbx.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
 			this.publisherCbx.OnHoverItemForeColor = System.Drawing.Color.White;
 			this.publisherCbx.Radius = 6;
-			this.publisherCbx.Size = new System.Drawing.Size(414, 36);
+			this.publisherCbx.Size = new System.Drawing.Size(369, 36);
 			this.publisherCbx.TabIndex = 5;
 			this.publisherCbx.Leave += new System.EventHandler(this.publisherCbx_SelectedIndexChanged);
 			// 
@@ -365,12 +383,13 @@
 			this.sellPriceTxt.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
 			this.sellPriceTxt.BorderThickness = 0;
 			this.sellPriceTxt.Cursor = System.Windows.Forms.Cursors.IBeam;
-			this.sellPriceTxt.DefaultText = "";
+			this.sellPriceTxt.DefaultText = "0";
 			this.sellPriceTxt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
 			this.sellPriceTxt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
 			this.sellPriceTxt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
 			this.sellPriceTxt.DisabledState.Parent = this.sellPriceTxt;
 			this.sellPriceTxt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+			this.sellPriceTxt.Enabled = false;
 			this.sellPriceTxt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
 			this.sellPriceTxt.FocusedState.Parent = this.sellPriceTxt;
 			this.sellPriceTxt.Font = new System.Drawing.Font("#9Slide03 Cabin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -383,11 +402,10 @@
 			this.sellPriceTxt.PasswordChar = '\0';
 			this.sellPriceTxt.PlaceholderText = "Nhập giá bán";
 			this.sellPriceTxt.SelectedText = "";
+			this.sellPriceTxt.SelectionStart = 1;
 			this.sellPriceTxt.ShadowDecoration.Parent = this.sellPriceTxt;
 			this.sellPriceTxt.Size = new System.Drawing.Size(425, 36);
 			this.sellPriceTxt.TabIndex = 4;
-			this.sellPriceTxt.TextChanged += new System.EventHandler(this.sellPriceTxt_TextChanged);
-			this.sellPriceTxt.Leave += new System.EventHandler(this.sellPriceTxt_TextChanged);
 			// 
 			// errorSellPriceMsg
 			// 
@@ -419,6 +437,7 @@
 			// 
 			// panel3
 			// 
+			this.panel3.Controls.Add(this.addBookTypeBtn);
 			this.panel3.Controls.Add(this.errorBookTypeMsg);
 			this.panel3.Controls.Add(this.label16);
 			this.panel3.Controls.Add(this.bookTypeCbx);
@@ -426,6 +445,18 @@
 			this.panel3.Name = "panel3";
 			this.panel3.Size = new System.Drawing.Size(594, 88);
 			this.panel3.TabIndex = 1;
+			// 
+			// addBookTypeBtn
+			// 
+			this.addBookTypeBtn.Enabled = false;
+			this.addBookTypeBtn.Image = ((System.Drawing.Image)(resources.GetObject("addBookTypeBtn.Image")));
+			this.addBookTypeBtn.Location = new System.Drawing.Point(536, 12);
+			this.addBookTypeBtn.Margin = new System.Windows.Forms.Padding(4);
+			this.addBookTypeBtn.Name = "addBookTypeBtn";
+			this.addBookTypeBtn.Size = new System.Drawing.Size(38, 38);
+			this.addBookTypeBtn.TabIndex = 31;
+			this.addBookTypeBtn.UseVisualStyleBackColor = true;
+			this.addBookTypeBtn.Click += new System.EventHandler(this.addBookTypeBtn_Click);
 			// 
 			// errorBookTypeMsg
 			// 
@@ -468,12 +499,13 @@
 			this.bookTypeCbx.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
 			this.bookTypeCbx.OnHoverItemForeColor = System.Drawing.Color.White;
 			this.bookTypeCbx.Radius = 6;
-			this.bookTypeCbx.Size = new System.Drawing.Size(414, 36);
+			this.bookTypeCbx.Size = new System.Drawing.Size(369, 36);
 			this.bookTypeCbx.TabIndex = 3;
 			this.bookTypeCbx.Leave += new System.EventHandler(this.bookTypeCbx_SelectedIndexChanged);
 			// 
 			// panel2
 			// 
+			this.panel2.Controls.Add(this.btnAddTacGia);
 			this.panel2.Controls.Add(this.errorAuthorMsg);
 			this.panel2.Controls.Add(this.label13);
 			this.panel2.Controls.Add(this.authorCbx);
@@ -481,6 +513,18 @@
 			this.panel2.Name = "panel2";
 			this.panel2.Size = new System.Drawing.Size(594, 88);
 			this.panel2.TabIndex = 1;
+			// 
+			// btnAddTacGia
+			// 
+			this.btnAddTacGia.Enabled = false;
+			this.btnAddTacGia.Image = ((System.Drawing.Image)(resources.GetObject("btnAddTacGia.Image")));
+			this.btnAddTacGia.Location = new System.Drawing.Point(536, 10);
+			this.btnAddTacGia.Margin = new System.Windows.Forms.Padding(4);
+			this.btnAddTacGia.Name = "btnAddTacGia";
+			this.btnAddTacGia.Size = new System.Drawing.Size(38, 38);
+			this.btnAddTacGia.TabIndex = 29;
+			this.btnAddTacGia.UseVisualStyleBackColor = true;
+			this.btnAddTacGia.Click += new System.EventHandler(this.btnAddTacGia_Click);
 			// 
 			// errorAuthorMsg
 			// 
@@ -523,7 +567,7 @@
 			this.authorCbx.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
 			this.authorCbx.OnHoverItemForeColor = System.Drawing.Color.White;
 			this.authorCbx.Radius = 6;
-			this.authorCbx.Size = new System.Drawing.Size(414, 36);
+			this.authorCbx.Size = new System.Drawing.Size(369, 36);
 			this.authorCbx.TabIndex = 2;
 			this.authorCbx.Leave += new System.EventHandler(this.authorCbx_SelectedIndexChanged);
 			// 
@@ -756,5 +800,8 @@
         private Guna.UI2.WinForms.Guna2TextBox publishYearTxt;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label2;
-    }
+		private System.Windows.Forms.Button addPublisherBtn;
+		private System.Windows.Forms.Button addBookTypeBtn;
+		private System.Windows.Forms.Button btnAddTacGia;
+	}
 }
