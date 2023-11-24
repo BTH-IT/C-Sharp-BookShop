@@ -251,7 +251,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             try
             {
                 List<BookDTO> newBookList = this.bookList.FindAll(
-                        (book) => book.TenSach.Contains(searchText) || book.MaSach.ToString().Contains(searchText)
+                        (book) => book.TenSach.ToLower().Contains(searchText.ToLower()) || book.MaSach.ToString().ToLower().Contains(searchText.ToLower())
                     );
 
                 if (this.priceFrom.Text.ToString() != string.Empty

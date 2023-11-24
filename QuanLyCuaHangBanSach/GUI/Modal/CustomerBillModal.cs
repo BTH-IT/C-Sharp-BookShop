@@ -490,8 +490,14 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             );
 
             PointToggleBtn.Enabled = this.customerCbx.SelectedIndex != 1 && this.customerCbx.SelectedIndex != 0;
-
-            getTotalPriceWhenChangeSaleAndCustomer();
+            if (this.customerCbx.SelectedIndex != 1 && this.customerCbx.SelectedIndex != 0 && this.PointToggleBtn.Checked)
+            {
+                int diem = CustomerBUS.Instance.getById(this.customerCbx.SelectedValue.ToString()).Diem;
+                this.PointToggleBtn.Checked = diem > 0;
+            } else
+            {
+                this.PointToggleBtn.Checked = false;
+            }
         }
 
         private void PointToggleBtn_CheckedChanged(object sender, EventArgs e)

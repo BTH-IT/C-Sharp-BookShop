@@ -91,5 +91,10 @@ namespace QuanLyCuaHangBanSach.BUS
         {
             return ImportBillDAO.Instance.getById(id);
         }
-    }
+
+		public string getLatestId()
+		{
+			return ImportBillDAO.Instance.getLatestId();
+		}
+	}
 }

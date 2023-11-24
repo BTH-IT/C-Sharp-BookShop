@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StaffModal));
 			this.panel10 = new System.Windows.Forms.Panel();
 			this.birthYearTxt = new Guna.UI2.WinForms.Guna2TextBox();
 			this.errorBirthYearMsg = new System.Windows.Forms.Label();
 			this.birthYearLine = new System.Windows.Forms.Panel();
 			this.label4 = new System.Windows.Forms.Label();
 			this.panel2 = new System.Windows.Forms.Panel();
+			this.btnAddPosition = new System.Windows.Forms.Button();
 			this.errorPositionMsg = new System.Windows.Forms.Label();
 			this.label13 = new System.Windows.Forms.Label();
 			this.positionCbx = new Guna.UI.WinForms.GunaComboBox();
@@ -140,6 +142,7 @@
 			// 
 			// panel2
 			// 
+			this.panel2.Controls.Add(this.btnAddPosition);
 			this.panel2.Controls.Add(this.errorPositionMsg);
 			this.panel2.Controls.Add(this.label13);
 			this.panel2.Controls.Add(this.positionCbx);
@@ -147,6 +150,18 @@
 			this.panel2.Name = "panel2";
 			this.panel2.Size = new System.Drawing.Size(594, 88);
 			this.panel2.TabIndex = 3;
+			// 
+			// btnAddPosition
+			// 
+			this.btnAddPosition.Enabled = false;
+			this.btnAddPosition.Image = ((System.Drawing.Image)(resources.GetObject("btnAddPosition.Image")));
+			this.btnAddPosition.Location = new System.Drawing.Point(530, 12);
+			this.btnAddPosition.Margin = new System.Windows.Forms.Padding(4);
+			this.btnAddPosition.Name = "btnAddPosition";
+			this.btnAddPosition.Size = new System.Drawing.Size(38, 38);
+			this.btnAddPosition.TabIndex = 28;
+			this.btnAddPosition.UseVisualStyleBackColor = true;
+			this.btnAddPosition.Click += new System.EventHandler(this.btnAddPosition_Click);
 			// 
 			// errorPositionMsg
 			// 
@@ -189,7 +204,7 @@
 			this.positionCbx.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
 			this.positionCbx.OnHoverItemForeColor = System.Drawing.Color.White;
 			this.positionCbx.Radius = 6;
-			this.positionCbx.Size = new System.Drawing.Size(408, 36);
+			this.positionCbx.Size = new System.Drawing.Size(363, 36);
 			this.positionCbx.TabIndex = 2;
 			this.positionCbx.Leave += new System.EventHandler(this.positionCbx_SelectedIndexChanged);
 			// 
@@ -604,5 +619,6 @@
         private System.Windows.Forms.Label errorGenderMsg;
         private System.Windows.Forms.Label label16;
         private Guna.UI.WinForms.GunaComboBox genderCbx;
-    }
+		private System.Windows.Forms.Button btnAddPosition;
+	}
 }

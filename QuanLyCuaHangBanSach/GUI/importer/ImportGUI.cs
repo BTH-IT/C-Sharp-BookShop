@@ -19,7 +19,9 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
         private bool PrintBtnAllowed = false;
         private int supplierID = 0;
         private int staffID;
-        private decimal total = 0;
+		private bool useExcel = false;
+		private int importBillId = Convert.ToInt32(ImportBillBUS.Instance.getLatestId());
+		private decimal total = 0;
         private List<ImportBillDetailDTO> importBillDetails = new List<ImportBillDetailDTO>();
 
         public ImportGUI(int staffID)
@@ -181,7 +183,7 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
 			catch (Exception ex) { Console.WriteLine(ex); }
         }
 
-        private void AddProductToCart(BookDTO book, decimal importPrice = -1, int amount = 1)
+        private void AddProductToCart(BookDTO book, decimal importPrice = -1, int amount = 1, bool disabled = false)
         {
             try
             {
@@ -189,6 +191,8 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
                 {
 					ImportCartProductUserControl product = new ImportCartProductUserControl();
                     product.details(book, amount);
+                    importBillId++;
+					product.ImportIdDetailLb.Text = importBillId.ToString();
 
                     product.ImportPriceTxb.MouseLeave += (object sender, EventArgs e) =>
                     {
@@ -204,6 +208,13 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
                     if (importPrice != -1)
                     {
                         product.ImportPriceTxb.Text = importPrice.ToString();
+					}
+
+                    if (disabled)
+                    {
+                        product.amountPanel.Enabled = false;
+                        product.ImportPriceTxb.Enabled = false;
+                        product.DeleteBtn.Enabled = false;
 					}
 
                     CartContainer.Controls.Add(product);
@@ -241,9 +252,12 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
             {
                 if (BookUserControl.clicked)
                 {
-                    int ChoseId_int = Convert.ToInt32(BookUserControl.ChoseId);
-                    BookDTO book = BookBUS.Instance.getById(BookUserControl.ChoseId);
-                    AddProductToCart(book);
+                    if (!useExcel)
+                    {
+                        int ChoseId_int = Convert.ToInt32(BookUserControl.ChoseId);
+                        BookDTO book = BookBUS.Instance.getById(BookUserControl.ChoseId);
+                        AddProductToCart(book);
+                    }
                 }
 
                 if (ImportCartProductUserControl.deletePress)
@@ -264,7 +278,16 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
                         idx++;
                     }
 
-                    CartHandler();
+                    idx = 0;
+                    importBillId = Convert.ToInt32(ImportBillBUS.Instance.getLatestId());
+					foreach (var importBillDetail in importBillDetails)
+                    {
+						ImportCartProductUserControl cartProduct = CartContainer.Controls[idx] as ImportCartProductUserControl;
+                        importBillId++;
+						cartProduct.ImportIdDetailLb.Text = importBillId.ToString();
+						idx++;
+                    }
+					CartHandler();
                     ImportCartProductUserControl.deleteId = "";
                     ImportCartProductUserControl.deletePress = false;
                 }
@@ -390,7 +413,9 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
                     SupplierNameLb.Text = "";
                     ProfitPercentTxb.Text = "";
                     supplierID = 0;
-                    CartHandler();
+                    useExcel = false;
+                    importBillId = Convert.ToInt32(ImportBillBUS.Instance.getLatestId());
+					CartHandler();
                     RenderBookContainer();
 				    label1.Focus();
 				}
@@ -433,9 +458,10 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
 					BookDTO book = BookBUS.Instance.getById(row[0].ToString());
 					if (book != null)
 					{
-						AddProductToCart(book, Convert.ToDecimal(row[3].ToString()), Convert.ToInt32(row[2].ToString()));
+						AddProductToCart(book, Convert.ToDecimal(row[3].ToString()), Convert.ToInt32(row[2].ToString()), true);
 					}
 				}
+                useExcel = true;
 			}
 			catch (Exception ex)
 			{
@@ -485,6 +511,33 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
 				}
 			}
 			catch (Exception ex) { Console.WriteLine(ex); }
+		}
+
+		private void CreateBookBtn_Click(object sender, EventArgs e)
+		{
+            using (BookModal bookM = new BookModal())
+            {
+                bookM.ShowDialog();
+
+				if (bookM.isSubmitSuccess)
+				{
+                    RenderBookContainer();
+				}
+			}
+		}
+
+		private void refreshBtn_Click(object sender, EventArgs e)
+		{
+			CartContainer.Controls.Clear();
+			importBillDetails.Clear();
+			SupplierNameLb.Text = "";
+			ProfitPercentTxb.Text = "";
+			supplierID = 0;
+			useExcel = false;
+			importBillId = Convert.ToInt32(ImportBillBUS.Instance.getLatestId());
+			CartHandler();
+			RenderBookContainer();
+			label1.Focus();
 		}
 	}
 }
