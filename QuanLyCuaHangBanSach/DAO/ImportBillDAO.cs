@@ -213,7 +213,19 @@ namespace QuanLyCuaHangBanSach.DAO
 
             return importBill;
         }
-        public bool createBookAmount(string madon, string id, int amount)
+
+		public string getLatestId()
+		{
+			DataTable dataTable = DataProvider.Instance.ExecuteQuery(
+				"SELECT maDonNhapHang FROM phieunhap ORDER BY maDonNhapHang DESC LIMIT 1;"
+			);
+
+			if (dataTable.Rows.Count <= 0) return null;
+
+            return dataTable.Rows[0]["maDonNhapHang"].ToString();
+		}
+
+		public bool createBookAmount(string madon, string id, int amount)
         {
             string sql = $@"UPDATE chitietphieunhap SET soLuongDoiTra=soLuongDoiTra+@soLuongDoiTra
                              WHERE maDonNhapHang=@maDonNhapHang and maSach=@maSach;";
