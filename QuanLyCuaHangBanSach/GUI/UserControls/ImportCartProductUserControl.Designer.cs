@@ -31,7 +31,7 @@
 			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ImportCartProductUserControl));
 			this.NameLb = new System.Windows.Forms.Label();
-			this.panel1 = new System.Windows.Forms.Panel();
+			this.amountPanel = new System.Windows.Forms.Panel();
 			this.PlusBtn = new System.Windows.Forms.PictureBox();
 			this.MinusBtn = new System.Windows.Forms.PictureBox();
 			this.AmountTxt = new System.Windows.Forms.TextBox();
@@ -42,7 +42,9 @@
 			this.StockLb = new System.Windows.Forms.Label();
 			this.ImportPriceTxb = new Guna.UI2.WinForms.Guna2TextBox();
 			this.VndLb = new System.Windows.Forms.Label();
-			this.panel1.SuspendLayout();
+			this.ImportIdLb = new System.Windows.Forms.Label();
+			this.ImportIdDetailLb = new System.Windows.Forms.Label();
+			this.amountPanel.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.PlusBtn)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.MinusBtn)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.BookImage)).BeginInit();
@@ -52,23 +54,23 @@
 			// 
 			this.NameLb.AutoEllipsis = true;
 			this.NameLb.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-			this.NameLb.Location = new System.Drawing.Point(107, 14);
+			this.NameLb.Location = new System.Drawing.Point(107, 41);
 			this.NameLb.Name = "NameLb";
-			this.NameLb.Size = new System.Drawing.Size(137, 21);
+			this.NameLb.Size = new System.Drawing.Size(171, 21);
 			this.NameLb.TabIndex = 1;
 			this.NameLb.Text = "Book Name";
 			// 
-			// panel1
+			// amountPanel
 			// 
-			this.panel1.BackColor = System.Drawing.Color.White;
-			this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.panel1.Controls.Add(this.PlusBtn);
-			this.panel1.Controls.Add(this.MinusBtn);
-			this.panel1.Controls.Add(this.AmountTxt);
-			this.panel1.Location = new System.Drawing.Point(110, 99);
-			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(93, 26);
-			this.panel1.TabIndex = 0;
+			this.amountPanel.BackColor = System.Drawing.Color.White;
+			this.amountPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.amountPanel.Controls.Add(this.PlusBtn);
+			this.amountPanel.Controls.Add(this.MinusBtn);
+			this.amountPanel.Controls.Add(this.AmountTxt);
+			this.amountPanel.Location = new System.Drawing.Point(110, 99);
+			this.amountPanel.Name = "amountPanel";
+			this.amountPanel.Size = new System.Drawing.Size(93, 26);
+			this.amountPanel.TabIndex = 0;
 			// 
 			// PlusBtn
 			// 
@@ -155,7 +157,7 @@
 			this.StockLb.AutoSize = true;
 			this.StockLb.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
 			this.StockLb.ForeColor = System.Drawing.Color.Gray;
-			this.StockLb.Location = new System.Drawing.Point(108, 59);
+			this.StockLb.Location = new System.Drawing.Point(108, 73);
 			this.StockLb.Name = "StockLb";
 			this.StockLb.Size = new System.Drawing.Size(24, 18);
 			this.StockLb.TabIndex = 2;
@@ -201,23 +203,46 @@
 			this.VndLb.Text = "VND";
 			this.VndLb.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
+			// ImportIdLb
+			// 
+			this.ImportIdLb.AutoSize = true;
+			this.ImportIdLb.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+			this.ImportIdLb.ForeColor = System.Drawing.Color.Gray;
+			this.ImportIdLb.Location = new System.Drawing.Point(109, 13);
+			this.ImportIdLb.Name = "ImportIdLb";
+			this.ImportIdLb.Size = new System.Drawing.Size(51, 18);
+			this.ImportIdLb.TabIndex = 30;
+			this.ImportIdLb.Text = "Mã đơn:";
+			// 
+			// ImportIdDetailLb
+			// 
+			this.ImportIdDetailLb.AutoEllipsis = true;
+			this.ImportIdDetailLb.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+			this.ImportIdDetailLb.ForeColor = System.Drawing.Color.Gray;
+			this.ImportIdDetailLb.Location = new System.Drawing.Point(154, 13);
+			this.ImportIdDetailLb.Name = "ImportIdDetailLb";
+			this.ImportIdDetailLb.Size = new System.Drawing.Size(90, 18);
+			this.ImportIdDetailLb.TabIndex = 31;
+			// 
 			// ImportCartProductUserControl
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.Controls.Add(this.ImportIdDetailLb);
+			this.Controls.Add(this.ImportIdLb);
 			this.Controls.Add(this.ImportPriceTxb);
 			this.Controls.Add(this.VndLb);
 			this.Controls.Add(this.IdLb);
 			this.Controls.Add(this.DeleteBtn);
-			this.Controls.Add(this.panel1);
+			this.Controls.Add(this.amountPanel);
 			this.Controls.Add(this.StockLb);
 			this.Controls.Add(this.NameLb);
 			this.Controls.Add(this.BookImage);
 			this.Margin = new System.Windows.Forms.Padding(0);
 			this.Name = "ImportCartProductUserControl";
 			this.Size = new System.Drawing.Size(283, 200);
-			this.panel1.ResumeLayout(false);
-			this.panel1.PerformLayout();
+			this.amountPanel.ResumeLayout(false);
+			this.amountPanel.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.PlusBtn)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.MinusBtn)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.BookImage)).EndInit();
@@ -230,15 +255,17 @@
 
 		private System.Windows.Forms.PictureBox BookImage;
 		private System.Windows.Forms.Label NameLb;
-		private System.Windows.Forms.Panel panel1;
 		private System.Windows.Forms.PictureBox PlusBtn;
 		private System.Windows.Forms.PictureBox MinusBtn;
 		private System.Windows.Forms.ToolTip toolTip1;
-		private Guna.UI2.WinForms.Guna2CircleButton DeleteBtn;
 		internal System.Windows.Forms.Label IdLb;
 		internal System.Windows.Forms.TextBox AmountTxt;
 		private System.Windows.Forms.Label StockLb;
 		private System.Windows.Forms.Label VndLb;
-		internal Guna.UI2.WinForms.Guna2TextBox ImportPriceTxb;
+		private System.Windows.Forms.Label ImportIdLb;
+		public System.Windows.Forms.Label ImportIdDetailLb;
+		public System.Windows.Forms.Panel amountPanel;
+		public Guna.UI2.WinForms.Guna2TextBox ImportPriceTxb;
+		public Guna.UI2.WinForms.Guna2CircleButton DeleteBtn;
 	}
 }
