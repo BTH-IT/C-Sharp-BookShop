@@ -18,8 +18,9 @@ namespace QuanLyCuaHangBanSach.GUI.UserControls
         private int positionId;
         public delegate void OnPermissionAuthorizeChange(int staffId, string screenName);
         public static event OnPermissionAuthorizeChange onPermissionAuthorizeChange;
-
-        public AuthorizeCkb(string text, int positionId, int permissionId, bool isCheck)
+		private List<int> authForStaffNhapHang = new List<int>() { 1, 3, 4, 5, 7, 9, 14, 16 };
+		private List<int> authForStaffBanHang = new List<int>() { 6, 8, 10, 13, 16 };
+		public AuthorizeCkb(string text, int positionId, int permissionId, bool isCheck)
         {
             InitializeComponent();
             this.permissionId = permissionId;
@@ -29,7 +30,19 @@ namespace QuanLyCuaHangBanSach.GUI.UserControls
             if(positionId == 1)
             {
                 this.ckx.Enabled = false;   
-            }
+            }else if(positionId == 7) 
+            {
+                if(authForStaffNhapHang.Contains(permissionId))
+                {
+                    this.ckx.Enabled = false;
+                }    
+            }else if(positionId == 8)
+            {
+                if(authForStaffBanHang.Contains(permissionId))
+                {
+                    this.ckx.Enabled=false; 
+                }    
+            }    
         }
 
         public void ckx_CheckedChanged()
