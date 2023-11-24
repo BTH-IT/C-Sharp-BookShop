@@ -12,6 +12,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
     {
         private PositionDTO position;
         private List<AuthDetailDTO> authDetailList = new List<AuthDetailDTO>();
+
         public AuthorizeModal(int maChucVu)
         {
             InitializeComponent();
