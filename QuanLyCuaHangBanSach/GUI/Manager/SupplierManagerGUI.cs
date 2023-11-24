@@ -27,12 +27,12 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
                 foreach (SupplierDTO Supplier in SupplierList)
                 {
-                    this.dgvSupplier.Rows.Add(new object[] {
-                        Supplier.MaNhaCungCap,
-                        Supplier.TenNhaCungCap,
-                        Supplier.DiaChi,
-                        Supplier.SoDienThoai,
-                    });
+					    this.dgvSupplier.Rows.Add(new object[] {
+						    Supplier.MaNhaCungCap,
+						    Supplier.TenNhaCungCap,
+						    Supplier.DiaChi,
+						    Supplier.SoDienThoai,
+					    });
                 }
             }
             catch (Exception er)

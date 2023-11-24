@@ -26,12 +26,16 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
                 foreach (PublisherDTO Publisher in PublisherList)
                 {
-                    this.dgvPublisher.Rows.Add(new object[] {
-                        Publisher.MaNhaXuatBan,
-                        Publisher.TenNhaXuatBan,
-                        Publisher.DiaChi,
-                        Publisher.SoDienThoai,
-                    });
+                    if(Publisher.MaNhaXuatBan != 0)
+                    {
+					    this.dgvPublisher.Rows.Add(new object[] {
+						    Publisher.MaNhaXuatBan,
+						    Publisher.TenNhaXuatBan,
+						    Publisher.DiaChi,
+						    Publisher.SoDienThoai,
+					    });
+					}
+                 
                 }
             }
             catch (Exception er)

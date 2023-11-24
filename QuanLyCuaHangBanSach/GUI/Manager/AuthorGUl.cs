@@ -29,12 +29,15 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                 dgvAuthor.Hide();
 				foreach (AuthorDTO Author in AuthorList)
                 {
-                    this.dgvAuthor.Rows.Add(new object[] {
-                    Author.Ma,
-                    Author.Ten,
-                    Author.GioiTinh,
-                    Author.NamSinh,
-                });
+                    if(Author.Ma != 0)
+                    {
+						this.dgvAuthor.Rows.Add(new object[] {
+					    Author.Ma,
+					    Author.Ten,
+					    Author.GioiTinh,
+					    Author.NamSinh,
+					    });
+					}    
                 }
                 dgvAuthor.Show();
             }
