@@ -433,6 +433,7 @@
     <Compile Include="Authorization.cs" />
     <Compile Include="BUS\AuthDetailBUS.cs" />
     <Compile Include="BUS\ImportBillBUS.cs" />
+    <Compile Include="BUS\OrderBillBUS.cs" />
     <Compile Include="BUS\PerrmissionBUS.cs" />
     <Compile Include="BUS\PositionBUS.cs" />
     <Compile Include="BUS\SaleBUS.cs" />
@@ -453,6 +454,7 @@
     <Compile Include="DAO\AuthDetailDAO.cs" />
     <Compile Include="DAO\CustomerBillDAO.cs" />
     <Compile Include="DAO\ImportBillDAO.cs" />
+    <Compile Include="DAO\OrderBillDAO.cs" />
     <Compile Include="DAO\PositionDAO.cs" />
     <Compile Include="DAO\PermissionDAO.cs" />
     <Compile Include="DAO\SaleDAO.cs" />
@@ -461,6 +463,8 @@
     <Compile Include="DAO\SupplierDAO.cs" />
     <Compile Include="DTO\AuthDetailDTO.cs" />
     <Compile Include="DTO\BookDTO.cs" />
+    <Compile Include="DTO\OrderBillDetailDTO.cs" />
+    <Compile Include="DTO\OrderBillDTO.cs" />
     <Compile Include="DTO\PermissionDTO.cs" />
     <Compile Include="DTO\PositionDTO.cs" />
     <Compile Include="DTO\SupplierDTO.cs" />
@@ -542,6 +546,12 @@
     </Compile>
     <Compile Include="GUI\Manager\CustomerStatisticGUI.Designer.cs">
       <DependentUpon>CustomerStatisticGUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Manager\OrderBillManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Manager\OrderBillManager.Designer.cs">
+      <DependentUpon>OrderBillManager.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Manager\ProductStatisticGUI.cs">
       <SubType>Form</SubType>
@@ -753,6 +763,12 @@
     <Compile Include="GUI\Modal\ViewImportBillModal.Designer.cs">
       <DependentUpon>ViewImportBillModal.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Modal\ViewOrderBillModal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Modal\ViewOrderBillModal.Designer.cs">
+      <DependentUpon>ViewOrderBillModal.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Report\BarcodeDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -763,6 +779,14 @@
     </Compile>
     <Compile Include="GUI\Report\BarcodePrintForm.Designer.cs">
       <DependentUpon>BarcodePrintForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Report\BookD.cs">
+      <DependentUpon>BookD.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Report\BookD.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BookD.xsd</DependentUpon>
     </Compile>
     <Compile Include="GUI\Report\bookDataSet.cs">
       <DependentUpon>bookDataSet.xsd</DependentUpon>
@@ -783,6 +807,12 @@
     </Compile>
     <Compile Include="GUI\Report\ImportBillPrintForm.Designer.cs">
       <DependentUpon>ImportBillPrintForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Report\OrderBillPrintForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Report\OrderBillPrintForm.Designer.cs">
+      <DependentUpon>OrderBillPrintForm.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\UserControls\AuthorizeCkb.cs">
       <SubType>UserControl</SubType>
@@ -894,6 +924,9 @@
     <EmbeddedResource Include="GUI\Auth\SendCodeGUI.resx">
       <DependentUpon>SendCodeGUI.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Manager\OrderBillManager.resx">
+      <DependentUpon>OrderBillManager.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Manager\ProductStatisticGUI.resx">
       <DependentUpon>ProductStatisticGUI.cs</DependentUpon>
     </EmbeddedResource>
@@ -987,6 +1020,9 @@
     <EmbeddedResource Include="GUI\Modal\ViewImportBillModal.resx">
       <DependentUpon>ViewImportBillModal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Modal\ViewOrderBillModal.resx">
+      <DependentUpon>ViewOrderBillModal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Report\BarcodePrintForm.resx">
       <DependentUpon>BarcodePrintForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -999,6 +1035,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Report\ImportBillReport.rdlc" />
     <EmbeddedResource Include="GUI\Report\CustomerBillReport.rdlc" />
+    <EmbeddedResource Include="GUI\Report\OrderBillPrintForm.resx">
+      <DependentUpon>OrderBillPrintForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Report\OrderBillReport.rdlc" />
     <EmbeddedResource Include="GUI\UserControls\AuthorizeCkb.resx">
       <DependentUpon>AuthorizeCkb.cs</DependentUpon>
     </EmbeddedResource>
@@ -1047,6 +1087,17 @@
     </None>
     <None Include="GUI\Report\BarcodeDataSet.xss">
       <DependentUpon>BarcodeDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="GUI\Report\BookD.xsc">
+      <DependentUpon>BookD.xsd</DependentUpon>
+    </None>
+    <None Include="GUI\Report\BookD.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BookD.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="GUI\Report\BookD.xss">
+      <DependentUpon>BookD.xsd</DependentUpon>
     </None>
     <None Include="GUI\Report\bookDataSet.xsc">
       <DependentUpon>bookDataSet.xsd</DependentUpon>
