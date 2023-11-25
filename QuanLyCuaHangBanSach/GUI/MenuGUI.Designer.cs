@@ -127,6 +127,7 @@
 			this.import.Size = new System.Drawing.Size(271, 231);
 			this.import.TabIndex = 11;
 			this.import.Visible = false;
+			this.import.Click += new System.EventHandler(this.label4_Click);
 			// 
 			// label4
 			// 
@@ -139,6 +140,7 @@
 			this.label4.TabIndex = 8;
 			this.label4.Text = "Nhập Hàng";
 			this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.label4.Click += new System.EventHandler(this.label4_Click);
 			// 
 			// guna2PictureBox3
 			// 
@@ -168,6 +170,7 @@
 			this.manage.Size = new System.Drawing.Size(271, 231);
 			this.manage.TabIndex = 10;
 			this.manage.Visible = false;
+			this.manage.Click += new System.EventHandler(this.guna2PictureBox2_Click);
 			// 
 			// label3
 			// 
@@ -180,6 +183,7 @@
 			this.label3.TabIndex = 8;
 			this.label3.Text = "Quản Lý";
 			this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.label3.Click += new System.EventHandler(this.guna2PictureBox2_Click);
 			// 
 			// guna2PictureBox2
 			// 
@@ -222,6 +226,7 @@
 			this.label2.TabIndex = 6;
 			this.label2.Text = "Bán Hàng";
 			this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.label2.Click += new System.EventHandler(this.sell_Click_1);
 			// 
 			// guna2PictureBox1
 			// 
@@ -234,14 +239,15 @@
 			this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
 			this.guna2PictureBox1.TabIndex = 5;
 			this.guna2PictureBox1.TabStop = false;
+			this.guna2PictureBox1.Click += new System.EventHandler(this.sell_Click_1);
 			// 
 			// MenuGUI
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 23F);
+			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 18F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
 			this.BackColor = System.Drawing.Color.White;
-			this.ClientSize = new System.Drawing.Size(1184, 51);
+			this.ClientSize = new System.Drawing.Size(1184, 73);
 			this.ControlBox = false;
 			this.Controls.Add(this.panel2);
 			this.Controls.Add(this.panel1);

@@ -16,7 +16,7 @@ namespace QuanLyCuaHangBanSach.DTO
 		public bool TrangThai { get; set; }
 		
 		public OrderBillDTO() { }	
-		public OrderBillDTO(int maPhieuYeuCau,int maNhaCungCap,int maNhanVien,DateTime ngayLap,bool trangThai) 
+		public OrderBillDTO(int maPhieuYeuCau,int maNhaCungCap,int maNhanVien,DateTime ngayLap, bool trangThai) 
 		{
 			this.MaPhieuYeuCau = maPhieuYeuCau;
 			this.MaNhaCungCap = maNhaCungCap;

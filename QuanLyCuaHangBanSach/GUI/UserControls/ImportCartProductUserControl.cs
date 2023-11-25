@@ -15,14 +15,16 @@ namespace QuanLyCuaHangBanSach.GUI.Vendor
 {
     public partial class ImportCartProductUserControl : UserControl
     {
-        public static bool AmountChanged = false;
+		private int mode;
+		public static bool AmountChanged = false;
         public static bool deletePress = false;
         public static string AmountChangedId = "";
         public static string deleteId = "";
 
-        public ImportCartProductUserControl()
+        public ImportCartProductUserControl(int mode) //1: import, 2: request
         {
             InitializeComponent();
+            this.mode = mode;
         }
 
         public void details(BookDTO book, int amount = 1)
@@ -40,7 +42,15 @@ namespace QuanLyCuaHangBanSach.GUI.Vendor
             
             StockLb.Text = "ST: " + book.SoLuongConLai;
             IdLb.Text = book.MaSach.ToString();
-            ImportPriceTxb.Text = book.GiaNhap.ToString();
+            if (mode == 1)
+            {
+                ImportPriceTxb.Text = book.GiaNhap.ToString();
+            }
+            else
+            {
+				ImportPriceTxb.Visible = false;
+                VndLb.Visible = false;
+			}
             NameLb.Text = book.TenSach;
             AmountTxt.Text = amount.ToString();
             toolTip1.SetToolTip(NameLb, NameLb.Text);

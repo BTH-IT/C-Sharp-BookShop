@@ -60,9 +60,18 @@ namespace QuanLyCuaHangBanSach.BUS
 			return OrderBillDAO.Instance.insert(data);	
 		}
 
+		public OrderBillDTO insertReturnBill(OrderBillDTO data)
+		{
+			return OrderBillDAO.Instance.insertReturnBill(data);
+		}
+
 		public bool update(OrderBillDTO data)
 		{
 			return OrderBillDAO.Instance.update(data);
+		}
+		public bool updateTrangThai(string maPhieuyeucau, int trangThai)
+		{
+			return OrderBillDAO.Instance.updateTrangThai(maPhieuyeucau, trangThai);
 		}
 		public string getLatestId()
 		{
