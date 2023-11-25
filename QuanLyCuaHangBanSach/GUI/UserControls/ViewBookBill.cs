@@ -20,9 +20,16 @@ namespace QuanLyCuaHangBanSach.GUI.UserControls
             InitializeComponent();
             NameLb.Text = name;
             StockLb.Text = "SL: " + amount;
-            PriceLb.Text = string.Format("{0:N0} VND", price);
+            if(price != 0)
+            {
+				PriceLb.Text = string.Format("{0:N0} VND", price);
+            }
+            else
+            {
+                PriceLb.Visible = false;    
+            }
 
-            MemoryStream ms = new MemoryStream(image);
+			MemoryStream ms = new MemoryStream(image);
             Image img = Image.FromStream(ms);
 
             this.BookImage.Image = img;
