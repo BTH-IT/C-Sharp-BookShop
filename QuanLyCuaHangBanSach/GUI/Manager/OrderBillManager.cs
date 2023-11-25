@@ -233,12 +233,11 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 			}
 
 			DataGridViewRow row = this.dgvOrderBill.Rows[this.dgvOrderBill.CurrentCell.RowIndex];
-			//sửa lại
-			ImportBillDTO importBill = ImportBillBUS.Instance.getById(row.Cells[1].Value.ToString());
+			OrderBillDTO OrderBill = OrderBillBUS.Instance.getById(row.Cells[0].Value.ToString());
 
-			using (ViewImportBillModal viewImportBillModal = new ViewImportBillModal(importBill))
+			using (ViewOrderBillModal viewOrderBillModal = new ViewOrderBillModal(OrderBill))
 			{
-				viewImportBillModal.ShowDialog();
+				viewOrderBillModal.ShowDialog();
 			}
 		}
 		private void viewMoreBtn_Click(object sender, EventArgs e)
@@ -254,12 +253,11 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 					}
 
 					DataGridViewRow row = this.dgvOrderBill.Rows[this.dgvOrderBill.CurrentCell.RowIndex];
-					//sửa lại
-					ImportBillDTO importBill = ImportBillBUS.Instance.getById(row.Cells[0].Value.ToString());
+					OrderBillDTO OrderBill = OrderBillBUS.Instance.getById(row.Cells[0].Value.ToString());
 
-					using (ViewImportBillModal viewImportBillModal = new ViewImportBillModal(importBill))
+					using (ViewOrderBillModal viewOrderBillModal = new ViewOrderBillModal(OrderBill))
 					{
-						viewImportBillModal.ShowDialog();
+						viewOrderBillModal.ShowDialog();
 					}
 				}
 				else

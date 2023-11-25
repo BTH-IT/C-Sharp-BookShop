@@ -763,6 +763,12 @@
     <Compile Include="GUI\Modal\ViewImportBillModal.Designer.cs">
       <DependentUpon>ViewImportBillModal.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Modal\ViewOrderBillModal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Modal\ViewOrderBillModal.Designer.cs">
+      <DependentUpon>ViewOrderBillModal.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Report\BarcodeDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1013,6 +1019,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Modal\ViewImportBillModal.resx">
       <DependentUpon>ViewImportBillModal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Modal\ViewOrderBillModal.resx">
+      <DependentUpon>ViewOrderBillModal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Report\BarcodePrintForm.resx">
       <DependentUpon>BarcodePrintForm.cs</DependentUpon>
