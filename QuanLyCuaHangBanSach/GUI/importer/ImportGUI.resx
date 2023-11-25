@@ -361,6 +361,16 @@
         eIVqAAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="CreateBookBtn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1
+        MAAA6mAAADqYAAAXcJy6UTwAAAAHdElNRQfnCxgBIxHwM/JfAAAA30lEQVRYR+2XUQ7CIAyGiXeaHsrN
+        MwzvNU9g4iV0cIE917/YFxgmBgd7aZM/S9pmfIyOgikyosOJ/PVIbmZ15C37JFrfMOAFA1Ms30u4vnXk
+        bikA+yRc3zDbRwrAPgnXNwVQAAVQgG0B0ER4b+etFM/7L8KAyxrALbncvHgr90NoYNLV0pc1EUBGfM7Q
+        UrMJDTTvCoDleHJvt7lgC4Ul4EJAQfRwTHGhfBdy/ypC5E6ovXPxKWrb37DAFEABFEABdgf49PMYgH0S
+        rm+Y7ZACwNfuciqnKItZv0RjWWMx5g2TzRVH8L+FrAAAAABJRU5ErkJggg==
+</value>
+  </data>
   <data name="ExcelImportBtn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
@@ -405,16 +415,6 @@
         XcX07Xb7siVfcFTsIQ1rnfGTlJvl3qh7+XQ9gqLFSSyTsxgNznQ5QMbXLkVNA99fn02s4/T+gB+LxQjG
         31HpxD5sBktxruSa+4G5nsYVJJt2JPeyKcRc3jbWX8Np5o9Iqm8lEndQMxjVIK4/w2iHk9F1wmxUtDt/
         5UojEPgDN0t8NXpZl9gAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="CreateBookBtn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1
-        MAAA6mAAADqYAAAXcJy6UTwAAAAHdElNRQfnCxgBIxHwM/JfAAAA30lEQVRYR+2XUQ7CIAyGiXeaHsrN
-        MwzvNU9g4iV0cIE917/YFxgmBgd7aZM/S9pmfIyOgikyosOJ/PVIbmZ15C37JFrfMOAFA1Ms30u4vnXk
-        bikA+yRc3zDbRwrAPgnXNwVQAAVQgG0B0ER4b+etFM/7L8KAyxrALbncvHgr90NoYNLV0pc1EUBGfM7Q
-        UrMJDTTvCoDleHJvt7lgC4Ul4EJAQfRwTHGhfBdy/ypC5E6ovXPxKWrb37DAFEABFEABdgf49PMYgH0S
-        rm+Y7ZACwNfuciqnKItZv0RjWWMx5g2TzRVH8L+FrAAAAABJRU5ErkJggg==
 </value>
   </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">

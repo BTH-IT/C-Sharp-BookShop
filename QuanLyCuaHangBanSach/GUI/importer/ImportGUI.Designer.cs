@@ -39,21 +39,22 @@
 			this.ProductSearchInp = new Guna.UI2.WinForms.Guna2TextBox();
 			this.FilterBtn = new System.Windows.Forms.Button();
 			this.panel1 = new System.Windows.Forms.Panel();
-			this.QRScanBtn = new Guna.UI.WinForms.GunaButton();
 			this.FilterContainer = new System.Windows.Forms.Panel();
 			this.BookContainer = new System.Windows.Forms.FlowLayoutPanel();
 			this.panel3 = new System.Windows.Forms.Panel();
+			this.refreshBtn = new Guna.UI.WinForms.GunaAdvenceButton();
 			this.panel4 = new System.Windows.Forms.Panel();
+			this.PrintRequestBtn = new System.Windows.Forms.Button();
 			this.ErrorLb = new System.Windows.Forms.Label();
 			this.ProfitPercentTxb = new Guna.UI2.WinForms.Guna2TextBox();
-			this.VndLb = new System.Windows.Forms.Label();
+			this.PercentLb = new System.Windows.Forms.Label();
 			this.panel7 = new System.Windows.Forms.Panel();
 			this.NameInp = new Guna.UI2.WinForms.Guna2TextBox();
 			this.TotalMoneyLb = new System.Windows.Forms.Label();
 			this.NameResultContainer = new System.Windows.Forms.FlowLayoutPanel();
 			this.CartContainer = new System.Windows.Forms.FlowLayoutPanel();
 			this.SupplierLb = new System.Windows.Forms.Label();
-			this.PrintBtn = new System.Windows.Forms.Button();
+			this.PrintImportBtn = new System.Windows.Forms.Button();
 			this.AddCustomerBtn = new System.Windows.Forms.Button();
 			this.label3 = new System.Windows.Forms.Label();
 			this.TotalLb = new System.Windows.Forms.Label();
@@ -64,11 +65,13 @@
 			this.gunaElipsePanel1 = new Guna.UI.WinForms.GunaElipsePanel();
 			this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
 			this.panel2 = new System.Windows.Forms.Panel();
+			this.CreateBookBtn = new Guna.UI2.WinForms.Guna2Button();
 			this.ExcelImportBtn = new Guna.UI2.WinForms.Guna2Button();
 			this.panel6 = new System.Windows.Forms.Panel();
 			this.LogoutBtn = new Guna.UI2.WinForms.Guna2Button();
-			this.CreateBookBtn = new Guna.UI2.WinForms.Guna2Button();
-			this.refreshBtn = new Guna.UI.WinForms.GunaAdvenceButton();
+			this.QRScanBtn = new Guna.UI.WinForms.GunaButton();
+			this.ManualImportToggleBtn = new Guna.UI2.WinForms.Guna2ToggleSwitch();
+			this.label4 = new System.Windows.Forms.Label();
 			this.flowLayoutPanel2.SuspendLayout();
 			this.flowLayoutPanel4.SuspendLayout();
 			this.flowLayoutPanel5.SuspendLayout();
@@ -195,41 +198,14 @@
 			// 
 			// panel1
 			// 
+			this.panel1.Controls.Add(this.label4);
+			this.panel1.Controls.Add(this.ManualImportToggleBtn);
 			this.panel1.Controls.Add(this.QRScanBtn);
 			this.panel1.Location = new System.Drawing.Point(294, 0);
 			this.panel1.Margin = new System.Windows.Forms.Padding(0);
 			this.panel1.Name = "panel1";
 			this.panel1.Size = new System.Drawing.Size(492, 48);
 			this.panel1.TabIndex = 1;
-			// 
-			// QRScanBtn
-			// 
-			this.QRScanBtn.Animated = true;
-			this.QRScanBtn.AnimationHoverSpeed = 0.07F;
-			this.QRScanBtn.AnimationSpeed = 0.03F;
-			this.QRScanBtn.BackColor = System.Drawing.Color.Transparent;
-			this.QRScanBtn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-			this.QRScanBtn.BorderColor = System.Drawing.Color.White;
-			this.QRScanBtn.BorderSize = 1;
-			this.QRScanBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.QRScanBtn.DialogResult = System.Windows.Forms.DialogResult.None;
-			this.QRScanBtn.FocusedColor = System.Drawing.Color.PaleTurquoise;
-			this.QRScanBtn.Font = new System.Drawing.Font("Segoe UI", 9F);
-			this.QRScanBtn.ForeColor = System.Drawing.Color.White;
-			this.QRScanBtn.Image = ((System.Drawing.Image)(resources.GetObject("QRScanBtn.Image")));
-			this.QRScanBtn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
-			this.QRScanBtn.ImageSize = new System.Drawing.Size(26, 26);
-			this.QRScanBtn.Location = new System.Drawing.Point(447, 3);
-			this.QRScanBtn.Name = "QRScanBtn";
-			this.QRScanBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-			this.QRScanBtn.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-			this.QRScanBtn.OnHoverForeColor = System.Drawing.Color.White;
-			this.QRScanBtn.OnHoverImage = null;
-			this.QRScanBtn.OnPressedColor = System.Drawing.Color.Black;
-			this.QRScanBtn.Radius = 8;
-			this.QRScanBtn.Size = new System.Drawing.Size(42, 42);
-			this.QRScanBtn.TabIndex = 1;
-			this.QRScanBtn.Click += new System.EventHandler(this.QRScanBtn_Click);
 			// 
 			// FilterContainer
 			// 
@@ -260,18 +236,52 @@
 			this.panel3.Size = new System.Drawing.Size(359, 702);
 			this.panel3.TabIndex = 1;
 			// 
+			// refreshBtn
+			// 
+			this.refreshBtn.AnimationHoverSpeed = 0.07F;
+			this.refreshBtn.AnimationSpeed = 0.03F;
+			this.refreshBtn.BackColor = System.Drawing.Color.Transparent;
+			this.refreshBtn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+			this.refreshBtn.BorderColor = System.Drawing.Color.Black;
+			this.refreshBtn.CheckedBaseColor = System.Drawing.Color.PaleTurquoise;
+			this.refreshBtn.CheckedBorderColor = System.Drawing.Color.Black;
+			this.refreshBtn.CheckedForeColor = System.Drawing.Color.White;
+			this.refreshBtn.CheckedImage = ((System.Drawing.Image)(resources.GetObject("refreshBtn.CheckedImage")));
+			this.refreshBtn.CheckedLineColor = System.Drawing.Color.DimGray;
+			this.refreshBtn.DialogResult = System.Windows.Forms.DialogResult.None;
+			this.refreshBtn.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(159)))), ((int)(((byte)(147)))));
+			this.refreshBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold);
+			this.refreshBtn.ForeColor = System.Drawing.Color.White;
+			this.refreshBtn.Image = ((System.Drawing.Image)(resources.GetObject("refreshBtn.Image")));
+			this.refreshBtn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			this.refreshBtn.ImageSize = new System.Drawing.Size(30, 30);
+			this.refreshBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+			this.refreshBtn.Location = new System.Drawing.Point(307, 13);
+			this.refreshBtn.Name = "refreshBtn";
+			this.refreshBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+			this.refreshBtn.OnHoverBorderColor = System.Drawing.Color.Transparent;
+			this.refreshBtn.OnHoverForeColor = System.Drawing.Color.White;
+			this.refreshBtn.OnHoverImage = null;
+			this.refreshBtn.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+			this.refreshBtn.OnPressedColor = System.Drawing.Color.Black;
+			this.refreshBtn.Radius = 6;
+			this.refreshBtn.Size = new System.Drawing.Size(36, 36);
+			this.refreshBtn.TabIndex = 32;
+			this.refreshBtn.Click += new System.EventHandler(this.refreshBtn_Click);
+			// 
 			// panel4
 			// 
+			this.panel4.Controls.Add(this.PrintRequestBtn);
 			this.panel4.Controls.Add(this.ErrorLb);
 			this.panel4.Controls.Add(this.ProfitPercentTxb);
-			this.panel4.Controls.Add(this.VndLb);
+			this.panel4.Controls.Add(this.PercentLb);
 			this.panel4.Controls.Add(this.panel7);
 			this.panel4.Controls.Add(this.NameInp);
 			this.panel4.Controls.Add(this.TotalMoneyLb);
 			this.panel4.Controls.Add(this.NameResultContainer);
 			this.panel4.Controls.Add(this.CartContainer);
 			this.panel4.Controls.Add(this.SupplierLb);
-			this.panel4.Controls.Add(this.PrintBtn);
+			this.panel4.Controls.Add(this.PrintImportBtn);
 			this.panel4.Controls.Add(this.AddCustomerBtn);
 			this.panel4.Controls.Add(this.label3);
 			this.panel4.Controls.Add(this.TotalLb);
@@ -281,12 +291,26 @@
 			this.panel4.Size = new System.Drawing.Size(300, 668);
 			this.panel4.TabIndex = 0;
 			// 
+			// PrintRequestBtn
+			// 
+			this.PrintRequestBtn.BackColor = System.Drawing.Color.Silver;
+			this.PrintRequestBtn.Cursor = System.Windows.Forms.Cursors.No;
+			this.PrintRequestBtn.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+			this.PrintRequestBtn.ForeColor = System.Drawing.Color.White;
+			this.PrintRequestBtn.Location = new System.Drawing.Point(127, 619);
+			this.PrintRequestBtn.Name = "PrintRequestBtn";
+			this.PrintRequestBtn.Size = new System.Drawing.Size(173, 42);
+			this.PrintRequestBtn.TabIndex = 31;
+			this.PrintRequestBtn.Text = "In phiếu yêu cầu";
+			this.PrintRequestBtn.UseVisualStyleBackColor = false;
+			this.PrintRequestBtn.Click += new System.EventHandler(this.PrintRequestBtn_Click);
+			// 
 			// ErrorLb
 			// 
 			this.ErrorLb.AutoSize = true;
 			this.ErrorLb.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
 			this.ErrorLb.ForeColor = System.Drawing.Color.Red;
-			this.ErrorLb.Location = new System.Drawing.Point(10, 603);
+			this.ErrorLb.Location = new System.Drawing.Point(17, 594);
 			this.ErrorLb.Margin = new System.Windows.Forms.Padding(20, 30, 3, 5);
 			this.ErrorLb.Name = "ErrorLb";
 			this.ErrorLb.Size = new System.Drawing.Size(210, 18);
@@ -311,7 +335,7 @@
 			this.ProfitPercentTxb.ForeColor = System.Drawing.Color.Black;
 			this.ProfitPercentTxb.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
 			this.ProfitPercentTxb.HoverState.Parent = this.ProfitPercentTxb;
-			this.ProfitPercentTxb.Location = new System.Drawing.Point(11, 563);
+			this.ProfitPercentTxb.Location = new System.Drawing.Point(11, 556);
 			this.ProfitPercentTxb.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.ProfitPercentTxb.Name = "ProfitPercentTxb";
 			this.ProfitPercentTxb.PasswordChar = '\0';
@@ -321,20 +345,22 @@
 			this.ProfitPercentTxb.ShadowDecoration.Parent = this.ProfitPercentTxb;
 			this.ProfitPercentTxb.Size = new System.Drawing.Size(247, 35);
 			this.ProfitPercentTxb.TabIndex = 3;
+			this.ProfitPercentTxb.Visible = false;
 			this.ProfitPercentTxb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ProfitPercentTxb_KeyPress);
 			this.ProfitPercentTxb.MouseLeave += new System.EventHandler(this.ProfitPercentTxb_MouseLeave);
 			// 
-			// VndLb
+			// PercentLb
 			// 
-			this.VndLb.AutoSize = true;
-			this.VndLb.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-			this.VndLb.Location = new System.Drawing.Point(263, 562);
-			this.VndLb.Margin = new System.Windows.Forms.Padding(20, 30, 3, 5);
-			this.VndLb.Name = "VndLb";
-			this.VndLb.Size = new System.Drawing.Size(27, 25);
-			this.VndLb.TabIndex = 29;
-			this.VndLb.Text = "%";
-			this.VndLb.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.PercentLb.AutoSize = true;
+			this.PercentLb.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+			this.PercentLb.Location = new System.Drawing.Point(263, 561);
+			this.PercentLb.Margin = new System.Windows.Forms.Padding(20, 30, 3, 5);
+			this.PercentLb.Name = "PercentLb";
+			this.PercentLb.Size = new System.Drawing.Size(27, 25);
+			this.PercentLb.TabIndex = 29;
+			this.PercentLb.Text = "%";
+			this.PercentLb.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.PercentLb.Visible = false;
 			// 
 			// panel7
 			// 
@@ -377,13 +403,14 @@
 			// TotalMoneyLb
 			// 
 			this.TotalMoneyLb.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-			this.TotalMoneyLb.Location = new System.Drawing.Point(139, 530);
+			this.TotalMoneyLb.Location = new System.Drawing.Point(139, 520);
 			this.TotalMoneyLb.Margin = new System.Windows.Forms.Padding(20, 30, 3, 5);
 			this.TotalMoneyLb.Name = "TotalMoneyLb";
 			this.TotalMoneyLb.Size = new System.Drawing.Size(154, 21);
 			this.TotalMoneyLb.TabIndex = 21;
 			this.TotalMoneyLb.Text = "0 VND";
 			this.TotalMoneyLb.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.TotalMoneyLb.Visible = false;
 			// 
 			// NameResultContainer
 			// 
@@ -399,16 +426,16 @@
 			// CartContainer
 			// 
 			this.CartContainer.AutoScroll = true;
-			this.CartContainer.Location = new System.Drawing.Point(0, 122);
+			this.CartContainer.Location = new System.Drawing.Point(0, 149);
 			this.CartContainer.Name = "CartContainer";
-			this.CartContainer.Size = new System.Drawing.Size(300, 400);
+			this.CartContainer.Size = new System.Drawing.Size(300, 360);
 			this.CartContainer.TabIndex = 2;
 			// 
 			// SupplierLb
 			// 
 			this.SupplierLb.AutoSize = true;
 			this.SupplierLb.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-			this.SupplierLb.Location = new System.Drawing.Point(-1, 92);
+			this.SupplierLb.Location = new System.Drawing.Point(-1, 105);
 			this.SupplierLb.Margin = new System.Windows.Forms.Padding(20, 30, 3, 5);
 			this.SupplierLb.Name = "SupplierLb";
 			this.SupplierLb.Size = new System.Drawing.Size(109, 25);
@@ -416,19 +443,19 @@
 			this.SupplierLb.Text = "Nhà cung cấp:";
 			this.SupplierLb.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
-			// PrintBtn
+			// PrintImportBtn
 			// 
-			this.PrintBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-			this.PrintBtn.Cursor = System.Windows.Forms.Cursors.No;
-			this.PrintBtn.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-			this.PrintBtn.ForeColor = System.Drawing.Color.White;
-			this.PrintBtn.Location = new System.Drawing.Point(4, 623);
-			this.PrintBtn.Name = "PrintBtn";
-			this.PrintBtn.Size = new System.Drawing.Size(293, 42);
-			this.PrintBtn.TabIndex = 4;
-			this.PrintBtn.Text = "Print Receipt";
-			this.PrintBtn.UseVisualStyleBackColor = false;
-			this.PrintBtn.Click += new System.EventHandler(this.PrintBtn_Click);
+			this.PrintImportBtn.BackColor = System.Drawing.Color.Silver;
+			this.PrintImportBtn.Cursor = System.Windows.Forms.Cursors.No;
+			this.PrintImportBtn.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+			this.PrintImportBtn.ForeColor = System.Drawing.Color.White;
+			this.PrintImportBtn.Location = new System.Drawing.Point(4, 619);
+			this.PrintImportBtn.Name = "PrintImportBtn";
+			this.PrintImportBtn.Size = new System.Drawing.Size(124, 42);
+			this.PrintImportBtn.TabIndex = 4;
+			this.PrintImportBtn.Text = "In hoá đơn";
+			this.PrintImportBtn.UseVisualStyleBackColor = false;
+			this.PrintImportBtn.Click += new System.EventHandler(this.PrintImportBtn_Click);
 			// 
 			// AddCustomerBtn
 			// 
@@ -457,19 +484,20 @@
 			// 
 			this.TotalLb.AutoSize = true;
 			this.TotalLb.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-			this.TotalLb.Location = new System.Drawing.Point(8, 528);
+			this.TotalLb.Location = new System.Drawing.Point(8, 518);
 			this.TotalLb.Margin = new System.Windows.Forms.Padding(20, 30, 3, 5);
 			this.TotalLb.Name = "TotalLb";
 			this.TotalLb.Size = new System.Drawing.Size(120, 25);
 			this.TotalLb.TabIndex = 16;
 			this.TotalLb.Text = "Tổng tiền hàng:";
 			this.TotalLb.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.TotalLb.Visible = false;
 			// 
 			// SupplierNameLb
 			// 
 			this.SupplierNameLb.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
 			this.SupplierNameLb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-			this.SupplierNameLb.Location = new System.Drawing.Point(103, 89);
+			this.SupplierNameLb.Location = new System.Drawing.Point(103, 102);
 			this.SupplierNameLb.Margin = new System.Windows.Forms.Padding(20, 30, 3, 5);
 			this.SupplierNameLb.Name = "SupplierNameLb";
 			this.SupplierNameLb.Size = new System.Drawing.Size(174, 30);
@@ -533,6 +561,36 @@
 			this.panel2.Name = "panel2";
 			this.panel2.Size = new System.Drawing.Size(77, 516);
 			this.panel2.TabIndex = 1;
+			// 
+			// CreateBookBtn
+			// 
+			this.CreateBookBtn.Animated = true;
+			this.CreateBookBtn.BackColor = System.Drawing.Color.Transparent;
+			this.CreateBookBtn.BorderColor = System.Drawing.Color.White;
+			this.CreateBookBtn.BorderRadius = 25;
+			this.CreateBookBtn.BorderThickness = 1;
+			this.CreateBookBtn.CheckedState.Parent = this.CreateBookBtn;
+			this.CreateBookBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.CreateBookBtn.CustomImages.Parent = this.CreateBookBtn;
+			this.CreateBookBtn.FillColor = System.Drawing.Color.White;
+			this.CreateBookBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 10F);
+			this.CreateBookBtn.ForeColor = System.Drawing.Color.White;
+			this.CreateBookBtn.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(107)))), ((int)(((byte)(250)))));
+			this.CreateBookBtn.HoverState.FillColor = System.Drawing.Color.White;
+			this.CreateBookBtn.HoverState.Parent = this.CreateBookBtn;
+			this.CreateBookBtn.Image = ((System.Drawing.Image)(resources.GetObject("CreateBookBtn.Image")));
+			this.CreateBookBtn.ImageSize = new System.Drawing.Size(35, 35);
+			this.CreateBookBtn.Location = new System.Drawing.Point(14, 124);
+			this.CreateBookBtn.Name = "CreateBookBtn";
+			this.CreateBookBtn.PressedColor = System.Drawing.Color.Transparent;
+			this.CreateBookBtn.ShadowDecoration.BorderRadius = 25;
+			this.CreateBookBtn.ShadowDecoration.Depth = 100;
+			this.CreateBookBtn.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+			this.CreateBookBtn.ShadowDecoration.Parent = this.CreateBookBtn;
+			this.CreateBookBtn.Size = new System.Drawing.Size(50, 50);
+			this.CreateBookBtn.TabIndex = 48;
+			this.CreateBookBtn.TabStop = false;
+			this.CreateBookBtn.Click += new System.EventHandler(this.CreateBookBtn_Click);
 			// 
 			// ExcelImportBtn
 			// 
@@ -602,68 +660,70 @@
 			this.LogoutBtn.TabStop = false;
 			this.LogoutBtn.Click += new System.EventHandler(this.LogOutBtn_Click);
 			// 
-			// CreateBookBtn
+			// QRScanBtn
 			// 
-			this.CreateBookBtn.Animated = true;
-			this.CreateBookBtn.BackColor = System.Drawing.Color.Transparent;
-			this.CreateBookBtn.BorderColor = System.Drawing.Color.White;
-			this.CreateBookBtn.BorderRadius = 25;
-			this.CreateBookBtn.BorderThickness = 1;
-			this.CreateBookBtn.CheckedState.Parent = this.CreateBookBtn;
-			this.CreateBookBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.CreateBookBtn.CustomImages.Parent = this.CreateBookBtn;
-			this.CreateBookBtn.FillColor = System.Drawing.Color.White;
-			this.CreateBookBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 10F);
-			this.CreateBookBtn.ForeColor = System.Drawing.Color.White;
-			this.CreateBookBtn.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(107)))), ((int)(((byte)(250)))));
-			this.CreateBookBtn.HoverState.FillColor = System.Drawing.Color.White;
-			this.CreateBookBtn.HoverState.Parent = this.CreateBookBtn;
-			this.CreateBookBtn.Image = ((System.Drawing.Image)(resources.GetObject("CreateBookBtn.Image")));
-			this.CreateBookBtn.ImageSize = new System.Drawing.Size(35, 35);
-			this.CreateBookBtn.Location = new System.Drawing.Point(14, 124);
-			this.CreateBookBtn.Name = "CreateBookBtn";
-			this.CreateBookBtn.PressedColor = System.Drawing.Color.Transparent;
-			this.CreateBookBtn.ShadowDecoration.BorderRadius = 25;
-			this.CreateBookBtn.ShadowDecoration.Depth = 100;
-			this.CreateBookBtn.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-			this.CreateBookBtn.ShadowDecoration.Parent = this.CreateBookBtn;
-			this.CreateBookBtn.Size = new System.Drawing.Size(50, 50);
-			this.CreateBookBtn.TabIndex = 48;
-			this.CreateBookBtn.TabStop = false;
-			this.CreateBookBtn.Click += new System.EventHandler(this.CreateBookBtn_Click);
+			this.QRScanBtn.Animated = true;
+			this.QRScanBtn.AnimationHoverSpeed = 0.07F;
+			this.QRScanBtn.AnimationSpeed = 0.03F;
+			this.QRScanBtn.BackColor = System.Drawing.Color.Transparent;
+			this.QRScanBtn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+			this.QRScanBtn.BorderColor = System.Drawing.Color.White;
+			this.QRScanBtn.BorderSize = 1;
+			this.QRScanBtn.Cursor = System.Windows.Forms.Cursors.No;
+			this.QRScanBtn.DialogResult = System.Windows.Forms.DialogResult.None;
+			this.QRScanBtn.Enabled = false;
+			this.QRScanBtn.FocusedColor = System.Drawing.Color.PaleTurquoise;
+			this.QRScanBtn.Font = new System.Drawing.Font("Segoe UI", 9F);
+			this.QRScanBtn.ForeColor = System.Drawing.Color.White;
+			this.QRScanBtn.Image = ((System.Drawing.Image)(resources.GetObject("QRScanBtn.Image")));
+			this.QRScanBtn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			this.QRScanBtn.ImageSize = new System.Drawing.Size(26, 26);
+			this.QRScanBtn.Location = new System.Drawing.Point(447, 3);
+			this.QRScanBtn.Name = "QRScanBtn";
+			this.QRScanBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+			this.QRScanBtn.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+			this.QRScanBtn.OnHoverForeColor = System.Drawing.Color.White;
+			this.QRScanBtn.OnHoverImage = null;
+			this.QRScanBtn.OnPressedColor = System.Drawing.Color.Black;
+			this.QRScanBtn.Radius = 8;
+			this.QRScanBtn.Size = new System.Drawing.Size(42, 42);
+			this.QRScanBtn.TabIndex = 1;
+			this.QRScanBtn.Click += new System.EventHandler(this.QRScanBtn_Click);
 			// 
-			// refreshBtn
+			// ManualImportToggleBtn
 			// 
-			this.refreshBtn.AnimationHoverSpeed = 0.07F;
-			this.refreshBtn.AnimationSpeed = 0.03F;
-			this.refreshBtn.BackColor = System.Drawing.Color.Transparent;
-			this.refreshBtn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-			this.refreshBtn.BorderColor = System.Drawing.Color.Black;
-			this.refreshBtn.CheckedBaseColor = System.Drawing.Color.PaleTurquoise;
-			this.refreshBtn.CheckedBorderColor = System.Drawing.Color.Black;
-			this.refreshBtn.CheckedForeColor = System.Drawing.Color.White;
-			this.refreshBtn.CheckedImage = ((System.Drawing.Image)(resources.GetObject("refreshBtn.CheckedImage")));
-			this.refreshBtn.CheckedLineColor = System.Drawing.Color.DimGray;
-			this.refreshBtn.DialogResult = System.Windows.Forms.DialogResult.None;
-			this.refreshBtn.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(159)))), ((int)(((byte)(147)))));
-			this.refreshBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, System.Drawing.FontStyle.Bold);
-			this.refreshBtn.ForeColor = System.Drawing.Color.White;
-			this.refreshBtn.Image = ((System.Drawing.Image)(resources.GetObject("refreshBtn.Image")));
-			this.refreshBtn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
-			this.refreshBtn.ImageSize = new System.Drawing.Size(30, 30);
-			this.refreshBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-			this.refreshBtn.Location = new System.Drawing.Point(307, 13);
-			this.refreshBtn.Name = "refreshBtn";
-			this.refreshBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-			this.refreshBtn.OnHoverBorderColor = System.Drawing.Color.Transparent;
-			this.refreshBtn.OnHoverForeColor = System.Drawing.Color.White;
-			this.refreshBtn.OnHoverImage = null;
-			this.refreshBtn.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-			this.refreshBtn.OnPressedColor = System.Drawing.Color.Black;
-			this.refreshBtn.Radius = 6;
-			this.refreshBtn.Size = new System.Drawing.Size(36, 36);
-			this.refreshBtn.TabIndex = 32;
-			this.refreshBtn.Click += new System.EventHandler(this.refreshBtn_Click);
+			this.ManualImportToggleBtn.Animated = true;
+			this.ManualImportToggleBtn.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+			this.ManualImportToggleBtn.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+			this.ManualImportToggleBtn.CheckedState.InnerBorderColor = System.Drawing.Color.White;
+			this.ManualImportToggleBtn.CheckedState.InnerColor = System.Drawing.Color.White;
+			this.ManualImportToggleBtn.CheckedState.Parent = this.ManualImportToggleBtn;
+			this.ManualImportToggleBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.ManualImportToggleBtn.Location = new System.Drawing.Point(348, 10);
+			this.ManualImportToggleBtn.Name = "ManualImportToggleBtn";
+			this.ManualImportToggleBtn.ShadowDecoration.Parent = this.ManualImportToggleBtn;
+			this.ManualImportToggleBtn.Size = new System.Drawing.Size(58, 28);
+			this.ManualImportToggleBtn.TabIndex = 2;
+			this.ManualImportToggleBtn.TabStop = false;
+			this.ManualImportToggleBtn.UncheckedState.BorderColor = System.Drawing.Color.Gray;
+			this.ManualImportToggleBtn.UncheckedState.BorderThickness = 1;
+			this.ManualImportToggleBtn.UncheckedState.FillColor = System.Drawing.Color.White;
+			this.ManualImportToggleBtn.UncheckedState.InnerBorderColor = System.Drawing.Color.Gray;
+			this.ManualImportToggleBtn.UncheckedState.InnerColor = System.Drawing.Color.Gray;
+			this.ManualImportToggleBtn.UncheckedState.Parent = this.ManualImportToggleBtn;
+			this.ManualImportToggleBtn.CheckedChanged += new System.EventHandler(this.ManualImportToggleBtn_CheckedChanged);
+			// 
+			// label4
+			// 
+			this.label4.AutoSize = true;
+			this.label4.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+			this.label4.Location = new System.Drawing.Point(186, 10);
+			this.label4.Margin = new System.Windows.Forms.Padding(20, 14, 3, 2);
+			this.label4.Name = "label4";
+			this.label4.Size = new System.Drawing.Size(156, 25);
+			this.label4.TabIndex = 3;
+			this.label4.Text = "Nhập hàng thủ công:";
+			this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
 			// ImportGUI
 			// 
@@ -689,6 +749,7 @@
 			this.flowLayoutPanel5.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
 			this.panel1.ResumeLayout(false);
+			this.panel1.PerformLayout();
 			this.panel3.ResumeLayout(false);
 			this.panel4.ResumeLayout(false);
 			this.panel4.PerformLayout();
@@ -720,7 +781,7 @@
         private System.Windows.Forms.FlowLayoutPanel NameResultContainer;
         private System.Windows.Forms.FlowLayoutPanel CartContainer;
         private System.Windows.Forms.Label SupplierLb;
-        private System.Windows.Forms.Button PrintBtn;
+        private System.Windows.Forms.Button PrintImportBtn;
         private System.Windows.Forms.Label TotalLb;
         private System.Windows.Forms.Button AddCustomerBtn;
         private System.Windows.Forms.Label label3;
@@ -733,14 +794,17 @@
 		private System.Windows.Forms.Panel panel6;
 		private Guna.UI2.WinForms.Guna2Button LogoutBtn;
 		private Guna.UI2.WinForms.Guna2TextBox ProductSearchInp;
-		private Guna.UI.WinForms.GunaButton QRScanBtn;
 		private Guna.UI2.WinForms.Guna2TextBox NameInp;
 		private System.Windows.Forms.Panel panel7;
 		private Guna.UI2.WinForms.Guna2Button ExcelImportBtn;
 		private Guna.UI2.WinForms.Guna2TextBox ProfitPercentTxb;
-		private System.Windows.Forms.Label VndLb;
+		private System.Windows.Forms.Label PercentLb;
 		private System.Windows.Forms.Label ErrorLb;
 		private Guna.UI2.WinForms.Guna2Button CreateBookBtn;
 		private Guna.UI.WinForms.GunaAdvenceButton refreshBtn;
+		private System.Windows.Forms.Button PrintRequestBtn;
+		private Guna.UI.WinForms.GunaButton QRScanBtn;
+		private System.Windows.Forms.Label label4;
+		private Guna.UI2.WinForms.Guna2ToggleSwitch ManualImportToggleBtn;
 	}
 }

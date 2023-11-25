@@ -16,10 +16,11 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
     public partial class ImportGUI : Form
     {
         private bool search = false;
-        private bool PrintBtnAllowed = false;
-        private int supplierID = 0;
+        private bool printImportBtnAllowed = false;
+		private bool printRequestBtnAllowed = false;
+		private int supplierID = 0;
         private int staffID;
-		private bool useExcel = false;
+		private bool importExcel = false;
 		private int importBillId = Convert.ToInt32(ImportBillBUS.Instance.getLatestId()) + 1;
 		private decimal total = 0;
         private List<ImportBillDetailDTO> importBillDetails = new List<ImportBillDetailDTO>();
@@ -167,31 +168,15 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
 			catch (Exception ex) { Console.WriteLine(ex); }
         }
 
-        private void QRScanBtn_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                var modal = new ScannerModal();
-                modal.ShowDialog();
-                BookDTO book = modal.scannedBook;
-                if (book != null)
-                {
-                    AddProductToCart(book);
-                }
-				label1.Focus();
-			}
-			catch (Exception ex) { Console.WriteLine(ex); }
-        }
-
         private void AddProductToCart(BookDTO book, decimal importPrice = -1, int amount = 1, bool disabled = false)
         {
             try
             {
                 if (importBillDetails.Count == 0 || !importBillDetails.Any(item => item.MaSach == book.MaSach))
                 {
-					ImportCartProductUserControl product = new ImportCartProductUserControl();
+					ImportCartProductUserControl product = new ImportCartProductUserControl(ManualImportToggleBtn.Checked || importExcel ? 1 : 0);
                     product.details(book, amount);
-					product.ImportIdDetailLb.Text = importBillId.ToString();
+					product.BillIdDetailLb.Text = importBillId.ToString();
 
                     product.ImportPriceTxb.MouseLeave += (object sender, EventArgs e) =>
                     {
@@ -218,9 +203,17 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
 
                     CartContainer.Controls.Add(product);
 
-					ImportBillDetailDTO importBillDetail = new ImportBillDetailDTO(0, book.MaSach, amount, Convert.ToDecimal(product.ImportPriceTxb.Text));
-					importBillDetails.Add(importBillDetail);
-				}
+                    if (ManualImportToggleBtn.Checked || importExcel)
+                    {
+                        ImportBillDetailDTO importBillDetail = new ImportBillDetailDTO(0, book.MaSach, amount, Convert.ToDecimal(product.ImportPriceTxb.Text));
+                        importBillDetails.Add(importBillDetail);
+                    }
+                    else
+                    {
+                        //tao don yeu cau
+                    }
+                    Console.WriteLine(importBillDetails.Count);
+                }
                 else
                 {
                     int idx = 0;
@@ -245,19 +238,54 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
             catch (Exception ex) { Console.WriteLine(ex); }
         }
 
-        private void checkUser_Tick(object sender, EventArgs e)
+		private void QRScanBtn_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				var modal = new ScannerModal();
+				modal.ShowDialog();
+				BookDTO book = modal.scannedBook;
+				if (book != null)
+				{
+					AddProductToCart(book, 1);
+				}
+				label1.Focus();
+			}
+			catch (Exception ex) { Console.WriteLine(ex); }
+		}
+
+		private void ManualImportToggleBtn_CheckedChanged(object sender, EventArgs e)
+		{
+            if (ManualImportToggleBtn.Checked)
+            {
+                QRScanBtn.Enabled = true;
+                QRScanBtn.Cursor = Cursors.Hand;
+			}
+            else
+            {
+                QRScanBtn.Enabled = false;
+				QRScanBtn.Cursor = Cursors.No;
+			}
+            importBillDetails.Clear();
+			importExcel = false;
+			CartContainer.Controls.Clear();
+            CartHandler();
+		}
+
+		private void checkUser_Tick(object sender, EventArgs e)
         {
             try
             {
                 if (BookUserControl.clicked)
                 {
-                    if (!useExcel)
+                    if (!importExcel)
                     {
                         int ChoseId_int = Convert.ToInt32(BookUserControl.ChoseId);
                         BookDTO book = BookBUS.Instance.getById(BookUserControl.ChoseId);
-                        AddProductToCart(book);
-                    }
-                    else
+                        AddProductToCart(book, book.GiaNhap);
+						BookUserControl.clicked = false;
+					}
+					else
                     {
                         BookUserControl.clicked = false;
                     }
@@ -344,78 +372,65 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
                 }
 
                 TotalMoneyLb.Text = string.Format("{0:N0} VND", total);
-                if (CartContainer.Controls.Count > 0 && supplierID != 0 && !string.IsNullOrEmpty(ProfitPercentTxb.Text) && Convert.ToInt32(ProfitPercentTxb.Text) <= 100)
+                if (importExcel || ManualImportToggleBtn.Checked)
                 {
-                    PrintBtn.Cursor = Cursors.Hand;
-                    PrintBtnAllowed = true;
+                    TotalLb.Visible = true;
+                    TotalMoneyLb.Visible = true;
+                    ProfitPercentTxb.Visible = true;
+                    PercentLb.Visible = true;
+
+                    if (CartContainer.Controls.Count > 0 && supplierID != 0 && !string.IsNullOrEmpty(ProfitPercentTxb.Text) && Convert.ToInt32(ProfitPercentTxb.Text) <= 100)
+                    {
+                        PrintImportBtn.Cursor = Cursors.Hand;
+                        printImportBtnAllowed = true;
+                        PrintImportBtn.BackColor = Color.FromArgb(45, 210, 192);
+						PrintRequestBtn.Cursor = Cursors.No;
+						printRequestBtnAllowed = false;
+						PrintRequestBtn.BackColor = Color.Silver;
+					}
+                    else
+                    {
+                        PrintImportBtn.Cursor = Cursors.No;
+                        printImportBtnAllowed = false;
+					    PrintImportBtn.BackColor = Color.Silver;
+						PrintRequestBtn.Cursor = Cursors.No;
+						printRequestBtnAllowed = false;
+						PrintRequestBtn.BackColor = Color.Silver;
+					}
                 }
                 else
                 {
-                    PrintBtn.Cursor = Cursors.No;
-                    PrintBtnAllowed = false;
-                }
-            }
+					TotalLb.Visible = false;
+					TotalMoneyLb.Visible = false;
+					ProfitPercentTxb.Visible = false;
+					PercentLb.Visible = false;
+
+					if (CartContainer.Controls.Count > 0 && supplierID != 0)
+                    {
+						PrintRequestBtn.Cursor = Cursors.Hand;
+						printRequestBtnAllowed = true;
+						PrintRequestBtn.BackColor = Color.FromArgb(45, 210, 192);
+						PrintImportBtn.Cursor = Cursors.No;
+						printImportBtnAllowed = false;
+						PrintImportBtn.BackColor = Color.Silver;
+					}
+					else
+					{
+						PrintRequestBtn.Cursor = Cursors.No;
+						printRequestBtnAllowed = false;
+						PrintRequestBtn.BackColor = Color.Silver;
+						PrintImportBtn.Cursor = Cursors.No;
+						printImportBtnAllowed = false;
+						PrintImportBtn.BackColor = Color.Silver;
+					}
+				}
+			}
             catch (Exception ex) { Console.WriteLine(ex); }
         }
 		private void ProductSearchInp_MouseLeave(object sender, EventArgs e)
 		{
 			panel1.Focus();
 		}
-
-		private void PrintBtn_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (PrintBtnAllowed)
-                {
-                    ImportBillDTO importBill = new ImportBillDTO();
-                    importBill.TongTien = total;
-                    importBill.MaNhanVien = staffID;
-                    importBill.MaNhaCungCap = supplierID;
-                    importBill.NgayLap = DateTime.Now;
-                    importBill.PhanTramLoiNhuan = Convert.ToInt32(ProfitPercentTxb.Text);
-
-					ImportBillDTO newImportBill = ImportBillBUS.Instance.insertReturnBill(importBill);
-
-                    if (newImportBill == null)
-                    {
-						MessageBox.Show("Thất bại");
-					}
-                    else
-                    {
-                        foreach (var importBillDetail in importBillDetails)
-                        {
-                            ImportBillDetailDTO newImportBillDetail = new ImportBillDetailDTO(
-                                newImportBill.MaDonNhapHang,
-                                importBillDetail.MaSach,
-                                importBillDetail.SoLuong,
-                                importBillDetail.DonGia
-                            );
-                            ImportBillBUS.Instance.createImportBillDetail(newImportBillDetail, importBill.PhanTramLoiNhuan);
-                        }
-
-						MessageBox.Show("Thành công");
-					}
-
-                    using (ImportBillPrintForm importBillPrintForm = new ImportBillPrintForm(newImportBill.MaDonNhapHang))
-                    {
-                        importBillPrintForm.ShowDialog();
-                    }
-
-                    CartContainer.Controls.Clear();
-                    importBillDetails.Clear();
-                    SupplierNameLb.Text = "";
-                    ProfitPercentTxb.Text = "";
-                    supplierID = 0;
-                    useExcel = false;
-                    importBillId = Convert.ToInt32(ImportBillBUS.Instance.getLatestId());
-					CartHandler();
-                    RenderBookContainer();
-				    label1.Focus();
-				}
-			}
-            catch (Exception ex) { Console.WriteLine(ex); }
-        }
 
         private void LogOutBtn_Click(object sender, EventArgs e)
         {
@@ -447,6 +462,8 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
 
 				CartContainer.Controls.Clear();
 				importBillDetails.Clear();
+                ManualImportToggleBtn.Checked = false;
+                importExcel = true;
 				foreach (DataRow row in dt.Rows)
 				{
 					BookDTO book = BookBUS.Instance.getById(row[0].ToString());
@@ -455,7 +472,6 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
 						AddProductToCart(book, Convert.ToDecimal(row[3].ToString()), Convert.ToInt32(row[2].ToString()), true);
 					}
 				}
-                useExcel = true;
 			}
 			catch (Exception ex)
 			{
@@ -520,18 +536,134 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
 			}
 		}
 
-		private void refreshBtn_Click(object sender, EventArgs e)
-		{
+        private void refresh()
+        {
 			CartContainer.Controls.Clear();
 			importBillDetails.Clear();
+			TotalLb.Visible = false;
+			TotalMoneyLb.Visible = false;
+			ProfitPercentTxb.Visible = false;
+			PercentLb.Visible = false;
+			PrintImportBtn.Cursor = Cursors.No;
+			printImportBtnAllowed = false;
+			PrintImportBtn.BackColor = Color.Silver;
+			PrintRequestBtn.Cursor = Cursors.No;
+			printRequestBtnAllowed = false;
+			PrintRequestBtn.BackColor = Color.Silver;
+            ManualImportToggleBtn.Checked = false;
 			SupplierNameLb.Text = "";
 			ProfitPercentTxb.Text = "";
 			supplierID = 0;
-			useExcel = false;
+			importExcel = false;
 			importBillId = Convert.ToInt32(ImportBillBUS.Instance.getLatestId());
 			CartHandler();
 			RenderBookContainer();
 			label1.Focus();
+		}
+
+		private void refreshBtn_Click(object sender, EventArgs e)
+		{
+            refresh();
+		}
+
+		private void PrintImportBtn_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				if (printImportBtnAllowed)
+				{
+                    ImportBillDTO importBill = new ImportBillDTO();
+                    importBill.TongTien = total;
+                    importBill.MaNhanVien = staffID;
+                    importBill.MaNhaCungCap = supplierID;
+                    importBill.NgayLap = DateTime.Now;
+                    importBill.PhanTramLoiNhuan = Convert.ToInt32(ProfitPercentTxb.Text);
+
+                    ImportBillDTO newImportBill = ImportBillBUS.Instance.insertReturnBill(importBill);
+
+                    if (newImportBill == null)
+                    {
+                        MessageBox.Show("Thất bại");
+                    }
+                    else
+                    {
+                        foreach (var importBillDetail in importBillDetails)
+                        {
+                            ImportBillDetailDTO newImportBillDetail = new ImportBillDetailDTO(
+                                newImportBill.MaDonNhapHang,
+                                importBillDetail.MaSach,
+                                importBillDetail.SoLuong,
+                                importBillDetail.DonGia
+                            );
+                            ImportBillBUS.Instance.createImportBillDetail(newImportBillDetail, importBill.PhanTramLoiNhuan);
+                        }
+
+                        MessageBox.Show("Thành công");
+                    }
+
+                    using (ImportBillPrintForm importBillPrintForm = new ImportBillPrintForm(newImportBill.MaDonNhapHang))
+                    {
+                        importBillPrintForm.ShowDialog();
+                    }
+
+                    refresh();
+				}
+				else
+				{
+					panel1.Focus();
+				}
+			}
+			catch (Exception ex) { Console.WriteLine(ex); }
+		}
+
+		private void PrintRequestBtn_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				if (printRequestBtnAllowed)
+				{
+					//ImportBillDTO importBill = new ImportBillDTO();
+					//importBill.TongTien = total;
+					//importBill.MaNhanVien = staffID;
+					//importBill.MaNhaCungCap = supplierID;
+					//importBill.NgayLap = DateTime.Now;
+					//importBill.PhanTramLoiNhuan = Convert.ToInt32(ProfitPercentTxb.Text);
+
+					//ImportBillDTO newImportBill = ImportBillBUS.Instance.insertReturnBill(importBill);
+
+					//if (newImportBill == null)
+					//{
+					//	MessageBox.Show("Thất bại");
+					//}
+					//else
+					//{
+					//	foreach (var importBillDetail in importBillDetails)
+					//	{
+					//		ImportBillDetailDTO newImportBillDetail = new ImportBillDetailDTO(
+					//			newImportBill.MaDonNhapHang,
+					//			importBillDetail.MaSach,
+					//			importBillDetail.SoLuong,
+					//			importBillDetail.DonGia
+					//		);
+					//		ImportBillBUS.Instance.createImportBillDetail(newImportBillDetail, importBill.PhanTramLoiNhuan);
+					//	}
+
+					//	MessageBox.Show("Thành công");
+					//}
+
+					//using (ImportBillPrintForm importBillPrintForm = new ImportBillPrintForm(newImportBill.MaDonNhapHang))
+					//{
+					//	importBillPrintForm.ShowDialog();
+					//}
+
+					refresh();
+				}
+                else
+                {
+                    panel1.Focus();
+				}
+			}
+			catch (Exception ex) { Console.WriteLine(ex); }
 		}
 	}
 }

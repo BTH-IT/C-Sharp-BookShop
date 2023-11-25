@@ -42,8 +42,8 @@
 			this.StockLb = new System.Windows.Forms.Label();
 			this.ImportPriceTxb = new Guna.UI2.WinForms.Guna2TextBox();
 			this.VndLb = new System.Windows.Forms.Label();
-			this.ImportIdLb = new System.Windows.Forms.Label();
-			this.ImportIdDetailLb = new System.Windows.Forms.Label();
+			this.BillIdLb = new System.Windows.Forms.Label();
+			this.BillIdDetailLb = new System.Windows.Forms.Label();
 			this.amountPanel.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.PlusBtn)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.MinusBtn)).BeginInit();
@@ -179,7 +179,7 @@
 			this.ImportPriceTxb.ForeColor = System.Drawing.Color.Black;
 			this.ImportPriceTxb.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
 			this.ImportPriceTxb.HoverState.Parent = this.ImportPriceTxb;
-			this.ImportPriceTxb.Location = new System.Drawing.Point(8, 151);
+			this.ImportPriceTxb.Location = new System.Drawing.Point(8, 140);
 			this.ImportPriceTxb.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.ImportPriceTxb.Name = "ImportPriceTxb";
 			this.ImportPriceTxb.PasswordChar = '\0';
@@ -195,7 +195,7 @@
 			// 
 			this.VndLb.AutoSize = true;
 			this.VndLb.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-			this.VndLb.Location = new System.Drawing.Point(233, 153);
+			this.VndLb.Location = new System.Drawing.Point(233, 142);
 			this.VndLb.Margin = new System.Windows.Forms.Padding(20, 30, 3, 5);
 			this.VndLb.Name = "VndLb";
 			this.VndLb.Size = new System.Drawing.Size(45, 25);
@@ -203,33 +203,33 @@
 			this.VndLb.Text = "VND";
 			this.VndLb.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
-			// ImportIdLb
+			// BillIdLb
 			// 
-			this.ImportIdLb.AutoSize = true;
-			this.ImportIdLb.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-			this.ImportIdLb.ForeColor = System.Drawing.Color.Gray;
-			this.ImportIdLb.Location = new System.Drawing.Point(109, 13);
-			this.ImportIdLb.Name = "ImportIdLb";
-			this.ImportIdLb.Size = new System.Drawing.Size(51, 18);
-			this.ImportIdLb.TabIndex = 30;
-			this.ImportIdLb.Text = "Mã đơn:";
+			this.BillIdLb.AutoSize = true;
+			this.BillIdLb.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+			this.BillIdLb.ForeColor = System.Drawing.Color.Gray;
+			this.BillIdLb.Location = new System.Drawing.Point(109, 13);
+			this.BillIdLb.Name = "BillIdLb";
+			this.BillIdLb.Size = new System.Drawing.Size(51, 18);
+			this.BillIdLb.TabIndex = 30;
+			this.BillIdLb.Text = "Mã đơn:";
 			// 
-			// ImportIdDetailLb
+			// BillIdDetailLb
 			// 
-			this.ImportIdDetailLb.AutoEllipsis = true;
-			this.ImportIdDetailLb.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-			this.ImportIdDetailLb.ForeColor = System.Drawing.Color.Gray;
-			this.ImportIdDetailLb.Location = new System.Drawing.Point(154, 13);
-			this.ImportIdDetailLb.Name = "ImportIdDetailLb";
-			this.ImportIdDetailLb.Size = new System.Drawing.Size(90, 18);
-			this.ImportIdDetailLb.TabIndex = 31;
+			this.BillIdDetailLb.AutoEllipsis = true;
+			this.BillIdDetailLb.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+			this.BillIdDetailLb.ForeColor = System.Drawing.Color.Gray;
+			this.BillIdDetailLb.Location = new System.Drawing.Point(156, 13);
+			this.BillIdDetailLb.Name = "BillIdDetailLb";
+			this.BillIdDetailLb.Size = new System.Drawing.Size(90, 18);
+			this.BillIdDetailLb.TabIndex = 31;
 			// 
 			// ImportCartProductUserControl
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.Controls.Add(this.ImportIdDetailLb);
-			this.Controls.Add(this.ImportIdLb);
+			this.Controls.Add(this.BillIdDetailLb);
+			this.Controls.Add(this.BillIdLb);
 			this.Controls.Add(this.ImportPriceTxb);
 			this.Controls.Add(this.VndLb);
 			this.Controls.Add(this.IdLb);
@@ -240,7 +240,7 @@
 			this.Controls.Add(this.BookImage);
 			this.Margin = new System.Windows.Forms.Padding(0);
 			this.Name = "ImportCartProductUserControl";
-			this.Size = new System.Drawing.Size(283, 200);
+			this.Size = new System.Drawing.Size(283, 180);
 			this.amountPanel.ResumeLayout(false);
 			this.amountPanel.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.PlusBtn)).EndInit();
@@ -262,8 +262,8 @@
 		internal System.Windows.Forms.TextBox AmountTxt;
 		private System.Windows.Forms.Label StockLb;
 		private System.Windows.Forms.Label VndLb;
-		private System.Windows.Forms.Label ImportIdLb;
-		public System.Windows.Forms.Label ImportIdDetailLb;
+		private System.Windows.Forms.Label BillIdLb;
+		public System.Windows.Forms.Label BillIdDetailLb;
 		public System.Windows.Forms.Panel amountPanel;
 		public Guna.UI2.WinForms.Guna2TextBox ImportPriceTxb;
 		public Guna.UI2.WinForms.Guna2CircleButton DeleteBtn;
