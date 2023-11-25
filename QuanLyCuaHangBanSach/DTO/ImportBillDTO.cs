@@ -8,19 +8,21 @@ namespace QuanLyCuaHangBanSach.DTO
         public int MaDonNhapHang { get; set; }
         public int MaNhaCungCap { get; set; }
         public int PhanTramLoiNhuan { get; set; }
+        public int MaPhieuYeuCau { get; set; }
 
-        public ImportBillDTO() : base()
+		public ImportBillDTO() : base()
         {
         }
 
         public ImportBillDTO(
-            int maDonNhapHang, int maNhaCungCap, int maNhanVien, DateTime ngayLap, decimal tongTien, int phanTramLoiNhuan
+            int maDonNhapHang, int maNhaCungCap, int maNhanVien, DateTime ngayLap, decimal tongTien, int phanTramLoiNhuan, int maPhieuYeuCau
         ) : base(ngayLap, maNhanVien, tongTien)
         {
             this.MaDonNhapHang = maDonNhapHang;
             this.MaNhaCungCap = maNhaCungCap;
             this.PhanTramLoiNhuan = phanTramLoiNhuan;
-        }
+            this.MaPhieuYeuCau = maPhieuYeuCau;
+		}
 
         public ImportBillDTO(DataRow row)
         {
@@ -30,6 +32,7 @@ namespace QuanLyCuaHangBanSach.DTO
             this.MaNhanVien = (int)row["maNhanVien"];
             this.TongTien = Convert.ToDecimal(row["tongTien"]);
             this.PhanTramLoiNhuan = Convert.ToInt32(row["phanTramLoiNhuan"]);
-        }
+            this.MaPhieuYeuCau = (int)row["maPhieuYeuCau"];
+		}
     }
 }

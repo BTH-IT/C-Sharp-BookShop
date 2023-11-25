@@ -130,8 +130,8 @@ namespace QuanLyCuaHangBanSach.DAO
         public bool insert(ImportBillDTO data)
         {
 
-            string sql = $@"INSERT INTO phieunhap (maNhanVien, maNhaCungCap, ngayLap, tongTien, phanTramLoiNhuan)
-                            VALUES (@maNhanVien, @maNhaCungCap, @ngayLap, @tongTien, @phanTramLoiNhuan);";
+            string sql = $@"INSERT INTO phieunhap (maNhanVien, maNhaCungCap, ngayLap, tongTien, phanTramLoiNhuan, maPhieuYeuCau)
+                            VALUES (@maNhanVien, @maNhaCungCap, @ngayLap, @tongTien, @phanTramLoiNhuan, @maPhieuYeuCau);";
 
             int rowChanged = DataProvider.Instance.ExecuteNonQuery(sql,
                 new MySqlParameter[] {
@@ -140,7 +140,8 @@ namespace QuanLyCuaHangBanSach.DAO
                     new MySqlParameter("@ngayLap", data.NgayLap),
                     new MySqlParameter("@tongTien", data.TongTien),
                     new MySqlParameter("@phanTramLoiNhuan", data.PhanTramLoiNhuan),
-                });
+					new MySqlParameter("@maPhieuYeuCau", data.MaPhieuYeuCau),
+				});
 
             return rowChanged > 0;
         }
@@ -166,7 +167,7 @@ namespace QuanLyCuaHangBanSach.DAO
         {
             string sql = $@"UPDATE phieunhap SET 
                             maNhaCungCap=@maNhaCungCap, maNhanVien=@maNhanVien, ngayLap=@ngayLap, 
-                            tongTien=@tongTien WHERE maDonNhapHang=@maDonNhapHang;";
+                            tongTien=@tongTien, @phanTramLoiNhuan, @maPhieuYeuCau WHERE maDonNhapHang=@maDonNhapHang;";
 
             int rowChanged = DataProvider.Instance.ExecuteNonQuery(sql,
                 new MySqlParameter[] {
@@ -175,7 +176,9 @@ namespace QuanLyCuaHangBanSach.DAO
                     new MySqlParameter("@ngayLap", data.NgayLap),
                     new MySqlParameter("@tongTien", data.TongTien),
                     new MySqlParameter("@maDonNhapHang", data.MaDonNhapHang),
-                });
+					new MySqlParameter("@phanTramLoiNhuan", data.PhanTramLoiNhuan),
+					new MySqlParameter("@maPhieuYeuCau", data.MaPhieuYeuCau),
+				});
             return rowChanged > 0;
         }
 

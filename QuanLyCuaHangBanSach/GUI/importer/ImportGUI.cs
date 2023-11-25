@@ -20,12 +20,15 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
 		private bool printRequestBtnAllowed = false;
 		private int supplierID = 0;
         private int staffID;
+		private string orderBillId;
 		private bool importExcel = false;
+		private bool requestExcel = false;
 		private int importBillId = Convert.ToInt32(ImportBillBUS.Instance.getLatestId()) + 1;
 		private decimal total = 0;
         private List<ImportBillDetailDTO> importBillDetails = new List<ImportBillDetailDTO>();
+        private List<OrderBillDetailDTO> orderBillDetails = new List<OrderBillDetailDTO>();
 
-        public ImportGUI(int staffID)
+		public ImportGUI(int staffID)
         {
             InitializeComponent();
             FormBorderStyle = FormBorderStyle.None;
@@ -174,7 +177,7 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
             {
                 if (importBillDetails.Count == 0 || !importBillDetails.Any(item => item.MaSach == book.MaSach))
                 {
-					ImportCartProductUserControl product = new ImportCartProductUserControl(ManualImportToggleBtn.Checked || importExcel ? 1 : 0);
+					ImportCartProductUserControl product = new ImportCartProductUserControl(importExcel ? 1 : 0);
                     product.details(book, amount);
 					product.BillIdDetailLb.Text = importBillId.ToString();
 
@@ -203,33 +206,33 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
 
                     CartContainer.Controls.Add(product);
 
-                    if (ManualImportToggleBtn.Checked || importExcel)
+                    if (importExcel)
                     {
                         ImportBillDetailDTO importBillDetail = new ImportBillDetailDTO(0, book.MaSach, amount, Convert.ToDecimal(product.ImportPriceTxb.Text));
                         importBillDetails.Add(importBillDetail);
                     }
                     else
                     {
-                        //tao don yeu cau
-                    }
-                    Console.WriteLine(importBillDetails.Count);
+                        OrderBillDetailDTO orderBillDetail = new OrderBillDetailDTO(0, book.MaSach, amount);
+                        orderBillDetails.Add(orderBillDetail);
+					}
                 }
                 else
                 {
-                    int idx = 0;
+					int idx = 0;
 
-                    foreach (var importBillDetail in importBillDetails)
-                    {
-                        if (importBillDetail.MaSach == book.MaSach)
-                        {
-                            importBillDetail.SoLuong += 1;
-                            ImportCartProductUserControl cartProduct = CartContainer.Controls[idx] as ImportCartProductUserControl;
-                            cartProduct.AmountTxt.Text = (Convert.ToInt32(cartProduct.AmountTxt.Text) + 1).ToString();
-                            break;
-                        }
-                        idx++;
-                    }
-                }
+					foreach (var orderBillDetail in orderBillDetails)
+					{
+						if (orderBillDetail.MaSach == book.MaSach)
+						{
+							orderBillDetail.SoLuong += 1;
+							ImportCartProductUserControl cartProduct = CartContainer.Controls[idx] as ImportCartProductUserControl;
+							cartProduct.AmountTxt.Text = (Convert.ToInt32(cartProduct.AmountTxt.Text) + 1).ToString();
+							break;
+						}
+						idx++;
+					}
+				}
 
                 CartHandler();
                 BookUserControl.ChoseId = "";
@@ -254,31 +257,13 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
 			catch (Exception ex) { Console.WriteLine(ex); }
 		}
 
-		private void ManualImportToggleBtn_CheckedChanged(object sender, EventArgs e)
-		{
-            if (ManualImportToggleBtn.Checked)
-            {
-                QRScanBtn.Enabled = true;
-                QRScanBtn.Cursor = Cursors.Hand;
-			}
-            else
-            {
-                QRScanBtn.Enabled = false;
-				QRScanBtn.Cursor = Cursors.No;
-			}
-            importBillDetails.Clear();
-			importExcel = false;
-			CartContainer.Controls.Clear();
-            CartHandler();
-		}
-
 		private void checkUser_Tick(object sender, EventArgs e)
         {
             try
             {
                 if (BookUserControl.clicked)
                 {
-                    if (!importExcel)
+                    if (!importExcel && !requestExcel)
                     {
                         int ChoseId_int = Convert.ToInt32(BookUserControl.ChoseId);
                         BookDTO book = BookBUS.Instance.getById(BookUserControl.ChoseId);
@@ -293,41 +278,41 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
 
                 if (ImportCartProductUserControl.deletePress)
                 {
-                    int idx = 0;
+					int idx = 0;
 
-                    foreach (var importBillDetail in importBillDetails)
-                    {
-                        if (importBillDetail.MaSach == Convert.ToInt32(ImportCartProductUserControl.deleteId))
-                        {
-                            importBillDetails.RemoveAt(idx);
+					foreach (var orderBillDetail in orderBillDetails)
+					{
+						if (orderBillDetail.MaSach == Convert.ToInt32(ImportCartProductUserControl.deleteId))
+						{
+							orderBillDetails.RemoveAt(idx);
 
-                            ImportCartProductUserControl cartProduct = CartContainer.Controls[idx] as ImportCartProductUserControl;
-                            CartContainer.Controls.RemoveAt(idx);
-                            cartProduct.Dispose();
-                            break;
-                        }
-                        idx++;
-                    }
+							ImportCartProductUserControl cartProduct = CartContainer.Controls[idx] as ImportCartProductUserControl;
+							CartContainer.Controls.RemoveAt(idx);
+							cartProduct.Dispose();
+							break;
+						}
+						idx++;
+					}
 
-					CartHandler();
+                    CartHandler();
                     ImportCartProductUserControl.deleteId = "";
                     ImportCartProductUserControl.deletePress = false;
                 }
 
                 if (ImportCartProductUserControl.AmountChanged)
                 {
-                    int idx = 0;
+					int idx = 0;
 
-                    foreach (var importBillDetail in importBillDetails)
-                    {
-                        if (importBillDetail.MaSach == Convert.ToInt32(ImportCartProductUserControl.AmountChangedId))
-                        {
-                            ImportCartProductUserControl cartProduct = CartContainer.Controls[idx] as ImportCartProductUserControl;
-                            importBillDetail.SoLuong = Convert.ToInt32(cartProduct.AmountTxt.Text);
-                            break;
-                        }
-                        idx++;
-                    }
+					foreach (var orderBillDetail in orderBillDetails)
+					{
+						if (orderBillDetail.MaSach == Convert.ToInt32(ImportCartProductUserControl.AmountChangedId))
+						{
+							ImportCartProductUserControl cartProduct = CartContainer.Controls[idx] as ImportCartProductUserControl;
+							orderBillDetail.SoLuong = Convert.ToInt32(cartProduct.AmountTxt.Text);
+							break;
+						}
+						idx++;
+					}
                     CartHandler();
                     ImportCartProductUserControl.AmountChanged = false;
                 }
@@ -372,7 +357,7 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
                 }
 
                 TotalMoneyLb.Text = string.Format("{0:N0} VND", total);
-                if (importExcel || ManualImportToggleBtn.Checked)
+                if (importExcel)
                 {
                     TotalLb.Visible = true;
                     TotalMoneyLb.Visible = true;
@@ -439,40 +424,192 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
             menu.Show();
         }
 
-		private void ExcelImportBtn_Click(object sender, EventArgs e)
+		private void ExcelBtn_Click(object sender, EventArgs e)
 		{
 			try
 			{
-				DataTable dt = CustomExcel.Instance.ImportFile();
+				ChooseExcelModal modal = new ChooseExcelModal();
+				modal.ShowDialog();
 
-				if (dt == null)
-				{
-					MessageBox.Show("Lỗi chưa chọn file hoặc file excel không đúng dữ liệu!");
-					return;
-				}
-
-                foreach (DataRow row in dt.Rows)
+                if (modal.isImport)
                 {
-                    if (!int.TryParse(row[0].ToString(), out int maSach) || !int.TryParse(row[2].ToString(), out int soLuong) || !decimal.TryParse(row[3].ToString(), out decimal giaNhap))
-                    {
-                        MessageBox.Show("Lỗi chưa chọn file hoặc file excel không đúng format dữ liệu nhập!");
-                        return;
-                    }
-                }
+					DataTable dt = CustomExcel.Instance.ImportFile();
 
-				CartContainer.Controls.Clear();
-				importBillDetails.Clear();
-                ManualImportToggleBtn.Checked = false;
-                importExcel = true;
-				foreach (DataRow row in dt.Rows)
-				{
-					BookDTO book = BookBUS.Instance.getById(row[0].ToString());
-					if (book != null)
+					if (dt == null)
 					{
-						AddProductToCart(book, Convert.ToDecimal(row[3].ToString()), Convert.ToInt32(row[2].ToString()), true);
+						MessageBox.Show("Lỗi chưa chọn file hoặc file excel không đúng dữ liệu!");
+						return;
+					}
+
+                    bool validate = true;
+					List<OrderBillDetailDTO> orderBillDetailList = new List<OrderBillDetailDTO>();
+
+					//Validate loop
+					foreach (DataRow row in dt.Rows)
+					{
+                        if (validate)
+                        {
+                            if (!int.TryParse(row[0].ToString(), out int maPhieuYeuCau) || !int.TryParse(row[1].ToString(), out int maNhaCungCap))
+                            {
+								MessageBox.Show("Lỗi chưa chọn file hoặc file excel không đúng format dữ liệu nhập!");
+								return;
+							}
+
+							orderBillDetailList = OrderBillBUS.Instance.getOrderBillDetailList(row[0].ToString());
+							if (orderBillDetailList == null)
+							{
+								MessageBox.Show("Thất bại, không tìm thấy phiếu yêu cầu!");
+								return;
+							}
+
+							OrderBillDTO orderBill = OrderBillBUS.Instance.getById(row[0].ToString());
+                            if (orderBill.TrangThai)
+                            {
+								MessageBox.Show("Thất bại, phiếu yêu cầu đã được nhập trước đó một lần!");
+								return;
+							}
+							
+							if (orderBill.MaNhaCungCap != Convert.ToInt32(row[1].ToString()))
+							{
+								MessageBox.Show("Thất bại, nhà cung cấp không giống phiếu yêu cầu!");
+								return;
+							}
+
+							validate = false;
+							continue;
+						}
+
+                        if (!int.TryParse(row[0].ToString(), out int maSach) || !int.TryParse(row[2].ToString(), out int soLuong) || !decimal.TryParse(row[3].ToString(), out decimal giaNhap))
+						{
+							MessageBox.Show("Lỗi chưa chọn file hoặc file excel không đúng format dữ liệu nhập!");
+							return;
+						}
+
+						BookDTO book = BookBUS.Instance.getById(row[0].ToString());
+						if (book != null)
+						{
+							int foundIdx = orderBillDetailList.FindIndex(item => item.SoLuong == Convert.ToInt32(row[2].ToString()));
+							if (foundIdx != -1)
+							{
+								orderBillDetailList.RemoveAt(foundIdx);
+							}
+							else
+							{
+                                Console.WriteLine(1);
+                                MessageBox.Show("Không hợp lệ, phiếu nhập không tương đồng với phiếu yêu cầu!");
+								return;
+							}
+						}
+						else
+						{
+							Console.WriteLine(2);
+							MessageBox.Show("Không hợp lệ, phiếu nhập không tương đồng với phiếu yêu cầu!");
+							return;
+						}
+					}
+
+					CartContainer.Controls.Clear();
+					importBillDetails.Clear();
+					orderBillDetails.Clear();
+                    NameInp.Enabled = false;
+					QRScanBtn.Enabled = false;
+					QRScanBtn.Cursor = Cursors.No;
+					importExcel = true;
+					requestExcel = false;
+					validate = true;
+
+					//Add books loop
+					foreach (DataRow row in dt.Rows)
+					{
+                        if (validate)
+                        {
+							orderBillId = row[0].ToString();
+							SupplierDTO supplier = SupplierBUS.Instance.getById(row[1].ToString());
+                            supplierID = supplier.MaNhaCungCap;
+                            SupplierNameLb.Text = supplier.TenNhaCungCap;
+							validate = false;
+                            continue;
+                        }
+
+						BookDTO book = BookBUS.Instance.getById(row[0].ToString());
+                        AddProductToCart(book, Convert.ToDecimal(row[3].ToString()), Convert.ToInt32(row[2].ToString()), true);
 					}
 				}
-			}
+                else if (modal.isRequest)
+                {
+					DataTable dt = CustomExcel.Instance.ImportFile();
+
+					if (dt == null)
+					{
+						MessageBox.Show("Lỗi chưa chọn file hoặc file excel không đúng dữ liệu!");
+						return;
+					}
+
+                    bool validate = true;
+					
+                    //Validate loop
+					foreach (DataRow row in dt.Rows)
+					{
+                        if (validate)
+                        {
+                            if (!int.TryParse(row[0].ToString(), out int maNhaCungCap) || int.TryParse(row[1].ToString(), out int nullVal))
+                            {
+								MessageBox.Show("Lỗi chưa chọn file hoặc file excel không đúng format dữ liệu nhập!");
+								return;
+							}
+
+							SupplierDTO supplier = SupplierBUS.Instance.getById(row[0].ToString());
+							if (supplier == null)
+							{
+								MessageBox.Show("Thất bại, nhà cung cấp không tồn tại!");
+								return;
+							}
+
+							validate = false;
+							continue;
+						}
+
+                        if (!int.TryParse(row[0].ToString(), out int maSach) || !int.TryParse(row[2].ToString(), out int soLuong))
+						{
+							MessageBox.Show("Lỗi chưa chọn file hoặc file excel không đúng format dữ liệu nhập!");
+							return;
+						}
+
+						BookDTO book = BookBUS.Instance.getById(row[0].ToString());
+						if (book == null)
+						{
+                            MessageBox.Show("Thất bại, có sách không tồn tại trong phiếu yêu cầu!");
+						    return;
+						}
+					}
+
+					CartContainer.Controls.Clear();
+					importBillDetails.Clear();
+					orderBillDetails.Clear();
+                    NameInp.Enabled = false;
+					QRScanBtn.Enabled = false;
+					QRScanBtn.Cursor = Cursors.No;
+					importExcel = false;
+					requestExcel = true;
+					validate = true;
+
+					//Add books loop
+					foreach (DataRow row in dt.Rows)
+					{
+                        if (validate)
+                        {
+							SupplierDTO supplier = SupplierBUS.Instance.getById(row[0].ToString());
+                            supplierID = supplier.MaNhaCungCap;
+                            SupplierNameLb.Text = supplier.TenNhaCungCap;
+							validate = false;
+                            continue;
+                        }
+
+						BookDTO book = BookBUS.Instance.getById(row[0].ToString());
+                        AddProductToCart(book, amount: Convert.ToInt32(row[2].ToString()), disabled: true);
+					}
+				}
+            }
 			catch (Exception ex)
 			{
 				Console.WriteLine(ex);
@@ -540,21 +677,25 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
         {
 			CartContainer.Controls.Clear();
 			importBillDetails.Clear();
+			orderBillDetails.Clear();
 			TotalLb.Visible = false;
 			TotalMoneyLb.Visible = false;
 			ProfitPercentTxb.Visible = false;
 			PercentLb.Visible = false;
 			PrintImportBtn.Cursor = Cursors.No;
 			printImportBtnAllowed = false;
+			NameInp.Enabled = true;
+			QRScanBtn.Enabled = true;
+			QRScanBtn.Cursor = Cursors.Hand;
 			PrintImportBtn.BackColor = Color.Silver;
 			PrintRequestBtn.Cursor = Cursors.No;
 			printRequestBtnAllowed = false;
 			PrintRequestBtn.BackColor = Color.Silver;
-            ManualImportToggleBtn.Checked = false;
 			SupplierNameLb.Text = "";
 			ProfitPercentTxb.Text = "";
 			supplierID = 0;
 			importExcel = false;
+			requestExcel = false;
 			importBillId = Convert.ToInt32(ImportBillBUS.Instance.getLatestId());
 			CartHandler();
 			RenderBookContainer();
@@ -578,12 +719,14 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
                     importBill.MaNhaCungCap = supplierID;
                     importBill.NgayLap = DateTime.Now;
                     importBill.PhanTramLoiNhuan = Convert.ToInt32(ProfitPercentTxb.Text);
+					importBill.MaPhieuYeuCau = Convert.ToInt32(orderBillId);
 
-                    ImportBillDTO newImportBill = ImportBillBUS.Instance.insertReturnBill(importBill);
+					ImportBillDTO newImportBill = ImportBillBUS.Instance.insertReturnBill(importBill);
 
                     if (newImportBill == null)
                     {
                         MessageBox.Show("Thất bại");
+						return;
                     }
                     else
                     {
@@ -606,6 +749,7 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
                         importBillPrintForm.ShowDialog();
                     }
 
+					OrderBillBUS.Instance.updateTrangThai(orderBillId, 1);
                     refresh();
 				}
 				else
@@ -622,45 +766,43 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
 			{
 				if (printRequestBtnAllowed)
 				{
-					//ImportBillDTO importBill = new ImportBillDTO();
-					//importBill.TongTien = total;
-					//importBill.MaNhanVien = staffID;
-					//importBill.MaNhaCungCap = supplierID;
-					//importBill.NgayLap = DateTime.Now;
-					//importBill.PhanTramLoiNhuan = Convert.ToInt32(ProfitPercentTxb.Text);
+					OrderBillDTO orderBill = new OrderBillDTO();
+					orderBill.MaNhanVien = staffID;
+					orderBill.MaNhaCungCap = supplierID;
+					orderBill.NgayLap = DateTime.Now;
 
-					//ImportBillDTO newImportBill = ImportBillBUS.Instance.insertReturnBill(importBill);
+					OrderBillDTO newOrderBill = OrderBillBUS.Instance.insertReturnBill(orderBill);
 
-					//if (newImportBill == null)
-					//{
-					//	MessageBox.Show("Thất bại");
-					//}
-					//else
-					//{
-					//	foreach (var importBillDetail in importBillDetails)
-					//	{
-					//		ImportBillDetailDTO newImportBillDetail = new ImportBillDetailDTO(
-					//			newImportBill.MaDonNhapHang,
-					//			importBillDetail.MaSach,
-					//			importBillDetail.SoLuong,
-					//			importBillDetail.DonGia
-					//		);
-					//		ImportBillBUS.Instance.createImportBillDetail(newImportBillDetail, importBill.PhanTramLoiNhuan);
-					//	}
+					if (newOrderBill == null)
+					{
+						MessageBox.Show("Thất bại");
+						return;
+					}
+					else
+					{
+						foreach (var orderBillDetail in orderBillDetails)
+						{
+							OrderBillDetailDTO newOrderBillDetail = new OrderBillDetailDTO(
+								newOrderBill.MaPhieuYeuCau,
+								orderBillDetail.MaSach,
+								orderBillDetail.SoLuong
+							);
+							OrderBillBUS.Instance.createOrderBillDetail(newOrderBillDetail);
+						}
 
-					//	MessageBox.Show("Thành công");
-					//}
+						MessageBox.Show("Thành công");
+					}
 
-					//using (ImportBillPrintForm importBillPrintForm = new ImportBillPrintForm(newImportBill.MaDonNhapHang))
-					//{
-					//	importBillPrintForm.ShowDialog();
-					//}
+					using (OrderBillPrintForm orderBillPrintForm = new OrderBillPrintForm(newOrderBill.MaPhieuYeuCau))
+					{
+						orderBillPrintForm.ShowDialog();
+					}
 
 					refresh();
 				}
-                else
-                {
-                    panel1.Focus();
+				else
+				{
+					panel1.Focus();
 				}
 			}
 			catch (Exception ex) { Console.WriteLine(ex); }

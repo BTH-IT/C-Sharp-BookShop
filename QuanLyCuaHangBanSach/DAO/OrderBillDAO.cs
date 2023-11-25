@@ -132,6 +132,20 @@ namespace QuanLyCuaHangBanSach.DAO
 
 			return rowChanged > 0;
 		}
+
+		public bool updateTrangThai(string maPhieuyeucau, int trangThai)
+		{
+			string sql = $@"UPDATE phieuyeucau SET 
+                            trangThai=@trangThai Where maPhieuYeuCau=@maPhieuYeuCau;";
+
+			int rowChanged = DataProvider.Instance.ExecuteNonQuery(sql,
+				new MySqlParameter[] {
+					new MySqlParameter("@maPhieuYeuCau", maPhieuyeucau),
+					new MySqlParameter("@trangThai", trangThai),
+				});
+			return rowChanged > 0;
+		}
+
 		public DataTable searchData(string value)
 		{
 			string sql = $@"SELECT * FROM phieuyeucau WHERE maPhieuYeuCau LIKE @maPhieuYeuCau;";

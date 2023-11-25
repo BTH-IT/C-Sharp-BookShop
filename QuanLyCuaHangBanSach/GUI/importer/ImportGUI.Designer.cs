@@ -39,6 +39,7 @@
 			this.ProductSearchInp = new Guna.UI2.WinForms.Guna2TextBox();
 			this.FilterBtn = new System.Windows.Forms.Button();
 			this.panel1 = new System.Windows.Forms.Panel();
+			this.QRScanBtn = new Guna.UI.WinForms.GunaButton();
 			this.FilterContainer = new System.Windows.Forms.Panel();
 			this.BookContainer = new System.Windows.Forms.FlowLayoutPanel();
 			this.panel3 = new System.Windows.Forms.Panel();
@@ -66,12 +67,9 @@
 			this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
 			this.panel2 = new System.Windows.Forms.Panel();
 			this.CreateBookBtn = new Guna.UI2.WinForms.Guna2Button();
-			this.ExcelImportBtn = new Guna.UI2.WinForms.Guna2Button();
+			this.ExcelBtn = new Guna.UI2.WinForms.Guna2Button();
 			this.panel6 = new System.Windows.Forms.Panel();
 			this.LogoutBtn = new Guna.UI2.WinForms.Guna2Button();
-			this.QRScanBtn = new Guna.UI.WinForms.GunaButton();
-			this.ManualImportToggleBtn = new Guna.UI2.WinForms.Guna2ToggleSwitch();
-			this.label4 = new System.Windows.Forms.Label();
 			this.flowLayoutPanel2.SuspendLayout();
 			this.flowLayoutPanel4.SuspendLayout();
 			this.flowLayoutPanel5.SuspendLayout();
@@ -198,14 +196,41 @@
 			// 
 			// panel1
 			// 
-			this.panel1.Controls.Add(this.label4);
-			this.panel1.Controls.Add(this.ManualImportToggleBtn);
 			this.panel1.Controls.Add(this.QRScanBtn);
 			this.panel1.Location = new System.Drawing.Point(294, 0);
 			this.panel1.Margin = new System.Windows.Forms.Padding(0);
 			this.panel1.Name = "panel1";
 			this.panel1.Size = new System.Drawing.Size(492, 48);
 			this.panel1.TabIndex = 1;
+			// 
+			// QRScanBtn
+			// 
+			this.QRScanBtn.Animated = true;
+			this.QRScanBtn.AnimationHoverSpeed = 0.07F;
+			this.QRScanBtn.AnimationSpeed = 0.03F;
+			this.QRScanBtn.BackColor = System.Drawing.Color.Transparent;
+			this.QRScanBtn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+			this.QRScanBtn.BorderColor = System.Drawing.Color.White;
+			this.QRScanBtn.BorderSize = 1;
+			this.QRScanBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.QRScanBtn.DialogResult = System.Windows.Forms.DialogResult.None;
+			this.QRScanBtn.FocusedColor = System.Drawing.Color.PaleTurquoise;
+			this.QRScanBtn.Font = new System.Drawing.Font("Segoe UI", 9F);
+			this.QRScanBtn.ForeColor = System.Drawing.Color.White;
+			this.QRScanBtn.Image = ((System.Drawing.Image)(resources.GetObject("QRScanBtn.Image")));
+			this.QRScanBtn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			this.QRScanBtn.ImageSize = new System.Drawing.Size(26, 26);
+			this.QRScanBtn.Location = new System.Drawing.Point(447, 3);
+			this.QRScanBtn.Name = "QRScanBtn";
+			this.QRScanBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+			this.QRScanBtn.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+			this.QRScanBtn.OnHoverForeColor = System.Drawing.Color.White;
+			this.QRScanBtn.OnHoverImage = null;
+			this.QRScanBtn.OnPressedColor = System.Drawing.Color.Black;
+			this.QRScanBtn.Radius = 8;
+			this.QRScanBtn.Size = new System.Drawing.Size(42, 42);
+			this.QRScanBtn.TabIndex = 1;
+			this.QRScanBtn.Click += new System.EventHandler(this.QRScanBtn_Click);
 			// 
 			// FilterContainer
 			// 
@@ -556,7 +581,7 @@
 			// panel2
 			// 
 			this.panel2.Controls.Add(this.CreateBookBtn);
-			this.panel2.Controls.Add(this.ExcelImportBtn);
+			this.panel2.Controls.Add(this.ExcelBtn);
 			this.panel2.Location = new System.Drawing.Point(3, 87);
 			this.panel2.Name = "panel2";
 			this.panel2.Size = new System.Drawing.Size(77, 516);
@@ -592,35 +617,35 @@
 			this.CreateBookBtn.TabStop = false;
 			this.CreateBookBtn.Click += new System.EventHandler(this.CreateBookBtn_Click);
 			// 
-			// ExcelImportBtn
+			// ExcelBtn
 			// 
-			this.ExcelImportBtn.Animated = true;
-			this.ExcelImportBtn.BackColor = System.Drawing.Color.Transparent;
-			this.ExcelImportBtn.BorderColor = System.Drawing.Color.White;
-			this.ExcelImportBtn.BorderRadius = 25;
-			this.ExcelImportBtn.BorderThickness = 1;
-			this.ExcelImportBtn.CheckedState.Parent = this.ExcelImportBtn;
-			this.ExcelImportBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.ExcelImportBtn.CustomImages.Parent = this.ExcelImportBtn;
-			this.ExcelImportBtn.FillColor = System.Drawing.Color.White;
-			this.ExcelImportBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 10F);
-			this.ExcelImportBtn.ForeColor = System.Drawing.Color.White;
-			this.ExcelImportBtn.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(107)))), ((int)(((byte)(250)))));
-			this.ExcelImportBtn.HoverState.FillColor = System.Drawing.Color.White;
-			this.ExcelImportBtn.HoverState.Parent = this.ExcelImportBtn;
-			this.ExcelImportBtn.Image = ((System.Drawing.Image)(resources.GetObject("ExcelImportBtn.Image")));
-			this.ExcelImportBtn.ImageSize = new System.Drawing.Size(35, 35);
-			this.ExcelImportBtn.Location = new System.Drawing.Point(14, 32);
-			this.ExcelImportBtn.Name = "ExcelImportBtn";
-			this.ExcelImportBtn.PressedColor = System.Drawing.Color.Transparent;
-			this.ExcelImportBtn.ShadowDecoration.BorderRadius = 25;
-			this.ExcelImportBtn.ShadowDecoration.Depth = 100;
-			this.ExcelImportBtn.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-			this.ExcelImportBtn.ShadowDecoration.Parent = this.ExcelImportBtn;
-			this.ExcelImportBtn.Size = new System.Drawing.Size(50, 50);
-			this.ExcelImportBtn.TabIndex = 47;
-			this.ExcelImportBtn.TabStop = false;
-			this.ExcelImportBtn.Click += new System.EventHandler(this.ExcelImportBtn_Click);
+			this.ExcelBtn.Animated = true;
+			this.ExcelBtn.BackColor = System.Drawing.Color.Transparent;
+			this.ExcelBtn.BorderColor = System.Drawing.Color.White;
+			this.ExcelBtn.BorderRadius = 25;
+			this.ExcelBtn.BorderThickness = 1;
+			this.ExcelBtn.CheckedState.Parent = this.ExcelBtn;
+			this.ExcelBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.ExcelBtn.CustomImages.Parent = this.ExcelBtn;
+			this.ExcelBtn.FillColor = System.Drawing.Color.White;
+			this.ExcelBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 10F);
+			this.ExcelBtn.ForeColor = System.Drawing.Color.White;
+			this.ExcelBtn.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(107)))), ((int)(((byte)(250)))));
+			this.ExcelBtn.HoverState.FillColor = System.Drawing.Color.White;
+			this.ExcelBtn.HoverState.Parent = this.ExcelBtn;
+			this.ExcelBtn.Image = ((System.Drawing.Image)(resources.GetObject("ExcelBtn.Image")));
+			this.ExcelBtn.ImageSize = new System.Drawing.Size(35, 35);
+			this.ExcelBtn.Location = new System.Drawing.Point(14, 32);
+			this.ExcelBtn.Name = "ExcelBtn";
+			this.ExcelBtn.PressedColor = System.Drawing.Color.Transparent;
+			this.ExcelBtn.ShadowDecoration.BorderRadius = 25;
+			this.ExcelBtn.ShadowDecoration.Depth = 100;
+			this.ExcelBtn.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+			this.ExcelBtn.ShadowDecoration.Parent = this.ExcelBtn;
+			this.ExcelBtn.Size = new System.Drawing.Size(50, 50);
+			this.ExcelBtn.TabIndex = 47;
+			this.ExcelBtn.TabStop = false;
+			this.ExcelBtn.Click += new System.EventHandler(this.ExcelBtn_Click);
 			// 
 			// panel6
 			// 
@@ -660,71 +685,6 @@
 			this.LogoutBtn.TabStop = false;
 			this.LogoutBtn.Click += new System.EventHandler(this.LogOutBtn_Click);
 			// 
-			// QRScanBtn
-			// 
-			this.QRScanBtn.Animated = true;
-			this.QRScanBtn.AnimationHoverSpeed = 0.07F;
-			this.QRScanBtn.AnimationSpeed = 0.03F;
-			this.QRScanBtn.BackColor = System.Drawing.Color.Transparent;
-			this.QRScanBtn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-			this.QRScanBtn.BorderColor = System.Drawing.Color.White;
-			this.QRScanBtn.BorderSize = 1;
-			this.QRScanBtn.Cursor = System.Windows.Forms.Cursors.No;
-			this.QRScanBtn.DialogResult = System.Windows.Forms.DialogResult.None;
-			this.QRScanBtn.Enabled = false;
-			this.QRScanBtn.FocusedColor = System.Drawing.Color.PaleTurquoise;
-			this.QRScanBtn.Font = new System.Drawing.Font("Segoe UI", 9F);
-			this.QRScanBtn.ForeColor = System.Drawing.Color.White;
-			this.QRScanBtn.Image = ((System.Drawing.Image)(resources.GetObject("QRScanBtn.Image")));
-			this.QRScanBtn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
-			this.QRScanBtn.ImageSize = new System.Drawing.Size(26, 26);
-			this.QRScanBtn.Location = new System.Drawing.Point(447, 3);
-			this.QRScanBtn.Name = "QRScanBtn";
-			this.QRScanBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-			this.QRScanBtn.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-			this.QRScanBtn.OnHoverForeColor = System.Drawing.Color.White;
-			this.QRScanBtn.OnHoverImage = null;
-			this.QRScanBtn.OnPressedColor = System.Drawing.Color.Black;
-			this.QRScanBtn.Radius = 8;
-			this.QRScanBtn.Size = new System.Drawing.Size(42, 42);
-			this.QRScanBtn.TabIndex = 1;
-			this.QRScanBtn.Click += new System.EventHandler(this.QRScanBtn_Click);
-			// 
-			// ManualImportToggleBtn
-			// 
-			this.ManualImportToggleBtn.Animated = true;
-			this.ManualImportToggleBtn.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-			this.ManualImportToggleBtn.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-			this.ManualImportToggleBtn.CheckedState.InnerBorderColor = System.Drawing.Color.White;
-			this.ManualImportToggleBtn.CheckedState.InnerColor = System.Drawing.Color.White;
-			this.ManualImportToggleBtn.CheckedState.Parent = this.ManualImportToggleBtn;
-			this.ManualImportToggleBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.ManualImportToggleBtn.Location = new System.Drawing.Point(348, 10);
-			this.ManualImportToggleBtn.Name = "ManualImportToggleBtn";
-			this.ManualImportToggleBtn.ShadowDecoration.Parent = this.ManualImportToggleBtn;
-			this.ManualImportToggleBtn.Size = new System.Drawing.Size(58, 28);
-			this.ManualImportToggleBtn.TabIndex = 2;
-			this.ManualImportToggleBtn.TabStop = false;
-			this.ManualImportToggleBtn.UncheckedState.BorderColor = System.Drawing.Color.Gray;
-			this.ManualImportToggleBtn.UncheckedState.BorderThickness = 1;
-			this.ManualImportToggleBtn.UncheckedState.FillColor = System.Drawing.Color.White;
-			this.ManualImportToggleBtn.UncheckedState.InnerBorderColor = System.Drawing.Color.Gray;
-			this.ManualImportToggleBtn.UncheckedState.InnerColor = System.Drawing.Color.Gray;
-			this.ManualImportToggleBtn.UncheckedState.Parent = this.ManualImportToggleBtn;
-			this.ManualImportToggleBtn.CheckedChanged += new System.EventHandler(this.ManualImportToggleBtn_CheckedChanged);
-			// 
-			// label4
-			// 
-			this.label4.AutoSize = true;
-			this.label4.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-			this.label4.Location = new System.Drawing.Point(186, 10);
-			this.label4.Margin = new System.Windows.Forms.Padding(20, 14, 3, 2);
-			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(156, 25);
-			this.label4.TabIndex = 3;
-			this.label4.Text = "Nhập hàng thủ công:";
-			this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			// 
 			// ImportGUI
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -749,7 +709,6 @@
 			this.flowLayoutPanel5.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
 			this.panel1.ResumeLayout(false);
-			this.panel1.PerformLayout();
 			this.panel3.ResumeLayout(false);
 			this.panel4.ResumeLayout(false);
 			this.panel4.PerformLayout();
@@ -796,7 +755,7 @@
 		private Guna.UI2.WinForms.Guna2TextBox ProductSearchInp;
 		private Guna.UI2.WinForms.Guna2TextBox NameInp;
 		private System.Windows.Forms.Panel panel7;
-		private Guna.UI2.WinForms.Guna2Button ExcelImportBtn;
+		private Guna.UI2.WinForms.Guna2Button ExcelBtn;
 		private Guna.UI2.WinForms.Guna2TextBox ProfitPercentTxb;
 		private System.Windows.Forms.Label PercentLb;
 		private System.Windows.Forms.Label ErrorLb;
@@ -804,7 +763,5 @@
 		private Guna.UI.WinForms.GunaAdvenceButton refreshBtn;
 		private System.Windows.Forms.Button PrintRequestBtn;
 		private Guna.UI.WinForms.GunaButton QRScanBtn;
-		private System.Windows.Forms.Label label4;
-		private Guna.UI2.WinForms.Guna2ToggleSwitch ManualImportToggleBtn;
 	}
 }

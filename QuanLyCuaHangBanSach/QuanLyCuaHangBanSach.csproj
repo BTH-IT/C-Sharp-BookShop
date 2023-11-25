@@ -679,6 +679,12 @@
     <Compile Include="GUI\Modal\BookTypeModal.Designer.cs">
       <DependentUpon>BookTypeModal.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Modal\ChooseExcelModal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Modal\ChooseExcelModal.Designer.cs">
+      <DependentUpon>ChooseExcelModal.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Modal\CustomerBillModal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -980,6 +986,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Modal\BookTypeModal.resx">
       <DependentUpon>BookTypeModal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Modal\ChooseExcelModal.resx">
+      <DependentUpon>ChooseExcelModal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Modal\CustomerBillModal.resx">
       <DependentUpon>CustomerBillModal.cs</DependentUpon>
