@@ -89,7 +89,7 @@
 			this.btnExport.Image = ((System.Drawing.Image)(resources.GetObject("btnExport.Image")));
 			this.btnExport.ImageSize = new System.Drawing.Size(20, 20);
 			this.btnExport.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-			this.btnExport.Location = new System.Drawing.Point(130, 7);
+			this.btnExport.Location = new System.Drawing.Point(125, 7);
 			this.btnExport.Name = "btnExport";
 			this.btnExport.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
 			this.btnExport.OnHoverBorderColor = System.Drawing.Color.Transparent;
@@ -275,7 +275,6 @@
 			this.dgvAccount.AllowUserToDeleteRows = false;
 			this.dgvAccount.AllowUserToResizeRows = false;
 			dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-			dataGridViewCellStyle1.Font = new System.Drawing.Font("#9Slide03 Cabin", 10F);
 			this.dgvAccount.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
 			this.dgvAccount.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
 			this.dgvAccount.BackgroundColor = System.Drawing.Color.White;
@@ -284,7 +283,7 @@
 			this.dgvAccount.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
 			dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
 			dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-			dataGridViewCellStyle2.Font = new System.Drawing.Font("#9Slide03 Cabin", 10F);
+			dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
 			dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
 			dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
 			dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
@@ -299,7 +298,7 @@
             this.matKhau});
 			dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
 			dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-			dataGridViewCellStyle3.Font = new System.Drawing.Font("#9Slide03 Cabin", 10F);
+			dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
 			dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
 			dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
 			dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
@@ -312,7 +311,7 @@
 			this.dgvAccount.Name = "dgvAccount";
 			dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
 			dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-			dataGridViewCellStyle4.Font = new System.Drawing.Font("#9Slide03 Cabin", 10F);
+			dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
 			dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
 			dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
 			dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
