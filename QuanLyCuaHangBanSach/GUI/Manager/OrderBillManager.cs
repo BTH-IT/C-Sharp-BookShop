@@ -231,7 +231,6 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 			{
 				return;
 			}
-
 			DataGridViewRow row = this.dgvOrderBill.Rows[this.dgvOrderBill.CurrentCell.RowIndex];
 			OrderBillDTO OrderBill = OrderBillBUS.Instance.getById(row.Cells[0].Value.ToString());
 

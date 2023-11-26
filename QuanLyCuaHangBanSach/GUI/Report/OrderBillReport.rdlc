@@ -228,7 +228,7 @@
             <Top>3.66955cm</Top>
             <Left>0.73928cm</Left>
             <Height>0.6cm</Height>
-            <Width>3.37007cm</Width>
+            <Width>3.78634cm</Width>
             <ZIndex>5</ZIndex>
             <Style>
               <Border>
@@ -259,9 +259,9 @@
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
             <Top>3.66955cm</Top>
-            <Left>4.21518cm</Left>
+            <Left>4.70201cm</Left>
             <Height>0.6cm</Height>
-            <Width>3.27469cm</Width>
+            <Width>3.40169cm</Width>
             <ZIndex>6</ZIndex>
             <Style>
               <Border>
@@ -846,7 +846,7 @@
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
     <ReportParameter Name="pDate">
-      <DataType>DateTime</DataType>
+      <DataType>String</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
     <ReportParameter Name="pSupplierId">

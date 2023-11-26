@@ -423,7 +423,7 @@
 			this.deleteBtn.OnPressedColor = System.Drawing.Color.Black;
 			this.deleteBtn.Radius = 6;
 			this.deleteBtn.Size = new System.Drawing.Size(78, 42);
-			this.deleteBtn.TabIndex = 10;
+			this.deleteBtn.TabIndex = 11;
 			this.deleteBtn.Text = "Xóa";
 			this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
 			// 
@@ -457,7 +457,7 @@
 			this.editBtn.OnPressedColor = System.Drawing.Color.Black;
 			this.editBtn.Radius = 6;
 			this.editBtn.Size = new System.Drawing.Size(113, 42);
-			this.editBtn.TabIndex = 9;
+			this.editBtn.TabIndex = 10;
 			this.editBtn.Text = "Chỉnh sửa";
 			this.editBtn.Click += new System.EventHandler(this.editBtn_Click);
 			// 
@@ -491,7 +491,7 @@
 			this.addBtn.OnPressedColor = System.Drawing.Color.Black;
 			this.addBtn.Radius = 6;
 			this.addBtn.Size = new System.Drawing.Size(117, 42);
-			this.addBtn.TabIndex = 8;
+			this.addBtn.TabIndex = 9;
 			this.addBtn.Text = "Thêm mới";
 			this.addBtn.Click += new System.EventHandler(this.addBtn_Click);
 			// 
