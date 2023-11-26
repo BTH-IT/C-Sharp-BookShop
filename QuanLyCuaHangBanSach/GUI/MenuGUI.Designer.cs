@@ -138,7 +138,7 @@
 			this.label4.Name = "label4";
 			this.label4.Size = new System.Drawing.Size(208, 56);
 			this.label4.TabIndex = 8;
-			this.label4.Text = "Nhập Hàng";
+			this.label4.Text = "Đặt và Nhập Hàng";
 			this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			this.label4.Click += new System.EventHandler(this.label4_Click);
 			// 

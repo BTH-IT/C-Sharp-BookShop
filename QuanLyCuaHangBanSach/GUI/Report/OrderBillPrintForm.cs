@@ -34,7 +34,6 @@ namespace QuanLyCuaHangBanSach.GUI.Report
 
 			System.Data.DataTable dataTable = this.bookD1.Tables[0];
 
-			int count = 1;
 			BookDTO book;
 	
 			foreach (OrderBillDetailDTO OrderBillDetail in OrderBillDetailList)
@@ -42,7 +41,7 @@ namespace QuanLyCuaHangBanSach.GUI.Report
 				book = BookBUS.Instance.getById(OrderBillDetail.MaSach.ToString());
 
 				dataTable.Rows.Add(
-					count,
+					book.MaSach,
 					book.TenSach,
 					OrderBillDetail.SoLuong
 				);
@@ -53,10 +52,11 @@ namespace QuanLyCuaHangBanSach.GUI.Report
 			Microsoft.Reporting.WinForms.ReportParameter[] p = new Microsoft.Reporting.WinForms.ReportParameter[]
 			{
 				new Microsoft.Reporting.WinForms.ReportParameter("pInvoiceCode", OrderBill.MaPhieuYeuCau.ToString()),
-				new Microsoft.Reporting.WinForms.ReportParameter("pEmployee", staff.Ten.ToString()),
+				new Microsoft.Reporting.WinForms.ReportParameter("pSupplierId", supplier.MaNhaCungCap.ToString()),
+				new Microsoft.Reporting.WinForms.ReportParameter("pSupplierName", supplier.TenNhaCungCap),
 				new Microsoft.Reporting.WinForms.ReportParameter("pDate", OrderBill.NgayLap.GetDateTimeFormats()[0].ToString()),
-				new Microsoft.Reporting.WinForms.ReportParameter("pSupplier", supplier.TenNhaCungCap),
-
+				new Microsoft.Reporting.WinForms.ReportParameter("pEmployeeId", staff.Ma.ToString()),
+				new Microsoft.Reporting.WinForms.ReportParameter("pEmployeeName", staff.Ten.ToString()),
 			};
 			// Set the data source of the report
 			ReportDataSource reportDataSource = new ReportDataSource("BookD", dataTable);
