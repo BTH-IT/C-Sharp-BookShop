@@ -24,6 +24,7 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
 		private bool importExcel = false;
 		private bool requestExcel = false;
 		private int importBillId = Convert.ToInt32(ImportBillBUS.Instance.getLatestId()) + 1;
+		private int requestBillId = Convert.ToInt32(OrderBillBUS.Instance.getLatestId()) + 1;
 		private decimal total = 0;
         private List<ImportBillDetailDTO> importBillDetails = new List<ImportBillDetailDTO>();
         private List<OrderBillDetailDTO> orderBillDetails = new List<OrderBillDetailDTO>();
@@ -175,11 +176,11 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
         {
             try
             {
-                if (importBillDetails.Count == 0 || !importBillDetails.Any(item => item.MaSach == book.MaSach))
+                if ((importBillDetails.Count == 0 || !importBillDetails.Any(item => item.MaSach == book.MaSach)) && (orderBillDetails.Count == 0 || !orderBillDetails.Any(item => item.MaSach == book.MaSach)))
                 {
 					ImportCartProductUserControl product = new ImportCartProductUserControl(importExcel ? 1 : 0);
                     product.details(book, amount);
-					product.BillIdDetailLb.Text = importBillId.ToString();
+					product.BillIdDetailLb.Text = importExcel ? importBillId.ToString() : requestBillId.ToString();
 
                     product.ImportPriceTxb.MouseLeave += (object sender, EventArgs e) =>
                     {
@@ -267,7 +268,7 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
                     {
                         int ChoseId_int = Convert.ToInt32(BookUserControl.ChoseId);
                         BookDTO book = BookBUS.Instance.getById(BookUserControl.ChoseId);
-                        AddProductToCart(book, book.GiaNhap);
+                        AddProductToCart(book);
 						BookUserControl.clicked = false;
 					}
 					else
@@ -696,7 +697,8 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
 			supplierID = 0;
 			importExcel = false;
 			requestExcel = false;
-			importBillId = Convert.ToInt32(ImportBillBUS.Instance.getLatestId());
+			importBillId = Convert.ToInt32(ImportBillBUS.Instance.getLatestId()) + 1;
+			requestBillId = Convert.ToInt32(OrderBillBUS.Instance.getLatestId()) + 1;
 			CartHandler();
 			RenderBookContainer();
 			label1.Focus();

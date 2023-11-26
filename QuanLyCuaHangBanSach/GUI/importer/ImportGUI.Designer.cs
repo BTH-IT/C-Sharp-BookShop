@@ -102,9 +102,9 @@
 			this.label1.Location = new System.Drawing.Point(20, 14);
 			this.label1.Margin = new System.Windows.Forms.Padding(20, 14, 3, 2);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(114, 33);
+			this.label1.Size = new System.Drawing.Size(181, 33);
 			this.label1.TabIndex = 2;
-			this.label1.Text = "Nhập sách";
+			this.label1.Text = "Đặt và Nhập sách";
 			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
 			// label2
@@ -281,7 +281,7 @@
 			this.refreshBtn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			this.refreshBtn.ImageSize = new System.Drawing.Size(30, 30);
 			this.refreshBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-			this.refreshBtn.Location = new System.Drawing.Point(307, 13);
+			this.refreshBtn.Location = new System.Drawing.Point(302, 18);
 			this.refreshBtn.Name = "refreshBtn";
 			this.refreshBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
 			this.refreshBtn.OnHoverBorderColor = System.Drawing.Color.Transparent;
@@ -497,7 +497,7 @@
 			// 
 			this.label3.AutoSize = true;
 			this.label3.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-			this.label3.Location = new System.Drawing.Point(-3, 12);
+			this.label3.Location = new System.Drawing.Point(-3, 13);
 			this.label3.Margin = new System.Windows.Forms.Padding(20, 30, 3, 5);
 			this.label3.Name = "label3";
 			this.label3.Size = new System.Drawing.Size(98, 33);
