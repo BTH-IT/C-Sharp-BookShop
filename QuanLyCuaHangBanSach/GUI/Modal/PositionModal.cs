@@ -65,11 +65,11 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
         private bool validateForm()
         {
             bool isPosition = CustomValidation.Instance.checkTextbox(
-                    this.positionNameTxt,
-                    this.errorPositionNameMsg,
-                    this.nameLine,
-                    new string[] { "required", "name" , "space" }
-                );
+                this.positionNameTxt,
+                this.errorPositionNameMsg,
+                this.nameLine,
+                new string[] { "required", "name" , "space" }
+            );
 
             if (isPosition)
             {
@@ -103,12 +103,13 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 if (!isValid) return;
 
                 string positionName = this.positionNameTxt.Text;
+                float heSoLuong = float.Parse(this.heSoLuongTxt.Value.ToString());
                 string desc = this.descTxt.Text == "" ? "Không có" : this.descTxt.Text;
                 bool isActive = this.activeCkx.Checked;
 
                 int id = updatePosition != null ? updatePosition.MaChucVu : 0;
 
-                PositionDTO position = new PositionDTO(id, positionName, desc, isActive);
+                PositionDTO position = new PositionDTO(id, positionName, desc, isActive, heSoLuong);
 
                 bool isSuccess = updatePosition != null ? PositionBUS.Instance.update(position) : PositionBUS.Instance.insert(position);
 
@@ -144,6 +145,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 {
                     this.positionNameTxt.Text = updatePosition.TenChucVu;
                     this.descTxt.Text = updatePosition.MoTa;
+                    this.heSoLuongTxt.Value = Convert.ToDecimal(updatePosition.HeSoLuong.ToString());
                     this.activeCkx.Checked = updatePosition.TrangThai;
                     this.activeCkx.Enabled = (updatePosition.MaChucVu != 1 && updatePosition.MaChucVu != 7 && updatePosition.MaChucVu !=8);
                 }

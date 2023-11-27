@@ -182,8 +182,8 @@ namespace QuanLyCuaHangBanSach.DAO
         public bool insert(BookDTO data)
         {
 
-            string sql = $@"INSERT INTO sach (tenSach, hinhAnh, maTheLoai, maTacGia, maNhaXuatBan, giaBan, giaNhap, namXuatBan)
-                            VALUES (@tenSach, @hinhAnh, @maTheLoai, @maTacGia, @maNhaXuatBan, @giaBan, @giaNhap, @namXuatBan);";
+            string sql = $@"INSERT INTO sach (tenSach, hinhAnh, maTheLoai, maTacGia, maNhaXuatBan, giaBan, giaNhap)
+                            VALUES (@tenSach, @hinhAnh, @maTheLoai, @maTacGia, @maNhaXuatBan, @giaBan, @giaNhap);";
 
             int rowChanged = DataProvider.Instance.ExecuteNonQuery(sql,
                 new MySqlParameter[] {
@@ -194,7 +194,6 @@ namespace QuanLyCuaHangBanSach.DAO
                     new MySqlParameter("@maNhaXuatBan", data.MaNhaXuatBan),
                     new MySqlParameter("@giaBan", data.GiaBan),
                     new MySqlParameter("@giaNhap", data.GiaNhap),
-                    new MySqlParameter("@namXuatBan", data.NamXuatBan),
                 });
 
             return rowChanged > 0;
@@ -203,7 +202,7 @@ namespace QuanLyCuaHangBanSach.DAO
         public bool update(BookDTO data)
         {
             string sql = $@"UPDATE sach
-                            SET tenSach=@tenSach, hinhAnh=@hinhAnh, maTheLoai=@maTheLoai, maTacGia=@maTacGia, maNhaXuatBan=@maNhaXuatBan, giaBan=@giaBan, giaNhap=@giaNhap, namXuatBan=@namXuatBan
+                            SET tenSach=@tenSach, hinhAnh=@hinhAnh, maTheLoai=@maTheLoai, maTacGia=@maTacGia, maNhaXuatBan=@maNhaXuatBan, giaBan=@giaBan, giaNhap=@giaNhap
                             WHERE maSach=@maSach;";
 
             int rowChanged = DataProvider.Instance.ExecuteNonQuery(sql,
@@ -217,7 +216,6 @@ namespace QuanLyCuaHangBanSach.DAO
                     new MySqlParameter("@soLuongConLai", data.SoLuongConLai),
                     new MySqlParameter("@giaBan", data.GiaBan),
                     new MySqlParameter("@giaNhap", data.GiaNhap),
-                    new MySqlParameter("@namXuatBan", data.NamXuatBan),
                 });
 
             return rowChanged > 0;
@@ -295,11 +293,12 @@ namespace QuanLyCuaHangBanSach.DAO
         public List<BookDTO> getBookList(string id)
         {
             DataTable dataTable = DataProvider.Instance.ExecuteQuery(
-               "SELECT * FROM sach WHERE maSach=@MaSach AND hienThi = 1;",
-               new MySqlParameter[] {
+                "SELECT * FROM sach WHERE maSach=@MaSach AND hienThi = 1;",
+                new MySqlParameter[] {
                     new MySqlParameter("@MaSach", id)
-               }
-           );
+                }
+            );
+
             if (dataTable.Rows.Count <= 0) return null;
 
             DataTable dataTable1 = DataProvider.Instance.ExecuteQuery(

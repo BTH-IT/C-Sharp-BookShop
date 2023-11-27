@@ -101,9 +101,6 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                     Image img = Image.FromStream(ms);
 
                     this.bookNameTxt.Text = updateBook.TenSach;
-                    this.sellPriceTxt.Text = updateBook.GiaBan.ToString();
-                    this.importPriceTxt.Text = updateBook.GiaNhap.ToString();
-                    this.publishYearTxt.Text = updateBook.NamXuatBan.ToString();
                     this.authorCbx.SelectedValue = updateBook.MaTacGia;
                     this.bookTypeCbx.SelectedValue = updateBook.MaTheLoai;
                     this.publisherCbx.SelectedValue = updateBook.MaNhaXuatBan;
@@ -201,73 +198,6 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             }
         }
 
-        private void sellPriceTxt_TextChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                bool isSellPriceValid = CustomValidation.Instance.checkTextbox(
-                    this.sellPriceTxt,
-                    this.errorSellPriceMsg,
-                    this.sellPriceLine,
-                    new string[] { "required", "positive-number" , "space" }
-                );
-                if (isSellPriceValid)
-                { 
-                    isSellPriceValid = CustomValidation.Instance.checkTextboxMatchWithOtherTextBox(sellPriceTxt, importPriceTxt, "Giá bán phải lớn hơn giá nhập", errorSellPriceMsg, sellPriceLine, "after");
-				}
-				CustomValidation.Instance.checkTextboxMatchWithOtherTextBox(importPriceTxt, sellPriceTxt, "Giá nhập phải nhỏ hơn giá bán", this.errorImportPriceMsg, importPriceLine, "before");
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex);
-            }
-        }
-
-        private void importPriceTxt_TextChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                this.importPriceTxt.ForeColor = Color.Black;
-
-                bool isImportPriceValid =CustomValidation.Instance.checkTextbox(
-                    this.importPriceTxt,
-                    this.errorImportPriceMsg,
-                    this.importPriceLine,
-                    new string[] { "required", "number", "space" }
-                );
-                if(isImportPriceValid)
-                {
-                    isImportPriceValid = CustomValidation.Instance.checkTextboxMatchWithOtherTextBox(importPriceTxt,sellPriceTxt,  "Giá nhập phải nhỏ hơn giá bán", this.errorImportPriceMsg , importPriceLine, "before");
-                }
-				bool isc = CustomValidation.Instance.checkTextboxMatchWithOtherTextBox(sellPriceTxt, importPriceTxt, "Giá bán phải lớn hơn giá nhập", errorSellPriceMsg, sellPriceLine, "after");
-                Console.WriteLine(isc);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex);
-            }
-        }
-
-        
-        private void publishYearTxt_TextChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                this.publishYearTxt.ForeColor = Color.Black;
-
-                CustomValidation.Instance.checkTextbox(
-                    this.publishYearTxt,
-                    this.errorPublishYearMsg,
-                    this.publishYearLine,
-                    new string[] { "required", "positive-number", "max-current-year", "space" }
-                );
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex);
-            }
-        }
-
         private bool validateForm()
         {
             try
@@ -299,13 +229,6 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                     }
                 }
 
-                bool isCheckTxt4 = CustomValidation.Instance.checkTextbox(
-                    this.publishYearTxt,
-                    this.errorPublishYearMsg,
-                    this.publishYearLine,
-                    new string[] { "required", "positive-number", "max-current-year", "space" }
-                );
-
                 bool isCheckCbx1 = CustomValidation.Instance.checkCombobox(
                     this.authorCbx,
                     this.errorAuthorMsg,
@@ -330,7 +253,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                     new string[] { "required" }
                 );
 
-                return isBookName  && isCheckTxt4 && isCheckCbx1 && isCheckCbx2 && isCheckCbx3 && isCheckPictureBox;
+                return isBookName && isCheckCbx1 && isCheckCbx2 && isCheckCbx3 && isCheckPictureBox;
             }
             catch (Exception ex)
             {
@@ -355,16 +278,15 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 byte[] img = ms.ToArray();
 
                 string bookName = this.bookNameTxt.Text;
-                decimal sellPrice = Convert.ToDecimal(this.sellPriceTxt.Text);
-                decimal importPrice = Convert.ToDecimal(this.importPriceTxt.Text);
-                int publishYear = Convert.ToInt32(this.publishYearTxt.Text);
+                decimal sellPrice = updateBook != null ? updateBook.GiaBan : 0;
+                decimal importPrice = updateBook != null ? updateBook.GiaNhap : 0;
                 int authorId = Convert.ToInt32(this.authorCbx.SelectedValue);
                 int bookTypeId = Convert.ToInt32(this.bookTypeCbx.SelectedValue);
                 int publisherId = Convert.ToInt32(this.publisherCbx.SelectedValue);
 
                 int id = updateBook != null ? updateBook.MaSach : 0;
 
-                BookDTO book = new BookDTO(id, bookName, img, bookTypeId, authorId, publisherId, sellPrice, importPrice, publishYear);
+                BookDTO book = new BookDTO(id, bookName, img, bookTypeId, authorId, publisherId, sellPrice, importPrice);
 
                 bool isSuccess = updateBook != null ? BookBUS.Instance.update(book) : BookBUS.Instance.insert(book);
 
@@ -532,5 +454,10 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 			}
 
 		}
-	}
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+    }
 }

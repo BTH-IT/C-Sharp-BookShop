@@ -88,14 +88,15 @@ namespace QuanLyCuaHangBanSach.DAO
         public bool insert(PositionDTO data)
         {
 
-            string sql = $@"INSERT INTO chucvu (tenChucVu, moTa, trangThai)
-                            VALUES (@tenChucVu, @moTa, @trangThai);";
+            string sql = $@"INSERT INTO chucvu (tenChucVu, heSoLuong, moTa, trangThai)
+                            VALUES (@tenChucVu, @heSoLuong, @moTa, @trangThai);";
 
             int rowChanged = DataProvider.Instance.ExecuteNonQuery(sql,
                 new MySqlParameter[] {
                     new MySqlParameter("@tenChucVu", data.TenChucVu),
                     new MySqlParameter("@moTa", data.MoTa),
                     new MySqlParameter("@trangThai", data.TrangThai),
+                    new MySqlParameter("@heSoLuong", data.HeSoLuong),
                 });
 
             if (rowChanged > 0)
@@ -129,13 +130,14 @@ namespace QuanLyCuaHangBanSach.DAO
         public bool update(PositionDTO data)
         {
             string sql = $@"UPDATE chucvu
-                            SET tenChucVu=@tenChucVu, moTa=@moTa, trangThai=@trangThai
+                            SET tenChucVu=@tenChucVu, heSoLuong=@heSoLuong, moTa=@moTa, trangThai=@trangThai
                             WHERE maChucVu=@maChucVu;";
 
             int rowChanged = DataProvider.Instance.ExecuteNonQuery(sql,
                 new MySqlParameter[] {
                     new MySqlParameter("@maChucVu", data.MaChucVu),
                     new MySqlParameter("@tenChucVu", data.TenChucVu),
+                    new MySqlParameter("@heSoLuong", data.HeSoLuong),
                     new MySqlParameter("@moTa", data.MoTa),
                     new MySqlParameter("@trangThai", data.TrangThai),
                 });

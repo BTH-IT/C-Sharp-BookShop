@@ -67,81 +67,17 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
                     sale = SaleBUS.Instance.getById(customerBill.MaKhuyenMai.ToString());
 
-					/*
-                    if (sale == null)
-                    {
-                        if (customer == null)
-                        {
-                            this.dgvCustomerBill.Rows.Add(new object[] {
-                                false,
-                                customerBill.MaDonKhachHang,
-                                "Vãng lai",
-                                "Không có",
-                                StaffBUS.Instance.getById(customerBill.MaNhanVien.ToString()).Ten,
-                                "Không có",
-                                customerBill.PhanTramKhuyenMai + "%",
-                                customerBill.NgayLap.GetDateTimeFormats()[0],
-                                string.Format("{0:N0} VNĐ", customerBill.TongTien),
-                            });
-                        }
-                        else
-                        {
-                            this.dgvCustomerBill.Rows.Add(new object[] {
-                                false,
-                                customerBill.MaDonKhachHang,
-                                customer.Ten,
-                                customer.SoDienThoai,
-                                StaffBUS.Instance.getById(customerBill.MaNhanVien.ToString()).Ten,
-                                "Không có",
-                                customerBill.PhanTramKhuyenMai + "%",
-                                customerBill.NgayLap.GetDateTimeFormats()[0],
-                                string.Format("{0:N0} VNĐ", customerBill.TongTien),
-                            });
-                        }
-                    }
-                    else
-                    {
-                        if (customer == null)
-                        {
-                            this.dgvCustomerBill.Rows.Add(new object[] {
-                                false,
-                                customerBill.MaDonKhachHang,
-							    "Vãng lai",
-                                "Không có",
-                                StaffBUS.Instance.getById(customerBill.MaNhanVien.ToString()).Ten,
-                                sale.TenKhuyenMai,
-                                customerBill.PhanTramKhuyenMai + "%",
-                                customerBill.NgayLap.GetDateTimeFormats()[0],
-                                string.Format("{0:N0} VNĐ", customerBill.TongTien),
-                            });
-                        }
-                        else
-                        {
-                            this.dgvCustomerBill.Rows.Add(new object[] {
-                                false,
-                                customerBill.MaDonKhachHang,
-                                customer.Ten,
-                                customer.SoDienThoai,
-                                StaffBUS.Instance.getById(customerBill.MaNhanVien.ToString()).Ten,
-                                sale.TenKhuyenMai,
-                                customerBill.PhanTramKhuyenMai + "%",
-                                customerBill.NgayLap.GetDateTimeFormats()[0],
-                                string.Format("{0:N0} VNĐ", customerBill.TongTien),
-                            });
-                        }
-                    }
-                    */
 					this.dgvCustomerBill.Rows.Add(new object[] {
-								false,
-								customerBill.MaDonKhachHang,
-								customer.Ten,
-								customer.SoDienThoai == "0" ? "Không có" : customer.SoDienThoai,
-								StaffBUS.Instance.getById(customerBill.MaNhanVien.ToString()).Ten,
-								sale.TenKhuyenMai,
-								customerBill.PhanTramKhuyenMai + "%",
-								customerBill.NgayLap.GetDateTimeFormats()[0],
-								string.Format("{0:N0} VNĐ", customerBill.TongTien),
-							});
+						false,
+						customerBill.MaDonKhachHang,
+						customer.Ten,
+						customer.SoDienThoai == "0" ? "Không có" : customer.SoDienThoai,
+						StaffBUS.Instance.getById(customerBill.MaNhanVien.ToString()).Ten,
+						sale.TenKhuyenMai,
+						customerBill.PhanTramKhuyenMai + "%",
+						customerBill.NgayLap.GetDateTimeFormats()[0],
+						string.Format("{0:N0} VNĐ", customerBill.TongTien),
+					});
 
 				}
 			}
@@ -149,7 +85,6 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             {
                 Console.WriteLine(ex);
             }
-
         }
 
         private void loadCustomerCbx()

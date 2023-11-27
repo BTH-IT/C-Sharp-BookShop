@@ -674,9 +674,6 @@
   <metadata name="Column8.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="Column9.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <metadata name="Column6.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -696,7 +693,7 @@
   <data name="gunaAdvenceButton1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAQAAAAEACAYAAABccqhmAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vQAADr0BR/uQrQAAF2tJREFUeF7tnX/EZmUax5MkSUaSJBlJkowxVsYYYyRjjIwxkoyMZI2RzB8ZKyOx
+        vAAADrwBlbxySQAAF2tJREFUeF7tnX/EZmUax5MkSUaSJBlJkowxVsYYYyRjjIwxkoyMZI2RzB8ZKyOx
         kiRJVlaSlZVkJSvJGllZKyNrZa2srGStlay11lorq/1+z3O9ep77Pec+9znPde7nmvN+P1y8Td/7es95
         n3M+5/d5rhBCCCGEEEIIIYQQQgghhBBCCCGEEEIIIYQQQgghhBBCCCGEEEIIIYQQQgghhBBCCCFETL77
         7rvrUfejjqFus3+eHPyua/j7UPtQh1EPoB5CPYY6t1RPop5Zqguorf/H7COo46hDqD2om1BX2q+ZFPwe
