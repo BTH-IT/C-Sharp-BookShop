@@ -49,15 +49,18 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             { 
                 foreach( SaleDTO sale in sales)
                 {
-                    this.dgvSale.Rows.Add(new object[]
+                    if (sale.MaKhuyenMai != 0)
                     {
-                        false,
-                        sale.MaKhuyenMai,
-                        sale.TenKhuyenMai,
-                        sale.PhanTram,
-                        sale.NgayBatDau.GetDateTimeFormats()[0],
-                        sale.NgayKetThuc.GetDateTimeFormats()[0],
-                    });
+                        this.dgvSale.Rows.Add(new object[]
+                        {
+                            false,
+                            sale.MaKhuyenMai,
+                            sale.TenKhuyenMai,
+                            sale.PhanTram,
+                            sale.NgayBatDau.GetDateTimeFormats()[0],
+                            sale.NgayKetThuc.GetDateTimeFormats()[0],
+                        });
+                    }
                 }
             }
         }

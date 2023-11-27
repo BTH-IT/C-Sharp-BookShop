@@ -30,7 +30,7 @@ namespace QuanLyCuaHangBanSach.DTO
 			this.MaNhaCungCap = (int)row["maNhaCungCap"];
 			this.MaNhanVien = (int)row["maNhanVien"];
 			this.NgayLap = (DateTime)row["ngayLap"];
-			this.TrangThai = (int)row["trangThai"];
+			this.TrangThai = Convert.ToInt16(row["trangThai"].ToString());
 		}
 	}
 }

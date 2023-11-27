@@ -189,7 +189,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 			try
 			{
 				List<PositionDTO> positions = PositionBUS.Instance.getAllData();
-				positions.Insert(0, new PositionDTO(0, "Chọn chức vụ", "", false));
+				positions.Insert(0, new PositionDTO(0, "Chọn chức vụ", "", false, 0));
 				this.positionCbx.DisplayMember = "TenChucVu";
 				this.positionCbx.ValueMember = "MaChucVu";
 				this.positionCbx.DataSource = positions;

@@ -46,12 +46,12 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 						trangThai = "Nhập thiếu hàng";
 					}
 					this.dgvOrderBill.Rows.Add(new object[] {
-					orderBill.MaPhieuYeuCau,
-					SupplierBUS.Instance.getById(orderBill.MaNhaCungCap.ToString()).TenNhaCungCap,
-					StaffBUS.Instance.getById(orderBill.MaNhanVien.ToString()).Ten,
-					orderBill.NgayLap.GetDateTimeFormats()[0],
-					trangThai
-				});
+						orderBill.MaPhieuYeuCau,
+						SupplierBUS.Instance.getById(orderBill.MaNhaCungCap.ToString()).TenNhaCungCap,
+						StaffBUS.Instance.getById(orderBill.MaNhanVien.ToString()).Ten,
+						orderBill.NgayLap.GetDateTimeFormats()[0],
+						trangThai
+					});
 				}
 			}
 			catch (Exception ex)
@@ -284,20 +284,12 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 		}
 		private void OrderBillManagerGUI_Load(object sender, EventArgs e)
 		{
-			try
-			{
 				this.dateTimeFrom.Enabled = this.filterCkx.Checked;
 				this.dateTimeTo.Enabled = this.filterCkx.Checked;
 				List<OrderBillDTO> orderBillList = OrderBillBUS.Instance.getAllData();
-				this.loadOrderBillListToDataView(orderBillList);
 				this.loadSupplierCbx();
 				this.loadStaffCbx();
-
-			}
-			
-			catch{
-
-			}
+				this.loadOrderBillListToDataView(orderBillList);
 
 		}
 		private void dateTimeFrom_ValueChanged(object sender, EventArgs e)

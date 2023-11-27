@@ -29,7 +29,7 @@ namespace QuanLyCuaHangBanSach.DAO
 
         public bool checkDuplicateName(string value)
         {
-            DataTable dataTable = DataProvider.Instance.ExecuteQuery("select * from theloai WHERE  LOWER(tenTheLoai)=LOWER(@tenTheLoai) ;",
+            DataTable dataTable = DataProvider.Instance.ExecuteQuery("select * from theloai WHERE  LOWER(tenTheLoai)=LOWER(@tenTheLoai);",
                 new MySqlParameter[] {
                     new MySqlParameter("@tenTheLoai", value.Trim().ToLower())
                 }

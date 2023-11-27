@@ -69,7 +69,6 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                     PublisherBUS.Instance.getById(book.MaNhaXuatBan.ToString()).TenNhaXuatBan,
                     string.Format("{0:N0} VNĐ", book.GiaBan),
                     string.Format("{0:N0} VNĐ", book.GiaNhap),
-                    book.NamXuatBan,
                     string.Format("{0:N0} Sách", book.SoLuongConLai),
                 });
                 }
