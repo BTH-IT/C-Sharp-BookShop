@@ -32,6 +32,5 @@ namespace QuanLyCuaHangBanSach.DTO
 			this.NgayLap = (DateTime)row["ngayLap"];
 			this.TrangThai = Convert.ToInt16(row["trangThai"].ToString());
 		}
-
 	}
 }
