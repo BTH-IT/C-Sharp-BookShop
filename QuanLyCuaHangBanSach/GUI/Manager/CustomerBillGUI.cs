@@ -67,7 +67,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
                     sale = SaleBUS.Instance.getById(customerBill.MaKhuyenMai.ToString());
 
-
+					/*
                     if (sale == null)
                     {
                         if (customer == null)
@@ -130,8 +130,21 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                             });
                         }
                     }
-                }
-            }
+                    */
+					this.dgvCustomerBill.Rows.Add(new object[] {
+								false,
+								customerBill.MaDonKhachHang,
+								customer.Ten,
+								customer.SoDienThoai == "0" ? "Không có" : customer.SoDienThoai,
+								StaffBUS.Instance.getById(customerBill.MaNhanVien.ToString()).Ten,
+								sale.TenKhuyenMai,
+								customerBill.PhanTramKhuyenMai + "%",
+								customerBill.NgayLap.GetDateTimeFormats()[0],
+								string.Format("{0:N0} VNĐ", customerBill.TongTien),
+							});
+
+				}
+			}
             catch (Exception ex)
             {
                 Console.WriteLine(ex);
@@ -144,9 +157,8 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             try
             {
                 List<CustomerDTO> customerList = CustomerBUS.Instance.getAllData();
-
+                
                 customerList.Insert(0, new CustomerDTO(-1, "Tất cả khách hàng", "", 0, "Tất cả khách hàng", 0));
-                customerList.Insert(1, new CustomerDTO(0, "Vãng lai", "", 0, "Vãng lai", 0));
                  
                 this.customerCbx.ValueMember = "Ma";
                 this.customerCbx.DisplayMember = "Ten";
