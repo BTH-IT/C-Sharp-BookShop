@@ -14,7 +14,6 @@ namespace QuanLyCuaHangBanSach.DTO
         public int SoLuongConLai { get; set; }
         public decimal GiaBan { get; set; }
         public decimal GiaNhap { get; set; }
-        public int NamXuatBan { get; set; }
 
         public BookDTO() { }
         public BookDTO(
@@ -25,8 +24,7 @@ namespace QuanLyCuaHangBanSach.DTO
             int maTacGia,
             int maNhaXuatBan,
             decimal giaBan,
-            decimal giaNhap,
-            int namXuatBan
+            decimal giaNhap
         ) {
             this.MaSach = maSach;
             this.TenSach = tenSach;
@@ -36,7 +34,6 @@ namespace QuanLyCuaHangBanSach.DTO
             this.MaNhaXuatBan = maNhaXuatBan;
             this.GiaBan = giaBan;
             this.GiaNhap = giaNhap;
-            this.NamXuatBan = namXuatBan;
         }
 
         public BookDTO(DataRow row)
@@ -50,7 +47,6 @@ namespace QuanLyCuaHangBanSach.DTO
             this.GiaBan = Convert.ToDecimal(row["giaBan"]);
             this.GiaNhap = Convert.ToDecimal(row["giaNhap"]);
             this.SoLuongConLai = Convert.ToInt32(row["soLuongConLai"]);
-            this.NamXuatBan = Convert.ToInt32(row["namXuatBan"]);
         }
 
         public override string ToString()

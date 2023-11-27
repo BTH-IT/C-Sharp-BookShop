@@ -30,6 +30,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                     this.dgvPosition.Rows.Add(new object[] {
                         position.MaChucVu,
                         position.TenChucVu,
+                        position.HeSoLuong,
                         position.MoTa,
                         position.TrangThai ? "Đang hoạt động" : "Ngưng hoạt động",
                     });

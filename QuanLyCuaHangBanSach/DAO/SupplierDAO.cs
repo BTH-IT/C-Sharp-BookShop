@@ -25,7 +25,7 @@ namespace QuanLyCuaHangBanSach.DAO
 
         public DataTable getAll()
         {
-            return DataProvider.Instance.ExecuteQuery("select * from nhacungcap");
+            return DataProvider.Instance.ExecuteQuery("select * from nhacungcap;");
         }
 
         public bool checkDuplicateName(string value)
