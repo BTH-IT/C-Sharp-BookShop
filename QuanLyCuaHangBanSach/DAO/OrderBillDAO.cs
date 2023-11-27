@@ -68,7 +68,7 @@ namespace QuanLyCuaHangBanSach.DAO
 		public bool insert(OrderBillDTO data)
 		{
 
-			string sql = $@"INSERT INTO phieuyeucau (maNhanVien, maNhaCungCap, ngayLap,trangThai)
+			string sql = $@"INSERT INTO phieuyeucau (maNhanVien, maNhaCungCap, ngayLap, trangThai)
                             VALUES (@maNhanVien, @maNhaCungCap, @ngayLap, @trangThai);";
 
 			int rowChanged = DataProvider.Instance.ExecuteNonQuery(sql,

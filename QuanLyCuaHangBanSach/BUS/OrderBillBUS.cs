@@ -43,7 +43,6 @@ namespace QuanLyCuaHangBanSach.BUS
 			foreach (DataRow row in dt.Rows)
 			{
 				OrderBillDTO orderBill = new OrderBillDTO(row);
-				Console.WriteLine(orderBill.TrangThai);
 				orderBillList.Add(orderBill);
 			}
 		

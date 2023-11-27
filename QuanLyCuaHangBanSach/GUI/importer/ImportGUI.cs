@@ -22,6 +22,7 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
         private int staffID;
 		private string orderBillId;
 		private bool importExcel = false;
+		private bool importNotEnough = false;
 		private bool requestExcel = false;
 		private int importBillId = Convert.ToInt32(ImportBillBUS.Instance.getLatestId()) + 1;
 		private int requestBillId = Convert.ToInt32(OrderBillBUS.Instance.getLatestId()) + 1;
@@ -465,8 +466,8 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
 							}
 
 							OrderBillDTO orderBill = OrderBillBUS.Instance.getById(row[1].ToString());
-							if (orderBill.TrangThai)
-							{
+							if (orderBill.TrangThai == 1 || orderBill.TrangThai == 2)
+                            {
 								MessageBox.Show("Thất bại, phiếu yêu cầu đã được nhập trước đó một lần!");
 								return;
 							}
@@ -514,6 +515,7 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
 								{
 									return;
 								}
+								importNotEnough = true;
 							}
                         }
                     }
@@ -561,27 +563,33 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
 						return;
 					}
 
-                    bool validate = true;
+					int count = 1;
 					
                     //Validate loop
 					foreach (DataRow row in dt.Rows)
 					{
-                        if (validate)
+                        if (count == 1)
                         {
-                            if (!int.TryParse(row[0].ToString(), out int maNhaCungCap) || int.TryParse(row[1].ToString(), out int nullVal))
+                            if (!int.TryParse(row[1].ToString(), out int maNhaCungCap) || int.TryParse(row[2].ToString(), out int nullVal))
                             {
 								MessageBox.Show("Lỗi chưa chọn file hoặc file excel không đúng format dữ liệu nhập!");
 								return;
 							}
 
-							SupplierDTO supplier = SupplierBUS.Instance.getById(row[0].ToString());
+							SupplierDTO supplier = SupplierBUS.Instance.getById(row[1].ToString());
 							if (supplier == null)
 							{
 								MessageBox.Show("Thất bại, nhà cung cấp không tồn tại!");
 								return;
 							}
 
-							validate = false;
+							count++;
+							continue;
+						}
+
+						if (count == 2)
+						{
+							count++;
 							continue;
 						}
 
@@ -594,7 +602,7 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
 						BookDTO book = BookBUS.Instance.getById(row[0].ToString());
 						if (book == null)
 						{
-                            MessageBox.Show("Thất bại, có sách không tồn tại trong phiếu yêu cầu!");
+                            MessageBox.Show($@"Thất bại, sách có mã là: {Convert.ToInt32(row[0].ToString())} không tồn tại trong hệ thống!");
 						    return;
 						}
 					}
@@ -607,19 +615,25 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
 					QRScanBtn.Cursor = Cursors.No;
 					importExcel = false;
 					requestExcel = true;
-					validate = true;
+					count = 1;
 
 					//Add books loop
 					foreach (DataRow row in dt.Rows)
 					{
-                        if (validate)
+                        if (count == 1)
                         {
-							SupplierDTO supplier = SupplierBUS.Instance.getById(row[0].ToString());
+							SupplierDTO supplier = SupplierBUS.Instance.getById(row[1].ToString());
                             supplierID = supplier.MaNhaCungCap;
                             SupplierNameLb.Text = supplier.TenNhaCungCap;
-							validate = false;
+							count++;
                             continue;
                         }
+
+						if (count == 2)
+						{
+							count++;
+							continue;
+						}
 
 						BookDTO book = BookBUS.Instance.getById(row[0].ToString());
                         AddProductToCart(book, amount: Convert.ToInt32(row[2].ToString()), disabled: true);
@@ -711,6 +725,7 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
 			ProfitPercentTxb.Text = "";
 			supplierID = 0;
 			importExcel = false;
+			importNotEnough = false;
 			requestExcel = false;
 			importBillId = Convert.ToInt32(ImportBillBUS.Instance.getLatestId()) + 1;
 			requestBillId = Convert.ToInt32(OrderBillBUS.Instance.getLatestId()) + 1;
@@ -766,7 +781,7 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
                         importBillPrintForm.ShowDialog();
                     }
 
-					OrderBillBUS.Instance.updateTrangThai(orderBillId, 1);
+					OrderBillBUS.Instance.updateTrangThai(orderBillId, importNotEnough ? 2 : 1);
                     refresh();
 				}
 				else
@@ -787,6 +802,7 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
 					orderBill.MaNhanVien = staffID;
 					orderBill.MaNhaCungCap = supplierID;
 					orderBill.NgayLap = DateTime.Now;
+					orderBill.TrangThai = 0;
 
 					OrderBillDTO newOrderBill = OrderBillBUS.Instance.insertReturnBill(orderBill);
 

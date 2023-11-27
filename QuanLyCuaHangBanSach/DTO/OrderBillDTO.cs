@@ -13,10 +13,10 @@ namespace QuanLyCuaHangBanSach.DTO
 		public int MaNhaCungCap { get; set; }
 		public int MaNhanVien { get; set; }
 		public DateTime NgayLap { get; set; }	
-		public bool TrangThai { get; set; }
+		public int TrangThai { get; set; }
 		
 		public OrderBillDTO() { }	
-		public OrderBillDTO(int maPhieuYeuCau,int maNhaCungCap,int maNhanVien,DateTime ngayLap, bool trangThai) 
+		public OrderBillDTO(int maPhieuYeuCau,int maNhaCungCap,int maNhanVien,DateTime ngayLap, int trangThai) 
 		{
 			this.MaPhieuYeuCau = maPhieuYeuCau;
 			this.MaNhaCungCap = maNhaCungCap;
@@ -30,8 +30,7 @@ namespace QuanLyCuaHangBanSach.DTO
 			this.MaNhaCungCap = (int)row["maNhaCungCap"];
 			this.MaNhanVien = (int)row["maNhanVien"];
 			this.NgayLap = (DateTime)row["ngayLap"];
-			this.TrangThai = Convert.ToBoolean(row["trangThai"]);
+			this.TrangThai = (int)row["trangThai"];
 		}
-
 	}
 }
