@@ -32,12 +32,25 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
 				foreach (OrderBillDTO orderBill in orderBillList)
 				{
+					string trangThai;
+					if(orderBill.TrangThai == 0)
+					{
+						trangThai = "Chưa nhập";
+					}
+					else if (orderBill.TrangThai == 1)
+					{
+						trangThai = "Nhập đủ hàng";
+					}
+					else
+					{
+						trangThai = "Nhập thiếu hàng";
+					}
 					this.dgvOrderBill.Rows.Add(new object[] {
 					orderBill.MaPhieuYeuCau,
 					SupplierBUS.Instance.getById(orderBill.MaNhaCungCap.ToString()).TenNhaCungCap,
 					StaffBUS.Instance.getById(orderBill.MaNhanVien.ToString()).Ten,
 					orderBill.NgayLap.GetDateTimeFormats()[0],
-					orderBill.TrangThai ? "Đã nhận" : "Chưa nhận"
+					trangThai
 				});
 				}
 			}

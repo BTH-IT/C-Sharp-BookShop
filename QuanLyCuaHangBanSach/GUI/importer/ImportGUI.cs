@@ -464,7 +464,7 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
 							}
 
 							OrderBillDTO orderBill = OrderBillBUS.Instance.getById(row[0].ToString());
-                            if (orderBill.TrangThai)
+                            if (orderBill.TrangThai == 1 || orderBill.TrangThai == 2)
                             {
 								MessageBox.Show("Thất bại, phiếu yêu cầu đã được nhập trước đó một lần!");
 								return;

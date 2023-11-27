@@ -29,15 +29,19 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 				{
 					foreach (CustomerDTO customer in customers)
 					{
-						this.dgvCustomer.Rows.Add(new object[]
+						if (customer.Ma != 0)
 						{
+							this.dgvCustomer.Rows.Add(new object[]
+							{
 							customer.Ma,
 							customer.Ten,
 							customer.GioiTinh,
 							customer.NamSinh,
 							customer.SoDienThoai,
 							customer.Diem
-                        });
+							});
+						}	
+						
 					}
 
 				}
