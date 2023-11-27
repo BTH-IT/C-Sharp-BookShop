@@ -442,72 +442,81 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
 						return;
 					}
 
-                    bool validate = true;
 					List<OrderBillDetailDTO> orderBillDetailList = new List<OrderBillDetailDTO>();
+
+					int count = 1;
 
 					//Validate loop
 					foreach (DataRow row in dt.Rows)
 					{
-                        if (validate)
-                        {
-                            if (!int.TryParse(row[0].ToString(), out int maPhieuYeuCau) || !int.TryParse(row[1].ToString(), out int maNhaCungCap))
-                            {
+						if (count == 1)
+						{
+							if (!int.TryParse(row[1].ToString(), out int maPhieuYeuCau) || !int.TryParse(row[3].ToString(), out int maNhaCungCap))
+							{
 								MessageBox.Show("Lỗi chưa chọn file hoặc file excel không đúng format dữ liệu nhập!");
 								return;
 							}
 
-							orderBillDetailList = OrderBillBUS.Instance.getOrderBillDetailList(row[0].ToString());
+							orderBillDetailList = OrderBillBUS.Instance.getOrderBillDetailList(row[1].ToString());
 							if (orderBillDetailList == null)
 							{
 								MessageBox.Show("Thất bại, không tìm thấy phiếu yêu cầu!");
 								return;
 							}
 
-							OrderBillDTO orderBill = OrderBillBUS.Instance.getById(row[0].ToString());
-                            if (orderBill.TrangThai)
-                            {
+							OrderBillDTO orderBill = OrderBillBUS.Instance.getById(row[1].ToString());
+							if (orderBill.TrangThai)
+							{
 								MessageBox.Show("Thất bại, phiếu yêu cầu đã được nhập trước đó một lần!");
 								return;
 							}
-							
-							if (orderBill.MaNhaCungCap != Convert.ToInt32(row[1].ToString()))
+
+							if (orderBill.MaNhaCungCap != Convert.ToInt32(row[3].ToString()))
 							{
 								MessageBox.Show("Thất bại, nhà cung cấp không giống phiếu yêu cầu!");
 								return;
 							}
 
-							validate = false;
+							count++;
 							continue;
 						}
 
-                        if (!int.TryParse(row[0].ToString(), out int maSach) || !int.TryParse(row[2].ToString(), out int soLuong) || !decimal.TryParse(row[3].ToString(), out decimal giaNhap))
+						if (count == 2)
+						{
+							count++;
+							continue;
+						}
+
+						if (!int.TryParse(row[0].ToString(), out int maSach) || !int.TryParse(row[2].ToString(), out int soLuong) || !decimal.TryParse(row[3].ToString(), out decimal giaNhap))
 						{
 							MessageBox.Show("Lỗi chưa chọn file hoặc file excel không đúng format dữ liệu nhập!");
 							return;
 						}
 
 						BookDTO book = BookBUS.Instance.getById(row[0].ToString());
-						if (book != null)
+						if (book == null)
 						{
-							int foundIdx = orderBillDetailList.FindIndex(item => item.SoLuong == Convert.ToInt32(row[2].ToString()));
-							if (foundIdx != -1)
-							{
-								orderBillDetailList.RemoveAt(foundIdx);
-							}
-							else
-							{
-                                Console.WriteLine(1);
-                                MessageBox.Show("Không hợp lệ, phiếu nhập không tương đồng với phiếu yêu cầu!");
-								return;
-							}
-						}
-						else
-						{
-							Console.WriteLine(2);
 							MessageBox.Show("Không hợp lệ, phiếu nhập không tương đồng với phiếu yêu cầu!");
 							return;
 						}
-					}
+						else
+                        {
+							int foundIdx = orderBillDetailList.FindIndex(item => item.MaSach == Convert.ToInt32(row[0].ToString()));
+                            if (Convert.ToInt32(row[2].ToString()) > orderBillDetailList[foundIdx].SoLuong)
+                            {
+								MessageBox.Show($@"Không hợp lệ, sách có mã là: {Convert.ToInt32(row[0].ToString())} có số lượng lớn hơn trong phiếu yêu cầu!");
+								return;
+							}
+							else if (Convert.ToInt32(row[2].ToString()) < orderBillDetailList[foundIdx].SoLuong)
+                            {
+								DialogResult result = MessageBox.Show($@"sách có mã là: {Convert.ToInt32(row[0].ToString())} có số lượng bé hơn trong phiếu yêu cầu, bạn có muốn nhập tiếp không?", "Cảnh báo", MessageBoxButtons.YesNo);
+								if (result == DialogResult.No)
+								{
+									return;
+								}
+							}
+                        }
+                    }
 
 					CartContainer.Controls.Clear();
 					importBillDetails.Clear();
@@ -517,22 +526,28 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
 					QRScanBtn.Cursor = Cursors.No;
 					importExcel = true;
 					requestExcel = false;
-					validate = true;
+					count = 1;
 
 					//Add books loop
 					foreach (DataRow row in dt.Rows)
 					{
-                        if (validate)
+                        if (count == 1)
                         {
-							orderBillId = row[0].ToString();
-							SupplierDTO supplier = SupplierBUS.Instance.getById(row[1].ToString());
+							orderBillId = row[1].ToString();
+							SupplierDTO supplier = SupplierBUS.Instance.getById(row[3].ToString());
                             supplierID = supplier.MaNhaCungCap;
                             SupplierNameLb.Text = supplier.TenNhaCungCap;
-							validate = false;
+							count++;
                             continue;
                         }
 
-						BookDTO book = BookBUS.Instance.getById(row[0].ToString());
+                        if (count == 2)
+                        {
+							count++;
+							continue;
+						}
+
+                        BookDTO book = BookBUS.Instance.getById(row[0].ToString());
                         AddProductToCart(book, Convert.ToDecimal(row[3].ToString()), Convert.ToInt32(row[2].ToString()), true);
 					}
 				}
