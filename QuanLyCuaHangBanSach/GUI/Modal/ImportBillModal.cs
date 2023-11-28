@@ -369,5 +369,13 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 e.Handled = true; // Ngăn chặn ký tự nhập vào TextBox
             }
         }
+
+        private void supplierCbx_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                submitBtn_Click(sender, e);
+            }
+        }
     }
 }

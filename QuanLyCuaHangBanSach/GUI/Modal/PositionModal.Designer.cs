@@ -34,6 +34,9 @@
             this.nameLine = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.heSoLuongTxt = new Guna.UI2.WinForms.Guna2NumericUpDown();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.descTxt = new Guna.UI2.WinForms.Guna2TextBox();
             this.sellPriceLine = new System.Windows.Forms.Panel();
@@ -44,15 +47,12 @@
             this.submitBtn = new Guna.UI.WinForms.GunaButton();
             this.cancelBtn = new Guna.UI.WinForms.GunaButton();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.heSoLuongTxt = new Guna.UI2.WinForms.Guna2NumericUpDown();
             this.panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.panel12.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.heSoLuongTxt)).BeginInit();
+            this.panel4.SuspendLayout();
+            this.panel12.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -94,6 +94,7 @@
             this.positionNameTxt.Size = new System.Drawing.Size(425, 36);
             this.positionNameTxt.TabIndex = 1;
             this.positionNameTxt.TextChanged += new System.EventHandler(this.positionNameTxt_TextChanged);
+            this.positionNameTxt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.positionNameTxt_KeyDown);
             this.positionNameTxt.Leave += new System.EventHandler(this.positionNameTxt_TextChanged);
             // 
             // errorPositionNameMsg
@@ -103,7 +104,7 @@
             this.errorPositionNameMsg.ForeColor = System.Drawing.Color.Red;
             this.errorPositionNameMsg.Location = new System.Drawing.Point(163, 50);
             this.errorPositionNameMsg.Name = "errorPositionNameMsg";
-            this.errorPositionNameMsg.Size = new System.Drawing.Size(0, 21);
+            this.errorPositionNameMsg.Size = new System.Drawing.Size(0, 26);
             this.errorPositionNameMsg.TabIndex = 7;
             // 
             // nameLine
@@ -136,6 +137,59 @@
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(600, 331);
             this.flowLayoutPanel1.TabIndex = 0;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.heSoLuongTxt);
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Location = new System.Drawing.Point(3, 97);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(594, 62);
+            this.panel2.TabIndex = 9;
+            // 
+            // heSoLuongTxt
+            // 
+            this.heSoLuongTxt.BackColor = System.Drawing.Color.Transparent;
+            this.heSoLuongTxt.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.heSoLuongTxt.DecimalPlaces = 1;
+            this.heSoLuongTxt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.heSoLuongTxt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.heSoLuongTxt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.heSoLuongTxt.DisabledState.Parent = this.heSoLuongTxt;
+            this.heSoLuongTxt.DisabledState.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(177)))), ((int)(((byte)(177)))));
+            this.heSoLuongTxt.DisabledState.UpDownButtonForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(203)))), ((int)(((byte)(203)))));
+            this.heSoLuongTxt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.heSoLuongTxt.FocusedState.Parent = this.heSoLuongTxt;
+            this.heSoLuongTxt.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.heSoLuongTxt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.heSoLuongTxt.Location = new System.Drawing.Point(160, 11);
+            this.heSoLuongTxt.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.heSoLuongTxt.Name = "heSoLuongTxt";
+            this.heSoLuongTxt.ShadowDecoration.Parent = this.heSoLuongTxt;
+            this.heSoLuongTxt.Size = new System.Drawing.Size(414, 36);
+            this.heSoLuongTxt.TabIndex = 9;
+            this.heSoLuongTxt.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+            this.heSoLuongTxt.UpDownButtonForeColor = System.Drawing.Color.White;
+            this.heSoLuongTxt.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.heSoLuongTxt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.positionNameTxt_KeyDown);
+            // 
+            // label4
+            // 
+            this.label4.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label4.Location = new System.Drawing.Point(3, 3);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(151, 49);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "Hệ số lương:";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panel4
             // 
@@ -174,6 +228,7 @@
             this.descTxt.ShadowDecoration.Parent = this.descTxt;
             this.descTxt.Size = new System.Drawing.Size(425, 36);
             this.descTxt.TabIndex = 2;
+            this.descTxt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.positionNameTxt_KeyDown);
             // 
             // sellPriceLine
             // 
@@ -211,9 +266,10 @@
             this.activeCkx.Font = new System.Drawing.Font("#9Slide03 Cabin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.activeCkx.Location = new System.Drawing.Point(160, 12);
             this.activeCkx.Name = "activeCkx";
-            this.activeCkx.Size = new System.Drawing.Size(126, 23);
+            this.activeCkx.Size = new System.Drawing.Size(150, 29);
             this.activeCkx.TabIndex = 3;
             this.activeCkx.Text = "Đang hoạt động";
+            this.activeCkx.KeyDown += new System.Windows.Forms.KeyEventHandler(this.positionNameTxt_KeyDown);
             // 
             // label10
             // 
@@ -297,61 +353,9 @@
             this.label1.Text = "Thêm Chức Vụ";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.heSoLuongTxt);
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Location = new System.Drawing.Point(3, 97);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(594, 62);
-            this.panel2.TabIndex = 9;
-            // 
-            // label4
-            // 
-            this.label4.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label4.Location = new System.Drawing.Point(3, 3);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(151, 49);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Hệ số lương:";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // heSoLuongTxt
-            // 
-            this.heSoLuongTxt.BackColor = System.Drawing.Color.Transparent;
-            this.heSoLuongTxt.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.heSoLuongTxt.DecimalPlaces = 1;
-            this.heSoLuongTxt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.heSoLuongTxt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.heSoLuongTxt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.heSoLuongTxt.DisabledState.Parent = this.heSoLuongTxt;
-            this.heSoLuongTxt.DisabledState.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(177)))), ((int)(((byte)(177)))));
-            this.heSoLuongTxt.DisabledState.UpDownButtonForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(203)))), ((int)(((byte)(203)))));
-            this.heSoLuongTxt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.heSoLuongTxt.FocusedState.Parent = this.heSoLuongTxt;
-            this.heSoLuongTxt.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.heSoLuongTxt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.heSoLuongTxt.Location = new System.Drawing.Point(160, 11);
-            this.heSoLuongTxt.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.heSoLuongTxt.Name = "heSoLuongTxt";
-            this.heSoLuongTxt.ShadowDecoration.Parent = this.heSoLuongTxt;
-            this.heSoLuongTxt.Size = new System.Drawing.Size(414, 36);
-            this.heSoLuongTxt.TabIndex = 9;
-            this.heSoLuongTxt.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
-            this.heSoLuongTxt.UpDownButtonForeColor = System.Drawing.Color.White;
-            this.heSoLuongTxt.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
             // PositionModal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(624, 481);
@@ -369,11 +373,11 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.heSoLuongTxt)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel12.ResumeLayout(false);
             this.panel12.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.heSoLuongTxt)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -256,5 +256,13 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 "Thời gian kết thúc phải lớn hơn thời gian bắt đầu"
             );
         }
+
+        private void saleNameTxt_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnSubmit_Click(sender, e);
+            }
+        }
     }
 }

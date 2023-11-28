@@ -33,34 +33,34 @@
             this.cancelBtn = new Guna.UI.WinForms.GunaButton();
             this.submitBtn = new Guna.UI.WinForms.GunaButton();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.errorImageMsg = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.bookTypeCbx = new Guna.UI.WinForms.GunaComboBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.errorBookTypeMsg = new System.Windows.Forms.Label();
             this.addBookTypeBtn = new System.Windows.Forms.Button();
+            this.errorBookTypeMsg = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.bookTypeCbx = new Guna.UI.WinForms.GunaComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.authorCbx = new Guna.UI.WinForms.GunaComboBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.errorAuthorMsg = new System.Windows.Forms.Label();
             this.btnAddTacGia = new System.Windows.Forms.Button();
+            this.errorAuthorMsg = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.authorCbx = new Guna.UI.WinForms.GunaComboBox();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.publisherCbx = new Guna.UI.WinForms.GunaComboBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.errorPublisherMsg = new System.Windows.Forms.Label();
             this.addPublisherBtn = new System.Windows.Forms.Button();
+            this.errorPublisherMsg = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.publisherCbx = new Guna.UI.WinForms.GunaComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.nameLine = new System.Windows.Forms.Panel();
-            this.errorBookNameMsg = new System.Windows.Forms.Label();
             this.bookNameTxt = new Guna.UI2.WinForms.Guna2TextBox();
+            this.errorBookNameMsg = new System.Windows.Forms.Label();
+            this.nameLine = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -151,19 +151,26 @@
             this.panel5.Size = new System.Drawing.Size(594, 249);
             this.panel5.TabIndex = 34;
             // 
-            // guna2PictureBox2
+            // errorImageMsg
             // 
-            this.guna2PictureBox2.BorderRadius = 16;
-            this.guna2PictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2PictureBox2.InitialImage = null;
-            this.guna2PictureBox2.Location = new System.Drawing.Point(266, 11);
-            this.guna2PictureBox2.Name = "guna2PictureBox2";
-            this.guna2PictureBox2.ShadowDecoration.Parent = this.guna2PictureBox2;
-            this.guna2PictureBox2.Size = new System.Drawing.Size(149, 193);
-            this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox2.TabIndex = 14;
-            this.guna2PictureBox2.TabStop = false;
-            this.guna2PictureBox2.Visible = false;
+            this.errorImageMsg.AutoSize = true;
+            this.errorImageMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.errorImageMsg.ForeColor = System.Drawing.Color.Red;
+            this.errorImageMsg.Location = new System.Drawing.Point(165, 219);
+            this.errorImageMsg.Name = "errorImageMsg";
+            this.errorImageMsg.Size = new System.Drawing.Size(0, 26);
+            this.errorImageMsg.TabIndex = 11;
+            this.errorImageMsg.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label2.Location = new System.Drawing.Point(3, 20);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(151, 49);
+            this.label2.TabIndex = 34;
+            this.label2.Text = "Hình ảnh:";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // guna2PictureBox1
             // 
@@ -179,26 +186,19 @@
             this.guna2PictureBox1.TabStop = false;
             this.guna2PictureBox1.Click += new System.EventHandler(this.guna2PictureBox1_Click);
             // 
-            // label2
+            // guna2PictureBox2
             // 
-            this.label2.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label2.Location = new System.Drawing.Point(3, 20);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(151, 49);
-            this.label2.TabIndex = 34;
-            this.label2.Text = "Hình ảnh:";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // errorImageMsg
-            // 
-            this.errorImageMsg.AutoSize = true;
-            this.errorImageMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.errorImageMsg.ForeColor = System.Drawing.Color.Red;
-            this.errorImageMsg.Location = new System.Drawing.Point(165, 219);
-            this.errorImageMsg.Name = "errorImageMsg";
-            this.errorImageMsg.Size = new System.Drawing.Size(0, 21);
-            this.errorImageMsg.TabIndex = 11;
-            this.errorImageMsg.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.guna2PictureBox2.BorderRadius = 16;
+            this.guna2PictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.guna2PictureBox2.InitialImage = null;
+            this.guna2PictureBox2.Location = new System.Drawing.Point(266, 11);
+            this.guna2PictureBox2.Name = "guna2PictureBox2";
+            this.guna2PictureBox2.ShadowDecoration.Parent = this.guna2PictureBox2;
+            this.guna2PictureBox2.Size = new System.Drawing.Size(149, 193);
+            this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox2.TabIndex = 14;
+            this.guna2PictureBox2.TabStop = false;
+            this.guna2PictureBox2.Visible = false;
             // 
             // panel3
             // 
@@ -210,6 +210,38 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(594, 88);
             this.panel3.TabIndex = 1;
+            // 
+            // addBookTypeBtn
+            // 
+            this.addBookTypeBtn.Enabled = false;
+            this.addBookTypeBtn.Image = ((System.Drawing.Image)(resources.GetObject("addBookTypeBtn.Image")));
+            this.addBookTypeBtn.Location = new System.Drawing.Point(536, 12);
+            this.addBookTypeBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.addBookTypeBtn.Name = "addBookTypeBtn";
+            this.addBookTypeBtn.Size = new System.Drawing.Size(38, 38);
+            this.addBookTypeBtn.TabIndex = 31;
+            this.addBookTypeBtn.UseVisualStyleBackColor = true;
+            this.addBookTypeBtn.Click += new System.EventHandler(this.addBookTypeBtn_Click);
+            // 
+            // errorBookTypeMsg
+            // 
+            this.errorBookTypeMsg.AutoSize = true;
+            this.errorBookTypeMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.errorBookTypeMsg.ForeColor = System.Drawing.Color.Red;
+            this.errorBookTypeMsg.Location = new System.Drawing.Point(163, 52);
+            this.errorBookTypeMsg.Name = "errorBookTypeMsg";
+            this.errorBookTypeMsg.Size = new System.Drawing.Size(0, 26);
+            this.errorBookTypeMsg.TabIndex = 30;
+            // 
+            // label16
+            // 
+            this.label16.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label16.Location = new System.Drawing.Point(3, 3);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(145, 49);
+            this.label16.TabIndex = 28;
+            this.label16.Text = "Thể loại:";
+            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // bookTypeCbx
             // 
@@ -234,39 +266,8 @@
             this.bookTypeCbx.Radius = 6;
             this.bookTypeCbx.Size = new System.Drawing.Size(369, 36);
             this.bookTypeCbx.TabIndex = 3;
+            this.bookTypeCbx.KeyDown += new System.Windows.Forms.KeyEventHandler(this.bookNameTxt_KeyDown);
             this.bookTypeCbx.Leave += new System.EventHandler(this.bookTypeCbx_SelectedIndexChanged);
-            // 
-            // label16
-            // 
-            this.label16.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label16.Location = new System.Drawing.Point(3, 3);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(145, 49);
-            this.label16.TabIndex = 28;
-            this.label16.Text = "Thể loại:";
-            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // errorBookTypeMsg
-            // 
-            this.errorBookTypeMsg.AutoSize = true;
-            this.errorBookTypeMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.errorBookTypeMsg.ForeColor = System.Drawing.Color.Red;
-            this.errorBookTypeMsg.Location = new System.Drawing.Point(163, 52);
-            this.errorBookTypeMsg.Name = "errorBookTypeMsg";
-            this.errorBookTypeMsg.Size = new System.Drawing.Size(0, 21);
-            this.errorBookTypeMsg.TabIndex = 30;
-            // 
-            // addBookTypeBtn
-            // 
-            this.addBookTypeBtn.Enabled = false;
-            this.addBookTypeBtn.Image = ((System.Drawing.Image)(resources.GetObject("addBookTypeBtn.Image")));
-            this.addBookTypeBtn.Location = new System.Drawing.Point(536, 12);
-            this.addBookTypeBtn.Margin = new System.Windows.Forms.Padding(4);
-            this.addBookTypeBtn.Name = "addBookTypeBtn";
-            this.addBookTypeBtn.Size = new System.Drawing.Size(38, 38);
-            this.addBookTypeBtn.TabIndex = 31;
-            this.addBookTypeBtn.UseVisualStyleBackColor = true;
-            this.addBookTypeBtn.Click += new System.EventHandler(this.addBookTypeBtn_Click);
             // 
             // panel2
             // 
@@ -278,6 +279,38 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(594, 88);
             this.panel2.TabIndex = 1;
+            // 
+            // btnAddTacGia
+            // 
+            this.btnAddTacGia.Enabled = false;
+            this.btnAddTacGia.Image = ((System.Drawing.Image)(resources.GetObject("btnAddTacGia.Image")));
+            this.btnAddTacGia.Location = new System.Drawing.Point(536, 10);
+            this.btnAddTacGia.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAddTacGia.Name = "btnAddTacGia";
+            this.btnAddTacGia.Size = new System.Drawing.Size(38, 38);
+            this.btnAddTacGia.TabIndex = 29;
+            this.btnAddTacGia.UseVisualStyleBackColor = true;
+            this.btnAddTacGia.Click += new System.EventHandler(this.btnAddTacGia_Click);
+            // 
+            // errorAuthorMsg
+            // 
+            this.errorAuthorMsg.AutoSize = true;
+            this.errorAuthorMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.errorAuthorMsg.ForeColor = System.Drawing.Color.Red;
+            this.errorAuthorMsg.Location = new System.Drawing.Point(163, 52);
+            this.errorAuthorMsg.Name = "errorAuthorMsg";
+            this.errorAuthorMsg.Size = new System.Drawing.Size(0, 26);
+            this.errorAuthorMsg.TabIndex = 27;
+            // 
+            // label13
+            // 
+            this.label13.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label13.Location = new System.Drawing.Point(3, 3);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(145, 49);
+            this.label13.TabIndex = 9;
+            this.label13.Text = "Tác giả:";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // authorCbx
             // 
@@ -302,39 +335,8 @@
             this.authorCbx.Radius = 6;
             this.authorCbx.Size = new System.Drawing.Size(369, 36);
             this.authorCbx.TabIndex = 2;
+            this.authorCbx.KeyDown += new System.Windows.Forms.KeyEventHandler(this.bookNameTxt_KeyDown);
             this.authorCbx.Leave += new System.EventHandler(this.authorCbx_SelectedIndexChanged);
-            // 
-            // label13
-            // 
-            this.label13.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label13.Location = new System.Drawing.Point(3, 3);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(145, 49);
-            this.label13.TabIndex = 9;
-            this.label13.Text = "Tác giả:";
-            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // errorAuthorMsg
-            // 
-            this.errorAuthorMsg.AutoSize = true;
-            this.errorAuthorMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.errorAuthorMsg.ForeColor = System.Drawing.Color.Red;
-            this.errorAuthorMsg.Location = new System.Drawing.Point(163, 52);
-            this.errorAuthorMsg.Name = "errorAuthorMsg";
-            this.errorAuthorMsg.Size = new System.Drawing.Size(0, 21);
-            this.errorAuthorMsg.TabIndex = 27;
-            // 
-            // btnAddTacGia
-            // 
-            this.btnAddTacGia.Enabled = false;
-            this.btnAddTacGia.Image = ((System.Drawing.Image)(resources.GetObject("btnAddTacGia.Image")));
-            this.btnAddTacGia.Location = new System.Drawing.Point(536, 10);
-            this.btnAddTacGia.Margin = new System.Windows.Forms.Padding(4);
-            this.btnAddTacGia.Name = "btnAddTacGia";
-            this.btnAddTacGia.Size = new System.Drawing.Size(38, 38);
-            this.btnAddTacGia.TabIndex = 29;
-            this.btnAddTacGia.UseVisualStyleBackColor = true;
-            this.btnAddTacGia.Click += new System.EventHandler(this.btnAddTacGia_Click);
             // 
             // panel6
             // 
@@ -346,6 +348,38 @@
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(594, 88);
             this.panel6.TabIndex = 2;
+            // 
+            // addPublisherBtn
+            // 
+            this.addPublisherBtn.Enabled = false;
+            this.addPublisherBtn.Image = ((System.Drawing.Image)(resources.GetObject("addPublisherBtn.Image")));
+            this.addPublisherBtn.Location = new System.Drawing.Point(536, 14);
+            this.addPublisherBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.addPublisherBtn.Name = "addPublisherBtn";
+            this.addPublisherBtn.Size = new System.Drawing.Size(38, 38);
+            this.addPublisherBtn.TabIndex = 34;
+            this.addPublisherBtn.UseVisualStyleBackColor = true;
+            this.addPublisherBtn.Click += new System.EventHandler(this.addPublisherBtn_Click);
+            // 
+            // errorPublisherMsg
+            // 
+            this.errorPublisherMsg.AutoSize = true;
+            this.errorPublisherMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.errorPublisherMsg.ForeColor = System.Drawing.Color.Red;
+            this.errorPublisherMsg.Location = new System.Drawing.Point(163, 52);
+            this.errorPublisherMsg.Name = "errorPublisherMsg";
+            this.errorPublisherMsg.Size = new System.Drawing.Size(0, 26);
+            this.errorPublisherMsg.TabIndex = 33;
+            // 
+            // label18
+            // 
+            this.label18.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label18.Location = new System.Drawing.Point(3, 3);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(145, 49);
+            this.label18.TabIndex = 31;
+            this.label18.Text = "Nhà xuất bản:";
+            this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // publisherCbx
             // 
@@ -370,39 +404,8 @@
             this.publisherCbx.Radius = 6;
             this.publisherCbx.Size = new System.Drawing.Size(369, 36);
             this.publisherCbx.TabIndex = 5;
+            this.publisherCbx.KeyDown += new System.Windows.Forms.KeyEventHandler(this.bookNameTxt_KeyDown);
             this.publisherCbx.Leave += new System.EventHandler(this.publisherCbx_SelectedIndexChanged);
-            // 
-            // label18
-            // 
-            this.label18.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label18.Location = new System.Drawing.Point(3, 3);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(145, 49);
-            this.label18.TabIndex = 31;
-            this.label18.Text = "Nhà xuất bản:";
-            this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // errorPublisherMsg
-            // 
-            this.errorPublisherMsg.AutoSize = true;
-            this.errorPublisherMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.errorPublisherMsg.ForeColor = System.Drawing.Color.Red;
-            this.errorPublisherMsg.Location = new System.Drawing.Point(163, 52);
-            this.errorPublisherMsg.Name = "errorPublisherMsg";
-            this.errorPublisherMsg.Size = new System.Drawing.Size(0, 21);
-            this.errorPublisherMsg.TabIndex = 33;
-            // 
-            // addPublisherBtn
-            // 
-            this.addPublisherBtn.Enabled = false;
-            this.addPublisherBtn.Image = ((System.Drawing.Image)(resources.GetObject("addPublisherBtn.Image")));
-            this.addPublisherBtn.Location = new System.Drawing.Point(536, 14);
-            this.addPublisherBtn.Margin = new System.Windows.Forms.Padding(4);
-            this.addPublisherBtn.Name = "addPublisherBtn";
-            this.addPublisherBtn.Size = new System.Drawing.Size(38, 38);
-            this.addPublisherBtn.TabIndex = 34;
-            this.addPublisherBtn.UseVisualStyleBackColor = true;
-            this.addPublisherBtn.Click += new System.EventHandler(this.addPublisherBtn_Click);
             // 
             // panel1
             // 
@@ -414,34 +417,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(594, 88);
             this.panel1.TabIndex = 0;
-            // 
-            // label3
-            // 
-            this.label3.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label3.Location = new System.Drawing.Point(3, 3);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(151, 49);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Tên sách:";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // nameLine
-            // 
-            this.nameLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(212)))), ((int)(((byte)(191)))));
-            this.nameLine.Location = new System.Drawing.Point(160, 45);
-            this.nameLine.Name = "nameLine";
-            this.nameLine.Size = new System.Drawing.Size(414, 1);
-            this.nameLine.TabIndex = 8;
-            // 
-            // errorBookNameMsg
-            // 
-            this.errorBookNameMsg.AutoSize = true;
-            this.errorBookNameMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.errorBookNameMsg.ForeColor = System.Drawing.Color.Red;
-            this.errorBookNameMsg.Location = new System.Drawing.Point(163, 50);
-            this.errorBookNameMsg.Name = "errorBookNameMsg";
-            this.errorBookNameMsg.Size = new System.Drawing.Size(0, 21);
-            this.errorBookNameMsg.TabIndex = 7;
             // 
             // bookNameTxt
             // 
@@ -471,7 +446,36 @@
             this.bookNameTxt.Size = new System.Drawing.Size(425, 36);
             this.bookNameTxt.TabIndex = 1;
             this.bookNameTxt.TextChanged += new System.EventHandler(this.bookNameTxt_TextChanged);
+            this.bookNameTxt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.bookNameTxt_KeyDown);
             this.bookNameTxt.Leave += new System.EventHandler(this.bookNameTxt_TextChanged);
+            // 
+            // errorBookNameMsg
+            // 
+            this.errorBookNameMsg.AutoSize = true;
+            this.errorBookNameMsg.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed Bold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.errorBookNameMsg.ForeColor = System.Drawing.Color.Red;
+            this.errorBookNameMsg.Location = new System.Drawing.Point(163, 50);
+            this.errorBookNameMsg.Name = "errorBookNameMsg";
+            this.errorBookNameMsg.Size = new System.Drawing.Size(0, 26);
+            this.errorBookNameMsg.TabIndex = 7;
+            // 
+            // nameLine
+            // 
+            this.nameLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(212)))), ((int)(((byte)(191)))));
+            this.nameLine.Location = new System.Drawing.Point(160, 45);
+            this.nameLine.Name = "nameLine";
+            this.nameLine.Size = new System.Drawing.Size(414, 1);
+            this.nameLine.TabIndex = 8;
+            // 
+            // label3
+            // 
+            this.label3.Font = new System.Drawing.Font("#9Slide03 Cabin Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label3.Location = new System.Drawing.Point(3, 3);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(151, 49);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Tên sách:";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // flowLayoutPanel1
             // 
@@ -490,7 +494,7 @@
             // 
             // BookModal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(629, 769);
@@ -507,8 +511,8 @@
             this.Load += new System.EventHandler(this.AddBookModal_Load);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);

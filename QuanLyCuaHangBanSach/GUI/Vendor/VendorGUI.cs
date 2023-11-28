@@ -81,6 +81,24 @@ namespace QuanLyCuaHangBanSach.GUI
                 RecipientNameLb.Text = "";
                 PointToggleBtn.Enabled = false;
             }
+            List<AuthDetailDTO> authDetails;
+            authDetails = AuthDetailBUS.Instance.getByPositionId(MenuGUI.staff.MaChucVu.ToString());
+            if (authDetails != null)
+            {
+                // check quyen khách hàng
+                if (!authDetails.Any(c => c.maQuyenHan == 8 && c.TrangThai))
+                {
+                    this.AddCustomerBtn.Enabled = false;
+                }
+                else
+                {
+                    this.AddCustomerBtn.Enabled = true;
+                }
+            }
+            else
+            {
+                this.AddCustomerBtn.Enabled = false;
+            }
         }
 
         private void RenderBookContainer()
