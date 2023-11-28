@@ -155,5 +155,13 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 Console.WriteLine(ex);
             }
         }
+
+        private void positionNameTxt_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                submitBtn_Click(sender, e);
+            }
+        }
     }
 }

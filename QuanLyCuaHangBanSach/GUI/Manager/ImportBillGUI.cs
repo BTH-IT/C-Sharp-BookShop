@@ -62,6 +62,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                     this.dgvImportBill.Rows.Add(new object[] {
                     false,
                     importBill.MaDonNhapHang,
+                    importBill.MaPhieuYeuCau,
                     SupplierBUS.Instance.getById(importBill.MaNhaCungCap.ToString()).TenNhaCungCap,
                     StaffBUS.Instance.getById(importBill.MaNhanVien.ToString()).Ten,
                     importBill.NgayLap.GetDateTimeFormats()[0],

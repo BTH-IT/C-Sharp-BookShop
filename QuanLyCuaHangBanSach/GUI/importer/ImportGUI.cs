@@ -53,6 +53,34 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
                 FilterUserControl filter = new FilterUserControl();
                 filter.TabStop = false;
                 FilterContainer.Controls.Add(filter);
+                List<AuthDetailDTO> authDetails;
+                authDetails = AuthDetailBUS.Instance.getByPositionId(MenuGUI.staff.MaChucVu.ToString());
+                if (authDetails != null)
+                {
+                    // check quyen Nhà Cung Cấp
+                    if (!authDetails.Any(c => c.maQuyenHan == 3 && c.TrangThai))
+                    {
+                        this.AddCustomerBtn.Enabled = false;
+                    }
+                    else
+                    {
+                        this.AddCustomerBtn.Enabled = true;
+                    }
+                    // check quyen Sách
+                    if (!authDetails.Any(c => c.maQuyenHan == 1 && c.TrangThai))
+                    {
+                        this.CreateBookBtn.Enabled = false;
+                    }
+                    else
+                    {
+                        this.CreateBookBtn.Enabled = true;
+                    }
+                }
+                else
+                {
+                    this.AddCustomerBtn.Enabled = false;
+                    this.CreateBookBtn.Enabled = false;
+                }
             }
 
             catch (Exception ex) { Console.WriteLine(ex); }

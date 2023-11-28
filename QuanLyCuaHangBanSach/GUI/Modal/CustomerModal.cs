@@ -203,5 +203,13 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 new string[] { "required" }
             );
         }
-	}
+
+        private void customerNameTxtBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnSubmit_Click(sender, e);
+            }
+        }
+    }
 }

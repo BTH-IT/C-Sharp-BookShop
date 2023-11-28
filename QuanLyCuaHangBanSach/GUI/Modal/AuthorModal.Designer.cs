@@ -164,7 +164,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             this.authorName.ShadowDecoration.Parent = this.authorName;
             this.authorName.Size = new System.Drawing.Size(425, 36);
             this.authorName.TabIndex = 1;
-            this.authorName.TextChanged += new System.EventHandler(this.bookNameTxt_TextChanged);
+            this.authorName.TextChanged += new System.EventHandler(this.cancelBtn_Click);
             this.authorName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.AuthorModal_KeyDown);
             this.authorName.Leave += new System.EventHandler(this.bookNameTxt_TextChanged);
             // 
