@@ -35,20 +35,15 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.errorImageMsg = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.addBookTypeBtn = new System.Windows.Forms.Button();
             this.errorBookTypeMsg = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.bookTypeCbx = new Guna.UI.WinForms.GunaComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnAddTacGia = new System.Windows.Forms.Button();
             this.errorAuthorMsg = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.authorCbx = new Guna.UI.WinForms.GunaComboBox();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.addPublisherBtn = new System.Windows.Forms.Button();
             this.errorPublisherMsg = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.publisherCbx = new Guna.UI.WinForms.GunaComboBox();
@@ -58,14 +53,19 @@
             this.nameLine = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.addPublisherBtn = new System.Windows.Forms.Button();
+            this.btnAddTacGia = new System.Windows.Forms.Button();
+            this.addBookTypeBtn = new System.Windows.Forms.Button();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -158,7 +158,7 @@
             this.errorImageMsg.ForeColor = System.Drawing.Color.Red;
             this.errorImageMsg.Location = new System.Drawing.Point(165, 219);
             this.errorImageMsg.Name = "errorImageMsg";
-            this.errorImageMsg.Size = new System.Drawing.Size(0, 26);
+            this.errorImageMsg.Size = new System.Drawing.Size(0, 21);
             this.errorImageMsg.TabIndex = 11;
             this.errorImageMsg.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -172,34 +172,6 @@
             this.label2.Text = "Hình ảnh:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.BorderRadius = 16;
-            this.guna2PictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
-            this.guna2PictureBox1.Location = new System.Drawing.Point(266, 12);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.ShadowDecoration.Parent = this.guna2PictureBox1;
-            this.guna2PictureBox1.Size = new System.Drawing.Size(149, 193);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox1.TabIndex = 13;
-            this.guna2PictureBox1.TabStop = false;
-            this.guna2PictureBox1.Click += new System.EventHandler(this.guna2PictureBox1_Click);
-            // 
-            // guna2PictureBox2
-            // 
-            this.guna2PictureBox2.BorderRadius = 16;
-            this.guna2PictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2PictureBox2.InitialImage = null;
-            this.guna2PictureBox2.Location = new System.Drawing.Point(266, 11);
-            this.guna2PictureBox2.Name = "guna2PictureBox2";
-            this.guna2PictureBox2.ShadowDecoration.Parent = this.guna2PictureBox2;
-            this.guna2PictureBox2.Size = new System.Drawing.Size(149, 193);
-            this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox2.TabIndex = 14;
-            this.guna2PictureBox2.TabStop = false;
-            this.guna2PictureBox2.Visible = false;
-            // 
             // panel3
             // 
             this.panel3.Controls.Add(this.addBookTypeBtn);
@@ -211,18 +183,6 @@
             this.panel3.Size = new System.Drawing.Size(594, 88);
             this.panel3.TabIndex = 1;
             // 
-            // addBookTypeBtn
-            // 
-            this.addBookTypeBtn.Enabled = false;
-            this.addBookTypeBtn.Image = ((System.Drawing.Image)(resources.GetObject("addBookTypeBtn.Image")));
-            this.addBookTypeBtn.Location = new System.Drawing.Point(536, 12);
-            this.addBookTypeBtn.Margin = new System.Windows.Forms.Padding(4);
-            this.addBookTypeBtn.Name = "addBookTypeBtn";
-            this.addBookTypeBtn.Size = new System.Drawing.Size(38, 38);
-            this.addBookTypeBtn.TabIndex = 31;
-            this.addBookTypeBtn.UseVisualStyleBackColor = true;
-            this.addBookTypeBtn.Click += new System.EventHandler(this.addBookTypeBtn_Click);
-            // 
             // errorBookTypeMsg
             // 
             this.errorBookTypeMsg.AutoSize = true;
@@ -230,7 +190,7 @@
             this.errorBookTypeMsg.ForeColor = System.Drawing.Color.Red;
             this.errorBookTypeMsg.Location = new System.Drawing.Point(163, 52);
             this.errorBookTypeMsg.Name = "errorBookTypeMsg";
-            this.errorBookTypeMsg.Size = new System.Drawing.Size(0, 26);
+            this.errorBookTypeMsg.Size = new System.Drawing.Size(0, 21);
             this.errorBookTypeMsg.TabIndex = 30;
             // 
             // label16
@@ -280,18 +240,6 @@
             this.panel2.Size = new System.Drawing.Size(594, 88);
             this.panel2.TabIndex = 1;
             // 
-            // btnAddTacGia
-            // 
-            this.btnAddTacGia.Enabled = false;
-            this.btnAddTacGia.Image = ((System.Drawing.Image)(resources.GetObject("btnAddTacGia.Image")));
-            this.btnAddTacGia.Location = new System.Drawing.Point(536, 10);
-            this.btnAddTacGia.Margin = new System.Windows.Forms.Padding(4);
-            this.btnAddTacGia.Name = "btnAddTacGia";
-            this.btnAddTacGia.Size = new System.Drawing.Size(38, 38);
-            this.btnAddTacGia.TabIndex = 29;
-            this.btnAddTacGia.UseVisualStyleBackColor = true;
-            this.btnAddTacGia.Click += new System.EventHandler(this.btnAddTacGia_Click);
-            // 
             // errorAuthorMsg
             // 
             this.errorAuthorMsg.AutoSize = true;
@@ -299,7 +247,7 @@
             this.errorAuthorMsg.ForeColor = System.Drawing.Color.Red;
             this.errorAuthorMsg.Location = new System.Drawing.Point(163, 52);
             this.errorAuthorMsg.Name = "errorAuthorMsg";
-            this.errorAuthorMsg.Size = new System.Drawing.Size(0, 26);
+            this.errorAuthorMsg.Size = new System.Drawing.Size(0, 21);
             this.errorAuthorMsg.TabIndex = 27;
             // 
             // label13
@@ -349,18 +297,6 @@
             this.panel6.Size = new System.Drawing.Size(594, 88);
             this.panel6.TabIndex = 2;
             // 
-            // addPublisherBtn
-            // 
-            this.addPublisherBtn.Enabled = false;
-            this.addPublisherBtn.Image = ((System.Drawing.Image)(resources.GetObject("addPublisherBtn.Image")));
-            this.addPublisherBtn.Location = new System.Drawing.Point(536, 14);
-            this.addPublisherBtn.Margin = new System.Windows.Forms.Padding(4);
-            this.addPublisherBtn.Name = "addPublisherBtn";
-            this.addPublisherBtn.Size = new System.Drawing.Size(38, 38);
-            this.addPublisherBtn.TabIndex = 34;
-            this.addPublisherBtn.UseVisualStyleBackColor = true;
-            this.addPublisherBtn.Click += new System.EventHandler(this.addPublisherBtn_Click);
-            // 
             // errorPublisherMsg
             // 
             this.errorPublisherMsg.AutoSize = true;
@@ -368,7 +304,7 @@
             this.errorPublisherMsg.ForeColor = System.Drawing.Color.Red;
             this.errorPublisherMsg.Location = new System.Drawing.Point(163, 52);
             this.errorPublisherMsg.Name = "errorPublisherMsg";
-            this.errorPublisherMsg.Size = new System.Drawing.Size(0, 26);
+            this.errorPublisherMsg.Size = new System.Drawing.Size(0, 21);
             this.errorPublisherMsg.TabIndex = 33;
             // 
             // label18
@@ -456,7 +392,7 @@
             this.errorBookNameMsg.ForeColor = System.Drawing.Color.Red;
             this.errorBookNameMsg.Location = new System.Drawing.Point(163, 50);
             this.errorBookNameMsg.Name = "errorBookNameMsg";
-            this.errorBookNameMsg.Size = new System.Drawing.Size(0, 26);
+            this.errorBookNameMsg.Size = new System.Drawing.Size(0, 21);
             this.errorBookNameMsg.TabIndex = 7;
             // 
             // nameLine
@@ -492,9 +428,74 @@
             this.flowLayoutPanel1.TabIndex = 4;
             this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
+            // addPublisherBtn
+            // 
+            this.addPublisherBtn.Enabled = false;
+            this.addPublisherBtn.Image = ((System.Drawing.Image)(resources.GetObject("addPublisherBtn.Image")));
+            this.addPublisherBtn.Location = new System.Drawing.Point(536, 14);
+            this.addPublisherBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.addPublisherBtn.Name = "addPublisherBtn";
+            this.addPublisherBtn.Size = new System.Drawing.Size(38, 38);
+            this.addPublisherBtn.TabIndex = 34;
+            this.addPublisherBtn.UseVisualStyleBackColor = true;
+            this.addPublisherBtn.Click += new System.EventHandler(this.addPublisherBtn_Click);
+            // 
+            // btnAddTacGia
+            // 
+            this.btnAddTacGia.Enabled = false;
+            this.btnAddTacGia.Image = ((System.Drawing.Image)(resources.GetObject("btnAddTacGia.Image")));
+            this.btnAddTacGia.Location = new System.Drawing.Point(536, 10);
+            this.btnAddTacGia.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAddTacGia.Name = "btnAddTacGia";
+            this.btnAddTacGia.Size = new System.Drawing.Size(38, 38);
+            this.btnAddTacGia.TabIndex = 29;
+            this.btnAddTacGia.UseVisualStyleBackColor = true;
+            this.btnAddTacGia.Click += new System.EventHandler(this.btnAddTacGia_Click);
+            // 
+            // addBookTypeBtn
+            // 
+            this.addBookTypeBtn.Enabled = false;
+            this.addBookTypeBtn.Image = ((System.Drawing.Image)(resources.GetObject("addBookTypeBtn.Image")));
+            this.addBookTypeBtn.Location = new System.Drawing.Point(536, 12);
+            this.addBookTypeBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.addBookTypeBtn.Name = "addBookTypeBtn";
+            this.addBookTypeBtn.Size = new System.Drawing.Size(38, 38);
+            this.addBookTypeBtn.TabIndex = 31;
+            this.addBookTypeBtn.UseVisualStyleBackColor = true;
+            this.addBookTypeBtn.Click += new System.EventHandler(this.addBookTypeBtn_Click);
+            // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.BorderRadius = 16;
+            this.guna2PictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
+            this.guna2PictureBox1.Location = new System.Drawing.Point(266, 12);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.ShadowDecoration.Parent = this.guna2PictureBox1;
+            this.guna2PictureBox1.Size = new System.Drawing.Size(149, 193);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox1.TabIndex = 13;
+            this.guna2PictureBox1.TabStop = false;
+            this.guna2PictureBox1.Click += new System.EventHandler(this.guna2PictureBox1_Click);
+            // 
+            // guna2PictureBox2
+            // 
+            this.guna2PictureBox2.BorderRadius = 16;
+            this.guna2PictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.guna2PictureBox2.Image = global::QuanLyCuaHangBanSach.Properties.Resources.book_cover;
+            this.guna2PictureBox2.InitialImage = null;
+            this.guna2PictureBox2.Location = new System.Drawing.Point(266, 11);
+            this.guna2PictureBox2.Name = "guna2PictureBox2";
+            this.guna2PictureBox2.ShadowDecoration.Parent = this.guna2PictureBox2;
+            this.guna2PictureBox2.Size = new System.Drawing.Size(149, 193);
+            this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox2.TabIndex = 14;
+            this.guna2PictureBox2.TabStop = false;
+            this.guna2PictureBox2.Visible = false;
+            // 
             // BookModal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(629, 769);
@@ -511,8 +512,6 @@
             this.Load += new System.EventHandler(this.AddBookModal_Load);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -522,6 +521,8 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }

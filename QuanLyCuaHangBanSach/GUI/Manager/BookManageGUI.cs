@@ -86,7 +86,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             {
                 List<AuthorDTO> authorList = AuthorBUS.Instance.getAllData();
 
-                authorList.Insert(0, new AuthorDTO(0, "Tất cả tác giả", "", 0));
+                authorList.Insert(0, new AuthorDTO(-1, "Tất cả tác giả", "", 0));
 
                 this.authorCbx.ValueMember = "Ma";
                 this.authorCbx.DisplayMember = "Ten";
@@ -106,7 +106,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             {
                 List<BookTypeDTO> bookTypeList = BookTypeBUS.Instance.getAllData();
 
-                bookTypeList.Insert(0, new BookTypeDTO(0, "Tất cả thể loại"));
+                bookTypeList.Insert(0, new BookTypeDTO(-1, "Tất cả thể loại"));
 
                 this.bookTypeCbx.ValueMember = "MaTheLoai";
                 this.bookTypeCbx.DisplayMember = "TenTheLoai";
@@ -124,7 +124,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             {
                 List<PublisherDTO> publisherList = PublisherBUS.Instance.getAllData();
 
-                publisherList.Insert(0, new PublisherDTO(0, "Tất cả nhà xuất bản", "", ""));
+                publisherList.Insert(0, new PublisherDTO(-1, "Tất cả nhà xuất bản", "", ""));
 
                 this.publisherCbx.ValueMember = "MaNhaXuatBan";
                 this.publisherCbx.DisplayMember = "TenNhaXuatBan";
@@ -238,41 +238,41 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
                 List<BookDTO> newBookList = bookList.FindAll(book =>
                 {
-                    if (authorId != 0 && bookTypeId != 0 && publisherId != 0)
+                    if (authorId != -1 && bookTypeId != -1 && publisherId != -1)
                     {
                         return book.MaTacGia == authorId &&
                                book.MaTheLoai == bookTypeId &&
                                book.MaNhaXuatBan == publisherId;
                     }
 
-                    if (authorId == 0 && bookTypeId != 0 && publisherId != 0)
+                    if (authorId == -1 && bookTypeId != -1 && publisherId != -1)
                     {
                         return book.MaTheLoai == bookTypeId &&
                                book.MaNhaXuatBan == publisherId;
                     }
 
-                    if (authorId == 0 && bookTypeId == 0 && publisherId != 0)
+                    if (authorId == -1 && bookTypeId == -1 && publisherId != -1)
                     {
                         return book.MaNhaXuatBan == publisherId;
                     }
 
-                    if (authorId == 0 && bookTypeId != 0 && publisherId == 0)
+                    if (authorId == -1 && bookTypeId != -1 && publisherId == -1)
                     {
                         return book.MaTheLoai == bookTypeId;
                     }
 
-                    if (authorId != 0 && bookTypeId == 0 && publisherId == 0)
+                    if (authorId != -1 && bookTypeId == -1 && publisherId == -1)
                     {
                         return book.MaTacGia == authorId;
                     }
 
-                    if (authorId != 0 && bookTypeId != 0 && publisherId == 0)
+                    if (authorId != -1 && bookTypeId != -1 && publisherId == -1)
                     {
                         return book.MaTacGia == authorId &&
                                book.MaTheLoai == bookTypeId;
                     }
 
-                    if (authorId != 0 && bookTypeId == 0 && publisherId != 0)
+                    if (authorId != -1 && bookTypeId == -1 && publisherId != -1)
                     {
                         return book.MaTacGia == authorId &&
                                book.MaNhaXuatBan == publisherId;
@@ -649,6 +649,29 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             {
                 Console.WriteLine(ex);
             }
+        }
+
+        private void authorCbx_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            e.DrawBackground();
+
+            // Lấy mục hiện tại
+            string itemText = authorCbx.GetItemText(authorCbx.Items[e.Index]);
+
+            // Kiểm tra độ dài của văn bản
+            if (e.Graphics.MeasureString(itemText, e.Font).Width > e.Bounds.Width)
+            {
+                // Nếu văn bản quá dài, thay thế nó bằng "..."
+                itemText = itemText.Substring(0, itemText.Length - 6) + "...";
+            }
+
+            // Tạo brush cho văn bản
+            Brush textBrush = ((e.State & DrawItemState.Selected) == DrawItemState.Selected) ? SystemBrushes.HighlightText : SystemBrushes.ControlText;
+
+            // Vẽ văn bản
+            e.Graphics.DrawString(itemText, e.Font, textBrush, e.Bounds.X, e.Bounds.Y);
+
+            e.DrawFocusRectangle();
         }
     }
 }
