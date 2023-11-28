@@ -97,5 +97,13 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             Bitmap largerBarcodeBitmap = GenerateBarcodeWithText(guna2TextBox1.Text, string.Format("{0:N0} VNĐ", book.GiaBan));
             pictureBox1.Image = largerBarcodeBitmap;
         }
+
+        private void guna2TextBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                submitBtn_Click(sender, e);
+            }
+        }
     }
 }

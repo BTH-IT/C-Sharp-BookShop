@@ -3,6 +3,7 @@ using QuanLyCuaHangBanSach.DTO;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace QuanLyCuaHangBanSach.GUI.Modal
@@ -73,7 +74,24 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 }
 
                 this.staffComboBox.SelectedIndexChanged += staffComboBox_SelectedIndexChanged;
-
+                List<AuthDetailDTO> authDetails;
+                authDetails = AuthDetailBUS.Instance.getByPositionId(MenuGUI.staff.MaChucVu.ToString());
+                if (authDetails != null)
+                {
+                    // check quyen Nhân Viên
+                    if (!authDetails.Any(c => c.maQuyenHan == 2 && c.TrangThai))
+                    {
+                        this.AddStaffBtn.Enabled = false;
+                    }
+                    else
+                    {
+                        this.AddStaffBtn.Enabled = true;
+                    }
+                }
+                else
+                {
+                    this.AddStaffBtn.Enabled = false;
+                }
 
             }
             catch { }
@@ -319,6 +337,23 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
             {
                 e.Handled = true; // Chặn ký tự nhập vào
             }
+        }
+
+        private void staffComboBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                submitBtn_Click(sender, e);
+            }
+        }
+
+        private void AddStaffBtn_Click(object sender, EventArgs e)
+        {
+            using (StaffModal modal = new StaffModal())
+            {
+                modal.ShowDialog();
+            }
+            this.loadStaffCbx();
         }
     }
 }

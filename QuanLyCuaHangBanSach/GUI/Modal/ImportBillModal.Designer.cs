@@ -239,7 +239,7 @@
             this.errorCustomerMsg.ForeColor = System.Drawing.Color.Red;
             this.errorCustomerMsg.Location = new System.Drawing.Point(162, 55);
             this.errorCustomerMsg.Name = "errorCustomerMsg";
-            this.errorCustomerMsg.Size = new System.Drawing.Size(0, 21);
+            this.errorCustomerMsg.Size = new System.Drawing.Size(0, 26);
             this.errorCustomerMsg.TabIndex = 27;
             // 
             // label5
@@ -276,6 +276,7 @@
             this.supplierCbx.Size = new System.Drawing.Size(408, 36);
             this.supplierCbx.TabIndex = 26;
             this.supplierCbx.TabStop = false;
+            this.supplierCbx.KeyDown += new System.Windows.Forms.KeyEventHandler(this.supplierCbx_KeyDown);
             this.supplierCbx.Leave += new System.EventHandler(this.supplierCbx_SelectedIndexChanged);
             // 
             // panel2
@@ -328,6 +329,7 @@
             this.benefitTxt.Size = new System.Drawing.Size(236, 29);
             this.benefitTxt.TabIndex = 28;
             this.benefitTxt.TextChanged += new System.EventHandler(this.benefitTxt_TextChanged);
+            this.benefitTxt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.supplierCbx_KeyDown);
             this.benefitTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.benefitTxt_KeyPress);
             this.benefitTxt.Leave += new System.EventHandler(this.benefitTxt_TextChanged);
             // 
@@ -346,7 +348,7 @@
             this.errorBenefitMsg.ForeColor = System.Drawing.Color.Red;
             this.errorBenefitMsg.Location = new System.Drawing.Point(124, 57);
             this.errorBenefitMsg.Name = "errorBenefitMsg";
-            this.errorBenefitMsg.Size = new System.Drawing.Size(0, 21);
+            this.errorBenefitMsg.Size = new System.Drawing.Size(0, 26);
             this.errorBenefitMsg.TabIndex = 27;
             // 
             // label13
@@ -377,12 +379,12 @@
             this.errorBookListMsg.ForeColor = System.Drawing.Color.Red;
             this.errorBookListMsg.Location = new System.Drawing.Point(314, 344);
             this.errorBookListMsg.Name = "errorBookListMsg";
-            this.errorBookListMsg.Size = new System.Drawing.Size(0, 21);
+            this.errorBookListMsg.Size = new System.Drawing.Size(0, 26);
             this.errorBookListMsg.TabIndex = 36;
             // 
             // ImportBillModal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1057, 709);

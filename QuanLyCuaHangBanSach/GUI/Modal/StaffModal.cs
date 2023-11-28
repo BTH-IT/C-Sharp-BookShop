@@ -354,5 +354,13 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 }    
 			}
 		}
-	}
+
+        private void staffNameTxt_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                submitBtn_Click(sender, e);
+            }
+        }
+    }
  }

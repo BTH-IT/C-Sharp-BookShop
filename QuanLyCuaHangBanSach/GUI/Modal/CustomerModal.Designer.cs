@@ -91,6 +91,7 @@
             this.genderCbx.Radius = 6;
             this.genderCbx.Size = new System.Drawing.Size(408, 36);
             this.genderCbx.TabIndex = 4;
+            this.genderCbx.KeyDown += new System.Windows.Forms.KeyEventHandler(this.customerNameTxtBox_KeyDown);
             this.genderCbx.Leave += new System.EventHandler(this.genderCbx_SelectedIndexChanged);
             // 
             // panel10
@@ -132,6 +133,7 @@
             this.phoneNumberTxtBox.Size = new System.Drawing.Size(425, 29);
             this.phoneNumberTxtBox.TabIndex = 2;
             this.phoneNumberTxtBox.TextChanged += new System.EventHandler(this.phoneNumberTxtBox_TextChanged);
+            this.phoneNumberTxtBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.customerNameTxtBox_KeyDown);
             this.phoneNumberTxtBox.Leave += new System.EventHandler(this.phoneNumberTxtBox_TextChanged);
             // 
             // errorPhoneNumberMsg
@@ -141,7 +143,7 @@
             this.errorPhoneNumberMsg.ForeColor = System.Drawing.Color.Red;
             this.errorPhoneNumberMsg.Location = new System.Drawing.Point(163, 48);
             this.errorPhoneNumberMsg.Name = "errorPhoneNumberMsg";
-            this.errorPhoneNumberMsg.Size = new System.Drawing.Size(0, 21);
+            this.errorPhoneNumberMsg.Size = new System.Drawing.Size(0, 26);
             this.errorPhoneNumberMsg.TabIndex = 7;
             // 
             // phoneNumberLine
@@ -201,6 +203,7 @@
             this.customerNameTxtBox.Size = new System.Drawing.Size(406, 28);
             this.customerNameTxtBox.TabIndex = 1;
             this.customerNameTxtBox.TextChanged += new System.EventHandler(this.customerNameTxtBox_TextChanged);
+            this.customerNameTxtBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.customerNameTxtBox_KeyDown);
             this.customerNameTxtBox.Leave += new System.EventHandler(this.customerNameTxtBox_TextChanged);
             // 
             // errorCustomerNameMsg
@@ -210,7 +213,7 @@
             this.errorCustomerNameMsg.ForeColor = System.Drawing.Color.Red;
             this.errorCustomerNameMsg.Location = new System.Drawing.Point(181, 52);
             this.errorCustomerNameMsg.Name = "errorCustomerNameMsg";
-            this.errorCustomerNameMsg.Size = new System.Drawing.Size(0, 21);
+            this.errorCustomerNameMsg.Size = new System.Drawing.Size(0, 26);
             this.errorCustomerNameMsg.TabIndex = 7;
             // 
             // customerNameLine
@@ -283,6 +286,7 @@
             this.birthYearTxtBox.Size = new System.Drawing.Size(406, 31);
             this.birthYearTxtBox.TabIndex = 3;
             this.birthYearTxtBox.TextChanged += new System.EventHandler(this.birthYearTxtBox_TextChanged);
+            this.birthYearTxtBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.customerNameTxtBox_KeyDown);
             this.birthYearTxtBox.Leave += new System.EventHandler(this.birthYearTxtBox_TextChanged);
             // 
             // errorBirthYearMsg
@@ -292,7 +296,7 @@
             this.errorBirthYearMsg.ForeColor = System.Drawing.Color.Red;
             this.errorBirthYearMsg.Location = new System.Drawing.Point(177, 45);
             this.errorBirthYearMsg.Name = "errorBirthYearMsg";
-            this.errorBirthYearMsg.Size = new System.Drawing.Size(0, 21);
+            this.errorBirthYearMsg.Size = new System.Drawing.Size(0, 26);
             this.errorBirthYearMsg.TabIndex = 7;
             // 
             // birthYearLine
@@ -330,7 +334,7 @@
             this.errorGenderMsg.ForeColor = System.Drawing.Color.Red;
             this.errorGenderMsg.Location = new System.Drawing.Point(164, 52);
             this.errorGenderMsg.Name = "errorGenderMsg";
-            this.errorGenderMsg.Size = new System.Drawing.Size(0, 21);
+            this.errorGenderMsg.Size = new System.Drawing.Size(0, 26);
             this.errorGenderMsg.TabIndex = 30;
             // 
             // submitBtn
@@ -407,7 +411,7 @@
             // 
             // CustomerModal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1222, 352);
