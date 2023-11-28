@@ -649,7 +649,7 @@
 			// 
 			// luongC
 			// 
-			this.luongC.HeaderText = "Lương";
+			this.luongC.HeaderText = "Lương thực tế";
 			this.luongC.MinimumWidth = 6;
 			this.luongC.Name = "luongC";
 			// 
