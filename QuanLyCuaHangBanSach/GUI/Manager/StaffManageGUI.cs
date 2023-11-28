@@ -53,6 +53,8 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 				{
 					foreach (StaffDTO staff in staffs)
 					{
+                        PositionDTO position = PositionBUS.Instance.getById(staff.MaChucVu.ToString());
+                        decimal luongChinh =Math.Round((staff.Luong * (decimal)position.HeSoLuong)/1000)*1000;
 						this.dgvStaff.Rows.Add(
 							new object[]
 							{
@@ -63,7 +65,8 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 								staff.GioiTinh,
 								staff.SoDienThoai,
                                 string.Format("{0:N0} VNĐ", staff.Luong),
-								PositionBUS.Instance.getById(staff.MaChucVu.ToString()).TenChucVu
+								position.TenChucVu,
+                                string.Format("{0:N0} VNĐ", luongChinh)
 							}
 						);
 					}
@@ -170,7 +173,13 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             }
             
         }
+        private decimal tinhLuongChinhThuc(StaffDTO staff)
+        {
+			PositionDTO position = PositionBUS.Instance.getById(staff.MaChucVu.ToString());
+			decimal luongChinh = Math.Round((staff.Luong * (decimal)position.HeSoLuong) / 1000) * 1000;
 
+            return luongChinh;
+		}
         private List<StaffDTO> handleFilter(string searchInput)
         {
 			List<StaffDTO> staffs = StaffBUS.Instance.search(searchInput);
@@ -196,7 +205,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 						}
                         else
                         {
-                            staffs = staffs.Where(staff => staff.Luong >= Convert.ToDecimal(this.salaryFrom.Text) && staff.Luong <= Convert.ToDecimal(this.salaryTo.Text)).ToList();
+                            staffs = staffs.Where(staff =>tinhLuongChinhThuc(staff) >= Convert.ToDecimal(this.salaryFrom.Text) && tinhLuongChinhThuc(staff) <= Convert.ToDecimal(this.salaryTo.Text)).ToList();
                         }
 					}
 				}
