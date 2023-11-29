@@ -423,7 +423,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
                 return;
             }
 
-            string[] headerList = new string[] { "Mã sách", "Tên sách", "Tác giả", "Thể loại", "Nhà xuất bản", "Giá bán", "Giá nhập", "Năm xuất bản", "Còn lại" };
+            string[] headerList = new string[] { "Mã sách", "Tên sách", "Tác giả", "Thể loại", "Nhà xuất bản", "Giá bán", "Giá nhập", "Còn lại" };
             
             DataTable dt = CustomExcel.Instance.ConvertDataGridViewToDataTable(dgvBook);
 

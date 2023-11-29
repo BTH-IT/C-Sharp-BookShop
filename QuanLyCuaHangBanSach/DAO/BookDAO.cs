@@ -82,15 +82,15 @@ namespace QuanLyCuaHangBanSach.DAO
         public DataTable getAllDataFiltered(int SortMode, string Type, string Author, string Publisher, bool Import)
         {
             string sql = $@"SELECT * FROM sach WHERE hienThi = 1";
-            if (!Type.Equals("0"))
+            if (!Type.Equals("-1"))
             {
                 sql += " AND maTheLoai=@maTheLoai";
             }
-            if (!Author.Equals("0"))
+            if (!Author.Equals("-1"))
             {
                 sql += " AND maTacGia=@maTacGia";
             }
-            if (!Publisher.Equals("0"))
+            if (!Publisher.Equals("-1"))
             {
                 sql += " AND maNhaXuatBan=@maNhaXuatBan";
             }

@@ -50,9 +50,10 @@
 			this.PriceUpCkb.CheckedState.BorderThickness = 0;
 			this.PriceUpCkb.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
 			this.PriceUpCkb.Font = new System.Drawing.Font("#9Slide03 Cabin Medium", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-			this.PriceUpCkb.Location = new System.Drawing.Point(20, 20);
+			this.PriceUpCkb.Location = new System.Drawing.Point(27, 25);
+			this.PriceUpCkb.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.PriceUpCkb.Name = "PriceUpCkb";
-			this.PriceUpCkb.Size = new System.Drawing.Size(104, 25);
+			this.PriceUpCkb.Size = new System.Drawing.Size(123, 30);
 			this.PriceUpCkb.TabIndex = 0;
 			this.PriceUpCkb.Text = "Giá tăng dần";
 			this.PriceUpCkb.UncheckedState.BorderColor = System.Drawing.Color.DimGray;
@@ -71,9 +72,10 @@
 			this.PriceDownCkb.CheckedState.BorderThickness = 0;
 			this.PriceDownCkb.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
 			this.PriceDownCkb.Font = new System.Drawing.Font("#9Slide03 Cabin Medium", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-			this.PriceDownCkb.Location = new System.Drawing.Point(20, 60);
+			this.PriceDownCkb.Location = new System.Drawing.Point(27, 74);
+			this.PriceDownCkb.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.PriceDownCkb.Name = "PriceDownCkb";
-			this.PriceDownCkb.Size = new System.Drawing.Size(106, 25);
+			this.PriceDownCkb.Size = new System.Drawing.Size(127, 30);
 			this.PriceDownCkb.TabIndex = 1;
 			this.PriceDownCkb.Text = "Giá giảm dần";
 			this.PriceDownCkb.UncheckedState.BorderColor = System.Drawing.Color.DimGray;
@@ -92,9 +94,10 @@
 			this.NameAZCkb.CheckedState.BorderThickness = 0;
 			this.NameAZCkb.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
 			this.NameAZCkb.Font = new System.Drawing.Font("#9Slide03 Cabin Medium", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-			this.NameAZCkb.Location = new System.Drawing.Point(20, 100);
+			this.NameAZCkb.Location = new System.Drawing.Point(27, 123);
+			this.NameAZCkb.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.NameAZCkb.Name = "NameAZCkb";
-			this.NameAZCkb.Size = new System.Drawing.Size(94, 25);
+			this.NameAZCkb.Size = new System.Drawing.Size(111, 30);
 			this.NameAZCkb.TabIndex = 2;
 			this.NameAZCkb.Text = "Tên từ A-Z";
 			this.NameAZCkb.UncheckedState.BorderColor = System.Drawing.Color.DimGray;
@@ -113,9 +116,10 @@
 			this.NameZACkb.CheckedState.BorderThickness = 0;
 			this.NameZACkb.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
 			this.NameZACkb.Font = new System.Drawing.Font("#9Slide03 Cabin Medium", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-			this.NameZACkb.Location = new System.Drawing.Point(20, 139);
+			this.NameZACkb.Location = new System.Drawing.Point(27, 171);
+			this.NameZACkb.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.NameZACkb.Name = "NameZACkb";
-			this.NameZACkb.Size = new System.Drawing.Size(94, 25);
+			this.NameZACkb.Size = new System.Drawing.Size(111, 30);
 			this.NameZACkb.TabIndex = 3;
 			this.NameZACkb.Text = "Tên từ Z-A";
 			this.NameZACkb.UncheckedState.BorderColor = System.Drawing.Color.DimGray;
@@ -136,10 +140,11 @@
 			this.ApplyBtn.Font = new System.Drawing.Font("#9Slide03 Cabin Medium", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
 			this.ApplyBtn.ForeColor = System.Drawing.Color.White;
 			this.ApplyBtn.HoverState.Parent = this.ApplyBtn;
-			this.ApplyBtn.Location = new System.Drawing.Point(20, 177);
+			this.ApplyBtn.Location = new System.Drawing.Point(27, 218);
+			this.ApplyBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.ApplyBtn.Name = "ApplyBtn";
 			this.ApplyBtn.ShadowDecoration.Parent = this.ApplyBtn;
-			this.ApplyBtn.Size = new System.Drawing.Size(293, 31);
+			this.ApplyBtn.Size = new System.Drawing.Size(391, 38);
 			this.ApplyBtn.TabIndex = 7;
 			this.ApplyBtn.Text = "Áp dụng";
 			this.ApplyBtn.Click += new System.EventHandler(this.ApplyBtn_Click);
@@ -158,12 +163,13 @@
 			this.TypeCb.FormattingEnabled = true;
 			this.TypeCb.Items.AddRange(new object[] {
             "Tất cả"});
-			this.TypeCb.Location = new System.Drawing.Point(159, 31);
+			this.TypeCb.Location = new System.Drawing.Point(212, 38);
+			this.TypeCb.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.TypeCb.Name = "TypeCb";
 			this.TypeCb.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
 			this.TypeCb.OnHoverItemForeColor = System.Drawing.Color.White;
 			this.TypeCb.Radius = 4;
-			this.TypeCb.Size = new System.Drawing.Size(154, 28);
+			this.TypeCb.Size = new System.Drawing.Size(204, 33);
 			this.TypeCb.TabIndex = 4;
 			this.TypeCb.TabStop = false;
 			this.TypeCb.Tag = "";
@@ -182,12 +188,13 @@
 			this.AuthorCb.FormattingEnabled = true;
 			this.AuthorCb.Items.AddRange(new object[] {
             "Tất cả"});
-			this.AuthorCb.Location = new System.Drawing.Point(159, 84);
+			this.AuthorCb.Location = new System.Drawing.Point(212, 103);
+			this.AuthorCb.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.AuthorCb.Name = "AuthorCb";
 			this.AuthorCb.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
 			this.AuthorCb.OnHoverItemForeColor = System.Drawing.Color.White;
 			this.AuthorCb.Radius = 4;
-			this.AuthorCb.Size = new System.Drawing.Size(154, 28);
+			this.AuthorCb.Size = new System.Drawing.Size(204, 33);
 			this.AuthorCb.TabIndex = 5;
 			this.AuthorCb.TabStop = false;
 			this.AuthorCb.Tag = "";
@@ -206,12 +213,13 @@
 			this.PublisherCb.FormattingEnabled = true;
 			this.PublisherCb.Items.AddRange(new object[] {
             "Tất cả"});
-			this.PublisherCb.Location = new System.Drawing.Point(159, 137);
+			this.PublisherCb.Location = new System.Drawing.Point(212, 169);
+			this.PublisherCb.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.PublisherCb.Name = "PublisherCb";
 			this.PublisherCb.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
 			this.PublisherCb.OnHoverItemForeColor = System.Drawing.Color.White;
 			this.PublisherCb.Radius = 4;
-			this.PublisherCb.Size = new System.Drawing.Size(154, 28);
+			this.PublisherCb.Size = new System.Drawing.Size(204, 33);
 			this.PublisherCb.TabIndex = 6;
 			this.PublisherCb.TabStop = false;
 			this.PublisherCb.Tag = "";
@@ -220,9 +228,10 @@
 			// 
 			this.Typelb.AutoSize = true;
 			this.Typelb.Font = new System.Drawing.Font("#9Slide03 Cabin Medium", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-			this.Typelb.Location = new System.Drawing.Point(173, 13);
+			this.Typelb.Location = new System.Drawing.Point(231, 16);
+			this.Typelb.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.Typelb.Name = "Typelb";
-			this.Typelb.Size = new System.Drawing.Size(50, 18);
+			this.Typelb.Size = new System.Drawing.Size(59, 23);
 			this.Typelb.TabIndex = 9;
 			this.Typelb.Text = "Thể loại";
 			// 
@@ -230,9 +239,10 @@
 			// 
 			this.AuthorLb.AutoSize = true;
 			this.AuthorLb.Font = new System.Drawing.Font("#9Slide03 Cabin Medium", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-			this.AuthorLb.Location = new System.Drawing.Point(173, 66);
+			this.AuthorLb.Location = new System.Drawing.Point(231, 81);
+			this.AuthorLb.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.AuthorLb.Name = "AuthorLb";
-			this.AuthorLb.Size = new System.Drawing.Size(44, 18);
+			this.AuthorLb.Size = new System.Drawing.Size(52, 23);
 			this.AuthorLb.TabIndex = 10;
 			this.AuthorLb.Text = "Tác giả";
 			// 
@@ -240,15 +250,16 @@
 			// 
 			this.PublisherLb.AutoSize = true;
 			this.PublisherLb.Font = new System.Drawing.Font("#9Slide03 Cabin Medium", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-			this.PublisherLb.Location = new System.Drawing.Point(173, 119);
+			this.PublisherLb.Location = new System.Drawing.Point(231, 146);
+			this.PublisherLb.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.PublisherLb.Name = "PublisherLb";
-			this.PublisherLb.Size = new System.Drawing.Size(77, 18);
+			this.PublisherLb.Size = new System.Drawing.Size(92, 23);
 			this.PublisherLb.TabIndex = 11;
 			this.PublisherLb.Text = "Nhà xuất bản";
 			// 
 			// FilterUserControl
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(245)))));
 			this.Controls.Add(this.PublisherLb);
@@ -264,7 +275,7 @@
 			this.Controls.Add(this.PriceUpCkb);
 			this.Margin = new System.Windows.Forms.Padding(0);
 			this.Name = "FilterUserControl";
-			this.Size = new System.Drawing.Size(334, 221);
+			this.Size = new System.Drawing.Size(445, 272);
 			this.Load += new System.EventHandler(this.FilterUserControl_Load);
 			this.ResumeLayout(false);
 			this.PerformLayout();
