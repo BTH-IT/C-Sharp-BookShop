@@ -598,7 +598,7 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
 					{
                         if (count == 1)
                         {
-                            if (!int.TryParse(row[1].ToString(), out int maNhaCungCap) || int.TryParse(row[2].ToString(), out int nullVal))
+                            if (!int.TryParse(row[1].ToString(), out int maNhaCungCap) || int.TryParse(row[3].ToString(), out int nullVal))
                             {
 								MessageBox.Show("Lỗi chưa chọn file hoặc file excel không đúng format dữ liệu nhập!");
 								return;
