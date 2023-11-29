@@ -161,7 +161,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             }
             try
             {
-                string[] headerList = new string[] { "Mã nhân viên", "Tên nhân viên", "Năm sinh", "Giới tính", "SĐT",  "Lương", "Chức vụ" };
+                string[] headerList = new string[] { "Mã nhân viên", "Tên nhân viên", "Năm sinh", "Giới tính", "SĐT",  "Lương", "Chức vụ" ,"Lương thực tế"};
 
                 DataTable dt = CustomExcel.Instance.ConvertDataGridViewToDataTable(dgvStaff);
 

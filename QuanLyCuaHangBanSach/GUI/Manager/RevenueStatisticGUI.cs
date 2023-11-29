@@ -429,7 +429,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
             try
 			{
-				string[] headerList = new string[] { "Ngày lập hóa đơn", "Mã hóa đơn", "Khuyến mãi", "Doanh thu" };
+				string[] headerList = new string[] { "Ngày lập hóa đơn", "Mã hóa đơn", "Khuyến mãi", "Đổi điểm","Doanh thu" };
 
 				DataTable dt = CustomExcel.Instance.ConvertDataGridViewToDataTable(dgvBill);
 
