@@ -38,8 +38,7 @@ namespace QuanLyCuaHangBanSach.GUI
 
         private void Menu_Load(object sender, EventArgs e)
         {
-            Console.WriteLine(this.sell.Height);
-            this.Size = new System.Drawing.Size(this.Size.Width, this.Size.Height + this.sell.Height+ (this.sell.Height)/2);
+            this.Size = new System.Drawing.Size(this.Size.Width, this.Size.Height + this.manage.Height+ (this.manage.Height)/2);
             foreach (AuthDetailDTO authDetail in authDetails)
             {
                 if (authDetail.maQuyenHan == 6 && !this.sell.Visible)
@@ -72,7 +71,11 @@ namespace QuanLyCuaHangBanSach.GUI
                     }
                 }
             }
-
+            if (!this.manage.Visible)
+            {
+                    this.menuFlow.Size = new System.Drawing.Size(this.menuFlow.Size.Width - this.manage.Width, this.menuFlow.Size.Height);
+                    this.menuFlow.Left = (this.panel1.Width - this.menuFlow.Width) / 2;
+            }
             this.Left += SystemInformation.VirtualScreen.Width / 2 - this.Width / 2;
             this.Top += SystemInformation.VirtualScreen.Height / 2 - this.Height / 2;
         }
