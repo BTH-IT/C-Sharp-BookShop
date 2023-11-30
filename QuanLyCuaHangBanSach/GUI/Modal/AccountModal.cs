@@ -220,6 +220,16 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 this.staffLine,
                 new string[] { "required" }
             );
+            if (isStaffCbx)
+            {
+                StaffDTO staff = StaffBUS.Instance.getById(this.staffComboBox.SelectedValue.ToString());
+                this.staffPhoneNumber.Text = staff.SoDienThoai.ToString();
+
+			}
+            else
+            {
+                this.staffPhoneNumber.Text = "Số điện thoại nhân viên";
+			}    
         }
 
         private void emailTxt_TextChanged(object sender, EventArgs e)
