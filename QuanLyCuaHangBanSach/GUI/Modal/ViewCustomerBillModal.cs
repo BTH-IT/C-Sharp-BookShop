@@ -48,6 +48,8 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
                 giaGoc += customerBillDetail.ThanhTien;
             }
 
+            this.originTotalPrice.Text = string.Format("{0:N0} VNĐ", (giaGoc));
+
             decimal salePrice = sale == null ? 0 : Convert.ToDecimal((giaGoc * Convert.ToDecimal(customerBill.PhanTramKhuyenMai / 100.0)).ToString().Split('.')[0]);
 
             decimal giaDaGiam = giaGoc - salePrice;
