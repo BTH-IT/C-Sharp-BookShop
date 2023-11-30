@@ -1148,6 +1148,7 @@
   <ItemGroup>
     <Content Include="assets\email-icom.jpg" />
     <Content Include="assets\eye-icon.png" />
+    <None Include="Resources\book-cover.png" />
     <None Include="Resources\logo_momo.png" />
     <None Include="assets\female.png" />
     <None Include="assets\male-circle.png" />
