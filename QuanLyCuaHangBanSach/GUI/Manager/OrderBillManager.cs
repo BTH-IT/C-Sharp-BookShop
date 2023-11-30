@@ -21,6 +21,49 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 		{
 			InitializeComponent();
 		}
+		private CheckBox headerCheckbox;
+		private void renderCheckBoxDgv()
+		{
+			try
+			{
+				int size = 25;
+				Rectangle rect = this.dgvOrderBill.GetCellDisplayRectangle(0, -1, false);
+
+				headerCheckbox = new CheckBox();
+
+				headerCheckbox.BackColor = Color.FromArgb(45, 210, 192);
+				headerCheckbox.Name = "chkHeader";
+				headerCheckbox.Size = new Size(size, size);
+				headerCheckbox.TabStop = false;
+
+				rect.X = (rect.Width / 2) - (size / 4);
+				rect.Y = (rect.Height / 2) - (size / 2);
+
+				headerCheckbox.Location = rect.Location;
+
+				this.dgvOrderBill.Controls.Add(headerCheckbox);
+			}
+			catch (Exception ex)
+			{
+				Console.WriteLine(ex);
+			}
+		}
+		private void headerCheckbox_Clicked(object sender, EventArgs e)
+		{
+			try
+			{
+				foreach (DataGridViewRow row in this.dgvOrderBill.Rows)
+				{
+					row.Cells[0].Value = headerCheckbox.Checked;
+				}
+
+				this.dgvOrderBill.RefreshEdit();
+			}
+			catch (Exception ex)
+			{
+				Console.WriteLine(ex);
+			}
+		}
 		private void loadOrderBillListToDataView(List<OrderBillDTO> orderBillList)
 		{
 			try
@@ -41,11 +84,17 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 					{
 						trangThai = "Nhập đủ hàng";
 					}
+					else if (orderBill.TrangThai == -1)
+					{
+						trangThai = "Hủy";
+					}
 					else
 					{
 						trangThai = "Nhập thiếu hàng";
 					}
+
 					this.dgvOrderBill.Rows.Add(new object[] {
+						false,
 						orderBill.MaPhieuYeuCau,
 						SupplierBUS.Instance.getById(orderBill.MaNhaCungCap.ToString()).TenNhaCungCap,
 						StaffBUS.Instance.getById(orderBill.MaNhanVien.ToString()).Ten,
@@ -231,7 +280,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
 				DataTable dt = CustomExcel.Instance.ConvertDataGridViewToDataTable(dgvOrderBill);
 
-				CustomExcel.Instance.ExportFileDatagridView(dt, "Book Manage", 0, "Cửa hàng bán sách", headerList);
+				CustomExcel.Instance.ExportFileDatagridView(dt, "Book Manage", 1, "Cửa hàng bán sách", headerList);
 			}
 			catch (Exception ex)
 			{
@@ -245,7 +294,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 				return;
 			}
 			DataGridViewRow row = this.dgvOrderBill.Rows[this.dgvOrderBill.CurrentCell.RowIndex];
-			OrderBillDTO OrderBill = OrderBillBUS.Instance.getById(row.Cells[0].Value.ToString());
+			OrderBillDTO OrderBill = OrderBillBUS.Instance.getById(row.Cells[1].Value.ToString());
 
 			using (ViewOrderBillModal viewOrderBillModal = new ViewOrderBillModal(OrderBill))
 			{
@@ -265,7 +314,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 					}
 
 					DataGridViewRow row = this.dgvOrderBill.Rows[this.dgvOrderBill.CurrentCell.RowIndex];
-					OrderBillDTO OrderBill = OrderBillBUS.Instance.getById(row.Cells[0].Value.ToString());
+					OrderBillDTO OrderBill = OrderBillBUS.Instance.getById(row.Cells[1].Value.ToString());
 
 					using (ViewOrderBillModal viewOrderBillModal = new ViewOrderBillModal(OrderBill))
 					{
@@ -289,7 +338,10 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 				List<OrderBillDTO> orderBillList = OrderBillBUS.Instance.getAllData();
 				this.loadSupplierCbx();
 				this.loadStaffCbx();
+				renderCheckBoxDgv();
+				this.headerCheckbox.Click += headerCheckbox_Clicked;
 				this.loadOrderBillListToDataView(orderBillList);
+				
 
 		}
 		private void dateTimeFrom_ValueChanged(object sender, EventArgs e)
@@ -357,7 +409,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
 					DataGridViewRow row = this.dgvOrderBill.Rows[this.dgvOrderBill.CurrentCell.RowIndex];
 					// sửa lại
-					using (OrderBillPrintForm orderBillPrintForm = new OrderBillPrintForm(Convert.ToInt32(row.Cells[0].Value)))
+					using (OrderBillPrintForm orderBillPrintForm = new OrderBillPrintForm(Convert.ToInt32(row.Cells[1].Value)))
 					{
 						orderBillPrintForm.ShowDialog();
 					}
@@ -371,6 +423,60 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 			catch (Exception ex)
 			{
 				Console.WriteLine(ex);
+			}
+		}
+
+		private void cancelBtn_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				bool isHaveSelect = false;
+
+				foreach (DataGridViewRow row in this.dgvOrderBill.Rows)
+				{
+					if ((bool)row.Cells[0].Value)
+					{
+						isHaveSelect = true;
+					}
+				}
+
+				if (!isHaveSelect)
+				{
+					MessageBox.Show("Bạn chưa chọn các phiếu yêu cầu cần hủy");
+					return;
+				}
+
+				DialogResult dialogResult = MessageBox.Show(
+					"Bạn có chắc hủy những phiếu yêu cầu đã chọn",
+					"Xác nhận",
+					MessageBoxButtons.YesNo,
+					MessageBoxIcon.None
+				);
+				if (dialogResult == DialogResult.Yes)
+				{
+					foreach (DataGridViewRow row in this.dgvOrderBill.Rows)
+					{
+						if ((bool)row.Cells[0].Value)
+						{
+							string trangThai = (string)row.Cells[5].Value;
+							if (trangThai == "Chưa nhập")
+							{
+								OrderBillDTO orderBill = OrderBillBUS.Instance.getById(row.Cells[1].Value.ToString());
+								orderBill.TrangThai = -1;
+								OrderBillBUS.Instance.update(orderBill);
+							}
+						}
+					}
+					MessageBox.Show("Bạn đã hủy các phiếu chưa nhập đã chọn thành công");
+
+					List<OrderBillDTO> orderBills = handleFilter(this.searchInput.Text.Trim());
+					this.loadOrderBillListToDataView(orderBills);
+				}
+
+			}
+			catch
+			{
+
 			}
 		}
 	}

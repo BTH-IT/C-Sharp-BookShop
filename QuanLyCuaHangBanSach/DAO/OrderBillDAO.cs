@@ -106,9 +106,10 @@ namespace QuanLyCuaHangBanSach.DAO
 		}
 		public bool update(OrderBillDTO data)
 		{
+			Console.WriteLine();
 			string sql = $@"UPDATE phieuyeucau SET 
                             maNhaCungCap=@maNhaCungCap, maNhanVien=@maNhanVien, ngayLap=@ngayLap, 
-                            trangThai=@trangThai WHERE maPhieuNhapHang=@maPhieuNhapHang;";
+                            trangThai=@trangThai WHERE maPhieuYeuCau=@maPhieuNhapHang;";
 
 			int rowChanged = DataProvider.Instance.ExecuteNonQuery(sql,
 				new MySqlParameter[] {
@@ -164,6 +165,7 @@ namespace QuanLyCuaHangBanSach.DAO
 		}
 		public OrderBillDTO getById(string id)
 		{
+			Console.WriteLine(id);
 			DataTable dataTable = DataProvider.Instance.ExecuteQuery(
 				"SELECT * FROM phieuyeucau WHERE maPhieuYeuCau=@maPhieuYeuCau;",
 				new MySqlParameter[] {
