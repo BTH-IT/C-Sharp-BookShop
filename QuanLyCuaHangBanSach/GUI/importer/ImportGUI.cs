@@ -967,7 +967,9 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
 				importBillDetails.Clear();
 				orderBillDetails.Clear();
 				NameInp.Enabled = false;
+				SupplierNameLb.Text = "";
 				supplierID = 0;
+				CartHandler();
 			}
         }
 	}
