@@ -84,16 +84,18 @@
 			this.panel1.Controls.Add(this.panel2);
 			this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panel1.Location = new System.Drawing.Point(0, 0);
+			this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
 			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(1636, 926);
+			this.panel1.Size = new System.Drawing.Size(1232, 676);
 			this.panel1.TabIndex = 0;
 			// 
 			// manageContent
 			// 
 			this.manageContent.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.manageContent.Location = new System.Drawing.Point(236, 36);
+			this.manageContent.Location = new System.Drawing.Point(189, 29);
+			this.manageContent.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
 			this.manageContent.Name = "manageContent";
-			this.manageContent.Size = new System.Drawing.Size(1400, 890);
+			this.manageContent.Size = new System.Drawing.Size(1043, 647);
 			this.manageContent.TabIndex = 3;
 			// 
 			// panel3
@@ -102,9 +104,10 @@
 			this.panel3.Controls.Add(this.panel5);
 			this.panel3.Controls.Add(this.panel6);
 			this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
-			this.panel3.Location = new System.Drawing.Point(0, 36);
+			this.panel3.Location = new System.Drawing.Point(0, 29);
+			this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
 			this.panel3.Name = "panel3";
-			this.panel3.Size = new System.Drawing.Size(236, 890);
+			this.panel3.Size = new System.Drawing.Size(189, 647);
 			this.panel3.TabIndex = 2;
 			// 
 			// panel5
@@ -114,18 +117,20 @@
 			this.panel5.Controls.Add(this.panel4);
 			this.panel5.Controls.Add(this.navBar);
 			this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.panel5.Location = new System.Drawing.Point(0, 94);
+			this.panel5.Location = new System.Drawing.Point(0, 75);
+			this.panel5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
 			this.panel5.Name = "panel5";
-			this.panel5.Size = new System.Drawing.Size(236, 796);
+			this.panel5.Size = new System.Drawing.Size(189, 572);
 			this.panel5.TabIndex = 6;
 			// 
 			// panel4
 			// 
 			this.panel4.Controls.Add(this.backBtn);
 			this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.panel4.Location = new System.Drawing.Point(0, 744);
+			this.panel4.Location = new System.Drawing.Point(0, 530);
+			this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
 			this.panel4.Name = "panel4";
-			this.panel4.Size = new System.Drawing.Size(236, 52);
+			this.panel4.Size = new System.Drawing.Size(189, 42);
 			this.panel4.TabIndex = 32;
 			// 
 			// backBtn
@@ -149,7 +154,8 @@
 			this.backBtn.Image = ((System.Drawing.Image)(resources.GetObject("backBtn.Image")));
 			this.backBtn.ImageSize = new System.Drawing.Size(20, 20);
 			this.backBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-			this.backBtn.Location = new System.Drawing.Point(17, 6);
+			this.backBtn.Location = new System.Drawing.Point(14, 5);
+			this.backBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
 			this.backBtn.Name = "backBtn";
 			this.backBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
 			this.backBtn.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -158,7 +164,7 @@
 			this.backBtn.OnHoverLineColor = System.Drawing.Color.Transparent;
 			this.backBtn.OnPressedColor = System.Drawing.Color.Black;
 			this.backBtn.Radius = 8;
-			this.backBtn.Size = new System.Drawing.Size(205, 40);
+			this.backBtn.Size = new System.Drawing.Size(164, 32);
 			this.backBtn.TabIndex = 31;
 			this.backBtn.Text = "Trở về";
 			this.backBtn.Click += new System.EventHandler(this.backBtn_Click);
@@ -183,8 +189,9 @@
 			this.navBar.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.navBar.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
 			this.navBar.Location = new System.Drawing.Point(0, 0);
+			this.navBar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
 			this.navBar.Name = "navBar";
-			this.navBar.Size = new System.Drawing.Size(236, 796);
+			this.navBar.Size = new System.Drawing.Size(189, 572);
 			this.navBar.TabIndex = 33;
 			// 
 			// bookBtn
@@ -208,7 +215,8 @@
 			this.bookBtn.Image = ((System.Drawing.Image)(resources.GetObject("bookBtn.Image")));
 			this.bookBtn.ImageSize = new System.Drawing.Size(20, 20);
 			this.bookBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-			this.bookBtn.Location = new System.Drawing.Point(3, 3);
+			this.bookBtn.Location = new System.Drawing.Point(3, 2);
+			this.bookBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
 			this.bookBtn.Name = "bookBtn";
 			this.bookBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
 			this.bookBtn.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -217,7 +225,7 @@
 			this.bookBtn.OnHoverLineColor = System.Drawing.Color.Transparent;
 			this.bookBtn.OnPressedColor = System.Drawing.Color.Black;
 			this.bookBtn.Radius = 8;
-			this.bookBtn.Size = new System.Drawing.Size(230, 40);
+			this.bookBtn.Size = new System.Drawing.Size(184, 32);
 			this.bookBtn.TabIndex = 50;
 			this.bookBtn.TabStop = false;
 			this.bookBtn.Text = "Sách";
@@ -244,7 +252,8 @@
 			this.staffBtn.Image = ((System.Drawing.Image)(resources.GetObject("staffBtn.Image")));
 			this.staffBtn.ImageSize = new System.Drawing.Size(20, 20);
 			this.staffBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-			this.staffBtn.Location = new System.Drawing.Point(3, 49);
+			this.staffBtn.Location = new System.Drawing.Point(3, 38);
+			this.staffBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
 			this.staffBtn.Name = "staffBtn";
 			this.staffBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
 			this.staffBtn.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -253,7 +262,7 @@
 			this.staffBtn.OnHoverLineColor = System.Drawing.Color.Transparent;
 			this.staffBtn.OnPressedColor = System.Drawing.Color.Black;
 			this.staffBtn.Radius = 8;
-			this.staffBtn.Size = new System.Drawing.Size(230, 40);
+			this.staffBtn.Size = new System.Drawing.Size(184, 32);
 			this.staffBtn.TabIndex = 51;
 			this.staffBtn.TabStop = false;
 			this.staffBtn.Text = "Nhân viên";
@@ -280,7 +289,8 @@
 			this.supplierBtn.Image = ((System.Drawing.Image)(resources.GetObject("supplierBtn.Image")));
 			this.supplierBtn.ImageSize = new System.Drawing.Size(20, 20);
 			this.supplierBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-			this.supplierBtn.Location = new System.Drawing.Point(3, 95);
+			this.supplierBtn.Location = new System.Drawing.Point(3, 74);
+			this.supplierBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
 			this.supplierBtn.Name = "supplierBtn";
 			this.supplierBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
 			this.supplierBtn.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -289,7 +299,7 @@
 			this.supplierBtn.OnHoverLineColor = System.Drawing.Color.Transparent;
 			this.supplierBtn.OnPressedColor = System.Drawing.Color.Black;
 			this.supplierBtn.Radius = 8;
-			this.supplierBtn.Size = new System.Drawing.Size(230, 40);
+			this.supplierBtn.Size = new System.Drawing.Size(184, 32);
 			this.supplierBtn.TabIndex = 52;
 			this.supplierBtn.TabStop = false;
 			this.supplierBtn.Text = "Nhà cung cấp";
@@ -316,7 +326,8 @@
 			this.bookTypeBtn.Image = ((System.Drawing.Image)(resources.GetObject("bookTypeBtn.Image")));
 			this.bookTypeBtn.ImageSize = new System.Drawing.Size(20, 20);
 			this.bookTypeBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-			this.bookTypeBtn.Location = new System.Drawing.Point(3, 141);
+			this.bookTypeBtn.Location = new System.Drawing.Point(3, 110);
+			this.bookTypeBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
 			this.bookTypeBtn.Name = "bookTypeBtn";
 			this.bookTypeBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
 			this.bookTypeBtn.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -325,7 +336,7 @@
 			this.bookTypeBtn.OnHoverLineColor = System.Drawing.Color.Transparent;
 			this.bookTypeBtn.OnPressedColor = System.Drawing.Color.Black;
 			this.bookTypeBtn.Radius = 8;
-			this.bookTypeBtn.Size = new System.Drawing.Size(230, 40);
+			this.bookTypeBtn.Size = new System.Drawing.Size(184, 32);
 			this.bookTypeBtn.TabIndex = 53;
 			this.bookTypeBtn.TabStop = false;
 			this.bookTypeBtn.Text = "Thể loại";
@@ -352,7 +363,8 @@
 			this.publisherBtn.Image = ((System.Drawing.Image)(resources.GetObject("publisherBtn.Image")));
 			this.publisherBtn.ImageSize = new System.Drawing.Size(20, 20);
 			this.publisherBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-			this.publisherBtn.Location = new System.Drawing.Point(3, 187);
+			this.publisherBtn.Location = new System.Drawing.Point(3, 146);
+			this.publisherBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
 			this.publisherBtn.Name = "publisherBtn";
 			this.publisherBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
 			this.publisherBtn.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -361,7 +373,7 @@
 			this.publisherBtn.OnHoverLineColor = System.Drawing.Color.Transparent;
 			this.publisherBtn.OnPressedColor = System.Drawing.Color.Black;
 			this.publisherBtn.Radius = 8;
-			this.publisherBtn.Size = new System.Drawing.Size(230, 40);
+			this.publisherBtn.Size = new System.Drawing.Size(184, 32);
 			this.publisherBtn.TabIndex = 54;
 			this.publisherBtn.TabStop = false;
 			this.publisherBtn.Text = "Nhà xuất bản";
@@ -388,7 +400,8 @@
 			this.customerBtn.Image = ((System.Drawing.Image)(resources.GetObject("customerBtn.Image")));
 			this.customerBtn.ImageSize = new System.Drawing.Size(20, 20);
 			this.customerBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-			this.customerBtn.Location = new System.Drawing.Point(3, 233);
+			this.customerBtn.Location = new System.Drawing.Point(3, 182);
+			this.customerBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
 			this.customerBtn.Name = "customerBtn";
 			this.customerBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
 			this.customerBtn.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -397,7 +410,7 @@
 			this.customerBtn.OnHoverLineColor = System.Drawing.Color.Transparent;
 			this.customerBtn.OnPressedColor = System.Drawing.Color.Black;
 			this.customerBtn.Radius = 8;
-			this.customerBtn.Size = new System.Drawing.Size(230, 40);
+			this.customerBtn.Size = new System.Drawing.Size(184, 32);
 			this.customerBtn.TabIndex = 56;
 			this.customerBtn.TabStop = false;
 			this.customerBtn.Text = "Khách hàng";
@@ -424,7 +437,8 @@
 			this.authorBtn.Image = ((System.Drawing.Image)(resources.GetObject("authorBtn.Image")));
 			this.authorBtn.ImageSize = new System.Drawing.Size(20, 20);
 			this.authorBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-			this.authorBtn.Location = new System.Drawing.Point(3, 279);
+			this.authorBtn.Location = new System.Drawing.Point(3, 218);
+			this.authorBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
 			this.authorBtn.Name = "authorBtn";
 			this.authorBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
 			this.authorBtn.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -433,7 +447,7 @@
 			this.authorBtn.OnHoverLineColor = System.Drawing.Color.Transparent;
 			this.authorBtn.OnPressedColor = System.Drawing.Color.Black;
 			this.authorBtn.Radius = 8;
-			this.authorBtn.Size = new System.Drawing.Size(230, 40);
+			this.authorBtn.Size = new System.Drawing.Size(184, 32);
 			this.authorBtn.TabIndex = 57;
 			this.authorBtn.TabStop = false;
 			this.authorBtn.Text = "Tác giả";
@@ -460,7 +474,8 @@
 			this.seoBtn.Image = ((System.Drawing.Image)(resources.GetObject("seoBtn.Image")));
 			this.seoBtn.ImageSize = new System.Drawing.Size(20, 20);
 			this.seoBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-			this.seoBtn.Location = new System.Drawing.Point(3, 325);
+			this.seoBtn.Location = new System.Drawing.Point(3, 254);
+			this.seoBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
 			this.seoBtn.Name = "seoBtn";
 			this.seoBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
 			this.seoBtn.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -469,7 +484,7 @@
 			this.seoBtn.OnHoverLineColor = System.Drawing.Color.Transparent;
 			this.seoBtn.OnPressedColor = System.Drawing.Color.Black;
 			this.seoBtn.Radius = 8;
-			this.seoBtn.Size = new System.Drawing.Size(230, 40);
+			this.seoBtn.Size = new System.Drawing.Size(184, 32);
 			this.seoBtn.TabIndex = 58;
 			this.seoBtn.TabStop = false;
 			this.seoBtn.Text = "Khuyến mãi";
@@ -496,7 +511,8 @@
 			this.permissionBtn.Image = ((System.Drawing.Image)(resources.GetObject("permissionBtn.Image")));
 			this.permissionBtn.ImageSize = new System.Drawing.Size(20, 20);
 			this.permissionBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-			this.permissionBtn.Location = new System.Drawing.Point(3, 371);
+			this.permissionBtn.Location = new System.Drawing.Point(3, 290);
+			this.permissionBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
 			this.permissionBtn.Name = "permissionBtn";
 			this.permissionBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
 			this.permissionBtn.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -505,7 +521,7 @@
 			this.permissionBtn.OnHoverLineColor = System.Drawing.Color.Transparent;
 			this.permissionBtn.OnPressedColor = System.Drawing.Color.Black;
 			this.permissionBtn.Radius = 8;
-			this.permissionBtn.Size = new System.Drawing.Size(230, 40);
+			this.permissionBtn.Size = new System.Drawing.Size(184, 32);
 			this.permissionBtn.TabIndex = 59;
 			this.permissionBtn.TabStop = false;
 			this.permissionBtn.Text = "Quyền";
@@ -532,7 +548,8 @@
 			this.positionBtn.Image = ((System.Drawing.Image)(resources.GetObject("positionBtn.Image")));
 			this.positionBtn.ImageSize = new System.Drawing.Size(20, 20);
 			this.positionBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-			this.positionBtn.Location = new System.Drawing.Point(3, 417);
+			this.positionBtn.Location = new System.Drawing.Point(3, 326);
+			this.positionBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
 			this.positionBtn.Name = "positionBtn";
 			this.positionBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
 			this.positionBtn.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -541,7 +558,7 @@
 			this.positionBtn.OnHoverLineColor = System.Drawing.Color.Transparent;
 			this.positionBtn.OnPressedColor = System.Drawing.Color.Black;
 			this.positionBtn.Radius = 8;
-			this.positionBtn.Size = new System.Drawing.Size(230, 40);
+			this.positionBtn.Size = new System.Drawing.Size(184, 32);
 			this.positionBtn.TabIndex = 60;
 			this.positionBtn.TabStop = false;
 			this.positionBtn.Text = "Chức vụ";
@@ -568,7 +585,8 @@
 			this.billBtn.Image = ((System.Drawing.Image)(resources.GetObject("billBtn.Image")));
 			this.billBtn.ImageSize = new System.Drawing.Size(20, 20);
 			this.billBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-			this.billBtn.Location = new System.Drawing.Point(3, 463);
+			this.billBtn.Location = new System.Drawing.Point(3, 362);
+			this.billBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
 			this.billBtn.Name = "billBtn";
 			this.billBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
 			this.billBtn.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -577,7 +595,7 @@
 			this.billBtn.OnHoverLineColor = System.Drawing.Color.Transparent;
 			this.billBtn.OnPressedColor = System.Drawing.Color.Black;
 			this.billBtn.Radius = 8;
-			this.billBtn.Size = new System.Drawing.Size(230, 40);
+			this.billBtn.Size = new System.Drawing.Size(184, 32);
 			this.billBtn.TabIndex = 61;
 			this.billBtn.TabStop = false;
 			this.billBtn.Text = "Hóa đơn";
@@ -604,7 +622,8 @@
 			this.importBilBtn.Image = ((System.Drawing.Image)(resources.GetObject("importBilBtn.Image")));
 			this.importBilBtn.ImageSize = new System.Drawing.Size(20, 20);
 			this.importBilBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-			this.importBilBtn.Location = new System.Drawing.Point(3, 509);
+			this.importBilBtn.Location = new System.Drawing.Point(3, 398);
+			this.importBilBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
 			this.importBilBtn.Name = "importBilBtn";
 			this.importBilBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
 			this.importBilBtn.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -613,7 +632,7 @@
 			this.importBilBtn.OnHoverLineColor = System.Drawing.Color.Transparent;
 			this.importBilBtn.OnPressedColor = System.Drawing.Color.Black;
 			this.importBilBtn.Radius = 8;
-			this.importBilBtn.Size = new System.Drawing.Size(230, 40);
+			this.importBilBtn.Size = new System.Drawing.Size(184, 32);
 			this.importBilBtn.TabIndex = 62;
 			this.importBilBtn.TabStop = false;
 			this.importBilBtn.Text = "Phiếu nhập";
@@ -640,7 +659,8 @@
 			this.orderBillBtn.Image = ((System.Drawing.Image)(resources.GetObject("orderBillBtn.Image")));
 			this.orderBillBtn.ImageSize = new System.Drawing.Size(20, 20);
 			this.orderBillBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-			this.orderBillBtn.Location = new System.Drawing.Point(3, 555);
+			this.orderBillBtn.Location = new System.Drawing.Point(3, 434);
+			this.orderBillBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
 			this.orderBillBtn.Name = "orderBillBtn";
 			this.orderBillBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
 			this.orderBillBtn.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -649,7 +669,7 @@
 			this.orderBillBtn.OnHoverLineColor = System.Drawing.Color.Transparent;
 			this.orderBillBtn.OnPressedColor = System.Drawing.Color.Black;
 			this.orderBillBtn.Radius = 8;
-			this.orderBillBtn.Size = new System.Drawing.Size(230, 40);
+			this.orderBillBtn.Size = new System.Drawing.Size(184, 32);
 			this.orderBillBtn.TabIndex = 70;
 			this.orderBillBtn.TabStop = false;
 			this.orderBillBtn.Text = "Phiếu yêu cầu";
@@ -676,7 +696,8 @@
 			this.accountBtn.Image = ((System.Drawing.Image)(resources.GetObject("accountBtn.Image")));
 			this.accountBtn.ImageSize = new System.Drawing.Size(20, 20);
 			this.accountBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-			this.accountBtn.Location = new System.Drawing.Point(3, 601);
+			this.accountBtn.Location = new System.Drawing.Point(3, 470);
+			this.accountBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
 			this.accountBtn.Name = "accountBtn";
 			this.accountBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
 			this.accountBtn.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -685,7 +706,7 @@
 			this.accountBtn.OnHoverLineColor = System.Drawing.Color.Transparent;
 			this.accountBtn.OnPressedColor = System.Drawing.Color.Black;
 			this.accountBtn.Radius = 8;
-			this.accountBtn.Size = new System.Drawing.Size(230, 40);
+			this.accountBtn.Size = new System.Drawing.Size(184, 32);
 			this.accountBtn.TabIndex = 68;
 			this.accountBtn.TabStop = false;
 			this.accountBtn.Text = "Tài khoản";
@@ -712,7 +733,8 @@
 			this.homeBtn.Image = ((System.Drawing.Image)(resources.GetObject("homeBtn.Image")));
 			this.homeBtn.ImageSize = new System.Drawing.Size(20, 20);
 			this.homeBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-			this.homeBtn.Location = new System.Drawing.Point(3, 647);
+			this.homeBtn.Location = new System.Drawing.Point(3, 506);
+			this.homeBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
 			this.homeBtn.Name = "homeBtn";
 			this.homeBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
 			this.homeBtn.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -721,7 +743,7 @@
 			this.homeBtn.OnHoverLineColor = System.Drawing.Color.Transparent;
 			this.homeBtn.OnPressedColor = System.Drawing.Color.Black;
 			this.homeBtn.Radius = 8;
-			this.homeBtn.Size = new System.Drawing.Size(230, 40);
+			this.homeBtn.Size = new System.Drawing.Size(184, 32);
 			this.homeBtn.TabIndex = 69;
 			this.homeBtn.TabStop = false;
 			this.homeBtn.Text = "Thống kê";
@@ -735,17 +757,19 @@
 			this.panel6.Controls.Add(this.line1);
 			this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
 			this.panel6.Location = new System.Drawing.Point(0, 0);
+			this.panel6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
 			this.panel6.Name = "panel6";
-			this.panel6.Size = new System.Drawing.Size(236, 94);
+			this.panel6.Size = new System.Drawing.Size(189, 75);
 			this.panel6.TabIndex = 0;
 			// 
 			// staffImg
 			// 
 			this.staffImg.BaseColor = System.Drawing.Color.White;
 			this.staffImg.Image = ((System.Drawing.Image)(resources.GetObject("staffImg.Image")));
-			this.staffImg.Location = new System.Drawing.Point(12, 16);
+			this.staffImg.Location = new System.Drawing.Point(10, 13);
+			this.staffImg.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
 			this.staffImg.Name = "staffImg";
-			this.staffImg.Size = new System.Drawing.Size(50, 50);
+			this.staffImg.Size = new System.Drawing.Size(40, 40);
 			this.staffImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
 			this.staffImg.TabIndex = 0;
 			this.staffImg.TabStop = false;
@@ -755,9 +779,10 @@
 			// 
 			this.staffName.AutoSize = true;
 			this.staffName.Font = new System.Drawing.Font("#9Slide03 Cabin Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.staffName.Location = new System.Drawing.Point(68, 12);
+			this.staffName.Location = new System.Drawing.Point(54, 10);
+			this.staffName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
 			this.staffName.Name = "staffName";
-			this.staffName.Size = new System.Drawing.Size(149, 26);
+			this.staffName.Size = new System.Drawing.Size(130, 21);
 			this.staffName.TabIndex = 1;
 			this.staffName.Text = "Biện Thành Hưng";
 			// 
@@ -765,9 +790,10 @@
 			// 
 			this.staffPosition.AutoSize = true;
 			this.staffPosition.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(115)))), ((int)(((byte)(115)))));
-			this.staffPosition.Location = new System.Drawing.Point(68, 43);
+			this.staffPosition.Location = new System.Drawing.Point(54, 34);
+			this.staffPosition.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
 			this.staffPosition.Name = "staffPosition";
-			this.staffPosition.Size = new System.Drawing.Size(122, 23);
+			this.staffPosition.Size = new System.Drawing.Size(102, 18);
 			this.staffPosition.TabIndex = 2;
 			this.staffPosition.Text = "Nhân viên quản lý";
 			this.staffPosition.Click += new System.EventHandler(this.staffPosition_Click);
@@ -776,9 +802,10 @@
 			// 
 			this.line1.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.line1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(212)))), ((int)(((byte)(212)))));
-			this.line1.Location = new System.Drawing.Point(0, 80);
+			this.line1.Location = new System.Drawing.Point(0, 64);
+			this.line1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
 			this.line1.Name = "line1";
-			this.line1.Size = new System.Drawing.Size(236, 1);
+			this.line1.Size = new System.Drawing.Size(189, 1);
 			this.line1.TabIndex = 5;
 			// 
 			// panel2
@@ -791,8 +818,9 @@
 			this.panel2.Controls.Add(this.pictureBox1);
 			this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
 			this.panel2.Location = new System.Drawing.Point(0, 0);
+			this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
 			this.panel2.Name = "panel2";
-			this.panel2.Size = new System.Drawing.Size(1636, 36);
+			this.panel2.Size = new System.Drawing.Size(1232, 29);
 			this.panel2.TabIndex = 0;
 			// 
 			// pictureBox4
@@ -800,9 +828,10 @@
 			this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.pictureBox4.Dock = System.Windows.Forms.DockStyle.Right;
 			this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-			this.pictureBox4.Location = new System.Drawing.Point(1465, 0);
+			this.pictureBox4.Location = new System.Drawing.Point(1094, 0);
+			this.pictureBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
 			this.pictureBox4.Name = "pictureBox4";
-			this.pictureBox4.Size = new System.Drawing.Size(57, 36);
+			this.pictureBox4.Size = new System.Drawing.Size(46, 29);
 			this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
 			this.pictureBox4.TabIndex = 4;
 			this.pictureBox4.TabStop = false;
@@ -813,9 +842,10 @@
 			this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.pictureBox3.Dock = System.Windows.Forms.DockStyle.Right;
 			this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-			this.pictureBox3.Location = new System.Drawing.Point(1522, 0);
+			this.pictureBox3.Location = new System.Drawing.Point(1140, 0);
+			this.pictureBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
 			this.pictureBox3.Name = "pictureBox3";
-			this.pictureBox3.Size = new System.Drawing.Size(57, 36);
+			this.pictureBox3.Size = new System.Drawing.Size(46, 29);
 			this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
 			this.pictureBox3.TabIndex = 3;
 			this.pictureBox3.TabStop = false;
@@ -825,9 +855,10 @@
 			// 
 			this.label1.Dock = System.Windows.Forms.DockStyle.Left;
 			this.label1.Font = new System.Drawing.Font("#9Slide03 Cabin", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label1.Location = new System.Drawing.Point(38, 0);
+			this.label1.Location = new System.Drawing.Point(30, 0);
+			this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(86, 36);
+			this.label1.Size = new System.Drawing.Size(69, 29);
 			this.label1.TabIndex = 2;
 			this.label1.Text = "Manager";
 			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -837,8 +868,9 @@
 			this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Left;
 			this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
 			this.pictureBox2.Location = new System.Drawing.Point(0, 0);
+			this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
 			this.pictureBox2.Name = "pictureBox2";
-			this.pictureBox2.Size = new System.Drawing.Size(38, 36);
+			this.pictureBox2.Size = new System.Drawing.Size(30, 29);
 			this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 			this.pictureBox2.TabIndex = 1;
 			this.pictureBox2.TabStop = false;
@@ -848,9 +880,10 @@
 			this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Right;
 			this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-			this.pictureBox1.Location = new System.Drawing.Point(1579, 0);
+			this.pictureBox1.Location = new System.Drawing.Point(1186, 0);
+			this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
 			this.pictureBox1.Name = "pictureBox1";
-			this.pictureBox1.Size = new System.Drawing.Size(57, 36);
+			this.pictureBox1.Size = new System.Drawing.Size(46, 29);
 			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
 			this.pictureBox1.TabIndex = 0;
 			this.pictureBox1.TabStop = false;
@@ -858,14 +891,14 @@
 			// 
 			// ManagerGUI
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+			this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-			this.ClientSize = new System.Drawing.Size(1636, 926);
+			this.ClientSize = new System.Drawing.Size(1232, 676);
 			this.Controls.Add(this.panel1);
 			this.Font = new System.Drawing.Font("#9Slide03 Cabin", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-			this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+			this.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
 			this.Name = "ManagerGUI";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "ManagerGUI";
