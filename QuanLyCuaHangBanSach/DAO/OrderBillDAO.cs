@@ -31,6 +31,12 @@ namespace QuanLyCuaHangBanSach.DAO
 		{
 			return DataProvider.Instance.ExecuteQuery("select * from phieuyeucau;");
 		}
+
+		public DataTable getAllNotImported()
+		{
+			return DataProvider.Instance.ExecuteQuery("SELECT * FROM phieuyeucau WHERE trangThai=0;");
+		}
+
 		public List<OrderBillDetailDTO> getOrderBillDetailList(string billId)
 		{
 			DataTable dataTable = DataProvider.Instance.ExecuteQuery(
@@ -171,6 +177,7 @@ namespace QuanLyCuaHangBanSach.DAO
 
 			return orderBill;
 		}
+
 		public string getLatestId()
 		{
 			DataTable dataTable = DataProvider.Instance.ExecuteQuery(

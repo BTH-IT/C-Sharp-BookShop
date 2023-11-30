@@ -70,6 +70,10 @@
 			this.ExcelBtn = new Guna.UI2.WinForms.Guna2Button();
 			this.panel6 = new System.Windows.Forms.Panel();
 			this.LogoutBtn = new Guna.UI2.WinForms.Guna2Button();
+			this.ManualImportBtn = new Guna.UI2.WinForms.Guna2ToggleSwitch();
+			this.label4 = new System.Windows.Forms.Label();
+			this.RequestIdCb = new Guna.UI.WinForms.GunaComboBox();
+			this.label5 = new System.Windows.Forms.Label();
 			this.flowLayoutPanel2.SuspendLayout();
 			this.flowLayoutPanel4.SuspendLayout();
 			this.flowLayoutPanel5.SuspendLayout();
@@ -196,6 +200,10 @@
 			// 
 			// panel1
 			// 
+			this.panel1.Controls.Add(this.label5);
+			this.panel1.Controls.Add(this.RequestIdCb);
+			this.panel1.Controls.Add(this.label4);
+			this.panel1.Controls.Add(this.ManualImportBtn);
 			this.panel1.Controls.Add(this.QRScanBtn);
 			this.panel1.Location = new System.Drawing.Point(294, 0);
 			this.panel1.Margin = new System.Windows.Forms.Padding(0);
@@ -235,7 +243,7 @@
 			// FilterContainer
 			// 
 			this.FilterContainer.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.FilterContainer.Location = new System.Drawing.Point(207, 121);
+			this.FilterContainer.Location = new System.Drawing.Point(90, 119);
 			this.FilterContainer.Name = "FilterContainer";
 			this.FilterContainer.Size = new System.Drawing.Size(334, 221);
 			this.FilterContainer.TabIndex = 8;
@@ -685,6 +693,80 @@
 			this.LogoutBtn.TabStop = false;
 			this.LogoutBtn.Click += new System.EventHandler(this.LogOutBtn_Click);
 			// 
+			// ManualImportBtn
+			// 
+			this.ManualImportBtn.Animated = true;
+			this.ManualImportBtn.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+			this.ManualImportBtn.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+			this.ManualImportBtn.CheckedState.InnerBorderColor = System.Drawing.Color.White;
+			this.ManualImportBtn.CheckedState.InnerColor = System.Drawing.Color.White;
+			this.ManualImportBtn.CheckedState.Parent = this.ManualImportBtn;
+			this.ManualImportBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.ManualImportBtn.Location = new System.Drawing.Point(160, 14);
+			this.ManualImportBtn.Name = "ManualImportBtn";
+			this.ManualImportBtn.ShadowDecoration.Parent = this.ManualImportBtn;
+			this.ManualImportBtn.Size = new System.Drawing.Size(46, 22);
+			this.ManualImportBtn.TabIndex = 2;
+			this.ManualImportBtn.TabStop = false;
+			this.ManualImportBtn.UncheckedState.BorderColor = System.Drawing.Color.Gray;
+			this.ManualImportBtn.UncheckedState.BorderThickness = 1;
+			this.ManualImportBtn.UncheckedState.FillColor = System.Drawing.Color.White;
+			this.ManualImportBtn.UncheckedState.InnerBorderColor = System.Drawing.Color.Gray;
+			this.ManualImportBtn.UncheckedState.InnerColor = System.Drawing.Color.Gray;
+			this.ManualImportBtn.UncheckedState.Parent = this.ManualImportBtn;
+			this.ManualImportBtn.CheckedChanged += new System.EventHandler(this.ManualImportBtn_CheckedChanged);
+			// 
+			// label4
+			// 
+			this.label4.AutoSize = true;
+			this.label4.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+			this.label4.Location = new System.Drawing.Point(4, 11);
+			this.label4.Margin = new System.Windows.Forms.Padding(20, 30, 3, 5);
+			this.label4.Name = "label4";
+			this.label4.Size = new System.Drawing.Size(156, 25);
+			this.label4.TabIndex = 19;
+			this.label4.Text = "Nhập hàng thủ công:";
+			this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			// 
+			// RequestIdCb
+			// 
+			this.RequestIdCb.BackColor = System.Drawing.Color.Transparent;
+			this.RequestIdCb.BaseColor = System.Drawing.Color.White;
+			this.RequestIdCb.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+			this.RequestIdCb.BorderSize = 1;
+			this.RequestIdCb.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+			this.RequestIdCb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.RequestIdCb.FocusedColor = System.Drawing.Color.Empty;
+			this.RequestIdCb.Font = new System.Drawing.Font("#9Slide03 Cabin", 10F);
+			this.RequestIdCb.ForeColor = System.Drawing.Color.Black;
+			this.RequestIdCb.FormattingEnabled = true;
+			this.RequestIdCb.IntegralHeight = false;
+			this.RequestIdCb.Location = new System.Drawing.Point(360, 10);
+			this.RequestIdCb.MaxLength = 10;
+			this.RequestIdCb.Name = "RequestIdCb";
+			this.RequestIdCb.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
+			this.RequestIdCb.OnHoverItemForeColor = System.Drawing.Color.White;
+			this.RequestIdCb.Radius = 5;
+			this.RequestIdCb.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+			this.RequestIdCb.Size = new System.Drawing.Size(75, 28);
+			this.RequestIdCb.TabIndex = 20;
+			this.RequestIdCb.TabStop = false;
+			this.RequestIdCb.Visible = false;
+			this.RequestIdCb.SelectedIndexChanged += new System.EventHandler(this.RequestIdCb_SelectedIndexChanged);
+			// 
+			// label5
+			// 
+			this.label5.AutoSize = true;
+			this.label5.Font = new System.Drawing.Font("#9Slide03 Cabin Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+			this.label5.Location = new System.Drawing.Point(216, 11);
+			this.label5.Margin = new System.Windows.Forms.Padding(20, 30, 3, 5);
+			this.label5.Name = "label5";
+			this.label5.Size = new System.Drawing.Size(138, 25);
+			this.label5.TabIndex = 21;
+			this.label5.Text = "Mã phiếu yêu cầu:";
+			this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.label5.Visible = false;
+			// 
 			// ImportGUI
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -709,6 +791,7 @@
 			this.flowLayoutPanel5.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
 			this.panel1.ResumeLayout(false);
+			this.panel1.PerformLayout();
 			this.panel3.ResumeLayout(false);
 			this.panel4.ResumeLayout(false);
 			this.panel4.PerformLayout();
@@ -763,5 +846,9 @@
 		private Guna.UI.WinForms.GunaAdvenceButton refreshBtn;
 		private System.Windows.Forms.Button PrintRequestBtn;
 		private Guna.UI.WinForms.GunaButton QRScanBtn;
+		private Guna.UI2.WinForms.Guna2ToggleSwitch ManualImportBtn;
+		private System.Windows.Forms.Label label4;
+		private Guna.UI.WinForms.GunaComboBox RequestIdCb;
+		private System.Windows.Forms.Label label5;
 	}
 }
