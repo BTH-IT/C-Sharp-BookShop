@@ -85,7 +85,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
             try
             {
 				List<PositionDTO> positions = PositionBUS.Instance.getAllData();
-				positions.Insert(0, new PositionDTO(0, "Lọc theo chức vụ", "", false, 0));
+				positions.Insert(0, new PositionDTO(0, "Tất cả chức vụ", "", false, 0));
 				this.positionCbx.DisplayMember = "TenChucVu";
 				this.positionCbx.ValueMember = "MaChucVu";
 
@@ -503,7 +503,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 
         private void dgvStaff_SortCompare(object sender, DataGridViewSortCompareEventArgs e)
         {
-            if (e.Column.Index == dgvStaff.Columns.Count - 2) // Check if sorting the last column
+            if (e.Column.Index == dgvStaff.Columns.Count - 1 || e.Column.Index == dgvStaff.Columns.Count - 3) // Check if sorting the last column
             {
                 // Extract the values for sorting from the cell values
                 double value1 = GetSortingValue(e.CellValue1);

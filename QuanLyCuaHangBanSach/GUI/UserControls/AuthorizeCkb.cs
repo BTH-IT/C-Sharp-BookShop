@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using System.Windows.Forms;
 using QuanLyCuaHangBanSach.BUS;
 using QuanLyCuaHangBanSach.DTO;
@@ -18,7 +11,7 @@ namespace QuanLyCuaHangBanSach.GUI.UserControls
         private int positionId;
         public delegate void OnPermissionAuthorizeChange(int staffId, string screenName);
         public static event OnPermissionAuthorizeChange onPermissionAuthorizeChange;
-		private List<int> authForStaffNhapHang = new List<int>() { 1, 3, 4, 5, 7, 9, 14, 16 };
+		private List<int> authForStaffNhapHang = new List<int>() { 1, 3, 4, 5, 7, 9, 14, 16, 17 };
 		private List<int> authForStaffBanHang = new List<int>() { 6, 8, 10, 13, 16 };
 		public AuthorizeCkb(string text, int positionId, int permissionId, bool isCheck)
         {

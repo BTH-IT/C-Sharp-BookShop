@@ -117,7 +117,7 @@ namespace QuanLyCuaHangBanSach.GUI.Manager
 						dgvCustomer.Rows.Add(new object[] {
 							customer.Ma,
 							customer.Ten,
-							customer.SoDienThoai,
+							customer.SoDienThoai == "0" ? "Không có" : customer.SoDienThoai,
 							CustomerBillBUS.Instance.countBillByCustomerID(customer.Ma.ToString()),
 							string.Format("{0:N0} VNĐ", CustomerBillBUS.Instance.getCustomerBoughtTotal(customer.Ma.ToString()))
 						});
