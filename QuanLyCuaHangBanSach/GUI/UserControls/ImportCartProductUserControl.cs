@@ -74,7 +74,7 @@ namespace QuanLyCuaHangBanSach.GUI.Vendor
 
         private void MinusBtn_Click(object sender, EventArgs e)
         {
-            if (!AmountTxt.Text.Equals("1"))
+            if (!AmountTxt.Text.Equals("0"))
             {
                 AmountTxt.Text = (int.Parse(AmountTxt.Text) - 1).ToString();
                 ChangeAmount();
@@ -83,9 +83,9 @@ namespace QuanLyCuaHangBanSach.GUI.Vendor
 
         private void AmountTxt_Validation()
         {
-            if (String.IsNullOrEmpty(AmountTxt.Text))
+            if ((int.TryParse(AmountTxt.Text, out int re) && re < 0) || String.IsNullOrEmpty(AmountTxt.Text))
             {
-                AmountTxt.Text = "1";
+                AmountTxt.Text = "0";
             }
             else if (max != -1 && int.Parse(AmountTxt.Text) > max)
             {
