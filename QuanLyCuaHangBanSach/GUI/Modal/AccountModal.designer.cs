@@ -42,6 +42,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.AddStaffBtn = new System.Windows.Forms.Button();
             this.staffLine = new System.Windows.Forms.Label();
             this.staffComboBox = new Guna.UI.WinForms.GunaComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -52,7 +53,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.submitBtn = new Guna.UI.WinForms.GunaButton();
             this.cancelBtn = new Guna.UI.WinForms.GunaButton();
-            this.AddStaffBtn = new System.Windows.Forms.Button();
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -67,7 +67,7 @@
             this.title.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(210)))), ((int)(((byte)(192)))));
             this.title.Location = new System.Drawing.Point(211, 2);
             this.title.Name = "title";
-            this.title.Size = new System.Drawing.Size(224, 45);
+            this.title.Size = new System.Drawing.Size(178, 36);
             this.title.TabIndex = 9;
             this.title.Text = "Thêm Tài khoản";
             // 
@@ -110,7 +110,7 @@
             this.errorPasswordMsg.ForeColor = System.Drawing.Color.Red;
             this.errorPasswordMsg.Location = new System.Drawing.Point(179, 47);
             this.errorPasswordMsg.Name = "errorPasswordMsg";
-            this.errorPasswordMsg.Size = new System.Drawing.Size(0, 26);
+            this.errorPasswordMsg.Size = new System.Drawing.Size(0, 21);
             this.errorPasswordMsg.TabIndex = 7;
             // 
             // passwordLine
@@ -161,7 +161,7 @@
             this.emailTxt.TabIndex = 2;
             this.emailTxt.TextChanged += new System.EventHandler(this.emailTxt_TextChanged);
             this.emailTxt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.staffComboBox_KeyDown);
-            this.emailTxt.Leave += new System.EventHandler(this.staffComboBox_SelectedIndexChanged);
+            this.emailTxt.Leave += new System.EventHandler(this.emailTxt_TextChanged);
             // 
             // errorEmailMsg
             // 
@@ -170,7 +170,7 @@
             this.errorEmailMsg.ForeColor = System.Drawing.Color.Red;
             this.errorEmailMsg.Location = new System.Drawing.Point(182, 49);
             this.errorEmailMsg.Name = "errorEmailMsg";
-            this.errorEmailMsg.Size = new System.Drawing.Size(0, 26);
+            this.errorEmailMsg.Size = new System.Drawing.Size(0, 21);
             this.errorEmailMsg.TabIndex = 7;
             // 
             // errorEmailLine
@@ -243,6 +243,18 @@
             this.panel3.Size = new System.Drawing.Size(570, 92);
             this.panel3.TabIndex = 13;
             // 
+            // AddStaffBtn
+            // 
+            this.AddStaffBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.AddStaffBtn.Image = ((System.Drawing.Image)(resources.GetObject("AddStaffBtn.Image")));
+            this.AddStaffBtn.Location = new System.Drawing.Point(513, 9);
+            this.AddStaffBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.AddStaffBtn.Name = "AddStaffBtn";
+            this.AddStaffBtn.Size = new System.Drawing.Size(38, 38);
+            this.AddStaffBtn.TabIndex = 28;
+            this.AddStaffBtn.UseVisualStyleBackColor = true;
+            this.AddStaffBtn.Click += new System.EventHandler(this.AddStaffBtn_Click);
+            // 
             // staffLine
             // 
             this.staffLine.AutoSize = true;
@@ -250,7 +262,7 @@
             this.staffLine.ForeColor = System.Drawing.Color.Red;
             this.staffLine.Location = new System.Drawing.Point(187, 56);
             this.staffLine.Name = "staffLine";
-            this.staffLine.Size = new System.Drawing.Size(0, 26);
+            this.staffLine.Size = new System.Drawing.Size(0, 21);
             this.staffLine.TabIndex = 27;
             // 
             // staffComboBox
@@ -339,7 +351,7 @@
             this.errorConfirmPasswordMsg.ForeColor = System.Drawing.Color.Red;
             this.errorConfirmPasswordMsg.Location = new System.Drawing.Point(182, 47);
             this.errorConfirmPasswordMsg.Name = "errorConfirmPasswordMsg";
-            this.errorConfirmPasswordMsg.Size = new System.Drawing.Size(0, 26);
+            this.errorConfirmPasswordMsg.Size = new System.Drawing.Size(0, 21);
             this.errorConfirmPasswordMsg.TabIndex = 7;
             // 
             // confirmPasswordLine
@@ -423,21 +435,9 @@
             this.cancelBtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
             // 
-            // AddStaffBtn
-            // 
-            this.AddStaffBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.AddStaffBtn.Image = ((System.Drawing.Image)(resources.GetObject("AddStaffBtn.Image")));
-            this.AddStaffBtn.Location = new System.Drawing.Point(513, 9);
-            this.AddStaffBtn.Margin = new System.Windows.Forms.Padding(4);
-            this.AddStaffBtn.Name = "AddStaffBtn";
-            this.AddStaffBtn.Size = new System.Drawing.Size(38, 38);
-            this.AddStaffBtn.TabIndex = 28;
-            this.AddStaffBtn.UseVisualStyleBackColor = true;
-            this.AddStaffBtn.Click += new System.EventHandler(this.AddStaffBtn_Click);
-            // 
             // AccountModal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(5F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(646, 578);

@@ -12,6 +12,7 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 {
     public partial class PrintBarcodeModal : Form
     {
+        Bitmap largerBarcodeBitmap;
         public PrintBarcodeModal(string ma)
         {
             InitializeComponent();
@@ -21,9 +22,6 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
         private void submitBtn_Click(object sender, EventArgs e)
         {
-            BookDTO book = BookBUS.Instance.getById(guna2TextBox1.Text);
-            Bitmap largerBarcodeBitmap = GenerateBarcodeWithText(guna2TextBox1.Text, string.Format("{0:N0} VNĐ", book.GiaBan));
-            pictureBox1.Image = largerBarcodeBitmap;
             this.barcodeDataSet1.Clear();
             System.Data.DataTable dataTable = this.barcodeDataSet1.Tables[0];
             using (MemoryStream ms = new MemoryStream())
@@ -91,19 +89,19 @@ namespace QuanLyCuaHangBanSach.GUI.Modal
 
         }
 
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            BookDTO book = BookBUS.Instance.getById(guna2TextBox1.Text);
-            Bitmap largerBarcodeBitmap = GenerateBarcodeWithText(guna2TextBox1.Text, string.Format("{0:N0} VNĐ", book.GiaBan));
-            pictureBox1.Image = largerBarcodeBitmap;
-        }
-
         private void guna2TextBox1_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
                 submitBtn_Click(sender, e);
             }
+        }
+
+        private void PrintBarcodeModal_Load(object sender, EventArgs e)
+        {
+            BookDTO book = BookBUS.Instance.getById(guna2TextBox1.Text);
+            largerBarcodeBitmap = GenerateBarcodeWithText(guna2TextBox1.Text, string.Format("{0:N0} VNĐ", book.GiaBan));
+            pictureBox1.Image = largerBarcodeBitmap;
         }
     }
 }
