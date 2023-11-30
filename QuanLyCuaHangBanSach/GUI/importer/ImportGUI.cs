@@ -198,7 +198,6 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
 			{
 				NameInp.Text = "";
 				NameResultContainer.Height = 0;
-				SupplierNameLb.Text = "";
 
 				using (SupplierModal modal = new SupplierModal())
 				{
@@ -217,7 +216,7 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
 				{
 					ImportCartProductUserControl product = new ImportCartProductUserControl(importExcel || manualImport ? 1 : 0, max);
 					product.details(book, amount);
-					product.BillIdDetailLb.Text = importExcel ? importBillId.ToString() : requestBillId.ToString();
+					product.BillIdDetailLb.Text = importExcel || manualImport ? importBillId.ToString() : requestBillId.ToString();
 
 					product.ImportPriceTxb.MouseLeave += (object sender, EventArgs e) =>
 					{
@@ -305,7 +304,7 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
 			{
 				if (BookUserControl.clicked)
 				{
-					if (!importExcel && !requestExcel)
+					if (!importExcel && !requestExcel && !manualImport)
 					{
 						int ChoseId_int = Convert.ToInt32(BookUserControl.ChoseId);
 						BookDTO book = BookBUS.Instance.getById(BookUserControl.ChoseId);
@@ -930,6 +929,7 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
 			if (ManualImportBtn.Checked)
 			{
 				refresh(true);
+				QRScanBtn.Enabled = false;
 				ExcelBtn.Enabled = false;
 				manualImport = true;
 				RequestIdCb.Visible = true;
