@@ -74,23 +74,49 @@ namespace QuanLyCuaHangBanSach.GUI.Vendor
 
         private void MinusBtn_Click(object sender, EventArgs e)
         {
-            if (!AmountTxt.Text.Equals("1"))
+            if (mode == 1)
             {
-                AmountTxt.Text = (int.Parse(AmountTxt.Text) - 1).ToString();
-                ChangeAmount();
+                if (!AmountTxt.Text.Equals("0"))
+                {
+                    AmountTxt.Text = (int.Parse(AmountTxt.Text) - 1).ToString();
+                    ChangeAmount();
+                }
+            } else
+            {
+                if (!AmountTxt.Text.Equals("1"))
+                {
+                    AmountTxt.Text = (int.Parse(AmountTxt.Text) - 1).ToString();
+                    ChangeAmount();
+                }
             }
+            
         }
 
         private void AmountTxt_Validation()
         {
-            if (String.IsNullOrEmpty(AmountTxt.Text))
+            if (mode == 1)
             {
-                AmountTxt.Text = "1";
+                if ((int.TryParse(AmountTxt.Text, out int re) && re < 0) || String.IsNullOrEmpty(AmountTxt.Text))
+                {
+                    AmountTxt.Text = "0";
+                }
+                else if (max != -1 && int.Parse(AmountTxt.Text) > max)
+                {
+                    AmountTxt.Text = max.ToString();
+                }
             }
-            else if (max != -1 && int.Parse(AmountTxt.Text) > max)
+            else
             {
-				AmountTxt.Text = max.ToString();
-			}
+                if ((int.TryParse(AmountTxt.Text, out int re) && re <= 0) || String.IsNullOrEmpty(AmountTxt.Text))
+                {
+                    AmountTxt.Text = "1";
+                }
+                else if (max != -1 && int.Parse(AmountTxt.Text) > max)
+                {
+                    AmountTxt.Text = max.ToString();
+                }
+            }
+            
         }
 
         private void AmountTxt_KeyPress(object sender, KeyPressEventArgs e)

@@ -56,12 +56,13 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
 				FilterContainer.Controls.Add(filter);
 
 				List<OrderBillDTO> orderBills = OrderBillBUS.Instance.getAllNotImported() ?? new List<OrderBillDTO>();
-				//orderBills.Insert(0, new OrderBillDTO(0, 0, 0, new DateTime(), 0));
-				RequestIdCb.DataSource = orderBills;
-				RequestIdCb.DisplayMember = "maPhieuYeuCau";
-				RequestIdCb.ValueMember = "maPhieuYeuCau";
+                List<string> maPhieuYeuCauList = orderBills.Select(orderBill => orderBill.MaPhieuYeuCau.ToString()).ToList();
+				maPhieuYeuCauList.Insert(0, "Chọn mã phiếu yêu cầu");
 
-				List<AuthDetailDTO> authDetails;
+                RequestIdCb.DataSource = maPhieuYeuCauList;
+
+
+                List<AuthDetailDTO> authDetails;
 				authDetails = AuthDetailBUS.Instance.getByPositionId(MenuGUI.staff.MaChucVu.ToString());
 				if (authDetails != null)
 				{
@@ -547,7 +548,7 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
 							continue;
 						}
 
-						if (!int.TryParse(row[0].ToString(), out int maSach) || !int.TryParse(row[2].ToString(), out int soLuong) || !decimal.TryParse(row[3].ToString(), out decimal giaNhap))
+						if (!int.TryParse(row[0].ToString(), out int maSach) || !int.TryParse(row[2].ToString(), out int soLuong) || soLuong < 0 || !decimal.TryParse(row[3].ToString(), out decimal giaNhap) || giaNhap < đ)
 						{
 							MessageBox.Show("Lỗi chưa chọn file hoặc file excel không đúng format dữ liệu nhập!");
 							return;
@@ -652,7 +653,7 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
 							continue;
 						}
 
-						if (!int.TryParse(row[0].ToString(), out int maSach) || !int.TryParse(row[2].ToString(), out int soLuong))
+						if (!int.TryParse(row[0].ToString(), out int maSach) || !int.TryParse(row[2].ToString(), out int soLuong) || soLuong <= 0)
 						{
 							MessageBox.Show("Lỗi chưa chọn file hoặc file excel không đúng format dữ liệu nhập!");
 							return;
@@ -798,11 +799,11 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
 				RenderBookContainer();
             }
 			List<OrderBillDTO> orderBills = OrderBillBUS.Instance.getAllNotImported() ?? new List<OrderBillDTO>();
-			orderBills.Insert(0, new OrderBillDTO(0, 0, 0, new DateTime(), 0));
-			RequestIdCb.DataSource = orderBills;
-			RequestIdCb.DisplayMember = "maPhieuYeuCau";
-			RequestIdCb.ValueMember = "maPhieuYeuCau";
-			label1.Focus();
+            List<string> maPhieuYeuCauList = orderBills.Select(orderBill => orderBill.MaPhieuYeuCau.ToString()).ToList();
+            maPhieuYeuCauList.Insert(0, "Chọn mã phiếu yêu cầu");
+
+            RequestIdCb.DataSource = maPhieuYeuCauList;
+            label1.Focus();
 		}
 
 		private void refreshBtn_Click(object sender, EventArgs e)
@@ -963,7 +964,7 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
 			}
             else if (manualImport)
             {
-				CartContainer.Controls.Clear();
+                CartContainer.Controls.Clear();
 				importBillDetails.Clear();
 				orderBillDetails.Clear();
 				NameInp.Enabled = false;
