@@ -957,7 +957,7 @@ namespace QuanLyCuaHangBanSach.GUI
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            LoginGUI.Instance.Close();
+            Application.Exit();
         }
 
         private void ManagerGUI_Load(object sender, EventArgs e)
