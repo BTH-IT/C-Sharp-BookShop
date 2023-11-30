@@ -49,6 +49,22 @@ namespace QuanLyCuaHangBanSach.BUS
 			return orderBillList;
 		}
 
+		public List<OrderBillDTO> getAllNotImported()
+		{
+			List<OrderBillDTO> orderBillList = new List<OrderBillDTO>();
+			DataTable dt = OrderBillDAO.Instance.getAllNotImported();
+
+			if (dt.Rows.Count <= 0) return null;
+
+			foreach (DataRow row in dt.Rows)
+			{
+				OrderBillDTO orderBill = new OrderBillDTO(row);
+				orderBillList.Add(orderBill);
+			}
+
+			return orderBillList;
+		}
+
 		public OrderBillDTO getById(string id)
 		{
 			return OrderBillDAO.Instance.getById(id);

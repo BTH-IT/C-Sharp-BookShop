@@ -16,16 +16,18 @@ namespace QuanLyCuaHangBanSach.GUI.Vendor
     public partial class ImportCartProductUserControl : UserControl
     {
 		private int mode;
+		private int max;
 		public static bool AmountChanged = false;
         public static bool deletePress = false;
         public static string AmountChangedId = "";
         public static string deleteId = "";
 
-        public ImportCartProductUserControl(int mode) //1: import, 2: request
+        public ImportCartProductUserControl(int mode, int max=-1) //1: import, 2: request
         {
             InitializeComponent();
             this.mode = mode;
-        }
+            this.max = max;
+		}
 
         public void details(BookDTO book, int amount = 1)
         {
@@ -58,8 +60,16 @@ namespace QuanLyCuaHangBanSach.GUI.Vendor
 
         private void PlusBtn_Click(object sender, EventArgs e)
         {
-            AmountTxt.Text = (int.Parse(AmountTxt.Text) + 1).ToString();
-            ChangeAmount();
+            if (max == -1)
+            {
+                AmountTxt.Text = (int.Parse(AmountTxt.Text) + 1).ToString();
+                ChangeAmount();
+            }
+            else if (int.Parse(AmountTxt.Text) < max)
+            {
+				AmountTxt.Text = (int.Parse(AmountTxt.Text) + 1).ToString();
+				ChangeAmount();
+			}
         }
 
         private void MinusBtn_Click(object sender, EventArgs e)
@@ -77,6 +87,10 @@ namespace QuanLyCuaHangBanSach.GUI.Vendor
             {
                 AmountTxt.Text = "1";
             }
+            else if (max != -1 && int.Parse(AmountTxt.Text) > max)
+            {
+				AmountTxt.Text = max.ToString();
+			}
         }
 
         private void AmountTxt_KeyPress(object sender, KeyPressEventArgs e)
