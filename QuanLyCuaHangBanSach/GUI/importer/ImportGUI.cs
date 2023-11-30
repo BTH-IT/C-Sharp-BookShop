@@ -548,7 +548,7 @@ namespace QuanLyCuaHangBanSach.GUI.Importer
 							continue;
 						}
 
-						if (!int.TryParse(row[0].ToString(), out int maSach) || !int.TryParse(row[2].ToString(), out int soLuong) || soLuong <= 0 || !decimal.TryParse(row[3].ToString(), out decimal giaNhap))
+						if (!int.TryParse(row[0].ToString(), out int maSach) || !int.TryParse(row[2].ToString(), out int soLuong) || soLuong < 0 || !decimal.TryParse(row[3].ToString(), out decimal giaNhap))
 						{
 							MessageBox.Show("Lỗi chưa chọn file hoặc file excel không đúng format dữ liệu nhập!");
 							return;
